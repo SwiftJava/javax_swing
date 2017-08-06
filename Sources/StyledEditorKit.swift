@@ -156,14 +156,35 @@ open class StyledEditorKit: DefaultEditorKit {
 
     /// public javax.swing.Action[] javax.swing.text.StyledEditorKit.getActions()
 
+    /// public javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.getInputAttributes()
+
+    private static var getInputAttributes_MethodID_2: jmethodID?
+
+    open func getInputAttributes() -> MutableAttributeSet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputAttributes", methodSig: "()Ljavax/swing/text/MutableAttributeSet;", methodCache: &StyledEditorKit.getInputAttributes_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MutableAttributeSetForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.StyledEditorKit.deinstall(javax.swing.JEditorPane)
+
+    /// public void javax.swing.text.StyledEditorKit.install(javax.swing.JEditorPane)
+
+    /// public javax.swing.text.Document javax.swing.text.StyledEditorKit.createDefaultDocument()
+
+    /// public javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.getViewFactory()
+
     /// public javax.swing.text.Element javax.swing.text.StyledEditorKit.getCharacterAttributeRun()
 
-    private static var getCharacterAttributeRun_MethodID_2: jmethodID?
+    private static var getCharacterAttributeRun_MethodID_3: jmethodID?
 
     open func getCharacterAttributeRun() -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttributeRun", methodSig: "()Ljavax/swing/text/Element;", methodCache: &StyledEditorKit.getCharacterAttributeRun_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttributeRun", methodSig: "()Ljavax/swing/text/Element;", methodCache: &StyledEditorKit.getCharacterAttributeRun_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -173,14 +194,14 @@ open class StyledEditorKit: DefaultEditorKit {
 
     /// protected void javax.swing.text.StyledEditorKit.createInputAttributes(javax.swing.text.Element,javax.swing.text.MutableAttributeSet)
 
-    private static var createInputAttributes_MethodID_3: jmethodID?
+    private static var createInputAttributes_MethodID_4: jmethodID?
 
     open func createInputAttributes( element: Element?, set: MutableAttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: element, locals: &__locals )
         __args[1] = JNIType.toJava( value: set, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInputAttributes", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &StyledEditorKit.createInputAttributes_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInputAttributes", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &StyledEditorKit.createInputAttributes_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func createInputAttributes( _ _element: Element?, _ _set: MutableAttributeSet? ) {
@@ -188,27 +209,6 @@ open class StyledEditorKit: DefaultEditorKit {
     }
 
     /// private void javax.swing.text.StyledEditorKit.createInputAttributeUpdated()
-
-    /// public javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.getInputAttributes()
-
-    private static var getInputAttributes_MethodID_4: jmethodID?
-
-    open func getInputAttributes() -> MutableAttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputAttributes", methodSig: "()Ljavax/swing/text/MutableAttributeSet;", methodCache: &StyledEditorKit.getInputAttributes_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MutableAttributeSetForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.getViewFactory()
-
-    /// public void javax.swing.text.StyledEditorKit.deinstall(javax.swing.JEditorPane)
-
-    /// public void javax.swing.text.StyledEditorKit.install(javax.swing.JEditorPane)
-
-    /// public javax.swing.text.Document javax.swing.text.StyledEditorKit.createDefaultDocument()
 
 }
 

@@ -19,10 +19,6 @@ public protocol AbstractDocument_Content: JavaProtocol {
 
     func getChars( _where: Int, len: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */
 
-    /// public abstract java.lang.String javax.swing.text.AbstractDocument$Content.getString(int,int) throws javax.swing.text.BadLocationException
-
-    func getString( _where: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String!
-
     /// public abstract javax.swing.undo.UndoableEdit javax.swing.text.AbstractDocument$Content.insertString(int,java.lang.String) throws javax.swing.text.BadLocationException
 
     func insertString( _where: Int, str: String? ) throws /* javax.swing.text.BadLocationException */ -> UndoableEdit!
@@ -30,6 +26,10 @@ public protocol AbstractDocument_Content: JavaProtocol {
     /// public abstract javax.swing.text.Position javax.swing.text.AbstractDocument$Content.createPosition(int) throws javax.swing.text.BadLocationException
 
     func createPosition( offset: Int ) throws /* javax.swing.text.BadLocationException */ -> Position!
+
+    /// public abstract java.lang.String javax.swing.text.AbstractDocument$Content.getString(int,int) throws javax.swing.text.BadLocationException
+
+    func getString( _where: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String!
 
 }
 
@@ -91,36 +91,16 @@ open class AbstractDocument_ContentForward: JNIObjectForward, AbstractDocument_C
         try getChars( _where: __where, len: _len, txt: _txt )
     }
 
-    /// public abstract java.lang.String javax.swing.text.AbstractDocument$Content.getString(int,int) throws javax.swing.text.BadLocationException
-
-    private static var getString_MethodID_10: jmethodID?
-
-    open func getString( _where: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _where, locals: &__locals )
-        __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(II)Ljava/lang/String;", methodCache: &AbstractDocument_ContentForward.getString_MethodID_10, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getString( _ __where: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        return try getString( _where: __where, len: _len )
-    }
-
     /// public abstract javax.swing.undo.UndoableEdit javax.swing.text.AbstractDocument$Content.insertString(int,java.lang.String) throws javax.swing.text.BadLocationException
 
-    private static var insertString_MethodID_11: jmethodID?
+    private static var insertString_MethodID_10: jmethodID?
 
     open func insertString( _where: Int, str: String? ) throws /* javax.swing.text.BadLocationException */ -> UndoableEdit! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;)Ljavax/swing/undo/UndoableEdit;", methodCache: &AbstractDocument_ContentForward.insertString_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;)Ljavax/swing/undo/UndoableEdit;", methodCache: &AbstractDocument_ContentForward.insertString_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -134,13 +114,13 @@ open class AbstractDocument_ContentForward: JNIObjectForward, AbstractDocument_C
 
     /// public abstract javax.swing.text.Position javax.swing.text.AbstractDocument$Content.createPosition(int) throws javax.swing.text.BadLocationException
 
-    private static var createPosition_MethodID_12: jmethodID?
+    private static var createPosition_MethodID_11: jmethodID?
 
     open func createPosition( offset: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &AbstractDocument_ContentForward.createPosition_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &AbstractDocument_ContentForward.createPosition_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -150,6 +130,26 @@ open class AbstractDocument_ContentForward: JNIObjectForward, AbstractDocument_C
 
     open func createPosition( _ _offset: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
         return try createPosition( offset: _offset )
+    }
+
+    /// public abstract java.lang.String javax.swing.text.AbstractDocument$Content.getString(int,int) throws javax.swing.text.BadLocationException
+
+    private static var getString_MethodID_12: jmethodID?
+
+    open func getString( _where: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: _where, locals: &__locals )
+        __args[1] = JNIType.toJava( value: len, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(II)Ljava/lang/String;", methodCache: &AbstractDocument_ContentForward.getString_MethodID_12, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getString( _ __where: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        return try getString( _where: __where, len: _len )
     }
 
 }

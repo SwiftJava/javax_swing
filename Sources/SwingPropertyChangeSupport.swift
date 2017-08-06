@@ -63,32 +63,32 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
         self.init( sourceBean: _sourceBean, notifyOnEDT: _notifyOnEDT )
     }
 
-    /// public final boolean javax.swing.event.SwingPropertyChangeSupport.isNotifyOnEDT()
-
-    private static var isNotifyOnEDT_MethodID_3: jmethodID?
-
-    open func isNotifyOnEDT() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNotifyOnEDT", methodSig: "()Z", methodCache: &SwingPropertyChangeSupport.isNotifyOnEDT_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public void javax.swing.event.SwingPropertyChangeSupport.firePropertyChange(java.beans.PropertyChangeEvent)
 
-    private static var firePropertyChange_MethodID_4: jmethodID?
+    private static var firePropertyChange_MethodID_3: jmethodID?
 
     open func firePropertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SwingPropertyChangeSupport.firePropertyChange_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SwingPropertyChangeSupport.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func firePropertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         firePropertyChange( evt: _evt )
     }
+
+    /// public final boolean javax.swing.event.SwingPropertyChangeSupport.isNotifyOnEDT()
+
+    private static var isNotifyOnEDT_MethodID_4: jmethodID?
+
+    open func isNotifyOnEDT() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNotifyOnEDT", methodSig: "()Z", methodCache: &SwingPropertyChangeSupport.isNotifyOnEDT_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
 }
 

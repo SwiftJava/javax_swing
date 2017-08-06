@@ -25,7 +25,7 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
 
     private static var spinner_FieldID: jfieldID?
 
-    open var spinner: JSpinner! {
+    override open var spinner: JSpinner! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "spinner", fieldType: "Ljavax/swing/JSpinner;", fieldCache: &SynthSpinnerUI.spinner_FieldID, object: javaObject, locals: &__locals )
@@ -166,7 +166,7 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -175,55 +175,61 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthSpinnerUI.replaceEditor(javax.swing.JComponent,javax.swing.JComponent)
-
-    private static var replaceEditor_MethodID_4: jmethodID?
-
-    open func replaceEditor( oldEditor: JComponent?, newEditor: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: oldEditor != nil ? oldEditor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newEditor != nil ? newEditor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceEditor", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)V", methodCache: &SynthSpinnerUI.replaceEditor_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func replaceEditor( _ _oldEditor: JComponent?, _ _newEditor: JComponent? ) {
-        replaceEditor( oldEditor: _oldEditor, newEditor: _newEditor )
-    }
-
-    /// protected java.awt.Component javax.swing.plaf.synth.SynthSpinnerUI.createPreviousButton()
-
-    private static var createPreviousButton_MethodID_5: jmethodID?
-
-    open func createPreviousButton() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPreviousButton", methodSig: "()Ljava/awt/Component;", methodCache: &SynthSpinnerUI.createPreviousButton_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Component javax.swing.plaf.synth.SynthSpinnerUI.createNextButton()
-
-    private static var createNextButton_MethodID_6: jmethodID?
-
-    open func createNextButton() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNextButton", methodSig: "()Ljava/awt/Component;", methodCache: &SynthSpinnerUI.createNextButton_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.plaf.synth.SynthSpinnerUI.updateEditorAlignment(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthSpinnerUI.updateStyle(javax.swing.JSpinner)
+
+    /// public void javax.swing.plaf.synth.SynthSpinnerUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_4: jmethodID?
+
+    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSpinnerUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// protected javax.swing.JComponent javax.swing.plaf.synth.SynthSpinnerUI.createEditor()
+
+    private static var createEditor_MethodID_5: jmethodID?
+
+    override open func createEditor() -> JComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/JComponent;", methodCache: &SynthSpinnerUI.createEditor_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthSpinnerUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_6: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthSpinnerUI.paintBorder_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthSpinnerUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.synth.SynthSpinnerUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
@@ -241,28 +247,24 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
         paint( context: _context, g: _g )
     }
 
-    /// public void javax.swing.plaf.synth.SynthSpinnerUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// protected java.awt.LayoutManager javax.swing.plaf.synth.SynthSpinnerUI.createLayout()
 
-    /// public void javax.swing.plaf.synth.SynthSpinnerUI.propertyChange(java.beans.PropertyChangeEvent)
+    private static var createLayout_MethodID_8: jmethodID?
 
-    private static var propertyChange_MethodID_8: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    override open func createLayout() -> java_awt.LayoutManager! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSpinnerUI.propertyChange_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &SynthSpinnerUI.createLayout_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
 
     /// protected void javax.swing.plaf.synth.SynthSpinnerUI.installDefaults()
 
     private static var installDefaults_MethodID_9: jmethodID?
 
-    open func installDefaults() {
+    override open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthSpinnerUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
@@ -273,7 +275,7 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
 
     private static var installListeners_MethodID_10: jmethodID?
 
-    open func installListeners() {
+    override open func installListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthSpinnerUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
@@ -284,7 +286,7 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
 
     private static var uninstallDefaults_MethodID_11: jmethodID?
 
-    open func uninstallDefaults() {
+    override open func uninstallDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthSpinnerUI.uninstallDefaults_MethodID_11, args: &__args, locals: &__locals )
@@ -295,58 +297,56 @@ open class SynthSpinnerUI: BasicSpinnerUI, /* java.beans.PropertyChangeListener 
 
     private static var uninstallListeners_MethodID_12: jmethodID?
 
-    open func uninstallListeners() {
+    override open func uninstallListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthSpinnerUI.uninstallListeners_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
-    /// protected java.awt.LayoutManager javax.swing.plaf.synth.SynthSpinnerUI.createLayout()
+    /// protected void javax.swing.plaf.synth.SynthSpinnerUI.replaceEditor(javax.swing.JComponent,javax.swing.JComponent)
 
-    private static var createLayout_MethodID_13: jmethodID?
+    private static var replaceEditor_MethodID_13: jmethodID?
 
-    open func createLayout() -> java_awt.LayoutManager! {
+    override open func replaceEditor( oldEditor: JComponent?, newEditor: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: oldEditor != nil ? oldEditor! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newEditor != nil ? newEditor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceEditor", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)V", methodCache: &SynthSpinnerUI.replaceEditor_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func replaceEditor( _ _oldEditor: JComponent?, _ _newEditor: JComponent? ) {
+        replaceEditor( oldEditor: _oldEditor, newEditor: _newEditor )
+    }
+
+    /// protected java.awt.Component javax.swing.plaf.synth.SynthSpinnerUI.createPreviousButton()
+
+    private static var createPreviousButton_MethodID_14: jmethodID?
+
+    override open func createPreviousButton() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &SynthSpinnerUI.createLayout_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPreviousButton", methodSig: "()Ljava/awt/Component;", methodCache: &SynthSpinnerUI.createPreviousButton_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
-    /// protected javax.swing.JComponent javax.swing.plaf.synth.SynthSpinnerUI.createEditor()
+    /// protected java.awt.Component javax.swing.plaf.synth.SynthSpinnerUI.createNextButton()
 
-    private static var createEditor_MethodID_14: jmethodID?
+    private static var createNextButton_MethodID_15: jmethodID?
 
-    open func createEditor() -> JComponent! {
+    override open func createNextButton() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/JComponent;", methodCache: &SynthSpinnerUI.createEditor_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNextButton", methodSig: "()Ljava/awt/Component;", methodCache: &SynthSpinnerUI.createNextButton_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.plaf.synth.SynthSpinnerUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_15: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthSpinnerUI.paintBorder_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
+    /// private void javax.swing.plaf.synth.SynthSpinnerUI.updateEditorAlignment(javax.swing.JComponent)
 
 }
 

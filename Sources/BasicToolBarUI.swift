@@ -558,17 +558,27 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// private javax.swing.plaf.basic.BasicToolBarUI$Handler javax.swing.plaf.basic.BasicToolBarUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicToolBarUI.getInputMap(int)
+    /// public boolean javax.swing.plaf.basic.BasicToolBarUI.isFloating()
+
+    private static var isFloating_MethodID_2: jmethodID?
+
+    open func isFloating() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFloating", methodSig: "()Z", methodCache: &BasicToolBarUI.isFloating_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicToolBarUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_2: jmethodID?
+    private static var createUI_MethodID_3: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicToolBarUI", classCache: &BasicToolBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicToolBarUI", classCache: &BasicToolBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -577,105 +587,36 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
         return createUI( c: _c )
     }
 
-    /// static void javax.swing.plaf.basic.BasicToolBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicToolBarUI.getInputMap(int)
 
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installDefaults()
+    /// public void javax.swing.plaf.basic.BasicToolBarUI.setOrientation(int)
 
-    private static var installDefaults_MethodID_3: jmethodID?
+    private static var setOrientation_MethodID_4: jmethodID?
 
-    open func installDefaults() {
+    open func setOrientation( orientation: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicToolBarUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &BasicToolBarUI.setOrientation_MethodID_4, args: &__args, locals: &__locals )
     }
 
-
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installComponents()
-
-    private static var installComponents_MethodID_4: jmethodID?
-
-    open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicToolBarUI.installComponents_MethodID_4, args: &__args, locals: &__locals )
+    open func setOrientation( _ _orientation: Int ) {
+        setOrientation( orientation: _orientation )
     }
 
+    /// public void javax.swing.plaf.basic.BasicToolBarUI.installUI(javax.swing.JComponent)
 
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installListeners()
-
-    private static var installListeners_MethodID_5: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicToolBarUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_6: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicToolBarUI.installKeyboardActions_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_7: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_8: jmethodID?
-
-    open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallComponents_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_10: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
-    }
-
+    /// public void javax.swing.plaf.basic.BasicToolBarUI.uninstallUI(javax.swing.JComponent)
 
     /// protected javax.swing.JFrame javax.swing.plaf.basic.BasicToolBarUI.createFloatingFrame(javax.swing.JToolBar)
 
-    private static var createFloatingFrame_MethodID_11: jmethodID?
+    private static var createFloatingFrame_MethodID_5: jmethodID?
 
     open func createFloatingFrame( toolbar: JToolBar? ) -> JFrame! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: toolbar != nil ? toolbar! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFloatingFrame", methodSig: "(Ljavax/swing/JToolBar;)Ljavax/swing/JFrame;", methodCache: &BasicToolBarUI.createFloatingFrame_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFloatingFrame", methodSig: "(Ljavax/swing/JToolBar;)Ljavax/swing/JFrame;", methodCache: &BasicToolBarUI.createFloatingFrame_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JFrame( javaObject: __return ) : nil
     }
@@ -686,13 +627,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.RootPaneContainer javax.swing.plaf.basic.BasicToolBarUI.createFloatingWindow(javax.swing.JToolBar)
 
-    private static var createFloatingWindow_MethodID_12: jmethodID?
+    private static var createFloatingWindow_MethodID_6: jmethodID?
 
     open func createFloatingWindow( toolbar: JToolBar? ) -> RootPaneContainer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: toolbar != nil ? toolbar! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFloatingWindow", methodSig: "(Ljavax/swing/JToolBar;)Ljavax/swing/RootPaneContainer;", methodCache: &BasicToolBarUI.createFloatingWindow_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFloatingWindow", methodSig: "(Ljavax/swing/JToolBar;)Ljavax/swing/RootPaneContainer;", methodCache: &BasicToolBarUI.createFloatingWindow_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RootPaneContainerForward( javaObject: __return ) : nil
     }
@@ -703,14 +644,14 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public void javax.swing.plaf.basic.BasicToolBarUI.setFloating(boolean,java.awt.Point)
 
-    private static var setFloating_MethodID_13: jmethodID?
+    private static var setFloating_MethodID_7: jmethodID?
 
     open func setFloating( b: Bool, p: java_awt.Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         __args[1] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloating", methodSig: "(ZLjava/awt/Point;)V", methodCache: &BasicToolBarUI.setFloating_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloating", methodSig: "(ZLjava/awt/Point;)V", methodCache: &BasicToolBarUI.setFloating_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setFloating( _ _b: Bool, _ _p: java_awt.Point? ) {
@@ -719,13 +660,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.navigateFocusedComp(int)
 
-    private static var navigateFocusedComp_MethodID_14: jmethodID?
+    private static var navigateFocusedComp_MethodID_8: jmethodID?
 
     open func navigateFocusedComp( direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "navigateFocusedComp", methodSig: "(I)V", methodCache: &BasicToolBarUI.navigateFocusedComp_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "navigateFocusedComp", methodSig: "(I)V", methodCache: &BasicToolBarUI.navigateFocusedComp_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func navigateFocusedComp( _ _direction: Int ) {
@@ -734,12 +675,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.border.Border javax.swing.plaf.basic.BasicToolBarUI.createRolloverBorder()
 
-    private static var createRolloverBorder_MethodID_15: jmethodID?
+    private static var createRolloverBorder_MethodID_9: jmethodID?
 
     open func createRolloverBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.createRolloverBorder_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.createRolloverBorder_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -747,12 +688,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.border.Border javax.swing.plaf.basic.BasicToolBarUI.createNonRolloverBorder()
 
-    private static var createNonRolloverBorder_MethodID_16: jmethodID?
+    private static var createNonRolloverBorder_MethodID_10: jmethodID?
 
     open func createNonRolloverBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNonRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.createNonRolloverBorder_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNonRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.createNonRolloverBorder_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -762,13 +703,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.plaf.basic.BasicToolBarUI$DragWindow javax.swing.plaf.basic.BasicToolBarUI.createDragWindow(javax.swing.JToolBar)
 
-    private static var createDragWindow_MethodID_17: jmethodID?
+    private static var createDragWindow_MethodID_11: jmethodID?
 
     open func createDragWindow( toolbar: JToolBar? ) -> /* javax.swing.plaf.basic.BasicToolBarUI$DragWindow */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: toolbar != nil ? toolbar! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDragWindow", methodSig: "(Ljavax/swing/JToolBar;)Ljavax/swing/plaf/basic/BasicToolBarUI$DragWindow;", methodCache: &BasicToolBarUI.createDragWindow_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDragWindow", methodSig: "(Ljavax/swing/JToolBar;)Ljavax/swing/plaf/basic/BasicToolBarUI$DragWindow;", methodCache: &BasicToolBarUI.createDragWindow_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.basic.BasicToolBarUI$DragWindow */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -779,25 +720,25 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public boolean javax.swing.plaf.basic.BasicToolBarUI.isRolloverBorders()
 
-    private static var isRolloverBorders_MethodID_18: jmethodID?
+    private static var isRolloverBorders_MethodID_12: jmethodID?
 
     open func isRolloverBorders() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRolloverBorders", methodSig: "()Z", methodCache: &BasicToolBarUI.isRolloverBorders_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRolloverBorders", methodSig: "()Z", methodCache: &BasicToolBarUI.isRolloverBorders_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.plaf.basic.BasicToolBarUI.setRolloverBorders(boolean)
 
-    private static var setRolloverBorders_MethodID_19: jmethodID?
+    private static var setRolloverBorders_MethodID_13: jmethodID?
 
     open func setRolloverBorders( rollover: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rollover, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverBorders", methodSig: "(Z)V", methodCache: &BasicToolBarUI.setRolloverBorders_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverBorders", methodSig: "(Z)V", methodCache: &BasicToolBarUI.setRolloverBorders_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setRolloverBorders( _ _rollover: Bool ) {
@@ -806,13 +747,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.installRolloverBorders(javax.swing.JComponent)
 
-    private static var installRolloverBorders_MethodID_20: jmethodID?
+    private static var installRolloverBorders_MethodID_14: jmethodID?
 
     open func installRolloverBorders( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installRolloverBorders", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolBarUI.installRolloverBorders_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installRolloverBorders", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolBarUI.installRolloverBorders_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func installRolloverBorders( _ _c: JComponent? ) {
@@ -821,13 +762,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.installNonRolloverBorders(javax.swing.JComponent)
 
-    private static var installNonRolloverBorders_MethodID_21: jmethodID?
+    private static var installNonRolloverBorders_MethodID_15: jmethodID?
 
     open func installNonRolloverBorders( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installNonRolloverBorders", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolBarUI.installNonRolloverBorders_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installNonRolloverBorders", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolBarUI.installNonRolloverBorders_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func installNonRolloverBorders( _ _c: JComponent? ) {
@@ -836,13 +777,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.installNormalBorders(javax.swing.JComponent)
 
-    private static var installNormalBorders_MethodID_22: jmethodID?
+    private static var installNormalBorders_MethodID_16: jmethodID?
 
     open func installNormalBorders( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installNormalBorders", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolBarUI.installNormalBorders_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installNormalBorders", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolBarUI.installNormalBorders_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func installNormalBorders( _ _c: JComponent? ) {
@@ -851,13 +792,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.setBorderToRollover(java.awt.Component)
 
-    private static var setBorderToRollover_MethodID_23: jmethodID?
+    private static var setBorderToRollover_MethodID_17: jmethodID?
 
     open func setBorderToRollover( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicToolBarUI.setBorderToRollover_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicToolBarUI.setBorderToRollover_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setBorderToRollover( _ _c: java_awt.Component? ) {
@@ -866,13 +807,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.border.Border javax.swing.plaf.basic.BasicToolBarUI.getRolloverBorder(javax.swing.AbstractButton)
 
-    private static var getRolloverBorder_MethodID_24: jmethodID?
+    private static var getRolloverBorder_MethodID_18: jmethodID?
 
     open func getRolloverBorder( b: AbstractButton? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRolloverBorder", methodSig: "(Ljavax/swing/AbstractButton;)Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.getRolloverBorder_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRolloverBorder", methodSig: "(Ljavax/swing/AbstractButton;)Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.getRolloverBorder_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -883,13 +824,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.setBorderToNonRollover(java.awt.Component)
 
-    private static var setBorderToNonRollover_MethodID_25: jmethodID?
+    private static var setBorderToNonRollover_MethodID_19: jmethodID?
 
     open func setBorderToNonRollover( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicToolBarUI.setBorderToNonRollover_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicToolBarUI.setBorderToNonRollover_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setBorderToNonRollover( _ _c: java_awt.Component? ) {
@@ -898,13 +839,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.border.Border javax.swing.plaf.basic.BasicToolBarUI.getNonRolloverBorder(javax.swing.AbstractButton)
 
-    private static var getNonRolloverBorder_MethodID_26: jmethodID?
+    private static var getNonRolloverBorder_MethodID_20: jmethodID?
 
     open func getNonRolloverBorder( b: AbstractButton? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNonRolloverBorder", methodSig: "(Ljavax/swing/AbstractButton;)Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.getNonRolloverBorder_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNonRolloverBorder", methodSig: "(Ljavax/swing/AbstractButton;)Ljavax/swing/border/Border;", methodCache: &BasicToolBarUI.getNonRolloverBorder_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -915,13 +856,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.setBorderToNormal(java.awt.Component)
 
-    private static var setBorderToNormal_MethodID_27: jmethodID?
+    private static var setBorderToNormal_MethodID_21: jmethodID?
 
     open func setBorderToNormal( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNormal", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicToolBarUI.setBorderToNormal_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNormal", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicToolBarUI.setBorderToNormal_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func setBorderToNormal( _ _c: java_awt.Component? ) {
@@ -930,14 +871,14 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public void javax.swing.plaf.basic.BasicToolBarUI.setFloatingLocation(int,int)
 
-    private static var setFloatingLocation_MethodID_28: jmethodID?
+    private static var setFloatingLocation_MethodID_22: jmethodID?
 
     open func setFloatingLocation( x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloatingLocation", methodSig: "(II)V", methodCache: &BasicToolBarUI.setFloatingLocation_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloatingLocation", methodSig: "(II)V", methodCache: &BasicToolBarUI.setFloatingLocation_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setFloatingLocation( _ _x: Int, _ _y: Int ) {
@@ -948,12 +889,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public java.awt.Color javax.swing.plaf.basic.BasicToolBarUI.getDockingColor()
 
-    private static var getDockingColor_MethodID_29: jmethodID?
+    private static var getDockingColor_MethodID_23: jmethodID?
 
     open func getDockingColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDockingColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicToolBarUI.getDockingColor_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDockingColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicToolBarUI.getDockingColor_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -961,13 +902,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public void javax.swing.plaf.basic.BasicToolBarUI.setDockingColor(java.awt.Color)
 
-    private static var setDockingColor_MethodID_30: jmethodID?
+    private static var setDockingColor_MethodID_24: jmethodID?
 
     open func setDockingColor( c: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDockingColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &BasicToolBarUI.setDockingColor_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDockingColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &BasicToolBarUI.setDockingColor_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setDockingColor( _ _c: java_awt.Color? ) {
@@ -976,12 +917,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public java.awt.Color javax.swing.plaf.basic.BasicToolBarUI.getFloatingColor()
 
-    private static var getFloatingColor_MethodID_31: jmethodID?
+    private static var getFloatingColor_MethodID_25: jmethodID?
 
     open func getFloatingColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFloatingColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicToolBarUI.getFloatingColor_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFloatingColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicToolBarUI.getFloatingColor_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -989,13 +930,13 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public void javax.swing.plaf.basic.BasicToolBarUI.setFloatingColor(java.awt.Color)
 
-    private static var setFloatingColor_MethodID_32: jmethodID?
+    private static var setFloatingColor_MethodID_26: jmethodID?
 
     open func setFloatingColor( c: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloatingColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &BasicToolBarUI.setFloatingColor_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloatingColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &BasicToolBarUI.setFloatingColor_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setFloatingColor( _ _c: java_awt.Color? ) {
@@ -1006,14 +947,14 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// public boolean javax.swing.plaf.basic.BasicToolBarUI.canDock(java.awt.Component,java.awt.Point)
 
-    private static var canDock_MethodID_33: jmethodID?
+    private static var canDock_MethodID_27: jmethodID?
 
     open func canDock( c: java_awt.Component?, p: java_awt.Point? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canDock", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;)Z", methodCache: &BasicToolBarUI.canDock_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canDock", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;)Z", methodCache: &BasicToolBarUI.canDock_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1027,14 +968,14 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.dragTo(java.awt.Point,java.awt.Point)
 
-    private static var dragTo_MethodID_34: jmethodID?
+    private static var dragTo_MethodID_28: jmethodID?
 
     open func dragTo( position: java_awt.Point?, origin: java_awt.Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: position != nil ? position! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: origin != nil ? origin! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragTo", methodSig: "(Ljava/awt/Point;Ljava/awt/Point;)V", methodCache: &BasicToolBarUI.dragTo_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragTo", methodSig: "(Ljava/awt/Point;Ljava/awt/Point;)V", methodCache: &BasicToolBarUI.dragTo_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func dragTo( _ _position: java_awt.Point?, _ _origin: java_awt.Point? ) {
@@ -1043,14 +984,14 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.floatAt(java.awt.Point,java.awt.Point)
 
-    private static var floatAt_MethodID_35: jmethodID?
+    private static var floatAt_MethodID_29: jmethodID?
 
     open func floatAt( position: java_awt.Point?, origin: java_awt.Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: position != nil ? position! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: origin != nil ? origin! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "floatAt", methodSig: "(Ljava/awt/Point;Ljava/awt/Point;)V", methodCache: &BasicToolBarUI.floatAt_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "floatAt", methodSig: "(Ljava/awt/Point;Ljava/awt/Point;)V", methodCache: &BasicToolBarUI.floatAt_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func floatAt( _ _position: java_awt.Point?, _ _origin: java_awt.Point? ) {
@@ -1059,12 +1000,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected java.awt.event.ContainerListener javax.swing.plaf.basic.BasicToolBarUI.createToolBarContListener()
 
-    private static var createToolBarContListener_MethodID_36: jmethodID?
+    private static var createToolBarContListener_MethodID_30: jmethodID?
 
     open func createToolBarContListener() -> java_awt.ContainerListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createToolBarContListener", methodSig: "()Ljava/awt/event/ContainerListener;", methodCache: &BasicToolBarUI.createToolBarContListener_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createToolBarContListener", methodSig: "()Ljava/awt/event/ContainerListener;", methodCache: &BasicToolBarUI.createToolBarContListener_MethodID_30, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.ContainerListenerForward( javaObject: __return ) : nil
     }
@@ -1072,12 +1013,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicToolBarUI.createToolBarFocusListener()
 
-    private static var createToolBarFocusListener_MethodID_37: jmethodID?
+    private static var createToolBarFocusListener_MethodID_31: jmethodID?
 
     open func createToolBarFocusListener() -> java_awt.FocusListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createToolBarFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicToolBarUI.createToolBarFocusListener_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createToolBarFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicToolBarUI.createToolBarFocusListener_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
     }
@@ -1085,12 +1026,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicToolBarUI.createPropertyListener()
 
-    private static var createPropertyListener_MethodID_38: jmethodID?
+    private static var createPropertyListener_MethodID_32: jmethodID?
 
     open func createPropertyListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicToolBarUI.createPropertyListener_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicToolBarUI.createPropertyListener_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -1098,12 +1039,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicToolBarUI.createDockingListener()
 
-    private static var createDockingListener_MethodID_39: jmethodID?
+    private static var createDockingListener_MethodID_33: jmethodID?
 
     open func createDockingListener() -> MouseInputListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDockingListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicToolBarUI.createDockingListener_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDockingListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicToolBarUI.createDockingListener_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
     }
@@ -1111,12 +1052,12 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected java.awt.event.WindowListener javax.swing.plaf.basic.BasicToolBarUI.createFrameListener()
 
-    private static var createFrameListener_MethodID_40: jmethodID?
+    private static var createFrameListener_MethodID_34: jmethodID?
 
     open func createFrameListener() -> java_awt.WindowListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFrameListener", methodSig: "()Ljava/awt/event/WindowListener;", methodCache: &BasicToolBarUI.createFrameListener_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFrameListener", methodSig: "()Ljava/awt/event/WindowListener;", methodCache: &BasicToolBarUI.createFrameListener_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.WindowListenerForward( javaObject: __return ) : nil
     }
@@ -1124,49 +1065,108 @@ open class BasicToolBarUI: ToolBarUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicToolBarUI.paintDragWindow(java.awt.Graphics)
 
-    private static var paintDragWindow_MethodID_41: jmethodID?
+    private static var paintDragWindow_MethodID_35: jmethodID?
 
     open func paintDragWindow( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDragWindow", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicToolBarUI.paintDragWindow_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDragWindow", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicToolBarUI.paintDragWindow_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func paintDragWindow( _ _g: java_awt.Graphics? ) {
         paintDragWindow( g: _g )
     }
 
-    /// public void javax.swing.plaf.basic.BasicToolBarUI.setOrientation(int)
+    /// static void javax.swing.plaf.basic.BasicToolBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    private static var setOrientation_MethodID_42: jmethodID?
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installDefaults()
 
-    open func setOrientation( orientation: Int ) {
+    private static var installDefaults_MethodID_36: jmethodID?
+
+    open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &BasicToolBarUI.setOrientation_MethodID_42, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicToolBarUI.installDefaults_MethodID_36, args: &__args, locals: &__locals )
     }
 
-    open func setOrientation( _ _orientation: Int ) {
-        setOrientation( orientation: _orientation )
-    }
 
-    /// public boolean javax.swing.plaf.basic.BasicToolBarUI.isFloating()
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installComponents()
 
-    private static var isFloating_MethodID_43: jmethodID?
+    private static var installComponents_MethodID_37: jmethodID?
 
-    open func isFloating() -> Bool {
+    open func installComponents() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFloating", methodSig: "()Z", methodCache: &BasicToolBarUI.isFloating_MethodID_43, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicToolBarUI.installComponents_MethodID_37, args: &__args, locals: &__locals )
     }
 
 
-    /// public void javax.swing.plaf.basic.BasicToolBarUI.installUI(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installListeners()
 
-    /// public void javax.swing.plaf.basic.BasicToolBarUI.uninstallUI(javax.swing.JComponent)
+    private static var installListeners_MethodID_38: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicToolBarUI.installListeners_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_39: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicToolBarUI.installKeyboardActions_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_40: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallDefaults_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_41: jmethodID?
+
+    open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallComponents_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_42: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallListeners_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicToolBarUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_43: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicToolBarUI.uninstallKeyboardActions_MethodID_43, args: &__args, locals: &__locals )
+    }
+
 
 }
 

@@ -113,42 +113,30 @@ open class ComponentView: View {
         setParent( p: _p )
     }
 
-    /// public float javax.swing.text.ComponentView.getAlignment(int)
+    /// protected java.awt.Component javax.swing.text.ComponentView.createComponent()
 
-    /// public final java.awt.Component javax.swing.text.ComponentView.getComponent()
+    private static var createComponent_MethodID_3: jmethodID?
 
-    private static var getComponent_MethodID_3: jmethodID?
-
-    open func getComponent() -> java_awt.Component! {
+    open func createComponent() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.getComponent_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.createComponent_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
-    /// void javax.swing.text.ComponentView.setComponentParent()
+    /// public float javax.swing.text.ComponentView.getAlignment(int)
 
-    /// public void javax.swing.text.ComponentView.paint(java.awt.Graphics,java.awt.Shape)
+    /// public float javax.swing.text.ComponentView.getMinimumSpan(int)
 
-    private static var paint_MethodID_4: jmethodID?
+    /// public float javax.swing.text.ComponentView.getMaximumSpan(int)
 
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ComponentView.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
+    /// public float javax.swing.text.ComponentView.getPreferredSpan(int)
 
     /// public int javax.swing.text.ComponentView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
 
-    private static var viewToModel_MethodID_5: jmethodID?
+    private static var viewToModel_MethodID_4: jmethodID?
 
     open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -157,7 +145,7 @@ open class ComponentView: View {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         __args[3] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &ComponentView.viewToModel_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &ComponentView.viewToModel_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -167,24 +155,36 @@ open class ComponentView: View {
 
     /// public java.awt.Shape javax.swing.text.ComponentView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    /// public float javax.swing.text.ComponentView.getMinimumSpan(int)
+    /// public final java.awt.Component javax.swing.text.ComponentView.getComponent()
 
-    /// public float javax.swing.text.ComponentView.getMaximumSpan(int)
+    private static var getComponent_MethodID_5: jmethodID?
 
-    /// protected java.awt.Component javax.swing.text.ComponentView.createComponent()
-
-    private static var createComponent_MethodID_6: jmethodID?
-
-    open func createComponent() -> java_awt.Component! {
+    open func getComponent() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.createComponent_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.getComponent_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
-    /// public float javax.swing.text.ComponentView.getPreferredSpan(int)
+    /// void javax.swing.text.ComponentView.setComponentParent()
+
+    /// public void javax.swing.text.ComponentView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ComponentView.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
 
 }
 

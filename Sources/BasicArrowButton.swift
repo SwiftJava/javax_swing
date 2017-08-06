@@ -760,7 +760,11 @@ open class BasicArrowButton: JButton {
         self.init( direction: _direction )
     }
 
-    /// public void javax.swing.plaf.basic.BasicArrowButton.paint(java.awt.Graphics)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getPreferredSize()
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getMinimumSize()
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getMaximumSize()
 
     /// public boolean javax.swing.plaf.basic.BasicArrowButton.isFocusTraversable()
 
@@ -811,11 +815,7 @@ open class BasicArrowButton: JButton {
         paintTriangle( g: _g, x: _x, y: _y, size: _size, direction: _direction, isEnabled: _isEnabled )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getPreferredSize()
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getMinimumSize()
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getMaximumSize()
+    /// public void javax.swing.plaf.basic.BasicArrowButton.paint(java.awt.Graphics)
 
 }
 

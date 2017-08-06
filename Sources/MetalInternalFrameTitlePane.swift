@@ -955,19 +955,32 @@ open class MetalInternalFrameTitlePane: BasicInternalFrameTitlePane {
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$600(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
-    /// public void javax.swing.plaf.metal.MetalInternalFrameTitlePane.addNotify()
+    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$700(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+
+    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$800(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.showSystemMenu()
+
+    private static var showSystemMenu_MethodID_2: jmethodID?
+
+    override open func showSystemMenu() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "showSystemMenu", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.showSystemMenu_MethodID_2, args: &__args, locals: &__locals )
+    }
+
 
     /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2900(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
     /// public void javax.swing.plaf.metal.MetalInternalFrameTitlePane.paintPalette(java.awt.Graphics)
 
-    private static var paintPalette_MethodID_2: jmethodID?
+    private static var paintPalette_MethodID_3: jmethodID?
 
     open func paintPalette( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPalette", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &MetalInternalFrameTitlePane.paintPalette_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPalette", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &MetalInternalFrameTitlePane.paintPalette_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func paintPalette( _ _g: java_awt.Graphics? ) {
@@ -976,13 +989,13 @@ open class MetalInternalFrameTitlePane: BasicInternalFrameTitlePane {
 
     /// public void javax.swing.plaf.metal.MetalInternalFrameTitlePane.setPalette(boolean)
 
-    private static var setPalette_MethodID_3: jmethodID?
+    private static var setPalette_MethodID_4: jmethodID?
 
     open func setPalette( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPalette", methodSig: "(Z)V", methodCache: &MetalInternalFrameTitlePane.setPalette_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPalette", methodSig: "(Z)V", methodCache: &MetalInternalFrameTitlePane.setPalette_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setPalette( _ _b: Bool ) {
@@ -991,56 +1004,11 @@ open class MetalInternalFrameTitlePane: BasicInternalFrameTitlePane {
 
     /// private void javax.swing.plaf.metal.MetalInternalFrameTitlePane.updateOptionPaneState()
 
+    /// public void javax.swing.plaf.metal.MetalInternalFrameTitlePane.addNotify()
+
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1100(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
-    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$700(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
-
-    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$800(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.installDefaults()
-
-    private static var installDefaults_MethodID_4: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.installDefaults_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_5: jmethodID?
-
-    override open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.uninstallDefaults_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalInternalFrameTitlePane.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_6: jmethodID?
-
-    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalInternalFrameTitlePane.createPropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1700(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
-
-    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1800(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
-
-    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1900(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
-
-    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2200(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
-
-    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2100(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+    /// public void javax.swing.plaf.metal.MetalInternalFrameTitlePane.paintComponent(java.awt.Graphics)
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2700(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
@@ -1056,78 +1024,6 @@ open class MetalInternalFrameTitlePane: BasicInternalFrameTitlePane {
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2600(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.showSystemMenu()
-
-    private static var showSystemMenu_MethodID_7: jmethodID?
-
-    override open func showSystemMenu() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "showSystemMenu", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.showSystemMenu_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.addSubComponents()
-
-    private static var addSubComponents_MethodID_8: jmethodID?
-
-    override open func addSubComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSubComponents", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.addSubComponents_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.createButtons()
-
-    private static var createButtons_MethodID_9: jmethodID?
-
-    override open func createButtons() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createButtons", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.createButtons_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.assembleSystemMenu()
-
-    private static var assembleSystemMenu_MethodID_10: jmethodID?
-
-    override open func assembleSystemMenu() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "assembleSystemMenu", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.assembleSystemMenu_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.addSystemMenuItems(javax.swing.JMenu)
-
-    private static var addSystemMenuItems_MethodID_11: jmethodID?
-
-    override open func addSystemMenuItems( systemMenu: JMenu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: systemMenu != nil ? systemMenu! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSystemMenuItems", methodSig: "(Ljavax/swing/JMenu;)V", methodCache: &MetalInternalFrameTitlePane.addSystemMenuItems_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func addSystemMenuItems( _ _systemMenu: JMenu? ) {
-        addSystemMenuItems( systemMenu: _systemMenu )
-    }
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.metal.MetalInternalFrameTitlePane.createLayout()
-
-    private static var createLayout_MethodID_12: jmethodID?
-
-    override open func createLayout() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &MetalInternalFrameTitlePane.createLayout_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$900(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1000(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
@@ -1142,7 +1038,111 @@ open class MetalInternalFrameTitlePane: BasicInternalFrameTitlePane {
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1600(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
-    /// public void javax.swing.plaf.metal.MetalInternalFrameTitlePane.paintComponent(java.awt.Graphics)
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.addSubComponents()
+
+    private static var addSubComponents_MethodID_5: jmethodID?
+
+    override open func addSubComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSubComponents", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.addSubComponents_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.createButtons()
+
+    private static var createButtons_MethodID_6: jmethodID?
+
+    override open func createButtons() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createButtons", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.createButtons_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.assembleSystemMenu()
+
+    private static var assembleSystemMenu_MethodID_7: jmethodID?
+
+    override open func assembleSystemMenu() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "assembleSystemMenu", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.assembleSystemMenu_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.addSystemMenuItems(javax.swing.JMenu)
+
+    private static var addSystemMenuItems_MethodID_8: jmethodID?
+
+    override open func addSystemMenuItems( systemMenu: JMenu? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: systemMenu != nil ? systemMenu! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSystemMenuItems", methodSig: "(Ljavax/swing/JMenu;)V", methodCache: &MetalInternalFrameTitlePane.addSystemMenuItems_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func addSystemMenuItems( _ _systemMenu: JMenu? ) {
+        addSystemMenuItems( systemMenu: _systemMenu )
+    }
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.metal.MetalInternalFrameTitlePane.createLayout()
+
+    private static var createLayout_MethodID_9: jmethodID?
+
+    override open func createLayout() -> java_awt.LayoutManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &MetalInternalFrameTitlePane.createLayout_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.installDefaults()
+
+    private static var installDefaults_MethodID_10: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.installDefaults_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameTitlePane.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_11: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &MetalInternalFrameTitlePane.uninstallDefaults_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalInternalFrameTitlePane.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_12: jmethodID?
+
+    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalInternalFrameTitlePane.createPropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1700(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+
+    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1800(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+
+    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$1900(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+
+    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2200(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
+
+    /// static javax.swing.JButton javax.swing.plaf.metal.MetalInternalFrameTitlePane.access$2100(javax.swing.plaf.metal.MetalInternalFrameTitlePane)
 
 }
 

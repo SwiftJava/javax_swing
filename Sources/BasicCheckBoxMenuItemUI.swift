@@ -309,15 +309,33 @@ open class BasicCheckBoxMenuItemUI: BasicMenuItemUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public void javax.swing.plaf.basic.BasicCheckBoxMenuItemUI.processMouseEvent(javax.swing.JMenuItem,java.awt.event.MouseEvent,javax.swing.MenuElement[],javax.swing.MenuSelectionManager)
+
+    private static var processMouseEvent_MethodID_2: jmethodID?
+
+    open func processMouseEvent( item: JMenuItem?, e: java_awt.MouseEvent?, path: [MenuElement]?, manager: MenuSelectionManager? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: path, locals: &__locals )
+        __args[3] = JNIType.toJava( value: manager != nil ? manager! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljavax/swing/JMenuItem;Ljava/awt/event/MouseEvent;[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &BasicCheckBoxMenuItemUI.processMouseEvent_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func processMouseEvent( _ _item: JMenuItem?, _ _e: java_awt.MouseEvent?, _ _path: [MenuElement]?, _ _manager: MenuSelectionManager? ) {
+        processMouseEvent( item: _item, e: _e, path: _path, manager: _manager )
+    }
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicCheckBoxMenuItemUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_2: jmethodID?
+    private static var createUI_MethodID_3: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicCheckBoxMenuItemUI", classCache: &BasicCheckBoxMenuItemUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicCheckBoxMenuItemUI", classCache: &BasicCheckBoxMenuItemUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -328,33 +346,15 @@ open class BasicCheckBoxMenuItemUI: BasicMenuItemUI {
 
     /// protected java.lang.String javax.swing.plaf.basic.BasicCheckBoxMenuItemUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_3: jmethodID?
+    private static var getPropertyPrefix_MethodID_4: jmethodID?
 
     override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicCheckBoxMenuItemUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicCheckBoxMenuItemUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// public void javax.swing.plaf.basic.BasicCheckBoxMenuItemUI.processMouseEvent(javax.swing.JMenuItem,java.awt.event.MouseEvent,javax.swing.MenuElement[],javax.swing.MenuSelectionManager)
-
-    private static var processMouseEvent_MethodID_4: jmethodID?
-
-    open func processMouseEvent( item: JMenuItem?, e: java_awt.MouseEvent?, path: [MenuElement]?, manager: MenuSelectionManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: path, locals: &__locals )
-        __args[3] = JNIType.toJava( value: manager != nil ? manager! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljavax/swing/JMenuItem;Ljava/awt/event/MouseEvent;[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &BasicCheckBoxMenuItemUI.processMouseEvent_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func processMouseEvent( _ _item: JMenuItem?, _ _e: java_awt.MouseEvent?, _ _path: [MenuElement]?, _ _manager: MenuSelectionManager? ) {
-        processMouseEvent( item: _item, e: _e, path: _path, manager: _manager )
-    }
 
 }
 

@@ -167,9 +167,11 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
 
     /// public void javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.setSize(java.awt.Dimension)
 
-    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleName()
+    /// private javax.swing.text.Element javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElement(int)
 
-    /// public javax.accessibility.AccessibleStateSet javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleStateSet()
+    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElementText(int) throws javax.swing.text.BadLocationException
+
+    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getSegmentAt(int,int) throws javax.swing.text.BadLocationException
 
     /// public javax.accessibility.AccessibleText javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleText()
 
@@ -230,6 +232,8 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
     }
 
 
+    /// private java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAtIndex(int,int,int)
+
     /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAtIndex(int,int)
 
     private static var getAtIndex_MethodID_6: jmethodID?
@@ -246,8 +250,6 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
     open func getAtIndex( _ _part: Int, _ _index: Int ) -> String! {
         return getAtIndex( part: _part, index: _index )
     }
-
-    /// private java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAtIndex(int,int,int)
 
     /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAfterIndex(int,int)
 
@@ -400,11 +402,9 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
 
     /// public int javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleIndexInParent()
 
-    /// private javax.swing.text.Element javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElement(int)
+    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleName()
 
-    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElementText(int) throws javax.swing.text.BadLocationException
-
-    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getSegmentAt(int,int) throws javax.swing.text.BadLocationException
+    /// public javax.accessibility.AccessibleStateSet javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleStateSet()
 
 }
 

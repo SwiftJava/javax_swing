@@ -69,26 +69,26 @@ open class BasicPasswordFieldUI: BasicTextFieldUI {
 
     /// javax.swing.ActionMap javax.swing.plaf.basic.BasicPasswordFieldUI.createActionMap()
 
-    /// protected void javax.swing.plaf.basic.BasicPasswordFieldUI.installDefaults()
-
-    private static var installDefaults_MethodID_3: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicPasswordFieldUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
     /// protected java.lang.String javax.swing.plaf.basic.BasicPasswordFieldUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_4: jmethodID?
+    private static var getPropertyPrefix_MethodID_3: jmethodID?
 
     override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicPasswordFieldUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicPasswordFieldUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicPasswordFieldUI.installDefaults()
+
+    private static var installDefaults_MethodID_4: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicPasswordFieldUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
 

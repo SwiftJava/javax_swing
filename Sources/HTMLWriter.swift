@@ -142,51 +142,32 @@ open class HTMLWriter: AbstractWriter {
     }
 
 
-    /// protected void javax.swing.text.html.HTMLWriter.writeLineSeparator() throws java.io.IOException
+    /// protected boolean javax.swing.text.html.HTMLWriter.matchNameAttribute(javax.swing.text.AttributeSet,javax.swing.text.html.HTML$Tag)
 
-    private static var writeLineSeparator_MethodID_4: jmethodID?
+    private static var matchNameAttribute_MethodID_4: jmethodID?
 
-    override open func writeLineSeparator() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func matchNameAttribute( attr: AttributeSet?, tag: HTML_Tag? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLineSeparator", methodSig: "()V", methodCache: &HTMLWriter.writeLineSeparator_MethodID_4, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "matchNameAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljavax/swing/text/html/HTML$Tag;)Z", methodCache: &HTMLWriter.matchNameAttribute_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// protected void javax.swing.text.html.HTMLWriter.output(char[],int,int) throws java.io.IOException
-
-    private static var output_MethodID_5: jmethodID?
-
-    open func output( chars: [UInt16]?, start: Int, length: Int ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "output", methodSig: "([CII)V", methodCache: &HTMLWriter.output_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
+    open func matchNameAttribute( _ _attr: AttributeSet?, _ _tag: HTML_Tag? ) -> Bool {
+        return matchNameAttribute( attr: _attr, tag: _tag )
     }
-
-    override open func output( _ _chars: [UInt16]?, _ _start: Int, _ _length: Int ) throws /* java.io.IOException */ {
-        try output( chars: _chars, start: _start, length: _length )
-    }
-
-    /// private void javax.swing.text.html.HTMLWriter.output(java.lang.String) throws java.io.IOException
 
     /// protected void javax.swing.text.html.HTMLWriter.writeAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
 
-    private static var writeAttributes_MethodID_6: jmethodID?
+    private static var writeAttributes_MethodID_5: jmethodID?
 
     override open func writeAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.writeAttributes_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.writeAttributes_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -196,15 +177,17 @@ open class HTMLWriter: AbstractWriter {
         try writeAttributes( attr: _attr )
     }
 
+    /// private static void javax.swing.text.html.HTMLWriter.addAttribute(javax.swing.text.MutableAttributeSet,java.lang.Object,java.lang.Object)
+
     /// protected void javax.swing.text.html.HTMLWriter.text(javax.swing.text.Element) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var text_MethodID_7: jmethodID?
+    private static var text_MethodID_6: jmethodID?
 
     override open func text( elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.text_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.text_MethodID_6, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -214,15 +197,69 @@ open class HTMLWriter: AbstractWriter {
         try text( elem: _elem )
     }
 
+    /// protected void javax.swing.text.html.HTMLWriter.writeLineSeparator() throws java.io.IOException
+
+    private static var writeLineSeparator_MethodID_7: jmethodID?
+
+    override open func writeLineSeparator() throws /* java.io.IOException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLineSeparator", methodSig: "()V", methodCache: &HTMLWriter.writeLineSeparator_MethodID_7, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+
+    /// private void javax.swing.text.html.HTMLWriter.output(java.lang.String) throws java.io.IOException
+
+    /// protected void javax.swing.text.html.HTMLWriter.output(char[],int,int) throws java.io.IOException
+
+    private static var output_MethodID_8: jmethodID?
+
+    open func output( chars: [UInt16]?, start: Int, length: Int ) throws /* java.io.IOException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
+        __args[1] = JNIType.toJava( value: start, locals: &__locals )
+        __args[2] = JNIType.toJava( value: length, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "output", methodSig: "([CII)V", methodCache: &HTMLWriter.output_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+    override open func output( _ _chars: [UInt16]?, _ _start: Int, _ _length: Int ) throws /* java.io.IOException */ {
+        try output( chars: _chars, start: _start, length: _length )
+    }
+
+    /// protected void javax.swing.text.html.HTMLWriter.comment(javax.swing.text.Element) throws javax.swing.text.BadLocationException,java.io.IOException
+
+    private static var comment_MethodID_9: jmethodID?
+
+    open func comment( elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "comment", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.comment_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func comment( _ _elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
+        try comment( elem: _elem )
+    }
+
     /// protected void javax.swing.text.html.HTMLWriter.textAreaContent(javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var textAreaContent_MethodID_8: jmethodID?
+    private static var textAreaContent_MethodID_10: jmethodID?
 
     open func textAreaContent( attr: AttributeSet? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "textAreaContent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.textAreaContent_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "textAreaContent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.textAreaContent_MethodID_10, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -234,13 +271,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected boolean javax.swing.text.html.HTMLWriter.isBlockTag(javax.swing.text.AttributeSet)
 
-    private static var isBlockTag_MethodID_9: jmethodID?
+    private static var isBlockTag_MethodID_11: jmethodID?
 
     open func isBlockTag( attr: AttributeSet? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBlockTag", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &HTMLWriter.isBlockTag_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBlockTag", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &HTMLWriter.isBlockTag_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -250,13 +287,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.emptyTag(javax.swing.text.Element) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var emptyTag_MethodID_10: jmethodID?
+    private static var emptyTag_MethodID_12: jmethodID?
 
     open func emptyTag( elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "emptyTag", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.emptyTag_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "emptyTag", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.emptyTag_MethodID_12, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -268,13 +305,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.endTag(javax.swing.text.Element) throws java.io.IOException
 
-    private static var endTag_MethodID_11: jmethodID?
+    private static var endTag_MethodID_13: jmethodID?
 
     open func endTag( elem: Element? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endTag", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.endTag_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endTag", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.endTag_MethodID_13, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -286,13 +323,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.startTag(javax.swing.text.Element) throws java.io.IOException,javax.swing.text.BadLocationException
 
-    private static var startTag_MethodID_12: jmethodID?
+    private static var startTag_MethodID_14: jmethodID?
 
     open func startTag( elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTag", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.startTag_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTag", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.startTag_MethodID_14, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -304,13 +341,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.selectContent(javax.swing.text.AttributeSet) throws java.io.IOException
 
-    private static var selectContent_MethodID_13: jmethodID?
+    private static var selectContent_MethodID_15: jmethodID?
 
     open func selectContent( attr: AttributeSet? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectContent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.selectContent_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectContent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.selectContent_MethodID_15, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -322,13 +359,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.writeOption(javax.swing.text.html.Option) throws java.io.IOException
 
-    private static var writeOption_MethodID_14: jmethodID?
+    private static var writeOption_MethodID_16: jmethodID?
 
     open func writeOption( option: Option? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: option != nil ? option! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeOption", methodSig: "(Ljavax/swing/text/html/Option;)V", methodCache: &HTMLWriter.writeOption_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeOption", methodSig: "(Ljavax/swing/text/html/Option;)V", methodCache: &HTMLWriter.writeOption_MethodID_16, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -344,13 +381,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected boolean javax.swing.text.html.HTMLWriter.synthesizedElement(javax.swing.text.Element)
 
-    private static var synthesizedElement_MethodID_15: jmethodID?
+    private static var synthesizedElement_MethodID_17: jmethodID?
 
     open func synthesizedElement( elem: Element? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "synthesizedElement", methodSig: "(Ljavax/swing/text/Element;)Z", methodCache: &HTMLWriter.synthesizedElement_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "synthesizedElement", methodSig: "(Ljavax/swing/text/Element;)Z", methodCache: &HTMLWriter.synthesizedElement_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -360,13 +397,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.writeEmbeddedTags(javax.swing.text.AttributeSet) throws java.io.IOException
 
-    private static var writeEmbeddedTags_MethodID_16: jmethodID?
+    private static var writeEmbeddedTags_MethodID_18: jmethodID?
 
     open func writeEmbeddedTags( attr: AttributeSet? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeEmbeddedTags", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.writeEmbeddedTags_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeEmbeddedTags", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.writeEmbeddedTags_MethodID_18, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -380,13 +417,13 @@ open class HTMLWriter: AbstractWriter {
 
     /// protected void javax.swing.text.html.HTMLWriter.closeOutUnwantedEmbeddedTags(javax.swing.text.AttributeSet) throws java.io.IOException
 
-    private static var closeOutUnwantedEmbeddedTags_MethodID_17: jmethodID?
+    private static var closeOutUnwantedEmbeddedTags_MethodID_19: jmethodID?
 
     open func closeOutUnwantedEmbeddedTags( attr: AttributeSet? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeOutUnwantedEmbeddedTags", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.closeOutUnwantedEmbeddedTags_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeOutUnwantedEmbeddedTags", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLWriter.closeOutUnwantedEmbeddedTags_MethodID_19, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -419,43 +456,6 @@ open class HTMLWriter: AbstractWriter {
     /// private static void javax.swing.text.html.HTMLWriter.convertToHTML40(javax.swing.text.AttributeSet,javax.swing.text.MutableAttributeSet)
 
     /// private void javax.swing.text.html.HTMLWriter.indentSmart() throws java.io.IOException
-
-    /// protected boolean javax.swing.text.html.HTMLWriter.matchNameAttribute(javax.swing.text.AttributeSet,javax.swing.text.html.HTML$Tag)
-
-    private static var matchNameAttribute_MethodID_18: jmethodID?
-
-    open func matchNameAttribute( attr: AttributeSet?, tag: HTML_Tag? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "matchNameAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljavax/swing/text/html/HTML$Tag;)Z", methodCache: &HTMLWriter.matchNameAttribute_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func matchNameAttribute( _ _attr: AttributeSet?, _ _tag: HTML_Tag? ) -> Bool {
-        return matchNameAttribute( attr: _attr, tag: _tag )
-    }
-
-    /// protected void javax.swing.text.html.HTMLWriter.comment(javax.swing.text.Element) throws javax.swing.text.BadLocationException,java.io.IOException
-
-    private static var comment_MethodID_19: jmethodID?
-
-    open func comment( elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "comment", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &HTMLWriter.comment_MethodID_19, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func comment( _ _elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
-        try comment( elem: _elem )
-    }
-
-    /// private static void javax.swing.text.html.HTMLWriter.addAttribute(javax.swing.text.MutableAttributeSet,java.lang.Object,java.lang.Object)
 
 }
 

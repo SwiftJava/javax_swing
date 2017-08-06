@@ -87,10 +87,6 @@ public protocol ListSelectionModel: JavaProtocol {
 
     func removeIndexInterval( index0: Int, index1: Int )
 
-    /// public abstract boolean javax.swing.ListSelectionModel.getValueIsAdjusting()
-
-    func getValueIsAdjusting() -> Bool
-
     /// public abstract int javax.swing.ListSelectionModel.getSelectionMode()
 
     func getSelectionMode() -> Int
@@ -98,6 +94,10 @@ public protocol ListSelectionModel: JavaProtocol {
     /// public abstract boolean javax.swing.ListSelectionModel.isSelectionEmpty()
 
     func isSelectionEmpty() -> Bool
+
+    /// public abstract boolean javax.swing.ListSelectionModel.getValueIsAdjusting()
+
+    func getValueIsAdjusting() -> Bool
 
 }
 
@@ -385,38 +385,38 @@ open class ListSelectionModelForward: JNIObjectForward, ListSelectionModel {
         removeIndexInterval( index0: _index0, index1: _index1 )
     }
 
-    /// public abstract boolean javax.swing.ListSelectionModel.getValueIsAdjusting()
-
-    private static var getValueIsAdjusting_MethodID_38: jmethodID?
-
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &ListSelectionModelForward.getValueIsAdjusting_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public abstract int javax.swing.ListSelectionModel.getSelectionMode()
 
-    private static var getSelectionMode_MethodID_39: jmethodID?
+    private static var getSelectionMode_MethodID_38: jmethodID?
 
     open func getSelectionMode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &ListSelectionModelForward.getSelectionMode_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &ListSelectionModelForward.getSelectionMode_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract boolean javax.swing.ListSelectionModel.isSelectionEmpty()
 
-    private static var isSelectionEmpty_MethodID_40: jmethodID?
+    private static var isSelectionEmpty_MethodID_39: jmethodID?
 
     open func isSelectionEmpty() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionEmpty", methodSig: "()Z", methodCache: &ListSelectionModelForward.isSelectionEmpty_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionEmpty", methodSig: "()Z", methodCache: &ListSelectionModelForward.isSelectionEmpty_MethodID_39, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public abstract boolean javax.swing.ListSelectionModel.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_40: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &ListSelectionModelForward.getValueIsAdjusting_MethodID_40, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 

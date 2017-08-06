@@ -573,34 +573,13 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
 
     /// public boolean javax.swing.DefaultListCellRenderer.isOpaque()
 
-    /// public void javax.swing.DefaultListCellRenderer.repaint(long,int,int,int,int)
+    /// public void javax.swing.DefaultListCellRenderer.invalidate()
 
-    /// public void javax.swing.DefaultListCellRenderer.repaint(java.awt.Rectangle)
-
-    /// public void javax.swing.DefaultListCellRenderer.repaint()
-
-    /// public void javax.swing.DefaultListCellRenderer.validate()
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,short,short)
-
-    private static var firePropertyChange_MethodID_2: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: Int16, newValue: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int16, _ _newValue: Int16 ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
+    /// public void javax.swing.DefaultListCellRenderer.revalidate()
 
     /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,long,long)
 
-    private static var firePropertyChange_MethodID_3: jmethodID?
+    private static var firePropertyChange_MethodID_2: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: Int64, newValue: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -608,7 +587,7 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int64, _ _newValue: Int64 ) {
@@ -616,6 +595,27 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
     }
 
     /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,int,int)
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,short,short)
+
+    private static var firePropertyChange_MethodID_3: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: Int16, newValue: Int16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int16, _ _newValue: Int16 ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,char,char)
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
 
     /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,float,float)
 
@@ -651,8 +651,6 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
-
     /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,byte,byte)
 
     private static var firePropertyChange_MethodID_6: jmethodID?
@@ -687,8 +685,6 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,char,char)
-
     /// private javax.swing.border.Border javax.swing.DefaultListCellRenderer.getNoFocusBorder()
 
     /// public java.awt.Component javax.swing.DefaultListCellRenderer.getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
@@ -712,9 +708,13 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         return getListCellRendererComponent( list: _list, value: _value, index: _index, isSelected: _isSelected, cellHasFocus: _cellHasFocus )
     }
 
-    /// public void javax.swing.DefaultListCellRenderer.invalidate()
+    /// public void javax.swing.DefaultListCellRenderer.repaint()
 
-    /// public void javax.swing.DefaultListCellRenderer.revalidate()
+    /// public void javax.swing.DefaultListCellRenderer.repaint(java.awt.Rectangle)
+
+    /// public void javax.swing.DefaultListCellRenderer.repaint(long,int,int,int,int)
+
+    /// public void javax.swing.DefaultListCellRenderer.validate()
 
 }
 

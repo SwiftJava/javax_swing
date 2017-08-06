@@ -181,16 +181,21 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         }
     }
 
-    /// public javax.swing.AbstractAction()
+    /// public javax.swing.AbstractAction(java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init() {
+    public convenience init( name: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "()V", methodCache: &AbstractAction.new_MethodID_1, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _name: String? ) {
+        self.init( name: _name )
     }
 
     /// public javax.swing.AbstractAction(java.lang.String,javax.swing.Icon)
@@ -211,21 +216,16 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         self.init( name: _name, icon: _icon )
     }
 
-    /// public javax.swing.AbstractAction(java.lang.String)
+    /// public javax.swing.AbstractAction()
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( name: String? ) {
+    public convenience init() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractAction.new_MethodID_3, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "()V", methodCache: &AbstractAction.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _name: String? ) {
-        self.init( name: _name )
     }
 
     /// protected java.lang.Object javax.swing.AbstractAction.clone() throws java.lang.CloneNotSupportedException
@@ -265,37 +265,15 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// private void javax.swing.AbstractAction.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// static void javax.swing.AbstractAction.setEnabledFromAction(javax.swing.JComponent,javax.swing.Action)
+    /// public java.lang.Object[] javax.swing.AbstractAction.getKeys()
 
-    /// static void javax.swing.AbstractAction.setToolTipTextFromAction(javax.swing.JComponent,javax.swing.Action)
+    private static var getKeys_MethodID_6: jmethodID?
 
-    /// static boolean javax.swing.AbstractAction.hasSelectedKey(javax.swing.Action)
-
-    /// public void javax.swing.AbstractAction.putValue(java.lang.String,java.lang.Object)
-
-    private static var putValue_MethodID_6: jmethodID?
-
-    open func putValue( key: String?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &AbstractAction.putValue_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func putValue( _ _key: String?, _ _value: java_swift.JavaObject? ) {
-        putValue( key: _key, value: _value )
-    }
-
-    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.AbstractAction.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_7: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+    open func getKeys() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &AbstractAction.getPropertyChangeListeners_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeys", methodSig: "()[Ljava/lang/Object;", methodCache: &AbstractAction.getKeys_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 
@@ -303,25 +281,25 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// public boolean javax.swing.AbstractAction.isEnabled()
 
-    private static var isEnabled_MethodID_8: jmethodID?
+    private static var isEnabled_MethodID_7: jmethodID?
 
     open func isEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &AbstractAction.isEnabled_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &AbstractAction.isEnabled_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.AbstractAction.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_9: jmethodID?
+    private static var setEnabled_MethodID_8: jmethodID?
 
     open func setEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &AbstractAction.setEnabled_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &AbstractAction.setEnabled_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setEnabled( _ _b: Bool ) {
@@ -330,13 +308,13 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// public synchronized void javax.swing.AbstractAction.addPropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var addPropertyChangeListener_MethodID_10: jmethodID?
+    private static var addPropertyChangeListener_MethodID_9: jmethodID?
 
     open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.addPropertyChangeListener_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.addPropertyChangeListener_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
@@ -345,13 +323,13 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// public synchronized void javax.swing.AbstractAction.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var removePropertyChangeListener_MethodID_11: jmethodID?
+    private static var removePropertyChangeListener_MethodID_10: jmethodID?
 
     open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.removePropertyChangeListener_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.removePropertyChangeListener_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
@@ -360,7 +338,7 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// protected void javax.swing.AbstractAction.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
 
-    private static var firePropertyChange_MethodID_12: jmethodID?
+    private static var firePropertyChange_MethodID_11: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -368,7 +346,7 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractAction.firePropertyChange_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractAction.firePropertyChange_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
@@ -377,15 +355,37 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// static boolean javax.swing.AbstractAction.shouldReconfigure(java.beans.PropertyChangeEvent)
 
-    /// public java.lang.Object[] javax.swing.AbstractAction.getKeys()
+    /// static void javax.swing.AbstractAction.setEnabledFromAction(javax.swing.JComponent,javax.swing.Action)
 
-    private static var getKeys_MethodID_13: jmethodID?
+    /// static void javax.swing.AbstractAction.setToolTipTextFromAction(javax.swing.JComponent,javax.swing.Action)
 
-    open func getKeys() -> [JavaObject]! {
+    /// static boolean javax.swing.AbstractAction.hasSelectedKey(javax.swing.Action)
+
+    /// public void javax.swing.AbstractAction.putValue(java.lang.String,java.lang.Object)
+
+    private static var putValue_MethodID_12: jmethodID?
+
+    open func putValue( key: String?, value: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &AbstractAction.putValue_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func putValue( _ _key: String?, _ _value: java_swift.JavaObject? ) {
+        putValue( key: _key, value: _value )
+    }
+
+    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.AbstractAction.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_13: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeys", methodSig: "()[Ljava/lang/Object;", methodCache: &AbstractAction.getKeys_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &AbstractAction.getPropertyChangeListeners_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
     }
 
 

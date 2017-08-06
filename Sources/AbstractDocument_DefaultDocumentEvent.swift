@@ -115,28 +115,15 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
     }
 
 
-    /// public javax.swing.text.Document javax.swing.text.AbstractDocument$DefaultDocumentEvent.getDocument()
-
-    private static var getDocument_MethodID_5: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractDocument_DefaultDocumentEvent.getDocument_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
-
     /// public javax.swing.event.DocumentEvent$ElementChange javax.swing.text.AbstractDocument$DefaultDocumentEvent.getChange(javax.swing.text.Element)
 
-    private static var getChange_MethodID_6: jmethodID?
+    private static var getChange_MethodID_5: jmethodID?
 
     open func getChange( elem: Element? ) -> DocumentEvent_ElementChange! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChange", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/event/DocumentEvent$ElementChange;", methodCache: &AbstractDocument_DefaultDocumentEvent.getChange_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChange", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/event/DocumentEvent$ElementChange;", methodCache: &AbstractDocument_DefaultDocumentEvent.getChange_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DocumentEvent_ElementChangeForward( javaObject: __return ) : nil
     }
@@ -144,6 +131,19 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
     open func getChange( _ _elem: Element? ) -> DocumentEvent_ElementChange! {
         return getChange( elem: _elem )
     }
+
+    /// public javax.swing.text.Document javax.swing.text.AbstractDocument$DefaultDocumentEvent.getDocument()
+
+    private static var getDocument_MethodID_6: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractDocument_DefaultDocumentEvent.getDocument_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
 
     /// public void javax.swing.text.AbstractDocument$DefaultDocumentEvent.undo() throws javax.swing.undo.CannotUndoException
 

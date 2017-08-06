@@ -695,18 +695,155 @@ open class JEditorPane: JTextComponent {
     }
 
 
+    /// protected java.io.InputStream javax.swing.JEditorPane.getStream(java.net.URL) throws java.io.IOException
+
+    private static var getStream_MethodID_7: jmethodID?
+
+    open func getStream( page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ -> /* java.io.InputStream */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStream", methodSig: "(Ljava/net/URL;)Ljava/io/InputStream;", methodCache: &JEditorPane.getStream_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+        }
+        return __return != nil ? /* java.io.InputStream */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+    open func getStream( _ _page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ -> /* java.io.InputStream */ UnclassedObject! {
+        return try getStream( page: _page )
+    }
+
+    /// public java.awt.Dimension javax.swing.JEditorPane.getPreferredSize()
+
+    /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKit()
+
+    private static var getEditorKit_MethodID_8: jmethodID?
+
+    open func getEditorKit() -> EditorKit! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKit_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? EditorKit( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JEditorPane.setPage(java.net.URL) throws java.io.IOException
+
+    private static var setPage_MethodID_9: jmethodID?
+
+    open func setPage( page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/net/URL;)V", methodCache: &JEditorPane.setPage_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+    open func setPage( _ _page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
+        try setPage( page: _page )
+    }
+
+    /// public void javax.swing.JEditorPane.setPage(java.lang.String) throws java.io.IOException
+
+    private static var setPage_MethodID_10: jmethodID?
+
+    open func setPage( url: String? ) throws /* java.io.IOException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: url, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setPage_MethodID_10, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+    open func setPage( _ _url: String? ) throws /* java.io.IOException */ {
+        try setPage( url: _url )
+    }
+
+    /// public void javax.swing.JEditorPane.scrollToReference(java.lang.String)
+
+    private static var scrollToReference_MethodID_11: jmethodID?
+
+    open func scrollToReference( reference: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: reference, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollToReference", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.scrollToReference_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func scrollToReference( _ _reference: String? ) {
+        scrollToReference( reference: _reference )
+    }
+
+    /// public void javax.swing.JEditorPane.fireHyperlinkUpdate(javax.swing.event.HyperlinkEvent)
+
+    private static var fireHyperlinkUpdate_MethodID_12: jmethodID?
+
+    open func fireHyperlinkUpdate( e: HyperlinkEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireHyperlinkUpdate", methodSig: "(Ljavax/swing/event/HyperlinkEvent;)V", methodCache: &JEditorPane.fireHyperlinkUpdate_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func fireHyperlinkUpdate( _ _e: HyperlinkEvent? ) {
+        fireHyperlinkUpdate( e: _e )
+    }
+
+    /// public java.net.URL javax.swing.JEditorPane.getPage()
+
+    private static var getPage_MethodID_13: jmethodID?
+
+    open func getPage() -> /* java.net.URL */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPage", methodSig: "()Ljava/net/URL;", methodCache: &JEditorPane.getPage_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.JEditorPane.getText()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JEditorPane.getAccessibleContext()
+
+    /// public void javax.swing.JEditorPane.setText(java.lang.String)
+
+    private static var setText_MethodID_14: jmethodID?
+
+    open func setText( t: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setText_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    override open func setText( _ _t: String? ) {
+        setText( t: _t )
+    }
+
     /// public boolean javax.swing.JEditorPane.getScrollableTracksViewportWidth()
 
     /// public boolean javax.swing.JEditorPane.getScrollableTracksViewportHeight()
 
+    /// public java.lang.String javax.swing.JEditorPane.getUIClassID()
+
+    /// private int javax.swing.JEditorPane.getAsynchronousLoadPriority(javax.swing.text.Document)
+
     /// protected javax.swing.text.EditorKit javax.swing.JEditorPane.createDefaultEditorKit()
 
-    private static var createDefaultEditorKit_MethodID_7: jmethodID?
+    private static var createDefaultEditorKit_MethodID_15: jmethodID?
 
     open func createDefaultEditorKit() -> EditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.createDefaultEditorKit_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.createDefaultEditorKit_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EditorKit( javaObject: __return ) : nil
     }
@@ -714,13 +851,13 @@ open class JEditorPane: JTextComponent {
 
     /// public void javax.swing.JEditorPane.setEditorKit(javax.swing.text.EditorKit)
 
-    private static var setEditorKit_MethodID_8: jmethodID?
+    private static var setEditorKit_MethodID_16: jmethodID?
 
     open func setEditorKit( kit: EditorKit? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: kit != nil ? kit! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKit", methodSig: "(Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKit_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKit", methodSig: "(Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKit_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setEditorKit( _ _kit: EditorKit? ) {
@@ -729,13 +866,13 @@ open class JEditorPane: JTextComponent {
 
     /// public static java.lang.String javax.swing.JEditorPane.getEditorKitClassNameForContentType(java.lang.String)
 
-    private static var getEditorKitClassNameForContentType_MethodID_9: jmethodID?
+    private static var getEditorKitClassNameForContentType_MethodID_17: jmethodID?
 
     open class func getEditorKitClassNameForContentType( type: String? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "getEditorKitClassNameForContentType", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &getEditorKitClassNameForContentType_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "getEditorKitClassNameForContentType", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &getEditorKitClassNameForContentType_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -745,14 +882,14 @@ open class JEditorPane: JTextComponent {
 
     /// public void javax.swing.JEditorPane.setEditorKitForContentType(java.lang.String,javax.swing.text.EditorKit)
 
-    private static var setEditorKitForContentType_MethodID_10: jmethodID?
+    private static var setEditorKitForContentType_MethodID_18: jmethodID?
 
     open func setEditorKitForContentType( type: String?, k: EditorKit? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: k != nil ? k! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKitForContentType_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKitForContentType_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setEditorKitForContentType( _ _type: String?, _ _k: EditorKit? ) {
@@ -761,13 +898,13 @@ open class JEditorPane: JTextComponent {
 
     /// public synchronized void javax.swing.JEditorPane.addHyperlinkListener(javax.swing.event.HyperlinkListener)
 
-    private static var addHyperlinkListener_MethodID_11: jmethodID?
+    private static var addHyperlinkListener_MethodID_19: jmethodID?
 
     open func addHyperlinkListener( listener: HyperlinkListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.addHyperlinkListener_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.addHyperlinkListener_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func addHyperlinkListener( _ _listener: HyperlinkListener? ) {
@@ -776,13 +913,13 @@ open class JEditorPane: JTextComponent {
 
     /// public synchronized void javax.swing.JEditorPane.removeHyperlinkListener(javax.swing.event.HyperlinkListener)
 
-    private static var removeHyperlinkListener_MethodID_12: jmethodID?
+    private static var removeHyperlinkListener_MethodID_20: jmethodID?
 
     open func removeHyperlinkListener( listener: HyperlinkListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.removeHyperlinkListener_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.removeHyperlinkListener_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func removeHyperlinkListener( _ _listener: HyperlinkListener? ) {
@@ -791,12 +928,12 @@ open class JEditorPane: JTextComponent {
 
     /// public synchronized javax.swing.event.HyperlinkListener[] javax.swing.JEditorPane.getHyperlinkListeners()
 
-    private static var getHyperlinkListeners_MethodID_13: jmethodID?
+    private static var getHyperlinkListeners_MethodID_21: jmethodID?
 
     open func getHyperlinkListeners() -> [HyperlinkListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHyperlinkListeners", methodSig: "()[Ljavax/swing/event/HyperlinkListener;", methodCache: &JEditorPane.getHyperlinkListeners_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHyperlinkListeners", methodSig: "()[Ljavax/swing/event/HyperlinkListener;", methodCache: &JEditorPane.getHyperlinkListeners_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [HyperlinkListenerForward](), from: __return )
     }
 
@@ -813,13 +950,13 @@ open class JEditorPane: JTextComponent {
 
     /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKitForContentType(java.lang.String)
 
-    private static var getEditorKitForContentType_MethodID_14: jmethodID?
+    private static var getEditorKitForContentType_MethodID_22: jmethodID?
 
     open func getEditorKitForContentType( type: String? ) -> EditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKitForContentType_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKitForContentType_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EditorKit( javaObject: __return ) : nil
     }
@@ -830,13 +967,13 @@ open class JEditorPane: JTextComponent {
 
     /// public static javax.swing.text.EditorKit javax.swing.JEditorPane.createEditorKitForContentType(java.lang.String)
 
-    private static var createEditorKitForContentType_MethodID_15: jmethodID?
+    private static var createEditorKitForContentType_MethodID_23: jmethodID?
 
     open class func createEditorKitForContentType( type: String? ) -> EditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "createEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &createEditorKitForContentType_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "createEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &createEditorKitForContentType_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EditorKit( javaObject: __return ) : nil
     }
@@ -847,14 +984,14 @@ open class JEditorPane: JTextComponent {
 
     /// public static void javax.swing.JEditorPane.registerEditorKitForContentType(java.lang.String,java.lang.String)
 
-    private static var registerEditorKitForContentType_MethodID_16: jmethodID?
+    private static var registerEditorKitForContentType_MethodID_24: jmethodID?
 
     open class func registerEditorKitForContentType( type: String?, classname: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: classname, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &registerEditorKitForContentType_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &registerEditorKitForContentType_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open class func registerEditorKitForContentType( _ _type: String?, _ _classname: String? ) {
@@ -863,7 +1000,7 @@ open class JEditorPane: JTextComponent {
 
     /// public static void javax.swing.JEditorPane.registerEditorKitForContentType(java.lang.String,java.lang.String,java.lang.ClassLoader)
 
-    private static var registerEditorKitForContentType_MethodID_17: jmethodID?
+    private static var registerEditorKitForContentType_MethodID_25: jmethodID?
 
     open class func registerEditorKitForContentType( type: String?, classname: String?, loader: java_lang.ClassLoader? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -871,7 +1008,7 @@ open class JEditorPane: JTextComponent {
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: classname, locals: &__locals )
         __args[2] = JNIType.toJava( value: loader != nil ? loader! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V", methodCache: &registerEditorKitForContentType_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V", methodCache: &registerEditorKitForContentType_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open class func registerEditorKitForContentType( _ _type: String?, _ _classname: String?, _ _loader: java_lang.ClassLoader? ) {
@@ -886,184 +1023,47 @@ open class JEditorPane: JTextComponent {
 
     /// private static void javax.swing.JEditorPane.loadDefaultKitsIfNecessary()
 
-    /// protected java.io.InputStream javax.swing.JEditorPane.getStream(java.net.URL) throws java.io.IOException
-
-    private static var getStream_MethodID_18: jmethodID?
-
-    open func getStream( page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ -> /* java.io.InputStream */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStream", methodSig: "(Ljava/net/URL;)Ljava/io/InputStream;", methodCache: &JEditorPane.getStream_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-        return __return != nil ? /* java.io.InputStream */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-    open func getStream( _ _page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ -> /* java.io.InputStream */ UnclassedObject! {
-        return try getStream( page: _page )
-    }
-
     /// public final java.lang.String javax.swing.JEditorPane.getContentType()
 
-    private static var getContentType_MethodID_19: jmethodID?
+    private static var getContentType_MethodID_26: jmethodID?
 
     open func getContentType() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentType", methodSig: "()Ljava/lang/String;", methodCache: &JEditorPane.getContentType_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentType", methodSig: "()Ljava/lang/String;", methodCache: &JEditorPane.getContentType_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public final void javax.swing.JEditorPane.setContentType(java.lang.String)
 
-    private static var setContentType_MethodID_20: jmethodID?
+    private static var setContentType_MethodID_27: jmethodID?
 
     open func setContentType( type: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentType", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setContentType_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentType", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setContentType_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setContentType( _ _type: String? ) {
         setContentType( type: _type )
     }
 
-    /// public java.lang.String javax.swing.JEditorPane.getText()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JEditorPane.getAccessibleContext()
-
-    /// public void javax.swing.JEditorPane.setText(java.lang.String)
-
-    private static var setText_MethodID_21: jmethodID?
-
-    open func setText( t: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setText_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    override open func setText( _ _t: String? ) {
-        setText( t: _t )
-    }
-
-    /// public java.lang.String javax.swing.JEditorPane.getUIClassID()
-
     /// public void javax.swing.JEditorPane.replaceSelection(java.lang.String)
 
-    private static var replaceSelection_MethodID_22: jmethodID?
+    private static var replaceSelection_MethodID_28: jmethodID?
 
     open func replaceSelection( content: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: content, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceSelection", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.replaceSelection_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceSelection", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.replaceSelection_MethodID_28, args: &__args, locals: &__locals )
     }
 
     override open func replaceSelection( _ _content: String? ) {
         replaceSelection( content: _content )
     }
-
-    /// private int javax.swing.JEditorPane.getAsynchronousLoadPriority(javax.swing.text.Document)
-
-    /// public java.awt.Dimension javax.swing.JEditorPane.getPreferredSize()
-
-    /// public void javax.swing.JEditorPane.setPage(java.net.URL) throws java.io.IOException
-
-    private static var setPage_MethodID_23: jmethodID?
-
-    open func setPage( page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: page != nil ? page! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/net/URL;)V", methodCache: &JEditorPane.setPage_MethodID_23, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func setPage( _ _page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try setPage( page: _page )
-    }
-
-    /// public void javax.swing.JEditorPane.setPage(java.lang.String) throws java.io.IOException
-
-    private static var setPage_MethodID_24: jmethodID?
-
-    open func setPage( url: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: url, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setPage_MethodID_24, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func setPage( _ _url: String? ) throws /* java.io.IOException */ {
-        try setPage( url: _url )
-    }
-
-    /// public void javax.swing.JEditorPane.scrollToReference(java.lang.String)
-
-    private static var scrollToReference_MethodID_25: jmethodID?
-
-    open func scrollToReference( reference: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: reference, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollToReference", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.scrollToReference_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func scrollToReference( _ _reference: String? ) {
-        scrollToReference( reference: _reference )
-    }
-
-    /// public void javax.swing.JEditorPane.fireHyperlinkUpdate(javax.swing.event.HyperlinkEvent)
-
-    private static var fireHyperlinkUpdate_MethodID_26: jmethodID?
-
-    open func fireHyperlinkUpdate( e: HyperlinkEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireHyperlinkUpdate", methodSig: "(Ljavax/swing/event/HyperlinkEvent;)V", methodCache: &JEditorPane.fireHyperlinkUpdate_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func fireHyperlinkUpdate( _ _e: HyperlinkEvent? ) {
-        fireHyperlinkUpdate( e: _e )
-    }
-
-    /// public java.net.URL javax.swing.JEditorPane.getPage()
-
-    private static var getPage_MethodID_27: jmethodID?
-
-    open func getPage() -> /* java.net.URL */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPage", methodSig: "()Ljava/net/URL;", methodCache: &JEditorPane.getPage_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKit()
-
-    private static var getEditorKit_MethodID_28: jmethodID?
-
-    open func getEditorKit() -> EditorKit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKit_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? EditorKit( javaObject: __return ) : nil
-    }
-
 
 }
 

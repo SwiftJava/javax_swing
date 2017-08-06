@@ -70,6 +70,8 @@ open class DefaultMetalTheme: MetalTheme {
 
     /// public java.lang.String javax.swing.plaf.metal.DefaultMetalTheme.getName()
 
+    /// public javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getControlTextFont()
+
     /// static java.lang.String javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontName(int)
 
     /// static int javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontStyle(int)
@@ -168,11 +170,9 @@ open class DefaultMetalTheme: MetalTheme {
 
     /// public javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getSubTextFont()
 
-    /// private javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getFont(int)
-
-    /// public javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getControlTextFont()
-
     /// void javax.swing.plaf.metal.DefaultMetalTheme.install()
+
+    /// private javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getFont(int)
 
 }
 

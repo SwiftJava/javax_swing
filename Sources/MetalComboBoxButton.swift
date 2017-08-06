@@ -827,6 +827,8 @@ open class MetalComboBoxButton: JButton {
 
     /// javax.swing.plaf.metal.MetalComboBoxButton()
 
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalComboBoxButton.getMinimumSize()
+
     /// public final javax.swing.JComboBox javax.swing.plaf.metal.MetalComboBoxButton.getComboBox()
 
     private static var getComboBox_MethodID_3: jmethodID?
@@ -941,8 +943,6 @@ open class MetalComboBoxButton: JButton {
     override open func paintComponent( _ _g: java_awt.Graphics? ) {
         paintComponent( g: _g )
     }
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalComboBoxButton.getMinimumSize()
 
 }
 

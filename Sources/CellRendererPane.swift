@@ -333,6 +333,10 @@ open class CellRendererPane: java_awt.Container {
 
     /// private void javax.swing.CellRendererPane.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
+    /// public void javax.swing.CellRendererPane.invalidate()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.CellRendererPane.getAccessibleContext()
+
     /// protected void javax.swing.CellRendererPane.addImpl(java.awt.Component,java.lang.Object,int)
 
     private static var addImpl_MethodID_3: jmethodID?
@@ -350,26 +354,9 @@ open class CellRendererPane: java_awt.Container {
         addImpl( x: _x, constraints: _constraints, index: _index )
     }
 
-    /// public void javax.swing.CellRendererPane.paint(java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &CellRendererPane.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics? ) {
-        paint( g: _g )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.CellRendererPane.getAccessibleContext()
-
     /// public void javax.swing.CellRendererPane.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,int,int,int,int,boolean)
 
-    private static var paintComponent_MethodID_5: jmethodID?
+    private static var paintComponent_MethodID_4: jmethodID?
 
     open func paintComponent( g: java_awt.Graphics?, c: java_awt.Component?, p: java_awt.Container?, x: Int, y: Int, w: Int, h: Int, shouldValidate: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -382,7 +369,7 @@ open class CellRendererPane: java_awt.Container {
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
         __args[7] = JNIType.toJava( value: shouldValidate, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;IIIIZ)V", methodCache: &CellRendererPane.paintComponent_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;IIIIZ)V", methodCache: &CellRendererPane.paintComponent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func paintComponent( _ _g: java_awt.Graphics?, _ _c: java_awt.Component?, _ _p: java_awt.Container?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _shouldValidate: Bool ) {
@@ -391,7 +378,7 @@ open class CellRendererPane: java_awt.Container {
 
     /// public void javax.swing.CellRendererPane.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,java.awt.Rectangle)
 
-    private static var paintComponent_MethodID_6: jmethodID?
+    private static var paintComponent_MethodID_5: jmethodID?
 
     open func paintComponent( g: java_awt.Graphics?, c: java_awt.Component?, p: java_awt.Container?, r: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -400,7 +387,7 @@ open class CellRendererPane: java_awt.Container {
         __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
         __args[3] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;Ljava/awt/Rectangle;)V", methodCache: &CellRendererPane.paintComponent_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;Ljava/awt/Rectangle;)V", methodCache: &CellRendererPane.paintComponent_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintComponent( _ _g: java_awt.Graphics?, _ _c: java_awt.Component?, _ _p: java_awt.Container?, _ _r: java_awt.Rectangle? ) {
@@ -409,7 +396,7 @@ open class CellRendererPane: java_awt.Container {
 
     /// public void javax.swing.CellRendererPane.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,int,int,int,int)
 
-    private static var paintComponent_MethodID_7: jmethodID?
+    private static var paintComponent_MethodID_6: jmethodID?
 
     open func paintComponent( g: java_awt.Graphics?, c: java_awt.Component?, p: java_awt.Container?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -421,14 +408,27 @@ open class CellRendererPane: java_awt.Container {
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;IIII)V", methodCache: &CellRendererPane.paintComponent_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;IIII)V", methodCache: &CellRendererPane.paintComponent_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func paintComponent( _ _g: java_awt.Graphics?, _ _c: java_awt.Component?, _ _p: java_awt.Container?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintComponent( g: _g, c: _c, p: _p, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.CellRendererPane.invalidate()
+    /// public void javax.swing.CellRendererPane.paint(java.awt.Graphics)
+
+    private static var paint_MethodID_7: jmethodID?
+
+    open func paint( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &CellRendererPane.paint_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics? ) {
+        paint( g: _g )
+    }
 
     /// In declared protocol but not defined.. ///
 

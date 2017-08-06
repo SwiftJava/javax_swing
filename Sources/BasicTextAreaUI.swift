@@ -50,6 +50,16 @@ open class BasicTextAreaUI: BasicTextUI {
 
     /// public javax.swing.text.View javax.swing.plaf.basic.BasicTextAreaUI.create(javax.swing.text.Element)
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicTextAreaUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextAreaUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
+    /// javax.swing.text.View javax.swing.plaf.basic.BasicTextAreaUI.createI18N(javax.swing.text.Element)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTextAreaUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -82,38 +92,28 @@ open class BasicTextAreaUI: BasicTextUI {
         propertyChange( evt: _evt )
     }
 
-    /// javax.swing.text.View javax.swing.plaf.basic.BasicTextAreaUI.createI18N(javax.swing.text.Element)
-
-    /// protected void javax.swing.plaf.basic.BasicTextAreaUI.installDefaults()
-
-    private static var installDefaults_MethodID_4: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTextAreaUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
     /// protected java.lang.String javax.swing.plaf.basic.BasicTextAreaUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_5: jmethodID?
+    private static var getPropertyPrefix_MethodID_4: jmethodID?
 
     override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextAreaUI.getPropertyPrefix_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextAreaUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getPreferredSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicTextAreaUI.installDefaults()
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getMinimumSize(javax.swing.JComponent)
+    private static var installDefaults_MethodID_5: jmethodID?
 
-    /// public int javax.swing.plaf.basic.BasicTextAreaUI.getBaseline(javax.swing.JComponent,int,int)
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTextAreaUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
+    }
 
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextAreaUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

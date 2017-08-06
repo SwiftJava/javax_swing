@@ -126,32 +126,19 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// private javax.swing.Spring javax.swing.SpringLayout$Constraints.scale(javax.swing.Spring,float)
 
-    /// public void javax.swing.SpringLayout$Constraints.setWidth(javax.swing.Spring)
-
-    private static var setWidth_MethodID_5: jmethodID?
-
-    open func setWidth( width: Spring? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width != nil ? width! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWidth", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setWidth_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setWidth( _ _width: Spring? ) {
-        setWidth( width: _width )
-    }
+    /// private javax.swing.Spring javax.swing.SpringLayout$Constraints.getBaseline()
 
     /// private javax.swing.Spring javax.swing.SpringLayout$Constraints.difference(javax.swing.Spring,javax.swing.Spring)
 
     /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getConstraint(java.lang.String)
 
-    private static var getConstraint_MethodID_6: jmethodID?
+    private static var getConstraint_MethodID_5: jmethodID?
 
     open func getConstraint( edgeName: String? ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: edgeName, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConstraint", methodSig: "(Ljava/lang/String;)Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getConstraint_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getConstraint", methodSig: "(Ljava/lang/String;)Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getConstraint_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
@@ -162,13 +149,13 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// public void javax.swing.SpringLayout$Constraints.setX(javax.swing.Spring)
 
-    private static var setX_MethodID_7: jmethodID?
+    private static var setX_MethodID_6: jmethodID?
 
     open func setX( x: Spring? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setX", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setX_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setX", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setX_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setX( _ _x: Spring? ) {
@@ -177,13 +164,13 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// public void javax.swing.SpringLayout$Constraints.setY(javax.swing.Spring)
 
-    private static var setY_MethodID_8: jmethodID?
+    private static var setY_MethodID_7: jmethodID?
 
     open func setY( y: Spring? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: y != nil ? y! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setY", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setY_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setY", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setY_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setY( _ _y: Spring? ) {
@@ -192,13 +179,13 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// public void javax.swing.SpringLayout$Constraints.setHeight(javax.swing.Spring)
 
-    private static var setHeight_MethodID_9: jmethodID?
+    private static var setHeight_MethodID_8: jmethodID?
 
     open func setHeight( height: Spring? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: height != nil ? height! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHeight", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setHeight_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHeight", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setHeight_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setHeight( _ _height: Spring? ) {
@@ -207,14 +194,14 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// public void javax.swing.SpringLayout$Constraints.setConstraint(java.lang.String,javax.swing.Spring)
 
-    private static var setConstraint_MethodID_10: jmethodID?
+    private static var setConstraint_MethodID_9: jmethodID?
 
     open func setConstraint( edgeName: String?, s: Spring? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: edgeName, locals: &__locals )
         __args[1] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setConstraint", methodSig: "(Ljava/lang/String;Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setConstraint_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setConstraint", methodSig: "(Ljava/lang/String;Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setConstraint_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setConstraint( _ _edgeName: String?, _ _s: Spring? ) {
@@ -251,40 +238,14 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// private void javax.swing.SpringLayout$Constraints.setBaseline(javax.swing.Spring)
 
-    /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getX()
-
-    private static var getX_MethodID_11: jmethodID?
-
-    open func getX() -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getX", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getX_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Spring( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getY()
-
-    private static var getY_MethodID_12: jmethodID?
-
-    open func getY() -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getY", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getY_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Spring( javaObject: __return ) : nil
-    }
-
-
     /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getWidth()
 
-    private static var getWidth_MethodID_13: jmethodID?
+    private static var getWidth_MethodID_10: jmethodID?
 
     open func getWidth() -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWidth", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getWidth_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWidth", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getWidth_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
@@ -292,18 +253,57 @@ open class SpringLayout_Constraints: java_swift.JavaObject {
 
     /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getHeight()
 
-    private static var getHeight_MethodID_14: jmethodID?
+    private static var getHeight_MethodID_11: jmethodID?
 
     open func getHeight() -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeight", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getHeight_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeight", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getHeight_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
 
 
-    /// private javax.swing.Spring javax.swing.SpringLayout$Constraints.getBaseline()
+    /// public void javax.swing.SpringLayout$Constraints.setWidth(javax.swing.Spring)
+
+    private static var setWidth_MethodID_12: jmethodID?
+
+    open func setWidth( width: Spring? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width != nil ? width! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWidth", methodSig: "(Ljavax/swing/Spring;)V", methodCache: &SpringLayout_Constraints.setWidth_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setWidth( _ _width: Spring? ) {
+        setWidth( width: _width )
+    }
+
+    /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getX()
+
+    private static var getX_MethodID_13: jmethodID?
+
+    open func getX() -> Spring! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getX", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getX_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Spring( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Spring javax.swing.SpringLayout$Constraints.getY()
+
+    private static var getY_MethodID_14: jmethodID?
+
+    open func getY() -> Spring! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getY", methodSig: "()Ljavax/swing/Spring;", methodCache: &SpringLayout_Constraints.getY_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Spring( javaObject: __return ) : nil
+    }
+
 
 }
 

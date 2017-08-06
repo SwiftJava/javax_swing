@@ -229,45 +229,28 @@ open class JComponent_AccessibleJComponent: /* java.awt.Container$AccessibleAWTC
 
     /// public void javax.swing.JComponent$AccessibleJComponent.setSize(java.awt.Dimension)
 
-    /// public javax.accessibility.AccessibleKeyBinding javax.swing.JComponent$AccessibleJComponent.getAccessibleKeyBinding()
-
-    private static var getAccessibleKeyBinding_MethodID_2: jmethodID?
-
-    open func getAccessibleKeyBinding() -> /* javax.accessibility.AccessibleKeyBinding */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleKeyBinding", methodSig: "()Ljavax/accessibility/AccessibleKeyBinding;", methodCache: &JComponent_AccessibleJComponent.getAccessibleKeyBinding_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleKeyBinding */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.lang.String javax.swing.JComponent$AccessibleJComponent.getAccessibleName()
-
-    /// public javax.accessibility.AccessibleStateSet javax.swing.JComponent$AccessibleJComponent.getAccessibleStateSet()
-
     /// javax.accessibility.AccessibleExtendedComponent javax.swing.JComponent$AccessibleJComponent.getAccessibleExtendedComponent()
 
     /// public java.lang.String javax.swing.JComponent$AccessibleJComponent.getToolTipText()
 
-    private static var getToolTipText_MethodID_3: jmethodID?
+    private static var getToolTipText_MethodID_2: jmethodID?
 
     open func getToolTipText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "()Ljava/lang/String;", methodCache: &JComponent_AccessibleJComponent.getToolTipText_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "()Ljava/lang/String;", methodCache: &JComponent_AccessibleJComponent.getToolTipText_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public java.lang.String javax.swing.JComponent$AccessibleJComponent.getTitledBorderText()
 
-    private static var getTitledBorderText_MethodID_4: jmethodID?
+    private static var getTitledBorderText_MethodID_3: jmethodID?
 
     open func getTitledBorderText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitledBorderText", methodSig: "()Ljava/lang/String;", methodCache: &JComponent_AccessibleJComponent.getTitledBorderText_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitledBorderText", methodSig: "()Ljava/lang/String;", methodCache: &JComponent_AccessibleJComponent.getTitledBorderText_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -322,13 +305,13 @@ open class JComponent_AccessibleJComponent: /* java.awt.Container$AccessibleAWTC
 
     /// public void javax.swing.JComponent$AccessibleJComponent.addPropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var addPropertyChangeListener_MethodID_5: jmethodID?
+    private static var addPropertyChangeListener_MethodID_4: jmethodID?
 
     open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &JComponent_AccessibleJComponent.addPropertyChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &JComponent_AccessibleJComponent.addPropertyChangeListener_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
@@ -337,13 +320,13 @@ open class JComponent_AccessibleJComponent: /* java.awt.Container$AccessibleAWTC
 
     /// public void javax.swing.JComponent$AccessibleJComponent.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var removePropertyChangeListener_MethodID_6: jmethodID?
+    private static var removePropertyChangeListener_MethodID_5: jmethodID?
 
     open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &JComponent_AccessibleJComponent.removePropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &JComponent_AccessibleJComponent.removePropertyChangeListener_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
@@ -352,13 +335,13 @@ open class JComponent_AccessibleJComponent: /* java.awt.Container$AccessibleAWTC
 
     /// protected java.lang.String javax.swing.JComponent$AccessibleJComponent.getBorderTitle(javax.swing.border.Border)
 
-    private static var getBorderTitle_MethodID_7: jmethodID?
+    private static var getBorderTitle_MethodID_6: jmethodID?
 
     open func getBorderTitle( b: Border? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderTitle", methodSig: "(Ljavax/swing/border/Border;)Ljava/lang/String;", methodCache: &JComponent_AccessibleJComponent.getBorderTitle_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderTitle", methodSig: "(Ljavax/swing/border/Border;)Ljava/lang/String;", methodCache: &JComponent_AccessibleJComponent.getBorderTitle_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -374,13 +357,13 @@ open class JComponent_AccessibleJComponent: /* java.awt.Container$AccessibleAWTC
 
     /// public javax.accessibility.Accessible javax.swing.JComponent$AccessibleJComponent.getAccessibleChild(int)
 
-    private static var getAccessibleChild_MethodID_8: jmethodID?
+    private static var getAccessibleChild_MethodID_7: jmethodID?
 
     open func getAccessibleChild( i: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(I)Ljavax/accessibility/Accessible;", methodCache: &JComponent_AccessibleJComponent.getAccessibleChild_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(I)Ljavax/accessibility/Accessible;", methodCache: &JComponent_AccessibleJComponent.getAccessibleChild_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -394,6 +377,23 @@ open class JComponent_AccessibleJComponent: /* java.awt.Container$AccessibleAWTC
     /// public int javax.swing.JComponent$AccessibleJComponent.getAccessibleIndexInParent()
 
     /// public javax.accessibility.Accessible javax.swing.JComponent$AccessibleJComponent.getAccessibleParent()
+
+    /// public javax.accessibility.AccessibleKeyBinding javax.swing.JComponent$AccessibleJComponent.getAccessibleKeyBinding()
+
+    private static var getAccessibleKeyBinding_MethodID_8: jmethodID?
+
+    open func getAccessibleKeyBinding() -> /* javax.accessibility.AccessibleKeyBinding */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleKeyBinding", methodSig: "()Ljavax/accessibility/AccessibleKeyBinding;", methodCache: &JComponent_AccessibleJComponent.getAccessibleKeyBinding_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.AccessibleKeyBinding */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.JComponent$AccessibleJComponent.getAccessibleName()
+
+    /// public javax.accessibility.AccessibleStateSet javax.swing.JComponent$AccessibleJComponent.getAccessibleStateSet()
 
     /// In declared protocol but not defined.. ///
 

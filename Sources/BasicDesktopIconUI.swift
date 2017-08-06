@@ -82,6 +82,12 @@ open class BasicDesktopIconUI: DesktopIconUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopIconUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopIconUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopIconUI.getMaximumSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicDesktopIconUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -115,6 +121,10 @@ open class BasicDesktopIconUI: DesktopIconUI {
     open func getInsets( _ _c: JComponent? ) -> java_awt.Insets! {
         return getInsets( c: _c )
     }
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI.uninstallUI(javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.basic.BasicDesktopIconUI.installDefaults()
 
@@ -205,16 +215,6 @@ open class BasicDesktopIconUI: DesktopIconUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deiconize", methodSig: "()V", methodCache: &BasicDesktopIconUI.deiconize_MethodID_11, args: &__args, locals: &__locals )
     }
 
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopIconUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopIconUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopIconUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

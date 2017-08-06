@@ -229,48 +229,31 @@ open class text_html_ParagraphView: ParagraphView {
 
     /// public void javax.swing.text.html.ParagraphView.setParent(javax.swing.text.View)
 
-    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.ParagraphView.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_2: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &text_html_ParagraphView.getStyleSheet_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.html.ParagraphView.paint(java.awt.Graphics,java.awt.Shape)
-
-    /// public boolean javax.swing.text.html.ParagraphView.isVisible()
-
     /// public float javax.swing.text.html.ParagraphView.getMinimumSpan(int)
 
     /// public float javax.swing.text.html.ParagraphView.getMaximumSpan(int)
 
     /// protected void javax.swing.text.html.ParagraphView.setPropertiesFromAttributes()
 
-    private static var setPropertiesFromAttributes_MethodID_3: jmethodID?
+    private static var setPropertiesFromAttributes_MethodID_2: jmethodID?
 
     override open func setPropertiesFromAttributes() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &text_html_ParagraphView.setPropertiesFromAttributes_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &text_html_ParagraphView.setPropertiesFromAttributes_MethodID_2, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.SizeRequirements javax.swing.text.html.ParagraphView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var calculateMinorAxisRequirements_MethodID_4: jmethodID?
+    private static var calculateMinorAxisRequirements_MethodID_3: jmethodID?
 
     override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
         __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &text_html_ParagraphView.calculateMinorAxisRequirements_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &text_html_ParagraphView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -279,7 +262,24 @@ open class text_html_ParagraphView: ParagraphView {
         return calculateMinorAxisRequirements( axis: _axis, r: _r )
     }
 
+    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.ParagraphView.getStyleSheet()
+
+    private static var getStyleSheet_MethodID_4: jmethodID?
+
+    open func getStyleSheet() -> StyleSheet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &text_html_ParagraphView.getStyleSheet_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
+    }
+
+
     /// public float javax.swing.text.html.ParagraphView.getPreferredSpan(int)
+
+    /// public boolean javax.swing.text.html.ParagraphView.isVisible()
+
+    /// public void javax.swing.text.html.ParagraphView.paint(java.awt.Graphics,java.awt.Shape)
 
 }
 

@@ -619,16 +619,20 @@ open class JList: JComponent, Scrollable {
     }
 
 
-    /// public javax.swing.plaf.ListUI javax.swing.JList.getUI()
+    /// public java.lang.String javax.swing.JList.getToolTipText(java.awt.event.MouseEvent)
 
-    private static var getUI_MethodID_6: jmethodID?
+    /// public javax.accessibility.AccessibleContext javax.swing.JList.getAccessibleContext()
 
-    open func getUI() -> ListUI! {
+    /// public javax.swing.ListModel javax.swing.JList.getModel()
+
+    private static var getModel_MethodID_6: jmethodID?
+
+    open func getModel() -> ListModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ListUI;", methodCache: &JList.getUI_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/ListModel;", methodCache: &JList.getModel_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListUI( javaObject: __return ) : nil
+        return __return != nil ? ListModelForward( javaObject: __return ) : nil
     }
 
 
@@ -1042,251 +1046,15 @@ open class JList: JComponent, Scrollable {
         addListSelectionListener( listener: _listener )
     }
 
-    /// public javax.swing.event.ListSelectionListener[] javax.swing.JList.getListSelectionListeners()
-
-    private static var getListSelectionListeners_MethodID_36: jmethodID?
-
-    open func getListSelectionListeners() -> [ListSelectionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListSelectionListeners", methodSig: "()[Ljavax/swing/event/ListSelectionListener;", methodCache: &JList.getListSelectionListeners_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ListSelectionListenerForward](), from: __return )
-    }
-
-
-    /// public boolean javax.swing.JList.getValueIsAdjusting()
-
-    private static var getValueIsAdjusting_MethodID_37: jmethodID?
-
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &JList.getValueIsAdjusting_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.lang.String javax.swing.JList.getToolTipText(java.awt.event.MouseEvent)
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JList.getAccessibleContext()
-
-    /// public javax.swing.ListModel javax.swing.JList.getModel()
-
-    private static var getModel_MethodID_38: jmethodID?
-
-    open func getModel() -> ListModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/ListModel;", methodCache: &JList.getModel_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.JList.updateFixedCellSize()
-
-    /// public java.lang.Object javax.swing.JList.getPrototypeCellValue()
-
-    private static var getPrototypeCellValue_MethodID_39: jmethodID?
-
-    open func getPrototypeCellValue() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrototypeCellValue", methodSig: "()Ljava/lang/Object;", methodCache: &JList.getPrototypeCellValue_MethodID_39, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JList.setPrototypeCellValue(java.lang.Object)
-
-    private static var setPrototypeCellValue_MethodID_40: jmethodID?
-
-    open func setPrototypeCellValue( prototypeCellValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: prototypeCellValue != nil ? prototypeCellValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrototypeCellValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JList.setPrototypeCellValue_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func setPrototypeCellValue( _ _prototypeCellValue: java_swift.JavaObject? ) {
-        setPrototypeCellValue( prototypeCellValue: _prototypeCellValue )
-    }
-
-    /// public int javax.swing.JList.getFixedCellWidth()
-
-    private static var getFixedCellWidth_MethodID_41: jmethodID?
-
-    open func getFixedCellWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFixedCellWidth", methodSig: "()I", methodCache: &JList.getFixedCellWidth_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JList.setFixedCellWidth(int)
-
-    private static var setFixedCellWidth_MethodID_42: jmethodID?
-
-    open func setFixedCellWidth( width: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFixedCellWidth", methodSig: "(I)V", methodCache: &JList.setFixedCellWidth_MethodID_42, args: &__args, locals: &__locals )
-    }
-
-    open func setFixedCellWidth( _ _width: Int ) {
-        setFixedCellWidth( width: _width )
-    }
-
-    /// public int javax.swing.JList.getFixedCellHeight()
-
-    private static var getFixedCellHeight_MethodID_43: jmethodID?
-
-    open func getFixedCellHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFixedCellHeight", methodSig: "()I", methodCache: &JList.getFixedCellHeight_MethodID_43, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JList.setFixedCellHeight(int)
-
-    private static var setFixedCellHeight_MethodID_44: jmethodID?
-
-    open func setFixedCellHeight( height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFixedCellHeight", methodSig: "(I)V", methodCache: &JList.setFixedCellHeight_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open func setFixedCellHeight( _ _height: Int ) {
-        setFixedCellHeight( height: _height )
-    }
-
-    /// public int javax.swing.JList.getLayoutOrientation()
-
-    private static var getLayoutOrientation_MethodID_45: jmethodID?
-
-    open func getLayoutOrientation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayoutOrientation", methodSig: "()I", methodCache: &JList.getLayoutOrientation_MethodID_45, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JList.setLayoutOrientation(int)
-
-    private static var setLayoutOrientation_MethodID_46: jmethodID?
-
-    open func setLayoutOrientation( layoutOrientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: layoutOrientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayoutOrientation", methodSig: "(I)V", methodCache: &JList.setLayoutOrientation_MethodID_46, args: &__args, locals: &__locals )
-    }
-
-    open func setLayoutOrientation( _ _layoutOrientation: Int ) {
-        setLayoutOrientation( layoutOrientation: _layoutOrientation )
-    }
-
-    /// protected javax.swing.ListSelectionModel javax.swing.JList.createSelectionModel()
-
-    private static var createSelectionModel_MethodID_47: jmethodID?
-
-    open func createSelectionModel() -> ListSelectionModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSelectionModel", methodSig: "()Ljavax/swing/ListSelectionModel;", methodCache: &JList.createSelectionModel_MethodID_47, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListSelectionModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JList.setSelectedIndices(int[])
-
-    private static var setSelectedIndices_MethodID_48: jmethodID?
-
-    open func setSelectedIndices( indices: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: indices, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndices", methodSig: "([I)V", methodCache: &JList.setSelectedIndices_MethodID_48, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedIndices( _ _indices: [Int32]? ) {
-        setSelectedIndices( indices: _indices )
-    }
-
-    /// public java.lang.Object[] javax.swing.JList.getSelectedValues()
-
-    private static var getSelectedValues_MethodID_49: jmethodID?
-
-    open func getSelectedValues() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedValues", methodSig: "()[Ljava/lang/Object;", methodCache: &JList.getSelectedValues_MethodID_49, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
-    }
-
-
-    /// public java.util.List javax.swing.JList.getSelectedValuesList()
-
-    private static var getSelectedValuesList_MethodID_50: jmethodID?
-
-    open func getSelectedValuesList() -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedValuesList", methodSig: "()Ljava/util/List;", methodCache: &JList.getSelectedValuesList_MethodID_50, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.lang.Object javax.swing.JList.getSelectedValue()
-
-    private static var getSelectedValue_MethodID_51: jmethodID?
-
-    open func getSelectedValue() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedValue", methodSig: "()Ljava/lang/Object;", methodCache: &JList.getSelectedValue_MethodID_51, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JList.setSelectedValue(java.lang.Object,boolean)
-
-    private static var setSelectedValue_MethodID_52: jmethodID?
-
-    open func setSelectedValue( anObject: java_swift.JavaObject?, shouldScroll: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: shouldScroll, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedValue", methodSig: "(Ljava/lang/Object;Z)V", methodCache: &JList.setSelectedValue_MethodID_52, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedValue( _ _anObject: java_swift.JavaObject?, _ _shouldScroll: Bool ) {
-        setSelectedValue( anObject: _anObject, shouldScroll: _shouldScroll )
-    }
-
-    /// private void javax.swing.JList.checkScrollableParameters(java.awt.Rectangle,int)
-
     /// public void javax.swing.JList.setListData(java.lang.Object[])
 
-    private static var setListData_MethodID_53: jmethodID?
+    private static var setListData_MethodID_36: jmethodID?
 
     open func setListData( listData: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listData, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setListData", methodSig: "([Ljava/lang/Object;)V", methodCache: &JList.setListData_MethodID_53, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setListData", methodSig: "([Ljava/lang/Object;)V", methodCache: &JList.setListData_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func setListData( _ _listData: [JavaObject]? ) {
@@ -1295,13 +1063,13 @@ open class JList: JComponent, Scrollable {
 
     /// public void javax.swing.JList.setListData(java.util.Vector)
 
-    private static var setListData_MethodID_54: jmethodID?
+    private static var setListData_MethodID_37: jmethodID?
 
     open func setListData( listData: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listData != nil ? listData! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setListData", methodSig: "(Ljava/util/Vector;)V", methodCache: &JList.setListData_MethodID_54, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setListData", methodSig: "(Ljava/util/Vector;)V", methodCache: &JList.setListData_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func setListData( _ _listData: java_util.Vector? ) {
@@ -1310,37 +1078,37 @@ open class JList: JComponent, Scrollable {
 
     /// public int javax.swing.JList.getFirstVisibleIndex()
 
-    private static var getFirstVisibleIndex_MethodID_55: jmethodID?
+    private static var getFirstVisibleIndex_MethodID_38: jmethodID?
 
     open func getFirstVisibleIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFirstVisibleIndex", methodSig: "()I", methodCache: &JList.getFirstVisibleIndex_MethodID_55, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFirstVisibleIndex", methodSig: "()I", methodCache: &JList.getFirstVisibleIndex_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JList.getLastVisibleIndex()
 
-    private static var getLastVisibleIndex_MethodID_56: jmethodID?
+    private static var getLastVisibleIndex_MethodID_39: jmethodID?
 
     open func getLastVisibleIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastVisibleIndex", methodSig: "()I", methodCache: &JList.getLastVisibleIndex_MethodID_56, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastVisibleIndex", methodSig: "()I", methodCache: &JList.getLastVisibleIndex_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.Point javax.swing.JList.indexToLocation(int)
 
-    private static var indexToLocation_MethodID_57: jmethodID?
+    private static var indexToLocation_MethodID_40: jmethodID?
 
     open func indexToLocation( index: Int ) -> java_awt.Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "indexToLocation", methodSig: "(I)Ljava/awt/Point;", methodCache: &JList.indexToLocation_MethodID_57, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "indexToLocation", methodSig: "(I)Ljava/awt/Point;", methodCache: &JList.indexToLocation_MethodID_40, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
@@ -1351,13 +1119,13 @@ open class JList: JComponent, Scrollable {
 
     /// public void javax.swing.JList.ensureIndexIsVisible(int)
 
-    private static var ensureIndexIsVisible_MethodID_58: jmethodID?
+    private static var ensureIndexIsVisible_MethodID_41: jmethodID?
 
     open func ensureIndexIsVisible( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureIndexIsVisible", methodSig: "(I)V", methodCache: &JList.ensureIndexIsVisible_MethodID_58, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureIndexIsVisible", methodSig: "(I)V", methodCache: &JList.ensureIndexIsVisible_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open func ensureIndexIsVisible( _ _index: Int ) {
@@ -1366,14 +1134,14 @@ open class JList: JComponent, Scrollable {
 
     /// public java.awt.Rectangle javax.swing.JList.getCellBounds(int,int)
 
-    private static var getCellBounds_MethodID_59: jmethodID?
+    private static var getCellBounds_MethodID_42: jmethodID?
 
     open func getCellBounds( index0: Int, index1: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellBounds", methodSig: "(II)Ljava/awt/Rectangle;", methodCache: &JList.getCellBounds_MethodID_59, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellBounds", methodSig: "(II)Ljava/awt/Rectangle;", methodCache: &JList.getCellBounds_MethodID_42, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -1384,25 +1152,25 @@ open class JList: JComponent, Scrollable {
 
     /// public int javax.swing.JList.getSelectionMode()
 
-    private static var getSelectionMode_MethodID_60: jmethodID?
+    private static var getSelectionMode_MethodID_43: jmethodID?
 
     open func getSelectionMode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &JList.getSelectionMode_MethodID_60, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &JList.getSelectionMode_MethodID_43, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JList.locationToIndex(java.awt.Point)
 
-    private static var locationToIndex_MethodID_61: jmethodID?
+    private static var locationToIndex_MethodID_44: jmethodID?
 
     open func locationToIndex( location: java_awt.Point? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: location != nil ? location! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "locationToIndex", methodSig: "(Ljava/awt/Point;)I", methodCache: &JList.locationToIndex_MethodID_61, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "locationToIndex", methodSig: "(Ljava/awt/Point;)I", methodCache: &JList.locationToIndex_MethodID_44, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1412,19 +1180,19 @@ open class JList: JComponent, Scrollable {
 
     /// public int[] javax.swing.JList.getSelectedIndices()
 
-    private static var getSelectedIndices_MethodID_62: jmethodID?
+    private static var getSelectedIndices_MethodID_45: jmethodID?
 
     open func getSelectedIndices() -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedIndices", methodSig: "()[I", methodCache: &JList.getSelectedIndices_MethodID_62, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedIndices", methodSig: "()[I", methodCache: &JList.getSelectedIndices_MethodID_45, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
 
     /// protected void javax.swing.JList.fireSelectionValueChanged(int,int,boolean)
 
-    private static var fireSelectionValueChanged_MethodID_63: jmethodID?
+    private static var fireSelectionValueChanged_MethodID_46: jmethodID?
 
     open func fireSelectionValueChanged( firstIndex: Int, lastIndex: Int, isAdjusting: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1432,7 +1200,7 @@ open class JList: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: firstIndex, locals: &__locals )
         __args[1] = JNIType.toJava( value: lastIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: isAdjusting, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireSelectionValueChanged", methodSig: "(IIZ)V", methodCache: &JList.fireSelectionValueChanged_MethodID_63, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireSelectionValueChanged", methodSig: "(IIZ)V", methodCache: &JList.fireSelectionValueChanged_MethodID_46, args: &__args, locals: &__locals )
     }
 
     open func fireSelectionValueChanged( _ _firstIndex: Int, _ _lastIndex: Int, _ _isAdjusting: Bool ) {
@@ -1443,13 +1211,13 @@ open class JList: JComponent, Scrollable {
 
     /// public void javax.swing.JList.setUI(javax.swing.plaf.ListUI)
 
-    private static var setUI_MethodID_64: jmethodID?
+    private static var setUI_MethodID_47: jmethodID?
 
     open func setUI( ui: ListUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ListUI;)V", methodCache: &JList.setUI_MethodID_64, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ListUI;)V", methodCache: &JList.setUI_MethodID_47, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: ListUI? ) {
@@ -1466,12 +1234,12 @@ open class JList: JComponent, Scrollable {
 
     /// public java.awt.Color javax.swing.JList.getSelectionBackground()
 
-    private static var getSelectionBackground_MethodID_65: jmethodID?
+    private static var getSelectionBackground_MethodID_48: jmethodID?
 
     open func getSelectionBackground() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionBackground", methodSig: "()Ljava/awt/Color;", methodCache: &JList.getSelectionBackground_MethodID_65, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionBackground", methodSig: "()Ljava/awt/Color;", methodCache: &JList.getSelectionBackground_MethodID_48, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -1479,26 +1247,51 @@ open class JList: JComponent, Scrollable {
 
     /// public java.awt.Color javax.swing.JList.getSelectionForeground()
 
-    private static var getSelectionForeground_MethodID_66: jmethodID?
+    private static var getSelectionForeground_MethodID_49: jmethodID?
 
     open func getSelectionForeground() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionForeground", methodSig: "()Ljava/awt/Color;", methodCache: &JList.getSelectionForeground_MethodID_66, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionForeground", methodSig: "()Ljava/awt/Color;", methodCache: &JList.getSelectionForeground_MethodID_49, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
 
+    /// public javax.swing.event.ListSelectionListener[] javax.swing.JList.getListSelectionListeners()
+
+    private static var getListSelectionListeners_MethodID_50: jmethodID?
+
+    open func getListSelectionListeners() -> [ListSelectionListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListSelectionListeners", methodSig: "()[Ljavax/swing/event/ListSelectionListener;", methodCache: &JList.getListSelectionListeners_MethodID_50, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ListSelectionListenerForward](), from: __return )
+    }
+
+
+    /// public javax.swing.plaf.ListUI javax.swing.JList.getUI()
+
+    private static var getUI_MethodID_51: jmethodID?
+
+    open func getUI() -> ListUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ListUI;", methodCache: &JList.getUI_MethodID_51, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ListUI( javaObject: __return ) : nil
+    }
+
+
     /// public void javax.swing.JList.setCellRenderer(javax.swing.ListCellRenderer)
 
-    private static var setCellRenderer_MethodID_67: jmethodID?
+    private static var setCellRenderer_MethodID_52: jmethodID?
 
     open func setCellRenderer( cellRenderer: ListCellRenderer? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: cellRenderer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellRenderer", methodSig: "(Ljavax/swing/ListCellRenderer;)V", methodCache: &JList.setCellRenderer_MethodID_67, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellRenderer", methodSig: "(Ljavax/swing/ListCellRenderer;)V", methodCache: &JList.setCellRenderer_MethodID_52, args: &__args, locals: &__locals )
     }
 
     open func setCellRenderer( _ _cellRenderer: ListCellRenderer? ) {
@@ -1507,25 +1300,25 @@ open class JList: JComponent, Scrollable {
 
     /// public boolean javax.swing.JList.isSelectionEmpty()
 
-    private static var isSelectionEmpty_MethodID_68: jmethodID?
+    private static var isSelectionEmpty_MethodID_53: jmethodID?
 
     open func isSelectionEmpty() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionEmpty", methodSig: "()Z", methodCache: &JList.isSelectionEmpty_MethodID_68, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionEmpty", methodSig: "()Z", methodCache: &JList.isSelectionEmpty_MethodID_53, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JList.setVisibleRowCount(int)
 
-    private static var setVisibleRowCount_MethodID_69: jmethodID?
+    private static var setVisibleRowCount_MethodID_54: jmethodID?
 
     open func setVisibleRowCount( visibleRowCount: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: visibleRowCount, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleRowCount", methodSig: "(I)V", methodCache: &JList.setVisibleRowCount_MethodID_69, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleRowCount", methodSig: "(I)V", methodCache: &JList.setVisibleRowCount_MethodID_54, args: &__args, locals: &__locals )
     }
 
     open func setVisibleRowCount( _ _visibleRowCount: Int ) {
@@ -1534,19 +1327,19 @@ open class JList: JComponent, Scrollable {
 
     /// public int javax.swing.JList.getVisibleRowCount()
 
-    private static var getVisibleRowCount_MethodID_70: jmethodID?
+    private static var getVisibleRowCount_MethodID_55: jmethodID?
 
     open func getVisibleRowCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVisibleRowCount", methodSig: "()I", methodCache: &JList.getVisibleRowCount_MethodID_70, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVisibleRowCount", methodSig: "()I", methodCache: &JList.getVisibleRowCount_MethodID_55, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JList.getNextMatch(java.lang.String,int,javax.swing.text.Position$Bias)
 
-    private static var getNextMatch_MethodID_71: jmethodID?
+    private static var getNextMatch_MethodID_56: jmethodID?
 
     open func getNextMatch( prefix: String?, startIndex: Int, bias: Position_Bias? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1554,7 +1347,7 @@ open class JList: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: prefix, locals: &__locals )
         __args[1] = JNIType.toJava( value: startIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: bias != nil ? bias! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextMatch", methodSig: "(Ljava/lang/String;ILjavax/swing/text/Position$Bias;)I", methodCache: &JList.getNextMatch_MethodID_71, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextMatch", methodSig: "(Ljava/lang/String;ILjavax/swing/text/Position$Bias;)I", methodCache: &JList.getNextMatch_MethodID_56, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1564,13 +1357,13 @@ open class JList: JComponent, Scrollable {
 
     /// public void javax.swing.JList.setSelectedIndex(int)
 
-    private static var setSelectedIndex_MethodID_72: jmethodID?
+    private static var setSelectedIndex_MethodID_57: jmethodID?
 
     open func setSelectedIndex( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &JList.setSelectedIndex_MethodID_72, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &JList.setSelectedIndex_MethodID_57, args: &__args, locals: &__locals )
     }
 
     open func setSelectedIndex( _ _index: Int ) {
@@ -1579,15 +1372,222 @@ open class JList: JComponent, Scrollable {
 
     /// public int javax.swing.JList.getSelectedIndex()
 
-    private static var getSelectedIndex_MethodID_73: jmethodID?
+    private static var getSelectedIndex_MethodID_58: jmethodID?
 
     open func getSelectedIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &JList.getSelectedIndex_MethodID_73, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &JList.getSelectedIndex_MethodID_58, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
+
+    /// public boolean javax.swing.JList.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_59: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &JList.getValueIsAdjusting_MethodID_59, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// private void javax.swing.JList.updateFixedCellSize()
+
+    /// public java.lang.Object javax.swing.JList.getPrototypeCellValue()
+
+    private static var getPrototypeCellValue_MethodID_60: jmethodID?
+
+    open func getPrototypeCellValue() -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrototypeCellValue", methodSig: "()Ljava/lang/Object;", methodCache: &JList.getPrototypeCellValue_MethodID_60, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JList.setPrototypeCellValue(java.lang.Object)
+
+    private static var setPrototypeCellValue_MethodID_61: jmethodID?
+
+    open func setPrototypeCellValue( prototypeCellValue: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: prototypeCellValue != nil ? prototypeCellValue! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrototypeCellValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JList.setPrototypeCellValue_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func setPrototypeCellValue( _ _prototypeCellValue: java_swift.JavaObject? ) {
+        setPrototypeCellValue( prototypeCellValue: _prototypeCellValue )
+    }
+
+    /// public int javax.swing.JList.getFixedCellWidth()
+
+    private static var getFixedCellWidth_MethodID_62: jmethodID?
+
+    open func getFixedCellWidth() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFixedCellWidth", methodSig: "()I", methodCache: &JList.getFixedCellWidth_MethodID_62, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JList.setFixedCellWidth(int)
+
+    private static var setFixedCellWidth_MethodID_63: jmethodID?
+
+    open func setFixedCellWidth( width: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFixedCellWidth", methodSig: "(I)V", methodCache: &JList.setFixedCellWidth_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+    open func setFixedCellWidth( _ _width: Int ) {
+        setFixedCellWidth( width: _width )
+    }
+
+    /// public int javax.swing.JList.getFixedCellHeight()
+
+    private static var getFixedCellHeight_MethodID_64: jmethodID?
+
+    open func getFixedCellHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFixedCellHeight", methodSig: "()I", methodCache: &JList.getFixedCellHeight_MethodID_64, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JList.setFixedCellHeight(int)
+
+    private static var setFixedCellHeight_MethodID_65: jmethodID?
+
+    open func setFixedCellHeight( height: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: height, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFixedCellHeight", methodSig: "(I)V", methodCache: &JList.setFixedCellHeight_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+    open func setFixedCellHeight( _ _height: Int ) {
+        setFixedCellHeight( height: _height )
+    }
+
+    /// public int javax.swing.JList.getLayoutOrientation()
+
+    private static var getLayoutOrientation_MethodID_66: jmethodID?
+
+    open func getLayoutOrientation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayoutOrientation", methodSig: "()I", methodCache: &JList.getLayoutOrientation_MethodID_66, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JList.setLayoutOrientation(int)
+
+    private static var setLayoutOrientation_MethodID_67: jmethodID?
+
+    open func setLayoutOrientation( layoutOrientation: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: layoutOrientation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayoutOrientation", methodSig: "(I)V", methodCache: &JList.setLayoutOrientation_MethodID_67, args: &__args, locals: &__locals )
+    }
+
+    open func setLayoutOrientation( _ _layoutOrientation: Int ) {
+        setLayoutOrientation( layoutOrientation: _layoutOrientation )
+    }
+
+    /// protected javax.swing.ListSelectionModel javax.swing.JList.createSelectionModel()
+
+    private static var createSelectionModel_MethodID_68: jmethodID?
+
+    open func createSelectionModel() -> ListSelectionModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSelectionModel", methodSig: "()Ljavax/swing/ListSelectionModel;", methodCache: &JList.createSelectionModel_MethodID_68, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ListSelectionModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JList.setSelectedIndices(int[])
+
+    private static var setSelectedIndices_MethodID_69: jmethodID?
+
+    open func setSelectedIndices( indices: [Int32]? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: indices, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndices", methodSig: "([I)V", methodCache: &JList.setSelectedIndices_MethodID_69, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedIndices( _ _indices: [Int32]? ) {
+        setSelectedIndices( indices: _indices )
+    }
+
+    /// public java.lang.Object[] javax.swing.JList.getSelectedValues()
+
+    private static var getSelectedValues_MethodID_70: jmethodID?
+
+    open func getSelectedValues() -> [JavaObject]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedValues", methodSig: "()[Ljava/lang/Object;", methodCache: &JList.getSelectedValues_MethodID_70, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject](), from: __return )
+    }
+
+
+    /// public java.util.List javax.swing.JList.getSelectedValuesList()
+
+    private static var getSelectedValuesList_MethodID_71: jmethodID?
+
+    open func getSelectedValuesList() -> java_util.List! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedValuesList", methodSig: "()Ljava/util/List;", methodCache: &JList.getSelectedValuesList_MethodID_71, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.Object javax.swing.JList.getSelectedValue()
+
+    private static var getSelectedValue_MethodID_72: jmethodID?
+
+    open func getSelectedValue() -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedValue", methodSig: "()Ljava/lang/Object;", methodCache: &JList.getSelectedValue_MethodID_72, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JList.setSelectedValue(java.lang.Object,boolean)
+
+    private static var setSelectedValue_MethodID_73: jmethodID?
+
+    open func setSelectedValue( anObject: java_swift.JavaObject?, shouldScroll: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: shouldScroll, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedValue", methodSig: "(Ljava/lang/Object;Z)V", methodCache: &JList.setSelectedValue_MethodID_73, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedValue( _ _anObject: java_swift.JavaObject?, _ _shouldScroll: Bool ) {
+        setSelectedValue( anObject: _anObject, shouldScroll: _shouldScroll )
+    }
+
+    /// private void javax.swing.JList.checkScrollableParameters(java.awt.Rectangle,int)
 
     /// In declared protocol but not defined.. ///
 

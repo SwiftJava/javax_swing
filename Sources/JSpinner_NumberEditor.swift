@@ -510,33 +510,33 @@ open class JSpinner_NumberEditor: JSpinner_DefaultEditor {
 
     /// private javax.swing.JSpinner$NumberEditor(javax.swing.JSpinner,java.text.DecimalFormat)
 
+    /// public java.text.DecimalFormat javax.swing.JSpinner$NumberEditor.getFormat()
+
+    private static var getFormat_MethodID_3: jmethodID?
+
+    open func getFormat() -> /* java.text.DecimalFormat */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/DecimalFormat;", methodCache: &JSpinner_NumberEditor.getFormat_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.text.DecimalFormat */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
     /// public javax.swing.SpinnerNumberModel javax.swing.JSpinner$NumberEditor.getModel()
 
-    private static var getModel_MethodID_3: jmethodID?
+    private static var getModel_MethodID_4: jmethodID?
 
     open func getModel() -> SpinnerNumberModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerNumberModel;", methodCache: &JSpinner_NumberEditor.getModel_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerNumberModel;", methodCache: &JSpinner_NumberEditor.getModel_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SpinnerNumberModel( javaObject: __return ) : nil
     }
 
 
     /// private static java.lang.String javax.swing.JSpinner$NumberEditor.getDefaultPattern(java.util.Locale)
-
-    /// public java.text.DecimalFormat javax.swing.JSpinner$NumberEditor.getFormat()
-
-    private static var getFormat_MethodID_4: jmethodID?
-
-    open func getFormat() -> /* java.text.DecimalFormat */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/DecimalFormat;", methodCache: &JSpinner_NumberEditor.getFormat_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.text.DecimalFormat */ UnclassedObject( javaObject: __return ) : nil
-    }
-
 
 }
 

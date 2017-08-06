@@ -145,21 +145,7 @@ open class VariableHeightLayoutCache: AbstractLayoutCache {
 
     /// private void javax.swing.tree.VariableHeightLayoutCache.removeMapping(javax.swing.tree.VariableHeightLayoutCache$TreeStateNode)
 
-    /// public void javax.swing.tree.VariableHeightLayoutCache.setRowHeight(int)
-
-    /// public int javax.swing.tree.VariableHeightLayoutCache.getRowCount()
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.setModel(javax.swing.tree.TreeModel)
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.treeNodesChanged(javax.swing.event.TreeModelEvent)
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.treeNodesInserted(javax.swing.event.TreeModelEvent)
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.treeNodesRemoved(javax.swing.event.TreeModelEvent)
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.treeStructureChanged(javax.swing.event.TreeModelEvent)
-
-    /// public int javax.swing.tree.VariableHeightLayoutCache.getPreferredWidth(java.awt.Rectangle)
+    /// static void javax.swing.tree.VariableHeightLayoutCache.access$700(javax.swing.tree.VariableHeightLayoutCache)
 
     /// public void javax.swing.tree.VariableHeightLayoutCache.invalidateSizes()
 
@@ -176,24 +162,6 @@ open class VariableHeightLayoutCache: AbstractLayoutCache {
     /// public void javax.swing.tree.VariableHeightLayoutCache.invalidatePathBounds(javax.swing.tree.TreePath)
 
     /// public int javax.swing.tree.VariableHeightLayoutCache.getVisibleChildCount(javax.swing.tree.TreePath)
-
-    /// private void javax.swing.tree.VariableHeightLayoutCache.addMapping(javax.swing.tree.VariableHeightLayoutCache$TreeStateNode)
-
-    /// public java.awt.Rectangle javax.swing.tree.VariableHeightLayoutCache.getBounds(javax.swing.tree.TreePath,java.awt.Rectangle)
-
-    /// private java.awt.Rectangle javax.swing.tree.VariableHeightLayoutCache.getBounds(int,java.awt.Rectangle)
-
-    /// static void javax.swing.tree.VariableHeightLayoutCache.access$700(javax.swing.tree.VariableHeightLayoutCache)
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.setRootVisible(boolean)
-
-    /// public boolean javax.swing.tree.VariableHeightLayoutCache.isExpanded(javax.swing.tree.TreePath)
-
-    /// public javax.swing.tree.TreePath javax.swing.tree.VariableHeightLayoutCache.getPathForRow(int)
-
-    /// public int javax.swing.tree.VariableHeightLayoutCache.getRowForPath(javax.swing.tree.TreePath)
-
-    /// public void javax.swing.tree.VariableHeightLayoutCache.setExpandedState(javax.swing.tree.TreePath,boolean)
 
     /// private void javax.swing.tree.VariableHeightLayoutCache.visibleNodesChanged()
 
@@ -216,6 +184,38 @@ open class VariableHeightLayoutCache: AbstractLayoutCache {
     /// private void javax.swing.tree.VariableHeightLayoutCache.updateYLocationsFrom(int)
 
     /// private int javax.swing.tree.VariableHeightLayoutCache.getMaxNodeWidth()
+
+    /// public java.awt.Rectangle javax.swing.tree.VariableHeightLayoutCache.getBounds(javax.swing.tree.TreePath,java.awt.Rectangle)
+
+    /// private java.awt.Rectangle javax.swing.tree.VariableHeightLayoutCache.getBounds(int,java.awt.Rectangle)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.setRowHeight(int)
+
+    /// public int javax.swing.tree.VariableHeightLayoutCache.getRowCount()
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.setModel(javax.swing.tree.TreeModel)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.treeNodesChanged(javax.swing.event.TreeModelEvent)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.treeNodesInserted(javax.swing.event.TreeModelEvent)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.treeNodesRemoved(javax.swing.event.TreeModelEvent)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.treeStructureChanged(javax.swing.event.TreeModelEvent)
+
+    /// private void javax.swing.tree.VariableHeightLayoutCache.addMapping(javax.swing.tree.VariableHeightLayoutCache$TreeStateNode)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.setRootVisible(boolean)
+
+    /// public boolean javax.swing.tree.VariableHeightLayoutCache.isExpanded(javax.swing.tree.TreePath)
+
+    /// public javax.swing.tree.TreePath javax.swing.tree.VariableHeightLayoutCache.getPathForRow(int)
+
+    /// public int javax.swing.tree.VariableHeightLayoutCache.getRowForPath(javax.swing.tree.TreePath)
+
+    /// public void javax.swing.tree.VariableHeightLayoutCache.setExpandedState(javax.swing.tree.TreePath,boolean)
+
+    /// public int javax.swing.tree.VariableHeightLayoutCache.getPreferredWidth(java.awt.Rectangle)
 
 }
 

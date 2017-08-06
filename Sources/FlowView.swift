@@ -192,15 +192,31 @@ open class FlowView: BoxView {
 
     /// public void javax.swing.text.FlowView.setParent(javax.swing.text.View)
 
+    /// protected void javax.swing.text.FlowView.layout(int,int)
+
+    private static var layout_MethodID_2: jmethodID?
+
+    override open func layout( width: Int, height: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "(II)V", methodCache: &FlowView.layout_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func layout( _ _width: Int, _ _height: Int ) {
+        layout( width: _width, height: _height )
+    }
+
     /// public int javax.swing.text.FlowView.getFlowSpan(int)
 
-    private static var getFlowSpan_MethodID_2: jmethodID?
+    private static var getFlowSpan_MethodID_3: jmethodID?
 
     open func getFlowSpan( index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowSpan", methodSig: "(I)I", methodCache: &FlowView.getFlowSpan_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowSpan", methodSig: "(I)I", methodCache: &FlowView.getFlowSpan_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -210,14 +226,14 @@ open class FlowView: BoxView {
 
     /// protected javax.swing.SizeRequirements javax.swing.text.FlowView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var calculateMinorAxisRequirements_MethodID_3: jmethodID?
+    private static var calculateMinorAxisRequirements_MethodID_4: jmethodID?
 
     override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
         __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &FlowView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &FlowView.calculateMinorAxisRequirements_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -228,13 +244,13 @@ open class FlowView: BoxView {
 
     /// public int javax.swing.text.FlowView.getFlowStart(int)
 
-    private static var getFlowStart_MethodID_4: jmethodID?
+    private static var getFlowStart_MethodID_5: jmethodID?
 
     open func getFlowStart( index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowStart", methodSig: "(I)I", methodCache: &FlowView.getFlowStart_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowStart", methodSig: "(I)I", methodCache: &FlowView.getFlowStart_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -244,12 +260,12 @@ open class FlowView: BoxView {
 
     /// protected abstract javax.swing.text.View javax.swing.text.FlowView.createRow()
 
-    private static var createRow_MethodID_5: jmethodID?
+    private static var createRow_MethodID_6: jmethodID?
 
     open func createRow() -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRow", methodSig: "()Ljavax/swing/text/View;", methodCache: &FlowView.createRow_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRow", methodSig: "()Ljavax/swing/text/View;", methodCache: &FlowView.createRow_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -257,31 +273,15 @@ open class FlowView: BoxView {
 
     /// public int javax.swing.text.FlowView.getFlowAxis()
 
-    private static var getFlowAxis_MethodID_6: jmethodID?
+    private static var getFlowAxis_MethodID_7: jmethodID?
 
     open func getFlowAxis() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowAxis", methodSig: "()I", methodCache: &FlowView.getFlowAxis_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowAxis", methodSig: "()I", methodCache: &FlowView.getFlowAxis_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-
-    /// protected void javax.swing.text.FlowView.layout(int,int)
-
-    private static var layout_MethodID_7: jmethodID?
-
-    override open func layout( width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "(II)V", methodCache: &FlowView.layout_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func layout( _ _width: Int, _ _height: Int ) {
-        layout( width: _width, height: _height )
-    }
 
     /// public void javax.swing.text.FlowView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 

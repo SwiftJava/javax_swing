@@ -86,6 +86,14 @@ open class BasicSliderUI_TrackListener: MouseInputAdapter {
         self.init( this_0: _this_0 )
     }
 
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mousePressed(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseReleased(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseMoved(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseDragged(java.awt.event.MouseEvent)
+
     /// public boolean javax.swing.plaf.basic.BasicSliderUI$TrackListener.shouldScroll(int)
 
     private static var shouldScroll_MethodID_2: jmethodID?
@@ -101,14 +109,6 @@ open class BasicSliderUI_TrackListener: MouseInputAdapter {
     open func shouldScroll( _ _direction: Int ) -> Bool {
         return shouldScroll( direction: _direction )
     }
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mousePressed(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseReleased(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseMoved(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseDragged(java.awt.event.MouseEvent)
 
 }
 

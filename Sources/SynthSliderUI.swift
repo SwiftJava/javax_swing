@@ -55,7 +55,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var scrollTimer_FieldID: jfieldID?
 
-    open var scrollTimer: Timer! {
+    override open var scrollTimer: Timer! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "scrollTimer", fieldType: "Ljavax/swing/Timer;", fieldCache: &SynthSliderUI.scrollTimer_FieldID, object: javaObject, locals: &__locals )
@@ -72,7 +72,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var slider_FieldID: jfieldID?
 
-    open var slider: JSlider! {
+    override open var slider: JSlider! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "slider", fieldType: "Ljavax/swing/JSlider;", fieldCache: &SynthSliderUI.slider_FieldID, object: javaObject, locals: &__locals )
@@ -89,7 +89,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var focusInsets_FieldID: jfieldID?
 
-    open var focusInsets: java_awt.Insets! {
+    override open var focusInsets: java_awt.Insets! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "focusInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &SynthSliderUI.focusInsets_FieldID, object: javaObject, locals: &__locals )
@@ -106,7 +106,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var insetCache_FieldID: jfieldID?
 
-    open var insetCache: java_awt.Insets! {
+    override open var insetCache: java_awt.Insets! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "insetCache", fieldType: "Ljava/awt/Insets;", fieldCache: &SynthSliderUI.insetCache_FieldID, object: javaObject, locals: &__locals )
@@ -123,7 +123,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var leftToRightCache_FieldID: jfieldID?
 
-    open var leftToRightCache: Bool {
+    override open var leftToRightCache: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "leftToRightCache", fieldType: "Z", fieldCache: &SynthSliderUI.leftToRightCache_FieldID, object: javaObject, locals: &__locals )
@@ -140,7 +140,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var focusRect_FieldID: jfieldID?
 
-    open var focusRect: java_awt.Rectangle! {
+    override open var focusRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "focusRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthSliderUI.focusRect_FieldID, object: javaObject, locals: &__locals )
@@ -157,7 +157,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var contentRect_FieldID: jfieldID?
 
-    open var contentRect: java_awt.Rectangle! {
+    override open var contentRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "contentRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthSliderUI.contentRect_FieldID, object: javaObject, locals: &__locals )
@@ -174,7 +174,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var labelRect_FieldID: jfieldID?
 
-    open var labelRect: java_awt.Rectangle! {
+    override open var labelRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "labelRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthSliderUI.labelRect_FieldID, object: javaObject, locals: &__locals )
@@ -191,7 +191,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var tickRect_FieldID: jfieldID?
 
-    open var tickRect: java_awt.Rectangle! {
+    override open var tickRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "tickRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthSliderUI.tickRect_FieldID, object: javaObject, locals: &__locals )
@@ -208,7 +208,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var trackRect_FieldID: jfieldID?
 
-    open var trackRect: java_awt.Rectangle! {
+    override open var trackRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "trackRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthSliderUI.trackRect_FieldID, object: javaObject, locals: &__locals )
@@ -225,7 +225,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var thumbRect_FieldID: jfieldID?
 
-    open var thumbRect: java_awt.Rectangle! {
+    override open var thumbRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "thumbRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthSliderUI.thumbRect_FieldID, object: javaObject, locals: &__locals )
@@ -242,7 +242,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var trackBuffer_FieldID: jfieldID?
 
-    open var trackBuffer: Int {
+    override open var trackBuffer: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "trackBuffer", fieldType: "I", fieldCache: &SynthSliderUI.trackBuffer_FieldID, object: javaObject, locals: &__locals )
@@ -261,7 +261,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var trackListener_FieldID: jfieldID?
 
-    open var trackListener: BasicSliderUI_TrackListener! {
+    override open var trackListener: BasicSliderUI_TrackListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "trackListener", fieldType: "Ljavax/swing/plaf/basic/BasicSliderUI$TrackListener;", fieldCache: &SynthSliderUI.trackListener_FieldID, object: javaObject, locals: &__locals )
@@ -278,7 +278,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var changeListener_FieldID: jfieldID?
 
-    open var changeListener: ChangeListener! {
+    override open var changeListener: ChangeListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthSliderUI.changeListener_FieldID, object: javaObject, locals: &__locals )
@@ -295,7 +295,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var componentListener_FieldID: jfieldID?
 
-    open var componentListener: java_awt.ComponentListener! {
+    override open var componentListener: java_awt.ComponentListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "componentListener", fieldType: "Ljava/awt/event/ComponentListener;", fieldCache: &SynthSliderUI.componentListener_FieldID, object: javaObject, locals: &__locals )
@@ -312,7 +312,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var focusListener_FieldID: jfieldID?
 
-    open var focusListener: java_awt.FocusListener! {
+    override open var focusListener: java_awt.FocusListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &SynthSliderUI.focusListener_FieldID, object: javaObject, locals: &__locals )
@@ -329,7 +329,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var scrollListener_FieldID: jfieldID?
 
-    open var scrollListener: BasicSliderUI_ScrollListener! {
+    override open var scrollListener: BasicSliderUI_ScrollListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "scrollListener", fieldType: "Ljavax/swing/plaf/basic/BasicSliderUI$ScrollListener;", fieldCache: &SynthSliderUI.scrollListener_FieldID, object: javaObject, locals: &__locals )
@@ -346,7 +346,7 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthSliderUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -477,6 +477,10 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     /// static void javax.swing.plaf.synth.SynthSliderUI.access$300(javax.swing.plaf.synth.SynthSliderUI,boolean)
 
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSliderUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
+
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSliderUI.getContext(javax.swing.JComponent,int)
+
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSliderUI.getContext(javax.swing.JComponent)
 
     private static var getContext_MethodID_2: jmethodID?
@@ -494,10 +498,6 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
         return getContext( c: _c )
     }
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSliderUI.getContext(javax.swing.JComponent,int)
-
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSliderUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
-
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSliderUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
     /// static void javax.swing.plaf.synth.SynthSliderUI.access$400(javax.swing.plaf.synth.SynthSliderUI,int,int,boolean)
@@ -506,269 +506,103 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     /// static boolean javax.swing.plaf.synth.SynthSliderUI.access$600(javax.swing.plaf.synth.SynthSliderUI)
 
+    /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$700(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$800(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSliderUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSliderUI.getMinimumSize(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.layout()
+
+    private static var layout_MethodID_3: jmethodID?
+
+    open func layout() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "()V", methodCache: &SynthSliderUI.layout_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
+    /// public int javax.swing.plaf.synth.SynthSliderUI.getBaseline(javax.swing.JComponent,int,int)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthSliderUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_3: jmethodID?
+    private static var createUI_MethodID_4: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthSliderUI", classCache: &SynthSliderUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthSliderUI", classCache: &SynthSliderUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
-    /// protected javax.swing.plaf.basic.BasicSliderUI$TrackListener javax.swing.plaf.synth.SynthSliderUI.createTrackListener(javax.swing.JSlider)
-
-    private static var createTrackListener_MethodID_4: jmethodID?
-
-    open func createTrackListener( s: JSlider? ) -> BasicSliderUI_TrackListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTrackListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/plaf/basic/BasicSliderUI$TrackListener;", methodCache: &SynthSliderUI.createTrackListener_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BasicSliderUI_TrackListener( javaObject: __return ) : nil
-    }
-
-    open func createTrackListener( _ _s: JSlider? ) -> BasicSliderUI_TrackListener! {
-        return createTrackListener( s: _s )
-    }
-
-    /// private void javax.swing.plaf.synth.SynthSliderUI.updateThumbState(int,int)
-
-    /// private void javax.swing.plaf.synth.SynthSliderUI.updateThumbState(int,int,boolean)
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.paintThumb(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
-
-    private static var paintThumb_MethodID_5: jmethodID?
-
-    open func paintThumb( context: SynthContext?, g: java_awt.Graphics?, thumbBounds: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: thumbBounds != nil ? thumbBounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/awt/Rectangle;)V", methodCache: &SynthSliderUI.paintThumb_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paintThumb( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _thumbBounds: java_awt.Rectangle? ) {
-        paintThumb( context: _context, g: _g, thumbBounds: _thumbBounds )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.calculateGeometry()
-
-    private static var calculateGeometry_MethodID_6: jmethodID?
-
-    open func calculateGeometry() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateGeometry", methodSig: "()V", methodCache: &SynthSliderUI.calculateGeometry_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.calculateThumbLocation()
-
-    private static var calculateThumbLocation_MethodID_7: jmethodID?
-
-    open func calculateThumbLocation() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateThumbLocation", methodSig: "()V", methodCache: &SynthSliderUI.calculateThumbLocation_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.awt.Dimension javax.swing.plaf.synth.SynthSliderUI.getThumbSize()
-
-    private static var getThumbSize_MethodID_8: jmethodID?
-
-    open func getThumbSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SynthSliderUI.getThumbSize_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.recalculateIfInsetsChanged()
-
-    private static var recalculateIfInsetsChanged_MethodID_9: jmethodID?
-
-    open func recalculateIfInsetsChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "recalculateIfInsetsChanged", methodSig: "()V", methodCache: &SynthSliderUI.recalculateIfInsetsChanged_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.plaf.synth.SynthSliderUI.setThumbLocation(int,int)
-
-    /// protected int javax.swing.plaf.synth.SynthSliderUI.xPositionForValue(int)
-
-    private static var xPositionForValue_MethodID_10: jmethodID?
-
-    open func xPositionForValue( value: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "xPositionForValue", methodSig: "(I)I", methodCache: &SynthSliderUI.xPositionForValue_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func xPositionForValue( _ _value: Int ) -> Int {
-        return xPositionForValue( value: _value )
-    }
-
-    /// protected int javax.swing.plaf.synth.SynthSliderUI.yPositionForValue(int,int,int)
-
-    private static var yPositionForValue_MethodID_11: jmethodID?
-
-    open func yPositionForValue( value: Int, trackY: Int, trackHeight: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        __args[1] = JNIType.toJava( value: trackY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: trackHeight, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "yPositionForValue", methodSig: "(III)I", methodCache: &SynthSliderUI.yPositionForValue_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func yPositionForValue( _ _value: Int, _ _trackY: Int, _ _trackHeight: Int ) -> Int {
-        return yPositionForValue( value: _value, trackY: _trackY, trackHeight: _trackHeight )
-    }
-
-    /// public int javax.swing.plaf.synth.SynthSliderUI.valueForYPosition(int)
-
-    /// public int javax.swing.plaf.synth.SynthSliderUI.valueForXPosition(int)
-
-    /// private int javax.swing.plaf.synth.SynthSliderUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
+    /// private void javax.swing.plaf.synth.SynthSliderUI.updateStyle(javax.swing.JSlider)
 
     /// static void javax.swing.plaf.synth.SynthSliderUI.access$3000(javax.swing.plaf.synth.SynthSliderUI,int,int)
 
     /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$2900(javax.swing.plaf.synth.SynthSliderUI)
 
-    /// private void javax.swing.plaf.synth.SynthSliderUI.setThumbActive(boolean)
-
-    /// private void javax.swing.plaf.synth.SynthSliderUI.setThumbPressed(boolean)
-
-    /// private int javax.swing.plaf.synth.SynthSliderUI.getPadForLabel(int)
-
-    /// private void javax.swing.plaf.synth.SynthSliderUI.updateStyle(javax.swing.JSlider)
-
-    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$1100(javax.swing.plaf.synth.SynthSliderUI)
-
-    /// public void javax.swing.plaf.synth.SynthSliderUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_12: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthSliderUI.paint_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
     /// public void javax.swing.plaf.synth.SynthSliderUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_13: jmethodID?
+    private static var propertyChange_MethodID_5: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSliderUI.propertyChange_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSliderUI.propertyChange_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$700(javax.swing.plaf.synth.SynthSliderUI)
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.paintTrack(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
 
-    /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$800(javax.swing.plaf.synth.SynthSliderUI)
+    private static var paintTrack_MethodID_6: jmethodID?
 
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.installDefaults(javax.swing.JSlider)
-
-    private static var installDefaults_MethodID_14: jmethodID?
-
-    open func installDefaults( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paintTrack( context: SynthContext?, g: java_awt.Graphics?, trackBounds: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.installDefaults_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: trackBounds != nil ? trackBounds! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/awt/Rectangle;)V", methodCache: &SynthSliderUI.paintTrack_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func installDefaults( _ _slider: JSlider? ) {
-        installDefaults( slider: _slider )
+    open func paintTrack( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _trackBounds: java_awt.Rectangle? ) {
+        paintTrack( context: _context, g: _g, trackBounds: _trackBounds )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.installListeners(javax.swing.JSlider)
+    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$1100(javax.swing.plaf.synth.SynthSliderUI)
 
-    private static var installListeners_MethodID_15: jmethodID?
+    /// public void javax.swing.plaf.synth.SynthSliderUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    open func installListeners( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var paintBorder_MethodID_7: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.installListeners_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthSliderUI.paintBorder_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func installListeners( _ _slider: JSlider? ) {
-        installListeners( slider: _slider )
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.uninstallDefaults(javax.swing.JSlider)
-
-    private static var uninstallDefaults_MethodID_16: jmethodID?
-
-    open func uninstallDefaults( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.uninstallDefaults_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallDefaults( _ _slider: JSlider? ) {
-        uninstallDefaults( slider: _slider )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.uninstallListeners(javax.swing.JSlider)
-
-    private static var uninstallListeners_MethodID_17: jmethodID?
-
-    open func uninstallListeners( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.uninstallListeners_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallListeners( _ _slider: JSlider? ) {
-        uninstallListeners( slider: _slider )
-    }
-
-    /// static boolean javax.swing.plaf.synth.SynthSliderUI.access$1700(javax.swing.plaf.synth.SynthSliderUI)
-
-    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$1800(javax.swing.plaf.synth.SynthSliderUI)
-
-    /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$1900(javax.swing.plaf.synth.SynthSliderUI)
-
-    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$2200(javax.swing.plaf.synth.SynthSliderUI)
-
-    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$2100(javax.swing.plaf.synth.SynthSliderUI)
 
     /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$2700(javax.swing.plaf.synth.SynthSliderUI)
 
@@ -784,6 +618,14 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     /// static boolean javax.swing.plaf.synth.SynthSliderUI.access$2600(javax.swing.plaf.synth.SynthSliderUI)
 
+    /// private int javax.swing.plaf.synth.SynthSliderUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
+
+    /// private void javax.swing.plaf.synth.SynthSliderUI.setThumbActive(boolean)
+
+    /// private void javax.swing.plaf.synth.SynthSliderUI.setThumbPressed(boolean)
+
+    /// private int javax.swing.plaf.synth.SynthSliderUI.getPadForLabel(int)
+
     /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$900(javax.swing.plaf.synth.SynthSliderUI)
 
     /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$1000(javax.swing.plaf.synth.SynthSliderUI)
@@ -798,59 +640,217 @@ open class SynthSliderUI: BasicSliderUI, /* java.beans.PropertyChangeListener */
 
     /// static int javax.swing.plaf.synth.SynthSliderUI.access$1600(javax.swing.plaf.synth.SynthSliderUI,int)
 
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.paintTrack(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
+    /// public void javax.swing.plaf.synth.SynthSliderUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var paintTrack_MethodID_18: jmethodID?
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    open func paintTrack( context: SynthContext?, g: java_awt.Graphics?, trackBounds: java_awt.Rectangle? ) {
+    private static var paint_MethodID_8: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthSliderUI.paint_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.installDefaults(javax.swing.JSlider)
+
+    private static var installDefaults_MethodID_9: jmethodID?
+
+    override open func installDefaults( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func installDefaults( _ _slider: JSlider? ) {
+        installDefaults( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.installListeners(javax.swing.JSlider)
+
+    private static var installListeners_MethodID_10: jmethodID?
+
+    override open func installListeners( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func installListeners( _ _slider: JSlider? ) {
+        installListeners( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.uninstallDefaults(javax.swing.JSlider)
+
+    private static var uninstallDefaults_MethodID_11: jmethodID?
+
+    override open func uninstallDefaults( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.uninstallDefaults_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallDefaults( _ _slider: JSlider? ) {
+        uninstallDefaults( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.uninstallListeners(javax.swing.JSlider)
+
+    private static var uninstallListeners_MethodID_12: jmethodID?
+
+    override open func uninstallListeners( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &SynthSliderUI.uninstallListeners_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallListeners( _ _slider: JSlider? ) {
+        uninstallListeners( slider: _slider )
+    }
+
+    /// static boolean javax.swing.plaf.synth.SynthSliderUI.access$1700(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$1800(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// static javax.swing.JSlider javax.swing.plaf.synth.SynthSliderUI.access$1900(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$2200(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// static java.awt.Rectangle javax.swing.plaf.synth.SynthSliderUI.access$2100(javax.swing.plaf.synth.SynthSliderUI)
+
+    /// protected javax.swing.plaf.basic.BasicSliderUI$TrackListener javax.swing.plaf.synth.SynthSliderUI.createTrackListener(javax.swing.JSlider)
+
+    private static var createTrackListener_MethodID_13: jmethodID?
+
+    open func createTrackListener( s: JSlider? ) -> BasicSliderUI_TrackListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTrackListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/plaf/basic/BasicSliderUI$TrackListener;", methodCache: &SynthSliderUI.createTrackListener_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BasicSliderUI_TrackListener( javaObject: __return ) : nil
+    }
+
+    override open func createTrackListener( _ _s: JSlider? ) -> BasicSliderUI_TrackListener! {
+        return createTrackListener( s: _s )
+    }
+
+    /// private void javax.swing.plaf.synth.SynthSliderUI.updateThumbState(int,int)
+
+    /// private void javax.swing.plaf.synth.SynthSliderUI.updateThumbState(int,int,boolean)
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.paintThumb(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
+
+    private static var paintThumb_MethodID_14: jmethodID?
+
+    open func paintThumb( context: SynthContext?, g: java_awt.Graphics?, thumbBounds: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: trackBounds != nil ? trackBounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/awt/Rectangle;)V", methodCache: &SynthSliderUI.paintTrack_MethodID_18, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: thumbBounds != nil ? thumbBounds! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/awt/Rectangle;)V", methodCache: &SynthSliderUI.paintThumb_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func paintTrack( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _trackBounds: java_awt.Rectangle? ) {
-        paintTrack( context: _context, g: _g, trackBounds: _trackBounds )
+    open func paintThumb( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _thumbBounds: java_awt.Rectangle? ) {
+        paintThumb( context: _context, g: _g, thumbBounds: _thumbBounds )
     }
 
-    /// public void javax.swing.plaf.synth.SynthSliderUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.calculateGeometry()
 
-    private static var paintBorder_MethodID_19: jmethodID?
+    private static var calculateGeometry_MethodID_15: jmethodID?
 
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthSliderUI.paintBorder_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSliderUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSliderUI.getMinimumSize(javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthSliderUI.layout()
-
-    private static var layout_MethodID_20: jmethodID?
-
-    open func layout() {
+    override open func calculateGeometry() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "()V", methodCache: &SynthSliderUI.layout_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateGeometry", methodSig: "()V", methodCache: &SynthSliderUI.calculateGeometry_MethodID_15, args: &__args, locals: &__locals )
     }
 
 
-    /// public int javax.swing.plaf.synth.SynthSliderUI.getBaseline(javax.swing.JComponent,int,int)
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.calculateThumbLocation()
+
+    private static var calculateThumbLocation_MethodID_16: jmethodID?
+
+    override open func calculateThumbLocation() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateThumbLocation", methodSig: "()V", methodCache: &SynthSliderUI.calculateThumbLocation_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.awt.Dimension javax.swing.plaf.synth.SynthSliderUI.getThumbSize()
+
+    private static var getThumbSize_MethodID_17: jmethodID?
+
+    override open func getThumbSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SynthSliderUI.getThumbSize_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthSliderUI.recalculateIfInsetsChanged()
+
+    private static var recalculateIfInsetsChanged_MethodID_18: jmethodID?
+
+    override open func recalculateIfInsetsChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "recalculateIfInsetsChanged", methodSig: "()V", methodCache: &SynthSliderUI.recalculateIfInsetsChanged_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthSliderUI.setThumbLocation(int,int)
+
+    /// protected int javax.swing.plaf.synth.SynthSliderUI.xPositionForValue(int)
+
+    private static var xPositionForValue_MethodID_19: jmethodID?
+
+    override open func xPositionForValue( value: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "xPositionForValue", methodSig: "(I)I", methodCache: &SynthSliderUI.xPositionForValue_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func xPositionForValue( _ _value: Int ) -> Int {
+        return xPositionForValue( value: _value )
+    }
+
+    /// protected int javax.swing.plaf.synth.SynthSliderUI.yPositionForValue(int,int,int)
+
+    private static var yPositionForValue_MethodID_20: jmethodID?
+
+    override open func yPositionForValue( value: Int, trackY: Int, trackHeight: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        __args[1] = JNIType.toJava( value: trackY, locals: &__locals )
+        __args[2] = JNIType.toJava( value: trackHeight, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "yPositionForValue", methodSig: "(III)I", methodCache: &SynthSliderUI.yPositionForValue_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func yPositionForValue( _ _value: Int, _ _trackY: Int, _ _trackHeight: Int ) -> Int {
+        return yPositionForValue( value: _value, trackY: _trackY, trackHeight: _trackHeight )
+    }
+
+    /// public int javax.swing.plaf.synth.SynthSliderUI.valueForYPosition(int)
+
+    /// public int javax.swing.plaf.synth.SynthSliderUI.valueForXPosition(int)
 
 }
 

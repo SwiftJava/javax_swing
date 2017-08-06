@@ -53,6 +53,8 @@ open class MetalToolTipUI: BasicToolTipUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalToolTipUI.getPreferredSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalToolTipUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -70,7 +72,9 @@ open class MetalToolTipUI: BasicToolTipUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.metal.MetalToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// public void javax.swing.plaf.metal.MetalToolTipUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.metal.MetalToolTipUI.uninstallUI(javax.swing.JComponent)
 
     /// private int javax.swing.plaf.metal.MetalToolTipUI.calcAccelSpacing(javax.swing.JComponent,java.awt.FontMetrics,java.lang.String)
 
@@ -86,8 +90,6 @@ open class MetalToolTipUI: BasicToolTipUI {
     }
 
 
-    /// private java.lang.String javax.swing.plaf.metal.MetalToolTipUI.getAcceleratorString(javax.swing.JToolTip)
-
     /// public java.lang.String javax.swing.plaf.metal.MetalToolTipUI.getAcceleratorString()
 
     private static var getAcceleratorString_MethodID_4: jmethodID?
@@ -100,11 +102,9 @@ open class MetalToolTipUI: BasicToolTipUI {
     }
 
 
-    /// public void javax.swing.plaf.metal.MetalToolTipUI.installUI(javax.swing.JComponent)
+    /// private java.lang.String javax.swing.plaf.metal.MetalToolTipUI.getAcceleratorString(javax.swing.JToolTip)
 
-    /// public void javax.swing.plaf.metal.MetalToolTipUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalToolTipUI.getPreferredSize(javax.swing.JComponent)
+    /// public void javax.swing.plaf.metal.MetalToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
 }
 

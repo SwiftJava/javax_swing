@@ -894,25 +894,22 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
         self.init( title: _title )
     }
 
-    /// public javax.swing.JInternalFrame(java.lang.String,boolean,boolean,boolean,boolean)
+    /// public javax.swing.JInternalFrame(java.lang.String,boolean)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( title: String?, resizable: Bool, closable: Bool, maximizable: Bool, iconifiable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( title: String?, resizable: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
         __args[1] = JNIType.toJava( value: resizable, locals: &__locals )
-        __args[2] = JNIType.toJava( value: closable, locals: &__locals )
-        __args[3] = JNIType.toJava( value: maximizable, locals: &__locals )
-        __args[4] = JNIType.toJava( value: iconifiable, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame", classCache: &JInternalFrame.JInternalFrameJNIClass, methodSig: "(Ljava/lang/String;ZZZZ)V", methodCache: &JInternalFrame.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame", classCache: &JInternalFrame.JInternalFrameJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &JInternalFrame.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _title: String?, _ _resizable: Bool, _ _closable: Bool, _ _maximizable: Bool, _ _iconifiable: Bool ) {
-        self.init( title: _title, resizable: _resizable, closable: _closable, maximizable: _maximizable, iconifiable: _iconifiable )
+    public convenience init( _ _title: String?, _ _resizable: Bool ) {
+        self.init( title: _title, resizable: _resizable )
     }
 
     /// public javax.swing.JInternalFrame(java.lang.String,boolean,boolean)
@@ -954,34 +951,37 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
         self.init( title: _title, resizable: _resizable, closable: _closable, maximizable: _maximizable )
     }
 
-    /// public javax.swing.JInternalFrame(java.lang.String,boolean)
-
-    private static var new_MethodID_5: jmethodID?
-
-    public convenience init( title: String?, resizable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: resizable, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame", classCache: &JInternalFrame.JInternalFrameJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &JInternalFrame.new_MethodID_5, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _title: String?, _ _resizable: Bool ) {
-        self.init( title: _title, resizable: _resizable )
-    }
-
     /// public javax.swing.JInternalFrame()
 
-    private static var new_MethodID_6: jmethodID?
+    private static var new_MethodID_5: jmethodID?
 
     public convenience init() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame", classCache: &JInternalFrame.JInternalFrameJNIClass, methodSig: "()V", methodCache: &JInternalFrame.new_MethodID_6, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame", classCache: &JInternalFrame.JInternalFrameJNIClass, methodSig: "()V", methodCache: &JInternalFrame.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
+    }
+
+    /// public javax.swing.JInternalFrame(java.lang.String,boolean,boolean,boolean,boolean)
+
+    private static var new_MethodID_6: jmethodID?
+
+    public convenience init( title: String?, resizable: Bool, closable: Bool, maximizable: Bool, iconifiable: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: resizable, locals: &__locals )
+        __args[2] = JNIType.toJava( value: closable, locals: &__locals )
+        __args[3] = JNIType.toJava( value: maximizable, locals: &__locals )
+        __args[4] = JNIType.toJava( value: iconifiable, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame", classCache: &JInternalFrame.JInternalFrameJNIClass, methodSig: "(Ljava/lang/String;ZZZZ)V", methodCache: &JInternalFrame.new_MethodID_6, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _title: String?, _ _resizable: Bool, _ _closable: Bool, _ _maximizable: Bool, _ _iconifiable: Bool ) {
+        self.init( title: _title, resizable: _resizable, closable: _closable, maximizable: _maximizable, iconifiable: _iconifiable )
     }
 
     /// public void javax.swing.JInternalFrame.remove(java.awt.Component)
@@ -1015,484 +1015,11 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
     }
 
 
-    /// public javax.swing.plaf.InternalFrameUI javax.swing.JInternalFrame.getUI()
-
-    private static var getUI_MethodID_9: jmethodID?
-
-    open func getUI() -> InternalFrameUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/InternalFrameUI;", methodCache: &JInternalFrame.getUI_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? InternalFrameUI( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.hide()
-
-    /// public java.awt.Container javax.swing.JInternalFrame.getContentPane()
-
-    private static var getContentPane_MethodID_10: jmethodID?
-
-    open func getContentPane() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JInternalFrame.getContentPane_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setLayout(java.awt.LayoutManager)
-
-    private static var setLayout_MethodID_11: jmethodID?
-
-    open func setLayout( manager: java_awt.LayoutManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: manager, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JInternalFrame.setLayout_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
-        setLayout( manager: _manager )
-    }
-
-    /// public javax.swing.JRootPane javax.swing.JInternalFrame.getRootPane()
-
-    /// public void javax.swing.JInternalFrame.pack()
-
-    private static var pack_MethodID_12: jmethodID?
-
-    open func pack() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pack", methodSig: "()V", methodCache: &JInternalFrame.pack_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.JRootPane javax.swing.JInternalFrame.createRootPane()
-
-    private static var createRootPane_MethodID_13: jmethodID?
-
-    open func createRootPane() -> JRootPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JInternalFrame.createRootPane_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JRootPane( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setDefaultCloseOperation(int)
-
-    private static var setDefaultCloseOperation_MethodID_14: jmethodID?
-
-    open func setDefaultCloseOperation( operation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: operation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCloseOperation", methodSig: "(I)V", methodCache: &JInternalFrame.setDefaultCloseOperation_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setDefaultCloseOperation( _ _operation: Int ) {
-        setDefaultCloseOperation( operation: _operation )
-    }
-
-    /// public int javax.swing.JInternalFrame.getDefaultCloseOperation()
-
-    private static var getDefaultCloseOperation_MethodID_15: jmethodID?
-
-    open func getDefaultCloseOperation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDefaultCloseOperation", methodSig: "()I", methodCache: &JInternalFrame.getDefaultCloseOperation_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setJMenuBar(javax.swing.JMenuBar)
-
-    private static var setJMenuBar_MethodID_16: jmethodID?
-
-    open func setJMenuBar( m: JMenuBar? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JInternalFrame.setJMenuBar_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setJMenuBar( _ _m: JMenuBar? ) {
-        setJMenuBar( m: _m )
-    }
-
-    /// public javax.swing.JMenuBar javax.swing.JInternalFrame.getJMenuBar()
-
-    private static var getJMenuBar_MethodID_17: jmethodID?
-
-    open func getJMenuBar() -> JMenuBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JInternalFrame.getJMenuBar_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JMenuBar( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.JInternalFrame.isRootPaneCheckingEnabled()
-
-    private static var isRootPaneCheckingEnabled_MethodID_18: jmethodID?
-
-    open func isRootPaneCheckingEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JInternalFrame.isRootPaneCheckingEnabled_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.JInternalFrame.setRootPaneCheckingEnabled(boolean)
-
-    private static var setRootPaneCheckingEnabled_MethodID_19: jmethodID?
-
-    open func setRootPaneCheckingEnabled( enabled: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JInternalFrame.setRootPaneCheckingEnabled_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
-        setRootPaneCheckingEnabled( enabled: _enabled )
-    }
-
-    /// protected void javax.swing.JInternalFrame.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_20: jmethodID?
-
-    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JInternalFrame.addImpl_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
-    }
-
-    /// protected void javax.swing.JInternalFrame.setRootPane(javax.swing.JRootPane)
-
-    private static var setRootPane_MethodID_21: jmethodID?
-
-    open func setRootPane( root: JRootPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: root != nil ? root! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JInternalFrame.setRootPane_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func setRootPane( _ _root: JRootPane? ) {
-        setRootPane( root: _root )
-    }
-
-    /// public void javax.swing.JInternalFrame.setContentPane(java.awt.Container)
-
-    private static var setContentPane_MethodID_22: jmethodID?
-
-    open func setContentPane( contentPane: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: contentPane != nil ? contentPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JInternalFrame.setContentPane_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setContentPane( _ _contentPane: java_awt.Container? ) {
-        setContentPane( contentPane: _contentPane )
-    }
-
-    /// public javax.swing.JLayeredPane javax.swing.JInternalFrame.getLayeredPane()
-
-    private static var getLayeredPane_MethodID_23: jmethodID?
-
-    open func getLayeredPane() -> JLayeredPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JInternalFrame.getLayeredPane_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JLayeredPane( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setLayeredPane(javax.swing.JLayeredPane)
-
-    private static var setLayeredPane_MethodID_24: jmethodID?
-
-    open func setLayeredPane( layeredPane: JLayeredPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: layeredPane != nil ? layeredPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JInternalFrame.setLayeredPane_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
-        setLayeredPane( layeredPane: _layeredPane )
-    }
-
-    /// public java.awt.Component javax.swing.JInternalFrame.getGlassPane()
-
-    private static var getGlassPane_MethodID_25: jmethodID?
-
-    open func getGlassPane() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JInternalFrame.getGlassPane_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setGlassPane(java.awt.Component)
-
-    private static var setGlassPane_MethodID_26: jmethodID?
-
-    open func setGlassPane( glassPane: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: glassPane != nil ? glassPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JInternalFrame.setGlassPane_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func setGlassPane( _ _glassPane: java_awt.Component? ) {
-        setGlassPane( glassPane: _glassPane )
-    }
-
-    /// public void javax.swing.JInternalFrame.setMenuBar(javax.swing.JMenuBar)
-
-    private static var setMenuBar_MethodID_27: jmethodID?
-
-    open func setMenuBar( m: JMenuBar? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JInternalFrame.setMenuBar_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func setMenuBar( _ _m: JMenuBar? ) {
-        setMenuBar( m: _m )
-    }
-
-    /// public javax.swing.JMenuBar javax.swing.JInternalFrame.getMenuBar()
-
-    private static var getMenuBar_MethodID_28: jmethodID?
-
-    open func getMenuBar() -> JMenuBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JInternalFrame.getMenuBar_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JMenuBar( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setTitle(java.lang.String)
-
-    private static var setTitle_MethodID_29: jmethodID?
-
-    open func setTitle( title: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &JInternalFrame.setTitle_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func setTitle( _ _title: String? ) {
-        setTitle( title: _title )
-    }
-
-    /// public void javax.swing.JInternalFrame.toBack()
-
-    private static var toBack_MethodID_30: jmethodID?
-
-    open func toBack() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toBack", methodSig: "()V", methodCache: &JInternalFrame.toBack_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean javax.swing.JInternalFrame.isResizable()
-
-    private static var isResizable_MethodID_31: jmethodID?
-
-    open func isResizable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &JInternalFrame.isResizable_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JInternalFrame.setResizable(boolean)
-
-    private static var setResizable_MethodID_32: jmethodID?
-
-    open func setResizable( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &JInternalFrame.setResizable_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setResizable( _ _b: Bool ) {
-        setResizable( b: _b )
-    }
-
-    /// public void javax.swing.JInternalFrame.toFront()
-
-    private static var toFront_MethodID_33: jmethodID?
-
-    open func toFront() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toFront", methodSig: "()V", methodCache: &JInternalFrame.toFront_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.Component javax.swing.JInternalFrame.getMostRecentFocusOwner()
-
-    private static var getMostRecentFocusOwner_MethodID_34: jmethodID?
-
-    open func getMostRecentFocusOwner() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMostRecentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &JInternalFrame.getMostRecentFocusOwner_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JInternalFrame.dispose()
-
-    private static var dispose_MethodID_35: jmethodID?
-
-    open func dispose() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &JInternalFrame.dispose_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JInternalFrame.show()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JInternalFrame.getAccessibleContext()
-
-    /// public boolean javax.swing.JInternalFrame.isSelected()
-
-    /// public void javax.swing.JInternalFrame.setSelected(boolean) throws java.beans.PropertyVetoException
-
-    private static var setSelected_MethodID_36: jmethodID?
-
-    open func setSelected( selected: Bool ) throws /* java.beans.PropertyVetoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Z)V", methodCache: &JInternalFrame.setSelected_MethodID_36, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func setSelected( _ _selected: Bool ) throws /* java.beans.PropertyVetoException */ {
-        try setSelected( selected: _selected )
-    }
-
-    /// public void javax.swing.JInternalFrame.setCursor(java.awt.Cursor)
-
-    private static var setCursor_MethodID_37: jmethodID?
-
-    open func setCursor( cursor: java_awt.Cursor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cursor != nil ? cursor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &JInternalFrame.setCursor_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    override open func setCursor( _ _cursor: java_awt.Cursor? ) {
-        setCursor( cursor: _cursor )
-    }
-
-    /// public java.lang.String javax.swing.JInternalFrame.getTitle()
-
-    private static var getTitle_MethodID_38: jmethodID?
-
-    open func getTitle() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &JInternalFrame.getTitle_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
     /// void javax.swing.JInternalFrame.compWriteObjectNotify()
-
-    /// public void javax.swing.JInternalFrame.updateUI()
-
-    /// public void javax.swing.JInternalFrame.setUI(javax.swing.plaf.InternalFrameUI)
-
-    private static var setUI_MethodID_39: jmethodID?
-
-    open func setUI( ui: InternalFrameUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/InternalFrameUI;)V", methodCache: &JInternalFrame.setUI_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _ui: InternalFrameUI? ) {
-        setUI( ui: _ui )
-    }
-
-    /// public java.lang.String javax.swing.JInternalFrame.getUIClassID()
-
-    /// protected void javax.swing.JInternalFrame.paintComponent(java.awt.Graphics)
-
-    private static var paintComponent_MethodID_40: jmethodID?
-
-    override open func paintComponent( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JInternalFrame.paintComponent_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    override open func paintComponent( _ _g: java_awt.Graphics? ) {
-        paintComponent( g: _g )
-    }
-
-    /// public void javax.swing.JInternalFrame.setIcon(boolean) throws java.beans.PropertyVetoException
-
-    private static var setIcon_MethodID_41: jmethodID?
-
-    open func setIcon( b: Bool ) throws /* java.beans.PropertyVetoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Z)V", methodCache: &JInternalFrame.setIcon_MethodID_41, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func setIcon( _ _b: Bool ) throws /* java.beans.PropertyVetoException */ {
-        try setIcon( b: _b )
-    }
 
     /// public void javax.swing.JInternalFrame.reshape(int,int,int,int)
 
-    private static var reshape_MethodID_42: jmethodID?
+    private static var reshape_MethodID_9: jmethodID?
 
     open func reshape( x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -1501,7 +1028,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reshape", methodSig: "(IIII)V", methodCache: &JInternalFrame.reshape_MethodID_42, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reshape", methodSig: "(IIII)V", methodCache: &JInternalFrame.reshape_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func reshape( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -1510,24 +1037,24 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public final java.lang.String javax.swing.JInternalFrame.getWarningString()
 
-    private static var getWarningString_MethodID_43: jmethodID?
+    private static var getWarningString_MethodID_10: jmethodID?
 
     open func getWarningString() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWarningString", methodSig: "()Ljava/lang/String;", methodCache: &JInternalFrame.getWarningString_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWarningString", methodSig: "()Ljava/lang/String;", methodCache: &JInternalFrame.getWarningString_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public java.awt.Component javax.swing.JInternalFrame.getFocusOwner()
 
-    private static var getFocusOwner_MethodID_44: jmethodID?
+    private static var getFocusOwner_MethodID_11: jmethodID?
 
     open func getFocusOwner() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &JInternalFrame.getFocusOwner_MethodID_44, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &JInternalFrame.getFocusOwner_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -1535,13 +1062,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public final void javax.swing.JInternalFrame.setFocusCycleRoot(boolean)
 
-    private static var setFocusCycleRoot_MethodID_45: jmethodID?
+    private static var setFocusCycleRoot_MethodID_12: jmethodID?
 
     open func setFocusCycleRoot( focusCycleRoot: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: focusCycleRoot, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusCycleRoot", methodSig: "(Z)V", methodCache: &JInternalFrame.setFocusCycleRoot_MethodID_45, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusCycleRoot", methodSig: "(Z)V", methodCache: &JInternalFrame.setFocusCycleRoot_MethodID_12, args: &__args, locals: &__locals )
     }
 
     override open func setFocusCycleRoot( _ _focusCycleRoot: Bool ) {
@@ -1554,12 +1081,12 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public javax.swing.JDesktopPane javax.swing.JInternalFrame.getDesktopPane()
 
-    private static var getDesktopPane_MethodID_46: jmethodID?
+    private static var getDesktopPane_MethodID_13: jmethodID?
 
     open func getDesktopPane() -> JDesktopPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopPane", methodSig: "()Ljavax/swing/JDesktopPane;", methodCache: &JInternalFrame.getDesktopPane_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopPane", methodSig: "()Ljavax/swing/JDesktopPane;", methodCache: &JInternalFrame.getDesktopPane_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JDesktopPane( javaObject: __return ) : nil
     }
@@ -1567,12 +1094,12 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public javax.swing.JInternalFrame$JDesktopIcon javax.swing.JInternalFrame.getDesktopIcon()
 
-    private static var getDesktopIcon_MethodID_47: jmethodID?
+    private static var getDesktopIcon_MethodID_14: jmethodID?
 
     open func getDesktopIcon() -> JInternalFrame_JDesktopIcon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopIcon", methodSig: "()Ljavax/swing/JInternalFrame$JDesktopIcon;", methodCache: &JInternalFrame.getDesktopIcon_MethodID_47, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopIcon", methodSig: "()Ljavax/swing/JInternalFrame$JDesktopIcon;", methodCache: &JInternalFrame.getDesktopIcon_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JInternalFrame_JDesktopIcon( javaObject: __return ) : nil
     }
@@ -1580,12 +1107,12 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public java.awt.Rectangle javax.swing.JInternalFrame.getNormalBounds()
 
-    private static var getNormalBounds_MethodID_48: jmethodID?
+    private static var getNormalBounds_MethodID_15: jmethodID?
 
     open func getNormalBounds() -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &JInternalFrame.getNormalBounds_MethodID_48, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNormalBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &JInternalFrame.getNormalBounds_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -1593,13 +1120,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.setNormalBounds(java.awt.Rectangle)
 
-    private static var setNormalBounds_MethodID_49: jmethodID?
+    private static var setNormalBounds_MethodID_16: jmethodID?
 
     open func setNormalBounds( r: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNormalBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &JInternalFrame.setNormalBounds_MethodID_49, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNormalBounds", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &JInternalFrame.setNormalBounds_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setNormalBounds( _ _r: java_awt.Rectangle? ) {
@@ -1610,12 +1137,12 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public int javax.swing.JInternalFrame.getLayer()
 
-    private static var getLayer_MethodID_50: jmethodID?
+    private static var getLayer_MethodID_17: jmethodID?
 
     open func getLayer() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayer", methodSig: "()I", methodCache: &JInternalFrame.getLayer_MethodID_50, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayer", methodSig: "()I", methodCache: &JInternalFrame.getLayer_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1624,23 +1151,23 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.restoreSubcomponentFocus()
 
-    private static var restoreSubcomponentFocus_MethodID_51: jmethodID?
+    private static var restoreSubcomponentFocus_MethodID_18: jmethodID?
 
     open func restoreSubcomponentFocus() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreSubcomponentFocus", methodSig: "()V", methodCache: &JInternalFrame.restoreSubcomponentFocus_MethodID_51, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreSubcomponentFocus", methodSig: "()V", methodCache: &JInternalFrame.restoreSubcomponentFocus_MethodID_18, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.JInternalFrame.moveToFront()
 
-    private static var moveToFront_MethodID_52: jmethodID?
+    private static var moveToFront_MethodID_19: jmethodID?
 
     open func moveToFront() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToFront", methodSig: "()V", methodCache: &JInternalFrame.moveToFront_MethodID_52, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToFront", methodSig: "()V", methodCache: &JInternalFrame.moveToFront_MethodID_19, args: &__args, locals: &__locals )
     }
 
 
@@ -1654,13 +1181,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.setClosable(boolean)
 
-    private static var setClosable_MethodID_53: jmethodID?
+    private static var setClosable_MethodID_20: jmethodID?
 
     open func setClosable( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClosable", methodSig: "(Z)V", methodCache: &JInternalFrame.setClosable_MethodID_53, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClosable", methodSig: "(Z)V", methodCache: &JInternalFrame.setClosable_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setClosable( _ _b: Bool ) {
@@ -1669,25 +1196,25 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public boolean javax.swing.JInternalFrame.isClosable()
 
-    private static var isClosable_MethodID_54: jmethodID?
+    private static var isClosable_MethodID_21: jmethodID?
 
     open func isClosable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isClosable", methodSig: "()Z", methodCache: &JInternalFrame.isClosable_MethodID_54, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isClosable", methodSig: "()Z", methodCache: &JInternalFrame.isClosable_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JInternalFrame.setClosed(boolean) throws java.beans.PropertyVetoException
 
-    private static var setClosed_MethodID_55: jmethodID?
+    private static var setClosed_MethodID_22: jmethodID?
 
     open func setClosed( b: Bool ) throws /* java.beans.PropertyVetoException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClosed", methodSig: "(Z)V", methodCache: &JInternalFrame.setClosed_MethodID_55, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClosed", methodSig: "(Z)V", methodCache: &JInternalFrame.setClosed_MethodID_22, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
         }
@@ -1699,13 +1226,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.setIconifiable(boolean)
 
-    private static var setIconifiable_MethodID_56: jmethodID?
+    private static var setIconifiable_MethodID_23: jmethodID?
 
     open func setIconifiable( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconifiable", methodSig: "(Z)V", methodCache: &JInternalFrame.setIconifiable_MethodID_56, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconifiable", methodSig: "(Z)V", methodCache: &JInternalFrame.setIconifiable_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func setIconifiable( _ _b: Bool ) {
@@ -1714,25 +1241,25 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public boolean javax.swing.JInternalFrame.isIconifiable()
 
-    private static var isIconifiable_MethodID_57: jmethodID?
+    private static var isIconifiable_MethodID_24: jmethodID?
 
     open func isIconifiable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIconifiable", methodSig: "()Z", methodCache: &JInternalFrame.isIconifiable_MethodID_57, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIconifiable", methodSig: "()Z", methodCache: &JInternalFrame.isIconifiable_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JInternalFrame.setMaximizable(boolean)
 
-    private static var setMaximizable_MethodID_58: jmethodID?
+    private static var setMaximizable_MethodID_25: jmethodID?
 
     open func setMaximizable( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizable", methodSig: "(Z)V", methodCache: &JInternalFrame.setMaximizable_MethodID_58, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximizable", methodSig: "(Z)V", methodCache: &JInternalFrame.setMaximizable_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func setMaximizable( _ _b: Bool ) {
@@ -1741,25 +1268,25 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public boolean javax.swing.JInternalFrame.isMaximizable()
 
-    private static var isMaximizable_MethodID_59: jmethodID?
+    private static var isMaximizable_MethodID_26: jmethodID?
 
     open func isMaximizable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMaximizable", methodSig: "()Z", methodCache: &JInternalFrame.isMaximizable_MethodID_59, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMaximizable", methodSig: "()Z", methodCache: &JInternalFrame.isMaximizable_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JInternalFrame.setMaximum(boolean) throws java.beans.PropertyVetoException
 
-    private static var setMaximum_MethodID_60: jmethodID?
+    private static var setMaximum_MethodID_27: jmethodID?
 
     open func setMaximum( b: Bool ) throws /* java.beans.PropertyVetoException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(Z)V", methodCache: &JInternalFrame.setMaximum_MethodID_60, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(Z)V", methodCache: &JInternalFrame.setMaximum_MethodID_27, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
         }
@@ -1771,13 +1298,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.setFrameIcon(javax.swing.Icon)
 
-    private static var setFrameIcon_MethodID_61: jmethodID?
+    private static var setFrameIcon_MethodID_28: jmethodID?
 
     open func setFrameIcon( icon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: icon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrameIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JInternalFrame.setFrameIcon_MethodID_61, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFrameIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JInternalFrame.setFrameIcon_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setFrameIcon( _ _icon: Icon? ) {
@@ -1786,12 +1313,12 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public javax.swing.Icon javax.swing.JInternalFrame.getFrameIcon()
 
-    private static var getFrameIcon_MethodID_62: jmethodID?
+    private static var getFrameIcon_MethodID_29: jmethodID?
 
     open func getFrameIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFrameIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JInternalFrame.getFrameIcon_MethodID_62, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFrameIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JInternalFrame.getFrameIcon_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -1799,67 +1326,67 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.moveToBack()
 
-    private static var moveToBack_MethodID_63: jmethodID?
+    private static var moveToBack_MethodID_30: jmethodID?
 
     open func moveToBack() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToBack", methodSig: "()V", methodCache: &JInternalFrame.moveToBack_MethodID_63, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToBack", methodSig: "()V", methodCache: &JInternalFrame.moveToBack_MethodID_30, args: &__args, locals: &__locals )
     }
 
 
     /// public java.awt.Cursor javax.swing.JInternalFrame.getLastCursor()
 
-    private static var getLastCursor_MethodID_64: jmethodID?
+    private static var getLastCursor_MethodID_31: jmethodID?
 
     open func getLastCursor() -> java_awt.Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &JInternalFrame.getLastCursor_MethodID_64, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &JInternalFrame.getLastCursor_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Cursor( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.JInternalFrame.setLayer(java.lang.Integer)
-
-    private static var setLayer_MethodID_65: jmethodID?
-
-    open func setLayer( layer: java_lang.Integer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: layer != nil ? layer! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(Ljava/lang/Integer;)V", methodCache: &JInternalFrame.setLayer_MethodID_65, args: &__args, locals: &__locals )
-    }
-
-    open func setLayer( _ _layer: java_lang.Integer? ) {
-        setLayer( layer: _layer )
-    }
-
     /// public void javax.swing.JInternalFrame.setLayer(int)
 
-    private static var setLayer_MethodID_66: jmethodID?
+    private static var setLayer_MethodID_32: jmethodID?
 
     open func setLayer( layer: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(I)V", methodCache: &JInternalFrame.setLayer_MethodID_66, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(I)V", methodCache: &JInternalFrame.setLayer_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func setLayer( _ _layer: Int ) {
         setLayer( layer: _layer )
     }
 
+    /// public void javax.swing.JInternalFrame.setLayer(java.lang.Integer)
+
+    private static var setLayer_MethodID_33: jmethodID?
+
+    open func setLayer( layer: java_lang.Integer? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: layer != nil ? layer! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(Ljava/lang/Integer;)V", methodCache: &JInternalFrame.setLayer_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func setLayer( _ _layer: java_lang.Integer? ) {
+        setLayer( layer: _layer )
+    }
+
     /// public void javax.swing.JInternalFrame.setDesktopIcon(javax.swing.JInternalFrame$JDesktopIcon)
 
-    private static var setDesktopIcon_MethodID_67: jmethodID?
+    private static var setDesktopIcon_MethodID_34: jmethodID?
 
     open func setDesktopIcon( d: JInternalFrame_JDesktopIcon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDesktopIcon", methodSig: "(Ljavax/swing/JInternalFrame$JDesktopIcon;)V", methodCache: &JInternalFrame.setDesktopIcon_MethodID_67, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDesktopIcon", methodSig: "(Ljavax/swing/JInternalFrame$JDesktopIcon;)V", methodCache: &JInternalFrame.setDesktopIcon_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func setDesktopIcon( _ _d: JInternalFrame_JDesktopIcon? ) {
@@ -1870,13 +1397,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.addInternalFrameListener(javax.swing.event.InternalFrameListener)
 
-    private static var addInternalFrameListener_MethodID_68: jmethodID?
+    private static var addInternalFrameListener_MethodID_35: jmethodID?
 
     open func addInternalFrameListener( l: InternalFrameListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addInternalFrameListener", methodSig: "(Ljavax/swing/event/InternalFrameListener;)V", methodCache: &JInternalFrame.addInternalFrameListener_MethodID_68, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addInternalFrameListener", methodSig: "(Ljavax/swing/event/InternalFrameListener;)V", methodCache: &JInternalFrame.addInternalFrameListener_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func addInternalFrameListener( _ _l: InternalFrameListener? ) {
@@ -1885,13 +1412,13 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.removeInternalFrameListener(javax.swing.event.InternalFrameListener)
 
-    private static var removeInternalFrameListener_MethodID_69: jmethodID?
+    private static var removeInternalFrameListener_MethodID_36: jmethodID?
 
     open func removeInternalFrameListener( l: InternalFrameListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeInternalFrameListener", methodSig: "(Ljavax/swing/event/InternalFrameListener;)V", methodCache: &JInternalFrame.removeInternalFrameListener_MethodID_69, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeInternalFrameListener", methodSig: "(Ljavax/swing/event/InternalFrameListener;)V", methodCache: &JInternalFrame.removeInternalFrameListener_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func removeInternalFrameListener( _ _l: InternalFrameListener? ) {
@@ -1900,25 +1427,25 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public javax.swing.event.InternalFrameListener[] javax.swing.JInternalFrame.getInternalFrameListeners()
 
-    private static var getInternalFrameListeners_MethodID_70: jmethodID?
+    private static var getInternalFrameListeners_MethodID_37: jmethodID?
 
     open func getInternalFrameListeners() -> [InternalFrameListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInternalFrameListeners", methodSig: "()[Ljavax/swing/event/InternalFrameListener;", methodCache: &JInternalFrame.getInternalFrameListeners_MethodID_70, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInternalFrameListeners", methodSig: "()[Ljavax/swing/event/InternalFrameListener;", methodCache: &JInternalFrame.getInternalFrameListeners_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [InternalFrameListenerForward](), from: __return )
     }
 
 
     /// protected void javax.swing.JInternalFrame.fireInternalFrameEvent(int)
 
-    private static var fireInternalFrameEvent_MethodID_71: jmethodID?
+    private static var fireInternalFrameEvent_MethodID_38: jmethodID?
 
     open func fireInternalFrameEvent( id: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireInternalFrameEvent", methodSig: "(I)V", methodCache: &JInternalFrame.fireInternalFrameEvent_MethodID_71, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireInternalFrameEvent", methodSig: "(I)V", methodCache: &JInternalFrame.fireInternalFrameEvent_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func fireInternalFrameEvent( _ _id: Int ) {
@@ -1927,14 +1454,487 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     /// public void javax.swing.JInternalFrame.doDefaultCloseAction()
 
-    private static var doDefaultCloseAction_MethodID_72: jmethodID?
+    private static var doDefaultCloseAction_MethodID_39: jmethodID?
 
     open func doDefaultCloseAction() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doDefaultCloseAction", methodSig: "()V", methodCache: &JInternalFrame.doDefaultCloseAction_MethodID_72, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doDefaultCloseAction", methodSig: "()V", methodCache: &JInternalFrame.doDefaultCloseAction_MethodID_39, args: &__args, locals: &__locals )
     }
 
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JInternalFrame.getAccessibleContext()
+
+    /// public boolean javax.swing.JInternalFrame.isSelected()
+
+    /// public void javax.swing.JInternalFrame.setSelected(boolean) throws java.beans.PropertyVetoException
+
+    private static var setSelected_MethodID_40: jmethodID?
+
+    open func setSelected( selected: Bool ) throws /* java.beans.PropertyVetoException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: selected, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Z)V", methodCache: &JInternalFrame.setSelected_MethodID_40, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+    open func setSelected( _ _selected: Bool ) throws /* java.beans.PropertyVetoException */ {
+        try setSelected( selected: _selected )
+    }
+
+    /// public void javax.swing.JInternalFrame.setCursor(java.awt.Cursor)
+
+    private static var setCursor_MethodID_41: jmethodID?
+
+    open func setCursor( cursor: java_awt.Cursor? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: cursor != nil ? cursor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &JInternalFrame.setCursor_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    override open func setCursor( _ _cursor: java_awt.Cursor? ) {
+        setCursor( cursor: _cursor )
+    }
+
+    /// public java.lang.String javax.swing.JInternalFrame.getTitle()
+
+    private static var getTitle_MethodID_42: jmethodID?
+
+    open func getTitle() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "()Ljava/lang/String;", methodCache: &JInternalFrame.getTitle_MethodID_42, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public void javax.swing.JInternalFrame.hide()
+
+    /// public java.awt.Container javax.swing.JInternalFrame.getContentPane()
+
+    private static var getContentPane_MethodID_43: jmethodID?
+
+    open func getContentPane() -> java_awt.Container! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JInternalFrame.getContentPane_MethodID_43, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setLayout(java.awt.LayoutManager)
+
+    private static var setLayout_MethodID_44: jmethodID?
+
+    open func setLayout( manager: java_awt.LayoutManager? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: manager, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JInternalFrame.setLayout_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
+        setLayout( manager: _manager )
+    }
+
+    /// public javax.swing.JRootPane javax.swing.JInternalFrame.getRootPane()
+
+    /// public void javax.swing.JInternalFrame.pack()
+
+    private static var pack_MethodID_45: jmethodID?
+
+    open func pack() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pack", methodSig: "()V", methodCache: &JInternalFrame.pack_MethodID_45, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.JRootPane javax.swing.JInternalFrame.createRootPane()
+
+    private static var createRootPane_MethodID_46: jmethodID?
+
+    open func createRootPane() -> JRootPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JInternalFrame.createRootPane_MethodID_46, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JRootPane( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setDefaultCloseOperation(int)
+
+    private static var setDefaultCloseOperation_MethodID_47: jmethodID?
+
+    open func setDefaultCloseOperation( operation: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: operation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCloseOperation", methodSig: "(I)V", methodCache: &JInternalFrame.setDefaultCloseOperation_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+    open func setDefaultCloseOperation( _ _operation: Int ) {
+        setDefaultCloseOperation( operation: _operation )
+    }
+
+    /// public int javax.swing.JInternalFrame.getDefaultCloseOperation()
+
+    private static var getDefaultCloseOperation_MethodID_48: jmethodID?
+
+    open func getDefaultCloseOperation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDefaultCloseOperation", methodSig: "()I", methodCache: &JInternalFrame.getDefaultCloseOperation_MethodID_48, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setJMenuBar(javax.swing.JMenuBar)
+
+    private static var setJMenuBar_MethodID_49: jmethodID?
+
+    open func setJMenuBar( m: JMenuBar? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JInternalFrame.setJMenuBar_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+    open func setJMenuBar( _ _m: JMenuBar? ) {
+        setJMenuBar( m: _m )
+    }
+
+    /// public javax.swing.JMenuBar javax.swing.JInternalFrame.getJMenuBar()
+
+    private static var getJMenuBar_MethodID_50: jmethodID?
+
+    open func getJMenuBar() -> JMenuBar! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JInternalFrame.getJMenuBar_MethodID_50, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JMenuBar( javaObject: __return ) : nil
+    }
+
+
+    /// protected boolean javax.swing.JInternalFrame.isRootPaneCheckingEnabled()
+
+    private static var isRootPaneCheckingEnabled_MethodID_51: jmethodID?
+
+    open func isRootPaneCheckingEnabled() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JInternalFrame.isRootPaneCheckingEnabled_MethodID_51, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected void javax.swing.JInternalFrame.setRootPaneCheckingEnabled(boolean)
+
+    private static var setRootPaneCheckingEnabled_MethodID_52: jmethodID?
+
+    open func setRootPaneCheckingEnabled( enabled: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JInternalFrame.setRootPaneCheckingEnabled_MethodID_52, args: &__args, locals: &__locals )
+    }
+
+    open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
+        setRootPaneCheckingEnabled( enabled: _enabled )
+    }
+
+    /// protected void javax.swing.JInternalFrame.addImpl(java.awt.Component,java.lang.Object,int)
+
+    private static var addImpl_MethodID_53: jmethodID?
+
+    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JInternalFrame.addImpl_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    }
+
+    /// protected void javax.swing.JInternalFrame.setRootPane(javax.swing.JRootPane)
+
+    private static var setRootPane_MethodID_54: jmethodID?
+
+    open func setRootPane( root: JRootPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: root != nil ? root! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JInternalFrame.setRootPane_MethodID_54, args: &__args, locals: &__locals )
+    }
+
+    open func setRootPane( _ _root: JRootPane? ) {
+        setRootPane( root: _root )
+    }
+
+    /// public void javax.swing.JInternalFrame.setContentPane(java.awt.Container)
+
+    private static var setContentPane_MethodID_55: jmethodID?
+
+    open func setContentPane( contentPane: java_awt.Container? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: contentPane != nil ? contentPane! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JInternalFrame.setContentPane_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+    open func setContentPane( _ _contentPane: java_awt.Container? ) {
+        setContentPane( contentPane: _contentPane )
+    }
+
+    /// public javax.swing.JLayeredPane javax.swing.JInternalFrame.getLayeredPane()
+
+    private static var getLayeredPane_MethodID_56: jmethodID?
+
+    open func getLayeredPane() -> JLayeredPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JInternalFrame.getLayeredPane_MethodID_56, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JLayeredPane( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setLayeredPane(javax.swing.JLayeredPane)
+
+    private static var setLayeredPane_MethodID_57: jmethodID?
+
+    open func setLayeredPane( layeredPane: JLayeredPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: layeredPane != nil ? layeredPane! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JInternalFrame.setLayeredPane_MethodID_57, args: &__args, locals: &__locals )
+    }
+
+    open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
+        setLayeredPane( layeredPane: _layeredPane )
+    }
+
+    /// public java.awt.Component javax.swing.JInternalFrame.getGlassPane()
+
+    private static var getGlassPane_MethodID_58: jmethodID?
+
+    open func getGlassPane() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JInternalFrame.getGlassPane_MethodID_58, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setGlassPane(java.awt.Component)
+
+    private static var setGlassPane_MethodID_59: jmethodID?
+
+    open func setGlassPane( glassPane: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: glassPane != nil ? glassPane! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JInternalFrame.setGlassPane_MethodID_59, args: &__args, locals: &__locals )
+    }
+
+    open func setGlassPane( _ _glassPane: java_awt.Component? ) {
+        setGlassPane( glassPane: _glassPane )
+    }
+
+    /// public void javax.swing.JInternalFrame.setMenuBar(javax.swing.JMenuBar)
+
+    private static var setMenuBar_MethodID_60: jmethodID?
+
+    open func setMenuBar( m: JMenuBar? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JInternalFrame.setMenuBar_MethodID_60, args: &__args, locals: &__locals )
+    }
+
+    open func setMenuBar( _ _m: JMenuBar? ) {
+        setMenuBar( m: _m )
+    }
+
+    /// public javax.swing.JMenuBar javax.swing.JInternalFrame.getMenuBar()
+
+    private static var getMenuBar_MethodID_61: jmethodID?
+
+    open func getMenuBar() -> JMenuBar! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JInternalFrame.getMenuBar_MethodID_61, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JMenuBar( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setTitle(java.lang.String)
+
+    private static var setTitle_MethodID_62: jmethodID?
+
+    open func setTitle( title: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &JInternalFrame.setTitle_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open func setTitle( _ _title: String? ) {
+        setTitle( title: _title )
+    }
+
+    /// public void javax.swing.JInternalFrame.toBack()
+
+    private static var toBack_MethodID_63: jmethodID?
+
+    open func toBack() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toBack", methodSig: "()V", methodCache: &JInternalFrame.toBack_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+
+    /// public boolean javax.swing.JInternalFrame.isResizable()
+
+    private static var isResizable_MethodID_64: jmethodID?
+
+    open func isResizable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isResizable", methodSig: "()Z", methodCache: &JInternalFrame.isResizable_MethodID_64, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JInternalFrame.setResizable(boolean)
+
+    private static var setResizable_MethodID_65: jmethodID?
+
+    open func setResizable( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &JInternalFrame.setResizable_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+    open func setResizable( _ _b: Bool ) {
+        setResizable( b: _b )
+    }
+
+    /// public void javax.swing.JInternalFrame.toFront()
+
+    private static var toFront_MethodID_66: jmethodID?
+
+    open func toFront() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toFront", methodSig: "()V", methodCache: &JInternalFrame.toFront_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Component javax.swing.JInternalFrame.getMostRecentFocusOwner()
+
+    private static var getMostRecentFocusOwner_MethodID_67: jmethodID?
+
+    open func getMostRecentFocusOwner() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMostRecentFocusOwner", methodSig: "()Ljava/awt/Component;", methodCache: &JInternalFrame.getMostRecentFocusOwner_MethodID_67, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.updateUI()
+
+    /// public void javax.swing.JInternalFrame.setUI(javax.swing.plaf.InternalFrameUI)
+
+    private static var setUI_MethodID_68: jmethodID?
+
+    open func setUI( ui: InternalFrameUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/InternalFrameUI;)V", methodCache: &JInternalFrame.setUI_MethodID_68, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: InternalFrameUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// public java.lang.String javax.swing.JInternalFrame.getUIClassID()
+
+    /// protected void javax.swing.JInternalFrame.paintComponent(java.awt.Graphics)
+
+    private static var paintComponent_MethodID_69: jmethodID?
+
+    override open func paintComponent( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JInternalFrame.paintComponent_MethodID_69, args: &__args, locals: &__locals )
+    }
+
+    override open func paintComponent( _ _g: java_awt.Graphics? ) {
+        paintComponent( g: _g )
+    }
+
+    /// public void javax.swing.JInternalFrame.setIcon(boolean) throws java.beans.PropertyVetoException
+
+    private static var setIcon_MethodID_70: jmethodID?
+
+    open func setIcon( b: Bool ) throws /* java.beans.PropertyVetoException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Z)V", methodCache: &JInternalFrame.setIcon_MethodID_70, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.beans.PropertyVetoException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+    open func setIcon( _ _b: Bool ) throws /* java.beans.PropertyVetoException */ {
+        try setIcon( b: _b )
+    }
+
+    /// public javax.swing.plaf.InternalFrameUI javax.swing.JInternalFrame.getUI()
+
+    private static var getUI_MethodID_71: jmethodID?
+
+    open func getUI() -> InternalFrameUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/InternalFrameUI;", methodCache: &JInternalFrame.getUI_MethodID_71, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? InternalFrameUI( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JInternalFrame.dispose()
+
+    private static var dispose_MethodID_72: jmethodID?
+
+    open func dispose() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dispose", methodSig: "()V", methodCache: &JInternalFrame.dispose_MethodID_72, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JInternalFrame.show()
 
     /// In declared protocol but not defined.. ///
 

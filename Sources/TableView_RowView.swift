@@ -172,23 +172,6 @@ open class TableView_RowView: BoxView {
 
     /// public javax.swing.text.AttributeSet javax.swing.text.html.TableView$RowView.getAttributes()
 
-    /// int javax.swing.text.html.TableView$RowView.getColumnCount()
-
-    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.TableView$RowView.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_3: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &TableView_RowView.getStyleSheet_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.html.TableView$RowView.paint(java.awt.Graphics,java.awt.Shape)
-
     /// public float javax.swing.text.html.TableView$RowView.getMinimumSpan(int)
 
     /// public float javax.swing.text.html.TableView$RowView.getMaximumSpan(int)
@@ -201,14 +184,14 @@ open class TableView_RowView: BoxView {
 
     /// protected javax.swing.SizeRequirements javax.swing.text.html.TableView$RowView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var calculateMinorAxisRequirements_MethodID_4: jmethodID?
+    private static var calculateMinorAxisRequirements_MethodID_3: jmethodID?
 
     override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
         __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMinorAxisRequirements_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -219,7 +202,7 @@ open class TableView_RowView: BoxView {
 
     /// protected void javax.swing.text.html.TableView$RowView.layoutMajorAxis(int,int,int[],int[])
 
-    private static var layoutMajorAxis_MethodID_5: jmethodID?
+    private static var layoutMajorAxis_MethodID_4: jmethodID?
 
     override open func layoutMajorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -228,7 +211,7 @@ open class TableView_RowView: BoxView {
         __args[1] = JNIType.toJava( value: axis, locals: &__locals )
         __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[3] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMajorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMajorAxis_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMajorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMajorAxis_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func layoutMajorAxis( _ _targetSpan: Int, _ _axis: Int, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
@@ -237,7 +220,7 @@ open class TableView_RowView: BoxView {
 
     /// protected void javax.swing.text.html.TableView$RowView.layoutMinorAxis(int,int,int[],int[])
 
-    private static var layoutMinorAxis_MethodID_6: jmethodID?
+    private static var layoutMinorAxis_MethodID_5: jmethodID?
 
     override open func layoutMinorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -246,7 +229,7 @@ open class TableView_RowView: BoxView {
         __args[1] = JNIType.toJava( value: axis, locals: &__locals )
         __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[3] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMinorAxis_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMinorAxis_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func layoutMinorAxis( _ _targetSpan: Int, _ _axis: Int, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
@@ -255,14 +238,14 @@ open class TableView_RowView: BoxView {
 
     /// protected javax.swing.SizeRequirements javax.swing.text.html.TableView$RowView.calculateMajorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var calculateMajorAxisRequirements_MethodID_7: jmethodID?
+    private static var calculateMajorAxisRequirements_MethodID_6: jmethodID?
 
     override open func calculateMajorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
         __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMajorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMajorAxisRequirements_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMajorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMajorAxisRequirements_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -271,13 +254,18 @@ open class TableView_RowView: BoxView {
         return calculateMajorAxisRequirements( axis: _axis, r: _r )
     }
 
-    /// javax.swing.text.View javax.swing.text.html.TableView$RowView.findViewAtPoint(int,int,java.awt.Rectangle)
+    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.TableView$RowView.getStyleSheet()
 
-    /// void javax.swing.text.html.TableView$RowView.clearFilledColumns()
+    private static var getStyleSheet_MethodID_7: jmethodID?
 
-    /// boolean javax.swing.text.html.TableView$RowView.isFilled(int)
+    open func getStyleSheet() -> StyleSheet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &TableView_RowView.getStyleSheet_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
+    }
 
-    /// void javax.swing.text.html.TableView$RowView.fillColumn(int)
 
     /// public void javax.swing.text.html.TableView$RowView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
@@ -300,6 +288,18 @@ open class TableView_RowView: BoxView {
     override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
         return getViewAtPosition( pos: _pos, a: _a )
     }
+
+    /// int javax.swing.text.html.TableView$RowView.getColumnCount()
+
+    /// public void javax.swing.text.html.TableView$RowView.paint(java.awt.Graphics,java.awt.Shape)
+
+    /// javax.swing.text.View javax.swing.text.html.TableView$RowView.findViewAtPoint(int,int,java.awt.Rectangle)
+
+    /// void javax.swing.text.html.TableView$RowView.clearFilledColumns()
+
+    /// boolean javax.swing.text.html.TableView$RowView.isFilled(int)
+
+    /// void javax.swing.text.html.TableView$RowView.fillColumn(int)
 
 }
 

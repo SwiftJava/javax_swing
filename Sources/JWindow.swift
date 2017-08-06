@@ -538,25 +538,16 @@ open class JWindow: java_awt.Window, RootPaneContainer {
     }
 
 
-    /// protected void javax.swing.JWindow.windowInit()
-
-    private static var windowInit_MethodID_8: jmethodID?
-
-    open func windowInit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowInit", methodSig: "()V", methodCache: &JWindow.windowInit_MethodID_8, args: &__args, locals: &__locals )
-    }
-
+    /// public javax.accessibility.AccessibleContext javax.swing.JWindow.getAccessibleContext()
 
     /// public java.awt.Container javax.swing.JWindow.getContentPane()
 
-    private static var getContentPane_MethodID_9: jmethodID?
+    private static var getContentPane_MethodID_8: jmethodID?
 
     open func getContentPane() -> java_awt.Container! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JWindow.getContentPane_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JWindow.getContentPane_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Container( javaObject: __return ) : nil
     }
@@ -564,13 +555,13 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public void javax.swing.JWindow.setLayout(java.awt.LayoutManager)
 
-    private static var setLayout_MethodID_10: jmethodID?
+    private static var setLayout_MethodID_9: jmethodID?
 
     open func setLayout( manager: java_awt.LayoutManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: manager, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JWindow.setLayout_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JWindow.setLayout_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
@@ -579,12 +570,12 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public javax.swing.JRootPane javax.swing.JWindow.getRootPane()
 
-    private static var getRootPane_MethodID_11: jmethodID?
+    private static var getRootPane_MethodID_10: jmethodID?
 
     open func getRootPane() -> JRootPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JWindow.getRootPane_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JWindow.getRootPane_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JRootPane( javaObject: __return ) : nil
     }
@@ -592,12 +583,12 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// protected javax.swing.JRootPane javax.swing.JWindow.createRootPane()
 
-    private static var createRootPane_MethodID_12: jmethodID?
+    private static var createRootPane_MethodID_11: jmethodID?
 
     open func createRootPane() -> JRootPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JWindow.createRootPane_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JWindow.createRootPane_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JRootPane( javaObject: __return ) : nil
     }
@@ -605,13 +596,13 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public void javax.swing.JWindow.setTransferHandler(javax.swing.TransferHandler)
 
-    private static var setTransferHandler_MethodID_13: jmethodID?
+    private static var setTransferHandler_MethodID_12: jmethodID?
 
     open func setTransferHandler( newHandler: TransferHandler? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newHandler != nil ? newHandler! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransferHandler", methodSig: "(Ljavax/swing/TransferHandler;)V", methodCache: &JWindow.setTransferHandler_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransferHandler", methodSig: "(Ljavax/swing/TransferHandler;)V", methodCache: &JWindow.setTransferHandler_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setTransferHandler( _ _newHandler: TransferHandler? ) {
@@ -620,12 +611,12 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public javax.swing.TransferHandler javax.swing.JWindow.getTransferHandler()
 
-    private static var getTransferHandler_MethodID_14: jmethodID?
+    private static var getTransferHandler_MethodID_13: jmethodID?
 
     open func getTransferHandler() -> TransferHandler! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferHandler", methodSig: "()Ljavax/swing/TransferHandler;", methodCache: &JWindow.getTransferHandler_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferHandler", methodSig: "()Ljavax/swing/TransferHandler;", methodCache: &JWindow.getTransferHandler_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TransferHandler( javaObject: __return ) : nil
     }
@@ -633,25 +624,25 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// protected boolean javax.swing.JWindow.isRootPaneCheckingEnabled()
 
-    private static var isRootPaneCheckingEnabled_MethodID_15: jmethodID?
+    private static var isRootPaneCheckingEnabled_MethodID_14: jmethodID?
 
     open func isRootPaneCheckingEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JWindow.isRootPaneCheckingEnabled_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JWindow.isRootPaneCheckingEnabled_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// protected void javax.swing.JWindow.setRootPaneCheckingEnabled(boolean)
 
-    private static var setRootPaneCheckingEnabled_MethodID_16: jmethodID?
+    private static var setRootPaneCheckingEnabled_MethodID_15: jmethodID?
 
     open func setRootPaneCheckingEnabled( enabled: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JWindow.setRootPaneCheckingEnabled_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JWindow.setRootPaneCheckingEnabled_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
@@ -660,7 +651,7 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// protected void javax.swing.JWindow.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var addImpl_MethodID_17: jmethodID?
+    private static var addImpl_MethodID_16: jmethodID?
 
     open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -668,7 +659,7 @@ open class JWindow: java_awt.Window, RootPaneContainer {
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JWindow.addImpl_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JWindow.addImpl_MethodID_16, args: &__args, locals: &__locals )
     }
 
     override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
@@ -677,13 +668,13 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// protected void javax.swing.JWindow.setRootPane(javax.swing.JRootPane)
 
-    private static var setRootPane_MethodID_18: jmethodID?
+    private static var setRootPane_MethodID_17: jmethodID?
 
     open func setRootPane( root: JRootPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: root != nil ? root! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JWindow.setRootPane_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JWindow.setRootPane_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setRootPane( _ _root: JRootPane? ) {
@@ -692,13 +683,13 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public void javax.swing.JWindow.setContentPane(java.awt.Container)
 
-    private static var setContentPane_MethodID_19: jmethodID?
+    private static var setContentPane_MethodID_18: jmethodID?
 
     open func setContentPane( contentPane: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: contentPane != nil ? contentPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JWindow.setContentPane_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JWindow.setContentPane_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setContentPane( _ _contentPane: java_awt.Container? ) {
@@ -707,12 +698,12 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public javax.swing.JLayeredPane javax.swing.JWindow.getLayeredPane()
 
-    private static var getLayeredPane_MethodID_20: jmethodID?
+    private static var getLayeredPane_MethodID_19: jmethodID?
 
     open func getLayeredPane() -> JLayeredPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JWindow.getLayeredPane_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JWindow.getLayeredPane_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JLayeredPane( javaObject: __return ) : nil
     }
@@ -720,13 +711,13 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public void javax.swing.JWindow.setLayeredPane(javax.swing.JLayeredPane)
 
-    private static var setLayeredPane_MethodID_21: jmethodID?
+    private static var setLayeredPane_MethodID_20: jmethodID?
 
     open func setLayeredPane( layeredPane: JLayeredPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layeredPane != nil ? layeredPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JWindow.setLayeredPane_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JWindow.setLayeredPane_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
@@ -735,12 +726,12 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public java.awt.Component javax.swing.JWindow.getGlassPane()
 
-    private static var getGlassPane_MethodID_22: jmethodID?
+    private static var getGlassPane_MethodID_21: jmethodID?
 
     open func getGlassPane() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JWindow.getGlassPane_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JWindow.getGlassPane_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -748,18 +739,29 @@ open class JWindow: java_awt.Window, RootPaneContainer {
 
     /// public void javax.swing.JWindow.setGlassPane(java.awt.Component)
 
-    private static var setGlassPane_MethodID_23: jmethodID?
+    private static var setGlassPane_MethodID_22: jmethodID?
 
     open func setGlassPane( glassPane: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: glassPane != nil ? glassPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JWindow.setGlassPane_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JWindow.setGlassPane_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setGlassPane( _ _glassPane: java_awt.Component? ) {
         setGlassPane( glassPane: _glassPane )
     }
+
+    /// protected void javax.swing.JWindow.windowInit()
+
+    private static var windowInit_MethodID_23: jmethodID?
+
+    open func windowInit() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "windowInit", methodSig: "()V", methodCache: &JWindow.windowInit_MethodID_23, args: &__args, locals: &__locals )
+    }
+
 
     /// public void javax.swing.JWindow.repaint(long,int,int,int,int)
 
@@ -781,8 +783,6 @@ open class JWindow: java_awt.Window, RootPaneContainer {
     }
 
     /// public java.awt.Graphics javax.swing.JWindow.getGraphics()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JWindow.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

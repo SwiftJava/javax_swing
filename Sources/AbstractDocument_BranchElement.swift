@@ -74,11 +74,19 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
         replace( offset: _offset, length: _length, elems: _elems )
     }
 
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementIndex(int)
+
+    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.getElement(int)
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getEndOffset()
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getStartOffset()
+
     /// public int javax.swing.text.AbstractDocument$BranchElement.getElementCount()
 
-    /// public boolean javax.swing.text.AbstractDocument$BranchElement.getAllowsChildren()
-
     /// public java.util.Enumeration javax.swing.text.AbstractDocument$BranchElement.children()
+
+    /// public boolean javax.swing.text.AbstractDocument$BranchElement.getAllowsChildren()
 
     /// public boolean javax.swing.text.AbstractDocument$BranchElement.isLeaf()
 
@@ -98,14 +106,6 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
     open func positionToElement( _ _pos: Int ) -> Element! {
         return positionToElement( pos: _pos )
     }
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementIndex(int)
-
-    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.getElement(int)
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getEndOffset()
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getStartOffset()
 
 }
 

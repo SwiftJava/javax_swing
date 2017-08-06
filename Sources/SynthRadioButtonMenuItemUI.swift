@@ -39,7 +39,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var menuItem_FieldID: jfieldID?
 
-    open var menuItem: JMenuItem! {
+    override open var menuItem: JMenuItem! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &SynthRadioButtonMenuItemUI.menuItem_FieldID, object: javaObject, locals: &__locals )
@@ -56,7 +56,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var selectionBackground_FieldID: jfieldID?
 
-    open var selectionBackground: java_awt.Color! {
+    override open var selectionBackground: java_awt.Color! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthRadioButtonMenuItemUI.selectionBackground_FieldID, object: javaObject, locals: &__locals )
@@ -73,7 +73,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var selectionForeground_FieldID: jfieldID?
 
-    open var selectionForeground: java_awt.Color! {
+    override open var selectionForeground: java_awt.Color! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthRadioButtonMenuItemUI.selectionForeground_FieldID, object: javaObject, locals: &__locals )
@@ -90,7 +90,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var disabledForeground_FieldID: jfieldID?
 
-    open var disabledForeground: java_awt.Color! {
+    override open var disabledForeground: java_awt.Color! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthRadioButtonMenuItemUI.disabledForeground_FieldID, object: javaObject, locals: &__locals )
@@ -107,7 +107,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var acceleratorForeground_FieldID: jfieldID?
 
-    open var acceleratorForeground: java_awt.Color! {
+    override open var acceleratorForeground: java_awt.Color! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "acceleratorForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthRadioButtonMenuItemUI.acceleratorForeground_FieldID, object: javaObject, locals: &__locals )
@@ -124,7 +124,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var acceleratorSelectionForeground_FieldID: jfieldID?
 
-    open var acceleratorSelectionForeground: java_awt.Color! {
+    override open var acceleratorSelectionForeground: java_awt.Color! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "acceleratorSelectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthRadioButtonMenuItemUI.acceleratorSelectionForeground_FieldID, object: javaObject, locals: &__locals )
@@ -141,7 +141,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var acceleratorDelimiter_FieldID: jfieldID?
 
-    open var acceleratorDelimiter: String! {
+    override open var acceleratorDelimiter: String! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &SynthRadioButtonMenuItemUI.acceleratorDelimiter_FieldID, object: javaObject, locals: &__locals )
@@ -158,7 +158,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var defaultTextIconGap_FieldID: jfieldID?
 
-    open var defaultTextIconGap: Int {
+    override open var defaultTextIconGap: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &SynthRadioButtonMenuItemUI.defaultTextIconGap_FieldID, object: javaObject, locals: &__locals )
@@ -175,7 +175,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var acceleratorFont_FieldID: jfieldID?
 
-    open var acceleratorFont: java_awt.Font! {
+    override open var acceleratorFont: java_awt.Font! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &SynthRadioButtonMenuItemUI.acceleratorFont_FieldID, object: javaObject, locals: &__locals )
@@ -192,7 +192,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var mouseInputListener_FieldID: jfieldID?
 
-    open var mouseInputListener: MouseInputListener! {
+    override open var mouseInputListener: MouseInputListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthRadioButtonMenuItemUI.mouseInputListener_FieldID, object: javaObject, locals: &__locals )
@@ -209,7 +209,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var menuDragMouseListener_FieldID: jfieldID?
 
-    open var menuDragMouseListener: MenuDragMouseListener! {
+    override open var menuDragMouseListener: MenuDragMouseListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &SynthRadioButtonMenuItemUI.menuDragMouseListener_FieldID, object: javaObject, locals: &__locals )
@@ -226,7 +226,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var menuKeyListener_FieldID: jfieldID?
 
-    open var menuKeyListener: MenuKeyListener! {
+    override open var menuKeyListener: MenuKeyListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &SynthRadioButtonMenuItemUI.menuKeyListener_FieldID, object: javaObject, locals: &__locals )
@@ -243,7 +243,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthRadioButtonMenuItemUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -262,7 +262,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var arrowIcon_FieldID: jfieldID?
 
-    open var arrowIcon: Icon! {
+    override open var arrowIcon: Icon! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "arrowIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthRadioButtonMenuItemUI.arrowIcon_FieldID, object: javaObject, locals: &__locals )
@@ -279,7 +279,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var checkIcon_FieldID: jfieldID?
 
-    open var checkIcon: Icon! {
+    override open var checkIcon: Icon! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "checkIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthRadioButtonMenuItemUI.checkIcon_FieldID, object: javaObject, locals: &__locals )
@@ -296,7 +296,7 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
     private static var oldBorderPainted_FieldID: jfieldID?
 
-    open var oldBorderPainted: Bool {
+    override open var oldBorderPainted: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &SynthRadioButtonMenuItemUI.oldBorderPainted_FieldID, object: javaObject, locals: &__locals )
@@ -340,17 +340,15 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
         return createUI( b: _b )
     }
-
-    /// void javax.swing.plaf.synth.SynthRadioButtonMenuItemUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
     /// protected java.lang.String javax.swing.plaf.synth.SynthRadioButtonMenuItemUI.getPropertyPrefix()
 
     private static var getPropertyPrefix_MethodID_3: jmethodID?
 
-    open func getPropertyPrefix() -> String! {
+    override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &SynthRadioButtonMenuItemUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
@@ -359,6 +357,8 @@ open class SynthRadioButtonMenuItemUI: SynthMenuItemUI {
 
 
     /// public void javax.swing.plaf.synth.SynthRadioButtonMenuItemUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    /// void javax.swing.plaf.synth.SynthRadioButtonMenuItemUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

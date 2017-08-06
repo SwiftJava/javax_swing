@@ -79,14 +79,6 @@ open class DateFormatter: InternationalFormatter {
         self.init( format: _format )
     }
 
-    /// boolean javax.swing.text.DateFormatter.getSupportsIncrement()
-
-    /// java.lang.Object javax.swing.text.DateFormatter.getAdjustField(int,java.util.Map)
-
-    /// java.lang.Object javax.swing.text.DateFormatter.adjustValue(java.lang.Object,java.util.Map,java.lang.Object,int) throws javax.swing.text.BadLocationException,java.text.ParseException
-
-    /// private java.util.Calendar javax.swing.text.DateFormatter.getCalendar()
-
     /// public void javax.swing.text.DateFormatter.setFormat(java.text.DateFormat)
 
     private static var setFormat_MethodID_3: jmethodID?
@@ -101,6 +93,14 @@ open class DateFormatter: InternationalFormatter {
     override open func setFormat( _ _format: /* java.text.DateFormat */ UnclassedObject? ) {
         setFormat( format: _format )
     }
+
+    /// private java.util.Calendar javax.swing.text.DateFormatter.getCalendar()
+
+    /// boolean javax.swing.text.DateFormatter.getSupportsIncrement()
+
+    /// java.lang.Object javax.swing.text.DateFormatter.getAdjustField(int,java.util.Map)
+
+    /// java.lang.Object javax.swing.text.DateFormatter.adjustValue(java.lang.Object,java.util.Map,java.lang.Object,int) throws javax.swing.text.BadLocationException,java.text.ParseException
 
 }
 

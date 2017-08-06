@@ -37,7 +37,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var comboBox_FieldID: jfieldID?
 
-    open var comboBox: JComboBox! {
+    override open var comboBox: JComboBox! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "comboBox", fieldType: "Ljavax/swing/JComboBox;", fieldCache: &SynthComboBoxUI.comboBox_FieldID, object: javaObject, locals: &__locals )
@@ -54,7 +54,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var hasFocus_FieldID: jfieldID?
 
-    open var hasFocus: Bool {
+    override open var hasFocus: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "hasFocus", fieldType: "Z", fieldCache: &SynthComboBoxUI.hasFocus_FieldID, object: javaObject, locals: &__locals )
@@ -75,7 +75,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var listBox_FieldID: jfieldID?
 
-    open var listBox: JList! {
+    override open var listBox: JList! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "listBox", fieldType: "Ljavax/swing/JList;", fieldCache: &SynthComboBoxUI.listBox_FieldID, object: javaObject, locals: &__locals )
@@ -92,7 +92,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var currentValuePane_FieldID: jfieldID?
 
-    open var currentValuePane: CellRendererPane! {
+    override open var currentValuePane: CellRendererPane! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "currentValuePane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &SynthComboBoxUI.currentValuePane_FieldID, object: javaObject, locals: &__locals )
@@ -109,7 +109,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var popup_FieldID: jfieldID?
 
-    open var popup: ComboPopup! {
+    override open var popup: ComboPopup! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "popup", fieldType: "Ljavax/swing/plaf/basic/ComboPopup;", fieldCache: &SynthComboBoxUI.popup_FieldID, object: javaObject, locals: &__locals )
@@ -126,7 +126,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var editor_FieldID: jfieldID?
 
-    open var editor: java_awt.Component! {
+    override open var editor: java_awt.Component! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljava/awt/Component;", fieldCache: &SynthComboBoxUI.editor_FieldID, object: javaObject, locals: &__locals )
@@ -143,7 +143,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var arrowButton_FieldID: jfieldID?
 
-    open var arrowButton: JButton! {
+    override open var arrowButton: JButton! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "arrowButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &SynthComboBoxUI.arrowButton_FieldID, object: javaObject, locals: &__locals )
@@ -160,7 +160,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var keyListener_FieldID: jfieldID?
 
-    open var keyListener: java_awt.KeyListener! {
+    override open var keyListener: java_awt.KeyListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "keyListener", fieldType: "Ljava/awt/event/KeyListener;", fieldCache: &SynthComboBoxUI.keyListener_FieldID, object: javaObject, locals: &__locals )
@@ -177,7 +177,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var focusListener_FieldID: jfieldID?
 
-    open var focusListener: java_awt.FocusListener! {
+    override open var focusListener: java_awt.FocusListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &SynthComboBoxUI.focusListener_FieldID, object: javaObject, locals: &__locals )
@@ -194,7 +194,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthComboBoxUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -211,7 +211,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var itemListener_FieldID: jfieldID?
 
-    open var itemListener: java_awt.ItemListener! {
+    override open var itemListener: java_awt.ItemListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "itemListener", fieldType: "Ljava/awt/event/ItemListener;", fieldCache: &SynthComboBoxUI.itemListener_FieldID, object: javaObject, locals: &__locals )
@@ -228,7 +228,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var popupMouseListener_FieldID: jfieldID?
 
-    open var popupMouseListener: java_awt.MouseListener! {
+    override open var popupMouseListener: java_awt.MouseListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "popupMouseListener", fieldType: "Ljava/awt/event/MouseListener;", fieldCache: &SynthComboBoxUI.popupMouseListener_FieldID, object: javaObject, locals: &__locals )
@@ -245,7 +245,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var popupMouseMotionListener_FieldID: jfieldID?
 
-    open var popupMouseMotionListener: java_awt.MouseMotionListener! {
+    override open var popupMouseMotionListener: java_awt.MouseMotionListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "popupMouseMotionListener", fieldType: "Ljava/awt/event/MouseMotionListener;", fieldCache: &SynthComboBoxUI.popupMouseMotionListener_FieldID, object: javaObject, locals: &__locals )
@@ -262,7 +262,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var popupKeyListener_FieldID: jfieldID?
 
-    open var popupKeyListener: java_awt.KeyListener! {
+    override open var popupKeyListener: java_awt.KeyListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "popupKeyListener", fieldType: "Ljava/awt/event/KeyListener;", fieldCache: &SynthComboBoxUI.popupKeyListener_FieldID, object: javaObject, locals: &__locals )
@@ -281,7 +281,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var listDataListener_FieldID: jfieldID?
 
-    open var listDataListener: ListDataListener! {
+    override open var listDataListener: ListDataListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "listDataListener", fieldType: "Ljavax/swing/event/ListDataListener;", fieldCache: &SynthComboBoxUI.listDataListener_FieldID, object: javaObject, locals: &__locals )
@@ -308,7 +308,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var isMinimumSizeDirty_FieldID: jfieldID?
 
-    open var isMinimumSizeDirty: Bool {
+    override open var isMinimumSizeDirty: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "isMinimumSizeDirty", fieldType: "Z", fieldCache: &SynthComboBoxUI.isMinimumSizeDirty_FieldID, object: javaObject, locals: &__locals )
@@ -325,7 +325,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var cachedMinimumSize_FieldID: jfieldID?
 
-    open var cachedMinimumSize: java_awt.Dimension! {
+    override open var cachedMinimumSize: java_awt.Dimension! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "cachedMinimumSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthComboBoxUI.cachedMinimumSize_FieldID, object: javaObject, locals: &__locals )
@@ -352,7 +352,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var squareButton_FieldID: jfieldID?
 
-    open var squareButton: Bool {
+    override open var squareButton: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "squareButton", fieldType: "Z", fieldCache: &SynthComboBoxUI.squareButton_FieldID, object: javaObject, locals: &__locals )
@@ -369,7 +369,7 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     private static var padding_FieldID: jfieldID?
 
-    open var padding: java_awt.Insets! {
+    override open var padding: java_awt.Insets! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "padding", fieldType: "Ljava/awt/Insets;", fieldCache: &SynthComboBoxUI.padding_FieldID, object: javaObject, locals: &__locals )
@@ -496,11 +496,15 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$600(javax.swing.plaf.synth.SynthComboBoxUI)
 
+    /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$700(javax.swing.plaf.synth.SynthComboBoxUI)
+
+    /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$800(javax.swing.plaf.synth.SynthComboBoxUI)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthComboBoxUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -509,150 +513,69 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
-    /// private int javax.swing.plaf.synth.SynthComboBoxUI.getComponentState(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthComboBoxUI.updateStyle(javax.swing.JComboBox)
-
-    /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$1100(javax.swing.plaf.synth.SynthComboBoxUI)
-
-    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthComboBoxUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthComboBoxUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// public void javax.swing.plaf.synth.SynthComboBoxUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_5: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthComboBoxUI.propertyChange_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthComboBoxUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$700(javax.swing.plaf.synth.SynthComboBoxUI)
+    /// protected javax.swing.ComboBoxEditor javax.swing.plaf.synth.SynthComboBoxUI.createEditor()
 
-    /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$800(javax.swing.plaf.synth.SynthComboBoxUI)
+    private static var createEditor_MethodID_5: jmethodID?
 
-    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.installDefaults()
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    open func installDefaults() {
+    override open func createEditor() -> ComboBoxEditor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthComboBoxUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.installListeners()
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthComboBoxUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_8: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthComboBoxUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthComboBoxUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.plaf.basic.ComboPopup javax.swing.plaf.synth.SynthComboBoxUI.createPopup()
-
-    private static var createPopup_MethodID_10: jmethodID?
-
-    open func createPopup() -> ComboPopup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPopup", methodSig: "()Ljavax/swing/plaf/basic/ComboPopup;", methodCache: &SynthComboBoxUI.createPopup_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/ComboBoxEditor;", methodCache: &SynthComboBoxUI.createEditor_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboPopupForward( javaObject: __return ) : nil
+        return __return != nil ? ComboBoxEditorForward( javaObject: __return ) : nil
     }
 
 
-    /// protected javax.swing.ListCellRenderer javax.swing.plaf.synth.SynthComboBoxUI.createRenderer()
+    /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$1100(javax.swing.plaf.synth.SynthComboBoxUI)
 
-    private static var createRenderer_MethodID_11: jmethodID?
+    /// public void javax.swing.plaf.synth.SynthComboBoxUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    open func createRenderer() -> ListCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var paintBorder_MethodID_6: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRenderer", methodSig: "()Ljavax/swing/ListCellRenderer;", methodCache: &SynthComboBoxUI.createRenderer_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListCellRendererForward( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthComboBoxUI.paintBorder_MethodID_6, args: &__args, locals: &__locals )
     }
 
-
-    /// protected javax.swing.JButton javax.swing.plaf.synth.SynthComboBoxUI.createArrowButton()
-
-    private static var createArrowButton_MethodID_12: jmethodID?
-
-    open func createArrowButton() -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createArrowButton", methodSig: "()Ljavax/swing/JButton;", methodCache: &SynthComboBoxUI.createArrowButton_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JButton( javaObject: __return ) : nil
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
+    /// public void javax.swing.plaf.synth.SynthComboBoxUI.installUI(javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.synth.SynthComboBoxUI.paintCurrentValue(java.awt.Graphics,java.awt.Rectangle,boolean)
+    /// public void javax.swing.plaf.synth.SynthComboBoxUI.uninstallUI(javax.swing.JComponent)
 
-    /// protected java.awt.Dimension javax.swing.plaf.synth.SynthComboBoxUI.getDefaultSize()
+    /// private boolean javax.swing.plaf.synth.SynthComboBoxUI.shouldActLikeButton()
 
-    private static var getDefaultSize_MethodID_13: jmethodID?
-
-    open func getDefaultSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SynthComboBoxUI.getDefaultSize_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
+    /// private int javax.swing.plaf.synth.SynthComboBoxUI.getComponentState(javax.swing.JComponent)
 
     /// static boolean javax.swing.plaf.synth.SynthComboBoxUI.access$900(javax.swing.plaf.synth.SynthComboBoxUI)
 
@@ -666,44 +589,121 @@ open class SynthComboBoxUI: BasicComboBoxUI, /* java.beans.PropertyChangeListene
 
     /// static javax.swing.JComboBox javax.swing.plaf.synth.SynthComboBoxUI.access$1500(javax.swing.plaf.synth.SynthComboBoxUI)
 
-    /// protected javax.swing.ComboBoxEditor javax.swing.plaf.synth.SynthComboBoxUI.createEditor()
+    /// public void javax.swing.plaf.synth.SynthComboBoxUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var createEditor_MethodID_14: jmethodID?
+    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    open func createEditor() -> ComboBoxEditor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/ComboBoxEditor;", methodCache: &SynthComboBoxUI.createEditor_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboBoxEditorForward( javaObject: __return ) : nil
-    }
+    private static var paint_MethodID_7: jmethodID?
 
-
-    /// public void javax.swing.plaf.synth.SynthComboBoxUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_15: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthComboBoxUI.paintBorder_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthComboBoxUI.paint_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
     }
 
-    /// public void javax.swing.plaf.synth.SynthComboBoxUI.installUI(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.installDefaults()
 
-    /// public void javax.swing.plaf.synth.SynthComboBoxUI.uninstallUI(javax.swing.JComponent)
+    private static var installDefaults_MethodID_8: jmethodID?
 
-    /// private boolean javax.swing.plaf.synth.SynthComboBoxUI.shouldActLikeButton()
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthComboBoxUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.installListeners()
+
+    private static var installListeners_MethodID_9: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthComboBoxUI.installListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_10: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthComboBoxUI.uninstallDefaults_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthComboBoxUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_11: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthComboBoxUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.plaf.basic.ComboPopup javax.swing.plaf.synth.SynthComboBoxUI.createPopup()
+
+    private static var createPopup_MethodID_12: jmethodID?
+
+    override open func createPopup() -> ComboPopup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPopup", methodSig: "()Ljavax/swing/plaf/basic/ComboPopup;", methodCache: &SynthComboBoxUI.createPopup_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComboPopupForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.ListCellRenderer javax.swing.plaf.synth.SynthComboBoxUI.createRenderer()
+
+    private static var createRenderer_MethodID_13: jmethodID?
+
+    override open func createRenderer() -> ListCellRenderer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRenderer", methodSig: "()Ljavax/swing/ListCellRenderer;", methodCache: &SynthComboBoxUI.createRenderer_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ListCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.JButton javax.swing.plaf.synth.SynthComboBoxUI.createArrowButton()
+
+    private static var createArrowButton_MethodID_14: jmethodID?
+
+    override open func createArrowButton() -> JButton! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createArrowButton", methodSig: "()Ljavax/swing/JButton;", methodCache: &SynthComboBoxUI.createArrowButton_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JButton( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthComboBoxUI.paintCurrentValue(java.awt.Graphics,java.awt.Rectangle,boolean)
+
+    /// protected java.awt.Dimension javax.swing.plaf.synth.SynthComboBoxUI.getDefaultSize()
+
+    private static var getDefaultSize_MethodID_15: jmethodID?
+
+    override open func getDefaultSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &SynthComboBoxUI.getDefaultSize_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
 
 }
 

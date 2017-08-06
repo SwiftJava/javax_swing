@@ -140,11 +140,17 @@ open class BasicTableUI: TableUI {
 
     /// private javax.swing.plaf.basic.BasicTableUI$Handler javax.swing.plaf.basic.BasicTableUI.getHandler()
 
-    /// private int javax.swing.plaf.basic.BasicTableUI.viewIndexForColumn(javax.swing.table.TableColumn)
+    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.access$700(javax.swing.plaf.basic.BasicTableUI,javax.swing.JTable$DropLocation)
 
-    /// private boolean javax.swing.plaf.basic.BasicTableUI.pointOutsidePrefSize(int,int,java.awt.Point)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.getPreferredSize(javax.swing.JComponent)
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTableUI.getInputMap(int)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicTableUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTableUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTableUI.createUI(javax.swing.JComponent)
 
@@ -165,9 +171,39 @@ open class BasicTableUI: TableUI {
 
     /// private void javax.swing.plaf.basic.BasicTableUI.installDefaults2()
 
+    /// private int javax.swing.plaf.basic.BasicTableUI.viewIndexForColumn(javax.swing.table.TableColumn)
+
+    /// private boolean javax.swing.plaf.basic.BasicTableUI.pointOutsidePrefSize(int,int,java.awt.Point)
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTableUI.getInputMap(int)
+
+    /// public void javax.swing.plaf.basic.BasicTableUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicTableUI.uninstallUI(javax.swing.JComponent)
+
+    /// private java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.createTableSize(long)
+
+    /// private void javax.swing.plaf.basic.BasicTableUI.paintDropLines(java.awt.Graphics)
+
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.getHDropLineRect(javax.swing.JTable$DropLocation)
+
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.getVDropLineRect(javax.swing.JTable$DropLocation)
+
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.extendRect(java.awt.Rectangle,boolean)
+
+    /// private void javax.swing.plaf.basic.BasicTableUI.paintGrid(java.awt.Graphics,int,int,int,int)
+
+    /// private void javax.swing.plaf.basic.BasicTableUI.paintCells(java.awt.Graphics,int,int,int,int)
+
+    /// private void javax.swing.plaf.basic.BasicTableUI.paintDraggedArea(java.awt.Graphics,int,int,javax.swing.table.TableColumn,int)
+
+    /// private static int javax.swing.plaf.basic.BasicTableUI.getAdjustedLead(javax.swing.JTable,boolean)
+
+    /// private static int javax.swing.plaf.basic.BasicTableUI.getAdjustedLead(javax.swing.JTable,boolean,javax.swing.ListSelectionModel)
+
     /// public void javax.swing.plaf.basic.BasicTableUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.access$700(javax.swing.plaf.basic.BasicTableUI,javax.swing.JTable$DropLocation)
+    /// private void javax.swing.plaf.basic.BasicTableUI.paintCell(java.awt.Graphics,java.awt.Rectangle,int,int)
 
     /// static void javax.swing.plaf.basic.BasicTableUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
@@ -275,42 +311,6 @@ open class BasicTableUI: TableUI {
         return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
     }
 
-
-    /// private java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.createTableSize(long)
-
-    /// private void javax.swing.plaf.basic.BasicTableUI.paintDropLines(java.awt.Graphics)
-
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.getHDropLineRect(javax.swing.JTable$DropLocation)
-
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.getVDropLineRect(javax.swing.JTable$DropLocation)
-
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTableUI.extendRect(java.awt.Rectangle,boolean)
-
-    /// private void javax.swing.plaf.basic.BasicTableUI.paintGrid(java.awt.Graphics,int,int,int,int)
-
-    /// private void javax.swing.plaf.basic.BasicTableUI.paintCells(java.awt.Graphics,int,int,int,int)
-
-    /// private void javax.swing.plaf.basic.BasicTableUI.paintDraggedArea(java.awt.Graphics,int,int,javax.swing.table.TableColumn,int)
-
-    /// private static int javax.swing.plaf.basic.BasicTableUI.getAdjustedLead(javax.swing.JTable,boolean,javax.swing.ListSelectionModel)
-
-    /// private static int javax.swing.plaf.basic.BasicTableUI.getAdjustedLead(javax.swing.JTable,boolean)
-
-    /// private void javax.swing.plaf.basic.BasicTableUI.paintCell(java.awt.Graphics,java.awt.Rectangle,int,int)
-
-    /// public void javax.swing.plaf.basic.BasicTableUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicTableUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableUI.getMaximumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.basic.BasicTableUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTableUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

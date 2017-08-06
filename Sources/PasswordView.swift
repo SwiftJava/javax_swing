@@ -133,6 +133,8 @@ open class PasswordView: FieldView {
         self.init( elem: _elem )
     }
 
+    /// public float javax.swing.text.PasswordView.getPreferredSpan(int)
+
     /// public int javax.swing.text.PasswordView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
 
     /// public java.awt.Shape javax.swing.text.PasswordView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
@@ -201,8 +203,6 @@ open class PasswordView: FieldView {
     open func drawEchoCharacter( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _c: UInt16 ) -> Int {
         return drawEchoCharacter( g: _g, x: _x, y: _y, c: _c )
     }
-
-    /// public float javax.swing.text.PasswordView.getPreferredSpan(int)
 
 }
 

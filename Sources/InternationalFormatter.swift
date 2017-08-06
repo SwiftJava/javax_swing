@@ -130,15 +130,45 @@ open class InternationalFormatter: DefaultFormatter {
 
     /// java.util.Map javax.swing.text.InternationalFormatter.getAttributes(int)
 
+    /// public void javax.swing.text.InternationalFormatter.setFormat(java.text.Format)
+
+    private static var setFormat_MethodID_5: jmethodID?
+
+    open func setFormat( format: /* java.text.Format */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/Format;)V", methodCache: &InternationalFormatter.setFormat_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func setFormat( _ _format: /* java.text.Format */ UnclassedObject? ) {
+        setFormat( format: _format )
+    }
+
+    /// public java.text.Format javax.swing.text.InternationalFormatter.getFormat()
+
+    private static var getFormat_MethodID_6: jmethodID?
+
+    open func getFormat() -> /* java.text.Format */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/Format;", methodCache: &InternationalFormatter.getFormat_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.text.Format */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
+    /// java.lang.Object javax.swing.text.InternationalFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
+
     /// public java.lang.Object javax.swing.text.InternationalFormatter.stringToValue(java.lang.String) throws java.text.ParseException
 
-    private static var stringToValue_MethodID_5: jmethodID?
+    private static var stringToValue_MethodID_7: jmethodID?
 
     override open func stringToValue( text: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &InternationalFormatter.stringToValue_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &InternationalFormatter.stringToValue_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
@@ -150,17 +180,15 @@ open class InternationalFormatter: DefaultFormatter {
         return try stringToValue( text: _text )
     }
 
-    /// java.lang.Object javax.swing.text.InternationalFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
-
     /// public java.lang.String javax.swing.text.InternationalFormatter.valueToString(java.lang.Object) throws java.text.ParseException
 
-    private static var valueToString_MethodID_6: jmethodID?
+    private static var valueToString_MethodID_8: jmethodID?
 
     override open func valueToString( value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &InternationalFormatter.valueToString_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &InternationalFormatter.valueToString_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
         }
@@ -173,12 +201,12 @@ open class InternationalFormatter: DefaultFormatter {
 
     /// public java.lang.Comparable javax.swing.text.InternationalFormatter.getMinimum()
 
-    private static var getMinimum_MethodID_7: jmethodID?
+    private static var getMinimum_MethodID_9: jmethodID?
 
     open func getMinimum() -> java_lang.JavaComparable! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimum", methodSig: "()Ljava/lang/Comparable;", methodCache: &InternationalFormatter.getMinimum_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimum", methodSig: "()Ljava/lang/Comparable;", methodCache: &InternationalFormatter.getMinimum_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
     }
@@ -186,13 +214,13 @@ open class InternationalFormatter: DefaultFormatter {
 
     /// public void javax.swing.text.InternationalFormatter.setMinimum(java.lang.Comparable)
 
-    private static var setMinimum_MethodID_8: jmethodID?
+    private static var setMinimum_MethodID_10: jmethodID?
 
     open func setMinimum( minimum: java_lang.JavaComparable? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: minimum, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &InternationalFormatter.setMinimum_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &InternationalFormatter.setMinimum_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setMinimum( _ _minimum: java_lang.JavaComparable? ) {
@@ -201,16 +229,46 @@ open class InternationalFormatter: DefaultFormatter {
 
     /// public java.lang.Comparable javax.swing.text.InternationalFormatter.getMaximum()
 
-    private static var getMaximum_MethodID_9: jmethodID?
+    private static var getMaximum_MethodID_11: jmethodID?
 
     open func getMaximum() -> java_lang.JavaComparable! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximum", methodSig: "()Ljava/lang/Comparable;", methodCache: &InternationalFormatter.getMaximum_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximum", methodSig: "()Ljava/lang/Comparable;", methodCache: &InternationalFormatter.getMaximum_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.text.InternationalFormatter.install(javax.swing.JFormattedTextField)
+
+    private static var install_MethodID_12: jmethodID?
+
+    override open func install( ftf: JFormattedTextField? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ftf != nil ? ftf! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &InternationalFormatter.install_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    override open func install( _ _ftf: JFormattedTextField? ) {
+        install( ftf: _ftf )
+    }
+
+    /// public void javax.swing.text.InternationalFormatter.setMaximum(java.lang.Comparable)
+
+    private static var setMaximum_MethodID_13: jmethodID?
+
+    open func setMaximum( max: java_lang.JavaComparable? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: max, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &InternationalFormatter.setMaximum_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximum( _ _max: java_lang.JavaComparable? ) {
+        setMaximum( max: _max )
+    }
 
     /// boolean javax.swing.text.InternationalFormatter.getSupportsIncrement()
 
@@ -259,64 +317,6 @@ open class InternationalFormatter: DefaultFormatter {
     /// void javax.swing.text.InternationalFormatter.resetValue(java.lang.Object) throws javax.swing.text.BadLocationException,java.text.ParseException
 
     /// javax.swing.text.DefaultFormatter$ReplaceHolder javax.swing.text.InternationalFormatter.getReplaceHolder(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet)
-
-    /// public void javax.swing.text.InternationalFormatter.setFormat(java.text.Format)
-
-    private static var setFormat_MethodID_10: jmethodID?
-
-    open func setFormat( format: /* java.text.Format */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/Format;)V", methodCache: &InternationalFormatter.setFormat_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setFormat( _ _format: /* java.text.Format */ UnclassedObject? ) {
-        setFormat( format: _format )
-    }
-
-    /// public java.text.Format javax.swing.text.InternationalFormatter.getFormat()
-
-    private static var getFormat_MethodID_11: jmethodID?
-
-    open func getFormat() -> /* java.text.Format */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/Format;", methodCache: &InternationalFormatter.getFormat_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.text.Format */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.InternationalFormatter.install(javax.swing.JFormattedTextField)
-
-    private static var install_MethodID_12: jmethodID?
-
-    override open func install( ftf: JFormattedTextField? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ftf != nil ? ftf! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &InternationalFormatter.install_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    override open func install( _ _ftf: JFormattedTextField? ) {
-        install( ftf: _ftf )
-    }
-
-    /// public void javax.swing.text.InternationalFormatter.setMaximum(java.lang.Comparable)
-
-    private static var setMaximum_MethodID_13: jmethodID?
-
-    open func setMaximum( max: java_lang.JavaComparable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: max, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &InternationalFormatter.setMaximum_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximum( _ _max: java_lang.JavaComparable? ) {
-        setMaximum( max: _max )
-    }
 
 }
 

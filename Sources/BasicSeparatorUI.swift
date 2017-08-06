@@ -63,6 +63,12 @@ open class BasicSeparatorUI: SeparatorUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMaximumSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicSeparatorUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -79,6 +85,10 @@ open class BasicSeparatorUI: SeparatorUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
+
+    /// public void javax.swing.plaf.basic.BasicSeparatorUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicSeparatorUI.uninstallUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
@@ -141,16 +151,6 @@ open class BasicSeparatorUI: SeparatorUI {
     open func uninstallListeners( _ _s: JSeparator? ) {
         uninstallListeners( s: _s )
     }
-
-    /// public void javax.swing.plaf.basic.BasicSeparatorUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicSeparatorUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

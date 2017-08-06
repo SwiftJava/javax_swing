@@ -592,9 +592,62 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
 
     /// public boolean javax.swing.table.DefaultTableCellRenderer.isOpaque()
 
+    /// public void javax.swing.table.DefaultTableCellRenderer.invalidate()
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.revalidate()
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.setBackground(java.awt.Color)
+
+    private static var setBackground_MethodID_3: jmethodID?
+
+    open func setBackground( c: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTableCellRenderer.setBackground_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func setBackground( _ _c: java_awt.Color? ) {
+        setBackground( c: _c )
+    }
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.setForeground(java.awt.Color)
+
+    private static var setForeground_MethodID_4: jmethodID?
+
+    open func setForeground( c: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTableCellRenderer.setForeground_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func setForeground( _ _c: java_awt.Color? ) {
+        setForeground( c: _c )
+    }
+
+    /// protected void javax.swing.table.DefaultTableCellRenderer.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_5: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultTableCellRenderer.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
+
     /// public java.awt.Component javax.swing.table.DefaultTableCellRenderer.getTableCellRendererComponent(javax.swing.JTable,java.lang.Object,boolean,boolean,int,int)
 
-    private static var getTableCellRendererComponent_MethodID_3: jmethodID?
+    private static var getTableCellRendererComponent_MethodID_6: jmethodID?
 
     open func getTableCellRendererComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, hasFocus: Bool, row: Int, column: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -605,7 +658,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         __args[3] = JNIType.toJava( value: hasFocus, locals: &__locals )
         __args[4] = JNIType.toJava( value: row, locals: &__locals )
         __args[5] = JNIType.toJava( value: column, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableCellRendererComponent", methodSig: "(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;", methodCache: &DefaultTableCellRenderer.getTableCellRendererComponent_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableCellRendererComponent", methodSig: "(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;", methodCache: &DefaultTableCellRenderer.getTableCellRendererComponent_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -614,70 +667,17 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         return getTableCellRendererComponent( table: _table, value: _value, isSelected: _isSelected, hasFocus: _hasFocus, row: _row, column: _column )
     }
 
-    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(java.awt.Rectangle)
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.repaint()
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(long,int,int,int,int)
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.validate()
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.setBackground(java.awt.Color)
-
-    private static var setBackground_MethodID_4: jmethodID?
-
-    open func setBackground( c: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTableCellRenderer.setBackground_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func setBackground( _ _c: java_awt.Color? ) {
-        setBackground( c: _c )
-    }
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.setForeground(java.awt.Color)
-
-    private static var setForeground_MethodID_5: jmethodID?
-
-    open func setForeground( c: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTableCellRenderer.setForeground_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func setForeground( _ _c: java_awt.Color? ) {
-        setForeground( c: _c )
-    }
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
-
-    /// protected void javax.swing.table.DefaultTableCellRenderer.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_6: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultTableCellRenderer.firePropertyChange_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
     /// public void javax.swing.table.DefaultTableCellRenderer.updateUI()
 
     /// private javax.swing.border.Border javax.swing.table.DefaultTableCellRenderer.getNoFocusBorder()
 
-    /// public void javax.swing.table.DefaultTableCellRenderer.invalidate()
+    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(long,int,int,int,int)
 
-    /// public void javax.swing.table.DefaultTableCellRenderer.revalidate()
+    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(java.awt.Rectangle)
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.repaint()
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.validate()
 
 }
 

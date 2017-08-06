@@ -38,6 +38,8 @@ open class MetalComboBoxUI_MetalComboBoxLayoutManager: BasicComboBoxUI_ComboBoxL
         self.init( this_0: _this_0 )
     }
 
+    /// public void javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager.layoutContainer(java.awt.Container)
+
     /// public void javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager.superLayout(java.awt.Container)
 
     private static var superLayout_MethodID_2: jmethodID?
@@ -52,8 +54,6 @@ open class MetalComboBoxUI_MetalComboBoxLayoutManager: BasicComboBoxUI_ComboBoxL
     open func superLayout( _ _parent: java_awt.Container? ) {
         superLayout( parent: _parent )
     }
-
-    /// public void javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager.layoutContainer(java.awt.Container)
 
 }
 

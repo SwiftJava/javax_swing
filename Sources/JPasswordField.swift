@@ -712,31 +712,18 @@ open class JPasswordField: JTextField {
     }
 
 
-    /// public void javax.swing.JPasswordField.setEchoChar(char)
-
-    private static var setEchoChar_MethodID_8: jmethodID?
-
-    open func setEchoChar( c: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoChar", methodSig: "(C)V", methodCache: &JPasswordField.setEchoChar_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setEchoChar( _ _c: UInt16 ) {
-        setEchoChar( c: _c )
-    }
+    /// public java.lang.String javax.swing.JPasswordField.getText()
 
     /// public java.lang.String javax.swing.JPasswordField.getText(int,int) throws javax.swing.text.BadLocationException
 
-    private static var getText_MethodID_9: jmethodID?
+    private static var getText_MethodID_8: jmethodID?
 
     open func getText( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offs, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &JPasswordField.getText_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &JPasswordField.getText_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -747,20 +734,16 @@ open class JPasswordField: JTextField {
         return try getText( offs: _offs, len: _len )
     }
 
-    /// public java.lang.String javax.swing.JPasswordField.getText()
-
     /// public javax.accessibility.AccessibleContext javax.swing.JPasswordField.getAccessibleContext()
-
-    /// boolean javax.swing.JPasswordField.customSetUIProperty(java.lang.String,java.lang.Object)
 
     /// public char[] javax.swing.JPasswordField.getPassword()
 
-    private static var getPassword_MethodID_10: jmethodID?
+    private static var getPassword_MethodID_9: jmethodID?
 
     open func getPassword() -> [UInt16]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPassword", methodSig: "()[C", methodCache: &JPasswordField.getPassword_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPassword", methodSig: "()[C", methodCache: &JPasswordField.getPassword_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [UInt16](), from: __return )
     }
 
@@ -769,7 +752,24 @@ open class JPasswordField: JTextField {
 
     /// public java.lang.String javax.swing.JPasswordField.getUIClassID()
 
+    /// public void javax.swing.JPasswordField.setEchoChar(char)
+
+    private static var setEchoChar_MethodID_10: jmethodID?
+
+    open func setEchoChar( c: UInt16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoChar", methodSig: "(C)V", methodCache: &JPasswordField.setEchoChar_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setEchoChar( _ _c: UInt16 ) {
+        setEchoChar( c: _c )
+    }
+
     /// public void javax.swing.JPasswordField.cut()
+
+    /// boolean javax.swing.JPasswordField.customSetUIProperty(java.lang.String,java.lang.Object)
 
     /// public boolean javax.swing.JPasswordField.echoCharIsSet()
 

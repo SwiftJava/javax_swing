@@ -36,6 +36,12 @@ open class BasicToolTipUI: ToolTipUI {
 
     /// static void javax.swing.plaf.basic.BasicToolTipUI.access$100(javax.swing.plaf.basic.BasicToolTipUI,javax.swing.JComponent)
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMaximumSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicToolTipUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -54,6 +60,10 @@ open class BasicToolTipUI: ToolTipUI {
     }
 
     /// private void javax.swing.plaf.basic.BasicToolTipUI.componentChanged(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicToolTipUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicToolTipUI.uninstallUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
@@ -122,16 +132,6 @@ open class BasicToolTipUI: ToolTipUI {
     }
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicToolTipUI.createPropertyChangeListener(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicToolTipUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicToolTipUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

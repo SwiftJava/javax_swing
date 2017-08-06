@@ -419,7 +419,15 @@ open class BasicSliderUI: SliderUI {
 
     /// private javax.swing.plaf.basic.BasicSliderUI$Handler javax.swing.plaf.basic.BasicSliderUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicSliderUI.getInputMap(int,javax.swing.JSlider)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicSliderUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicSliderUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicSliderUI.createUI(javax.swing.JComponent)
 
@@ -438,815 +446,29 @@ open class BasicSliderUI: SliderUI {
         return createUI( b: _b )
     }
 
-    /// public void javax.swing.plaf.basic.BasicSliderUI.scrollByUnit(int)
+    /// protected boolean javax.swing.plaf.basic.BasicSliderUI.isDragging()
 
-    private static var scrollByUnit_MethodID_3: jmethodID?
+    private static var isDragging_MethodID_3: jmethodID?
 
-    open func scrollByUnit( direction: Int ) {
+    open func isDragging() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByUnit", methodSig: "(I)V", methodCache: &BasicSliderUI.scrollByUnit_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func scrollByUnit( _ _direction: Int ) {
-        scrollByUnit( direction: _direction )
-    }
-
-    /// protected javax.swing.plaf.basic.BasicSliderUI$TrackListener javax.swing.plaf.basic.BasicSliderUI.createTrackListener(javax.swing.JSlider)
-
-    private static var createTrackListener_MethodID_4: jmethodID?
-
-    open func createTrackListener( slider: JSlider? ) -> BasicSliderUI_TrackListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTrackListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/plaf/basic/BasicSliderUI$TrackListener;", methodCache: &BasicSliderUI.createTrackListener_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BasicSliderUI_TrackListener( javaObject: __return ) : nil
-    }
-
-    open func createTrackListener( _ _slider: JSlider? ) -> BasicSliderUI_TrackListener! {
-        return createTrackListener( slider: _slider )
-    }
-
-    /// protected javax.swing.plaf.basic.BasicSliderUI$ScrollListener javax.swing.plaf.basic.BasicSliderUI.createScrollListener(javax.swing.JSlider)
-
-    private static var createScrollListener_MethodID_5: jmethodID?
-
-    open func createScrollListener( slider: JSlider? ) -> BasicSliderUI_ScrollListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/plaf/basic/BasicSliderUI$ScrollListener;", methodCache: &BasicSliderUI.createScrollListener_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BasicSliderUI_ScrollListener( javaObject: __return ) : nil
-    }
-
-    open func createScrollListener( _ _slider: JSlider? ) -> BasicSliderUI_ScrollListener! {
-        return createScrollListener( slider: _slider )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI.paintThumb(java.awt.Graphics)
-
-    private static var paintThumb_MethodID_6: jmethodID?
-
-    open func paintThumb( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintThumb_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paintThumb( _ _g: java_awt.Graphics? ) {
-        paintThumb( g: _g )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI.scrollByBlock(int)
-
-    private static var scrollByBlock_MethodID_7: jmethodID?
-
-    open func scrollByBlock( direction: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByBlock", methodSig: "(I)V", methodCache: &BasicSliderUI.scrollByBlock_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func scrollByBlock( _ _direction: Int ) {
-        scrollByBlock( direction: _direction )
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicSliderUI.getFocusColor()
-
-    private static var getFocusColor_MethodID_8: jmethodID?
-
-    open func getFocusColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicSliderUI.getFocusColor_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.plaf.basic.BasicSliderUI.labelsHaveSameBaselines()
-
-    private static var labelsHaveSameBaselines_MethodID_9: jmethodID?
-
-    open func labelsHaveSameBaselines() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "labelsHaveSameBaselines", methodSig: "()Z", methodCache: &BasicSliderUI.labelsHaveSameBaselines_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDragging", methodSig: "()Z", methodCache: &BasicSliderUI.isDragging_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getPreferredHorizontalSize()
-
-    private static var getPreferredHorizontalSize_MethodID_10: jmethodID?
-
-    open func getPreferredHorizontalSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredHorizontalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getPreferredHorizontalSize_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getPreferredVerticalSize()
-
-    private static var getPreferredVerticalSize_MethodID_11: jmethodID?
-
-    open func getPreferredVerticalSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredVerticalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getPreferredVerticalSize_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMinimumHorizontalSize()
-
-    private static var getMinimumHorizontalSize_MethodID_12: jmethodID?
-
-    open func getMinimumHorizontalSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumHorizontalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getMinimumHorizontalSize_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMinimumVerticalSize()
-
-    private static var getMinimumVerticalSize_MethodID_13: jmethodID?
-
-    open func getMinimumVerticalSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumVerticalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getMinimumVerticalSize_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateGeometry()
-
-    private static var calculateGeometry_MethodID_14: jmethodID?
-
-    open func calculateGeometry() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateGeometry", methodSig: "()V", methodCache: &BasicSliderUI.calculateGeometry_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateFocusRect()
-
-    private static var calculateFocusRect_MethodID_15: jmethodID?
-
-    open func calculateFocusRect() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateFocusRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateFocusRect_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateThumbSize()
-
-    private static var calculateThumbSize_MethodID_16: jmethodID?
-
-    open func calculateThumbSize() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateThumbSize", methodSig: "()V", methodCache: &BasicSliderUI.calculateThumbSize_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateContentRect()
-
-    private static var calculateContentRect_MethodID_17: jmethodID?
-
-    open func calculateContentRect() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateContentRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateContentRect_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// private int javax.swing.plaf.basic.BasicSliderUI.getTickSpacing()
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateThumbLocation()
-
-    private static var calculateThumbLocation_MethodID_18: jmethodID?
-
-    open func calculateThumbLocation() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateThumbLocation", methodSig: "()V", methodCache: &BasicSliderUI.calculateThumbLocation_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateTrackBuffer()
-
-    private static var calculateTrackBuffer_MethodID_19: jmethodID?
-
-    open func calculateTrackBuffer() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTrackBuffer", methodSig: "()V", methodCache: &BasicSliderUI.calculateTrackBuffer_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateTrackRect()
-
-    private static var calculateTrackRect_MethodID_20: jmethodID?
-
-    open func calculateTrackRect() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTrackRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateTrackRect_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getTickLength()
-
-    private static var getTickLength_MethodID_21: jmethodID?
-
-    open func getTickLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTickLength", methodSig: "()I", methodCache: &BasicSliderUI.getTickLength_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateTickRect()
-
-    private static var calculateTickRect_MethodID_22: jmethodID?
-
-    open func calculateTickRect() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTickRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateTickRect_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateLabelRect()
-
-    private static var calculateLabelRect_MethodID_23: jmethodID?
-
-    open func calculateLabelRect() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateLabelRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateLabelRect_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getThumbSize()
-
-    private static var getThumbSize_MethodID_24: jmethodID?
-
-    open func getThumbSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getThumbSize_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getWidthOfWidestLabel()
-
-    private static var getWidthOfWidestLabel_MethodID_25: jmethodID?
-
-    open func getWidthOfWidestLabel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidthOfWidestLabel", methodSig: "()I", methodCache: &BasicSliderUI.getWidthOfWidestLabel_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getHeightOfTallestLabel()
-
-    private static var getHeightOfTallestLabel_MethodID_26: jmethodID?
-
-    open func getHeightOfTallestLabel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeightOfTallestLabel", methodSig: "()I", methodCache: &BasicSliderUI.getHeightOfTallestLabel_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getWidthOfHighValueLabel()
-
-    private static var getWidthOfHighValueLabel_MethodID_27: jmethodID?
-
-    open func getWidthOfHighValueLabel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidthOfHighValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getWidthOfHighValueLabel_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getWidthOfLowValueLabel()
-
-    private static var getWidthOfLowValueLabel_MethodID_28: jmethodID?
-
-    open func getWidthOfLowValueLabel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidthOfLowValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getWidthOfLowValueLabel_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getHeightOfHighValueLabel()
-
-    private static var getHeightOfHighValueLabel_MethodID_29: jmethodID?
-
-    open func getHeightOfHighValueLabel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeightOfHighValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getHeightOfHighValueLabel_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.getHeightOfLowValueLabel()
-
-    private static var getHeightOfLowValueLabel_MethodID_30: jmethodID?
-
-    open func getHeightOfLowValueLabel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeightOfLowValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getHeightOfLowValueLabel_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected boolean javax.swing.plaf.basic.BasicSliderUI.drawInverted()
-
-    private static var drawInverted_MethodID_31: jmethodID?
-
-    open func drawInverted() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawInverted", methodSig: "()Z", methodCache: &BasicSliderUI.drawInverted_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected java.lang.Integer javax.swing.plaf.basic.BasicSliderUI.getHighestValue()
-
-    private static var getHighestValue_MethodID_32: jmethodID?
-
-    open func getHighestValue() -> java_lang.Integer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighestValue", methodSig: "()Ljava/lang/Integer;", methodCache: &BasicSliderUI.getHighestValue_MethodID_32, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_lang.Integer( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.lang.Integer javax.swing.plaf.basic.BasicSliderUI.getLowestValue()
-
-    private static var getLowestValue_MethodID_33: jmethodID?
-
-    open func getLowestValue() -> java_lang.Integer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLowestValue", methodSig: "()Ljava/lang/Integer;", methodCache: &BasicSliderUI.getLowestValue_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_lang.Integer( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Component javax.swing.plaf.basic.BasicSliderUI.getLowestValueLabel()
-
-    private static var getLowestValueLabel_MethodID_34: jmethodID?
-
-    open func getLowestValueLabel() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLowestValueLabel", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSliderUI.getLowestValueLabel_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Component javax.swing.plaf.basic.BasicSliderUI.getHighestValueLabel()
-
-    private static var getHighestValueLabel_MethodID_35: jmethodID?
-
-    open func getHighestValueLabel() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighestValueLabel", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSliderUI.getHighestValueLabel_MethodID_35, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.recalculateIfInsetsChanged()
-
-    private static var recalculateIfInsetsChanged_MethodID_36: jmethodID?
-
-    open func recalculateIfInsetsChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "recalculateIfInsetsChanged", methodSig: "()V", methodCache: &BasicSliderUI.recalculateIfInsetsChanged_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.recalculateIfOrientationChanged()
-
-    private static var recalculateIfOrientationChanged_MethodID_37: jmethodID?
-
-    open func recalculateIfOrientationChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "recalculateIfOrientationChanged", methodSig: "()V", methodCache: &BasicSliderUI.recalculateIfOrientationChanged_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMinorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMinorTickForHorizSlider_MethodID_38: jmethodID?
-
-    open func paintMinorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMinorTickForHorizSlider_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-    open func paintMinorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
-        paintMinorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMajorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMajorTickForHorizSlider_MethodID_39: jmethodID?
-
-    open func paintMajorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMajorTickForHorizSlider_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func paintMajorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
-        paintMajorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMinorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMinorTickForVertSlider_MethodID_40: jmethodID?
-
-    open func paintMinorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMinorTickForVertSlider_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func paintMinorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
-        paintMinorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMajorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMajorTickForVertSlider_MethodID_41: jmethodID?
-
-    open func paintMajorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMajorTickForVertSlider_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-    open func paintMajorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
-        paintMajorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintHorizontalLabel(java.awt.Graphics,int,java.awt.Component)
-
-    private static var paintHorizontalLabel_MethodID_42: jmethodID?
-
-    open func paintHorizontalLabel( g: java_awt.Graphics?, value: Int, label: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: label != nil ? label! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalLabel", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Component;)V", methodCache: &BasicSliderUI.paintHorizontalLabel_MethodID_42, args: &__args, locals: &__locals )
-    }
-
-    open func paintHorizontalLabel( _ _g: java_awt.Graphics?, _ _value: Int, _ _label: java_awt.Component? ) {
-        paintHorizontalLabel( g: _g, value: _value, label: _label )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintVerticalLabel(java.awt.Graphics,int,java.awt.Component)
-
-    private static var paintVerticalLabel_MethodID_43: jmethodID?
-
-    open func paintVerticalLabel( g: java_awt.Graphics?, value: Int, label: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: label != nil ? label! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalLabel", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Component;)V", methodCache: &BasicSliderUI.paintVerticalLabel_MethodID_43, args: &__args, locals: &__locals )
-    }
-
-    open func paintVerticalLabel( _ _g: java_awt.Graphics?, _ _value: Int, _ _label: java_awt.Component? ) {
-        paintVerticalLabel( g: _g, value: _value, label: _label )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI.setThumbLocation(int,int)
-
-    private static var setThumbLocation_MethodID_44: jmethodID?
-
-    open func setThumbLocation( x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbLocation", methodSig: "(II)V", methodCache: &BasicSliderUI.setThumbLocation_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open func setThumbLocation( _ _x: Int, _ _y: Int ) {
-        setThumbLocation( x: _x, y: _y )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.scrollDueToClickInTrack(int)
-
-    private static var scrollDueToClickInTrack_MethodID_45: jmethodID?
-
-    open func scrollDueToClickInTrack( dir: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dir, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollDueToClickInTrack", methodSig: "(I)V", methodCache: &BasicSliderUI.scrollDueToClickInTrack_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-    open func scrollDueToClickInTrack( _ _dir: Int ) {
-        scrollDueToClickInTrack( dir: _dir )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.xPositionForValue(int)
-
-    private static var xPositionForValue_MethodID_46: jmethodID?
-
-    open func xPositionForValue( value: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "xPositionForValue", methodSig: "(I)I", methodCache: &BasicSliderUI.xPositionForValue_MethodID_46, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func xPositionForValue( _ _value: Int ) -> Int {
-        return xPositionForValue( value: _value )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.yPositionForValue(int,int,int)
-
-    private static var yPositionForValue_MethodID_47: jmethodID?
-
-    open func yPositionForValue( value: Int, trackY: Int, trackHeight: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        __args[1] = JNIType.toJava( value: trackY, locals: &__locals )
-        __args[2] = JNIType.toJava( value: trackHeight, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "yPositionForValue", methodSig: "(III)I", methodCache: &BasicSliderUI.yPositionForValue_MethodID_47, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func yPositionForValue( _ _value: Int, _ _trackY: Int, _ _trackHeight: Int ) -> Int {
-        return yPositionForValue( value: _value, trackY: _trackY, trackHeight: _trackHeight )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicSliderUI.yPositionForValue(int)
-
-    private static var yPositionForValue_MethodID_48: jmethodID?
-
-    open func yPositionForValue( value: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "yPositionForValue", methodSig: "(I)I", methodCache: &BasicSliderUI.yPositionForValue_MethodID_48, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func yPositionForValue( _ _value: Int ) -> Int {
-        return yPositionForValue( value: _value )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicSliderUI.valueForYPosition(int)
-
-    private static var valueForYPosition_MethodID_49: jmethodID?
-
-    open func valueForYPosition( yPos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: yPos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "valueForYPosition", methodSig: "(I)I", methodCache: &BasicSliderUI.valueForYPosition_MethodID_49, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func valueForYPosition( _ _yPos: Int ) -> Int {
-        return valueForYPosition( yPos: _yPos )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicSliderUI.valueForXPosition(int)
-
-    private static var valueForXPosition_MethodID_50: jmethodID?
-
-    open func valueForXPosition( xPos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: xPos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "valueForXPosition", methodSig: "(I)I", methodCache: &BasicSliderUI.valueForXPosition_MethodID_50, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func valueForXPosition( _ _xPos: Int ) -> Int {
-        return valueForXPosition( xPos: _xPos )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// static void javax.swing.plaf.basic.BasicSliderUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.installDefaults(javax.swing.JSlider)
-
-    private static var installDefaults_MethodID_51: jmethodID?
-
-    open func installDefaults( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.installDefaults_MethodID_51, args: &__args, locals: &__locals )
-    }
-
-    open func installDefaults( _ _slider: JSlider? ) {
-        installDefaults( slider: _slider )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.installListeners(javax.swing.JSlider)
-
-    private static var installListeners_MethodID_52: jmethodID?
-
-    open func installListeners( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.installListeners_MethodID_52, args: &__args, locals: &__locals )
-    }
-
-    open func installListeners( _ _slider: JSlider? ) {
-        installListeners( slider: _slider )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.installKeyboardActions(javax.swing.JSlider)
-
-    private static var installKeyboardActions_MethodID_53: jmethodID?
-
-    open func installKeyboardActions( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.installKeyboardActions_MethodID_53, args: &__args, locals: &__locals )
-    }
-
-    open func installKeyboardActions( _ _slider: JSlider? ) {
-        installKeyboardActions( slider: _slider )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.uninstallDefaults(javax.swing.JSlider)
-
-    private static var uninstallDefaults_MethodID_54: jmethodID?
-
-    open func uninstallDefaults( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.uninstallDefaults_MethodID_54, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallDefaults( _ _slider: JSlider? ) {
-        uninstallDefaults( slider: _slider )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.uninstallListeners(javax.swing.JSlider)
-
-    private static var uninstallListeners_MethodID_55: jmethodID?
-
-    open func uninstallListeners( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.uninstallListeners_MethodID_55, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallListeners( _ _slider: JSlider? ) {
-        uninstallListeners( slider: _slider )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSliderUI.uninstallKeyboardActions(javax.swing.JSlider)
-
-    private static var uninstallKeyboardActions_MethodID_56: jmethodID?
-
-    open func uninstallKeyboardActions( slider: JSlider? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.uninstallKeyboardActions_MethodID_56, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallKeyboardActions( _ _slider: JSlider? ) {
-        uninstallKeyboardActions( slider: _slider )
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSliderUI.createPropertyChangeListener(javax.swing.JSlider)
-
-    private static var createPropertyChangeListener_MethodID_57: jmethodID?
-
-    open func createPropertyChangeListener( slider: JSlider? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/beans/PropertyChangeListener;", methodCache: &BasicSliderUI.createPropertyChangeListener_MethodID_57, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    open func createPropertyChangeListener( _ _slider: JSlider? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        return createPropertyChangeListener( slider: _slider )
-    }
-
-    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicSliderUI.createFocusListener(javax.swing.JSlider)
-
-    private static var createFocusListener_MethodID_58: jmethodID?
-
-    open func createFocusListener( slider: JSlider? ) -> java_awt.FocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/awt/event/FocusListener;", methodCache: &BasicSliderUI.createFocusListener_MethodID_58, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
-    }
-
-    open func createFocusListener( _ _slider: JSlider? ) -> java_awt.FocusListener! {
-        return createFocusListener( slider: _slider )
-    }
-
-    /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicSliderUI.createComponentListener(javax.swing.JSlider)
-
-    private static var createComponentListener_MethodID_59: jmethodID?
-
-    open func createComponentListener( slider: JSlider? ) -> java_awt.ComponentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/awt/event/ComponentListener;", methodCache: &BasicSliderUI.createComponentListener_MethodID_59, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
-    }
-
-    open func createComponentListener( _ _slider: JSlider? ) -> java_awt.ComponentListener! {
-        return createComponentListener( slider: _slider )
-    }
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicSliderUI.getInputMap(int,javax.swing.JSlider)
 
     /// public void javax.swing.plaf.basic.BasicSliderUI.paintTicks(java.awt.Graphics)
 
-    private static var paintTicks_MethodID_60: jmethodID?
+    private static var paintTicks_MethodID_4: jmethodID?
 
     open func paintTicks( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTicks", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintTicks_MethodID_60, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTicks", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintTicks_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func paintTicks( _ _g: java_awt.Graphics? ) {
@@ -1255,13 +477,13 @@ open class BasicSliderUI: SliderUI {
 
     /// public void javax.swing.plaf.basic.BasicSliderUI.paintTrack(java.awt.Graphics)
 
-    private static var paintTrack_MethodID_61: jmethodID?
+    private static var paintTrack_MethodID_5: jmethodID?
 
     open func paintTrack( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintTrack_MethodID_61, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintTrack_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintTrack( _ _g: java_awt.Graphics? ) {
@@ -1270,13 +492,13 @@ open class BasicSliderUI: SliderUI {
 
     /// public void javax.swing.plaf.basic.BasicSliderUI.paintLabels(java.awt.Graphics)
 
-    private static var paintLabels_MethodID_62: jmethodID?
+    private static var paintLabels_MethodID_6: jmethodID?
 
     open func paintLabels( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLabels", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintLabels_MethodID_62, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLabels", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintLabels_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func paintLabels( _ _g: java_awt.Graphics? ) {
@@ -1287,15 +509,17 @@ open class BasicSliderUI: SliderUI {
 
     /// public void javax.swing.plaf.basic.BasicSliderUI.uninstallUI(javax.swing.JComponent)
 
+    /// public void javax.swing.plaf.basic.BasicSliderUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
     /// public void javax.swing.plaf.basic.BasicSliderUI.paintFocus(java.awt.Graphics)
 
-    private static var paintFocus_MethodID_63: jmethodID?
+    private static var paintFocus_MethodID_7: jmethodID?
 
     open func paintFocus( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintFocus_MethodID_63, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintFocus_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func paintFocus( _ _g: java_awt.Graphics? ) {
@@ -1304,13 +528,13 @@ open class BasicSliderUI: SliderUI {
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicSliderUI.createChangeListener(javax.swing.JSlider)
 
-    private static var createChangeListener_MethodID_64: jmethodID?
+    private static var createChangeListener_MethodID_8: jmethodID?
 
     open func createChangeListener( slider: JSlider? ) -> ChangeListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/event/ChangeListener;", methodCache: &BasicSliderUI.createChangeListener_MethodID_64, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/event/ChangeListener;", methodCache: &BasicSliderUI.createChangeListener_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
@@ -1319,14 +543,31 @@ open class BasicSliderUI: SliderUI {
         return createChangeListener( slider: _slider )
     }
 
+    /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicSliderUI.createComponentListener(javax.swing.JSlider)
+
+    private static var createComponentListener_MethodID_9: jmethodID?
+
+    open func createComponentListener( slider: JSlider? ) -> java_awt.ComponentListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/awt/event/ComponentListener;", methodCache: &BasicSliderUI.createComponentListener_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
+    }
+
+    open func createComponentListener( _ _slider: JSlider? ) -> java_awt.ComponentListener! {
+        return createComponentListener( slider: _slider )
+    }
+
     /// protected java.awt.Color javax.swing.plaf.basic.BasicSliderUI.getHighlightColor()
 
-    private static var getHighlightColor_MethodID_65: jmethodID?
+    private static var getHighlightColor_MethodID_10: jmethodID?
 
     open func getHighlightColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicSliderUI.getHighlightColor_MethodID_65, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicSliderUI.getHighlightColor_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -1334,38 +575,797 @@ open class BasicSliderUI: SliderUI {
 
     /// protected java.awt.Color javax.swing.plaf.basic.BasicSliderUI.getShadowColor()
 
-    private static var getShadowColor_MethodID_66: jmethodID?
+    private static var getShadowColor_MethodID_11: jmethodID?
 
     open func getShadowColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicSliderUI.getShadowColor_MethodID_66, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicSliderUI.getShadowColor_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getPreferredSize(javax.swing.JComponent)
+    /// static void javax.swing.plaf.basic.BasicSliderUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMinimumSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.installDefaults(javax.swing.JSlider)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMaximumSize(javax.swing.JComponent)
+    private static var installDefaults_MethodID_12: jmethodID?
 
-    /// public int javax.swing.plaf.basic.BasicSliderUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicSliderUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
-    /// protected boolean javax.swing.plaf.basic.BasicSliderUI.isDragging()
-
-    private static var isDragging_MethodID_67: jmethodID?
-
-    open func isDragging() -> Bool {
+    open func installDefaults( slider: JSlider? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDragging", methodSig: "()Z", methodCache: &BasicSliderUI.isDragging_MethodID_67, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.installDefaults_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func installDefaults( _ _slider: JSlider? ) {
+        installDefaults( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.installListeners(javax.swing.JSlider)
+
+    private static var installListeners_MethodID_13: jmethodID?
+
+    open func installListeners( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.installListeners_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func installListeners( _ _slider: JSlider? ) {
+        installListeners( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.installKeyboardActions(javax.swing.JSlider)
+
+    private static var installKeyboardActions_MethodID_14: jmethodID?
+
+    open func installKeyboardActions( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.installKeyboardActions_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func installKeyboardActions( _ _slider: JSlider? ) {
+        installKeyboardActions( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.uninstallDefaults(javax.swing.JSlider)
+
+    private static var uninstallDefaults_MethodID_15: jmethodID?
+
+    open func uninstallDefaults( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.uninstallDefaults_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func uninstallDefaults( _ _slider: JSlider? ) {
+        uninstallDefaults( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.uninstallListeners(javax.swing.JSlider)
+
+    private static var uninstallListeners_MethodID_16: jmethodID?
+
+    open func uninstallListeners( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.uninstallListeners_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func uninstallListeners( _ _slider: JSlider? ) {
+        uninstallListeners( slider: _slider )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.uninstallKeyboardActions(javax.swing.JSlider)
+
+    private static var uninstallKeyboardActions_MethodID_17: jmethodID?
+
+    open func uninstallKeyboardActions( slider: JSlider? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "(Ljavax/swing/JSlider;)V", methodCache: &BasicSliderUI.uninstallKeyboardActions_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func uninstallKeyboardActions( _ _slider: JSlider? ) {
+        uninstallKeyboardActions( slider: _slider )
+    }
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSliderUI.createPropertyChangeListener(javax.swing.JSlider)
+
+    private static var createPropertyChangeListener_MethodID_18: jmethodID?
+
+    open func createPropertyChangeListener( slider: JSlider? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/beans/PropertyChangeListener;", methodCache: &BasicSliderUI.createPropertyChangeListener_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+    open func createPropertyChangeListener( _ _slider: JSlider? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        return createPropertyChangeListener( slider: _slider )
+    }
+
+    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicSliderUI.createFocusListener(javax.swing.JSlider)
+
+    private static var createFocusListener_MethodID_19: jmethodID?
+
+    open func createFocusListener( slider: JSlider? ) -> java_awt.FocusListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/awt/event/FocusListener;", methodCache: &BasicSliderUI.createFocusListener_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
+    }
+
+    open func createFocusListener( _ _slider: JSlider? ) -> java_awt.FocusListener! {
+        return createFocusListener( slider: _slider )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI.scrollByUnit(int)
+
+    private static var scrollByUnit_MethodID_20: jmethodID?
+
+    open func scrollByUnit( direction: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByUnit", methodSig: "(I)V", methodCache: &BasicSliderUI.scrollByUnit_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func scrollByUnit( _ _direction: Int ) {
+        scrollByUnit( direction: _direction )
+    }
+
+    /// protected javax.swing.plaf.basic.BasicSliderUI$TrackListener javax.swing.plaf.basic.BasicSliderUI.createTrackListener(javax.swing.JSlider)
+
+    private static var createTrackListener_MethodID_21: jmethodID?
+
+    open func createTrackListener( slider: JSlider? ) -> BasicSliderUI_TrackListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTrackListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/plaf/basic/BasicSliderUI$TrackListener;", methodCache: &BasicSliderUI.createTrackListener_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BasicSliderUI_TrackListener( javaObject: __return ) : nil
+    }
+
+    open func createTrackListener( _ _slider: JSlider? ) -> BasicSliderUI_TrackListener! {
+        return createTrackListener( slider: _slider )
+    }
+
+    /// protected javax.swing.plaf.basic.BasicSliderUI$ScrollListener javax.swing.plaf.basic.BasicSliderUI.createScrollListener(javax.swing.JSlider)
+
+    private static var createScrollListener_MethodID_22: jmethodID?
+
+    open func createScrollListener( slider: JSlider? ) -> BasicSliderUI_ScrollListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollListener", methodSig: "(Ljavax/swing/JSlider;)Ljavax/swing/plaf/basic/BasicSliderUI$ScrollListener;", methodCache: &BasicSliderUI.createScrollListener_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BasicSliderUI_ScrollListener( javaObject: __return ) : nil
+    }
+
+    open func createScrollListener( _ _slider: JSlider? ) -> BasicSliderUI_ScrollListener! {
+        return createScrollListener( slider: _slider )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI.paintThumb(java.awt.Graphics)
+
+    private static var paintThumb_MethodID_23: jmethodID?
+
+    open func paintThumb( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSliderUI.paintThumb_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func paintThumb( _ _g: java_awt.Graphics? ) {
+        paintThumb( g: _g )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI.scrollByBlock(int)
+
+    private static var scrollByBlock_MethodID_24: jmethodID?
+
+    open func scrollByBlock( direction: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByBlock", methodSig: "(I)V", methodCache: &BasicSliderUI.scrollByBlock_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func scrollByBlock( _ _direction: Int ) {
+        scrollByBlock( direction: _direction )
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicSliderUI.getFocusColor()
+
+    private static var getFocusColor_MethodID_25: jmethodID?
+
+    open func getFocusColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicSliderUI.getFocusColor_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// protected boolean javax.swing.plaf.basic.BasicSliderUI.labelsHaveSameBaselines()
+
+    private static var labelsHaveSameBaselines_MethodID_26: jmethodID?
+
+    open func labelsHaveSameBaselines() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "labelsHaveSameBaselines", methodSig: "()Z", methodCache: &BasicSliderUI.labelsHaveSameBaselines_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getPreferredHorizontalSize()
+
+    private static var getPreferredHorizontalSize_MethodID_27: jmethodID?
+
+    open func getPreferredHorizontalSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredHorizontalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getPreferredHorizontalSize_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getPreferredVerticalSize()
+
+    private static var getPreferredVerticalSize_MethodID_28: jmethodID?
+
+    open func getPreferredVerticalSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredVerticalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getPreferredVerticalSize_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMinimumHorizontalSize()
+
+    private static var getMinimumHorizontalSize_MethodID_29: jmethodID?
+
+    open func getMinimumHorizontalSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumHorizontalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getMinimumHorizontalSize_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getMinimumVerticalSize()
+
+    private static var getMinimumVerticalSize_MethodID_30: jmethodID?
+
+    open func getMinimumVerticalSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumVerticalSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getMinimumVerticalSize_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateGeometry()
+
+    private static var calculateGeometry_MethodID_31: jmethodID?
+
+    open func calculateGeometry() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateGeometry", methodSig: "()V", methodCache: &BasicSliderUI.calculateGeometry_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateFocusRect()
+
+    private static var calculateFocusRect_MethodID_32: jmethodID?
+
+    open func calculateFocusRect() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateFocusRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateFocusRect_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateThumbSize()
+
+    private static var calculateThumbSize_MethodID_33: jmethodID?
+
+    open func calculateThumbSize() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateThumbSize", methodSig: "()V", methodCache: &BasicSliderUI.calculateThumbSize_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateContentRect()
+
+    private static var calculateContentRect_MethodID_34: jmethodID?
+
+    open func calculateContentRect() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateContentRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateContentRect_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+
+    /// private int javax.swing.plaf.basic.BasicSliderUI.getTickSpacing()
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateThumbLocation()
+
+    private static var calculateThumbLocation_MethodID_35: jmethodID?
+
+    open func calculateThumbLocation() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateThumbLocation", methodSig: "()V", methodCache: &BasicSliderUI.calculateThumbLocation_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateTrackBuffer()
+
+    private static var calculateTrackBuffer_MethodID_36: jmethodID?
+
+    open func calculateTrackBuffer() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTrackBuffer", methodSig: "()V", methodCache: &BasicSliderUI.calculateTrackBuffer_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateTrackRect()
+
+    private static var calculateTrackRect_MethodID_37: jmethodID?
+
+    open func calculateTrackRect() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTrackRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateTrackRect_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getTickLength()
+
+    private static var getTickLength_MethodID_38: jmethodID?
+
+    open func getTickLength() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTickLength", methodSig: "()I", methodCache: &BasicSliderUI.getTickLength_MethodID_38, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateTickRect()
+
+    private static var calculateTickRect_MethodID_39: jmethodID?
+
+    open func calculateTickRect() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTickRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateTickRect_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.calculateLabelRect()
+
+    private static var calculateLabelRect_MethodID_40: jmethodID?
+
+    open func calculateLabelRect() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateLabelRect", methodSig: "()V", methodCache: &BasicSliderUI.calculateLabelRect_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.awt.Dimension javax.swing.plaf.basic.BasicSliderUI.getThumbSize()
+
+    private static var getThumbSize_MethodID_41: jmethodID?
+
+    open func getThumbSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicSliderUI.getThumbSize_MethodID_41, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getWidthOfWidestLabel()
+
+    private static var getWidthOfWidestLabel_MethodID_42: jmethodID?
+
+    open func getWidthOfWidestLabel() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidthOfWidestLabel", methodSig: "()I", methodCache: &BasicSliderUI.getWidthOfWidestLabel_MethodID_42, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getHeightOfTallestLabel()
+
+    private static var getHeightOfTallestLabel_MethodID_43: jmethodID?
+
+    open func getHeightOfTallestLabel() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeightOfTallestLabel", methodSig: "()I", methodCache: &BasicSliderUI.getHeightOfTallestLabel_MethodID_43, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getWidthOfHighValueLabel()
+
+    private static var getWidthOfHighValueLabel_MethodID_44: jmethodID?
+
+    open func getWidthOfHighValueLabel() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidthOfHighValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getWidthOfHighValueLabel_MethodID_44, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getWidthOfLowValueLabel()
+
+    private static var getWidthOfLowValueLabel_MethodID_45: jmethodID?
+
+    open func getWidthOfLowValueLabel() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidthOfLowValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getWidthOfLowValueLabel_MethodID_45, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getHeightOfHighValueLabel()
+
+    private static var getHeightOfHighValueLabel_MethodID_46: jmethodID?
+
+    open func getHeightOfHighValueLabel() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeightOfHighValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getHeightOfHighValueLabel_MethodID_46, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.getHeightOfLowValueLabel()
+
+    private static var getHeightOfLowValueLabel_MethodID_47: jmethodID?
+
+    open func getHeightOfLowValueLabel() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHeightOfLowValueLabel", methodSig: "()I", methodCache: &BasicSliderUI.getHeightOfLowValueLabel_MethodID_47, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected boolean javax.swing.plaf.basic.BasicSliderUI.drawInverted()
+
+    private static var drawInverted_MethodID_48: jmethodID?
+
+    open func drawInverted() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawInverted", methodSig: "()Z", methodCache: &BasicSliderUI.drawInverted_MethodID_48, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected java.lang.Integer javax.swing.plaf.basic.BasicSliderUI.getHighestValue()
+
+    private static var getHighestValue_MethodID_49: jmethodID?
+
+    open func getHighestValue() -> java_lang.Integer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighestValue", methodSig: "()Ljava/lang/Integer;", methodCache: &BasicSliderUI.getHighestValue_MethodID_49, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_lang.Integer( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.lang.Integer javax.swing.plaf.basic.BasicSliderUI.getLowestValue()
+
+    private static var getLowestValue_MethodID_50: jmethodID?
+
+    open func getLowestValue() -> java_lang.Integer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLowestValue", methodSig: "()Ljava/lang/Integer;", methodCache: &BasicSliderUI.getLowestValue_MethodID_50, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_lang.Integer( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Component javax.swing.plaf.basic.BasicSliderUI.getLowestValueLabel()
+
+    private static var getLowestValueLabel_MethodID_51: jmethodID?
+
+    open func getLowestValueLabel() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLowestValueLabel", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSliderUI.getLowestValueLabel_MethodID_51, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Component javax.swing.plaf.basic.BasicSliderUI.getHighestValueLabel()
+
+    private static var getHighestValueLabel_MethodID_52: jmethodID?
+
+    open func getHighestValueLabel() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighestValueLabel", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSliderUI.getHighestValueLabel_MethodID_52, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.recalculateIfInsetsChanged()
+
+    private static var recalculateIfInsetsChanged_MethodID_53: jmethodID?
+
+    open func recalculateIfInsetsChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "recalculateIfInsetsChanged", methodSig: "()V", methodCache: &BasicSliderUI.recalculateIfInsetsChanged_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.recalculateIfOrientationChanged()
+
+    private static var recalculateIfOrientationChanged_MethodID_54: jmethodID?
+
+    open func recalculateIfOrientationChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "recalculateIfOrientationChanged", methodSig: "()V", methodCache: &BasicSliderUI.recalculateIfOrientationChanged_MethodID_54, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMinorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMinorTickForHorizSlider_MethodID_55: jmethodID?
+
+    open func paintMinorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMinorTickForHorizSlider_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+    open func paintMinorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
+        paintMinorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMajorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMajorTickForHorizSlider_MethodID_56: jmethodID?
+
+    open func paintMajorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMajorTickForHorizSlider_MethodID_56, args: &__args, locals: &__locals )
+    }
+
+    open func paintMajorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
+        paintMajorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMinorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMinorTickForVertSlider_MethodID_57: jmethodID?
+
+    open func paintMinorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMinorTickForVertSlider_MethodID_57, args: &__args, locals: &__locals )
+    }
+
+    open func paintMinorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
+        paintMinorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintMajorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMajorTickForVertSlider_MethodID_58: jmethodID?
+
+    open func paintMajorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &BasicSliderUI.paintMajorTickForVertSlider_MethodID_58, args: &__args, locals: &__locals )
+    }
+
+    open func paintMajorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
+        paintMajorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintHorizontalLabel(java.awt.Graphics,int,java.awt.Component)
+
+    private static var paintHorizontalLabel_MethodID_59: jmethodID?
+
+    open func paintHorizontalLabel( g: java_awt.Graphics?, value: Int, label: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        __args[2] = JNIType.toJava( value: label != nil ? label! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalLabel", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Component;)V", methodCache: &BasicSliderUI.paintHorizontalLabel_MethodID_59, args: &__args, locals: &__locals )
+    }
+
+    open func paintHorizontalLabel( _ _g: java_awt.Graphics?, _ _value: Int, _ _label: java_awt.Component? ) {
+        paintHorizontalLabel( g: _g, value: _value, label: _label )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.paintVerticalLabel(java.awt.Graphics,int,java.awt.Component)
+
+    private static var paintVerticalLabel_MethodID_60: jmethodID?
+
+    open func paintVerticalLabel( g: java_awt.Graphics?, value: Int, label: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        __args[2] = JNIType.toJava( value: label != nil ? label! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalLabel", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Component;)V", methodCache: &BasicSliderUI.paintVerticalLabel_MethodID_60, args: &__args, locals: &__locals )
+    }
+
+    open func paintVerticalLabel( _ _g: java_awt.Graphics?, _ _value: Int, _ _label: java_awt.Component? ) {
+        paintVerticalLabel( g: _g, value: _value, label: _label )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI.setThumbLocation(int,int)
+
+    private static var setThumbLocation_MethodID_61: jmethodID?
+
+    open func setThumbLocation( x: Int, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbLocation", methodSig: "(II)V", methodCache: &BasicSliderUI.setThumbLocation_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func setThumbLocation( _ _x: Int, _ _y: Int ) {
+        setThumbLocation( x: _x, y: _y )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSliderUI.scrollDueToClickInTrack(int)
+
+    private static var scrollDueToClickInTrack_MethodID_62: jmethodID?
+
+    open func scrollDueToClickInTrack( dir: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dir, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollDueToClickInTrack", methodSig: "(I)V", methodCache: &BasicSliderUI.scrollDueToClickInTrack_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open func scrollDueToClickInTrack( _ _dir: Int ) {
+        scrollDueToClickInTrack( dir: _dir )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.xPositionForValue(int)
+
+    private static var xPositionForValue_MethodID_63: jmethodID?
+
+    open func xPositionForValue( value: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "xPositionForValue", methodSig: "(I)I", methodCache: &BasicSliderUI.xPositionForValue_MethodID_63, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func xPositionForValue( _ _value: Int ) -> Int {
+        return xPositionForValue( value: _value )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.yPositionForValue(int)
+
+    private static var yPositionForValue_MethodID_64: jmethodID?
+
+    open func yPositionForValue( value: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "yPositionForValue", methodSig: "(I)I", methodCache: &BasicSliderUI.yPositionForValue_MethodID_64, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func yPositionForValue( _ _value: Int ) -> Int {
+        return yPositionForValue( value: _value )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicSliderUI.yPositionForValue(int,int,int)
+
+    private static var yPositionForValue_MethodID_65: jmethodID?
+
+    open func yPositionForValue( value: Int, trackY: Int, trackHeight: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        __args[1] = JNIType.toJava( value: trackY, locals: &__locals )
+        __args[2] = JNIType.toJava( value: trackHeight, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "yPositionForValue", methodSig: "(III)I", methodCache: &BasicSliderUI.yPositionForValue_MethodID_65, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func yPositionForValue( _ _value: Int, _ _trackY: Int, _ _trackHeight: Int ) -> Int {
+        return yPositionForValue( value: _value, trackY: _trackY, trackHeight: _trackHeight )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicSliderUI.valueForYPosition(int)
+
+    private static var valueForYPosition_MethodID_66: jmethodID?
+
+    open func valueForYPosition( yPos: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: yPos, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "valueForYPosition", methodSig: "(I)I", methodCache: &BasicSliderUI.valueForYPosition_MethodID_66, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func valueForYPosition( _ _yPos: Int ) -> Int {
+        return valueForYPosition( yPos: _yPos )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicSliderUI.valueForXPosition(int)
+
+    private static var valueForXPosition_MethodID_67: jmethodID?
+
+    open func valueForXPosition( xPos: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: xPos, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "valueForXPosition", methodSig: "(I)I", methodCache: &BasicSliderUI.valueForXPosition_MethodID_67, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func valueForXPosition( _ _xPos: Int ) -> Int {
+        return valueForXPosition( xPos: _xPos )
+    }
 
 }
 

@@ -130,31 +130,14 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
         return isDefined( attrName: _attrName )
     }
 
-    /// public java.lang.Object javax.swing.text.StyleContext$SmallAttributeSet.getAttribute(java.lang.Object)
-
-    private static var getAttribute_MethodID_6: jmethodID?
-
-    open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyleContext_SmallAttributeSet.getAttribute_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getAttribute( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getAttribute( key: _key )
-    }
-
     /// public javax.swing.text.AttributeSet javax.swing.text.StyleContext$SmallAttributeSet.getResolveParent()
 
-    private static var getResolveParent_MethodID_7: jmethodID?
+    private static var getResolveParent_MethodID_6: jmethodID?
 
     open func getResolveParent() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResolveParent", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_SmallAttributeSet.getResolveParent_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResolveParent", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_SmallAttributeSet.getResolveParent_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -162,24 +145,24 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
 
     /// public int javax.swing.text.StyleContext$SmallAttributeSet.getAttributeCount()
 
-    private static var getAttributeCount_MethodID_8: jmethodID?
+    private static var getAttributeCount_MethodID_7: jmethodID?
 
     open func getAttributeCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAttributeCount", methodSig: "()I", methodCache: &StyleContext_SmallAttributeSet.getAttributeCount_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAttributeCount", methodSig: "()I", methodCache: &StyleContext_SmallAttributeSet.getAttributeCount_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public javax.swing.text.AttributeSet javax.swing.text.StyleContext$SmallAttributeSet.copyAttributes()
 
-    private static var copyAttributes_MethodID_9: jmethodID?
+    private static var copyAttributes_MethodID_8: jmethodID?
 
     open func copyAttributes() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_SmallAttributeSet.copyAttributes_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_SmallAttributeSet.copyAttributes_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -187,12 +170,12 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
 
     /// public java.util.Enumeration javax.swing.text.StyleContext$SmallAttributeSet.getAttributeNames()
 
-    private static var getAttributeNames_MethodID_10: jmethodID?
+    private static var getAttributeNames_MethodID_9: jmethodID?
 
     open func getAttributeNames() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeNames", methodSig: "()Ljava/util/Enumeration;", methodCache: &StyleContext_SmallAttributeSet.getAttributeNames_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeNames", methodSig: "()Ljava/util/Enumeration;", methodCache: &StyleContext_SmallAttributeSet.getAttributeNames_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -200,14 +183,14 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
 
     /// public boolean javax.swing.text.StyleContext$SmallAttributeSet.containsAttribute(java.lang.Object,java.lang.Object)
 
-    private static var containsAttribute_MethodID_11: jmethodID?
+    private static var containsAttribute_MethodID_10: jmethodID?
 
     open func containsAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &StyleContext_SmallAttributeSet.containsAttribute_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &StyleContext_SmallAttributeSet.containsAttribute_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -217,13 +200,13 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
 
     /// public boolean javax.swing.text.StyleContext$SmallAttributeSet.containsAttributes(javax.swing.text.AttributeSet)
 
-    private static var containsAttributes_MethodID_12: jmethodID?
+    private static var containsAttributes_MethodID_11: jmethodID?
 
     open func containsAttributes( attributes: AttributeSet? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_SmallAttributeSet.containsAttributes_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_SmallAttributeSet.containsAttributes_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -231,25 +214,42 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
         return containsAttributes( attributes: _attributes )
     }
 
-    /// private void javax.swing.text.StyleContext$SmallAttributeSet.updateResolveParent()
-
-    /// java.lang.Object javax.swing.text.StyleContext$SmallAttributeSet.getLocalAttribute(java.lang.Object)
-
     /// public boolean javax.swing.text.StyleContext$SmallAttributeSet.isEqual(javax.swing.text.AttributeSet)
 
-    private static var isEqual_MethodID_13: jmethodID?
+    private static var isEqual_MethodID_12: jmethodID?
 
     open func isEqual( attr: AttributeSet? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_SmallAttributeSet.isEqual_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_SmallAttributeSet.isEqual_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
     open func isEqual( _ _attr: AttributeSet? ) -> Bool {
         return isEqual( attr: _attr )
     }
+
+    /// public java.lang.Object javax.swing.text.StyleContext$SmallAttributeSet.getAttribute(java.lang.Object)
+
+    private static var getAttribute_MethodID_13: jmethodID?
+
+    open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyleContext_SmallAttributeSet.getAttribute_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func getAttribute( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getAttribute( key: _key )
+    }
+
+    /// private void javax.swing.text.StyleContext$SmallAttributeSet.updateResolveParent()
+
+    /// java.lang.Object javax.swing.text.StyleContext$SmallAttributeSet.getLocalAttribute(java.lang.Object)
 
 }
 

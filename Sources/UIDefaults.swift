@@ -190,93 +190,16 @@ open class UIDefaults: java_util.Hashtable {
         return getInt( arg0: _arg0 )
     }
 
-    /// public javax.swing.plaf.ComponentUI javax.swing.UIDefaults.getUI(javax.swing.JComponent)
-
-    private static var getUI_MethodID_9: jmethodID?
-
-    open func getUI( arg0: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &UIDefaults.getUI_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    open func getUI( _ _arg0: JComponent? ) -> ComponentUI! {
-        return getUI( arg0: _arg0 )
-    }
-
-    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.UIDefaults.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_10: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &UIDefaults.getPropertyChangeListeners_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-
-    /// public java.awt.Color javax.swing.UIDefaults.getColor(java.lang.Object,java.util.Locale)
-
-    private static var getColor_MethodID_11: jmethodID?
-
-    open func getColor( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Color;", methodCache: &UIDefaults.getColor_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open func getColor( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> java_awt.Color! {
-        return getColor( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.awt.Color javax.swing.UIDefaults.getColor(java.lang.Object)
-
-    private static var getColor_MethodID_12: jmethodID?
-
-    open func getColor( arg0: java_swift.JavaObject? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "(Ljava/lang/Object;)Ljava/awt/Color;", methodCache: &UIDefaults.getColor_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open func getColor( _ _arg0: java_swift.JavaObject? ) -> java_awt.Color! {
-        return getColor( arg0: _arg0 )
-    }
-
-    /// public java.util.Locale javax.swing.UIDefaults.getDefaultLocale()
-
-    private static var getDefaultLocale_MethodID_13: jmethodID?
-
-    open func getDefaultLocale() -> java_util.JavaLocale! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultLocale", methodSig: "()Ljava/util/Locale;", methodCache: &UIDefaults.getDefaultLocale_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.JavaLocale( javaObject: __return ) : nil
-    }
-
-
     /// public javax.swing.Icon javax.swing.UIDefaults.getIcon(java.lang.Object,java.util.Locale)
 
-    private static var getIcon_MethodID_14: jmethodID?
+    private static var getIcon_MethodID_9: jmethodID?
 
     open func getIcon( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/Icon;", methodCache: &UIDefaults.getIcon_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/Icon;", methodCache: &UIDefaults.getIcon_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -287,13 +210,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public javax.swing.Icon javax.swing.UIDefaults.getIcon(java.lang.Object)
 
-    private static var getIcon_MethodID_15: jmethodID?
+    private static var getIcon_MethodID_10: jmethodID?
 
     open func getIcon( arg0: java_swift.JavaObject? ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Icon;", methodCache: &UIDefaults.getIcon_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Icon;", methodCache: &UIDefaults.getIcon_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -304,13 +227,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public java.awt.Insets javax.swing.UIDefaults.getInsets(java.lang.Object)
 
-    private static var getInsets_MethodID_16: jmethodID?
+    private static var getInsets_MethodID_11: jmethodID?
 
     open func getInsets( arg0: java_swift.JavaObject? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljava/lang/Object;)Ljava/awt/Insets;", methodCache: &UIDefaults.getInsets_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljava/lang/Object;)Ljava/awt/Insets;", methodCache: &UIDefaults.getInsets_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -321,14 +244,14 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public java.awt.Insets javax.swing.UIDefaults.getInsets(java.lang.Object,java.util.Locale)
 
-    private static var getInsets_MethodID_17: jmethodID?
+    private static var getInsets_MethodID_12: jmethodID?
 
     open func getInsets( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Insets;", methodCache: &UIDefaults.getInsets_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Insets;", methodCache: &UIDefaults.getInsets_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -337,33 +260,15 @@ open class UIDefaults: java_util.Hashtable {
         return getInsets( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public java.awt.Font javax.swing.UIDefaults.getFont(java.lang.Object,java.util.Locale)
-
-    private static var getFont_MethodID_18: jmethodID?
-
-    open func getFont( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> java_awt.Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Font;", methodCache: &UIDefaults.getFont_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
-    }
-
-    open func getFont( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> java_awt.Font! {
-        return getFont( arg0: _arg0, arg1: _arg1 )
-    }
-
     /// public java.awt.Font javax.swing.UIDefaults.getFont(java.lang.Object)
 
-    private static var getFont_MethodID_19: jmethodID?
+    private static var getFont_MethodID_13: jmethodID?
 
     open func getFont( arg0: java_swift.JavaObject? ) -> java_awt.Font! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljava/lang/Object;)Ljava/awt/Font;", methodCache: &UIDefaults.getFont_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljava/lang/Object;)Ljava/awt/Font;", methodCache: &UIDefaults.getFont_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Font( javaObject: __return ) : nil
     }
@@ -372,15 +277,33 @@ open class UIDefaults: java_util.Hashtable {
         return getFont( arg0: _arg0 )
     }
 
+    /// public java.awt.Font javax.swing.UIDefaults.getFont(java.lang.Object,java.util.Locale)
+
+    private static var getFont_MethodID_14: jmethodID?
+
+    open func getFont( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> java_awt.Font! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Font;", methodCache: &UIDefaults.getFont_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
+    }
+
+    open func getFont( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> java_awt.Font! {
+        return getFont( arg0: _arg0, arg1: _arg1 )
+    }
+
     /// public synchronized void javax.swing.UIDefaults.addPropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var addPropertyChangeListener_MethodID_20: jmethodID?
+    private static var addPropertyChangeListener_MethodID_15: jmethodID?
 
     open func addPropertyChangeListener( arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &UIDefaults.addPropertyChangeListener_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &UIDefaults.addPropertyChangeListener_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func addPropertyChangeListener( _ _arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
@@ -389,46 +312,28 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public synchronized void javax.swing.UIDefaults.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var removePropertyChangeListener_MethodID_21: jmethodID?
+    private static var removePropertyChangeListener_MethodID_16: jmethodID?
 
     open func removePropertyChangeListener( arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &UIDefaults.removePropertyChangeListener_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &UIDefaults.removePropertyChangeListener_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func removePropertyChangeListener( _ _arg0: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         removePropertyChangeListener( arg0: _arg0 )
     }
 
-    /// public javax.swing.border.Border javax.swing.UIDefaults.getBorder(java.lang.Object,java.util.Locale)
-
-    private static var getBorder_MethodID_22: jmethodID?
-
-    open func getBorder( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorder", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/border/Border;", methodCache: &UIDefaults.getBorder_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-    open func getBorder( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> Border! {
-        return getBorder( arg0: _arg0, arg1: _arg1 )
-    }
-
     /// public javax.swing.border.Border javax.swing.UIDefaults.getBorder(java.lang.Object)
 
-    private static var getBorder_MethodID_23: jmethodID?
+    private static var getBorder_MethodID_17: jmethodID?
 
     open func getBorder( arg0: java_swift.JavaObject? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorder", methodSig: "(Ljava/lang/Object;)Ljavax/swing/border/Border;", methodCache: &UIDefaults.getBorder_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorder", methodSig: "(Ljava/lang/Object;)Ljavax/swing/border/Border;", methodCache: &UIDefaults.getBorder_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -437,9 +342,27 @@ open class UIDefaults: java_util.Hashtable {
         return getBorder( arg0: _arg0 )
     }
 
+    /// public javax.swing.border.Border javax.swing.UIDefaults.getBorder(java.lang.Object,java.util.Locale)
+
+    private static var getBorder_MethodID_18: jmethodID?
+
+    open func getBorder( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorder", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/border/Border;", methodCache: &UIDefaults.getBorder_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+    open func getBorder( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> Border! {
+        return getBorder( arg0: _arg0, arg1: _arg1 )
+    }
+
     /// protected void javax.swing.UIDefaults.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
 
-    private static var firePropertyChange_MethodID_24: jmethodID?
+    private static var firePropertyChange_MethodID_19: jmethodID?
 
     open func firePropertyChange( arg0: String?, arg1: java_swift.JavaObject?, arg2: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -447,55 +370,82 @@ open class UIDefaults: java_util.Hashtable {
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &UIDefaults.firePropertyChange_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &UIDefaults.firePropertyChange_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func firePropertyChange( _ _arg0: String?, _ _arg1: java_swift.JavaObject?, _ _arg2: java_swift.JavaObject? ) {
         firePropertyChange( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public java.lang.String javax.swing.UIDefaults.getString(java.lang.Object)
+    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.UIDefaults.getPropertyChangeListeners()
 
-    private static var getString_MethodID_25: jmethodID?
+    private static var getPropertyChangeListeners_MethodID_20: jmethodID?
 
-    open func getString( arg0: java_swift.JavaObject? ) -> String! {
+    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &UIDefaults.getPropertyChangeListeners_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+    }
+
+
+    /// public java.awt.Color javax.swing.UIDefaults.getColor(java.lang.Object)
+
+    private static var getColor_MethodID_21: jmethodID?
+
+    open func getColor( arg0: java_swift.JavaObject? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &UIDefaults.getString_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "(Ljava/lang/Object;)Ljava/awt/Color;", methodCache: &UIDefaults.getColor_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
-    open func getString( _ _arg0: java_swift.JavaObject? ) -> String! {
-        return getString( arg0: _arg0 )
+    open func getColor( _ _arg0: java_swift.JavaObject? ) -> java_awt.Color! {
+        return getColor( arg0: _arg0 )
     }
 
-    /// public java.lang.String javax.swing.UIDefaults.getString(java.lang.Object,java.util.Locale)
+    /// public java.awt.Color javax.swing.UIDefaults.getColor(java.lang.Object,java.util.Locale)
 
-    private static var getString_MethodID_26: jmethodID?
+    private static var getColor_MethodID_22: jmethodID?
 
-    open func getString( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> String! {
+    open func getColor( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/String;", methodCache: &UIDefaults.getString_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Color;", methodCache: &UIDefaults.getColor_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
-    open func getString( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> String! {
-        return getString( arg0: _arg0, arg1: _arg1 )
+    open func getColor( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> java_awt.Color! {
+        return getColor( arg0: _arg0, arg1: _arg1 )
     }
+
+    /// public java.util.Locale javax.swing.UIDefaults.getDefaultLocale()
+
+    private static var getDefaultLocale_MethodID_23: jmethodID?
+
+    open func getDefaultLocale() -> java_util.JavaLocale! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultLocale", methodSig: "()Ljava/util/Locale;", methodCache: &UIDefaults.getDefaultLocale_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.JavaLocale( javaObject: __return ) : nil
+    }
+
 
     /// public void javax.swing.UIDefaults.setDefaultLocale(java.util.Locale)
 
-    private static var setDefaultLocale_MethodID_27: jmethodID?
+    private static var setDefaultLocale_MethodID_24: jmethodID?
 
     open func setDefaultLocale( arg0: java_util.JavaLocale? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultLocale", methodSig: "(Ljava/util/Locale;)V", methodCache: &UIDefaults.setDefaultLocale_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultLocale", methodSig: "(Ljava/util/Locale;)V", methodCache: &UIDefaults.setDefaultLocale_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setDefaultLocale( _ _arg0: java_util.JavaLocale? ) {
@@ -510,13 +460,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public void javax.swing.UIDefaults.putDefaults(java.lang.Object[])
 
-    private static var putDefaults_MethodID_28: jmethodID?
+    private static var putDefaults_MethodID_25: jmethodID?
 
     open func putDefaults( arg0: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putDefaults", methodSig: "([Ljava/lang/Object;)V", methodCache: &UIDefaults.putDefaults_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putDefaults", methodSig: "([Ljava/lang/Object;)V", methodCache: &UIDefaults.putDefaults_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func putDefaults( _ _arg0: [JavaObject]? ) {
@@ -525,13 +475,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public java.awt.Dimension javax.swing.UIDefaults.getDimension(java.lang.Object)
 
-    private static var getDimension_MethodID_29: jmethodID?
+    private static var getDimension_MethodID_26: jmethodID?
 
     open func getDimension( arg0: java_swift.JavaObject? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDimension", methodSig: "(Ljava/lang/Object;)Ljava/awt/Dimension;", methodCache: &UIDefaults.getDimension_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDimension", methodSig: "(Ljava/lang/Object;)Ljava/awt/Dimension;", methodCache: &UIDefaults.getDimension_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -542,14 +492,14 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public java.awt.Dimension javax.swing.UIDefaults.getDimension(java.lang.Object,java.util.Locale)
 
-    private static var getDimension_MethodID_30: jmethodID?
+    private static var getDimension_MethodID_27: jmethodID?
 
     open func getDimension( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDimension", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Dimension;", methodCache: &UIDefaults.getDimension_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDimension", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Dimension;", methodCache: &UIDefaults.getDimension_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -560,13 +510,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public java.lang.Class javax.swing.UIDefaults.getUIClass(java.lang.String)
 
-    private static var getUIClass_MethodID_31: jmethodID?
+    private static var getUIClass_MethodID_28: jmethodID?
 
     open func getUIClass( arg0: String? ) -> java_swift.JavaClass! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIClass", methodSig: "(Ljava/lang/String;)Ljava/lang/Class;", methodCache: &UIDefaults.getUIClass_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIClass", methodSig: "(Ljava/lang/String;)Ljava/lang/Class;", methodCache: &UIDefaults.getUIClass_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
     }
@@ -577,14 +527,14 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public java.lang.Class javax.swing.UIDefaults.getUIClass(java.lang.String,java.lang.ClassLoader)
 
-    private static var getUIClass_MethodID_32: jmethodID?
+    private static var getUIClass_MethodID_29: jmethodID?
 
     open func getUIClass( arg0: String?, arg1: java_lang.ClassLoader? ) -> java_swift.JavaClass! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIClass", methodSig: "(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;", methodCache: &UIDefaults.getUIClass_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIClass", methodSig: "(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/Class;", methodCache: &UIDefaults.getUIClass_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
     }
@@ -595,13 +545,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// protected void javax.swing.UIDefaults.getUIError(java.lang.String)
 
-    private static var getUIError_MethodID_33: jmethodID?
+    private static var getUIError_MethodID_30: jmethodID?
 
     open func getUIError( arg0: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getUIError", methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults.getUIError_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getUIError", methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults.getUIError_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func getUIError( _ _arg0: String? ) {
@@ -610,13 +560,13 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public synchronized void javax.swing.UIDefaults.addResourceBundle(java.lang.String)
 
-    private static var addResourceBundle_MethodID_34: jmethodID?
+    private static var addResourceBundle_MethodID_31: jmethodID?
 
     open func addResourceBundle( arg0: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addResourceBundle", methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults.addResourceBundle_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addResourceBundle", methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults.addResourceBundle_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open func addResourceBundle( _ _arg0: String? ) {
@@ -625,17 +575,67 @@ open class UIDefaults: java_util.Hashtable {
 
     /// public synchronized void javax.swing.UIDefaults.removeResourceBundle(java.lang.String)
 
-    private static var removeResourceBundle_MethodID_35: jmethodID?
+    private static var removeResourceBundle_MethodID_32: jmethodID?
 
     open func removeResourceBundle( arg0: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeResourceBundle", methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults.removeResourceBundle_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeResourceBundle", methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults.removeResourceBundle_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func removeResourceBundle( _ _arg0: String? ) {
         removeResourceBundle( arg0: _arg0 )
+    }
+
+    /// public java.lang.String javax.swing.UIDefaults.getString(java.lang.Object,java.util.Locale)
+
+    private static var getString_MethodID_33: jmethodID?
+
+    open func getString( arg0: java_swift.JavaObject?, arg1: java_util.JavaLocale? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/String;", methodCache: &UIDefaults.getString_MethodID_33, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getString( _ _arg0: java_swift.JavaObject?, _ _arg1: java_util.JavaLocale? ) -> String! {
+        return getString( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.lang.String javax.swing.UIDefaults.getString(java.lang.Object)
+
+    private static var getString_MethodID_34: jmethodID?
+
+    open func getString( arg0: java_swift.JavaObject? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &UIDefaults.getString_MethodID_34, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getString( _ _arg0: java_swift.JavaObject? ) -> String! {
+        return getString( arg0: _arg0 )
+    }
+
+    /// public javax.swing.plaf.ComponentUI javax.swing.UIDefaults.getUI(javax.swing.JComponent)
+
+    private static var getUI_MethodID_35: jmethodID?
+
+    open func getUI( arg0: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &UIDefaults.getUI_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    open func getUI( _ _arg0: JComponent? ) -> ComponentUI! {
+        return getUI( arg0: _arg0 )
     }
 
 }

@@ -145,17 +145,100 @@ open class ZoneView: BoxView {
         self.init( elem: _elem, axis: _axis )
     }
 
+    /// public void javax.swing.text.ZoneView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var insertUpdate_MethodID_2: jmethodID?
+
+    open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.insertUpdate_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        insertUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// public void javax.swing.text.ZoneView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var removeUpdate_MethodID_3: jmethodID?
+
+    open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.removeUpdate_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        removeUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// protected int javax.swing.text.ZoneView.getViewIndexAtPosition(int)
+
+    private static var getViewIndexAtPosition_MethodID_4: jmethodID?
+
+    override open func getViewIndexAtPosition( pos: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &ZoneView.getViewIndexAtPosition_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
+        return getViewIndexAtPosition( pos: _pos )
+    }
+
+    /// protected boolean javax.swing.text.ZoneView.updateChildren(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,javax.swing.text.ViewFactory)
+
+    private static var updateChildren_MethodID_5: jmethodID?
+
+    override open func updateChildren( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, f: ViewFactory? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateChildren", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljavax/swing/text/ViewFactory;)Z", methodCache: &ZoneView.updateChildren_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    override open func updateChildren( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _f: ViewFactory? ) -> Bool {
+        return updateChildren( ec: _ec, e: _e, f: _f )
+    }
+
+    /// protected void javax.swing.text.ZoneView.loadChildren(javax.swing.text.ViewFactory)
+
+    private static var loadChildren_MethodID_6: jmethodID?
+
+    override open func loadChildren( f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.loadChildren_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func loadChildren( _ _f: ViewFactory? ) {
+        loadChildren( f: _f )
+    }
+
     /// void javax.swing.text.ZoneView.handleRemove(int,int)
 
     /// protected void javax.swing.text.ZoneView.zoneWasLoaded(javax.swing.text.View)
 
-    private static var zoneWasLoaded_MethodID_2: jmethodID?
+    private static var zoneWasLoaded_MethodID_7: jmethodID?
 
     open func zoneWasLoaded( zone: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: zone != nil ? zone! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "zoneWasLoaded", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.zoneWasLoaded_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "zoneWasLoaded", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.zoneWasLoaded_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func zoneWasLoaded( _ _zone: View? ) {
@@ -164,25 +247,25 @@ open class ZoneView: BoxView {
 
     /// public int javax.swing.text.ZoneView.getMaximumZoneSize()
 
-    private static var getMaximumZoneSize_MethodID_3: jmethodID?
+    private static var getMaximumZoneSize_MethodID_8: jmethodID?
 
     open func getMaximumZoneSize() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumZoneSize", methodSig: "()I", methodCache: &ZoneView.getMaximumZoneSize_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumZoneSize", methodSig: "()I", methodCache: &ZoneView.getMaximumZoneSize_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.text.ZoneView.setMaximumZoneSize(int)
 
-    private static var setMaximumZoneSize_MethodID_4: jmethodID?
+    private static var setMaximumZoneSize_MethodID_9: jmethodID?
 
     open func setMaximumZoneSize( size: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumZoneSize", methodSig: "(I)V", methodCache: &ZoneView.setMaximumZoneSize_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumZoneSize", methodSig: "(I)V", methodCache: &ZoneView.setMaximumZoneSize_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setMaximumZoneSize( _ _size: Int ) {
@@ -191,25 +274,25 @@ open class ZoneView: BoxView {
 
     /// public int javax.swing.text.ZoneView.getMaxZonesLoaded()
 
-    private static var getMaxZonesLoaded_MethodID_5: jmethodID?
+    private static var getMaxZonesLoaded_MethodID_10: jmethodID?
 
     open func getMaxZonesLoaded() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxZonesLoaded", methodSig: "()I", methodCache: &ZoneView.getMaxZonesLoaded_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxZonesLoaded", methodSig: "()I", methodCache: &ZoneView.getMaxZonesLoaded_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.text.ZoneView.setMaxZonesLoaded(int)
 
-    private static var setMaxZonesLoaded_MethodID_6: jmethodID?
+    private static var setMaxZonesLoaded_MethodID_11: jmethodID?
 
     open func setMaxZonesLoaded( mzl: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mzl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaxZonesLoaded", methodSig: "(I)V", methodCache: &ZoneView.setMaxZonesLoaded_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaxZonesLoaded", methodSig: "(I)V", methodCache: &ZoneView.setMaxZonesLoaded_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setMaxZonesLoaded( _ _mzl: Int ) {
@@ -220,13 +303,13 @@ open class ZoneView: BoxView {
 
     /// protected void javax.swing.text.ZoneView.unloadZone(javax.swing.text.View)
 
-    private static var unloadZone_MethodID_7: jmethodID?
+    private static var unloadZone_MethodID_12: jmethodID?
 
     open func unloadZone( zone: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: zone != nil ? zone! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "unloadZone", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.unloadZone_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "unloadZone", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.unloadZone_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func unloadZone( _ _zone: View? ) {
@@ -235,13 +318,13 @@ open class ZoneView: BoxView {
 
     /// protected boolean javax.swing.text.ZoneView.isZoneLoaded(javax.swing.text.View)
 
-    private static var isZoneLoaded_MethodID_8: jmethodID?
+    private static var isZoneLoaded_MethodID_13: jmethodID?
 
     open func isZoneLoaded( zone: View? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: zone != nil ? zone! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isZoneLoaded", methodSig: "(Ljavax/swing/text/View;)Z", methodCache: &ZoneView.isZoneLoaded_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isZoneLoaded", methodSig: "(Ljavax/swing/text/View;)Z", methodCache: &ZoneView.isZoneLoaded_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -251,14 +334,14 @@ open class ZoneView: BoxView {
 
     /// protected javax.swing.text.View javax.swing.text.ZoneView.createZone(int,int)
 
-    private static var createZone_MethodID_9: jmethodID?
+    private static var createZone_MethodID_14: jmethodID?
 
     open func createZone( p0: Int, p1: Int ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: p0, locals: &__locals )
         __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createZone", methodSig: "(II)Ljavax/swing/text/View;", methodCache: &ZoneView.createZone_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createZone", methodSig: "(II)Ljavax/swing/text/View;", methodCache: &ZoneView.createZone_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -272,89 +355,6 @@ open class ZoneView: BoxView {
     /// void javax.swing.text.ZoneView.splitZone(int,int,int)
 
     /// int javax.swing.text.ZoneView.getDesiredZoneEnd(int)
-
-    /// public void javax.swing.text.ZoneView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var insertUpdate_MethodID_10: jmethodID?
-
-    open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.insertUpdate_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        insertUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// public void javax.swing.text.ZoneView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var removeUpdate_MethodID_11: jmethodID?
-
-    open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.removeUpdate_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        removeUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// protected int javax.swing.text.ZoneView.getViewIndexAtPosition(int)
-
-    private static var getViewIndexAtPosition_MethodID_12: jmethodID?
-
-    override open func getViewIndexAtPosition( pos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &ZoneView.getViewIndexAtPosition_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
-        return getViewIndexAtPosition( pos: _pos )
-    }
-
-    /// protected boolean javax.swing.text.ZoneView.updateChildren(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,javax.swing.text.ViewFactory)
-
-    private static var updateChildren_MethodID_13: jmethodID?
-
-    override open func updateChildren( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, f: ViewFactory? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateChildren", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljavax/swing/text/ViewFactory;)Z", methodCache: &ZoneView.updateChildren_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func updateChildren( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _f: ViewFactory? ) -> Bool {
-        return updateChildren( ec: _ec, e: _e, f: _f )
-    }
-
-    /// protected void javax.swing.text.ZoneView.loadChildren(javax.swing.text.ViewFactory)
-
-    private static var loadChildren_MethodID_14: jmethodID?
-
-    override open func loadChildren( f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.loadChildren_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    override open func loadChildren( _ _f: ViewFactory? ) {
-        loadChildren( f: _f )
-    }
 
 }
 

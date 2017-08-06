@@ -503,41 +503,32 @@ open class JToolTip: JComponent {
     }
 
 
-    /// public javax.swing.plaf.ToolTipUI javax.swing.JToolTip.getUI()
+    /// public void javax.swing.JToolTip.setComponent(javax.swing.JComponent)
 
-    private static var getUI_MethodID_3: jmethodID?
+    private static var setComponent_MethodID_3: jmethodID?
 
-    open func getUI() -> ToolTipUI! {
+    open func setComponent( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ToolTipUI;", methodCache: &JToolTip.getUI_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ToolTipUI( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponent", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &JToolTip.setComponent_MethodID_3, args: &__args, locals: &__locals )
     }
 
-
-    /// public javax.swing.JComponent javax.swing.JToolTip.getComponent()
-
-    private static var getComponent_MethodID_4: jmethodID?
-
-    open func getComponent() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &JToolTip.getComponent_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
+    open func setComponent( _ _c: JComponent? ) {
+        setComponent( c: _c )
     }
 
+    /// boolean javax.swing.JToolTip.alwaysOnTop()
 
     /// public void javax.swing.JToolTip.setTipText(java.lang.String)
 
-    private static var setTipText_MethodID_5: jmethodID?
+    private static var setTipText_MethodID_4: jmethodID?
 
     open func setTipText( tipText: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tipText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTipText", methodSig: "(Ljava/lang/String;)V", methodCache: &JToolTip.setTipText_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTipText", methodSig: "(Ljava/lang/String;)V", methodCache: &JToolTip.setTipText_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setTipText( _ _tipText: String? ) {
@@ -546,38 +537,47 @@ open class JToolTip: JComponent {
 
     /// public java.lang.String javax.swing.JToolTip.getTipText()
 
-    private static var getTipText_MethodID_6: jmethodID?
+    private static var getTipText_MethodID_5: jmethodID?
 
     open func getTipText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTipText", methodSig: "()Ljava/lang/String;", methodCache: &JToolTip.getTipText_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTipText", methodSig: "()Ljava/lang/String;", methodCache: &JToolTip.getTipText_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public javax.accessibility.AccessibleContext javax.swing.JToolTip.getAccessibleContext()
 
-    /// public void javax.swing.JToolTip.setComponent(javax.swing.JComponent)
+    /// public javax.swing.JComponent javax.swing.JToolTip.getComponent()
 
-    private static var setComponent_MethodID_7: jmethodID?
+    private static var getComponent_MethodID_6: jmethodID?
 
-    open func setComponent( c: JComponent? ) {
+    open func getComponent() -> JComponent! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponent", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &JToolTip.setComponent_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &JToolTip.getComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
-    open func setComponent( _ _c: JComponent? ) {
-        setComponent( c: _c )
-    }
 
     /// public void javax.swing.JToolTip.updateUI()
 
     /// public java.lang.String javax.swing.JToolTip.getUIClassID()
 
-    /// boolean javax.swing.JToolTip.alwaysOnTop()
+    /// public javax.swing.plaf.ToolTipUI javax.swing.JToolTip.getUI()
+
+    private static var getUI_MethodID_7: jmethodID?
+
+    open func getUI() -> ToolTipUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ToolTipUI;", methodCache: &JToolTip.getUI_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ToolTipUI( javaObject: __return ) : nil
+    }
+
 
     /// In declared protocol but not defined.. ///
 

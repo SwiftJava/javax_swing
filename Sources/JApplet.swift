@@ -406,6 +406,8 @@ open class JApplet: /* java.applet.Applet */ UnclassedObject, RootPaneContainer 
     }
 
 
+    /// public javax.accessibility.AccessibleContext javax.swing.JApplet.getAccessibleContext()
+
     /// public java.awt.Container javax.swing.JApplet.getContentPane()
 
     private static var getContentPane_MethodID_5: jmethodID?
@@ -666,8 +668,6 @@ open class JApplet: /* java.applet.Applet */ UnclassedObject, RootPaneContainer 
     }
 
     /// public java.awt.Graphics javax.swing.JApplet.getGraphics()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JApplet.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

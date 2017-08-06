@@ -609,15 +609,63 @@ open class JTextPane: JEditorPane {
     }
 
 
+    /// public javax.swing.text.Style javax.swing.JTextPane.getStyle(java.lang.String)
+
+    private static var getStyle_MethodID_4: jmethodID?
+
+    open func getStyle( nm: String? ) -> Style! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Style;", methodCache: &JTextPane.getStyle_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleForward( javaObject: __return ) : nil
+    }
+
+    open func getStyle( _ _nm: String? ) -> Style! {
+        return getStyle( nm: _nm )
+    }
+
+    /// public javax.swing.text.MutableAttributeSet javax.swing.JTextPane.getInputAttributes()
+
+    private static var getInputAttributes_MethodID_5: jmethodID?
+
+    open func getInputAttributes() -> MutableAttributeSet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputAttributes", methodSig: "()Ljavax/swing/text/MutableAttributeSet;", methodCache: &JTextPane.getInputAttributes_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MutableAttributeSetForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JTextPane.setCharacterAttributes(javax.swing.text.AttributeSet,boolean)
+
+    private static var setCharacterAttributes_MethodID_6: jmethodID?
+
+    open func setCharacterAttributes( attr: AttributeSet?, replace: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        __args[1] = JNIType.toJava( value: replace, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCharacterAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;Z)V", methodCache: &JTextPane.setCharacterAttributes_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func setCharacterAttributes( _ _attr: AttributeSet?, _ _replace: Bool ) {
+        setCharacterAttributes( attr: _attr, replace: _replace )
+    }
+
+    /// public java.lang.String javax.swing.JTextPane.getUIClassID()
+
     /// public void javax.swing.JTextPane.setStyledDocument(javax.swing.text.StyledDocument)
 
-    private static var setStyledDocument_MethodID_4: jmethodID?
+    private static var setStyledDocument_MethodID_7: jmethodID?
 
     open func setStyledDocument( doc: StyledDocument? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: doc, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStyledDocument", methodSig: "(Ljavax/swing/text/StyledDocument;)V", methodCache: &JTextPane.setStyledDocument_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStyledDocument", methodSig: "(Ljavax/swing/text/StyledDocument;)V", methodCache: &JTextPane.setStyledDocument_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setStyledDocument( _ _doc: StyledDocument? ) {
@@ -626,12 +674,12 @@ open class JTextPane: JEditorPane {
 
     /// public javax.swing.text.StyledDocument javax.swing.JTextPane.getStyledDocument()
 
-    private static var getStyledDocument_MethodID_5: jmethodID?
+    private static var getStyledDocument_MethodID_8: jmethodID?
 
     open func getStyledDocument() -> StyledDocument! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledDocument", methodSig: "()Ljavax/swing/text/StyledDocument;", methodCache: &JTextPane.getStyledDocument_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledDocument", methodSig: "()Ljavax/swing/text/StyledDocument;", methodCache: &JTextPane.getStyledDocument_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyledDocumentForward( javaObject: __return ) : nil
     }
@@ -639,13 +687,13 @@ open class JTextPane: JEditorPane {
 
     /// public void javax.swing.JTextPane.insertComponent(java.awt.Component)
 
-    private static var insertComponent_MethodID_6: jmethodID?
+    private static var insertComponent_MethodID_9: jmethodID?
 
     open func insertComponent( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JTextPane.insertComponent_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JTextPane.insertComponent_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func insertComponent( _ _c: java_awt.Component? ) {
@@ -654,13 +702,13 @@ open class JTextPane: JEditorPane {
 
     /// public void javax.swing.JTextPane.insertIcon(javax.swing.Icon)
 
-    private static var insertIcon_MethodID_7: jmethodID?
+    private static var insertIcon_MethodID_10: jmethodID?
 
     open func insertIcon( g: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JTextPane.insertIcon_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JTextPane.insertIcon_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func insertIcon( _ _g: Icon? ) {
@@ -669,14 +717,14 @@ open class JTextPane: JEditorPane {
 
     /// public javax.swing.text.Style javax.swing.JTextPane.addStyle(java.lang.String,javax.swing.text.Style)
 
-    private static var addStyle_MethodID_8: jmethodID?
+    private static var addStyle_MethodID_11: jmethodID?
 
     open func addStyle( nm: String?, parent: Style? ) -> Style! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addStyle", methodSig: "(Ljava/lang/String;Ljavax/swing/text/Style;)Ljavax/swing/text/Style;", methodCache: &JTextPane.addStyle_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addStyle", methodSig: "(Ljava/lang/String;Ljavax/swing/text/Style;)Ljavax/swing/text/Style;", methodCache: &JTextPane.addStyle_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleForward( javaObject: __return ) : nil
     }
@@ -687,13 +735,13 @@ open class JTextPane: JEditorPane {
 
     /// public void javax.swing.JTextPane.removeStyle(java.lang.String)
 
-    private static var removeStyle_MethodID_9: jmethodID?
+    private static var removeStyle_MethodID_12: jmethodID?
 
     open func removeStyle( nm: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeStyle", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextPane.removeStyle_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeStyle", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextPane.removeStyle_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func removeStyle( _ _nm: String? ) {
@@ -702,13 +750,13 @@ open class JTextPane: JEditorPane {
 
     /// public void javax.swing.JTextPane.setLogicalStyle(javax.swing.text.Style)
 
-    private static var setLogicalStyle_MethodID_10: jmethodID?
+    private static var setLogicalStyle_MethodID_13: jmethodID?
 
     open func setLogicalStyle( s: Style? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLogicalStyle", methodSig: "(Ljavax/swing/text/Style;)V", methodCache: &JTextPane.setLogicalStyle_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLogicalStyle", methodSig: "(Ljavax/swing/text/Style;)V", methodCache: &JTextPane.setLogicalStyle_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setLogicalStyle( _ _s: Style? ) {
@@ -717,12 +765,12 @@ open class JTextPane: JEditorPane {
 
     /// public javax.swing.text.Style javax.swing.JTextPane.getLogicalStyle()
 
-    private static var getLogicalStyle_MethodID_11: jmethodID?
+    private static var getLogicalStyle_MethodID_14: jmethodID?
 
     open func getLogicalStyle() -> Style! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalStyle", methodSig: "()Ljavax/swing/text/Style;", methodCache: &JTextPane.getLogicalStyle_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalStyle", methodSig: "()Ljavax/swing/text/Style;", methodCache: &JTextPane.getLogicalStyle_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleForward( javaObject: __return ) : nil
     }
@@ -730,12 +778,12 @@ open class JTextPane: JEditorPane {
 
     /// public javax.swing.text.AttributeSet javax.swing.JTextPane.getCharacterAttributes()
 
-    private static var getCharacterAttributes_MethodID_12: jmethodID?
+    private static var getCharacterAttributes_MethodID_15: jmethodID?
 
     open func getCharacterAttributes() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &JTextPane.getCharacterAttributes_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &JTextPane.getCharacterAttributes_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -743,12 +791,12 @@ open class JTextPane: JEditorPane {
 
     /// public javax.swing.text.AttributeSet javax.swing.JTextPane.getParagraphAttributes()
 
-    private static var getParagraphAttributes_MethodID_13: jmethodID?
+    private static var getParagraphAttributes_MethodID_16: jmethodID?
 
     open func getParagraphAttributes() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParagraphAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &JTextPane.getParagraphAttributes_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParagraphAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &JTextPane.getParagraphAttributes_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -756,14 +804,14 @@ open class JTextPane: JEditorPane {
 
     /// public void javax.swing.JTextPane.setParagraphAttributes(javax.swing.text.AttributeSet,boolean)
 
-    private static var setParagraphAttributes_MethodID_14: jmethodID?
+    private static var setParagraphAttributes_MethodID_17: jmethodID?
 
     open func setParagraphAttributes( attr: AttributeSet?, replace: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
         __args[1] = JNIType.toJava( value: replace, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;Z)V", methodCache: &JTextPane.setParagraphAttributes_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;Z)V", methodCache: &JTextPane.setParagraphAttributes_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setParagraphAttributes( _ _attr: AttributeSet?, _ _replace: Bool ) {
@@ -772,12 +820,12 @@ open class JTextPane: JEditorPane {
 
     /// protected final javax.swing.text.StyledEditorKit javax.swing.JTextPane.getStyledEditorKit()
 
-    private static var getStyledEditorKit_MethodID_15: jmethodID?
+    private static var getStyledEditorKit_MethodID_18: jmethodID?
 
     open func getStyledEditorKit() -> StyledEditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledEditorKit", methodSig: "()Ljavax/swing/text/StyledEditorKit;", methodCache: &JTextPane.getStyledEditorKit_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledEditorKit", methodSig: "()Ljavax/swing/text/StyledEditorKit;", methodCache: &JTextPane.getStyledEditorKit_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyledEditorKit( javaObject: __return ) : nil
     }
@@ -785,12 +833,12 @@ open class JTextPane: JEditorPane {
 
     /// protected javax.swing.text.EditorKit javax.swing.JTextPane.createDefaultEditorKit()
 
-    private static var createDefaultEditorKit_MethodID_16: jmethodID?
+    private static var createDefaultEditorKit_MethodID_19: jmethodID?
 
     override open func createDefaultEditorKit() -> EditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JTextPane.createDefaultEditorKit_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JTextPane.createDefaultEditorKit_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EditorKit( javaObject: __return ) : nil
     }
@@ -798,30 +846,15 @@ open class JTextPane: JEditorPane {
 
     /// public final void javax.swing.JTextPane.setEditorKit(javax.swing.text.EditorKit)
 
-    /// public javax.swing.text.MutableAttributeSet javax.swing.JTextPane.getInputAttributes()
-
-    private static var getInputAttributes_MethodID_17: jmethodID?
-
-    open func getInputAttributes() -> MutableAttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputAttributes", methodSig: "()Ljavax/swing/text/MutableAttributeSet;", methodCache: &JTextPane.getInputAttributes_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MutableAttributeSetForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.lang.String javax.swing.JTextPane.getUIClassID()
-
     /// public void javax.swing.JTextPane.setDocument(javax.swing.text.Document)
 
-    private static var setDocument_MethodID_18: jmethodID?
+    private static var setDocument_MethodID_20: jmethodID?
 
     open func setDocument( doc: Document? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: doc, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDocument", methodSig: "(Ljavax/swing/text/Document;)V", methodCache: &JTextPane.setDocument_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDocument", methodSig: "(Ljavax/swing/text/Document;)V", methodCache: &JTextPane.setDocument_MethodID_20, args: &__args, locals: &__locals )
     }
 
     override open func setDocument( _ _doc: Document? ) {
@@ -831,39 +864,6 @@ open class JTextPane: JEditorPane {
     /// private void javax.swing.JTextPane.replaceSelection(java.lang.String,boolean)
 
     /// public void javax.swing.JTextPane.replaceSelection(java.lang.String)
-
-    /// public void javax.swing.JTextPane.setCharacterAttributes(javax.swing.text.AttributeSet,boolean)
-
-    private static var setCharacterAttributes_MethodID_19: jmethodID?
-
-    open func setCharacterAttributes( attr: AttributeSet?, replace: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[1] = JNIType.toJava( value: replace, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCharacterAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;Z)V", methodCache: &JTextPane.setCharacterAttributes_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setCharacterAttributes( _ _attr: AttributeSet?, _ _replace: Bool ) {
-        setCharacterAttributes( attr: _attr, replace: _replace )
-    }
-
-    /// public javax.swing.text.Style javax.swing.JTextPane.getStyle(java.lang.String)
-
-    private static var getStyle_MethodID_20: jmethodID?
-
-    open func getStyle( nm: String? ) -> Style! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Style;", methodCache: &JTextPane.getStyle_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleForward( javaObject: __return ) : nil
-    }
-
-    open func getStyle( _ _nm: String? ) -> Style! {
-        return getStyle( nm: _nm )
-    }
 
 }
 

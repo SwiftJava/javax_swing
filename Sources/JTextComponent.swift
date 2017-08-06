@@ -713,878 +713,11 @@ open class JTextComponent: JComponent, Scrollable {
     }
 
 
-    /// public javax.swing.plaf.TextUI javax.swing.text.JTextComponent.getUI()
-
-    private static var getUI_MethodID_10: jmethodID?
-
-    open func getUI() -> TextUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TextUI;", methodCache: &JTextComponent.getUI_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TextUI( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean javax.swing.text.JTextComponent.isEditable()
-
-    private static var isEditable_MethodID_11: jmethodID?
-
-    open func isEditable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &JTextComponent.isEditable_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setDragEnabled(boolean)
-
-    private static var setDragEnabled_MethodID_12: jmethodID?
-
-    open func setDragEnabled( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragEnabled", methodSig: "(Z)V", methodCache: &JTextComponent.setDragEnabled_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setDragEnabled( _ _arg0: Bool ) {
-        setDragEnabled( arg0: _arg0 )
-    }
-
-    /// public boolean javax.swing.text.JTextComponent.getDragEnabled()
-
-    private static var getDragEnabled_MethodID_13: jmethodID?
-
-    open func getDragEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getDragEnabled", methodSig: "()Z", methodCache: &JTextComponent.getDragEnabled_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public final void javax.swing.text.JTextComponent.setDropMode(javax.swing.DropMode)
-
-    private static var setDropMode_MethodID_14: jmethodID?
-
-    open func setDropMode( arg0: DropMode? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDropMode", methodSig: "(Ljavax/swing/DropMode;)V", methodCache: &JTextComponent.setDropMode_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setDropMode( _ _arg0: DropMode? ) {
-        setDropMode( arg0: _arg0 )
-    }
-
-    /// public final javax.swing.DropMode javax.swing.text.JTextComponent.getDropMode()
-
-    private static var getDropMode_MethodID_15: jmethodID?
-
-    open func getDropMode() -> DropMode! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropMode", methodSig: "()Ljavax/swing/DropMode;", methodCache: &JTextComponent.getDropMode_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DropMode( javaObject: __return ) : nil
-    }
-
-
-    /// public final javax.swing.text.JTextComponent$DropLocation javax.swing.text.JTextComponent.getDropLocation()
-
-    private static var getDropLocation_MethodID_16: jmethodID?
-
-    open func getDropLocation() -> JTextComponent_DropLocation! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLocation", methodSig: "()Ljavax/swing/text/JTextComponent$DropLocation;", methodCache: &JTextComponent.getDropLocation_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JTextComponent_DropLocation( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.selectAll()
-
-    private static var selectAll_MethodID_17: jmethodID?
-
-    open func selectAll() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &JTextComponent.selectAll_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.Dimension javax.swing.text.JTextComponent.getPreferredScrollableViewportSize()
-
-    private static var getPreferredScrollableViewportSize_MethodID_18: jmethodID?
-
-    open func getPreferredScrollableViewportSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JTextComponent.getPreferredScrollableViewportSize_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.text.JTextComponent.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
-
-    private static var getScrollableUnitIncrement_MethodID_19: jmethodID?
-
-    open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
-        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTextComponent.getScrollableUnitIncrement_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getScrollableUnitIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
-        return getScrollableUnitIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
-    }
-
-    /// public int javax.swing.text.JTextComponent.getScrollableBlockIncrement(java.awt.Rectangle,int,int)
-
-    private static var getScrollableBlockIncrement_MethodID_20: jmethodID?
-
-    open func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
-        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTextComponent.getScrollableBlockIncrement_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getScrollableBlockIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
-        return getScrollableBlockIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
-    }
-
-    /// public boolean javax.swing.text.JTextComponent.getScrollableTracksViewportWidth()
-
-    private static var getScrollableTracksViewportWidth_MethodID_21: jmethodID?
-
-    open func getScrollableTracksViewportWidth() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &JTextComponent.getScrollableTracksViewportWidth_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.text.JTextComponent.getScrollableTracksViewportHeight()
-
-    private static var getScrollableTracksViewportHeight_MethodID_22: jmethodID?
-
-    open func getScrollableTracksViewportHeight() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &JTextComponent.getScrollableTracksViewportHeight_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.awt.print.Printable javax.swing.text.JTextComponent.getPrintable(java.text.MessageFormat,java.text.MessageFormat)
-
-    private static var getPrintable_MethodID_23: jmethodID?
-
-    open func getPrintable( arg0: /* java.text.MessageFormat */ UnclassedObject?, arg1: /* java.text.MessageFormat */ UnclassedObject? ) -> java_awt.Printable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintable", methodSig: "(Ljava/text/MessageFormat;Ljava/text/MessageFormat;)Ljava/awt/print/Printable;", methodCache: &JTextComponent.getPrintable_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.PrintableForward( javaObject: __return ) : nil
-    }
-
-    open func getPrintable( _ _arg0: /* java.text.MessageFormat */ UnclassedObject?, _ _arg1: /* java.text.MessageFormat */ UnclassedObject? ) -> java_awt.Printable! {
-        return getPrintable( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public int javax.swing.text.JTextComponent.getCaretPosition()
-
-    private static var getCaretPosition_MethodID_24: jmethodID?
-
-    open func getCaretPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &JTextComponent.getCaretPosition_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.text.JTextComponent.getSelectionStart()
-
-    private static var getSelectionStart_MethodID_25: jmethodID?
-
-    open func getSelectionStart() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &JTextComponent.getSelectionStart_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.text.JTextComponent.getSelectionEnd()
-
-    private static var getSelectionEnd_MethodID_26: jmethodID?
-
-    open func getSelectionEnd() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &JTextComponent.getSelectionEnd_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.lang.String javax.swing.text.JTextComponent.getSelectedText()
-
-    private static var getSelectedText_MethodID_27: jmethodID?
-
-    open func getSelectedText() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &JTextComponent.getSelectedText_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public java.lang.String javax.swing.text.JTextComponent.getText()
-
-    private static var getText_MethodID_28: jmethodID?
-
-    open func getText() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &JTextComponent.getText_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public java.lang.String javax.swing.text.JTextComponent.getText(int,int) throws javax.swing.text.BadLocationException
-
-    private static var getText_MethodID_29: jmethodID?
-
-    open func getText( arg0: Int, arg1: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent.getText_MethodID_29, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getText( _ _arg0: Int, _ _arg1: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        return try getText( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.lang.String javax.swing.text.JTextComponent.getToolTipText(java.awt.event.MouseEvent)
-
-    private static var getToolTipText_MethodID_30: jmethodID?
-
-    open func getToolTipText( arg0: java_awt.MouseEvent? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(Ljava/awt/event/MouseEvent;)Ljava/lang/String;", methodCache: &JTextComponent.getToolTipText_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    override open func getToolTipText( _ _arg0: java_awt.MouseEvent? ) -> String! {
-        return getToolTipText( arg0: _arg0 )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.text.JTextComponent.getAccessibleContext()
-
-    /// public int javax.swing.text.JTextComponent.viewToModel(java.awt.Point)
-
-    private static var viewToModel_MethodID_31: jmethodID?
-
-    open func viewToModel( arg0: java_awt.Point? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljava/awt/Point;)I", methodCache: &JTextComponent.viewToModel_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func viewToModel( _ _arg0: java_awt.Point? ) -> Int {
-        return viewToModel( arg0: _arg0 )
-    }
-
-    /// public java.awt.Rectangle javax.swing.text.JTextComponent.modelToView(int) throws javax.swing.text.BadLocationException
-
-    private static var modelToView_MethodID_32: jmethodID?
-
-    open func modelToView( arg0: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(I)Ljava/awt/Rectangle;", methodCache: &JTextComponent.modelToView_MethodID_32, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func modelToView( _ _arg0: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
-        return try modelToView( arg0: _arg0 )
-    }
-
-    /// public javax.swing.text.Document javax.swing.text.JTextComponent.getDocument()
-
-    private static var getDocument_MethodID_33: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &JTextComponent.getDocument_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setText(java.lang.String)
-
-    private static var setText_MethodID_34: jmethodID?
-
-    open func setText( arg0: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextComponent.setText_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func setText( _ _arg0: String? ) {
-        setText( arg0: _arg0 )
-    }
-
     /// static javax.swing.text.Position javax.swing.text.JTextComponent.access$700(javax.swing.text.JTextComponent)
 
     /// static javax.swing.text.Position javax.swing.text.JTextComponent.access$800(javax.swing.text.JTextComponent)
 
-    /// static java.lang.String javax.swing.text.JTextComponent.access$900(javax.swing.text.JTextComponent)
-
-    /// static javax.swing.text.SimpleAttributeSet javax.swing.text.JTextComponent.access$1000(javax.swing.text.JTextComponent)
-
-    /// static javax.swing.text.Position javax.swing.text.JTextComponent.access$602(javax.swing.text.JTextComponent,javax.swing.text.Position)
-
     /// public void javax.swing.text.JTextComponent.setComponentOrientation(java.awt.ComponentOrientation)
-
-    /// public void javax.swing.text.JTextComponent.updateUI()
-
-    /// public void javax.swing.text.JTextComponent.setUI(javax.swing.plaf.TextUI)
-
-    private static var setUI_MethodID_35: jmethodID?
-
-    open func setUI( arg0: TextUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TextUI;)V", methodCache: &JTextComponent.setUI_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _arg0: TextUI? ) {
-        setUI( arg0: _arg0 )
-    }
-
-    /// javax.swing.text.JTextComponent$DropLocation javax.swing.text.JTextComponent.dropLocationForPoint(java.awt.Point)
-
-    /// java.lang.Object javax.swing.text.JTextComponent.setDropLocation(javax.swing.TransferHandler$DropLocation,java.lang.Object,boolean)
-
-    /// public void javax.swing.text.JTextComponent.setEditable(boolean)
-
-    private static var setEditable_MethodID_36: jmethodID?
-
-    open func setEditable( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &JTextComponent.setEditable_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func setEditable( _ _arg0: Bool ) {
-        setEditable( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.setMargin(java.awt.Insets)
-
-    private static var setMargin_MethodID_37: jmethodID?
-
-    open func setMargin( arg0: java_awt.Insets? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMargin", methodSig: "(Ljava/awt/Insets;)V", methodCache: &JTextComponent.setMargin_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func setMargin( _ _arg0: java_awt.Insets? ) {
-        setMargin( arg0: _arg0 )
-    }
-
-    /// public java.awt.Insets javax.swing.text.JTextComponent.getMargin()
-
-    private static var getMargin_MethodID_38: jmethodID?
-
-    open func getMargin() -> java_awt.Insets! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMargin", methodSig: "()Ljava/awt/Insets;", methodCache: &JTextComponent.getMargin_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setDocument(javax.swing.text.Document)
-
-    private static var setDocument_MethodID_39: jmethodID?
-
-    open func setDocument( arg0: Document? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDocument", methodSig: "(Ljavax/swing/text/Document;)V", methodCache: &JTextComponent.setDocument_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func setDocument( _ _arg0: Document? ) {
-        setDocument( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.addCaretListener(javax.swing.event.CaretListener)
-
-    private static var addCaretListener_MethodID_40: jmethodID?
-
-    open func addCaretListener( arg0: CaretListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addCaretListener", methodSig: "(Ljavax/swing/event/CaretListener;)V", methodCache: &JTextComponent.addCaretListener_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func addCaretListener( _ _arg0: CaretListener? ) {
-        addCaretListener( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.removeCaretListener(javax.swing.event.CaretListener)
-
-    private static var removeCaretListener_MethodID_41: jmethodID?
-
-    open func removeCaretListener( arg0: CaretListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeCaretListener", methodSig: "(Ljavax/swing/event/CaretListener;)V", methodCache: &JTextComponent.removeCaretListener_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-    open func removeCaretListener( _ _arg0: CaretListener? ) {
-        removeCaretListener( arg0: _arg0 )
-    }
-
-    /// public javax.swing.event.CaretListener[] javax.swing.text.JTextComponent.getCaretListeners()
-
-    private static var getCaretListeners_MethodID_42: jmethodID?
-
-    open func getCaretListeners() -> [CaretListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretListeners", methodSig: "()[Ljavax/swing/event/CaretListener;", methodCache: &JTextComponent.getCaretListeners_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [CaretListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.JTextComponent.fireCaretUpdate(javax.swing.event.CaretEvent)
-
-    private static var fireCaretUpdate_MethodID_43: jmethodID?
-
-    open func fireCaretUpdate( arg0: CaretEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireCaretUpdate", methodSig: "(Ljavax/swing/event/CaretEvent;)V", methodCache: &JTextComponent.fireCaretUpdate_MethodID_43, args: &__args, locals: &__locals )
-    }
-
-    open func fireCaretUpdate( _ _arg0: CaretEvent? ) {
-        fireCaretUpdate( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.setNavigationFilter(javax.swing.text.NavigationFilter)
-
-    private static var setNavigationFilter_MethodID_44: jmethodID?
-
-    open func setNavigationFilter( arg0: NavigationFilter? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNavigationFilter", methodSig: "(Ljavax/swing/text/NavigationFilter;)V", methodCache: &JTextComponent.setNavigationFilter_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open func setNavigationFilter( _ _arg0: NavigationFilter? ) {
-        setNavigationFilter( arg0: _arg0 )
-    }
-
-    /// public javax.swing.text.NavigationFilter javax.swing.text.JTextComponent.getNavigationFilter()
-
-    private static var getNavigationFilter_MethodID_45: jmethodID?
-
-    open func getNavigationFilter() -> NavigationFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &JTextComponent.getNavigationFilter_MethodID_45, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.text.Caret javax.swing.text.JTextComponent.getCaret()
-
-    private static var getCaret_MethodID_46: jmethodID?
-
-    open func getCaret() -> Caret! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaret", methodSig: "()Ljavax/swing/text/Caret;", methodCache: &JTextComponent.getCaret_MethodID_46, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CaretForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setCaret(javax.swing.text.Caret)
-
-    private static var setCaret_MethodID_47: jmethodID?
-
-    open func setCaret( arg0: Caret? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaret", methodSig: "(Ljavax/swing/text/Caret;)V", methodCache: &JTextComponent.setCaret_MethodID_47, args: &__args, locals: &__locals )
-    }
-
-    open func setCaret( _ _arg0: Caret? ) {
-        setCaret( arg0: _arg0 )
-    }
-
-    /// public javax.swing.text.Highlighter javax.swing.text.JTextComponent.getHighlighter()
-
-    private static var getHighlighter_MethodID_48: jmethodID?
-
-    open func getHighlighter() -> Highlighter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlighter", methodSig: "()Ljavax/swing/text/Highlighter;", methodCache: &JTextComponent.getHighlighter_MethodID_48, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HighlighterForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setHighlighter(javax.swing.text.Highlighter)
-
-    private static var setHighlighter_MethodID_49: jmethodID?
-
-    open func setHighlighter( arg0: Highlighter? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHighlighter", methodSig: "(Ljavax/swing/text/Highlighter;)V", methodCache: &JTextComponent.setHighlighter_MethodID_49, args: &__args, locals: &__locals )
-    }
-
-    open func setHighlighter( _ _arg0: Highlighter? ) {
-        setHighlighter( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.setKeymap(javax.swing.text.Keymap)
-
-    private static var setKeymap_MethodID_50: jmethodID?
-
-    open func setKeymap( arg0: Keymap? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeymap", methodSig: "(Ljavax/swing/text/Keymap;)V", methodCache: &JTextComponent.setKeymap_MethodID_50, args: &__args, locals: &__locals )
-    }
-
-    open func setKeymap( _ _arg0: Keymap? ) {
-        setKeymap( arg0: _arg0 )
-    }
-
-    /// void javax.swing.text.JTextComponent.updateInputMap(javax.swing.text.Keymap,javax.swing.text.Keymap)
-
-    /// public static javax.swing.text.Keymap javax.swing.text.JTextComponent.getKeymap(java.lang.String)
-
-    private static var getKeymap_MethodID_51: jmethodID?
-
-    open class func getKeymap( arg0: String? ) -> Keymap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "getKeymap", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Keymap;", methodCache: &getKeymap_MethodID_51, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? KeymapForward( javaObject: __return ) : nil
-    }
-
-    open class func getKeymap( _ _arg0: String? ) -> Keymap! {
-        return getKeymap( arg0: _arg0 )
-    }
-
-    /// public javax.swing.text.Keymap javax.swing.text.JTextComponent.getKeymap()
-
-    private static var getKeymap_MethodID_52: jmethodID?
-
-    open func getKeymap() -> Keymap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeymap", methodSig: "()Ljavax/swing/text/Keymap;", methodCache: &JTextComponent.getKeymap_MethodID_52, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? KeymapForward( javaObject: __return ) : nil
-    }
-
-
-    /// public static javax.swing.text.Keymap javax.swing.text.JTextComponent.addKeymap(java.lang.String,javax.swing.text.Keymap)
-
-    private static var addKeymap_MethodID_53: jmethodID?
-
-    open class func addKeymap( arg0: String?, arg1: Keymap? ) -> Keymap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "addKeymap", methodSig: "(Ljava/lang/String;Ljavax/swing/text/Keymap;)Ljavax/swing/text/Keymap;", methodCache: &addKeymap_MethodID_53, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? KeymapForward( javaObject: __return ) : nil
-    }
-
-    open class func addKeymap( _ _arg0: String?, _ _arg1: Keymap? ) -> Keymap! {
-        return addKeymap( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public static javax.swing.text.Keymap javax.swing.text.JTextComponent.removeKeymap(java.lang.String)
-
-    private static var removeKeymap_MethodID_54: jmethodID?
-
-    open class func removeKeymap( arg0: String? ) -> Keymap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "removeKeymap", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Keymap;", methodCache: &removeKeymap_MethodID_54, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? KeymapForward( javaObject: __return ) : nil
-    }
-
-    open class func removeKeymap( _ _arg0: String? ) -> Keymap! {
-        return removeKeymap( arg0: _arg0 )
-    }
-
-    /// private static java.util.HashMap javax.swing.text.JTextComponent.getKeymapTable()
-
-    /// public static void javax.swing.text.JTextComponent.loadKeymap(javax.swing.text.Keymap,javax.swing.text.JTextComponent$KeyBinding[],javax.swing.Action[])
-
-    private static var loadKeymap_MethodID_55: jmethodID?
-
-    open class func loadKeymap( arg0: Keymap?, arg1: [JTextComponent_KeyBinding]?, arg2: [Action]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "loadKeymap", methodSig: "(Ljavax/swing/text/Keymap;[Ljavax/swing/text/JTextComponent$KeyBinding;[Ljavax/swing/Action;)V", methodCache: &loadKeymap_MethodID_55, args: &__args, locals: &__locals )
-    }
-
-    open class func loadKeymap( _ _arg0: Keymap?, _ _arg1: [JTextComponent_KeyBinding]?, _ _arg2: [Action]? ) {
-        loadKeymap( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public java.awt.Color javax.swing.text.JTextComponent.getCaretColor()
-
-    private static var getCaretColor_MethodID_56: jmethodID?
-
-    open func getCaretColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getCaretColor_MethodID_56, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setCaretColor(java.awt.Color)
-
-    private static var setCaretColor_MethodID_57: jmethodID?
-
-    open func setCaretColor( arg0: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setCaretColor_MethodID_57, args: &__args, locals: &__locals )
-    }
-
-    open func setCaretColor( _ _arg0: java_awt.Color? ) {
-        setCaretColor( arg0: _arg0 )
-    }
-
-    /// public java.awt.Color javax.swing.text.JTextComponent.getSelectionColor()
-
-    private static var getSelectionColor_MethodID_58: jmethodID?
-
-    open func getSelectionColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getSelectionColor_MethodID_58, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setSelectionColor(java.awt.Color)
-
-    private static var setSelectionColor_MethodID_59: jmethodID?
-
-    open func setSelectionColor( arg0: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setSelectionColor_MethodID_59, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectionColor( _ _arg0: java_awt.Color? ) {
-        setSelectionColor( arg0: _arg0 )
-    }
-
-    /// public java.awt.Color javax.swing.text.JTextComponent.getSelectedTextColor()
-
-    private static var getSelectedTextColor_MethodID_60: jmethodID?
-
-    open func getSelectedTextColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedTextColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getSelectedTextColor_MethodID_60, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setSelectedTextColor(java.awt.Color)
-
-    private static var setSelectedTextColor_MethodID_61: jmethodID?
-
-    open func setSelectedTextColor( arg0: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedTextColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setSelectedTextColor_MethodID_61, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedTextColor( _ _arg0: java_awt.Color? ) {
-        setSelectedTextColor( arg0: _arg0 )
-    }
-
-    /// public java.awt.Color javax.swing.text.JTextComponent.getDisabledTextColor()
-
-    private static var getDisabledTextColor_MethodID_62: jmethodID?
-
-    open func getDisabledTextColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledTextColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getDisabledTextColor_MethodID_62, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.setDisabledTextColor(java.awt.Color)
-
-    private static var setDisabledTextColor_MethodID_63: jmethodID?
-
-    open func setDisabledTextColor( arg0: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledTextColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setDisabledTextColor_MethodID_63, args: &__args, locals: &__locals )
-    }
-
-    open func setDisabledTextColor( _ _arg0: java_awt.Color? ) {
-        setDisabledTextColor( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.replaceSelection(java.lang.String)
-
-    private static var replaceSelection_MethodID_64: jmethodID?
-
-    open func replaceSelection( arg0: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceSelection", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextComponent.replaceSelection_MethodID_64, args: &__args, locals: &__locals )
-    }
-
-    open func replaceSelection( _ _arg0: String? ) {
-        replaceSelection( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.cut()
-
-    private static var cut_MethodID_65: jmethodID?
-
-    open func cut() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cut", methodSig: "()V", methodCache: &JTextComponent.cut_MethodID_65, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.text.JTextComponent.paste()
-
-    private static var paste_MethodID_66: jmethodID?
-
-    open func paste() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paste", methodSig: "()V", methodCache: &JTextComponent.paste_MethodID_66, args: &__args, locals: &__locals )
-    }
-
-
-    /// private void javax.swing.text.JTextComponent.invokeAction(java.lang.String,javax.swing.Action)
-
-    /// private void javax.swing.text.JTextComponent.installDefaultTransferHandlerIfNecessary()
-
-    /// public void javax.swing.text.JTextComponent.moveCaretPosition(int)
-
-    private static var moveCaretPosition_MethodID_67: jmethodID?
-
-    open func moveCaretPosition( arg0: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveCaretPosition", methodSig: "(I)V", methodCache: &JTextComponent.moveCaretPosition_MethodID_67, args: &__args, locals: &__locals )
-    }
-
-    open func moveCaretPosition( _ _arg0: Int ) {
-        moveCaretPosition( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.text.JTextComponent.setFocusAccelerator(char)
-
-    private static var setFocusAccelerator_MethodID_68: jmethodID?
-
-    open func setFocusAccelerator( arg0: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusAccelerator", methodSig: "(C)V", methodCache: &JTextComponent.setFocusAccelerator_MethodID_68, args: &__args, locals: &__locals )
-    }
-
-    open func setFocusAccelerator( _ _arg0: UInt16 ) {
-        setFocusAccelerator( arg0: _arg0 )
-    }
 
     /// public void javax.swing.text.JTextComponent.removeNotify()
 
@@ -1594,40 +727,28 @@ open class JTextComponent: JComponent, Scrollable {
 
     /// protected void javax.swing.text.JTextComponent.processInputMethodEvent(java.awt.event.InputMethodEvent)
 
-    private static var processInputMethodEvent_MethodID_69: jmethodID?
+    private static var processInputMethodEvent_MethodID_10: jmethodID?
 
     override open func processInputMethodEvent( arg0: java_awt.InputMethodEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processInputMethodEvent", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &JTextComponent.processInputMethodEvent_MethodID_69, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processInputMethodEvent", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &JTextComponent.processInputMethodEvent_MethodID_10, args: &__args, locals: &__locals )
     }
 
     override open func processInputMethodEvent( _ _arg0: java_awt.InputMethodEvent? ) {
         processInputMethodEvent( arg0: _arg0 )
     }
 
-    /// public char javax.swing.text.JTextComponent.getFocusAccelerator()
-
-    private static var getFocusAccelerator_MethodID_70: jmethodID?
-
-    open func getFocusAccelerator() -> UInt16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getFocusAccelerator", methodSig: "()C", methodCache: &JTextComponent.getFocusAccelerator_MethodID_70, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: UInt16(), from: __return )
-    }
-
-
     /// public void javax.swing.text.JTextComponent.setCaretPosition(int)
 
-    private static var setCaretPosition_MethodID_71: jmethodID?
+    private static var setCaretPosition_MethodID_11: jmethodID?
 
     open func setCaretPosition( arg0: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretPosition", methodSig: "(I)V", methodCache: &JTextComponent.setCaretPosition_MethodID_71, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretPosition", methodSig: "(I)V", methodCache: &JTextComponent.setCaretPosition_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setCaretPosition( _ _arg0: Int ) {
@@ -1636,13 +757,13 @@ open class JTextComponent: JComponent, Scrollable {
 
     /// public void javax.swing.text.JTextComponent.setSelectionStart(int)
 
-    private static var setSelectionStart_MethodID_72: jmethodID?
+    private static var setSelectionStart_MethodID_12: jmethodID?
 
     open func setSelectionStart( arg0: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionStart", methodSig: "(I)V", methodCache: &JTextComponent.setSelectionStart_MethodID_72, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionStart", methodSig: "(I)V", methodCache: &JTextComponent.setSelectionStart_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setSelectionStart( _ _arg0: Int ) {
@@ -1651,13 +772,13 @@ open class JTextComponent: JComponent, Scrollable {
 
     /// public void javax.swing.text.JTextComponent.setSelectionEnd(int)
 
-    private static var setSelectionEnd_MethodID_73: jmethodID?
+    private static var setSelectionEnd_MethodID_13: jmethodID?
 
     open func setSelectionEnd( arg0: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionEnd", methodSig: "(I)V", methodCache: &JTextComponent.setSelectionEnd_MethodID_73, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionEnd", methodSig: "(I)V", methodCache: &JTextComponent.setSelectionEnd_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setSelectionEnd( _ _arg0: Int ) {
@@ -1666,14 +787,14 @@ open class JTextComponent: JComponent, Scrollable {
 
     /// public void javax.swing.text.JTextComponent.select(int,int)
 
-    private static var select_MethodID_74: jmethodID?
+    private static var select_MethodID_14: jmethodID?
 
     open func select( arg0: Int, arg1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(II)V", methodCache: &JTextComponent.select_MethodID_74, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "select", methodSig: "(II)V", methodCache: &JTextComponent.select_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func select( _ _arg0: Int, _ _arg1: Int ) {
@@ -1690,13 +811,13 @@ open class JTextComponent: JComponent, Scrollable {
 
     /// protected boolean javax.swing.text.JTextComponent.saveComposedText(int)
 
-    private static var saveComposedText_MethodID_75: jmethodID?
+    private static var saveComposedText_MethodID_15: jmethodID?
 
     open func saveComposedText( arg0: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "saveComposedText", methodSig: "(I)Z", methodCache: &JTextComponent.saveComposedText_MethodID_75, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "saveComposedText", methodSig: "(I)Z", methodCache: &JTextComponent.saveComposedText_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1706,12 +827,12 @@ open class JTextComponent: JComponent, Scrollable {
 
     /// protected void javax.swing.text.JTextComponent.restoreComposedText()
 
-    private static var restoreComposedText_MethodID_76: jmethodID?
+    private static var restoreComposedText_MethodID_16: jmethodID?
 
     open func restoreComposedText() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreComposedText", methodSig: "()V", methodCache: &JTextComponent.restoreComposedText_MethodID_76, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreComposedText", methodSig: "()V", methodCache: &JTextComponent.restoreComposedText_MethodID_16, args: &__args, locals: &__locals )
     }
 
 
@@ -1724,6 +845,885 @@ open class JTextComponent: JComponent, Scrollable {
     /// private boolean javax.swing.text.JTextComponent.shouldSynthensizeKeyEvents()
 
     /// boolean javax.swing.text.JTextComponent.composedTextExists()
+
+    /// public int javax.swing.text.JTextComponent.getCaretPosition()
+
+    private static var getCaretPosition_MethodID_17: jmethodID?
+
+    open func getCaretPosition() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &JTextComponent.getCaretPosition_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.JTextComponent.getSelectionStart()
+
+    private static var getSelectionStart_MethodID_18: jmethodID?
+
+    open func getSelectionStart() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &JTextComponent.getSelectionStart_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.JTextComponent.getSelectionEnd()
+
+    private static var getSelectionEnd_MethodID_19: jmethodID?
+
+    open func getSelectionEnd() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &JTextComponent.getSelectionEnd_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.lang.String javax.swing.text.JTextComponent.getSelectedText()
+
+    private static var getSelectedText_MethodID_20: jmethodID?
+
+    open func getSelectedText() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &JTextComponent.getSelectedText_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public java.lang.String javax.swing.text.JTextComponent.getText(int,int) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_21: jmethodID?
+
+    open func getText( arg0: Int, arg1: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent.getText_MethodID_21, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getText( _ _arg0: Int, _ _arg1: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        return try getText( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.lang.String javax.swing.text.JTextComponent.getText()
+
+    private static var getText_MethodID_22: jmethodID?
+
+    open func getText() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &JTextComponent.getText_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public java.lang.String javax.swing.text.JTextComponent.getToolTipText(java.awt.event.MouseEvent)
+
+    private static var getToolTipText_MethodID_23: jmethodID?
+
+    open func getToolTipText( arg0: java_awt.MouseEvent? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(Ljava/awt/event/MouseEvent;)Ljava/lang/String;", methodCache: &JTextComponent.getToolTipText_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    override open func getToolTipText( _ _arg0: java_awt.MouseEvent? ) -> String! {
+        return getToolTipText( arg0: _arg0 )
+    }
+
+    /// public javax.accessibility.AccessibleContext javax.swing.text.JTextComponent.getAccessibleContext()
+
+    /// public int javax.swing.text.JTextComponent.viewToModel(java.awt.Point)
+
+    private static var viewToModel_MethodID_24: jmethodID?
+
+    open func viewToModel( arg0: java_awt.Point? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljava/awt/Point;)I", methodCache: &JTextComponent.viewToModel_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func viewToModel( _ _arg0: java_awt.Point? ) -> Int {
+        return viewToModel( arg0: _arg0 )
+    }
+
+    /// public java.awt.Rectangle javax.swing.text.JTextComponent.modelToView(int) throws javax.swing.text.BadLocationException
+
+    private static var modelToView_MethodID_25: jmethodID?
+
+    open func modelToView( arg0: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(I)Ljava/awt/Rectangle;", methodCache: &JTextComponent.modelToView_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    open func modelToView( _ _arg0: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
+        return try modelToView( arg0: _arg0 )
+    }
+
+    /// public javax.swing.text.Document javax.swing.text.JTextComponent.getDocument()
+
+    private static var getDocument_MethodID_26: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &JTextComponent.getDocument_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setText(java.lang.String)
+
+    private static var setText_MethodID_27: jmethodID?
+
+    open func setText( arg0: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextComponent.setText_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func setText( _ _arg0: String? ) {
+        setText( arg0: _arg0 )
+    }
+
+    /// public boolean javax.swing.text.JTextComponent.isEditable()
+
+    private static var isEditable_MethodID_28: jmethodID?
+
+    open func isEditable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &JTextComponent.isEditable_MethodID_28, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setDragEnabled(boolean)
+
+    private static var setDragEnabled_MethodID_29: jmethodID?
+
+    open func setDragEnabled( arg0: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragEnabled", methodSig: "(Z)V", methodCache: &JTextComponent.setDragEnabled_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setDragEnabled( _ _arg0: Bool ) {
+        setDragEnabled( arg0: _arg0 )
+    }
+
+    /// public boolean javax.swing.text.JTextComponent.getDragEnabled()
+
+    private static var getDragEnabled_MethodID_30: jmethodID?
+
+    open func getDragEnabled() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getDragEnabled", methodSig: "()Z", methodCache: &JTextComponent.getDragEnabled_MethodID_30, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public final void javax.swing.text.JTextComponent.setDropMode(javax.swing.DropMode)
+
+    private static var setDropMode_MethodID_31: jmethodID?
+
+    open func setDropMode( arg0: DropMode? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDropMode", methodSig: "(Ljavax/swing/DropMode;)V", methodCache: &JTextComponent.setDropMode_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func setDropMode( _ _arg0: DropMode? ) {
+        setDropMode( arg0: _arg0 )
+    }
+
+    /// public final javax.swing.DropMode javax.swing.text.JTextComponent.getDropMode()
+
+    private static var getDropMode_MethodID_32: jmethodID?
+
+    open func getDropMode() -> DropMode! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropMode", methodSig: "()Ljavax/swing/DropMode;", methodCache: &JTextComponent.getDropMode_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DropMode( javaObject: __return ) : nil
+    }
+
+
+    /// public final javax.swing.text.JTextComponent$DropLocation javax.swing.text.JTextComponent.getDropLocation()
+
+    private static var getDropLocation_MethodID_33: jmethodID?
+
+    open func getDropLocation() -> JTextComponent_DropLocation! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLocation", methodSig: "()Ljavax/swing/text/JTextComponent$DropLocation;", methodCache: &JTextComponent.getDropLocation_MethodID_33, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JTextComponent_DropLocation( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.selectAll()
+
+    private static var selectAll_MethodID_34: jmethodID?
+
+    open func selectAll() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &JTextComponent.selectAll_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Dimension javax.swing.text.JTextComponent.getPreferredScrollableViewportSize()
+
+    private static var getPreferredScrollableViewportSize_MethodID_35: jmethodID?
+
+    open func getPreferredScrollableViewportSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JTextComponent.getPreferredScrollableViewportSize_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.text.JTextComponent.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
+
+    private static var getScrollableUnitIncrement_MethodID_36: jmethodID?
+
+    open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTextComponent.getScrollableUnitIncrement_MethodID_36, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getScrollableUnitIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
+        return getScrollableUnitIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
+    }
+
+    /// public int javax.swing.text.JTextComponent.getScrollableBlockIncrement(java.awt.Rectangle,int,int)
+
+    private static var getScrollableBlockIncrement_MethodID_37: jmethodID?
+
+    open func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTextComponent.getScrollableBlockIncrement_MethodID_37, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getScrollableBlockIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
+        return getScrollableBlockIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
+    }
+
+    /// public boolean javax.swing.text.JTextComponent.getScrollableTracksViewportWidth()
+
+    private static var getScrollableTracksViewportWidth_MethodID_38: jmethodID?
+
+    open func getScrollableTracksViewportWidth() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &JTextComponent.getScrollableTracksViewportWidth_MethodID_38, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.text.JTextComponent.getScrollableTracksViewportHeight()
+
+    private static var getScrollableTracksViewportHeight_MethodID_39: jmethodID?
+
+    open func getScrollableTracksViewportHeight() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &JTextComponent.getScrollableTracksViewportHeight_MethodID_39, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public java.awt.print.Printable javax.swing.text.JTextComponent.getPrintable(java.text.MessageFormat,java.text.MessageFormat)
+
+    private static var getPrintable_MethodID_40: jmethodID?
+
+    open func getPrintable( arg0: /* java.text.MessageFormat */ UnclassedObject?, arg1: /* java.text.MessageFormat */ UnclassedObject? ) -> java_awt.Printable! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrintable", methodSig: "(Ljava/text/MessageFormat;Ljava/text/MessageFormat;)Ljava/awt/print/Printable;", methodCache: &JTextComponent.getPrintable_MethodID_40, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.PrintableForward( javaObject: __return ) : nil
+    }
+
+    open func getPrintable( _ _arg0: /* java.text.MessageFormat */ UnclassedObject?, _ _arg1: /* java.text.MessageFormat */ UnclassedObject? ) -> java_awt.Printable! {
+        return getPrintable( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.updateUI()
+
+    /// public void javax.swing.text.JTextComponent.setUI(javax.swing.plaf.TextUI)
+
+    private static var setUI_MethodID_41: jmethodID?
+
+    open func setUI( arg0: TextUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TextUI;)V", methodCache: &JTextComponent.setUI_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _arg0: TextUI? ) {
+        setUI( arg0: _arg0 )
+    }
+
+    /// javax.swing.text.JTextComponent$DropLocation javax.swing.text.JTextComponent.dropLocationForPoint(java.awt.Point)
+
+    /// java.lang.Object javax.swing.text.JTextComponent.setDropLocation(javax.swing.TransferHandler$DropLocation,java.lang.Object,boolean)
+
+    /// static java.lang.String javax.swing.text.JTextComponent.access$900(javax.swing.text.JTextComponent)
+
+    /// static javax.swing.text.SimpleAttributeSet javax.swing.text.JTextComponent.access$1000(javax.swing.text.JTextComponent)
+
+    /// static javax.swing.text.Position javax.swing.text.JTextComponent.access$602(javax.swing.text.JTextComponent,javax.swing.text.Position)
+
+    /// public javax.swing.plaf.TextUI javax.swing.text.JTextComponent.getUI()
+
+    private static var getUI_MethodID_42: jmethodID?
+
+    open func getUI() -> TextUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TextUI;", methodCache: &JTextComponent.getUI_MethodID_42, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TextUI( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setEditable(boolean)
+
+    private static var setEditable_MethodID_43: jmethodID?
+
+    open func setEditable( arg0: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &JTextComponent.setEditable_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func setEditable( _ _arg0: Bool ) {
+        setEditable( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.setMargin(java.awt.Insets)
+
+    private static var setMargin_MethodID_44: jmethodID?
+
+    open func setMargin( arg0: java_awt.Insets? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMargin", methodSig: "(Ljava/awt/Insets;)V", methodCache: &JTextComponent.setMargin_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    open func setMargin( _ _arg0: java_awt.Insets? ) {
+        setMargin( arg0: _arg0 )
+    }
+
+    /// public java.awt.Insets javax.swing.text.JTextComponent.getMargin()
+
+    private static var getMargin_MethodID_45: jmethodID?
+
+    open func getMargin() -> java_awt.Insets! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMargin", methodSig: "()Ljava/awt/Insets;", methodCache: &JTextComponent.getMargin_MethodID_45, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setDocument(javax.swing.text.Document)
+
+    private static var setDocument_MethodID_46: jmethodID?
+
+    open func setDocument( arg0: Document? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDocument", methodSig: "(Ljavax/swing/text/Document;)V", methodCache: &JTextComponent.setDocument_MethodID_46, args: &__args, locals: &__locals )
+    }
+
+    open func setDocument( _ _arg0: Document? ) {
+        setDocument( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.addCaretListener(javax.swing.event.CaretListener)
+
+    private static var addCaretListener_MethodID_47: jmethodID?
+
+    open func addCaretListener( arg0: CaretListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addCaretListener", methodSig: "(Ljavax/swing/event/CaretListener;)V", methodCache: &JTextComponent.addCaretListener_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+    open func addCaretListener( _ _arg0: CaretListener? ) {
+        addCaretListener( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.removeCaretListener(javax.swing.event.CaretListener)
+
+    private static var removeCaretListener_MethodID_48: jmethodID?
+
+    open func removeCaretListener( arg0: CaretListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeCaretListener", methodSig: "(Ljavax/swing/event/CaretListener;)V", methodCache: &JTextComponent.removeCaretListener_MethodID_48, args: &__args, locals: &__locals )
+    }
+
+    open func removeCaretListener( _ _arg0: CaretListener? ) {
+        removeCaretListener( arg0: _arg0 )
+    }
+
+    /// public javax.swing.event.CaretListener[] javax.swing.text.JTextComponent.getCaretListeners()
+
+    private static var getCaretListeners_MethodID_49: jmethodID?
+
+    open func getCaretListeners() -> [CaretListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretListeners", methodSig: "()[Ljavax/swing/event/CaretListener;", methodCache: &JTextComponent.getCaretListeners_MethodID_49, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [CaretListenerForward](), from: __return )
+    }
+
+
+    /// protected void javax.swing.text.JTextComponent.fireCaretUpdate(javax.swing.event.CaretEvent)
+
+    private static var fireCaretUpdate_MethodID_50: jmethodID?
+
+    open func fireCaretUpdate( arg0: CaretEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireCaretUpdate", methodSig: "(Ljavax/swing/event/CaretEvent;)V", methodCache: &JTextComponent.fireCaretUpdate_MethodID_50, args: &__args, locals: &__locals )
+    }
+
+    open func fireCaretUpdate( _ _arg0: CaretEvent? ) {
+        fireCaretUpdate( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.setNavigationFilter(javax.swing.text.NavigationFilter)
+
+    private static var setNavigationFilter_MethodID_51: jmethodID?
+
+    open func setNavigationFilter( arg0: NavigationFilter? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNavigationFilter", methodSig: "(Ljavax/swing/text/NavigationFilter;)V", methodCache: &JTextComponent.setNavigationFilter_MethodID_51, args: &__args, locals: &__locals )
+    }
+
+    open func setNavigationFilter( _ _arg0: NavigationFilter? ) {
+        setNavigationFilter( arg0: _arg0 )
+    }
+
+    /// public javax.swing.text.NavigationFilter javax.swing.text.JTextComponent.getNavigationFilter()
+
+    private static var getNavigationFilter_MethodID_52: jmethodID?
+
+    open func getNavigationFilter() -> NavigationFilter! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &JTextComponent.getNavigationFilter_MethodID_52, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.Caret javax.swing.text.JTextComponent.getCaret()
+
+    private static var getCaret_MethodID_53: jmethodID?
+
+    open func getCaret() -> Caret! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaret", methodSig: "()Ljavax/swing/text/Caret;", methodCache: &JTextComponent.getCaret_MethodID_53, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? CaretForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setCaret(javax.swing.text.Caret)
+
+    private static var setCaret_MethodID_54: jmethodID?
+
+    open func setCaret( arg0: Caret? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaret", methodSig: "(Ljavax/swing/text/Caret;)V", methodCache: &JTextComponent.setCaret_MethodID_54, args: &__args, locals: &__locals )
+    }
+
+    open func setCaret( _ _arg0: Caret? ) {
+        setCaret( arg0: _arg0 )
+    }
+
+    /// public javax.swing.text.Highlighter javax.swing.text.JTextComponent.getHighlighter()
+
+    private static var getHighlighter_MethodID_55: jmethodID?
+
+    open func getHighlighter() -> Highlighter! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlighter", methodSig: "()Ljavax/swing/text/Highlighter;", methodCache: &JTextComponent.getHighlighter_MethodID_55, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HighlighterForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setHighlighter(javax.swing.text.Highlighter)
+
+    private static var setHighlighter_MethodID_56: jmethodID?
+
+    open func setHighlighter( arg0: Highlighter? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHighlighter", methodSig: "(Ljavax/swing/text/Highlighter;)V", methodCache: &JTextComponent.setHighlighter_MethodID_56, args: &__args, locals: &__locals )
+    }
+
+    open func setHighlighter( _ _arg0: Highlighter? ) {
+        setHighlighter( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.setKeymap(javax.swing.text.Keymap)
+
+    private static var setKeymap_MethodID_57: jmethodID?
+
+    open func setKeymap( arg0: Keymap? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeymap", methodSig: "(Ljavax/swing/text/Keymap;)V", methodCache: &JTextComponent.setKeymap_MethodID_57, args: &__args, locals: &__locals )
+    }
+
+    open func setKeymap( _ _arg0: Keymap? ) {
+        setKeymap( arg0: _arg0 )
+    }
+
+    /// void javax.swing.text.JTextComponent.updateInputMap(javax.swing.text.Keymap,javax.swing.text.Keymap)
+
+    /// public javax.swing.text.Keymap javax.swing.text.JTextComponent.getKeymap()
+
+    private static var getKeymap_MethodID_58: jmethodID?
+
+    open func getKeymap() -> Keymap! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeymap", methodSig: "()Ljavax/swing/text/Keymap;", methodCache: &JTextComponent.getKeymap_MethodID_58, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? KeymapForward( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.text.Keymap javax.swing.text.JTextComponent.getKeymap(java.lang.String)
+
+    private static var getKeymap_MethodID_59: jmethodID?
+
+    open class func getKeymap( arg0: String? ) -> Keymap! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "getKeymap", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Keymap;", methodCache: &getKeymap_MethodID_59, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? KeymapForward( javaObject: __return ) : nil
+    }
+
+    open class func getKeymap( _ _arg0: String? ) -> Keymap! {
+        return getKeymap( arg0: _arg0 )
+    }
+
+    /// public static javax.swing.text.Keymap javax.swing.text.JTextComponent.addKeymap(java.lang.String,javax.swing.text.Keymap)
+
+    private static var addKeymap_MethodID_60: jmethodID?
+
+    open class func addKeymap( arg0: String?, arg1: Keymap? ) -> Keymap! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "addKeymap", methodSig: "(Ljava/lang/String;Ljavax/swing/text/Keymap;)Ljavax/swing/text/Keymap;", methodCache: &addKeymap_MethodID_60, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? KeymapForward( javaObject: __return ) : nil
+    }
+
+    open class func addKeymap( _ _arg0: String?, _ _arg1: Keymap? ) -> Keymap! {
+        return addKeymap( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static javax.swing.text.Keymap javax.swing.text.JTextComponent.removeKeymap(java.lang.String)
+
+    private static var removeKeymap_MethodID_61: jmethodID?
+
+    open class func removeKeymap( arg0: String? ) -> Keymap! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "removeKeymap", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Keymap;", methodCache: &removeKeymap_MethodID_61, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? KeymapForward( javaObject: __return ) : nil
+    }
+
+    open class func removeKeymap( _ _arg0: String? ) -> Keymap! {
+        return removeKeymap( arg0: _arg0 )
+    }
+
+    /// private static java.util.HashMap javax.swing.text.JTextComponent.getKeymapTable()
+
+    /// public static void javax.swing.text.JTextComponent.loadKeymap(javax.swing.text.Keymap,javax.swing.text.JTextComponent$KeyBinding[],javax.swing.Action[])
+
+    private static var loadKeymap_MethodID_62: jmethodID?
+
+    open class func loadKeymap( arg0: Keymap?, arg1: [JTextComponent_KeyBinding]?, arg2: [Action]? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass, methodName: "loadKeymap", methodSig: "(Ljavax/swing/text/Keymap;[Ljavax/swing/text/JTextComponent$KeyBinding;[Ljavax/swing/Action;)V", methodCache: &loadKeymap_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open class func loadKeymap( _ _arg0: Keymap?, _ _arg1: [JTextComponent_KeyBinding]?, _ _arg2: [Action]? ) {
+        loadKeymap( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public java.awt.Color javax.swing.text.JTextComponent.getCaretColor()
+
+    private static var getCaretColor_MethodID_63: jmethodID?
+
+    open func getCaretColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCaretColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getCaretColor_MethodID_63, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setCaretColor(java.awt.Color)
+
+    private static var setCaretColor_MethodID_64: jmethodID?
+
+    open func setCaretColor( arg0: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCaretColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setCaretColor_MethodID_64, args: &__args, locals: &__locals )
+    }
+
+    open func setCaretColor( _ _arg0: java_awt.Color? ) {
+        setCaretColor( arg0: _arg0 )
+    }
+
+    /// public java.awt.Color javax.swing.text.JTextComponent.getSelectionColor()
+
+    private static var getSelectionColor_MethodID_65: jmethodID?
+
+    open func getSelectionColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getSelectionColor_MethodID_65, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setSelectionColor(java.awt.Color)
+
+    private static var setSelectionColor_MethodID_66: jmethodID?
+
+    open func setSelectionColor( arg0: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setSelectionColor_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectionColor( _ _arg0: java_awt.Color? ) {
+        setSelectionColor( arg0: _arg0 )
+    }
+
+    /// public java.awt.Color javax.swing.text.JTextComponent.getSelectedTextColor()
+
+    private static var getSelectedTextColor_MethodID_67: jmethodID?
+
+    open func getSelectedTextColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedTextColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getSelectedTextColor_MethodID_67, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setSelectedTextColor(java.awt.Color)
+
+    private static var setSelectedTextColor_MethodID_68: jmethodID?
+
+    open func setSelectedTextColor( arg0: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedTextColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setSelectedTextColor_MethodID_68, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedTextColor( _ _arg0: java_awt.Color? ) {
+        setSelectedTextColor( arg0: _arg0 )
+    }
+
+    /// public java.awt.Color javax.swing.text.JTextComponent.getDisabledTextColor()
+
+    private static var getDisabledTextColor_MethodID_69: jmethodID?
+
+    open func getDisabledTextColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledTextColor", methodSig: "()Ljava/awt/Color;", methodCache: &JTextComponent.getDisabledTextColor_MethodID_69, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.setDisabledTextColor(java.awt.Color)
+
+    private static var setDisabledTextColor_MethodID_70: jmethodID?
+
+    open func setDisabledTextColor( arg0: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledTextColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &JTextComponent.setDisabledTextColor_MethodID_70, args: &__args, locals: &__locals )
+    }
+
+    open func setDisabledTextColor( _ _arg0: java_awt.Color? ) {
+        setDisabledTextColor( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.replaceSelection(java.lang.String)
+
+    private static var replaceSelection_MethodID_71: jmethodID?
+
+    open func replaceSelection( arg0: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceSelection", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextComponent.replaceSelection_MethodID_71, args: &__args, locals: &__locals )
+    }
+
+    open func replaceSelection( _ _arg0: String? ) {
+        replaceSelection( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.cut()
+
+    private static var cut_MethodID_72: jmethodID?
+
+    open func cut() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cut", methodSig: "()V", methodCache: &JTextComponent.cut_MethodID_72, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.text.JTextComponent.paste()
+
+    private static var paste_MethodID_73: jmethodID?
+
+    open func paste() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paste", methodSig: "()V", methodCache: &JTextComponent.paste_MethodID_73, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.text.JTextComponent.invokeAction(java.lang.String,javax.swing.Action)
+
+    /// private void javax.swing.text.JTextComponent.installDefaultTransferHandlerIfNecessary()
+
+    /// public void javax.swing.text.JTextComponent.moveCaretPosition(int)
+
+    private static var moveCaretPosition_MethodID_74: jmethodID?
+
+    open func moveCaretPosition( arg0: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveCaretPosition", methodSig: "(I)V", methodCache: &JTextComponent.moveCaretPosition_MethodID_74, args: &__args, locals: &__locals )
+    }
+
+    open func moveCaretPosition( _ _arg0: Int ) {
+        moveCaretPosition( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.JTextComponent.setFocusAccelerator(char)
+
+    private static var setFocusAccelerator_MethodID_75: jmethodID?
+
+    open func setFocusAccelerator( arg0: UInt16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusAccelerator", methodSig: "(C)V", methodCache: &JTextComponent.setFocusAccelerator_MethodID_75, args: &__args, locals: &__locals )
+    }
+
+    open func setFocusAccelerator( _ _arg0: UInt16 ) {
+        setFocusAccelerator( arg0: _arg0 )
+    }
+
+    /// public char javax.swing.text.JTextComponent.getFocusAccelerator()
+
+    private static var getFocusAccelerator_MethodID_76: jmethodID?
+
+    open func getFocusAccelerator() -> UInt16 {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getFocusAccelerator", methodSig: "()C", methodCache: &JTextComponent.getFocusAccelerator_MethodID_76, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: UInt16(), from: __return )
+    }
+
 
     /// In declared protocol but not defined.. ///
 

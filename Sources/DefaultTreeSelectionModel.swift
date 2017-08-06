@@ -258,15 +258,61 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// private void javax.swing.tree.DefaultTreeSelectionModel.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
+    /// public synchronized void javax.swing.tree.DefaultTreeSelectionModel.addPropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_3: jmethodID?
+
+    open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &DefaultTreeSelectionModel.addPropertyChangeListener_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        addPropertyChangeListener( listener: _listener )
+    }
+
+    /// public synchronized void javax.swing.tree.DefaultTreeSelectionModel.removePropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_4: jmethodID?
+
+    open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &DefaultTreeSelectionModel.removePropertyChangeListener_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
+        removePropertyChangeListener( listener: _listener )
+    }
+
+    /// public java.util.EventListener[] javax.swing.tree.DefaultTreeSelectionModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_5: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultTreeSelectionModel.getListeners_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
     /// public void javax.swing.tree.DefaultTreeSelectionModel.setSelectionMode(int)
 
-    private static var setSelectionMode_MethodID_3: jmethodID?
+    private static var setSelectionMode_MethodID_6: jmethodID?
 
     open func setSelectionMode( mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionMode", methodSig: "(I)V", methodCache: &DefaultTreeSelectionModel.setSelectionMode_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionMode", methodSig: "(I)V", methodCache: &DefaultTreeSelectionModel.setSelectionMode_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setSelectionMode( _ _mode: Int ) {
@@ -275,24 +321,24 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// public void javax.swing.tree.DefaultTreeSelectionModel.clearSelection()
 
-    private static var clearSelection_MethodID_4: jmethodID?
+    private static var clearSelection_MethodID_7: jmethodID?
 
     open func clearSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.clearSelection_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.clearSelection_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// public boolean javax.swing.tree.DefaultTreeSelectionModel.isRowSelected(int)
 
-    private static var isRowSelected_MethodID_5: jmethodID?
+    private static var isRowSelected_MethodID_8: jmethodID?
 
     open func isRowSelected( row: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRowSelected", methodSig: "(I)Z", methodCache: &DefaultTreeSelectionModel.isRowSelected_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRowSelected", methodSig: "(I)Z", methodCache: &DefaultTreeSelectionModel.isRowSelected_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -300,15 +346,39 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
         return isRowSelected( row: _row )
     }
 
+    /// public java.beans.PropertyChangeListener[] javax.swing.tree.DefaultTreeSelectionModel.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_9: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &DefaultTreeSelectionModel.getPropertyChangeListeners_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+    }
+
+
+    /// public int javax.swing.tree.DefaultTreeSelectionModel.getSelectionMode()
+
+    private static var getSelectionMode_MethodID_10: jmethodID?
+
+    open func getSelectionMode() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &DefaultTreeSelectionModel.getSelectionMode_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
     /// public void javax.swing.tree.DefaultTreeSelectionModel.setRowMapper(javax.swing.tree.RowMapper)
 
-    private static var setRowMapper_MethodID_6: jmethodID?
+    private static var setRowMapper_MethodID_11: jmethodID?
 
     open func setRowMapper( newMapper: RowMapper? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newMapper, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowMapper", methodSig: "(Ljavax/swing/tree/RowMapper;)V", methodCache: &DefaultTreeSelectionModel.setRowMapper_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowMapper", methodSig: "(Ljavax/swing/tree/RowMapper;)V", methodCache: &DefaultTreeSelectionModel.setRowMapper_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setRowMapper( _ _newMapper: RowMapper? ) {
@@ -317,12 +387,12 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// public javax.swing.tree.RowMapper javax.swing.tree.DefaultTreeSelectionModel.getRowMapper()
 
-    private static var getRowMapper_MethodID_7: jmethodID?
+    private static var getRowMapper_MethodID_12: jmethodID?
 
     open func getRowMapper() -> RowMapper! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowMapper", methodSig: "()Ljavax/swing/tree/RowMapper;", methodCache: &DefaultTreeSelectionModel.getRowMapper_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowMapper", methodSig: "()Ljavax/swing/tree/RowMapper;", methodCache: &DefaultTreeSelectionModel.getRowMapper_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RowMapperForward( javaObject: __return ) : nil
     }
@@ -330,35 +400,35 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// public void javax.swing.tree.DefaultTreeSelectionModel.resetRowSelection()
 
-    private static var resetRowSelection_MethodID_8: jmethodID?
+    private static var resetRowSelection_MethodID_13: jmethodID?
 
     open func resetRowSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetRowSelection", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.resetRowSelection_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetRowSelection", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.resetRowSelection_MethodID_13, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.tree.DefaultTreeSelectionModel.insureRowContinuity()
 
-    private static var insureRowContinuity_MethodID_9: jmethodID?
+    private static var insureRowContinuity_MethodID_14: jmethodID?
 
     open func insureRowContinuity() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insureRowContinuity", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.insureRowContinuity_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insureRowContinuity", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.insureRowContinuity_MethodID_14, args: &__args, locals: &__locals )
     }
 
 
     /// protected boolean javax.swing.tree.DefaultTreeSelectionModel.arePathsContiguous(javax.swing.tree.TreePath[])
 
-    private static var arePathsContiguous_MethodID_10: jmethodID?
+    private static var arePathsContiguous_MethodID_15: jmethodID?
 
     open func arePathsContiguous( paths: [TreePath]? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: paths, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "arePathsContiguous", methodSig: "([Ljavax/swing/tree/TreePath;)Z", methodCache: &DefaultTreeSelectionModel.arePathsContiguous_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "arePathsContiguous", methodSig: "([Ljavax/swing/tree/TreePath;)Z", methodCache: &DefaultTreeSelectionModel.arePathsContiguous_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -368,13 +438,13 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// protected boolean javax.swing.tree.DefaultTreeSelectionModel.canPathsBeAdded(javax.swing.tree.TreePath[])
 
-    private static var canPathsBeAdded_MethodID_11: jmethodID?
+    private static var canPathsBeAdded_MethodID_16: jmethodID?
 
     open func canPathsBeAdded( paths: [TreePath]? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: paths, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canPathsBeAdded", methodSig: "([Ljavax/swing/tree/TreePath;)Z", methodCache: &DefaultTreeSelectionModel.canPathsBeAdded_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canPathsBeAdded", methodSig: "([Ljavax/swing/tree/TreePath;)Z", methodCache: &DefaultTreeSelectionModel.canPathsBeAdded_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -384,13 +454,13 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// protected boolean javax.swing.tree.DefaultTreeSelectionModel.canPathsBeRemoved(javax.swing.tree.TreePath[])
 
-    private static var canPathsBeRemoved_MethodID_12: jmethodID?
+    private static var canPathsBeRemoved_MethodID_17: jmethodID?
 
     open func canPathsBeRemoved( paths: [TreePath]? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: paths, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canPathsBeRemoved", methodSig: "([Ljavax/swing/tree/TreePath;)Z", methodCache: &DefaultTreeSelectionModel.canPathsBeRemoved_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canPathsBeRemoved", methodSig: "([Ljavax/swing/tree/TreePath;)Z", methodCache: &DefaultTreeSelectionModel.canPathsBeRemoved_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -400,14 +470,14 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// protected void javax.swing.tree.DefaultTreeSelectionModel.notifyPathChange(java.util.Vector,javax.swing.tree.TreePath)
 
-    private static var notifyPathChange_MethodID_13: jmethodID?
+    private static var notifyPathChange_MethodID_18: jmethodID?
 
     open func notifyPathChange( changedPaths: java_util.Vector?, oldLeadSelection: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: changedPaths != nil ? changedPaths! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldLeadSelection != nil ? oldLeadSelection! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "notifyPathChange", methodSig: "(Ljava/util/Vector;Ljavax/swing/tree/TreePath;)V", methodCache: &DefaultTreeSelectionModel.notifyPathChange_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "notifyPathChange", methodSig: "(Ljava/util/Vector;Ljavax/swing/tree/TreePath;)V", methodCache: &DefaultTreeSelectionModel.notifyPathChange_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func notifyPathChange( _ _changedPaths: java_util.Vector?, _ _oldLeadSelection: TreePath? ) {
@@ -416,93 +486,23 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     /// protected void javax.swing.tree.DefaultTreeSelectionModel.updateLeadIndex()
 
-    private static var updateLeadIndex_MethodID_14: jmethodID?
+    private static var updateLeadIndex_MethodID_19: jmethodID?
 
     open func updateLeadIndex() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLeadIndex", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.updateLeadIndex_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLeadIndex", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.updateLeadIndex_MethodID_19, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.tree.DefaultTreeSelectionModel.insureUniqueness()
 
-    private static var insureUniqueness_MethodID_15: jmethodID?
+    private static var insureUniqueness_MethodID_20: jmethodID?
 
     open func insureUniqueness() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insureUniqueness", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.insureUniqueness_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.beans.PropertyChangeListener[] javax.swing.tree.DefaultTreeSelectionModel.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_16: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &DefaultTreeSelectionModel.getPropertyChangeListeners_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-
-    /// public synchronized void javax.swing.tree.DefaultTreeSelectionModel.addPropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_17: jmethodID?
-
-    open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &DefaultTreeSelectionModel.addPropertyChangeListener_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( listener: _listener )
-    }
-
-    /// public synchronized void javax.swing.tree.DefaultTreeSelectionModel.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_18: jmethodID?
-
-    open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &DefaultTreeSelectionModel.removePropertyChangeListener_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( listener: _listener )
-    }
-
-    /// public java.util.EventListener[] javax.swing.tree.DefaultTreeSelectionModel.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_19: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultTreeSelectionModel.getListeners_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
-    /// public int javax.swing.tree.DefaultTreeSelectionModel.getSelectionMode()
-
-    private static var getSelectionMode_MethodID_20: jmethodID?
-
-    open func getSelectionMode() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &DefaultTreeSelectionModel.getSelectionMode_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insureUniqueness", methodSig: "()V", methodCache: &DefaultTreeSelectionModel.insureUniqueness_MethodID_20, args: &__args, locals: &__locals )
     }
 
 

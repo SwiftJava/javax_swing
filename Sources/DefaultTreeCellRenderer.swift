@@ -751,292 +751,23 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setBorderSelectionColor(java.awt.Color)
+    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellRenderer.getPreferredSize()
 
-    private static var setBorderSelectionColor_MethodID_2: jmethodID?
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.invalidate()
 
-    open func setBorderSelectionColor( newColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBorderSelectionColor_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func setBorderSelectionColor( _ _newColor: java_awt.Color? ) {
-        setBorderSelectionColor( newColor: _newColor )
-    }
-
-    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getBorderSelectionColor()
-
-    private static var getBorderSelectionColor_MethodID_3: jmethodID?
-
-    open func getBorderSelectionColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getBorderSelectionColor_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getLeafIcon()
-
-    private static var getLeafIcon_MethodID_4: jmethodID?
-
-    open func getLeafIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLeafIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getLeafIcon_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getOpenIcon()
-
-    private static var getOpenIcon_MethodID_5: jmethodID?
-
-    open func getOpenIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOpenIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getOpenIcon_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getClosedIcon()
-
-    private static var getClosedIcon_MethodID_6: jmethodID?
-
-    open func getClosedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClosedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getClosedIcon_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getDefaultOpenIcon()
-
-    private static var getDefaultOpenIcon_MethodID_7: jmethodID?
-
-    open func getDefaultOpenIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultOpenIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getDefaultOpenIcon_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getDefaultClosedIcon()
-
-    private static var getDefaultClosedIcon_MethodID_8: jmethodID?
-
-    open func getDefaultClosedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultClosedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getDefaultClosedIcon_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getDefaultLeafIcon()
-
-    private static var getDefaultLeafIcon_MethodID_9: jmethodID?
-
-    open func getDefaultLeafIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultLeafIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getDefaultLeafIcon_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setOpenIcon(javax.swing.Icon)
-
-    private static var setOpenIcon_MethodID_10: jmethodID?
-
-    open func setOpenIcon( newIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpenIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &DefaultTreeCellRenderer.setOpenIcon_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setOpenIcon( _ _newIcon: Icon? ) {
-        setOpenIcon( newIcon: _newIcon )
-    }
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setClosedIcon(javax.swing.Icon)
-
-    private static var setClosedIcon_MethodID_11: jmethodID?
-
-    open func setClosedIcon( newIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClosedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &DefaultTreeCellRenderer.setClosedIcon_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setClosedIcon( _ _newIcon: Icon? ) {
-        setClosedIcon( newIcon: _newIcon )
-    }
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setLeafIcon(javax.swing.Icon)
-
-    private static var setLeafIcon_MethodID_12: jmethodID?
-
-    open func setLeafIcon( newIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeafIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &DefaultTreeCellRenderer.setLeafIcon_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setLeafIcon( _ _newIcon: Icon? ) {
-        setLeafIcon( newIcon: _newIcon )
-    }
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setTextSelectionColor(java.awt.Color)
-
-    private static var setTextSelectionColor_MethodID_13: jmethodID?
-
-    open func setTextSelectionColor( newColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTextSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setTextSelectionColor_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setTextSelectionColor( _ _newColor: java_awt.Color? ) {
-        setTextSelectionColor( newColor: _newColor )
-    }
-
-    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getTextSelectionColor()
-
-    private static var getTextSelectionColor_MethodID_14: jmethodID?
-
-    open func getTextSelectionColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getTextSelectionColor_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setTextNonSelectionColor(java.awt.Color)
-
-    private static var setTextNonSelectionColor_MethodID_15: jmethodID?
-
-    open func setTextNonSelectionColor( newColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTextNonSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setTextNonSelectionColor_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setTextNonSelectionColor( _ _newColor: java_awt.Color? ) {
-        setTextNonSelectionColor( newColor: _newColor )
-    }
-
-    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getTextNonSelectionColor()
-
-    private static var getTextNonSelectionColor_MethodID_16: jmethodID?
-
-    open func getTextNonSelectionColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextNonSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getTextNonSelectionColor_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setBackgroundSelectionColor(java.awt.Color)
-
-    private static var setBackgroundSelectionColor_MethodID_17: jmethodID?
-
-    open func setBackgroundSelectionColor( newColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackgroundSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBackgroundSelectionColor_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setBackgroundSelectionColor( _ _newColor: java_awt.Color? ) {
-        setBackgroundSelectionColor( newColor: _newColor )
-    }
-
-    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getBackgroundSelectionColor()
-
-    private static var getBackgroundSelectionColor_MethodID_18: jmethodID?
-
-    open func getBackgroundSelectionColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackgroundSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getBackgroundSelectionColor_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.setBackgroundNonSelectionColor(java.awt.Color)
-
-    private static var setBackgroundNonSelectionColor_MethodID_19: jmethodID?
-
-    open func setBackgroundNonSelectionColor( newColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackgroundNonSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBackgroundNonSelectionColor_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setBackgroundNonSelectionColor( _ _newColor: java_awt.Color? ) {
-        setBackgroundNonSelectionColor( newColor: _newColor )
-    }
-
-    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getBackgroundNonSelectionColor()
-
-    private static var getBackgroundNonSelectionColor_MethodID_20: jmethodID?
-
-    open func getBackgroundNonSelectionColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackgroundNonSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getBackgroundNonSelectionColor_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// private int javax.swing.tree.DefaultTreeCellRenderer.getLabelStart()
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.paint(java.awt.Graphics)
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.repaint()
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.repaint(long,int,int,int,int)
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.repaint(java.awt.Rectangle)
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.validate()
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.revalidate()
 
     /// public java.awt.Font javax.swing.tree.DefaultTreeCellRenderer.getFont()
 
     /// public void javax.swing.tree.DefaultTreeCellRenderer.setBackground(java.awt.Color)
 
-    private static var setBackground_MethodID_21: jmethodID?
+    private static var setBackground_MethodID_2: jmethodID?
 
     open func setBackground( color: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBackground_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBackground_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func setBackground( _ _color: java_awt.Color? ) {
@@ -1047,7 +778,7 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
 
     /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,short,short)
 
-    private static var firePropertyChange_MethodID_22: jmethodID?
+    private static var firePropertyChange_MethodID_3: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: Int16, newValue: Int16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1055,16 +786,20 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int16, _ _newValue: Int16 ) {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,char,char)
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,int,int)
+
     /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,byte,byte)
 
-    private static var firePropertyChange_MethodID_23: jmethodID?
+    private static var firePropertyChange_MethodID_4: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: Int8, newValue: Int8 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1072,18 +807,33 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;BB)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;BB)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int8, _ _newValue: Int8 ) {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,char,char)
+    /// protected void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_5: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
 
     /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,double,double)
 
-    private static var firePropertyChange_MethodID_24: jmethodID?
+    private static var firePropertyChange_MethodID_6: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: Double, newValue: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1091,7 +841,7 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;DD)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;DD)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Double, _ _newValue: Double ) {
@@ -1100,7 +850,7 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
 
     /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,float,float)
 
-    private static var firePropertyChange_MethodID_25: jmethodID?
+    private static var firePropertyChange_MethodID_7: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: Float, newValue: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1108,16 +858,18 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;FF)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;FF)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_7, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Float, _ _newValue: Float ) {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
+
     /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,long,long)
 
-    private static var firePropertyChange_MethodID_26: jmethodID?
+    private static var firePropertyChange_MethodID_8: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: Int64, newValue: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1125,35 +877,289 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int64, _ _newValue: Int64 ) {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,int,int)
-
-    /// protected void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_27: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultTreeCellRenderer.firePropertyChange_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
-
     /// public void javax.swing.tree.DefaultTreeCellRenderer.updateUI()
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setBorderSelectionColor(java.awt.Color)
+
+    private static var setBorderSelectionColor_MethodID_9: jmethodID?
+
+    open func setBorderSelectionColor( newColor: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBorderSelectionColor_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setBorderSelectionColor( _ _newColor: java_awt.Color? ) {
+        setBorderSelectionColor( newColor: _newColor )
+    }
+
+    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getBorderSelectionColor()
+
+    private static var getBorderSelectionColor_MethodID_10: jmethodID?
+
+    open func getBorderSelectionColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getBorderSelectionColor_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getLeafIcon()
+
+    private static var getLeafIcon_MethodID_11: jmethodID?
+
+    open func getLeafIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLeafIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getLeafIcon_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getOpenIcon()
+
+    private static var getOpenIcon_MethodID_12: jmethodID?
+
+    open func getOpenIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOpenIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getOpenIcon_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getClosedIcon()
+
+    private static var getClosedIcon_MethodID_13: jmethodID?
+
+    open func getClosedIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClosedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getClosedIcon_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getDefaultOpenIcon()
+
+    private static var getDefaultOpenIcon_MethodID_14: jmethodID?
+
+    open func getDefaultOpenIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultOpenIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getDefaultOpenIcon_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getDefaultClosedIcon()
+
+    private static var getDefaultClosedIcon_MethodID_15: jmethodID?
+
+    open func getDefaultClosedIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultClosedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getDefaultClosedIcon_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.tree.DefaultTreeCellRenderer.getDefaultLeafIcon()
+
+    private static var getDefaultLeafIcon_MethodID_16: jmethodID?
+
+    open func getDefaultLeafIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultLeafIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &DefaultTreeCellRenderer.getDefaultLeafIcon_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setOpenIcon(javax.swing.Icon)
+
+    private static var setOpenIcon_MethodID_17: jmethodID?
+
+    open func setOpenIcon( newIcon: Icon? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOpenIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &DefaultTreeCellRenderer.setOpenIcon_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setOpenIcon( _ _newIcon: Icon? ) {
+        setOpenIcon( newIcon: _newIcon )
+    }
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setClosedIcon(javax.swing.Icon)
+
+    private static var setClosedIcon_MethodID_18: jmethodID?
+
+    open func setClosedIcon( newIcon: Icon? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClosedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &DefaultTreeCellRenderer.setClosedIcon_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setClosedIcon( _ _newIcon: Icon? ) {
+        setClosedIcon( newIcon: _newIcon )
+    }
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setLeafIcon(javax.swing.Icon)
+
+    private static var setLeafIcon_MethodID_19: jmethodID?
+
+    open func setLeafIcon( newIcon: Icon? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeafIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &DefaultTreeCellRenderer.setLeafIcon_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setLeafIcon( _ _newIcon: Icon? ) {
+        setLeafIcon( newIcon: _newIcon )
+    }
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setTextSelectionColor(java.awt.Color)
+
+    private static var setTextSelectionColor_MethodID_20: jmethodID?
+
+    open func setTextSelectionColor( newColor: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTextSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setTextSelectionColor_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func setTextSelectionColor( _ _newColor: java_awt.Color? ) {
+        setTextSelectionColor( newColor: _newColor )
+    }
+
+    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getTextSelectionColor()
+
+    private static var getTextSelectionColor_MethodID_21: jmethodID?
+
+    open func getTextSelectionColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getTextSelectionColor_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setTextNonSelectionColor(java.awt.Color)
+
+    private static var setTextNonSelectionColor_MethodID_22: jmethodID?
+
+    open func setTextNonSelectionColor( newColor: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTextNonSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setTextNonSelectionColor_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setTextNonSelectionColor( _ _newColor: java_awt.Color? ) {
+        setTextNonSelectionColor( newColor: _newColor )
+    }
+
+    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getTextNonSelectionColor()
+
+    private static var getTextNonSelectionColor_MethodID_23: jmethodID?
+
+    open func getTextNonSelectionColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextNonSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getTextNonSelectionColor_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setBackgroundSelectionColor(java.awt.Color)
+
+    private static var setBackgroundSelectionColor_MethodID_24: jmethodID?
+
+    open func setBackgroundSelectionColor( newColor: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackgroundSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBackgroundSelectionColor_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setBackgroundSelectionColor( _ _newColor: java_awt.Color? ) {
+        setBackgroundSelectionColor( newColor: _newColor )
+    }
+
+    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getBackgroundSelectionColor()
+
+    private static var getBackgroundSelectionColor_MethodID_25: jmethodID?
+
+    open func getBackgroundSelectionColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackgroundSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getBackgroundSelectionColor_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.setBackgroundNonSelectionColor(java.awt.Color)
+
+    private static var setBackgroundNonSelectionColor_MethodID_26: jmethodID?
+
+    open func setBackgroundNonSelectionColor( newColor: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackgroundNonSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellRenderer.setBackgroundNonSelectionColor_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setBackgroundNonSelectionColor( _ _newColor: java_awt.Color? ) {
+        setBackgroundNonSelectionColor( newColor: _newColor )
+    }
+
+    /// public java.awt.Color javax.swing.tree.DefaultTreeCellRenderer.getBackgroundNonSelectionColor()
+
+    private static var getBackgroundNonSelectionColor_MethodID_27: jmethodID?
+
+    open func getBackgroundNonSelectionColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackgroundNonSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellRenderer.getBackgroundNonSelectionColor_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// private int javax.swing.tree.DefaultTreeCellRenderer.getLabelStart()
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.paint(java.awt.Graphics)
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.repaint(long,int,int,int,int)
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.repaint(java.awt.Rectangle)
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.repaint()
+
+    /// public void javax.swing.tree.DefaultTreeCellRenderer.validate()
 
     /// public java.awt.Component javax.swing.tree.DefaultTreeCellRenderer.getTreeCellRendererComponent(javax.swing.JTree,java.lang.Object,boolean,boolean,boolean,int,boolean)
 
@@ -1179,12 +1185,6 @@ open class DefaultTreeCellRenderer: JLabel, TreeCellRenderer {
     }
 
     /// private void javax.swing.tree.DefaultTreeCellRenderer.paintFocus(java.awt.Graphics,int,int,int,int,java.awt.Color)
-
-    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellRenderer.getPreferredSize()
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.invalidate()
-
-    /// public void javax.swing.tree.DefaultTreeCellRenderer.revalidate()
 
 }
 

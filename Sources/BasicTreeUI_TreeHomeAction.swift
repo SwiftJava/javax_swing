@@ -120,9 +120,9 @@ open class BasicTreeUI_TreeHomeAction: AbstractAction {
 
     /// private javax.swing.plaf.basic.BasicTreeUI$TreeHomeAction(javax.swing.plaf.basic.BasicTreeUI,int,java.lang.String,boolean,boolean)
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeHomeAction.actionPerformed(java.awt.event.ActionEvent)
-
     /// public boolean javax.swing.plaf.basic.BasicTreeUI$TreeHomeAction.isEnabled()
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeHomeAction.actionPerformed(java.awt.event.ActionEvent)
 
 }
 

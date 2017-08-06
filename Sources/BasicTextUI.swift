@@ -93,82 +93,46 @@ open class BasicTextUI: TextUI, ViewFactory {
 
     /// static javax.swing.text.DefaultCaret javax.swing.plaf.basic.BasicTextUI.access$102(javax.swing.plaf.basic.BasicTextUI,javax.swing.text.DefaultCaret)
 
-    /// protected final javax.swing.text.JTextComponent javax.swing.plaf.basic.BasicTextUI.getComponent()
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var getComponent_MethodID_4: jmethodID?
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextUI.getMinimumSize(javax.swing.JComponent)
 
-    open func getComponent() -> JTextComponent! {
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextUI.getMaximumSize(javax.swing.JComponent)
+
+    /// protected javax.swing.text.Caret javax.swing.plaf.basic.BasicTextUI.createCaret()
+
+    private static var createCaret_MethodID_4: jmethodID?
+
+    open func createCaret() -> Caret! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &BasicTextUI.getComponent_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCaret", methodSig: "()Ljavax/swing/text/Caret;", methodCache: &BasicTextUI.createCaret_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JTextComponent( javaObject: __return ) : nil
+        return __return != nil ? CaretForward( javaObject: __return ) : nil
     }
 
-
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTextUI.getInputMap()
-
-    /// javax.swing.ActionMap javax.swing.plaf.basic.BasicTextUI.getActionMap()
-
-    /// javax.swing.TransferHandler javax.swing.plaf.basic.BasicTextUI.getTransferHandler()
-
-    /// public void javax.swing.plaf.basic.BasicTextUI.damageRange(javax.swing.text.JTextComponent,int,int)
-
-    private static var damageRange_MethodID_5: jmethodID?
-
-    open func damageRange( tc: JTextComponent?, p0: Int, p1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: p1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;II)V", methodCache: &BasicTextUI.damageRange_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func damageRange( _ _tc: JTextComponent?, _ _p0: Int, _ _p1: Int ) {
-        damageRange( tc: _tc, p0: _p0, p1: _p1 )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicTextUI.damageRange(javax.swing.text.JTextComponent,int,int,javax.swing.text.Position$Bias,javax.swing.text.Position$Bias)
-
-    private static var damageRange_MethodID_6: jmethodID?
-
-    open func damageRange( t: JTextComponent?, p0: Int, p1: Int, p0Bias: Position_Bias?, p1Bias: Position_Bias? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: p1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: p0Bias != nil ? p0Bias! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: p1Bias != nil ? p1Bias! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;IILjavax/swing/text/Position$Bias;Ljavax/swing/text/Position$Bias;)V", methodCache: &BasicTextUI.damageRange_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func damageRange( _ _t: JTextComponent?, _ _p0: Int, _ _p1: Int, _ _p0Bias: Position_Bias?, _ _p1Bias: Position_Bias? ) {
-        damageRange( t: _t, p0: _p0, p1: _p1, p0Bias: _p0Bias, p1Bias: _p1Bias )
-    }
 
     /// void javax.swing.plaf.basic.BasicTextUI.updateFocusTraversalKeys()
 
     /// protected void javax.swing.plaf.basic.BasicTextUI.modelChanged()
 
-    private static var modelChanged_MethodID_7: jmethodID?
+    private static var modelChanged_MethodID_5: jmethodID?
 
     open func modelChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "modelChanged", methodSig: "()V", methodCache: &BasicTextUI.modelChanged_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "modelChanged", methodSig: "()V", methodCache: &BasicTextUI.modelChanged_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.text.Highlighter javax.swing.plaf.basic.BasicTextUI.createHighlighter()
 
-    private static var createHighlighter_MethodID_8: jmethodID?
+    private static var createHighlighter_MethodID_6: jmethodID?
 
     open func createHighlighter() -> Highlighter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createHighlighter", methodSig: "()Ljavax/swing/text/Highlighter;", methodCache: &BasicTextUI.createHighlighter_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createHighlighter", methodSig: "()Ljavax/swing/text/Highlighter;", methodCache: &BasicTextUI.createHighlighter_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HighlighterForward( javaObject: __return ) : nil
     }
@@ -176,24 +140,24 @@ open class BasicTextUI: TextUI, ViewFactory {
 
     /// protected java.lang.String javax.swing.plaf.basic.BasicTextUI.getKeymapName()
 
-    private static var getKeymapName_MethodID_9: jmethodID?
+    private static var getKeymapName_MethodID_7: jmethodID?
 
     open func getKeymapName() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeymapName", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextUI.getKeymapName_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeymapName", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextUI.getKeymapName_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// protected javax.swing.text.Keymap javax.swing.plaf.basic.BasicTextUI.createKeymap()
 
-    private static var createKeymap_MethodID_10: jmethodID?
+    private static var createKeymap_MethodID_8: jmethodID?
 
     open func createKeymap() -> Keymap! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeymap", methodSig: "()Ljavax/swing/text/Keymap;", methodCache: &BasicTextUI.createKeymap_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeymap", methodSig: "()Ljavax/swing/text/Keymap;", methodCache: &BasicTextUI.createKeymap_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? KeymapForward( javaObject: __return ) : nil
     }
@@ -211,13 +175,13 @@ open class BasicTextUI: TextUI, ViewFactory {
 
     /// protected void javax.swing.plaf.basic.BasicTextUI.paintSafely(java.awt.Graphics)
 
-    private static var paintSafely_MethodID_11: jmethodID?
+    private static var paintSafely_MethodID_9: jmethodID?
 
     open func paintSafely( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSafely", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicTextUI.paintSafely_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSafely", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicTextUI.paintSafely_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func paintSafely( _ _g: java_awt.Graphics? ) {
@@ -226,12 +190,12 @@ open class BasicTextUI: TextUI, ViewFactory {
 
     /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicTextUI.getVisibleEditorRect()
 
-    private static var getVisibleEditorRect_MethodID_12: jmethodID?
+    private static var getVisibleEditorRect_MethodID_10: jmethodID?
 
     open func getVisibleEditorRect() -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisibleEditorRect", methodSig: "()Ljava/awt/Rectangle;", methodCache: &BasicTextUI.getVisibleEditorRect_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisibleEditorRect", methodSig: "()Ljava/awt/Rectangle;", methodCache: &BasicTextUI.getVisibleEditorRect_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -239,13 +203,64 @@ open class BasicTextUI: TextUI, ViewFactory {
 
     /// private static javax.swing.plaf.basic.BasicTextUI$DragListener javax.swing.plaf.basic.BasicTextUI.getDragListener()
 
-    /// public final void javax.swing.plaf.basic.BasicTextUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// public javax.swing.text.EditorKit javax.swing.plaf.basic.BasicTextUI.getEditorKit(javax.swing.text.JTextComponent)
+
+    private static var getEditorKit_MethodID_11: jmethodID?
+
+    open func getEditorKit( tc: JTextComponent? ) -> EditorKit! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/EditorKit;", methodCache: &BasicTextUI.getEditorKit_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? EditorKit( javaObject: __return ) : nil
+    }
+
+    override open func getEditorKit( _ _tc: JTextComponent? ) -> EditorKit! {
+        return getEditorKit( tc: _tc )
+    }
+
+    /// public javax.swing.text.View javax.swing.plaf.basic.BasicTextUI.getRootView(javax.swing.text.JTextComponent)
+
+    private static var getRootView_MethodID_12: jmethodID?
+
+    open func getRootView( tc: JTextComponent? ) -> View! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootView", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/View;", methodCache: &BasicTextUI.getRootView_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    override open func getRootView( _ _tc: JTextComponent? ) -> View! {
+        return getRootView( tc: _tc )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicTextUI.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
 
     /// public java.lang.String javax.swing.plaf.basic.BasicTextUI.getToolTipText(javax.swing.text.JTextComponent,java.awt.Point)
 
-    /// public int javax.swing.plaf.basic.BasicTextUI.viewToModel(javax.swing.text.JTextComponent,java.awt.Point,javax.swing.text.Position$Bias[])
+    /// public int javax.swing.plaf.basic.BasicTextUI.viewToModel(javax.swing.text.JTextComponent,java.awt.Point)
 
     private static var viewToModel_MethodID_13: jmethodID?
+
+    open func viewToModel( tc: JTextComponent?, pt: java_awt.Point? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;)I", methodCache: &BasicTextUI.viewToModel_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func viewToModel( _ _tc: JTextComponent?, _ _pt: java_awt.Point? ) -> Int {
+        return viewToModel( tc: _tc, pt: _pt )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicTextUI.viewToModel(javax.swing.text.JTextComponent,java.awt.Point,javax.swing.text.Position$Bias[])
+
+    private static var viewToModel_MethodID_14: jmethodID?
 
     open func viewToModel( tc: JTextComponent?, pt: java_awt.Point?, biasReturn: [Position_Bias]? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -253,29 +268,12 @@ open class BasicTextUI: TextUI, ViewFactory {
         __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: biasReturn, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;[Ljavax/swing/text/Position$Bias;)I", methodCache: &BasicTextUI.viewToModel_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;[Ljavax/swing/text/Position$Bias;)I", methodCache: &BasicTextUI.viewToModel_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     override open func viewToModel( _ _tc: JTextComponent?, _ _pt: java_awt.Point?, _ _biasReturn: [Position_Bias]? ) -> Int {
         return viewToModel( tc: _tc, pt: _pt, biasReturn: _biasReturn )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicTextUI.viewToModel(javax.swing.text.JTextComponent,java.awt.Point)
-
-    private static var viewToModel_MethodID_14: jmethodID?
-
-    open func viewToModel( tc: JTextComponent?, pt: java_awt.Point? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pt != nil ? pt! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;)I", methodCache: &BasicTextUI.viewToModel_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func viewToModel( _ _tc: JTextComponent?, _ _pt: java_awt.Point? ) -> Int {
-        return viewToModel( tc: _tc, pt: _pt )
     }
 
     /// public java.awt.Rectangle javax.swing.plaf.basic.BasicTextUI.modelToView(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
@@ -336,108 +334,69 @@ open class BasicTextUI: TextUI, ViewFactory {
         propertyChange( evt: _evt )
     }
 
-    /// protected javax.swing.text.Caret javax.swing.plaf.basic.BasicTextUI.createCaret()
+    /// protected final javax.swing.text.JTextComponent javax.swing.plaf.basic.BasicTextUI.getComponent()
 
-    private static var createCaret_MethodID_18: jmethodID?
+    private static var getComponent_MethodID_18: jmethodID?
 
-    open func createCaret() -> Caret! {
+    open func getComponent() -> JTextComponent! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCaret", methodSig: "()Ljavax/swing/text/Caret;", methodCache: &BasicTextUI.createCaret_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &BasicTextUI.getComponent_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CaretForward( javaObject: __return ) : nil
+        return __return != nil ? JTextComponent( javaObject: __return ) : nil
     }
 
 
-    /// protected void javax.swing.plaf.basic.BasicTextUI.installDefaults()
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTextUI.getInputMap()
 
-    private static var installDefaults_MethodID_19: jmethodID?
+    /// javax.swing.ActionMap javax.swing.plaf.basic.BasicTextUI.getActionMap()
 
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// javax.swing.TransferHandler javax.swing.plaf.basic.BasicTextUI.getTransferHandler()
+
+    /// public void javax.swing.plaf.basic.BasicTextUI.damageRange(javax.swing.text.JTextComponent,int,int)
+
+    private static var damageRange_MethodID_19: jmethodID?
+
+    open func damageRange( tc: JTextComponent?, p0: Int, p1: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTextUI.installDefaults_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p0, locals: &__locals )
+        __args[2] = JNIType.toJava( value: p1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;II)V", methodCache: &BasicTextUI.damageRange_MethodID_19, args: &__args, locals: &__locals )
     }
 
+    override open func damageRange( _ _tc: JTextComponent?, _ _p0: Int, _ _p1: Int ) {
+        damageRange( tc: _tc, p0: _p0, p1: _p1 )
+    }
 
-    /// protected void javax.swing.plaf.basic.BasicTextUI.installListeners()
+    /// public void javax.swing.plaf.basic.BasicTextUI.damageRange(javax.swing.text.JTextComponent,int,int,javax.swing.text.Position$Bias,javax.swing.text.Position$Bias)
 
-    private static var installListeners_MethodID_20: jmethodID?
+    private static var damageRange_MethodID_20: jmethodID?
 
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func damageRange( t: JTextComponent?, p0: Int, p1: Int, p0Bias: Position_Bias?, p1Bias: Position_Bias? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTextUI.installListeners_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p0, locals: &__locals )
+        __args[2] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[3] = JNIType.toJava( value: p0Bias != nil ? p0Bias! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: p1Bias != nil ? p1Bias! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;IILjavax/swing/text/Position$Bias;Ljavax/swing/text/Position$Bias;)V", methodCache: &BasicTextUI.damageRange_MethodID_20, args: &__args, locals: &__locals )
     }
 
-
-    /// protected void javax.swing.plaf.basic.BasicTextUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_21: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTextUI.installKeyboardActions_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTextUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_22: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTextUI.uninstallDefaults_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTextUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_23: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTextUI.uninstallListeners_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTextUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_24: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTextUI.uninstallKeyboardActions_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTextUI.paintBackground(java.awt.Graphics)
-
-    private static var paintBackground_MethodID_25: jmethodID?
-
-    open func paintBackground( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicTextUI.paintBackground_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func paintBackground( _ _g: java_awt.Graphics? ) {
-        paintBackground( g: _g )
+    override open func damageRange( _ _t: JTextComponent?, _ _p0: Int, _ _p1: Int, _ _p0Bias: Position_Bias?, _ _p1Bias: Position_Bias? ) {
+        damageRange( t: _t, p0: _p0, p1: _p1, p0Bias: _p0Bias, p1Bias: _p1Bias )
     }
 
     /// protected abstract java.lang.String javax.swing.plaf.basic.BasicTextUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_26: jmethodID?
+    private static var getPropertyPrefix_MethodID_21: jmethodID?
 
     open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextUI.getPropertyPrefix_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextUI.getPropertyPrefix_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -448,59 +407,100 @@ open class BasicTextUI: TextUI, ViewFactory {
 
     /// protected final void javax.swing.plaf.basic.BasicTextUI.setView(javax.swing.text.View)
 
-    private static var setView_MethodID_27: jmethodID?
+    private static var setView_MethodID_22: jmethodID?
 
     open func setView( v: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setView", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &BasicTextUI.setView_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setView", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &BasicTextUI.setView_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setView( _ _v: View? ) {
         setView( v: _v )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextUI.getPreferredSize(javax.swing.JComponent)
+    /// public final void javax.swing.plaf.basic.BasicTextUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextUI.getMinimumSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicTextUI.installDefaults()
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextUI.getMaximumSize(javax.swing.JComponent)
+    private static var installDefaults_MethodID_23: jmethodID?
 
-    /// public javax.swing.text.View javax.swing.plaf.basic.BasicTextUI.getRootView(javax.swing.text.JTextComponent)
-
-    private static var getRootView_MethodID_28: jmethodID?
-
-    open func getRootView( tc: JTextComponent? ) -> View! {
+    open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootView", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/View;", methodCache: &BasicTextUI.getRootView_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTextUI.installDefaults_MethodID_23, args: &__args, locals: &__locals )
     }
 
-    override open func getRootView( _ _tc: JTextComponent? ) -> View! {
-        return getRootView( tc: _tc )
-    }
 
-    /// public int javax.swing.plaf.basic.BasicTextUI.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+    /// protected void javax.swing.plaf.basic.BasicTextUI.installListeners()
 
-    /// public javax.swing.text.EditorKit javax.swing.plaf.basic.BasicTextUI.getEditorKit(javax.swing.text.JTextComponent)
+    private static var installListeners_MethodID_24: jmethodID?
 
-    private static var getEditorKit_MethodID_29: jmethodID?
-
-    open func getEditorKit( tc: JTextComponent? ) -> EditorKit! {
+    open func installListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tc != nil ? tc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/EditorKit;", methodCache: &BasicTextUI.getEditorKit_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? EditorKit( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTextUI.installListeners_MethodID_24, args: &__args, locals: &__locals )
     }
 
-    override open func getEditorKit( _ _tc: JTextComponent? ) -> EditorKit! {
-        return getEditorKit( tc: _tc )
+
+    /// protected void javax.swing.plaf.basic.BasicTextUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_25: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTextUI.installKeyboardActions_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTextUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_26: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTextUI.uninstallDefaults_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTextUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_27: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTextUI.uninstallListeners_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTextUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_28: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTextUI.uninstallKeyboardActions_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTextUI.paintBackground(java.awt.Graphics)
+
+    private static var paintBackground_MethodID_29: jmethodID?
+
+    open func paintBackground( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicTextUI.paintBackground_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func paintBackground( _ _g: java_awt.Graphics? ) {
+        paintBackground( g: _g )
     }
 
 }

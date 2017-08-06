@@ -150,8 +150,6 @@ open class ListView: BlockView {
 
     /// public float javax.swing.text.html.ListView.getAlignment(int)
 
-    /// public void javax.swing.text.html.ListView.paint(java.awt.Graphics,java.awt.Shape)
-
     /// protected void javax.swing.text.html.ListView.setPropertiesFromAttributes()
 
     private static var setPropertiesFromAttributes_MethodID_2: jmethodID?
@@ -179,6 +177,8 @@ open class ListView: BlockView {
     override open func paintChild( _ _g: java_awt.Graphics?, _ _alloc: java_awt.Rectangle?, _ _index: Int ) {
         paintChild( g: _g, alloc: _alloc, index: _index )
     }
+
+    /// public void javax.swing.text.html.ListView.paint(java.awt.Graphics,java.awt.Shape)
 
 }
 

@@ -787,7 +787,11 @@ open class MetalScrollButton: BasicArrowButton {
         self.init( direction: _direction, width: _width, freeStanding: _freeStanding )
     }
 
-    /// public void javax.swing.plaf.metal.MetalScrollButton.paint(java.awt.Graphics)
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getPreferredSize()
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getMinimumSize()
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getMaximumSize()
 
     /// public void javax.swing.plaf.metal.MetalScrollButton.setFreeStanding(boolean)
 
@@ -816,11 +820,7 @@ open class MetalScrollButton: BasicArrowButton {
     }
 
 
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getPreferredSize()
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getMinimumSize()
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getMaximumSize()
+    /// public void javax.swing.plaf.metal.MetalScrollButton.paint(java.awt.Graphics)
 
 }
 

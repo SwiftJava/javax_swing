@@ -45,157 +45,9 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.drawLine(javax.swing.plaf.synth.SynthContext,java.lang.Object,java.awt.Graphics,int,int,int,int,java.lang.Object)
-
-    private static var drawLine_MethodID_2: jmethodID?
-
-    open func drawLine( context: SynthContext?, paintKey: java_swift.JavaObject?, g: java_awt.Graphics?, x1: Int, y1: Int, x2: Int, y2: Int, styleKey: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: paintKey != nil ? paintKey! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[5] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[6] = JNIType.toJava( value: y2, locals: &__locals )
-        __args[7] = JNIType.toJava( value: styleKey != nil ? styleKey! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Ljava/awt/Graphics;IIIILjava/lang/Object;)V", methodCache: &SynthGraphicsUtils.drawLine_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func drawLine( _ _context: SynthContext?, _ _paintKey: java_swift.JavaObject?, _ _g: java_awt.Graphics?, _ _x1: Int, _ _y1: Int, _ _x2: Int, _ _y2: Int, _ _styleKey: java_swift.JavaObject? ) {
-        drawLine( context: _context, paintKey: _paintKey, g: _g, x1: _x1, y1: _y1, x2: _x2, y2: _y2, styleKey: _styleKey )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.drawLine(javax.swing.plaf.synth.SynthContext,java.lang.Object,java.awt.Graphics,int,int,int,int)
-
-    private static var drawLine_MethodID_3: jmethodID?
-
-    open func drawLine( context: SynthContext?, paintKey: java_swift.JavaObject?, g: java_awt.Graphics?, x1: Int, y1: Int, x2: Int, y2: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: paintKey != nil ? paintKey! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[5] = JNIType.toJava( value: x2, locals: &__locals )
-        __args[6] = JNIType.toJava( value: y2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Ljava/awt/Graphics;IIII)V", methodCache: &SynthGraphicsUtils.drawLine_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func drawLine( _ _context: SynthContext?, _ _paintKey: java_swift.JavaObject?, _ _g: java_awt.Graphics?, _ _x1: Int, _ _y1: Int, _ _x2: Int, _ _y2: Int ) {
-        drawLine( context: _context, paintKey: _paintKey, g: _g, x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
-    }
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintIcon(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
-
-    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String,java.awt.Rectangle,int)
-
-    private static var paintText_MethodID_4: jmethodID?
-
-    open func paintText( ss: SynthContext?, g: java_awt.Graphics?, text: String?, bounds: java_awt.Rectangle?, mnemonicIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: text, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;Ljava/awt/Rectangle;I)V", methodCache: &SynthGraphicsUtils.paintText_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paintText( _ _ss: SynthContext?, _ _g: java_awt.Graphics?, _ _text: String?, _ _bounds: java_awt.Rectangle?, _ _mnemonicIndex: Int ) {
-        paintText( ss: _ss, g: _g, text: _text, bounds: _bounds, mnemonicIndex: _mnemonicIndex )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String,int,int,int)
-
-    private static var paintText_MethodID_5: jmethodID?
-
-    open func paintText( ss: SynthContext?, g: java_awt.Graphics?, text: String?, x: Int, y: Int, mnemonicIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: text, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;III)V", methodCache: &SynthGraphicsUtils.paintText_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paintText( _ _ss: SynthContext?, _ _g: java_awt.Graphics?, _ _text: String?, _ _x: Int, _ _y: Int, _ _mnemonicIndex: Int ) {
-        paintText( ss: _ss, g: _g, text: _text, x: _x, y: _y, mnemonicIndex: _mnemonicIndex )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String,javax.swing.Icon,int,int,int,int,int,int,int)
-
-    private static var paintText_MethodID_6: jmethodID?
-
-    open func paintText( ss: SynthContext?, g: java_awt.Graphics?, text: String?, icon: Icon?, hAlign: Int, vAlign: Int, hTextPosition: Int, vTextPosition: Int, iconTextGap: Int, mnemonicIndex: Int, textOffset: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 11 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: text, locals: &__locals )
-        __args[3] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[4] = JNIType.toJava( value: hAlign, locals: &__locals )
-        __args[5] = JNIType.toJava( value: vAlign, locals: &__locals )
-        __args[6] = JNIType.toJava( value: hTextPosition, locals: &__locals )
-        __args[7] = JNIType.toJava( value: vTextPosition, locals: &__locals )
-        __args[8] = JNIType.toJava( value: iconTextGap, locals: &__locals )
-        __args[9] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
-        __args[10] = JNIType.toJava( value: textOffset, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;Ljavax/swing/Icon;IIIIIII)V", methodCache: &SynthGraphicsUtils.paintText_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paintText( _ _ss: SynthContext?, _ _g: java_awt.Graphics?, _ _text: String?, _ _icon: Icon?, _ _hAlign: Int, _ _vAlign: Int, _ _hTextPosition: Int, _ _vTextPosition: Int, _ _iconTextGap: Int, _ _mnemonicIndex: Int, _ _textOffset: Int ) {
-        paintText( ss: _ss, g: _g, text: _text, icon: _icon, hAlign: _hAlign, vAlign: _vAlign, hTextPosition: _hTextPosition, vTextPosition: _vTextPosition, iconTextGap: _iconTextGap, mnemonicIndex: _mnemonicIndex, textOffset: _textOffset )
-    }
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paint(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.Icon,javax.swing.Icon,java.lang.String,int,java.lang.String)
-
-    /// static java.awt.Dimension javax.swing.plaf.synth.SynthGraphicsUtils.getPreferredMenuItemSize(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthContext,javax.swing.JComponent,javax.swing.Icon,javax.swing.Icon,int,java.lang.String,boolean,java.lang.String)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintMenuItem(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintCheckIcon(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintAccText(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintArrowIcon(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.applyInsets(java.awt.Rectangle,java.awt.Insets,boolean)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
-
-    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintBackground(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper)
-
-    /// public int javax.swing.plaf.synth.SynthGraphicsUtils.computeStringWidth(javax.swing.plaf.synth.SynthContext,java.awt.Font,java.awt.FontMetrics,java.lang.String)
-
-    private static var computeStringWidth_MethodID_7: jmethodID?
-
-    open func computeStringWidth( ss: SynthContext?, font: java_awt.Font?, metrics: java_awt.FontMetrics?, text: String? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: metrics != nil ? metrics! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: text, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "computeStringWidth", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/awt/FontMetrics;Ljava/lang/String;)I", methodCache: &SynthGraphicsUtils.computeStringWidth_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func computeStringWidth( _ _ss: SynthContext?, _ _font: java_awt.Font?, _ _metrics: java_awt.FontMetrics?, _ _text: String? ) -> Int {
-        return computeStringWidth( ss: _ss, font: _font, metrics: _metrics, text: _text )
-    }
-
     /// public java.awt.Dimension javax.swing.plaf.synth.SynthGraphicsUtils.getPreferredSize(javax.swing.plaf.synth.SynthContext,java.awt.Font,java.lang.String,javax.swing.Icon,int,int,int,int,int,int)
 
-    private static var getPreferredSize_MethodID_8: jmethodID?
+    private static var getPreferredSize_MethodID_2: jmethodID?
 
     open func getPreferredSize( ss: SynthContext?, font: java_awt.Font?, text: String?, icon: Icon?, hAlign: Int, vAlign: Int, hTextPosition: Int, vTextPosition: Int, iconTextGap: Int, mnemonicIndex: Int ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 10 )
@@ -210,7 +62,7 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
         __args[7] = JNIType.toJava( value: vTextPosition, locals: &__locals )
         __args[8] = JNIType.toJava( value: iconTextGap, locals: &__locals )
         __args[9] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/lang/String;Ljavax/swing/Icon;IIIIII)Ljava/awt/Dimension;", methodCache: &SynthGraphicsUtils.getPreferredSize_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/lang/String;Ljavax/swing/Icon;IIIIII)Ljava/awt/Dimension;", methodCache: &SynthGraphicsUtils.getPreferredSize_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -221,7 +73,7 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
 
     /// public java.awt.Dimension javax.swing.plaf.synth.SynthGraphicsUtils.getMinimumSize(javax.swing.plaf.synth.SynthContext,java.awt.Font,java.lang.String,javax.swing.Icon,int,int,int,int,int,int)
 
-    private static var getMinimumSize_MethodID_9: jmethodID?
+    private static var getMinimumSize_MethodID_3: jmethodID?
 
     open func getMinimumSize( ss: SynthContext?, font: java_awt.Font?, text: String?, icon: Icon?, hAlign: Int, vAlign: Int, hTextPosition: Int, vTextPosition: Int, iconTextGap: Int, mnemonicIndex: Int ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 10 )
@@ -236,7 +88,7 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
         __args[7] = JNIType.toJava( value: vTextPosition, locals: &__locals )
         __args[8] = JNIType.toJava( value: iconTextGap, locals: &__locals )
         __args[9] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/lang/String;Ljavax/swing/Icon;IIIIII)Ljava/awt/Dimension;", methodCache: &SynthGraphicsUtils.getMinimumSize_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/lang/String;Ljavax/swing/Icon;IIIIII)Ljava/awt/Dimension;", methodCache: &SynthGraphicsUtils.getMinimumSize_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -247,7 +99,7 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
 
     /// public java.awt.Dimension javax.swing.plaf.synth.SynthGraphicsUtils.getMaximumSize(javax.swing.plaf.synth.SynthContext,java.awt.Font,java.lang.String,javax.swing.Icon,int,int,int,int,int,int)
 
-    private static var getMaximumSize_MethodID_10: jmethodID?
+    private static var getMaximumSize_MethodID_4: jmethodID?
 
     open func getMaximumSize( ss: SynthContext?, font: java_awt.Font?, text: String?, icon: Icon?, hAlign: Int, vAlign: Int, hTextPosition: Int, vTextPosition: Int, iconTextGap: Int, mnemonicIndex: Int ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 10 )
@@ -262,7 +114,7 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
         __args[7] = JNIType.toJava( value: vTextPosition, locals: &__locals )
         __args[8] = JNIType.toJava( value: iconTextGap, locals: &__locals )
         __args[9] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/lang/String;Ljavax/swing/Icon;IIIIII)Ljava/awt/Dimension;", methodCache: &SynthGraphicsUtils.getMaximumSize_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/lang/String;Ljavax/swing/Icon;IIIIII)Ljava/awt/Dimension;", methodCache: &SynthGraphicsUtils.getMaximumSize_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -271,9 +123,28 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
         return getMaximumSize( ss: _ss, font: _font, text: _text, icon: _icon, hAlign: _hAlign, vAlign: _vAlign, hTextPosition: _hTextPosition, vTextPosition: _vTextPosition, iconTextGap: _iconTextGap, mnemonicIndex: _mnemonicIndex )
     }
 
+    /// public int javax.swing.plaf.synth.SynthGraphicsUtils.computeStringWidth(javax.swing.plaf.synth.SynthContext,java.awt.Font,java.awt.FontMetrics,java.lang.String)
+
+    private static var computeStringWidth_MethodID_5: jmethodID?
+
+    open func computeStringWidth( ss: SynthContext?, font: java_awt.Font?, metrics: java_awt.FontMetrics?, text: String? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: metrics != nil ? metrics! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: text, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "computeStringWidth", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Font;Ljava/awt/FontMetrics;Ljava/lang/String;)I", methodCache: &SynthGraphicsUtils.computeStringWidth_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func computeStringWidth( _ _ss: SynthContext?, _ _font: java_awt.Font?, _ _metrics: java_awt.FontMetrics?, _ _text: String? ) -> Int {
+        return computeStringWidth( ss: _ss, font: _font, metrics: _metrics, text: _text )
+    }
+
     /// public java.lang.String javax.swing.plaf.synth.SynthGraphicsUtils.layoutText(javax.swing.plaf.synth.SynthContext,java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
 
-    private static var layoutText_MethodID_11: jmethodID?
+    private static var layoutText_MethodID_6: jmethodID?
 
     open func layoutText( ss: SynthContext?, fm: java_awt.FontMetrics?, text: String?, icon: Icon?, hAlign: Int, vAlign: Int, hTextPosition: Int, vTextPosition: Int, viewR: java_awt.Rectangle?, iconR: java_awt.Rectangle?, textR: java_awt.Rectangle?, iconTextGap: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 12 )
@@ -290,7 +161,7 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
         __args[9] = JNIType.toJava( value: iconR != nil ? iconR! as JNIObject : nil, locals: &__locals )
         __args[10] = JNIType.toJava( value: textR != nil ? textR! as JNIObject : nil, locals: &__locals )
         __args[11] = JNIType.toJava( value: iconTextGap, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "layoutText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;IIIILjava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;I)Ljava/lang/String;", methodCache: &SynthGraphicsUtils.layoutText_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "layoutText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;IIIILjava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;I)Ljava/lang/String;", methodCache: &SynthGraphicsUtils.layoutText_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -300,19 +171,148 @@ open class SynthGraphicsUtils: java_swift.JavaObject {
 
     /// public int javax.swing.plaf.synth.SynthGraphicsUtils.getMaximumCharHeight(javax.swing.plaf.synth.SynthContext)
 
-    private static var getMaximumCharHeight_MethodID_12: jmethodID?
+    private static var getMaximumCharHeight_MethodID_7: jmethodID?
 
     open func getMaximumCharHeight( context: SynthContext? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumCharHeight", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)I", methodCache: &SynthGraphicsUtils.getMaximumCharHeight_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumCharHeight", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)I", methodCache: &SynthGraphicsUtils.getMaximumCharHeight_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     open func getMaximumCharHeight( _ _context: SynthContext? ) -> Int {
         return getMaximumCharHeight( context: _context )
     }
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paint(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.Icon,javax.swing.Icon,java.lang.String,int,java.lang.String)
+
+    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.drawLine(javax.swing.plaf.synth.SynthContext,java.lang.Object,java.awt.Graphics,int,int,int,int)
+
+    private static var drawLine_MethodID_8: jmethodID?
+
+    open func drawLine( context: SynthContext?, paintKey: java_swift.JavaObject?, g: java_awt.Graphics?, x1: Int, y1: Int, x2: Int, y2: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: paintKey != nil ? paintKey! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: x1, locals: &__locals )
+        __args[4] = JNIType.toJava( value: y1, locals: &__locals )
+        __args[5] = JNIType.toJava( value: x2, locals: &__locals )
+        __args[6] = JNIType.toJava( value: y2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Ljava/awt/Graphics;IIII)V", methodCache: &SynthGraphicsUtils.drawLine_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func drawLine( _ _context: SynthContext?, _ _paintKey: java_swift.JavaObject?, _ _g: java_awt.Graphics?, _ _x1: Int, _ _y1: Int, _ _x2: Int, _ _y2: Int ) {
+        drawLine( context: _context, paintKey: _paintKey, g: _g, x1: _x1, y1: _y1, x2: _x2, y2: _y2 )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.drawLine(javax.swing.plaf.synth.SynthContext,java.lang.Object,java.awt.Graphics,int,int,int,int,java.lang.Object)
+
+    private static var drawLine_MethodID_9: jmethodID?
+
+    open func drawLine( context: SynthContext?, paintKey: java_swift.JavaObject?, g: java_awt.Graphics?, x1: Int, y1: Int, x2: Int, y2: Int, styleKey: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: paintKey != nil ? paintKey! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: x1, locals: &__locals )
+        __args[4] = JNIType.toJava( value: y1, locals: &__locals )
+        __args[5] = JNIType.toJava( value: x2, locals: &__locals )
+        __args[6] = JNIType.toJava( value: y2, locals: &__locals )
+        __args[7] = JNIType.toJava( value: styleKey != nil ? styleKey! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Ljava/awt/Graphics;IIIILjava/lang/Object;)V", methodCache: &SynthGraphicsUtils.drawLine_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func drawLine( _ _context: SynthContext?, _ _paintKey: java_swift.JavaObject?, _ _g: java_awt.Graphics?, _ _x1: Int, _ _y1: Int, _ _x2: Int, _ _y2: Int, _ _styleKey: java_swift.JavaObject? ) {
+        drawLine( context: _context, paintKey: _paintKey, g: _g, x1: _x1, y1: _y1, x2: _x2, y2: _y2, styleKey: _styleKey )
+    }
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintIcon(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
+
+    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String,javax.swing.Icon,int,int,int,int,int,int,int)
+
+    private static var paintText_MethodID_10: jmethodID?
+
+    open func paintText( ss: SynthContext?, g: java_awt.Graphics?, text: String?, icon: Icon?, hAlign: Int, vAlign: Int, hTextPosition: Int, vTextPosition: Int, iconTextGap: Int, mnemonicIndex: Int, textOffset: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 11 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: text, locals: &__locals )
+        __args[3] = JNIType.toJava( value: icon, locals: &__locals )
+        __args[4] = JNIType.toJava( value: hAlign, locals: &__locals )
+        __args[5] = JNIType.toJava( value: vAlign, locals: &__locals )
+        __args[6] = JNIType.toJava( value: hTextPosition, locals: &__locals )
+        __args[7] = JNIType.toJava( value: vTextPosition, locals: &__locals )
+        __args[8] = JNIType.toJava( value: iconTextGap, locals: &__locals )
+        __args[9] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
+        __args[10] = JNIType.toJava( value: textOffset, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;Ljavax/swing/Icon;IIIIIII)V", methodCache: &SynthGraphicsUtils.paintText_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func paintText( _ _ss: SynthContext?, _ _g: java_awt.Graphics?, _ _text: String?, _ _icon: Icon?, _ _hAlign: Int, _ _vAlign: Int, _ _hTextPosition: Int, _ _vTextPosition: Int, _ _iconTextGap: Int, _ _mnemonicIndex: Int, _ _textOffset: Int ) {
+        paintText( ss: _ss, g: _g, text: _text, icon: _icon, hAlign: _hAlign, vAlign: _vAlign, hTextPosition: _hTextPosition, vTextPosition: _vTextPosition, iconTextGap: _iconTextGap, mnemonicIndex: _mnemonicIndex, textOffset: _textOffset )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String,java.awt.Rectangle,int)
+
+    private static var paintText_MethodID_11: jmethodID?
+
+    open func paintText( ss: SynthContext?, g: java_awt.Graphics?, text: String?, bounds: java_awt.Rectangle?, mnemonicIndex: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: text, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;Ljava/awt/Rectangle;I)V", methodCache: &SynthGraphicsUtils.paintText_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func paintText( _ _ss: SynthContext?, _ _g: java_awt.Graphics?, _ _text: String?, _ _bounds: java_awt.Rectangle?, _ _mnemonicIndex: Int ) {
+        paintText( ss: _ss, g: _g, text: _text, bounds: _bounds, mnemonicIndex: _mnemonicIndex )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthGraphicsUtils.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String,int,int,int)
+
+    private static var paintText_MethodID_12: jmethodID?
+
+    open func paintText( ss: SynthContext?, g: java_awt.Graphics?, text: String?, x: Int, y: Int, mnemonicIndex: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: text, locals: &__locals )
+        __args[3] = JNIType.toJava( value: x, locals: &__locals )
+        __args[4] = JNIType.toJava( value: y, locals: &__locals )
+        __args[5] = JNIType.toJava( value: mnemonicIndex, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;III)V", methodCache: &SynthGraphicsUtils.paintText_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func paintText( _ _ss: SynthContext?, _ _g: java_awt.Graphics?, _ _text: String?, _ _x: Int, _ _y: Int, _ _mnemonicIndex: Int ) {
+        paintText( ss: _ss, g: _g, text: _text, x: _x, y: _y, mnemonicIndex: _mnemonicIndex )
+    }
+
+    /// static java.awt.Dimension javax.swing.plaf.synth.SynthGraphicsUtils.getPreferredMenuItemSize(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthContext,javax.swing.JComponent,javax.swing.Icon,javax.swing.Icon,int,java.lang.String,boolean,java.lang.String)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintMenuItem(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintCheckIcon(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintAccText(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintArrowIcon(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper,sun.swing.MenuItemLayoutHelper$LayoutResult)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.applyInsets(java.awt.Rectangle,java.awt.Insets,boolean)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintBackground(java.awt.Graphics,javax.swing.plaf.synth.SynthMenuItemLayoutHelper)
+
+    /// static void javax.swing.plaf.synth.SynthGraphicsUtils.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

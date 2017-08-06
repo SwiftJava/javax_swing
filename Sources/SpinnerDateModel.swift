@@ -81,14 +81,40 @@ open class SpinnerDateModel: AbstractSpinnerModel {
 
     /// public void javax.swing.SpinnerDateModel.setValue(java.lang.Object)
 
+    /// public java.lang.Comparable javax.swing.SpinnerDateModel.getStart()
+
+    private static var getStart_MethodID_3: jmethodID?
+
+    open func getStart() -> java_lang.JavaComparable! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStart", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getStart_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.Comparable javax.swing.SpinnerDateModel.getEnd()
+
+    private static var getEnd_MethodID_4: jmethodID?
+
+    open func getEnd() -> java_lang.JavaComparable! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEnd", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getEnd_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
+    }
+
+
     /// public java.util.Date javax.swing.SpinnerDateModel.getDate()
 
-    private static var getDate_MethodID_3: jmethodID?
+    private static var getDate_MethodID_5: jmethodID?
 
     open func getDate() -> java_util.Date! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDate", methodSig: "()Ljava/util/Date;", methodCache: &SpinnerDateModel.getDate_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDate", methodSig: "()Ljava/util/Date;", methodCache: &SpinnerDateModel.getDate_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Date( javaObject: __return ) : nil
     }
@@ -97,32 +123,6 @@ open class SpinnerDateModel: AbstractSpinnerModel {
     /// public java.lang.Object javax.swing.SpinnerDateModel.getNextValue()
 
     /// public java.lang.Object javax.swing.SpinnerDateModel.getPreviousValue()
-
-    /// public java.lang.Comparable javax.swing.SpinnerDateModel.getStart()
-
-    private static var getStart_MethodID_4: jmethodID?
-
-    open func getStart() -> java_lang.JavaComparable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStart", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getStart_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.lang.Comparable javax.swing.SpinnerDateModel.getEnd()
-
-    private static var getEnd_MethodID_5: jmethodID?
-
-    open func getEnd() -> java_lang.JavaComparable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEnd", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getEnd_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
-    }
-
 
     /// private boolean javax.swing.SpinnerDateModel.calendarFieldOK(int)
 

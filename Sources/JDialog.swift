@@ -809,6 +809,8 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     }
 
 
+    /// public javax.accessibility.AccessibleContext javax.swing.JDialog.getAccessibleContext()
+
     /// public java.awt.Container javax.swing.JDialog.getContentPane()
 
     private static var getContentPane_MethodID_18: jmethodID?
@@ -1149,8 +1151,6 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     }
 
     /// public java.awt.Graphics javax.swing.JDialog.getGraphics()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JDialog.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

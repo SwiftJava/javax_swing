@@ -62,34 +62,7 @@ open class CSS: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProto
 
     /// static java.util.Hashtable javax.swing.text.html.CSS.access$600()
 
-    /// public static final javax.swing.text.html.CSS$Attribute javax.swing.text.html.CSS.getAttribute(java.lang.String)
-
-    private static var getAttribute_MethodID_2: jmethodID?
-
-    open class func getAttribute( name: String? ) -> CSS_Attribute! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/CSS", classCache: &CSSJNIClass, methodName: "getAttribute", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/CSS$Attribute;", methodCache: &getAttribute_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CSS_Attribute( javaObject: __return ) : nil
-    }
-
-    open class func getAttribute( _ _name: String? ) -> CSS_Attribute! {
-        return getAttribute( name: _name )
-    }
-
-    /// public static javax.swing.text.html.CSS$Attribute[] javax.swing.text.html.CSS.getAllAttributeKeys()
-
-    private static var getAllAttributeKeys_MethodID_3: jmethodID?
-
-    open class func getAllAttributeKeys() -> [CSS_Attribute]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/CSS", classCache: &CSSJNIClass, methodName: "getAllAttributeKeys", methodSig: "()[Ljavax/swing/text/html/CSS$Attribute;", methodCache: &getAllAttributeKeys_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [CSS_Attribute](), from: __return )
-    }
-
+    /// static java.util.Hashtable javax.swing.text.html.CSS.access$700()
 
     /// static java.lang.String[] javax.swing.text.html.CSS.parseStrings(java.lang.String)
 
@@ -131,13 +104,11 @@ open class CSS: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProto
 
     /// static void javax.swing.text.html.CSS.calculateTiledLayout(javax.swing.text.html.CSS$LayoutIterator,int)
 
-    /// java.awt.Color javax.swing.text.html.CSS.getColor(javax.swing.text.AttributeSet,javax.swing.text.html.CSS$Attribute)
-
     /// javax.swing.text.AttributeSet javax.swing.text.html.CSS.translateHTMLToCSS(javax.swing.text.AttributeSet)
 
-    /// void javax.swing.text.html.CSS.setBaseFontSize(int)
-
     /// void javax.swing.text.html.CSS.setBaseFontSize(java.lang.String)
+
+    /// void javax.swing.text.html.CSS.setBaseFontSize(int)
 
     /// static int javax.swing.text.html.CSS.getIndexOfSize(float,int[])
 
@@ -163,7 +134,36 @@ open class CSS: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProto
 
     /// java.awt.Font javax.swing.text.html.CSS.getFont(javax.swing.text.StyleContext,javax.swing.text.AttributeSet,int,javax.swing.text.html.StyleSheet)
 
-    /// static java.util.Hashtable javax.swing.text.html.CSS.access$700()
+    /// public static final javax.swing.text.html.CSS$Attribute javax.swing.text.html.CSS.getAttribute(java.lang.String)
+
+    private static var getAttribute_MethodID_2: jmethodID?
+
+    open class func getAttribute( name: String? ) -> CSS_Attribute! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/CSS", classCache: &CSSJNIClass, methodName: "getAttribute", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/CSS$Attribute;", methodCache: &getAttribute_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? CSS_Attribute( javaObject: __return ) : nil
+    }
+
+    open class func getAttribute( _ _name: String? ) -> CSS_Attribute! {
+        return getAttribute( name: _name )
+    }
+
+    /// public static javax.swing.text.html.CSS$Attribute[] javax.swing.text.html.CSS.getAllAttributeKeys()
+
+    private static var getAllAttributeKeys_MethodID_3: jmethodID?
+
+    open class func getAllAttributeKeys() -> [CSS_Attribute]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/CSS", classCache: &CSSJNIClass, methodName: "getAllAttributeKeys", methodSig: "()[Ljavax/swing/text/html/CSS$Attribute;", methodCache: &getAllAttributeKeys_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [CSS_Attribute](), from: __return )
+    }
+
+
+    /// java.awt.Color javax.swing.text.html.CSS.getColor(javax.swing.text.AttributeSet,javax.swing.text.html.CSS$Attribute)
 
 }
 

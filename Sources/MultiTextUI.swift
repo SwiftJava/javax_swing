@@ -81,15 +81,66 @@ open class MultiTextUI: TextUI {
         return contains( a: _a, b: _b, c: _c )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTextUI.getPreferredSize(javax.swing.JComponent)
+
+    private static var getPreferredSize_MethodID_4: jmethodID?
+
+    open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTextUI.getPreferredSize_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getPreferredSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getPreferredSize( a: _a )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTextUI.getMinimumSize(javax.swing.JComponent)
+
+    private static var getMinimumSize_MethodID_5: jmethodID?
+
+    open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTextUI.getMinimumSize_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getMinimumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getMinimumSize( a: _a )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTextUI.getMaximumSize(javax.swing.JComponent)
+
+    private static var getMaximumSize_MethodID_6: jmethodID?
+
+    open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTextUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getMaximumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getMaximumSize( a: _a )
+    }
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiTextUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_4: jmethodID?
+    private static var createUI_MethodID_7: jmethodID?
 
     open class func createUI( a: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiTextUI", classCache: &MultiTextUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiTextUI", classCache: &MultiTextUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -98,68 +149,73 @@ open class MultiTextUI: TextUI {
         return createUI( a: _a )
     }
 
-    /// public void javax.swing.plaf.multi.MultiTextUI.damageRange(javax.swing.text.JTextComponent,int,int,javax.swing.text.Position$Bias,javax.swing.text.Position$Bias)
+    /// public javax.swing.text.EditorKit javax.swing.plaf.multi.MultiTextUI.getEditorKit(javax.swing.text.JTextComponent)
 
-    private static var damageRange_MethodID_5: jmethodID?
+    private static var getEditorKit_MethodID_8: jmethodID?
 
-    open func damageRange( a: JTextComponent?, b: Int, c: Int, d: Position_Bias?, e: Position_Bias? ) {
+    open func getEditorKit( a: JTextComponent? ) -> EditorKit! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/EditorKit;", methodCache: &MultiTextUI.getEditorKit_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? EditorKit( javaObject: __return ) : nil
+    }
+
+    override open func getEditorKit( _ _a: JTextComponent? ) -> EditorKit! {
+        return getEditorKit( a: _a )
+    }
+
+    /// public javax.swing.text.View javax.swing.plaf.multi.MultiTextUI.getRootView(javax.swing.text.JTextComponent)
+
+    private static var getRootView_MethodID_9: jmethodID?
+
+    open func getRootView( a: JTextComponent? ) -> View! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootView", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/View;", methodCache: &MultiTextUI.getRootView_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    override open func getRootView( _ _a: JTextComponent? ) -> View! {
+        return getRootView( a: _a )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiTextUI.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    private static var getNextVisualPositionFrom_MethodID_10: jmethodID?
+
+    open func getNextVisualPositionFrom( a: JTextComponent?, b: Int, c: Position_Bias?, d: Int, e: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: c, locals: &__locals )
-        __args[3] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;IILjavax/swing/text/Position$Bias;Ljavax/swing/text/Position$Bias;)V", methodCache: &MultiTextUI.damageRange_MethodID_5, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: d, locals: &__locals )
+        __args[4] = JNIType.toJava( value: e, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextVisualPositionFrom", methodSig: "(Ljavax/swing/text/JTextComponent;ILjavax/swing/text/Position$Bias;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &MultiTextUI.getNextVisualPositionFrom_MethodID_10, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    override open func damageRange( _ _a: JTextComponent?, _ _b: Int, _ _c: Int, _ _d: Position_Bias?, _ _e: Position_Bias? ) {
-        damageRange( a: _a, b: _b, c: _c, d: _d, e: _e )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiTextUI.damageRange(javax.swing.text.JTextComponent,int,int)
-
-    private static var damageRange_MethodID_6: jmethodID?
-
-    open func damageRange( a: JTextComponent?, b: Int, c: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;II)V", methodCache: &MultiTextUI.damageRange_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func damageRange( _ _a: JTextComponent?, _ _b: Int, _ _c: Int ) {
-        damageRange( a: _a, b: _b, c: _c )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiTextUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_7: jmethodID?
-
-    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTextUI.paint_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
-        paint( a: _a, b: _b )
+    override open func getNextVisualPositionFrom( _ _a: JTextComponent?, _ _b: Int, _ _c: Position_Bias?, _ _d: Int, _ _e: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try getNextVisualPositionFrom( a: _a, b: _b, c: _c, d: _d, e: _e )
     }
 
     /// public java.lang.String javax.swing.plaf.multi.MultiTextUI.getToolTipText(javax.swing.text.JTextComponent,java.awt.Point)
 
-    private static var getToolTipText_MethodID_8: jmethodID?
+    private static var getToolTipText_MethodID_11: jmethodID?
 
     open func getToolTipText( a: JTextComponent?, b: java_awt.Point? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;)Ljava/lang/String;", methodCache: &MultiTextUI.getToolTipText_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;)Ljava/lang/String;", methodCache: &MultiTextUI.getToolTipText_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -169,7 +225,7 @@ open class MultiTextUI: TextUI {
 
     /// public int javax.swing.plaf.multi.MultiTextUI.viewToModel(javax.swing.text.JTextComponent,java.awt.Point,javax.swing.text.Position$Bias[])
 
-    private static var viewToModel_MethodID_9: jmethodID?
+    private static var viewToModel_MethodID_12: jmethodID?
 
     open func viewToModel( a: JTextComponent?, b: java_awt.Point?, c: [Position_Bias]? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -177,7 +233,7 @@ open class MultiTextUI: TextUI {
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;[Ljavax/swing/text/Position$Bias;)I", methodCache: &MultiTextUI.viewToModel_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;[Ljavax/swing/text/Position$Bias;)I", methodCache: &MultiTextUI.viewToModel_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -187,14 +243,14 @@ open class MultiTextUI: TextUI {
 
     /// public int javax.swing.plaf.multi.MultiTextUI.viewToModel(javax.swing.text.JTextComponent,java.awt.Point)
 
-    private static var viewToModel_MethodID_10: jmethodID?
+    private static var viewToModel_MethodID_13: jmethodID?
 
     open func viewToModel( a: JTextComponent?, b: java_awt.Point? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;)I", methodCache: &MultiTextUI.viewToModel_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(Ljavax/swing/text/JTextComponent;Ljava/awt/Point;)I", methodCache: &MultiTextUI.viewToModel_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -202,30 +258,9 @@ open class MultiTextUI: TextUI {
         return viewToModel( a: _a, b: _b )
     }
 
-    /// public java.awt.Rectangle javax.swing.plaf.multi.MultiTextUI.modelToView(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
-
-    private static var modelToView_MethodID_11: jmethodID?
-
-    open func modelToView( a: JTextComponent?, b: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(Ljavax/swing/text/JTextComponent;I)Ljava/awt/Rectangle;", methodCache: &MultiTextUI.modelToView_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    override open func modelToView( _ _a: JTextComponent?, _ _b: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
-        return try modelToView( a: _a, b: _b )
-    }
-
     /// public java.awt.Rectangle javax.swing.plaf.multi.MultiTextUI.modelToView(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    private static var modelToView_MethodID_12: jmethodID?
+    private static var modelToView_MethodID_14: jmethodID?
 
     open func modelToView( a: JTextComponent?, b: Int, c: Position_Bias? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -233,7 +268,7 @@ open class MultiTextUI: TextUI {
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(Ljavax/swing/text/JTextComponent;ILjavax/swing/text/Position$Bias;)Ljava/awt/Rectangle;", methodCache: &MultiTextUI.modelToView_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(Ljavax/swing/text/JTextComponent;ILjavax/swing/text/Position$Bias;)Ljava/awt/Rectangle;", methodCache: &MultiTextUI.modelToView_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -245,15 +280,36 @@ open class MultiTextUI: TextUI {
         return try modelToView( a: _a, b: _b, c: _c )
     }
 
+    /// public java.awt.Rectangle javax.swing.plaf.multi.MultiTextUI.modelToView(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
+
+    private static var modelToView_MethodID_15: jmethodID?
+
+    open func modelToView( a: JTextComponent?, b: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(Ljavax/swing/text/JTextComponent;I)Ljava/awt/Rectangle;", methodCache: &MultiTextUI.modelToView_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    override open func modelToView( _ _a: JTextComponent?, _ _b: Int ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Rectangle! {
+        return try modelToView( a: _a, b: _b )
+    }
+
     /// public int javax.swing.plaf.multi.MultiTextUI.getAccessibleChildrenCount(javax.swing.JComponent)
 
-    private static var getAccessibleChildrenCount_MethodID_13: jmethodID?
+    private static var getAccessibleChildrenCount_MethodID_16: jmethodID?
 
     open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiTextUI.getAccessibleChildrenCount_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiTextUI.getAccessibleChildrenCount_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -263,14 +319,14 @@ open class MultiTextUI: TextUI {
 
     /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiTextUI.getAccessibleChild(javax.swing.JComponent,int)
 
-    private static var getAccessibleChild_MethodID_14: jmethodID?
+    private static var getAccessibleChild_MethodID_17: jmethodID?
 
     open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiTextUI.getAccessibleChild_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiTextUI.getAccessibleChild_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -279,27 +335,51 @@ open class MultiTextUI: TextUI {
         return getAccessibleChild( a: _a, b: _b )
     }
 
-    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiTextUI.getUIs()
+    /// public void javax.swing.plaf.multi.MultiTextUI.damageRange(javax.swing.text.JTextComponent,int,int)
 
-    private static var getUIs_MethodID_15: jmethodID?
+    private static var damageRange_MethodID_18: jmethodID?
 
-    open func getUIs() -> [ComponentUI]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func damageRange( a: JTextComponent?, b: Int, c: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiTextUI.getUIs_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ComponentUI](), from: __return )
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;II)V", methodCache: &MultiTextUI.damageRange_MethodID_18, args: &__args, locals: &__locals )
     }
 
+    override open func damageRange( _ _a: JTextComponent?, _ _b: Int, _ _c: Int ) {
+        damageRange( a: _a, b: _b, c: _c )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiTextUI.damageRange(javax.swing.text.JTextComponent,int,int,javax.swing.text.Position$Bias,javax.swing.text.Position$Bias)
+
+    private static var damageRange_MethodID_19: jmethodID?
+
+    open func damageRange( a: JTextComponent?, b: Int, c: Int, d: Position_Bias?, e: Position_Bias? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: c, locals: &__locals )
+        __args[3] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageRange", methodSig: "(Ljavax/swing/text/JTextComponent;IILjavax/swing/text/Position$Bias;Ljavax/swing/text/Position$Bias;)V", methodCache: &MultiTextUI.damageRange_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    override open func damageRange( _ _a: JTextComponent?, _ _b: Int, _ _c: Int, _ _d: Position_Bias?, _ _e: Position_Bias? ) {
+        damageRange( a: _a, b: _b, c: _c, d: _d, e: _e )
+    }
 
     /// public void javax.swing.plaf.multi.MultiTextUI.installUI(javax.swing.JComponent)
 
-    private static var installUI_MethodID_16: jmethodID?
+    private static var installUI_MethodID_20: jmethodID?
 
     open func installUI( a: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTextUI.installUI_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTextUI.installUI_MethodID_20, args: &__args, locals: &__locals )
     }
 
     override open func installUI( _ _a: JComponent? ) {
@@ -308,125 +388,45 @@ open class MultiTextUI: TextUI {
 
     /// public void javax.swing.plaf.multi.MultiTextUI.uninstallUI(javax.swing.JComponent)
 
-    private static var uninstallUI_MethodID_17: jmethodID?
+    private static var uninstallUI_MethodID_21: jmethodID?
 
     open func uninstallUI( a: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTextUI.uninstallUI_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTextUI.uninstallUI_MethodID_21, args: &__args, locals: &__locals )
     }
 
     override open func uninstallUI( _ _a: JComponent? ) {
         uninstallUI( a: _a )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTextUI.getPreferredSize(javax.swing.JComponent)
+    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiTextUI.getUIs()
 
-    private static var getPreferredSize_MethodID_18: jmethodID?
+    private static var getUIs_MethodID_22: jmethodID?
 
-    open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
+    open func getUIs() -> [ComponentUI]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTextUI.getPreferredSize_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiTextUI.getUIs_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ComponentUI](), from: __return )
     }
 
-    override open func getPreferredSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getPreferredSize( a: _a )
-    }
 
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTextUI.getMinimumSize(javax.swing.JComponent)
+    /// public void javax.swing.plaf.multi.MultiTextUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_19: jmethodID?
+    private static var paint_MethodID_23: jmethodID?
 
-    open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTextUI.getMinimumSize_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTextUI.paint_MethodID_23, args: &__args, locals: &__locals )
     }
 
-    override open func getMinimumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getMinimumSize( a: _a )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTextUI.getMaximumSize(javax.swing.JComponent)
-
-    private static var getMaximumSize_MethodID_20: jmethodID?
-
-    open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTextUI.getMaximumSize_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getMaximumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getMaximumSize( a: _a )
-    }
-
-    /// public javax.swing.text.View javax.swing.plaf.multi.MultiTextUI.getRootView(javax.swing.text.JTextComponent)
-
-    private static var getRootView_MethodID_21: jmethodID?
-
-    open func getRootView( a: JTextComponent? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootView", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/View;", methodCache: &MultiTextUI.getRootView_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    override open func getRootView( _ _a: JTextComponent? ) -> View! {
-        return getRootView( a: _a )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiTextUI.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    private static var getNextVisualPositionFrom_MethodID_22: jmethodID?
-
-    open func getNextVisualPositionFrom( a: JTextComponent?, b: Int, c: Position_Bias?, d: Int, e: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: d, locals: &__locals )
-        __args[4] = JNIType.toJava( value: e, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextVisualPositionFrom", methodSig: "(Ljavax/swing/text/JTextComponent;ILjavax/swing/text/Position$Bias;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &MultiTextUI.getNextVisualPositionFrom_MethodID_22, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getNextVisualPositionFrom( _ _a: JTextComponent?, _ _b: Int, _ _c: Position_Bias?, _ _d: Int, _ _e: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try getNextVisualPositionFrom( a: _a, b: _b, c: _c, d: _d, e: _e )
-    }
-
-    /// public javax.swing.text.EditorKit javax.swing.plaf.multi.MultiTextUI.getEditorKit(javax.swing.text.JTextComponent)
-
-    private static var getEditorKit_MethodID_23: jmethodID?
-
-    open func getEditorKit( a: JTextComponent? ) -> EditorKit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "(Ljavax/swing/text/JTextComponent;)Ljavax/swing/text/EditorKit;", methodCache: &MultiTextUI.getEditorKit_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? EditorKit( javaObject: __return ) : nil
-    }
-
-    override open func getEditorKit( _ _a: JTextComponent? ) -> EditorKit! {
-        return getEditorKit( a: _a )
+    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
+        paint( a: _a, b: _b )
     }
 
 }

@@ -56,10 +56,6 @@ public protocol Action: java_awt.ActionListener {
 
     func getValue( key: String? ) -> java_swift.JavaObject!
 
-    /// public abstract void javax.swing.Action.putValue(java.lang.String,java.lang.Object)
-
-    func putValue( key: String?, value: java_swift.JavaObject? )
-
     /// public abstract boolean javax.swing.Action.isEnabled()
 
     func isEnabled() -> Bool
@@ -75,6 +71,10 @@ public protocol Action: java_awt.ActionListener {
     /// public abstract void javax.swing.Action.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
     func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? )
+
+    /// public abstract void javax.swing.Action.putValue(java.lang.String,java.lang.Object)
+
+    func putValue( key: String?, value: java_swift.JavaObject? )
 
 }
 
@@ -221,43 +221,27 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
         return getValue( key: _key )
     }
 
-    /// public abstract void javax.swing.Action.putValue(java.lang.String,java.lang.Object)
-
-    private static var putValue_MethodID_8: jmethodID?
-
-    open func putValue( key: String?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &ActionForward.putValue_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func putValue( _ _key: String?, _ _value: java_swift.JavaObject? ) {
-        putValue( key: _key, value: _value )
-    }
-
     /// public abstract boolean javax.swing.Action.isEnabled()
 
-    private static var isEnabled_MethodID_9: jmethodID?
+    private static var isEnabled_MethodID_8: jmethodID?
 
     open func isEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &ActionForward.isEnabled_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &ActionForward.isEnabled_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract void javax.swing.Action.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_10: jmethodID?
+    private static var setEnabled_MethodID_9: jmethodID?
 
     open func setEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &ActionForward.setEnabled_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &ActionForward.setEnabled_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setEnabled( _ _b: Bool ) {
@@ -266,13 +250,13 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     /// public abstract void javax.swing.Action.addPropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var addPropertyChangeListener_MethodID_11: jmethodID?
+    private static var addPropertyChangeListener_MethodID_10: jmethodID?
 
     open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &ActionForward.addPropertyChangeListener_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &ActionForward.addPropertyChangeListener_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
@@ -281,17 +265,33 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     /// public abstract void javax.swing.Action.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var removePropertyChangeListener_MethodID_12: jmethodID?
+    private static var removePropertyChangeListener_MethodID_11: jmethodID?
 
     open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &ActionForward.removePropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &ActionForward.removePropertyChangeListener_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
         removePropertyChangeListener( listener: _listener )
+    }
+
+    /// public abstract void javax.swing.Action.putValue(java.lang.String,java.lang.Object)
+
+    private static var putValue_MethodID_12: jmethodID?
+
+    open func putValue( key: String?, value: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &ActionForward.putValue_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func putValue( _ _key: String?, _ _value: java_swift.JavaObject? ) {
+        putValue( key: _key, value: _value )
     }
 
     /// public abstract void java.awt.event.ActionListener.actionPerformed(java.awt.event.ActionEvent)

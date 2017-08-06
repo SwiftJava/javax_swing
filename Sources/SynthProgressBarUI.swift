@@ -49,7 +49,7 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
 
     private static var progressBar_FieldID: jfieldID?
 
-    open var progressBar: JProgressBar! {
+    override open var progressBar: JProgressBar! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "progressBar", fieldType: "Ljavax/swing/JProgressBar;", fieldCache: &SynthProgressBarUI.progressBar_FieldID, object: javaObject, locals: &__locals )
@@ -66,7 +66,7 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
 
     private static var changeListener_FieldID: jfieldID?
 
-    open var changeListener: ChangeListener! {
+    override open var changeListener: ChangeListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthProgressBarUI.changeListener_FieldID, object: javaObject, locals: &__locals )
@@ -95,7 +95,7 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
 
     private static var boxRect_FieldID: jfieldID?
 
-    open var boxRect: java_awt.Rectangle! {
+    override open var boxRect: java_awt.Rectangle! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "boxRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &SynthProgressBarUI.boxRect_FieldID, object: javaObject, locals: &__locals )
@@ -209,6 +209,8 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
 
     /// public void javax.swing.plaf.synth.SynthProgressBarUI.update(java.awt.Graphics,javax.swing.JComponent)
 
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthProgressBarUI.getContext(javax.swing.JComponent,int)
+
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthProgressBarUI.getContext(javax.swing.JComponent)
 
     private static var getContext_MethodID_2: jmethodID?
@@ -226,13 +228,15 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
         return getContext( c: _c )
     }
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthProgressBarUI.getContext(javax.swing.JComponent,int)
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthProgressBarUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.synth.SynthProgressBarUI.getBaseline(javax.swing.JComponent,int,int)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthProgressBarUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( x: JComponent? ) -> ComponentUI! {
+    override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
@@ -241,143 +245,30 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
         return createUI( x: _x )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String)
-
-    private static var paintText_MethodID_4: jmethodID?
-
-    open func paintText( context: SynthContext?, g: java_awt.Graphics?, title: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;)V", methodCache: &SynthProgressBarUI.paintText_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paintText( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _title: String? ) {
-        paintText( context: _context, g: _g, title: _title )
-    }
-
-    /// private int javax.swing.plaf.synth.SynthProgressBarUI.getComponentState(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthProgressBarUI.updateStyle(javax.swing.JProgressBar)
-
-    /// public void javax.swing.plaf.synth.SynthProgressBarUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_5: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthProgressBarUI.paint_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
 
     /// public void javax.swing.plaf.synth.SynthProgressBarUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_6: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthProgressBarUI.propertyChange_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthProgressBarUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.installDefaults()
-
-    private static var installDefaults_MethodID_7: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthProgressBarUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.installListeners()
-
-    private static var installListeners_MethodID_8: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthProgressBarUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_9: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthProgressBarUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_10: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthProgressBarUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.awt.Rectangle javax.swing.plaf.synth.SynthProgressBarUI.getBox(java.awt.Rectangle)
-
-    private static var getBox_MethodID_11: jmethodID?
-
-    open func getBox( r: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBox", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &SynthProgressBarUI.getBox_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func getBox( _ _r: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        return getBox( r: _r )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.setAnimationIndex(int)
-
-    private static var setAnimationIndex_MethodID_12: jmethodID?
-
-    open func setAnimationIndex( newValue: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAnimationIndex", methodSig: "(I)V", methodCache: &SynthProgressBarUI.setAnimationIndex_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setAnimationIndex( _ _newValue: Int ) {
-        setAnimationIndex( newValue: _newValue )
-    }
-
     /// public void javax.swing.plaf.synth.SynthProgressBarUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_13: jmethodID?
+    private static var paintBorder_MethodID_5: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -388,16 +279,125 @@ open class SynthProgressBarUI: BasicProgressBarUI, SynthUI, /* java.beans.Proper
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthProgressBarUI.paintBorder_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthProgressBarUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthProgressBarUI.getPreferredSize(javax.swing.JComponent)
+    /// private int javax.swing.plaf.synth.SynthProgressBarUI.getComponentState(javax.swing.JComponent)
 
-    /// public int javax.swing.plaf.synth.SynthProgressBarUI.getBaseline(javax.swing.JComponent,int,int)
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthProgressBarUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthProgressBarUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.paintText(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.lang.String)
+
+    private static var paintText_MethodID_7: jmethodID?
+
+    open func paintText( context: SynthContext?, g: java_awt.Graphics?, title: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/lang/String;)V", methodCache: &SynthProgressBarUI.paintText_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func paintText( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _title: String? ) {
+        paintText( context: _context, g: _g, title: _title )
+    }
+
+    /// protected java.awt.Rectangle javax.swing.plaf.synth.SynthProgressBarUI.getBox(java.awt.Rectangle)
+
+    private static var getBox_MethodID_8: jmethodID?
+
+    override open func getBox( r: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBox", methodSig: "(Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &SynthProgressBarUI.getBox_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    override open func getBox( _ _r: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        return getBox( r: _r )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.setAnimationIndex(int)
+
+    private static var setAnimationIndex_MethodID_9: jmethodID?
+
+    override open func setAnimationIndex( newValue: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAnimationIndex", methodSig: "(I)V", methodCache: &SynthProgressBarUI.setAnimationIndex_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func setAnimationIndex( _ _newValue: Int ) {
+        setAnimationIndex( newValue: _newValue )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.installDefaults()
+
+    private static var installDefaults_MethodID_10: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthProgressBarUI.installDefaults_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.installListeners()
+
+    private static var installListeners_MethodID_11: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthProgressBarUI.installListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_12: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthProgressBarUI.uninstallDefaults_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthProgressBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_13: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthProgressBarUI.uninstallListeners_MethodID_13, args: &__args, locals: &__locals )
+    }
+
 
 }
 

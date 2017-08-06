@@ -147,6 +147,40 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
         setValueClass( arg0: _arg0 )
     }
 
+    /// public void javax.swing.text.DefaultFormatter.install(javax.swing.JFormattedTextField)
+
+    private static var install_MethodID_7: jmethodID?
+
+    open func install( arg0: JFormattedTextField? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &DefaultFormatter.install_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func install( _ _arg0: JFormattedTextField? ) {
+        install( arg0: _arg0 )
+    }
+
+    /// void javax.swing.text.DefaultFormatter.setDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
+
+    /// void javax.swing.text.DefaultFormatter.moveDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
+
+    /// int javax.swing.text.DefaultFormatter.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    /// protected javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.getNavigationFilter()
+
+    private static var getNavigationFilter_MethodID_8: jmethodID?
+
+    override open func getNavigationFilter() -> NavigationFilter! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &DefaultFormatter.getNavigationFilter_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+    }
+
+
     /// boolean javax.swing.text.DefaultFormatter.isNavigatable(int)
 
     /// void javax.swing.text.DefaultFormatter.updateValue()
@@ -161,13 +195,13 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
 
     /// public void javax.swing.text.DefaultFormatter.setOverwriteMode(boolean)
 
-    private static var setOverwriteMode_MethodID_7: jmethodID?
+    private static var setOverwriteMode_MethodID_9: jmethodID?
 
     open func setOverwriteMode( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOverwriteMode", methodSig: "(Z)V", methodCache: &DefaultFormatter.setOverwriteMode_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOverwriteMode", methodSig: "(Z)V", methodCache: &DefaultFormatter.setOverwriteMode_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setOverwriteMode( _ _arg0: Bool ) {
@@ -176,12 +210,12 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
 
     /// public java.lang.Class javax.swing.text.DefaultFormatter.getValueClass()
 
-    private static var getValueClass_MethodID_8: jmethodID?
+    private static var getValueClass_MethodID_10: jmethodID?
 
     open func getValueClass() -> java_swift.JavaClass! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValueClass", methodSig: "()Ljava/lang/Class;", methodCache: &DefaultFormatter.getValueClass_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValueClass", methodSig: "()Ljava/lang/Class;", methodCache: &DefaultFormatter.getValueClass_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
     }
@@ -191,37 +225,37 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
 
     /// public boolean javax.swing.text.DefaultFormatter.getAllowsInvalid()
 
-    private static var getAllowsInvalid_MethodID_9: jmethodID?
+    private static var getAllowsInvalid_MethodID_11: jmethodID?
 
     open func getAllowsInvalid() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsInvalid", methodSig: "()Z", methodCache: &DefaultFormatter.getAllowsInvalid_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsInvalid", methodSig: "()Z", methodCache: &DefaultFormatter.getAllowsInvalid_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean javax.swing.text.DefaultFormatter.getOverwriteMode()
 
-    private static var getOverwriteMode_MethodID_10: jmethodID?
+    private static var getOverwriteMode_MethodID_12: jmethodID?
 
     open func getOverwriteMode() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getOverwriteMode", methodSig: "()Z", methodCache: &DefaultFormatter.getOverwriteMode_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getOverwriteMode", methodSig: "()Z", methodCache: &DefaultFormatter.getOverwriteMode_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.text.DefaultFormatter.setCommitsOnValidEdit(boolean)
 
-    private static var setCommitsOnValidEdit_MethodID_11: jmethodID?
+    private static var setCommitsOnValidEdit_MethodID_13: jmethodID?
 
     open func setCommitsOnValidEdit( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCommitsOnValidEdit", methodSig: "(Z)V", methodCache: &DefaultFormatter.setCommitsOnValidEdit_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCommitsOnValidEdit", methodSig: "(Z)V", methodCache: &DefaultFormatter.setCommitsOnValidEdit_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setCommitsOnValidEdit( _ _arg0: Bool ) {
@@ -230,25 +264,25 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
 
     /// public boolean javax.swing.text.DefaultFormatter.getCommitsOnValidEdit()
 
-    private static var getCommitsOnValidEdit_MethodID_12: jmethodID?
+    private static var getCommitsOnValidEdit_MethodID_14: jmethodID?
 
     open func getCommitsOnValidEdit() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCommitsOnValidEdit", methodSig: "()Z", methodCache: &DefaultFormatter.getCommitsOnValidEdit_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCommitsOnValidEdit", methodSig: "()Z", methodCache: &DefaultFormatter.getCommitsOnValidEdit_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.text.DefaultFormatter.setAllowsInvalid(boolean)
 
-    private static var setAllowsInvalid_MethodID_13: jmethodID?
+    private static var setAllowsInvalid_MethodID_15: jmethodID?
 
     open func setAllowsInvalid( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllowsInvalid", methodSig: "(Z)V", methodCache: &DefaultFormatter.setAllowsInvalid_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllowsInvalid", methodSig: "(Z)V", methodCache: &DefaultFormatter.setAllowsInvalid_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setAllowsInvalid( _ _arg0: Bool ) {
@@ -266,40 +300,6 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
     /// boolean javax.swing.text.DefaultFormatter.isValidEdit(javax.swing.text.DefaultFormatter$ReplaceHolder)
 
     /// int javax.swing.text.DefaultFormatter.getNextCursorPosition(int,int)
-
-    /// protected javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.getNavigationFilter()
-
-    private static var getNavigationFilter_MethodID_14: jmethodID?
-
-    override open func getNavigationFilter() -> NavigationFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &DefaultFormatter.getNavigationFilter_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
-    }
-
-
-    /// int javax.swing.text.DefaultFormatter.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    /// public void javax.swing.text.DefaultFormatter.install(javax.swing.JFormattedTextField)
-
-    private static var install_MethodID_15: jmethodID?
-
-    open func install( arg0: JFormattedTextField? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &DefaultFormatter.install_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    override open func install( _ _arg0: JFormattedTextField? ) {
-        install( arg0: _arg0 )
-    }
-
-    /// void javax.swing.text.DefaultFormatter.setDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
-
-    /// void javax.swing.text.DefaultFormatter.moveDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
 
 }
 

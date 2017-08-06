@@ -152,31 +152,14 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
         return isDefined( attrName: _attrName )
     }
 
-    /// public java.lang.Object javax.swing.text.SimpleAttributeSet.getAttribute(java.lang.Object)
-
-    private static var getAttribute_MethodID_7: jmethodID?
-
-    open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &SimpleAttributeSet.getAttribute_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getAttribute( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getAttribute( key: _key )
-    }
-
     /// public javax.swing.text.AttributeSet javax.swing.text.SimpleAttributeSet.getResolveParent()
 
-    private static var getResolveParent_MethodID_8: jmethodID?
+    private static var getResolveParent_MethodID_7: jmethodID?
 
     open func getResolveParent() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResolveParent", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &SimpleAttributeSet.getResolveParent_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResolveParent", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &SimpleAttributeSet.getResolveParent_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -184,13 +167,13 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public void javax.swing.text.SimpleAttributeSet.setResolveParent(javax.swing.text.AttributeSet)
 
-    private static var setResolveParent_MethodID_9: jmethodID?
+    private static var setResolveParent_MethodID_8: jmethodID?
 
     open func setResolveParent( parent: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResolveParent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &SimpleAttributeSet.setResolveParent_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResolveParent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &SimpleAttributeSet.setResolveParent_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setResolveParent( _ _parent: AttributeSet? ) {
@@ -199,24 +182,24 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public int javax.swing.text.SimpleAttributeSet.getAttributeCount()
 
-    private static var getAttributeCount_MethodID_10: jmethodID?
+    private static var getAttributeCount_MethodID_9: jmethodID?
 
     open func getAttributeCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAttributeCount", methodSig: "()I", methodCache: &SimpleAttributeSet.getAttributeCount_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAttributeCount", methodSig: "()I", methodCache: &SimpleAttributeSet.getAttributeCount_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public javax.swing.text.AttributeSet javax.swing.text.SimpleAttributeSet.copyAttributes()
 
-    private static var copyAttributes_MethodID_11: jmethodID?
+    private static var copyAttributes_MethodID_10: jmethodID?
 
     open func copyAttributes() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &SimpleAttributeSet.copyAttributes_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &SimpleAttributeSet.copyAttributes_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -224,12 +207,12 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public java.util.Enumeration javax.swing.text.SimpleAttributeSet.getAttributeNames()
 
-    private static var getAttributeNames_MethodID_12: jmethodID?
+    private static var getAttributeNames_MethodID_11: jmethodID?
 
     open func getAttributeNames() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeNames", methodSig: "()Ljava/util/Enumeration;", methodCache: &SimpleAttributeSet.getAttributeNames_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeNames", methodSig: "()Ljava/util/Enumeration;", methodCache: &SimpleAttributeSet.getAttributeNames_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -237,14 +220,14 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public boolean javax.swing.text.SimpleAttributeSet.containsAttribute(java.lang.Object,java.lang.Object)
 
-    private static var containsAttribute_MethodID_13: jmethodID?
+    private static var containsAttribute_MethodID_12: jmethodID?
 
     open func containsAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &SimpleAttributeSet.containsAttribute_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &SimpleAttributeSet.containsAttribute_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -254,13 +237,13 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public boolean javax.swing.text.SimpleAttributeSet.containsAttributes(javax.swing.text.AttributeSet)
 
-    private static var containsAttributes_MethodID_14: jmethodID?
+    private static var containsAttributes_MethodID_13: jmethodID?
 
     open func containsAttributes( attributes: AttributeSet? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &SimpleAttributeSet.containsAttributes_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &SimpleAttributeSet.containsAttributes_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -270,13 +253,13 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public void javax.swing.text.SimpleAttributeSet.addAttributes(javax.swing.text.AttributeSet)
 
-    private static var addAttributes_MethodID_15: jmethodID?
+    private static var addAttributes_MethodID_14: jmethodID?
 
     open func addAttributes( attributes: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &SimpleAttributeSet.addAttributes_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &SimpleAttributeSet.addAttributes_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func addAttributes( _ _attributes: AttributeSet? ) {
@@ -285,13 +268,13 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public void javax.swing.text.SimpleAttributeSet.removeAttribute(java.lang.Object)
 
-    private static var removeAttribute_MethodID_16: jmethodID?
+    private static var removeAttribute_MethodID_15: jmethodID?
 
     open func removeAttribute( name: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljava/lang/Object;)V", methodCache: &SimpleAttributeSet.removeAttribute_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljava/lang/Object;)V", methodCache: &SimpleAttributeSet.removeAttribute_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func removeAttribute( _ _name: java_swift.JavaObject? ) {
@@ -300,13 +283,13 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public void javax.swing.text.SimpleAttributeSet.removeAttributes(java.util.Enumeration)
 
-    private static var removeAttributes_MethodID_17: jmethodID?
+    private static var removeAttributes_MethodID_16: jmethodID?
 
     open func removeAttributes( names: java_util.Enumeration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: names, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljava/util/Enumeration;)V", methodCache: &SimpleAttributeSet.removeAttributes_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljava/util/Enumeration;)V", methodCache: &SimpleAttributeSet.removeAttributes_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func removeAttributes( _ _names: java_util.Enumeration? ) {
@@ -315,17 +298,33 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
 
     /// public void javax.swing.text.SimpleAttributeSet.removeAttributes(javax.swing.text.AttributeSet)
 
-    private static var removeAttributes_MethodID_18: jmethodID?
+    private static var removeAttributes_MethodID_17: jmethodID?
 
     open func removeAttributes( attributes: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &SimpleAttributeSet.removeAttributes_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &SimpleAttributeSet.removeAttributes_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func removeAttributes( _ _attributes: AttributeSet? ) {
         removeAttributes( attributes: _attributes )
+    }
+
+    /// public void javax.swing.text.SimpleAttributeSet.addAttribute(java.lang.Object,java.lang.Object)
+
+    private static var addAttribute_MethodID_18: jmethodID?
+
+    open func addAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &SimpleAttributeSet.addAttribute_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func addAttribute( _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
+        addAttribute( name: _name, value: _value )
     }
 
     /// public boolean javax.swing.text.SimpleAttributeSet.isEqual(javax.swing.text.AttributeSet)
@@ -344,20 +343,21 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* ja
         return isEqual( attr: _attr )
     }
 
-    /// public void javax.swing.text.SimpleAttributeSet.addAttribute(java.lang.Object,java.lang.Object)
+    /// public java.lang.Object javax.swing.text.SimpleAttributeSet.getAttribute(java.lang.Object)
 
-    private static var addAttribute_MethodID_20: jmethodID?
+    private static var getAttribute_MethodID_20: jmethodID?
 
-    open func addAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &SimpleAttributeSet.addAttribute_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &SimpleAttributeSet.getAttribute_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
-    open func addAttribute( _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
-        addAttribute( name: _name, value: _value )
+    open func getAttribute( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getAttribute( key: _key )
     }
 
 }

@@ -653,163 +653,20 @@ open class JViewport: JComponent {
     }
 
 
-    /// public javax.swing.plaf.ViewportUI javax.swing.JViewport.getUI()
+    /// public void javax.swing.JViewport.reshape(int,int,int,int)
 
-    private static var getUI_MethodID_4: jmethodID?
+    /// public java.awt.Component javax.swing.JViewport.getView()
 
-    open func getUI() -> ViewportUI! {
+    private static var getView_MethodID_4: jmethodID?
+
+    open func getView() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ViewportUI;", methodCache: &JViewport.getUI_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getView", methodSig: "()Ljava/awt/Component;", methodCache: &JViewport.getView_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ViewportUI( javaObject: __return ) : nil
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-
-    /// private javax.swing.Timer javax.swing.JViewport.createRepaintTimer()
-
-    /// protected void javax.swing.JViewport.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_5: jmethodID?
-
-    open func addImpl( child: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: child != nil ? child! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JViewport.addImpl_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _child: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( child: _child, constraints: _constraints, index: _index )
-    }
-
-    /// public java.awt.Dimension javax.swing.JViewport.getExtentSize()
-
-    private static var getExtentSize_MethodID_6: jmethodID?
-
-    open func getExtentSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExtentSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JViewport.getExtentSize_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Rectangle javax.swing.JViewport.getViewRect()
-
-    private static var getViewRect_MethodID_7: jmethodID?
-
-    open func getViewRect() -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewRect", methodSig: "()Ljava/awt/Rectangle;", methodCache: &JViewport.getViewRect_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Dimension javax.swing.JViewport.getViewSize()
-
-    private static var getViewSize_MethodID_8: jmethodID?
-
-    open func getViewSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JViewport.getViewSize_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Point javax.swing.JViewport.getViewPosition()
-
-    private static var getViewPosition_MethodID_9: jmethodID?
-
-    open func getViewPosition() -> java_awt.Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewPosition", methodSig: "()Ljava/awt/Point;", methodCache: &JViewport.getViewPosition_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Point( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JViewport.addChangeListener(javax.swing.event.ChangeListener)
-
-    private static var addChangeListener_MethodID_10: jmethodID?
-
-    open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JViewport.addChangeListener_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func addChangeListener( _ _l: ChangeListener? ) {
-        addChangeListener( l: _l )
-    }
-
-    /// public void javax.swing.JViewport.removeChangeListener(javax.swing.event.ChangeListener)
-
-    private static var removeChangeListener_MethodID_11: jmethodID?
-
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JViewport.removeChangeListener_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.JViewport.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_12: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JViewport.getChangeListeners_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.JViewport.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_13: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JViewport.fireStateChanged_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JViewport.paint(java.awt.Graphics)
-
-    /// public void javax.swing.JViewport.repaint(long,int,int,int,int)
-
-    private static var repaint_MethodID_14: jmethodID?
-
-    open func repaint( tm: Int64, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tm, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: w, locals: &__locals )
-        __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JViewport.repaint_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    override open func repaint( _ _tm: Int64, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        repaint( tm: _tm, x: _x, y: _y, w: _w, h: _h )
-    }
 
     /// public javax.accessibility.AccessibleContext javax.swing.JViewport.getAccessibleContext()
 
@@ -819,7 +676,7 @@ open class JViewport: JComponent {
 
     /// protected void javax.swing.JViewport.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
 
-    private static var firePropertyChange_MethodID_15: jmethodID?
+    private static var firePropertyChange_MethodID_5: jmethodID?
 
     open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -827,35 +684,119 @@ open class JViewport: JComponent {
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
         __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &JViewport.firePropertyChange_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &JViewport.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
         firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
-    /// protected java.awt.LayoutManager javax.swing.JViewport.createLayoutManager()
+    /// protected void javax.swing.JViewport.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var createLayoutManager_MethodID_16: jmethodID?
+    private static var addImpl_MethodID_6: jmethodID?
 
-    open func createLayoutManager() -> java_awt.LayoutManager! {
+    open func addImpl( child: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: child != nil ? child! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JViewport.addImpl_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func addImpl( _ _child: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( child: _child, constraints: _constraints, index: _index )
+    }
+
+    /// public void javax.swing.JViewport.updateUI()
+
+    /// public void javax.swing.JViewport.setUI(javax.swing.plaf.ViewportUI)
+
+    private static var setUI_MethodID_7: jmethodID?
+
+    open func setUI( ui: ViewportUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &JViewport.createLayoutManager_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ViewportUI;)V", methodCache: &JViewport.setUI_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: ViewportUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// public java.lang.String javax.swing.JViewport.getUIClassID()
+
+    /// public final void javax.swing.JViewport.setBorder(javax.swing.border.Border)
+
+    /// public void javax.swing.JViewport.scrollRectToVisible(java.awt.Rectangle)
+
+    private static var scrollRectToVisible_MethodID_8: jmethodID?
+
+    open func scrollRectToVisible( contentRect: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: contentRect != nil ? contentRect! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollRectToVisible", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &JViewport.scrollRectToVisible_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func scrollRectToVisible( _ _contentRect: java_awt.Rectangle? ) {
+        scrollRectToVisible( contentRect: _contentRect )
+    }
+
+    /// public boolean javax.swing.JViewport.isOptimizedDrawingEnabled()
+
+    /// protected boolean javax.swing.JViewport.isPaintingOrigin()
+
+    private static var isPaintingOrigin_MethodID_9: jmethodID?
+
+    override open func isPaintingOrigin() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPaintingOrigin", methodSig: "()Z", methodCache: &JViewport.isPaintingOrigin_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
+    /// public void javax.swing.JViewport.setViewPosition(java.awt.Point)
+
+    private static var setViewPosition_MethodID_10: jmethodID?
+
+    open func setViewPosition( p: java_awt.Point? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewPosition", methodSig: "(Ljava/awt/Point;)V", methodCache: &JViewport.setViewPosition_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setViewPosition( _ _p: java_awt.Point? ) {
+        setViewPosition( p: _p )
+    }
+
+    /// public void javax.swing.JViewport.setView(java.awt.Component)
+
+    private static var setView_MethodID_11: jmethodID?
+
+    open func setView( view: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setView", methodSig: "(Ljava/awt/Component;)V", methodCache: &JViewport.setView_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setView( _ _view: java_awt.Component? ) {
+        setView( view: _view )
+    }
+
     /// public void javax.swing.JViewport.setExtentSize(java.awt.Dimension)
 
-    private static var setExtentSize_MethodID_17: jmethodID?
+    private static var setExtentSize_MethodID_12: jmethodID?
 
     open func setExtentSize( newExtent: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newExtent != nil ? newExtent! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtentSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JViewport.setExtentSize_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtentSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JViewport.setExtentSize_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setExtentSize( _ _newExtent: java_awt.Dimension? ) {
@@ -864,13 +805,13 @@ open class JViewport: JComponent {
 
     /// public void javax.swing.JViewport.setScrollMode(int)
 
-    private static var setScrollMode_MethodID_18: jmethodID?
+    private static var setScrollMode_MethodID_13: jmethodID?
 
     open func setScrollMode( mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollMode", methodSig: "(I)V", methodCache: &JViewport.setScrollMode_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollMode", methodSig: "(I)V", methodCache: &JViewport.setScrollMode_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setScrollMode( _ _mode: Int ) {
@@ -883,45 +824,45 @@ open class JViewport: JComponent {
 
     /// private java.awt.Graphics javax.swing.JViewport.getBackingStoreGraphics(java.awt.Graphics)
 
-    /// private void javax.swing.JViewport.paintViaBackingStore(java.awt.Graphics)
-
     /// private void javax.swing.JViewport.paintViaBackingStore(java.awt.Graphics,java.awt.Rectangle)
+
+    /// private void javax.swing.JViewport.paintViaBackingStore(java.awt.Graphics)
 
     /// private java.awt.Point javax.swing.JViewport.getViewLocation()
 
     /// public int javax.swing.JViewport.getScrollMode()
 
-    private static var getScrollMode_MethodID_19: jmethodID?
+    private static var getScrollMode_MethodID_14: jmethodID?
 
     open func getScrollMode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollMode", methodSig: "()I", methodCache: &JViewport.getScrollMode_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollMode", methodSig: "()I", methodCache: &JViewport.getScrollMode_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean javax.swing.JViewport.isBackingStoreEnabled()
 
-    private static var isBackingStoreEnabled_MethodID_20: jmethodID?
+    private static var isBackingStoreEnabled_MethodID_15: jmethodID?
 
     open func isBackingStoreEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBackingStoreEnabled", methodSig: "()Z", methodCache: &JViewport.isBackingStoreEnabled_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBackingStoreEnabled", methodSig: "()Z", methodCache: &JViewport.isBackingStoreEnabled_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JViewport.setBackingStoreEnabled(boolean)
 
-    private static var setBackingStoreEnabled_MethodID_21: jmethodID?
+    private static var setBackingStoreEnabled_MethodID_16: jmethodID?
 
     open func setBackingStoreEnabled( enabled: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackingStoreEnabled", methodSig: "(Z)V", methodCache: &JViewport.setBackingStoreEnabled_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackingStoreEnabled", methodSig: "(Z)V", methodCache: &JViewport.setBackingStoreEnabled_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setBackingStoreEnabled( _ _enabled: Bool ) {
@@ -932,13 +873,13 @@ open class JViewport: JComponent {
 
     /// public void javax.swing.JViewport.setViewSize(java.awt.Dimension)
 
-    private static var setViewSize_MethodID_22: jmethodID?
+    private static var setViewSize_MethodID_17: jmethodID?
 
     open func setViewSize( newSize: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newSize != nil ? newSize! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JViewport.setViewSize_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JViewport.setViewSize_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setViewSize( _ _newSize: java_awt.Dimension? ) {
@@ -947,7 +888,7 @@ open class JViewport: JComponent {
 
     /// protected boolean javax.swing.JViewport.computeBlit(int,int,java.awt.Point,java.awt.Point,java.awt.Dimension,java.awt.Rectangle)
 
-    private static var computeBlit_MethodID_23: jmethodID?
+    private static var computeBlit_MethodID_18: jmethodID?
 
     open func computeBlit( dx: Int, dy: Int, blitFrom: java_awt.Point?, blitTo: java_awt.Point?, blitSize: java_awt.Dimension?, blitPaint: java_awt.Rectangle? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -958,7 +899,7 @@ open class JViewport: JComponent {
         __args[3] = JNIType.toJava( value: blitTo != nil ? blitTo! as JNIObject : nil, locals: &__locals )
         __args[4] = JNIType.toJava( value: blitSize != nil ? blitSize! as JNIObject : nil, locals: &__locals )
         __args[5] = JNIType.toJava( value: blitPaint != nil ? blitPaint! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "computeBlit", methodSig: "(IILjava/awt/Point;Ljava/awt/Point;Ljava/awt/Dimension;Ljava/awt/Rectangle;)Z", methodCache: &JViewport.computeBlit_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "computeBlit", methodSig: "(IILjava/awt/Point;Ljava/awt/Point;Ljava/awt/Dimension;Ljava/awt/Rectangle;)Z", methodCache: &JViewport.computeBlit_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -968,13 +909,13 @@ open class JViewport: JComponent {
 
     /// public java.awt.Dimension javax.swing.JViewport.toViewCoordinates(java.awt.Dimension)
 
-    private static var toViewCoordinates_MethodID_24: jmethodID?
+    private static var toViewCoordinates_MethodID_19: jmethodID?
 
     open func toViewCoordinates( size: java_awt.Dimension? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size != nil ? size! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toViewCoordinates", methodSig: "(Ljava/awt/Dimension;)Ljava/awt/Dimension;", methodCache: &JViewport.toViewCoordinates_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toViewCoordinates", methodSig: "(Ljava/awt/Dimension;)Ljava/awt/Dimension;", methodCache: &JViewport.toViewCoordinates_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -985,13 +926,13 @@ open class JViewport: JComponent {
 
     /// public java.awt.Point javax.swing.JViewport.toViewCoordinates(java.awt.Point)
 
-    private static var toViewCoordinates_MethodID_25: jmethodID?
+    private static var toViewCoordinates_MethodID_20: jmethodID?
 
     open func toViewCoordinates( p: java_awt.Point? ) -> java_awt.Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toViewCoordinates", methodSig: "(Ljava/awt/Point;)Ljava/awt/Point;", methodCache: &JViewport.toViewCoordinates_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toViewCoordinates", methodSig: "(Ljava/awt/Point;)Ljava/awt/Point;", methodCache: &JViewport.toViewCoordinates_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
@@ -1002,12 +943,12 @@ open class JViewport: JComponent {
 
     /// protected javax.swing.JViewport$ViewListener javax.swing.JViewport.createViewListener()
 
-    private static var createViewListener_MethodID_26: jmethodID?
+    private static var createViewListener_MethodID_21: jmethodID?
 
     open func createViewListener() -> /* javax.swing.JViewport$ViewListener */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createViewListener", methodSig: "()Ljavax/swing/JViewport$ViewListener;", methodCache: &JViewport.createViewListener_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createViewListener", methodSig: "()Ljavax/swing/JViewport$ViewListener;", methodCache: &JViewport.createViewListener_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.JViewport$ViewListener */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -1025,98 +966,157 @@ open class JViewport: JComponent {
 
     /// private boolean javax.swing.JViewport.canUseWindowBlitter()
 
-    /// public void javax.swing.JViewport.updateUI()
+    /// private javax.swing.Timer javax.swing.JViewport.createRepaintTimer()
 
-    /// public void javax.swing.JViewport.setUI(javax.swing.plaf.ViewportUI)
+    /// public javax.swing.plaf.ViewportUI javax.swing.JViewport.getUI()
 
-    private static var setUI_MethodID_27: jmethodID?
+    private static var getUI_MethodID_22: jmethodID?
 
-    open func setUI( ui: ViewportUI? ) {
+    open func getUI() -> ViewportUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ViewportUI;)V", methodCache: &JViewport.setUI_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _ui: ViewportUI? ) {
-        setUI( ui: _ui )
-    }
-
-    /// public java.lang.String javax.swing.JViewport.getUIClassID()
-
-    /// public final void javax.swing.JViewport.setBorder(javax.swing.border.Border)
-
-    /// public void javax.swing.JViewport.scrollRectToVisible(java.awt.Rectangle)
-
-    private static var scrollRectToVisible_MethodID_28: jmethodID?
-
-    open func scrollRectToVisible( contentRect: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: contentRect != nil ? contentRect! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollRectToVisible", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &JViewport.scrollRectToVisible_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    override open func scrollRectToVisible( _ _contentRect: java_awt.Rectangle? ) {
-        scrollRectToVisible( contentRect: _contentRect )
-    }
-
-    /// public boolean javax.swing.JViewport.isOptimizedDrawingEnabled()
-
-    /// protected boolean javax.swing.JViewport.isPaintingOrigin()
-
-    private static var isPaintingOrigin_MethodID_29: jmethodID?
-
-    override open func isPaintingOrigin() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPaintingOrigin", methodSig: "()Z", methodCache: &JViewport.isPaintingOrigin_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JViewport.setViewPosition(java.awt.Point)
-
-    private static var setViewPosition_MethodID_30: jmethodID?
-
-    open func setViewPosition( p: java_awt.Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewPosition", methodSig: "(Ljava/awt/Point;)V", methodCache: &JViewport.setViewPosition_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func setViewPosition( _ _p: java_awt.Point? ) {
-        setViewPosition( p: _p )
-    }
-
-    /// public void javax.swing.JViewport.setView(java.awt.Component)
-
-    private static var setView_MethodID_31: jmethodID?
-
-    open func setView( view: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setView", methodSig: "(Ljava/awt/Component;)V", methodCache: &JViewport.setView_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func setView( _ _view: java_awt.Component? ) {
-        setView( view: _view )
-    }
-
-    /// public void javax.swing.JViewport.reshape(int,int,int,int)
-
-    /// public java.awt.Component javax.swing.JViewport.getView()
-
-    private static var getView_MethodID_32: jmethodID?
-
-    open func getView() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getView", methodSig: "()Ljava/awt/Component;", methodCache: &JViewport.getView_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ViewportUI;", methodCache: &JViewport.getUI_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+        return __return != nil ? ViewportUI( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JViewport.addChangeListener(javax.swing.event.ChangeListener)
+
+    private static var addChangeListener_MethodID_23: jmethodID?
+
+    open func addChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JViewport.addChangeListener_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func addChangeListener( _ _l: ChangeListener? ) {
+        addChangeListener( l: _l )
+    }
+
+    /// public void javax.swing.JViewport.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_24: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JViewport.removeChangeListener_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
+    /// public javax.swing.event.ChangeListener[] javax.swing.JViewport.getChangeListeners()
+
+    private static var getChangeListeners_MethodID_25: jmethodID?
+
+    open func getChangeListeners() -> [ChangeListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JViewport.getChangeListeners_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
+    }
+
+
+    /// protected void javax.swing.JViewport.fireStateChanged()
+
+    private static var fireStateChanged_MethodID_26: jmethodID?
+
+    open func fireStateChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JViewport.fireStateChanged_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JViewport.paint(java.awt.Graphics)
+
+    /// public void javax.swing.JViewport.repaint(long,int,int,int,int)
+
+    private static var repaint_MethodID_27: jmethodID?
+
+    open func repaint( tm: Int64, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: tm, locals: &__locals )
+        __args[1] = JNIType.toJava( value: x, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        __args[3] = JNIType.toJava( value: w, locals: &__locals )
+        __args[4] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JViewport.repaint_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    override open func repaint( _ _tm: Int64, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        repaint( tm: _tm, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected java.awt.LayoutManager javax.swing.JViewport.createLayoutManager()
+
+    private static var createLayoutManager_MethodID_28: jmethodID?
+
+    open func createLayoutManager() -> java_awt.LayoutManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &JViewport.createLayoutManager_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension javax.swing.JViewport.getExtentSize()
+
+    private static var getExtentSize_MethodID_29: jmethodID?
+
+    open func getExtentSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExtentSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JViewport.getExtentSize_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Rectangle javax.swing.JViewport.getViewRect()
+
+    private static var getViewRect_MethodID_30: jmethodID?
+
+    open func getViewRect() -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewRect", methodSig: "()Ljava/awt/Rectangle;", methodCache: &JViewport.getViewRect_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension javax.swing.JViewport.getViewSize()
+
+    private static var getViewSize_MethodID_31: jmethodID?
+
+    open func getViewSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JViewport.getViewSize_MethodID_31, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Point javax.swing.JViewport.getViewPosition()
+
+    private static var getViewPosition_MethodID_32: jmethodID?
+
+    open func getViewPosition() -> java_awt.Point! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewPosition", methodSig: "()Ljava/awt/Point;", methodCache: &JViewport.getViewPosition_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
 
 

@@ -328,6 +328,10 @@ open class DefaultRowSorter: RowSorter {
 
     /// private void javax.swing.DefaultRowSorter.checkColumn(int)
 
+    /// private boolean javax.swing.DefaultRowSorter.isTransformed()
+
+    /// public final java.lang.Object javax.swing.DefaultRowSorter.getModel()
+
     /// public int javax.swing.DefaultRowSorter.convertRowIndexToView(int)
 
     /// public int javax.swing.DefaultRowSorter.convertRowIndexToModel(int)
@@ -336,9 +340,9 @@ open class DefaultRowSorter: RowSorter {
 
     /// public void javax.swing.DefaultRowSorter.allRowsChanged()
 
-    /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int)
-
     /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int,int)
+
+    /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int)
 
     /// public void javax.swing.DefaultRowSorter.rowsInserted(int,int)
 
@@ -347,10 +351,6 @@ open class DefaultRowSorter: RowSorter {
     /// public void javax.swing.DefaultRowSorter.modelStructureChanged()
 
     /// private void javax.swing.DefaultRowSorter.allChanged()
-
-    /// public final java.lang.Object javax.swing.DefaultRowSorter.getModel()
-
-    /// private boolean javax.swing.DefaultRowSorter.isTransformed()
 
 }
 

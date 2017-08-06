@@ -391,38 +391,173 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
     }
 
 
-    /// static boolean javax.swing.text.AbstractDocument.isLeftToRight(javax.swing.text.Document,int,int)
+    /// public void javax.swing.text.AbstractDocument.dump(java.io.PrintStream)
 
-    /// public void javax.swing.text.AbstractDocument.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
+    private static var dump_MethodID_17: jmethodID?
 
-    private static var getText_MethodID_17: jmethodID?
+    open func dump( out: /* java.io.PrintStream */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: out != nil ? out! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dump", methodSig: "(Ljava/io/PrintStream;)V", methodCache: &AbstractDocument.dump_MethodID_17, args: &__args, locals: &__locals )
+    }
 
-    open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+    open func dump( _ _out: /* java.io.PrintStream */ UnclassedObject? ) {
+        dump( out: _out )
+    }
+
+    /// public void javax.swing.text.AbstractDocument.removeDocumentListener(javax.swing.event.DocumentListener)
+
+    private static var removeDocumentListener_MethodID_18: jmethodID?
+
+    open func removeDocumentListener( listener: DocumentListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &AbstractDocument.removeDocumentListener_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func removeDocumentListener( _ _listener: DocumentListener? ) {
+        removeDocumentListener( listener: _listener )
+    }
+
+    /// public final synchronized void javax.swing.text.AbstractDocument.readUnlock()
+
+    private static var readUnlock_MethodID_19: jmethodID?
+
+    open func readUnlock() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "readUnlock", methodSig: "()V", methodCache: &AbstractDocument.readUnlock_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.text.AbstractDocument.addDocumentListener(javax.swing.event.DocumentListener)
+
+    private static var addDocumentListener_MethodID_20: jmethodID?
+
+    open func addDocumentListener( listener: DocumentListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &AbstractDocument.addDocumentListener_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func addDocumentListener( _ _listener: DocumentListener? ) {
+        addDocumentListener( listener: _listener )
+    }
+
+    /// public void javax.swing.text.AbstractDocument.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
+
+    private static var insertString_MethodID_21: jmethodID?
+
+    open func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt != nil ? txt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &AbstractDocument.getText_MethodID_17, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: str, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument.insertString_MethodID_21, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
     }
 
-    open func getText( _ _offset: Int, _ _length: Int, _ _txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
-        try getText( offset: _offset, length: _length, txt: _txt )
+    open func insertString( _ _offset: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        try insertString( offset: _offset, str: _str, a: _a )
     }
+
+    /// public synchronized javax.swing.text.Position javax.swing.text.AbstractDocument.createPosition(int) throws javax.swing.text.BadLocationException
+
+    private static var createPosition_MethodID_22: jmethodID?
+
+    open func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &AbstractDocument.createPosition_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? PositionForward( javaObject: __return ) : nil
+    }
+
+    open func createPosition( _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
+        return try createPosition( offs: _offs )
+    }
+
+    /// protected void javax.swing.text.AbstractDocument.insertUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
+
+    private static var insertUpdate_MethodID_23: jmethodID?
+
+    open func insertUpdate( chng: AbstractDocument_DefaultDocumentEvent?, attr: AttributeSet? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument.insertUpdate_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func insertUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent?, _ _attr: AttributeSet? ) {
+        insertUpdate( chng: _chng, attr: _attr )
+    }
+
+    /// protected void javax.swing.text.AbstractDocument.removeUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent)
+
+    private static var removeUpdate_MethodID_24: jmethodID?
+
+    open func removeUpdate( chng: AbstractDocument_DefaultDocumentEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &AbstractDocument.removeUpdate_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func removeUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent? ) {
+        removeUpdate( chng: _chng )
+    }
+
+    /// public abstract javax.swing.text.Element javax.swing.text.AbstractDocument.getParagraphElement(int)
+
+    private static var getParagraphElement_MethodID_25: jmethodID?
+
+    open func getParagraphElement( pos: Int ) -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParagraphElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &AbstractDocument.getParagraphElement_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+    open func getParagraphElement( _ _pos: Int ) -> Element! {
+        return getParagraphElement( pos: _pos )
+    }
+
+    /// public abstract javax.swing.text.Element javax.swing.text.AbstractDocument.getDefaultRootElement()
+
+    private static var getDefaultRootElement_MethodID_26: jmethodID?
+
+    open func getDefaultRootElement() -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &AbstractDocument.getDefaultRootElement_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
 
     /// public java.lang.String javax.swing.text.AbstractDocument.getText(int,int) throws javax.swing.text.BadLocationException
 
-    private static var getText_MethodID_18: jmethodID?
+    private static var getText_MethodID_27: jmethodID?
 
     open func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
         __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &AbstractDocument.getText_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &AbstractDocument.getText_MethodID_27, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -433,15 +568,35 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
         return try getText( offset: _offset, length: _length )
     }
 
+    /// public void javax.swing.text.AbstractDocument.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_28: jmethodID?
+
+    open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = JNIType.toJava( value: length, locals: &__locals )
+        __args[2] = JNIType.toJava( value: txt != nil ? txt! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &AbstractDocument.getText_MethodID_28, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func getText( _ _offset: Int, _ _length: Int, _ _txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+        try getText( offset: _offset, length: _length, txt: _txt )
+    }
+
     /// public java.util.EventListener[] javax.swing.text.AbstractDocument.getListeners(java.lang.Class)
 
-    private static var getListeners_MethodID_19: jmethodID?
+    private static var getListeners_MethodID_29: jmethodID?
 
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractDocument.getListeners_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractDocument.getListeners_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
 
@@ -451,67 +606,36 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// public final synchronized void javax.swing.text.AbstractDocument.readLock()
 
-    private static var readLock_MethodID_20: jmethodID?
+    private static var readLock_MethodID_30: jmethodID?
 
     open func readLock() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "readLock", methodSig: "()V", methodCache: &AbstractDocument.readLock_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "readLock", methodSig: "()V", methodCache: &AbstractDocument.readLock_MethodID_30, args: &__args, locals: &__locals )
     }
 
 
     /// protected final synchronized void javax.swing.text.AbstractDocument.writeLock()
 
-    private static var writeLock_MethodID_21: jmethodID?
+    private static var writeLock_MethodID_31: jmethodID?
 
     open func writeLock() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLock", methodSig: "()V", methodCache: &AbstractDocument.writeLock_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLock", methodSig: "()V", methodCache: &AbstractDocument.writeLock_MethodID_31, args: &__args, locals: &__locals )
     }
 
-
-    /// public void javax.swing.text.AbstractDocument.dump(java.io.PrintStream)
-
-    private static var dump_MethodID_22: jmethodID?
-
-    open func dump( out: /* java.io.PrintStream */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: out != nil ? out! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dump", methodSig: "(Ljava/io/PrintStream;)V", methodCache: &AbstractDocument.dump_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func dump( _ _out: /* java.io.PrintStream */ UnclassedObject? ) {
-        dump( out: _out )
-    }
-
-    /// public final void javax.swing.text.AbstractDocument.putProperty(java.lang.Object,java.lang.Object)
-
-    private static var putProperty_MethodID_23: jmethodID?
-
-    open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractDocument.putProperty_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
-        putProperty( key: _key, value: _value )
-    }
 
     /// protected javax.swing.text.Element javax.swing.text.AbstractDocument.createBranchElement(javax.swing.text.Element,javax.swing.text.AttributeSet)
 
-    private static var createBranchElement_MethodID_24: jmethodID?
+    private static var createBranchElement_MethodID_32: jmethodID?
 
     open func createBranchElement( parent: Element?, a: AttributeSet? ) -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBranchElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/Element;", methodCache: &AbstractDocument.createBranchElement_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBranchElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/Element;", methodCache: &AbstractDocument.createBranchElement_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -522,7 +646,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected javax.swing.text.Element javax.swing.text.AbstractDocument.createLeafElement(javax.swing.text.Element,javax.swing.text.AttributeSet,int,int)
 
-    private static var createLeafElement_MethodID_25: jmethodID?
+    private static var createLeafElement_MethodID_33: jmethodID?
 
     open func createLeafElement( parent: Element?, a: AttributeSet?, p0: Int, p1: Int ) -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -531,7 +655,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: p0, locals: &__locals )
         __args[3] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLeafElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;II)Ljavax/swing/text/Element;", methodCache: &AbstractDocument.createLeafElement_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLeafElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;II)Ljavax/swing/text/Element;", methodCache: &AbstractDocument.createLeafElement_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -542,12 +666,12 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// public java.util.Dictionary javax.swing.text.AbstractDocument.getDocumentProperties()
 
-    private static var getDocumentProperties_MethodID_26: jmethodID?
+    private static var getDocumentProperties_MethodID_34: jmethodID?
 
     open func getDocumentProperties() -> java_util.Dictionary! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentProperties", methodSig: "()Ljava/util/Dictionary;", methodCache: &AbstractDocument.getDocumentProperties_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentProperties", methodSig: "()Ljava/util/Dictionary;", methodCache: &AbstractDocument.getDocumentProperties_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Dictionary( javaObject: __return ) : nil
     }
@@ -555,13 +679,13 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// public void javax.swing.text.AbstractDocument.setDocumentProperties(java.util.Dictionary)
 
-    private static var setDocumentProperties_MethodID_27: jmethodID?
+    private static var setDocumentProperties_MethodID_35: jmethodID?
 
     open func setDocumentProperties( x: java_util.Dictionary? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDocumentProperties", methodSig: "(Ljava/util/Dictionary;)V", methodCache: &AbstractDocument.setDocumentProperties_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDocumentProperties", methodSig: "(Ljava/util/Dictionary;)V", methodCache: &AbstractDocument.setDocumentProperties_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func setDocumentProperties( _ _x: java_util.Dictionary? ) {
@@ -570,13 +694,13 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected void javax.swing.text.AbstractDocument.fireInsertUpdate(javax.swing.event.DocumentEvent)
 
-    private static var fireInsertUpdate_MethodID_28: jmethodID?
+    private static var fireInsertUpdate_MethodID_36: jmethodID?
 
     open func fireInsertUpdate( e: DocumentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireInsertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &AbstractDocument.fireInsertUpdate_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireInsertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &AbstractDocument.fireInsertUpdate_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func fireInsertUpdate( _ _e: DocumentEvent? ) {
@@ -585,13 +709,13 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected void javax.swing.text.AbstractDocument.fireChangedUpdate(javax.swing.event.DocumentEvent)
 
-    private static var fireChangedUpdate_MethodID_29: jmethodID?
+    private static var fireChangedUpdate_MethodID_37: jmethodID?
 
     open func fireChangedUpdate( e: DocumentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireChangedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &AbstractDocument.fireChangedUpdate_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireChangedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &AbstractDocument.fireChangedUpdate_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func fireChangedUpdate( _ _e: DocumentEvent? ) {
@@ -600,13 +724,13 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected void javax.swing.text.AbstractDocument.fireRemoveUpdate(javax.swing.event.DocumentEvent)
 
-    private static var fireRemoveUpdate_MethodID_30: jmethodID?
+    private static var fireRemoveUpdate_MethodID_38: jmethodID?
 
     open func fireRemoveUpdate( e: DocumentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireRemoveUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &AbstractDocument.fireRemoveUpdate_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireRemoveUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &AbstractDocument.fireRemoveUpdate_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func fireRemoveUpdate( _ _e: DocumentEvent? ) {
@@ -615,13 +739,13 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected void javax.swing.text.AbstractDocument.fireUndoableEditUpdate(javax.swing.event.UndoableEditEvent)
 
-    private static var fireUndoableEditUpdate_MethodID_31: jmethodID?
+    private static var fireUndoableEditUpdate_MethodID_39: jmethodID?
 
     open func fireUndoableEditUpdate( e: UndoableEditEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireUndoableEditUpdate", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &AbstractDocument.fireUndoableEditUpdate_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireUndoableEditUpdate", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &AbstractDocument.fireUndoableEditUpdate_MethodID_39, args: &__args, locals: &__locals )
     }
 
     open func fireUndoableEditUpdate( _ _e: UndoableEditEvent? ) {
@@ -630,25 +754,25 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// public int javax.swing.text.AbstractDocument.getAsynchronousLoadPriority()
 
-    private static var getAsynchronousLoadPriority_MethodID_32: jmethodID?
+    private static var getAsynchronousLoadPriority_MethodID_40: jmethodID?
 
     open func getAsynchronousLoadPriority() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAsynchronousLoadPriority", methodSig: "()I", methodCache: &AbstractDocument.getAsynchronousLoadPriority_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAsynchronousLoadPriority", methodSig: "()I", methodCache: &AbstractDocument.getAsynchronousLoadPriority_MethodID_40, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.text.AbstractDocument.setAsynchronousLoadPriority(int)
 
-    private static var setAsynchronousLoadPriority_MethodID_33: jmethodID?
+    private static var setAsynchronousLoadPriority_MethodID_41: jmethodID?
 
     open func setAsynchronousLoadPriority( p: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAsynchronousLoadPriority", methodSig: "(I)V", methodCache: &AbstractDocument.setAsynchronousLoadPriority_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAsynchronousLoadPriority", methodSig: "(I)V", methodCache: &AbstractDocument.setAsynchronousLoadPriority_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open func setAsynchronousLoadPriority( _ _p: Int ) {
@@ -657,24 +781,24 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// public javax.swing.event.DocumentListener[] javax.swing.text.AbstractDocument.getDocumentListeners()
 
-    private static var getDocumentListeners_MethodID_34: jmethodID?
+    private static var getDocumentListeners_MethodID_42: jmethodID?
 
     open func getDocumentListeners() -> [DocumentListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentListeners", methodSig: "()[Ljavax/swing/event/DocumentListener;", methodCache: &AbstractDocument.getDocumentListeners_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentListeners", methodSig: "()[Ljavax/swing/event/DocumentListener;", methodCache: &AbstractDocument.getDocumentListeners_MethodID_42, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [DocumentListenerForward](), from: __return )
     }
 
 
     /// public javax.swing.event.UndoableEditListener[] javax.swing.text.AbstractDocument.getUndoableEditListeners()
 
-    private static var getUndoableEditListeners_MethodID_35: jmethodID?
+    private static var getUndoableEditListeners_MethodID_43: jmethodID?
 
     open func getUndoableEditListeners() -> [UndoableEditListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUndoableEditListeners", methodSig: "()[Ljavax/swing/event/UndoableEditListener;", methodCache: &AbstractDocument.getUndoableEditListeners_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUndoableEditListeners", methodSig: "()[Ljavax/swing/event/UndoableEditListener;", methodCache: &AbstractDocument.getUndoableEditListeners_MethodID_43, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [UndoableEditListenerForward](), from: __return )
     }
 
@@ -685,12 +809,12 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected final javax.swing.text.AbstractDocument$AttributeContext javax.swing.text.AbstractDocument.getAttributeContext()
 
-    private static var getAttributeContext_MethodID_36: jmethodID?
+    private static var getAttributeContext_MethodID_44: jmethodID?
 
     open func getAttributeContext() -> AbstractDocument_AttributeContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeContext", methodSig: "()Ljavax/swing/text/AbstractDocument$AttributeContext;", methodCache: &AbstractDocument.getAttributeContext_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeContext", methodSig: "()Ljavax/swing/text/AbstractDocument$AttributeContext;", methodCache: &AbstractDocument.getAttributeContext_MethodID_44, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AbstractDocument_AttributeContextForward( javaObject: __return ) : nil
     }
@@ -698,13 +822,13 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected void javax.swing.text.AbstractDocument.postRemoveUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent)
 
-    private static var postRemoveUpdate_MethodID_37: jmethodID?
+    private static var postRemoveUpdate_MethodID_45: jmethodID?
 
     open func postRemoveUpdate( chng: AbstractDocument_DefaultDocumentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "postRemoveUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &AbstractDocument.postRemoveUpdate_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "postRemoveUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &AbstractDocument.postRemoveUpdate_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func postRemoveUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent? ) {
@@ -717,12 +841,12 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected final synchronized java.lang.Thread javax.swing.text.AbstractDocument.getCurrentWriter()
 
-    private static var getCurrentWriter_MethodID_38: jmethodID?
+    private static var getCurrentWriter_MethodID_46: jmethodID?
 
     open func getCurrentWriter() -> java_lang.Thread! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentWriter", methodSig: "()Ljava/lang/Thread;", methodCache: &AbstractDocument.getCurrentWriter_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentWriter", methodSig: "()Ljava/lang/Thread;", methodCache: &AbstractDocument.getCurrentWriter_MethodID_46, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.Thread( javaObject: __return ) : nil
     }
@@ -730,156 +854,32 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* java.io.Seriali
 
     /// protected final synchronized void javax.swing.text.AbstractDocument.writeUnlock()
 
-    private static var writeUnlock_MethodID_39: jmethodID?
+    private static var writeUnlock_MethodID_47: jmethodID?
 
     open func writeUnlock() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeUnlock", methodSig: "()V", methodCache: &AbstractDocument.writeUnlock_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeUnlock", methodSig: "()V", methodCache: &AbstractDocument.writeUnlock_MethodID_47, args: &__args, locals: &__locals )
     }
 
 
-    /// protected void javax.swing.text.AbstractDocument.insertUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
+    /// public final void javax.swing.text.AbstractDocument.putProperty(java.lang.Object,java.lang.Object)
 
-    private static var insertUpdate_MethodID_40: jmethodID?
+    private static var putProperty_MethodID_48: jmethodID?
 
-    open func insertUpdate( chng: AbstractDocument_DefaultDocumentEvent?, attr: AttributeSet? ) {
+    open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument.insertUpdate_MethodID_40, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractDocument.putProperty_MethodID_48, args: &__args, locals: &__locals )
     }
 
-    open func insertUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent?, _ _attr: AttributeSet? ) {
-        insertUpdate( chng: _chng, attr: _attr )
+    open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
+        putProperty( key: _key, value: _value )
     }
 
-    /// protected void javax.swing.text.AbstractDocument.removeUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent)
-
-    private static var removeUpdate_MethodID_41: jmethodID?
-
-    open func removeUpdate( chng: AbstractDocument_DefaultDocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &AbstractDocument.removeUpdate_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-    open func removeUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent? ) {
-        removeUpdate( chng: _chng )
-    }
-
-    /// public abstract javax.swing.text.Element javax.swing.text.AbstractDocument.getParagraphElement(int)
-
-    private static var getParagraphElement_MethodID_42: jmethodID?
-
-    open func getParagraphElement( pos: Int ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParagraphElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &AbstractDocument.getParagraphElement_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-    open func getParagraphElement( _ _pos: Int ) -> Element! {
-        return getParagraphElement( pos: _pos )
-    }
-
-    /// public abstract javax.swing.text.Element javax.swing.text.AbstractDocument.getDefaultRootElement()
-
-    private static var getDefaultRootElement_MethodID_43: jmethodID?
-
-    open func getDefaultRootElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &AbstractDocument.getDefaultRootElement_MethodID_43, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.AbstractDocument.removeDocumentListener(javax.swing.event.DocumentListener)
-
-    private static var removeDocumentListener_MethodID_44: jmethodID?
-
-    open func removeDocumentListener( listener: DocumentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &AbstractDocument.removeDocumentListener_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open func removeDocumentListener( _ _listener: DocumentListener? ) {
-        removeDocumentListener( listener: _listener )
-    }
-
-    /// public final synchronized void javax.swing.text.AbstractDocument.readUnlock()
-
-    private static var readUnlock_MethodID_45: jmethodID?
-
-    open func readUnlock() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "readUnlock", methodSig: "()V", methodCache: &AbstractDocument.readUnlock_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.text.AbstractDocument.addDocumentListener(javax.swing.event.DocumentListener)
-
-    private static var addDocumentListener_MethodID_46: jmethodID?
-
-    open func addDocumentListener( listener: DocumentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &AbstractDocument.addDocumentListener_MethodID_46, args: &__args, locals: &__locals )
-    }
-
-    open func addDocumentListener( _ _listener: DocumentListener? ) {
-        addDocumentListener( listener: _listener )
-    }
-
-    /// public void javax.swing.text.AbstractDocument.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
-
-    private static var insertString_MethodID_47: jmethodID?
-
-    open func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: str, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument.insertString_MethodID_47, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func insertString( _ _offset: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        try insertString( offset: _offset, str: _str, a: _a )
-    }
-
-    /// public synchronized javax.swing.text.Position javax.swing.text.AbstractDocument.createPosition(int) throws javax.swing.text.BadLocationException
-
-    private static var createPosition_MethodID_48: jmethodID?
-
-    open func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &AbstractDocument.createPosition_MethodID_48, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return __return != nil ? PositionForward( javaObject: __return ) : nil
-    }
-
-    open func createPosition( _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
-        return try createPosition( offs: _offs )
-    }
+    /// static boolean javax.swing.text.AbstractDocument.isLeftToRight(javax.swing.text.Document,int,int)
 
 }
 

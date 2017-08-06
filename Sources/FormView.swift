@@ -126,15 +126,44 @@ open class FormView: ComponentView, java_awt.ActionListener {
 
     /// static java.lang.String javax.swing.text.html.FormView.access$000(javax.swing.text.html.FormView,java.awt.Point)
 
+    /// protected java.awt.Component javax.swing.text.html.FormView.createComponent()
+
+    private static var createComponent_MethodID_2: jmethodID?
+
+    override open func createComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "()Ljava/awt/Component;", methodCache: &FormView.createComponent_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public float javax.swing.text.html.FormView.getMaximumSpan(int)
+
+    private static var getMaximumSpan_MethodID_3: jmethodID?
+
+    open func getMaximumSpan( arg0: Int ) -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMaximumSpan", methodSig: "(I)F", methodCache: &FormView.getMaximumSpan_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+    override open func getMaximumSpan( _ _arg0: Int ) -> Float {
+        return getMaximumSpan( arg0: _arg0 )
+    }
+
     /// protected void javax.swing.text.html.FormView.submitData(java.lang.String)
 
-    private static var submitData_MethodID_2: jmethodID?
+    private static var submitData_MethodID_4: jmethodID?
 
     open func submitData( arg0: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "submitData", methodSig: "(Ljava/lang/String;)V", methodCache: &FormView.submitData_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "submitData", methodSig: "(Ljava/lang/String;)V", methodCache: &FormView.submitData_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func submitData( _ _arg0: String? ) {
@@ -143,13 +172,13 @@ open class FormView: ComponentView, java_awt.ActionListener {
 
     /// protected void javax.swing.text.html.FormView.imageSubmit(java.lang.String)
 
-    private static var imageSubmit_MethodID_3: jmethodID?
+    private static var imageSubmit_MethodID_5: jmethodID?
 
     open func imageSubmit( arg0: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "imageSubmit", methodSig: "(Ljava/lang/String;)V", methodCache: &FormView.imageSubmit_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "imageSubmit", methodSig: "(Ljava/lang/String;)V", methodCache: &FormView.imageSubmit_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func imageSubmit( _ _arg0: String? ) {
@@ -186,47 +215,18 @@ open class FormView: ComponentView, java_awt.ActionListener {
 
     /// public void javax.swing.text.html.FormView.actionPerformed(java.awt.event.ActionEvent)
 
-    private static var actionPerformed_MethodID_4: jmethodID?
+    private static var actionPerformed_MethodID_6: jmethodID?
 
     open func actionPerformed( e: java_awt.ActionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &FormView.actionPerformed_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &FormView.actionPerformed_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
         actionPerformed( e: _e )
     }
-
-    /// public float javax.swing.text.html.FormView.getMaximumSpan(int)
-
-    private static var getMaximumSpan_MethodID_5: jmethodID?
-
-    open func getMaximumSpan( arg0: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMaximumSpan", methodSig: "(I)F", methodCache: &FormView.getMaximumSpan_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    override open func getMaximumSpan( _ _arg0: Int ) -> Float {
-        return getMaximumSpan( arg0: _arg0 )
-    }
-
-    /// protected java.awt.Component javax.swing.text.html.FormView.createComponent()
-
-    private static var createComponent_MethodID_6: jmethodID?
-
-    override open func createComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "()Ljava/awt/Component;", methodCache: &FormView.createComponent_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
 
 }
 

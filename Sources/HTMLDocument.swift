@@ -267,60 +267,21 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// javax.swing.text.html.Map javax.swing.text.html.HTMLDocument.getMap(java.lang.String)
 
-    /// public void javax.swing.text.html.HTMLDocument.setParagraphAttributes(int,int,javax.swing.text.AttributeSet,boolean)
-
-    /// public void javax.swing.text.html.HTMLDocument.setBase(java.net.URL)
-
-    private static var setBase_MethodID_7: jmethodID?
-
-    open func setBase( u: /* java.net.URL */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: u != nil ? u! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBase", methodSig: "(Ljava/net/URL;)V", methodCache: &HTMLDocument.setBase_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setBase( _ _u: /* java.net.URL */ UnclassedObject? ) {
-        setBase( u: _u )
-    }
-
-    /// public java.net.URL javax.swing.text.html.HTMLDocument.getBase()
-
-    private static var getBase_MethodID_8: jmethodID?
-
-    open func getBase() -> /* java.net.URL */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBase", methodSig: "()Ljava/net/URL;", methodCache: &HTMLDocument.getBase_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.text.html.StyleSheet javax.swing.text.html.HTMLDocument.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_9: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &HTMLDocument.getStyleSheet_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
     /// static java.util.HashMap javax.swing.text.html.HTMLDocument.access$700(javax.swing.text.html.HTMLDocument)
+
+    /// static java.util.HashMap javax.swing.text.html.HTMLDocument.access$702(javax.swing.text.html.HTMLDocument,java.util.HashMap)
+
+    /// static java.lang.String javax.swing.text.html.HTMLDocument.access$1002(javax.swing.text.html.HTMLDocument,java.lang.String)
 
     /// public void javax.swing.text.html.HTMLDocument.setPreservesUnknownTags(boolean)
 
-    private static var setPreservesUnknownTags_MethodID_10: jmethodID?
+    private static var setPreservesUnknownTags_MethodID_7: jmethodID?
 
     open func setPreservesUnknownTags( preservesTags: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: preservesTags, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreservesUnknownTags", methodSig: "(Z)V", methodCache: &HTMLDocument.setPreservesUnknownTags_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreservesUnknownTags", methodSig: "(Z)V", methodCache: &HTMLDocument.setPreservesUnknownTags_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setPreservesUnknownTags( _ _preservesTags: Bool ) {
@@ -331,13 +292,13 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public javax.swing.text.html.HTMLEditorKit$ParserCallback javax.swing.text.html.HTMLDocument.getReader(int)
 
-    private static var getReader_MethodID_11: jmethodID?
+    private static var getReader_MethodID_8: jmethodID?
 
     open func getReader( pos: Int ) -> HTMLEditorKit_ParserCallback! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getReader", methodSig: "(I)Ljavax/swing/text/html/HTMLEditorKit$ParserCallback;", methodCache: &HTMLDocument.getReader_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getReader", methodSig: "(I)Ljavax/swing/text/html/HTMLEditorKit$ParserCallback;", methodCache: &HTMLDocument.getReader_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HTMLEditorKit_ParserCallback( javaObject: __return ) : nil
     }
@@ -348,7 +309,7 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public javax.swing.text.html.HTMLEditorKit$ParserCallback javax.swing.text.html.HTMLDocument.getReader(int,int,int,javax.swing.text.html.HTML$Tag)
 
-    private static var getReader_MethodID_12: jmethodID?
+    private static var getReader_MethodID_9: jmethodID?
 
     open func getReader( pos: Int, popDepth: Int, pushDepth: Int, insertTag: HTML_Tag? ) -> HTMLEditorKit_ParserCallback! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -357,7 +318,7 @@ open class HTMLDocument: DefaultStyledDocument {
         __args[1] = JNIType.toJava( value: popDepth, locals: &__locals )
         __args[2] = JNIType.toJava( value: pushDepth, locals: &__locals )
         __args[3] = JNIType.toJava( value: insertTag != nil ? insertTag! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getReader", methodSig: "(IIILjavax/swing/text/html/HTML$Tag;)Ljavax/swing/text/html/HTMLEditorKit$ParserCallback;", methodCache: &HTMLDocument.getReader_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getReader", methodSig: "(IIILjavax/swing/text/html/HTML$Tag;)Ljavax/swing/text/html/HTMLEditorKit$ParserCallback;", methodCache: &HTMLDocument.getReader_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HTMLEditorKit_ParserCallback( javaObject: __return ) : nil
     }
@@ -370,13 +331,13 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.setTokenThreshold(int)
 
-    private static var setTokenThreshold_MethodID_13: jmethodID?
+    private static var setTokenThreshold_MethodID_10: jmethodID?
 
     open func setTokenThreshold( n: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTokenThreshold", methodSig: "(I)V", methodCache: &HTMLDocument.setTokenThreshold_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTokenThreshold", methodSig: "(I)V", methodCache: &HTMLDocument.setTokenThreshold_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setTokenThreshold( _ _n: Int ) {
@@ -385,37 +346,37 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public int javax.swing.text.html.HTMLDocument.getTokenThreshold()
 
-    private static var getTokenThreshold_MethodID_14: jmethodID?
+    private static var getTokenThreshold_MethodID_11: jmethodID?
 
     open func getTokenThreshold() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTokenThreshold", methodSig: "()I", methodCache: &HTMLDocument.getTokenThreshold_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTokenThreshold", methodSig: "()I", methodCache: &HTMLDocument.getTokenThreshold_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean javax.swing.text.html.HTMLDocument.getPreservesUnknownTags()
 
-    private static var getPreservesUnknownTags_MethodID_15: jmethodID?
+    private static var getPreservesUnknownTags_MethodID_12: jmethodID?
 
     open func getPreservesUnknownTags() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPreservesUnknownTags", methodSig: "()Z", methodCache: &HTMLDocument.getPreservesUnknownTags_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPreservesUnknownTags", methodSig: "()Z", methodCache: &HTMLDocument.getPreservesUnknownTags_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.text.html.HTMLDocument.processHTMLFrameHyperlinkEvent(javax.swing.text.html.HTMLFrameHyperlinkEvent)
 
-    private static var processHTMLFrameHyperlinkEvent_MethodID_16: jmethodID?
+    private static var processHTMLFrameHyperlinkEvent_MethodID_13: jmethodID?
 
     open func processHTMLFrameHyperlinkEvent( e: HTMLFrameHyperlinkEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processHTMLFrameHyperlinkEvent", methodSig: "(Ljavax/swing/text/html/HTMLFrameHyperlinkEvent;)V", methodCache: &HTMLDocument.processHTMLFrameHyperlinkEvent_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processHTMLFrameHyperlinkEvent", methodSig: "(Ljavax/swing/text/html/HTMLFrameHyperlinkEvent;)V", methodCache: &HTMLDocument.processHTMLFrameHyperlinkEvent_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func processHTMLFrameHyperlinkEvent( _ _e: HTMLFrameHyperlinkEvent? ) {
@@ -446,13 +407,13 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.setParser(javax.swing.text.html.HTMLEditorKit$Parser)
 
-    private static var setParser_MethodID_17: jmethodID?
+    private static var setParser_MethodID_14: jmethodID?
 
     open func setParser( parser: HTMLEditorKit_Parser? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parser != nil ? parser! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParser", methodSig: "(Ljavax/swing/text/html/HTMLEditorKit$Parser;)V", methodCache: &HTMLDocument.setParser_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParser", methodSig: "(Ljavax/swing/text/html/HTMLEditorKit$Parser;)V", methodCache: &HTMLDocument.setParser_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setParser( _ _parser: HTMLEditorKit_Parser? ) {
@@ -461,12 +422,12 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public javax.swing.text.html.HTMLEditorKit$Parser javax.swing.text.html.HTMLDocument.getParser()
 
-    private static var getParser_MethodID_18: jmethodID?
+    private static var getParser_MethodID_15: jmethodID?
 
     open func getParser() -> HTMLEditorKit_Parser! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParser", methodSig: "()Ljavax/swing/text/html/HTMLEditorKit$Parser;", methodCache: &HTMLDocument.getParser_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParser", methodSig: "()Ljavax/swing/text/html/HTMLEditorKit$Parser;", methodCache: &HTMLDocument.getParser_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HTMLEditorKit_Parser( javaObject: __return ) : nil
     }
@@ -474,14 +435,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.setInnerHTML(javax.swing.text.Element,java.lang.String) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var setInnerHTML_MethodID_19: jmethodID?
+    private static var setInnerHTML_MethodID_16: jmethodID?
 
     open func setInnerHTML( elem: Element?, htmlText: String? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: htmlText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInnerHTML", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.setInnerHTML_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInnerHTML", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.setInnerHTML_MethodID_16, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -493,14 +454,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.setOuterHTML(javax.swing.text.Element,java.lang.String) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var setOuterHTML_MethodID_20: jmethodID?
+    private static var setOuterHTML_MethodID_17: jmethodID?
 
     open func setOuterHTML( elem: Element?, htmlText: String? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: htmlText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOuterHTML", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.setOuterHTML_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOuterHTML", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.setOuterHTML_MethodID_17, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -512,14 +473,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.insertAfterStart(javax.swing.text.Element,java.lang.String) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var insertAfterStart_MethodID_21: jmethodID?
+    private static var insertAfterStart_MethodID_18: jmethodID?
 
     open func insertAfterStart( elem: Element?, htmlText: String? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: htmlText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAfterStart", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertAfterStart_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAfterStart", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertAfterStart_MethodID_18, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -531,14 +492,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.insertBeforeEnd(javax.swing.text.Element,java.lang.String) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var insertBeforeEnd_MethodID_22: jmethodID?
+    private static var insertBeforeEnd_MethodID_19: jmethodID?
 
     open func insertBeforeEnd( elem: Element?, htmlText: String? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: htmlText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertBeforeEnd", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertBeforeEnd_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertBeforeEnd", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertBeforeEnd_MethodID_19, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -550,14 +511,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.insertBeforeStart(javax.swing.text.Element,java.lang.String) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var insertBeforeStart_MethodID_23: jmethodID?
+    private static var insertBeforeStart_MethodID_20: jmethodID?
 
     open func insertBeforeStart( elem: Element?, htmlText: String? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: htmlText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertBeforeStart", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertBeforeStart_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertBeforeStart", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertBeforeStart_MethodID_20, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -569,14 +530,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// public void javax.swing.text.html.HTMLDocument.insertAfterEnd(javax.swing.text.Element,java.lang.String) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var insertAfterEnd_MethodID_24: jmethodID?
+    private static var insertAfterEnd_MethodID_21: jmethodID?
 
     open func insertAfterEnd( elem: Element?, htmlText: String? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: htmlText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAfterEnd", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertAfterEnd_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAfterEnd", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLDocument.insertAfterEnd_MethodID_21, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -592,9 +553,9 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// private void javax.swing.text.html.HTMLDocument.insertHTML(javax.swing.text.Element,int,java.lang.String,boolean) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    /// private void javax.swing.text.html.HTMLDocument.removeElements(javax.swing.text.Element,int,int) throws javax.swing.text.BadLocationException
-
     /// private void javax.swing.text.html.HTMLDocument.removeElements(javax.swing.text.Element,int,int,int,int) throws javax.swing.text.BadLocationException
+
+    /// private void javax.swing.text.html.HTMLDocument.removeElements(javax.swing.text.Element,int,int) throws javax.swing.text.BadLocationException
 
     /// private void javax.swing.text.html.HTMLDocument.removeElementsAtEnd(javax.swing.text.Element,int,int,int,int) throws javax.swing.text.BadLocationException
 
@@ -604,14 +565,109 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// java.lang.String javax.swing.text.html.HTMLDocument.getBaseTarget()
 
+    /// public void javax.swing.text.html.HTMLDocument.setBase(java.net.URL)
+
+    private static var setBase_MethodID_22: jmethodID?
+
+    open func setBase( u: /* java.net.URL */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: u != nil ? u! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBase", methodSig: "(Ljava/net/URL;)V", methodCache: &HTMLDocument.setBase_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setBase( _ _u: /* java.net.URL */ UnclassedObject? ) {
+        setBase( u: _u )
+    }
+
+    /// public java.net.URL javax.swing.text.html.HTMLDocument.getBase()
+
+    private static var getBase_MethodID_23: jmethodID?
+
+    open func getBase() -> /* java.net.URL */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBase", methodSig: "()Ljava/net/URL;", methodCache: &HTMLDocument.getBase_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.html.StyleSheet javax.swing.text.html.HTMLDocument.getStyleSheet()
+
+    private static var getStyleSheet_MethodID_24: jmethodID?
+
+    open func getStyleSheet() -> StyleSheet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &HTMLDocument.getStyleSheet_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.text.html.HTMLDocument.insertUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
+
+    private static var insertUpdate_MethodID_25: jmethodID?
+
+    override open func insertUpdate( chng: AbstractDocument_DefaultDocumentEvent?, attr: AttributeSet? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLDocument.insertUpdate_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    override open func insertUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent?, _ _attr: AttributeSet? ) {
+        insertUpdate( chng: _chng, attr: _attr )
+    }
+
+    /// private javax.swing.text.Element javax.swing.text.html.HTMLDocument.getElement(javax.swing.text.Element,java.lang.Object,java.lang.Object,boolean)
+
+    /// public javax.swing.text.Element javax.swing.text.html.HTMLDocument.getElement(java.lang.String)
+
+    private static var getElement_MethodID_26: jmethodID?
+
+    open func getElement( id: String? ) -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: id, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.getElement_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+    open func getElement( _ _id: String? ) -> Element! {
+        return getElement( id: _id )
+    }
+
+    /// public javax.swing.text.Element javax.swing.text.html.HTMLDocument.getElement(javax.swing.text.Element,java.lang.Object,java.lang.Object)
+
+    private static var getElement_MethodID_27: jmethodID?
+
+    open func getElement( e: Element?, attribute: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        __args[1] = JNIType.toJava( value: attribute != nil ? attribute! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/Object;Ljava/lang/Object;)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.getElement_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+    open func getElement( _ _e: Element?, _ _attribute: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> Element! {
+        return getElement( e: _e, attribute: _attribute, value: _value )
+    }
+
     /// protected javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.html.HTMLDocument.createDefaultRoot()
 
-    private static var createDefaultRoot_MethodID_25: jmethodID?
+    private static var createDefaultRoot_MethodID_28: jmethodID?
 
     override open func createDefaultRoot() -> AbstractDocument_AbstractElement! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &HTMLDocument.createDefaultRoot_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &HTMLDocument.createDefaultRoot_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AbstractDocument_AbstractElement( javaObject: __return ) : nil
     }
@@ -619,14 +675,14 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// protected javax.swing.text.Element javax.swing.text.html.HTMLDocument.createBranchElement(javax.swing.text.Element,javax.swing.text.AttributeSet)
 
-    private static var createBranchElement_MethodID_26: jmethodID?
+    private static var createBranchElement_MethodID_29: jmethodID?
 
     override open func createBranchElement( parent: Element?, a: AttributeSet? ) -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBranchElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.createBranchElement_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBranchElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.createBranchElement_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -637,7 +693,7 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// protected javax.swing.text.Element javax.swing.text.html.HTMLDocument.createLeafElement(javax.swing.text.Element,javax.swing.text.AttributeSet,int,int)
 
-    private static var createLeafElement_MethodID_27: jmethodID?
+    private static var createLeafElement_MethodID_30: jmethodID?
 
     override open func createLeafElement( parent: Element?, a: AttributeSet?, p0: Int, p1: Int ) -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -646,7 +702,7 @@ open class HTMLDocument: DefaultStyledDocument {
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: p0, locals: &__locals )
         __args[3] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLeafElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;II)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.createLeafElement_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLeafElement", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;II)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.createLeafElement_MethodID_30, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -657,13 +713,13 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// protected void javax.swing.text.html.HTMLDocument.fireChangedUpdate(javax.swing.event.DocumentEvent)
 
-    private static var fireChangedUpdate_MethodID_28: jmethodID?
+    private static var fireChangedUpdate_MethodID_31: jmethodID?
 
     override open func fireChangedUpdate( e: DocumentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireChangedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &HTMLDocument.fireChangedUpdate_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireChangedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &HTMLDocument.fireChangedUpdate_MethodID_31, args: &__args, locals: &__locals )
     }
 
     override open func fireChangedUpdate( _ _e: DocumentEvent? ) {
@@ -672,76 +728,20 @@ open class HTMLDocument: DefaultStyledDocument {
 
     /// protected void javax.swing.text.html.HTMLDocument.fireUndoableEditUpdate(javax.swing.event.UndoableEditEvent)
 
-    private static var fireUndoableEditUpdate_MethodID_29: jmethodID?
+    private static var fireUndoableEditUpdate_MethodID_32: jmethodID?
 
     override open func fireUndoableEditUpdate( e: UndoableEditEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireUndoableEditUpdate", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &HTMLDocument.fireUndoableEditUpdate_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireUndoableEditUpdate", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &HTMLDocument.fireUndoableEditUpdate_MethodID_32, args: &__args, locals: &__locals )
     }
 
     override open func fireUndoableEditUpdate( _ _e: UndoableEditEvent? ) {
         fireUndoableEditUpdate( e: _e )
     }
 
-    /// static java.util.HashMap javax.swing.text.html.HTMLDocument.access$702(javax.swing.text.html.HTMLDocument,java.util.HashMap)
-
-    /// static java.lang.String javax.swing.text.html.HTMLDocument.access$1002(javax.swing.text.html.HTMLDocument,java.lang.String)
-
-    /// protected void javax.swing.text.html.HTMLDocument.insertUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
-
-    private static var insertUpdate_MethodID_30: jmethodID?
-
-    override open func insertUpdate( chng: AbstractDocument_DefaultDocumentEvent?, attr: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLDocument.insertUpdate_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    override open func insertUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent?, _ _attr: AttributeSet? ) {
-        insertUpdate( chng: _chng, attr: _attr )
-    }
-
-    /// private javax.swing.text.Element javax.swing.text.html.HTMLDocument.getElement(javax.swing.text.Element,java.lang.Object,java.lang.Object,boolean)
-
-    /// public javax.swing.text.Element javax.swing.text.html.HTMLDocument.getElement(javax.swing.text.Element,java.lang.Object,java.lang.Object)
-
-    private static var getElement_MethodID_31: jmethodID?
-
-    open func getElement( e: Element?, attribute: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        __args[1] = JNIType.toJava( value: attribute != nil ? attribute! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(Ljavax/swing/text/Element;Ljava/lang/Object;Ljava/lang/Object;)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.getElement_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-    open func getElement( _ _e: Element?, _ _attribute: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> Element! {
-        return getElement( e: _e, attribute: _attribute, value: _value )
-    }
-
-    /// public javax.swing.text.Element javax.swing.text.html.HTMLDocument.getElement(java.lang.String)
-
-    private static var getElement_MethodID_32: jmethodID?
-
-    open func getElement( id: String? ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: id, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Element;", methodCache: &HTMLDocument.getElement_MethodID_32, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-    open func getElement( _ _id: String? ) -> Element! {
-        return getElement( id: _id )
-    }
+    /// public void javax.swing.text.html.HTMLDocument.setParagraphAttributes(int,int,javax.swing.text.AttributeSet,boolean)
 
 }
 

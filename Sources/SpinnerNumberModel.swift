@@ -174,15 +174,34 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
     }
 
 
+    /// public void javax.swing.SpinnerNumberModel.setMaximum(java.lang.Comparable)
+
+    private static var setMaximum_MethodID_9: jmethodID?
+
+    open func setMaximum( maximum: java_lang.JavaComparable? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: maximum, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &SpinnerNumberModel.setMaximum_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximum( _ _maximum: java_lang.JavaComparable? ) {
+        setMaximum( maximum: _maximum )
+    }
+
+    /// public java.lang.Object javax.swing.SpinnerNumberModel.getNextValue()
+
+    /// public java.lang.Object javax.swing.SpinnerNumberModel.getPreviousValue()
+
     /// public void javax.swing.SpinnerNumberModel.setStepSize(java.lang.Number)
 
-    private static var setStepSize_MethodID_9: jmethodID?
+    private static var setStepSize_MethodID_10: jmethodID?
 
     open func setStepSize( stepSize: java_lang.Number? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: stepSize != nil ? stepSize! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStepSize", methodSig: "(Ljava/lang/Number;)V", methodCache: &SpinnerNumberModel.setStepSize_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStepSize", methodSig: "(Ljava/lang/Number;)V", methodCache: &SpinnerNumberModel.setStepSize_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setStepSize( _ _stepSize: java_lang.Number? ) {
@@ -191,37 +210,18 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
 
     /// public java.lang.Number javax.swing.SpinnerNumberModel.getStepSize()
 
-    private static var getStepSize_MethodID_10: jmethodID?
+    private static var getStepSize_MethodID_11: jmethodID?
 
     open func getStepSize() -> java_lang.Number! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStepSize", methodSig: "()Ljava/lang/Number;", methodCache: &SpinnerNumberModel.getStepSize_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStepSize", methodSig: "()Ljava/lang/Number;", methodCache: &SpinnerNumberModel.getStepSize_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.Number( javaObject: __return ) : nil
     }
 
 
     /// private java.lang.Number javax.swing.SpinnerNumberModel.incrValue(int)
-
-    /// public java.lang.Object javax.swing.SpinnerNumberModel.getNextValue()
-
-    /// public java.lang.Object javax.swing.SpinnerNumberModel.getPreviousValue()
-
-    /// public void javax.swing.SpinnerNumberModel.setMaximum(java.lang.Comparable)
-
-    private static var setMaximum_MethodID_11: jmethodID?
-
-    open func setMaximum( maximum: java_lang.JavaComparable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: maximum, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &SpinnerNumberModel.setMaximum_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximum( _ _maximum: java_lang.JavaComparable? ) {
-        setMaximum( maximum: _maximum )
-    }
 
 }
 

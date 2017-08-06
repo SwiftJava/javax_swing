@@ -104,9 +104,9 @@ open class BasicSliderUI_ActionScroller: AbstractAction {
         self.init( this_0: _this_0, slider: _slider, dir: _dir, block: _block )
     }
 
-    /// public void javax.swing.plaf.basic.BasicSliderUI$ActionScroller.actionPerformed(java.awt.event.ActionEvent)
-
     /// public boolean javax.swing.plaf.basic.BasicSliderUI$ActionScroller.isEnabled()
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$ActionScroller.actionPerformed(java.awt.event.ActionEvent)
 
 }
 

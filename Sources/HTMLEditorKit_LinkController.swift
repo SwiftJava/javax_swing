@@ -40,13 +40,11 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
         JNI.DeleteLocalRef( __object )
     }
 
-    /// private java.lang.String javax.swing.text.html.HTMLEditorKit$LinkController.getMapHREF(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,javax.swing.text.Element,javax.swing.text.AttributeSet,int,int,int)
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseClicked(java.awt.event.MouseEvent)
 
-    /// private boolean javax.swing.text.html.HTMLEditorKit$LinkController.doesElementContainLocation(javax.swing.JEditorPane,javax.swing.text.Element,int,int,int)
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseMoved(java.awt.event.MouseEvent)
 
-    /// javax.swing.event.HyperlinkEvent javax.swing.text.html.HTMLEditorKit$LinkController.createHyperlinkEvent(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.AttributeSet,javax.swing.text.Element,java.awt.event.MouseEvent)
-
-    /// void javax.swing.text.html.HTMLEditorKit$LinkController.fireEvents(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.Element,java.awt.event.MouseEvent)
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseDragged(java.awt.event.MouseEvent)
 
     /// protected void javax.swing.text.html.HTMLEditorKit$LinkController.activateLink(int,javax.swing.JEditorPane)
 
@@ -66,11 +64,13 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
 
     /// void javax.swing.text.html.HTMLEditorKit$LinkController.activateLink(int,javax.swing.JEditorPane,java.awt.event.MouseEvent)
 
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseClicked(java.awt.event.MouseEvent)
+    /// private java.lang.String javax.swing.text.html.HTMLEditorKit$LinkController.getMapHREF(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,javax.swing.text.Element,javax.swing.text.AttributeSet,int,int,int)
 
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseMoved(java.awt.event.MouseEvent)
+    /// private boolean javax.swing.text.html.HTMLEditorKit$LinkController.doesElementContainLocation(javax.swing.JEditorPane,javax.swing.text.Element,int,int,int)
 
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseDragged(java.awt.event.MouseEvent)
+    /// javax.swing.event.HyperlinkEvent javax.swing.text.html.HTMLEditorKit$LinkController.createHyperlinkEvent(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.AttributeSet,javax.swing.text.Element,java.awt.event.MouseEvent)
+
+    /// void javax.swing.text.html.HTMLEditorKit$LinkController.fireEvents(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.Element,java.awt.event.MouseEvent)
 
     /// In declared protocol but not defined.. ///
 

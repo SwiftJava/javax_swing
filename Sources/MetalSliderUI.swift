@@ -443,115 +443,9 @@ open class MetalSliderUI: BasicSliderUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.metal.MetalSliderUI.paintThumb(java.awt.Graphics)
+    /// public void javax.swing.plaf.metal.MetalSliderUI.paintTrack(java.awt.Graphics)
 
-    /// public int javax.swing.plaf.metal.MetalSliderUI.getTickLength()
-
-    private static var getTickLength_MethodID_3: jmethodID?
-
-    override open func getTickLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTickLength", methodSig: "()I", methodCache: &MetalSliderUI.getTickLength_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected java.awt.Dimension javax.swing.plaf.metal.MetalSliderUI.getThumbSize()
-
-    private static var getThumbSize_MethodID_4: jmethodID?
-
-    override open func getThumbSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &MetalSliderUI.getThumbSize_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMinorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMinorTickForHorizSlider_MethodID_5: jmethodID?
-
-    override open func paintMinorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMinorTickForHorizSlider_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func paintMinorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
-        paintMinorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMajorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMajorTickForHorizSlider_MethodID_6: jmethodID?
-
-    override open func paintMajorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMajorTickForHorizSlider_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func paintMajorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
-        paintMajorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMinorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMinorTickForVertSlider_MethodID_7: jmethodID?
-
-    override open func paintMinorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMinorTickForVertSlider_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func paintMinorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
-        paintMinorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMajorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
-
-    private static var paintMajorTickForVertSlider_MethodID_8: jmethodID?
-
-    override open func paintMajorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMajorTickForVertSlider_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    override open func paintMajorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
-        paintMajorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalSliderUI.scrollDueToClickInTrack(int)
-
-    private static var scrollDueToClickInTrack_MethodID_9: jmethodID?
-
-    override open func scrollDueToClickInTrack( dir: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dir, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollDueToClickInTrack", methodSig: "(I)V", methodCache: &MetalSliderUI.scrollDueToClickInTrack_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    override open func scrollDueToClickInTrack( _ _dir: Int ) {
-        scrollDueToClickInTrack( dir: _dir )
-    }
+    /// public void javax.swing.plaf.metal.MetalSliderUI.installUI(javax.swing.JComponent)
 
     /// private static javax.swing.Icon javax.swing.plaf.metal.MetalSliderUI.getHorizThumbIcon()
 
@@ -565,49 +459,51 @@ open class MetalSliderUI: BasicSliderUI {
 
     /// protected int javax.swing.plaf.metal.MetalSliderUI.getTrackWidth()
 
-    private static var getTrackWidth_MethodID_10: jmethodID?
+    private static var getTrackWidth_MethodID_3: jmethodID?
 
     open func getTrackWidth() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTrackWidth", methodSig: "()I", methodCache: &MetalSliderUI.getTrackWidth_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTrackWidth", methodSig: "()I", methodCache: &MetalSliderUI.getTrackWidth_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected int javax.swing.plaf.metal.MetalSliderUI.getTrackLength()
 
-    private static var getTrackLength_MethodID_11: jmethodID?
+    private static var getTrackLength_MethodID_4: jmethodID?
 
     open func getTrackLength() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTrackLength", methodSig: "()I", methodCache: &MetalSliderUI.getTrackLength_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTrackLength", methodSig: "()I", methodCache: &MetalSliderUI.getTrackLength_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected int javax.swing.plaf.metal.MetalSliderUI.getThumbOverhang()
 
-    private static var getThumbOverhang_MethodID_12: jmethodID?
+    private static var getThumbOverhang_MethodID_5: jmethodID?
 
     open func getThumbOverhang() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getThumbOverhang", methodSig: "()I", methodCache: &MetalSliderUI.getThumbOverhang_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getThumbOverhang", methodSig: "()I", methodCache: &MetalSliderUI.getThumbOverhang_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
+    /// public void javax.swing.plaf.metal.MetalSliderUI.paintFocus(java.awt.Graphics)
+
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalSliderUI.createPropertyChangeListener(javax.swing.JSlider)
 
-    private static var createPropertyChangeListener_MethodID_13: jmethodID?
+    private static var createPropertyChangeListener_MethodID_6: jmethodID?
 
     override open func createPropertyChangeListener( slider: JSlider? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/beans/PropertyChangeListener;", methodCache: &MetalSliderUI.createPropertyChangeListener_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "(Ljavax/swing/JSlider;)Ljava/beans/PropertyChangeListener;", methodCache: &MetalSliderUI.createPropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -616,11 +512,115 @@ open class MetalSliderUI: BasicSliderUI {
         return createPropertyChangeListener( slider: _slider )
     }
 
-    /// public void javax.swing.plaf.metal.MetalSliderUI.paintTrack(java.awt.Graphics)
+    /// public void javax.swing.plaf.metal.MetalSliderUI.paintThumb(java.awt.Graphics)
 
-    /// public void javax.swing.plaf.metal.MetalSliderUI.installUI(javax.swing.JComponent)
+    /// public int javax.swing.plaf.metal.MetalSliderUI.getTickLength()
 
-    /// public void javax.swing.plaf.metal.MetalSliderUI.paintFocus(java.awt.Graphics)
+    private static var getTickLength_MethodID_7: jmethodID?
+
+    override open func getTickLength() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTickLength", methodSig: "()I", methodCache: &MetalSliderUI.getTickLength_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected java.awt.Dimension javax.swing.plaf.metal.MetalSliderUI.getThumbSize()
+
+    private static var getThumbSize_MethodID_8: jmethodID?
+
+    override open func getThumbSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &MetalSliderUI.getThumbSize_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMinorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMinorTickForHorizSlider_MethodID_9: jmethodID?
+
+    override open func paintMinorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMinorTickForHorizSlider_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func paintMinorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
+        paintMinorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMajorTickForHorizSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMajorTickForHorizSlider_MethodID_10: jmethodID?
+
+    override open func paintMajorTickForHorizSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, x: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForHorizSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMajorTickForHorizSlider_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func paintMajorTickForHorizSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _x: Int ) {
+        paintMajorTickForHorizSlider( g: _g, tickBounds: _tickBounds, x: _x )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMinorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMinorTickForVertSlider_MethodID_11: jmethodID?
+
+    override open func paintMinorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMinorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMinorTickForVertSlider_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func paintMinorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
+        paintMinorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalSliderUI.paintMajorTickForVertSlider(java.awt.Graphics,java.awt.Rectangle,int)
+
+    private static var paintMajorTickForVertSlider_MethodID_12: jmethodID?
+
+    override open func paintMajorTickForVertSlider( g: java_awt.Graphics?, tickBounds: java_awt.Rectangle?, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tickBounds != nil ? tickBounds! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMajorTickForVertSlider", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &MetalSliderUI.paintMajorTickForVertSlider_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    override open func paintMajorTickForVertSlider( _ _g: java_awt.Graphics?, _ _tickBounds: java_awt.Rectangle?, _ _y: Int ) {
+        paintMajorTickForVertSlider( g: _g, tickBounds: _tickBounds, y: _y )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalSliderUI.scrollDueToClickInTrack(int)
+
+    private static var scrollDueToClickInTrack_MethodID_13: jmethodID?
+
+    override open func scrollDueToClickInTrack( dir: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dir, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollDueToClickInTrack", methodSig: "(I)V", methodCache: &MetalSliderUI.scrollDueToClickInTrack_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func scrollDueToClickInTrack( _ _dir: Int ) {
+        scrollDueToClickInTrack( dir: _dir )
+    }
 
 }
 

@@ -81,219 +81,15 @@ open class MultiSplitPaneUI: SplitPaneUI {
         return contains( a: _a, b: _b, c: _c )
     }
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiSplitPaneUI.createUI(javax.swing.JComponent)
-
-    private static var createUI_MethodID_4: jmethodID?
-
-    open class func createUI( a: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiSplitPaneUI", classCache: &MultiSplitPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    override open class func createUI( _ _a: JComponent? ) -> ComponentUI! {
-        return createUI( a: _a )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getDividerLocation(javax.swing.JSplitPane)
-
-    private static var getDividerLocation_MethodID_5: jmethodID?
-
-    open func getDividerLocation( a: JSplitPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &MultiSplitPaneUI.getDividerLocation_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getDividerLocation( _ _a: JSplitPane? ) -> Int {
-        return getDividerLocation( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.setDividerLocation(javax.swing.JSplitPane,int)
-
-    private static var setDividerLocation_MethodID_6: jmethodID?
-
-    open func setDividerLocation( a: JSplitPane?, b: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;I)V", methodCache: &MultiSplitPaneUI.setDividerLocation_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func setDividerLocation( _ _a: JSplitPane?, _ _b: Int ) {
-        setDividerLocation( a: _a, b: _b )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getMinimumDividerLocation(javax.swing.JSplitPane)
-
-    private static var getMinimumDividerLocation_MethodID_7: jmethodID?
-
-    open func getMinimumDividerLocation( a: JSplitPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &MultiSplitPaneUI.getMinimumDividerLocation_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getMinimumDividerLocation( _ _a: JSplitPane? ) -> Int {
-        return getMinimumDividerLocation( a: _a )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getMaximumDividerLocation(javax.swing.JSplitPane)
-
-    private static var getMaximumDividerLocation_MethodID_8: jmethodID?
-
-    open func getMaximumDividerLocation( a: JSplitPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &MultiSplitPaneUI.getMaximumDividerLocation_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getMaximumDividerLocation( _ _a: JSplitPane? ) -> Int {
-        return getMaximumDividerLocation( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_9: jmethodID?
-
-    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiSplitPaneUI.paint_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
-        paint( a: _a, b: _b )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getAccessibleChildrenCount(javax.swing.JComponent)
-
-    private static var getAccessibleChildrenCount_MethodID_10: jmethodID?
-
-    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiSplitPaneUI.getAccessibleChildrenCount_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
-        return getAccessibleChildrenCount( a: _a )
-    }
-
-    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiSplitPaneUI.getAccessibleChild(javax.swing.JComponent,int)
-
-    private static var getAccessibleChild_MethodID_11: jmethodID?
-
-    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiSplitPaneUI.getAccessibleChild_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        return getAccessibleChild( a: _a, b: _b )
-    }
-
-    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiSplitPaneUI.getUIs()
-
-    private static var getUIs_MethodID_12: jmethodID?
-
-    open func getUIs() -> [ComponentUI]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiSplitPaneUI.getUIs_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ComponentUI](), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.resetToPreferredSizes(javax.swing.JSplitPane)
-
-    private static var resetToPreferredSizes_MethodID_13: jmethodID?
-
-    open func resetToPreferredSizes( a: JSplitPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "(Ljavax/swing/JSplitPane;)V", methodCache: &MultiSplitPaneUI.resetToPreferredSizes_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    override open func resetToPreferredSizes( _ _a: JSplitPane? ) {
-        resetToPreferredSizes( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.finishedPaintingChildren(javax.swing.JSplitPane,java.awt.Graphics)
-
-    private static var finishedPaintingChildren_MethodID_14: jmethodID?
-
-    open func finishedPaintingChildren( a: JSplitPane?, b: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &MultiSplitPaneUI.finishedPaintingChildren_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    override open func finishedPaintingChildren( _ _a: JSplitPane?, _ _b: java_awt.Graphics? ) {
-        finishedPaintingChildren( a: _a, b: _b )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.installUI(javax.swing.JComponent)
-
-    private static var installUI_MethodID_15: jmethodID?
-
-    open func installUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiSplitPaneUI.installUI_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    override open func installUI( _ _a: JComponent? ) {
-        installUI( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.uninstallUI(javax.swing.JComponent)
-
-    private static var uninstallUI_MethodID_16: jmethodID?
-
-    open func uninstallUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiSplitPaneUI.uninstallUI_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    override open func uninstallUI( _ _a: JComponent? ) {
-        uninstallUI( a: _a )
-    }
-
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiSplitPaneUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var getPreferredSize_MethodID_17: jmethodID?
+    private static var getPreferredSize_MethodID_4: jmethodID?
 
     open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiSplitPaneUI.getPreferredSize_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiSplitPaneUI.getPreferredSize_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -304,13 +100,13 @@ open class MultiSplitPaneUI: SplitPaneUI {
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiSplitPaneUI.getMinimumSize(javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_18: jmethodID?
+    private static var getMinimumSize_MethodID_5: jmethodID?
 
     open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiSplitPaneUI.getMinimumSize_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiSplitPaneUI.getMinimumSize_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -321,19 +117,223 @@ open class MultiSplitPaneUI: SplitPaneUI {
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiSplitPaneUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var getMaximumSize_MethodID_19: jmethodID?
+    private static var getMaximumSize_MethodID_6: jmethodID?
 
     open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiSplitPaneUI.getMaximumSize_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiSplitPaneUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
     override open func getMaximumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
         return getMaximumSize( a: _a )
+    }
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiSplitPaneUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_7: jmethodID?
+
+    open class func createUI( a: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiSplitPaneUI", classCache: &MultiSplitPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _a: JComponent? ) -> ComponentUI! {
+        return createUI( a: _a )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getAccessibleChildrenCount(javax.swing.JComponent)
+
+    private static var getAccessibleChildrenCount_MethodID_8: jmethodID?
+
+    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiSplitPaneUI.getAccessibleChildrenCount_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
+        return getAccessibleChildrenCount( a: _a )
+    }
+
+    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiSplitPaneUI.getAccessibleChild(javax.swing.JComponent,int)
+
+    private static var getAccessibleChild_MethodID_9: jmethodID?
+
+    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiSplitPaneUI.getAccessibleChild_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        return getAccessibleChild( a: _a, b: _b )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.resetToPreferredSizes(javax.swing.JSplitPane)
+
+    private static var resetToPreferredSizes_MethodID_10: jmethodID?
+
+    open func resetToPreferredSizes( a: JSplitPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "(Ljavax/swing/JSplitPane;)V", methodCache: &MultiSplitPaneUI.resetToPreferredSizes_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func resetToPreferredSizes( _ _a: JSplitPane? ) {
+        resetToPreferredSizes( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.finishedPaintingChildren(javax.swing.JSplitPane,java.awt.Graphics)
+
+    private static var finishedPaintingChildren_MethodID_11: jmethodID?
+
+    open func finishedPaintingChildren( a: JSplitPane?, b: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &MultiSplitPaneUI.finishedPaintingChildren_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func finishedPaintingChildren( _ _a: JSplitPane?, _ _b: java_awt.Graphics? ) {
+        finishedPaintingChildren( a: _a, b: _b )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_12: jmethodID?
+
+    open func installUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiSplitPaneUI.installUI_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    override open func installUI( _ _a: JComponent? ) {
+        installUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.uninstallUI(javax.swing.JComponent)
+
+    private static var uninstallUI_MethodID_13: jmethodID?
+
+    open func uninstallUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiSplitPaneUI.uninstallUI_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallUI( _ _a: JComponent? ) {
+        uninstallUI( a: _a )
+    }
+
+    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiSplitPaneUI.getUIs()
+
+    private static var getUIs_MethodID_14: jmethodID?
+
+    open func getUIs() -> [ComponentUI]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiSplitPaneUI.getUIs_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ComponentUI](), from: __return )
+    }
+
+
+    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paint_MethodID_15: jmethodID?
+
+    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiSplitPaneUI.paint_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
+        paint( a: _a, b: _b )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getDividerLocation(javax.swing.JSplitPane)
+
+    private static var getDividerLocation_MethodID_16: jmethodID?
+
+    open func getDividerLocation( a: JSplitPane? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &MultiSplitPaneUI.getDividerLocation_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getDividerLocation( _ _a: JSplitPane? ) -> Int {
+        return getDividerLocation( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiSplitPaneUI.setDividerLocation(javax.swing.JSplitPane,int)
+
+    private static var setDividerLocation_MethodID_17: jmethodID?
+
+    open func setDividerLocation( a: JSplitPane?, b: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;I)V", methodCache: &MultiSplitPaneUI.setDividerLocation_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    override open func setDividerLocation( _ _a: JSplitPane?, _ _b: Int ) {
+        setDividerLocation( a: _a, b: _b )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getMinimumDividerLocation(javax.swing.JSplitPane)
+
+    private static var getMinimumDividerLocation_MethodID_18: jmethodID?
+
+    open func getMinimumDividerLocation( a: JSplitPane? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &MultiSplitPaneUI.getMinimumDividerLocation_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getMinimumDividerLocation( _ _a: JSplitPane? ) -> Int {
+        return getMinimumDividerLocation( a: _a )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiSplitPaneUI.getMaximumDividerLocation(javax.swing.JSplitPane)
+
+    private static var getMaximumDividerLocation_MethodID_19: jmethodID?
+
+    open func getMaximumDividerLocation( a: JSplitPane? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &MultiSplitPaneUI.getMaximumDividerLocation_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getMaximumDividerLocation( _ _a: JSplitPane? ) -> Int {
+        return getMaximumDividerLocation( a: _a )
     }
 
 }

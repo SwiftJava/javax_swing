@@ -39,6 +39,8 @@ open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializabl
 
     /// javax.swing.text.html.StyleSheet$ListPainter(javax.swing.text.AttributeSet,javax.swing.text.html.StyleSheet)
 
+    /// private void javax.swing.text.html.StyleSheet$ListPainter.getStart(javax.swing.text.View)
+
     /// public void javax.swing.text.html.StyleSheet$ListPainter.paint(java.awt.Graphics,float,float,float,float,javax.swing.text.View,int)
 
     private static var paint_MethodID_1: jmethodID?
@@ -74,13 +76,11 @@ open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializabl
 
     /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatAlphaNumerals(int)
 
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int,int)
-
     /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int)
 
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanDigit(int,int)
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int,int)
 
-    /// private void javax.swing.text.html.StyleSheet$ListPainter.getStart(javax.swing.text.View)
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanDigit(int,int)
 
 }
 

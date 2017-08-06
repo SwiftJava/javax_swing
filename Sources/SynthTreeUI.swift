@@ -44,7 +44,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var collapsedIcon_FieldID: jfieldID?
 
-    open var collapsedIcon: Icon! {
+    override open var collapsedIcon: Icon! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "collapsedIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthTreeUI.collapsedIcon_FieldID, object: javaObject, locals: &__locals )
@@ -61,7 +61,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var expandedIcon_FieldID: jfieldID?
 
-    open var expandedIcon: Icon! {
+    override open var expandedIcon: Icon! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "expandedIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthTreeUI.expandedIcon_FieldID, object: javaObject, locals: &__locals )
@@ -80,7 +80,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var leftChildIndent_FieldID: jfieldID?
 
-    open var leftChildIndent: Int {
+    override open var leftChildIndent: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "leftChildIndent", fieldType: "I", fieldCache: &SynthTreeUI.leftChildIndent_FieldID, object: javaObject, locals: &__locals )
@@ -97,7 +97,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var rightChildIndent_FieldID: jfieldID?
 
-    open var rightChildIndent: Int {
+    override open var rightChildIndent: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "rightChildIndent", fieldType: "I", fieldCache: &SynthTreeUI.rightChildIndent_FieldID, object: javaObject, locals: &__locals )
@@ -114,7 +114,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var totalChildIndent_FieldID: jfieldID?
 
-    open var totalChildIndent: Int {
+    override open var totalChildIndent: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "totalChildIndent", fieldType: "I", fieldCache: &SynthTreeUI.totalChildIndent_FieldID, object: javaObject, locals: &__locals )
@@ -131,7 +131,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var preferredMinSize_FieldID: jfieldID?
 
-    open var preferredMinSize: java_awt.Dimension! {
+    override open var preferredMinSize: java_awt.Dimension! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "preferredMinSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthTreeUI.preferredMinSize_FieldID, object: javaObject, locals: &__locals )
@@ -148,7 +148,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var lastSelectedRow_FieldID: jfieldID?
 
-    open var lastSelectedRow: Int {
+    override open var lastSelectedRow: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "lastSelectedRow", fieldType: "I", fieldCache: &SynthTreeUI.lastSelectedRow_FieldID, object: javaObject, locals: &__locals )
@@ -165,7 +165,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var tree_FieldID: jfieldID?
 
-    open var tree: JTree! {
+    override open var tree: JTree! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "tree", fieldType: "Ljavax/swing/JTree;", fieldCache: &SynthTreeUI.tree_FieldID, object: javaObject, locals: &__locals )
@@ -182,7 +182,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var currentCellRenderer_FieldID: jfieldID?
 
-    open var currentCellRenderer: TreeCellRenderer! {
+    override open var currentCellRenderer: TreeCellRenderer! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "currentCellRenderer", fieldType: "Ljavax/swing/tree/TreeCellRenderer;", fieldCache: &SynthTreeUI.currentCellRenderer_FieldID, object: javaObject, locals: &__locals )
@@ -199,7 +199,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var createdRenderer_FieldID: jfieldID?
 
-    open var createdRenderer: Bool {
+    override open var createdRenderer: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "createdRenderer", fieldType: "Z", fieldCache: &SynthTreeUI.createdRenderer_FieldID, object: javaObject, locals: &__locals )
@@ -216,7 +216,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var cellEditor_FieldID: jfieldID?
 
-    open var cellEditor: TreeCellEditor! {
+    override open var cellEditor: TreeCellEditor! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "cellEditor", fieldType: "Ljavax/swing/tree/TreeCellEditor;", fieldCache: &SynthTreeUI.cellEditor_FieldID, object: javaObject, locals: &__locals )
@@ -233,7 +233,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var createdCellEditor_FieldID: jfieldID?
 
-    open var createdCellEditor: Bool {
+    override open var createdCellEditor: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "createdCellEditor", fieldType: "Z", fieldCache: &SynthTreeUI.createdCellEditor_FieldID, object: javaObject, locals: &__locals )
@@ -250,7 +250,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var stopEditingInCompleteEditing_FieldID: jfieldID?
 
-    open var stopEditingInCompleteEditing: Bool {
+    override open var stopEditingInCompleteEditing: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "stopEditingInCompleteEditing", fieldType: "Z", fieldCache: &SynthTreeUI.stopEditingInCompleteEditing_FieldID, object: javaObject, locals: &__locals )
@@ -267,7 +267,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var rendererPane_FieldID: jfieldID?
 
-    open var rendererPane: CellRendererPane! {
+    override open var rendererPane: CellRendererPane! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "rendererPane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &SynthTreeUI.rendererPane_FieldID, object: javaObject, locals: &__locals )
@@ -284,7 +284,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var preferredSize_FieldID: jfieldID?
 
-    open var preferredSize: java_awt.Dimension! {
+    override open var preferredSize: java_awt.Dimension! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "preferredSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthTreeUI.preferredSize_FieldID, object: javaObject, locals: &__locals )
@@ -301,7 +301,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var validCachedPreferredSize_FieldID: jfieldID?
 
-    open var validCachedPreferredSize: Bool {
+    override open var validCachedPreferredSize: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "validCachedPreferredSize", fieldType: "Z", fieldCache: &SynthTreeUI.validCachedPreferredSize_FieldID, object: javaObject, locals: &__locals )
@@ -318,7 +318,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var treeState_FieldID: jfieldID?
 
-    open var treeState: AbstractLayoutCache! {
+    override open var treeState: AbstractLayoutCache! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "treeState", fieldType: "Ljavax/swing/tree/AbstractLayoutCache;", fieldCache: &SynthTreeUI.treeState_FieldID, object: javaObject, locals: &__locals )
@@ -335,7 +335,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var drawingCache_FieldID: jfieldID?
 
-    open var drawingCache: java_util.Hashtable! {
+    override open var drawingCache: java_util.Hashtable! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "drawingCache", fieldType: "Ljava/util/Hashtable;", fieldCache: &SynthTreeUI.drawingCache_FieldID, object: javaObject, locals: &__locals )
@@ -352,7 +352,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var largeModel_FieldID: jfieldID?
 
-    open var largeModel: Bool {
+    override open var largeModel: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "largeModel", fieldType: "Z", fieldCache: &SynthTreeUI.largeModel_FieldID, object: javaObject, locals: &__locals )
@@ -369,7 +369,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var nodeDimensions_FieldID: jfieldID?
 
-    open var nodeDimensions: AbstractLayoutCache_NodeDimensions! {
+    override open var nodeDimensions: AbstractLayoutCache_NodeDimensions! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "nodeDimensions", fieldType: "Ljavax/swing/tree/AbstractLayoutCache$NodeDimensions;", fieldCache: &SynthTreeUI.nodeDimensions_FieldID, object: javaObject, locals: &__locals )
@@ -386,7 +386,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var treeModel_FieldID: jfieldID?
 
-    open var treeModel: TreeModel! {
+    override open var treeModel: TreeModel! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "treeModel", fieldType: "Ljavax/swing/tree/TreeModel;", fieldCache: &SynthTreeUI.treeModel_FieldID, object: javaObject, locals: &__locals )
@@ -403,7 +403,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var treeSelectionModel_FieldID: jfieldID?
 
-    open var treeSelectionModel: TreeSelectionModel! {
+    override open var treeSelectionModel: TreeSelectionModel! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "treeSelectionModel", fieldType: "Ljavax/swing/tree/TreeSelectionModel;", fieldCache: &SynthTreeUI.treeSelectionModel_FieldID, object: javaObject, locals: &__locals )
@@ -420,7 +420,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var depthOffset_FieldID: jfieldID?
 
-    open var depthOffset: Int {
+    override open var depthOffset: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "depthOffset", fieldType: "I", fieldCache: &SynthTreeUI.depthOffset_FieldID, object: javaObject, locals: &__locals )
@@ -437,7 +437,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var editingComponent_FieldID: jfieldID?
 
-    open var editingComponent: java_awt.Component! {
+    override open var editingComponent: java_awt.Component! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "editingComponent", fieldType: "Ljava/awt/Component;", fieldCache: &SynthTreeUI.editingComponent_FieldID, object: javaObject, locals: &__locals )
@@ -454,7 +454,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var editingPath_FieldID: jfieldID?
 
-    open var editingPath: TreePath! {
+    override open var editingPath: TreePath! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "editingPath", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &SynthTreeUI.editingPath_FieldID, object: javaObject, locals: &__locals )
@@ -471,7 +471,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var editingRow_FieldID: jfieldID?
 
-    open var editingRow: Int {
+    override open var editingRow: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "editingRow", fieldType: "I", fieldCache: &SynthTreeUI.editingRow_FieldID, object: javaObject, locals: &__locals )
@@ -488,7 +488,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var editorHasDifferentSize_FieldID: jfieldID?
 
-    open var editorHasDifferentSize: Bool {
+    override open var editorHasDifferentSize: Bool {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetBooleanField( fieldName: "editorHasDifferentSize", fieldType: "Z", fieldCache: &SynthTreeUI.editorHasDifferentSize_FieldID, object: javaObject, locals: &__locals )
@@ -636,8 +636,6 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     /// static javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTreeUI.access$300(javax.swing.plaf.synth.SynthTreeUI,javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTreeUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
-
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTreeUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTreeUI.getContext(javax.swing.JComponent,int)
@@ -659,17 +657,23 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         return getContext( c: _c )
     }
 
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTreeUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
+
     /// static javax.swing.JTree javax.swing.plaf.synth.SynthTreeUI.access$400(javax.swing.plaf.synth.SynthTreeUI)
 
     /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$500(javax.swing.plaf.synth.SynthTreeUI)
 
     /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$600(javax.swing.plaf.synth.SynthTreeUI)
 
+    /// static javax.swing.JTree javax.swing.plaf.synth.SynthTreeUI.access$700(javax.swing.plaf.synth.SynthTreeUI)
+
+    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$800(javax.swing.plaf.synth.SynthTreeUI)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthTreeUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( x: JComponent? ) -> ComponentUI! {
+    override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
@@ -678,9 +682,11 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
         return createUI( x: _x )
     }
+
+    /// private void javax.swing.plaf.synth.SynthTreeUI.updateStyle(javax.swing.JTree)
 
     /// public javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.getExpandedIcon()
 
@@ -688,7 +694,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var createDefaultCellEditor_MethodID_4: jmethodID?
 
-    open func createDefaultCellEditor() -> TreeCellEditor! {
+    override open func createDefaultCellEditor() -> TreeCellEditor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &SynthTreeUI.createDefaultCellEditor_MethodID_4, args: &__args, locals: &__locals )
@@ -701,7 +707,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var createDefaultCellRenderer_MethodID_5: jmethodID?
 
-    open func createDefaultCellRenderer() -> TreeCellRenderer! {
+    override open func createDefaultCellRenderer() -> TreeCellRenderer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &SynthTreeUI.createDefaultCellRenderer_MethodID_5, args: &__args, locals: &__locals )
@@ -714,7 +720,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var paintHorizontalPartOfLeg_MethodID_6: jmethodID?
 
-    open func paintHorizontalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
+    override open func paintHorizontalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 9 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
@@ -729,7 +735,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &SynthTreeUI.paintHorizontalPartOfLeg_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func paintHorizontalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
+    override open func paintHorizontalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
         paintHorizontalPartOfLeg( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
     }
 
@@ -737,7 +743,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var paintVerticalPartOfLeg_MethodID_7: jmethodID?
 
-    open func paintVerticalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, path: TreePath? ) {
+    override open func paintVerticalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, path: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
@@ -747,7 +753,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljavax/swing/tree/TreePath;)V", methodCache: &SynthTreeUI.paintVerticalPartOfLeg_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func paintVerticalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _path: TreePath? ) {
+    override open func paintVerticalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _path: TreePath? ) {
         paintVerticalPartOfLeg( g: _g, clipBounds: _clipBounds, insets: _insets, path: _path )
     }
 
@@ -755,7 +761,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var paintExpandControl_MethodID_8: jmethodID?
 
-    open func paintExpandControl( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
+    override open func paintExpandControl( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 9 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
@@ -770,7 +776,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintExpandControl", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &SynthTreeUI.paintExpandControl_MethodID_8, args: &__args, locals: &__locals )
     }
 
-    open func paintExpandControl( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
+    override open func paintExpandControl( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
         paintExpandControl( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
     }
 
@@ -780,7 +786,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var paintVerticalLine_MethodID_9: jmethodID?
 
-    open func paintVerticalLine( g: java_awt.Graphics?, c: JComponent?, x: Int, top: Int, bottom: Int ) {
+    override open func paintVerticalLine( g: java_awt.Graphics?, c: JComponent?, x: Int, top: Int, bottom: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
@@ -791,7 +797,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalLine", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;III)V", methodCache: &SynthTreeUI.paintVerticalLine_MethodID_9, args: &__args, locals: &__locals )
     }
 
-    open func paintVerticalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _x: Int, _ _top: Int, _ _bottom: Int ) {
+    override open func paintVerticalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _x: Int, _ _top: Int, _ _bottom: Int ) {
         paintVerticalLine( g: _g, c: _c, x: _x, top: _top, bottom: _bottom )
     }
 
@@ -799,7 +805,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var paintHorizontalLine_MethodID_10: jmethodID?
 
-    open func paintHorizontalLine( g: java_awt.Graphics?, c: JComponent?, y: Int, left: Int, right: Int ) {
+    override open func paintHorizontalLine( g: java_awt.Graphics?, c: JComponent?, y: Int, left: Int, right: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
@@ -810,7 +816,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalLine", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;III)V", methodCache: &SynthTreeUI.paintHorizontalLine_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func paintHorizontalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _y: Int, _ _left: Int, _ _right: Int ) {
+    override open func paintHorizontalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _y: Int, _ _left: Int, _ _right: Int ) {
         paintHorizontalLine( g: _g, c: _c, y: _y, left: _left, right: _right )
     }
 
@@ -820,7 +826,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var drawCentered_MethodID_11: jmethodID?
 
-    open func drawCentered( c: java_awt.Component?, graphics: java_awt.Graphics?, icon: Icon?, x: Int, y: Int ) {
+    override open func drawCentered( c: java_awt.Component?, graphics: java_awt.Graphics?, icon: Icon?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -831,7 +837,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawCentered", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;Ljavax/swing/Icon;II)V", methodCache: &SynthTreeUI.drawCentered_MethodID_11, args: &__args, locals: &__locals )
     }
 
-    open func drawCentered( _ _c: java_awt.Component?, _ _graphics: java_awt.Graphics?, _ _icon: Icon?, _ _x: Int, _ _y: Int ) {
+    override open func drawCentered( _ _c: java_awt.Component?, _ _graphics: java_awt.Graphics?, _ _icon: Icon?, _ _x: Int, _ _y: Int ) {
         drawCentered( c: _c, graphics: _graphics, icon: _icon, x: _x, y: _y )
     }
 
@@ -839,7 +845,7 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var getRowX_MethodID_12: jmethodID?
 
-    open func getRowX( row: Int, depth: Int ) -> Int {
+    override open func getRowX( row: Int, depth: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
@@ -848,125 +854,30 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    open func getRowX( _ _row: Int, _ _depth: Int ) -> Int {
+    override open func getRowX( _ _row: Int, _ _depth: Int ) -> Int {
         return getRowX( row: _row, depth: _depth )
     }
 
-    /// private int javax.swing.plaf.synth.SynthTreeUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
-
-    /// private void javax.swing.plaf.synth.SynthTreeUI.configureRenderer(javax.swing.plaf.synth.SynthContext)
-
-    /// private void javax.swing.plaf.synth.SynthTreeUI.updateStyle(javax.swing.JTree)
-
-    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$1100(javax.swing.plaf.synth.SynthTreeUI)
-
-    /// protected void javax.swing.plaf.synth.SynthTreeUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_13: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthTreeUI.paint_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
     /// public void javax.swing.plaf.synth.SynthTreeUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_14: jmethodID?
+    private static var propertyChange_MethodID_13: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthTreeUI.propertyChange_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthTreeUI.propertyChange_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// static javax.swing.JTree javax.swing.plaf.synth.SynthTreeUI.access$700(javax.swing.plaf.synth.SynthTreeUI)
-
-    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$800(javax.swing.plaf.synth.SynthTreeUI)
-
-    /// protected void javax.swing.plaf.synth.SynthTreeUI.installDefaults()
-
-    private static var installDefaults_MethodID_15: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthTreeUI.installDefaults_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthTreeUI.installListeners()
-
-    private static var installListeners_MethodID_16: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthTreeUI.installListeners_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthTreeUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_17: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthTreeUI.uninstallDefaults_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthTreeUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_18: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthTreeUI.uninstallListeners_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-
-    /// private void javax.swing.plaf.synth.SynthTreeUI.repaintDropLocation(javax.swing.JTree$DropLocation)
-
-    /// protected void javax.swing.plaf.synth.SynthTreeUI.paintDropLine(java.awt.Graphics)
-
-    private static var paintDropLine_MethodID_19: jmethodID?
-
-    open func paintDropLine( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDropLine", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthTreeUI.paintDropLine_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func paintDropLine( _ _g: java_awt.Graphics? ) {
-        paintDropLine( g: _g )
-    }
-
-    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$900(javax.swing.plaf.synth.SynthTreeUI)
-
-    /// static javax.swing.JTree javax.swing.plaf.synth.SynthTreeUI.access$1000(javax.swing.plaf.synth.SynthTreeUI)
-
-    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$1200(javax.swing.plaf.synth.SynthTreeUI)
+    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$1100(javax.swing.plaf.synth.SynthTreeUI)
 
     /// public void javax.swing.plaf.synth.SynthTreeUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_20: jmethodID?
+    private static var paintBorder_MethodID_14: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -977,12 +888,101 @@ open class SynthTreeUI: BasicTreeUI, /* java.beans.PropertyChangeListener */ Unc
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthTreeUI.paintBorder_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthTreeUI.paintBorder_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
+
+    /// private void javax.swing.plaf.synth.SynthTreeUI.repaintDropLocation(javax.swing.JTree$DropLocation)
+
+    /// private int javax.swing.plaf.synth.SynthTreeUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
+
+    /// private void javax.swing.plaf.synth.SynthTreeUI.configureRenderer(javax.swing.plaf.synth.SynthContext)
+
+    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$900(javax.swing.plaf.synth.SynthTreeUI)
+
+    /// static javax.swing.JTree javax.swing.plaf.synth.SynthTreeUI.access$1000(javax.swing.plaf.synth.SynthTreeUI)
+
+    /// static javax.swing.Icon javax.swing.plaf.synth.SynthTreeUI.access$1200(javax.swing.plaf.synth.SynthTreeUI)
+
+    /// protected void javax.swing.plaf.synth.SynthTreeUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_15: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthTreeUI.paint_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthTreeUI.paintDropLine(java.awt.Graphics)
+
+    private static var paintDropLine_MethodID_16: jmethodID?
+
+    override open func paintDropLine( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDropLine", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthTreeUI.paintDropLine_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    override open func paintDropLine( _ _g: java_awt.Graphics? ) {
+        paintDropLine( g: _g )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthTreeUI.installDefaults()
+
+    private static var installDefaults_MethodID_17: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthTreeUI.installDefaults_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthTreeUI.installListeners()
+
+    private static var installListeners_MethodID_18: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthTreeUI.installListeners_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthTreeUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_19: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthTreeUI.uninstallDefaults_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthTreeUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_20: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthTreeUI.uninstallListeners_MethodID_20, args: &__args, locals: &__locals )
+    }
+
 
 }
 

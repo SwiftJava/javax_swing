@@ -510,33 +510,33 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
 
     /// private javax.swing.JSpinner$DateEditor(javax.swing.JSpinner,java.text.DateFormat)
 
+    /// public java.text.SimpleDateFormat javax.swing.JSpinner$DateEditor.getFormat()
+
+    private static var getFormat_MethodID_3: jmethodID?
+
+    open func getFormat() -> /* java.text.SimpleDateFormat */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/SimpleDateFormat;", methodCache: &JSpinner_DateEditor.getFormat_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.text.SimpleDateFormat */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
     /// public javax.swing.SpinnerDateModel javax.swing.JSpinner$DateEditor.getModel()
 
-    private static var getModel_MethodID_3: jmethodID?
+    private static var getModel_MethodID_4: jmethodID?
 
     open func getModel() -> SpinnerDateModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerDateModel;", methodCache: &JSpinner_DateEditor.getModel_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerDateModel;", methodCache: &JSpinner_DateEditor.getModel_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SpinnerDateModel( javaObject: __return ) : nil
     }
 
 
     /// private static java.lang.String javax.swing.JSpinner$DateEditor.getDefaultPattern(java.util.Locale)
-
-    /// public java.text.SimpleDateFormat javax.swing.JSpinner$DateEditor.getFormat()
-
-    private static var getFormat_MethodID_4: jmethodID?
-
-    open func getFormat() -> /* java.text.SimpleDateFormat */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/SimpleDateFormat;", methodCache: &JSpinner_DateEditor.getFormat_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.text.SimpleDateFormat */ UnclassedObject( javaObject: __return ) : nil
-    }
-
 
 }
 

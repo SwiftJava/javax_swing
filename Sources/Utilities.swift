@@ -29,8 +29,6 @@ open class Utilities: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// static boolean javax.swing.text.Utilities.isLeftToRight(java.awt.Component)
-
     /// public static final int javax.swing.text.Utilities.getPositionAbove(javax.swing.text.JTextComponent,int,int) throws javax.swing.text.BadLocationException
 
     private static var getPositionAbove_MethodID_2: jmethodID?
@@ -157,15 +155,79 @@ open class Utilities: java_swift.JavaObject {
         return try getNextWord( c: _c, offs: _offs )
     }
 
-    /// static boolean javax.swing.text.Utilities.isComposedTextAttributeDefined(javax.swing.text.AttributeSet)
+    /// public static final javax.swing.text.Element javax.swing.text.Utilities.getParagraphElement(javax.swing.text.JTextComponent,int)
 
-    /// static boolean javax.swing.text.Utilities.isComposedTextElement(javax.swing.text.Document,int)
+    private static var getParagraphElement_MethodID_8: jmethodID?
+
+    open class func getParagraphElement( c: JTextComponent?, offs: Int ) -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getParagraphElement", methodSig: "(Ljavax/swing/text/JTextComponent;I)Ljavax/swing/text/Element;", methodCache: &getParagraphElement_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+    open class func getParagraphElement( _ _c: JTextComponent?, _ _offs: Int ) -> Element! {
+        return getParagraphElement( c: _c, offs: _offs )
+    }
+
+    /// public static final int javax.swing.text.Utilities.getRowStart(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
+
+    private static var getRowStart_MethodID_9: jmethodID?
+
+    open class func getRowStart( c: JTextComponent?, offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getRowStart", methodSig: "(Ljavax/swing/text/JTextComponent;I)I", methodCache: &getRowStart_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func getRowStart( _ _c: JTextComponent?, _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try getRowStart( c: _c, offs: _offs )
+    }
+
+    /// public static final int javax.swing.text.Utilities.getRowEnd(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
+
+    private static var getRowEnd_MethodID_10: jmethodID?
+
+    open class func getRowEnd( c: JTextComponent?, offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getRowEnd", methodSig: "(Ljavax/swing/text/JTextComponent;I)I", methodCache: &getRowEnd_MethodID_10, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func getRowEnd( _ _c: JTextComponent?, _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try getRowEnd( c: _c, offs: _offs )
+    }
+
+    /// static int javax.swing.text.Utilities.getNextVisualPositionFrom(javax.swing.text.View,int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    /// static boolean javax.swing.text.Utilities.isComposedTextAttributeDefined(javax.swing.text.AttributeSet)
 
     /// static boolean javax.swing.text.Utilities.isComposedTextElement(javax.swing.text.Element)
 
+    /// static boolean javax.swing.text.Utilities.isComposedTextElement(javax.swing.text.Document,int)
+
+    /// static boolean javax.swing.text.Utilities.isLeftToRight(java.awt.Component)
+
+    /// static final int javax.swing.text.Utilities.getTabbedTextWidth(javax.swing.text.View,javax.swing.text.Segment,java.awt.FontMetrics,int,javax.swing.text.TabExpander,int,int[])
+
     /// public static final int javax.swing.text.Utilities.getTabbedTextWidth(javax.swing.text.Segment,java.awt.FontMetrics,int,javax.swing.text.TabExpander,int)
 
-    private static var getTabbedTextWidth_MethodID_8: jmethodID?
+    private static var getTabbedTextWidth_MethodID_11: jmethodID?
 
     open class func getTabbedTextWidth( s: Segment?, metrics: java_awt.FontMetrics?, x: Int, e: TabExpander?, startOffset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -175,7 +237,7 @@ open class Utilities: java_swift.JavaObject {
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: e, locals: &__locals )
         __args[4] = JNIType.toJava( value: startOffset, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getTabbedTextWidth", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I)I", methodCache: &getTabbedTextWidth_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getTabbedTextWidth", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;ILjavax/swing/text/TabExpander;I)I", methodCache: &getTabbedTextWidth_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -183,13 +245,13 @@ open class Utilities: java_swift.JavaObject {
         return getTabbedTextWidth( s: _s, metrics: _metrics, x: _x, e: _e, startOffset: _startOffset )
     }
 
-    /// static final int javax.swing.text.Utilities.getTabbedTextWidth(javax.swing.text.View,javax.swing.text.Segment,java.awt.FontMetrics,int,javax.swing.text.TabExpander,int,int[])
+    /// static final int javax.swing.text.Utilities.drawTabbedText(javax.swing.text.View,javax.swing.text.Segment,int,int,java.awt.Graphics,javax.swing.text.TabExpander,int)
 
     /// static final int javax.swing.text.Utilities.drawTabbedText(javax.swing.text.View,javax.swing.text.Segment,int,int,java.awt.Graphics,javax.swing.text.TabExpander,int,int[])
 
     /// public static final int javax.swing.text.Utilities.drawTabbedText(javax.swing.text.Segment,int,int,java.awt.Graphics,javax.swing.text.TabExpander,int)
 
-    private static var drawTabbedText_MethodID_9: jmethodID?
+    private static var drawTabbedText_MethodID_12: jmethodID?
 
     open class func drawTabbedText( s: Segment?, x: Int, y: Int, g: java_awt.Graphics?, e: TabExpander?, startOffset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -200,7 +262,7 @@ open class Utilities: java_swift.JavaObject {
         __args[3] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[4] = JNIType.toJava( value: e, locals: &__locals )
         __args[5] = JNIType.toJava( value: startOffset, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "drawTabbedText", methodSig: "(Ljavax/swing/text/Segment;IILjava/awt/Graphics;Ljavax/swing/text/TabExpander;I)I", methodCache: &drawTabbedText_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "drawTabbedText", methodSig: "(Ljavax/swing/text/Segment;IILjava/awt/Graphics;Ljavax/swing/text/TabExpander;I)I", methodCache: &drawTabbedText_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -208,11 +270,11 @@ open class Utilities: java_swift.JavaObject {
         return drawTabbedText( s: _s, x: _x, y: _y, g: _g, e: _e, startOffset: _startOffset )
     }
 
-    /// static final int javax.swing.text.Utilities.drawTabbedText(javax.swing.text.View,javax.swing.text.Segment,int,int,java.awt.Graphics,javax.swing.text.TabExpander,int)
+    /// static final int javax.swing.text.Utilities.getTabbedTextOffset(javax.swing.text.View,javax.swing.text.Segment,java.awt.FontMetrics,int,int,javax.swing.text.TabExpander,int,boolean,int[])
 
     /// public static final int javax.swing.text.Utilities.getTabbedTextOffset(javax.swing.text.Segment,java.awt.FontMetrics,int,int,javax.swing.text.TabExpander,int,boolean)
 
-    private static var getTabbedTextOffset_MethodID_10: jmethodID?
+    private static var getTabbedTextOffset_MethodID_13: jmethodID?
 
     open class func getTabbedTextOffset( s: Segment?, metrics: java_awt.FontMetrics?, x0: Int, x: Int, e: TabExpander?, startOffset: Int, round: Bool ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -224,7 +286,7 @@ open class Utilities: java_swift.JavaObject {
         __args[4] = JNIType.toJava( value: e, locals: &__locals )
         __args[5] = JNIType.toJava( value: startOffset, locals: &__locals )
         __args[6] = JNIType.toJava( value: round, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getTabbedTextOffset", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;IZ)I", methodCache: &getTabbedTextOffset_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getTabbedTextOffset", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;IZ)I", methodCache: &getTabbedTextOffset_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -232,13 +294,11 @@ open class Utilities: java_swift.JavaObject {
         return getTabbedTextOffset( s: _s, metrics: _metrics, x0: _x0, x: _x, e: _e, startOffset: _startOffset, round: _round )
     }
 
-    /// static final int javax.swing.text.Utilities.getTabbedTextOffset(javax.swing.text.View,javax.swing.text.Segment,java.awt.FontMetrics,int,int,javax.swing.text.TabExpander,int,boolean,int[])
-
     /// static final int javax.swing.text.Utilities.getTabbedTextOffset(javax.swing.text.View,javax.swing.text.Segment,java.awt.FontMetrics,int,int,javax.swing.text.TabExpander,int,int[])
 
     /// public static final int javax.swing.text.Utilities.getTabbedTextOffset(javax.swing.text.Segment,java.awt.FontMetrics,int,int,javax.swing.text.TabExpander,int)
 
-    private static var getTabbedTextOffset_MethodID_11: jmethodID?
+    private static var getTabbedTextOffset_MethodID_14: jmethodID?
 
     open class func getTabbedTextOffset( s: Segment?, metrics: java_awt.FontMetrics?, x0: Int, x: Int, e: TabExpander?, startOffset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -249,7 +309,7 @@ open class Utilities: java_swift.JavaObject {
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
         __args[4] = JNIType.toJava( value: e, locals: &__locals )
         __args[5] = JNIType.toJava( value: startOffset, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getTabbedTextOffset", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;I)I", methodCache: &getTabbedTextOffset_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getTabbedTextOffset", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;I)I", methodCache: &getTabbedTextOffset_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -265,7 +325,7 @@ open class Utilities: java_swift.JavaObject {
 
     /// public static final int javax.swing.text.Utilities.getBreakLocation(javax.swing.text.Segment,java.awt.FontMetrics,int,int,javax.swing.text.TabExpander,int)
 
-    private static var getBreakLocation_MethodID_12: jmethodID?
+    private static var getBreakLocation_MethodID_15: jmethodID?
 
     open class func getBreakLocation( s: Segment?, metrics: java_awt.FontMetrics?, x0: Int, x: Int, e: TabExpander?, startOffset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -276,73 +336,13 @@ open class Utilities: java_swift.JavaObject {
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
         __args[4] = JNIType.toJava( value: e, locals: &__locals )
         __args[5] = JNIType.toJava( value: startOffset, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getBreakLocation", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;I)I", methodCache: &getBreakLocation_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getBreakLocation", methodSig: "(Ljavax/swing/text/Segment;Ljava/awt/FontMetrics;IILjavax/swing/text/TabExpander;I)I", methodCache: &getBreakLocation_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     open class func getBreakLocation( _ _s: Segment?, _ _metrics: java_awt.FontMetrics?, _ _x0: Int, _ _x: Int, _ _e: TabExpander?, _ _startOffset: Int ) -> Int {
         return getBreakLocation( s: _s, metrics: _metrics, x0: _x0, x: _x, e: _e, startOffset: _startOffset )
     }
-
-    /// public static final javax.swing.text.Element javax.swing.text.Utilities.getParagraphElement(javax.swing.text.JTextComponent,int)
-
-    private static var getParagraphElement_MethodID_13: jmethodID?
-
-    open class func getParagraphElement( c: JTextComponent?, offs: Int ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getParagraphElement", methodSig: "(Ljavax/swing/text/JTextComponent;I)Ljavax/swing/text/Element;", methodCache: &getParagraphElement_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-    open class func getParagraphElement( _ _c: JTextComponent?, _ _offs: Int ) -> Element! {
-        return getParagraphElement( c: _c, offs: _offs )
-    }
-
-    /// public static final int javax.swing.text.Utilities.getRowStart(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
-
-    private static var getRowStart_MethodID_14: jmethodID?
-
-    open class func getRowStart( c: JTextComponent?, offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getRowStart", methodSig: "(Ljavax/swing/text/JTextComponent;I)I", methodCache: &getRowStart_MethodID_14, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getRowStart( _ _c: JTextComponent?, _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try getRowStart( c: _c, offs: _offs )
-    }
-
-    /// public static final int javax.swing.text.Utilities.getRowEnd(javax.swing.text.JTextComponent,int) throws javax.swing.text.BadLocationException
-
-    private static var getRowEnd_MethodID_15: jmethodID?
-
-    open class func getRowEnd( c: JTextComponent?, offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/Utilities", classCache: &UtilitiesJNIClass, methodName: "getRowEnd", methodSig: "(Ljavax/swing/text/JTextComponent;I)I", methodCache: &getRowEnd_MethodID_15, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getRowEnd( _ _c: JTextComponent?, _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try getRowEnd( c: _c, offs: _offs )
-    }
-
-    /// static int javax.swing.text.Utilities.getNextVisualPositionFrom(javax.swing.text.View,int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
 
 }
 

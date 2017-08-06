@@ -47,8 +47,6 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
 
     /// float javax.swing.text.html.StyleSheet$BoxPainter.getOrientationMargin(javax.swing.text.html.StyleSheet$BoxPainter$HorizontalMargin,float,javax.swing.text.AttributeSet,boolean)
 
-    /// static boolean javax.swing.text.html.StyleSheet$BoxPainter.isLeftToRight(javax.swing.text.View)
-
     /// java.awt.Color javax.swing.text.html.StyleSheet$BoxPainter.getBorderColor(javax.swing.text.AttributeSet)
 
     /// public float javax.swing.text.html.StyleSheet$BoxPainter.getInset(int,javax.swing.text.View)
@@ -67,6 +65,8 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
     open func getInset( _ _side: Int, _ _v: View? ) -> Float {
         return getInset( side: _side, v: _v )
     }
+
+    /// javax.swing.border.Border javax.swing.text.html.StyleSheet$BoxPainter.getBorder(javax.swing.text.AttributeSet)
 
     /// public void javax.swing.text.html.StyleSheet$BoxPainter.paint(java.awt.Graphics,float,float,float,float,javax.swing.text.View)
 
@@ -88,7 +88,7 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
         paint( g: _g, x: _x, y: _y, w: _w, h: _h, v: _v )
     }
 
-    /// javax.swing.border.Border javax.swing.text.html.StyleSheet$BoxPainter.getBorder(javax.swing.text.AttributeSet)
+    /// static boolean javax.swing.text.html.StyleSheet$BoxPainter.isLeftToRight(javax.swing.text.View)
 
 }
 

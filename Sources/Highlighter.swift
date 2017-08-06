@@ -28,10 +28,6 @@ public protocol Highlighter: JavaProtocol {
 
     func getHighlights() -> [Highlighter_Highlight]!
 
-    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
-
-    func paint( g: java_awt.Graphics? )
-
     /// public abstract void javax.swing.text.Highlighter.deinstall(javax.swing.text.JTextComponent)
 
     func deinstall( c: JTextComponent? )
@@ -39,6 +35,10 @@ public protocol Highlighter: JavaProtocol {
     /// public abstract void javax.swing.text.Highlighter.install(javax.swing.text.JTextComponent)
 
     func install( c: JTextComponent? )
+
+    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
+
+    func paint( g: java_awt.Graphics? )
 
 }
 
@@ -127,30 +127,15 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
     }
 
 
-    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
-
-    private static var paint_MethodID_14: jmethodID?
-
-    open func paint( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &HighlighterForward.paint_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _g: java_awt.Graphics? ) {
-        paint( g: _g )
-    }
-
     /// public abstract void javax.swing.text.Highlighter.deinstall(javax.swing.text.JTextComponent)
 
-    private static var deinstall_MethodID_15: jmethodID?
+    private static var deinstall_MethodID_14: jmethodID?
 
     open func deinstall( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.deinstall_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.deinstall_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func deinstall( _ _c: JTextComponent? ) {
@@ -159,17 +144,32 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
 
     /// public abstract void javax.swing.text.Highlighter.install(javax.swing.text.JTextComponent)
 
-    private static var install_MethodID_16: jmethodID?
+    private static var install_MethodID_15: jmethodID?
 
     open func install( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.install_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.install_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func install( _ _c: JTextComponent? ) {
         install( c: _c )
+    }
+
+    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
+
+    private static var paint_MethodID_16: jmethodID?
+
+    open func paint( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &HighlighterForward.paint_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _g: java_awt.Graphics? ) {
+        paint( g: _g )
     }
 
 }

@@ -52,28 +52,28 @@ open class HTMLDocument_Iterator: java_swift.JavaObject {
     }
 
 
-    /// public abstract javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLDocument$Iterator.getTag()
-
-    private static var getTag_MethodID_4: jmethodID?
-
-    open func getTag() -> HTML_Tag! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTag", methodSig: "()Ljavax/swing/text/html/HTML$Tag;", methodCache: &HTMLDocument_Iterator.getTag_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HTML_Tag( javaObject: __return ) : nil
-    }
-
-
     /// public abstract boolean javax.swing.text.html.HTMLDocument$Iterator.isValid()
 
-    private static var isValid_MethodID_5: jmethodID?
+    private static var isValid_MethodID_4: jmethodID?
 
     open func isValid() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isValid", methodSig: "()Z", methodCache: &HTMLDocument_Iterator.isValid_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isValid", methodSig: "()Z", methodCache: &HTMLDocument_Iterator.isValid_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public abstract javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLDocument$Iterator.getTag()
+
+    private static var getTag_MethodID_5: jmethodID?
+
+    open func getTag() -> HTML_Tag! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTag", methodSig: "()Ljavax/swing/text/html/HTML$Tag;", methodCache: &HTMLDocument_Iterator.getTag_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HTML_Tag( javaObject: __return ) : nil
     }
 
 

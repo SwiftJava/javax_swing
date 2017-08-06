@@ -131,14 +131,76 @@ open class DefaultStyledDocument_ElementBuffer: java_swift.JavaObject, /* java.i
         insert( offset: _offset, length: _length, data: _data, de: _de )
     }
 
+    /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.advance(int)
+
+    /// boolean javax.swing.text.DefaultStyledDocument$ElementBuffer.removeElements(javax.swing.text.Element,int,int)
+
+    /// public javax.swing.text.Element javax.swing.text.DefaultStyledDocument$ElementBuffer.getRootElement()
+
+    private static var getRootElement_MethodID_5: jmethodID?
+
+    open func getRootElement() -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DefaultStyledDocument_ElementBuffer.getRootElement_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.DefaultStyledDocument$ElementBuffer.change(int,int,javax.swing.text.AbstractDocument$DefaultDocumentEvent)
+
+    private static var change_MethodID_6: jmethodID?
+
+    open func change( offset: Int, length: Int, de: AbstractDocument_DefaultDocumentEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = JNIType.toJava( value: length, locals: &__locals )
+        __args[2] = JNIType.toJava( value: de != nil ? de! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "change", methodSig: "(IILjavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &DefaultStyledDocument_ElementBuffer.change_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func change( _ _offset: Int, _ _length: Int, _ _de: AbstractDocument_DefaultDocumentEvent? ) {
+        change( offset: _offset, length: _length, de: _de )
+    }
+
+    /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.insertElement(javax.swing.text.DefaultStyledDocument$ElementSpec)
+
+    /// protected void javax.swing.text.DefaultStyledDocument$ElementBuffer.insertUpdate(javax.swing.text.DefaultStyledDocument$ElementSpec[])
+
+    private static var insertUpdate_MethodID_7: jmethodID?
+
+    open func insertUpdate( data: [DefaultStyledDocument_ElementSpec]? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: data, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "([Ljavax/swing/text/DefaultStyledDocument$ElementSpec;)V", methodCache: &DefaultStyledDocument_ElementBuffer.insertUpdate_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func insertUpdate( _ _data: [DefaultStyledDocument_ElementSpec]? ) {
+        insertUpdate( data: _data )
+    }
+
+    /// protected void javax.swing.text.DefaultStyledDocument$ElementBuffer.removeUpdate()
+
+    private static var removeUpdate_MethodID_8: jmethodID?
+
+    open func removeUpdate() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "()V", methodCache: &DefaultStyledDocument_ElementBuffer.removeUpdate_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
     /// protected void javax.swing.text.DefaultStyledDocument$ElementBuffer.changeUpdate()
 
-    private static var changeUpdate_MethodID_5: jmethodID?
+    private static var changeUpdate_MethodID_9: jmethodID?
 
     open func changeUpdate() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeUpdate", methodSig: "()V", methodCache: &DefaultStyledDocument_ElementBuffer.changeUpdate_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeUpdate", methodSig: "()V", methodCache: &DefaultStyledDocument_ElementBuffer.changeUpdate_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
@@ -154,73 +216,11 @@ open class DefaultStyledDocument_ElementBuffer: java_swift.JavaObject, /* java.i
 
     /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.fractureFrom(javax.swing.text.DefaultStyledDocument$ElementBuffer$ElemChanges[],int,int)
 
-    /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.advance(int)
-
-    /// boolean javax.swing.text.DefaultStyledDocument$ElementBuffer.removeElements(javax.swing.text.Element,int,int)
-
-    /// public javax.swing.text.Element javax.swing.text.DefaultStyledDocument$ElementBuffer.getRootElement()
-
-    private static var getRootElement_MethodID_6: jmethodID?
-
-    open func getRootElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DefaultStyledDocument_ElementBuffer.getRootElement_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.DefaultStyledDocument$ElementBuffer.change(int,int,javax.swing.text.AbstractDocument$DefaultDocumentEvent)
-
-    private static var change_MethodID_7: jmethodID?
-
-    open func change( offset: Int, length: Int, de: AbstractDocument_DefaultDocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: de != nil ? de! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "change", methodSig: "(IILjavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &DefaultStyledDocument_ElementBuffer.change_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func change( _ _offset: Int, _ _length: Int, _ _de: AbstractDocument_DefaultDocumentEvent? ) {
-        change( offset: _offset, length: _length, de: _de )
-    }
-
-    /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.insertElement(javax.swing.text.DefaultStyledDocument$ElementSpec)
-
     /// javax.swing.text.Element javax.swing.text.DefaultStyledDocument$ElementBuffer.recreateFracturedElement(javax.swing.text.Element,javax.swing.text.Element)
 
     /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.fractureDeepestLeaf(javax.swing.text.DefaultStyledDocument$ElementSpec[])
 
     /// void javax.swing.text.DefaultStyledDocument$ElementBuffer.insertFirstContent(javax.swing.text.DefaultStyledDocument$ElementSpec[])
-
-    /// protected void javax.swing.text.DefaultStyledDocument$ElementBuffer.insertUpdate(javax.swing.text.DefaultStyledDocument$ElementSpec[])
-
-    private static var insertUpdate_MethodID_8: jmethodID?
-
-    open func insertUpdate( data: [DefaultStyledDocument_ElementSpec]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: data, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "([Ljavax/swing/text/DefaultStyledDocument$ElementSpec;)V", methodCache: &DefaultStyledDocument_ElementBuffer.insertUpdate_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func insertUpdate( _ _data: [DefaultStyledDocument_ElementSpec]? ) {
-        insertUpdate( data: _data )
-    }
-
-    /// protected void javax.swing.text.DefaultStyledDocument$ElementBuffer.removeUpdate()
-
-    private static var removeUpdate_MethodID_9: jmethodID?
-
-    open func removeUpdate() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "()V", methodCache: &DefaultStyledDocument_ElementBuffer.removeUpdate_MethodID_9, args: &__args, locals: &__locals )
-    }
-
 
 }
 

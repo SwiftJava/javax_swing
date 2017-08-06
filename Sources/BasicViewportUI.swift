@@ -47,6 +47,10 @@ open class BasicViewportUI: ViewportUI {
         return createUI( c: _c )
     }
 
+    /// public void javax.swing.plaf.basic.BasicViewportUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicViewportUI.uninstallUI(javax.swing.JComponent)
+
     /// protected void javax.swing.plaf.basic.BasicViewportUI.installDefaults(javax.swing.JComponent)
 
     private static var installDefaults_MethodID_3: jmethodID?
@@ -76,10 +80,6 @@ open class BasicViewportUI: ViewportUI {
     open func uninstallDefaults( _ _c: JComponent? ) {
         uninstallDefaults( c: _c )
     }
-
-    /// public void javax.swing.plaf.basic.BasicViewportUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicViewportUI.uninstallUI(javax.swing.JComponent)
 
 }
 

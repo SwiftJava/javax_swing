@@ -116,6 +116,10 @@ open class SpinnerListModel: AbstractSpinnerModel {
     }
 
 
+    /// public java.lang.Object javax.swing.SpinnerListModel.getNextValue()
+
+    /// public java.lang.Object javax.swing.SpinnerListModel.getPreviousValue()
+
     /// java.lang.Object javax.swing.SpinnerListModel.findNextMatch(java.lang.String)
 
     /// public void javax.swing.SpinnerListModel.setList(java.util.List)
@@ -132,10 +136,6 @@ open class SpinnerListModel: AbstractSpinnerModel {
     open func setList( _ _list: java_util.List? ) {
         setList( list: _list )
     }
-
-    /// public java.lang.Object javax.swing.SpinnerListModel.getNextValue()
-
-    /// public java.lang.Object javax.swing.SpinnerListModel.getPreviousValue()
 
 }
 

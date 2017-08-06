@@ -158,15 +158,31 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     }
 
 
+    /// public int javax.swing.DefaultComboBoxModel.getIndexOf(java.lang.Object)
+
+    private static var getIndexOf_MethodID_9: jmethodID?
+
+    open func getIndexOf( anObject: java_swift.JavaObject? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &DefaultComboBoxModel.getIndexOf_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getIndexOf( _ _anObject: java_swift.JavaObject? ) -> Int {
+        return getIndexOf( anObject: _anObject )
+    }
+
     /// public void javax.swing.DefaultComboBoxModel.setSelectedItem(java.lang.Object)
 
-    private static var setSelectedItem_MethodID_9: jmethodID?
+    private static var setSelectedItem_MethodID_10: jmethodID?
 
     open func setSelectedItem( anItem: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anItem != nil ? anItem! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultComboBoxModel.setSelectedItem_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultComboBoxModel.setSelectedItem_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setSelectedItem( _ _anItem: java_swift.JavaObject? ) {
@@ -175,34 +191,18 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
 
     /// public java.lang.Object javax.swing.DefaultComboBoxModel.getSelectedItem()
 
-    private static var getSelectedItem_MethodID_10: jmethodID?
+    private static var getSelectedItem_MethodID_11: jmethodID?
 
     open func getSelectedItem() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/Object;", methodCache: &DefaultComboBoxModel.getSelectedItem_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/Object;", methodCache: &DefaultComboBoxModel.getSelectedItem_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
     /// public java.lang.Object javax.swing.DefaultComboBoxModel.getElementAt(int)
-
-    /// public int javax.swing.DefaultComboBoxModel.getIndexOf(java.lang.Object)
-
-    private static var getIndexOf_MethodID_11: jmethodID?
-
-    open func getIndexOf( anObject: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &DefaultComboBoxModel.getIndexOf_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getIndexOf( _ _anObject: java_swift.JavaObject? ) -> Int {
-        return getIndexOf( anObject: _anObject )
-    }
 
     /// In declared protocol but not defined.. ///
 

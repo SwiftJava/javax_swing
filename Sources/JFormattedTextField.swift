@@ -938,10 +938,6 @@ open class JFormattedTextField: JTextField {
 
     /// private javax.swing.JFormattedTextField$AbstractFormatterFactory javax.swing.JFormattedTextField.getDefaultFormatterFactory(java.lang.Object)
 
-    /// public java.lang.String javax.swing.JFormattedTextField.getUIClassID()
-
-    /// public void javax.swing.JFormattedTextField.setDocument(javax.swing.text.Document)
-
     /// protected void javax.swing.JFormattedTextField.processFocusEvent(java.awt.event.FocusEvent)
 
     private static var processFocusEvent_MethodID_18: jmethodID?
@@ -971,6 +967,10 @@ open class JFormattedTextField: JTextField {
     override open func processInputMethodEvent( _ _e: java_awt.InputMethodEvent? ) {
         processInputMethodEvent( e: _e )
     }
+
+    /// public java.lang.String javax.swing.JFormattedTextField.getUIClassID()
+
+    /// public void javax.swing.JFormattedTextField.setDocument(javax.swing.text.Document)
 
 }
 

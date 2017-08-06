@@ -36,7 +36,7 @@ open class SynthToggleButtonUI: SynthButtonUI {
 
     private static var defaultTextIconGap_FieldID: jfieldID?
 
-    open var defaultTextIconGap: Int {
+    override open var defaultTextIconGap: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &SynthToggleButtonUI.defaultTextIconGap_FieldID, object: javaObject, locals: &__locals )
@@ -55,7 +55,7 @@ open class SynthToggleButtonUI: SynthButtonUI {
 
     private static var defaultTextShiftOffset_FieldID: jfieldID?
 
-    open var defaultTextShiftOffset: Int {
+    override open var defaultTextShiftOffset: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &SynthToggleButtonUI.defaultTextShiftOffset_FieldID, object: javaObject, locals: &__locals )
@@ -103,17 +103,15 @@ open class SynthToggleButtonUI: SynthButtonUI {
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
         return createUI( b: _b )
     }
-
-    /// void javax.swing.plaf.synth.SynthToggleButtonUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
     /// protected java.lang.String javax.swing.plaf.synth.SynthToggleButtonUI.getPropertyPrefix()
 
     private static var getPropertyPrefix_MethodID_3: jmethodID?
 
-    open func getPropertyPrefix() -> String! {
+    override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &SynthToggleButtonUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
@@ -122,6 +120,8 @@ open class SynthToggleButtonUI: SynthButtonUI {
 
 
     /// public void javax.swing.plaf.synth.SynthToggleButtonUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    /// void javax.swing.plaf.synth.SynthToggleButtonUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

@@ -103,9 +103,17 @@ open class BasicTableHeaderUI: TableHeaderUI {
 
     /// static int javax.swing.plaf.basic.BasicTableHeaderUI.access$600(javax.swing.plaf.basic.BasicTableHeaderUI,javax.swing.table.TableColumn)
 
-    /// private int javax.swing.plaf.basic.BasicTableHeaderUI.viewIndexForColumn(javax.swing.table.TableColumn)
+    /// static int javax.swing.plaf.basic.BasicTableHeaderUI.access$700(javax.swing.plaf.basic.BasicTableHeaderUI,boolean)
 
-    /// private java.awt.Component javax.swing.plaf.basic.BasicTableHeaderUI.getHeaderRenderer(int)
+    /// static int javax.swing.plaf.basic.BasicTableHeaderUI.access$800(javax.swing.plaf.basic.BasicTableHeaderUI,boolean)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicTableHeaderUI.getBaseline(javax.swing.JComponent,int,int)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTableHeaderUI.createUI(javax.swing.JComponent)
 
@@ -124,103 +132,24 @@ open class BasicTableHeaderUI: TableHeaderUI {
         return createUI( h: _h )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTableHeaderUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// private int javax.swing.plaf.basic.BasicTableHeaderUI.viewIndexForColumn(javax.swing.table.TableColumn)
 
-    /// static int javax.swing.plaf.basic.BasicTableHeaderUI.access$700(javax.swing.plaf.basic.BasicTableHeaderUI,boolean)
+    /// private java.awt.Component javax.swing.plaf.basic.BasicTableHeaderUI.getHeaderRenderer(int)
 
-    /// static int javax.swing.plaf.basic.BasicTableHeaderUI.access$800(javax.swing.plaf.basic.BasicTableHeaderUI,boolean)
+    /// public void javax.swing.plaf.basic.BasicTableHeaderUI.installUI(javax.swing.JComponent)
 
-    /// static void javax.swing.plaf.basic.BasicTableHeaderUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.installDefaults()
-
-    private static var installDefaults_MethodID_3: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTableHeaderUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.installListeners()
-
-    private static var installListeners_MethodID_4: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTableHeaderUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_5: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTableHeaderUI.installKeyboardActions_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_6: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTableHeaderUI.uninstallDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_7: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTableHeaderUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_8: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTableHeaderUI.uninstallKeyboardActions_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicTableHeaderUI.createMouseInputListener()
-
-    private static var createMouseInputListener_MethodID_9: jmethodID?
-
-    open func createMouseInputListener() -> MouseInputListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseInputListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicTableHeaderUI.createMouseInputListener_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
-    }
-
+    /// public void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallUI(javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.rolloverColumnUpdated(int,int)
 
-    private static var rolloverColumnUpdated_MethodID_10: jmethodID?
+    private static var rolloverColumnUpdated_MethodID_3: jmethodID?
 
     open func rolloverColumnUpdated( oldColumn: Int, newColumn: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: oldColumn, locals: &__locals )
         __args[1] = JNIType.toJava( value: newColumn, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rolloverColumnUpdated", methodSig: "(II)V", methodCache: &BasicTableHeaderUI.rolloverColumnUpdated_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rolloverColumnUpdated", methodSig: "(II)V", methodCache: &BasicTableHeaderUI.rolloverColumnUpdated_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func rolloverColumnUpdated( _ _oldColumn: Int, _ _newColumn: Int ) {
@@ -233,12 +162,12 @@ open class BasicTableHeaderUI: TableHeaderUI {
 
     /// protected int javax.swing.plaf.basic.BasicTableHeaderUI.getRolloverColumn()
 
-    private static var getRolloverColumn_MethodID_11: jmethodID?
+    private static var getRolloverColumn_MethodID_4: jmethodID?
 
     open func getRolloverColumn() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRolloverColumn", methodSig: "()I", methodCache: &BasicTableHeaderUI.getRolloverColumn_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRolloverColumn", methodSig: "()I", methodCache: &BasicTableHeaderUI.getRolloverColumn_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -257,23 +186,94 @@ open class BasicTableHeaderUI: TableHeaderUI {
 
     /// private java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.createHeaderSize(long)
 
+    /// public void javax.swing.plaf.basic.BasicTableHeaderUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// private void javax.swing.plaf.basic.BasicTableHeaderUI.paintCell(java.awt.Graphics,java.awt.Rectangle,int)
+
     /// private int javax.swing.plaf.basic.BasicTableHeaderUI.selectPreviousColumn(boolean)
 
     /// private int javax.swing.plaf.basic.BasicTableHeaderUI.selectNextColumn(boolean)
 
-    /// private void javax.swing.plaf.basic.BasicTableHeaderUI.paintCell(java.awt.Graphics,java.awt.Rectangle,int)
+    /// static void javax.swing.plaf.basic.BasicTableHeaderUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    /// public void javax.swing.plaf.basic.BasicTableHeaderUI.installUI(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.installDefaults()
 
-    /// public void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallUI(javax.swing.JComponent)
+    private static var installDefaults_MethodID_5: jmethodID?
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.getPreferredSize(javax.swing.JComponent)
+    open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTableHeaderUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
+    }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.getMinimumSize(javax.swing.JComponent)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTableHeaderUI.getMaximumSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.installListeners()
 
-    /// public int javax.swing.plaf.basic.BasicTableHeaderUI.getBaseline(javax.swing.JComponent,int,int)
+    private static var installListeners_MethodID_6: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTableHeaderUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_7: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTableHeaderUI.installKeyboardActions_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_8: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTableHeaderUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_9: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTableHeaderUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTableHeaderUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_10: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTableHeaderUI.uninstallKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicTableHeaderUI.createMouseInputListener()
+
+    private static var createMouseInputListener_MethodID_11: jmethodID?
+
+    open func createMouseInputListener() -> MouseInputListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseInputListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicTableHeaderUI.createMouseInputListener_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
+    }
+
 
 }
 

@@ -61,7 +61,9 @@ open class DefaultHighlighter: LayeredHighlighter {
 
     /// public javax.swing.text.Highlighter$Highlight[] javax.swing.text.DefaultHighlighter.getHighlights()
 
-    /// public void javax.swing.text.DefaultHighlighter.paint(java.awt.Graphics)
+    /// public void javax.swing.text.DefaultHighlighter.deinstall(javax.swing.text.JTextComponent)
+
+    /// public void javax.swing.text.DefaultHighlighter.install(javax.swing.text.JTextComponent)
 
     /// public void javax.swing.text.DefaultHighlighter.paintLayeredHighlights(java.awt.Graphics,int,int,java.awt.Shape,javax.swing.text.JTextComponent,javax.swing.text.View)
 
@@ -96,9 +98,7 @@ open class DefaultHighlighter: LayeredHighlighter {
     }
 
 
-    /// public void javax.swing.text.DefaultHighlighter.deinstall(javax.swing.text.JTextComponent)
-
-    /// public void javax.swing.text.DefaultHighlighter.install(javax.swing.text.JTextComponent)
+    /// public void javax.swing.text.DefaultHighlighter.paint(java.awt.Graphics)
 
 }
 

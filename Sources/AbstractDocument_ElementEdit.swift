@@ -76,15 +76,16 @@ open class AbstractDocument_ElementEdit: AbstractUndoableEdit, DocumentEvent_Ele
     }
 
 
-    /// public int javax.swing.text.AbstractDocument$ElementEdit.getIndex()
+    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$ElementEdit.getElement()
 
-    private static var getIndex_MethodID_4: jmethodID?
+    private static var getElement_MethodID_4: jmethodID?
 
-    open func getIndex() -> Int {
+    open func getElement() -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &AbstractDocument_ElementEdit.getIndex_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &AbstractDocument_ElementEdit.getElement_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
 
 
@@ -92,16 +93,15 @@ open class AbstractDocument_ElementEdit: AbstractUndoableEdit, DocumentEvent_Ele
 
     /// public void javax.swing.text.AbstractDocument$ElementEdit.redo() throws javax.swing.undo.CannotRedoException
 
-    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$ElementEdit.getElement()
+    /// public int javax.swing.text.AbstractDocument$ElementEdit.getIndex()
 
-    private static var getElement_MethodID_5: jmethodID?
+    private static var getIndex_MethodID_5: jmethodID?
 
-    open func getElement() -> Element! {
+    open func getIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &AbstractDocument_ElementEdit.getElement_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &AbstractDocument_ElementEdit.getIndex_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
 

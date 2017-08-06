@@ -596,6 +596,8 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollBarUI.getPreferredSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalScrollBarUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -613,26 +615,80 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         return createUI( c: _c )
     }
 
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.paintTrack(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
+
+    private static var paintTrack_MethodID_3: jmethodID?
+
+    override open func paintTrack( g: java_awt.Graphics?, c: JComponent?, trackBounds: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: trackBounds != nil ? trackBounds! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintTrack_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func paintTrack( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _trackBounds: java_awt.Rectangle? ) {
+        paintTrack( g: _g, c: _c, trackBounds: _trackBounds )
+    }
+
+    /// private void javax.swing.plaf.metal.MetalScrollBarUI.oceanPaintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
+
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installDefaults()
+
+    private static var installDefaults_MethodID_4: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalScrollBarUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installListeners()
+
+    private static var installListeners_MethodID_5: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalScrollBarUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollBarUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_6: jmethodID?
+
+    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollBarUI.createPropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
     /// protected void javax.swing.plaf.metal.MetalScrollBarUI.configureScrollBarColors()
 
-    private static var configureScrollBarColors_MethodID_3: jmethodID?
+    private static var configureScrollBarColors_MethodID_7: jmethodID?
 
     override open func configureScrollBarColors() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScrollBarColors", methodSig: "()V", methodCache: &MetalScrollBarUI.configureScrollBarColors_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScrollBarColors", methodSig: "()V", methodCache: &MetalScrollBarUI.configureScrollBarColors_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.JButton javax.swing.plaf.metal.MetalScrollBarUI.createDecreaseButton(int)
 
-    private static var createDecreaseButton_MethodID_4: jmethodID?
+    private static var createDecreaseButton_MethodID_8: jmethodID?
 
     override open func createDecreaseButton( orientation: Int ) -> JButton! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDecreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &MetalScrollBarUI.createDecreaseButton_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDecreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &MetalScrollBarUI.createDecreaseButton_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
     }
@@ -643,13 +699,13 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     /// protected javax.swing.JButton javax.swing.plaf.metal.MetalScrollBarUI.createIncreaseButton(int)
 
-    private static var createIncreaseButton_MethodID_5: jmethodID?
+    private static var createIncreaseButton_MethodID_9: jmethodID?
 
     override open func createIncreaseButton( orientation: Int ) -> JButton! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createIncreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &MetalScrollBarUI.createIncreaseButton_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createIncreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &MetalScrollBarUI.createIncreaseButton_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
     }
@@ -660,7 +716,7 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     /// protected void javax.swing.plaf.metal.MetalScrollBarUI.paintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
 
-    private static var paintThumb_MethodID_6: jmethodID?
+    private static var paintThumb_MethodID_10: jmethodID?
 
     override open func paintThumb( g: java_awt.Graphics?, c: JComponent?, thumbBounds: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -668,7 +724,7 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: thumbBounds != nil ? thumbBounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintThumb_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintThumb_MethodID_10, args: &__args, locals: &__locals )
     }
 
     override open func paintThumb( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _thumbBounds: java_awt.Rectangle? ) {
@@ -677,12 +733,12 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     /// protected java.awt.Dimension javax.swing.plaf.metal.MetalScrollBarUI.getMinimumThumbSize()
 
-    private static var getMinimumThumbSize_MethodID_7: jmethodID?
+    private static var getMinimumThumbSize_MethodID_11: jmethodID?
 
     override open func getMinimumThumbSize() -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &MetalScrollBarUI.getMinimumThumbSize_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &MetalScrollBarUI.getMinimumThumbSize_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -690,7 +746,7 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     /// protected void javax.swing.plaf.metal.MetalScrollBarUI.setThumbBounds(int,int,int,int)
 
-    private static var setThumbBounds_MethodID_8: jmethodID?
+    private static var setThumbBounds_MethodID_12: jmethodID?
 
     override open func setThumbBounds( x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -699,68 +755,12 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbBounds", methodSig: "(IIII)V", methodCache: &MetalScrollBarUI.setThumbBounds_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbBounds", methodSig: "(IIII)V", methodCache: &MetalScrollBarUI.setThumbBounds_MethodID_12, args: &__args, locals: &__locals )
     }
 
     override open func setThumbBounds( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
         setThumbBounds( x: _x, y: _y, width: _width, height: _height )
     }
-
-    /// private void javax.swing.plaf.metal.MetalScrollBarUI.oceanPaintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
-
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installDefaults()
-
-    private static var installDefaults_MethodID_9: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalScrollBarUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installListeners()
-
-    private static var installListeners_MethodID_10: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalScrollBarUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollBarUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_11: jmethodID?
-
-    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollBarUI.createPropertyChangeListener_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.paintTrack(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
-
-    private static var paintTrack_MethodID_12: jmethodID?
-
-    override open func paintTrack( g: java_awt.Graphics?, c: JComponent?, trackBounds: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: trackBounds != nil ? trackBounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintTrack_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    override open func paintTrack( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _trackBounds: java_awt.Rectangle? ) {
-        paintTrack( g: _g, c: _c, trackBounds: _trackBounds )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollBarUI.getPreferredSize(javax.swing.JComponent)
 
 }
 

@@ -174,7 +174,7 @@ open class BasicOptionPaneUI: OptionPaneUI {
 
     /// private javax.swing.plaf.basic.BasicOptionPaneUI$Handler javax.swing.plaf.basic.BasicOptionPaneUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicOptionPaneUI.getInputMap(int)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI.getPreferredSize(javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicOptionPaneUI.createUI(javax.swing.JComponent)
 
@@ -208,337 +208,18 @@ open class BasicOptionPaneUI: OptionPaneUI {
 
     /// private int javax.swing.plaf.basic.BasicOptionPaneUI.getMnemonic(java.lang.String,java.util.Locale)
 
-    /// static void javax.swing.plaf.basic.BasicOptionPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installDefaults()
-
-    private static var installDefaults_MethodID_5: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicOptionPaneUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installComponents()
-
-    private static var installComponents_MethodID_6: jmethodID?
-
-    open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicOptionPaneUI.installComponents_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installListeners()
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicOptionPaneUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_8: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicOptionPaneUI.installKeyboardActions_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_9: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_10: jmethodID?
-
-    open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallComponents_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_11: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_12: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallKeyboardActions_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicOptionPaneUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_13: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicOptionPaneUI.createPropertyChangeListener_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicOptionPaneUI.createLayoutManager()
-
-    private static var createLayoutManager_MethodID_14: jmethodID?
-
-    open func createLayoutManager() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicOptionPaneUI.createLayoutManager_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.addMessageComponents(java.awt.Container,java.awt.GridBagConstraints,java.lang.Object,int,boolean)
-
-    private static var addMessageComponents_MethodID_15: jmethodID?
-
-    open func addMessageComponents( container: java_awt.Container?, cons: java_awt.GridBagConstraints?, msg: java_swift.JavaObject?, maxll: Int, internallyCreated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: container != nil ? container! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cons != nil ? cons! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: msg != nil ? msg! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: maxll, locals: &__locals )
-        __args[4] = JNIType.toJava( value: internallyCreated, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMessageComponents", methodSig: "(Ljava/awt/Container;Ljava/awt/GridBagConstraints;Ljava/lang/Object;IZ)V", methodCache: &BasicOptionPaneUI.addMessageComponents_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func addMessageComponents( _ _container: java_awt.Container?, _ _cons: java_awt.GridBagConstraints?, _ _msg: java_swift.JavaObject?, _ _maxll: Int, _ _internallyCreated: Bool ) {
-        addMessageComponents( container: _container, cons: _cons, msg: _msg, maxll: _maxll, internallyCreated: _internallyCreated )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.addButtonComponents(java.awt.Container,java.lang.Object[],int)
-
-    private static var addButtonComponents_MethodID_16: jmethodID?
-
-    open func addButtonComponents( container: java_awt.Container?, buttons: [JavaObject]?, initialIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: container != nil ? container! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: buttons, locals: &__locals )
-        __args[2] = JNIType.toJava( value: initialIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addButtonComponents", methodSig: "(Ljava/awt/Container;[Ljava/lang/Object;I)V", methodCache: &BasicOptionPaneUI.addButtonComponents_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func addButtonComponents( _ _container: java_awt.Container?, _ _buttons: [JavaObject]?, _ _initialIndex: Int ) {
-        addButtonComponents( container: _container, buttons: _buttons, initialIndex: _initialIndex )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.resetInputValue()
-
-    private static var resetInputValue_MethodID_17: jmethodID?
-
-    open func resetInputValue() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetInputValue", methodSig: "()V", methodCache: &BasicOptionPaneUI.resetInputValue_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI.getMinimumOptionPaneSize()
-
-    private static var getMinimumOptionPaneSize_MethodID_18: jmethodID?
-
-    open func getMinimumOptionPaneSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumOptionPaneSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicOptionPaneUI.getMinimumOptionPaneSize_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Container javax.swing.plaf.basic.BasicOptionPaneUI.createMessageArea()
-
-    private static var createMessageArea_MethodID_19: jmethodID?
-
-    open func createMessageArea() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMessageArea", methodSig: "()Ljava/awt/Container;", methodCache: &BasicOptionPaneUI.createMessageArea_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.addIcon(java.awt.Container)
-
-    private static var addIcon_MethodID_20: jmethodID?
-
-    open func addIcon( top: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top != nil ? top! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addIcon", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicOptionPaneUI.addIcon_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func addIcon( _ _top: java_awt.Container? ) {
-        addIcon( top: _top )
-    }
-
-    /// protected javax.swing.Icon javax.swing.plaf.basic.BasicOptionPaneUI.getIconForType(int)
-
-    private static var getIconForType_MethodID_21: jmethodID?
-
-    open func getIconForType( messageType: Int ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: messageType, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconForType", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &BasicOptionPaneUI.getIconForType_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    open func getIconForType( _ _messageType: Int ) -> Icon! {
-        return getIconForType( messageType: _messageType )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.burstStringInto(java.awt.Container,java.lang.String,int)
-
-    private static var burstStringInto_MethodID_22: jmethodID?
-
-    open func burstStringInto( c: java_awt.Container?, d: String?, maxll: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: d, locals: &__locals )
-        __args[2] = JNIType.toJava( value: maxll, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "burstStringInto", methodSig: "(Ljava/awt/Container;Ljava/lang/String;I)V", methodCache: &BasicOptionPaneUI.burstStringInto_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func burstStringInto( _ _c: java_awt.Container?, _ _d: String?, _ _maxll: Int ) {
-        burstStringInto( c: _c, d: _d, maxll: _maxll )
-    }
-
-    /// protected java.awt.Container javax.swing.plaf.basic.BasicOptionPaneUI.createSeparator()
-
-    private static var createSeparator_MethodID_23: jmethodID?
-
-    open func createSeparator() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSeparator", methodSig: "()Ljava/awt/Container;", methodCache: &BasicOptionPaneUI.createSeparator_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Container javax.swing.plaf.basic.BasicOptionPaneUI.createButtonArea()
-
-    private static var createButtonArea_MethodID_24: jmethodID?
-
-    open func createButtonArea() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createButtonArea", methodSig: "()Ljava/awt/Container;", methodCache: &BasicOptionPaneUI.createButtonArea_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicOptionPaneUI.createButtonActionListener(int)
-
-    private static var createButtonActionListener_MethodID_25: jmethodID?
-
-    open func createButtonActionListener( buttonIndex: Int ) -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: buttonIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createButtonActionListener", methodSig: "(I)Ljava/awt/event/ActionListener;", methodCache: &BasicOptionPaneUI.createButtonActionListener_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-    open func createButtonActionListener( _ _buttonIndex: Int ) -> java_awt.ActionListener! {
-        return createButtonActionListener( buttonIndex: _buttonIndex )
-    }
-
-    /// protected java.lang.Object[] javax.swing.plaf.basic.BasicOptionPaneUI.getButtons()
-
-    private static var getButtons_MethodID_26: jmethodID?
-
-    open func getButtons() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getButtons", methodSig: "()[Ljava/lang/Object;", methodCache: &BasicOptionPaneUI.getButtons_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
-    }
-
-
-    /// protected boolean javax.swing.plaf.basic.BasicOptionPaneUI.getSizeButtonsToSameWidth()
-
-    private static var getSizeButtonsToSameWidth_MethodID_27: jmethodID?
-
-    open func getSizeButtonsToSameWidth() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSizeButtonsToSameWidth", methodSig: "()Z", methodCache: &BasicOptionPaneUI.getSizeButtonsToSameWidth_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicOptionPaneUI.getInitialValueIndex()
-
-    private static var getInitialValueIndex_MethodID_28: jmethodID?
-
-    open func getInitialValueIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInitialValueIndex", methodSig: "()I", methodCache: &BasicOptionPaneUI.getInitialValueIndex_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private void javax.swing.plaf.basic.BasicOptionPaneUI.configureMessageLabel(javax.swing.JLabel)
-
-    /// private void javax.swing.plaf.basic.BasicOptionPaneUI.configureButton(javax.swing.JButton)
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicOptionPaneUI.getInputMap(int)
 
     /// public void javax.swing.plaf.basic.BasicOptionPaneUI.selectInitialValue(javax.swing.JOptionPane)
 
     /// protected int javax.swing.plaf.basic.BasicOptionPaneUI.getMaxCharactersPerLineCount()
 
-    private static var getMaxCharactersPerLineCount_MethodID_29: jmethodID?
+    private static var getMaxCharactersPerLineCount_MethodID_5: jmethodID?
 
     open func getMaxCharactersPerLineCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxCharactersPerLineCount", methodSig: "()I", methodCache: &BasicOptionPaneUI.getMaxCharactersPerLineCount_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxCharactersPerLineCount", methodSig: "()I", methodCache: &BasicOptionPaneUI.getMaxCharactersPerLineCount_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -549,7 +230,326 @@ open class BasicOptionPaneUI: OptionPaneUI {
 
     /// public void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallUI(javax.swing.JComponent)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI.getPreferredSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.addMessageComponents(java.awt.Container,java.awt.GridBagConstraints,java.lang.Object,int,boolean)
+
+    private static var addMessageComponents_MethodID_6: jmethodID?
+
+    open func addMessageComponents( container: java_awt.Container?, cons: java_awt.GridBagConstraints?, msg: java_swift.JavaObject?, maxll: Int, internallyCreated: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: container != nil ? container! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: cons != nil ? cons! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: msg != nil ? msg! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: maxll, locals: &__locals )
+        __args[4] = JNIType.toJava( value: internallyCreated, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMessageComponents", methodSig: "(Ljava/awt/Container;Ljava/awt/GridBagConstraints;Ljava/lang/Object;IZ)V", methodCache: &BasicOptionPaneUI.addMessageComponents_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func addMessageComponents( _ _container: java_awt.Container?, _ _cons: java_awt.GridBagConstraints?, _ _msg: java_swift.JavaObject?, _ _maxll: Int, _ _internallyCreated: Bool ) {
+        addMessageComponents( container: _container, cons: _cons, msg: _msg, maxll: _maxll, internallyCreated: _internallyCreated )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.addButtonComponents(java.awt.Container,java.lang.Object[],int)
+
+    private static var addButtonComponents_MethodID_7: jmethodID?
+
+    open func addButtonComponents( container: java_awt.Container?, buttons: [JavaObject]?, initialIndex: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: container != nil ? container! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: buttons, locals: &__locals )
+        __args[2] = JNIType.toJava( value: initialIndex, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addButtonComponents", methodSig: "(Ljava/awt/Container;[Ljava/lang/Object;I)V", methodCache: &BasicOptionPaneUI.addButtonComponents_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func addButtonComponents( _ _container: java_awt.Container?, _ _buttons: [JavaObject]?, _ _initialIndex: Int ) {
+        addButtonComponents( container: _container, buttons: _buttons, initialIndex: _initialIndex )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.resetInputValue()
+
+    private static var resetInputValue_MethodID_8: jmethodID?
+
+    open func resetInputValue() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetInputValue", methodSig: "()V", methodCache: &BasicOptionPaneUI.resetInputValue_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI.getMinimumOptionPaneSize()
+
+    private static var getMinimumOptionPaneSize_MethodID_9: jmethodID?
+
+    open func getMinimumOptionPaneSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumOptionPaneSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicOptionPaneUI.getMinimumOptionPaneSize_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Container javax.swing.plaf.basic.BasicOptionPaneUI.createMessageArea()
+
+    private static var createMessageArea_MethodID_10: jmethodID?
+
+    open func createMessageArea() -> java_awt.Container! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMessageArea", methodSig: "()Ljava/awt/Container;", methodCache: &BasicOptionPaneUI.createMessageArea_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.addIcon(java.awt.Container)
+
+    private static var addIcon_MethodID_11: jmethodID?
+
+    open func addIcon( top: java_awt.Container? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: top != nil ? top! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addIcon", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicOptionPaneUI.addIcon_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func addIcon( _ _top: java_awt.Container? ) {
+        addIcon( top: _top )
+    }
+
+    /// protected javax.swing.Icon javax.swing.plaf.basic.BasicOptionPaneUI.getIconForType(int)
+
+    private static var getIconForType_MethodID_12: jmethodID?
+
+    open func getIconForType( messageType: Int ) -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: messageType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconForType", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &BasicOptionPaneUI.getIconForType_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    open func getIconForType( _ _messageType: Int ) -> Icon! {
+        return getIconForType( messageType: _messageType )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.burstStringInto(java.awt.Container,java.lang.String,int)
+
+    private static var burstStringInto_MethodID_13: jmethodID?
+
+    open func burstStringInto( c: java_awt.Container?, d: String?, maxll: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: d, locals: &__locals )
+        __args[2] = JNIType.toJava( value: maxll, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "burstStringInto", methodSig: "(Ljava/awt/Container;Ljava/lang/String;I)V", methodCache: &BasicOptionPaneUI.burstStringInto_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func burstStringInto( _ _c: java_awt.Container?, _ _d: String?, _ _maxll: Int ) {
+        burstStringInto( c: _c, d: _d, maxll: _maxll )
+    }
+
+    /// protected java.awt.Container javax.swing.plaf.basic.BasicOptionPaneUI.createSeparator()
+
+    private static var createSeparator_MethodID_14: jmethodID?
+
+    open func createSeparator() -> java_awt.Container! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSeparator", methodSig: "()Ljava/awt/Container;", methodCache: &BasicOptionPaneUI.createSeparator_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Container javax.swing.plaf.basic.BasicOptionPaneUI.createButtonArea()
+
+    private static var createButtonArea_MethodID_15: jmethodID?
+
+    open func createButtonArea() -> java_awt.Container! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createButtonArea", methodSig: "()Ljava/awt/Container;", methodCache: &BasicOptionPaneUI.createButtonArea_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicOptionPaneUI.createButtonActionListener(int)
+
+    private static var createButtonActionListener_MethodID_16: jmethodID?
+
+    open func createButtonActionListener( buttonIndex: Int ) -> java_awt.ActionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: buttonIndex, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createButtonActionListener", methodSig: "(I)Ljava/awt/event/ActionListener;", methodCache: &BasicOptionPaneUI.createButtonActionListener_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
+    }
+
+    open func createButtonActionListener( _ _buttonIndex: Int ) -> java_awt.ActionListener! {
+        return createButtonActionListener( buttonIndex: _buttonIndex )
+    }
+
+    /// protected java.lang.Object[] javax.swing.plaf.basic.BasicOptionPaneUI.getButtons()
+
+    private static var getButtons_MethodID_17: jmethodID?
+
+    open func getButtons() -> [JavaObject]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getButtons", methodSig: "()[Ljava/lang/Object;", methodCache: &BasicOptionPaneUI.getButtons_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject](), from: __return )
+    }
+
+
+    /// protected boolean javax.swing.plaf.basic.BasicOptionPaneUI.getSizeButtonsToSameWidth()
+
+    private static var getSizeButtonsToSameWidth_MethodID_18: jmethodID?
+
+    open func getSizeButtonsToSameWidth() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSizeButtonsToSameWidth", methodSig: "()Z", methodCache: &BasicOptionPaneUI.getSizeButtonsToSameWidth_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicOptionPaneUI.getInitialValueIndex()
+
+    private static var getInitialValueIndex_MethodID_19: jmethodID?
+
+    open func getInitialValueIndex() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInitialValueIndex", methodSig: "()I", methodCache: &BasicOptionPaneUI.getInitialValueIndex_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// private void javax.swing.plaf.basic.BasicOptionPaneUI.configureMessageLabel(javax.swing.JLabel)
+
+    /// private void javax.swing.plaf.basic.BasicOptionPaneUI.configureButton(javax.swing.JButton)
+
+    /// static void javax.swing.plaf.basic.BasicOptionPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installDefaults()
+
+    private static var installDefaults_MethodID_20: jmethodID?
+
+    open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicOptionPaneUI.installDefaults_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installComponents()
+
+    private static var installComponents_MethodID_21: jmethodID?
+
+    open func installComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicOptionPaneUI.installComponents_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installListeners()
+
+    private static var installListeners_MethodID_22: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicOptionPaneUI.installListeners_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_23: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicOptionPaneUI.installKeyboardActions_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_24: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallDefaults_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_25: jmethodID?
+
+    open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallComponents_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_26: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallListeners_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicOptionPaneUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_27: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicOptionPaneUI.uninstallKeyboardActions_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicOptionPaneUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_28: jmethodID?
+
+    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicOptionPaneUI.createPropertyChangeListener_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicOptionPaneUI.createLayoutManager()
+
+    private static var createLayoutManager_MethodID_29: jmethodID?
+
+    open func createLayoutManager() -> java_awt.LayoutManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicOptionPaneUI.createLayoutManager_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
 
 }
 

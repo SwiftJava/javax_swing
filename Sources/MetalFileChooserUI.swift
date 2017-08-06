@@ -690,43 +690,42 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// public java.lang.String javax.swing.plaf.metal.MetalFileChooserUI.getFileName()
 
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.valueChanged(javax.swing.event.ListSelectionEvent)
+    /// protected javax.swing.JPanel javax.swing.plaf.metal.MetalFileChooserUI.createList(javax.swing.JFileChooser)
 
-    private static var valueChanged_MethodID_2: jmethodID?
+    private static var createList_MethodID_2: jmethodID?
 
-    open func valueChanged( e: ListSelectionEvent? ) {
+    open func createList( fc: JFileChooser? ) -> JPanel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &MetalFileChooserUI.valueChanged_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func valueChanged( _ _e: ListSelectionEvent? ) {
-        valueChanged( e: _e )
-    }
-
-    /// protected javax.swing.ActionMap javax.swing.plaf.metal.MetalFileChooserUI.getActionMap()
-
-    private static var getActionMap_MethodID_3: jmethodID?
-
-    open func getActionMap() -> ActionMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionMap", methodSig: "()Ljavax/swing/ActionMap;", methodCache: &MetalFileChooserUI.getActionMap_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createList", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.createList_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ActionMap( javaObject: __return ) : nil
+        return __return != nil ? JPanel( javaObject: __return ) : nil
     }
 
+    open func createList( _ _fc: JFileChooser? ) -> JPanel! {
+        return createList( fc: _fc )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalFileChooserUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalFileChooserUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalFileChooserUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.rescanCurrentDirectory(javax.swing.JFileChooser)
+
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.ensureFileIsVisible(javax.swing.JFileChooser,java.io.File)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalFileChooserUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_4: jmethodID?
+    private static var createUI_MethodID_3: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalFileChooserUI", classCache: &MetalFileChooserUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalFileChooserUI", classCache: &MetalFileChooserUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -735,16 +734,82 @@ open class MetalFileChooserUI: BasicFileChooserUI {
         return createUI( c: _c )
     }
 
+    /// protected void javax.swing.plaf.metal.MetalFileChooserUI.setDirectorySelected(boolean)
+
+    private static var setDirectorySelected_MethodID_4: jmethodID?
+
+    open func setDirectorySelected( directorySelected: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: directorySelected, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirectorySelected", methodSig: "(Z)V", methodCache: &MetalFileChooserUI.setDirectorySelected_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func setDirectorySelected( _ _directorySelected: Bool ) {
+        setDirectorySelected( directorySelected: _directorySelected )
+    }
+
+    /// public java.lang.String javax.swing.plaf.metal.MetalFileChooserUI.getDirectoryName()
+
+    /// protected void javax.swing.plaf.metal.MetalFileChooserUI.installStrings(javax.swing.JFileChooser)
+
+    private static var installStrings_MethodID_5: jmethodID?
+
+    override open func installStrings( fc: JFileChooser? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installStrings", methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &MetalFileChooserUI.installStrings_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func installStrings( _ _fc: JFileChooser? ) {
+        installStrings( fc: _fc )
+    }
+
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.setFileName(java.lang.String)
+
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.setDirectoryName(java.lang.String)
+
+    /// protected javax.swing.JButton javax.swing.plaf.metal.MetalFileChooserUI.getApproveButton(javax.swing.JFileChooser)
+
+    private static var getApproveButton_MethodID_6: jmethodID?
+
+    override open func getApproveButton( fc: JFileChooser? ) -> JButton! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButton", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/JButton;", methodCache: &MetalFileChooserUI.getApproveButton_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JButton( javaObject: __return ) : nil
+    }
+
+    override open func getApproveButton( _ _fc: JFileChooser? ) -> JButton! {
+        return getApproveButton( fc: _fc )
+    }
+
+    /// protected javax.swing.ActionMap javax.swing.plaf.metal.MetalFileChooserUI.createActionMap()
+
+    private static var createActionMap_MethodID_7: jmethodID?
+
+    open func createActionMap() -> ActionMap! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionMap", methodSig: "()Ljavax/swing/ActionMap;", methodCache: &MetalFileChooserUI.createActionMap_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ActionMap( javaObject: __return ) : nil
+    }
+
+
     /// private void javax.swing.plaf.metal.MetalFileChooserUI.populateFileNameLabel()
 
     /// protected javax.swing.JPanel javax.swing.plaf.metal.MetalFileChooserUI.getButtonPanel()
 
-    private static var getButtonPanel_MethodID_5: jmethodID?
+    private static var getButtonPanel_MethodID_8: jmethodID?
 
     open func getButtonPanel() -> JPanel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getButtonPanel", methodSig: "()Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.getButtonPanel_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getButtonPanel", methodSig: "()Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.getButtonPanel_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JPanel( javaObject: __return ) : nil
     }
@@ -752,12 +817,12 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// protected javax.swing.JPanel javax.swing.plaf.metal.MetalFileChooserUI.getBottomPanel()
 
-    private static var getBottomPanel_MethodID_6: jmethodID?
+    private static var getBottomPanel_MethodID_9: jmethodID?
 
     open func getBottomPanel() -> JPanel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBottomPanel", methodSig: "()Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.getBottomPanel_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBottomPanel", methodSig: "()Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.getBottomPanel_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JPanel( javaObject: __return ) : nil
     }
@@ -765,13 +830,13 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// protected javax.swing.JPanel javax.swing.plaf.metal.MetalFileChooserUI.createDetailsView(javax.swing.JFileChooser)
 
-    private static var createDetailsView_MethodID_7: jmethodID?
+    private static var createDetailsView_MethodID_10: jmethodID?
 
     open func createDetailsView( fc: JFileChooser? ) -> JPanel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDetailsView", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.createDetailsView_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDetailsView", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.createDetailsView_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JPanel( javaObject: __return ) : nil
     }
@@ -780,9 +845,9 @@ open class MetalFileChooserUI: BasicFileChooserUI {
         return createDetailsView( fc: _fc )
     }
 
-    /// private java.lang.String javax.swing.plaf.metal.MetalFileChooserUI.fileNameString(java.io.File)
-
     /// private java.lang.String javax.swing.plaf.metal.MetalFileChooserUI.fileNameString(java.io.File[])
+
+    /// private java.lang.String javax.swing.plaf.metal.MetalFileChooserUI.fileNameString(java.io.File)
 
     /// private void javax.swing.plaf.metal.MetalFileChooserUI.doSelectedFileChanged(java.beans.PropertyChangeEvent)
 
@@ -806,35 +871,35 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// protected void javax.swing.plaf.metal.MetalFileChooserUI.removeControlButtons()
 
-    private static var removeControlButtons_MethodID_8: jmethodID?
+    private static var removeControlButtons_MethodID_11: jmethodID?
 
     open func removeControlButtons() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeControlButtons", methodSig: "()V", methodCache: &MetalFileChooserUI.removeControlButtons_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeControlButtons", methodSig: "()V", methodCache: &MetalFileChooserUI.removeControlButtons_MethodID_11, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.metal.MetalFileChooserUI.addControlButtons()
 
-    private static var addControlButtons_MethodID_9: jmethodID?
+    private static var addControlButtons_MethodID_12: jmethodID?
 
     open func addControlButtons() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addControlButtons", methodSig: "()V", methodCache: &MetalFileChooserUI.addControlButtons_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addControlButtons", methodSig: "()V", methodCache: &MetalFileChooserUI.addControlButtons_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxRenderer javax.swing.plaf.metal.MetalFileChooserUI.createDirectoryComboBoxRenderer(javax.swing.JFileChooser)
 
-    private static var createDirectoryComboBoxRenderer_MethodID_10: jmethodID?
+    private static var createDirectoryComboBoxRenderer_MethodID_13: jmethodID?
 
     open func createDirectoryComboBoxRenderer( fc: JFileChooser? ) -> /* javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxRenderer */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDirectoryComboBoxRenderer", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/plaf/metal/MetalFileChooserUI$DirectoryComboBoxRenderer;", methodCache: &MetalFileChooserUI.createDirectoryComboBoxRenderer_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDirectoryComboBoxRenderer", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/plaf/metal/MetalFileChooserUI$DirectoryComboBoxRenderer;", methodCache: &MetalFileChooserUI.createDirectoryComboBoxRenderer_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxRenderer */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -845,13 +910,13 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// protected javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxModel javax.swing.plaf.metal.MetalFileChooserUI.createDirectoryComboBoxModel(javax.swing.JFileChooser)
 
-    private static var createDirectoryComboBoxModel_MethodID_11: jmethodID?
+    private static var createDirectoryComboBoxModel_MethodID_14: jmethodID?
 
     open func createDirectoryComboBoxModel( fc: JFileChooser? ) -> /* javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxModel */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDirectoryComboBoxModel", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/plaf/metal/MetalFileChooserUI$DirectoryComboBoxModel;", methodCache: &MetalFileChooserUI.createDirectoryComboBoxModel_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDirectoryComboBoxModel", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/plaf/metal/MetalFileChooserUI$DirectoryComboBoxModel;", methodCache: &MetalFileChooserUI.createDirectoryComboBoxModel_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxModel */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -862,12 +927,12 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// protected javax.swing.plaf.metal.MetalFileChooserUI$FilterComboBoxRenderer javax.swing.plaf.metal.MetalFileChooserUI.createFilterComboBoxRenderer()
 
-    private static var createFilterComboBoxRenderer_MethodID_12: jmethodID?
+    private static var createFilterComboBoxRenderer_MethodID_15: jmethodID?
 
     open func createFilterComboBoxRenderer() -> MetalFileChooserUI_FilterComboBoxRenderer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFilterComboBoxRenderer", methodSig: "()Ljavax/swing/plaf/metal/MetalFileChooserUI$FilterComboBoxRenderer;", methodCache: &MetalFileChooserUI.createFilterComboBoxRenderer_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFilterComboBoxRenderer", methodSig: "()Ljavax/swing/plaf/metal/MetalFileChooserUI$FilterComboBoxRenderer;", methodCache: &MetalFileChooserUI.createFilterComboBoxRenderer_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MetalFileChooserUI_FilterComboBoxRenderer( javaObject: __return ) : nil
     }
@@ -875,12 +940,12 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// protected javax.swing.plaf.metal.MetalFileChooserUI$FilterComboBoxModel javax.swing.plaf.metal.MetalFileChooserUI.createFilterComboBoxModel()
 
-    private static var createFilterComboBoxModel_MethodID_13: jmethodID?
+    private static var createFilterComboBoxModel_MethodID_16: jmethodID?
 
     open func createFilterComboBoxModel() -> /* javax.swing.plaf.metal.MetalFileChooserUI$FilterComboBoxModel */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFilterComboBoxModel", methodSig: "()Ljavax/swing/plaf/metal/MetalFileChooserUI$FilterComboBoxModel;", methodCache: &MetalFileChooserUI.createFilterComboBoxModel_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFilterComboBoxModel", methodSig: "()Ljavax/swing/plaf/metal/MetalFileChooserUI$FilterComboBoxModel;", methodCache: &MetalFileChooserUI.createFilterComboBoxModel_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.metal.MetalFileChooserUI$FilterComboBoxModel */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -888,14 +953,31 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// private static void javax.swing.plaf.metal.MetalFileChooserUI.groupLabels(javax.swing.plaf.metal.MetalFileChooserUI$AlignedLabel[])
 
-    /// protected javax.swing.ActionMap javax.swing.plaf.metal.MetalFileChooserUI.createActionMap()
+    /// private java.lang.Integer javax.swing.plaf.metal.MetalFileChooserUI.getMnemonic(java.lang.String,java.util.Locale)
 
-    private static var createActionMap_MethodID_14: jmethodID?
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.valueChanged(javax.swing.event.ListSelectionEvent)
 
-    open func createActionMap() -> ActionMap! {
+    private static var valueChanged_MethodID_17: jmethodID?
+
+    open func valueChanged( e: ListSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionMap", methodSig: "()Ljavax/swing/ActionMap;", methodCache: &MetalFileChooserUI.createActionMap_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &MetalFileChooserUI.valueChanged_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func valueChanged( _ _e: ListSelectionEvent? ) {
+        valueChanged( e: _e )
+    }
+
+    /// protected javax.swing.ActionMap javax.swing.plaf.metal.MetalFileChooserUI.getActionMap()
+
+    private static var getActionMap_MethodID_18: jmethodID?
+
+    open func getActionMap() -> ActionMap! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionMap", methodSig: "()Ljavax/swing/ActionMap;", methodCache: &MetalFileChooserUI.getActionMap_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionMap( javaObject: __return ) : nil
     }
@@ -903,23 +985,37 @@ open class MetalFileChooserUI: BasicFileChooserUI {
 
     /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1100(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
 
-    /// private java.lang.Integer javax.swing.plaf.metal.MetalFileChooserUI.getMnemonic(java.lang.String,java.util.Locale)
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.installUI(javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.rescanCurrentDirectory(javax.swing.JFileChooser)
+    /// public void javax.swing.plaf.metal.MetalFileChooserUI.uninstallUI(javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.ensureFileIsVisible(javax.swing.JFileChooser,java.io.File)
+    /// static javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxModel javax.swing.plaf.metal.MetalFileChooserUI.access$2000(javax.swing.plaf.metal.MetalFileChooserUI)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$900(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1000(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1200(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1300(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1400(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1500(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
+
+    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1600(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
 
     /// public void javax.swing.plaf.metal.MetalFileChooserUI.installComponents(javax.swing.JFileChooser)
 
     /// protected void javax.swing.plaf.metal.MetalFileChooserUI.installListeners(javax.swing.JFileChooser)
 
-    private static var installListeners_MethodID_15: jmethodID?
+    private static var installListeners_MethodID_19: jmethodID?
 
     override open func installListeners( fc: JFileChooser? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &MetalFileChooserUI.installListeners_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &MetalFileChooserUI.installListeners_MethodID_19, args: &__args, locals: &__locals )
     }
 
     override open func installListeners( _ _fc: JFileChooser? ) {
@@ -939,102 +1035,6 @@ open class MetalFileChooserUI: BasicFileChooserUI {
     /// static javax.swing.JTextField javax.swing.plaf.metal.MetalFileChooserUI.access$1900(javax.swing.plaf.metal.MetalFileChooserUI)
 
     /// static javax.swing.JComboBox javax.swing.plaf.metal.MetalFileChooserUI.access$2100(javax.swing.plaf.metal.MetalFileChooserUI)
-
-    /// static javax.swing.plaf.metal.MetalFileChooserUI$DirectoryComboBoxModel javax.swing.plaf.metal.MetalFileChooserUI.access$2000(javax.swing.plaf.metal.MetalFileChooserUI)
-
-    /// protected void javax.swing.plaf.metal.MetalFileChooserUI.setDirectorySelected(boolean)
-
-    private static var setDirectorySelected_MethodID_16: jmethodID?
-
-    open func setDirectorySelected( directorySelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: directorySelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirectorySelected", methodSig: "(Z)V", methodCache: &MetalFileChooserUI.setDirectorySelected_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    override open func setDirectorySelected( _ _directorySelected: Bool ) {
-        setDirectorySelected( directorySelected: _directorySelected )
-    }
-
-    /// public java.lang.String javax.swing.plaf.metal.MetalFileChooserUI.getDirectoryName()
-
-    /// protected void javax.swing.plaf.metal.MetalFileChooserUI.installStrings(javax.swing.JFileChooser)
-
-    private static var installStrings_MethodID_17: jmethodID?
-
-    override open func installStrings( fc: JFileChooser? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installStrings", methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &MetalFileChooserUI.installStrings_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    override open func installStrings( _ _fc: JFileChooser? ) {
-        installStrings( fc: _fc )
-    }
-
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.setFileName(java.lang.String)
-
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.setDirectoryName(java.lang.String)
-
-    /// protected javax.swing.JButton javax.swing.plaf.metal.MetalFileChooserUI.getApproveButton(javax.swing.JFileChooser)
-
-    private static var getApproveButton_MethodID_18: jmethodID?
-
-    override open func getApproveButton( fc: JFileChooser? ) -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButton", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/JButton;", methodCache: &MetalFileChooserUI.getApproveButton_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JButton( javaObject: __return ) : nil
-    }
-
-    override open func getApproveButton( _ _fc: JFileChooser? ) -> JButton! {
-        return getApproveButton( fc: _fc )
-    }
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$900(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1000(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1200(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1300(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1400(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1500(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.metal.MetalFileChooserUI.access$1600(javax.swing.plaf.metal.MetalFileChooserUI,java.beans.PropertyChangeEvent)
-
-    /// protected javax.swing.JPanel javax.swing.plaf.metal.MetalFileChooserUI.createList(javax.swing.JFileChooser)
-
-    private static var createList_MethodID_19: jmethodID?
-
-    open func createList( fc: JFileChooser? ) -> JPanel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fc != nil ? fc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createList", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/JPanel;", methodCache: &MetalFileChooserUI.createList_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JPanel( javaObject: __return ) : nil
-    }
-
-    open func createList( _ _fc: JFileChooser? ) -> JPanel! {
-        return createList( fc: _fc )
-    }
-
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.metal.MetalFileChooserUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalFileChooserUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalFileChooserUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalFileChooserUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

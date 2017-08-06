@@ -89,6 +89,12 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMaximumSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalDesktopIconUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -160,12 +166,6 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalDesktopIconUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
     }
 
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

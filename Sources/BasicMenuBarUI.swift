@@ -84,7 +84,9 @@ open class BasicMenuBarUI: MenuBarUI {
 
     /// private javax.swing.plaf.basic.BasicMenuBarUI$Handler javax.swing.plaf.basic.BasicMenuBarUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicMenuBarUI.getInputMap(int)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMaximumSize(javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicMenuBarUI.createUI(javax.swing.JComponent)
 
@@ -116,73 +118,7 @@ open class BasicMenuBarUI: MenuBarUI {
     }
 
 
-    /// static void javax.swing.plaf.basic.BasicMenuBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.installDefaults()
-
-    private static var installDefaults_MethodID_4: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicMenuBarUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.installListeners()
-
-    private static var installListeners_MethodID_5: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicMenuBarUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_6: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicMenuBarUI.installKeyboardActions_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_7: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_8: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallListeners_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_9: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
-    }
-
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicMenuBarUI.getInputMap(int)
 
     /// public void javax.swing.plaf.basic.BasicMenuBarUI.installUI(javax.swing.JComponent)
 
@@ -190,20 +126,84 @@ open class BasicMenuBarUI: MenuBarUI {
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicMenuBarUI.createChangeListener()
 
-    private static var createChangeListener_MethodID_10: jmethodID?
+    private static var createChangeListener_MethodID_4: jmethodID?
 
     open func createChangeListener() -> ChangeListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicMenuBarUI.createChangeListener_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicMenuBarUI.createChangeListener_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMinimumSize(javax.swing.JComponent)
+    /// static void javax.swing.plaf.basic.BasicMenuBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMaximumSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.installDefaults()
+
+    private static var installDefaults_MethodID_5: jmethodID?
+
+    open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicMenuBarUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.installListeners()
+
+    private static var installListeners_MethodID_6: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicMenuBarUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_7: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicMenuBarUI.installKeyboardActions_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_8: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_9: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicMenuBarUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_10: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
+    }
+
 
 }
 

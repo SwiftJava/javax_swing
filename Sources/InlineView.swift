@@ -137,22 +137,9 @@ open class InlineView: LabelView {
 
     /// public javax.swing.text.AttributeSet javax.swing.text.html.InlineView.getAttributes()
 
-    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.InlineView.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_2: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &InlineView.getStyleSheet_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
     /// public javax.swing.text.View javax.swing.text.html.InlineView.breakView(int,int,float,float)
 
-    private static var breakView_MethodID_3: jmethodID?
+    private static var breakView_MethodID_2: jmethodID?
 
     override open func breakView( axis: Int, offset: Int, pos: Float, len: Float ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -161,7 +148,7 @@ open class InlineView: LabelView {
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         __args[3] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IIFF)Ljavax/swing/text/View;", methodCache: &InlineView.breakView_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IIFF)Ljavax/swing/text/View;", methodCache: &InlineView.breakView_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -174,12 +161,25 @@ open class InlineView: LabelView {
 
     /// protected void javax.swing.text.html.InlineView.setPropertiesFromAttributes()
 
-    private static var setPropertiesFromAttributes_MethodID_4: jmethodID?
+    private static var setPropertiesFromAttributes_MethodID_3: jmethodID?
 
     override open func setPropertiesFromAttributes() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &InlineView.setPropertiesFromAttributes_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &InlineView.setPropertiesFromAttributes_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.InlineView.getStyleSheet()
+
+    private static var getStyleSheet_MethodID_4: jmethodID?
+
+    open func getStyleSheet() -> StyleSheet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &InlineView.getStyleSheet_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
     }
 
 

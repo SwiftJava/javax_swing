@@ -517,53 +517,19 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         self.init( dtd: _dtd )
     }
 
-    /// char[] javax.swing.text.html.parser.Parser.getChars(int)
-
     /// char[] javax.swing.text.html.parser.Parser.getChars(int,int)
 
-    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
-
-    private static var error_MethodID_2: jmethodID?
-
-    open func error( err: String?, arg1: String?, arg2: String?, arg3: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String?, _ _arg3: String? ) {
-        error( err: _err, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String)
-
-    private static var error_MethodID_3: jmethodID?
-
-    open func error( err: String?, arg1: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func error( _ _err: String?, _ _arg1: String? ) {
-        error( err: _err, arg1: _arg1 )
-    }
+    /// char[] javax.swing.text.html.parser.Parser.getChars(int)
 
     /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String)
 
-    private static var error_MethodID_4: jmethodID?
+    private static var error_MethodID_2: jmethodID?
 
     open func error( err: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func error( _ _err: String? ) {
@@ -572,7 +538,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String)
 
-    private static var error_MethodID_5: jmethodID?
+    private static var error_MethodID_3: jmethodID?
 
     open func error( err: String?, arg1: String?, arg2: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -580,11 +546,45 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         __args[0] = JNIType.toJava( value: err, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String? ) {
         error( err: _err, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+
+    private static var error_MethodID_4: jmethodID?
+
+    open func error( err: String?, arg1: String?, arg2: String?, arg3: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: err, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String?, _ _arg3: String? ) {
+        error( err: _err, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String)
+
+    private static var error_MethodID_5: jmethodID?
+
+    open func error( err: String?, arg1: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: err, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func error( _ _err: String?, _ _arg1: String? ) {
+        error( err: _err, arg1: _arg1 )
     }
 
     /// protected javax.swing.text.SimpleAttributeSet javax.swing.text.html.parser.Parser.getAttributes()
@@ -617,6 +617,12 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func parse( _ __in: /* java.io.Reader */ UnclassedObject? ) throws /* java.io.IOException */ {
         try parse( _in: __in )
     }
+
+    /// void javax.swing.text.html.parser.Parser.parseContent() throws java.io.IOException
+
+    /// private final int javax.swing.text.html.parser.Parser.readCh() throws java.io.IOException
+
+    /// java.lang.String javax.swing.text.html.parser.Parser.getString(int)
 
     /// void javax.swing.text.html.parser.Parser.handleText(javax.swing.text.html.parser.TagElement)
 
@@ -931,12 +937,6 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     /// void javax.swing.text.html.parser.Parser.parseTag() throws java.io.IOException
 
     /// void javax.swing.text.html.parser.Parser.parseScript() throws java.io.IOException
-
-    /// java.lang.String javax.swing.text.html.parser.Parser.getString(int)
-
-    /// void javax.swing.text.html.parser.Parser.parseContent() throws java.io.IOException
-
-    /// private final int javax.swing.text.html.parser.Parser.readCh() throws java.io.IOException
 
 }
 

@@ -830,57 +830,146 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// private javax.swing.plaf.basic.BasicComboPopup$Handler javax.swing.plaf.basic.BasicComboPopup.getHandler()
 
-    /// public void javax.swing.plaf.basic.BasicComboPopup.hide()
+    /// protected javax.swing.JList javax.swing.plaf.basic.BasicComboPopup.createList()
 
-    /// public javax.swing.JList javax.swing.plaf.basic.BasicComboPopup.getList()
+    private static var createList_MethodID_2: jmethodID?
 
-    private static var getList_MethodID_2: jmethodID?
-
-    open func getList() -> JList! {
+    open func createList() -> JList! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getList", methodSig: "()Ljavax/swing/JList;", methodCache: &BasicComboPopup.getList_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createList", methodSig: "()Ljavax/swing/JList;", methodCache: &BasicComboPopup.createList_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JList( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.plaf.basic.BasicComboPopup.show()
+    /// public javax.swing.JList javax.swing.plaf.basic.BasicComboPopup.getList()
+
+    private static var getList_MethodID_3: jmethodID?
+
+    open func getList() -> JList! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getList", methodSig: "()Ljavax/swing/JList;", methodCache: &BasicComboPopup.getList_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JList( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.MouseEvent javax.swing.plaf.basic.BasicComboPopup.convertMouseEvent(java.awt.event.MouseEvent)
+
+    private static var convertMouseEvent_MethodID_4: jmethodID?
+
+    open func convertMouseEvent( e: java_awt.MouseEvent? ) -> java_awt.MouseEvent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "convertMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Ljava/awt/event/MouseEvent;", methodCache: &BasicComboPopup.convertMouseEvent_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.MouseEvent( javaObject: __return ) : nil
+    }
+
+    open func convertMouseEvent( _ _e: java_awt.MouseEvent? ) -> java_awt.MouseEvent! {
+        return convertMouseEvent( e: _e )
+    }
 
     /// public javax.accessibility.AccessibleContext javax.swing.plaf.basic.BasicComboPopup.getAccessibleContext()
 
     /// public boolean javax.swing.plaf.basic.BasicComboPopup.isFocusTraversable()
 
+    /// public void javax.swing.plaf.basic.BasicComboPopup.hide()
+
+    /// private java.awt.Point javax.swing.plaf.basic.BasicComboPopup.getPopupLocation()
+
+    /// protected void javax.swing.plaf.basic.BasicComboPopup.togglePopup()
+
+    private static var togglePopup_MethodID_5: jmethodID?
+
+    open func togglePopup() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "togglePopup", methodSig: "()V", methodCache: &BasicComboPopup.togglePopup_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicComboPopup.show()
+
+    /// protected void javax.swing.plaf.basic.BasicComboPopup.firePopupMenuWillBecomeVisible()
+
+    private static var firePopupMenuWillBecomeVisible_MethodID_6: jmethodID?
+
+    override open func firePopupMenuWillBecomeVisible() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeVisible", methodSig: "()V", methodCache: &BasicComboPopup.firePopupMenuWillBecomeVisible_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicComboPopup.firePopupMenuWillBecomeInvisible()
+
+    private static var firePopupMenuWillBecomeInvisible_MethodID_7: jmethodID?
+
+    override open func firePopupMenuWillBecomeInvisible() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeInvisible", methodSig: "()V", methodCache: &BasicComboPopup.firePopupMenuWillBecomeInvisible_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicComboPopup.firePopupMenuCanceled()
+
+    private static var firePopupMenuCanceled_MethodID_8: jmethodID?
+
+    override open func firePopupMenuCanceled() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuCanceled", methodSig: "()V", methodCache: &BasicComboPopup.firePopupMenuCanceled_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.awt.event.ItemListener javax.swing.plaf.basic.BasicComboPopup.createItemListener()
+
+    private static var createItemListener_MethodID_9: jmethodID?
+
+    open func createItemListener() -> java_awt.ItemListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createItemListener", methodSig: "()Ljava/awt/event/ItemListener;", methodCache: &BasicComboPopup.createItemListener_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ItemListenerForward( javaObject: __return ) : nil
+    }
+
+
     /// protected void javax.swing.plaf.basic.BasicComboPopup.installKeyboardActions()
 
-    private static var installKeyboardActions_MethodID_3: jmethodID?
+    private static var installKeyboardActions_MethodID_10: jmethodID?
 
     open func installKeyboardActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicComboPopup.installKeyboardActions_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicComboPopup.installKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.uninstallKeyboardActions()
 
-    private static var uninstallKeyboardActions_MethodID_4: jmethodID?
+    private static var uninstallKeyboardActions_MethodID_11: jmethodID?
 
     open func uninstallKeyboardActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicComboPopup.uninstallKeyboardActions_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicComboPopup.uninstallKeyboardActions_MethodID_11, args: &__args, locals: &__locals )
     }
 
 
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicComboPopup.createPropertyChangeListener()
 
-    private static var createPropertyChangeListener_MethodID_5: jmethodID?
+    private static var createPropertyChangeListener_MethodID_12: jmethodID?
 
     open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicComboPopup.createPropertyChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicComboPopup.createPropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -888,12 +977,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected java.awt.event.KeyListener javax.swing.plaf.basic.BasicComboPopup.createKeyListener()
 
-    private static var createKeyListener_MethodID_6: jmethodID?
+    private static var createKeyListener_MethodID_13: jmethodID?
 
     open func createKeyListener() -> java_awt.KeyListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyListener", methodSig: "()Ljava/awt/event/KeyListener;", methodCache: &BasicComboPopup.createKeyListener_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyListener", methodSig: "()Ljava/awt/event/KeyListener;", methodCache: &BasicComboPopup.createKeyListener_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.KeyListenerForward( javaObject: __return ) : nil
     }
@@ -901,12 +990,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected javax.swing.event.ListDataListener javax.swing.plaf.basic.BasicComboPopup.createListDataListener()
 
-    private static var createListDataListener_MethodID_7: jmethodID?
+    private static var createListDataListener_MethodID_14: jmethodID?
 
     open func createListDataListener() -> ListDataListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListDataListener", methodSig: "()Ljavax/swing/event/ListDataListener;", methodCache: &BasicComboPopup.createListDataListener_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListDataListener", methodSig: "()Ljavax/swing/event/ListDataListener;", methodCache: &BasicComboPopup.createListDataListener_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ListDataListenerForward( javaObject: __return ) : nil
     }
@@ -914,23 +1003,23 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// public void javax.swing.plaf.basic.BasicComboPopup.uninstallingUI()
 
-    private static var uninstallingUI_MethodID_8: jmethodID?
+    private static var uninstallingUI_MethodID_15: jmethodID?
 
     open func uninstallingUI() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallingUI", methodSig: "()V", methodCache: &BasicComboPopup.uninstallingUI_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallingUI", methodSig: "()V", methodCache: &BasicComboPopup.uninstallingUI_MethodID_15, args: &__args, locals: &__locals )
     }
 
 
     /// public java.awt.event.MouseListener javax.swing.plaf.basic.BasicComboPopup.getMouseListener()
 
-    private static var getMouseListener_MethodID_9: jmethodID?
+    private static var getMouseListener_MethodID_16: jmethodID?
 
     open func getMouseListener() -> java_awt.MouseListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicComboPopup.getMouseListener_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicComboPopup.getMouseListener_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseListenerForward( javaObject: __return ) : nil
     }
@@ -938,12 +1027,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// public java.awt.event.MouseMotionListener javax.swing.plaf.basic.BasicComboPopup.getMouseMotionListener()
 
-    private static var getMouseMotionListener_MethodID_10: jmethodID?
+    private static var getMouseMotionListener_MethodID_17: jmethodID?
 
     open func getMouseMotionListener() -> java_awt.MouseMotionListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseMotionListener", methodSig: "()Ljava/awt/event/MouseMotionListener;", methodCache: &BasicComboPopup.getMouseMotionListener_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMouseMotionListener", methodSig: "()Ljava/awt/event/MouseMotionListener;", methodCache: &BasicComboPopup.getMouseMotionListener_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseMotionListenerForward( javaObject: __return ) : nil
     }
@@ -951,12 +1040,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// public java.awt.event.KeyListener javax.swing.plaf.basic.BasicComboPopup.getKeyListener()
 
-    private static var getKeyListener_MethodID_11: jmethodID?
+    private static var getKeyListener_MethodID_18: jmethodID?
 
     open func getKeyListener() -> java_awt.KeyListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyListener", methodSig: "()Ljava/awt/event/KeyListener;", methodCache: &BasicComboPopup.getKeyListener_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeyListener", methodSig: "()Ljava/awt/event/KeyListener;", methodCache: &BasicComboPopup.getKeyListener_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.KeyListenerForward( javaObject: __return ) : nil
     }
@@ -964,35 +1053,35 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.autoScrollUp()
 
-    private static var autoScrollUp_MethodID_12: jmethodID?
+    private static var autoScrollUp_MethodID_19: jmethodID?
 
     open func autoScrollUp() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "autoScrollUp", methodSig: "()V", methodCache: &BasicComboPopup.autoScrollUp_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "autoScrollUp", methodSig: "()V", methodCache: &BasicComboPopup.autoScrollUp_MethodID_19, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.autoScrollDown()
 
-    private static var autoScrollDown_MethodID_13: jmethodID?
+    private static var autoScrollDown_MethodID_20: jmethodID?
 
     open func autoScrollDown() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "autoScrollDown", methodSig: "()V", methodCache: &BasicComboPopup.autoScrollDown_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "autoScrollDown", methodSig: "()V", methodCache: &BasicComboPopup.autoScrollDown_MethodID_20, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.uninstallComboBoxModelListeners(javax.swing.ComboBoxModel)
 
-    private static var uninstallComboBoxModelListeners_MethodID_14: jmethodID?
+    private static var uninstallComboBoxModelListeners_MethodID_21: jmethodID?
 
     open func uninstallComboBoxModelListeners( model: ComboBoxModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComboBoxModelListeners", methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &BasicComboPopup.uninstallComboBoxModelListeners_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComboBoxModelListeners", methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &BasicComboPopup.uninstallComboBoxModelListeners_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func uninstallComboBoxModelListeners( _ _model: ComboBoxModel? ) {
@@ -1001,12 +1090,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected java.awt.event.MouseListener javax.swing.plaf.basic.BasicComboPopup.createMouseListener()
 
-    private static var createMouseListener_MethodID_15: jmethodID?
+    private static var createMouseListener_MethodID_22: jmethodID?
 
     open func createMouseListener() -> java_awt.MouseListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicComboPopup.createMouseListener_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicComboPopup.createMouseListener_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseListenerForward( javaObject: __return ) : nil
     }
@@ -1014,12 +1103,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected java.awt.event.MouseMotionListener javax.swing.plaf.basic.BasicComboPopup.createMouseMotionListener()
 
-    private static var createMouseMotionListener_MethodID_16: jmethodID?
+    private static var createMouseMotionListener_MethodID_23: jmethodID?
 
     open func createMouseMotionListener() -> java_awt.MouseMotionListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseMotionListener", methodSig: "()Ljava/awt/event/MouseMotionListener;", methodCache: &BasicComboPopup.createMouseMotionListener_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseMotionListener", methodSig: "()Ljava/awt/event/MouseMotionListener;", methodCache: &BasicComboPopup.createMouseMotionListener_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseMotionListenerForward( javaObject: __return ) : nil
     }
@@ -1027,12 +1116,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected javax.swing.event.ListSelectionListener javax.swing.plaf.basic.BasicComboPopup.createListSelectionListener()
 
-    private static var createListSelectionListener_MethodID_17: jmethodID?
+    private static var createListSelectionListener_MethodID_24: jmethodID?
 
     open func createListSelectionListener() -> ListSelectionListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListSelectionListener", methodSig: "()Ljavax/swing/event/ListSelectionListener;", methodCache: &BasicComboPopup.createListSelectionListener_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListSelectionListener", methodSig: "()Ljavax/swing/event/ListSelectionListener;", methodCache: &BasicComboPopup.createListSelectionListener_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ListSelectionListenerForward( javaObject: __return ) : nil
     }
@@ -1040,12 +1129,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected java.awt.event.MouseListener javax.swing.plaf.basic.BasicComboPopup.createListMouseListener()
 
-    private static var createListMouseListener_MethodID_18: jmethodID?
+    private static var createListMouseListener_MethodID_25: jmethodID?
 
     open func createListMouseListener() -> java_awt.MouseListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicComboPopup.createListMouseListener_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicComboPopup.createListMouseListener_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseListenerForward( javaObject: __return ) : nil
     }
@@ -1053,12 +1142,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected java.awt.event.MouseMotionListener javax.swing.plaf.basic.BasicComboPopup.createListMouseMotionListener()
 
-    private static var createListMouseMotionListener_MethodID_19: jmethodID?
+    private static var createListMouseMotionListener_MethodID_26: jmethodID?
 
     open func createListMouseMotionListener() -> java_awt.MouseMotionListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListMouseMotionListener", methodSig: "()Ljava/awt/event/MouseMotionListener;", methodCache: &BasicComboPopup.createListMouseMotionListener_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListMouseMotionListener", methodSig: "()Ljava/awt/event/MouseMotionListener;", methodCache: &BasicComboPopup.createListMouseMotionListener_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseMotionListenerForward( javaObject: __return ) : nil
     }
@@ -1066,23 +1155,23 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.configureList()
 
-    private static var configureList_MethodID_20: jmethodID?
+    private static var configureList_MethodID_27: jmethodID?
 
     open func configureList() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureList", methodSig: "()V", methodCache: &BasicComboPopup.configureList_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureList", methodSig: "()V", methodCache: &BasicComboPopup.configureList_MethodID_27, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.installListListeners()
 
-    private static var installListListeners_MethodID_21: jmethodID?
+    private static var installListListeners_MethodID_28: jmethodID?
 
     open func installListListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListListeners", methodSig: "()V", methodCache: &BasicComboPopup.installListListeners_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListListeners", methodSig: "()V", methodCache: &BasicComboPopup.installListListeners_MethodID_28, args: &__args, locals: &__locals )
     }
 
 
@@ -1090,12 +1179,12 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicComboPopup.createScroller()
 
-    private static var createScroller_MethodID_22: jmethodID?
+    private static var createScroller_MethodID_29: jmethodID?
 
     open func createScroller() -> JScrollPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScroller", methodSig: "()Ljavax/swing/JScrollPane;", methodCache: &BasicComboPopup.createScroller_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScroller", methodSig: "()Ljavax/swing/JScrollPane;", methodCache: &BasicComboPopup.createScroller_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JScrollPane( javaObject: __return ) : nil
     }
@@ -1103,23 +1192,23 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.configureScroller()
 
-    private static var configureScroller_MethodID_23: jmethodID?
+    private static var configureScroller_MethodID_30: jmethodID?
 
     open func configureScroller() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScroller", methodSig: "()V", methodCache: &BasicComboPopup.configureScroller_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScroller", methodSig: "()V", methodCache: &BasicComboPopup.configureScroller_MethodID_30, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.configurePopup()
 
-    private static var configurePopup_MethodID_24: jmethodID?
+    private static var configurePopup_MethodID_31: jmethodID?
 
     open func configurePopup() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePopup", methodSig: "()V", methodCache: &BasicComboPopup.configurePopup_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePopup", methodSig: "()V", methodCache: &BasicComboPopup.configurePopup_MethodID_31, args: &__args, locals: &__locals )
     }
 
 
@@ -1129,24 +1218,24 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.installComboBoxListeners()
 
-    private static var installComboBoxListeners_MethodID_25: jmethodID?
+    private static var installComboBoxListeners_MethodID_32: jmethodID?
 
     open func installComboBoxListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComboBoxListeners", methodSig: "()V", methodCache: &BasicComboPopup.installComboBoxListeners_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComboBoxListeners", methodSig: "()V", methodCache: &BasicComboPopup.installComboBoxListeners_MethodID_32, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.installComboBoxModelListeners(javax.swing.ComboBoxModel)
 
-    private static var installComboBoxModelListeners_MethodID_26: jmethodID?
+    private static var installComboBoxModelListeners_MethodID_33: jmethodID?
 
     open func installComboBoxModelListeners( model: ComboBoxModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComboBoxModelListeners", methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &BasicComboPopup.installComboBoxModelListeners_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComboBoxModelListeners", methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &BasicComboPopup.installComboBoxModelListeners_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func installComboBoxModelListeners( _ _model: ComboBoxModel? ) {
@@ -1155,13 +1244,13 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.startAutoScrolling(int)
 
-    private static var startAutoScrolling_MethodID_27: jmethodID?
+    private static var startAutoScrolling_MethodID_34: jmethodID?
 
     open func startAutoScrolling( direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startAutoScrolling", methodSig: "(I)V", methodCache: &BasicComboPopup.startAutoScrolling_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startAutoScrolling", methodSig: "(I)V", methodCache: &BasicComboPopup.startAutoScrolling_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func startAutoScrolling( _ _direction: Int ) {
@@ -1170,24 +1259,24 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.stopAutoScrolling()
 
-    private static var stopAutoScrolling_MethodID_28: jmethodID?
+    private static var stopAutoScrolling_MethodID_35: jmethodID?
 
     open func stopAutoScrolling() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "stopAutoScrolling", methodSig: "()V", methodCache: &BasicComboPopup.stopAutoScrolling_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "stopAutoScrolling", methodSig: "()V", methodCache: &BasicComboPopup.stopAutoScrolling_MethodID_35, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.delegateFocus(java.awt.event.MouseEvent)
 
-    private static var delegateFocus_MethodID_29: jmethodID?
+    private static var delegateFocus_MethodID_36: jmethodID?
 
     open func delegateFocus( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delegateFocus", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicComboPopup.delegateFocus_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delegateFocus", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicComboPopup.delegateFocus_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func delegateFocus( _ _e: java_awt.MouseEvent? ) {
@@ -1198,13 +1287,13 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected int javax.swing.plaf.basic.BasicComboPopup.getPopupHeightForRowCount(int)
 
-    private static var getPopupHeightForRowCount_MethodID_30: jmethodID?
+    private static var getPopupHeightForRowCount_MethodID_37: jmethodID?
 
     open func getPopupHeightForRowCount( maxRowCount: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: maxRowCount, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPopupHeightForRowCount", methodSig: "(I)I", methodCache: &BasicComboPopup.getPopupHeightForRowCount_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPopupHeightForRowCount", methodSig: "(I)I", methodCache: &BasicComboPopup.getPopupHeightForRowCount_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1214,7 +1303,7 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicComboPopup.computePopupBounds(int,int,int,int)
 
-    private static var computePopupBounds_MethodID_31: jmethodID?
+    private static var computePopupBounds_MethodID_38: jmethodID?
 
     open func computePopupBounds( px: Int, py: Int, pw: Int, ph: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -1223,7 +1312,7 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
         __args[1] = JNIType.toJava( value: py, locals: &__locals )
         __args[2] = JNIType.toJava( value: pw, locals: &__locals )
         __args[3] = JNIType.toJava( value: ph, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "computePopupBounds", methodSig: "(IIII)Ljava/awt/Rectangle;", methodCache: &BasicComboPopup.computePopupBounds_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "computePopupBounds", methodSig: "(IIII)Ljava/awt/Rectangle;", methodCache: &BasicComboPopup.computePopupBounds_MethodID_38, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -1234,116 +1323,27 @@ open class BasicComboPopup: JPopupMenu, ComboPopup {
 
     /// protected void javax.swing.plaf.basic.BasicComboPopup.updateListBoxSelectionForEvent(java.awt.event.MouseEvent,boolean)
 
-    private static var updateListBoxSelectionForEvent_MethodID_32: jmethodID?
+    private static var updateListBoxSelectionForEvent_MethodID_39: jmethodID?
 
     open func updateListBoxSelectionForEvent( anEvent: java_awt.MouseEvent?, shouldScroll: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: shouldScroll, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateListBoxSelectionForEvent", methodSig: "(Ljava/awt/event/MouseEvent;Z)V", methodCache: &BasicComboPopup.updateListBoxSelectionForEvent_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateListBoxSelectionForEvent", methodSig: "(Ljava/awt/event/MouseEvent;Z)V", methodCache: &BasicComboPopup.updateListBoxSelectionForEvent_MethodID_39, args: &__args, locals: &__locals )
     }
 
     open func updateListBoxSelectionForEvent( _ _anEvent: java_awt.MouseEvent?, _ _shouldScroll: Bool ) {
         updateListBoxSelectionForEvent( anEvent: _anEvent, shouldScroll: _shouldScroll )
     }
 
-    /// protected java.awt.event.MouseEvent javax.swing.plaf.basic.BasicComboPopup.convertMouseEvent(java.awt.event.MouseEvent)
-
-    private static var convertMouseEvent_MethodID_33: jmethodID?
-
-    open func convertMouseEvent( e: java_awt.MouseEvent? ) -> java_awt.MouseEvent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "convertMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Ljava/awt/event/MouseEvent;", methodCache: &BasicComboPopup.convertMouseEvent_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.MouseEvent( javaObject: __return ) : nil
-    }
-
-    open func convertMouseEvent( _ _e: java_awt.MouseEvent? ) -> java_awt.MouseEvent! {
-        return convertMouseEvent( e: _e )
-    }
-
-    /// protected javax.swing.JList javax.swing.plaf.basic.BasicComboPopup.createList()
-
-    private static var createList_MethodID_34: jmethodID?
-
-    open func createList() -> JList! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createList", methodSig: "()Ljavax/swing/JList;", methodCache: &BasicComboPopup.createList_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JList( javaObject: __return ) : nil
-    }
-
-
-    /// private java.awt.Point javax.swing.plaf.basic.BasicComboPopup.getPopupLocation()
-
-    /// protected void javax.swing.plaf.basic.BasicComboPopup.firePopupMenuWillBecomeVisible()
-
-    private static var firePopupMenuWillBecomeVisible_MethodID_35: jmethodID?
-
-    override open func firePopupMenuWillBecomeVisible() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeVisible", methodSig: "()V", methodCache: &BasicComboPopup.firePopupMenuWillBecomeVisible_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicComboPopup.firePopupMenuWillBecomeInvisible()
-
-    private static var firePopupMenuWillBecomeInvisible_MethodID_36: jmethodID?
-
-    override open func firePopupMenuWillBecomeInvisible() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeInvisible", methodSig: "()V", methodCache: &BasicComboPopup.firePopupMenuWillBecomeInvisible_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicComboPopup.firePopupMenuCanceled()
-
-    private static var firePopupMenuCanceled_MethodID_37: jmethodID?
-
-    override open func firePopupMenuCanceled() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuCanceled", methodSig: "()V", methodCache: &BasicComboPopup.firePopupMenuCanceled_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.awt.event.ItemListener javax.swing.plaf.basic.BasicComboPopup.createItemListener()
-
-    private static var createItemListener_MethodID_38: jmethodID?
-
-    open func createItemListener() -> java_awt.ItemListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createItemListener", methodSig: "()Ljava/awt/event/ItemListener;", methodCache: &BasicComboPopup.createItemListener_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ItemListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicComboPopup.togglePopup()
-
-    private static var togglePopup_MethodID_39: jmethodID?
-
-    open func togglePopup() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "togglePopup", methodSig: "()V", methodCache: &BasicComboPopup.togglePopup_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-
     /// In declared protocol but not defined.. ///
 
     /// public abstract void javax.swing.plaf.basic.ComboPopup.show()
 
-    /// public abstract void javax.swing.plaf.basic.ComboPopup.hide()
-
     /// public abstract boolean javax.swing.plaf.basic.ComboPopup.isVisible()
+
+    /// public abstract void javax.swing.plaf.basic.ComboPopup.hide()
 
 }
 

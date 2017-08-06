@@ -31,9 +31,11 @@ open class MultiLookAndFeel: LookAndFeel {
 
     /// public java.lang.String javax.swing.plaf.multi.MultiLookAndFeel.getName()
 
-    /// public java.lang.String javax.swing.plaf.multi.MultiLookAndFeel.getDescription()
+    /// public java.lang.String javax.swing.plaf.multi.MultiLookAndFeel.getID()
 
-    /// public boolean javax.swing.plaf.multi.MultiLookAndFeel.isSupportedLookAndFeel()
+    /// public boolean javax.swing.plaf.multi.MultiLookAndFeel.isNativeLookAndFeel()
+
+    /// public javax.swing.UIDefaults javax.swing.plaf.multi.MultiLookAndFeel.getDefaults()
 
     /// protected static javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiLookAndFeel.uisToArray(java.util.Vector)
 
@@ -70,11 +72,9 @@ open class MultiLookAndFeel: LookAndFeel {
         return createUIs( mui: _mui, uis: _uis, target: _target )
     }
 
-    /// public java.lang.String javax.swing.plaf.multi.MultiLookAndFeel.getID()
+    /// public java.lang.String javax.swing.plaf.multi.MultiLookAndFeel.getDescription()
 
-    /// public boolean javax.swing.plaf.multi.MultiLookAndFeel.isNativeLookAndFeel()
-
-    /// public javax.swing.UIDefaults javax.swing.plaf.multi.MultiLookAndFeel.getDefaults()
+    /// public boolean javax.swing.plaf.multi.MultiLookAndFeel.isSupportedLookAndFeel()
 
 }
 

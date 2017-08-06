@@ -651,6 +651,10 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
     }
 
 
+    /// public void javax.swing.JFrame.setIconImage(java.awt.Image)
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JFrame.getAccessibleContext()
+
     /// public java.awt.Container javax.swing.JFrame.getContentPane()
 
     private static var getContentPane_MethodID_8: jmethodID?
@@ -960,9 +964,20 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
         setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: _defaultLookAndFeelDecorated )
     }
 
+    /// protected void javax.swing.JFrame.frameInit()
+
+    private static var frameInit_MethodID_30: jmethodID?
+
+    open func frameInit() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "frameInit", methodSig: "()V", methodCache: &JFrame.frameInit_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+
     /// public void javax.swing.JFrame.repaint(long,int,int,int,int)
 
-    private static var repaint_MethodID_30: jmethodID?
+    private static var repaint_MethodID_31: jmethodID?
 
     open func repaint( time: Int64, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -972,7 +987,7 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: width, locals: &__locals )
         __args[4] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JFrame.repaint_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JFrame.repaint_MethodID_31, args: &__args, locals: &__locals )
     }
 
     override open func repaint( _ _time: Int64, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -980,21 +995,6 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
     }
 
     /// public java.awt.Graphics javax.swing.JFrame.getGraphics()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JFrame.getAccessibleContext()
-
-    /// protected void javax.swing.JFrame.frameInit()
-
-    private static var frameInit_MethodID_31: jmethodID?
-
-    open func frameInit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "frameInit", methodSig: "()V", methodCache: &JFrame.frameInit_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JFrame.setIconImage(java.awt.Image)
 
     /// In declared protocol but not defined.. ///
 

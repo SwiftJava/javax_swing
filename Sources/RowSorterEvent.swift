@@ -89,6 +89,10 @@ open class RowSorterEvent: java_util.EventObject {
     }
 
 
+    /// public java.lang.Object javax.swing.event.RowSorterEvent.getSource()
+
+    /// public javax.swing.RowSorter javax.swing.event.RowSorterEvent.getSource()
+
     /// public int javax.swing.event.RowSorterEvent.getPreviousRowCount()
 
     private static var getPreviousRowCount_MethodID_4: jmethodID?
@@ -116,10 +120,6 @@ open class RowSorterEvent: java_util.EventObject {
     open func convertPreviousRowIndexToModel( _ _index: Int ) -> Int {
         return convertPreviousRowIndexToModel( index: _index )
     }
-
-    /// public java.lang.Object javax.swing.event.RowSorterEvent.getSource()
-
-    /// public javax.swing.RowSorter javax.swing.event.RowSorterEvent.getSource()
 
 }
 

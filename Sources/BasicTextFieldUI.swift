@@ -50,6 +50,10 @@ open class BasicTextFieldUI: BasicTextUI {
 
     /// public javax.swing.text.View javax.swing.plaf.basic.BasicTextFieldUI.create(javax.swing.text.Element)
 
+    /// public int javax.swing.plaf.basic.BasicTextFieldUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextFieldUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTextFieldUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -78,10 +82,6 @@ open class BasicTextFieldUI: BasicTextUI {
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// public int javax.swing.plaf.basic.BasicTextFieldUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextFieldUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

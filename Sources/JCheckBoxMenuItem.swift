@@ -855,6 +855,14 @@ open class JCheckBoxMenuItem: JMenuItem {
     }
 
 
+    /// public javax.accessibility.AccessibleContext javax.swing.JCheckBoxMenuItem.getAccessibleContext()
+
+    /// public java.lang.String javax.swing.JCheckBoxMenuItem.getUIClassID()
+
+    /// public java.lang.Object[] javax.swing.JCheckBoxMenuItem.getSelectedObjects()
+
+    /// boolean javax.swing.JCheckBoxMenuItem.shouldUpdateSelectedStateFromAction()
+
     /// public synchronized void javax.swing.JCheckBoxMenuItem.setState(boolean)
 
     private static var setState_MethodID_10: jmethodID?
@@ -869,14 +877,6 @@ open class JCheckBoxMenuItem: JMenuItem {
     open func setState( _ _b: Bool ) {
         setState( b: _b )
     }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JCheckBoxMenuItem.getAccessibleContext()
-
-    /// public java.lang.String javax.swing.JCheckBoxMenuItem.getUIClassID()
-
-    /// public java.lang.Object[] javax.swing.JCheckBoxMenuItem.getSelectedObjects()
-
-    /// boolean javax.swing.JCheckBoxMenuItem.shouldUpdateSelectedStateFromAction()
 
     /// In declared protocol but not defined.. ///
 

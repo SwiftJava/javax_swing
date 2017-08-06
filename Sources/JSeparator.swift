@@ -727,16 +727,15 @@ open class JSeparator: JComponent, SwingConstants {
     }
 
 
-    /// public javax.swing.plaf.SeparatorUI javax.swing.JSeparator.getUI()
+    /// public int javax.swing.JSeparator.getOrientation()
 
-    private static var getUI_MethodID_4: jmethodID?
+    private static var getOrientation_MethodID_4: jmethodID?
 
-    open func getUI() -> SeparatorUI! {
+    open func getOrientation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SeparatorUI;", methodCache: &JSeparator.getUI_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SeparatorUI( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSeparator.getOrientation_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
@@ -778,15 +777,16 @@ open class JSeparator: JComponent, SwingConstants {
 
     /// public java.lang.String javax.swing.JSeparator.getUIClassID()
 
-    /// public int javax.swing.JSeparator.getOrientation()
+    /// public javax.swing.plaf.SeparatorUI javax.swing.JSeparator.getUI()
 
-    private static var getOrientation_MethodID_7: jmethodID?
+    private static var getUI_MethodID_7: jmethodID?
 
-    open func getOrientation() -> Int {
+    open func getUI() -> SeparatorUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSeparator.getOrientation_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SeparatorUI;", methodCache: &JSeparator.getUI_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SeparatorUI( javaObject: __return ) : nil
     }
 
 

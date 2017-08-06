@@ -135,11 +135,13 @@ open class SynthToolTipUI: BasicToolTipUI, /* java.beans.PropertyChangeListener 
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthToolTipUI.getContext(javax.swing.JComponent,int)
 
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthToolTipUI.getPreferredSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthToolTipUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -148,110 +150,30 @@ open class SynthToolTipUI: BasicToolTipUI, /* java.beans.PropertyChangeListener 
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
-    /// private int javax.swing.plaf.synth.SynthToolTipUI.getComponentState(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthToolTipUI.updateStyle(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.synth.SynthToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthToolTipUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthToolTipUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
 
     /// public void javax.swing.plaf.synth.SynthToolTipUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_5: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthToolTipUI.propertyChange_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthToolTipUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthToolTipUI.installDefaults(javax.swing.JComponent)
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    open func installDefaults( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func installDefaults( _ _c: JComponent? ) {
-        installDefaults( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthToolTipUI.installListeners(javax.swing.JComponent)
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    open func installListeners( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func installListeners( _ _c: JComponent? ) {
-        installListeners( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthToolTipUI.uninstallDefaults(javax.swing.JComponent)
-
-    private static var uninstallDefaults_MethodID_8: jmethodID?
-
-    open func uninstallDefaults( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallDefaults( _ _c: JComponent? ) {
-        uninstallDefaults( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthToolTipUI.uninstallListeners(javax.swing.JComponent)
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    open func uninstallListeners( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallListeners( _ _c: JComponent? ) {
-        uninstallListeners( c: _c )
-    }
-
     /// public void javax.swing.plaf.synth.SynthToolTipUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_10: jmethodID?
+    private static var paintBorder_MethodID_5: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -262,14 +184,92 @@ open class SynthToolTipUI: BasicToolTipUI, /* java.beans.PropertyChangeListener 
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthToolTipUI.paintBorder_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthToolTipUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthToolTipUI.getPreferredSize(javax.swing.JComponent)
+    /// private int javax.swing.plaf.synth.SynthToolTipUI.getComponentState(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthToolTipUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthToolTipUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthToolTipUI.installDefaults(javax.swing.JComponent)
+
+    private static var installDefaults_MethodID_7: jmethodID?
+
+    override open func installDefaults( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func installDefaults( _ _c: JComponent? ) {
+        installDefaults( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthToolTipUI.installListeners(javax.swing.JComponent)
+
+    private static var installListeners_MethodID_8: jmethodID?
+
+    override open func installListeners( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func installListeners( _ _c: JComponent? ) {
+        installListeners( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthToolTipUI.uninstallDefaults(javax.swing.JComponent)
+
+    private static var uninstallDefaults_MethodID_9: jmethodID?
+
+    override open func uninstallDefaults( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallDefaults( _ _c: JComponent? ) {
+        uninstallDefaults( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthToolTipUI.uninstallListeners(javax.swing.JComponent)
+
+    private static var uninstallListeners_MethodID_10: jmethodID?
+
+    override open func uninstallListeners( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthToolTipUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallListeners( _ _c: JComponent? ) {
+        uninstallListeners( c: _c )
+    }
 
 }
 

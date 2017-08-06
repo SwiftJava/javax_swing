@@ -29,7 +29,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var list_FieldID: jfieldID?
 
-    open var list: JList! {
+    override open var list: JList! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "list", fieldType: "Ljavax/swing/JList;", fieldCache: &SynthListUI.list_FieldID, object: javaObject, locals: &__locals )
@@ -46,7 +46,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var rendererPane_FieldID: jfieldID?
 
-    open var rendererPane: CellRendererPane! {
+    override open var rendererPane: CellRendererPane! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "rendererPane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &SynthListUI.rendererPane_FieldID, object: javaObject, locals: &__locals )
@@ -63,7 +63,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var focusListener_FieldID: jfieldID?
 
-    open var focusListener: java_awt.FocusListener! {
+    override open var focusListener: java_awt.FocusListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &SynthListUI.focusListener_FieldID, object: javaObject, locals: &__locals )
@@ -80,7 +80,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var mouseInputListener_FieldID: jfieldID?
 
-    open var mouseInputListener: MouseInputListener! {
+    override open var mouseInputListener: MouseInputListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthListUI.mouseInputListener_FieldID, object: javaObject, locals: &__locals )
@@ -97,7 +97,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var listSelectionListener_FieldID: jfieldID?
 
-    open var listSelectionListener: ListSelectionListener! {
+    override open var listSelectionListener: ListSelectionListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "listSelectionListener", fieldType: "Ljavax/swing/event/ListSelectionListener;", fieldCache: &SynthListUI.listSelectionListener_FieldID, object: javaObject, locals: &__locals )
@@ -114,7 +114,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var listDataListener_FieldID: jfieldID?
 
-    open var listDataListener: ListDataListener! {
+    override open var listDataListener: ListDataListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "listDataListener", fieldType: "Ljavax/swing/event/ListDataListener;", fieldCache: &SynthListUI.listDataListener_FieldID, object: javaObject, locals: &__locals )
@@ -131,7 +131,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthListUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -150,7 +150,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var cellHeights_FieldID: jfieldID?
 
-    open var cellHeights: [Int32]! {
+    override open var cellHeights: [Int32]! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "cellHeights", fieldType: "[I", fieldCache: &SynthListUI.cellHeights_FieldID, object: javaObject, locals: &__locals )
@@ -167,7 +167,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var cellHeight_FieldID: jfieldID?
 
-    open var cellHeight: Int {
+    override open var cellHeight: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "cellHeight", fieldType: "I", fieldCache: &SynthListUI.cellHeight_FieldID, object: javaObject, locals: &__locals )
@@ -184,7 +184,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var cellWidth_FieldID: jfieldID?
 
-    open var cellWidth: Int {
+    override open var cellWidth: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "cellWidth", fieldType: "I", fieldCache: &SynthListUI.cellWidth_FieldID, object: javaObject, locals: &__locals )
@@ -201,7 +201,7 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var updateLayoutStateNeeded_FieldID: jfieldID?
 
-    open var updateLayoutStateNeeded: Int {
+    override open var updateLayoutStateNeeded: Int {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetIntField( fieldName: "updateLayoutStateNeeded", fieldType: "I", fieldCache: &SynthListUI.updateLayoutStateNeeded_FieldID, object: javaObject, locals: &__locals )
@@ -359,6 +359,8 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
 
     /// static boolean javax.swing.plaf.synth.SynthListUI.access$200(javax.swing.plaf.synth.SynthListUI)
 
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthListUI.getContext(javax.swing.JComponent,int)
+
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthListUI.getContext(javax.swing.JComponent)
 
     private static var getContext_MethodID_2: jmethodID?
@@ -376,13 +378,11 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
         return getContext( c: _c )
     }
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthListUI.getContext(javax.swing.JComponent,int)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthListUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( list: JComponent? ) -> ComponentUI! {
+    override open class func createUI( list: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
@@ -391,11 +391,9 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _list: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _list: JComponent? ) -> ComponentUI! {
         return createUI( list: _list )
     }
-
-    /// private int javax.swing.plaf.synth.SynthListUI.getComponentState(javax.swing.JComponent)
 
     /// private void javax.swing.plaf.synth.SynthListUI.updateStyle(javax.swing.JComponent)
 
@@ -414,53 +412,9 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
         propertyChange( evt: _evt )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthListUI.installDefaults()
-
-    private static var installDefaults_MethodID_5: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthListUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthListUI.installListeners()
-
-    private static var installListeners_MethodID_6: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthListUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthListUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_7: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthListUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthListUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_8: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthListUI.uninstallListeners_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
     /// public void javax.swing.plaf.synth.SynthListUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_9: jmethodID?
+    private static var paintBorder_MethodID_5: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -471,12 +425,58 @@ open class SynthListUI: BasicListUI, /* java.beans.PropertyChangeListener */ Unc
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthListUI.paintBorder_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthListUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
+
+    /// private int javax.swing.plaf.synth.SynthListUI.getComponentState(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthListUI.installDefaults()
+
+    private static var installDefaults_MethodID_6: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthListUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthListUI.installListeners()
+
+    private static var installListeners_MethodID_7: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthListUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthListUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_8: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthListUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthListUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_9: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthListUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
 
 }
 

@@ -37,6 +37,18 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMinimumSize(javax.swing.JComponent)
+
+    /// private java.lang.String javax.swing.plaf.basic.BasicLabelUI.layout(javax.swing.JLabel,java.awt.FontMetrics,int,int)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicLabelUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicLabelUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicLabelUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -114,8 +126,6 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
         paintEnabledText( l: _l, g: _g, s: _s, textX: _textX, textY: _textY )
     }
 
-    /// public void javax.swing.plaf.basic.BasicLabelUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
     /// public void javax.swing.plaf.basic.BasicLabelUI.propertyChange(java.beans.PropertyChangeEvent)
 
     private static var propertyChange_MethodID_6: jmethodID?
@@ -130,6 +140,12 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
+
+    /// public void javax.swing.plaf.basic.BasicLabelUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicLabelUI.uninstallUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicLabelUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// static void javax.swing.plaf.basic.BasicLabelUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
@@ -252,22 +268,6 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
     open func uninstallKeyboardActions( _ _c: JLabel? ) {
         uninstallKeyboardActions( c: _c )
     }
-
-    /// public void javax.swing.plaf.basic.BasicLabelUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicLabelUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMinimumSize(javax.swing.JComponent)
-
-    /// private java.lang.String javax.swing.plaf.basic.BasicLabelUI.layout(javax.swing.JLabel,java.awt.FontMetrics,int,int)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMaximumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.basic.BasicLabelUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicLabelUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

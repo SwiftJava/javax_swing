@@ -118,9 +118,9 @@ open class BasicTreeUI_TreeTraverseAction: AbstractAction {
 
     /// private javax.swing.plaf.basic.BasicTreeUI$TreeTraverseAction(javax.swing.plaf.basic.BasicTreeUI,int,java.lang.String,boolean)
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeTraverseAction.actionPerformed(java.awt.event.ActionEvent)
-
     /// public boolean javax.swing.plaf.basic.BasicTreeUI$TreeTraverseAction.isEnabled()
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeTraverseAction.actionPerformed(java.awt.event.ActionEvent)
 
 }
 

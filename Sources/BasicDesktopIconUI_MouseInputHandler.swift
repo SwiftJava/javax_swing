@@ -45,6 +45,14 @@ open class BasicDesktopIconUI_MouseInputHandler: MouseInputAdapter {
         self.init( this_0: _this_0 )
     }
 
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseReleased(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseMoved(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseDragged(java.awt.event.MouseEvent)
+
     /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.moveAndRepaint(javax.swing.JComponent,int,int,int,int)
 
     private static var moveAndRepaint_MethodID_2: jmethodID?
@@ -63,14 +71,6 @@ open class BasicDesktopIconUI_MouseInputHandler: MouseInputAdapter {
     open func moveAndRepaint( _ _f: JComponent?, _ _newX: Int, _ _newY: Int, _ _newWidth: Int, _ _newHeight: Int ) {
         moveAndRepaint( f: _f, newX: _newX, newY: _newY, newWidth: _newWidth, newHeight: _newHeight )
     }
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseReleased(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseMoved(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseDragged(java.awt.event.MouseEvent)
 
 }
 

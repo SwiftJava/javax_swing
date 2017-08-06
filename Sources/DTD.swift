@@ -670,15 +670,49 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         try read( _in: __in )
     }
 
+    /// public javax.swing.text.html.parser.Element javax.swing.text.html.parser.DTD.getElement(int)
+
+    private static var getElement_MethodID_4: jmethodID?
+
+    open func getElement( index: Int ) -> text_html_parser_Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(I)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.getElement_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? text_html_parser_Element( javaObject: __return ) : nil
+    }
+
+    open func getElement( _ _index: Int ) -> text_html_parser_Element! {
+        return getElement( index: _index )
+    }
+
+    /// public javax.swing.text.html.parser.Element javax.swing.text.html.parser.DTD.getElement(java.lang.String)
+
+    private static var getElement_MethodID_5: jmethodID?
+
+    open func getElement( name: String? ) -> text_html_parser_Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.getElement_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? text_html_parser_Element( javaObject: __return ) : nil
+    }
+
+    open func getElement( _ _name: String? ) -> text_html_parser_Element! {
+        return getElement( name: _name )
+    }
+
     /// public javax.swing.text.html.parser.Entity javax.swing.text.html.parser.DTD.getEntity(java.lang.String)
 
-    private static var getEntity_MethodID_4: jmethodID?
+    private static var getEntity_MethodID_6: jmethodID?
 
     open func getEntity( name: String? ) -> Entity! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEntity", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.getEntity_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEntity", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.getEntity_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Entity( javaObject: __return ) : nil
     }
@@ -689,13 +723,13 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// public javax.swing.text.html.parser.Entity javax.swing.text.html.parser.DTD.getEntity(int)
 
-    private static var getEntity_MethodID_5: jmethodID?
+    private static var getEntity_MethodID_7: jmethodID?
 
     open func getEntity( ch: Int ) -> Entity! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ch, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEntity", methodSig: "(I)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.getEntity_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEntity", methodSig: "(I)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.getEntity_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Entity( javaObject: __return ) : nil
     }
@@ -708,7 +742,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// public javax.swing.text.html.parser.Entity javax.swing.text.html.parser.DTD.defineEntity(java.lang.String,int,char[])
 
-    private static var defineEntity_MethodID_6: jmethodID?
+    private static var defineEntity_MethodID_8: jmethodID?
 
     open func defineEntity( name: String?, type: Int, data: [UInt16]? ) -> Entity! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -716,7 +750,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: data, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defineEntity", methodSig: "(Ljava/lang/String;I[C)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.defineEntity_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defineEntity", methodSig: "(Ljava/lang/String;I[C)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.defineEntity_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Entity( javaObject: __return ) : nil
     }
@@ -727,7 +761,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// public javax.swing.text.html.parser.Element javax.swing.text.html.parser.DTD.defineElement(java.lang.String,int,boolean,boolean,javax.swing.text.html.parser.ContentModel,java.util.BitSet,java.util.BitSet,javax.swing.text.html.parser.AttributeList)
 
-    private static var defineElement_MethodID_7: jmethodID?
+    private static var defineElement_MethodID_9: jmethodID?
 
     open func defineElement( name: String?, type: Int, omitStart: Bool, omitEnd: Bool, content: ContentModel?, exclusions: java_util.BitSet?, inclusions: java_util.BitSet?, atts: AttributeList? ) -> text_html_parser_Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -740,7 +774,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         __args[5] = JNIType.toJava( value: exclusions != nil ? exclusions! as JNIObject : nil, locals: &__locals )
         __args[6] = JNIType.toJava( value: inclusions != nil ? inclusions! as JNIObject : nil, locals: &__locals )
         __args[7] = JNIType.toJava( value: atts != nil ? atts! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defineElement", methodSig: "(Ljava/lang/String;IZZLjavax/swing/text/html/parser/ContentModel;Ljava/util/BitSet;Ljava/util/BitSet;Ljavax/swing/text/html/parser/AttributeList;)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.defineElement_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defineElement", methodSig: "(Ljava/lang/String;IZZLjavax/swing/text/html/parser/ContentModel;Ljava/util/BitSet;Ljava/util/BitSet;Ljavax/swing/text/html/parser/AttributeList;)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.defineElement_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? text_html_parser_Element( javaObject: __return ) : nil
     }
@@ -751,42 +785,23 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// public void javax.swing.text.html.parser.DTD.defineAttributes(java.lang.String,javax.swing.text.html.parser.AttributeList)
 
-    private static var defineAttributes_MethodID_8: jmethodID?
+    private static var defineAttributes_MethodID_10: jmethodID?
 
     open func defineAttributes( name: String?, atts: AttributeList? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: atts != nil ? atts! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "defineAttributes", methodSig: "(Ljava/lang/String;Ljavax/swing/text/html/parser/AttributeList;)V", methodCache: &DTD.defineAttributes_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "defineAttributes", methodSig: "(Ljava/lang/String;Ljavax/swing/text/html/parser/AttributeList;)V", methodCache: &DTD.defineAttributes_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func defineAttributes( _ _name: String?, _ _atts: AttributeList? ) {
         defineAttributes( name: _name, atts: _atts )
     }
 
-    /// protected javax.swing.text.html.parser.Entity javax.swing.text.html.parser.DTD.defEntity(java.lang.String,int,java.lang.String)
-
-    private static var defEntity_MethodID_9: jmethodID?
-
-    open func defEntity( name: String?, type: Int, str: String? ) -> Entity! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: str, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defEntity", methodSig: "(Ljava/lang/String;ILjava/lang/String;)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.defEntity_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Entity( javaObject: __return ) : nil
-    }
-
-    open func defEntity( _ _name: String?, _ _type: Int, _ _str: String? ) -> Entity! {
-        return defEntity( name: _name, type: _type, str: _str )
-    }
-
     /// public javax.swing.text.html.parser.Entity javax.swing.text.html.parser.DTD.defEntity(java.lang.String,int,int)
 
-    private static var defEntity_MethodID_10: jmethodID?
+    private static var defEntity_MethodID_11: jmethodID?
 
     open func defEntity( name: String?, type: Int, ch: Int ) -> Entity! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -794,7 +809,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: ch, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defEntity", methodSig: "(Ljava/lang/String;II)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.defEntity_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defEntity", methodSig: "(Ljava/lang/String;II)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.defEntity_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Entity( javaObject: __return ) : nil
     }
@@ -803,9 +818,28 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         return defEntity( name: _name, type: _type, ch: _ch )
     }
 
+    /// protected javax.swing.text.html.parser.Entity javax.swing.text.html.parser.DTD.defEntity(java.lang.String,int,java.lang.String)
+
+    private static var defEntity_MethodID_12: jmethodID?
+
+    open func defEntity( name: String?, type: Int, str: String? ) -> Entity! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: str, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defEntity", methodSig: "(Ljava/lang/String;ILjava/lang/String;)Ljavax/swing/text/html/parser/Entity;", methodCache: &DTD.defEntity_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Entity( javaObject: __return ) : nil
+    }
+
+    open func defEntity( _ _name: String?, _ _type: Int, _ _str: String? ) -> Entity! {
+        return defEntity( name: _name, type: _type, str: _str )
+    }
+
     /// protected javax.swing.text.html.parser.Element javax.swing.text.html.parser.DTD.defElement(java.lang.String,int,boolean,boolean,javax.swing.text.html.parser.ContentModel,java.lang.String[],java.lang.String[],javax.swing.text.html.parser.AttributeList)
 
-    private static var defElement_MethodID_11: jmethodID?
+    private static var defElement_MethodID_13: jmethodID?
 
     open func defElement( name: String?, type: Int, omitStart: Bool, omitEnd: Bool, content: ContentModel?, exclusions: [String]?, inclusions: [String]?, atts: AttributeList? ) -> text_html_parser_Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -818,7 +852,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         __args[5] = JNIType.toJava( value: exclusions, locals: &__locals )
         __args[6] = JNIType.toJava( value: inclusions, locals: &__locals )
         __args[7] = JNIType.toJava( value: atts != nil ? atts! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defElement", methodSig: "(Ljava/lang/String;IZZLjavax/swing/text/html/parser/ContentModel;[Ljava/lang/String;[Ljava/lang/String;Ljavax/swing/text/html/parser/AttributeList;)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.defElement_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defElement", methodSig: "(Ljava/lang/String;IZZLjavax/swing/text/html/parser/ContentModel;[Ljava/lang/String;[Ljava/lang/String;Ljavax/swing/text/html/parser/AttributeList;)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.defElement_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? text_html_parser_Element( javaObject: __return ) : nil
     }
@@ -829,7 +863,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// protected javax.swing.text.html.parser.AttributeList javax.swing.text.html.parser.DTD.defAttributeList(java.lang.String,int,int,java.lang.String,java.lang.String,javax.swing.text.html.parser.AttributeList)
 
-    private static var defAttributeList_MethodID_12: jmethodID?
+    private static var defAttributeList_MethodID_14: jmethodID?
 
     open func defAttributeList( name: String?, type: Int, modifier: Int, value: String?, values: String?, atts: AttributeList? ) -> AttributeList! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -840,7 +874,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         __args[3] = JNIType.toJava( value: value, locals: &__locals )
         __args[4] = JNIType.toJava( value: values, locals: &__locals )
         __args[5] = JNIType.toJava( value: atts != nil ? atts! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defAttributeList", methodSig: "(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/parser/AttributeList;)Ljavax/swing/text/html/parser/AttributeList;", methodCache: &DTD.defAttributeList_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defAttributeList", methodSig: "(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/parser/AttributeList;)Ljavax/swing/text/html/parser/AttributeList;", methodCache: &DTD.defAttributeList_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeList( javaObject: __return ) : nil
     }
@@ -851,7 +885,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// protected javax.swing.text.html.parser.ContentModel javax.swing.text.html.parser.DTD.defContentModel(int,java.lang.Object,javax.swing.text.html.parser.ContentModel)
 
-    private static var defContentModel_MethodID_13: jmethodID?
+    private static var defContentModel_MethodID_15: jmethodID?
 
     open func defContentModel( type: Int, obj: java_swift.JavaObject?, next: ContentModel? ) -> ContentModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -859,7 +893,7 @@ open class DTD: java_swift.JavaObject, DTDConstants {
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: next != nil ? next! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defContentModel", methodSig: "(ILjava/lang/Object;Ljavax/swing/text/html/parser/ContentModel;)Ljavax/swing/text/html/parser/ContentModel;", methodCache: &DTD.defContentModel_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "defContentModel", methodSig: "(ILjava/lang/Object;Ljavax/swing/text/html/parser/ContentModel;)Ljavax/swing/text/html/parser/ContentModel;", methodCache: &DTD.defContentModel_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ContentModel( javaObject: __return ) : nil
     }
@@ -870,14 +904,14 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// public static void javax.swing.text.html.parser.DTD.putDTDHash(java.lang.String,javax.swing.text.html.parser.DTD)
 
-    private static var putDTDHash_MethodID_14: jmethodID?
+    private static var putDTDHash_MethodID_16: jmethodID?
 
     open class func putDTDHash( name: String?, dtd: DTD? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: dtd != nil ? dtd! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/html/parser/DTD", classCache: &DTDJNIClass, methodName: "putDTDHash", methodSig: "(Ljava/lang/String;Ljavax/swing/text/html/parser/DTD;)V", methodCache: &putDTDHash_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/html/parser/DTD", classCache: &DTDJNIClass, methodName: "putDTDHash", methodSig: "(Ljava/lang/String;Ljavax/swing/text/html/parser/DTD;)V", methodCache: &putDTDHash_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open class func putDTDHash( _ _name: String?, _ _dtd: DTD? ) {
@@ -886,13 +920,13 @@ open class DTD: java_swift.JavaObject, DTDConstants {
 
     /// public static javax.swing.text.html.parser.DTD javax.swing.text.html.parser.DTD.getDTD(java.lang.String) throws java.io.IOException
 
-    private static var getDTD_MethodID_15: jmethodID?
+    private static var getDTD_MethodID_17: jmethodID?
 
     open class func getDTD( name: String? ) throws /* java.io.IOException */ -> DTD! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/parser/DTD", classCache: &DTDJNIClass, methodName: "getDTD", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/DTD;", methodCache: &getDTD_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/parser/DTD", classCache: &DTDJNIClass, methodName: "getDTD", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/DTD;", methodCache: &getDTD_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -911,40 +945,6 @@ open class DTD: java_swift.JavaObject, DTDConstants {
     /// private java.lang.String[] javax.swing.text.html.parser.DTD.readNameArray(java.io.DataInputStream,java.lang.String[]) throws java.io.IOException
 
     /// private javax.swing.text.html.parser.AttributeList javax.swing.text.html.parser.DTD.readAttributeList(java.io.DataInputStream,java.lang.String[]) throws java.io.IOException
-
-    /// public javax.swing.text.html.parser.Element javax.swing.text.html.parser.DTD.getElement(java.lang.String)
-
-    private static var getElement_MethodID_16: jmethodID?
-
-    open func getElement( name: String? ) -> text_html_parser_Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.getElement_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? text_html_parser_Element( javaObject: __return ) : nil
-    }
-
-    open func getElement( _ _name: String? ) -> text_html_parser_Element! {
-        return getElement( name: _name )
-    }
-
-    /// public javax.swing.text.html.parser.Element javax.swing.text.html.parser.DTD.getElement(int)
-
-    private static var getElement_MethodID_17: jmethodID?
-
-    open func getElement( index: Int ) -> text_html_parser_Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(I)Ljavax/swing/text/html/parser/Element;", methodCache: &DTD.getElement_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? text_html_parser_Element( javaObject: __return ) : nil
-    }
-
-    open func getElement( _ _index: Int ) -> text_html_parser_Element! {
-        return getElement( index: _index )
-    }
 
 }
 

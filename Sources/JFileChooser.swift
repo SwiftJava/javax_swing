@@ -1009,106 +1009,16 @@ open class JFileChooser: JComponent {
 
     /// static boolean javax.swing.JFileChooser.access$102(javax.swing.JFileChooser,boolean)
 
-    /// public javax.swing.plaf.FileChooserUI javax.swing.JFileChooser.getUI()
-
-    private static var getUI_MethodID_11: jmethodID?
-
-    open func getUI() -> FileChooserUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/FileChooserUI;", methodCache: &JFileChooser.getUI_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FileChooserUI( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JFileChooser.setDragEnabled(boolean)
-
-    private static var setDragEnabled_MethodID_12: jmethodID?
-
-    open func setDragEnabled( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragEnabled", methodSig: "(Z)V", methodCache: &JFileChooser.setDragEnabled_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setDragEnabled( _ _b: Bool ) {
-        setDragEnabled( b: _b )
-    }
-
-    /// public boolean javax.swing.JFileChooser.getDragEnabled()
-
-    private static var getDragEnabled_MethodID_13: jmethodID?
-
-    open func getDragEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getDragEnabled", methodSig: "()Z", methodCache: &JFileChooser.getDragEnabled_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.JFileChooser.fireActionPerformed(java.lang.String)
-
-    private static var fireActionPerformed_MethodID_14: jmethodID?
-
-    open func fireActionPerformed( command: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: command, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.fireActionPerformed_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func fireActionPerformed( _ _command: String? ) {
-        fireActionPerformed( command: _command )
-    }
-
-    /// public void javax.swing.JFileChooser.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_15: jmethodID?
-
-    open func addActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JFileChooser.addActionListener_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: java_awt.ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// protected javax.swing.JDialog javax.swing.JFileChooser.createDialog(java.awt.Component) throws java.awt.HeadlessException
-
-    private static var createDialog_MethodID_16: jmethodID?
-
-    open func createDialog( parent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> JDialog! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JDialog;", methodCache: &JFileChooser.createDialog_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? JDialog( javaObject: __return ) : nil
-    }
-
-    open func createDialog( _ _parent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> JDialog! {
-        return try createDialog( parent: _parent )
-    }
-
     /// public int javax.swing.JFileChooser.showDialog(java.awt.Component,java.lang.String) throws java.awt.HeadlessException
 
-    private static var showDialog_MethodID_17: jmethodID?
+    private static var showDialog_MethodID_11: jmethodID?
 
     open func showDialog( parent: java_awt.Component?, approveButtonText: String? ) throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: approveButtonText, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "showDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/String;)I", methodCache: &JFileChooser.showDialog_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "showDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/String;)I", methodCache: &JFileChooser.showDialog_MethodID_11, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1119,53 +1029,18 @@ open class JFileChooser: JComponent {
         return try showDialog( parent: _parent, approveButtonText: _approveButtonText )
     }
 
-    /// public java.lang.String javax.swing.JFileChooser.getDescription(java.io.File)
-
-    private static var getDescription_MethodID_18: jmethodID?
-
-    open func getDescription( f: /* java.io.File */ UnclassedObject? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &JFileChooser.getDescription_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getDescription( _ _f: /* java.io.File */ UnclassedObject? ) -> String! {
-        return getDescription( f: _f )
-    }
-
-    /// public javax.swing.Icon javax.swing.JFileChooser.getIcon(java.io.File)
-
-    private static var getIcon_MethodID_19: jmethodID?
-
-    open func getIcon( f: /* java.io.File */ UnclassedObject? ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/io/File;)Ljavax/swing/Icon;", methodCache: &JFileChooser.getIcon_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    open func getIcon( _ _f: /* java.io.File */ UnclassedObject? ) -> Icon! {
-        return getIcon( f: _f )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JFileChooser.getAccessibleContext()
-
     /// private void javax.swing.JFileChooser.installHierarchyListener()
 
     /// private void javax.swing.JFileChooser.installShowFilesListener()
 
     /// public java.io.File javax.swing.JFileChooser.getSelectedFile()
 
-    private static var getSelectedFile_MethodID_20: jmethodID?
+    private static var getSelectedFile_MethodID_12: jmethodID?
 
     open func getSelectedFile() -> /* java.io.File */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedFile", methodSig: "()Ljava/io/File;", methodCache: &JFileChooser.getSelectedFile_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedFile", methodSig: "()Ljava/io/File;", methodCache: &JFileChooser.getSelectedFile_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.io.File */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -1173,13 +1048,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setSelectedFile(java.io.File)
 
-    private static var setSelectedFile_MethodID_21: jmethodID?
+    private static var setSelectedFile_MethodID_13: jmethodID?
 
     open func setSelectedFile( file: /* java.io.File */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: file != nil ? file! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedFile", methodSig: "(Ljava/io/File;)V", methodCache: &JFileChooser.setSelectedFile_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedFile", methodSig: "(Ljava/io/File;)V", methodCache: &JFileChooser.setSelectedFile_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setSelectedFile( _ _file: /* java.io.File */ UnclassedObject? ) {
@@ -1188,25 +1063,25 @@ open class JFileChooser: JComponent {
 
     /// public java.io.File[] javax.swing.JFileChooser.getSelectedFiles()
 
-    private static var getSelectedFiles_MethodID_22: jmethodID?
+    private static var getSelectedFiles_MethodID_14: jmethodID?
 
     open func getSelectedFiles() -> [/* java.io.File */ UnclassedObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedFiles", methodSig: "()[Ljava/io/File;", methodCache: &JFileChooser.getSelectedFiles_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedFiles", methodSig: "()[Ljava/io/File;", methodCache: &JFileChooser.getSelectedFiles_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [/* java.io.File */ UnclassedObject](), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setSelectedFiles(java.io.File[])
 
-    private static var setSelectedFiles_MethodID_23: jmethodID?
+    private static var setSelectedFiles_MethodID_15: jmethodID?
 
     open func setSelectedFiles( selectedFiles: [/* java.io.File */ UnclassedObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: selectedFiles, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedFiles", methodSig: "([Ljava/io/File;)V", methodCache: &JFileChooser.setSelectedFiles_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedFiles", methodSig: "([Ljava/io/File;)V", methodCache: &JFileChooser.setSelectedFiles_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setSelectedFiles( _ _selectedFiles: [/* java.io.File */ UnclassedObject]? ) {
@@ -1215,12 +1090,12 @@ open class JFileChooser: JComponent {
 
     /// public java.io.File javax.swing.JFileChooser.getCurrentDirectory()
 
-    private static var getCurrentDirectory_MethodID_24: jmethodID?
+    private static var getCurrentDirectory_MethodID_16: jmethodID?
 
     open func getCurrentDirectory() -> /* java.io.File */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentDirectory", methodSig: "()Ljava/io/File;", methodCache: &JFileChooser.getCurrentDirectory_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCurrentDirectory", methodSig: "()Ljava/io/File;", methodCache: &JFileChooser.getCurrentDirectory_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.io.File */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -1228,13 +1103,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setCurrentDirectory(java.io.File)
 
-    private static var setCurrentDirectory_MethodID_25: jmethodID?
+    private static var setCurrentDirectory_MethodID_17: jmethodID?
 
     open func setCurrentDirectory( dir: /* java.io.File */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dir != nil ? dir! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentDirectory", methodSig: "(Ljava/io/File;)V", methodCache: &JFileChooser.setCurrentDirectory_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentDirectory", methodSig: "(Ljava/io/File;)V", methodCache: &JFileChooser.setCurrentDirectory_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setCurrentDirectory( _ _dir: /* java.io.File */ UnclassedObject? ) {
@@ -1243,35 +1118,35 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.changeToParentDirectory()
 
-    private static var changeToParentDirectory_MethodID_26: jmethodID?
+    private static var changeToParentDirectory_MethodID_18: jmethodID?
 
     open func changeToParentDirectory() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeToParentDirectory", methodSig: "()V", methodCache: &JFileChooser.changeToParentDirectory_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeToParentDirectory", methodSig: "()V", methodCache: &JFileChooser.changeToParentDirectory_MethodID_18, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.JFileChooser.rescanCurrentDirectory()
 
-    private static var rescanCurrentDirectory_MethodID_27: jmethodID?
+    private static var rescanCurrentDirectory_MethodID_19: jmethodID?
 
     open func rescanCurrentDirectory() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rescanCurrentDirectory", methodSig: "()V", methodCache: &JFileChooser.rescanCurrentDirectory_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rescanCurrentDirectory", methodSig: "()V", methodCache: &JFileChooser.rescanCurrentDirectory_MethodID_19, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.JFileChooser.ensureFileIsVisible(java.io.File)
 
-    private static var ensureFileIsVisible_MethodID_28: jmethodID?
+    private static var ensureFileIsVisible_MethodID_20: jmethodID?
 
     open func ensureFileIsVisible( f: /* java.io.File */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureFileIsVisible", methodSig: "(Ljava/io/File;)V", methodCache: &JFileChooser.ensureFileIsVisible_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureFileIsVisible", methodSig: "(Ljava/io/File;)V", methodCache: &JFileChooser.ensureFileIsVisible_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func ensureFileIsVisible( _ _f: /* java.io.File */ UnclassedObject? ) {
@@ -1280,13 +1155,13 @@ open class JFileChooser: JComponent {
 
     /// public int javax.swing.JFileChooser.showOpenDialog(java.awt.Component) throws java.awt.HeadlessException
 
-    private static var showOpenDialog_MethodID_29: jmethodID?
+    private static var showOpenDialog_MethodID_21: jmethodID?
 
     open func showOpenDialog( parent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "showOpenDialog", methodSig: "(Ljava/awt/Component;)I", methodCache: &JFileChooser.showOpenDialog_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "showOpenDialog", methodSig: "(Ljava/awt/Component;)I", methodCache: &JFileChooser.showOpenDialog_MethodID_21, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1299,13 +1174,13 @@ open class JFileChooser: JComponent {
 
     /// public int javax.swing.JFileChooser.showSaveDialog(java.awt.Component) throws java.awt.HeadlessException
 
-    private static var showSaveDialog_MethodID_30: jmethodID?
+    private static var showSaveDialog_MethodID_22: jmethodID?
 
     open func showSaveDialog( parent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "showSaveDialog", methodSig: "(Ljava/awt/Component;)I", methodCache: &JFileChooser.showSaveDialog_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "showSaveDialog", methodSig: "(Ljava/awt/Component;)I", methodCache: &JFileChooser.showSaveDialog_MethodID_22, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1318,25 +1193,25 @@ open class JFileChooser: JComponent {
 
     /// public boolean javax.swing.JFileChooser.getControlButtonsAreShown()
 
-    private static var getControlButtonsAreShown_MethodID_31: jmethodID?
+    private static var getControlButtonsAreShown_MethodID_23: jmethodID?
 
     open func getControlButtonsAreShown() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getControlButtonsAreShown", methodSig: "()Z", methodCache: &JFileChooser.getControlButtonsAreShown_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getControlButtonsAreShown", methodSig: "()Z", methodCache: &JFileChooser.getControlButtonsAreShown_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setControlButtonsAreShown(boolean)
 
-    private static var setControlButtonsAreShown_MethodID_32: jmethodID?
+    private static var setControlButtonsAreShown_MethodID_24: jmethodID?
 
     open func setControlButtonsAreShown( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setControlButtonsAreShown", methodSig: "(Z)V", methodCache: &JFileChooser.setControlButtonsAreShown_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setControlButtonsAreShown", methodSig: "(Z)V", methodCache: &JFileChooser.setControlButtonsAreShown_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setControlButtonsAreShown( _ _b: Bool ) {
@@ -1345,25 +1220,25 @@ open class JFileChooser: JComponent {
 
     /// public int javax.swing.JFileChooser.getDialogType()
 
-    private static var getDialogType_MethodID_33: jmethodID?
+    private static var getDialogType_MethodID_25: jmethodID?
 
     open func getDialogType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDialogType", methodSig: "()I", methodCache: &JFileChooser.getDialogType_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDialogType", methodSig: "()I", methodCache: &JFileChooser.getDialogType_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setDialogType(int)
 
-    private static var setDialogType_MethodID_34: jmethodID?
+    private static var setDialogType_MethodID_26: jmethodID?
 
     open func setDialogType( dialogType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dialogType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDialogType", methodSig: "(I)V", methodCache: &JFileChooser.setDialogType_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDialogType", methodSig: "(I)V", methodCache: &JFileChooser.setDialogType_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setDialogType( _ _dialogType: Int ) {
@@ -1372,13 +1247,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setDialogTitle(java.lang.String)
 
-    private static var setDialogTitle_MethodID_35: jmethodID?
+    private static var setDialogTitle_MethodID_27: jmethodID?
 
     open func setDialogTitle( dialogTitle: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dialogTitle, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDialogTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.setDialogTitle_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDialogTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.setDialogTitle_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setDialogTitle( _ _dialogTitle: String? ) {
@@ -1387,25 +1262,25 @@ open class JFileChooser: JComponent {
 
     /// public java.lang.String javax.swing.JFileChooser.getDialogTitle()
 
-    private static var getDialogTitle_MethodID_36: jmethodID?
+    private static var getDialogTitle_MethodID_28: jmethodID?
 
     open func getDialogTitle() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDialogTitle", methodSig: "()Ljava/lang/String;", methodCache: &JFileChooser.getDialogTitle_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDialogTitle", methodSig: "()Ljava/lang/String;", methodCache: &JFileChooser.getDialogTitle_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setApproveButtonToolTipText(java.lang.String)
 
-    private static var setApproveButtonToolTipText_MethodID_37: jmethodID?
+    private static var setApproveButtonToolTipText_MethodID_29: jmethodID?
 
     open func setApproveButtonToolTipText( toolTipText: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: toolTipText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonToolTipText", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.setApproveButtonToolTipText_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonToolTipText", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.setApproveButtonToolTipText_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func setApproveButtonToolTipText( _ _toolTipText: String? ) {
@@ -1414,37 +1289,37 @@ open class JFileChooser: JComponent {
 
     /// public java.lang.String javax.swing.JFileChooser.getApproveButtonToolTipText()
 
-    private static var getApproveButtonToolTipText_MethodID_38: jmethodID?
+    private static var getApproveButtonToolTipText_MethodID_30: jmethodID?
 
     open func getApproveButtonToolTipText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButtonToolTipText", methodSig: "()Ljava/lang/String;", methodCache: &JFileChooser.getApproveButtonToolTipText_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButtonToolTipText", methodSig: "()Ljava/lang/String;", methodCache: &JFileChooser.getApproveButtonToolTipText_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public int javax.swing.JFileChooser.getApproveButtonMnemonic()
 
-    private static var getApproveButtonMnemonic_MethodID_39: jmethodID?
+    private static var getApproveButtonMnemonic_MethodID_31: jmethodID?
 
     open func getApproveButtonMnemonic() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getApproveButtonMnemonic", methodSig: "()I", methodCache: &JFileChooser.getApproveButtonMnemonic_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getApproveButtonMnemonic", methodSig: "()I", methodCache: &JFileChooser.getApproveButtonMnemonic_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setApproveButtonMnemonic(char)
 
-    private static var setApproveButtonMnemonic_MethodID_40: jmethodID?
+    private static var setApproveButtonMnemonic_MethodID_32: jmethodID?
 
     open func setApproveButtonMnemonic( mnemonic: UInt16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mnemonic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonMnemonic", methodSig: "(C)V", methodCache: &JFileChooser.setApproveButtonMnemonic_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonMnemonic", methodSig: "(C)V", methodCache: &JFileChooser.setApproveButtonMnemonic_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func setApproveButtonMnemonic( _ _mnemonic: UInt16 ) {
@@ -1453,13 +1328,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setApproveButtonMnemonic(int)
 
-    private static var setApproveButtonMnemonic_MethodID_41: jmethodID?
+    private static var setApproveButtonMnemonic_MethodID_33: jmethodID?
 
     open func setApproveButtonMnemonic( mnemonic: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mnemonic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonMnemonic", methodSig: "(I)V", methodCache: &JFileChooser.setApproveButtonMnemonic_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonMnemonic", methodSig: "(I)V", methodCache: &JFileChooser.setApproveButtonMnemonic_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func setApproveButtonMnemonic( _ _mnemonic: Int ) {
@@ -1468,13 +1343,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setApproveButtonText(java.lang.String)
 
-    private static var setApproveButtonText_MethodID_42: jmethodID?
+    private static var setApproveButtonText_MethodID_34: jmethodID?
 
     open func setApproveButtonText( approveButtonText: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: approveButtonText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonText", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.setApproveButtonText_MethodID_42, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setApproveButtonText", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.setApproveButtonText_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func setApproveButtonText( _ _approveButtonText: String? ) {
@@ -1483,37 +1358,37 @@ open class JFileChooser: JComponent {
 
     /// public java.lang.String javax.swing.JFileChooser.getApproveButtonText()
 
-    private static var getApproveButtonText_MethodID_43: jmethodID?
+    private static var getApproveButtonText_MethodID_35: jmethodID?
 
     open func getApproveButtonText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButtonText", methodSig: "()Ljava/lang/String;", methodCache: &JFileChooser.getApproveButtonText_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButtonText", methodSig: "()Ljava/lang/String;", methodCache: &JFileChooser.getApproveButtonText_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public javax.swing.filechooser.FileFilter[] javax.swing.JFileChooser.getChoosableFileFilters()
 
-    private static var getChoosableFileFilters_MethodID_44: jmethodID?
+    private static var getChoosableFileFilters_MethodID_36: jmethodID?
 
     open func getChoosableFileFilters() -> [FileFilter]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChoosableFileFilters", methodSig: "()[Ljavax/swing/filechooser/FileFilter;", methodCache: &JFileChooser.getChoosableFileFilters_MethodID_44, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChoosableFileFilters", methodSig: "()[Ljavax/swing/filechooser/FileFilter;", methodCache: &JFileChooser.getChoosableFileFilters_MethodID_36, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [FileFilter](), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.addChoosableFileFilter(javax.swing.filechooser.FileFilter)
 
-    private static var addChoosableFileFilter_MethodID_45: jmethodID?
+    private static var addChoosableFileFilter_MethodID_37: jmethodID?
 
     open func addChoosableFileFilter( filter: FileFilter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: filter != nil ? filter! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChoosableFileFilter", methodSig: "(Ljavax/swing/filechooser/FileFilter;)V", methodCache: &JFileChooser.addChoosableFileFilter_MethodID_45, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChoosableFileFilter", methodSig: "(Ljavax/swing/filechooser/FileFilter;)V", methodCache: &JFileChooser.addChoosableFileFilter_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func addChoosableFileFilter( _ _filter: FileFilter? ) {
@@ -1522,13 +1397,13 @@ open class JFileChooser: JComponent {
 
     /// public boolean javax.swing.JFileChooser.removeChoosableFileFilter(javax.swing.filechooser.FileFilter)
 
-    private static var removeChoosableFileFilter_MethodID_46: jmethodID?
+    private static var removeChoosableFileFilter_MethodID_38: jmethodID?
 
     open func removeChoosableFileFilter( f: FileFilter? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "removeChoosableFileFilter", methodSig: "(Ljavax/swing/filechooser/FileFilter;)Z", methodCache: &JFileChooser.removeChoosableFileFilter_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "removeChoosableFileFilter", methodSig: "(Ljavax/swing/filechooser/FileFilter;)Z", methodCache: &JFileChooser.removeChoosableFileFilter_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1538,23 +1413,23 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.resetChoosableFileFilters()
 
-    private static var resetChoosableFileFilters_MethodID_47: jmethodID?
+    private static var resetChoosableFileFilters_MethodID_39: jmethodID?
 
     open func resetChoosableFileFilters() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetChoosableFileFilters", methodSig: "()V", methodCache: &JFileChooser.resetChoosableFileFilters_MethodID_47, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetChoosableFileFilters", methodSig: "()V", methodCache: &JFileChooser.resetChoosableFileFilters_MethodID_39, args: &__args, locals: &__locals )
     }
 
 
     /// public javax.swing.filechooser.FileFilter javax.swing.JFileChooser.getAcceptAllFileFilter()
 
-    private static var getAcceptAllFileFilter_MethodID_48: jmethodID?
+    private static var getAcceptAllFileFilter_MethodID_40: jmethodID?
 
     open func getAcceptAllFileFilter() -> FileFilter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAcceptAllFileFilter", methodSig: "()Ljavax/swing/filechooser/FileFilter;", methodCache: &JFileChooser.getAcceptAllFileFilter_MethodID_48, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAcceptAllFileFilter", methodSig: "()Ljavax/swing/filechooser/FileFilter;", methodCache: &JFileChooser.getAcceptAllFileFilter_MethodID_40, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FileFilter( javaObject: __return ) : nil
     }
@@ -1562,25 +1437,25 @@ open class JFileChooser: JComponent {
 
     /// public boolean javax.swing.JFileChooser.isAcceptAllFileFilterUsed()
 
-    private static var isAcceptAllFileFilterUsed_MethodID_49: jmethodID?
+    private static var isAcceptAllFileFilterUsed_MethodID_41: jmethodID?
 
     open func isAcceptAllFileFilterUsed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAcceptAllFileFilterUsed", methodSig: "()Z", methodCache: &JFileChooser.isAcceptAllFileFilterUsed_MethodID_49, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAcceptAllFileFilterUsed", methodSig: "()Z", methodCache: &JFileChooser.isAcceptAllFileFilterUsed_MethodID_41, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setAcceptAllFileFilterUsed(boolean)
 
-    private static var setAcceptAllFileFilterUsed_MethodID_50: jmethodID?
+    private static var setAcceptAllFileFilterUsed_MethodID_42: jmethodID?
 
     open func setAcceptAllFileFilterUsed( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAcceptAllFileFilterUsed", methodSig: "(Z)V", methodCache: &JFileChooser.setAcceptAllFileFilterUsed_MethodID_50, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAcceptAllFileFilterUsed", methodSig: "(Z)V", methodCache: &JFileChooser.setAcceptAllFileFilterUsed_MethodID_42, args: &__args, locals: &__locals )
     }
 
     open func setAcceptAllFileFilterUsed( _ _b: Bool ) {
@@ -1589,12 +1464,12 @@ open class JFileChooser: JComponent {
 
     /// public javax.swing.JComponent javax.swing.JFileChooser.getAccessory()
 
-    private static var getAccessory_MethodID_51: jmethodID?
+    private static var getAccessory_MethodID_43: jmethodID?
 
     open func getAccessory() -> JComponent! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessory", methodSig: "()Ljavax/swing/JComponent;", methodCache: &JFileChooser.getAccessory_MethodID_51, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessory", methodSig: "()Ljavax/swing/JComponent;", methodCache: &JFileChooser.getAccessory_MethodID_43, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
@@ -1602,13 +1477,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setAccessory(javax.swing.JComponent)
 
-    private static var setAccessory_MethodID_52: jmethodID?
+    private static var setAccessory_MethodID_44: jmethodID?
 
     open func setAccessory( newAccessory: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newAccessory != nil ? newAccessory! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAccessory", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &JFileChooser.setAccessory_MethodID_52, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAccessory", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &JFileChooser.setAccessory_MethodID_44, args: &__args, locals: &__locals )
     }
 
     open func setAccessory( _ _newAccessory: JComponent? ) {
@@ -1617,13 +1492,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setFileSelectionMode(int)
 
-    private static var setFileSelectionMode_MethodID_53: jmethodID?
+    private static var setFileSelectionMode_MethodID_45: jmethodID?
 
     open func setFileSelectionMode( mode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileSelectionMode", methodSig: "(I)V", methodCache: &JFileChooser.setFileSelectionMode_MethodID_53, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileSelectionMode", methodSig: "(I)V", methodCache: &JFileChooser.setFileSelectionMode_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func setFileSelectionMode( _ _mode: Int ) {
@@ -1632,49 +1507,49 @@ open class JFileChooser: JComponent {
 
     /// public int javax.swing.JFileChooser.getFileSelectionMode()
 
-    private static var getFileSelectionMode_MethodID_54: jmethodID?
+    private static var getFileSelectionMode_MethodID_46: jmethodID?
 
     open func getFileSelectionMode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFileSelectionMode", methodSig: "()I", methodCache: &JFileChooser.getFileSelectionMode_MethodID_54, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFileSelectionMode", methodSig: "()I", methodCache: &JFileChooser.getFileSelectionMode_MethodID_46, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean javax.swing.JFileChooser.isFileSelectionEnabled()
 
-    private static var isFileSelectionEnabled_MethodID_55: jmethodID?
+    private static var isFileSelectionEnabled_MethodID_47: jmethodID?
 
     open func isFileSelectionEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFileSelectionEnabled", methodSig: "()Z", methodCache: &JFileChooser.isFileSelectionEnabled_MethodID_55, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFileSelectionEnabled", methodSig: "()Z", methodCache: &JFileChooser.isFileSelectionEnabled_MethodID_47, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean javax.swing.JFileChooser.isDirectorySelectionEnabled()
 
-    private static var isDirectorySelectionEnabled_MethodID_56: jmethodID?
+    private static var isDirectorySelectionEnabled_MethodID_48: jmethodID?
 
     open func isDirectorySelectionEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDirectorySelectionEnabled", methodSig: "()Z", methodCache: &JFileChooser.isDirectorySelectionEnabled_MethodID_56, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDirectorySelectionEnabled", methodSig: "()Z", methodCache: &JFileChooser.isDirectorySelectionEnabled_MethodID_48, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setMultiSelectionEnabled(boolean)
 
-    private static var setMultiSelectionEnabled_MethodID_57: jmethodID?
+    private static var setMultiSelectionEnabled_MethodID_49: jmethodID?
 
     open func setMultiSelectionEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMultiSelectionEnabled", methodSig: "(Z)V", methodCache: &JFileChooser.setMultiSelectionEnabled_MethodID_57, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMultiSelectionEnabled", methodSig: "(Z)V", methodCache: &JFileChooser.setMultiSelectionEnabled_MethodID_49, args: &__args, locals: &__locals )
     }
 
     open func setMultiSelectionEnabled( _ _b: Bool ) {
@@ -1683,37 +1558,37 @@ open class JFileChooser: JComponent {
 
     /// public boolean javax.swing.JFileChooser.isMultiSelectionEnabled()
 
-    private static var isMultiSelectionEnabled_MethodID_58: jmethodID?
+    private static var isMultiSelectionEnabled_MethodID_50: jmethodID?
 
     open func isMultiSelectionEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMultiSelectionEnabled", methodSig: "()Z", methodCache: &JFileChooser.isMultiSelectionEnabled_MethodID_58, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMultiSelectionEnabled", methodSig: "()Z", methodCache: &JFileChooser.isMultiSelectionEnabled_MethodID_50, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean javax.swing.JFileChooser.isFileHidingEnabled()
 
-    private static var isFileHidingEnabled_MethodID_59: jmethodID?
+    private static var isFileHidingEnabled_MethodID_51: jmethodID?
 
     open func isFileHidingEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFileHidingEnabled", methodSig: "()Z", methodCache: &JFileChooser.isFileHidingEnabled_MethodID_59, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFileHidingEnabled", methodSig: "()Z", methodCache: &JFileChooser.isFileHidingEnabled_MethodID_51, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JFileChooser.setFileHidingEnabled(boolean)
 
-    private static var setFileHidingEnabled_MethodID_60: jmethodID?
+    private static var setFileHidingEnabled_MethodID_52: jmethodID?
 
     open func setFileHidingEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileHidingEnabled", methodSig: "(Z)V", methodCache: &JFileChooser.setFileHidingEnabled_MethodID_60, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileHidingEnabled", methodSig: "(Z)V", methodCache: &JFileChooser.setFileHidingEnabled_MethodID_52, args: &__args, locals: &__locals )
     }
 
     open func setFileHidingEnabled( _ _b: Bool ) {
@@ -1722,13 +1597,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setFileFilter(javax.swing.filechooser.FileFilter)
 
-    private static var setFileFilter_MethodID_61: jmethodID?
+    private static var setFileFilter_MethodID_53: jmethodID?
 
     open func setFileFilter( filter: FileFilter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: filter != nil ? filter! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileFilter", methodSig: "(Ljavax/swing/filechooser/FileFilter;)V", methodCache: &JFileChooser.setFileFilter_MethodID_61, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileFilter", methodSig: "(Ljavax/swing/filechooser/FileFilter;)V", methodCache: &JFileChooser.setFileFilter_MethodID_53, args: &__args, locals: &__locals )
     }
 
     open func setFileFilter( _ _filter: FileFilter? ) {
@@ -1737,12 +1612,12 @@ open class JFileChooser: JComponent {
 
     /// public javax.swing.filechooser.FileFilter javax.swing.JFileChooser.getFileFilter()
 
-    private static var getFileFilter_MethodID_62: jmethodID?
+    private static var getFileFilter_MethodID_54: jmethodID?
 
     open func getFileFilter() -> FileFilter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileFilter", methodSig: "()Ljavax/swing/filechooser/FileFilter;", methodCache: &JFileChooser.getFileFilter_MethodID_62, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileFilter", methodSig: "()Ljavax/swing/filechooser/FileFilter;", methodCache: &JFileChooser.getFileFilter_MethodID_54, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FileFilter( javaObject: __return ) : nil
     }
@@ -1750,13 +1625,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setFileView(javax.swing.filechooser.FileView)
 
-    private static var setFileView_MethodID_63: jmethodID?
+    private static var setFileView_MethodID_55: jmethodID?
 
     open func setFileView( fileView: FileView? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: fileView != nil ? fileView! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileView", methodSig: "(Ljavax/swing/filechooser/FileView;)V", methodCache: &JFileChooser.setFileView_MethodID_63, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileView", methodSig: "(Ljavax/swing/filechooser/FileView;)V", methodCache: &JFileChooser.setFileView_MethodID_55, args: &__args, locals: &__locals )
     }
 
     open func setFileView( _ _fileView: FileView? ) {
@@ -1765,12 +1640,12 @@ open class JFileChooser: JComponent {
 
     /// public javax.swing.filechooser.FileView javax.swing.JFileChooser.getFileView()
 
-    private static var getFileView_MethodID_64: jmethodID?
+    private static var getFileView_MethodID_56: jmethodID?
 
     open func getFileView() -> FileView! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileView", methodSig: "()Ljavax/swing/filechooser/FileView;", methodCache: &JFileChooser.getFileView_MethodID_64, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileView", methodSig: "()Ljavax/swing/filechooser/FileView;", methodCache: &JFileChooser.getFileView_MethodID_56, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FileView( javaObject: __return ) : nil
     }
@@ -1778,13 +1653,13 @@ open class JFileChooser: JComponent {
 
     /// public java.lang.String javax.swing.JFileChooser.getTypeDescription(java.io.File)
 
-    private static var getTypeDescription_MethodID_65: jmethodID?
+    private static var getTypeDescription_MethodID_57: jmethodID?
 
     open func getTypeDescription( f: /* java.io.File */ UnclassedObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTypeDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &JFileChooser.getTypeDescription_MethodID_65, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTypeDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &JFileChooser.getTypeDescription_MethodID_57, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -1794,13 +1669,13 @@ open class JFileChooser: JComponent {
 
     /// public boolean javax.swing.JFileChooser.isTraversable(java.io.File)
 
-    private static var isTraversable_MethodID_66: jmethodID?
+    private static var isTraversable_MethodID_58: jmethodID?
 
     open func isTraversable( f: /* java.io.File */ UnclassedObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTraversable", methodSig: "(Ljava/io/File;)Z", methodCache: &JFileChooser.isTraversable_MethodID_66, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTraversable", methodSig: "(Ljava/io/File;)Z", methodCache: &JFileChooser.isTraversable_MethodID_58, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1810,13 +1685,13 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.setFileSystemView(javax.swing.filechooser.FileSystemView)
 
-    private static var setFileSystemView_MethodID_67: jmethodID?
+    private static var setFileSystemView_MethodID_59: jmethodID?
 
     open func setFileSystemView( fsv: FileSystemView? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: fsv != nil ? fsv! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileSystemView", methodSig: "(Ljavax/swing/filechooser/FileSystemView;)V", methodCache: &JFileChooser.setFileSystemView_MethodID_67, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFileSystemView", methodSig: "(Ljavax/swing/filechooser/FileSystemView;)V", methodCache: &JFileChooser.setFileSystemView_MethodID_59, args: &__args, locals: &__locals )
     }
 
     open func setFileSystemView( _ _fsv: FileSystemView? ) {
@@ -1825,12 +1700,12 @@ open class JFileChooser: JComponent {
 
     /// public javax.swing.filechooser.FileSystemView javax.swing.JFileChooser.getFileSystemView()
 
-    private static var getFileSystemView_MethodID_68: jmethodID?
+    private static var getFileSystemView_MethodID_60: jmethodID?
 
     open func getFileSystemView() -> FileSystemView! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileSystemView", methodSig: "()Ljavax/swing/filechooser/FileSystemView;", methodCache: &JFileChooser.getFileSystemView_MethodID_68, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileSystemView", methodSig: "()Ljavax/swing/filechooser/FileSystemView;", methodCache: &JFileChooser.getFileSystemView_MethodID_60, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FileSystemView( javaObject: __return ) : nil
     }
@@ -1838,39 +1713,148 @@ open class JFileChooser: JComponent {
 
     /// public void javax.swing.JFileChooser.approveSelection()
 
-    private static var approveSelection_MethodID_69: jmethodID?
+    private static var approveSelection_MethodID_61: jmethodID?
 
     open func approveSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "approveSelection", methodSig: "()V", methodCache: &JFileChooser.approveSelection_MethodID_69, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "approveSelection", methodSig: "()V", methodCache: &JFileChooser.approveSelection_MethodID_61, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.JFileChooser.cancelSelection()
 
-    private static var cancelSelection_MethodID_70: jmethodID?
+    private static var cancelSelection_MethodID_62: jmethodID?
 
     open func cancelSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancelSelection", methodSig: "()V", methodCache: &JFileChooser.cancelSelection_MethodID_70, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancelSelection", methodSig: "()V", methodCache: &JFileChooser.cancelSelection_MethodID_62, args: &__args, locals: &__locals )
     }
 
+
+    /// public javax.swing.Icon javax.swing.JFileChooser.getIcon(java.io.File)
+
+    private static var getIcon_MethodID_63: jmethodID?
+
+    open func getIcon( f: /* java.io.File */ UnclassedObject? ) -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/io/File;)Ljavax/swing/Icon;", methodCache: &JFileChooser.getIcon_MethodID_63, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    open func getIcon( _ _f: /* java.io.File */ UnclassedObject? ) -> Icon! {
+        return getIcon( f: _f )
+    }
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JFileChooser.getAccessibleContext()
+
+    /// public void javax.swing.JFileChooser.setDragEnabled(boolean)
+
+    private static var setDragEnabled_MethodID_64: jmethodID?
+
+    open func setDragEnabled( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragEnabled", methodSig: "(Z)V", methodCache: &JFileChooser.setDragEnabled_MethodID_64, args: &__args, locals: &__locals )
+    }
+
+    open func setDragEnabled( _ _b: Bool ) {
+        setDragEnabled( b: _b )
+    }
+
+    /// public boolean javax.swing.JFileChooser.getDragEnabled()
+
+    private static var getDragEnabled_MethodID_65: jmethodID?
+
+    open func getDragEnabled() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getDragEnabled", methodSig: "()Z", methodCache: &JFileChooser.getDragEnabled_MethodID_65, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected void javax.swing.JFileChooser.fireActionPerformed(java.lang.String)
+
+    private static var fireActionPerformed_MethodID_66: jmethodID?
+
+    open func fireActionPerformed( command: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: command, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "(Ljava/lang/String;)V", methodCache: &JFileChooser.fireActionPerformed_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+    open func fireActionPerformed( _ _command: String? ) {
+        fireActionPerformed( command: _command )
+    }
+
+    /// public void javax.swing.JFileChooser.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_67: jmethodID?
+
+    open func addActionListener( l: java_awt.ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JFileChooser.addActionListener_MethodID_67, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: java_awt.ActionListener? ) {
+        addActionListener( l: _l )
+    }
+
+    /// protected javax.swing.JDialog javax.swing.JFileChooser.createDialog(java.awt.Component) throws java.awt.HeadlessException
+
+    private static var createDialog_MethodID_68: jmethodID?
+
+    open func createDialog( parent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> JDialog! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JDialog;", methodCache: &JFileChooser.createDialog_MethodID_68, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? JDialog( javaObject: __return ) : nil
+    }
+
+    open func createDialog( _ _parent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> JDialog! {
+        return try createDialog( parent: _parent )
+    }
 
     /// public void javax.swing.JFileChooser.updateUI()
 
     /// public java.lang.String javax.swing.JFileChooser.getUIClassID()
 
+    /// public javax.swing.plaf.FileChooserUI javax.swing.JFileChooser.getUI()
+
+    private static var getUI_MethodID_69: jmethodID?
+
+    open func getUI() -> FileChooserUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/FileChooserUI;", methodCache: &JFileChooser.getUI_MethodID_69, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FileChooserUI( javaObject: __return ) : nil
+    }
+
+
     /// public void javax.swing.JFileChooser.removeActionListener(java.awt.event.ActionListener)
 
-    private static var removeActionListener_MethodID_71: jmethodID?
+    private static var removeActionListener_MethodID_70: jmethodID?
 
     open func removeActionListener( l: java_awt.ActionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JFileChooser.removeActionListener_MethodID_71, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JFileChooser.removeActionListener_MethodID_70, args: &__args, locals: &__locals )
     }
 
     open func removeActionListener( _ _l: java_awt.ActionListener? ) {
@@ -1879,15 +1863,31 @@ open class JFileChooser: JComponent {
 
     /// public java.awt.event.ActionListener[] javax.swing.JFileChooser.getActionListeners()
 
-    private static var getActionListeners_MethodID_72: jmethodID?
+    private static var getActionListeners_MethodID_71: jmethodID?
 
     open func getActionListeners() -> [ActionListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &JFileChooser.getActionListeners_MethodID_72, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &JFileChooser.getActionListeners_MethodID_71, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
     }
 
+
+    /// public java.lang.String javax.swing.JFileChooser.getDescription(java.io.File)
+
+    private static var getDescription_MethodID_72: jmethodID?
+
+    open func getDescription( f: /* java.io.File */ UnclassedObject? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &JFileChooser.getDescription_MethodID_72, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getDescription( _ _f: /* java.io.File */ UnclassedObject? ) -> String! {
+        return getDescription( f: _f )
+    }
 
     /// In declared protocol but not defined.. ///
 

@@ -247,40 +247,164 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// static boolean javax.swing.text.DefaultCaret.access$202(javax.swing.text.DefaultCaret,boolean)
 
-    /// protected final javax.swing.text.JTextComponent javax.swing.text.DefaultCaret.getComponent()
+    /// public void javax.swing.text.DefaultCaret.focusGained(java.awt.event.FocusEvent)
 
-    private static var getComponent_MethodID_2: jmethodID?
+    private static var focusGained_MethodID_2: jmethodID?
 
-    open func getComponent() -> JTextComponent! {
+    open func focusGained( e: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &DefaultCaret.getComponent_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JTextComponent( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &DefaultCaret.focusGained_MethodID_2, args: &__args, locals: &__locals )
     }
 
+    open func focusGained( _ _e: java_awt.FocusEvent? ) {
+        focusGained( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.focusLost(java.awt.event.FocusEvent)
+
+    private static var focusLost_MethodID_3: jmethodID?
+
+    open func focusLost( e: java_awt.FocusEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &DefaultCaret.focusLost_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func focusLost( _ _e: java_awt.FocusEvent? ) {
+        focusLost( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mousePressed(java.awt.event.MouseEvent)
+
+    private static var mousePressed_MethodID_4: jmethodID?
+
+    open func mousePressed( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mousePressed_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func mousePressed( _ _e: java_awt.MouseEvent? ) {
+        mousePressed( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mouseReleased(java.awt.event.MouseEvent)
+
+    private static var mouseReleased_MethodID_5: jmethodID?
+
+    open func mouseReleased( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseReleased_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func mouseReleased( _ _e: java_awt.MouseEvent? ) {
+        mouseReleased( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mouseClicked(java.awt.event.MouseEvent)
+
+    private static var mouseClicked_MethodID_6: jmethodID?
+
+    open func mouseClicked( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseClicked_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func mouseClicked( _ _e: java_awt.MouseEvent? ) {
+        mouseClicked( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mouseExited(java.awt.event.MouseEvent)
+
+    private static var mouseExited_MethodID_7: jmethodID?
+
+    open func mouseExited( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseExited_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func mouseExited( _ _e: java_awt.MouseEvent? ) {
+        mouseExited( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mouseEntered(java.awt.event.MouseEvent)
+
+    private static var mouseEntered_MethodID_8: jmethodID?
+
+    open func mouseEntered( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseEntered_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func mouseEntered( _ _e: java_awt.MouseEvent? ) {
+        mouseEntered( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mouseMoved(java.awt.event.MouseEvent)
+
+    private static var mouseMoved_MethodID_9: jmethodID?
+
+    open func mouseMoved( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseMoved_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func mouseMoved( _ _e: java_awt.MouseEvent? ) {
+        mouseMoved( e: _e )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.mouseDragged(java.awt.event.MouseEvent)
+
+    private static var mouseDragged_MethodID_10: jmethodID?
+
+    open func mouseDragged( e: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseDragged_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func mouseDragged( _ _e: java_awt.MouseEvent? ) {
+        mouseDragged( e: _e )
+    }
+
+    /// private java.awt.datatransfer.Clipboard javax.swing.text.DefaultCaret.getSystemSelection()
 
     /// public boolean javax.swing.text.DefaultCaret.isSelectionVisible()
 
-    private static var isSelectionVisible_MethodID_3: jmethodID?
+    private static var isSelectionVisible_MethodID_11: jmethodID?
 
     open func isSelectionVisible() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionVisible", methodSig: "()Z", methodCache: &DefaultCaret.isSelectionVisible_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionVisible", methodSig: "()Z", methodCache: &DefaultCaret.isSelectionVisible_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.text.DefaultCaret.setSelectionVisible(boolean)
 
-    private static var setSelectionVisible_MethodID_4: jmethodID?
+    private static var setSelectionVisible_MethodID_12: jmethodID?
 
     open func setSelectionVisible( v: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionVisible", methodSig: "(Z)V", methodCache: &DefaultCaret.setSelectionVisible_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionVisible", methodSig: "(Z)V", methodCache: &DefaultCaret.setSelectionVisible_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setSelectionVisible( _ _v: Bool ) {
@@ -289,13 +413,13 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// protected void javax.swing.text.DefaultCaret.positionCaret(java.awt.event.MouseEvent)
 
-    private static var positionCaret_MethodID_5: jmethodID?
+    private static var positionCaret_MethodID_13: jmethodID?
 
     open func positionCaret( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "positionCaret", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.positionCaret_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "positionCaret", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.positionCaret_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func positionCaret( _ _e: java_awt.MouseEvent? ) {
@@ -306,13 +430,13 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// public void javax.swing.text.DefaultCaret.setUpdatePolicy(int)
 
-    private static var setUpdatePolicy_MethodID_6: jmethodID?
+    private static var setUpdatePolicy_MethodID_14: jmethodID?
 
     open func setUpdatePolicy( policy: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: policy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUpdatePolicy", methodSig: "(I)V", methodCache: &DefaultCaret.setUpdatePolicy_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUpdatePolicy", methodSig: "(I)V", methodCache: &DefaultCaret.setUpdatePolicy_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setUpdatePolicy( _ _policy: Int ) {
@@ -321,25 +445,25 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// public int javax.swing.text.DefaultCaret.getUpdatePolicy()
 
-    private static var getUpdatePolicy_MethodID_7: jmethodID?
+    private static var getUpdatePolicy_MethodID_15: jmethodID?
 
     open func getUpdatePolicy() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUpdatePolicy", methodSig: "()I", methodCache: &DefaultCaret.getUpdatePolicy_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUpdatePolicy", methodSig: "()I", methodCache: &DefaultCaret.getUpdatePolicy_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected synchronized void javax.swing.text.DefaultCaret.damage(java.awt.Rectangle)
 
-    private static var damage_MethodID_8: jmethodID?
+    private static var damage_MethodID_16: jmethodID?
 
     open func damage( r: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damage", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &DefaultCaret.damage_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damage", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &DefaultCaret.damage_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func damage( _ _r: java_awt.Rectangle? ) {
@@ -348,13 +472,13 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// protected void javax.swing.text.DefaultCaret.adjustVisibility(java.awt.Rectangle)
 
-    private static var adjustVisibility_MethodID_9: jmethodID?
+    private static var adjustVisibility_MethodID_17: jmethodID?
 
     open func adjustVisibility( nloc: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nloc != nil ? nloc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustVisibility", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &DefaultCaret.adjustVisibility_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustVisibility", methodSig: "(Ljava/awt/Rectangle;)V", methodCache: &DefaultCaret.adjustVisibility_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func adjustVisibility( _ _nloc: java_awt.Rectangle? ) {
@@ -363,12 +487,12 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// protected javax.swing.text.Highlighter$HighlightPainter javax.swing.text.DefaultCaret.getSelectionPainter()
 
-    private static var getSelectionPainter_MethodID_10: jmethodID?
+    private static var getSelectionPainter_MethodID_18: jmethodID?
 
     open func getSelectionPainter() -> Highlighter_HighlightPainter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionPainter", methodSig: "()Ljavax/swing/text/Highlighter$HighlightPainter;", methodCache: &DefaultCaret.getSelectionPainter_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionPainter", methodSig: "()Ljavax/swing/text/Highlighter$HighlightPainter;", methodCache: &DefaultCaret.getSelectionPainter_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Highlighter_HighlightPainterForward( javaObject: __return ) : nil
     }
@@ -376,13 +500,13 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// protected void javax.swing.text.DefaultCaret.moveCaret(java.awt.event.MouseEvent)
 
-    private static var moveCaret_MethodID_11: jmethodID?
+    private static var moveCaret_MethodID_19: jmethodID?
 
     open func moveCaret( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveCaret", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.moveCaret_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveCaret", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.moveCaret_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func moveCaret( _ _e: java_awt.MouseEvent? ) {
@@ -423,127 +547,17 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// int javax.swing.text.DefaultCaret.getCaretWidth(int)
 
-    /// public void javax.swing.text.DefaultCaret.addChangeListener(javax.swing.event.ChangeListener)
+    /// public boolean javax.swing.text.DefaultCaret.isActive()
 
-    private static var addChangeListener_MethodID_12: jmethodID?
+    private static var isActive_MethodID_20: jmethodID?
 
-    open func addChangeListener( l: ChangeListener? ) {
+    open func isActive() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultCaret.addChangeListener_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func addChangeListener( _ _l: ChangeListener? ) {
-        addChangeListener( l: _l )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.removeChangeListener(javax.swing.event.ChangeListener)
-
-    private static var removeChangeListener_MethodID_13: jmethodID?
-
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultCaret.removeChangeListener_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.text.DefaultCaret.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_14: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &DefaultCaret.getChangeListeners_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.DefaultCaret.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_15: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &DefaultCaret.fireStateChanged_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.text.DefaultCaret.paint(java.awt.Graphics)
-
-    private static var paint_MethodID_16: jmethodID?
-
-    open func paint( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &DefaultCaret.paint_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _g: java_awt.Graphics? ) {
-        paint( g: _g )
-    }
-
-    /// protected final synchronized void javax.swing.text.DefaultCaret.repaint()
-
-    private static var repaint_MethodID_17: jmethodID?
-
-    open func repaint() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "()V", methodCache: &DefaultCaret.repaint_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean javax.swing.text.DefaultCaret.isVisible()
-
-    private static var isVisible_MethodID_18: jmethodID?
-
-    open func isVisible() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &DefaultCaret.isVisible_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isActive", methodSig: "()Z", methodCache: &DefaultCaret.isActive_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// public void javax.swing.text.DefaultCaret.setVisible(boolean)
-
-    private static var setVisible_MethodID_19: jmethodID?
-
-    open func setVisible( v: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisible", methodSig: "(Z)V", methodCache: &DefaultCaret.setVisible_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setVisible( _ _v: Bool ) {
-        setVisible( v: _v )
-    }
-
-    /// public java.util.EventListener[] javax.swing.text.DefaultCaret.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_20: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultCaret.getListeners_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
 
     /// public java.awt.Point javax.swing.text.DefaultCaret.getMagicCaretPosition()
 
@@ -573,164 +587,15 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
         setMagicCaretPosition( p: _p )
     }
 
-    /// public void javax.swing.text.DefaultCaret.focusGained(java.awt.event.FocusEvent)
-
-    private static var focusGained_MethodID_23: jmethodID?
-
-    open func focusGained( e: java_awt.FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &DefaultCaret.focusGained_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func focusGained( _ _e: java_awt.FocusEvent? ) {
-        focusGained( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.focusLost(java.awt.event.FocusEvent)
-
-    private static var focusLost_MethodID_24: jmethodID?
-
-    open func focusLost( e: java_awt.FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &DefaultCaret.focusLost_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func focusLost( _ _e: java_awt.FocusEvent? ) {
-        focusLost( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mousePressed(java.awt.event.MouseEvent)
-
-    private static var mousePressed_MethodID_25: jmethodID?
-
-    open func mousePressed( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mousePressed_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func mousePressed( _ _e: java_awt.MouseEvent? ) {
-        mousePressed( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mouseReleased(java.awt.event.MouseEvent)
-
-    private static var mouseReleased_MethodID_26: jmethodID?
-
-    open func mouseReleased( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseReleased_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func mouseReleased( _ _e: java_awt.MouseEvent? ) {
-        mouseReleased( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mouseClicked(java.awt.event.MouseEvent)
-
-    private static var mouseClicked_MethodID_27: jmethodID?
-
-    open func mouseClicked( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseClicked_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func mouseClicked( _ _e: java_awt.MouseEvent? ) {
-        mouseClicked( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mouseExited(java.awt.event.MouseEvent)
-
-    private static var mouseExited_MethodID_28: jmethodID?
-
-    open func mouseExited( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseExited_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func mouseExited( _ _e: java_awt.MouseEvent? ) {
-        mouseExited( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mouseEntered(java.awt.event.MouseEvent)
-
-    private static var mouseEntered_MethodID_29: jmethodID?
-
-    open func mouseEntered( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseEntered_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func mouseEntered( _ _e: java_awt.MouseEvent? ) {
-        mouseEntered( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mouseMoved(java.awt.event.MouseEvent)
-
-    private static var mouseMoved_MethodID_30: jmethodID?
-
-    open func mouseMoved( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseMoved_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func mouseMoved( _ _e: java_awt.MouseEvent? ) {
-        mouseMoved( e: _e )
-    }
-
-    /// public void javax.swing.text.DefaultCaret.mouseDragged(java.awt.event.MouseEvent)
-
-    private static var mouseDragged_MethodID_31: jmethodID?
-
-    open func mouseDragged( e: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DefaultCaret.mouseDragged_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func mouseDragged( _ _e: java_awt.MouseEvent? ) {
-        mouseDragged( e: _e )
-    }
-
-    /// private java.awt.datatransfer.Clipboard javax.swing.text.DefaultCaret.getSystemSelection()
-
-    /// public boolean javax.swing.text.DefaultCaret.isActive()
-
-    private static var isActive_MethodID_32: jmethodID?
-
-    open func isActive() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isActive", methodSig: "()Z", methodCache: &DefaultCaret.isActive_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public void javax.swing.text.DefaultCaret.deinstall(javax.swing.text.JTextComponent)
 
-    private static var deinstall_MethodID_33: jmethodID?
+    private static var deinstall_MethodID_23: jmethodID?
 
     open func deinstall( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &DefaultCaret.deinstall_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &DefaultCaret.deinstall_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func deinstall( _ _c: JTextComponent? ) {
@@ -739,113 +604,113 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// public void javax.swing.text.DefaultCaret.install(javax.swing.text.JTextComponent)
 
-    private static var install_MethodID_34: jmethodID?
+    private static var install_MethodID_24: jmethodID?
 
     open func install( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &DefaultCaret.install_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &DefaultCaret.install_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func install( _ _c: JTextComponent? ) {
         install( c: _c )
     }
 
-    /// public void javax.swing.text.DefaultCaret.setDot(int,javax.swing.text.Position$Bias)
-
-    private static var setDot_MethodID_35: jmethodID?
-
-    open func setDot( dot: Int, dotBias: Position_Bias? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dot, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dotBias != nil ? dotBias! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDot", methodSig: "(ILjavax/swing/text/Position$Bias;)V", methodCache: &DefaultCaret.setDot_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func setDot( _ _dot: Int, _ _dotBias: Position_Bias? ) {
-        setDot( dot: _dot, dotBias: _dotBias )
-    }
-
     /// public void javax.swing.text.DefaultCaret.setDot(int)
 
-    private static var setDot_MethodID_36: jmethodID?
+    private static var setDot_MethodID_25: jmethodID?
 
     open func setDot( dot: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dot, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDot", methodSig: "(I)V", methodCache: &DefaultCaret.setDot_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDot", methodSig: "(I)V", methodCache: &DefaultCaret.setDot_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func setDot( _ _dot: Int ) {
         setDot( dot: _dot )
     }
 
-    /// public void javax.swing.text.DefaultCaret.moveDot(int,javax.swing.text.Position$Bias)
+    /// public void javax.swing.text.DefaultCaret.setDot(int,javax.swing.text.Position$Bias)
 
-    private static var moveDot_MethodID_37: jmethodID?
+    private static var setDot_MethodID_26: jmethodID?
 
-    open func moveDot( dot: Int, dotBias: Position_Bias? ) {
+    open func setDot( dot: Int, dotBias: Position_Bias? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dot, locals: &__locals )
         __args[1] = JNIType.toJava( value: dotBias != nil ? dotBias! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveDot", methodSig: "(ILjavax/swing/text/Position$Bias;)V", methodCache: &DefaultCaret.moveDot_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDot", methodSig: "(ILjavax/swing/text/Position$Bias;)V", methodCache: &DefaultCaret.setDot_MethodID_26, args: &__args, locals: &__locals )
     }
 
-    open func moveDot( _ _dot: Int, _ _dotBias: Position_Bias? ) {
-        moveDot( dot: _dot, dotBias: _dotBias )
+    open func setDot( _ _dot: Int, _ _dotBias: Position_Bias? ) {
+        setDot( dot: _dot, dotBias: _dotBias )
     }
 
     /// public void javax.swing.text.DefaultCaret.moveDot(int)
 
-    private static var moveDot_MethodID_38: jmethodID?
+    private static var moveDot_MethodID_27: jmethodID?
 
     open func moveDot( dot: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dot, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveDot", methodSig: "(I)V", methodCache: &DefaultCaret.moveDot_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveDot", methodSig: "(I)V", methodCache: &DefaultCaret.moveDot_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func moveDot( _ _dot: Int ) {
         moveDot( dot: _dot )
     }
 
+    /// public void javax.swing.text.DefaultCaret.moveDot(int,javax.swing.text.Position$Bias)
+
+    private static var moveDot_MethodID_28: jmethodID?
+
+    open func moveDot( dot: Int, dotBias: Position_Bias? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: dot, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dotBias != nil ? dotBias! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveDot", methodSig: "(ILjavax/swing/text/Position$Bias;)V", methodCache: &DefaultCaret.moveDot_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func moveDot( _ _dot: Int, _ _dotBias: Position_Bias? ) {
+        moveDot( dot: _dot, dotBias: _dotBias )
+    }
+
     /// public int javax.swing.text.DefaultCaret.getMark()
 
-    private static var getMark_MethodID_39: jmethodID?
+    private static var getMark_MethodID_29: jmethodID?
 
     open func getMark() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMark", methodSig: "()I", methodCache: &DefaultCaret.getMark_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMark", methodSig: "()I", methodCache: &DefaultCaret.getMark_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.text.DefaultCaret.getDot()
 
-    private static var getDot_MethodID_40: jmethodID?
+    private static var getDot_MethodID_30: jmethodID?
 
     open func getDot() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDot", methodSig: "()I", methodCache: &DefaultCaret.getDot_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDot", methodSig: "()I", methodCache: &DefaultCaret.getDot_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public javax.swing.text.Position$Bias javax.swing.text.DefaultCaret.getMarkBias()
 
-    private static var getMarkBias_MethodID_41: jmethodID?
+    private static var getMarkBias_MethodID_31: jmethodID?
 
     open func getMarkBias() -> Position_Bias! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMarkBias", methodSig: "()Ljavax/swing/text/Position$Bias;", methodCache: &DefaultCaret.getMarkBias_MethodID_41, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMarkBias", methodSig: "()Ljavax/swing/text/Position$Bias;", methodCache: &DefaultCaret.getMarkBias_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Position_Bias( javaObject: __return ) : nil
     }
@@ -853,12 +718,12 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// public javax.swing.text.Position$Bias javax.swing.text.DefaultCaret.getDotBias()
 
-    private static var getDotBias_MethodID_42: jmethodID?
+    private static var getDotBias_MethodID_32: jmethodID?
 
     open func getDotBias() -> Position_Bias! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDotBias", methodSig: "()Ljavax/swing/text/Position$Bias;", methodCache: &DefaultCaret.getDotBias_MethodID_42, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDotBias", methodSig: "()Ljavax/swing/text/Position$Bias;", methodCache: &DefaultCaret.getDotBias_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Position_Bias( javaObject: __return ) : nil
     }
@@ -866,30 +731,165 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     /// public int javax.swing.text.DefaultCaret.getBlinkRate()
 
-    private static var getBlinkRate_MethodID_43: jmethodID?
+    private static var getBlinkRate_MethodID_33: jmethodID?
 
     open func getBlinkRate() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlinkRate", methodSig: "()I", methodCache: &DefaultCaret.getBlinkRate_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlinkRate", methodSig: "()I", methodCache: &DefaultCaret.getBlinkRate_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.text.DefaultCaret.setBlinkRate(int)
 
-    private static var setBlinkRate_MethodID_44: jmethodID?
+    private static var setBlinkRate_MethodID_34: jmethodID?
 
     open func setBlinkRate( rate: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rate, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBlinkRate", methodSig: "(I)V", methodCache: &DefaultCaret.setBlinkRate_MethodID_44, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBlinkRate", methodSig: "(I)V", methodCache: &DefaultCaret.setBlinkRate_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func setBlinkRate( _ _rate: Int ) {
         setBlinkRate( rate: _rate )
     }
+
+    /// public boolean javax.swing.text.DefaultCaret.isVisible()
+
+    private static var isVisible_MethodID_35: jmethodID?
+
+    open func isVisible() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &DefaultCaret.isVisible_MethodID_35, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.text.DefaultCaret.setVisible(boolean)
+
+    private static var setVisible_MethodID_36: jmethodID?
+
+    open func setVisible( v: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisible", methodSig: "(Z)V", methodCache: &DefaultCaret.setVisible_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func setVisible( _ _v: Bool ) {
+        setVisible( v: _v )
+    }
+
+    /// public java.util.EventListener[] javax.swing.text.DefaultCaret.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_37: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultCaret.getListeners_MethodID_37, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
+    /// protected final javax.swing.text.JTextComponent javax.swing.text.DefaultCaret.getComponent()
+
+    private static var getComponent_MethodID_38: jmethodID?
+
+    open func getComponent() -> JTextComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &DefaultCaret.getComponent_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JTextComponent( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.DefaultCaret.addChangeListener(javax.swing.event.ChangeListener)
+
+    private static var addChangeListener_MethodID_39: jmethodID?
+
+    open func addChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultCaret.addChangeListener_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+    open func addChangeListener( _ _l: ChangeListener? ) {
+        addChangeListener( l: _l )
+    }
+
+    /// public void javax.swing.text.DefaultCaret.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_40: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultCaret.removeChangeListener_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
+    /// public javax.swing.event.ChangeListener[] javax.swing.text.DefaultCaret.getChangeListeners()
+
+    private static var getChangeListeners_MethodID_41: jmethodID?
+
+    open func getChangeListeners() -> [ChangeListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &DefaultCaret.getChangeListeners_MethodID_41, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
+    }
+
+
+    /// protected void javax.swing.text.DefaultCaret.fireStateChanged()
+
+    private static var fireStateChanged_MethodID_42: jmethodID?
+
+    open func fireStateChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &DefaultCaret.fireStateChanged_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.text.DefaultCaret.paint(java.awt.Graphics)
+
+    private static var paint_MethodID_43: jmethodID?
+
+    open func paint( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &DefaultCaret.paint_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _g: java_awt.Graphics? ) {
+        paint( g: _g )
+    }
+
+    /// protected final synchronized void javax.swing.text.DefaultCaret.repaint()
+
+    private static var repaint_MethodID_44: jmethodID?
+
+    open func repaint() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "()V", methodCache: &DefaultCaret.repaint_MethodID_44, args: &__args, locals: &__locals )
+    }
+
 
 }
 

@@ -155,7 +155,11 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
 
     /// private javax.swing.plaf.basic.BasicDesktopPaneUI$Handler javax.swing.plaf.basic.BasicDesktopPaneUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicDesktopPaneUI.getInputMap(int)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMaximumSize(javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicDesktopPaneUI.createUI(javax.swing.JComponent)
 
@@ -173,6 +177,12 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicDesktopPaneUI.getInputMap(int)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.uninstallUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
@@ -304,16 +314,6 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "unregisterKeyboardActions", methodSig: "()V", methodCache: &BasicDesktopPaneUI.unregisterKeyboardActions_MethodID_13, args: &__args, locals: &__locals )
     }
 
-
-    /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

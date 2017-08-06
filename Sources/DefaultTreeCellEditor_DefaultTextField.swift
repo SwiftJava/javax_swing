@@ -632,13 +632,13 @@ open class DefaultTreeCellEditor_DefaultTextField: JTextField {
         self.init( this_0: _this_0, border: _border )
     }
 
+    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getPreferredSize()
+
     /// public java.awt.Font javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getFont()
 
     /// public javax.swing.border.Border javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getBorder()
 
     /// public void javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.setBorder(javax.swing.border.Border)
-
-    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getPreferredSize()
 
 }
 

@@ -48,80 +48,15 @@ open class BasicComboBoxEditor: java_swift.JavaObject, ComboBoxEditor, java_awt.
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.basic.BasicComboBoxEditor.selectAll()
-
-    private static var selectAll_MethodID_2: jmethodID?
-
-    open func selectAll() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &BasicComboBoxEditor.selectAll_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.Component javax.swing.plaf.basic.BasicComboBoxEditor.getEditorComponent()
-
-    private static var getEditorComponent_MethodID_3: jmethodID?
-
-    open func getEditorComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorComponent", methodSig: "()Ljava/awt/Component;", methodCache: &BasicComboBoxEditor.getEditorComponent_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicComboBoxEditor.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_4: jmethodID?
-
-    open func addActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &BasicComboBoxEditor.addActionListener_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: java_awt.ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// public java.lang.Object javax.swing.plaf.basic.BasicComboBoxEditor.getItem()
-
-    private static var getItem_MethodID_5: jmethodID?
-
-    open func getItem() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "()Ljava/lang/Object;", methodCache: &BasicComboBoxEditor.getItem_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.JTextField javax.swing.plaf.basic.BasicComboBoxEditor.createEditorComponent()
-
-    private static var createEditorComponent_MethodID_6: jmethodID?
-
-    open func createEditorComponent() -> JTextField! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditorComponent", methodSig: "()Ljavax/swing/JTextField;", methodCache: &BasicComboBoxEditor.createEditorComponent_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JTextField( javaObject: __return ) : nil
-    }
-
-
     /// public void javax.swing.plaf.basic.BasicComboBoxEditor.focusGained(java.awt.event.FocusEvent)
 
-    private static var focusGained_MethodID_7: jmethodID?
+    private static var focusGained_MethodID_2: jmethodID?
 
     open func focusGained( e: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicComboBoxEditor.focusGained_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicComboBoxEditor.focusGained_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func focusGained( _ _e: java_awt.FocusEvent? ) {
@@ -130,28 +65,80 @@ open class BasicComboBoxEditor: java_swift.JavaObject, ComboBoxEditor, java_awt.
 
     /// public void javax.swing.plaf.basic.BasicComboBoxEditor.focusLost(java.awt.event.FocusEvent)
 
-    private static var focusLost_MethodID_8: jmethodID?
+    private static var focusLost_MethodID_3: jmethodID?
 
     open func focusLost( e: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicComboBoxEditor.focusLost_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicComboBoxEditor.focusLost_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func focusLost( _ _e: java_awt.FocusEvent? ) {
         focusLost( e: _e )
     }
 
+    /// protected javax.swing.JTextField javax.swing.plaf.basic.BasicComboBoxEditor.createEditorComponent()
+
+    private static var createEditorComponent_MethodID_4: jmethodID?
+
+    open func createEditorComponent() -> JTextField! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditorComponent", methodSig: "()Ljavax/swing/JTextField;", methodCache: &BasicComboBoxEditor.createEditorComponent_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JTextField( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicComboBoxEditor.selectAll()
+
+    private static var selectAll_MethodID_5: jmethodID?
+
+    open func selectAll() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAll", methodSig: "()V", methodCache: &BasicComboBoxEditor.selectAll_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Component javax.swing.plaf.basic.BasicComboBoxEditor.getEditorComponent()
+
+    private static var getEditorComponent_MethodID_6: jmethodID?
+
+    open func getEditorComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorComponent", methodSig: "()Ljava/awt/Component;", methodCache: &BasicComboBoxEditor.getEditorComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicComboBoxEditor.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_7: jmethodID?
+
+    open func addActionListener( l: java_awt.ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &BasicComboBoxEditor.addActionListener_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: java_awt.ActionListener? ) {
+        addActionListener( l: _l )
+    }
+
     /// public void javax.swing.plaf.basic.BasicComboBoxEditor.removeActionListener(java.awt.event.ActionListener)
 
-    private static var removeActionListener_MethodID_9: jmethodID?
+    private static var removeActionListener_MethodID_8: jmethodID?
 
     open func removeActionListener( l: java_awt.ActionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &BasicComboBoxEditor.removeActionListener_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &BasicComboBoxEditor.removeActionListener_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func removeActionListener( _ _l: java_awt.ActionListener? ) {
@@ -160,18 +147,31 @@ open class BasicComboBoxEditor: java_swift.JavaObject, ComboBoxEditor, java_awt.
 
     /// public void javax.swing.plaf.basic.BasicComboBoxEditor.setItem(java.lang.Object)
 
-    private static var setItem_MethodID_10: jmethodID?
+    private static var setItem_MethodID_9: jmethodID?
 
     open func setItem( anObject: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &BasicComboBoxEditor.setItem_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &BasicComboBoxEditor.setItem_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setItem( _ _anObject: java_swift.JavaObject? ) {
         setItem( anObject: _anObject )
     }
+
+    /// public java.lang.Object javax.swing.plaf.basic.BasicComboBoxEditor.getItem()
+
+    private static var getItem_MethodID_10: jmethodID?
+
+    open func getItem() -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "()Ljava/lang/Object;", methodCache: &BasicComboBoxEditor.getItem_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
 
 }
 

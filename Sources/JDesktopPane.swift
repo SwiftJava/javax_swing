@@ -573,71 +573,16 @@ open class JDesktopPane: JLayeredPane {
 
     /// public void javax.swing.JDesktopPane.removeAll()
 
-    /// private java.util.List javax.swing.JDesktopPane.getFrames()
-
-    /// public javax.swing.plaf.DesktopPaneUI javax.swing.JDesktopPane.getUI()
-
-    private static var getUI_MethodID_4: jmethodID?
-
-    open func getUI() -> DesktopPaneUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/DesktopPaneUI;", methodCache: &JDesktopPane.getUI_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DesktopPaneUI( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.JDesktopPane.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_5: jmethodID?
-
-    override open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JDesktopPane.addImpl_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JDesktopPane.getAccessibleContext()
-
-    /// public void javax.swing.JDesktopPane.updateUI()
-
-    /// public void javax.swing.JDesktopPane.setUI(javax.swing.plaf.DesktopPaneUI)
-
-    private static var setUI_MethodID_6: jmethodID?
-
-    open func setUI( ui: DesktopPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/DesktopPaneUI;)V", methodCache: &JDesktopPane.setUI_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _ui: DesktopPaneUI? ) {
-        setUI( ui: _ui )
-    }
-
-    /// public java.lang.String javax.swing.JDesktopPane.getUIClassID()
-
-    /// void javax.swing.JDesktopPane.setUIProperty(java.lang.String,java.lang.Object)
-
     /// public void javax.swing.JDesktopPane.setComponentZOrder(java.awt.Component,int)
 
-    private static var setComponentZOrder_MethodID_7: jmethodID?
+    private static var setComponentZOrder_MethodID_4: jmethodID?
 
     open func setComponentZOrder( comp: java_awt.Component?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentZOrder", methodSig: "(Ljava/awt/Component;I)V", methodCache: &JDesktopPane.setComponentZOrder_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentZOrder", methodSig: "(Ljava/awt/Component;I)V", methodCache: &JDesktopPane.setComponentZOrder_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func setComponentZOrder( _ _comp: java_awt.Component?, _ _index: Int ) {
@@ -652,13 +597,13 @@ open class JDesktopPane: JLayeredPane {
 
     /// public javax.swing.JInternalFrame javax.swing.JDesktopPane.selectFrame(boolean)
 
-    private static var selectFrame_MethodID_8: jmethodID?
+    private static var selectFrame_MethodID_5: jmethodID?
 
     open func selectFrame( forward: Bool ) -> JInternalFrame! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: forward, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "selectFrame", methodSig: "(Z)Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.selectFrame_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "selectFrame", methodSig: "(Z)Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.selectFrame_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JInternalFrame( javaObject: __return ) : nil
     }
@@ -669,12 +614,12 @@ open class JDesktopPane: JLayeredPane {
 
     /// public javax.swing.JInternalFrame javax.swing.JDesktopPane.getSelectedFrame()
 
-    private static var getSelectedFrame_MethodID_9: jmethodID?
+    private static var getSelectedFrame_MethodID_6: jmethodID?
 
     open func getSelectedFrame() -> JInternalFrame! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedFrame", methodSig: "()Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.getSelectedFrame_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedFrame", methodSig: "()Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.getSelectedFrame_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JInternalFrame( javaObject: __return ) : nil
     }
@@ -682,13 +627,13 @@ open class JDesktopPane: JLayeredPane {
 
     /// public void javax.swing.JDesktopPane.setSelectedFrame(javax.swing.JInternalFrame)
 
-    private static var setSelectedFrame_MethodID_10: jmethodID?
+    private static var setSelectedFrame_MethodID_7: jmethodID?
 
     open func setSelectedFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JDesktopPane.setSelectedFrame_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JDesktopPane.setSelectedFrame_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setSelectedFrame( _ _f: JInternalFrame? ) {
@@ -697,25 +642,25 @@ open class JDesktopPane: JLayeredPane {
 
     /// public int javax.swing.JDesktopPane.getDragMode()
 
-    private static var getDragMode_MethodID_11: jmethodID?
+    private static var getDragMode_MethodID_8: jmethodID?
 
     open func getDragMode() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDragMode", methodSig: "()I", methodCache: &JDesktopPane.getDragMode_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDragMode", methodSig: "()I", methodCache: &JDesktopPane.getDragMode_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JDesktopPane.setDragMode(int)
 
-    private static var setDragMode_MethodID_12: jmethodID?
+    private static var setDragMode_MethodID_9: jmethodID?
 
     open func setDragMode( dragMode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dragMode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragMode", methodSig: "(I)V", methodCache: &JDesktopPane.setDragMode_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragMode", methodSig: "(I)V", methodCache: &JDesktopPane.setDragMode_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setDragMode( _ _dragMode: Int ) {
@@ -724,12 +669,12 @@ open class JDesktopPane: JLayeredPane {
 
     /// public javax.swing.DesktopManager javax.swing.JDesktopPane.getDesktopManager()
 
-    private static var getDesktopManager_MethodID_13: jmethodID?
+    private static var getDesktopManager_MethodID_10: jmethodID?
 
     open func getDesktopManager() -> DesktopManager! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopManager", methodSig: "()Ljavax/swing/DesktopManager;", methodCache: &JDesktopPane.getDesktopManager_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopManager", methodSig: "()Ljavax/swing/DesktopManager;", methodCache: &JDesktopPane.getDesktopManager_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DesktopManagerForward( javaObject: __return ) : nil
     }
@@ -737,13 +682,13 @@ open class JDesktopPane: JLayeredPane {
 
     /// public void javax.swing.JDesktopPane.setDesktopManager(javax.swing.DesktopManager)
 
-    private static var setDesktopManager_MethodID_14: jmethodID?
+    private static var setDesktopManager_MethodID_11: jmethodID?
 
     open func setDesktopManager( d: DesktopManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: d, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDesktopManager", methodSig: "(Ljavax/swing/DesktopManager;)V", methodCache: &JDesktopPane.setDesktopManager_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDesktopManager", methodSig: "(Ljavax/swing/DesktopManager;)V", methodCache: &JDesktopPane.setDesktopManager_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setDesktopManager( _ _d: DesktopManager? ) {
@@ -752,12 +697,12 @@ open class JDesktopPane: JLayeredPane {
 
     /// public javax.swing.JInternalFrame[] javax.swing.JDesktopPane.getAllFrames()
 
-    private static var getAllFrames_MethodID_15: jmethodID?
+    private static var getAllFrames_MethodID_12: jmethodID?
 
     open func getAllFrames() -> [JInternalFrame]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAllFrames", methodSig: "()[Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.getAllFrames_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAllFrames", methodSig: "()[Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.getAllFrames_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JInternalFrame](), from: __return )
     }
 
@@ -766,13 +711,13 @@ open class JDesktopPane: JLayeredPane {
 
     /// public javax.swing.JInternalFrame[] javax.swing.JDesktopPane.getAllFramesInLayer(int)
 
-    private static var getAllFramesInLayer_MethodID_16: jmethodID?
+    private static var getAllFramesInLayer_MethodID_13: jmethodID?
 
     open func getAllFramesInLayer( layer: Int ) -> [JInternalFrame]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAllFramesInLayer", methodSig: "(I)[Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.getAllFramesInLayer_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAllFramesInLayer", methodSig: "(I)[Ljavax/swing/JInternalFrame;", methodCache: &JDesktopPane.getAllFramesInLayer_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JInternalFrame](), from: __return )
     }
 
@@ -785,6 +730,61 @@ open class JDesktopPane: JLayeredPane {
     /// private void javax.swing.JDesktopPane.updateFramesCache()
 
     /// private void javax.swing.JDesktopPane.verifyFramesCache()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JDesktopPane.getAccessibleContext()
+
+    /// protected void javax.swing.JDesktopPane.addImpl(java.awt.Component,java.lang.Object,int)
+
+    private static var addImpl_MethodID_14: jmethodID?
+
+    override open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JDesktopPane.addImpl_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    }
+
+    /// public void javax.swing.JDesktopPane.updateUI()
+
+    /// public void javax.swing.JDesktopPane.setUI(javax.swing.plaf.DesktopPaneUI)
+
+    private static var setUI_MethodID_15: jmethodID?
+
+    open func setUI( ui: DesktopPaneUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/DesktopPaneUI;)V", methodCache: &JDesktopPane.setUI_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: DesktopPaneUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// public java.lang.String javax.swing.JDesktopPane.getUIClassID()
+
+    /// void javax.swing.JDesktopPane.setUIProperty(java.lang.String,java.lang.Object)
+
+    /// private java.util.List javax.swing.JDesktopPane.getFrames()
+
+    /// public javax.swing.plaf.DesktopPaneUI javax.swing.JDesktopPane.getUI()
+
+    private static var getUI_MethodID_16: jmethodID?
+
+    open func getUI() -> DesktopPaneUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/DesktopPaneUI;", methodCache: &JDesktopPane.getUI_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DesktopPaneUI( javaObject: __return ) : nil
+    }
+
 
     /// In declared protocol but not defined.. ///
 

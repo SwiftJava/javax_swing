@@ -491,9 +491,26 @@ open class Box_Filler: JComponent {
         self.init( min: _min, pref: _pref, max: _max )
     }
 
+    /// public javax.accessibility.AccessibleContext javax.swing.Box$Filler.getAccessibleContext()
+
+    /// protected void javax.swing.Box$Filler.paintComponent(java.awt.Graphics)
+
+    private static var paintComponent_MethodID_2: jmethodID?
+
+    override open func paintComponent( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Box_Filler.paintComponent_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func paintComponent( _ _g: java_awt.Graphics? ) {
+        paintComponent( g: _g )
+    }
+
     /// public void javax.swing.Box$Filler.changeShape(java.awt.Dimension,java.awt.Dimension,java.awt.Dimension)
 
-    private static var changeShape_MethodID_2: jmethodID?
+    private static var changeShape_MethodID_3: jmethodID?
 
     open func changeShape( min: java_awt.Dimension?, pref: java_awt.Dimension?, max: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -501,28 +518,11 @@ open class Box_Filler: JComponent {
         __args[0] = JNIType.toJava( value: min != nil ? min! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: pref != nil ? pref! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: max != nil ? max! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeShape", methodSig: "(Ljava/awt/Dimension;Ljava/awt/Dimension;Ljava/awt/Dimension;)V", methodCache: &Box_Filler.changeShape_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeShape", methodSig: "(Ljava/awt/Dimension;Ljava/awt/Dimension;Ljava/awt/Dimension;)V", methodCache: &Box_Filler.changeShape_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func changeShape( _ _min: java_awt.Dimension?, _ _pref: java_awt.Dimension?, _ _max: java_awt.Dimension? ) {
         changeShape( min: _min, pref: _pref, max: _max )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.Box$Filler.getAccessibleContext()
-
-    /// protected void javax.swing.Box$Filler.paintComponent(java.awt.Graphics)
-
-    private static var paintComponent_MethodID_3: jmethodID?
-
-    override open func paintComponent( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Box_Filler.paintComponent_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func paintComponent( _ _g: java_awt.Graphics? ) {
-        paintComponent( g: _g )
     }
 
     /// In declared protocol but not defined.. ///

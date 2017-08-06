@@ -976,18 +976,24 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
     }
 
 
-    /// public javax.swing.plaf.ScrollPaneUI javax.swing.JScrollPane.getUI()
+    /// public void javax.swing.JScrollPane.setComponentOrientation(java.awt.ComponentOrientation)
 
-    private static var getUI_MethodID_6: jmethodID?
+    private static var setComponentOrientation_MethodID_6: jmethodID?
 
-    open func getUI() -> ScrollPaneUI! {
+    open func setComponentOrientation( co: java_awt.ComponentOrientation? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ScrollPaneUI;", methodCache: &JScrollPane.getUI_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ScrollPaneUI( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: co != nil ? co! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &JScrollPane.setComponentOrientation_MethodID_6, args: &__args, locals: &__locals )
     }
 
+    override open func setComponentOrientation( _ _co: java_awt.ComponentOrientation? ) {
+        setComponentOrientation( co: _co )
+    }
+
+    /// public boolean javax.swing.JScrollPane.isValidateRoot()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JScrollPane.getAccessibleContext()
 
     /// public javax.swing.JViewport javax.swing.JScrollPane.getViewport()
 
@@ -1065,8 +1071,6 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
         setLayout( layout: _layout )
     }
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JScrollPane.getAccessibleContext()
-
     /// public javax.swing.JScrollBar javax.swing.JScrollPane.getHorizontalScrollBar()
 
     private static var getHorizontalScrollBar_MethodID_12: jmethodID?
@@ -1093,32 +1097,17 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
     }
 
 
-    /// public void javax.swing.JScrollPane.setComponentOrientation(java.awt.ComponentOrientation)
-
-    private static var setComponentOrientation_MethodID_14: jmethodID?
-
-    open func setComponentOrientation( co: java_awt.ComponentOrientation? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: co != nil ? co! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &JScrollPane.setComponentOrientation_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    override open func setComponentOrientation( _ _co: java_awt.ComponentOrientation? ) {
-        setComponentOrientation( co: _co )
-    }
-
     /// public void javax.swing.JScrollPane.updateUI()
 
     /// public void javax.swing.JScrollPane.setUI(javax.swing.plaf.ScrollPaneUI)
 
-    private static var setUI_MethodID_15: jmethodID?
+    private static var setUI_MethodID_14: jmethodID?
 
     open func setUI( ui: ScrollPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ScrollPaneUI;)V", methodCache: &JScrollPane.setUI_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ScrollPaneUI;)V", methodCache: &JScrollPane.setUI_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: ScrollPaneUI? ) {
@@ -1129,25 +1118,25 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public int javax.swing.JScrollPane.getVerticalScrollBarPolicy()
 
-    private static var getVerticalScrollBarPolicy_MethodID_16: jmethodID?
+    private static var getVerticalScrollBarPolicy_MethodID_15: jmethodID?
 
     open func getVerticalScrollBarPolicy() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalScrollBarPolicy", methodSig: "()I", methodCache: &JScrollPane.getVerticalScrollBarPolicy_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalScrollBarPolicy", methodSig: "()I", methodCache: &JScrollPane.getVerticalScrollBarPolicy_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JScrollPane.setVerticalScrollBarPolicy(int)
 
-    private static var setVerticalScrollBarPolicy_MethodID_17: jmethodID?
+    private static var setVerticalScrollBarPolicy_MethodID_16: jmethodID?
 
     open func setVerticalScrollBarPolicy( policy: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: policy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalScrollBarPolicy", methodSig: "(I)V", methodCache: &JScrollPane.setVerticalScrollBarPolicy_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalScrollBarPolicy", methodSig: "(I)V", methodCache: &JScrollPane.setVerticalScrollBarPolicy_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setVerticalScrollBarPolicy( _ _policy: Int ) {
@@ -1156,25 +1145,25 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public int javax.swing.JScrollPane.getHorizontalScrollBarPolicy()
 
-    private static var getHorizontalScrollBarPolicy_MethodID_18: jmethodID?
+    private static var getHorizontalScrollBarPolicy_MethodID_17: jmethodID?
 
     open func getHorizontalScrollBarPolicy() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalScrollBarPolicy", methodSig: "()I", methodCache: &JScrollPane.getHorizontalScrollBarPolicy_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalScrollBarPolicy", methodSig: "()I", methodCache: &JScrollPane.getHorizontalScrollBarPolicy_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JScrollPane.setHorizontalScrollBarPolicy(int)
 
-    private static var setHorizontalScrollBarPolicy_MethodID_19: jmethodID?
+    private static var setHorizontalScrollBarPolicy_MethodID_18: jmethodID?
 
     open func setHorizontalScrollBarPolicy( policy: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: policy, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalScrollBarPolicy", methodSig: "(I)V", methodCache: &JScrollPane.setHorizontalScrollBarPolicy_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalScrollBarPolicy", methodSig: "(I)V", methodCache: &JScrollPane.setHorizontalScrollBarPolicy_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setHorizontalScrollBarPolicy( _ _policy: Int ) {
@@ -1183,12 +1172,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public javax.swing.border.Border javax.swing.JScrollPane.getViewportBorder()
 
-    private static var getViewportBorder_MethodID_20: jmethodID?
+    private static var getViewportBorder_MethodID_19: jmethodID?
 
     open func getViewportBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &JScrollPane.getViewportBorder_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &JScrollPane.getViewportBorder_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -1196,13 +1185,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setViewportBorder(javax.swing.border.Border)
 
-    private static var setViewportBorder_MethodID_21: jmethodID?
+    private static var setViewportBorder_MethodID_20: jmethodID?
 
     open func setViewportBorder( viewportBorder: Border? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: viewportBorder, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewportBorder", methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &JScrollPane.setViewportBorder_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewportBorder", methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &JScrollPane.setViewportBorder_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setViewportBorder( _ _viewportBorder: Border? ) {
@@ -1211,12 +1200,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public java.awt.Rectangle javax.swing.JScrollPane.getViewportBorderBounds()
 
-    private static var getViewportBorderBounds_MethodID_22: jmethodID?
+    private static var getViewportBorderBounds_MethodID_21: jmethodID?
 
     open func getViewportBorderBounds() -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportBorderBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &JScrollPane.getViewportBorderBounds_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportBorderBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &JScrollPane.getViewportBorderBounds_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -1224,12 +1213,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public javax.swing.JScrollBar javax.swing.JScrollPane.createHorizontalScrollBar()
 
-    private static var createHorizontalScrollBar_MethodID_23: jmethodID?
+    private static var createHorizontalScrollBar_MethodID_22: jmethodID?
 
     open func createHorizontalScrollBar() -> JScrollBar! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createHorizontalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &JScrollPane.createHorizontalScrollBar_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createHorizontalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &JScrollPane.createHorizontalScrollBar_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JScrollBar( javaObject: __return ) : nil
     }
@@ -1237,13 +1226,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setHorizontalScrollBar(javax.swing.JScrollBar)
 
-    private static var setHorizontalScrollBar_MethodID_24: jmethodID?
+    private static var setHorizontalScrollBar_MethodID_23: jmethodID?
 
     open func setHorizontalScrollBar( horizontalScrollBar: JScrollBar? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: horizontalScrollBar != nil ? horizontalScrollBar! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalScrollBar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &JScrollPane.setHorizontalScrollBar_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalScrollBar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &JScrollPane.setHorizontalScrollBar_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func setHorizontalScrollBar( _ _horizontalScrollBar: JScrollBar? ) {
@@ -1252,12 +1241,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public javax.swing.JScrollBar javax.swing.JScrollPane.createVerticalScrollBar()
 
-    private static var createVerticalScrollBar_MethodID_25: jmethodID?
+    private static var createVerticalScrollBar_MethodID_24: jmethodID?
 
     open func createVerticalScrollBar() -> JScrollBar! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVerticalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &JScrollPane.createVerticalScrollBar_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVerticalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &JScrollPane.createVerticalScrollBar_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JScrollBar( javaObject: __return ) : nil
     }
@@ -1265,13 +1254,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setVerticalScrollBar(javax.swing.JScrollBar)
 
-    private static var setVerticalScrollBar_MethodID_26: jmethodID?
+    private static var setVerticalScrollBar_MethodID_25: jmethodID?
 
     open func setVerticalScrollBar( verticalScrollBar: JScrollBar? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: verticalScrollBar != nil ? verticalScrollBar! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalScrollBar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &JScrollPane.setVerticalScrollBar_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalScrollBar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &JScrollPane.setVerticalScrollBar_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func setVerticalScrollBar( _ _verticalScrollBar: JScrollBar? ) {
@@ -1280,12 +1269,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// protected javax.swing.JViewport javax.swing.JScrollPane.createViewport()
 
-    private static var createViewport_MethodID_27: jmethodID?
+    private static var createViewport_MethodID_26: jmethodID?
 
     open func createViewport() -> JViewport! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createViewport", methodSig: "()Ljavax/swing/JViewport;", methodCache: &JScrollPane.createViewport_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createViewport", methodSig: "()Ljavax/swing/JViewport;", methodCache: &JScrollPane.createViewport_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JViewport( javaObject: __return ) : nil
     }
@@ -1293,13 +1282,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setViewport(javax.swing.JViewport)
 
-    private static var setViewport_MethodID_28: jmethodID?
+    private static var setViewport_MethodID_27: jmethodID?
 
     open func setViewport( viewport: JViewport? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: viewport != nil ? viewport! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewport", methodSig: "(Ljavax/swing/JViewport;)V", methodCache: &JScrollPane.setViewport_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewport", methodSig: "(Ljavax/swing/JViewport;)V", methodCache: &JScrollPane.setViewport_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setViewport( _ _viewport: JViewport? ) {
@@ -1308,13 +1297,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setViewportView(java.awt.Component)
 
-    private static var setViewportView_MethodID_29: jmethodID?
+    private static var setViewportView_MethodID_28: jmethodID?
 
     open func setViewportView( view: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewportView", methodSig: "(Ljava/awt/Component;)V", methodCache: &JScrollPane.setViewportView_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setViewportView", methodSig: "(Ljava/awt/Component;)V", methodCache: &JScrollPane.setViewportView_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setViewportView( _ _view: java_awt.Component? ) {
@@ -1323,12 +1312,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public javax.swing.JViewport javax.swing.JScrollPane.getRowHeader()
 
-    private static var getRowHeader_MethodID_30: jmethodID?
+    private static var getRowHeader_MethodID_29: jmethodID?
 
     open func getRowHeader() -> JViewport! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &JScrollPane.getRowHeader_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &JScrollPane.getRowHeader_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JViewport( javaObject: __return ) : nil
     }
@@ -1336,13 +1325,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setRowHeader(javax.swing.JViewport)
 
-    private static var setRowHeader_MethodID_31: jmethodID?
+    private static var setRowHeader_MethodID_30: jmethodID?
 
     open func setRowHeader( rowHeader: JViewport? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rowHeader != nil ? rowHeader! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeader", methodSig: "(Ljavax/swing/JViewport;)V", methodCache: &JScrollPane.setRowHeader_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeader", methodSig: "(Ljavax/swing/JViewport;)V", methodCache: &JScrollPane.setRowHeader_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setRowHeader( _ _rowHeader: JViewport? ) {
@@ -1351,13 +1340,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setRowHeaderView(java.awt.Component)
 
-    private static var setRowHeaderView_MethodID_32: jmethodID?
+    private static var setRowHeaderView_MethodID_31: jmethodID?
 
     open func setRowHeaderView( view: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeaderView", methodSig: "(Ljava/awt/Component;)V", methodCache: &JScrollPane.setRowHeaderView_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeaderView", methodSig: "(Ljava/awt/Component;)V", methodCache: &JScrollPane.setRowHeaderView_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open func setRowHeaderView( _ _view: java_awt.Component? ) {
@@ -1366,12 +1355,12 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public javax.swing.JViewport javax.swing.JScrollPane.getColumnHeader()
 
-    private static var getColumnHeader_MethodID_33: jmethodID?
+    private static var getColumnHeader_MethodID_32: jmethodID?
 
     open func getColumnHeader() -> JViewport! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &JScrollPane.getColumnHeader_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &JScrollPane.getColumnHeader_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JViewport( javaObject: __return ) : nil
     }
@@ -1379,13 +1368,13 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public void javax.swing.JScrollPane.setColumnHeader(javax.swing.JViewport)
 
-    private static var setColumnHeader_MethodID_34: jmethodID?
+    private static var setColumnHeader_MethodID_33: jmethodID?
 
     open func setColumnHeader( columnHeader: JViewport? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columnHeader != nil ? columnHeader! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnHeader", methodSig: "(Ljavax/swing/JViewport;)V", methodCache: &JScrollPane.setColumnHeader_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnHeader", methodSig: "(Ljavax/swing/JViewport;)V", methodCache: &JScrollPane.setColumnHeader_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func setColumnHeader( _ _columnHeader: JViewport? ) {
@@ -1394,32 +1383,43 @@ open class JScrollPane: JComponent, ScrollPaneConstants {
 
     /// public boolean javax.swing.JScrollPane.isWheelScrollingEnabled()
 
-    private static var isWheelScrollingEnabled_MethodID_35: jmethodID?
+    private static var isWheelScrollingEnabled_MethodID_34: jmethodID?
 
     open func isWheelScrollingEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isWheelScrollingEnabled", methodSig: "()Z", methodCache: &JScrollPane.isWheelScrollingEnabled_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isWheelScrollingEnabled", methodSig: "()Z", methodCache: &JScrollPane.isWheelScrollingEnabled_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JScrollPane.setWheelScrollingEnabled(boolean)
 
-    private static var setWheelScrollingEnabled_MethodID_36: jmethodID?
+    private static var setWheelScrollingEnabled_MethodID_35: jmethodID?
 
     open func setWheelScrollingEnabled( handleWheel: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: handleWheel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWheelScrollingEnabled", methodSig: "(Z)V", methodCache: &JScrollPane.setWheelScrollingEnabled_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWheelScrollingEnabled", methodSig: "(Z)V", methodCache: &JScrollPane.setWheelScrollingEnabled_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func setWheelScrollingEnabled( _ _handleWheel: Bool ) {
         setWheelScrollingEnabled( handleWheel: _handleWheel )
     }
 
-    /// public boolean javax.swing.JScrollPane.isValidateRoot()
+    /// public javax.swing.plaf.ScrollPaneUI javax.swing.JScrollPane.getUI()
+
+    private static var getUI_MethodID_36: jmethodID?
+
+    open func getUI() -> ScrollPaneUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ScrollPaneUI;", methodCache: &JScrollPane.getUI_MethodID_36, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ScrollPaneUI( javaObject: __return ) : nil
+    }
+
 
     /// In declared protocol but not defined.. ///
 

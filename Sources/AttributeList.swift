@@ -585,26 +585,39 @@ open class AttributeList: java_swift.JavaObject, DTDConstants, /* java.io.Serial
     }
 
 
+    /// public java.util.Enumeration javax.swing.text.html.parser.AttributeList.getValues()
+
+    private static var getValues_MethodID_6: jmethodID?
+
+    open func getValues() -> java_util.Enumeration! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValues", methodSig: "()Ljava/util/Enumeration;", methodCache: &AttributeList.getValues_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
+    }
+
+
     /// public int javax.swing.text.html.parser.AttributeList.getModifier()
 
-    private static var getModifier_MethodID_6: jmethodID?
+    private static var getModifier_MethodID_7: jmethodID?
 
     open func getModifier() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModifier", methodSig: "()I", methodCache: &AttributeList.getModifier_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModifier", methodSig: "()I", methodCache: &AttributeList.getModifier_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public javax.swing.text.html.parser.AttributeList javax.swing.text.html.parser.AttributeList.getNext()
 
-    private static var getNext_MethodID_7: jmethodID?
+    private static var getNext_MethodID_8: jmethodID?
 
     open func getNext() -> AttributeList! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNext", methodSig: "()Ljavax/swing/text/html/parser/AttributeList;", methodCache: &AttributeList.getNext_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNext", methodSig: "()Ljavax/swing/text/html/parser/AttributeList;", methodCache: &AttributeList.getNext_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeList( javaObject: __return ) : nil
     }
@@ -614,13 +627,13 @@ open class AttributeList: java_swift.JavaObject, DTDConstants, /* java.io.Serial
 
     /// public static int javax.swing.text.html.parser.AttributeList.name2type(java.lang.String)
 
-    private static var name2type_MethodID_8: jmethodID?
+    private static var name2type_MethodID_9: jmethodID?
 
     open class func name2type( nm: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/parser/AttributeList", classCache: &AttributeListJNIClass, methodName: "name2type", methodSig: "(Ljava/lang/String;)I", methodCache: &name2type_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/parser/AttributeList", classCache: &AttributeListJNIClass, methodName: "name2type", methodSig: "(Ljava/lang/String;)I", methodCache: &name2type_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -630,32 +643,19 @@ open class AttributeList: java_swift.JavaObject, DTDConstants, /* java.io.Serial
 
     /// public static java.lang.String javax.swing.text.html.parser.AttributeList.type2name(int)
 
-    private static var type2name_MethodID_9: jmethodID?
+    private static var type2name_MethodID_10: jmethodID?
 
     open class func type2name( tp: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tp, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/parser/AttributeList", classCache: &AttributeListJNIClass, methodName: "type2name", methodSig: "(I)Ljava/lang/String;", methodCache: &type2name_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/parser/AttributeList", classCache: &AttributeListJNIClass, methodName: "type2name", methodSig: "(I)Ljava/lang/String;", methodCache: &type2name_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
     open class func type2name( _ _tp: Int ) -> String! {
         return type2name( tp: _tp )
     }
-
-    /// public java.util.Enumeration javax.swing.text.html.parser.AttributeList.getValues()
-
-    private static var getValues_MethodID_10: jmethodID?
-
-    open func getValues() -> java_util.Enumeration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValues", methodSig: "()Ljava/util/Enumeration;", methodCache: &AttributeList.getValues_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
-    }
-
 
 }
 

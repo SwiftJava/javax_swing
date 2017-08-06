@@ -44,8 +44,6 @@ open class FileNameExtensionFilter: FileFilter {
 
     /// public boolean javax.swing.filechooser.FileNameExtensionFilter.accept(java.io.File)
 
-    /// public java.lang.String javax.swing.filechooser.FileNameExtensionFilter.getDescription()
-
     /// public java.lang.String[] javax.swing.filechooser.FileNameExtensionFilter.getExtensions()
 
     private static var getExtensions_MethodID_2: jmethodID?
@@ -57,6 +55,8 @@ open class FileNameExtensionFilter: FileFilter {
         return JNIType.toSwift( type: [String](), from: __return )
     }
 
+
+    /// public java.lang.String javax.swing.filechooser.FileNameExtensionFilter.getDescription()
 
 }
 

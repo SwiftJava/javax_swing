@@ -138,20 +138,25 @@ open class PlainDocument: AbstractDocument {
         self.init( c: _c )
     }
 
-    /// protected javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.PlainDocument.createDefaultRoot()
+    /// public void javax.swing.text.PlainDocument.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    private static var createDefaultRoot_MethodID_3: jmethodID?
+    private static var insertString_MethodID_3: jmethodID?
 
-    open func createDefaultRoot() -> AbstractDocument_AbstractElement! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func insertString( offs: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &PlainDocument.createDefaultRoot_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AbstractDocument_AbstractElement( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
+        __args[1] = JNIType.toJava( value: str, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertString_MethodID_3, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
     }
 
-
-    /// private void javax.swing.text.PlainDocument.insertComposedTextUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
+    override open func insertString( _ _offs: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        try insertString( offs: _offs, str: _str, a: _a )
+    }
 
     /// protected void javax.swing.text.PlainDocument.insertUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
 
@@ -188,25 +193,20 @@ open class PlainDocument: AbstractDocument {
 
     /// public javax.swing.text.Element javax.swing.text.PlainDocument.getDefaultRootElement()
 
-    /// public void javax.swing.text.PlainDocument.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
+    /// protected javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.PlainDocument.createDefaultRoot()
 
-    private static var insertString_MethodID_6: jmethodID?
+    private static var createDefaultRoot_MethodID_6: jmethodID?
 
-    open func insertString( offs: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func createDefaultRoot() -> AbstractDocument_AbstractElement! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        __args[1] = JNIType.toJava( value: str, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertString_MethodID_6, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &PlainDocument.createDefaultRoot_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AbstractDocument_AbstractElement( javaObject: __return ) : nil
     }
 
-    override open func insertString( _ _offs: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        try insertString( offs: _offs, str: _str, a: _a )
-    }
+
+    /// private void javax.swing.text.PlainDocument.insertComposedTextUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
 
 }
 

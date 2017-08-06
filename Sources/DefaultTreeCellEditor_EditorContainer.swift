@@ -321,6 +321,12 @@ open class DefaultTreeCellEditor_EditorContainer: java_awt.Container {
         self.init( this_0: _this_0 )
     }
 
+    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$EditorContainer.getPreferredSize()
+
+    /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.doLayout()
+
+    /// private int javax.swing.tree.DefaultTreeCellEditor$EditorContainer.calculateIconY(javax.swing.Icon)
+
     /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.EditorContainer()
 
     private static var EditorContainer_MethodID_2: jmethodID?
@@ -346,12 +352,6 @@ open class DefaultTreeCellEditor_EditorContainer: java_awt.Container {
     override open func paint( _ _g: java_awt.Graphics? ) {
         paint( g: _g )
     }
-
-    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$EditorContainer.getPreferredSize()
-
-    /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.doLayout()
-
-    /// private int javax.swing.tree.DefaultTreeCellEditor$EditorContainer.calculateIconY(javax.swing.Icon)
 
 }
 

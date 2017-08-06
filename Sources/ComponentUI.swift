@@ -63,112 +63,15 @@ open class ComponentUI: java_swift.JavaObject {
         return contains( c: _c, x: _x, y: _y )
     }
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.ComponentUI.createUI(javax.swing.JComponent)
-
-    private static var createUI_MethodID_4: jmethodID?
-
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/ComponentUI", classCache: &ComponentUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
-        return createUI( c: _c )
-    }
-
-    /// public void javax.swing.plaf.ComponentUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_5: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &ComponentUI.paint_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
-        paint( g: _g, c: _c )
-    }
-
-    /// public int javax.swing.plaf.ComponentUI.getAccessibleChildrenCount(javax.swing.JComponent)
-
-    private static var getAccessibleChildrenCount_MethodID_6: jmethodID?
-
-    open func getAccessibleChildrenCount( c: JComponent? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &ComponentUI.getAccessibleChildrenCount_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getAccessibleChildrenCount( _ _c: JComponent? ) -> Int {
-        return getAccessibleChildrenCount( c: _c )
-    }
-
-    /// public javax.accessibility.Accessible javax.swing.plaf.ComponentUI.getAccessibleChild(javax.swing.JComponent,int)
-
-    private static var getAccessibleChild_MethodID_7: jmethodID?
-
-    open func getAccessibleChild( c: JComponent?, i: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &ComponentUI.getAccessibleChild_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    open func getAccessibleChild( _ _c: JComponent?, _ _i: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        return getAccessibleChild( c: _c, i: _i )
-    }
-
-    /// public void javax.swing.plaf.ComponentUI.installUI(javax.swing.JComponent)
-
-    private static var installUI_MethodID_8: jmethodID?
-
-    open func installUI( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &ComponentUI.installUI_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func installUI( _ _c: JComponent? ) {
-        installUI( c: _c )
-    }
-
-    /// public void javax.swing.plaf.ComponentUI.uninstallUI(javax.swing.JComponent)
-
-    private static var uninstallUI_MethodID_9: jmethodID?
-
-    open func uninstallUI( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &ComponentUI.uninstallUI_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallUI( _ _c: JComponent? ) {
-        uninstallUI( c: _c )
-    }
-
     /// public java.awt.Dimension javax.swing.plaf.ComponentUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var getPreferredSize_MethodID_10: jmethodID?
+    private static var getPreferredSize_MethodID_4: jmethodID?
 
     open func getPreferredSize( c: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &ComponentUI.getPreferredSize_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &ComponentUI.getPreferredSize_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -179,13 +82,13 @@ open class ComponentUI: java_swift.JavaObject {
 
     /// public java.awt.Dimension javax.swing.plaf.ComponentUI.getMinimumSize(javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_11: jmethodID?
+    private static var getMinimumSize_MethodID_5: jmethodID?
 
     open func getMinimumSize( c: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &ComponentUI.getMinimumSize_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &ComponentUI.getMinimumSize_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -196,13 +99,13 @@ open class ComponentUI: java_swift.JavaObject {
 
     /// public java.awt.Dimension javax.swing.plaf.ComponentUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var getMaximumSize_MethodID_12: jmethodID?
+    private static var getMaximumSize_MethodID_6: jmethodID?
 
     open func getMaximumSize( c: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &ComponentUI.getMaximumSize_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &ComponentUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -213,7 +116,7 @@ open class ComponentUI: java_swift.JavaObject {
 
     /// public int javax.swing.plaf.ComponentUI.getBaseline(javax.swing.JComponent,int,int)
 
-    private static var getBaseline_MethodID_13: jmethodID?
+    private static var getBaseline_MethodID_7: jmethodID?
 
     open func getBaseline( c: JComponent?, width: Int, height: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -221,7 +124,7 @@ open class ComponentUI: java_swift.JavaObject {
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: width, locals: &__locals )
         __args[2] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(Ljavax/swing/JComponent;II)I", methodCache: &ComponentUI.getBaseline_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(Ljavax/swing/JComponent;II)I", methodCache: &ComponentUI.getBaseline_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -231,19 +134,116 @@ open class ComponentUI: java_swift.JavaObject {
 
     /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.ComponentUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
-    private static var getBaselineResizeBehavior_MethodID_14: jmethodID?
+    private static var getBaselineResizeBehavior_MethodID_8: jmethodID?
 
     open func getBaselineResizeBehavior( c: JComponent? ) -> java_awt.Component_BaselineResizeBehavior! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineResizeBehavior", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Component$BaselineResizeBehavior;", methodCache: &ComponentUI.getBaselineResizeBehavior_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineResizeBehavior", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Component$BaselineResizeBehavior;", methodCache: &ComponentUI.getBaselineResizeBehavior_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component_BaselineResizeBehavior( javaObject: __return ) : nil
     }
 
     open func getBaselineResizeBehavior( _ _c: JComponent? ) -> java_awt.Component_BaselineResizeBehavior! {
         return getBaselineResizeBehavior( c: _c )
+    }
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.ComponentUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_9: jmethodID?
+
+    open class func createUI( c: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/ComponentUI", classCache: &ComponentUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+        return createUI( c: _c )
+    }
+
+    /// public int javax.swing.plaf.ComponentUI.getAccessibleChildrenCount(javax.swing.JComponent)
+
+    private static var getAccessibleChildrenCount_MethodID_10: jmethodID?
+
+    open func getAccessibleChildrenCount( c: JComponent? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &ComponentUI.getAccessibleChildrenCount_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getAccessibleChildrenCount( _ _c: JComponent? ) -> Int {
+        return getAccessibleChildrenCount( c: _c )
+    }
+
+    /// public javax.accessibility.Accessible javax.swing.plaf.ComponentUI.getAccessibleChild(javax.swing.JComponent,int)
+
+    private static var getAccessibleChild_MethodID_11: jmethodID?
+
+    open func getAccessibleChild( c: JComponent?, i: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: i, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &ComponentUI.getAccessibleChild_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+    open func getAccessibleChild( _ _c: JComponent?, _ _i: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        return getAccessibleChild( c: _c, i: _i )
+    }
+
+    /// public void javax.swing.plaf.ComponentUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_12: jmethodID?
+
+    open func installUI( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &ComponentUI.installUI_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func installUI( _ _c: JComponent? ) {
+        installUI( c: _c )
+    }
+
+    /// public void javax.swing.plaf.ComponentUI.uninstallUI(javax.swing.JComponent)
+
+    private static var uninstallUI_MethodID_13: jmethodID?
+
+    open func uninstallUI( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &ComponentUI.uninstallUI_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func uninstallUI( _ _c: JComponent? ) {
+        uninstallUI( c: _c )
+    }
+
+    /// public void javax.swing.plaf.ComponentUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paint_MethodID_14: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &ComponentUI.paint_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
+        paint( g: _g, c: _c )
     }
 
 }

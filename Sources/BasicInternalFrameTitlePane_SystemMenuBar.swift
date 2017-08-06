@@ -506,11 +506,11 @@ open class BasicInternalFrameTitlePane_SystemMenuBar: JMenuBar {
 
     /// public boolean javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.isOpaque()
 
-    /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.paint(java.awt.Graphics)
-
     /// public boolean javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.isFocusTraversable()
 
     /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.requestFocus()
+
+    /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.paint(java.awt.Graphics)
 
 }
 

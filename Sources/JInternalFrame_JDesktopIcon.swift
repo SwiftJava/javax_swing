@@ -492,16 +492,31 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// private void javax.swing.JInternalFrame$JDesktopIcon.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public javax.swing.plaf.DesktopIconUI javax.swing.JInternalFrame$JDesktopIcon.getUI()
+    /// public javax.swing.JDesktopPane javax.swing.JInternalFrame$JDesktopIcon.getDesktopPane()
 
-    private static var getUI_MethodID_2: jmethodID?
+    private static var getDesktopPane_MethodID_2: jmethodID?
 
-    open func getUI() -> DesktopIconUI! {
+    open func getDesktopPane() -> JDesktopPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/DesktopIconUI;", methodCache: &JInternalFrame_JDesktopIcon.getUI_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopPane", methodSig: "()Ljavax/swing/JDesktopPane;", methodCache: &JInternalFrame_JDesktopIcon.getDesktopPane_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DesktopIconUI( javaObject: __return ) : nil
+        return __return != nil ? JDesktopPane( javaObject: __return ) : nil
+    }
+
+
+    /// void javax.swing.JInternalFrame$JDesktopIcon.updateUIWhenHidden()
+
+    /// public javax.swing.JInternalFrame javax.swing.JInternalFrame$JDesktopIcon.getInternalFrame()
+
+    private static var getInternalFrame_MethodID_3: jmethodID?
+
+    open func getInternalFrame() -> JInternalFrame! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInternalFrame", methodSig: "()Ljavax/swing/JInternalFrame;", methodCache: &JInternalFrame_JDesktopIcon.getInternalFrame_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JInternalFrame( javaObject: __return ) : nil
     }
 
 
@@ -509,13 +524,13 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// public void javax.swing.JInternalFrame$JDesktopIcon.setInternalFrame(javax.swing.JInternalFrame)
 
-    private static var setInternalFrame_MethodID_3: jmethodID?
+    private static var setInternalFrame_MethodID_4: jmethodID?
 
     open func setInternalFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInternalFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JInternalFrame_JDesktopIcon.setInternalFrame_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInternalFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JInternalFrame_JDesktopIcon.setInternalFrame_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setInternalFrame( _ _f: JInternalFrame? ) {
@@ -526,13 +541,13 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// public void javax.swing.JInternalFrame$JDesktopIcon.setUI(javax.swing.plaf.DesktopIconUI)
 
-    private static var setUI_MethodID_4: jmethodID?
+    private static var setUI_MethodID_5: jmethodID?
 
     open func setUI( ui: DesktopIconUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/DesktopIconUI;)V", methodCache: &JInternalFrame_JDesktopIcon.setUI_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/DesktopIconUI;)V", methodCache: &JInternalFrame_JDesktopIcon.setUI_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: DesktopIconUI? ) {
@@ -541,31 +556,16 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// public java.lang.String javax.swing.JInternalFrame$JDesktopIcon.getUIClassID()
 
-    /// public javax.swing.JDesktopPane javax.swing.JInternalFrame$JDesktopIcon.getDesktopPane()
+    /// public javax.swing.plaf.DesktopIconUI javax.swing.JInternalFrame$JDesktopIcon.getUI()
 
-    private static var getDesktopPane_MethodID_5: jmethodID?
+    private static var getUI_MethodID_6: jmethodID?
 
-    open func getDesktopPane() -> JDesktopPane! {
+    open func getUI() -> DesktopIconUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopPane", methodSig: "()Ljavax/swing/JDesktopPane;", methodCache: &JInternalFrame_JDesktopIcon.getDesktopPane_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/DesktopIconUI;", methodCache: &JInternalFrame_JDesktopIcon.getUI_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JDesktopPane( javaObject: __return ) : nil
-    }
-
-
-    /// void javax.swing.JInternalFrame$JDesktopIcon.updateUIWhenHidden()
-
-    /// public javax.swing.JInternalFrame javax.swing.JInternalFrame$JDesktopIcon.getInternalFrame()
-
-    private static var getInternalFrame_MethodID_6: jmethodID?
-
-    open func getInternalFrame() -> JInternalFrame! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInternalFrame", methodSig: "()Ljavax/swing/JInternalFrame;", methodCache: &JInternalFrame_JDesktopIcon.getInternalFrame_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JInternalFrame( javaObject: __return ) : nil
+        return __return != nil ? DesktopIconUI( javaObject: __return ) : nil
     }
 
 

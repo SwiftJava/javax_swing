@@ -30,8 +30,6 @@ open class BasicRootPaneUI: RootPaneUI, /* java.beans.PropertyChangeListener */ 
         JNI.DeleteLocalRef( __object )
     }
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicRootPaneUI.getInputMap(int,javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicRootPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -63,6 +61,12 @@ open class BasicRootPaneUI: RootPaneUI, /* java.beans.PropertyChangeListener */ 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicRootPaneUI.getInputMap(int,javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicRootPaneUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicRootPaneUI.uninstallUI(javax.swing.JComponent)
 
     /// void javax.swing.plaf.basic.BasicRootPaneUI.updateDefaultButtonBindings(javax.swing.JRootPane)
 
@@ -189,10 +193,6 @@ open class BasicRootPaneUI: RootPaneUI, /* java.beans.PropertyChangeListener */ 
     }
 
     /// javax.swing.ComponentInputMap javax.swing.plaf.basic.BasicRootPaneUI.createInputMap(int,javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicRootPaneUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicRootPaneUI.uninstallUI(javax.swing.JComponent)
 
 }
 

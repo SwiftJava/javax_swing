@@ -61,7 +61,7 @@ open class JLayer: JComponent, Scrollable {
 
     private static var ui_FieldID: jfieldID?
 
-    open var ui: ComponentUI! {
+    override open var ui: ComponentUI! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JLayer.ui_FieldID, object: javaObject, locals: &__locals )
@@ -78,7 +78,7 @@ open class JLayer: JComponent, Scrollable {
 
     private static var listenerList_FieldID: jfieldID?
 
-    open var listenerList: EventListenerList! {
+    override open var listenerList: EventListenerList! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JLayer.listenerList_FieldID, object: javaObject, locals: &__locals )
@@ -455,7 +455,7 @@ open class JLayer: JComponent, Scrollable {
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JLayer.accessibleContext_FieldID, object: javaObject, locals: &__locals )
@@ -544,7 +544,7 @@ open class JLayer: JComponent, Scrollable {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLayer.remove_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func remove( _ _comp: java_awt.Component? ) {
+    override open func remove( _ _comp: java_awt.Component? ) {
         remove( comp: _comp )
     }
 
@@ -552,27 +552,61 @@ open class JLayer: JComponent, Scrollable {
 
     /// public void javax.swing.JLayer.removeAll()
 
-    /// public javax.swing.plaf.LayerUI javax.swing.JLayer.getUI()
+    /// public javax.swing.JPanel javax.swing.JLayer.createGlassPane()
 
-    private static var getUI_MethodID_5: jmethodID?
+    private static var createGlassPane_MethodID_5: jmethodID?
 
-    open func getUI() -> LayerUI! {
+    open func createGlassPane() -> JPanel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/LayerUI;", methodCache: &JLayer.getUI_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGlassPane", methodSig: "()Ljavax/swing/JPanel;", methodCache: &JLayer.createGlassPane_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LayerUI( javaObject: __return ) : nil
+        return __return != nil ? JPanel( javaObject: __return ) : nil
     }
 
 
+    /// public void javax.swing.JLayer.removeNotify()
+
+    /// public void javax.swing.JLayer.doLayout()
+
+    /// public java.awt.Component javax.swing.JLayer.getView()
+
+    private static var getView_MethodID_6: jmethodID?
+
+    open func getView() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getView", methodSig: "()Ljava/awt/Component;", methodCache: &JLayer.getView_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JLayer.getAccessibleContext()
+
+    /// public void javax.swing.JLayer.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_7: jmethodID?
+
+    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &JLayer.propertyChange_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
     /// public java.awt.Dimension javax.swing.JLayer.getPreferredScrollableViewportSize()
 
-    private static var getPreferredScrollableViewportSize_MethodID_6: jmethodID?
+    private static var getPreferredScrollableViewportSize_MethodID_8: jmethodID?
 
     open func getPreferredScrollableViewportSize() -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JLayer.getPreferredScrollableViewportSize_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JLayer.getPreferredScrollableViewportSize_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -580,7 +614,7 @@ open class JLayer: JComponent, Scrollable {
 
     /// public int javax.swing.JLayer.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
 
-    private static var getScrollableUnitIncrement_MethodID_7: jmethodID?
+    private static var getScrollableUnitIncrement_MethodID_9: jmethodID?
 
     open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -588,7 +622,7 @@ open class JLayer: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
         __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JLayer.getScrollableUnitIncrement_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JLayer.getScrollableUnitIncrement_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -598,7 +632,7 @@ open class JLayer: JComponent, Scrollable {
 
     /// public int javax.swing.JLayer.getScrollableBlockIncrement(java.awt.Rectangle,int,int)
 
-    private static var getScrollableBlockIncrement_MethodID_8: jmethodID?
+    private static var getScrollableBlockIncrement_MethodID_10: jmethodID?
 
     open func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -606,7 +640,7 @@ open class JLayer: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
         __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JLayer.getScrollableBlockIncrement_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JLayer.getScrollableBlockIncrement_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -616,46 +650,46 @@ open class JLayer: JComponent, Scrollable {
 
     /// public boolean javax.swing.JLayer.getScrollableTracksViewportWidth()
 
-    private static var getScrollableTracksViewportWidth_MethodID_9: jmethodID?
+    private static var getScrollableTracksViewportWidth_MethodID_11: jmethodID?
 
     open func getScrollableTracksViewportWidth() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &JLayer.getScrollableTracksViewportWidth_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &JLayer.getScrollableTracksViewportWidth_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean javax.swing.JLayer.getScrollableTracksViewportHeight()
 
-    private static var getScrollableTracksViewportHeight_MethodID_10: jmethodID?
+    private static var getScrollableTracksViewportHeight_MethodID_12: jmethodID?
 
     open func getScrollableTracksViewportHeight() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &JLayer.getScrollableTracksViewportHeight_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &JLayer.getScrollableTracksViewportHeight_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JLayer.setLayout(java.awt.LayoutManager)
 
-    private static var setLayout_MethodID_11: jmethodID?
+    private static var setLayout_MethodID_13: jmethodID?
 
     open func setLayout( mgr: java_awt.LayoutManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JLayer.setLayout_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JLayer.setLayout_MethodID_13, args: &__args, locals: &__locals )
     }
 
-    open func setLayout( _ _mgr: java_awt.LayoutManager? ) {
+    override open func setLayout( _ _mgr: java_awt.LayoutManager? ) {
         setLayout( mgr: _mgr )
     }
 
     /// protected void javax.swing.JLayer.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var addImpl_MethodID_12: jmethodID?
+    private static var addImpl_MethodID_14: jmethodID?
 
     open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -663,21 +697,21 @@ open class JLayer: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JLayer.addImpl_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JLayer.addImpl_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
         addImpl( comp: _comp, constraints: _constraints, index: _index )
     }
 
     /// public javax.swing.JPanel javax.swing.JLayer.getGlassPane()
 
-    private static var getGlassPane_MethodID_13: jmethodID?
+    private static var getGlassPane_MethodID_15: jmethodID?
 
     open func getGlassPane() -> JPanel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljavax/swing/JPanel;", methodCache: &JLayer.getGlassPane_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljavax/swing/JPanel;", methodCache: &JLayer.getGlassPane_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JPanel( javaObject: __return ) : nil
     }
@@ -685,13 +719,13 @@ open class JLayer: JComponent, Scrollable {
 
     /// public void javax.swing.JLayer.setGlassPane(javax.swing.JPanel)
 
-    private static var setGlassPane_MethodID_14: jmethodID?
+    private static var setGlassPane_MethodID_16: jmethodID?
 
     open func setGlassPane( glassPane: JPanel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: glassPane != nil ? glassPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljavax/swing/JPanel;)V", methodCache: &JLayer.setGlassPane_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljavax/swing/JPanel;)V", methodCache: &JLayer.setGlassPane_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setGlassPane( _ _glassPane: JPanel? ) {
@@ -700,64 +734,32 @@ open class JLayer: JComponent, Scrollable {
 
     /// public void javax.swing.JLayer.addNotify()
 
-    /// public javax.swing.JPanel javax.swing.JLayer.createGlassPane()
+    /// public long javax.swing.JLayer.getLayerEventMask()
 
-    private static var createGlassPane_MethodID_15: jmethodID?
+    private static var getLayerEventMask_MethodID_17: jmethodID?
 
-    open func createGlassPane() -> JPanel! {
+    open func getLayerEventMask() -> Int64 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGlassPane", methodSig: "()Ljavax/swing/JPanel;", methodCache: &JLayer.createGlassPane_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JPanel( javaObject: __return ) : nil
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getLayerEventMask", methodSig: "()J", methodCache: &JLayer.getLayerEventMask_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int64(), from: __return )
     }
 
-
-    /// public void javax.swing.JLayer.paint(java.awt.Graphics)
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JLayer.getAccessibleContext()
-
-    /// public void javax.swing.JLayer.propertyChange(java.beans.PropertyChangeEvent)
-
-    private static var propertyChange_MethodID_16: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &JLayer.propertyChange_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
 
     /// public void javax.swing.JLayer.setLayerEventMask(long)
 
-    private static var setLayerEventMask_MethodID_17: jmethodID?
+    private static var setLayerEventMask_MethodID_18: jmethodID?
 
     open func setLayerEventMask( layerEventMask: Int64 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layerEventMask, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayerEventMask", methodSig: "(J)V", methodCache: &JLayer.setLayerEventMask_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayerEventMask", methodSig: "(J)V", methodCache: &JLayer.setLayerEventMask_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setLayerEventMask( _ _layerEventMask: Int64 ) {
         setLayerEventMask( layerEventMask: _layerEventMask )
     }
-
-    /// public long javax.swing.JLayer.getLayerEventMask()
-
-    private static var getLayerEventMask_MethodID_18: jmethodID?
-
-    open func getLayerEventMask() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getLayerEventMask", methodSig: "()J", methodCache: &JLayer.getLayerEventMask_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
-    }
-
 
     /// public void javax.swing.JLayer.updateUI()
 
@@ -780,14 +782,14 @@ open class JLayer: JComponent, Scrollable {
 
     private static var paintComponent_MethodID_20: jmethodID?
 
-    open func paintComponent( g: java_awt.Graphics? ) {
+    override open func paintComponent( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JLayer.paintComponent_MethodID_20, args: &__args, locals: &__locals )
     }
 
-    open func paintComponent( _ _g: java_awt.Graphics? ) {
+    override open func paintComponent( _ _g: java_awt.Graphics? ) {
         paintComponent( g: _g )
     }
 
@@ -799,7 +801,7 @@ open class JLayer: JComponent, Scrollable {
 
     private static var isPaintingOrigin_MethodID_21: jmethodID?
 
-    open func isPaintingOrigin() -> Bool {
+    override open func isPaintingOrigin() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPaintingOrigin", methodSig: "()Z", methodCache: &JLayer.isPaintingOrigin_MethodID_21, args: &__args, locals: &__locals )
@@ -824,22 +826,20 @@ open class JLayer: JComponent, Scrollable {
         setView( view: _view )
     }
 
-    /// public void javax.swing.JLayer.removeNotify()
+    /// public javax.swing.plaf.LayerUI javax.swing.JLayer.getUI()
 
-    /// public void javax.swing.JLayer.doLayout()
+    private static var getUI_MethodID_23: jmethodID?
 
-    /// public java.awt.Component javax.swing.JLayer.getView()
-
-    private static var getView_MethodID_23: jmethodID?
-
-    open func getView() -> java_awt.Component! {
+    open func getUI() -> LayerUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getView", methodSig: "()Ljava/awt/Component;", methodCache: &JLayer.getView_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/LayerUI;", methodCache: &JLayer.getUI_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+        return __return != nil ? LayerUI( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.JLayer.paint(java.awt.Graphics)
 
     /// In declared protocol but not defined.. ///
 

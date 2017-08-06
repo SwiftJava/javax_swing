@@ -83,6 +83,21 @@ open class NumberFormatter: InternationalFormatter {
 
     /// void javax.swing.text.NumberFormatter.replace(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
+    /// public void javax.swing.text.NumberFormatter.setFormat(java.text.Format)
+
+    private static var setFormat_MethodID_3: jmethodID?
+
+    open func setFormat( arg0: /* java.text.Format */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/Format;)V", methodCache: &NumberFormatter.setFormat_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func setFormat( _ _arg0: /* java.text.Format */ UnclassedObject? ) {
+        setFormat( arg0: _arg0 )
+    }
+
     /// java.lang.Object javax.swing.text.NumberFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
 
     /// private java.text.DecimalFormatSymbols javax.swing.text.NumberFormatter.getDecimalFormatSymbols()
@@ -108,21 +123,6 @@ open class NumberFormatter: InternationalFormatter {
     /// private java.lang.Object javax.swing.text.NumberFormatter.toggleSign(boolean) throws java.text.ParseException
 
     /// private java.lang.Object javax.swing.text.NumberFormatter.toggleExponentSign(int,char) throws javax.swing.text.BadLocationException,java.text.ParseException
-
-    /// public void javax.swing.text.NumberFormatter.setFormat(java.text.Format)
-
-    private static var setFormat_MethodID_3: jmethodID?
-
-    open func setFormat( arg0: /* java.text.Format */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/Format;)V", methodCache: &NumberFormatter.setFormat_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func setFormat( _ _arg0: /* java.text.Format */ UnclassedObject? ) {
-        setFormat( arg0: _arg0 )
-    }
 
 }
 

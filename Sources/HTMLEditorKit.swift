@@ -374,47 +374,16 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// static int javax.swing.text.html.HTMLEditorKit.access$102(javax.swing.text.html.HTMLEditorKit,int)
 
-    /// protected void javax.swing.text.html.HTMLEditorKit.createInputAttributes(javax.swing.text.Element,javax.swing.text.MutableAttributeSet)
+    /// public java.awt.Cursor javax.swing.text.html.HTMLEditorKit.getDefaultCursor()
 
-    private static var createInputAttributes_MethodID_2: jmethodID?
+    private static var getDefaultCursor_MethodID_2: jmethodID?
 
-    override open func createInputAttributes( element: Element?, set: MutableAttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: element, locals: &__locals )
-        __args[1] = JNIType.toJava( value: set, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInputAttributes", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &HTMLEditorKit.createInputAttributes_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func createInputAttributes( _ _element: Element?, _ _set: MutableAttributeSet? ) {
-        createInputAttributes( element: _element, set: _set )
-    }
-
-    /// public java.lang.String javax.swing.text.html.HTMLEditorKit.getContentType()
-
-    /// public javax.swing.text.html.StyleSheet javax.swing.text.html.HTMLEditorKit.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_3: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
+    open func getDefaultCursor() -> java_awt.Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &HTMLEditorKit.getStyleSheet_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &HTMLEditorKit.getDefaultCursor_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.accessibility.AccessibleContext javax.swing.text.html.HTMLEditorKit.getAccessibleContext()
-
-    private static var getAccessibleContext_MethodID_4: jmethodID?
-
-    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &HTMLEditorKit.getAccessibleContext_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
+        return __return != nil ? java_awt.Cursor( javaObject: __return ) : nil
     }
 
 
@@ -422,12 +391,12 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// protected javax.swing.text.html.HTMLEditorKit$Parser javax.swing.text.html.HTMLEditorKit.getParser()
 
-    private static var getParser_MethodID_5: jmethodID?
+    private static var getParser_MethodID_3: jmethodID?
 
     open func getParser() -> HTMLEditorKit_Parser! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParser", methodSig: "()Ljavax/swing/text/html/HTMLEditorKit$Parser;", methodCache: &HTMLEditorKit.getParser_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParser", methodSig: "()Ljavax/swing/text/html/HTMLEditorKit$Parser;", methodCache: &HTMLEditorKit.getParser_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HTMLEditorKit_Parser( javaObject: __return ) : nil
     }
@@ -435,7 +404,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public void javax.swing.text.html.HTMLEditorKit.insertHTML(javax.swing.text.html.HTMLDocument,int,java.lang.String,int,int,javax.swing.text.html.HTML$Tag) throws javax.swing.text.BadLocationException,java.io.IOException
 
-    private static var insertHTML_MethodID_6: jmethodID?
+    private static var insertHTML_MethodID_4: jmethodID?
 
     open func insertHTML( doc: HTMLDocument?, offset: Int, html: String?, popDepth: Int, pushDepth: Int, insertTag: HTML_Tag? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -446,7 +415,7 @@ open class HTMLEditorKit: StyledEditorKit {
         __args[3] = JNIType.toJava( value: popDepth, locals: &__locals )
         __args[4] = JNIType.toJava( value: pushDepth, locals: &__locals )
         __args[5] = JNIType.toJava( value: insertTag != nil ? insertTag! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit.insertHTML_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit.insertHTML_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -458,12 +427,12 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public boolean javax.swing.text.html.HTMLEditorKit.isAutoFormSubmission()
 
-    private static var isAutoFormSubmission_MethodID_7: jmethodID?
+    private static var isAutoFormSubmission_MethodID_5: jmethodID?
 
     open func isAutoFormSubmission() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAutoFormSubmission", methodSig: "()Z", methodCache: &HTMLEditorKit.isAutoFormSubmission_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAutoFormSubmission", methodSig: "()Z", methodCache: &HTMLEditorKit.isAutoFormSubmission_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -472,13 +441,13 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public void javax.swing.text.html.HTMLEditorKit.setStyleSheet(javax.swing.text.html.StyleSheet)
 
-    private static var setStyleSheet_MethodID_8: jmethodID?
+    private static var setStyleSheet_MethodID_6: jmethodID?
 
     open func setStyleSheet( s: StyleSheet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStyleSheet", methodSig: "(Ljavax/swing/text/html/StyleSheet;)V", methodCache: &HTMLEditorKit.setStyleSheet_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStyleSheet", methodSig: "(Ljavax/swing/text/html/StyleSheet;)V", methodCache: &HTMLEditorKit.setStyleSheet_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setStyleSheet( _ _s: StyleSheet? ) {
@@ -487,13 +456,13 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public void javax.swing.text.html.HTMLEditorKit.setDefaultCursor(java.awt.Cursor)
 
-    private static var setDefaultCursor_MethodID_9: jmethodID?
+    private static var setDefaultCursor_MethodID_7: jmethodID?
 
     open func setDefaultCursor( cursor: java_awt.Cursor? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: cursor != nil ? cursor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &HTMLEditorKit.setDefaultCursor_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &HTMLEditorKit.setDefaultCursor_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setDefaultCursor( _ _cursor: java_awt.Cursor? ) {
@@ -502,13 +471,13 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public void javax.swing.text.html.HTMLEditorKit.setLinkCursor(java.awt.Cursor)
 
-    private static var setLinkCursor_MethodID_10: jmethodID?
+    private static var setLinkCursor_MethodID_8: jmethodID?
 
     open func setLinkCursor( cursor: java_awt.Cursor? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: cursor != nil ? cursor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLinkCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &HTMLEditorKit.setLinkCursor_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLinkCursor", methodSig: "(Ljava/awt/Cursor;)V", methodCache: &HTMLEditorKit.setLinkCursor_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setLinkCursor( _ _cursor: java_awt.Cursor? ) {
@@ -517,12 +486,12 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public java.awt.Cursor javax.swing.text.html.HTMLEditorKit.getLinkCursor()
 
-    private static var getLinkCursor_MethodID_11: jmethodID?
+    private static var getLinkCursor_MethodID_9: jmethodID?
 
     open func getLinkCursor() -> java_awt.Cursor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLinkCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &HTMLEditorKit.getLinkCursor_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLinkCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &HTMLEditorKit.getLinkCursor_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Cursor( javaObject: __return ) : nil
     }
@@ -530,13 +499,13 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// public void javax.swing.text.html.HTMLEditorKit.setAutoFormSubmission(boolean)
 
-    private static var setAutoFormSubmission_MethodID_12: jmethodID?
+    private static var setAutoFormSubmission_MethodID_10: jmethodID?
 
     open func setAutoFormSubmission( isAuto: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: isAuto, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoFormSubmission", methodSig: "(Z)V", methodCache: &HTMLEditorKit.setAutoFormSubmission_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAutoFormSubmission", methodSig: "(Z)V", methodCache: &HTMLEditorKit.setAutoFormSubmission_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setAutoFormSubmission( _ _isAuto: Bool ) {
@@ -547,18 +516,16 @@ open class HTMLEditorKit: StyledEditorKit {
 
     /// private static int javax.swing.text.html.HTMLEditorKit.getBodyElementStart(javax.swing.text.JTextComponent)
 
-    /// public javax.swing.text.ViewFactory javax.swing.text.html.HTMLEditorKit.getViewFactory()
+    /// public javax.swing.text.html.StyleSheet javax.swing.text.html.HTMLEditorKit.getStyleSheet()
 
-    /// public java.awt.Cursor javax.swing.text.html.HTMLEditorKit.getDefaultCursor()
+    private static var getStyleSheet_MethodID_11: jmethodID?
 
-    private static var getDefaultCursor_MethodID_13: jmethodID?
-
-    open func getDefaultCursor() -> java_awt.Cursor! {
+    open func getStyleSheet() -> StyleSheet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultCursor", methodSig: "()Ljava/awt/Cursor;", methodCache: &HTMLEditorKit.getDefaultCursor_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &HTMLEditorKit.getStyleSheet_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Cursor( javaObject: __return ) : nil
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
     }
 
 
@@ -567,6 +534,39 @@ open class HTMLEditorKit: StyledEditorKit {
     /// public void javax.swing.text.html.HTMLEditorKit.install(javax.swing.JEditorPane)
 
     /// public javax.swing.text.Document javax.swing.text.html.HTMLEditorKit.createDefaultDocument()
+
+    /// public javax.swing.text.ViewFactory javax.swing.text.html.HTMLEditorKit.getViewFactory()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.text.html.HTMLEditorKit.getAccessibleContext()
+
+    private static var getAccessibleContext_MethodID_12: jmethodID?
+
+    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &HTMLEditorKit.getAccessibleContext_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.text.html.HTMLEditorKit.createInputAttributes(javax.swing.text.Element,javax.swing.text.MutableAttributeSet)
+
+    private static var createInputAttributes_MethodID_13: jmethodID?
+
+    override open func createInputAttributes( element: Element?, set: MutableAttributeSet? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: element, locals: &__locals )
+        __args[1] = JNIType.toJava( value: set, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInputAttributes", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &HTMLEditorKit.createInputAttributes_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func createInputAttributes( _ _element: Element?, _ _set: MutableAttributeSet? ) {
+        createInputAttributes( element: _element, set: _set )
+    }
+
+    /// public java.lang.String javax.swing.text.html.HTMLEditorKit.getContentType()
 
 }
 

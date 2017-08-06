@@ -120,9 +120,9 @@ open class BasicTreeUI_TreePageAction: AbstractAction {
 
     /// private javax.swing.plaf.basic.BasicTreeUI$TreePageAction(javax.swing.plaf.basic.BasicTreeUI,int,java.lang.String,boolean,boolean)
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$TreePageAction.actionPerformed(java.awt.event.ActionEvent)
-
     /// public boolean javax.swing.plaf.basic.BasicTreeUI$TreePageAction.isEnabled()
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$TreePageAction.actionPerformed(java.awt.event.ActionEvent)
 
 }
 

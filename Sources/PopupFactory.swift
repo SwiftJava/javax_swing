@@ -42,14 +42,6 @@ open class PopupFactory: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// private javax.swing.Popup javax.swing.PopupFactory.getHeadlessPopup(java.awt.Component,java.awt.Component,int,int)
-
-    /// private javax.swing.Popup javax.swing.PopupFactory.getHeavyWeightPopup(java.awt.Component,java.awt.Component,int,int)
-
-    /// private javax.swing.Popup javax.swing.PopupFactory.getLightWeightPopup(java.awt.Component,java.awt.Component,int,int)
-
-    /// private javax.swing.Popup javax.swing.PopupFactory.getMediumWeightPopup(java.awt.Component,java.awt.Component,int,int)
-
     /// public static javax.swing.PopupFactory javax.swing.PopupFactory.getSharedInstance()
 
     private static var getSharedInstance_MethodID_2: jmethodID?
@@ -90,6 +82,20 @@ open class PopupFactory: java_swift.JavaObject {
 
     /// private javax.swing.Popup javax.swing.PopupFactory.getPopup(java.awt.Component,java.awt.Component,int,int,int)
 
+    /// int javax.swing.PopupFactory.getPopupType()
+
+    /// private int javax.swing.PopupFactory.getPopupType(java.awt.Component,java.awt.Component,int,int)
+
+    /// private boolean javax.swing.PopupFactory.invokerInHeavyWeightPopup(java.awt.Component)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getHeadlessPopup(java.awt.Component,java.awt.Component,int,int)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getHeavyWeightPopup(java.awt.Component,java.awt.Component,int,int)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getLightWeightPopup(java.awt.Component,java.awt.Component,int,int)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getMediumWeightPopup(java.awt.Component,java.awt.Component,int,int)
+
     /// public static void javax.swing.PopupFactory.setSharedInstance(javax.swing.PopupFactory)
 
     private static var setSharedInstance_MethodID_4: jmethodID?
@@ -104,12 +110,6 @@ open class PopupFactory: java_swift.JavaObject {
     open class func setSharedInstance( _ _factory: PopupFactory? ) {
         setSharedInstance( factory: _factory )
     }
-
-    /// private int javax.swing.PopupFactory.getPopupType(java.awt.Component,java.awt.Component,int,int)
-
-    /// int javax.swing.PopupFactory.getPopupType()
-
-    /// private boolean javax.swing.PopupFactory.invokerInHeavyWeightPopup(java.awt.Component)
 
 }
 

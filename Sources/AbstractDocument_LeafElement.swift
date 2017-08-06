@@ -61,14 +61,6 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
 
     /// private void javax.swing.text.AbstractDocument$LeafElement.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public int javax.swing.text.AbstractDocument$LeafElement.getElementCount()
-
-    /// public boolean javax.swing.text.AbstractDocument$LeafElement.getAllowsChildren()
-
-    /// public java.util.Enumeration javax.swing.text.AbstractDocument$LeafElement.children()
-
-    /// public boolean javax.swing.text.AbstractDocument$LeafElement.isLeaf()
-
     /// public int javax.swing.text.AbstractDocument$LeafElement.getElementIndex(int)
 
     private static var getElementIndex_MethodID_2: jmethodID?
@@ -90,6 +82,14 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
     /// public int javax.swing.text.AbstractDocument$LeafElement.getEndOffset()
 
     /// public int javax.swing.text.AbstractDocument$LeafElement.getStartOffset()
+
+    /// public int javax.swing.text.AbstractDocument$LeafElement.getElementCount()
+
+    /// public java.util.Enumeration javax.swing.text.AbstractDocument$LeafElement.children()
+
+    /// public boolean javax.swing.text.AbstractDocument$LeafElement.getAllowsChildren()
+
+    /// public boolean javax.swing.text.AbstractDocument$LeafElement.isLeaf()
 
 }
 

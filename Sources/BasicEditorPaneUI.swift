@@ -50,8 +50,6 @@ open class BasicEditorPaneUI: BasicTextUI {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// javax.swing.ActionMap javax.swing.plaf.basic.BasicEditorPaneUI.getActionMap()
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicEditorPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -85,6 +83,8 @@ open class BasicEditorPaneUI: BasicTextUI {
 
     /// private void javax.swing.plaf.basic.BasicEditorPaneUI.updateFont(java.awt.Font)
 
+    /// public javax.swing.text.EditorKit javax.swing.plaf.basic.BasicEditorPaneUI.getEditorKit(javax.swing.text.JTextComponent)
+
     /// protected void javax.swing.plaf.basic.BasicEditorPaneUI.propertyChange(java.beans.PropertyChangeEvent)
 
     private static var propertyChange_MethodID_3: jmethodID?
@@ -99,6 +99,8 @@ open class BasicEditorPaneUI: BasicTextUI {
     override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
+
+    /// javax.swing.ActionMap javax.swing.plaf.basic.BasicEditorPaneUI.getActionMap()
 
     /// protected java.lang.String javax.swing.plaf.basic.BasicEditorPaneUI.getPropertyPrefix()
 
@@ -115,8 +117,6 @@ open class BasicEditorPaneUI: BasicTextUI {
     /// public void javax.swing.plaf.basic.BasicEditorPaneUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicEditorPaneUI.uninstallUI(javax.swing.JComponent)
-
-    /// public javax.swing.text.EditorKit javax.swing.plaf.basic.BasicEditorPaneUI.getEditorKit(javax.swing.text.JTextComponent)
 
 }
 

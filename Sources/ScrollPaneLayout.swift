@@ -447,14 +447,94 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public void javax.swing.ScrollPaneLayout.removeLayoutComponent(java.awt.Component)
+
+    private static var removeLayoutComponent_MethodID_2: jmethodID?
+
+    open func removeLayoutComponent( comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &ScrollPaneLayout.removeLayoutComponent_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
+        removeLayoutComponent( comp: _comp )
+    }
+
+    /// public void javax.swing.ScrollPaneLayout.addLayoutComponent(java.lang.String,java.awt.Component)
+
+    private static var addLayoutComponent_MethodID_3: jmethodID?
+
+    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &ScrollPaneLayout.addLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
+        addLayoutComponent( name: _name, comp: _comp )
+    }
+
+    /// public void javax.swing.ScrollPaneLayout.layoutContainer(java.awt.Container)
+
+    private static var layoutContainer_MethodID_4: jmethodID?
+
+    open func layoutContainer( parent: java_awt.Container? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &ScrollPaneLayout.layoutContainer_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func layoutContainer( _ _parent: java_awt.Container? ) {
+        layoutContainer( parent: _parent )
+    }
+
+    /// public java.awt.Dimension javax.swing.ScrollPaneLayout.preferredLayoutSize(java.awt.Container)
+
+    private static var preferredLayoutSize_MethodID_5: jmethodID?
+
+    open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &ScrollPaneLayout.preferredLayoutSize_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func preferredLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return preferredLayoutSize( parent: _parent )
+    }
+
+    /// public java.awt.Dimension javax.swing.ScrollPaneLayout.minimumLayoutSize(java.awt.Container)
+
+    private static var minimumLayoutSize_MethodID_6: jmethodID?
+
+    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &ScrollPaneLayout.minimumLayoutSize_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return minimumLayoutSize( parent: _parent )
+    }
+
     /// public javax.swing.JViewport javax.swing.ScrollPaneLayout.getViewport()
 
-    private static var getViewport_MethodID_2: jmethodID?
+    private static var getViewport_MethodID_7: jmethodID?
 
     open func getViewport() -> JViewport! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewport", methodSig: "()Ljavax/swing/JViewport;", methodCache: &ScrollPaneLayout.getViewport_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewport", methodSig: "()Ljavax/swing/JViewport;", methodCache: &ScrollPaneLayout.getViewport_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JViewport( javaObject: __return ) : nil
     }
@@ -462,13 +542,13 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     /// public java.awt.Component javax.swing.ScrollPaneLayout.getCorner(java.lang.String)
 
-    private static var getCorner_MethodID_3: jmethodID?
+    private static var getCorner_MethodID_8: jmethodID?
 
     open func getCorner( key: String? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCorner", methodSig: "(Ljava/lang/String;)Ljava/awt/Component;", methodCache: &ScrollPaneLayout.getCorner_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCorner", methodSig: "(Ljava/lang/String;)Ljava/awt/Component;", methodCache: &ScrollPaneLayout.getCorner_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -477,16 +557,154 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
         return getCorner( key: _key )
     }
 
+    /// public javax.swing.JScrollBar javax.swing.ScrollPaneLayout.getHorizontalScrollBar()
+
+    private static var getHorizontalScrollBar_MethodID_9: jmethodID?
+
+    open func getHorizontalScrollBar() -> JScrollBar! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHorizontalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &ScrollPaneLayout.getHorizontalScrollBar_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JScrollBar( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JScrollBar javax.swing.ScrollPaneLayout.getVerticalScrollBar()
+
+    private static var getVerticalScrollBar_MethodID_10: jmethodID?
+
+    open func getVerticalScrollBar() -> JScrollBar! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVerticalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &ScrollPaneLayout.getVerticalScrollBar_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JScrollBar( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.ScrollPaneLayout.getVerticalScrollBarPolicy()
+
+    private static var getVerticalScrollBarPolicy_MethodID_11: jmethodID?
+
+    open func getVerticalScrollBarPolicy() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalScrollBarPolicy", methodSig: "()I", methodCache: &ScrollPaneLayout.getVerticalScrollBarPolicy_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.ScrollPaneLayout.setVerticalScrollBarPolicy(int)
+
+    private static var setVerticalScrollBarPolicy_MethodID_12: jmethodID?
+
+    open func setVerticalScrollBarPolicy( x: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalScrollBarPolicy", methodSig: "(I)V", methodCache: &ScrollPaneLayout.setVerticalScrollBarPolicy_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setVerticalScrollBarPolicy( _ _x: Int ) {
+        setVerticalScrollBarPolicy( x: _x )
+    }
+
+    /// public int javax.swing.ScrollPaneLayout.getHorizontalScrollBarPolicy()
+
+    private static var getHorizontalScrollBarPolicy_MethodID_13: jmethodID?
+
+    open func getHorizontalScrollBarPolicy() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalScrollBarPolicy", methodSig: "()I", methodCache: &ScrollPaneLayout.getHorizontalScrollBarPolicy_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.ScrollPaneLayout.setHorizontalScrollBarPolicy(int)
+
+    private static var setHorizontalScrollBarPolicy_MethodID_14: jmethodID?
+
+    open func setHorizontalScrollBarPolicy( x: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalScrollBarPolicy", methodSig: "(I)V", methodCache: &ScrollPaneLayout.setHorizontalScrollBarPolicy_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func setHorizontalScrollBarPolicy( _ _x: Int ) {
+        setHorizontalScrollBarPolicy( x: _x )
+    }
+
+    /// public java.awt.Rectangle javax.swing.ScrollPaneLayout.getViewportBorderBounds(javax.swing.JScrollPane)
+
+    private static var getViewportBorderBounds_MethodID_15: jmethodID?
+
+    open func getViewportBorderBounds( scrollpane: JScrollPane? ) -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: scrollpane != nil ? scrollpane! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportBorderBounds", methodSig: "(Ljavax/swing/JScrollPane;)Ljava/awt/Rectangle;", methodCache: &ScrollPaneLayout.getViewportBorderBounds_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    open func getViewportBorderBounds( _ _scrollpane: JScrollPane? ) -> java_awt.Rectangle! {
+        return getViewportBorderBounds( scrollpane: _scrollpane )
+    }
+
+    /// public javax.swing.JViewport javax.swing.ScrollPaneLayout.getRowHeader()
+
+    private static var getRowHeader_MethodID_16: jmethodID?
+
+    open func getRowHeader() -> JViewport! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &ScrollPaneLayout.getRowHeader_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JViewport( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JViewport javax.swing.ScrollPaneLayout.getColumnHeader()
+
+    private static var getColumnHeader_MethodID_17: jmethodID?
+
+    open func getColumnHeader() -> JViewport! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &ScrollPaneLayout.getColumnHeader_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JViewport( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.ScrollPaneLayout.syncWithScrollPane(javax.swing.JScrollPane)
+
+    private static var syncWithScrollPane_MethodID_18: jmethodID?
+
+    open func syncWithScrollPane( sp: JScrollPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: sp != nil ? sp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "syncWithScrollPane", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &ScrollPaneLayout.syncWithScrollPane_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func syncWithScrollPane( _ _sp: JScrollPane? ) {
+        syncWithScrollPane( sp: _sp )
+    }
+
     /// protected java.awt.Component javax.swing.ScrollPaneLayout.addSingletonComponent(java.awt.Component,java.awt.Component)
 
-    private static var addSingletonComponent_MethodID_4: jmethodID?
+    private static var addSingletonComponent_MethodID_19: jmethodID?
 
     open func addSingletonComponent( oldC: java_awt.Component?, newC: java_awt.Component? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: oldC != nil ? oldC! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: newC != nil ? newC! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addSingletonComponent", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &ScrollPaneLayout.addSingletonComponent_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addSingletonComponent", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &ScrollPaneLayout.addSingletonComponent_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -498,224 +716,6 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
     /// private void javax.swing.ScrollPaneLayout.adjustForVSB(boolean,java.awt.Rectangle,java.awt.Rectangle,java.awt.Insets,boolean)
 
     /// private void javax.swing.ScrollPaneLayout.adjustForHSB(boolean,java.awt.Rectangle,java.awt.Rectangle,java.awt.Insets)
-
-    /// public javax.swing.JScrollBar javax.swing.ScrollPaneLayout.getHorizontalScrollBar()
-
-    private static var getHorizontalScrollBar_MethodID_5: jmethodID?
-
-    open func getHorizontalScrollBar() -> JScrollBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHorizontalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &ScrollPaneLayout.getHorizontalScrollBar_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JScrollBar( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.JScrollBar javax.swing.ScrollPaneLayout.getVerticalScrollBar()
-
-    private static var getVerticalScrollBar_MethodID_6: jmethodID?
-
-    open func getVerticalScrollBar() -> JScrollBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVerticalScrollBar", methodSig: "()Ljavax/swing/JScrollBar;", methodCache: &ScrollPaneLayout.getVerticalScrollBar_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JScrollBar( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.ScrollPaneLayout.getVerticalScrollBarPolicy()
-
-    private static var getVerticalScrollBarPolicy_MethodID_7: jmethodID?
-
-    open func getVerticalScrollBarPolicy() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalScrollBarPolicy", methodSig: "()I", methodCache: &ScrollPaneLayout.getVerticalScrollBarPolicy_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.ScrollPaneLayout.setVerticalScrollBarPolicy(int)
-
-    private static var setVerticalScrollBarPolicy_MethodID_8: jmethodID?
-
-    open func setVerticalScrollBarPolicy( x: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalScrollBarPolicy", methodSig: "(I)V", methodCache: &ScrollPaneLayout.setVerticalScrollBarPolicy_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setVerticalScrollBarPolicy( _ _x: Int ) {
-        setVerticalScrollBarPolicy( x: _x )
-    }
-
-    /// public int javax.swing.ScrollPaneLayout.getHorizontalScrollBarPolicy()
-
-    private static var getHorizontalScrollBarPolicy_MethodID_9: jmethodID?
-
-    open func getHorizontalScrollBarPolicy() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalScrollBarPolicy", methodSig: "()I", methodCache: &ScrollPaneLayout.getHorizontalScrollBarPolicy_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.ScrollPaneLayout.setHorizontalScrollBarPolicy(int)
-
-    private static var setHorizontalScrollBarPolicy_MethodID_10: jmethodID?
-
-    open func setHorizontalScrollBarPolicy( x: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalScrollBarPolicy", methodSig: "(I)V", methodCache: &ScrollPaneLayout.setHorizontalScrollBarPolicy_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setHorizontalScrollBarPolicy( _ _x: Int ) {
-        setHorizontalScrollBarPolicy( x: _x )
-    }
-
-    /// public java.awt.Rectangle javax.swing.ScrollPaneLayout.getViewportBorderBounds(javax.swing.JScrollPane)
-
-    private static var getViewportBorderBounds_MethodID_11: jmethodID?
-
-    open func getViewportBorderBounds( scrollpane: JScrollPane? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scrollpane != nil ? scrollpane! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewportBorderBounds", methodSig: "(Ljavax/swing/JScrollPane;)Ljava/awt/Rectangle;", methodCache: &ScrollPaneLayout.getViewportBorderBounds_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func getViewportBorderBounds( _ _scrollpane: JScrollPane? ) -> java_awt.Rectangle! {
-        return getViewportBorderBounds( scrollpane: _scrollpane )
-    }
-
-    /// public javax.swing.JViewport javax.swing.ScrollPaneLayout.getRowHeader()
-
-    private static var getRowHeader_MethodID_12: jmethodID?
-
-    open func getRowHeader() -> JViewport! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &ScrollPaneLayout.getRowHeader_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JViewport( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.JViewport javax.swing.ScrollPaneLayout.getColumnHeader()
-
-    private static var getColumnHeader_MethodID_13: jmethodID?
-
-    open func getColumnHeader() -> JViewport! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnHeader", methodSig: "()Ljavax/swing/JViewport;", methodCache: &ScrollPaneLayout.getColumnHeader_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JViewport( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.ScrollPaneLayout.syncWithScrollPane(javax.swing.JScrollPane)
-
-    private static var syncWithScrollPane_MethodID_14: jmethodID?
-
-    open func syncWithScrollPane( sp: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sp != nil ? sp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "syncWithScrollPane", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &ScrollPaneLayout.syncWithScrollPane_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func syncWithScrollPane( _ _sp: JScrollPane? ) {
-        syncWithScrollPane( sp: _sp )
-    }
-
-    /// public void javax.swing.ScrollPaneLayout.removeLayoutComponent(java.awt.Component)
-
-    private static var removeLayoutComponent_MethodID_15: jmethodID?
-
-    open func removeLayoutComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &ScrollPaneLayout.removeLayoutComponent_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
-        removeLayoutComponent( comp: _comp )
-    }
-
-    /// public void javax.swing.ScrollPaneLayout.addLayoutComponent(java.lang.String,java.awt.Component)
-
-    private static var addLayoutComponent_MethodID_16: jmethodID?
-
-    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &ScrollPaneLayout.addLayoutComponent_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
-        addLayoutComponent( name: _name, comp: _comp )
-    }
-
-    /// public void javax.swing.ScrollPaneLayout.layoutContainer(java.awt.Container)
-
-    private static var layoutContainer_MethodID_17: jmethodID?
-
-    open func layoutContainer( parent: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &ScrollPaneLayout.layoutContainer_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func layoutContainer( _ _parent: java_awt.Container? ) {
-        layoutContainer( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.ScrollPaneLayout.preferredLayoutSize(java.awt.Container)
-
-    private static var preferredLayoutSize_MethodID_18: jmethodID?
-
-    open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &ScrollPaneLayout.preferredLayoutSize_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func preferredLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return preferredLayoutSize( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.ScrollPaneLayout.minimumLayoutSize(java.awt.Container)
-
-    private static var minimumLayoutSize_MethodID_19: jmethodID?
-
-    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &ScrollPaneLayout.minimumLayoutSize_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return minimumLayoutSize( parent: _parent )
-    }
 
 }
 

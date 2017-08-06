@@ -106,86 +106,17 @@ open class BasicOptionPaneUI_ButtonAreaLayout: java_swift.JavaObject, java_awt.L
     }
 
 
-    /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.setSyncAllWidths(boolean)
-
-    private static var setSyncAllWidths_MethodID_3: jmethodID?
-
-    open func setSyncAllWidths( newValue: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSyncAllWidths", methodSig: "(Z)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.setSyncAllWidths_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func setSyncAllWidths( _ _newValue: Bool ) {
-        setSyncAllWidths( newValue: _newValue )
-    }
-
-    /// public boolean javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.getSyncAllWidths()
-
-    private static var getSyncAllWidths_MethodID_4: jmethodID?
-
-    open func getSyncAllWidths() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSyncAllWidths", methodSig: "()Z", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.getSyncAllWidths_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.setPadding(int)
-
-    private static var setPadding_MethodID_5: jmethodID?
-
-    open func setPadding( newPadding: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newPadding, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPadding", methodSig: "(I)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.setPadding_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setPadding( _ _newPadding: Int ) {
-        setPadding( newPadding: _newPadding )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.setCentersChildren(boolean)
-
-    private static var setCentersChildren_MethodID_6: jmethodID?
-
-    open func setCentersChildren( newValue: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCentersChildren", methodSig: "(Z)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.setCentersChildren_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setCentersChildren( _ _newValue: Bool ) {
-        setCentersChildren( newValue: _newValue )
-    }
-
-    /// public boolean javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.getCentersChildren()
-
-    private static var getCentersChildren_MethodID_7: jmethodID?
-
-    open func getCentersChildren() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCentersChildren", methodSig: "()Z", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.getCentersChildren_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// private int javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.getOrientation(java.awt.Container)
 
     /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.removeLayoutComponent(java.awt.Component)
 
-    private static var removeLayoutComponent_MethodID_8: jmethodID?
+    private static var removeLayoutComponent_MethodID_3: jmethodID?
 
     open func removeLayoutComponent( comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.removeLayoutComponent_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.removeLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
@@ -194,14 +125,14 @@ open class BasicOptionPaneUI_ButtonAreaLayout: java_swift.JavaObject, java_awt.L
 
     /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    private static var addLayoutComponent_MethodID_9: jmethodID?
+    private static var addLayoutComponent_MethodID_4: jmethodID?
 
     open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.addLayoutComponent_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
@@ -210,13 +141,13 @@ open class BasicOptionPaneUI_ButtonAreaLayout: java_swift.JavaObject, java_awt.L
 
     /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.layoutContainer(java.awt.Container)
 
-    private static var layoutContainer_MethodID_10: jmethodID?
+    private static var layoutContainer_MethodID_5: jmethodID?
 
     open func layoutContainer( parent: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.layoutContainer_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.layoutContainer_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func layoutContainer( _ _parent: java_awt.Container? ) {
@@ -225,13 +156,13 @@ open class BasicOptionPaneUI_ButtonAreaLayout: java_swift.JavaObject, java_awt.L
 
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.preferredLayoutSize(java.awt.Container)
 
-    private static var preferredLayoutSize_MethodID_11: jmethodID?
+    private static var preferredLayoutSize_MethodID_6: jmethodID?
 
     open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.preferredLayoutSize_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.preferredLayoutSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -242,13 +173,13 @@ open class BasicOptionPaneUI_ButtonAreaLayout: java_swift.JavaObject, java_awt.L
 
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.minimumLayoutSize(java.awt.Container)
 
-    private static var minimumLayoutSize_MethodID_12: jmethodID?
+    private static var minimumLayoutSize_MethodID_7: jmethodID?
 
     open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.minimumLayoutSize_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.minimumLayoutSize_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -256,6 +187,75 @@ open class BasicOptionPaneUI_ButtonAreaLayout: java_swift.JavaObject, java_awt.L
     open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
         return minimumLayoutSize( parent: _parent )
     }
+
+    /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.setSyncAllWidths(boolean)
+
+    private static var setSyncAllWidths_MethodID_8: jmethodID?
+
+    open func setSyncAllWidths( newValue: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSyncAllWidths", methodSig: "(Z)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.setSyncAllWidths_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setSyncAllWidths( _ _newValue: Bool ) {
+        setSyncAllWidths( newValue: _newValue )
+    }
+
+    /// public boolean javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.getSyncAllWidths()
+
+    private static var getSyncAllWidths_MethodID_9: jmethodID?
+
+    open func getSyncAllWidths() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSyncAllWidths", methodSig: "()Z", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.getSyncAllWidths_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.setPadding(int)
+
+    private static var setPadding_MethodID_10: jmethodID?
+
+    open func setPadding( newPadding: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newPadding, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPadding", methodSig: "(I)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.setPadding_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setPadding( _ _newPadding: Int ) {
+        setPadding( newPadding: _newPadding )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.setCentersChildren(boolean)
+
+    private static var setCentersChildren_MethodID_11: jmethodID?
+
+    open func setCentersChildren( newValue: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCentersChildren", methodSig: "(Z)V", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.setCentersChildren_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setCentersChildren( _ _newValue: Bool ) {
+        setCentersChildren( newValue: _newValue )
+    }
+
+    /// public boolean javax.swing.plaf.basic.BasicOptionPaneUI$ButtonAreaLayout.getCentersChildren()
+
+    private static var getCentersChildren_MethodID_12: jmethodID?
+
+    open func getCentersChildren() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCentersChildren", methodSig: "()Z", methodCache: &BasicOptionPaneUI_ButtonAreaLayout.getCentersChildren_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
 }
 

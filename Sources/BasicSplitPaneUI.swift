@@ -436,493 +436,15 @@ open class BasicSplitPaneUI: SplitPaneUI {
 
     /// private javax.swing.plaf.basic.BasicSplitPaneUI$Handler javax.swing.plaf.basic.BasicSplitPaneUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicSplitPaneUI.getInputMap(int)
-
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicSplitPaneUI.createUI(javax.swing.JComponent)
-
-    private static var createUI_MethodID_2: jmethodID?
-
-    open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicSplitPaneUI", classCache: &BasicSplitPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
-        return createUI( x: _x )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.dragDividerTo(int)
-
-    private static var dragDividerTo_MethodID_3: jmethodID?
-
-    open func dragDividerTo( location: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragDividerTo", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.dragDividerTo_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func dragDividerTo( _ _location: Int ) {
-        dragDividerTo( location: _location )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.finishDraggingTo(int)
-
-    private static var finishDraggingTo_MethodID_4: jmethodID?
-
-    open func finishDraggingTo( location: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishDraggingTo", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.finishDraggingTo_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func finishDraggingTo( _ _location: Int ) {
-        finishDraggingTo( location: _location )
-    }
-
-    /// public java.awt.Component javax.swing.plaf.basic.BasicSplitPaneUI.getNonContinuousLayoutDivider()
-
-    private static var getNonContinuousLayoutDivider_MethodID_5: jmethodID?
-
-    open func getNonContinuousLayoutDivider() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNonContinuousLayoutDivider", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSplitPaneUI.getNonContinuousLayoutDivider_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// void javax.swing.plaf.basic.BasicSplitPaneUI.setKeepHidden(boolean)
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.startDragging()
-
-    private static var startDragging_MethodID_6: jmethodID?
-
-    open func startDragging() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDragging", methodSig: "()V", methodCache: &BasicSplitPaneUI.startDragging_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardUpLeftListener()
-
-    private static var createKeyboardUpLeftListener_MethodID_7: jmethodID?
-
-    open func createKeyboardUpLeftListener() -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardUpLeftListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardUpLeftListener_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardDownRightListener()
-
-    private static var createKeyboardDownRightListener_MethodID_8: jmethodID?
-
-    open func createKeyboardDownRightListener() -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardDownRightListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardDownRightListener_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardHomeListener()
-
-    private static var createKeyboardHomeListener_MethodID_9: jmethodID?
-
-    open func createKeyboardHomeListener() -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardHomeListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardHomeListener_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardEndListener()
-
-    private static var createKeyboardEndListener_MethodID_10: jmethodID?
-
-    open func createKeyboardEndListener() -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardEndListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardEndListener_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardResizeToggleListener()
-
-    private static var createKeyboardResizeToggleListener_MethodID_11: jmethodID?
-
-    open func createKeyboardResizeToggleListener() -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardResizeToggleListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardResizeToggleListener_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getLastDragLocation()
-
-    private static var getLastDragLocation_MethodID_12: jmethodID?
-
-    open func getLastDragLocation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastDragLocation", methodSig: "()I", methodCache: &BasicSplitPaneUI.getLastDragLocation_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setLastDragLocation(int)
-
-    private static var setLastDragLocation_MethodID_13: jmethodID?
-
-    open func setLastDragLocation( l: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLastDragLocation", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.setLastDragLocation_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setLastDragLocation( _ _l: Int ) {
-        setLastDragLocation( l: _l )
-    }
-
-    /// int javax.swing.plaf.basic.BasicSplitPaneUI.getKeyboardMoveIncrement()
-
-    /// public javax.swing.plaf.basic.BasicSplitPaneDivider javax.swing.plaf.basic.BasicSplitPaneUI.getDivider()
-
-    private static var getDivider_MethodID_14: jmethodID?
-
-    open func getDivider() -> BasicSplitPaneDivider! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDivider", methodSig: "()Ljavax/swing/plaf/basic/BasicSplitPaneDivider;", methodCache: &BasicSplitPaneUI.getDivider_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BasicSplitPaneDivider( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.Component javax.swing.plaf.basic.BasicSplitPaneUI.createDefaultNonContinuousLayoutDivider()
-
-    private static var createDefaultNonContinuousLayoutDivider_MethodID_15: jmethodID?
-
-    open func createDefaultNonContinuousLayoutDivider() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultNonContinuousLayoutDivider", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSplitPaneUI.createDefaultNonContinuousLayoutDivider_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.setNonContinuousLayoutDivider(java.awt.Component,boolean)
-
-    private static var setNonContinuousLayoutDivider_MethodID_16: jmethodID?
-
-    open func setNonContinuousLayoutDivider( newDivider: java_awt.Component?, rememberSizes: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newDivider != nil ? newDivider! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: rememberSizes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNonContinuousLayoutDivider", methodSig: "(Ljava/awt/Component;Z)V", methodCache: &BasicSplitPaneUI.setNonContinuousLayoutDivider_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setNonContinuousLayoutDivider( _ _newDivider: java_awt.Component?, _ _rememberSizes: Bool ) {
-        setNonContinuousLayoutDivider( newDivider: _newDivider, rememberSizes: _rememberSizes )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.setNonContinuousLayoutDivider(java.awt.Component)
-
-    private static var setNonContinuousLayoutDivider_MethodID_17: jmethodID?
-
-    open func setNonContinuousLayoutDivider( newDivider: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newDivider != nil ? newDivider! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNonContinuousLayoutDivider", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSplitPaneUI.setNonContinuousLayoutDivider_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setNonContinuousLayoutDivider( _ _newDivider: java_awt.Component? ) {
-        setNonContinuousLayoutDivider( newDivider: _newDivider )
-    }
-
-    /// private void javax.swing.plaf.basic.BasicSplitPaneUI.addHeavyweightDivider()
-
-    /// public javax.swing.plaf.basic.BasicSplitPaneDivider javax.swing.plaf.basic.BasicSplitPaneUI.createDefaultDivider()
-
-    private static var createDefaultDivider_MethodID_18: jmethodID?
-
-    open func createDefaultDivider() -> BasicSplitPaneDivider! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultDivider", methodSig: "()Ljavax/swing/plaf/basic/BasicSplitPaneDivider;", methodCache: &BasicSplitPaneUI.createDefaultDivider_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BasicSplitPaneDivider( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.resetLayoutManager()
-
-    private static var resetLayoutManager_MethodID_19: jmethodID?
-
-    open func resetLayoutManager() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetLayoutManager", methodSig: "()V", methodCache: &BasicSplitPaneUI.resetLayoutManager_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-
-    /// private boolean javax.swing.plaf.basic.BasicSplitPaneUI.getKeepHidden()
-
-    /// protected int javax.swing.plaf.basic.BasicSplitPaneUI.getDividerBorderSize()
-
-    private static var getDividerBorderSize_MethodID_20: jmethodID?
-
-    open func getDividerBorderSize() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerBorderSize", methodSig: "()I", methodCache: &BasicSplitPaneUI.getDividerBorderSize_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getDividerLocation(javax.swing.JSplitPane)
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setDividerLocation(javax.swing.JSplitPane,int)
-
-    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getMinimumDividerLocation(javax.swing.JSplitPane)
-
-    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getMaximumDividerLocation(javax.swing.JSplitPane)
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_21: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, jc: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &BasicSplitPaneUI.paint_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _jc: JComponent? ) {
-        paint( g: _g, jc: _jc )
-    }
-
-    /// public java.awt.Insets javax.swing.plaf.basic.BasicSplitPaneUI.getInsets(javax.swing.JComponent)
-
-    private static var getInsets_MethodID_22: jmethodID?
-
-    open func getInsets( jc: JComponent? ) -> java_awt.Insets! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Insets;", methodCache: &BasicSplitPaneUI.getInsets_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
-    }
-
-    open func getInsets( _ _jc: JComponent? ) -> java_awt.Insets! {
-        return getInsets( jc: _jc )
-    }
-
-    /// static void javax.swing.plaf.basic.BasicSplitPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.installDefaults()
-
-    private static var installDefaults_MethodID_23: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicSplitPaneUI.installDefaults_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.installListeners()
-
-    private static var installListeners_MethodID_24: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicSplitPaneUI.installListeners_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_25: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicSplitPaneUI.installKeyboardActions_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_26: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicSplitPaneUI.uninstallDefaults_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_27: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicSplitPaneUI.uninstallListeners_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_28: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicSplitPaneUI.uninstallKeyboardActions_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSplitPaneUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_29: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicSplitPaneUI.createPropertyChangeListener_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicSplitPaneUI.createFocusListener()
-
-    private static var createFocusListener_MethodID_30: jmethodID?
-
-    open func createFocusListener() -> java_awt.FocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicSplitPaneUI.createFocusListener_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.resetToPreferredSizes(javax.swing.JSplitPane)
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.finishedPaintingChildren(javax.swing.JSplitPane,java.awt.Graphics)
-
-    private static var finishedPaintingChildren_MethodID_31: jmethodID?
-
-    open func finishedPaintingChildren( sp: JSplitPane?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sp != nil ? sp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &BasicSplitPaneUI.finishedPaintingChildren_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    override open func finishedPaintingChildren( _ _sp: JSplitPane?, _ _g: java_awt.Graphics? ) {
-        finishedPaintingChildren( sp: _sp, g: _g )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setContinuousLayout(boolean)
-
-    private static var setContinuousLayout_MethodID_32: jmethodID?
-
-    open func setContinuousLayout( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContinuousLayout", methodSig: "(Z)V", methodCache: &BasicSplitPaneUI.setContinuousLayout_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setContinuousLayout( _ _b: Bool ) {
-        setContinuousLayout( b: _b )
-    }
-
-    /// public boolean javax.swing.plaf.basic.BasicSplitPaneUI.isContinuousLayout()
-
-    private static var isContinuousLayout_MethodID_33: jmethodID?
-
-    open func isContinuousLayout() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContinuousLayout", methodSig: "()Z", methodCache: &BasicSplitPaneUI.isContinuousLayout_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public javax.swing.JSplitPane javax.swing.plaf.basic.BasicSplitPaneUI.getSplitPane()
-
-    private static var getSplitPane_MethodID_34: jmethodID?
-
-    open func getSplitPane() -> JSplitPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSplitPane", methodSig: "()Ljavax/swing/JSplitPane;", methodCache: &BasicSplitPaneUI.getSplitPane_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JSplitPane( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setOrientation(int)
-
-    private static var setOrientation_MethodID_35: jmethodID?
-
-    open func setOrientation( orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.setOrientation_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func setOrientation( _ _orientation: Int ) {
-        setOrientation( orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallUI(javax.swing.JComponent)
-
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var getPreferredSize_MethodID_36: jmethodID?
+    private static var getPreferredSize_MethodID_2: jmethodID?
 
     open func getPreferredSize( jc: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI.getPreferredSize_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI.getPreferredSize_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -933,13 +455,13 @@ open class BasicSplitPaneUI: SplitPaneUI {
 
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI.getMinimumSize(javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_37: jmethodID?
+    private static var getMinimumSize_MethodID_3: jmethodID?
 
     open func getMinimumSize( jc: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI.getMinimumSize_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI.getMinimumSize_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -950,25 +472,25 @@ open class BasicSplitPaneUI: SplitPaneUI {
 
     /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getOrientation()
 
-    private static var getOrientation_MethodID_38: jmethodID?
+    private static var getOrientation_MethodID_4: jmethodID?
 
     open func getOrientation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &BasicSplitPaneUI.getOrientation_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &BasicSplitPaneUI.getOrientation_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var getMaximumSize_MethodID_39: jmethodID?
+    private static var getMaximumSize_MethodID_5: jmethodID?
 
     open func getMaximumSize( jc: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI.getMaximumSize_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI.getMaximumSize_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -976,6 +498,484 @@ open class BasicSplitPaneUI: SplitPaneUI {
     override open func getMaximumSize( _ _jc: JComponent? ) -> java_awt.Dimension! {
         return getMaximumSize( jc: _jc )
     }
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicSplitPaneUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_6: jmethodID?
+
+    open class func createUI( x: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicSplitPaneUI", classCache: &BasicSplitPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
+        return createUI( x: _x )
+    }
+
+    /// public java.awt.Insets javax.swing.plaf.basic.BasicSplitPaneUI.getInsets(javax.swing.JComponent)
+
+    private static var getInsets_MethodID_7: jmethodID?
+
+    open func getInsets( jc: JComponent? ) -> java_awt.Insets! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Insets;", methodCache: &BasicSplitPaneUI.getInsets_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
+    }
+
+    open func getInsets( _ _jc: JComponent? ) -> java_awt.Insets! {
+        return getInsets( jc: _jc )
+    }
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicSplitPaneUI.getInputMap(int)
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setOrientation(int)
+
+    private static var setOrientation_MethodID_8: jmethodID?
+
+    open func setOrientation( orientation: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.setOrientation_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setOrientation( _ _orientation: Int ) {
+        setOrientation( orientation: _orientation )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.resetToPreferredSizes(javax.swing.JSplitPane)
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.finishedPaintingChildren(javax.swing.JSplitPane,java.awt.Graphics)
+
+    private static var finishedPaintingChildren_MethodID_9: jmethodID?
+
+    open func finishedPaintingChildren( sp: JSplitPane?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: sp != nil ? sp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &BasicSplitPaneUI.finishedPaintingChildren_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func finishedPaintingChildren( _ _sp: JSplitPane?, _ _g: java_awt.Graphics? ) {
+        finishedPaintingChildren( sp: _sp, g: _g )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setContinuousLayout(boolean)
+
+    private static var setContinuousLayout_MethodID_10: jmethodID?
+
+    open func setContinuousLayout( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContinuousLayout", methodSig: "(Z)V", methodCache: &BasicSplitPaneUI.setContinuousLayout_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setContinuousLayout( _ _b: Bool ) {
+        setContinuousLayout( b: _b )
+    }
+
+    /// public boolean javax.swing.plaf.basic.BasicSplitPaneUI.isContinuousLayout()
+
+    private static var isContinuousLayout_MethodID_11: jmethodID?
+
+    open func isContinuousLayout() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContinuousLayout", methodSig: "()Z", methodCache: &BasicSplitPaneUI.isContinuousLayout_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public javax.swing.JSplitPane javax.swing.plaf.basic.BasicSplitPaneUI.getSplitPane()
+
+    private static var getSplitPane_MethodID_12: jmethodID?
+
+    open func getSplitPane() -> JSplitPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSplitPane", methodSig: "()Ljavax/swing/JSplitPane;", methodCache: &BasicSplitPaneUI.getSplitPane_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JSplitPane( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paint_MethodID_13: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, jc: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &BasicSplitPaneUI.paint_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _jc: JComponent? ) {
+        paint( g: _g, jc: _jc )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getDividerLocation(javax.swing.JSplitPane)
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setDividerLocation(javax.swing.JSplitPane,int)
+
+    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getMinimumDividerLocation(javax.swing.JSplitPane)
+
+    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getMaximumDividerLocation(javax.swing.JSplitPane)
+
+    /// static void javax.swing.plaf.basic.BasicSplitPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.installDefaults()
+
+    private static var installDefaults_MethodID_14: jmethodID?
+
+    open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicSplitPaneUI.installDefaults_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.installListeners()
+
+    private static var installListeners_MethodID_15: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicSplitPaneUI.installListeners_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_16: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicSplitPaneUI.installKeyboardActions_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_17: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicSplitPaneUI.uninstallDefaults_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_18: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicSplitPaneUI.uninstallListeners_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_19: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicSplitPaneUI.uninstallKeyboardActions_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSplitPaneUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_20: jmethodID?
+
+    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicSplitPaneUI.createPropertyChangeListener_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicSplitPaneUI.createFocusListener()
+
+    private static var createFocusListener_MethodID_21: jmethodID?
+
+    open func createFocusListener() -> java_awt.FocusListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicSplitPaneUI.createFocusListener_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.dragDividerTo(int)
+
+    private static var dragDividerTo_MethodID_22: jmethodID?
+
+    open func dragDividerTo( location: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: location, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragDividerTo", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.dragDividerTo_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func dragDividerTo( _ _location: Int ) {
+        dragDividerTo( location: _location )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.finishDraggingTo(int)
+
+    private static var finishDraggingTo_MethodID_23: jmethodID?
+
+    open func finishDraggingTo( location: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: location, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishDraggingTo", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.finishDraggingTo_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func finishDraggingTo( _ _location: Int ) {
+        finishDraggingTo( location: _location )
+    }
+
+    /// public java.awt.Component javax.swing.plaf.basic.BasicSplitPaneUI.getNonContinuousLayoutDivider()
+
+    private static var getNonContinuousLayoutDivider_MethodID_24: jmethodID?
+
+    open func getNonContinuousLayoutDivider() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNonContinuousLayoutDivider", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSplitPaneUI.getNonContinuousLayoutDivider_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// void javax.swing.plaf.basic.BasicSplitPaneUI.setKeepHidden(boolean)
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.startDragging()
+
+    private static var startDragging_MethodID_25: jmethodID?
+
+    open func startDragging() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startDragging", methodSig: "()V", methodCache: &BasicSplitPaneUI.startDragging_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardUpLeftListener()
+
+    private static var createKeyboardUpLeftListener_MethodID_26: jmethodID?
+
+    open func createKeyboardUpLeftListener() -> java_awt.ActionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardUpLeftListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardUpLeftListener_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardDownRightListener()
+
+    private static var createKeyboardDownRightListener_MethodID_27: jmethodID?
+
+    open func createKeyboardDownRightListener() -> java_awt.ActionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardDownRightListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardDownRightListener_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardHomeListener()
+
+    private static var createKeyboardHomeListener_MethodID_28: jmethodID?
+
+    open func createKeyboardHomeListener() -> java_awt.ActionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardHomeListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardHomeListener_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardEndListener()
+
+    private static var createKeyboardEndListener_MethodID_29: jmethodID?
+
+    open func createKeyboardEndListener() -> java_awt.ActionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardEndListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardEndListener_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.ActionListener javax.swing.plaf.basic.BasicSplitPaneUI.createKeyboardResizeToggleListener()
+
+    private static var createKeyboardResizeToggleListener_MethodID_30: jmethodID?
+
+    open func createKeyboardResizeToggleListener() -> java_awt.ActionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyboardResizeToggleListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &BasicSplitPaneUI.createKeyboardResizeToggleListener_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.plaf.basic.BasicSplitPaneUI.getLastDragLocation()
+
+    private static var getLastDragLocation_MethodID_31: jmethodID?
+
+    open func getLastDragLocation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastDragLocation", methodSig: "()I", methodCache: &BasicSplitPaneUI.getLastDragLocation_MethodID_31, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI.setLastDragLocation(int)
+
+    private static var setLastDragLocation_MethodID_32: jmethodID?
+
+    open func setLastDragLocation( l: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLastDragLocation", methodSig: "(I)V", methodCache: &BasicSplitPaneUI.setLastDragLocation_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func setLastDragLocation( _ _l: Int ) {
+        setLastDragLocation( l: _l )
+    }
+
+    /// int javax.swing.plaf.basic.BasicSplitPaneUI.getKeyboardMoveIncrement()
+
+    /// public javax.swing.plaf.basic.BasicSplitPaneDivider javax.swing.plaf.basic.BasicSplitPaneUI.getDivider()
+
+    private static var getDivider_MethodID_33: jmethodID?
+
+    open func getDivider() -> BasicSplitPaneDivider! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDivider", methodSig: "()Ljavax/swing/plaf/basic/BasicSplitPaneDivider;", methodCache: &BasicSplitPaneUI.getDivider_MethodID_33, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BasicSplitPaneDivider( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Component javax.swing.plaf.basic.BasicSplitPaneUI.createDefaultNonContinuousLayoutDivider()
+
+    private static var createDefaultNonContinuousLayoutDivider_MethodID_34: jmethodID?
+
+    open func createDefaultNonContinuousLayoutDivider() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultNonContinuousLayoutDivider", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSplitPaneUI.createDefaultNonContinuousLayoutDivider_MethodID_34, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.setNonContinuousLayoutDivider(java.awt.Component)
+
+    private static var setNonContinuousLayoutDivider_MethodID_35: jmethodID?
+
+    open func setNonContinuousLayoutDivider( newDivider: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newDivider != nil ? newDivider! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNonContinuousLayoutDivider", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSplitPaneUI.setNonContinuousLayoutDivider_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+    open func setNonContinuousLayoutDivider( _ _newDivider: java_awt.Component? ) {
+        setNonContinuousLayoutDivider( newDivider: _newDivider )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.setNonContinuousLayoutDivider(java.awt.Component,boolean)
+
+    private static var setNonContinuousLayoutDivider_MethodID_36: jmethodID?
+
+    open func setNonContinuousLayoutDivider( newDivider: java_awt.Component?, rememberSizes: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newDivider != nil ? newDivider! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: rememberSizes, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNonContinuousLayoutDivider", methodSig: "(Ljava/awt/Component;Z)V", methodCache: &BasicSplitPaneUI.setNonContinuousLayoutDivider_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func setNonContinuousLayoutDivider( _ _newDivider: java_awt.Component?, _ _rememberSizes: Bool ) {
+        setNonContinuousLayoutDivider( newDivider: _newDivider, rememberSizes: _rememberSizes )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicSplitPaneUI.addHeavyweightDivider()
+
+    /// public javax.swing.plaf.basic.BasicSplitPaneDivider javax.swing.plaf.basic.BasicSplitPaneUI.createDefaultDivider()
+
+    private static var createDefaultDivider_MethodID_37: jmethodID?
+
+    open func createDefaultDivider() -> BasicSplitPaneDivider! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultDivider", methodSig: "()Ljavax/swing/plaf/basic/BasicSplitPaneDivider;", methodCache: &BasicSplitPaneUI.createDefaultDivider_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BasicSplitPaneDivider( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI.resetLayoutManager()
+
+    private static var resetLayoutManager_MethodID_38: jmethodID?
+
+    open func resetLayoutManager() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetLayoutManager", methodSig: "()V", methodCache: &BasicSplitPaneUI.resetLayoutManager_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+
+    /// private boolean javax.swing.plaf.basic.BasicSplitPaneUI.getKeepHidden()
+
+    /// protected int javax.swing.plaf.basic.BasicSplitPaneUI.getDividerBorderSize()
+
+    private static var getDividerBorderSize_MethodID_39: jmethodID?
+
+    open func getDividerBorderSize() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerBorderSize", methodSig: "()I", methodCache: &BasicSplitPaneUI.getDividerBorderSize_MethodID_39, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
 }
 

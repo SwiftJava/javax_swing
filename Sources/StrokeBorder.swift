@@ -56,6 +56,10 @@ open class StrokeBorder: AbstractBorder {
         self.init( stroke: _stroke, paint: _paint )
     }
 
+    /// public void javax.swing.border.StrokeBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    /// public java.awt.Insets javax.swing.border.StrokeBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
     /// public java.awt.Paint javax.swing.border.StrokeBorder.getPaint()
 
     private static var getPaint_MethodID_3: jmethodID?
@@ -81,10 +85,6 @@ open class StrokeBorder: AbstractBorder {
         return __return != nil ? java_awt.BasicStroke( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.border.StrokeBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
-
-    /// public java.awt.Insets javax.swing.border.StrokeBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
 
 }
 

@@ -104,6 +104,10 @@ open class UIDefaults_ProxyLazyValue: java_swift.JavaObject, UIDefaults_LazyValu
 
     /// static java.lang.Class[] javax.swing.UIDefaults$ProxyLazyValue.access$400(javax.swing.UIDefaults$ProxyLazyValue,java.lang.Object[])
 
+    /// private java.lang.Class[] javax.swing.UIDefaults$ProxyLazyValue.getClassArray(java.lang.Object[])
+
+    /// private java.lang.String javax.swing.UIDefaults$ProxyLazyValue.printArgs(java.lang.Object[])
+
     /// public java.lang.Object javax.swing.UIDefaults$ProxyLazyValue.createValue(javax.swing.UIDefaults)
 
     private static var createValue_MethodID_5: jmethodID?
@@ -120,10 +124,6 @@ open class UIDefaults_ProxyLazyValue: java_swift.JavaObject, UIDefaults_LazyValu
     open func createValue( _ _arg0: UIDefaults? ) -> java_swift.JavaObject! {
         return createValue( arg0: _arg0 )
     }
-
-    /// private java.lang.Class[] javax.swing.UIDefaults$ProxyLazyValue.getClassArray(java.lang.Object[])
-
-    /// private java.lang.String javax.swing.UIDefaults$ProxyLazyValue.printArgs(java.lang.Object[])
 
 }
 

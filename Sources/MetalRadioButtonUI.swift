@@ -192,27 +192,14 @@ open class MetalRadioButtonUI: BasicRadioButtonUI {
         return createUI( c: _c )
     }
 
-    /// protected java.awt.Color javax.swing.plaf.metal.MetalRadioButtonUI.getFocusColor()
-
-    private static var getFocusColor_MethodID_3: jmethodID?
-
-    open func getFocusColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalRadioButtonUI.getFocusColor_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
     /// protected java.awt.Color javax.swing.plaf.metal.MetalRadioButtonUI.getSelectColor()
 
-    private static var getSelectColor_MethodID_4: jmethodID?
+    private static var getSelectColor_MethodID_3: jmethodID?
 
     open func getSelectColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalRadioButtonUI.getSelectColor_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalRadioButtonUI.getSelectColor_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -220,39 +207,9 @@ open class MetalRadioButtonUI: BasicRadioButtonUI {
 
     /// public synchronized void javax.swing.plaf.metal.MetalRadioButtonUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.metal.MetalRadioButtonUI.installDefaults(javax.swing.AbstractButton)
-
-    private static var installDefaults_MethodID_5: jmethodID?
-
-    override open func installDefaults( b: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalRadioButtonUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func installDefaults( _ _b: AbstractButton? ) {
-        installDefaults( b: _b )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalRadioButtonUI.uninstallDefaults(javax.swing.AbstractButton)
-
-    private static var uninstallDefaults_MethodID_6: jmethodID?
-
-    override open func uninstallDefaults( b: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalRadioButtonUI.uninstallDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func uninstallDefaults( _ _b: AbstractButton? ) {
-        uninstallDefaults( b: _b )
-    }
-
     /// protected void javax.swing.plaf.metal.MetalRadioButtonUI.paintFocus(java.awt.Graphics,java.awt.Rectangle,java.awt.Dimension)
 
-    private static var paintFocus_MethodID_7: jmethodID?
+    private static var paintFocus_MethodID_4: jmethodID?
 
     open func paintFocus( g: java_awt.Graphics?, t: java_awt.Rectangle?, d: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -260,7 +217,7 @@ open class MetalRadioButtonUI: BasicRadioButtonUI {
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Dimension;)V", methodCache: &MetalRadioButtonUI.paintFocus_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Dimension;)V", methodCache: &MetalRadioButtonUI.paintFocus_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func paintFocus( _ _g: java_awt.Graphics?, _ _t: java_awt.Rectangle?, _ _d: java_awt.Dimension? ) {
@@ -269,12 +226,55 @@ open class MetalRadioButtonUI: BasicRadioButtonUI {
 
     /// protected java.awt.Color javax.swing.plaf.metal.MetalRadioButtonUI.getDisabledTextColor()
 
-    private static var getDisabledTextColor_MethodID_8: jmethodID?
+    private static var getDisabledTextColor_MethodID_5: jmethodID?
 
     open func getDisabledTextColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledTextColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalRadioButtonUI.getDisabledTextColor_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledTextColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalRadioButtonUI.getDisabledTextColor_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.metal.MetalRadioButtonUI.installDefaults(javax.swing.AbstractButton)
+
+    private static var installDefaults_MethodID_6: jmethodID?
+
+    override open func installDefaults( b: AbstractButton? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalRadioButtonUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func installDefaults( _ _b: AbstractButton? ) {
+        installDefaults( b: _b )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalRadioButtonUI.uninstallDefaults(javax.swing.AbstractButton)
+
+    private static var uninstallDefaults_MethodID_7: jmethodID?
+
+    override open func uninstallDefaults( b: AbstractButton? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalRadioButtonUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallDefaults( _ _b: AbstractButton? ) {
+        uninstallDefaults( b: _b )
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.metal.MetalRadioButtonUI.getFocusColor()
+
+    private static var getFocusColor_MethodID_8: jmethodID?
+
+    open func getFocusColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalRadioButtonUI.getFocusColor_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }

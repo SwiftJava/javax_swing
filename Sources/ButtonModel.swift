@@ -8,30 +8,6 @@ import java_awt
 
 public protocol ButtonModel: java_awt.ItemSelectable {
 
-    /// public abstract void javax.swing.ButtonModel.setActionCommand(java.lang.String)
-
-    func setActionCommand( s: String? )
-
-    /// public abstract void javax.swing.ButtonModel.addActionListener(java.awt.event.ActionListener)
-
-    func addActionListener( l: java_awt.ActionListener? )
-
-    /// public abstract void javax.swing.ButtonModel.setMnemonic(int)
-
-    func setMnemonic( key: Int )
-
-    /// public abstract java.lang.String javax.swing.ButtonModel.getActionCommand()
-
-    func getActionCommand() -> String!
-
-    /// public abstract void javax.swing.ButtonModel.addChangeListener(javax.swing.event.ChangeListener)
-
-    func addChangeListener( l: ChangeListener? )
-
-    /// public abstract void javax.swing.ButtonModel.removeChangeListener(javax.swing.event.ChangeListener)
-
-    func removeChangeListener( l: ChangeListener? )
-
     /// public abstract boolean javax.swing.ButtonModel.isArmed()
 
     func isArmed() -> Bool
@@ -60,9 +36,29 @@ public protocol ButtonModel: java_awt.ItemSelectable {
 
     func setEnabled( b: Bool )
 
+    /// public abstract void javax.swing.ButtonModel.setActionCommand(java.lang.String)
+
+    func setActionCommand( s: String? )
+
+    /// public abstract void javax.swing.ButtonModel.addActionListener(java.awt.event.ActionListener)
+
+    func addActionListener( l: java_awt.ActionListener? )
+
+    /// public abstract void javax.swing.ButtonModel.setMnemonic(int)
+
+    func setMnemonic( key: Int )
+
     /// public abstract void javax.swing.ButtonModel.setGroup(javax.swing.ButtonGroup)
 
     func setGroup( group: ButtonGroup? )
+
+    /// public abstract void javax.swing.ButtonModel.addChangeListener(javax.swing.event.ChangeListener)
+
+    func addChangeListener( l: ChangeListener? )
+
+    /// public abstract void javax.swing.ButtonModel.removeChangeListener(javax.swing.event.ChangeListener)
+
+    func removeChangeListener( l: ChangeListener? )
 
     /// public abstract void javax.swing.ButtonModel.addItemListener(java.awt.event.ItemListener)
 
@@ -92,6 +88,10 @@ public protocol ButtonModel: java_awt.ItemSelectable {
 
     func isRollover() -> Bool
 
+    /// public abstract java.lang.String javax.swing.ButtonModel.getActionCommand()
+
+    func getActionCommand() -> String!
+
 }
 
 
@@ -99,138 +99,51 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     private static var ButtonModelJNIClass: jclass?
 
-    /// public abstract void javax.swing.ButtonModel.setActionCommand(java.lang.String)
-
-    private static var setActionCommand_MethodID_22: jmethodID?
-
-    open func setActionCommand( s: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &ButtonModelForward.setActionCommand_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setActionCommand( _ _s: String? ) {
-        setActionCommand( s: _s )
-    }
-
-    /// public abstract void javax.swing.ButtonModel.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_23: jmethodID?
-
-    open func addActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &ButtonModelForward.addActionListener_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: java_awt.ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// public abstract void javax.swing.ButtonModel.setMnemonic(int)
-
-    private static var setMnemonic_MethodID_24: jmethodID?
-
-    open func setMnemonic( key: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMnemonic", methodSig: "(I)V", methodCache: &ButtonModelForward.setMnemonic_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setMnemonic( _ _key: Int ) {
-        setMnemonic( key: _key )
-    }
-
-    /// public abstract java.lang.String javax.swing.ButtonModel.getActionCommand()
-
-    private static var getActionCommand_MethodID_25: jmethodID?
-
-    open func getActionCommand() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &ButtonModelForward.getActionCommand_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.ButtonModel.addChangeListener(javax.swing.event.ChangeListener)
-
-    private static var addChangeListener_MethodID_26: jmethodID?
-
-    open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ButtonModelForward.addChangeListener_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func addChangeListener( _ _l: ChangeListener? ) {
-        addChangeListener( l: _l )
-    }
-
-    /// public abstract void javax.swing.ButtonModel.removeChangeListener(javax.swing.event.ChangeListener)
-
-    private static var removeChangeListener_MethodID_27: jmethodID?
-
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ButtonModelForward.removeChangeListener_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
     /// public abstract boolean javax.swing.ButtonModel.isArmed()
 
-    private static var isArmed_MethodID_28: jmethodID?
+    private static var isArmed_MethodID_22: jmethodID?
 
     open func isArmed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isArmed", methodSig: "()Z", methodCache: &ButtonModelForward.isArmed_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isArmed", methodSig: "()Z", methodCache: &ButtonModelForward.isArmed_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract boolean javax.swing.ButtonModel.isPressed()
 
-    private static var isPressed_MethodID_29: jmethodID?
+    private static var isPressed_MethodID_23: jmethodID?
 
     open func isPressed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPressed", methodSig: "()Z", methodCache: &ButtonModelForward.isPressed_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPressed", methodSig: "()Z", methodCache: &ButtonModelForward.isPressed_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract boolean javax.swing.ButtonModel.isSelected()
 
-    private static var isSelected_MethodID_30: jmethodID?
+    private static var isSelected_MethodID_24: jmethodID?
 
     open func isSelected() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &ButtonModelForward.isSelected_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &ButtonModelForward.isSelected_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract void javax.swing.ButtonModel.setSelected(boolean)
 
-    private static var setSelected_MethodID_31: jmethodID?
+    private static var setSelected_MethodID_25: jmethodID?
 
     open func setSelected( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Z)V", methodCache: &ButtonModelForward.setSelected_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Z)V", methodCache: &ButtonModelForward.setSelected_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func setSelected( _ _b: Bool ) {
@@ -239,67 +152,142 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract boolean javax.swing.ButtonModel.isEnabled()
 
-    private static var isEnabled_MethodID_32: jmethodID?
+    private static var isEnabled_MethodID_26: jmethodID?
 
     open func isEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &ButtonModelForward.isEnabled_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &ButtonModelForward.isEnabled_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract int javax.swing.ButtonModel.getMnemonic()
 
-    private static var getMnemonic_MethodID_33: jmethodID?
+    private static var getMnemonic_MethodID_27: jmethodID?
 
     open func getMnemonic() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMnemonic", methodSig: "()I", methodCache: &ButtonModelForward.getMnemonic_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMnemonic", methodSig: "()I", methodCache: &ButtonModelForward.getMnemonic_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract void javax.swing.ButtonModel.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_34: jmethodID?
+    private static var setEnabled_MethodID_28: jmethodID?
 
     open func setEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &ButtonModelForward.setEnabled_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &ButtonModelForward.setEnabled_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setEnabled( _ _b: Bool ) {
         setEnabled( b: _b )
     }
 
+    /// public abstract void javax.swing.ButtonModel.setActionCommand(java.lang.String)
+
+    private static var setActionCommand_MethodID_29: jmethodID?
+
+    open func setActionCommand( s: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &ButtonModelForward.setActionCommand_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setActionCommand( _ _s: String? ) {
+        setActionCommand( s: _s )
+    }
+
+    /// public abstract void javax.swing.ButtonModel.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_30: jmethodID?
+
+    open func addActionListener( l: java_awt.ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &ButtonModelForward.addActionListener_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: java_awt.ActionListener? ) {
+        addActionListener( l: _l )
+    }
+
+    /// public abstract void javax.swing.ButtonModel.setMnemonic(int)
+
+    private static var setMnemonic_MethodID_31: jmethodID?
+
+    open func setMnemonic( key: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMnemonic", methodSig: "(I)V", methodCache: &ButtonModelForward.setMnemonic_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func setMnemonic( _ _key: Int ) {
+        setMnemonic( key: _key )
+    }
+
     /// public abstract void javax.swing.ButtonModel.setGroup(javax.swing.ButtonGroup)
 
-    private static var setGroup_MethodID_35: jmethodID?
+    private static var setGroup_MethodID_32: jmethodID?
 
     open func setGroup( group: ButtonGroup? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: group != nil ? group! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGroup", methodSig: "(Ljavax/swing/ButtonGroup;)V", methodCache: &ButtonModelForward.setGroup_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGroup", methodSig: "(Ljavax/swing/ButtonGroup;)V", methodCache: &ButtonModelForward.setGroup_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func setGroup( _ _group: ButtonGroup? ) {
         setGroup( group: _group )
     }
 
+    /// public abstract void javax.swing.ButtonModel.addChangeListener(javax.swing.event.ChangeListener)
+
+    private static var addChangeListener_MethodID_33: jmethodID?
+
+    open func addChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ButtonModelForward.addChangeListener_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func addChangeListener( _ _l: ChangeListener? ) {
+        addChangeListener( l: _l )
+    }
+
+    /// public abstract void javax.swing.ButtonModel.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_34: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ButtonModelForward.removeChangeListener_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
     /// public abstract void javax.swing.ButtonModel.addItemListener(java.awt.event.ItemListener)
 
-    private static var addItemListener_MethodID_36: jmethodID?
+    private static var addItemListener_MethodID_35: jmethodID?
 
     override open func addItemListener( l: java_awt.ItemListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &ButtonModelForward.addItemListener_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &ButtonModelForward.addItemListener_MethodID_35, args: &__args, locals: &__locals )
     }
 
     override open func addItemListener( _ _l: java_awt.ItemListener? ) {
@@ -308,13 +296,13 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract void javax.swing.ButtonModel.removeItemListener(java.awt.event.ItemListener)
 
-    private static var removeItemListener_MethodID_37: jmethodID?
+    private static var removeItemListener_MethodID_36: jmethodID?
 
     override open func removeItemListener( l: java_awt.ItemListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &ButtonModelForward.removeItemListener_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &ButtonModelForward.removeItemListener_MethodID_36, args: &__args, locals: &__locals )
     }
 
     override open func removeItemListener( _ _l: java_awt.ItemListener? ) {
@@ -323,13 +311,13 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract void javax.swing.ButtonModel.removeActionListener(java.awt.event.ActionListener)
 
-    private static var removeActionListener_MethodID_38: jmethodID?
+    private static var removeActionListener_MethodID_37: jmethodID?
 
     open func removeActionListener( l: java_awt.ActionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &ButtonModelForward.removeActionListener_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &ButtonModelForward.removeActionListener_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func removeActionListener( _ _l: java_awt.ActionListener? ) {
@@ -338,13 +326,13 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract void javax.swing.ButtonModel.setArmed(boolean)
 
-    private static var setArmed_MethodID_39: jmethodID?
+    private static var setArmed_MethodID_38: jmethodID?
 
     open func setArmed( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArmed", methodSig: "(Z)V", methodCache: &ButtonModelForward.setArmed_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setArmed", methodSig: "(Z)V", methodCache: &ButtonModelForward.setArmed_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func setArmed( _ _b: Bool ) {
@@ -353,13 +341,13 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract void javax.swing.ButtonModel.setPressed(boolean)
 
-    private static var setPressed_MethodID_40: jmethodID?
+    private static var setPressed_MethodID_39: jmethodID?
 
     open func setPressed( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPressed", methodSig: "(Z)V", methodCache: &ButtonModelForward.setPressed_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPressed", methodSig: "(Z)V", methodCache: &ButtonModelForward.setPressed_MethodID_39, args: &__args, locals: &__locals )
     }
 
     open func setPressed( _ _b: Bool ) {
@@ -368,13 +356,13 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract void javax.swing.ButtonModel.setRollover(boolean)
 
-    private static var setRollover_MethodID_41: jmethodID?
+    private static var setRollover_MethodID_40: jmethodID?
 
     open func setRollover( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRollover", methodSig: "(Z)V", methodCache: &ButtonModelForward.setRollover_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRollover", methodSig: "(Z)V", methodCache: &ButtonModelForward.setRollover_MethodID_40, args: &__args, locals: &__locals )
     }
 
     open func setRollover( _ _b: Bool ) {
@@ -383,13 +371,25 @@ open class ButtonModelForward: java_awt.ItemSelectableForward, ButtonModel {
 
     /// public abstract boolean javax.swing.ButtonModel.isRollover()
 
-    private static var isRollover_MethodID_42: jmethodID?
+    private static var isRollover_MethodID_41: jmethodID?
 
     open func isRollover() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRollover", methodSig: "()Z", methodCache: &ButtonModelForward.isRollover_MethodID_42, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRollover", methodSig: "()Z", methodCache: &ButtonModelForward.isRollover_MethodID_41, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public abstract java.lang.String javax.swing.ButtonModel.getActionCommand()
+
+    private static var getActionCommand_MethodID_42: jmethodID?
+
+    open func getActionCommand() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &ButtonModelForward.getActionCommand_MethodID_42, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
     }
 
 

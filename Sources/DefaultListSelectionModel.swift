@@ -150,15 +150,31 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// private void javax.swing.DefaultListSelectionModel.set(int)
 
+    /// public java.util.EventListener[] javax.swing.DefaultListSelectionModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_3: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultListSelectionModel.getListeners_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
     /// public void javax.swing.DefaultListSelectionModel.setSelectionMode(int)
 
-    private static var setSelectionMode_MethodID_3: jmethodID?
+    private static var setSelectionMode_MethodID_4: jmethodID?
 
     open func setSelectionMode( selectionMode: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: selectionMode, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionMode", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.setSelectionMode_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionMode", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.setSelectionMode_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setSelectionMode( _ _selectionMode: Int ) {
@@ -167,12 +183,12 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.clearSelection()
 
-    private static var clearSelection_MethodID_4: jmethodID?
+    private static var clearSelection_MethodID_5: jmethodID?
 
     open func clearSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &DefaultListSelectionModel.clearSelection_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &DefaultListSelectionModel.clearSelection_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
@@ -182,37 +198,37 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public int javax.swing.DefaultListSelectionModel.getAnchorSelectionIndex()
 
-    private static var getAnchorSelectionIndex_MethodID_5: jmethodID?
+    private static var getAnchorSelectionIndex_MethodID_6: jmethodID?
 
     open func getAnchorSelectionIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAnchorSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getAnchorSelectionIndex_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAnchorSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getAnchorSelectionIndex_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.DefaultListSelectionModel.getLeadSelectionIndex()
 
-    private static var getLeadSelectionIndex_MethodID_6: jmethodID?
+    private static var getLeadSelectionIndex_MethodID_7: jmethodID?
 
     open func getLeadSelectionIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeadSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getLeadSelectionIndex_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeadSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getLeadSelectionIndex_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.DefaultListSelectionModel.setValueIsAdjusting(boolean)
 
-    private static var setValueIsAdjusting_MethodID_7: jmethodID?
+    private static var setValueIsAdjusting_MethodID_8: jmethodID?
 
     open func setValueIsAdjusting( valueIsAdjusting: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: valueIsAdjusting, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &DefaultListSelectionModel.setValueIsAdjusting_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &DefaultListSelectionModel.setValueIsAdjusting_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setValueIsAdjusting( _ _valueIsAdjusting: Bool ) {
@@ -221,13 +237,13 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.setAnchorSelectionIndex(int)
 
-    private static var setAnchorSelectionIndex_MethodID_8: jmethodID?
+    private static var setAnchorSelectionIndex_MethodID_9: jmethodID?
 
     open func setAnchorSelectionIndex( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAnchorSelectionIndex", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.setAnchorSelectionIndex_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAnchorSelectionIndex", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.setAnchorSelectionIndex_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setAnchorSelectionIndex( _ _index: Int ) {
@@ -236,13 +252,13 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.setLeadSelectionIndex(int)
 
-    private static var setLeadSelectionIndex_MethodID_9: jmethodID?
+    private static var setLeadSelectionIndex_MethodID_10: jmethodID?
 
     open func setLeadSelectionIndex( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeadSelectionIndex", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.setLeadSelectionIndex_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeadSelectionIndex", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.setLeadSelectionIndex_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setLeadSelectionIndex( _ _index: Int ) {
@@ -251,14 +267,14 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.setSelectionInterval(int,int)
 
-    private static var setSelectionInterval_MethodID_10: jmethodID?
+    private static var setSelectionInterval_MethodID_11: jmethodID?
 
     open func setSelectionInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.setSelectionInterval_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.setSelectionInterval_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setSelectionInterval( _ _index0: Int, _ _index1: Int ) {
@@ -267,14 +283,14 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.addSelectionInterval(int,int)
 
-    private static var addSelectionInterval_MethodID_11: jmethodID?
+    private static var addSelectionInterval_MethodID_12: jmethodID?
 
     open func addSelectionInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSelectionInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.addSelectionInterval_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSelectionInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.addSelectionInterval_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func addSelectionInterval( _ _index0: Int, _ _index1: Int ) {
@@ -283,14 +299,14 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.removeSelectionInterval(int,int)
 
-    private static var removeSelectionInterval_MethodID_12: jmethodID?
+    private static var removeSelectionInterval_MethodID_13: jmethodID?
 
     open func removeSelectionInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeSelectionInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.removeSelectionInterval_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeSelectionInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.removeSelectionInterval_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func removeSelectionInterval( _ _index0: Int, _ _index1: Int ) {
@@ -299,37 +315,37 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public int javax.swing.DefaultListSelectionModel.getMinSelectionIndex()
 
-    private static var getMinSelectionIndex_MethodID_13: jmethodID?
+    private static var getMinSelectionIndex_MethodID_14: jmethodID?
 
     open func getMinSelectionIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getMinSelectionIndex_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getMinSelectionIndex_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.DefaultListSelectionModel.getMaxSelectionIndex()
 
-    private static var getMaxSelectionIndex_MethodID_14: jmethodID?
+    private static var getMaxSelectionIndex_MethodID_15: jmethodID?
 
     open func getMaxSelectionIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getMaxSelectionIndex_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxSelectionIndex", methodSig: "()I", methodCache: &DefaultListSelectionModel.getMaxSelectionIndex_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean javax.swing.DefaultListSelectionModel.isSelectedIndex(int)
 
-    private static var isSelectedIndex_MethodID_15: jmethodID?
+    private static var isSelectedIndex_MethodID_16: jmethodID?
 
     open func isSelectedIndex( index: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectedIndex", methodSig: "(I)Z", methodCache: &DefaultListSelectionModel.isSelectedIndex_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectedIndex", methodSig: "(I)Z", methodCache: &DefaultListSelectionModel.isSelectedIndex_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -339,13 +355,13 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.removeListSelectionListener(javax.swing.event.ListSelectionListener)
 
-    private static var removeListSelectionListener_MethodID_16: jmethodID?
+    private static var removeListSelectionListener_MethodID_17: jmethodID?
 
     open func removeListSelectionListener( x: ListSelectionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListSelectionListener", methodSig: "(Ljavax/swing/event/ListSelectionListener;)V", methodCache: &DefaultListSelectionModel.removeListSelectionListener_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListSelectionListener", methodSig: "(Ljavax/swing/event/ListSelectionListener;)V", methodCache: &DefaultListSelectionModel.removeListSelectionListener_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func removeListSelectionListener( _ _x: ListSelectionListener? ) {
@@ -354,13 +370,13 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.addListSelectionListener(javax.swing.event.ListSelectionListener)
 
-    private static var addListSelectionListener_MethodID_17: jmethodID?
+    private static var addListSelectionListener_MethodID_18: jmethodID?
 
     open func addListSelectionListener( x: ListSelectionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addListSelectionListener", methodSig: "(Ljavax/swing/event/ListSelectionListener;)V", methodCache: &DefaultListSelectionModel.addListSelectionListener_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addListSelectionListener", methodSig: "(Ljavax/swing/event/ListSelectionListener;)V", methodCache: &DefaultListSelectionModel.addListSelectionListener_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func addListSelectionListener( _ _x: ListSelectionListener? ) {
@@ -369,7 +385,7 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.insertIndexInterval(int,int,boolean)
 
-    private static var insertIndexInterval_MethodID_18: jmethodID?
+    private static var insertIndexInterval_MethodID_19: jmethodID?
 
     open func insertIndexInterval( index: Int, length: Int, before: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -377,7 +393,7 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
         __args[1] = JNIType.toJava( value: length, locals: &__locals )
         __args[2] = JNIType.toJava( value: before, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertIndexInterval", methodSig: "(IIZ)V", methodCache: &DefaultListSelectionModel.insertIndexInterval_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertIndexInterval", methodSig: "(IIZ)V", methodCache: &DefaultListSelectionModel.insertIndexInterval_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func insertIndexInterval( _ _index: Int, _ _length: Int, _ _before: Bool ) {
@@ -386,28 +402,40 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.removeIndexInterval(int,int)
 
-    private static var removeIndexInterval_MethodID_19: jmethodID?
+    private static var removeIndexInterval_MethodID_20: jmethodID?
 
     open func removeIndexInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeIndexInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.removeIndexInterval_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeIndexInterval", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.removeIndexInterval_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func removeIndexInterval( _ _index0: Int, _ _index1: Int ) {
         removeIndexInterval( index0: _index0, index1: _index1 )
     }
 
+    /// public int javax.swing.DefaultListSelectionModel.getSelectionMode()
+
+    private static var getSelectionMode_MethodID_21: jmethodID?
+
+    open func getSelectionMode() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &DefaultListSelectionModel.getSelectionMode_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
     /// public javax.swing.event.ListSelectionListener[] javax.swing.DefaultListSelectionModel.getListSelectionListeners()
 
-    private static var getListSelectionListeners_MethodID_20: jmethodID?
+    private static var getListSelectionListeners_MethodID_22: jmethodID?
 
     open func getListSelectionListeners() -> [ListSelectionListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListSelectionListeners", methodSig: "()[Ljavax/swing/event/ListSelectionListener;", methodCache: &DefaultListSelectionModel.getListSelectionListeners_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListSelectionListeners", methodSig: "()[Ljavax/swing/event/ListSelectionListener;", methodCache: &DefaultListSelectionModel.getListSelectionListeners_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ListSelectionListenerForward](), from: __return )
     }
 
@@ -416,13 +444,13 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.setLeadAnchorNotificationEnabled(boolean)
 
-    private static var setLeadAnchorNotificationEnabled_MethodID_21: jmethodID?
+    private static var setLeadAnchorNotificationEnabled_MethodID_23: jmethodID?
 
     open func setLeadAnchorNotificationEnabled( flag: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeadAnchorNotificationEnabled", methodSig: "(Z)V", methodCache: &DefaultListSelectionModel.setLeadAnchorNotificationEnabled_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeadAnchorNotificationEnabled", methodSig: "(Z)V", methodCache: &DefaultListSelectionModel.setLeadAnchorNotificationEnabled_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func setLeadAnchorNotificationEnabled( _ _flag: Bool ) {
@@ -431,12 +459,12 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public boolean javax.swing.DefaultListSelectionModel.isLeadAnchorNotificationEnabled()
 
-    private static var isLeadAnchorNotificationEnabled_MethodID_22: jmethodID?
+    private static var isLeadAnchorNotificationEnabled_MethodID_24: jmethodID?
 
     open func isLeadAnchorNotificationEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeadAnchorNotificationEnabled", methodSig: "()Z", methodCache: &DefaultListSelectionModel.isLeadAnchorNotificationEnabled_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeadAnchorNotificationEnabled", methodSig: "()Z", methodCache: &DefaultListSelectionModel.isLeadAnchorNotificationEnabled_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -447,109 +475,36 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     /// public void javax.swing.DefaultListSelectionModel.moveLeadSelectionIndex(int)
 
-    private static var moveLeadSelectionIndex_MethodID_23: jmethodID?
+    private static var moveLeadSelectionIndex_MethodID_25: jmethodID?
 
     open func moveLeadSelectionIndex( leadIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: leadIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveLeadSelectionIndex", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.moveLeadSelectionIndex_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveLeadSelectionIndex", methodSig: "(I)V", methodCache: &DefaultListSelectionModel.moveLeadSelectionIndex_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func moveLeadSelectionIndex( _ _leadIndex: Int ) {
         moveLeadSelectionIndex( leadIndex: _leadIndex )
     }
 
-    /// public boolean javax.swing.DefaultListSelectionModel.getValueIsAdjusting()
-
-    private static var getValueIsAdjusting_MethodID_24: jmethodID?
-
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &DefaultListSelectionModel.getValueIsAdjusting_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// private void javax.swing.DefaultListSelectionModel.setState(int,boolean)
-
-    /// public java.util.EventListener[] javax.swing.DefaultListSelectionModel.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_25: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultListSelectionModel.getListeners_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
-    /// public int javax.swing.DefaultListSelectionModel.getSelectionMode()
-
-    private static var getSelectionMode_MethodID_26: jmethodID?
-
-    open func getSelectionMode() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionMode", methodSig: "()I", methodCache: &DefaultListSelectionModel.getSelectionMode_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public boolean javax.swing.DefaultListSelectionModel.isSelectionEmpty()
 
-    private static var isSelectionEmpty_MethodID_27: jmethodID?
+    private static var isSelectionEmpty_MethodID_26: jmethodID?
 
     open func isSelectionEmpty() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionEmpty", methodSig: "()Z", methodCache: &DefaultListSelectionModel.isSelectionEmpty_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelectionEmpty", methodSig: "()Z", methodCache: &DefaultListSelectionModel.isSelectionEmpty_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// protected void javax.swing.DefaultListSelectionModel.fireValueChanged(boolean)
-
-    private static var fireValueChanged_MethodID_28: jmethodID?
-
-    open func fireValueChanged( isAdjusting: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isAdjusting, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireValueChanged", methodSig: "(Z)V", methodCache: &DefaultListSelectionModel.fireValueChanged_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func fireValueChanged( _ _isAdjusting: Bool ) {
-        fireValueChanged( isAdjusting: _isAdjusting )
-    }
-
-    /// protected void javax.swing.DefaultListSelectionModel.fireValueChanged(int,int)
-
-    private static var fireValueChanged_MethodID_29: jmethodID?
-
-    open func fireValueChanged( firstIndex: Int, lastIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: lastIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireValueChanged", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.fireValueChanged_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func fireValueChanged( _ _firstIndex: Int, _ _lastIndex: Int ) {
-        fireValueChanged( firstIndex: _firstIndex, lastIndex: _lastIndex )
-    }
 
     /// private void javax.swing.DefaultListSelectionModel.fireValueChanged()
 
     /// protected void javax.swing.DefaultListSelectionModel.fireValueChanged(int,int,boolean)
 
-    private static var fireValueChanged_MethodID_30: jmethodID?
+    private static var fireValueChanged_MethodID_27: jmethodID?
 
     open func fireValueChanged( firstIndex: Int, lastIndex: Int, isAdjusting: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -557,12 +512,57 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
         __args[0] = JNIType.toJava( value: firstIndex, locals: &__locals )
         __args[1] = JNIType.toJava( value: lastIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: isAdjusting, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireValueChanged", methodSig: "(IIZ)V", methodCache: &DefaultListSelectionModel.fireValueChanged_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireValueChanged", methodSig: "(IIZ)V", methodCache: &DefaultListSelectionModel.fireValueChanged_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func fireValueChanged( _ _firstIndex: Int, _ _lastIndex: Int, _ _isAdjusting: Bool ) {
         fireValueChanged( firstIndex: _firstIndex, lastIndex: _lastIndex, isAdjusting: _isAdjusting )
     }
+
+    /// protected void javax.swing.DefaultListSelectionModel.fireValueChanged(int,int)
+
+    private static var fireValueChanged_MethodID_28: jmethodID?
+
+    open func fireValueChanged( firstIndex: Int, lastIndex: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: firstIndex, locals: &__locals )
+        __args[1] = JNIType.toJava( value: lastIndex, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireValueChanged", methodSig: "(II)V", methodCache: &DefaultListSelectionModel.fireValueChanged_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func fireValueChanged( _ _firstIndex: Int, _ _lastIndex: Int ) {
+        fireValueChanged( firstIndex: _firstIndex, lastIndex: _lastIndex )
+    }
+
+    /// protected void javax.swing.DefaultListSelectionModel.fireValueChanged(boolean)
+
+    private static var fireValueChanged_MethodID_29: jmethodID?
+
+    open func fireValueChanged( isAdjusting: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: isAdjusting, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireValueChanged", methodSig: "(Z)V", methodCache: &DefaultListSelectionModel.fireValueChanged_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func fireValueChanged( _ _isAdjusting: Bool ) {
+        fireValueChanged( isAdjusting: _isAdjusting )
+    }
+
+    /// public boolean javax.swing.DefaultListSelectionModel.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_30: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &DefaultListSelectionModel.getValueIsAdjusting_MethodID_30, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// private void javax.swing.DefaultListSelectionModel.setState(int,boolean)
 
 }
 

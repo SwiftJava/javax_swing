@@ -96,9 +96,9 @@ open class BasicTreeUI_TreeCancelEditingAction: AbstractAction {
         self.init( this_0: _this_0, name: _name )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeCancelEditingAction.actionPerformed(java.awt.event.ActionEvent)
-
     /// public boolean javax.swing.plaf.basic.BasicTreeUI$TreeCancelEditingAction.isEnabled()
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeCancelEditingAction.actionPerformed(java.awt.event.ActionEvent)
 
 }
 

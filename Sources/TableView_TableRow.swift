@@ -162,10 +162,6 @@ open class TableView_TableRow: BoxView {
         replace( offset: _offset, length: _length, views: _views )
     }
 
-    /// int javax.swing.text.TableView$TableRow.getColumnCount()
-
-    /// int javax.swing.text.TableView$TableRow.getRow()
-
     /// public int javax.swing.text.TableView$TableRow.getResizeWeight(int)
 
     /// protected void javax.swing.text.TableView$TableRow.layoutMajorAxis(int,int,int[],int[])
@@ -204,14 +200,6 @@ open class TableView_TableRow: BoxView {
         layoutMinorAxis( targetSpan: _targetSpan, axis: _axis, offsets: _offsets, spans: _spans )
     }
 
-    /// void javax.swing.text.TableView$TableRow.clearFilledColumns()
-
-    /// void javax.swing.text.TableView$TableRow.setRow(int)
-
-    /// boolean javax.swing.text.TableView$TableRow.isFilled(int)
-
-    /// void javax.swing.text.TableView$TableRow.fillColumn(int)
-
     /// protected javax.swing.text.View javax.swing.text.TableView$TableRow.getViewAtPosition(int,java.awt.Rectangle)
 
     private static var getViewAtPosition_MethodID_5: jmethodID?
@@ -229,6 +217,18 @@ open class TableView_TableRow: BoxView {
     override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
         return getViewAtPosition( pos: _pos, a: _a )
     }
+
+    /// int javax.swing.text.TableView$TableRow.getColumnCount()
+
+    /// int javax.swing.text.TableView$TableRow.getRow()
+
+    /// void javax.swing.text.TableView$TableRow.clearFilledColumns()
+
+    /// void javax.swing.text.TableView$TableRow.setRow(int)
+
+    /// boolean javax.swing.text.TableView$TableRow.isFilled(int)
+
+    /// void javax.swing.text.TableView$TableRow.fillColumn(int)
 
 }
 

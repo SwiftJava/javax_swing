@@ -86,15 +86,43 @@ open class EventListenerList: java_swift.JavaObject, /* java.io.Serializable */ 
 
     /// private void javax.swing.event.EventListenerList.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
+    /// public java.util.EventListener[] javax.swing.event.EventListenerList.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_4: jmethodID?
+
+    open func getListeners( arg0: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &EventListenerList.getListeners_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _arg0: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( arg0: _arg0 )
+    }
+
+    /// public java.lang.Object[] javax.swing.event.EventListenerList.getListenerList()
+
+    private static var getListenerList_MethodID_5: jmethodID?
+
+    open func getListenerList() -> [JavaObject]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListenerList", methodSig: "()[Ljava/lang/Object;", methodCache: &EventListenerList.getListenerList_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject](), from: __return )
+    }
+
+
     /// public int javax.swing.event.EventListenerList.getListenerCount(java.lang.Class)
 
-    private static var getListenerCount_MethodID_4: jmethodID?
+    private static var getListenerCount_MethodID_6: jmethodID?
 
     open func getListenerCount( arg0: java_swift.JavaClass? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getListenerCount", methodSig: "(Ljava/lang/Class;)I", methodCache: &EventListenerList.getListenerCount_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getListenerCount", methodSig: "(Ljava/lang/Class;)I", methodCache: &EventListenerList.getListenerCount_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -106,41 +134,13 @@ open class EventListenerList: java_swift.JavaObject, /* java.io.Serializable */ 
 
     /// public int javax.swing.event.EventListenerList.getListenerCount()
 
-    private static var getListenerCount_MethodID_5: jmethodID?
+    private static var getListenerCount_MethodID_7: jmethodID?
 
     open func getListenerCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getListenerCount", methodSig: "()I", methodCache: &EventListenerList.getListenerCount_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getListenerCount", methodSig: "()I", methodCache: &EventListenerList.getListenerCount_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.util.EventListener[] javax.swing.event.EventListenerList.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_6: jmethodID?
-
-    open func getListeners( arg0: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &EventListenerList.getListeners_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _arg0: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( arg0: _arg0 )
-    }
-
-    /// public java.lang.Object[] javax.swing.event.EventListenerList.getListenerList()
-
-    private static var getListenerList_MethodID_7: jmethodID?
-
-    open func getListenerList() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListenerList", methodSig: "()[Ljava/lang/Object;", methodCache: &EventListenerList.getListenerList_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 

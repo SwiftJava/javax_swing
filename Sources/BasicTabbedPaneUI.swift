@@ -749,17 +749,43 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// private javax.swing.plaf.basic.BasicTabbedPaneUI$Handler javax.swing.plaf.basic.BasicTabbedPaneUI.getHandler()
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTabbedPaneUI.getInputMap(int)
+    /// static java.awt.Point javax.swing.plaf.basic.BasicTabbedPaneUI.access$800(javax.swing.plaf.basic.BasicTabbedPaneUI,int,int,java.awt.Point)
+
+    /// static boolean javax.swing.plaf.basic.BasicTabbedPaneUI.access$702(javax.swing.plaf.basic.BasicTabbedPaneUI,boolean)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI.getMaximumSize(javax.swing.JComponent)
+
+    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getBaseline(int)
+
+    private static var getBaseline_MethodID_2: jmethodID?
+
+    open func getBaseline( tab: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: tab, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getBaseline_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getBaseline( _ _tab: Int ) -> Int {
+        return getBaseline( tab: _tab )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicTabbedPaneUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTabbedPaneUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTabbedPaneUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_2: jmethodID?
+    private static var createUI_MethodID_3: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTabbedPaneUI", classCache: &BasicTabbedPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTabbedPaneUI", classCache: &BasicTabbedPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -768,285 +794,26 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         return createUI( c: _c )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintIcon(java.awt.Graphics,int,int,javax.swing.Icon,java.awt.Rectangle,boolean)
-
-    private static var paintIcon_MethodID_3: jmethodID?
-
-    open func paintIcon( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, icon: Icon?, iconRect: java_awt.Rectangle?, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[4] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Graphics;IILjavax/swing/Icon;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.paintIcon_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func paintIcon( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _icon: Icon?, _ _iconRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
-        paintIcon( g: _g, tabPlacement: _tabPlacement, tabIndex: _tabIndex, icon: _icon, iconRect: _iconRect, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.navigateSelectedTab(int)
-
-    private static var navigateSelectedTab_MethodID_4: jmethodID?
-
-    open func navigateSelectedTab( direction: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "navigateSelectedTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.navigateSelectedTab_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func navigateSelectedTab( _ _direction: Int ) {
-        navigateSelectedTab( direction: _direction )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getFocusIndex()
-
-    private static var getFocusIndex_MethodID_5: jmethodID?
-
-    open func getFocusIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFocusIndex", methodSig: "()I", methodCache: &BasicTabbedPaneUI.getFocusIndex_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintText(java.awt.Graphics,int,java.awt.Font,java.awt.FontMetrics,int,java.lang.String,java.awt.Rectangle,boolean)
-
-    private static var paintText_MethodID_6: jmethodID?
-
-    open func paintText( g: java_awt.Graphics?, tabPlacement: Int, font: java_awt.Font?, metrics: java_awt.FontMetrics?, tabIndex: Int, title: String?, textRect: java_awt.Rectangle?, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: metrics != nil ? metrics! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[5] = JNIType.toJava( value: title, locals: &__locals )
-        __args[6] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
-        __args[7] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Font;Ljava/awt/FontMetrics;ILjava/lang/String;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.paintText_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paintText( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _font: java_awt.Font?, _ _metrics: java_awt.FontMetrics?, _ _tabIndex: Int, _ _title: String?, _ _textRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
-        paintText( g: _g, tabPlacement: _tabPlacement, font: _font, metrics: _metrics, tabIndex: _tabIndex, title: _title, textRect: _textRect, isSelected: _isSelected )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicTabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int)
-
-    /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int,boolean)
-
-    /// public java.awt.Rectangle javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(javax.swing.JTabbedPane,int)
-
-    private static var getTabBounds_MethodID_7: jmethodID?
-
-    open func getTabBounds( pane: JTabbedPane?, i: Int ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pane != nil ? pane! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(Ljavax/swing/JTabbedPane;I)Ljava/awt/Rectangle;", methodCache: &BasicTabbedPaneUI.getTabBounds_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    override open func getTabBounds( _ _pane: JTabbedPane?, _ _i: Int ) -> java_awt.Rectangle! {
-        return getTabBounds( pane: _pane, i: _i )
-    }
-
-    /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(int,java.awt.Rectangle)
-
-    private static var getTabBounds_MethodID_8: jmethodID?
-
-    open func getTabBounds( tabIndex: Int, dest: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: dest != nil ? dest! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(ILjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &BasicTabbedPaneUI.getTabBounds_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func getTabBounds( _ _tabIndex: Int, _ _dest: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        return getTabBounds( tabIndex: _tabIndex, dest: _dest )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabRunCount(javax.swing.JTabbedPane)
-
-    /// static boolean javax.swing.plaf.basic.BasicTabbedPaneUI.access$1100(javax.swing.plaf.basic.BasicTabbedPaneUI)
-
-    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
     /// protected java.awt.FontMetrics javax.swing.plaf.basic.BasicTabbedPaneUI.getFontMetrics()
 
-    private static var getFontMetrics_MethodID_9: jmethodID?
+    private static var getFontMetrics_MethodID_4: jmethodID?
 
     open func getFontMetrics() -> java_awt.FontMetrics! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &BasicTabbedPaneUI.getFontMetrics_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &BasicTabbedPaneUI.getFontMetrics_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
     }
 
 
-    /// static java.awt.Point javax.swing.plaf.basic.BasicTabbedPaneUI.access$800(javax.swing.plaf.basic.BasicTabbedPaneUI,int,int,java.awt.Point)
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTabbedPaneUI.getInputMap(int)
 
-    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+    /// static boolean javax.swing.plaf.basic.BasicTabbedPaneUI.access$1100(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installDefaults()
+    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI.installUI(javax.swing.JComponent)
 
-    private static var installDefaults_MethodID_10: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installDefaults_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installComponents()
-
-    private static var installComponents_MethodID_11: jmethodID?
-
-    open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installComponents_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installListeners()
-
-    private static var installListeners_MethodID_12: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installListeners_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_13: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installKeyboardActions_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_14: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallDefaults_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_15: jmethodID?
-
-    open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallComponents_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_16: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallListeners_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_17: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallKeyboardActions_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_18: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicTabbedPaneUI.createPropertyChangeListener_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicTabbedPaneUI.createFocusListener()
-
-    private static var createFocusListener_MethodID_19: jmethodID?
-
-    open func createFocusListener() -> java_awt.FocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicTabbedPaneUI.createFocusListener_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicTabbedPaneUI.createLayoutManager()
-
-    private static var createLayoutManager_MethodID_20: jmethodID?
-
-    open func createLayoutManager() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicTabbedPaneUI.createLayoutManager_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.MouseListener javax.swing.plaf.basic.BasicTabbedPaneUI.createMouseListener()
-
-    private static var createMouseListener_MethodID_21: jmethodID?
-
-    open func createMouseListener() -> java_awt.MouseListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicTabbedPaneUI.createMouseListener_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.MouseListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.access$1800(javax.swing.plaf.basic.BasicTabbedPaneUI)
-
-    /// static java.util.Vector javax.swing.plaf.basic.BasicTabbedPaneUI.access$1900(javax.swing.plaf.basic.BasicTabbedPaneUI)
-
-    /// static int javax.swing.plaf.basic.BasicTabbedPaneUI.access$2200(javax.swing.plaf.basic.BasicTabbedPaneUI)
-
-    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.access$2100(javax.swing.plaf.basic.BasicTabbedPaneUI,int,int)
+    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallUI(javax.swing.JComponent)
 
     /// static java.awt.Polygon javax.swing.plaf.basic.BasicTabbedPaneUI.access$2700(int,java.awt.Rectangle,int)
 
@@ -1060,13 +827,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected javax.swing.JButton javax.swing.plaf.basic.BasicTabbedPaneUI.createScrollButton(int)
 
-    private static var createScrollButton_MethodID_22: jmethodID?
+    private static var createScrollButton_MethodID_5: jmethodID?
 
     open func createScrollButton( direction: Int ) -> JButton! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &BasicTabbedPaneUI.createScrollButton_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &BasicTabbedPaneUI.createScrollButton_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
     }
@@ -1089,13 +856,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.setRolloverTab(int)
 
-    private static var setRolloverTab_MethodID_23: jmethodID?
+    private static var setRolloverTab_MethodID_6: jmethodID?
 
     open func setRolloverTab( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.setRolloverTab_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.setRolloverTab_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setRolloverTab( _ _index: Int ) {
@@ -1104,24 +871,24 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getRolloverTab()
 
-    private static var getRolloverTab_MethodID_24: jmethodID?
+    private static var getRolloverTab_MethodID_7: jmethodID?
 
     open func getRolloverTab() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRolloverTab", methodSig: "()I", methodCache: &BasicTabbedPaneUI.getRolloverTab_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRolloverTab", methodSig: "()I", methodCache: &BasicTabbedPaneUI.getRolloverTab_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getBaselineOffset()
 
-    private static var getBaselineOffset_MethodID_25: jmethodID?
+    private static var getBaselineOffset_MethodID_8: jmethodID?
 
     open func getBaselineOffset() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaselineOffset", methodSig: "()I", methodCache: &BasicTabbedPaneUI.getBaselineOffset_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaselineOffset", methodSig: "()I", methodCache: &BasicTabbedPaneUI.getBaselineOffset_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1132,7 +899,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintTabArea(java.awt.Graphics,int,int)
 
-    private static var paintTabArea_MethodID_26: jmethodID?
+    private static var paintTabArea_MethodID_9: jmethodID?
 
     open func paintTabArea( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1140,7 +907,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[2] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabArea", methodSig: "(Ljava/awt/Graphics;II)V", methodCache: &BasicTabbedPaneUI.paintTabArea_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabArea", methodSig: "(Ljava/awt/Graphics;II)V", methodCache: &BasicTabbedPaneUI.paintTabArea_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func paintTabArea( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int ) {
@@ -1149,7 +916,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintTab(java.awt.Graphics,int,java.awt.Rectangle[],int,java.awt.Rectangle,java.awt.Rectangle)
 
-    private static var paintTab_MethodID_27: jmethodID?
+    private static var paintTab_MethodID_10: jmethodID?
 
     open func paintTab( g: java_awt.Graphics?, tabPlacement: Int, rects: [Rectangle]?, tabIndex: Int, iconRect: java_awt.Rectangle?, textRect: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -1160,7 +927,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[3] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[4] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
         __args[5] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTab", methodSig: "(Ljava/awt/Graphics;I[Ljava/awt/Rectangle;ILjava/awt/Rectangle;Ljava/awt/Rectangle;)V", methodCache: &BasicTabbedPaneUI.paintTab_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTab", methodSig: "(Ljava/awt/Graphics;I[Ljava/awt/Rectangle;ILjava/awt/Rectangle;Ljava/awt/Rectangle;)V", methodCache: &BasicTabbedPaneUI.paintTab_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func paintTab( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _rects: [Rectangle]?, _ _tabIndex: Int, _ _iconRect: java_awt.Rectangle?, _ _textRect: java_awt.Rectangle? ) {
@@ -1175,7 +942,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.layoutLabel(int,java.awt.FontMetrics,int,java.lang.String,javax.swing.Icon,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,boolean)
 
-    private static var layoutLabel_MethodID_28: jmethodID?
+    private static var layoutLabel_MethodID_11: jmethodID?
 
     open func layoutLabel( tabPlacement: Int, metrics: java_awt.FontMetrics?, tabIndex: Int, title: String?, icon: Icon?, tabRect: java_awt.Rectangle?, iconRect: java_awt.Rectangle?, textRect: java_awt.Rectangle?, isSelected: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 9 )
@@ -1189,7 +956,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[6] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
         __args[7] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
         __args[8] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutLabel", methodSig: "(ILjava/awt/FontMetrics;ILjava/lang/String;Ljavax/swing/Icon;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.layoutLabel_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutLabel", methodSig: "(ILjava/awt/FontMetrics;ILjava/lang/String;Ljavax/swing/Icon;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.layoutLabel_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func layoutLabel( _ _tabPlacement: Int, _ _metrics: java_awt.FontMetrics?, _ _tabIndex: Int, _ _title: String?, _ _icon: Icon?, _ _tabRect: java_awt.Rectangle?, _ _iconRect: java_awt.Rectangle?, _ _textRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
@@ -1198,7 +965,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabLabelShiftX(int,int,boolean)
 
-    private static var getTabLabelShiftX_MethodID_29: jmethodID?
+    private static var getTabLabelShiftX_MethodID_12: jmethodID?
 
     open func getTabLabelShiftX( tabPlacement: Int, tabIndex: Int, isSelected: Bool ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1206,7 +973,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftX", methodSig: "(IIZ)I", methodCache: &BasicTabbedPaneUI.getTabLabelShiftX_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftX", methodSig: "(IIZ)I", methodCache: &BasicTabbedPaneUI.getTabLabelShiftX_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1216,7 +983,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabLabelShiftY(int,int,boolean)
 
-    private static var getTabLabelShiftY_MethodID_30: jmethodID?
+    private static var getTabLabelShiftY_MethodID_13: jmethodID?
 
     open func getTabLabelShiftY( tabPlacement: Int, tabIndex: Int, isSelected: Bool ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1224,7 +991,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftY", methodSig: "(IIZ)I", methodCache: &BasicTabbedPaneUI.getTabLabelShiftY_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftY", methodSig: "(IIZ)I", methodCache: &BasicTabbedPaneUI.getTabLabelShiftY_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1234,7 +1001,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintFocusIndicator(java.awt.Graphics,int,java.awt.Rectangle[],int,java.awt.Rectangle,java.awt.Rectangle,boolean)
 
-    private static var paintFocusIndicator_MethodID_31: jmethodID?
+    private static var paintFocusIndicator_MethodID_14: jmethodID?
 
     open func paintFocusIndicator( g: java_awt.Graphics?, tabPlacement: Int, rects: [Rectangle]?, tabIndex: Int, iconRect: java_awt.Rectangle?, textRect: java_awt.Rectangle?, isSelected: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -1246,7 +1013,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[4] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
         __args[5] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
         __args[6] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocusIndicator", methodSig: "(Ljava/awt/Graphics;I[Ljava/awt/Rectangle;ILjava/awt/Rectangle;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.paintFocusIndicator_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocusIndicator", methodSig: "(Ljava/awt/Graphics;I[Ljava/awt/Rectangle;ILjava/awt/Rectangle;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.paintFocusIndicator_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func paintFocusIndicator( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _rects: [Rectangle]?, _ _tabIndex: Int, _ _iconRect: java_awt.Rectangle?, _ _textRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
@@ -1255,7 +1022,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintTabBorder(java.awt.Graphics,int,int,int,int,int,int,boolean)
 
-    private static var paintTabBorder_MethodID_32: jmethodID?
+    private static var paintTabBorder_MethodID_15: jmethodID?
 
     open func paintTabBorder( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, x: Int, y: Int, w: Int, h: Int, isSelected: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -1268,7 +1035,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
         __args[7] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBorder", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &BasicTabbedPaneUI.paintTabBorder_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBorder", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &BasicTabbedPaneUI.paintTabBorder_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func paintTabBorder( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _isSelected: Bool ) {
@@ -1277,7 +1044,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintTabBackground(java.awt.Graphics,int,int,int,int,int,int,boolean)
 
-    private static var paintTabBackground_MethodID_33: jmethodID?
+    private static var paintTabBackground_MethodID_16: jmethodID?
 
     open func paintTabBackground( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, x: Int, y: Int, w: Int, h: Int, isSelected: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
@@ -1290,7 +1057,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
         __args[7] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBackground", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &BasicTabbedPaneUI.paintTabBackground_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBackground", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &BasicTabbedPaneUI.paintTabBackground_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func paintTabBackground( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _isSelected: Bool ) {
@@ -1299,7 +1066,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintContentBorder(java.awt.Graphics,int,int)
 
-    private static var paintContentBorder_MethodID_34: jmethodID?
+    private static var paintContentBorder_MethodID_17: jmethodID?
 
     open func paintContentBorder( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1307,7 +1074,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[2] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorder", methodSig: "(Ljava/awt/Graphics;II)V", methodCache: &BasicTabbedPaneUI.paintContentBorder_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorder", methodSig: "(Ljava/awt/Graphics;II)V", methodCache: &BasicTabbedPaneUI.paintContentBorder_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func paintContentBorder( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int ) {
@@ -1316,7 +1083,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintContentBorderTopEdge(java.awt.Graphics,int,int,int,int,int,int)
 
-    private static var paintContentBorderTopEdge_MethodID_35: jmethodID?
+    private static var paintContentBorderTopEdge_MethodID_18: jmethodID?
 
     open func paintContentBorderTopEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -1328,7 +1095,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderTopEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderTopEdge_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderTopEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderTopEdge_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func paintContentBorderTopEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -1337,7 +1104,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintContentBorderLeftEdge(java.awt.Graphics,int,int,int,int,int,int)
 
-    private static var paintContentBorderLeftEdge_MethodID_36: jmethodID?
+    private static var paintContentBorderLeftEdge_MethodID_19: jmethodID?
 
     open func paintContentBorderLeftEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -1349,7 +1116,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderLeftEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderLeftEdge_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderLeftEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderLeftEdge_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func paintContentBorderLeftEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -1358,7 +1125,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintContentBorderBottomEdge(java.awt.Graphics,int,int,int,int,int,int)
 
-    private static var paintContentBorderBottomEdge_MethodID_37: jmethodID?
+    private static var paintContentBorderBottomEdge_MethodID_20: jmethodID?
 
     open func paintContentBorderBottomEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -1370,7 +1137,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderBottomEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderBottomEdge_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderBottomEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderBottomEdge_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func paintContentBorderBottomEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -1379,7 +1146,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintContentBorderRightEdge(java.awt.Graphics,int,int,int,int,int,int)
 
-    private static var paintContentBorderRightEdge_MethodID_38: jmethodID?
+    private static var paintContentBorderRightEdge_MethodID_21: jmethodID?
 
     open func paintContentBorderRightEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -1391,7 +1158,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
         __args[5] = JNIType.toJava( value: w, locals: &__locals )
         __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderRightEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderRightEdge_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderRightEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &BasicTabbedPaneUI.paintContentBorderRightEdge_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func paintContentBorderRightEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -1406,12 +1173,12 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected java.awt.Component javax.swing.plaf.basic.BasicTabbedPaneUI.getVisibleComponent()
 
-    private static var getVisibleComponent_MethodID_39: jmethodID?
+    private static var getVisibleComponent_MethodID_22: jmethodID?
 
     open func getVisibleComponent() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisibleComponent", methodSig: "()Ljava/awt/Component;", methodCache: &BasicTabbedPaneUI.getVisibleComponent_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVisibleComponent", methodSig: "()Ljava/awt/Component;", methodCache: &BasicTabbedPaneUI.getVisibleComponent_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -1419,13 +1186,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.setVisibleComponent(java.awt.Component)
 
-    private static var setVisibleComponent_MethodID_40: jmethodID?
+    private static var setVisibleComponent_MethodID_23: jmethodID?
 
     open func setVisibleComponent( component: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicTabbedPaneUI.setVisibleComponent_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicTabbedPaneUI.setVisibleComponent_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func setVisibleComponent( _ _component: java_awt.Component? ) {
@@ -1434,13 +1201,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.assureRectsCreated(int)
 
-    private static var assureRectsCreated_MethodID_41: jmethodID?
+    private static var assureRectsCreated_MethodID_24: jmethodID?
 
     open func assureRectsCreated( tabCount: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabCount, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "assureRectsCreated", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.assureRectsCreated_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "assureRectsCreated", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.assureRectsCreated_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func assureRectsCreated( _ _tabCount: Int ) {
@@ -1449,25 +1216,25 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.expandTabRunsArray()
 
-    private static var expandTabRunsArray_MethodID_42: jmethodID?
+    private static var expandTabRunsArray_MethodID_25: jmethodID?
 
     open func expandTabRunsArray() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "expandTabRunsArray", methodSig: "()V", methodCache: &BasicTabbedPaneUI.expandTabRunsArray_MethodID_42, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "expandTabRunsArray", methodSig: "()V", methodCache: &BasicTabbedPaneUI.expandTabRunsArray_MethodID_25, args: &__args, locals: &__locals )
     }
 
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getRunForTab(int,int)
 
-    private static var getRunForTab_MethodID_43: jmethodID?
+    private static var getRunForTab_MethodID_26: jmethodID?
 
     open func getRunForTab( tabCount: Int, tabIndex: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabCount, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRunForTab", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getRunForTab_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRunForTab", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getRunForTab_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1477,14 +1244,14 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.lastTabInRun(int,int)
 
-    private static var lastTabInRun_MethodID_44: jmethodID?
+    private static var lastTabInRun_MethodID_27: jmethodID?
 
     open func lastTabInRun( tabCount: Int, run: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabCount, locals: &__locals )
         __args[1] = JNIType.toJava( value: run, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "lastTabInRun", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.lastTabInRun_MethodID_44, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "lastTabInRun", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.lastTabInRun_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1494,13 +1261,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabRunOverlay(int)
 
-    private static var getTabRunOverlay_MethodID_45: jmethodID?
+    private static var getTabRunOverlay_MethodID_28: jmethodID?
 
     open func getTabRunOverlay( tabPlacement: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunOverlay", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getTabRunOverlay_MethodID_45, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunOverlay", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getTabRunOverlay_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1510,14 +1277,14 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabRunIndent(int,int)
 
-    private static var getTabRunIndent_MethodID_46: jmethodID?
+    private static var getTabRunIndent_MethodID_29: jmethodID?
 
     open func getTabRunIndent( tabPlacement: Int, run: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: run, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunIndent", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getTabRunIndent_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunIndent", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getTabRunIndent_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1527,14 +1294,14 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected boolean javax.swing.plaf.basic.BasicTabbedPaneUI.shouldPadTabRun(int,int)
 
-    private static var shouldPadTabRun_MethodID_47: jmethodID?
+    private static var shouldPadTabRun_MethodID_30: jmethodID?
 
     open func shouldPadTabRun( tabPlacement: Int, run: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: run, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldPadTabRun", methodSig: "(II)Z", methodCache: &BasicTabbedPaneUI.shouldPadTabRun_MethodID_47, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldPadTabRun", methodSig: "(II)Z", methodCache: &BasicTabbedPaneUI.shouldPadTabRun_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1544,13 +1311,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected boolean javax.swing.plaf.basic.BasicTabbedPaneUI.shouldRotateTabRuns(int)
 
-    private static var shouldRotateTabRuns_MethodID_48: jmethodID?
+    private static var shouldRotateTabRuns_MethodID_31: jmethodID?
 
     open func shouldRotateTabRuns( tabPlacement: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldRotateTabRuns", methodSig: "(I)Z", methodCache: &BasicTabbedPaneUI.shouldRotateTabRuns_MethodID_48, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldRotateTabRuns", methodSig: "(I)Z", methodCache: &BasicTabbedPaneUI.shouldRotateTabRuns_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1560,13 +1327,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected javax.swing.Icon javax.swing.plaf.basic.BasicTabbedPaneUI.getIconForTab(int)
 
-    private static var getIconForTab_MethodID_49: jmethodID?
+    private static var getIconForTab_MethodID_32: jmethodID?
 
     open func getIconForTab( tabIndex: Int ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconForTab", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &BasicTabbedPaneUI.getIconForTab_MethodID_49, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIconForTab", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &BasicTabbedPaneUI.getIconForTab_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -1577,13 +1344,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected javax.swing.text.View javax.swing.plaf.basic.BasicTabbedPaneUI.getTextViewForTab(int)
 
-    private static var getTextViewForTab_MethodID_50: jmethodID?
+    private static var getTextViewForTab_MethodID_33: jmethodID?
 
     open func getTextViewForTab( tabIndex: Int ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextViewForTab", methodSig: "(I)Ljavax/swing/text/View;", methodCache: &BasicTabbedPaneUI.getTextViewForTab_MethodID_50, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextViewForTab", methodSig: "(I)Ljavax/swing/text/View;", methodCache: &BasicTabbedPaneUI.getTextViewForTab_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -1594,7 +1361,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.calculateTabHeight(int,int,int)
 
-    private static var calculateTabHeight_MethodID_51: jmethodID?
+    private static var calculateTabHeight_MethodID_34: jmethodID?
 
     open func calculateTabHeight( tabPlacement: Int, tabIndex: Int, fontHeight: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1602,7 +1369,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: fontHeight, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabHeight", methodSig: "(III)I", methodCache: &BasicTabbedPaneUI.calculateTabHeight_MethodID_51, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabHeight", methodSig: "(III)I", methodCache: &BasicTabbedPaneUI.calculateTabHeight_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1612,13 +1379,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.calculateMaxTabHeight(int)
 
-    private static var calculateMaxTabHeight_MethodID_52: jmethodID?
+    private static var calculateMaxTabHeight_MethodID_35: jmethodID?
 
     open func calculateMaxTabHeight( tabPlacement: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateMaxTabHeight", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.calculateMaxTabHeight_MethodID_52, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateMaxTabHeight", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.calculateMaxTabHeight_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1628,7 +1395,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.calculateTabWidth(int,int,java.awt.FontMetrics)
 
-    private static var calculateTabWidth_MethodID_53: jmethodID?
+    private static var calculateTabWidth_MethodID_36: jmethodID?
 
     open func calculateTabWidth( tabPlacement: Int, tabIndex: Int, metrics: java_awt.FontMetrics? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1636,7 +1403,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: metrics != nil ? metrics! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabWidth", methodSig: "(IILjava/awt/FontMetrics;)I", methodCache: &BasicTabbedPaneUI.calculateTabWidth_MethodID_53, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabWidth", methodSig: "(IILjava/awt/FontMetrics;)I", methodCache: &BasicTabbedPaneUI.calculateTabWidth_MethodID_36, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1646,13 +1413,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.calculateMaxTabWidth(int)
 
-    private static var calculateMaxTabWidth_MethodID_54: jmethodID?
+    private static var calculateMaxTabWidth_MethodID_37: jmethodID?
 
     open func calculateMaxTabWidth( tabPlacement: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateMaxTabWidth", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.calculateMaxTabWidth_MethodID_54, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateMaxTabWidth", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.calculateMaxTabWidth_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1662,7 +1429,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.calculateTabAreaHeight(int,int,int)
 
-    private static var calculateTabAreaHeight_MethodID_55: jmethodID?
+    private static var calculateTabAreaHeight_MethodID_38: jmethodID?
 
     open func calculateTabAreaHeight( tabPlacement: Int, horizRunCount: Int, maxTabHeight: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1670,7 +1437,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: horizRunCount, locals: &__locals )
         __args[2] = JNIType.toJava( value: maxTabHeight, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabAreaHeight", methodSig: "(III)I", methodCache: &BasicTabbedPaneUI.calculateTabAreaHeight_MethodID_55, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabAreaHeight", methodSig: "(III)I", methodCache: &BasicTabbedPaneUI.calculateTabAreaHeight_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1680,7 +1447,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.calculateTabAreaWidth(int,int,int)
 
-    private static var calculateTabAreaWidth_MethodID_56: jmethodID?
+    private static var calculateTabAreaWidth_MethodID_39: jmethodID?
 
     open func calculateTabAreaWidth( tabPlacement: Int, vertRunCount: Int, maxTabWidth: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1688,7 +1455,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: vertRunCount, locals: &__locals )
         __args[2] = JNIType.toJava( value: maxTabWidth, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabAreaWidth", methodSig: "(III)I", methodCache: &BasicTabbedPaneUI.calculateTabAreaWidth_MethodID_56, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateTabAreaWidth", methodSig: "(III)I", methodCache: &BasicTabbedPaneUI.calculateTabAreaWidth_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1698,14 +1465,14 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.getTabInsets(int,int)
 
-    private static var getTabInsets_MethodID_57: jmethodID?
+    private static var getTabInsets_MethodID_40: jmethodID?
 
     open func getTabInsets( tabPlacement: Int, tabIndex: Int ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabInsets", methodSig: "(II)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getTabInsets_MethodID_57, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabInsets", methodSig: "(II)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getTabInsets_MethodID_40, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -1716,13 +1483,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.getSelectedTabPadInsets(int)
 
-    private static var getSelectedTabPadInsets_MethodID_58: jmethodID?
+    private static var getSelectedTabPadInsets_MethodID_41: jmethodID?
 
     open func getSelectedTabPadInsets( tabPlacement: Int ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedTabPadInsets", methodSig: "(I)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getSelectedTabPadInsets_MethodID_58, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedTabPadInsets", methodSig: "(I)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getSelectedTabPadInsets_MethodID_41, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -1733,13 +1500,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.getTabAreaInsets(int)
 
-    private static var getTabAreaInsets_MethodID_59: jmethodID?
+    private static var getTabAreaInsets_MethodID_42: jmethodID?
 
     open func getTabAreaInsets( tabPlacement: Int ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabAreaInsets", methodSig: "(I)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getTabAreaInsets_MethodID_59, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabAreaInsets", methodSig: "(I)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getTabAreaInsets_MethodID_42, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -1750,13 +1517,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.getContentBorderInsets(int)
 
-    private static var getContentBorderInsets_MethodID_60: jmethodID?
+    private static var getContentBorderInsets_MethodID_43: jmethodID?
 
     open func getContentBorderInsets( tabPlacement: Int ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentBorderInsets", methodSig: "(I)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getContentBorderInsets_MethodID_60, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentBorderInsets", methodSig: "(I)Ljava/awt/Insets;", methodCache: &BasicTabbedPaneUI.getContentBorderInsets_MethodID_43, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -1767,13 +1534,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.selectNextTabInRun(int)
 
-    private static var selectNextTabInRun_MethodID_61: jmethodID?
+    private static var selectNextTabInRun_MethodID_44: jmethodID?
 
     open func selectNextTabInRun( current: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: current, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectNextTabInRun", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectNextTabInRun_MethodID_61, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectNextTabInRun", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectNextTabInRun_MethodID_44, args: &__args, locals: &__locals )
     }
 
     open func selectNextTabInRun( _ _current: Int ) {
@@ -1782,13 +1549,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.selectPreviousTabInRun(int)
 
-    private static var selectPreviousTabInRun_MethodID_62: jmethodID?
+    private static var selectPreviousTabInRun_MethodID_45: jmethodID?
 
     open func selectPreviousTabInRun( current: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: current, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPreviousTabInRun", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectPreviousTabInRun_MethodID_62, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPreviousTabInRun", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectPreviousTabInRun_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func selectPreviousTabInRun( _ _current: Int ) {
@@ -1797,13 +1564,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.selectNextTab(int)
 
-    private static var selectNextTab_MethodID_63: jmethodID?
+    private static var selectNextTab_MethodID_46: jmethodID?
 
     open func selectNextTab( current: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: current, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectNextTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectNextTab_MethodID_63, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectNextTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectNextTab_MethodID_46, args: &__args, locals: &__locals )
     }
 
     open func selectNextTab( _ _current: Int ) {
@@ -1812,13 +1579,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.selectPreviousTab(int)
 
-    private static var selectPreviousTab_MethodID_64: jmethodID?
+    private static var selectPreviousTab_MethodID_47: jmethodID?
 
     open func selectPreviousTab( current: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: current, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPreviousTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectPreviousTab_MethodID_64, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPreviousTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.selectPreviousTab_MethodID_47, args: &__args, locals: &__locals )
     }
 
     open func selectPreviousTab( _ _current: Int ) {
@@ -1827,7 +1594,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.selectAdjacentRunTab(int,int,int)
 
-    private static var selectAdjacentRunTab_MethodID_65: jmethodID?
+    private static var selectAdjacentRunTab_MethodID_48: jmethodID?
 
     open func selectAdjacentRunTab( tabPlacement: Int, tabIndex: Int, offset: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1835,7 +1602,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
         __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: offset, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAdjacentRunTab", methodSig: "(III)V", methodCache: &BasicTabbedPaneUI.selectAdjacentRunTab_MethodID_65, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectAdjacentRunTab", methodSig: "(III)V", methodCache: &BasicTabbedPaneUI.selectAdjacentRunTab_MethodID_48, args: &__args, locals: &__locals )
     }
 
     open func selectAdjacentRunTab( _ _tabPlacement: Int, _ _tabIndex: Int, _ _offset: Int ) {
@@ -1852,7 +1619,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabRunOffset(int,int,int,boolean)
 
-    private static var getTabRunOffset_MethodID_66: jmethodID?
+    private static var getTabRunOffset_MethodID_49: jmethodID?
 
     open func getTabRunOffset( tabPlacement: Int, tabCount: Int, tabIndex: Int, forward: Bool ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -1861,7 +1628,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[1] = JNIType.toJava( value: tabCount, locals: &__locals )
         __args[2] = JNIType.toJava( value: tabIndex, locals: &__locals )
         __args[3] = JNIType.toJava( value: forward, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunOffset", methodSig: "(IIIZ)I", methodCache: &BasicTabbedPaneUI.getTabRunOffset_MethodID_66, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunOffset", methodSig: "(IIIZ)I", methodCache: &BasicTabbedPaneUI.getTabRunOffset_MethodID_49, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1871,13 +1638,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getPreviousTabIndex(int)
 
-    private static var getPreviousTabIndex_MethodID_67: jmethodID?
+    private static var getPreviousTabIndex_MethodID_50: jmethodID?
 
     open func getPreviousTabIndex( base: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: base, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousTabIndex", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getPreviousTabIndex_MethodID_67, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousTabIndex", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getPreviousTabIndex_MethodID_50, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1887,13 +1654,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getNextTabIndex(int)
 
-    private static var getNextTabIndex_MethodID_68: jmethodID?
+    private static var getNextTabIndex_MethodID_51: jmethodID?
 
     open func getNextTabIndex( base: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: base, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextTabIndex", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getNextTabIndex_MethodID_68, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextTabIndex", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getNextTabIndex_MethodID_51, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1903,14 +1670,14 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getNextTabIndexInRun(int,int)
 
-    private static var getNextTabIndexInRun_MethodID_69: jmethodID?
+    private static var getNextTabIndexInRun_MethodID_52: jmethodID?
 
     open func getNextTabIndexInRun( tabCount: Int, base: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabCount, locals: &__locals )
         __args[1] = JNIType.toJava( value: base, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextTabIndexInRun", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getNextTabIndexInRun_MethodID_69, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextTabIndexInRun", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getNextTabIndexInRun_MethodID_52, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1920,14 +1687,14 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getPreviousTabIndexInRun(int,int)
 
-    private static var getPreviousTabIndexInRun_MethodID_70: jmethodID?
+    private static var getPreviousTabIndexInRun_MethodID_53: jmethodID?
 
     open func getPreviousTabIndexInRun( tabCount: Int, base: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tabCount, locals: &__locals )
         __args[1] = JNIType.toJava( value: base, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousTabIndexInRun", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getPreviousTabIndexInRun_MethodID_70, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousTabIndexInRun", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI.getPreviousTabIndexInRun_MethodID_53, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1937,13 +1704,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getPreviousTabRun(int)
 
-    private static var getPreviousTabRun_MethodID_71: jmethodID?
+    private static var getPreviousTabRun_MethodID_54: jmethodID?
 
     open func getPreviousTabRun( baseRun: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: baseRun, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousTabRun", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getPreviousTabRun_MethodID_71, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousTabRun", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getPreviousTabRun_MethodID_54, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1953,13 +1720,13 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getNextTabRun(int)
 
-    private static var getNextTabRun_MethodID_72: jmethodID?
+    private static var getNextTabRun_MethodID_55: jmethodID?
 
     open func getNextTabRun( baseRun: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: baseRun, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextTabRun", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getNextTabRun_MethodID_72, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextTabRun", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getNextTabRun_MethodID_55, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1969,7 +1736,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// protected static void javax.swing.plaf.basic.BasicTabbedPaneUI.rotateInsets(java.awt.Insets,java.awt.Insets,int)
 
-    private static var rotateInsets_MethodID_73: jmethodID?
+    private static var rotateInsets_MethodID_56: jmethodID?
 
     open class func rotateInsets( topInsets: java_awt.Insets?, targetInsets: java_awt.Insets?, targetPlacement: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1977,7 +1744,7 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
         __args[0] = JNIType.toJava( value: topInsets != nil ? topInsets! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: targetInsets != nil ? targetInsets! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: targetPlacement, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/basic/BasicTabbedPaneUI", classCache: &BasicTabbedPaneUIJNIClass, methodName: "rotateInsets", methodSig: "(Ljava/awt/Insets;Ljava/awt/Insets;I)V", methodCache: &rotateInsets_MethodID_73, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/basic/BasicTabbedPaneUI", classCache: &BasicTabbedPaneUIJNIClass, methodName: "rotateInsets", methodSig: "(Ljava/awt/Insets;Ljava/awt/Insets;I)V", methodCache: &rotateInsets_MethodID_56, args: &__args, locals: &__locals )
     }
 
     open class func rotateInsets( _ _topInsets: java_awt.Insets?, _ _targetInsets: java_awt.Insets?, _ _targetPlacement: Int ) {
@@ -1996,8 +1763,6 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.access$2400(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
-    /// boolean javax.swing.plaf.basic.BasicTabbedPaneUI.requestFocusForVisibleComponent()
-
     /// static java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.access$1000(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
     /// static int javax.swing.plaf.basic.BasicTabbedPaneUI.access$1200(javax.swing.plaf.basic.BasicTabbedPaneUI,int,int)
@@ -2008,48 +1773,283 @@ open class BasicTabbedPaneUI: TabbedPaneUI, SwingConstants {
 
     /// static java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.access$1600(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
-    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallUI(javax.swing.JComponent)
+    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.createChangeListener()
 
-    private static var createChangeListener_MethodID_74: jmethodID?
+    private static var createChangeListener_MethodID_57: jmethodID?
 
     open func createChangeListener() -> ChangeListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicTabbedPaneUI.createChangeListener_MethodID_74, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicTabbedPaneUI.createChangeListener_MethodID_57, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// static boolean javax.swing.plaf.basic.BasicTabbedPaneUI.access$702(javax.swing.plaf.basic.BasicTabbedPaneUI,boolean)
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintIcon(java.awt.Graphics,int,int,javax.swing.Icon,java.awt.Rectangle,boolean)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI.getMinimumSize(javax.swing.JComponent)
+    private static var paintIcon_MethodID_58: jmethodID?
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI.getMaximumSize(javax.swing.JComponent)
+    open func paintIcon( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, icon: Icon?, iconRect: java_awt.Rectangle?, isSelected: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
+        __args[2] = JNIType.toJava( value: tabIndex, locals: &__locals )
+        __args[3] = JNIType.toJava( value: icon, locals: &__locals )
+        __args[4] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: isSelected, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Graphics;IILjavax/swing/Icon;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.paintIcon_MethodID_58, args: &__args, locals: &__locals )
+    }
 
-    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getBaseline(int)
+    open func paintIcon( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _icon: Icon?, _ _iconRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
+        paintIcon( g: _g, tabPlacement: _tabPlacement, tabIndex: _tabIndex, icon: _icon, iconRect: _iconRect, isSelected: _isSelected )
+    }
 
-    private static var getBaseline_MethodID_75: jmethodID?
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.paintText(java.awt.Graphics,int,java.awt.Font,java.awt.FontMetrics,int,java.lang.String,java.awt.Rectangle,boolean)
 
-    open func getBaseline( tab: Int ) -> Int {
+    private static var paintText_MethodID_59: jmethodID?
+
+    open func paintText( g: java_awt.Graphics?, tabPlacement: Int, font: java_awt.Font?, metrics: java_awt.FontMetrics?, tabIndex: Int, title: String?, textRect: java_awt.Rectangle?, isSelected: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
+        __args[2] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: metrics != nil ? metrics! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: tabIndex, locals: &__locals )
+        __args[5] = JNIType.toJava( value: title, locals: &__locals )
+        __args[6] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
+        __args[7] = JNIType.toJava( value: isSelected, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Font;Ljava/awt/FontMetrics;ILjava/lang/String;Ljava/awt/Rectangle;Z)V", methodCache: &BasicTabbedPaneUI.paintText_MethodID_59, args: &__args, locals: &__locals )
+    }
+
+    open func paintText( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _font: java_awt.Font?, _ _metrics: java_awt.FontMetrics?, _ _tabIndex: Int, _ _title: String?, _ _textRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
+        paintText( g: _g, tabPlacement: _tabPlacement, font: _font, metrics: _metrics, tabIndex: _tabIndex, title: _title, textRect: _textRect, isSelected: _isSelected )
+    }
+
+    /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int,boolean)
+
+    /// public int javax.swing.plaf.basic.BasicTabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int)
+
+    /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(int,java.awt.Rectangle)
+
+    private static var getTabBounds_MethodID_60: jmethodID?
+
+    open func getTabBounds( tabIndex: Int, dest: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
+        __args[1] = JNIType.toJava( value: dest != nil ? dest! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(ILjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &BasicTabbedPaneUI.getTabBounds_MethodID_60, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    open func getTabBounds( _ _tabIndex: Int, _ _dest: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        return getTabBounds( tabIndex: _tabIndex, dest: _dest )
+    }
+
+    /// public java.awt.Rectangle javax.swing.plaf.basic.BasicTabbedPaneUI.getTabBounds(javax.swing.JTabbedPane,int)
+
+    private static var getTabBounds_MethodID_61: jmethodID?
+
+    open func getTabBounds( pane: JTabbedPane?, i: Int ) -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pane != nil ? pane! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: i, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(Ljavax/swing/JTabbedPane;I)Ljava/awt/Rectangle;", methodCache: &BasicTabbedPaneUI.getTabBounds_MethodID_61, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    override open func getTabBounds( _ _pane: JTabbedPane?, _ _i: Int ) -> java_awt.Rectangle! {
+        return getTabBounds( pane: _pane, i: _i )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicTabbedPaneUI.getTabRunCount(javax.swing.JTabbedPane)
+
+    /// boolean javax.swing.plaf.basic.BasicTabbedPaneUI.requestFocusForVisibleComponent()
+
+    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installDefaults()
+
+    private static var installDefaults_MethodID_62: jmethodID?
+
+    open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tab, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(I)I", methodCache: &BasicTabbedPaneUI.getBaseline_MethodID_75, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installDefaults_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installComponents()
+
+    private static var installComponents_MethodID_63: jmethodID?
+
+    open func installComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installComponents_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installListeners()
+
+    private static var installListeners_MethodID_64: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installListeners_MethodID_64, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_65: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTabbedPaneUI.installKeyboardActions_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_66: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallDefaults_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_67: jmethodID?
+
+    open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallComponents_MethodID_67, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_68: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallListeners_MethodID_68, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_69: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTabbedPaneUI.uninstallKeyboardActions_MethodID_69, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_70: jmethodID?
+
+    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicTabbedPaneUI.createPropertyChangeListener_MethodID_70, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicTabbedPaneUI.createFocusListener()
+
+    private static var createFocusListener_MethodID_71: jmethodID?
+
+    open func createFocusListener() -> java_awt.FocusListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicTabbedPaneUI.createFocusListener_MethodID_71, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicTabbedPaneUI.createLayoutManager()
+
+    private static var createLayoutManager_MethodID_72: jmethodID?
+
+    open func createLayoutManager() -> java_awt.LayoutManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicTabbedPaneUI.createLayoutManager_MethodID_72, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.MouseListener javax.swing.plaf.basic.BasicTabbedPaneUI.createMouseListener()
+
+    private static var createMouseListener_MethodID_73: jmethodID?
+
+    open func createMouseListener() -> java_awt.MouseListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicTabbedPaneUI.createMouseListener_MethodID_73, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.MouseListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.access$1800(javax.swing.plaf.basic.BasicTabbedPaneUI)
+
+    /// static java.util.Vector javax.swing.plaf.basic.BasicTabbedPaneUI.access$1900(javax.swing.plaf.basic.BasicTabbedPaneUI)
+
+    /// static int javax.swing.plaf.basic.BasicTabbedPaneUI.access$2200(javax.swing.plaf.basic.BasicTabbedPaneUI)
+
+    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI.access$2100(javax.swing.plaf.basic.BasicTabbedPaneUI,int,int)
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI.navigateSelectedTab(int)
+
+    private static var navigateSelectedTab_MethodID_74: jmethodID?
+
+    open func navigateSelectedTab( direction: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "navigateSelectedTab", methodSig: "(I)V", methodCache: &BasicTabbedPaneUI.navigateSelectedTab_MethodID_74, args: &__args, locals: &__locals )
+    }
+
+    open func navigateSelectedTab( _ _direction: Int ) {
+        navigateSelectedTab( direction: _direction )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.getFocusIndex()
+
+    private static var getFocusIndex_MethodID_75: jmethodID?
+
+    open func getFocusIndex() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFocusIndex", methodSig: "()I", methodCache: &BasicTabbedPaneUI.getFocusIndex_MethodID_75, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    open func getBaseline( _ _tab: Int ) -> Int {
-        return getBaseline( tab: _tab )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicTabbedPaneUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTabbedPaneUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

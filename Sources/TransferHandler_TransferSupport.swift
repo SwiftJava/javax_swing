@@ -59,68 +59,16 @@ open class TransferHandler_TransferSupport: java_swift.JavaObject {
 
     /// static boolean javax.swing.TransferHandler$TransferSupport.access$600(javax.swing.TransferHandler$TransferSupport)
 
-    /// public javax.swing.TransferHandler$DropLocation javax.swing.TransferHandler$TransferSupport.getDropLocation()
-
-    private static var getDropLocation_MethodID_2: jmethodID?
-
-    open func getDropLocation() -> TransferHandler_DropLocation! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLocation", methodSig: "()Ljavax/swing/TransferHandler$DropLocation;", methodCache: &TransferHandler_TransferSupport.getDropLocation_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TransferHandler_DropLocation( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.TransferHandler$TransferSupport.getDropAction()
-
-    private static var getDropAction_MethodID_3: jmethodID?
-
-    open func getDropAction() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDropAction", methodSig: "()I", methodCache: &TransferHandler_TransferSupport.getDropAction_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.TransferHandler$TransferSupport.isDataFlavorSupported(java.awt.datatransfer.DataFlavor)
-
-    private static var isDataFlavorSupported_MethodID_4: jmethodID?
-
-    open func isDataFlavorSupported( arg0: java_awt.DataFlavor? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &TransferHandler_TransferSupport.isDataFlavorSupported_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isDataFlavorSupported( _ _arg0: java_awt.DataFlavor? ) -> Bool {
-        return isDataFlavorSupported( arg0: _arg0 )
-    }
-
-    /// public java.awt.Component javax.swing.TransferHandler$TransferSupport.getComponent()
-
-    private static var getComponent_MethodID_5: jmethodID?
-
-    open func getComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &TransferHandler_TransferSupport.getComponent_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
+    /// static boolean javax.swing.TransferHandler$TransferSupport.access$700(javax.swing.TransferHandler$TransferSupport)
 
     /// public java.awt.datatransfer.Transferable javax.swing.TransferHandler$TransferSupport.getTransferable()
 
-    private static var getTransferable_MethodID_6: jmethodID?
+    private static var getTransferable_MethodID_2: jmethodID?
 
     open func getTransferable() -> java_awt.Transferable! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferable", methodSig: "()Ljava/awt/datatransfer/Transferable;", methodCache: &TransferHandler_TransferSupport.getTransferable_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferable", methodSig: "()Ljava/awt/datatransfer/Transferable;", methodCache: &TransferHandler_TransferSupport.getTransferable_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.TransferableForward( javaObject: __return ) : nil
     }
@@ -128,29 +76,81 @@ open class TransferHandler_TransferSupport: java_swift.JavaObject {
 
     /// public java.awt.datatransfer.DataFlavor[] javax.swing.TransferHandler$TransferSupport.getDataFlavors()
 
-    private static var getDataFlavors_MethodID_7: jmethodID?
+    private static var getDataFlavors_MethodID_3: jmethodID?
 
     open func getDataFlavors() -> [DataFlavor]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &TransferHandler_TransferSupport.getDataFlavors_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDataFlavors", methodSig: "()[Ljava/awt/datatransfer/DataFlavor;", methodCache: &TransferHandler_TransferSupport.getDataFlavors_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [DataFlavor](), from: __return )
     }
 
 
+    /// public int javax.swing.TransferHandler$TransferSupport.getDropAction()
+
+    private static var getDropAction_MethodID_4: jmethodID?
+
+    open func getDropAction() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDropAction", methodSig: "()I", methodCache: &TransferHandler_TransferSupport.getDropAction_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.TransferHandler$TransferSupport.isDataFlavorSupported(java.awt.datatransfer.DataFlavor)
+
+    private static var isDataFlavorSupported_MethodID_5: jmethodID?
+
+    open func isDataFlavorSupported( arg0: java_awt.DataFlavor? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDataFlavorSupported", methodSig: "(Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &TransferHandler_TransferSupport.isDataFlavorSupported_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isDataFlavorSupported( _ _arg0: java_awt.DataFlavor? ) -> Bool {
+        return isDataFlavorSupported( arg0: _arg0 )
+    }
+
     /// public boolean javax.swing.TransferHandler$TransferSupport.isDrop()
 
-    private static var isDrop_MethodID_8: jmethodID?
+    private static var isDrop_MethodID_6: jmethodID?
 
     open func isDrop() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDrop", methodSig: "()Z", methodCache: &TransferHandler_TransferSupport.isDrop_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDrop", methodSig: "()Z", methodCache: &TransferHandler_TransferSupport.isDrop_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
-    /// static boolean javax.swing.TransferHandler$TransferSupport.access$700(javax.swing.TransferHandler$TransferSupport)
+    /// public javax.swing.TransferHandler$DropLocation javax.swing.TransferHandler$TransferSupport.getDropLocation()
+
+    private static var getDropLocation_MethodID_7: jmethodID?
+
+    open func getDropLocation() -> TransferHandler_DropLocation! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLocation", methodSig: "()Ljavax/swing/TransferHandler$DropLocation;", methodCache: &TransferHandler_TransferSupport.getDropLocation_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TransferHandler_DropLocation( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Component javax.swing.TransferHandler$TransferSupport.getComponent()
+
+    private static var getComponent_MethodID_8: jmethodID?
+
+    open func getComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &TransferHandler_TransferSupport.getComponent_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
 
     /// private void javax.swing.TransferHandler$TransferSupport.setDNDVariables(java.awt.Component,java.awt.dnd.DropTargetEvent)
 

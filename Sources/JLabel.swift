@@ -842,18 +842,26 @@ open class JLabel: JComponent, SwingConstants {
     }
 
 
-    /// public javax.swing.plaf.LabelUI javax.swing.JLabel.getUI()
+    /// public boolean javax.swing.JLabel.imageUpdate(java.awt.Image,int,int,int,int,int)
 
-    private static var getUI_MethodID_8: jmethodID?
+    private static var imageUpdate_MethodID_8: jmethodID?
 
-    open func getUI() -> LabelUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/LabelUI;", methodCache: &JLabel.getUI_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LabelUI( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &JLabel.imageUpdate_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
+        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
+    }
 
     /// public java.lang.String javax.swing.JLabel.getText()
 
@@ -1228,26 +1236,18 @@ open class JLabel: JComponent, SwingConstants {
         setLabelFor( c: _c )
     }
 
-    /// public boolean javax.swing.JLabel.imageUpdate(java.awt.Image,int,int,int,int,int)
+    /// public javax.swing.plaf.LabelUI javax.swing.JLabel.getUI()
 
-    private static var imageUpdate_MethodID_35: jmethodID?
+    private static var getUI_MethodID_35: jmethodID?
 
-    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func getUI() -> LabelUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &JLabel.imageUpdate_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/LabelUI;", methodCache: &JLabel.getUI_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? LabelUI( javaObject: __return ) : nil
     }
 
-    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
-        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
-    }
 
     /// In declared protocol but not defined.. ///
 

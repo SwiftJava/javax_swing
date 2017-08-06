@@ -509,27 +509,39 @@ open class Entity: java_swift.JavaObject, DTDConstants {
     }
 
 
+    /// public java.lang.String javax.swing.text.html.parser.Entity.getString()
+
+    private static var getString_MethodID_5: jmethodID?
+
+    open func getString() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "()Ljava/lang/String;", methodCache: &Entity.getString_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
     /// public char[] javax.swing.text.html.parser.Entity.getData()
 
-    private static var getData_MethodID_5: jmethodID?
+    private static var getData_MethodID_6: jmethodID?
 
     open func getData() -> [UInt16]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()[C", methodCache: &Entity.getData_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()[C", methodCache: &Entity.getData_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [UInt16](), from: __return )
     }
 
 
     /// public static int javax.swing.text.html.parser.Entity.name2type(java.lang.String)
 
-    private static var name2type_MethodID_6: jmethodID?
+    private static var name2type_MethodID_7: jmethodID?
 
     open class func name2type( nm: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/parser/Entity", classCache: &EntityJNIClass, methodName: "name2type", methodSig: "(Ljava/lang/String;)I", methodCache: &name2type_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/parser/Entity", classCache: &EntityJNIClass, methodName: "name2type", methodSig: "(Ljava/lang/String;)I", methodCache: &name2type_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -539,25 +551,13 @@ open class Entity: java_swift.JavaObject, DTDConstants {
 
     /// public boolean javax.swing.text.html.parser.Entity.isGeneral()
 
-    private static var isGeneral_MethodID_7: jmethodID?
+    private static var isGeneral_MethodID_8: jmethodID?
 
     open func isGeneral() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isGeneral", methodSig: "()Z", methodCache: &Entity.isGeneral_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isGeneral", methodSig: "()Z", methodCache: &Entity.isGeneral_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public java.lang.String javax.swing.text.html.parser.Entity.getString()
-
-    private static var getString_MethodID_8: jmethodID?
-
-    open func getString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "()Ljava/lang/String;", methodCache: &Entity.getString_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
     }
 
 

@@ -178,9 +178,71 @@ open class WrappedPlainView: BoxView, TabExpander {
 
     /// public void javax.swing.text.WrappedPlainView.setSize(float,float)
 
+    /// public float javax.swing.text.WrappedPlainView.getMinimumSpan(int)
+
+    /// public float javax.swing.text.WrappedPlainView.getMaximumSpan(int)
+
+    /// public float javax.swing.text.WrappedPlainView.nextTabStop(float,int)
+
+    private static var nextTabStop_MethodID_3: jmethodID?
+
+    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &WrappedPlainView.nextTabStop_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
+        return nextTabStop( x: _x, tabOffset: _tabOffset )
+    }
+
+    /// public void javax.swing.text.WrappedPlainView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public void javax.swing.text.WrappedPlainView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public void javax.swing.text.WrappedPlainView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// void javax.swing.text.WrappedPlainView.updateChildren(javax.swing.event.DocumentEvent,java.awt.Shape)
+
+    /// protected void javax.swing.text.WrappedPlainView.loadChildren(javax.swing.text.ViewFactory)
+
+    private static var loadChildren_MethodID_4: jmethodID?
+
+    override open func loadChildren( f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &WrappedPlainView.loadChildren_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func loadChildren( _ _f: ViewFactory? ) {
+        loadChildren( f: _f )
+    }
+
+    /// public float javax.swing.text.WrappedPlainView.getPreferredSpan(int)
+
+    /// public void javax.swing.text.WrappedPlainView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_5: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &WrappedPlainView.paint_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
+
     /// protected void javax.swing.text.WrappedPlainView.drawLine(int,int,java.awt.Graphics,int,int)
 
-    private static var drawLine_MethodID_3: jmethodID?
+    private static var drawLine_MethodID_6: jmethodID?
 
     open func drawLine( p0: Int, p1: Int, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -190,53 +252,16 @@ open class WrappedPlainView: BoxView, TabExpander {
         __args[2] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
         __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(IILjava/awt/Graphics;II)V", methodCache: &WrappedPlainView.drawLine_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(IILjava/awt/Graphics;II)V", methodCache: &WrappedPlainView.drawLine_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func drawLine( _ _p0: Int, _ _p1: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
         drawLine( p0: _p0, p1: _p1, g: _g, x: _x, y: _y )
     }
 
-    /// public void javax.swing.text.WrappedPlainView.paint(java.awt.Graphics,java.awt.Shape)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &WrappedPlainView.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
-
-    /// public float javax.swing.text.WrappedPlainView.getMinimumSpan(int)
-
-    /// public float javax.swing.text.WrappedPlainView.getMaximumSpan(int)
-
-    /// public float javax.swing.text.WrappedPlainView.nextTabStop(float,int)
-
-    private static var nextTabStop_MethodID_5: jmethodID?
-
-    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &WrappedPlainView.nextTabStop_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
-        return nextTabStop( x: _x, tabOffset: _tabOffset )
-    }
-
     /// protected int javax.swing.text.WrappedPlainView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
-    private static var drawUnselectedText_MethodID_6: jmethodID?
+    private static var drawUnselectedText_MethodID_7: jmethodID?
 
     open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -246,7 +271,7 @@ open class WrappedPlainView: BoxView, TabExpander {
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: p0, locals: &__locals )
         __args[4] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawUnselectedText_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawUnselectedText_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -259,7 +284,7 @@ open class WrappedPlainView: BoxView, TabExpander {
 
     /// protected int javax.swing.text.WrappedPlainView.drawSelectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
-    private static var drawSelectedText_MethodID_7: jmethodID?
+    private static var drawSelectedText_MethodID_8: jmethodID?
 
     open func drawSelectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -269,7 +294,7 @@ open class WrappedPlainView: BoxView, TabExpander {
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: p0, locals: &__locals )
         __args[4] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawSelectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawSelectedText_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawSelectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawSelectedText_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -282,24 +307,24 @@ open class WrappedPlainView: BoxView, TabExpander {
 
     /// protected int javax.swing.text.WrappedPlainView.getTabSize()
 
-    private static var getTabSize_MethodID_8: jmethodID?
+    private static var getTabSize_MethodID_9: jmethodID?
 
     open func getTabSize() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &WrappedPlainView.getTabSize_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &WrappedPlainView.getTabSize_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected final javax.swing.text.Segment javax.swing.text.WrappedPlainView.getLineBuffer()
 
-    private static var getLineBuffer_MethodID_9: jmethodID?
+    private static var getLineBuffer_MethodID_10: jmethodID?
 
     open func getLineBuffer() -> Segment! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineBuffer", methodSig: "()Ljavax/swing/text/Segment;", methodCache: &WrappedPlainView.getLineBuffer_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineBuffer", methodSig: "()Ljavax/swing/text/Segment;", methodCache: &WrappedPlainView.getLineBuffer_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Segment( javaObject: __return ) : nil
     }
@@ -311,14 +336,14 @@ open class WrappedPlainView: BoxView, TabExpander {
 
     /// protected int javax.swing.text.WrappedPlainView.calculateBreakPosition(int,int)
 
-    private static var calculateBreakPosition_MethodID_10: jmethodID?
+    private static var calculateBreakPosition_MethodID_11: jmethodID?
 
     open func calculateBreakPosition( p0: Int, p1: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: p0, locals: &__locals )
         __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateBreakPosition", methodSig: "(II)I", methodCache: &WrappedPlainView.calculateBreakPosition_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateBreakPosition", methodSig: "(II)I", methodCache: &WrappedPlainView.calculateBreakPosition_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -327,31 +352,6 @@ open class WrappedPlainView: BoxView, TabExpander {
     }
 
     /// private int javax.swing.text.WrappedPlainView.drawText(javax.swing.text.Element,int,int,java.awt.Graphics,int,int) throws javax.swing.text.BadLocationException
-
-    /// public void javax.swing.text.WrappedPlainView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.WrappedPlainView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.WrappedPlainView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// void javax.swing.text.WrappedPlainView.updateChildren(javax.swing.event.DocumentEvent,java.awt.Shape)
-
-    /// protected void javax.swing.text.WrappedPlainView.loadChildren(javax.swing.text.ViewFactory)
-
-    private static var loadChildren_MethodID_11: jmethodID?
-
-    override open func loadChildren( f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &WrappedPlainView.loadChildren_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func loadChildren( _ _f: ViewFactory? ) {
-        loadChildren( f: _f )
-    }
-
-    /// public float javax.swing.text.WrappedPlainView.getPreferredSpan(int)
 
 }
 

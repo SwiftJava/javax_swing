@@ -137,136 +137,11 @@ open class GlyphView: View, TabableView, java_lang.Cloneable {
 
     /// public float javax.swing.text.GlyphView.getAlignment(int)
 
-    /// public boolean javax.swing.text.GlyphView.isSuperscript()
-
-    private static var isSuperscript_MethodID_3: jmethodID?
-
-    open func isSuperscript() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSuperscript", methodSig: "()Z", methodCache: &GlyphView.isSuperscript_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.text.GlyphView.isSubscript()
-
-    private static var isSubscript_MethodID_4: jmethodID?
-
-    open func isSubscript() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSubscript", methodSig: "()Z", methodCache: &GlyphView.isSubscript_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.text.GlyphView.isUnderline()
-
-    private static var isUnderline_MethodID_5: jmethodID?
-
-    open func isUnderline() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUnderline", methodSig: "()Z", methodCache: &GlyphView.isUnderline_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.text.GlyphView.isStrikeThrough()
-
-    private static var isStrikeThrough_MethodID_6: jmethodID?
-
-    open func isStrikeThrough() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isStrikeThrough", methodSig: "()Z", methodCache: &GlyphView.isStrikeThrough_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.GlyphView.paint(java.awt.Graphics,java.awt.Shape)
-
-    private static var paint_MethodID_7: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &GlyphView.paint_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
-
-    /// public javax.swing.text.Segment javax.swing.text.GlyphView.getText(int,int)
-
-    private static var getText_MethodID_8: jmethodID?
-
-    open func getText( p0: Int, p1: Int ) -> Segment! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljavax/swing/text/Segment;", methodCache: &GlyphView.getText_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Segment( javaObject: __return ) : nil
-    }
-
-    open func getText( _ _p0: Int, _ _p1: Int ) -> Segment! {
-        return getText( p0: _p0, p1: _p1 )
-    }
-
-    /// public int javax.swing.text.GlyphView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    /// public java.awt.Shape javax.swing.text.GlyphView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
-
-    /// public java.awt.Font javax.swing.text.GlyphView.getFont()
-
-    private static var getFont_MethodID_9: jmethodID?
-
-    open func getFont() -> java_awt.Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &GlyphView.getFont_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Color javax.swing.text.GlyphView.getBackground()
-
-    private static var getBackground_MethodID_10: jmethodID?
-
-    open func getBackground() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "()Ljava/awt/Color;", methodCache: &GlyphView.getBackground_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Color javax.swing.text.GlyphView.getForeground()
-
-    private static var getForeground_MethodID_11: jmethodID?
-
-    open func getForeground() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "()Ljava/awt/Color;", methodCache: &GlyphView.getForeground_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
     /// public float javax.swing.text.GlyphView.getMinimumSpan(int)
 
     /// public javax.swing.text.View javax.swing.text.GlyphView.breakView(int,int,float,float)
 
-    private static var breakView_MethodID_12: jmethodID?
+    private static var breakView_MethodID_3: jmethodID?
 
     open func breakView( axis: Int, p0: Int, pos: Float, len: Float ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -275,7 +150,7 @@ open class GlyphView: View, TabableView, java_lang.Cloneable {
         __args[1] = JNIType.toJava( value: p0, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         __args[3] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IIFF)Ljavax/swing/text/View;", methodCache: &GlyphView.breakView_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IIFF)Ljavax/swing/text/View;", methodCache: &GlyphView.breakView_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -292,19 +167,158 @@ open class GlyphView: View, TabableView, java_lang.Cloneable {
 
     /// public float javax.swing.text.GlyphView.getPartialSpan(int,int)
 
-    private static var getPartialSpan_MethodID_13: jmethodID?
+    private static var getPartialSpan_MethodID_4: jmethodID?
 
     open func getPartialSpan( p0: Int, p1: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: p0, locals: &__locals )
         __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPartialSpan", methodSig: "(II)F", methodCache: &GlyphView.getPartialSpan_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPartialSpan", methodSig: "(II)F", methodCache: &GlyphView.getPartialSpan_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
     open func getPartialSpan( _ _p0: Int, _ _p1: Int ) -> Float {
         return getPartialSpan( p0: _p0, p1: _p1 )
+    }
+
+    /// public boolean javax.swing.text.GlyphView.isSuperscript()
+
+    private static var isSuperscript_MethodID_5: jmethodID?
+
+    open func isSuperscript() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSuperscript", methodSig: "()Z", methodCache: &GlyphView.isSuperscript_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.text.GlyphView.isSubscript()
+
+    private static var isSubscript_MethodID_6: jmethodID?
+
+    open func isSubscript() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSubscript", methodSig: "()Z", methodCache: &GlyphView.isSubscript_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.text.GlyphView.isUnderline()
+
+    private static var isUnderline_MethodID_7: jmethodID?
+
+    open func isUnderline() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isUnderline", methodSig: "()Z", methodCache: &GlyphView.isUnderline_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.text.GlyphView.isStrikeThrough()
+
+    private static var isStrikeThrough_MethodID_8: jmethodID?
+
+    open func isStrikeThrough() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isStrikeThrough", methodSig: "()Z", methodCache: &GlyphView.isStrikeThrough_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.text.GlyphView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public void javax.swing.text.GlyphView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public void javax.swing.text.GlyphView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public int javax.swing.text.GlyphView.getEndOffset()
+
+    /// public int javax.swing.text.GlyphView.getStartOffset()
+
+    /// public float javax.swing.text.GlyphView.getPreferredSpan(int)
+
+    /// public int javax.swing.text.GlyphView.getNextVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    /// public javax.swing.text.Segment javax.swing.text.GlyphView.getText(int,int)
+
+    private static var getText_MethodID_9: jmethodID?
+
+    open func getText( p0: Int, p1: Int ) -> Segment! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: p1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljavax/swing/text/Segment;", methodCache: &GlyphView.getText_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Segment( javaObject: __return ) : nil
+    }
+
+    open func getText( _ _p0: Int, _ _p1: Int ) -> Segment! {
+        return getText( p0: _p0, p1: _p1 )
+    }
+
+    /// public int javax.swing.text.GlyphView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    /// public java.awt.Shape javax.swing.text.GlyphView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
+
+    /// public java.awt.Font javax.swing.text.GlyphView.getFont()
+
+    private static var getFont_MethodID_10: jmethodID?
+
+    open func getFont() -> java_awt.Font! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "()Ljava/awt/Font;", methodCache: &GlyphView.getFont_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Color javax.swing.text.GlyphView.getBackground()
+
+    private static var getBackground_MethodID_11: jmethodID?
+
+    open func getBackground() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "()Ljava/awt/Color;", methodCache: &GlyphView.getBackground_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Color javax.swing.text.GlyphView.getForeground()
+
+    private static var getForeground_MethodID_12: jmethodID?
+
+    open func getForeground() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "()Ljava/awt/Color;", methodCache: &GlyphView.getForeground_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.GlyphView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_13: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &GlyphView.paint_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
     }
 
     /// public float javax.swing.text.GlyphView.getTabbedSpan(float,javax.swing.text.TabExpander)
@@ -387,20 +401,6 @@ open class GlyphView: View, TabableView, java_lang.Cloneable {
     /// private void javax.swing.text.GlyphView.syncCR()
 
     /// javax.swing.text.GlyphView$JustificationInfo javax.swing.text.GlyphView.getJustificationInfo(int)
-
-    /// public void javax.swing.text.GlyphView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.GlyphView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.GlyphView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public int javax.swing.text.GlyphView.getEndOffset()
-
-    /// public int javax.swing.text.GlyphView.getStartOffset()
-
-    /// public float javax.swing.text.GlyphView.getPreferredSpan(int)
-
-    /// public int javax.swing.text.GlyphView.getNextVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
 
 }
 

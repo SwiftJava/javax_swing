@@ -44,48 +44,9 @@ open class BorderUIResource: java_swift.JavaObject, Border, UIResource, /* java.
         self.init( delegate: _delegate )
     }
 
-    /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getEtchedBorderUIResource()
-
-    private static var getEtchedBorderUIResource_MethodID_2: jmethodID?
-
-    open class func getEtchedBorderUIResource() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getEtchedBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getEtchedBorderUIResource_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-
-    /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getLoweredBevelBorderUIResource()
-
-    private static var getLoweredBevelBorderUIResource_MethodID_3: jmethodID?
-
-    open class func getLoweredBevelBorderUIResource() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getLoweredBevelBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getLoweredBevelBorderUIResource_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-
-    /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getBlackLineBorderUIResource()
-
-    private static var getBlackLineBorderUIResource_MethodID_4: jmethodID?
-
-    open class func getBlackLineBorderUIResource() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getBlackLineBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getBlackLineBorderUIResource_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-
     /// public void javax.swing.plaf.BorderUIResource.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_5: jmethodID?
+    private static var paintBorder_MethodID_2: jmethodID?
 
     open func paintBorder( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -96,7 +57,7 @@ open class BorderUIResource: java_swift.JavaObject, Border, UIResource, /* java.
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: width, locals: &__locals )
         __args[5] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;IIII)V", methodCache: &BorderUIResource.paintBorder_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;IIII)V", methodCache: &BorderUIResource.paintBorder_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -105,13 +66,13 @@ open class BorderUIResource: java_swift.JavaObject, Border, UIResource, /* java.
 
     /// public java.awt.Insets javax.swing.plaf.BorderUIResource.getBorderInsets(java.awt.Component)
 
-    private static var getBorderInsets_MethodID_6: jmethodID?
+    private static var getBorderInsets_MethodID_3: jmethodID?
 
     open func getBorderInsets( c: java_awt.Component? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;)Ljava/awt/Insets;", methodCache: &BorderUIResource.getBorderInsets_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;)Ljava/awt/Insets;", methodCache: &BorderUIResource.getBorderInsets_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -122,24 +83,63 @@ open class BorderUIResource: java_swift.JavaObject, Border, UIResource, /* java.
 
     /// public boolean javax.swing.plaf.BorderUIResource.isBorderOpaque()
 
-    private static var isBorderOpaque_MethodID_7: jmethodID?
+    private static var isBorderOpaque_MethodID_4: jmethodID?
 
     open func isBorderOpaque() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderOpaque", methodSig: "()Z", methodCache: &BorderUIResource.isBorderOpaque_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderOpaque", methodSig: "()Z", methodCache: &BorderUIResource.isBorderOpaque_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getRaisedBevelBorderUIResource()
 
-    private static var getRaisedBevelBorderUIResource_MethodID_8: jmethodID?
+    private static var getRaisedBevelBorderUIResource_MethodID_5: jmethodID?
 
     open class func getRaisedBevelBorderUIResource() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getRaisedBevelBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getRaisedBevelBorderUIResource_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getRaisedBevelBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getRaisedBevelBorderUIResource_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getEtchedBorderUIResource()
+
+    private static var getEtchedBorderUIResource_MethodID_6: jmethodID?
+
+    open class func getEtchedBorderUIResource() -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getEtchedBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getEtchedBorderUIResource_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getLoweredBevelBorderUIResource()
+
+    private static var getLoweredBevelBorderUIResource_MethodID_7: jmethodID?
+
+    open class func getLoweredBevelBorderUIResource() -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getLoweredBevelBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getLoweredBevelBorderUIResource_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.border.Border javax.swing.plaf.BorderUIResource.getBlackLineBorderUIResource()
+
+    private static var getBlackLineBorderUIResource_MethodID_8: jmethodID?
+
+    open class func getBlackLineBorderUIResource() -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/BorderUIResource", classCache: &BorderUIResourceJNIClass, methodName: "getBlackLineBorderUIResource", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getBlackLineBorderUIResource_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }

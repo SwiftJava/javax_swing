@@ -48,18 +48,31 @@ open class BasicLookAndFeel: LookAndFeel, /* java.io.Serializable */ UnclassedPr
 
     /// public void javax.swing.plaf.basic.BasicLookAndFeel.initialize()
 
-    /// static int javax.swing.plaf.basic.BasicLookAndFeel.getFocusAcceleratorKeyMask()
+    /// protected void javax.swing.plaf.basic.BasicLookAndFeel.loadSystemColors(javax.swing.UIDefaults,java.lang.String[],boolean)
 
-    /// public void javax.swing.plaf.basic.BasicLookAndFeel.uninitialize()
+    private static var loadSystemColors_MethodID_2: jmethodID?
+
+    open func loadSystemColors( table: UIDefaults?, systemColors: [String]?, useNative: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: table, mapClass: "javax/swing/UIDefaults", locals: &__locals )
+        __args[1] = JNIType.toJava( value: systemColors, locals: &__locals )
+        __args[2] = JNIType.toJava( value: useNative, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadSystemColors", methodSig: "(Ljavax/swing/UIDefaults;[Ljava/lang/String;Z)V", methodCache: &BasicLookAndFeel.loadSystemColors_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func loadSystemColors( _ _table: UIDefaults?, _ _systemColors: [String]?, _ _useNative: Bool ) {
+        loadSystemColors( table: _table, systemColors: _systemColors, useNative: _useNative )
+    }
 
     /// protected javax.swing.ActionMap javax.swing.plaf.basic.BasicLookAndFeel.getAudioActionMap()
 
-    private static var getAudioActionMap_MethodID_2: jmethodID?
+    private static var getAudioActionMap_MethodID_3: jmethodID?
 
     open func getAudioActionMap() -> ActionMap! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAudioActionMap", methodSig: "()Ljavax/swing/ActionMap;", methodCache: &BasicLookAndFeel.getAudioActionMap_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAudioActionMap", methodSig: "()Ljavax/swing/ActionMap;", methodCache: &BasicLookAndFeel.getAudioActionMap_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionMap( javaObject: __return ) : nil
     }
@@ -69,13 +82,13 @@ open class BasicLookAndFeel: LookAndFeel, /* java.io.Serializable */ UnclassedPr
 
     /// protected void javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults(javax.swing.UIDefaults)
 
-    private static var initComponentDefaults_MethodID_3: jmethodID?
+    private static var initComponentDefaults_MethodID_4: jmethodID?
 
     open func initComponentDefaults( table: UIDefaults? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: table, mapClass: "javax/swing/UIDefaults", locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initComponentDefaults", methodSig: "(Ljavax/swing/UIDefaults;)V", methodCache: &BasicLookAndFeel.initComponentDefaults_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initComponentDefaults", methodSig: "(Ljavax/swing/UIDefaults;)V", methodCache: &BasicLookAndFeel.initComponentDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func initComponentDefaults( _ _table: UIDefaults? ) {
@@ -84,13 +97,13 @@ open class BasicLookAndFeel: LookAndFeel, /* java.io.Serializable */ UnclassedPr
 
     /// protected void javax.swing.plaf.basic.BasicLookAndFeel.initSystemColorDefaults(javax.swing.UIDefaults)
 
-    private static var initSystemColorDefaults_MethodID_4: jmethodID?
+    private static var initSystemColorDefaults_MethodID_5: jmethodID?
 
     open func initSystemColorDefaults( table: UIDefaults? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: table, mapClass: "javax/swing/UIDefaults", locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initSystemColorDefaults", methodSig: "(Ljavax/swing/UIDefaults;)V", methodCache: &BasicLookAndFeel.initSystemColorDefaults_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initSystemColorDefaults", methodSig: "(Ljavax/swing/UIDefaults;)V", methodCache: &BasicLookAndFeel.initSystemColorDefaults_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func initSystemColorDefaults( _ _table: UIDefaults? ) {
@@ -99,28 +112,34 @@ open class BasicLookAndFeel: LookAndFeel, /* java.io.Serializable */ UnclassedPr
 
     /// protected void javax.swing.plaf.basic.BasicLookAndFeel.initClassDefaults(javax.swing.UIDefaults)
 
-    private static var initClassDefaults_MethodID_5: jmethodID?
+    private static var initClassDefaults_MethodID_6: jmethodID?
 
     open func initClassDefaults( table: UIDefaults? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: table, mapClass: "javax/swing/UIDefaults", locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initClassDefaults", methodSig: "(Ljavax/swing/UIDefaults;)V", methodCache: &BasicLookAndFeel.initClassDefaults_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initClassDefaults", methodSig: "(Ljavax/swing/UIDefaults;)V", methodCache: &BasicLookAndFeel.initClassDefaults_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func initClassDefaults( _ _table: UIDefaults? ) {
         initClassDefaults( table: _table )
     }
 
+    /// public javax.swing.UIDefaults javax.swing.plaf.basic.BasicLookAndFeel.getDefaults()
+
+    /// static int javax.swing.plaf.basic.BasicLookAndFeel.getFocusAcceleratorKeyMask()
+
+    /// public void javax.swing.plaf.basic.BasicLookAndFeel.uninitialize()
+
     /// protected javax.swing.Action javax.swing.plaf.basic.BasicLookAndFeel.createAudioAction(java.lang.Object)
 
-    private static var createAudioAction_MethodID_6: jmethodID?
+    private static var createAudioAction_MethodID_7: jmethodID?
 
     open func createAudioAction( key: java_swift.JavaObject? ) -> Action! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createAudioAction", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Action;", methodCache: &BasicLookAndFeel.createAudioAction_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createAudioAction", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Action;", methodCache: &BasicLookAndFeel.createAudioAction_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionForward( javaObject: __return ) : nil
     }
@@ -137,13 +156,13 @@ open class BasicLookAndFeel: LookAndFeel, /* java.io.Serializable */ UnclassedPr
 
     /// protected void javax.swing.plaf.basic.BasicLookAndFeel.playSound(javax.swing.Action)
 
-    private static var playSound_MethodID_7: jmethodID?
+    private static var playSound_MethodID_8: jmethodID?
 
     open func playSound( audioAction: Action? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: audioAction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "playSound", methodSig: "(Ljavax/swing/Action;)V", methodCache: &BasicLookAndFeel.playSound_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "playSound", methodSig: "(Ljavax/swing/Action;)V", methodCache: &BasicLookAndFeel.playSound_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func playSound( _ _audioAction: Action? ) {
@@ -153,25 +172,6 @@ open class BasicLookAndFeel: LookAndFeel, /* java.io.Serializable */ UnclassedPr
     /// static void javax.swing.plaf.basic.BasicLookAndFeel.playSound(javax.swing.JComponent,java.lang.Object)
 
     /// static void javax.swing.plaf.basic.BasicLookAndFeel.installAudioActionMap(javax.swing.ActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicLookAndFeel.loadSystemColors(javax.swing.UIDefaults,java.lang.String[],boolean)
-
-    private static var loadSystemColors_MethodID_8: jmethodID?
-
-    open func loadSystemColors( table: UIDefaults?, systemColors: [String]?, useNative: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: table, mapClass: "javax/swing/UIDefaults", locals: &__locals )
-        __args[1] = JNIType.toJava( value: systemColors, locals: &__locals )
-        __args[2] = JNIType.toJava( value: useNative, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadSystemColors", methodSig: "(Ljavax/swing/UIDefaults;[Ljava/lang/String;Z)V", methodCache: &BasicLookAndFeel.loadSystemColors_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func loadSystemColors( _ _table: UIDefaults?, _ _systemColors: [String]?, _ _useNative: Bool ) {
-        loadSystemColors( table: _table, systemColors: _systemColors, useNative: _useNative )
-    }
-
-    /// public javax.swing.UIDefaults javax.swing.plaf.basic.BasicLookAndFeel.getDefaults()
 
 }
 

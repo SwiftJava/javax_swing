@@ -642,7 +642,9 @@ open class MetalTreeUI: BasicTreeUI {
         return isLocationInExpandControl( row: _row, rowLevel: _rowLevel, mouseX: _mouseX, mouseY: _mouseY )
     }
 
-    /// public void javax.swing.plaf.metal.MetalTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// public void javax.swing.plaf.metal.MetalTreeUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.metal.MetalTreeUI.uninstallUI(javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.metal.MetalTreeUI.decodeLineStyle(java.lang.Object)
 
@@ -675,9 +677,7 @@ open class MetalTreeUI: BasicTreeUI {
         paintHorizontalSeparators( g: _g, c: _c )
     }
 
-    /// public void javax.swing.plaf.metal.MetalTreeUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.metal.MetalTreeUI.uninstallUI(javax.swing.JComponent)
+    /// public void javax.swing.plaf.metal.MetalTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
 }
 

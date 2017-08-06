@@ -163,33 +163,33 @@ open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java
 
     /// private void javax.swing.JFormattedTextField$AbstractFormatter.installDocumentFilter(javax.swing.text.DocumentFilter)
 
-    /// protected javax.swing.text.NavigationFilter javax.swing.JFormattedTextField$AbstractFormatter.getNavigationFilter()
-
-    private static var getNavigationFilter_MethodID_11: jmethodID?
-
-    open func getNavigationFilter() -> NavigationFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &JFormattedTextField_AbstractFormatter.getNavigationFilter_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
-    }
-
-
     /// public void javax.swing.JFormattedTextField$AbstractFormatter.install(javax.swing.JFormattedTextField)
 
-    private static var install_MethodID_12: jmethodID?
+    private static var install_MethodID_11: jmethodID?
 
     open func install( ftf: JFormattedTextField? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ftf != nil ? ftf! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &JFormattedTextField_AbstractFormatter.install_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &JFormattedTextField_AbstractFormatter.install_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func install( _ _ftf: JFormattedTextField? ) {
         install( ftf: _ftf )
     }
+
+    /// protected javax.swing.text.NavigationFilter javax.swing.JFormattedTextField$AbstractFormatter.getNavigationFilter()
+
+    private static var getNavigationFilter_MethodID_12: jmethodID?
+
+    open func getNavigationFilter() -> NavigationFilter! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &JFormattedTextField_AbstractFormatter.getNavigationFilter_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+    }
+
 
 }
 

@@ -94,15 +94,32 @@ open class StyledEditorKit_StyledTextAction: TextAction {
         self.init( nm: _nm )
     }
 
+    /// protected final void javax.swing.text.StyledEditorKit$StyledTextAction.setCharacterAttributes(javax.swing.JEditorPane,javax.swing.text.AttributeSet,boolean)
+
+    private static var setCharacterAttributes_MethodID_2: jmethodID?
+
+    open func setCharacterAttributes( editor: JEditorPane?, attr: AttributeSet?, replace: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: attr, locals: &__locals )
+        __args[2] = JNIType.toJava( value: replace, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCharacterAttributes", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/AttributeSet;Z)V", methodCache: &StyledEditorKit_StyledTextAction.setCharacterAttributes_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func setCharacterAttributes( _ _editor: JEditorPane?, _ _attr: AttributeSet?, _ _replace: Bool ) {
+        setCharacterAttributes( editor: _editor, attr: _attr, replace: _replace )
+    }
+
     /// protected final javax.swing.text.StyledDocument javax.swing.text.StyledEditorKit$StyledTextAction.getStyledDocument(javax.swing.JEditorPane)
 
-    private static var getStyledDocument_MethodID_2: jmethodID?
+    private static var getStyledDocument_MethodID_3: jmethodID?
 
     open func getStyledDocument( e: JEditorPane? ) -> StyledDocument! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledDocument", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/StyledDocument;", methodCache: &StyledEditorKit_StyledTextAction.getStyledDocument_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledDocument", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/StyledDocument;", methodCache: &StyledEditorKit_StyledTextAction.getStyledDocument_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyledDocumentForward( javaObject: __return ) : nil
     }
@@ -113,7 +130,7 @@ open class StyledEditorKit_StyledTextAction: TextAction {
 
     /// protected final void javax.swing.text.StyledEditorKit$StyledTextAction.setParagraphAttributes(javax.swing.JEditorPane,javax.swing.text.AttributeSet,boolean)
 
-    private static var setParagraphAttributes_MethodID_3: jmethodID?
+    private static var setParagraphAttributes_MethodID_4: jmethodID?
 
     open func setParagraphAttributes( editor: JEditorPane?, attr: AttributeSet?, replace: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -121,7 +138,7 @@ open class StyledEditorKit_StyledTextAction: TextAction {
         __args[0] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: attr, locals: &__locals )
         __args[2] = JNIType.toJava( value: replace, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphAttributes", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/AttributeSet;Z)V", methodCache: &StyledEditorKit_StyledTextAction.setParagraphAttributes_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphAttributes", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/AttributeSet;Z)V", methodCache: &StyledEditorKit_StyledTextAction.setParagraphAttributes_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setParagraphAttributes( _ _editor: JEditorPane?, _ _attr: AttributeSet?, _ _replace: Bool ) {
@@ -130,13 +147,13 @@ open class StyledEditorKit_StyledTextAction: TextAction {
 
     /// protected final javax.swing.text.StyledEditorKit javax.swing.text.StyledEditorKit$StyledTextAction.getStyledEditorKit(javax.swing.JEditorPane)
 
-    private static var getStyledEditorKit_MethodID_4: jmethodID?
+    private static var getStyledEditorKit_MethodID_5: jmethodID?
 
     open func getStyledEditorKit( e: JEditorPane? ) -> StyledEditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledEditorKit", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/StyledEditorKit;", methodCache: &StyledEditorKit_StyledTextAction.getStyledEditorKit_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyledEditorKit", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/StyledEditorKit;", methodCache: &StyledEditorKit_StyledTextAction.getStyledEditorKit_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyledEditorKit( javaObject: __return ) : nil
     }
@@ -147,36 +164,19 @@ open class StyledEditorKit_StyledTextAction: TextAction {
 
     /// protected final javax.swing.JEditorPane javax.swing.text.StyledEditorKit$StyledTextAction.getEditor(java.awt.event.ActionEvent)
 
-    private static var getEditor_MethodID_5: jmethodID?
+    private static var getEditor_MethodID_6: jmethodID?
 
     open func getEditor( e: java_awt.ActionEvent? ) -> JEditorPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditor", methodSig: "(Ljava/awt/event/ActionEvent;)Ljavax/swing/JEditorPane;", methodCache: &StyledEditorKit_StyledTextAction.getEditor_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditor", methodSig: "(Ljava/awt/event/ActionEvent;)Ljavax/swing/JEditorPane;", methodCache: &StyledEditorKit_StyledTextAction.getEditor_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JEditorPane( javaObject: __return ) : nil
     }
 
     open func getEditor( _ _e: java_awt.ActionEvent? ) -> JEditorPane! {
         return getEditor( e: _e )
-    }
-
-    /// protected final void javax.swing.text.StyledEditorKit$StyledTextAction.setCharacterAttributes(javax.swing.JEditorPane,javax.swing.text.AttributeSet,boolean)
-
-    private static var setCharacterAttributes_MethodID_6: jmethodID?
-
-    open func setCharacterAttributes( editor: JEditorPane?, attr: AttributeSet?, replace: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[2] = JNIType.toJava( value: replace, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCharacterAttributes", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/AttributeSet;Z)V", methodCache: &StyledEditorKit_StyledTextAction.setCharacterAttributes_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setCharacterAttributes( _ _editor: JEditorPane?, _ _attr: AttributeSet?, _ _replace: Bool ) {
-        setCharacterAttributes( editor: _editor, attr: _attr, replace: _replace )
     }
 
 }

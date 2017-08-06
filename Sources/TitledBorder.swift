@@ -385,26 +385,26 @@ open class TitledBorder: AbstractBorder {
         self.init( border: _border, title: _title )
     }
 
-    /// private java.awt.Color javax.swing.border.TitledBorder.getColor(java.awt.Component)
+    /// public java.awt.Dimension javax.swing.border.TitledBorder.getMinimumSize(java.awt.Component)
 
-    /// public void javax.swing.border.TitledBorder.setTitle(java.lang.String)
+    private static var getMinimumSize_MethodID_7: jmethodID?
 
-    private static var setTitle_MethodID_7: jmethodID?
-
-    open func setTitle( title: String? ) {
+    open func getMinimumSize( c: java_awt.Component? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &TitledBorder.setTitle_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljava/awt/Component;)Ljava/awt/Dimension;", methodCache: &TitledBorder.getMinimumSize_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
-    open func setTitle( _ _title: String? ) {
-        setTitle( title: _title )
+    open func getMinimumSize( _ _c: java_awt.Component? ) -> java_awt.Dimension! {
+        return getMinimumSize( c: _c )
     }
 
-    /// private javax.swing.JLabel javax.swing.border.TitledBorder.getLabel(java.awt.Component)
+    /// public int javax.swing.border.TitledBorder.getBaseline(java.awt.Component,int,int)
 
-    /// private int javax.swing.border.TitledBorder.getPosition()
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.border.TitledBorder.getBaselineResizeBehavior(java.awt.Component)
 
     /// protected java.awt.Font javax.swing.border.TitledBorder.getFont(java.awt.Component)
 
@@ -448,17 +448,34 @@ open class TitledBorder: AbstractBorder {
     }
 
 
+    /// private java.awt.Color javax.swing.border.TitledBorder.getColor(java.awt.Component)
+
+    /// public void javax.swing.border.TitledBorder.setTitle(java.lang.String)
+
+    private static var setTitle_MethodID_11: jmethodID?
+
+    open func setTitle( title: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitle", methodSig: "(Ljava/lang/String;)V", methodCache: &TitledBorder.setTitle_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setTitle( _ _title: String? ) {
+        setTitle( title: _title )
+    }
+
     /// public void javax.swing.border.TitledBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
     /// public void javax.swing.border.TitledBorder.setBorder(javax.swing.border.Border)
 
-    private static var setBorder_MethodID_11: jmethodID?
+    private static var setBorder_MethodID_12: jmethodID?
 
     open func setBorder( border: Border? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorder", methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &TitledBorder.setBorder_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorder", methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &TitledBorder.setBorder_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setBorder( _ _border: Border? ) {
@@ -473,36 +490,36 @@ open class TitledBorder: AbstractBorder {
 
     /// public int javax.swing.border.TitledBorder.getTitlePosition()
 
-    private static var getTitlePosition_MethodID_12: jmethodID?
+    private static var getTitlePosition_MethodID_13: jmethodID?
 
     open func getTitlePosition() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTitlePosition", methodSig: "()I", methodCache: &TitledBorder.getTitlePosition_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTitlePosition", methodSig: "()I", methodCache: &TitledBorder.getTitlePosition_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.border.TitledBorder.getTitleJustification()
 
-    private static var getTitleJustification_MethodID_13: jmethodID?
+    private static var getTitleJustification_MethodID_14: jmethodID?
 
     open func getTitleJustification() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTitleJustification", methodSig: "()I", methodCache: &TitledBorder.getTitleJustification_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTitleJustification", methodSig: "()I", methodCache: &TitledBorder.getTitleJustification_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.Font javax.swing.border.TitledBorder.getTitleFont()
 
-    private static var getTitleFont_MethodID_14: jmethodID?
+    private static var getTitleFont_MethodID_15: jmethodID?
 
     open func getTitleFont() -> java_awt.Font! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitleFont", methodSig: "()Ljava/awt/Font;", methodCache: &TitledBorder.getTitleFont_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitleFont", methodSig: "()Ljava/awt/Font;", methodCache: &TitledBorder.getTitleFont_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Font( javaObject: __return ) : nil
     }
@@ -510,12 +527,12 @@ open class TitledBorder: AbstractBorder {
 
     /// public java.awt.Color javax.swing.border.TitledBorder.getTitleColor()
 
-    private static var getTitleColor_MethodID_15: jmethodID?
+    private static var getTitleColor_MethodID_16: jmethodID?
 
     open func getTitleColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitleColor", methodSig: "()Ljava/awt/Color;", methodCache: &TitledBorder.getTitleColor_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitleColor", methodSig: "()Ljava/awt/Color;", methodCache: &TitledBorder.getTitleColor_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -523,13 +540,13 @@ open class TitledBorder: AbstractBorder {
 
     /// public void javax.swing.border.TitledBorder.setTitlePosition(int)
 
-    private static var setTitlePosition_MethodID_16: jmethodID?
+    private static var setTitlePosition_MethodID_17: jmethodID?
 
     open func setTitlePosition( titlePosition: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: titlePosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitlePosition", methodSig: "(I)V", methodCache: &TitledBorder.setTitlePosition_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitlePosition", methodSig: "(I)V", methodCache: &TitledBorder.setTitlePosition_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setTitlePosition( _ _titlePosition: Int ) {
@@ -538,13 +555,13 @@ open class TitledBorder: AbstractBorder {
 
     /// public void javax.swing.border.TitledBorder.setTitleJustification(int)
 
-    private static var setTitleJustification_MethodID_17: jmethodID?
+    private static var setTitleJustification_MethodID_18: jmethodID?
 
     open func setTitleJustification( titleJustification: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: titleJustification, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitleJustification", methodSig: "(I)V", methodCache: &TitledBorder.setTitleJustification_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitleJustification", methodSig: "(I)V", methodCache: &TitledBorder.setTitleJustification_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setTitleJustification( _ _titleJustification: Int ) {
@@ -553,13 +570,13 @@ open class TitledBorder: AbstractBorder {
 
     /// public void javax.swing.border.TitledBorder.setTitleFont(java.awt.Font)
 
-    private static var setTitleFont_MethodID_18: jmethodID?
+    private static var setTitleFont_MethodID_19: jmethodID?
 
     open func setTitleFont( titleFont: java_awt.Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: titleFont != nil ? titleFont! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitleFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &TitledBorder.setTitleFont_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitleFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &TitledBorder.setTitleFont_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setTitleFont( _ _titleFont: java_awt.Font? ) {
@@ -568,13 +585,13 @@ open class TitledBorder: AbstractBorder {
 
     /// public void javax.swing.border.TitledBorder.setTitleColor(java.awt.Color)
 
-    private static var setTitleColor_MethodID_19: jmethodID?
+    private static var setTitleColor_MethodID_20: jmethodID?
 
     open func setTitleColor( titleColor: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: titleColor != nil ? titleColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitleColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &TitledBorder.setTitleColor_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTitleColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &TitledBorder.setTitleColor_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setTitleColor( _ _titleColor: java_awt.Color? ) {
@@ -583,26 +600,9 @@ open class TitledBorder: AbstractBorder {
 
     /// private int javax.swing.border.TitledBorder.getJustification(java.awt.Component)
 
-    /// public java.awt.Dimension javax.swing.border.TitledBorder.getMinimumSize(java.awt.Component)
+    /// private int javax.swing.border.TitledBorder.getPosition()
 
-    private static var getMinimumSize_MethodID_20: jmethodID?
-
-    open func getMinimumSize( c: java_awt.Component? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljava/awt/Component;)Ljava/awt/Dimension;", methodCache: &TitledBorder.getMinimumSize_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func getMinimumSize( _ _c: java_awt.Component? ) -> java_awt.Dimension! {
-        return getMinimumSize( c: _c )
-    }
-
-    /// public int javax.swing.border.TitledBorder.getBaseline(java.awt.Component,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.border.TitledBorder.getBaselineResizeBehavior(java.awt.Component)
+    /// private javax.swing.JLabel javax.swing.border.TitledBorder.getLabel(java.awt.Component)
 
 }
 

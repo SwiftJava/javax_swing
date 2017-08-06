@@ -119,6 +119,10 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     /// static boolean javax.swing.GroupLayout.access$202(javax.swing.GroupLayout,boolean)
 
+    /// static java.awt.Container javax.swing.GroupLayout.access$700(javax.swing.GroupLayout)
+
+    /// static javax.swing.LayoutStyle javax.swing.GroupLayout.access$800(javax.swing.GroupLayout)
+
     /// private void javax.swing.GroupLayout.insertAutopadding(boolean)
 
     /// private void javax.swing.GroupLayout.calculateAutopadding(javax.swing.GroupLayout$Group,int,int,int,int)
@@ -129,35 +133,35 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     /// private static void javax.swing.GroupLayout.checkLessThan(int,int)
 
-    /// public void javax.swing.GroupLayout.setHonorsVisibility(java.awt.Component,java.lang.Boolean)
+    /// public void javax.swing.GroupLayout.setHonorsVisibility(boolean)
 
     private static var setHonorsVisibility_MethodID_3: jmethodID?
+
+    open func setHonorsVisibility( honorsVisibility: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: honorsVisibility, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHonorsVisibility", methodSig: "(Z)V", methodCache: &GroupLayout.setHonorsVisibility_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func setHonorsVisibility( _ _honorsVisibility: Bool ) {
+        setHonorsVisibility( honorsVisibility: _honorsVisibility )
+    }
+
+    /// public void javax.swing.GroupLayout.setHonorsVisibility(java.awt.Component,java.lang.Boolean)
+
+    private static var setHonorsVisibility_MethodID_4: jmethodID?
 
     open func setHonorsVisibility( component: java_awt.Component?, honorsVisibility: java_lang.Boolean? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: honorsVisibility != nil ? honorsVisibility! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHonorsVisibility", methodSig: "(Ljava/awt/Component;Ljava/lang/Boolean;)V", methodCache: &GroupLayout.setHonorsVisibility_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHonorsVisibility", methodSig: "(Ljava/awt/Component;Ljava/lang/Boolean;)V", methodCache: &GroupLayout.setHonorsVisibility_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setHonorsVisibility( _ _component: java_awt.Component?, _ _honorsVisibility: java_lang.Boolean? ) {
         setHonorsVisibility( component: _component, honorsVisibility: _honorsVisibility )
-    }
-
-    /// public void javax.swing.GroupLayout.setHonorsVisibility(boolean)
-
-    private static var setHonorsVisibility_MethodID_4: jmethodID?
-
-    open func setHonorsVisibility( honorsVisibility: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: honorsVisibility, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHonorsVisibility", methodSig: "(Z)V", methodCache: &GroupLayout.setHonorsVisibility_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setHonorsVisibility( _ _honorsVisibility: Bool ) {
-        setHonorsVisibility( honorsVisibility: _honorsVisibility )
     }
 
     /// public boolean javax.swing.GroupLayout.getHonorsVisibility()
@@ -418,16 +422,6 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     /// private void javax.swing.GroupLayout.createSpringDescription(java.lang.StringBuffer,javax.swing.GroupLayout$Spring,java.lang.String,int)
 
-    /// private boolean javax.swing.GroupLayout.isLeftToRight()
-
-    /// static java.awt.Container javax.swing.GroupLayout.access$700(javax.swing.GroupLayout)
-
-    /// static javax.swing.LayoutStyle javax.swing.GroupLayout.access$800(javax.swing.GroupLayout)
-
-    /// static boolean javax.swing.GroupLayout.access$900(javax.swing.GroupLayout)
-
-    /// static boolean javax.swing.GroupLayout.access$1000(javax.swing.GroupLayout,java.awt.Component,java.awt.Component,int)
-
     /// public void javax.swing.GroupLayout.removeLayoutComponent(java.awt.Component)
 
     private static var removeLayoutComponent_MethodID_21: jmethodID?
@@ -443,36 +437,36 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
         removeLayoutComponent( comp: _comp )
     }
 
-    /// public void javax.swing.GroupLayout.addLayoutComponent(java.lang.String,java.awt.Component)
-
-    private static var addLayoutComponent_MethodID_22: jmethodID?
-
-    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &GroupLayout.addLayoutComponent_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
-        addLayoutComponent( name: _name, comp: _comp )
-    }
-
     /// public void javax.swing.GroupLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
 
-    private static var addLayoutComponent_MethodID_23: jmethodID?
+    private static var addLayoutComponent_MethodID_22: jmethodID?
 
     open func addLayoutComponent( comp: java_awt.Component?, constraints: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &GroupLayout.addLayoutComponent_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &GroupLayout.addLayoutComponent_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject? ) {
         addLayoutComponent( comp: _comp, constraints: _constraints )
+    }
+
+    /// public void javax.swing.GroupLayout.addLayoutComponent(java.lang.String,java.awt.Component)
+
+    private static var addLayoutComponent_MethodID_23: jmethodID?
+
+    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &GroupLayout.addLayoutComponent_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
+        addLayoutComponent( name: _name, comp: _comp )
     }
 
     /// public void javax.swing.GroupLayout.layoutContainer(java.awt.Container)
@@ -587,6 +581,12 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
     open func getLayoutAlignmentY( _ _target: java_awt.Container? ) -> Float {
         return getLayoutAlignmentY( target: _target )
     }
+
+    /// static boolean javax.swing.GroupLayout.access$900(javax.swing.GroupLayout)
+
+    /// static boolean javax.swing.GroupLayout.access$1000(javax.swing.GroupLayout,java.awt.Component,java.awt.Component,int)
+
+    /// private boolean javax.swing.GroupLayout.isLeftToRight()
 
 }
 

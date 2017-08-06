@@ -686,6 +686,8 @@ open class Region: java_swift.JavaObject {
     }
 
 
+    /// static javax.swing.plaf.synth.Region javax.swing.plaf.synth.Region.getRegion(javax.swing.JComponent)
+
     /// public boolean javax.swing.plaf.synth.Region.isSubregion()
 
     private static var isSubregion_MethodID_3: jmethodID?
@@ -698,15 +700,13 @@ open class Region: java_swift.JavaObject {
     }
 
 
+    /// java.lang.String javax.swing.plaf.synth.Region.getLowerCaseName()
+
     /// static void javax.swing.plaf.synth.Region.registerUIs(javax.swing.UIDefaults)
 
     /// private static java.util.Map javax.swing.plaf.synth.Region.getUItoRegionMap()
 
     /// private static java.util.Map javax.swing.plaf.synth.Region.getLowerCaseNameMap()
-
-    /// java.lang.String javax.swing.plaf.synth.Region.getLowerCaseName()
-
-    /// static javax.swing.plaf.synth.Region javax.swing.plaf.synth.Region.getRegion(javax.swing.JComponent)
 
 }
 

@@ -203,15 +203,41 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
 
     /// private void javax.swing.ImageIcon.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
+    /// public java.awt.Image javax.swing.ImageIcon.getImage()
+
+    private static var getImage_MethodID_10: jmethodID?
+
+    open func getImage() -> java_awt.Image! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/Image;", methodCache: &ImageIcon.getImage_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Image( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.ImageIcon.getAccessibleContext()
+
+    private static var getAccessibleContext_MethodID_11: jmethodID?
+
+    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &ImageIcon.getAccessibleContext_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
+    }
+
+
     /// protected void javax.swing.ImageIcon.loadImage(java.awt.Image)
 
-    private static var loadImage_MethodID_10: jmethodID?
+    private static var loadImage_MethodID_12: jmethodID?
 
     open func loadImage( image: java_awt.Image? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &ImageIcon.loadImage_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &ImageIcon.loadImage_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func loadImage( _ _image: java_awt.Image? ) {
@@ -226,25 +252,25 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
 
     /// public int javax.swing.ImageIcon.getImageLoadStatus()
 
-    private static var getImageLoadStatus_MethodID_11: jmethodID?
+    private static var getImageLoadStatus_MethodID_13: jmethodID?
 
     open func getImageLoadStatus() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getImageLoadStatus", methodSig: "()I", methodCache: &ImageIcon.getImageLoadStatus_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getImageLoadStatus", methodSig: "()I", methodCache: &ImageIcon.getImageLoadStatus_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.ImageIcon.setImage(java.awt.Image)
 
-    private static var setImage_MethodID_12: jmethodID?
+    private static var setImage_MethodID_14: jmethodID?
 
     open func setImage( image: java_awt.Image? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: image != nil ? image! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &ImageIcon.setImage_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &ImageIcon.setImage_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setImage( _ _image: java_awt.Image? ) {
@@ -253,25 +279,25 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
 
     /// public java.lang.String javax.swing.ImageIcon.getDescription()
 
-    private static var getDescription_MethodID_13: jmethodID?
+    private static var getDescription_MethodID_15: jmethodID?
 
     open func getDescription() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "()Ljava/lang/String;", methodCache: &ImageIcon.getDescription_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "()Ljava/lang/String;", methodCache: &ImageIcon.getDescription_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public void javax.swing.ImageIcon.setDescription(java.lang.String)
 
-    private static var setDescription_MethodID_14: jmethodID?
+    private static var setDescription_MethodID_16: jmethodID?
 
     open func setDescription( description: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: description, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDescription", methodSig: "(Ljava/lang/String;)V", methodCache: &ImageIcon.setDescription_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDescription", methodSig: "(Ljava/lang/String;)V", methodCache: &ImageIcon.setDescription_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setDescription( _ _description: String? ) {
@@ -280,7 +306,7 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
 
     /// public synchronized void javax.swing.ImageIcon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
 
-    private static var paintIcon_MethodID_15: jmethodID?
+    private static var paintIcon_MethodID_17: jmethodID?
 
     open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -289,7 +315,7 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
         __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &ImageIcon.paintIcon_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &ImageIcon.paintIcon_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func paintIcon( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
@@ -298,37 +324,37 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
 
     /// public int javax.swing.ImageIcon.getIconWidth()
 
-    private static var getIconWidth_MethodID_16: jmethodID?
+    private static var getIconWidth_MethodID_18: jmethodID?
 
     open func getIconWidth() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &ImageIcon.getIconWidth_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &ImageIcon.getIconWidth_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.ImageIcon.getIconHeight()
 
-    private static var getIconHeight_MethodID_17: jmethodID?
+    private static var getIconHeight_MethodID_19: jmethodID?
 
     open func getIconHeight() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &ImageIcon.getIconHeight_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &ImageIcon.getIconHeight_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.ImageIcon.setImageObserver(java.awt.image.ImageObserver)
 
-    private static var setImageObserver_MethodID_18: jmethodID?
+    private static var setImageObserver_MethodID_20: jmethodID?
 
     open func setImageObserver( observer: java_awt.ImageObserver? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: observer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageObserver", methodSig: "(Ljava/awt/image/ImageObserver;)V", methodCache: &ImageIcon.setImageObserver_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImageObserver", methodSig: "(Ljava/awt/image/ImageObserver;)V", methodCache: &ImageIcon.setImageObserver_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setImageObserver( _ _observer: java_awt.ImageObserver? ) {
@@ -337,40 +363,14 @@ open class ImageIcon: java_swift.JavaObject, Icon, /* java.io.Serializable */ Un
 
     /// public java.awt.image.ImageObserver javax.swing.ImageIcon.getImageObserver()
 
-    private static var getImageObserver_MethodID_19: jmethodID?
+    private static var getImageObserver_MethodID_21: jmethodID?
 
     open func getImageObserver() -> java_awt.ImageObserver! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageObserver", methodSig: "()Ljava/awt/image/ImageObserver;", methodCache: &ImageIcon.getImageObserver_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageObserver", methodSig: "()Ljava/awt/image/ImageObserver;", methodCache: &ImageIcon.getImageObserver_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.ImageObserverForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.accessibility.AccessibleContext javax.swing.ImageIcon.getAccessibleContext()
-
-    private static var getAccessibleContext_MethodID_20: jmethodID?
-
-    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &ImageIcon.getAccessibleContext_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Image javax.swing.ImageIcon.getImage()
-
-    private static var getImage_MethodID_21: jmethodID?
-
-    open func getImage() -> java_awt.Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/Image;", methodCache: &ImageIcon.getImage_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Image( javaObject: __return ) : nil
     }
 
 

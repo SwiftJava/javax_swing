@@ -198,34 +198,34 @@ open class MetalCheckBoxUI: MetalRadioButtonUI {
         return createUI( b: _b )
     }
 
+    /// public java.lang.String javax.swing.plaf.metal.MetalCheckBoxUI.getPropertyPrefix()
+
+    private static var getPropertyPrefix_MethodID_3: jmethodID?
+
+    override open func getPropertyPrefix() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &MetalCheckBoxUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
     /// public void javax.swing.plaf.metal.MetalCheckBoxUI.installDefaults(javax.swing.AbstractButton)
 
     /// protected void javax.swing.plaf.metal.MetalCheckBoxUI.uninstallDefaults(javax.swing.AbstractButton)
 
-    private static var uninstallDefaults_MethodID_3: jmethodID?
+    private static var uninstallDefaults_MethodID_4: jmethodID?
 
     override open func uninstallDefaults( b: AbstractButton? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalCheckBoxUI.uninstallDefaults_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalCheckBoxUI.uninstallDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func uninstallDefaults( _ _b: AbstractButton? ) {
         uninstallDefaults( b: _b )
     }
-
-    /// public java.lang.String javax.swing.plaf.metal.MetalCheckBoxUI.getPropertyPrefix()
-
-    private static var getPropertyPrefix_MethodID_4: jmethodID?
-
-    override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &MetalCheckBoxUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
 
 }
 

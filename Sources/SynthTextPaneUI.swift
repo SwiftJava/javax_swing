@@ -72,7 +72,7 @@ open class SynthTextPaneUI: SynthEditorPaneUI {
 
     private static var createUI_MethodID_2: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -81,7 +81,7 @@ open class SynthTextPaneUI: SynthEditorPaneUI {
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
@@ -93,24 +93,22 @@ open class SynthTextPaneUI: SynthEditorPaneUI {
 
     private static var propertyChange_MethodID_3: jmethodID?
 
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthTextPaneUI.propertyChange_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
-
-    /// void javax.swing.plaf.synth.SynthTextPaneUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
     /// protected java.lang.String javax.swing.plaf.synth.SynthTextPaneUI.getPropertyPrefix()
 
     private static var getPropertyPrefix_MethodID_4: jmethodID?
 
-    open func getPropertyPrefix() -> String! {
+    override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &SynthTextPaneUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
@@ -121,6 +119,8 @@ open class SynthTextPaneUI: SynthEditorPaneUI {
     /// public void javax.swing.plaf.synth.SynthTextPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
     /// public void javax.swing.plaf.synth.SynthTextPaneUI.installUI(javax.swing.JComponent)
+
+    /// void javax.swing.plaf.synth.SynthTextPaneUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

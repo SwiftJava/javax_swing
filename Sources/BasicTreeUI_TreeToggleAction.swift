@@ -96,9 +96,9 @@ open class BasicTreeUI_TreeToggleAction: AbstractAction {
         self.init( this_0: _this_0, name: _name )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeToggleAction.actionPerformed(java.awt.event.ActionEvent)
-
     /// public boolean javax.swing.plaf.basic.BasicTreeUI$TreeToggleAction.isEnabled()
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeToggleAction.actionPerformed(java.awt.event.ActionEvent)
 
 }
 

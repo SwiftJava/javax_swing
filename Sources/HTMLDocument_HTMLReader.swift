@@ -170,6 +170,8 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
 
     /// void javax.swing.text.html.HTMLDocument$HTMLReader.flushBuffer(boolean) throws javax.swing.text.BadLocationException
 
+    /// static boolean javax.swing.text.html.HTMLDocument$HTMLReader.access$800(javax.swing.text.html.HTMLDocument$HTMLReader)
+
     /// protected void javax.swing.text.html.HTMLDocument$HTMLReader.addContent(char[],int,int,boolean)
 
     private static var addContent_MethodID_3: jmethodID?
@@ -260,7 +262,7 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
         blockClose( t: _t )
     }
 
-    /// static boolean javax.swing.text.html.HTMLDocument$HTMLReader.access$800(javax.swing.text.html.HTMLDocument$HTMLReader)
+    /// static boolean javax.swing.text.html.HTMLDocument$HTMLReader.access$900(javax.swing.text.html.HTMLDocument$HTMLReader,javax.swing.text.html.HTML$Tag,javax.swing.text.AttributeSet,boolean)
 
     /// private void javax.swing.text.html.HTMLDocument$HTMLReader.generateEndsSpecsForMidInsert()
 
@@ -357,8 +359,6 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     /// private boolean javax.swing.text.html.HTMLDocument$HTMLReader.canInsertTag(javax.swing.text.html.HTML$Tag,javax.swing.text.AttributeSet,boolean)
 
     /// private boolean javax.swing.text.html.HTMLDocument$HTMLReader.isInsertTag(javax.swing.text.html.HTML$Tag)
-
-    /// static boolean javax.swing.text.html.HTMLDocument$HTMLReader.access$900(javax.swing.text.html.HTMLDocument$HTMLReader,javax.swing.text.html.HTML$Tag,javax.swing.text.AttributeSet,boolean)
 
 }
 

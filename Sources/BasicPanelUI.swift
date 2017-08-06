@@ -30,6 +30,10 @@ open class BasicPanelUI: PanelUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public int javax.swing.plaf.basic.BasicPanelUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicPanelUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicPanelUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -46,6 +50,10 @@ open class BasicPanelUI: PanelUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
+
+    /// public void javax.swing.plaf.basic.BasicPanelUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicPanelUI.uninstallUI(javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.basic.BasicPanelUI.installDefaults(javax.swing.JPanel)
 
@@ -76,14 +84,6 @@ open class BasicPanelUI: PanelUI {
     open func uninstallDefaults( _ _p: JPanel? ) {
         uninstallDefaults( p: _p )
     }
-
-    /// public void javax.swing.plaf.basic.BasicPanelUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicPanelUI.uninstallUI(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.basic.BasicPanelUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicPanelUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

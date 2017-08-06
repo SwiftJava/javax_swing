@@ -48,11 +48,7 @@ open class JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLink: /* javax.
         self.init( this_1: _this_1, e: _e )
     }
 
-    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionCount()
-
-    /// public java.lang.String javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionDescription(int)
-
-    /// public boolean javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.doAccessibleAction(int)
+    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getEndIndex()
 
     /// public boolean javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.isValid()
 
@@ -62,7 +58,11 @@ open class JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLink: /* javax.
 
     /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getStartIndex()
 
-    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getEndIndex()
+    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionCount()
+
+    /// public java.lang.String javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionDescription(int)
+
+    /// public boolean javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.doAccessibleAction(int)
 
 }
 

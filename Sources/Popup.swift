@@ -53,7 +53,7 @@ open class Popup: java_swift.JavaObject {
 
     /// void javax.swing.Popup.reset(java.awt.Component,java.awt.Component,int,int)
 
-    /// private java.awt.Window javax.swing.Popup.getParentWindow(java.awt.Component)
+    /// java.awt.Component javax.swing.Popup.createComponent(java.awt.Component)
 
     /// public void javax.swing.Popup.hide()
 
@@ -70,6 +70,8 @@ open class Popup: java_swift.JavaObject {
 
     /// void javax.swing.Popup.pack()
 
+    /// private java.awt.Window javax.swing.Popup.getParentWindow(java.awt.Component)
+
     /// void javax.swing.Popup.dispose()
 
     /// public void javax.swing.Popup.show()
@@ -82,8 +84,6 @@ open class Popup: java_swift.JavaObject {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "()V", methodCache: &Popup.show_MethodID_4, args: &__args, locals: &__locals )
     }
 
-
-    /// java.awt.Component javax.swing.Popup.createComponent(java.awt.Component)
 
 }
 

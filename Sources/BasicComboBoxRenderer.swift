@@ -569,6 +569,8 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicComboBoxRenderer.getPreferredSize()
+
     /// private static javax.swing.border.Border javax.swing.plaf.basic.BasicComboBoxRenderer.getNoFocusBorder()
 
     /// public java.awt.Component javax.swing.plaf.basic.BasicComboBoxRenderer.getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
@@ -591,8 +593,6 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
     open func getListCellRendererComponent( _ _list: JList?, _ _value: java_swift.JavaObject?, _ _index: Int, _ _isSelected: Bool, _ _cellHasFocus: Bool ) -> java_awt.Component! {
         return getListCellRendererComponent( list: _list, value: _value, index: _index, isSelected: _isSelected, cellHasFocus: _cellHasFocus )
     }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicComboBoxRenderer.getPreferredSize()
 
 }
 

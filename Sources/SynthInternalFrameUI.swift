@@ -23,7 +23,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var frame_FieldID: jfieldID?
 
-    open var frame: JInternalFrame! {
+    override open var frame: JInternalFrame! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &SynthInternalFrameUI.frame_FieldID, object: javaObject, locals: &__locals )
@@ -42,7 +42,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var borderListener_FieldID: jfieldID?
 
-    open var borderListener: MouseInputAdapter! {
+    override open var borderListener: MouseInputAdapter! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "borderListener", fieldType: "Ljavax/swing/event/MouseInputAdapter;", fieldCache: &SynthInternalFrameUI.borderListener_FieldID, object: javaObject, locals: &__locals )
@@ -59,7 +59,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthInternalFrameUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -76,7 +76,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var internalFrameLayout_FieldID: jfieldID?
 
-    open var internalFrameLayout: java_awt.LayoutManager! {
+    override open var internalFrameLayout: java_awt.LayoutManager! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "internalFrameLayout", fieldType: "Ljava/awt/LayoutManager;", fieldCache: &SynthInternalFrameUI.internalFrameLayout_FieldID, object: javaObject, locals: &__locals )
@@ -93,7 +93,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var componentListener_FieldID: jfieldID?
 
-    open var componentListener: java_awt.ComponentListener! {
+    override open var componentListener: java_awt.ComponentListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "componentListener", fieldType: "Ljava/awt/event/ComponentListener;", fieldCache: &SynthInternalFrameUI.componentListener_FieldID, object: javaObject, locals: &__locals )
@@ -110,7 +110,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var glassPaneDispatcher_FieldID: jfieldID?
 
-    open var glassPaneDispatcher: MouseInputListener! {
+    override open var glassPaneDispatcher: MouseInputListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "glassPaneDispatcher", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthInternalFrameUI.glassPaneDispatcher_FieldID, object: javaObject, locals: &__locals )
@@ -129,7 +129,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var northPane_FieldID: jfieldID?
 
-    open var northPane: JComponent! {
+    override open var northPane: JComponent! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "northPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthInternalFrameUI.northPane_FieldID, object: javaObject, locals: &__locals )
@@ -146,7 +146,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var southPane_FieldID: jfieldID?
 
-    open var southPane: JComponent! {
+    override open var southPane: JComponent! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "southPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthInternalFrameUI.southPane_FieldID, object: javaObject, locals: &__locals )
@@ -163,7 +163,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var westPane_FieldID: jfieldID?
 
-    open var westPane: JComponent! {
+    override open var westPane: JComponent! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "westPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthInternalFrameUI.westPane_FieldID, object: javaObject, locals: &__locals )
@@ -180,7 +180,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var eastPane_FieldID: jfieldID?
 
-    open var eastPane: JComponent! {
+    override open var eastPane: JComponent! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "eastPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthInternalFrameUI.eastPane_FieldID, object: javaObject, locals: &__locals )
@@ -197,7 +197,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var titlePane_FieldID: jfieldID?
 
-    open var titlePane: BasicInternalFrameTitlePane! {
+    override open var titlePane: BasicInternalFrameTitlePane! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "titlePane", fieldType: "Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;", fieldCache: &SynthInternalFrameUI.titlePane_FieldID, object: javaObject, locals: &__locals )
@@ -224,7 +224,7 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     private static var openMenuKey_FieldID: jfieldID?
 
-    open var openMenuKey: KeyStroke! {
+    override open var openMenuKey: KeyStroke! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "openMenuKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthInternalFrameUI.openMenuKey_FieldID, object: javaObject, locals: &__locals )
@@ -347,8 +347,6 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.synth.SynthInternalFrameUI.access$000(javax.swing.plaf.synth.SynthInternalFrameUI)
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthInternalFrameUI.getContext(javax.swing.JComponent,int)
-
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthInternalFrameUI.getContext(javax.swing.JComponent)
 
     private static var getContext_MethodID_2: jmethodID?
@@ -366,13 +364,15 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
         return getContext( c: _c )
     }
 
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthInternalFrameUI.getContext(javax.swing.JComponent,int)
+
     /// static javax.swing.JInternalFrame javax.swing.plaf.synth.SynthInternalFrameUI.access$400(javax.swing.plaf.synth.SynthInternalFrameUI)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthInternalFrameUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( b: JComponent? ) -> ComponentUI! {
+    override open class func createUI( b: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
@@ -381,137 +381,30 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
         return createUI( b: _b )
     }
 
-    /// private int javax.swing.plaf.synth.SynthInternalFrameUI.getComponentState(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthInternalFrameUI.updateStyle(javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthInternalFrameUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthInternalFrameUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// public void javax.swing.plaf.synth.SynthInternalFrameUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_5: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthInternalFrameUI.propertyChange_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthInternalFrameUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// public void javax.swing.plaf.synth.SynthInternalFrameUI.installDefaults()
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthInternalFrameUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.installListeners()
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthInternalFrameUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_8: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthInternalFrameUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_9: jmethodID?
-
-    open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &SynthInternalFrameUI.uninstallComponents_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_10: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthInternalFrameUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.JComponent javax.swing.plaf.synth.SynthInternalFrameUI.createNorthPane(javax.swing.JInternalFrame)
-
-    private static var createNorthPane_MethodID_11: jmethodID?
-
-    open func createNorthPane( w: JInternalFrame? ) -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w != nil ? w! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNorthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &SynthInternalFrameUI.createNorthPane_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
-    }
-
-    open func createNorthPane( _ _w: JInternalFrame? ) -> JComponent! {
-        return createNorthPane( w: _w )
-    }
-
-    /// protected java.awt.event.ComponentListener javax.swing.plaf.synth.SynthInternalFrameUI.createComponentListener()
-
-    private static var createComponentListener_MethodID_12: jmethodID?
-
-    open func createComponentListener() -> java_awt.ComponentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "()Ljava/awt/event/ComponentListener;", methodCache: &SynthInternalFrameUI.createComponentListener_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// static javax.swing.JInternalFrame javax.swing.plaf.synth.SynthInternalFrameUI.access$602(javax.swing.plaf.synth.SynthInternalFrameUI,javax.swing.JInternalFrame)
-
     /// public void javax.swing.plaf.synth.SynthInternalFrameUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_13: jmethodID?
+    private static var paintBorder_MethodID_5: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -522,12 +415,119 @@ open class SynthInternalFrameUI: BasicInternalFrameUI, SynthUI, /* java.beans.Pr
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthInternalFrameUI.paintBorder_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthInternalFrameUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
+
+    /// private int javax.swing.plaf.synth.SynthInternalFrameUI.getComponentState(javax.swing.JComponent)
+
+    /// static javax.swing.JInternalFrame javax.swing.plaf.synth.SynthInternalFrameUI.access$602(javax.swing.plaf.synth.SynthInternalFrameUI,javax.swing.JInternalFrame)
+
+    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthInternalFrameUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthInternalFrameUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected javax.swing.JComponent javax.swing.plaf.synth.SynthInternalFrameUI.createNorthPane(javax.swing.JInternalFrame)
+
+    private static var createNorthPane_MethodID_7: jmethodID?
+
+    override open func createNorthPane( w: JInternalFrame? ) -> JComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: w != nil ? w! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNorthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &SynthInternalFrameUI.createNorthPane_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+    override open func createNorthPane( _ _w: JInternalFrame? ) -> JComponent! {
+        return createNorthPane( w: _w )
+    }
+
+    /// protected java.awt.event.ComponentListener javax.swing.plaf.synth.SynthInternalFrameUI.createComponentListener()
+
+    private static var createComponentListener_MethodID_8: jmethodID?
+
+    override open func createComponentListener() -> java_awt.ComponentListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "()Ljava/awt/event/ComponentListener;", methodCache: &SynthInternalFrameUI.createComponentListener_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthInternalFrameUI.installDefaults()
+
+    private static var installDefaults_MethodID_9: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthInternalFrameUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.installListeners()
+
+    private static var installListeners_MethodID_10: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthInternalFrameUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_11: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthInternalFrameUI.uninstallDefaults_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_12: jmethodID?
+
+    override open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &SynthInternalFrameUI.uninstallComponents_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthInternalFrameUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_13: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthInternalFrameUI.uninstallListeners_MethodID_13, args: &__args, locals: &__locals )
+    }
+
 
 }
 

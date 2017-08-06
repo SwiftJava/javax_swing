@@ -59,9 +59,7 @@ open class BasicPopupMenuUI: PopupMenuUI {
 
     /// static boolean javax.swing.plaf.basic.BasicPopupMenuUI.access$300(javax.swing.MenuElement,javax.swing.MenuElement)
 
-    /// static javax.swing.InputMap javax.swing.plaf.basic.BasicPopupMenuUI.getInputMap(javax.swing.JPopupMenu,javax.swing.JComponent)
-
-    /// static javax.swing.ActionMap javax.swing.plaf.basic.BasicPopupMenuUI.getActionMap()
+    /// public boolean javax.swing.plaf.basic.BasicPopupMenuUI.isPopupTrigger(java.awt.event.MouseEvent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicPopupMenuUI.createUI(javax.swing.JComponent)
 
@@ -79,6 +77,30 @@ open class BasicPopupMenuUI: PopupMenuUI {
     override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
         return createUI( x: _x )
     }
+
+    /// static javax.swing.InputMap javax.swing.plaf.basic.BasicPopupMenuUI.getInputMap(javax.swing.JPopupMenu,javax.swing.JComponent)
+
+    /// static javax.swing.ActionMap javax.swing.plaf.basic.BasicPopupMenuUI.getActionMap()
+
+    /// public void javax.swing.plaf.basic.BasicPopupMenuUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicPopupMenuUI.uninstallUI(javax.swing.JComponent)
+
+    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.getFirstPopup()
+
+    /// static java.util.List javax.swing.plaf.basic.BasicPopupMenuUI.getPopups()
+
+    /// private static boolean javax.swing.plaf.basic.BasicPopupMenuUI.checkInvokerEqual(javax.swing.MenuElement,javax.swing.MenuElement)
+
+    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.nextEnabledChild(javax.swing.MenuElement[],int,int)
+
+    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.previousEnabledChild(javax.swing.MenuElement[],int,int)
+
+    /// static javax.swing.JPopupMenu javax.swing.plaf.basic.BasicPopupMenuUI.getLastPopup()
+
+    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],javax.swing.MenuElement,boolean)
+
+    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],int,boolean)
 
     /// static void javax.swing.plaf.basic.BasicPopupMenuUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
@@ -147,28 +169,6 @@ open class BasicPopupMenuUI: PopupMenuUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicPopupMenuUI.uninstallKeyboardActions_MethodID_8, args: &__args, locals: &__locals )
     }
 
-
-    /// static javax.swing.JPopupMenu javax.swing.plaf.basic.BasicPopupMenuUI.getLastPopup()
-
-    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],javax.swing.MenuElement,boolean)
-
-    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],int,boolean)
-
-    /// public boolean javax.swing.plaf.basic.BasicPopupMenuUI.isPopupTrigger(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicPopupMenuUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicPopupMenuUI.uninstallUI(javax.swing.JComponent)
-
-    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.getFirstPopup()
-
-    /// static java.util.List javax.swing.plaf.basic.BasicPopupMenuUI.getPopups()
-
-    /// private static boolean javax.swing.plaf.basic.BasicPopupMenuUI.checkInvokerEqual(javax.swing.MenuElement,javax.swing.MenuElement)
-
-    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.nextEnabledChild(javax.swing.MenuElement[],int,int)
-
-    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.previousEnabledChild(javax.swing.MenuElement[],int,int)
 
 }
 

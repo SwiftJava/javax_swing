@@ -83,15 +83,51 @@ open class SortingFocusTraversalPolicy: InternalFrameFocusTraversalPolicy {
         return accept( arg0: _arg0 )
     }
 
+    /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getComponentAfter(java.awt.Container,java.awt.Component)
+
+    private static var getComponentAfter_MethodID_4: jmethodID?
+
+    open func getComponentAfter( arg0: java_awt.Container?, arg1: java_awt.Component? ) -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &SortingFocusTraversalPolicy.getComponentAfter_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    override open func getComponentAfter( _ _arg0: java_awt.Container?, _ _arg1: java_awt.Component? ) -> java_awt.Component! {
+        return getComponentAfter( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getComponentBefore(java.awt.Container,java.awt.Component)
+
+    private static var getComponentBefore_MethodID_5: jmethodID?
+
+    open func getComponentBefore( arg0: java_awt.Container?, arg1: java_awt.Component? ) -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &SortingFocusTraversalPolicy.getComponentBefore_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    override open func getComponentBefore( _ _arg0: java_awt.Container?, _ _arg1: java_awt.Component? ) -> java_awt.Component! {
+        return getComponentBefore( arg0: _arg0, arg1: _arg1 )
+    }
+
     /// protected void javax.swing.SortingFocusTraversalPolicy.setComparator(java.util.Comparator)
 
-    private static var setComparator_MethodID_4: jmethodID?
+    private static var setComparator_MethodID_6: jmethodID?
 
     open func setComparator( arg0: java_util.JavaComparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComparator", methodSig: "(Ljava/util/Comparator;)V", methodCache: &SortingFocusTraversalPolicy.setComparator_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComparator", methodSig: "(Ljava/util/Comparator;)V", methodCache: &SortingFocusTraversalPolicy.setComparator_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setComparator( _ _arg0: java_util.JavaComparator? ) {
@@ -100,38 +136,57 @@ open class SortingFocusTraversalPolicy: InternalFrameFocusTraversalPolicy {
 
     /// protected java.util.Comparator javax.swing.SortingFocusTraversalPolicy.getComparator()
 
-    private static var getComparator_MethodID_5: jmethodID?
+    private static var getComparator_MethodID_7: jmethodID?
 
     open func getComparator() -> java_util.JavaComparator! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComparator", methodSig: "()Ljava/util/Comparator;", methodCache: &SortingFocusTraversalPolicy.getComparator_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComparator", methodSig: "()Ljava/util/Comparator;", methodCache: &SortingFocusTraversalPolicy.getComparator_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.JavaComparatorForward( javaObject: __return ) : nil
     }
 
 
+    /// private int javax.swing.SortingFocusTraversalPolicy.getComponentIndex(java.util.List,java.awt.Component)
+
+    /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getDefaultComponent(java.awt.Container)
+
+    private static var getDefaultComponent_MethodID_8: jmethodID?
+
+    open func getDefaultComponent( arg0: java_awt.Container? ) -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &SortingFocusTraversalPolicy.getDefaultComponent_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    override open func getDefaultComponent( _ _arg0: java_awt.Container? ) -> java_awt.Component! {
+        return getDefaultComponent( arg0: _arg0 )
+    }
+
     /// public boolean javax.swing.SortingFocusTraversalPolicy.getImplicitDownCycleTraversal()
 
-    private static var getImplicitDownCycleTraversal_MethodID_6: jmethodID?
+    private static var getImplicitDownCycleTraversal_MethodID_9: jmethodID?
 
     open func getImplicitDownCycleTraversal() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getImplicitDownCycleTraversal", methodSig: "()Z", methodCache: &SortingFocusTraversalPolicy.getImplicitDownCycleTraversal_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getImplicitDownCycleTraversal", methodSig: "()Z", methodCache: &SortingFocusTraversalPolicy.getImplicitDownCycleTraversal_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.SortingFocusTraversalPolicy.setImplicitDownCycleTraversal(boolean)
 
-    private static var setImplicitDownCycleTraversal_MethodID_7: jmethodID?
+    private static var setImplicitDownCycleTraversal_MethodID_10: jmethodID?
 
     open func setImplicitDownCycleTraversal( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImplicitDownCycleTraversal", methodSig: "(Z)V", methodCache: &SortingFocusTraversalPolicy.setImplicitDownCycleTraversal_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setImplicitDownCycleTraversal", methodSig: "(Z)V", methodCache: &SortingFocusTraversalPolicy.setImplicitDownCycleTraversal_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setImplicitDownCycleTraversal( _ _arg0: Bool ) {
@@ -149,61 +204,6 @@ open class SortingFocusTraversalPolicy: InternalFrameFocusTraversalPolicy {
     /// java.awt.Container javax.swing.SortingFocusTraversalPolicy.getTopmostProvider(java.awt.Container,java.awt.Component)
 
     /// private java.awt.Component javax.swing.SortingFocusTraversalPolicy.getComponentDownCycle(java.awt.Component,int)
-
-    /// private int javax.swing.SortingFocusTraversalPolicy.getComponentIndex(java.util.List,java.awt.Component)
-
-    /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getComponentAfter(java.awt.Container,java.awt.Component)
-
-    private static var getComponentAfter_MethodID_8: jmethodID?
-
-    open func getComponentAfter( arg0: java_awt.Container?, arg1: java_awt.Component? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &SortingFocusTraversalPolicy.getComponentAfter_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    override open func getComponentAfter( _ _arg0: java_awt.Container?, _ _arg1: java_awt.Component? ) -> java_awt.Component! {
-        return getComponentAfter( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getComponentBefore(java.awt.Container,java.awt.Component)
-
-    private static var getComponentBefore_MethodID_9: jmethodID?
-
-    open func getComponentBefore( arg0: java_awt.Container?, arg1: java_awt.Component? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &SortingFocusTraversalPolicy.getComponentBefore_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    override open func getComponentBefore( _ _arg0: java_awt.Container?, _ _arg1: java_awt.Component? ) -> java_awt.Component! {
-        return getComponentBefore( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getDefaultComponent(java.awt.Container)
-
-    private static var getDefaultComponent_MethodID_10: jmethodID?
-
-    open func getDefaultComponent( arg0: java_awt.Container? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &SortingFocusTraversalPolicy.getDefaultComponent_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    override open func getDefaultComponent( _ _arg0: java_awt.Container? ) -> java_awt.Component! {
-        return getDefaultComponent( arg0: _arg0 )
-    }
 
     /// public java.awt.Component javax.swing.SortingFocusTraversalPolicy.getFirstComponent(java.awt.Container)
 

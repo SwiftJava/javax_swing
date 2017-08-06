@@ -55,51 +55,9 @@ open class MetalIconFactory_TreeControlIcon: java_swift.JavaObject, Icon, /* jav
         self.init( isCollapsed: _isCollapsed )
     }
 
-    /// public void javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
-
-    private static var paintIcon_MethodID_2: jmethodID?
-
-    open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalIconFactory_TreeControlIcon.paintIcon_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func paintIcon( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
-        paintIcon( c: _c, g: _g, x: _x, y: _y )
-    }
-
-    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.getIconWidth()
-
-    private static var getIconWidth_MethodID_3: jmethodID?
-
-    open func getIconWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &MetalIconFactory_TreeControlIcon.getIconWidth_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.getIconHeight()
-
-    private static var getIconHeight_MethodID_4: jmethodID?
-
-    open func getIconHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &MetalIconFactory_TreeControlIcon.getIconHeight_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public void javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.paintMe(java.awt.Component,java.awt.Graphics,int,int)
 
-    private static var paintMe_MethodID_5: jmethodID?
+    private static var paintMe_MethodID_2: jmethodID?
 
     open func paintMe( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -108,12 +66,54 @@ open class MetalIconFactory_TreeControlIcon: java_swift.JavaObject, Icon, /* jav
         __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMe", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalIconFactory_TreeControlIcon.paintMe_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMe", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalIconFactory_TreeControlIcon.paintMe_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func paintMe( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
         paintMe( c: _c, g: _g, x: _x, y: _y )
     }
+
+    /// public void javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
+
+    private static var paintIcon_MethodID_3: jmethodID?
+
+    open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalIconFactory_TreeControlIcon.paintIcon_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func paintIcon( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
+        paintIcon( c: _c, g: _g, x: _x, y: _y )
+    }
+
+    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.getIconWidth()
+
+    private static var getIconWidth_MethodID_4: jmethodID?
+
+    open func getIconWidth() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &MetalIconFactory_TreeControlIcon.getIconWidth_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeControlIcon.getIconHeight()
+
+    private static var getIconHeight_MethodID_5: jmethodID?
+
+    open func getIconHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &MetalIconFactory_TreeControlIcon.getIconHeight_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
 }
 

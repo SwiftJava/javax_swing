@@ -46,15 +46,48 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public boolean javax.swing.table.AbstractTableModel.isCellEditable(int,int)
+
+    private static var isCellEditable_MethodID_2: jmethodID?
+
+    open func isCellEditable( rowIndex: Int, columnIndex: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: rowIndex, locals: &__locals )
+        __args[1] = JNIType.toJava( value: columnIndex, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(II)Z", methodCache: &AbstractTableModel.isCellEditable_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isCellEditable( _ _rowIndex: Int, _ _columnIndex: Int ) -> Bool {
+        return isCellEditable( rowIndex: _rowIndex, columnIndex: _columnIndex )
+    }
+
+    /// public java.util.EventListener[] javax.swing.table.AbstractTableModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_3: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractTableModel.getListeners_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
     /// public java.lang.String javax.swing.table.AbstractTableModel.getColumnName(int)
 
-    private static var getColumnName_MethodID_2: jmethodID?
+    private static var getColumnName_MethodID_4: jmethodID?
 
     open func getColumnName( columnIndex: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columnIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnName", methodSig: "(I)Ljava/lang/String;", methodCache: &AbstractTableModel.getColumnName_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnName", methodSig: "(I)Ljava/lang/String;", methodCache: &AbstractTableModel.getColumnName_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -64,13 +97,13 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public java.lang.Class javax.swing.table.AbstractTableModel.getColumnClass(int)
 
-    private static var getColumnClass_MethodID_3: jmethodID?
+    private static var getColumnClass_MethodID_5: jmethodID?
 
     open func getColumnClass( columnIndex: Int ) -> java_swift.JavaClass! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columnIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnClass", methodSig: "(I)Ljava/lang/Class;", methodCache: &AbstractTableModel.getColumnClass_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnClass", methodSig: "(I)Ljava/lang/Class;", methodCache: &AbstractTableModel.getColumnClass_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
     }
@@ -81,7 +114,7 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.setValueAt(java.lang.Object,int,int)
 
-    private static var setValueAt_MethodID_4: jmethodID?
+    private static var setValueAt_MethodID_6: jmethodID?
 
     open func setValueAt( aValue: java_swift.JavaObject?, rowIndex: Int, columnIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -89,7 +122,7 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
         __args[0] = JNIType.toJava( value: aValue != nil ? aValue! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: columnIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueAt", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractTableModel.setValueAt_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueAt", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractTableModel.setValueAt_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setValueAt( _ _aValue: java_swift.JavaObject?, _ _rowIndex: Int, _ _columnIndex: Int ) {
@@ -98,13 +131,13 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.removeTableModelListener(javax.swing.event.TableModelListener)
 
-    private static var removeTableModelListener_MethodID_5: jmethodID?
+    private static var removeTableModelListener_MethodID_7: jmethodID?
 
     open func removeTableModelListener( l: TableModelListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTableModelListener", methodSig: "(Ljavax/swing/event/TableModelListener;)V", methodCache: &AbstractTableModel.removeTableModelListener_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTableModelListener", methodSig: "(Ljavax/swing/event/TableModelListener;)V", methodCache: &AbstractTableModel.removeTableModelListener_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func removeTableModelListener( _ _l: TableModelListener? ) {
@@ -113,13 +146,13 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.addTableModelListener(javax.swing.event.TableModelListener)
 
-    private static var addTableModelListener_MethodID_6: jmethodID?
+    private static var addTableModelListener_MethodID_8: jmethodID?
 
     open func addTableModelListener( l: TableModelListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTableModelListener", methodSig: "(Ljavax/swing/event/TableModelListener;)V", methodCache: &AbstractTableModel.addTableModelListener_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTableModelListener", methodSig: "(Ljavax/swing/event/TableModelListener;)V", methodCache: &AbstractTableModel.addTableModelListener_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func addTableModelListener( _ _l: TableModelListener? ) {
@@ -128,14 +161,14 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.fireTableCellUpdated(int,int)
 
-    private static var fireTableCellUpdated_MethodID_7: jmethodID?
+    private static var fireTableCellUpdated_MethodID_9: jmethodID?
 
     open func fireTableCellUpdated( row: Int, column: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
         __args[1] = JNIType.toJava( value: column, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableCellUpdated", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableCellUpdated_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableCellUpdated", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableCellUpdated_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func fireTableCellUpdated( _ _row: Int, _ _column: Int ) {
@@ -144,13 +177,13 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public int javax.swing.table.AbstractTableModel.findColumn(java.lang.String)
 
-    private static var findColumn_MethodID_8: jmethodID?
+    private static var findColumn_MethodID_10: jmethodID?
 
     open func findColumn( columnName: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columnName, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "findColumn", methodSig: "(Ljava/lang/String;)I", methodCache: &AbstractTableModel.findColumn_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "findColumn", methodSig: "(Ljava/lang/String;)I", methodCache: &AbstractTableModel.findColumn_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -160,48 +193,48 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public javax.swing.event.TableModelListener[] javax.swing.table.AbstractTableModel.getTableModelListeners()
 
-    private static var getTableModelListeners_MethodID_9: jmethodID?
+    private static var getTableModelListeners_MethodID_11: jmethodID?
 
     open func getTableModelListeners() -> [TableModelListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableModelListeners", methodSig: "()[Ljavax/swing/event/TableModelListener;", methodCache: &AbstractTableModel.getTableModelListeners_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableModelListeners", methodSig: "()[Ljavax/swing/event/TableModelListener;", methodCache: &AbstractTableModel.getTableModelListeners_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [TableModelListenerForward](), from: __return )
     }
 
 
     /// public void javax.swing.table.AbstractTableModel.fireTableDataChanged()
 
-    private static var fireTableDataChanged_MethodID_10: jmethodID?
+    private static var fireTableDataChanged_MethodID_12: jmethodID?
 
     open func fireTableDataChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableDataChanged", methodSig: "()V", methodCache: &AbstractTableModel.fireTableDataChanged_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableDataChanged", methodSig: "()V", methodCache: &AbstractTableModel.fireTableDataChanged_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.table.AbstractTableModel.fireTableStructureChanged()
 
-    private static var fireTableStructureChanged_MethodID_11: jmethodID?
+    private static var fireTableStructureChanged_MethodID_13: jmethodID?
 
     open func fireTableStructureChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableStructureChanged", methodSig: "()V", methodCache: &AbstractTableModel.fireTableStructureChanged_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableStructureChanged", methodSig: "()V", methodCache: &AbstractTableModel.fireTableStructureChanged_MethodID_13, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.table.AbstractTableModel.fireTableRowsInserted(int,int)
 
-    private static var fireTableRowsInserted_MethodID_12: jmethodID?
+    private static var fireTableRowsInserted_MethodID_14: jmethodID?
 
     open func fireTableRowsInserted( firstRow: Int, lastRow: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
         __args[1] = JNIType.toJava( value: lastRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableRowsInserted", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableRowsInserted_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableRowsInserted", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableRowsInserted_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func fireTableRowsInserted( _ _firstRow: Int, _ _lastRow: Int ) {
@@ -210,14 +243,14 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.fireTableRowsUpdated(int,int)
 
-    private static var fireTableRowsUpdated_MethodID_13: jmethodID?
+    private static var fireTableRowsUpdated_MethodID_15: jmethodID?
 
     open func fireTableRowsUpdated( firstRow: Int, lastRow: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
         __args[1] = JNIType.toJava( value: lastRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableRowsUpdated", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableRowsUpdated_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableRowsUpdated", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableRowsUpdated_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func fireTableRowsUpdated( _ _firstRow: Int, _ _lastRow: Int ) {
@@ -226,14 +259,14 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.fireTableRowsDeleted(int,int)
 
-    private static var fireTableRowsDeleted_MethodID_14: jmethodID?
+    private static var fireTableRowsDeleted_MethodID_16: jmethodID?
 
     open func fireTableRowsDeleted( firstRow: Int, lastRow: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
         __args[1] = JNIType.toJava( value: lastRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableRowsDeleted", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableRowsDeleted_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableRowsDeleted", methodSig: "(II)V", methodCache: &AbstractTableModel.fireTableRowsDeleted_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func fireTableRowsDeleted( _ _firstRow: Int, _ _lastRow: Int ) {
@@ -242,50 +275,17 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
 
     /// public void javax.swing.table.AbstractTableModel.fireTableChanged(javax.swing.event.TableModelEvent)
 
-    private static var fireTableChanged_MethodID_15: jmethodID?
+    private static var fireTableChanged_MethodID_17: jmethodID?
 
     open func fireTableChanged( e: TableModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableChanged", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &AbstractTableModel.fireTableChanged_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableChanged", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &AbstractTableModel.fireTableChanged_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func fireTableChanged( _ _e: TableModelEvent? ) {
         fireTableChanged( e: _e )
-    }
-
-    /// public boolean javax.swing.table.AbstractTableModel.isCellEditable(int,int)
-
-    private static var isCellEditable_MethodID_16: jmethodID?
-
-    open func isCellEditable( rowIndex: Int, columnIndex: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rowIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: columnIndex, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(II)Z", methodCache: &AbstractTableModel.isCellEditable_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isCellEditable( _ _rowIndex: Int, _ _columnIndex: Int ) -> Bool {
-        return isCellEditable( rowIndex: _rowIndex, columnIndex: _columnIndex )
-    }
-
-    /// public java.util.EventListener[] javax.swing.table.AbstractTableModel.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_17: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractTableModel.getListeners_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
     }
 
     /// In declared protocol but not defined.. ///

@@ -111,35 +111,35 @@ open class TextAction: AbstractAction {
         return getTextComponent( e: _e )
     }
 
+    /// protected final javax.swing.text.JTextComponent javax.swing.text.TextAction.getFocusedComponent()
+
+    private static var getFocusedComponent_MethodID_3: jmethodID?
+
+    open func getFocusedComponent() -> JTextComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusedComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &TextAction.getFocusedComponent_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JTextComponent( javaObject: __return ) : nil
+    }
+
+
     /// public static final javax.swing.Action[] javax.swing.text.TextAction.augmentList(javax.swing.Action[],javax.swing.Action[])
 
-    private static var augmentList_MethodID_3: jmethodID?
+    private static var augmentList_MethodID_4: jmethodID?
 
     open class func augmentList( list1: [Action]?, list2: [Action]? ) -> [Action]! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: list1, locals: &__locals )
         __args[1] = JNIType.toJava( value: list2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/TextAction", classCache: &TextActionJNIClass, methodName: "augmentList", methodSig: "([Ljavax/swing/Action;[Ljavax/swing/Action;)[Ljavax/swing/Action;", methodCache: &augmentList_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/TextAction", classCache: &TextActionJNIClass, methodName: "augmentList", methodSig: "([Ljavax/swing/Action;[Ljavax/swing/Action;)[Ljavax/swing/Action;", methodCache: &augmentList_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ActionForward](), from: __return )
     }
 
     open class func augmentList( _ _list1: [Action]?, _ _list2: [Action]? ) -> [Action]! {
         return augmentList( list1: _list1, list2: _list2 )
     }
-
-    /// protected final javax.swing.text.JTextComponent javax.swing.text.TextAction.getFocusedComponent()
-
-    private static var getFocusedComponent_MethodID_4: jmethodID?
-
-    open func getFocusedComponent() -> JTextComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusedComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &TextAction.getFocusedComponent_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JTextComponent( javaObject: __return ) : nil
-    }
-
 
 }
 

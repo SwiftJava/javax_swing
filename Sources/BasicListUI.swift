@@ -284,15 +284,48 @@ open class BasicListUI: ListUI {
 
     /// private javax.swing.plaf.basic.BasicListUI$Handler javax.swing.plaf.basic.BasicListUI.getHandler()
 
+    /// static int javax.swing.plaf.basic.BasicListUI.access$700(javax.swing.plaf.basic.BasicListUI,int,int)
+
+    /// static long javax.swing.plaf.basic.BasicListUI.access$800(javax.swing.plaf.basic.BasicListUI)
+
+    /// static int javax.swing.plaf.basic.BasicListUI.access$1002(javax.swing.plaf.basic.BasicListUI,int)
+
+    /// static boolean javax.swing.plaf.basic.BasicListUI.access$1102(javax.swing.plaf.basic.BasicListUI,boolean)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicListUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicListUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicListUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicListUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_2: jmethodID?
+
+    open class func createUI( list: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicListUI", classCache: &BasicListUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _list: JComponent? ) -> ComponentUI! {
+        return createUI( list: _list )
+    }
+
+    /// private int javax.swing.plaf.basic.BasicListUI.getHeight(int,int)
+
     /// protected int javax.swing.plaf.basic.BasicListUI.getRowHeight(int)
 
-    private static var getRowHeight_MethodID_2: jmethodID?
+    private static var getRowHeight_MethodID_3: jmethodID?
 
     open func getRowHeight( row: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "(I)I", methodCache: &BasicListUI.getRowHeight_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "(I)I", methodCache: &BasicListUI.getRowHeight_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -306,167 +339,35 @@ open class BasicListUI: ListUI {
 
     /// javax.swing.InputMap javax.swing.plaf.basic.BasicListUI.getInputMap(int)
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicListUI.createUI(javax.swing.JComponent)
+    /// public java.awt.Point javax.swing.plaf.basic.BasicListUI.indexToLocation(javax.swing.JList,int)
 
-    private static var createUI_MethodID_3: jmethodID?
+    /// public java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.getCellBounds(javax.swing.JList,int,int)
 
-    open class func createUI( list: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicListUI", classCache: &BasicListUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.getCellBounds(javax.swing.JList,int)
 
-    override open class func createUI( _ _list: JComponent? ) -> ComponentUI! {
-        return createUI( list: _list )
-    }
+    /// public int javax.swing.plaf.basic.BasicListUI.locationToIndex(javax.swing.JList,java.awt.Point)
+
+    /// public void javax.swing.plaf.basic.BasicListUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicListUI.uninstallUI(javax.swing.JComponent)
+
+    /// static void javax.swing.plaf.basic.BasicListUI.access$900(javax.swing.plaf.basic.BasicListUI)
+
+    /// static int javax.swing.plaf.basic.BasicListUI.access$1000(javax.swing.plaf.basic.BasicListUI)
+
+    /// static void javax.swing.plaf.basic.BasicListUI.access$1200(javax.swing.plaf.basic.BasicListUI)
+
+    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.access$1300(javax.swing.plaf.basic.BasicListUI,javax.swing.JList$DropLocation)
+
+    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.access$1400(javax.swing.plaf.basic.BasicListUI,javax.swing.JList,int)
+
+    /// static boolean javax.swing.plaf.basic.BasicListUI.access$1500(javax.swing.plaf.basic.BasicListUI)
 
     /// public void javax.swing.plaf.basic.BasicListUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    /// private int javax.swing.plaf.basic.BasicListUI.getHeight(int,int)
-
-    /// static int javax.swing.plaf.basic.BasicListUI.access$700(javax.swing.plaf.basic.BasicListUI,int,int)
-
-    /// static long javax.swing.plaf.basic.BasicListUI.access$800(javax.swing.plaf.basic.BasicListUI)
-
-    /// static void javax.swing.plaf.basic.BasicListUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicListUI.installDefaults()
-
-    private static var installDefaults_MethodID_4: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicListUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicListUI.installListeners()
-
-    private static var installListeners_MethodID_5: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicListUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicListUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_6: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicListUI.installKeyboardActions_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicListUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_7: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicListUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicListUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_8: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicListUI.uninstallListeners_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicListUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_9: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicListUI.uninstallKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicListUI.createMouseInputListener()
-
-    private static var createMouseInputListener_MethodID_10: jmethodID?
-
-    open func createMouseInputListener() -> MouseInputListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseInputListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicListUI.createMouseInputListener_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicListUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_11: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicListUI.createPropertyChangeListener_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicListUI.createFocusListener()
-
-    private static var createFocusListener_MethodID_12: jmethodID?
-
-    open func createFocusListener() -> java_awt.FocusListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicListUI.createFocusListener_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.event.ListDataListener javax.swing.plaf.basic.BasicListUI.createListDataListener()
-
-    private static var createListDataListener_MethodID_13: jmethodID?
-
-    open func createListDataListener() -> ListDataListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListDataListener", methodSig: "()Ljavax/swing/event/ListDataListener;", methodCache: &BasicListUI.createListDataListener_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListDataListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.event.ListSelectionListener javax.swing.plaf.basic.BasicListUI.createListSelectionListener()
-
-    private static var createListSelectionListener_MethodID_14: jmethodID?
-
-    open func createListSelectionListener() -> ListSelectionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListSelectionListener", methodSig: "()Ljavax/swing/event/ListSelectionListener;", methodCache: &BasicListUI.createListSelectionListener_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListSelectionListenerForward( javaObject: __return ) : nil
-    }
-
-
     /// protected void javax.swing.plaf.basic.BasicListUI.paintCell(java.awt.Graphics,int,java.awt.Rectangle,javax.swing.ListCellRenderer,javax.swing.ListModel,javax.swing.ListSelectionModel,int)
 
-    private static var paintCell_MethodID_15: jmethodID?
+    private static var paintCell_MethodID_4: jmethodID?
 
     open func paintCell( g: java_awt.Graphics?, row: Int, rowBounds: java_awt.Rectangle?, cellRenderer: ListCellRenderer?, dataModel: ListModel?, selModel: ListSelectionModel?, leadIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -478,7 +379,7 @@ open class BasicListUI: ListUI {
         __args[4] = JNIType.toJava( value: dataModel, locals: &__locals )
         __args[5] = JNIType.toJava( value: selModel, locals: &__locals )
         __args[6] = JNIType.toJava( value: leadIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCell", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Rectangle;Ljavax/swing/ListCellRenderer;Ljavax/swing/ListModel;Ljavax/swing/ListSelectionModel;I)V", methodCache: &BasicListUI.paintCell_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCell", methodSig: "(Ljava/awt/Graphics;ILjava/awt/Rectangle;Ljavax/swing/ListCellRenderer;Ljavax/swing/ListModel;Ljavax/swing/ListSelectionModel;I)V", methodCache: &BasicListUI.paintCell_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func paintCell( _ _g: java_awt.Graphics?, _ _row: Int, _ _rowBounds: java_awt.Rectangle?, _ _cellRenderer: ListCellRenderer?, _ _dataModel: ListModel?, _ _selModel: ListSelectionModel?, _ _leadIndex: Int ) {
@@ -493,23 +394,23 @@ open class BasicListUI: ListUI {
 
     /// protected void javax.swing.plaf.basic.BasicListUI.selectPreviousIndex()
 
-    private static var selectPreviousIndex_MethodID_16: jmethodID?
+    private static var selectPreviousIndex_MethodID_5: jmethodID?
 
     open func selectPreviousIndex() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPreviousIndex", methodSig: "()V", methodCache: &BasicListUI.selectPreviousIndex_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPreviousIndex", methodSig: "()V", methodCache: &BasicListUI.selectPreviousIndex_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicListUI.selectNextIndex()
 
-    private static var selectNextIndex_MethodID_17: jmethodID?
+    private static var selectNextIndex_MethodID_6: jmethodID?
 
     open func selectNextIndex() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectNextIndex", methodSig: "()V", methodCache: &BasicListUI.selectNextIndex_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectNextIndex", methodSig: "()V", methodCache: &BasicListUI.selectNextIndex_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
@@ -517,13 +418,13 @@ open class BasicListUI: ListUI {
 
     /// protected int javax.swing.plaf.basic.BasicListUI.convertYToRow(int)
 
-    private static var convertYToRow_MethodID_18: jmethodID?
+    private static var convertYToRow_MethodID_7: jmethodID?
 
     open func convertYToRow( y0: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: y0, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertYToRow", methodSig: "(I)I", methodCache: &BasicListUI.convertYToRow_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertYToRow", methodSig: "(I)I", methodCache: &BasicListUI.convertYToRow_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -533,13 +434,13 @@ open class BasicListUI: ListUI {
 
     /// protected int javax.swing.plaf.basic.BasicListUI.convertRowToY(int)
 
-    private static var convertRowToY_MethodID_19: jmethodID?
+    private static var convertRowToY_MethodID_8: jmethodID?
 
     open func convertRowToY( row: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertRowToY", methodSig: "(I)I", methodCache: &BasicListUI.convertRowToY_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertRowToY", methodSig: "(I)I", methodCache: &BasicListUI.convertRowToY_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -561,23 +462,23 @@ open class BasicListUI: ListUI {
 
     /// protected void javax.swing.plaf.basic.BasicListUI.maybeUpdateLayoutState()
 
-    private static var maybeUpdateLayoutState_MethodID_20: jmethodID?
+    private static var maybeUpdateLayoutState_MethodID_9: jmethodID?
 
     open func maybeUpdateLayoutState() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "maybeUpdateLayoutState", methodSig: "()V", methodCache: &BasicListUI.maybeUpdateLayoutState_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "maybeUpdateLayoutState", methodSig: "()V", methodCache: &BasicListUI.maybeUpdateLayoutState_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicListUI.updateLayoutState()
 
-    private static var updateLayoutState_MethodID_21: jmethodID?
+    private static var updateLayoutState_MethodID_10: jmethodID?
 
     open func updateLayoutState() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayoutState", methodSig: "()V", methodCache: &BasicListUI.updateLayoutState_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayoutState", methodSig: "()V", methodCache: &BasicListUI.updateLayoutState_MethodID_10, args: &__args, locals: &__locals )
     }
 
 
@@ -587,39 +488,138 @@ open class BasicListUI: ListUI {
 
     /// private static int javax.swing.plaf.basic.BasicListUI.adjustIndex(int,javax.swing.JList)
 
-    /// static void javax.swing.plaf.basic.BasicListUI.access$900(javax.swing.plaf.basic.BasicListUI)
+    /// static void javax.swing.plaf.basic.BasicListUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    /// static int javax.swing.plaf.basic.BasicListUI.access$1000(javax.swing.plaf.basic.BasicListUI)
+    /// protected void javax.swing.plaf.basic.BasicListUI.installDefaults()
 
-    /// static void javax.swing.plaf.basic.BasicListUI.access$1200(javax.swing.plaf.basic.BasicListUI)
+    private static var installDefaults_MethodID_11: jmethodID?
 
-    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.access$1300(javax.swing.plaf.basic.BasicListUI,javax.swing.JList$DropLocation)
+    open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicListUI.installDefaults_MethodID_11, args: &__args, locals: &__locals )
+    }
 
-    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.access$1400(javax.swing.plaf.basic.BasicListUI,javax.swing.JList,int)
 
-    /// static boolean javax.swing.plaf.basic.BasicListUI.access$1500(javax.swing.plaf.basic.BasicListUI)
+    /// protected void javax.swing.plaf.basic.BasicListUI.installListeners()
 
-    /// public java.awt.Point javax.swing.plaf.basic.BasicListUI.indexToLocation(javax.swing.JList,int)
+    private static var installListeners_MethodID_12: jmethodID?
 
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.getCellBounds(javax.swing.JList,int)
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicListUI.installListeners_MethodID_12, args: &__args, locals: &__locals )
+    }
 
-    /// public java.awt.Rectangle javax.swing.plaf.basic.BasicListUI.getCellBounds(javax.swing.JList,int,int)
 
-    /// public int javax.swing.plaf.basic.BasicListUI.locationToIndex(javax.swing.JList,java.awt.Point)
+    /// protected void javax.swing.plaf.basic.BasicListUI.installKeyboardActions()
 
-    /// public void javax.swing.plaf.basic.BasicListUI.installUI(javax.swing.JComponent)
+    private static var installKeyboardActions_MethodID_13: jmethodID?
 
-    /// public void javax.swing.plaf.basic.BasicListUI.uninstallUI(javax.swing.JComponent)
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicListUI.installKeyboardActions_MethodID_13, args: &__args, locals: &__locals )
+    }
 
-    /// static int javax.swing.plaf.basic.BasicListUI.access$1002(javax.swing.plaf.basic.BasicListUI,int)
 
-    /// static boolean javax.swing.plaf.basic.BasicListUI.access$1102(javax.swing.plaf.basic.BasicListUI,boolean)
+    /// protected void javax.swing.plaf.basic.BasicListUI.uninstallDefaults()
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicListUI.getPreferredSize(javax.swing.JComponent)
+    private static var uninstallDefaults_MethodID_14: jmethodID?
 
-    /// public int javax.swing.plaf.basic.BasicListUI.getBaseline(javax.swing.JComponent,int,int)
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicListUI.uninstallDefaults_MethodID_14, args: &__args, locals: &__locals )
+    }
 
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicListUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.basic.BasicListUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_15: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicListUI.uninstallListeners_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicListUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_16: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicListUI.uninstallKeyboardActions_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicListUI.createMouseInputListener()
+
+    private static var createMouseInputListener_MethodID_17: jmethodID?
+
+    open func createMouseInputListener() -> MouseInputListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseInputListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicListUI.createMouseInputListener_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicListUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_18: jmethodID?
+
+    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicListUI.createPropertyChangeListener_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicListUI.createFocusListener()
+
+    private static var createFocusListener_MethodID_19: jmethodID?
+
+    open func createFocusListener() -> java_awt.FocusListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicListUI.createFocusListener_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.event.ListDataListener javax.swing.plaf.basic.BasicListUI.createListDataListener()
+
+    private static var createListDataListener_MethodID_20: jmethodID?
+
+    open func createListDataListener() -> ListDataListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListDataListener", methodSig: "()Ljavax/swing/event/ListDataListener;", methodCache: &BasicListUI.createListDataListener_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ListDataListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.event.ListSelectionListener javax.swing.plaf.basic.BasicListUI.createListSelectionListener()
+
+    private static var createListSelectionListener_MethodID_21: jmethodID?
+
+    open func createListSelectionListener() -> ListSelectionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createListSelectionListener", methodSig: "()Ljavax/swing/event/ListSelectionListener;", methodCache: &BasicListUI.createListSelectionListener_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ListSelectionListenerForward( javaObject: __return ) : nil
+    }
+
 
 }
 

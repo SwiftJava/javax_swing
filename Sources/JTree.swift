@@ -940,15 +940,32 @@ open class JTree: JComponent, Scrollable {
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public javax.swing.JTree(java.util.Vector)
+    /// public javax.swing.JTree(java.lang.Object[])
 
     private static var new_MethodID_1: jmethodID?
+
+    public convenience init( value: [JavaObject]? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "([Ljava/lang/Object;)V", methodCache: &JTree.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _value: [JavaObject]? ) {
+        self.init( value: _value )
+    }
+
+    /// public javax.swing.JTree(java.util.Vector)
+
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( value: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljava/util/Vector;)V", methodCache: &JTree.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljava/util/Vector;)V", methodCache: &JTree.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -957,50 +974,16 @@ open class JTree: JComponent, Scrollable {
         self.init( value: _value )
     }
 
-    /// public javax.swing.JTree(java.util.Hashtable)
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init( value: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, mapClass: "java/util/Hashtable", locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljava/util/Hashtable;)V", methodCache: &JTree.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _value: java_util.Hashtable? ) {
-        self.init( value: _value )
-    }
-
-    /// public javax.swing.JTree(javax.swing.tree.TreeNode)
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( root: TreeNode? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: root, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljavax/swing/tree/TreeNode;)V", methodCache: &JTree.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _root: TreeNode? ) {
-        self.init( root: _root )
-    }
-
     /// public javax.swing.JTree(javax.swing.tree.TreeNode,boolean)
 
-    private static var new_MethodID_4: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( root: TreeNode?, asksAllowsChildren: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: root, locals: &__locals )
         __args[1] = JNIType.toJava( value: asksAllowsChildren, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljavax/swing/tree/TreeNode;Z)V", methodCache: &JTree.new_MethodID_4, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljavax/swing/tree/TreeNode;Z)V", methodCache: &JTree.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -1009,15 +992,44 @@ open class JTree: JComponent, Scrollable {
         self.init( root: _root, asksAllowsChildren: _asksAllowsChildren )
     }
 
-    /// public javax.swing.JTree(javax.swing.tree.TreeModel)
+    /// public javax.swing.JTree(javax.swing.tree.TreeNode)
+
+    private static var new_MethodID_4: jmethodID?
+
+    public convenience init( root: TreeNode? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: root, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljavax/swing/tree/TreeNode;)V", methodCache: &JTree.new_MethodID_4, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _root: TreeNode? ) {
+        self.init( root: _root )
+    }
+
+    /// public javax.swing.JTree()
 
     private static var new_MethodID_5: jmethodID?
+
+    public convenience init() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "()V", methodCache: &JTree.new_MethodID_5, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// public javax.swing.JTree(javax.swing.tree.TreeModel)
+
+    private static var new_MethodID_6: jmethodID?
 
     public convenience init( newModel: TreeModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljavax/swing/tree/TreeModel;)V", methodCache: &JTree.new_MethodID_5, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljavax/swing/tree/TreeModel;)V", methodCache: &JTree.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -1026,32 +1038,20 @@ open class JTree: JComponent, Scrollable {
         self.init( newModel: _newModel )
     }
 
-    /// public javax.swing.JTree()
-
-    private static var new_MethodID_6: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "()V", methodCache: &JTree.new_MethodID_6, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    /// public javax.swing.JTree(java.lang.Object[])
+    /// public javax.swing.JTree(java.util.Hashtable)
 
     private static var new_MethodID_7: jmethodID?
 
-    public convenience init( value: [JavaObject]? ) {
+    public convenience init( value: java_util.Hashtable? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "([Ljava/lang/Object;)V", methodCache: &JTree.new_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, mapClass: "java/util/Hashtable", locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JTree", classCache: &JTree.JTreeJNIClass, methodSig: "(Ljava/util/Hashtable;)V", methodCache: &JTree.new_MethodID_7, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _value: [JavaObject]? ) {
+    public convenience init( _ _value: java_util.Hashtable? ) {
         self.init( value: _value )
     }
 
@@ -1075,34 +1075,54 @@ open class JTree: JComponent, Scrollable {
     }
 
 
-    /// public javax.swing.plaf.TreeUI javax.swing.JTree.getUI()
+    /// public java.lang.String javax.swing.JTree.getToolTipText(java.awt.event.MouseEvent)
 
-    private static var getUI_MethodID_9: jmethodID?
+    /// public javax.accessibility.AccessibleContext javax.swing.JTree.getAccessibleContext()
 
-    open func getUI() -> TreeUI! {
+    /// public javax.swing.tree.TreeModel javax.swing.JTree.getModel()
+
+    private static var getModel_MethodID_9: jmethodID?
+
+    open func getModel() -> TreeModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TreeUI;", methodCache: &JTree.getUI_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/tree/TreeModel;", methodCache: &JTree.getModel_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeUI( javaObject: __return ) : nil
+        return __return != nil ? TreeModelForward( javaObject: __return ) : nil
     }
 
 
+    /// public boolean javax.swing.JTree.isVisible(javax.swing.tree.TreePath)
+
+    private static var isVisible_MethodID_10: jmethodID?
+
+    open func isVisible( path: TreePath? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "(Ljavax/swing/tree/TreePath;)Z", methodCache: &JTree.isVisible_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isVisible( _ _path: TreePath? ) -> Bool {
+        return isVisible( path: _path )
+    }
+
     /// public boolean javax.swing.JTree.isEditable()
 
-    private static var isEditable_MethodID_10: jmethodID?
+    private static var isEditable_MethodID_11: jmethodID?
 
     open func isEditable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &JTree.isEditable_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &JTree.isEditable_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public java.lang.String javax.swing.JTree.convertValueToText(java.lang.Object,boolean,boolean,boolean,int,boolean)
 
-    private static var convertValueToText_MethodID_11: jmethodID?
+    private static var convertValueToText_MethodID_12: jmethodID?
 
     open func convertValueToText( value: java_swift.JavaObject?, selected: Bool, expanded: Bool, leaf: Bool, row: Int, hasFocus: Bool ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -1113,7 +1133,7 @@ open class JTree: JComponent, Scrollable {
         __args[3] = JNIType.toJava( value: leaf, locals: &__locals )
         __args[4] = JNIType.toJava( value: row, locals: &__locals )
         __args[5] = JNIType.toJava( value: hasFocus, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "convertValueToText", methodSig: "(Ljava/lang/Object;ZZZIZ)Ljava/lang/String;", methodCache: &JTree.convertValueToText_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "convertValueToText", methodSig: "(Ljava/lang/Object;ZZZIZ)Ljava/lang/String;", methodCache: &JTree.convertValueToText_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -1123,12 +1143,12 @@ open class JTree: JComponent, Scrollable {
 
     /// public javax.swing.tree.TreeCellRenderer javax.swing.JTree.getCellRenderer()
 
-    private static var getCellRenderer_MethodID_12: jmethodID?
+    private static var getCellRenderer_MethodID_13: jmethodID?
 
     open func getCellRenderer() -> TreeCellRenderer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &JTree.getCellRenderer_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &JTree.getCellRenderer_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeCellRendererForward( javaObject: __return ) : nil
     }
@@ -1136,13 +1156,13 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.setRowHeight(int)
 
-    private static var setRowHeight_MethodID_13: jmethodID?
+    private static var setRowHeight_MethodID_14: jmethodID?
 
     open func setRowHeight( rowHeight: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rowHeight, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeight", methodSig: "(I)V", methodCache: &JTree.setRowHeight_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeight", methodSig: "(I)V", methodCache: &JTree.setRowHeight_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setRowHeight( _ _rowHeight: Int ) {
@@ -1151,25 +1171,25 @@ open class JTree: JComponent, Scrollable {
 
     /// public int javax.swing.JTree.getRowHeight()
 
-    private static var getRowHeight_MethodID_14: jmethodID?
+    private static var getRowHeight_MethodID_15: jmethodID?
 
     open func getRowHeight() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "()I", methodCache: &JTree.getRowHeight_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "()I", methodCache: &JTree.getRowHeight_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JTree.setDragEnabled(boolean)
 
-    private static var setDragEnabled_MethodID_15: jmethodID?
+    private static var setDragEnabled_MethodID_16: jmethodID?
 
     open func setDragEnabled( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragEnabled", methodSig: "(Z)V", methodCache: &JTree.setDragEnabled_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragEnabled", methodSig: "(Z)V", methodCache: &JTree.setDragEnabled_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setDragEnabled( _ _b: Bool ) {
@@ -1178,25 +1198,25 @@ open class JTree: JComponent, Scrollable {
 
     /// public boolean javax.swing.JTree.getDragEnabled()
 
-    private static var getDragEnabled_MethodID_16: jmethodID?
+    private static var getDragEnabled_MethodID_17: jmethodID?
 
     open func getDragEnabled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getDragEnabled", methodSig: "()Z", methodCache: &JTree.getDragEnabled_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getDragEnabled", methodSig: "()Z", methodCache: &JTree.getDragEnabled_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public final void javax.swing.JTree.setDropMode(javax.swing.DropMode)
 
-    private static var setDropMode_MethodID_17: jmethodID?
+    private static var setDropMode_MethodID_18: jmethodID?
 
     open func setDropMode( dropMode: DropMode? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: dropMode != nil ? dropMode! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDropMode", methodSig: "(Ljavax/swing/DropMode;)V", methodCache: &JTree.setDropMode_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDropMode", methodSig: "(Ljavax/swing/DropMode;)V", methodCache: &JTree.setDropMode_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setDropMode( _ _dropMode: DropMode? ) {
@@ -1205,12 +1225,12 @@ open class JTree: JComponent, Scrollable {
 
     /// public final javax.swing.DropMode javax.swing.JTree.getDropMode()
 
-    private static var getDropMode_MethodID_18: jmethodID?
+    private static var getDropMode_MethodID_19: jmethodID?
 
     open func getDropMode() -> DropMode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropMode", methodSig: "()Ljavax/swing/DropMode;", methodCache: &JTree.getDropMode_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropMode", methodSig: "()Ljavax/swing/DropMode;", methodCache: &JTree.getDropMode_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DropMode( javaObject: __return ) : nil
     }
@@ -1218,12 +1238,12 @@ open class JTree: JComponent, Scrollable {
 
     /// public final javax.swing.JTree$DropLocation javax.swing.JTree.getDropLocation()
 
-    private static var getDropLocation_MethodID_19: jmethodID?
+    private static var getDropLocation_MethodID_20: jmethodID?
 
     open func getDropLocation() -> JTree_DropLocation! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLocation", methodSig: "()Ljavax/swing/JTree$DropLocation;", methodCache: &JTree.getDropLocation_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLocation", methodSig: "()Ljavax/swing/JTree$DropLocation;", methodCache: &JTree.getDropLocation_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JTree_DropLocation( javaObject: __return ) : nil
     }
@@ -1231,24 +1251,24 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.clearSelection()
 
-    private static var clearSelection_MethodID_20: jmethodID?
+    private static var clearSelection_MethodID_21: jmethodID?
 
     open func clearSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &JTree.clearSelection_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &JTree.clearSelection_MethodID_21, args: &__args, locals: &__locals )
     }
 
 
     /// public boolean javax.swing.JTree.isRowSelected(int)
 
-    private static var isRowSelected_MethodID_21: jmethodID?
+    private static var isRowSelected_MethodID_22: jmethodID?
 
     open func isRowSelected( row: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRowSelected", methodSig: "(I)Z", methodCache: &JTree.isRowSelected_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRowSelected", methodSig: "(I)Z", methodCache: &JTree.isRowSelected_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1258,37 +1278,37 @@ open class JTree: JComponent, Scrollable {
 
     /// public int javax.swing.JTree.getRowCount()
 
-    private static var getRowCount_MethodID_22: jmethodID?
+    private static var getRowCount_MethodID_23: jmethodID?
 
     open func getRowCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "()I", methodCache: &JTree.getRowCount_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "()I", methodCache: &JTree.getRowCount_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean javax.swing.JTree.isEditing()
 
-    private static var isEditing_MethodID_23: jmethodID?
+    private static var isEditing_MethodID_24: jmethodID?
 
     open func isEditing() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditing", methodSig: "()Z", methodCache: &JTree.isEditing_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditing", methodSig: "()Z", methodCache: &JTree.isEditing_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JTree.setModel(javax.swing.tree.TreeModel)
 
-    private static var setModel_MethodID_24: jmethodID?
+    private static var setModel_MethodID_25: jmethodID?
 
     open func setModel( newModel: TreeModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/tree/TreeModel;)V", methodCache: &JTree.setModel_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/tree/TreeModel;)V", methodCache: &JTree.setModel_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func setModel( _ _newModel: TreeModel? ) {
@@ -1297,13 +1317,13 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.setSelectionModel(javax.swing.tree.TreeSelectionModel)
 
-    private static var setSelectionModel_MethodID_25: jmethodID?
+    private static var setSelectionModel_MethodID_26: jmethodID?
 
     open func setSelectionModel( selectionModel: TreeSelectionModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: selectionModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionModel", methodSig: "(Ljavax/swing/tree/TreeSelectionModel;)V", methodCache: &JTree.setSelectionModel_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionModel", methodSig: "(Ljavax/swing/tree/TreeSelectionModel;)V", methodCache: &JTree.setSelectionModel_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setSelectionModel( _ _selectionModel: TreeSelectionModel? ) {
@@ -1312,12 +1332,12 @@ open class JTree: JComponent, Scrollable {
 
     /// public javax.swing.tree.TreeSelectionModel javax.swing.JTree.getSelectionModel()
 
-    private static var getSelectionModel_MethodID_26: jmethodID?
+    private static var getSelectionModel_MethodID_27: jmethodID?
 
     open func getSelectionModel() -> TreeSelectionModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionModel", methodSig: "()Ljavax/swing/tree/TreeSelectionModel;", methodCache: &JTree.getSelectionModel_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionModel", methodSig: "()Ljavax/swing/tree/TreeSelectionModel;", methodCache: &JTree.getSelectionModel_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeSelectionModelForward( javaObject: __return ) : nil
     }
@@ -1325,12 +1345,12 @@ open class JTree: JComponent, Scrollable {
 
     /// public java.awt.Dimension javax.swing.JTree.getPreferredScrollableViewportSize()
 
-    private static var getPreferredScrollableViewportSize_MethodID_27: jmethodID?
+    private static var getPreferredScrollableViewportSize_MethodID_28: jmethodID?
 
     open func getPreferredScrollableViewportSize() -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JTree.getPreferredScrollableViewportSize_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &JTree.getPreferredScrollableViewportSize_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -1338,7 +1358,7 @@ open class JTree: JComponent, Scrollable {
 
     /// public int javax.swing.JTree.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
 
-    private static var getScrollableUnitIncrement_MethodID_28: jmethodID?
+    private static var getScrollableUnitIncrement_MethodID_29: jmethodID?
 
     open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1346,7 +1366,7 @@ open class JTree: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
         __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTree.getScrollableUnitIncrement_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTree.getScrollableUnitIncrement_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1356,7 +1376,7 @@ open class JTree: JComponent, Scrollable {
 
     /// public int javax.swing.JTree.getScrollableBlockIncrement(java.awt.Rectangle,int,int)
 
-    private static var getScrollableBlockIncrement_MethodID_29: jmethodID?
+    private static var getScrollableBlockIncrement_MethodID_30: jmethodID?
 
     open func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1364,7 +1384,7 @@ open class JTree: JComponent, Scrollable {
         __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
         __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTree.getScrollableBlockIncrement_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTree.getScrollableBlockIncrement_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1374,36 +1394,36 @@ open class JTree: JComponent, Scrollable {
 
     /// public boolean javax.swing.JTree.getScrollableTracksViewportWidth()
 
-    private static var getScrollableTracksViewportWidth_MethodID_30: jmethodID?
+    private static var getScrollableTracksViewportWidth_MethodID_31: jmethodID?
 
     open func getScrollableTracksViewportWidth() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &JTree.getScrollableTracksViewportWidth_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &JTree.getScrollableTracksViewportWidth_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean javax.swing.JTree.getScrollableTracksViewportHeight()
 
-    private static var getScrollableTracksViewportHeight_MethodID_31: jmethodID?
+    private static var getScrollableTracksViewportHeight_MethodID_32: jmethodID?
 
     open func getScrollableTracksViewportHeight() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &JTree.getScrollableTracksViewportHeight_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &JTree.getScrollableTracksViewportHeight_MethodID_32, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public javax.swing.tree.TreeCellEditor javax.swing.JTree.getCellEditor()
 
-    private static var getCellEditor_MethodID_32: jmethodID?
+    private static var getCellEditor_MethodID_33: jmethodID?
 
     open func getCellEditor() -> TreeCellEditor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &JTree.getCellEditor_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &JTree.getCellEditor_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeCellEditorForward( javaObject: __return ) : nil
     }
@@ -1411,13 +1431,13 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.setCellEditor(javax.swing.tree.TreeCellEditor)
 
-    private static var setCellEditor_MethodID_33: jmethodID?
+    private static var setCellEditor_MethodID_34: jmethodID?
 
     open func setCellEditor( cellEditor: TreeCellEditor? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: cellEditor, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellEditor", methodSig: "(Ljavax/swing/tree/TreeCellEditor;)V", methodCache: &JTree.setCellEditor_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellEditor", methodSig: "(Ljavax/swing/tree/TreeCellEditor;)V", methodCache: &JTree.setCellEditor_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func setCellEditor( _ _cellEditor: TreeCellEditor? ) {
@@ -1426,14 +1446,14 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.setSelectionInterval(int,int)
 
-    private static var setSelectionInterval_MethodID_34: jmethodID?
+    private static var setSelectionInterval_MethodID_35: jmethodID?
 
     open func setSelectionInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionInterval", methodSig: "(II)V", methodCache: &JTree.setSelectionInterval_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionInterval", methodSig: "(II)V", methodCache: &JTree.setSelectionInterval_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func setSelectionInterval( _ _index0: Int, _ _index1: Int ) {
@@ -1442,14 +1462,14 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.addSelectionInterval(int,int)
 
-    private static var addSelectionInterval_MethodID_35: jmethodID?
+    private static var addSelectionInterval_MethodID_36: jmethodID?
 
     open func addSelectionInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSelectionInterval", methodSig: "(II)V", methodCache: &JTree.addSelectionInterval_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSelectionInterval", methodSig: "(II)V", methodCache: &JTree.addSelectionInterval_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func addSelectionInterval( _ _index0: Int, _ _index1: Int ) {
@@ -1458,64 +1478,31 @@ open class JTree: JComponent, Scrollable {
 
     /// public void javax.swing.JTree.removeSelectionInterval(int,int)
 
-    private static var removeSelectionInterval_MethodID_36: jmethodID?
+    private static var removeSelectionInterval_MethodID_37: jmethodID?
 
     open func removeSelectionInterval( index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index0, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeSelectionInterval", methodSig: "(II)V", methodCache: &JTree.removeSelectionInterval_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeSelectionInterval", methodSig: "(II)V", methodCache: &JTree.removeSelectionInterval_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func removeSelectionInterval( _ _index0: Int, _ _index1: Int ) {
         removeSelectionInterval( index0: _index0, index1: _index1 )
     }
 
-    /// public java.lang.String javax.swing.JTree.getToolTipText(java.awt.event.MouseEvent)
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JTree.getAccessibleContext()
-
-    /// public javax.swing.tree.TreeModel javax.swing.JTree.getModel()
-
-    private static var getModel_MethodID_37: jmethodID?
-
-    open func getModel() -> TreeModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/tree/TreeModel;", methodCache: &JTree.getModel_MethodID_37, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean javax.swing.JTree.isVisible(javax.swing.tree.TreePath)
-
-    private static var isVisible_MethodID_38: jmethodID?
-
-    open func isVisible( path: TreePath? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "(Ljavax/swing/tree/TreePath;)Z", methodCache: &JTree.isVisible_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isVisible( _ _path: TreePath? ) -> Bool {
-        return isVisible( path: _path )
-    }
-
     /// public void javax.swing.JTree.updateUI()
 
     /// public void javax.swing.JTree.setUI(javax.swing.plaf.TreeUI)
 
-    private static var setUI_MethodID_39: jmethodID?
+    private static var setUI_MethodID_38: jmethodID?
 
     open func setUI( ui: TreeUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TreeUI;)V", methodCache: &JTree.setUI_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TreeUI;)V", methodCache: &JTree.setUI_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: TreeUI? ) {
@@ -1524,15 +1511,28 @@ open class JTree: JComponent, Scrollable {
 
     /// public java.lang.String javax.swing.JTree.getUIClassID()
 
-    /// javax.swing.JTree$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
-
     /// javax.swing.TransferHandler$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
+
+    /// javax.swing.JTree$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
 
     /// java.lang.Object javax.swing.JTree.setDropLocation(javax.swing.TransferHandler$DropLocation,java.lang.Object,boolean)
 
     /// void javax.swing.JTree.dndDone()
 
     /// void javax.swing.JTree.setUIProperty(java.lang.String,java.lang.Object)
+
+    /// public javax.swing.plaf.TreeUI javax.swing.JTree.getUI()
+
+    private static var getUI_MethodID_39: jmethodID?
+
+    open func getUI() -> TreeUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TreeUI;", methodCache: &JTree.getUI_MethodID_39, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeUI( javaObject: __return ) : nil
+    }
+
 
     /// public void javax.swing.JTree.expandRow(int)
 

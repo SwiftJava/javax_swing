@@ -79,26 +79,15 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler(javax.swing.plaf.basic.BasicTreeUI,java.awt.Component,java.awt.Component,java.awt.event.MouseEvent,java.awt.Component)
 
-    /// protected void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.removeFromSource()
-
-    private static var removeFromSource_MethodID_2: jmethodID?
-
-    open func removeFromSource() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeFromSource", methodSig: "()V", methodCache: &BasicTreeUI_MouseInputHandler.removeFromSource_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
 
-    private static var mousePressed_MethodID_3: jmethodID?
+    private static var mousePressed_MethodID_2: jmethodID?
 
     open func mousePressed( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mousePressed_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mousePressed_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func mousePressed( _ _e: java_awt.MouseEvent? ) {
@@ -107,13 +96,13 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mouseReleased(java.awt.event.MouseEvent)
 
-    private static var mouseReleased_MethodID_4: jmethodID?
+    private static var mouseReleased_MethodID_3: jmethodID?
 
     open func mouseReleased( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseReleased_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseReleased_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func mouseReleased( _ _e: java_awt.MouseEvent? ) {
@@ -122,13 +111,13 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mouseClicked(java.awt.event.MouseEvent)
 
-    private static var mouseClicked_MethodID_5: jmethodID?
+    private static var mouseClicked_MethodID_4: jmethodID?
 
     open func mouseClicked( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseClicked_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseClicked_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func mouseClicked( _ _e: java_awt.MouseEvent? ) {
@@ -137,13 +126,13 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mouseExited(java.awt.event.MouseEvent)
 
-    private static var mouseExited_MethodID_6: jmethodID?
+    private static var mouseExited_MethodID_5: jmethodID?
 
     open func mouseExited( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseExited_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseExited_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func mouseExited( _ _e: java_awt.MouseEvent? ) {
@@ -152,13 +141,13 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mouseEntered(java.awt.event.MouseEvent)
 
-    private static var mouseEntered_MethodID_7: jmethodID?
+    private static var mouseEntered_MethodID_6: jmethodID?
 
     open func mouseEntered( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseEntered_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseEntered_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func mouseEntered( _ _e: java_awt.MouseEvent? ) {
@@ -167,13 +156,13 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mouseMoved(java.awt.event.MouseEvent)
 
-    private static var mouseMoved_MethodID_8: jmethodID?
+    private static var mouseMoved_MethodID_7: jmethodID?
 
     open func mouseMoved( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseMoved_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseMoved_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func mouseMoved( _ _e: java_awt.MouseEvent? ) {
@@ -182,18 +171,29 @@ open class BasicTreeUI_MouseInputHandler: java_swift.JavaObject, MouseInputListe
 
     /// public void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.mouseDragged(java.awt.event.MouseEvent)
 
-    private static var mouseDragged_MethodID_9: jmethodID?
+    private static var mouseDragged_MethodID_8: jmethodID?
 
     open func mouseDragged( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseDragged_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI_MouseInputHandler.mouseDragged_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func mouseDragged( _ _e: java_awt.MouseEvent? ) {
         mouseDragged( e: _e )
     }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI$MouseInputHandler.removeFromSource()
+
+    private static var removeFromSource_MethodID_9: jmethodID?
+
+    open func removeFromSource() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeFromSource", methodSig: "()V", methodCache: &BasicTreeUI_MouseInputHandler.removeFromSource_MethodID_9, args: &__args, locals: &__locals )
+    }
+
 
 }
 

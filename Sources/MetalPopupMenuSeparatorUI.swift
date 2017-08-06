@@ -63,6 +63,8 @@ open class MetalPopupMenuSeparatorUI: MetalSeparatorUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalPopupMenuSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalPopupMenuSeparatorUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -81,8 +83,6 @@ open class MetalPopupMenuSeparatorUI: MetalSeparatorUI {
     }
 
     /// public void javax.swing.plaf.metal.MetalPopupMenuSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalPopupMenuSeparatorUI.getPreferredSize(javax.swing.JComponent)
 
 }
 

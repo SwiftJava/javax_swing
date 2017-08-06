@@ -794,6 +794,14 @@ open class JButton: AbstractButton {
     }
 
 
+    /// public void javax.swing.JButton.removeNotify()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JButton.getAccessibleContext()
+
+    /// public void javax.swing.JButton.updateUI()
+
+    /// public java.lang.String javax.swing.JButton.getUIClassID()
+
     /// public boolean javax.swing.JButton.isDefaultButton()
 
     private static var isDefaultButton_MethodID_7: jmethodID?
@@ -832,14 +840,6 @@ open class JButton: AbstractButton {
     open func setDefaultCapable( _ _defaultCapable: Bool ) {
         setDefaultCapable( defaultCapable: _defaultCapable )
     }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JButton.getAccessibleContext()
-
-    /// public void javax.swing.JButton.updateUI()
-
-    /// public java.lang.String javax.swing.JButton.getUIClassID()
-
-    /// public void javax.swing.JButton.removeNotify()
 
     /// In declared protocol but not defined.. ///
 

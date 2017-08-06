@@ -694,17 +694,103 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// private javax.swing.plaf.basic.BasicScrollBarUI$Handler javax.swing.plaf.basic.BasicScrollBarUI.getHandler()
 
-    /// private javax.swing.InputMap javax.swing.plaf.basic.BasicScrollBarUI.getInputMap(int)
+    /// static void javax.swing.plaf.basic.BasicScrollBarUI.access$700(javax.swing.plaf.basic.BasicScrollBarUI)
+
+    /// static javax.swing.InputMap javax.swing.plaf.basic.BasicScrollBarUI.access$800(javax.swing.plaf.basic.BasicScrollBarUI,int)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicScrollBarUI.removeLayoutComponent(java.awt.Component)
+
+    private static var removeLayoutComponent_MethodID_2: jmethodID?
+
+    open func removeLayoutComponent( comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicScrollBarUI.removeLayoutComponent_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
+        removeLayoutComponent( comp: _comp )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicScrollBarUI.addLayoutComponent(java.lang.String,java.awt.Component)
+
+    private static var addLayoutComponent_MethodID_3: jmethodID?
+
+    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicScrollBarUI.addLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
+        addLayoutComponent( name: _name, comp: _comp )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicScrollBarUI.layoutContainer(java.awt.Container)
+
+    private static var layoutContainer_MethodID_4: jmethodID?
+
+    open func layoutContainer( parent: java_awt.Container? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicScrollBarUI.layoutContainer_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func layoutContainer( _ _parent: java_awt.Container? ) {
+        layoutContainer( parent: _parent )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.preferredLayoutSize(java.awt.Container)
+
+    private static var preferredLayoutSize_MethodID_5: jmethodID?
+
+    open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.preferredLayoutSize_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func preferredLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return preferredLayoutSize( parent: _parent )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.minimumLayoutSize(java.awt.Container)
+
+    private static var minimumLayoutSize_MethodID_6: jmethodID?
+
+    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.minimumLayoutSize_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return minimumLayoutSize( parent: _parent )
+    }
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicScrollBarUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_2: jmethodID?
+    private static var createUI_MethodID_7: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicScrollBarUI", classCache: &BasicScrollBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicScrollBarUI", classCache: &BasicScrollBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -713,15 +799,143 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
         return createUI( c: _c )
     }
 
+    /// private javax.swing.InputMap javax.swing.plaf.basic.BasicScrollBarUI.getInputMap(int)
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.paintTrack(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
+
+    private static var paintTrack_MethodID_8: jmethodID?
+
+    open func paintTrack( g: java_awt.Graphics?, c: JComponent?, trackBounds: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: trackBounds != nil ? trackBounds! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &BasicScrollBarUI.paintTrack_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func paintTrack( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _trackBounds: java_awt.Rectangle? ) {
+        paintTrack( g: _g, c: _c, trackBounds: _trackBounds )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicScrollBarUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicScrollBarUI.uninstallUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicScrollBarUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// static void javax.swing.plaf.basic.BasicScrollBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installDefaults()
+
+    private static var installDefaults_MethodID_9: jmethodID?
+
+    open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicScrollBarUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installComponents()
+
+    private static var installComponents_MethodID_10: jmethodID?
+
+    open func installComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicScrollBarUI.installComponents_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installListeners()
+
+    private static var installListeners_MethodID_11: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicScrollBarUI.installListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_12: jmethodID?
+
+    open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicScrollBarUI.installKeyboardActions_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_13: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallDefaults_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_14: jmethodID?
+
+    open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallComponents_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_15: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallListeners_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_16: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallKeyboardActions_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollBarUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_17: jmethodID?
+
+    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicScrollBarUI.createPropertyChangeListener_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.scrollByUnit(int)
 
-    private static var scrollByUnit_MethodID_3: jmethodID?
+    private static var scrollByUnit_MethodID_18: jmethodID?
 
     open func scrollByUnit( direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByUnit", methodSig: "(I)V", methodCache: &BasicScrollBarUI.scrollByUnit_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByUnit", methodSig: "(I)V", methodCache: &BasicScrollBarUI.scrollByUnit_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func scrollByUnit( _ _direction: Int ) {
@@ -730,23 +944,23 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.configureScrollBarColors()
 
-    private static var configureScrollBarColors_MethodID_4: jmethodID?
+    private static var configureScrollBarColors_MethodID_19: jmethodID?
 
     open func configureScrollBarColors() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScrollBarColors", methodSig: "()V", methodCache: &BasicScrollBarUI.configureScrollBarColors_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScrollBarColors", methodSig: "()V", methodCache: &BasicScrollBarUI.configureScrollBarColors_MethodID_19, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.plaf.basic.BasicScrollBarUI$TrackListener javax.swing.plaf.basic.BasicScrollBarUI.createTrackListener()
 
-    private static var createTrackListener_MethodID_5: jmethodID?
+    private static var createTrackListener_MethodID_20: jmethodID?
 
     open func createTrackListener() -> /* javax.swing.plaf.basic.BasicScrollBarUI$TrackListener */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTrackListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$TrackListener;", methodCache: &BasicScrollBarUI.createTrackListener_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTrackListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$TrackListener;", methodCache: &BasicScrollBarUI.createTrackListener_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$TrackListener */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -754,12 +968,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener javax.swing.plaf.basic.BasicScrollBarUI.createArrowButtonListener()
 
-    private static var createArrowButtonListener_MethodID_6: jmethodID?
+    private static var createArrowButtonListener_MethodID_21: jmethodID?
 
     open func createArrowButtonListener() -> /* javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createArrowButtonListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$ArrowButtonListener;", methodCache: &BasicScrollBarUI.createArrowButtonListener_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createArrowButtonListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$ArrowButtonListener;", methodCache: &BasicScrollBarUI.createArrowButtonListener_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -767,12 +981,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected javax.swing.plaf.basic.BasicScrollBarUI$ModelListener javax.swing.plaf.basic.BasicScrollBarUI.createModelListener()
 
-    private static var createModelListener_MethodID_7: jmethodID?
+    private static var createModelListener_MethodID_22: jmethodID?
 
     open func createModelListener() -> /* javax.swing.plaf.basic.BasicScrollBarUI$ModelListener */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createModelListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$ModelListener;", methodCache: &BasicScrollBarUI.createModelListener_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createModelListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$ModelListener;", methodCache: &BasicScrollBarUI.createModelListener_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$ModelListener */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -780,12 +994,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener javax.swing.plaf.basic.BasicScrollBarUI.createScrollListener()
 
-    private static var createScrollListener_MethodID_8: jmethodID?
+    private static var createScrollListener_MethodID_23: jmethodID?
 
     open func createScrollListener() -> /* javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$ScrollListener;", methodCache: &BasicScrollBarUI.createScrollListener_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollListener", methodSig: "()Ljavax/swing/plaf/basic/BasicScrollBarUI$ScrollListener;", methodCache: &BasicScrollBarUI.createScrollListener_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -795,13 +1009,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.setThumbRollover(boolean)
 
-    private static var setThumbRollover_MethodID_9: jmethodID?
+    private static var setThumbRollover_MethodID_24: jmethodID?
 
     open func setThumbRollover( active: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: active, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbRollover", methodSig: "(Z)V", methodCache: &BasicScrollBarUI.setThumbRollover_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbRollover", methodSig: "(Z)V", methodCache: &BasicScrollBarUI.setThumbRollover_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setThumbRollover( _ _active: Bool ) {
@@ -810,25 +1024,25 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// public boolean javax.swing.plaf.basic.BasicScrollBarUI.isThumbRollover()
 
-    private static var isThumbRollover_MethodID_10: jmethodID?
+    private static var isThumbRollover_MethodID_25: jmethodID?
 
     open func isThumbRollover() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isThumbRollover", methodSig: "()Z", methodCache: &BasicScrollBarUI.isThumbRollover_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isThumbRollover", methodSig: "()Z", methodCache: &BasicScrollBarUI.isThumbRollover_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// protected javax.swing.JButton javax.swing.plaf.basic.BasicScrollBarUI.createDecreaseButton(int)
 
-    private static var createDecreaseButton_MethodID_11: jmethodID?
+    private static var createDecreaseButton_MethodID_26: jmethodID?
 
     open func createDecreaseButton( orientation: Int ) -> JButton! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDecreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &BasicScrollBarUI.createDecreaseButton_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDecreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &BasicScrollBarUI.createDecreaseButton_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
     }
@@ -839,13 +1053,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected javax.swing.JButton javax.swing.plaf.basic.BasicScrollBarUI.createIncreaseButton(int)
 
-    private static var createIncreaseButton_MethodID_12: jmethodID?
+    private static var createIncreaseButton_MethodID_27: jmethodID?
 
     open func createIncreaseButton( orientation: Int ) -> JButton! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createIncreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &BasicScrollBarUI.createIncreaseButton_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createIncreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &BasicScrollBarUI.createIncreaseButton_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
     }
@@ -856,13 +1070,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.paintDecreaseHighlight(java.awt.Graphics)
 
-    private static var paintDecreaseHighlight_MethodID_13: jmethodID?
+    private static var paintDecreaseHighlight_MethodID_28: jmethodID?
 
     open func paintDecreaseHighlight( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDecreaseHighlight", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicScrollBarUI.paintDecreaseHighlight_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDecreaseHighlight", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicScrollBarUI.paintDecreaseHighlight_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func paintDecreaseHighlight( _ _g: java_awt.Graphics? ) {
@@ -871,13 +1085,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.paintIncreaseHighlight(java.awt.Graphics)
 
-    private static var paintIncreaseHighlight_MethodID_14: jmethodID?
+    private static var paintIncreaseHighlight_MethodID_29: jmethodID?
 
     open func paintIncreaseHighlight( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIncreaseHighlight", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicScrollBarUI.paintIncreaseHighlight_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIncreaseHighlight", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicScrollBarUI.paintIncreaseHighlight_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func paintIncreaseHighlight( _ _g: java_awt.Graphics? ) {
@@ -886,7 +1100,7 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.paintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
 
-    private static var paintThumb_MethodID_15: jmethodID?
+    private static var paintThumb_MethodID_30: jmethodID?
 
     open func paintThumb( g: java_awt.Graphics?, c: JComponent?, thumbBounds: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -894,7 +1108,7 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: thumbBounds != nil ? thumbBounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &BasicScrollBarUI.paintThumb_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &BasicScrollBarUI.paintThumb_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func paintThumb( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _thumbBounds: java_awt.Rectangle? ) {
@@ -903,12 +1117,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.getMinimumThumbSize()
 
-    private static var getMinimumThumbSize_MethodID_16: jmethodID?
+    private static var getMinimumThumbSize_MethodID_31: jmethodID?
 
     open func getMinimumThumbSize() -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.getMinimumThumbSize_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.getMinimumThumbSize_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -916,12 +1130,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.getMaximumThumbSize()
 
-    private static var getMaximumThumbSize_MethodID_17: jmethodID?
+    private static var getMaximumThumbSize_MethodID_32: jmethodID?
 
     open func getMaximumThumbSize() -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.getMaximumThumbSize_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.getMaximumThumbSize_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -929,13 +1143,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.layoutVScrollbar(javax.swing.JScrollBar)
 
-    private static var layoutVScrollbar_MethodID_18: jmethodID?
+    private static var layoutVScrollbar_MethodID_33: jmethodID?
 
     open func layoutVScrollbar( sb: JScrollBar? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: sb != nil ? sb! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutVScrollbar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &BasicScrollBarUI.layoutVScrollbar_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutVScrollbar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &BasicScrollBarUI.layoutVScrollbar_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func layoutVScrollbar( _ _sb: JScrollBar? ) {
@@ -944,13 +1158,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.layoutHScrollbar(javax.swing.JScrollBar)
 
-    private static var layoutHScrollbar_MethodID_19: jmethodID?
+    private static var layoutHScrollbar_MethodID_34: jmethodID?
 
     open func layoutHScrollbar( sb: JScrollBar? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: sb != nil ? sb! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutHScrollbar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &BasicScrollBarUI.layoutHScrollbar_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutHScrollbar", methodSig: "(Ljavax/swing/JScrollBar;)V", methodCache: &BasicScrollBarUI.layoutHScrollbar_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func layoutHScrollbar( _ _sb: JScrollBar? ) {
@@ -959,7 +1173,7 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.setThumbBounds(int,int,int,int)
 
-    private static var setThumbBounds_MethodID_20: jmethodID?
+    private static var setThumbBounds_MethodID_35: jmethodID?
 
     open func setThumbBounds( x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -968,7 +1182,7 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbBounds", methodSig: "(IIII)V", methodCache: &BasicScrollBarUI.setThumbBounds_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbBounds", methodSig: "(IIII)V", methodCache: &BasicScrollBarUI.setThumbBounds_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func setThumbBounds( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -977,12 +1191,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicScrollBarUI.getThumbBounds()
 
-    private static var getThumbBounds_MethodID_21: jmethodID?
+    private static var getThumbBounds_MethodID_36: jmethodID?
 
     open func getThumbBounds() -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &BasicScrollBarUI.getThumbBounds_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getThumbBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &BasicScrollBarUI.getThumbBounds_MethodID_36, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -990,12 +1204,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicScrollBarUI.getTrackBounds()
 
-    private static var getTrackBounds_MethodID_22: jmethodID?
+    private static var getTrackBounds_MethodID_37: jmethodID?
 
     open func getTrackBounds() -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrackBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &BasicScrollBarUI.getTrackBounds_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTrackBounds", methodSig: "()Ljava/awt/Rectangle;", methodCache: &BasicScrollBarUI.getTrackBounds_MethodID_37, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -1005,13 +1219,13 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// protected void javax.swing.plaf.basic.BasicScrollBarUI.scrollByBlock(int)
 
-    private static var scrollByBlock_MethodID_23: jmethodID?
+    private static var scrollByBlock_MethodID_38: jmethodID?
 
     open func scrollByBlock( direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByBlock", methodSig: "(I)V", methodCache: &BasicScrollBarUI.scrollByBlock_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollByBlock", methodSig: "(I)V", methodCache: &BasicScrollBarUI.scrollByBlock_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func scrollByBlock( _ _direction: Int ) {
@@ -1022,12 +1236,12 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
 
     /// public boolean javax.swing.plaf.basic.BasicScrollBarUI.getSupportsAbsolutePositioning()
 
-    private static var getSupportsAbsolutePositioning_MethodID_24: jmethodID?
+    private static var getSupportsAbsolutePositioning_MethodID_39: jmethodID?
 
     open func getSupportsAbsolutePositioning() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSupportsAbsolutePositioning", methodSig: "()Z", methodCache: &BasicScrollBarUI.getSupportsAbsolutePositioning_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSupportsAbsolutePositioning", methodSig: "()Z", methodCache: &BasicScrollBarUI.getSupportsAbsolutePositioning_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1041,220 +1255,6 @@ open class BasicScrollBarUI: ScrollBarUI, java_awt.LayoutManager, SwingConstants
     /// private boolean javax.swing.plaf.basic.BasicScrollBarUI.isMouseAfterThumb()
 
     /// private void javax.swing.plaf.basic.BasicScrollBarUI.updateButtonDirections()
-
-    /// public void javax.swing.plaf.basic.BasicScrollBarUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// static void javax.swing.plaf.basic.BasicScrollBarUI.access$700(javax.swing.plaf.basic.BasicScrollBarUI)
-
-    /// static javax.swing.InputMap javax.swing.plaf.basic.BasicScrollBarUI.access$800(javax.swing.plaf.basic.BasicScrollBarUI,int)
-
-    /// static void javax.swing.plaf.basic.BasicScrollBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installDefaults()
-
-    private static var installDefaults_MethodID_25: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicScrollBarUI.installDefaults_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installComponents()
-
-    private static var installComponents_MethodID_26: jmethodID?
-
-    open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicScrollBarUI.installComponents_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installListeners()
-
-    private static var installListeners_MethodID_27: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicScrollBarUI.installListeners_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_28: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicScrollBarUI.installKeyboardActions_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_29: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallDefaults_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_30: jmethodID?
-
-    open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallComponents_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_31: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallListeners_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_32: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicScrollBarUI.uninstallKeyboardActions_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollBarUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_33: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicScrollBarUI.createPropertyChangeListener_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicScrollBarUI.paintTrack(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
-
-    private static var paintTrack_MethodID_34: jmethodID?
-
-    open func paintTrack( g: java_awt.Graphics?, c: JComponent?, trackBounds: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: trackBounds != nil ? trackBounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &BasicScrollBarUI.paintTrack_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func paintTrack( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _trackBounds: java_awt.Rectangle? ) {
-        paintTrack( g: _g, c: _c, trackBounds: _trackBounds )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicScrollBarUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicScrollBarUI.uninstallUI(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.getMaximumSize(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicScrollBarUI.removeLayoutComponent(java.awt.Component)
-
-    private static var removeLayoutComponent_MethodID_35: jmethodID?
-
-    open func removeLayoutComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicScrollBarUI.removeLayoutComponent_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
-        removeLayoutComponent( comp: _comp )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicScrollBarUI.addLayoutComponent(java.lang.String,java.awt.Component)
-
-    private static var addLayoutComponent_MethodID_36: jmethodID?
-
-    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicScrollBarUI.addLayoutComponent_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
-        addLayoutComponent( name: _name, comp: _comp )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicScrollBarUI.layoutContainer(java.awt.Container)
-
-    private static var layoutContainer_MethodID_37: jmethodID?
-
-    open func layoutContainer( parent: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicScrollBarUI.layoutContainer_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func layoutContainer( _ _parent: java_awt.Container? ) {
-        layoutContainer( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.preferredLayoutSize(java.awt.Container)
-
-    private static var preferredLayoutSize_MethodID_38: jmethodID?
-
-    open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.preferredLayoutSize_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func preferredLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return preferredLayoutSize( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.minimumLayoutSize(java.awt.Container)
-
-    private static var minimumLayoutSize_MethodID_39: jmethodID?
-
-    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicScrollBarUI.minimumLayoutSize_MethodID_39, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return minimumLayoutSize( parent: _parent )
-    }
 
 }
 

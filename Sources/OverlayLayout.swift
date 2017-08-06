@@ -57,10 +57,6 @@ open class OverlayLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* jav
     }
 
 
-    /// void javax.swing.OverlayLayout.checkContainer(java.awt.Container)
-
-    /// void javax.swing.OverlayLayout.checkRequests()
-
     /// public void javax.swing.OverlayLayout.removeLayoutComponent(java.awt.Component)
 
     private static var removeLayoutComponent_MethodID_3: jmethodID?
@@ -76,36 +72,36 @@ open class OverlayLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* jav
         removeLayoutComponent( comp: _comp )
     }
 
-    /// public void javax.swing.OverlayLayout.addLayoutComponent(java.lang.String,java.awt.Component)
-
-    private static var addLayoutComponent_MethodID_4: jmethodID?
-
-    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &OverlayLayout.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
-        addLayoutComponent( name: _name, comp: _comp )
-    }
-
     /// public void javax.swing.OverlayLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
 
-    private static var addLayoutComponent_MethodID_5: jmethodID?
+    private static var addLayoutComponent_MethodID_4: jmethodID?
 
     open func addLayoutComponent( comp: java_awt.Component?, constraints: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &OverlayLayout.addLayoutComponent_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &OverlayLayout.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject? ) {
         addLayoutComponent( comp: _comp, constraints: _constraints )
+    }
+
+    /// public void javax.swing.OverlayLayout.addLayoutComponent(java.lang.String,java.awt.Component)
+
+    private static var addLayoutComponent_MethodID_5: jmethodID?
+
+    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &OverlayLayout.addLayoutComponent_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
+        addLayoutComponent( name: _name, comp: _comp )
     }
 
     /// public void javax.swing.OverlayLayout.layoutContainer(java.awt.Container)
@@ -220,6 +216,10 @@ open class OverlayLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* jav
     open func getLayoutAlignmentY( _ _target: java_awt.Container? ) -> Float {
         return getLayoutAlignmentY( target: _target )
     }
+
+    /// void javax.swing.OverlayLayout.checkRequests()
+
+    /// void javax.swing.OverlayLayout.checkContainer(java.awt.Container)
 
 }
 

@@ -552,32 +552,19 @@ open class JPanel: JComponent {
     }
 
 
-    /// public javax.swing.plaf.PanelUI javax.swing.JPanel.getUI()
-
-    private static var getUI_MethodID_6: jmethodID?
-
-    open func getUI() -> PanelUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/PanelUI;", methodCache: &JPanel.getUI_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PanelUI( javaObject: __return ) : nil
-    }
-
-
     /// public javax.accessibility.AccessibleContext javax.swing.JPanel.getAccessibleContext()
 
     /// public void javax.swing.JPanel.updateUI()
 
     /// public void javax.swing.JPanel.setUI(javax.swing.plaf.PanelUI)
 
-    private static var setUI_MethodID_7: jmethodID?
+    private static var setUI_MethodID_6: jmethodID?
 
     open func setUI( ui: PanelUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/PanelUI;)V", methodCache: &JPanel.setUI_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/PanelUI;)V", methodCache: &JPanel.setUI_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: PanelUI? ) {
@@ -585,6 +572,19 @@ open class JPanel: JComponent {
     }
 
     /// public java.lang.String javax.swing.JPanel.getUIClassID()
+
+    /// public javax.swing.plaf.PanelUI javax.swing.JPanel.getUI()
+
+    private static var getUI_MethodID_7: jmethodID?
+
+    open func getUI() -> PanelUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/PanelUI;", methodCache: &JPanel.getUI_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PanelUI( javaObject: __return ) : nil
+    }
+
 
     /// In declared protocol but not defined.. ///
 

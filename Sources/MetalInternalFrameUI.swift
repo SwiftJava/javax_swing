@@ -284,6 +284,10 @@ open class MetalInternalFrameUI: BasicInternalFrameUI {
 
     /// static javax.swing.plaf.basic.BasicInternalFrameTitlePane javax.swing.plaf.metal.MetalInternalFrameUI.access$600(javax.swing.plaf.metal.MetalInternalFrameUI)
 
+    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$700(javax.swing.plaf.metal.MetalInternalFrameUI)
+
+    /// static javax.swing.plaf.basic.BasicInternalFrameTitlePane javax.swing.plaf.metal.MetalInternalFrameUI.access$800(javax.swing.plaf.metal.MetalInternalFrameUI)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalInternalFrameUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -322,74 +326,23 @@ open class MetalInternalFrameUI: BasicInternalFrameUI {
 
     /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$1100(javax.swing.plaf.metal.MetalInternalFrameUI)
 
-    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$700(javax.swing.plaf.metal.MetalInternalFrameUI)
+    /// public void javax.swing.plaf.metal.MetalInternalFrameUI.installUI(javax.swing.JComponent)
 
-    /// static javax.swing.plaf.basic.BasicInternalFrameTitlePane javax.swing.plaf.metal.MetalInternalFrameUI.access$800(javax.swing.plaf.metal.MetalInternalFrameUI)
+    /// public void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallUI(javax.swing.JComponent)
 
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.installListeners()
+    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$900(javax.swing.plaf.metal.MetalInternalFrameUI)
 
-    private static var installListeners_MethodID_4: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalInternalFrameUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_5: jmethodID?
-
-    override open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &MetalInternalFrameUI.installKeyboardActions_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_6: jmethodID?
-
-    override open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &MetalInternalFrameUI.uninstallComponents_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_7: jmethodID?
-
-    override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalInternalFrameUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_8: jmethodID?
-
-    override open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &MetalInternalFrameUI.uninstallKeyboardActions_MethodID_8, args: &__args, locals: &__locals )
-    }
-
+    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$1000(javax.swing.plaf.metal.MetalInternalFrameUI)
 
     /// protected javax.swing.JComponent javax.swing.plaf.metal.MetalInternalFrameUI.createNorthPane(javax.swing.JInternalFrame)
 
-    private static var createNorthPane_MethodID_9: jmethodID?
+    private static var createNorthPane_MethodID_4: jmethodID?
 
     override open func createNorthPane( w: JInternalFrame? ) -> JComponent! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: w != nil ? w! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNorthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &MetalInternalFrameUI.createNorthPane_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNorthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &MetalInternalFrameUI.createNorthPane_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
@@ -400,13 +353,13 @@ open class MetalInternalFrameUI: BasicInternalFrameUI {
 
     /// protected javax.swing.event.MouseInputAdapter javax.swing.plaf.metal.MetalInternalFrameUI.createBorderListener(javax.swing.JInternalFrame)
 
-    private static var createBorderListener_MethodID_10: jmethodID?
+    private static var createBorderListener_MethodID_5: jmethodID?
 
     override open func createBorderListener( w: JInternalFrame? ) -> MouseInputAdapter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: w != nil ? w! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBorderListener", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/event/MouseInputAdapter;", methodCache: &MetalInternalFrameUI.createBorderListener_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBorderListener", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/event/MouseInputAdapter;", methodCache: &MetalInternalFrameUI.createBorderListener_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseInputAdapter( javaObject: __return ) : nil
     }
@@ -415,13 +368,60 @@ open class MetalInternalFrameUI: BasicInternalFrameUI {
         return createBorderListener( w: _w )
     }
 
-    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$900(javax.swing.plaf.metal.MetalInternalFrameUI)
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.installListeners()
 
-    /// static javax.swing.JInternalFrame javax.swing.plaf.metal.MetalInternalFrameUI.access$1000(javax.swing.plaf.metal.MetalInternalFrameUI)
+    private static var installListeners_MethodID_6: jmethodID?
 
-    /// public void javax.swing.plaf.metal.MetalInternalFrameUI.installUI(javax.swing.JComponent)
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalInternalFrameUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
+    }
 
-    /// public void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallUI(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_7: jmethodID?
+
+    override open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &MetalInternalFrameUI.installKeyboardActions_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_8: jmethodID?
+
+    override open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &MetalInternalFrameUI.uninstallComponents_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_9: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalInternalFrameUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalInternalFrameUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_10: jmethodID?
+
+    override open func uninstallKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &MetalInternalFrameUI.uninstallKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
+    }
+
 
 }
 

@@ -158,18 +158,31 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
         self.init( value: _value, children: _children )
     }
 
+    /// public javax.swing.tree.TreeNode javax.swing.JTree$DynamicUtilTreeNode.getChildAt(int)
+
+    /// protected void javax.swing.JTree$DynamicUtilTreeNode.loadChildren()
+
+    private static var loadChildren_MethodID_2: jmethodID?
+
+    open func loadChildren() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "()V", methodCache: &JTree_DynamicUtilTreeNode.loadChildren_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+
     /// public java.util.Enumeration javax.swing.JTree$DynamicUtilTreeNode.children()
 
     /// public static void javax.swing.JTree$DynamicUtilTreeNode.createChildren(javax.swing.tree.DefaultMutableTreeNode,java.lang.Object)
 
-    private static var createChildren_MethodID_2: jmethodID?
+    private static var createChildren_MethodID_3: jmethodID?
 
     open class func createChildren( parent: DefaultMutableTreeNode?, children: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: children != nil ? children! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JTree$DynamicUtilTreeNode", classCache: &JTree_DynamicUtilTreeNodeJNIClass, methodName: "createChildren", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;Ljava/lang/Object;)V", methodCache: &createChildren_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JTree$DynamicUtilTreeNode", classCache: &JTree_DynamicUtilTreeNodeJNIClass, methodName: "createChildren", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;Ljava/lang/Object;)V", methodCache: &createChildren_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open class func createChildren( _ _parent: DefaultMutableTreeNode?, _ _children: java_swift.JavaObject? ) {
@@ -179,19 +192,6 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
     /// public boolean javax.swing.JTree$DynamicUtilTreeNode.isLeaf()
 
     /// public int javax.swing.JTree$DynamicUtilTreeNode.getChildCount()
-
-    /// public javax.swing.tree.TreeNode javax.swing.JTree$DynamicUtilTreeNode.getChildAt(int)
-
-    /// protected void javax.swing.JTree$DynamicUtilTreeNode.loadChildren()
-
-    private static var loadChildren_MethodID_3: jmethodID?
-
-    open func loadChildren() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "()V", methodCache: &JTree_DynamicUtilTreeNode.loadChildren_MethodID_3, args: &__args, locals: &__locals )
-    }
-
 
 }
 

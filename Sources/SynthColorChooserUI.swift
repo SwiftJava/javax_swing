@@ -23,7 +23,7 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
 
     private static var chooser_FieldID: jfieldID?
 
-    open var chooser: JColorChooser! {
+    override open var chooser: JColorChooser! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "chooser", fieldType: "Ljavax/swing/JColorChooser;", fieldCache: &SynthColorChooserUI.chooser_FieldID, object: javaObject, locals: &__locals )
@@ -52,7 +52,7 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
 
     private static var defaultChoosers_FieldID: jfieldID?
 
-    open var defaultChoosers: [AbstractColorChooserPanel]! {
+    override open var defaultChoosers: [AbstractColorChooserPanel]! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "defaultChoosers", fieldType: "[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", fieldCache: &SynthColorChooserUI.defaultChoosers_FieldID, object: javaObject, locals: &__locals )
@@ -69,7 +69,7 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
 
     private static var previewListener_FieldID: jfieldID?
 
-    open var previewListener: ChangeListener! {
+    override open var previewListener: ChangeListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "previewListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthColorChooserUI.previewListener_FieldID, object: javaObject, locals: &__locals )
@@ -86,7 +86,7 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthColorChooserUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -215,7 +215,7 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -224,106 +224,30 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
-    /// private int javax.swing.plaf.synth.SynthColorChooserUI.getComponentState(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthColorChooserUI.updateStyle(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.synth.SynthColorChooserUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthColorChooserUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
 
     /// public void javax.swing.plaf.synth.SynthColorChooserUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_5: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthColorChooserUI.propertyChange_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthColorChooserUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.installDefaults()
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthColorChooserUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.installListeners()
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthColorChooserUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_8: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthColorChooserUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthColorChooserUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.colorchooser.AbstractColorChooserPanel[] javax.swing.plaf.synth.SynthColorChooserUI.createDefaultChoosers()
-
-    private static var createDefaultChoosers_MethodID_10: jmethodID?
-
-    open func createDefaultChoosers() -> [AbstractColorChooserPanel]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultChoosers", methodSig: "()[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", methodCache: &SynthColorChooserUI.createDefaultChoosers_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [AbstractColorChooserPanel](), from: __return )
-    }
-
-
     /// public void javax.swing.plaf.synth.SynthColorChooserUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_11: jmethodID?
+    private static var paintBorder_MethodID_5: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -334,12 +258,88 @@ open class SynthColorChooserUI: BasicColorChooserUI, /* java.beans.PropertyChang
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthColorChooserUI.paintBorder_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthColorChooserUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
+
+    /// private int javax.swing.plaf.synth.SynthColorChooserUI.getComponentState(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthColorChooserUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthColorChooserUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.installDefaults()
+
+    private static var installDefaults_MethodID_7: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthColorChooserUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.installListeners()
+
+    private static var installListeners_MethodID_8: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthColorChooserUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_9: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthColorChooserUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthColorChooserUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_10: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthColorChooserUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.colorchooser.AbstractColorChooserPanel[] javax.swing.plaf.synth.SynthColorChooserUI.createDefaultChoosers()
+
+    private static var createDefaultChoosers_MethodID_11: jmethodID?
+
+    override open func createDefaultChoosers() -> [AbstractColorChooserPanel]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultChoosers", methodSig: "()[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", methodCache: &SynthColorChooserUI.createDefaultChoosers_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [AbstractColorChooserPanel](), from: __return )
+    }
+
 
 }
 

@@ -872,11 +872,22 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// private javax.swing.plaf.basic.BasicInternalFrameTitlePane$Handler javax.swing.plaf.basic.BasicInternalFrameTitlePane.getHandler()
 
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.showSystemMenu()
+
+    private static var showSystemMenu_MethodID_2: jmethodID?
+
+    open func showSystemMenu() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "showSystemMenu", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.showSystemMenu_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+
     /// javax.swing.ActionMap javax.swing.plaf.basic.BasicInternalFrameTitlePane.createActionMap()
 
     /// protected java.lang.String javax.swing.plaf.basic.BasicInternalFrameTitlePane.getTitle(java.lang.String,java.awt.FontMetrics,int)
 
-    private static var getTitle_MethodID_2: jmethodID?
+    private static var getTitle_MethodID_3: jmethodID?
 
     open func getTitle( text: String?, fm: java_awt.FontMetrics?, availTextWidth: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -884,7 +895,7 @@ open class BasicInternalFrameTitlePane: JComponent {
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
         __args[1] = JNIType.toJava( value: fm != nil ? fm! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: availTextWidth, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "(Ljava/lang/String;Ljava/awt/FontMetrics;I)Ljava/lang/String;", methodCache: &BasicInternalFrameTitlePane.getTitle_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTitle", methodSig: "(Ljava/lang/String;Ljava/awt/FontMetrics;I)Ljava/lang/String;", methodCache: &BasicInternalFrameTitlePane.getTitle_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -892,82 +903,29 @@ open class BasicInternalFrameTitlePane: JComponent {
         return getTitle( text: _text, fm: _fm, availTextWidth: _availTextWidth )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.installDefaults()
+    /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane.paintComponent(java.awt.Graphics)
 
-    private static var installDefaults_MethodID_3: jmethodID?
+    private static var paintComponent_MethodID_4: jmethodID?
 
-    open func installDefaults() {
+    override open func paintComponent( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.installDefaults_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicInternalFrameTitlePane.paintComponent_MethodID_4, args: &__args, locals: &__locals )
     }
 
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.installListeners()
-
-    private static var installListeners_MethodID_4: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.installListeners_MethodID_4, args: &__args, locals: &__locals )
+    override open func paintComponent( _ _g: java_awt.Graphics? ) {
+        paintComponent( g: _g )
     }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_5: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.uninstallDefaults_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_6: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicInternalFrameTitlePane.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_7: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicInternalFrameTitlePane.createPropertyChangeListener_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.showSystemMenu()
-
-    private static var showSystemMenu_MethodID_8: jmethodID?
-
-    open func showSystemMenu() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "showSystemMenu", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.showSystemMenu_MethodID_8, args: &__args, locals: &__locals )
-    }
-
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.installTitlePane()
 
-    private static var installTitlePane_MethodID_9: jmethodID?
+    private static var installTitlePane_MethodID_5: jmethodID?
 
     open func installTitlePane() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installTitlePane", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.installTitlePane_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installTitlePane", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.installTitlePane_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
@@ -975,68 +933,68 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.addSubComponents()
 
-    private static var addSubComponents_MethodID_10: jmethodID?
+    private static var addSubComponents_MethodID_6: jmethodID?
 
     open func addSubComponents() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSubComponents", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.addSubComponents_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSubComponents", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.addSubComponents_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.createActions()
 
-    private static var createActions_MethodID_11: jmethodID?
+    private static var createActions_MethodID_7: jmethodID?
 
     open func createActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createActions", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.createActions_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createActions", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.createActions_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.createButtons()
 
-    private static var createButtons_MethodID_12: jmethodID?
+    private static var createButtons_MethodID_8: jmethodID?
 
     open func createButtons() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createButtons", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.createButtons_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createButtons", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.createButtons_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.setButtonIcons()
 
-    private static var setButtonIcons_MethodID_13: jmethodID?
+    private static var setButtonIcons_MethodID_9: jmethodID?
 
     open func setButtonIcons() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setButtonIcons", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.setButtonIcons_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setButtonIcons", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.setButtonIcons_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.assembleSystemMenu()
 
-    private static var assembleSystemMenu_MethodID_14: jmethodID?
+    private static var assembleSystemMenu_MethodID_10: jmethodID?
 
     open func assembleSystemMenu() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "assembleSystemMenu", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.assembleSystemMenu_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "assembleSystemMenu", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.assembleSystemMenu_MethodID_10, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.addSystemMenuItems(javax.swing.JMenu)
 
-    private static var addSystemMenuItems_MethodID_15: jmethodID?
+    private static var addSystemMenuItems_MethodID_11: jmethodID?
 
     open func addSystemMenuItems( systemMenu: JMenu? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: systemMenu != nil ? systemMenu! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSystemMenuItems", methodSig: "(Ljavax/swing/JMenu;)V", methodCache: &BasicInternalFrameTitlePane.addSystemMenuItems_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSystemMenuItems", methodSig: "(Ljavax/swing/JMenu;)V", methodCache: &BasicInternalFrameTitlePane.addSystemMenuItems_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func addSystemMenuItems( _ _systemMenu: JMenu? ) {
@@ -1047,12 +1005,12 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// protected javax.swing.JMenu javax.swing.plaf.basic.BasicInternalFrameTitlePane.createSystemMenu()
 
-    private static var createSystemMenu_MethodID_16: jmethodID?
+    private static var createSystemMenu_MethodID_12: jmethodID?
 
     open func createSystemMenu() -> JMenu! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSystemMenu", methodSig: "()Ljavax/swing/JMenu;", methodCache: &BasicInternalFrameTitlePane.createSystemMenu_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSystemMenu", methodSig: "()Ljavax/swing/JMenu;", methodCache: &BasicInternalFrameTitlePane.createSystemMenu_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JMenu( javaObject: __return ) : nil
     }
@@ -1060,12 +1018,12 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// protected javax.swing.JMenuBar javax.swing.plaf.basic.BasicInternalFrameTitlePane.createSystemMenuBar()
 
-    private static var createSystemMenuBar_MethodID_17: jmethodID?
+    private static var createSystemMenuBar_MethodID_13: jmethodID?
 
     open func createSystemMenuBar() -> JMenuBar! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSystemMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &BasicInternalFrameTitlePane.createSystemMenuBar_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSystemMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &BasicInternalFrameTitlePane.createSystemMenuBar_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JMenuBar( javaObject: __return ) : nil
     }
@@ -1073,13 +1031,13 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.paintTitleBackground(java.awt.Graphics)
 
-    private static var paintTitleBackground_MethodID_18: jmethodID?
+    private static var paintTitleBackground_MethodID_14: jmethodID?
 
     open func paintTitleBackground( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTitleBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicInternalFrameTitlePane.paintTitleBackground_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTitleBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicInternalFrameTitlePane.paintTitleBackground_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func paintTitleBackground( _ _g: java_awt.Graphics? ) {
@@ -1088,13 +1046,13 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.postClosingEvent(javax.swing.JInternalFrame)
 
-    private static var postClosingEvent_MethodID_19: jmethodID?
+    private static var postClosingEvent_MethodID_15: jmethodID?
 
     open func postClosingEvent( frame: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: frame != nil ? frame! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "postClosingEvent", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameTitlePane.postClosingEvent_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "postClosingEvent", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameTitlePane.postClosingEvent_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func postClosingEvent( _ _frame: JInternalFrame? ) {
@@ -1103,42 +1061,84 @@ open class BasicInternalFrameTitlePane: JComponent {
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.enableActions()
 
-    private static var enableActions_MethodID_20: jmethodID?
+    private static var enableActions_MethodID_16: jmethodID?
 
     open func enableActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableActions", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.enableActions_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableActions", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.enableActions_MethodID_16, args: &__args, locals: &__locals )
     }
 
 
     /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicInternalFrameTitlePane.createLayout()
 
-    private static var createLayout_MethodID_21: jmethodID?
+    private static var createLayout_MethodID_17: jmethodID?
 
     open func createLayout() -> java_awt.LayoutManager! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicInternalFrameTitlePane.createLayout_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicInternalFrameTitlePane.createLayout_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane.paintComponent(java.awt.Graphics)
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.installDefaults()
 
-    private static var paintComponent_MethodID_22: jmethodID?
+    private static var installDefaults_MethodID_18: jmethodID?
 
-    override open func paintComponent( g: java_awt.Graphics? ) {
+    open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicInternalFrameTitlePane.paintComponent_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.installDefaults_MethodID_18, args: &__args, locals: &__locals )
     }
 
-    override open func paintComponent( _ _g: java_awt.Graphics? ) {
-        paintComponent( g: _g )
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.installListeners()
+
+    private static var installListeners_MethodID_19: jmethodID?
+
+    open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.installListeners_MethodID_19, args: &__args, locals: &__locals )
     }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_20: jmethodID?
+
+    open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.uninstallDefaults_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameTitlePane.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_21: jmethodID?
+
+    open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicInternalFrameTitlePane.uninstallListeners_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicInternalFrameTitlePane.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_22: jmethodID?
+
+    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicInternalFrameTitlePane.createPropertyChangeListener_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
 
 }
 

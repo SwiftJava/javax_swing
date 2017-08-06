@@ -31,9 +31,35 @@ open class MetalIconFactory_FileIcon16: java_swift.JavaObject, Icon, /* java.io.
         JNI.DeleteLocalRef( __object )
     }
 
+    /// private void javax.swing.plaf.metal.MetalIconFactory$FileIcon16.paintMe(java.awt.Component,java.awt.Graphics)
+
+    /// public int javax.swing.plaf.metal.MetalIconFactory$FileIcon16.getShift()
+
+    private static var getShift_MethodID_2: jmethodID?
+
+    open func getShift() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getShift", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getShift_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.plaf.metal.MetalIconFactory$FileIcon16.getAdditionalHeight()
+
+    private static var getAdditionalHeight_MethodID_3: jmethodID?
+
+    open func getAdditionalHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAdditionalHeight", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getAdditionalHeight_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
     /// public void javax.swing.plaf.metal.MetalIconFactory$FileIcon16.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
 
-    private static var paintIcon_MethodID_2: jmethodID?
+    private static var paintIcon_MethodID_4: jmethodID?
 
     open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -42,7 +68,7 @@ open class MetalIconFactory_FileIcon16: java_swift.JavaObject, Icon, /* java.io.
         __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalIconFactory_FileIcon16.paintIcon_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalIconFactory_FileIcon16.paintIcon_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func paintIcon( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
@@ -51,50 +77,24 @@ open class MetalIconFactory_FileIcon16: java_swift.JavaObject, Icon, /* java.io.
 
     /// public int javax.swing.plaf.metal.MetalIconFactory$FileIcon16.getIconWidth()
 
-    private static var getIconWidth_MethodID_3: jmethodID?
+    private static var getIconWidth_MethodID_5: jmethodID?
 
     open func getIconWidth() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getIconWidth_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getIconWidth_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.plaf.metal.MetalIconFactory$FileIcon16.getIconHeight()
 
-    private static var getIconHeight_MethodID_4: jmethodID?
+    private static var getIconHeight_MethodID_6: jmethodID?
 
     open func getIconHeight() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getIconHeight_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private void javax.swing.plaf.metal.MetalIconFactory$FileIcon16.paintMe(java.awt.Component,java.awt.Graphics)
-
-    /// public int javax.swing.plaf.metal.MetalIconFactory$FileIcon16.getShift()
-
-    private static var getShift_MethodID_5: jmethodID?
-
-    open func getShift() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getShift", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getShift_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.plaf.metal.MetalIconFactory$FileIcon16.getAdditionalHeight()
-
-    private static var getAdditionalHeight_MethodID_6: jmethodID?
-
-    open func getAdditionalHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAdditionalHeight", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getAdditionalHeight_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &MetalIconFactory_FileIcon16.getIconHeight_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 

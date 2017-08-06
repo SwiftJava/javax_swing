@@ -64,8 +64,6 @@ open class MetalRootPaneUI: BasicRootPaneUI {
 
     /// static int[] javax.swing.plaf.metal.MetalRootPaneUI.access$600()
 
-    /// private javax.swing.JRootPane javax.swing.plaf.metal.MetalRootPaneUI.getRootPane()
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalRootPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -84,6 +82,12 @@ open class MetalRootPaneUI: BasicRootPaneUI {
     }
 
     /// public void javax.swing.plaf.metal.MetalRootPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    /// private javax.swing.JRootPane javax.swing.plaf.metal.MetalRootPaneUI.getRootPane()
+
+    /// public void javax.swing.plaf.metal.MetalRootPaneUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.metal.MetalRootPaneUI.uninstallUI(javax.swing.JComponent)
 
     /// private void javax.swing.plaf.metal.MetalRootPaneUI.installWindowListeners(javax.swing.JRootPane,java.awt.Component)
 
@@ -105,15 +109,11 @@ open class MetalRootPaneUI: BasicRootPaneUI {
 
     /// private javax.swing.JComponent javax.swing.plaf.metal.MetalRootPaneUI.getTitlePane()
 
-    /// private java.awt.LayoutManager javax.swing.plaf.metal.MetalRootPaneUI.createLayoutManager()
-
     /// void javax.swing.plaf.metal.MetalRootPaneUI.installBorder(javax.swing.JRootPane)
 
     /// private void javax.swing.plaf.metal.MetalRootPaneUI.uninstallBorder(javax.swing.JRootPane)
 
-    /// public void javax.swing.plaf.metal.MetalRootPaneUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.metal.MetalRootPaneUI.uninstallUI(javax.swing.JComponent)
+    /// private java.awt.LayoutManager javax.swing.plaf.metal.MetalRootPaneUI.createLayoutManager()
 
 }
 

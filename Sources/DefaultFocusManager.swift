@@ -127,33 +127,16 @@ open class DefaultFocusManager: FocusManager {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public boolean javax.swing.DefaultFocusManager.compareTabOrder(java.awt.Component,java.awt.Component)
-
-    private static var compareTabOrder_MethodID_2: jmethodID?
-
-    open func compareTabOrder( a: java_awt.Component?, b: java_awt.Component? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "compareTabOrder", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Z", methodCache: &DefaultFocusManager.compareTabOrder_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func compareTabOrder( _ _a: java_awt.Component?, _ _b: java_awt.Component? ) -> Bool {
-        return compareTabOrder( a: _a, b: _b )
-    }
-
     /// public java.awt.Component javax.swing.DefaultFocusManager.getComponentAfter(java.awt.Container,java.awt.Component)
 
-    private static var getComponentAfter_MethodID_3: jmethodID?
+    private static var getComponentAfter_MethodID_2: jmethodID?
 
     open func getComponentAfter( aContainer: java_awt.Container?, aComponent: java_awt.Component? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aContainer != nil ? aContainer! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentAfter_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentAfter_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -164,14 +147,14 @@ open class DefaultFocusManager: FocusManager {
 
     /// public java.awt.Component javax.swing.DefaultFocusManager.getComponentBefore(java.awt.Container,java.awt.Component)
 
-    private static var getComponentBefore_MethodID_4: jmethodID?
+    private static var getComponentBefore_MethodID_3: jmethodID?
 
     open func getComponentBefore( aContainer: java_awt.Container?, aComponent: java_awt.Component? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aContainer != nil ? aContainer! as JNIObject : nil, locals: &__locals )
         __args[1] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentBefore_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentBefore_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -182,13 +165,13 @@ open class DefaultFocusManager: FocusManager {
 
     /// public java.awt.Component javax.swing.DefaultFocusManager.getFirstComponent(java.awt.Container)
 
-    private static var getFirstComponent_MethodID_5: jmethodID?
+    private static var getFirstComponent_MethodID_4: jmethodID?
 
     open func getFirstComponent( aContainer: java_awt.Container? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aContainer != nil ? aContainer! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getFirstComponent_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getFirstComponent_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -199,19 +182,36 @@ open class DefaultFocusManager: FocusManager {
 
     /// public java.awt.Component javax.swing.DefaultFocusManager.getLastComponent(java.awt.Container)
 
-    private static var getLastComponent_MethodID_6: jmethodID?
+    private static var getLastComponent_MethodID_5: jmethodID?
 
     open func getLastComponent( aContainer: java_awt.Container? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aContainer != nil ? aContainer! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getLastComponent_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getLastComponent_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
     open func getLastComponent( _ _aContainer: java_awt.Container? ) -> java_awt.Component! {
         return getLastComponent( aContainer: _aContainer )
+    }
+
+    /// public boolean javax.swing.DefaultFocusManager.compareTabOrder(java.awt.Component,java.awt.Component)
+
+    private static var compareTabOrder_MethodID_6: jmethodID?
+
+    open func compareTabOrder( a: java_awt.Component?, b: java_awt.Component? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "compareTabOrder", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Z", methodCache: &DefaultFocusManager.compareTabOrder_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func compareTabOrder( _ _a: java_awt.Component?, _ _b: java_awt.Component? ) -> Bool {
+        return compareTabOrder( a: _a, b: _b )
     }
 
 }

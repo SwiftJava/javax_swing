@@ -208,24 +208,9 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         self.init( name: _name, html: _html, parentTag: _parentTag, addTag: _addTag )
     }
 
-    /// public void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.actionPerformed(java.awt.event.ActionEvent)
-
-    private static var actionPerformed_MethodID_3: jmethodID?
-
-    open func actionPerformed( ae: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ae != nil ? ae! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.actionPerformed_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func actionPerformed( _ _ae: java_awt.ActionEvent? ) {
-        actionPerformed( ae: _ae )
-    }
-
     /// protected void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertHTML(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,java.lang.String,int,int,javax.swing.text.html.HTML$Tag)
 
-    private static var insertHTML_MethodID_4: jmethodID?
+    private static var insertHTML_MethodID_3: jmethodID?
 
     open func insertHTML( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, html: String?, popDepth: Int, pushDepth: Int, addTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -237,7 +222,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         __args[4] = JNIType.toJava( value: popDepth, locals: &__locals )
         __args[5] = JNIType.toJava( value: pushDepth, locals: &__locals )
         __args[6] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertHTML_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertHTML_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func insertHTML( _ _editor: JEditorPane?, _ _doc: HTMLDocument?, _ _offset: Int, _ _html: String?, _ _popDepth: Int, _ _pushDepth: Int, _ _addTag: HTML_Tag? ) {
@@ -248,7 +233,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
 
     /// protected void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertAtBoundary(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,javax.swing.text.Element,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
 
-    private static var insertAtBoundary_MethodID_5: jmethodID?
+    private static var insertAtBoundary_MethodID_4: jmethodID?
 
     open func insertAtBoundary( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, insertElement: Element?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -260,7 +245,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         __args[4] = JNIType.toJava( value: html, locals: &__locals )
         __args[5] = JNIType.toJava( value: parentTag != nil ? parentTag! as JNIObject : nil, locals: &__locals )
         __args[6] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAtBoundary", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/Element;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertAtBoundary_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAtBoundary", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/Element;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertAtBoundary_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func insertAtBoundary( _ _editor: JEditorPane?, _ _doc: HTMLDocument?, _ _offset: Int, _ _insertElement: Element?, _ _html: String?, _ _parentTag: HTML_Tag?, _ _addTag: HTML_Tag? ) {
@@ -269,7 +254,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
 
     /// protected void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertAtBoundry(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,javax.swing.text.Element,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
 
-    private static var insertAtBoundry_MethodID_6: jmethodID?
+    private static var insertAtBoundry_MethodID_5: jmethodID?
 
     open func insertAtBoundry( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, insertElement: Element?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
@@ -281,7 +266,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         __args[4] = JNIType.toJava( value: html, locals: &__locals )
         __args[5] = JNIType.toJava( value: parentTag != nil ? parentTag! as JNIObject : nil, locals: &__locals )
         __args[6] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAtBoundry", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/Element;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertAtBoundry_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAtBoundry", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/Element;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertAtBoundry_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func insertAtBoundry( _ _editor: JEditorPane?, _ _doc: HTMLDocument?, _ _offset: Int, _ _insertElement: Element?, _ _html: String?, _ _parentTag: HTML_Tag?, _ _addTag: HTML_Tag? ) {
@@ -289,6 +274,21 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
     }
 
     /// boolean javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertIntoTag(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
+
+    /// public void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.actionPerformed(java.awt.event.ActionEvent)
+
+    private static var actionPerformed_MethodID_6: jmethodID?
+
+    open func actionPerformed( ae: java_awt.ActionEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ae != nil ? ae! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.actionPerformed_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func actionPerformed( _ _ae: java_awt.ActionEvent? ) {
+        actionPerformed( ae: _ae )
+    }
 
 }
 

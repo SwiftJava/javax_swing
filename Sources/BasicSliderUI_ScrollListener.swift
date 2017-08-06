@@ -74,34 +74,34 @@ open class BasicSliderUI_ScrollListener: java_swift.JavaObject, java_awt.ActionL
         actionPerformed( e: _e )
     }
 
-    /// public void javax.swing.plaf.basic.BasicSliderUI$ScrollListener.setScrollByBlock(boolean)
-
-    private static var setScrollByBlock_MethodID_4: jmethodID?
-
-    open func setScrollByBlock( block: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: block, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollByBlock", methodSig: "(Z)V", methodCache: &BasicSliderUI_ScrollListener.setScrollByBlock_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setScrollByBlock( _ _block: Bool ) {
-        setScrollByBlock( block: _block )
-    }
-
     /// public void javax.swing.plaf.basic.BasicSliderUI$ScrollListener.setDirection(int)
 
-    private static var setDirection_MethodID_5: jmethodID?
+    private static var setDirection_MethodID_4: jmethodID?
 
     open func setDirection( direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirection", methodSig: "(I)V", methodCache: &BasicSliderUI_ScrollListener.setDirection_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirection", methodSig: "(I)V", methodCache: &BasicSliderUI_ScrollListener.setDirection_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setDirection( _ _direction: Int ) {
         setDirection( direction: _direction )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$ScrollListener.setScrollByBlock(boolean)
+
+    private static var setScrollByBlock_MethodID_5: jmethodID?
+
+    open func setScrollByBlock( block: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: block, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setScrollByBlock", methodSig: "(Z)V", methodCache: &BasicSliderUI_ScrollListener.setScrollByBlock_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func setScrollByBlock( _ _block: Bool ) {
+        setScrollByBlock( block: _block )
     }
 
 }

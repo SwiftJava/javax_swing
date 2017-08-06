@@ -63,6 +63,8 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolBarSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicToolBarSeparatorUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -96,8 +98,6 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
     override open func installDefaults( _ _s: JSeparator? ) {
         installDefaults( s: _s )
     }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolBarSeparatorUI.getPreferredSize(javax.swing.JComponent)
 
 }
 

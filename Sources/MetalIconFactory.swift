@@ -104,14 +104,40 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getMenuItemCheckIcon()
+
+    private static var getMenuItemCheckIcon_MethodID_2: jmethodID?
+
+    open class func getMenuItemCheckIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getMenuItemCheckIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getMenuItemCheckIcon_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getMenuArrowIcon()
+
+    private static var getMenuArrowIcon_MethodID_3: jmethodID?
+
+    open class func getMenuArrowIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getMenuArrowIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getMenuArrowIcon_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getFileChooserDetailViewIcon()
 
-    private static var getFileChooserDetailViewIcon_MethodID_2: jmethodID?
+    private static var getFileChooserDetailViewIcon_MethodID_4: jmethodID?
 
     open class func getFileChooserDetailViewIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserDetailViewIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserDetailViewIcon_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserDetailViewIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserDetailViewIcon_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -119,12 +145,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getFileChooserHomeFolderIcon()
 
-    private static var getFileChooserHomeFolderIcon_MethodID_3: jmethodID?
+    private static var getFileChooserHomeFolderIcon_MethodID_5: jmethodID?
 
     open class func getFileChooserHomeFolderIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserHomeFolderIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserHomeFolderIcon_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserHomeFolderIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserHomeFolderIcon_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -132,12 +158,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getFileChooserListViewIcon()
 
-    private static var getFileChooserListViewIcon_MethodID_4: jmethodID?
+    private static var getFileChooserListViewIcon_MethodID_6: jmethodID?
 
     open class func getFileChooserListViewIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserListViewIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserListViewIcon_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserListViewIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserListViewIcon_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -145,12 +171,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getFileChooserNewFolderIcon()
 
-    private static var getFileChooserNewFolderIcon_MethodID_5: jmethodID?
+    private static var getFileChooserNewFolderIcon_MethodID_7: jmethodID?
 
     open class func getFileChooserNewFolderIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserNewFolderIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserNewFolderIcon_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserNewFolderIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserNewFolderIcon_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -158,12 +184,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getFileChooserUpFolderIcon()
 
-    private static var getFileChooserUpFolderIcon_MethodID_6: jmethodID?
+    private static var getFileChooserUpFolderIcon_MethodID_8: jmethodID?
 
     open class func getFileChooserUpFolderIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserUpFolderIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserUpFolderIcon_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getFileChooserUpFolderIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getFileChooserUpFolderIcon_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -171,13 +197,13 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getInternalFrameAltMaximizeIcon(int)
 
-    private static var getInternalFrameAltMaximizeIcon_MethodID_7: jmethodID?
+    private static var getInternalFrameAltMaximizeIcon_MethodID_9: jmethodID?
 
     open class func getInternalFrameAltMaximizeIcon( size: Int ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameAltMaximizeIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameAltMaximizeIcon_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameAltMaximizeIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameAltMaximizeIcon_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -188,13 +214,13 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getInternalFrameCloseIcon(int)
 
-    private static var getInternalFrameCloseIcon_MethodID_8: jmethodID?
+    private static var getInternalFrameCloseIcon_MethodID_10: jmethodID?
 
     open class func getInternalFrameCloseIcon( size: Int ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameCloseIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameCloseIcon_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameCloseIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameCloseIcon_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -205,12 +231,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getInternalFrameDefaultMenuIcon()
 
-    private static var getInternalFrameDefaultMenuIcon_MethodID_9: jmethodID?
+    private static var getInternalFrameDefaultMenuIcon_MethodID_11: jmethodID?
 
     open class func getInternalFrameDefaultMenuIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameDefaultMenuIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getInternalFrameDefaultMenuIcon_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameDefaultMenuIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getInternalFrameDefaultMenuIcon_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -218,13 +244,13 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getInternalFrameMaximizeIcon(int)
 
-    private static var getInternalFrameMaximizeIcon_MethodID_10: jmethodID?
+    private static var getInternalFrameMaximizeIcon_MethodID_12: jmethodID?
 
     open class func getInternalFrameMaximizeIcon( size: Int ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameMaximizeIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameMaximizeIcon_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameMaximizeIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameMaximizeIcon_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -235,13 +261,13 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getInternalFrameMinimizeIcon(int)
 
-    private static var getInternalFrameMinimizeIcon_MethodID_11: jmethodID?
+    private static var getInternalFrameMinimizeIcon_MethodID_13: jmethodID?
 
     open class func getInternalFrameMinimizeIcon( size: Int ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameMinimizeIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameMinimizeIcon_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getInternalFrameMinimizeIcon", methodSig: "(I)Ljavax/swing/Icon;", methodCache: &getInternalFrameMinimizeIcon_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -252,12 +278,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeComputerIcon()
 
-    private static var getTreeComputerIcon_MethodID_12: jmethodID?
+    private static var getTreeComputerIcon_MethodID_14: jmethodID?
 
     open class func getTreeComputerIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeComputerIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeComputerIcon_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeComputerIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeComputerIcon_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -265,12 +291,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeFloppyDriveIcon()
 
-    private static var getTreeFloppyDriveIcon_MethodID_13: jmethodID?
+    private static var getTreeFloppyDriveIcon_MethodID_15: jmethodID?
 
     open class func getTreeFloppyDriveIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeFloppyDriveIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeFloppyDriveIcon_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeFloppyDriveIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeFloppyDriveIcon_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -278,12 +304,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeHardDriveIcon()
 
-    private static var getTreeHardDriveIcon_MethodID_14: jmethodID?
+    private static var getTreeHardDriveIcon_MethodID_16: jmethodID?
 
     open class func getTreeHardDriveIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeHardDriveIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeHardDriveIcon_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeHardDriveIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeHardDriveIcon_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -291,12 +317,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeLeafIcon()
 
-    private static var getTreeLeafIcon_MethodID_15: jmethodID?
+    private static var getTreeLeafIcon_MethodID_17: jmethodID?
 
     open class func getTreeLeafIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeLeafIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeLeafIcon_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeLeafIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getTreeLeafIcon_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -304,13 +330,13 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeControlIcon(boolean)
 
-    private static var getTreeControlIcon_MethodID_16: jmethodID?
+    private static var getTreeControlIcon_MethodID_18: jmethodID?
 
     open class func getTreeControlIcon( isCollapsed: Bool ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: isCollapsed, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeControlIcon", methodSig: "(Z)Ljavax/swing/Icon;", methodCache: &getTreeControlIcon_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getTreeControlIcon", methodSig: "(Z)Ljavax/swing/Icon;", methodCache: &getTreeControlIcon_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -321,12 +347,12 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getHorizontalSliderThumbIcon()
 
-    private static var getHorizontalSliderThumbIcon_MethodID_17: jmethodID?
+    private static var getHorizontalSliderThumbIcon_MethodID_19: jmethodID?
 
     open class func getHorizontalSliderThumbIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getHorizontalSliderThumbIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getHorizontalSliderThumbIcon_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getHorizontalSliderThumbIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getHorizontalSliderThumbIcon_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -334,48 +360,20 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getVerticalSliderThumbIcon()
 
-    private static var getVerticalSliderThumbIcon_MethodID_18: jmethodID?
+    private static var getVerticalSliderThumbIcon_MethodID_20: jmethodID?
 
     open class func getVerticalSliderThumbIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getVerticalSliderThumbIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getVerticalSliderThumbIcon_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getVerticalSliderThumbIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getVerticalSliderThumbIcon_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
 
 
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1700()
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1500()
 
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1800()
-
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1900()
-
-    /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getMenuItemCheckIcon()
-
-    private static var getMenuItemCheckIcon_MethodID_19: jmethodID?
-
-    open class func getMenuItemCheckIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getMenuItemCheckIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getMenuItemCheckIcon_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getMenuArrowIcon()
-
-    private static var getMenuArrowIcon_MethodID_20: jmethodID?
-
-    open class func getMenuArrowIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass, methodName: "getMenuArrowIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &getMenuArrowIcon_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1600()
 
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeFolderIcon()
 
@@ -455,9 +453,11 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
     }
 
 
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1500()
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1700()
 
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1600()
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1800()
+
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1900()
 
 }
 

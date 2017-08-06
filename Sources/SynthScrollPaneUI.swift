@@ -27,7 +27,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     private static var scrollpane_FieldID: jfieldID?
 
-    open var scrollpane: JScrollPane! {
+    override open var scrollpane: JScrollPane! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &SynthScrollPaneUI.scrollpane_FieldID, object: javaObject, locals: &__locals )
@@ -44,7 +44,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     private static var vsbChangeListener_FieldID: jfieldID?
 
-    open var vsbChangeListener: ChangeListener! {
+    override open var vsbChangeListener: ChangeListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -61,7 +61,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     private static var hsbChangeListener_FieldID: jfieldID?
 
-    open var hsbChangeListener: ChangeListener! {
+    override open var hsbChangeListener: ChangeListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.hsbChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -78,7 +78,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     private static var viewportChangeListener_FieldID: jfieldID?
 
-    open var viewportChangeListener: ChangeListener! {
+    override open var viewportChangeListener: ChangeListener! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.viewportChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -95,7 +95,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     private static var spPropertyChangeListener_FieldID: jfieldID?
 
-    open var spPropertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var spPropertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         get {
             var __locals = [jobject]()
             let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, locals: &__locals )
@@ -284,7 +284,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     private static var createUI_MethodID_3: jmethodID?
 
-    open class func createUI( x: JComponent? ) -> ComponentUI! {
+    override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
@@ -293,110 +293,30 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
         return createUI( x: _x )
     }
 
-    /// private int javax.swing.plaf.synth.SynthScrollPaneUI.getComponentState(javax.swing.JComponent)
-
     /// private void javax.swing.plaf.synth.SynthScrollPaneUI.updateStyle(javax.swing.JScrollPane)
-
-    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthScrollPaneUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
 
     /// public void javax.swing.plaf.synth.SynthScrollPaneUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_5: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthScrollPaneUI.propertyChange_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthScrollPaneUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.installDefaults(javax.swing.JScrollPane)
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    open func installDefaults( scrollpane: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scrollpane != nil ? scrollpane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func installDefaults( _ _scrollpane: JScrollPane? ) {
-        installDefaults( scrollpane: _scrollpane )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.installListeners(javax.swing.JScrollPane)
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    open func installListeners( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func installListeners( _ _c: JScrollPane? ) {
-        installListeners( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.uninstallDefaults(javax.swing.JScrollPane)
-
-    private static var uninstallDefaults_MethodID_8: jmethodID?
-
-    open func uninstallDefaults( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallDefaults( _ _c: JScrollPane? ) {
-        uninstallDefaults( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.uninstallListeners(javax.swing.JComponent)
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    open func uninstallListeners( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthScrollPaneUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallListeners( _ _c: JComponent? ) {
-        uninstallListeners( c: _c )
-    }
-
     /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_10: jmethodID?
+    private static var paintBorder_MethodID_5: jmethodID?
 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -407,11 +327,91 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
         __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthScrollPaneUI.paintBorder_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthScrollPaneUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// private int javax.swing.plaf.synth.SynthScrollPaneUI.getComponentState(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthScrollPaneUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.installDefaults(javax.swing.JScrollPane)
+
+    private static var installDefaults_MethodID_7: jmethodID?
+
+    override open func installDefaults( scrollpane: JScrollPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: scrollpane != nil ? scrollpane! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func installDefaults( _ _scrollpane: JScrollPane? ) {
+        installDefaults( scrollpane: _scrollpane )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.installListeners(javax.swing.JScrollPane)
+
+    private static var installListeners_MethodID_8: jmethodID?
+
+    override open func installListeners( c: JScrollPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func installListeners( _ _c: JScrollPane? ) {
+        installListeners( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.uninstallDefaults(javax.swing.JScrollPane)
+
+    private static var uninstallDefaults_MethodID_9: jmethodID?
+
+    override open func uninstallDefaults( c: JScrollPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallDefaults( _ _c: JScrollPane? ) {
+        uninstallDefaults( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.uninstallListeners(javax.swing.JComponent)
+
+    private static var uninstallListeners_MethodID_10: jmethodID?
+
+    override open func uninstallListeners( c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthScrollPaneUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallListeners( _ _c: JComponent? ) {
+        uninstallListeners( c: _c )
     }
 
 }

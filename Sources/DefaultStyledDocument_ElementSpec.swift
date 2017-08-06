@@ -226,46 +226,46 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
     }
 
 
+    /// public void javax.swing.text.DefaultStyledDocument$ElementSpec.setType(short)
+
+    private static var setType_MethodID_9: jmethodID?
+
+    open func setType( type: Int16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setType", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setType_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setType( _ _type: Int16 ) {
+        setType( type: _type )
+    }
+
     /// public short javax.swing.text.DefaultStyledDocument$ElementSpec.getDirection()
 
-    private static var getDirection_MethodID_9: jmethodID?
+    private static var getDirection_MethodID_10: jmethodID?
 
     open func getDirection() -> Int16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getDirection", methodSig: "()S", methodCache: &DefaultStyledDocument_ElementSpec.getDirection_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getDirection", methodSig: "()S", methodCache: &DefaultStyledDocument_ElementSpec.getDirection_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int16(), from: __return )
     }
 
 
     /// public void javax.swing.text.DefaultStyledDocument$ElementSpec.setDirection(short)
 
-    private static var setDirection_MethodID_10: jmethodID?
+    private static var setDirection_MethodID_11: jmethodID?
 
     open func setDirection( direction: Int16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirection", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setDirection_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirection", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setDirection_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setDirection( _ _direction: Int16 ) {
         setDirection( direction: _direction )
-    }
-
-    /// public void javax.swing.text.DefaultStyledDocument$ElementSpec.setType(short)
-
-    private static var setType_MethodID_11: jmethodID?
-
-    open func setType( type: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setType", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setType_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setType( _ _type: Int16 ) {
-        setType( type: _type )
     }
 
 }

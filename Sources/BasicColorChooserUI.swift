@@ -133,6 +133,10 @@ open class BasicColorChooserUI: ColorChooserUI {
         return createUI( c: _c )
     }
 
+    /// public void javax.swing.plaf.basic.BasicColorChooserUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicColorChooserUI.uninstallUI(javax.swing.JComponent)
+
     /// protected void javax.swing.plaf.basic.BasicColorChooserUI.installDefaults()
 
     private static var installDefaults_MethodID_3: jmethodID?
@@ -236,10 +240,6 @@ open class BasicColorChooserUI: ColorChooserUI {
 
 
     /// private void javax.swing.plaf.basic.BasicColorChooserUI.selectionChanged(javax.swing.colorchooser.ColorSelectionModel)
-
-    /// public void javax.swing.plaf.basic.BasicColorChooserUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicColorChooserUI.uninstallUI(javax.swing.JComponent)
 
 }
 

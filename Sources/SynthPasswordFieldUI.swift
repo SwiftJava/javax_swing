@@ -72,7 +72,7 @@ open class SynthPasswordFieldUI: SynthTextFieldUI {
 
     private static var createUI_MethodID_2: jmethodID?
 
-    open class func createUI( c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
@@ -81,36 +81,36 @@ open class SynthPasswordFieldUI: SynthTextFieldUI {
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
 
-    open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
+    override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthPasswordFieldUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_3: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &SynthPasswordFieldUI.installKeyboardActions_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// void javax.swing.plaf.synth.SynthPasswordFieldUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
-
     /// protected java.lang.String javax.swing.plaf.synth.SynthPasswordFieldUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_4: jmethodID?
+    private static var getPropertyPrefix_MethodID_3: jmethodID?
 
-    open func getPropertyPrefix() -> String! {
+    override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &SynthPasswordFieldUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &SynthPasswordFieldUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public void javax.swing.plaf.synth.SynthPasswordFieldUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    /// protected void javax.swing.plaf.synth.SynthPasswordFieldUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_4: jmethodID?
+
+    override open func installKeyboardActions() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &SynthPasswordFieldUI.installKeyboardActions_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// void javax.swing.plaf.synth.SynthPasswordFieldUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

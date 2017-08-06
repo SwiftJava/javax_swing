@@ -149,36 +149,49 @@ open class SizeSequence: java_swift.JavaObject {
         removeEntries( start: _start, length: _length )
     }
 
-    /// private int javax.swing.SizeSequence.setSizes(int,int,int)
+    /// private int javax.swing.SizeSequence.getSizes(int,int,int[])
 
-    /// public void javax.swing.SizeSequence.setSizes(int[])
+    /// public int[] javax.swing.SizeSequence.getSizes()
 
-    private static var setSizes_MethodID_9: jmethodID?
+    private static var getSizes_MethodID_9: jmethodID?
 
-    open func setSizes( sizes: [Int32]? ) {
+    open func getSizes() -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sizes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSizes", methodSig: "([I)V", methodCache: &SizeSequence.setSizes_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSizes", methodSig: "()[I", methodCache: &SizeSequence.getSizes_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
-    open func setSizes( _ _sizes: [Int32]? ) {
-        setSizes( sizes: _sizes )
+
+    /// private void javax.swing.SizeSequence.changeSize(int,int,int,int)
+
+    /// private int javax.swing.SizeSequence.getIndex(int,int,int)
+
+    /// public int javax.swing.SizeSequence.getIndex(int)
+
+    private static var getIndex_MethodID_10: jmethodID?
+
+    open func getIndex( position: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: position, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "(I)I", methodCache: &SizeSequence.getIndex_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    /// void javax.swing.SizeSequence.setSizes(int,int)
-
-    /// private int javax.swing.SizeSequence.setSizes(int,int,int[])
+    open func getIndex( _ _position: Int ) -> Int {
+        return getIndex( position: _position )
+    }
 
     /// public int javax.swing.SizeSequence.getPosition(int)
 
-    private static var getPosition_MethodID_10: jmethodID?
+    private static var getPosition_MethodID_11: jmethodID?
 
     open func getPosition( index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPosition", methodSig: "(I)I", methodCache: &SizeSequence.getPosition_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPosition", methodSig: "(I)I", methodCache: &SizeSequence.getPosition_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -188,39 +201,26 @@ open class SizeSequence: java_swift.JavaObject {
 
     /// private int javax.swing.SizeSequence.getPosition(int,int,int)
 
-    /// public int javax.swing.SizeSequence.getIndex(int)
+    /// public void javax.swing.SizeSequence.setSizes(int[])
 
-    private static var getIndex_MethodID_11: jmethodID?
+    private static var setSizes_MethodID_12: jmethodID?
 
-    open func getIndex( position: Int ) -> Int {
+    open func setSizes( sizes: [Int32]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "(I)I", methodCache: &SizeSequence.getIndex_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = JNIType.toJava( value: sizes, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSizes", methodSig: "([I)V", methodCache: &SizeSequence.setSizes_MethodID_12, args: &__args, locals: &__locals )
     }
 
-    open func getIndex( _ _position: Int ) -> Int {
-        return getIndex( position: _position )
+    open func setSizes( _ _sizes: [Int32]? ) {
+        setSizes( sizes: _sizes )
     }
 
-    /// private int javax.swing.SizeSequence.getIndex(int,int,int)
+    /// private int javax.swing.SizeSequence.setSizes(int,int,int)
 
-    /// public int[] javax.swing.SizeSequence.getSizes()
+    /// private int javax.swing.SizeSequence.setSizes(int,int,int[])
 
-    private static var getSizes_MethodID_12: jmethodID?
-
-    open func getSizes() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSizes", methodSig: "()[I", methodCache: &SizeSequence.getSizes_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-
-    /// private int javax.swing.SizeSequence.getSizes(int,int,int[])
-
-    /// private void javax.swing.SizeSequence.changeSize(int,int,int,int)
+    /// void javax.swing.SizeSequence.setSizes(int,int)
 
 }
 

@@ -399,16 +399,32 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public java.lang.String javax.swing.text.StyleConstants.toString()
 
+    /// public static void javax.swing.text.StyleConstants.setComponent(javax.swing.text.MutableAttributeSet,java.awt.Component)
+
+    private static var setComponent_MethodID_1: jmethodID?
+
+    open class func setComponent( a: MutableAttributeSet?, c: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setComponent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/awt/Component;)V", methodCache: &setComponent_MethodID_1, args: &__args, locals: &__locals )
+    }
+
+    open class func setComponent( _ _a: MutableAttributeSet?, _ _c: java_awt.Component? ) {
+        setComponent( a: _a, c: _c )
+    }
+
     /// public static void javax.swing.text.StyleConstants.setAlignment(javax.swing.text.MutableAttributeSet,int)
 
-    private static var setAlignment_MethodID_1: jmethodID?
+    private static var setAlignment_MethodID_2: jmethodID?
 
     open class func setAlignment( a: MutableAttributeSet?, align: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: align, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setAlignment", methodSig: "(Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &setAlignment_MethodID_1, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setAlignment", methodSig: "(Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &setAlignment_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open class func setAlignment( _ _a: MutableAttributeSet?, _ _align: Int ) {
@@ -417,13 +433,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static int javax.swing.text.StyleConstants.getAlignment(javax.swing.text.AttributeSet)
 
-    private static var getAlignment_MethodID_2: jmethodID?
+    private static var getAlignment_MethodID_3: jmethodID?
 
     open class func getAlignment( a: AttributeSet? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getAlignment", methodSig: "(Ljavax/swing/text/AttributeSet;)I", methodCache: &getAlignment_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getAlignment", methodSig: "(Ljavax/swing/text/AttributeSet;)I", methodCache: &getAlignment_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -431,403 +447,47 @@ open class StyleConstants: java_swift.JavaObject {
         return getAlignment( a: _a )
     }
 
-    /// public static java.awt.Component javax.swing.text.StyleConstants.getComponent(javax.swing.text.AttributeSet)
+    /// public static boolean javax.swing.text.StyleConstants.isBold(javax.swing.text.AttributeSet)
 
-    private static var getComponent_MethodID_3: jmethodID?
+    private static var isBold_MethodID_4: jmethodID?
 
-    open class func getComponent( a: AttributeSet? ) -> java_awt.Component! {
+    open class func isBold( a: AttributeSet? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getComponent", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Component;", methodCache: &getComponent_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open class func getComponent( _ _a: AttributeSet? ) -> java_awt.Component! {
-        return getComponent( a: _a )
-    }
-
-    /// public static java.lang.String javax.swing.text.StyleConstants.getFontFamily(javax.swing.text.AttributeSet)
-
-    private static var getFontFamily_MethodID_4: jmethodID?
-
-    open class func getFontFamily( a: AttributeSet? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getFontFamily", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/lang/String;", methodCache: &getFontFamily_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func getFontFamily( _ _a: AttributeSet? ) -> String! {
-        return getFontFamily( a: _a )
-    }
-
-    /// public static int javax.swing.text.StyleConstants.getFontSize(javax.swing.text.AttributeSet)
-
-    private static var getFontSize_MethodID_5: jmethodID?
-
-    open class func getFontSize( a: AttributeSet? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getFontSize", methodSig: "(Ljavax/swing/text/AttributeSet;)I", methodCache: &getFontSize_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getFontSize( _ _a: AttributeSet? ) -> Int {
-        return getFontSize( a: _a )
-    }
-
-    /// public static boolean javax.swing.text.StyleConstants.isSuperscript(javax.swing.text.AttributeSet)
-
-    private static var isSuperscript_MethodID_6: jmethodID?
-
-    open class func isSuperscript( a: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isSuperscript", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isSuperscript_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isBold", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isBold_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-    open class func isSuperscript( _ _a: AttributeSet? ) -> Bool {
-        return isSuperscript( a: _a )
+    open class func isBold( _ _a: AttributeSet? ) -> Bool {
+        return isBold( a: _a )
     }
 
-    /// public static boolean javax.swing.text.StyleConstants.isSubscript(javax.swing.text.AttributeSet)
+    /// public static boolean javax.swing.text.StyleConstants.isItalic(javax.swing.text.AttributeSet)
 
-    private static var isSubscript_MethodID_7: jmethodID?
+    private static var isItalic_MethodID_5: jmethodID?
 
-    open class func isSubscript( a: AttributeSet? ) -> Bool {
+    open class func isItalic( a: AttributeSet? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isSubscript", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isSubscript_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isItalic", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isItalic_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-    open class func isSubscript( _ _a: AttributeSet? ) -> Bool {
-        return isSubscript( a: _a )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setBidiLevel(javax.swing.text.MutableAttributeSet,int)
-
-    private static var setBidiLevel_MethodID_8: jmethodID?
-
-    open class func setBidiLevel( a: MutableAttributeSet?, o: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: o, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setBidiLevel", methodSig: "(Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &setBidiLevel_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open class func setBidiLevel( _ _a: MutableAttributeSet?, _ _o: Int ) {
-        setBidiLevel( a: _a, o: _o )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setFontFamily(javax.swing.text.MutableAttributeSet,java.lang.String)
-
-    private static var setFontFamily_MethodID_9: jmethodID?
-
-    open class func setFontFamily( a: MutableAttributeSet?, fam: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: fam, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setFontFamily", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/lang/String;)V", methodCache: &setFontFamily_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open class func setFontFamily( _ _a: MutableAttributeSet?, _ _fam: String? ) {
-        setFontFamily( a: _a, fam: _fam )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setFontSize(javax.swing.text.MutableAttributeSet,int)
-
-    private static var setFontSize_MethodID_10: jmethodID?
-
-    open class func setFontSize( a: MutableAttributeSet?, s: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setFontSize", methodSig: "(Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &setFontSize_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open class func setFontSize( _ _a: MutableAttributeSet?, _ _s: Int ) {
-        setFontSize( a: _a, s: _s )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setBold(javax.swing.text.MutableAttributeSet,boolean)
-
-    private static var setBold_MethodID_11: jmethodID?
-
-    open class func setBold( a: MutableAttributeSet?, b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setBold", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setBold_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open class func setBold( _ _a: MutableAttributeSet?, _ _b: Bool ) {
-        setBold( a: _a, b: _b )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setItalic(javax.swing.text.MutableAttributeSet,boolean)
-
-    private static var setItalic_MethodID_12: jmethodID?
-
-    open class func setItalic( a: MutableAttributeSet?, b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setItalic", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setItalic_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open class func setItalic( _ _a: MutableAttributeSet?, _ _b: Bool ) {
-        setItalic( a: _a, b: _b )
-    }
-
-    /// public static boolean javax.swing.text.StyleConstants.isUnderline(javax.swing.text.AttributeSet)
-
-    private static var isUnderline_MethodID_13: jmethodID?
-
-    open class func isUnderline( a: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isUnderline", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isUnderline_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isUnderline( _ _a: AttributeSet? ) -> Bool {
-        return isUnderline( a: _a )
-    }
-
-    /// public static boolean javax.swing.text.StyleConstants.isStrikeThrough(javax.swing.text.AttributeSet)
-
-    private static var isStrikeThrough_MethodID_14: jmethodID?
-
-    open class func isStrikeThrough( a: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isStrikeThrough", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isStrikeThrough_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isStrikeThrough( _ _a: AttributeSet? ) -> Bool {
-        return isStrikeThrough( a: _a )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setStrikeThrough(javax.swing.text.MutableAttributeSet,boolean)
-
-    private static var setStrikeThrough_MethodID_15: jmethodID?
-
-    open class func setStrikeThrough( a: MutableAttributeSet?, b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setStrikeThrough", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setStrikeThrough_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open class func setStrikeThrough( _ _a: MutableAttributeSet?, _ _b: Bool ) {
-        setStrikeThrough( a: _a, b: _b )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setSubscript(javax.swing.text.MutableAttributeSet,boolean)
-
-    private static var setSubscript_MethodID_16: jmethodID?
-
-    open class func setSubscript( a: MutableAttributeSet?, b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSubscript", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setSubscript_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open class func setSubscript( _ _a: MutableAttributeSet?, _ _b: Bool ) {
-        setSubscript( a: _a, b: _b )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setRightIndent(javax.swing.text.MutableAttributeSet,float)
-
-    private static var setRightIndent_MethodID_17: jmethodID?
-
-    open class func setRightIndent( a: MutableAttributeSet?, i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setRightIndent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setRightIndent_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open class func setRightIndent( _ _a: MutableAttributeSet?, _ _i: Float ) {
-        setRightIndent( a: _a, i: _i )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setLeftIndent(javax.swing.text.MutableAttributeSet,float)
-
-    private static var setLeftIndent_MethodID_18: jmethodID?
-
-    open class func setLeftIndent( a: MutableAttributeSet?, i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setLeftIndent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setLeftIndent_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open class func setLeftIndent( _ _a: MutableAttributeSet?, _ _i: Float ) {
-        setLeftIndent( a: _a, i: _i )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setSpaceAbove(javax.swing.text.MutableAttributeSet,float)
-
-    private static var setSpaceAbove_MethodID_19: jmethodID?
-
-    open class func setSpaceAbove( a: MutableAttributeSet?, i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSpaceAbove", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setSpaceAbove_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open class func setSpaceAbove( _ _a: MutableAttributeSet?, _ _i: Float ) {
-        setSpaceAbove( a: _a, i: _i )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setSpaceBelow(javax.swing.text.MutableAttributeSet,float)
-
-    private static var setSpaceBelow_MethodID_20: jmethodID?
-
-    open class func setSpaceBelow( a: MutableAttributeSet?, i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSpaceBelow", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setSpaceBelow_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open class func setSpaceBelow( _ _a: MutableAttributeSet?, _ _i: Float ) {
-        setSpaceBelow( a: _a, i: _i )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setTabSet(javax.swing.text.MutableAttributeSet,javax.swing.text.TabSet)
-
-    private static var setTabSet_MethodID_21: jmethodID?
-
-    open class func setTabSet( a: MutableAttributeSet?, tabs: JavaTabSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabs != nil ? tabs! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setTabSet", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/text/TabSet;)V", methodCache: &setTabSet_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open class func setTabSet( _ _a: MutableAttributeSet?, _ _tabs: JavaTabSet? ) {
-        setTabSet( a: _a, tabs: _tabs )
-    }
-
-    /// public static javax.swing.Icon javax.swing.text.StyleConstants.getIcon(javax.swing.text.AttributeSet)
-
-    private static var getIcon_MethodID_22: jmethodID?
-
-    open class func getIcon( a: AttributeSet? ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getIcon", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/Icon;", methodCache: &getIcon_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    open class func getIcon( _ _a: AttributeSet? ) -> Icon! {
-        return getIcon( a: _a )
-    }
-
-    /// public static java.awt.Color javax.swing.text.StyleConstants.getBackground(javax.swing.text.AttributeSet)
-
-    private static var getBackground_MethodID_23: jmethodID?
-
-    open class func getBackground( a: AttributeSet? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getBackground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &getBackground_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open class func getBackground( _ _a: AttributeSet? ) -> java_awt.Color! {
-        return getBackground( a: _a )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setBackground(javax.swing.text.MutableAttributeSet,java.awt.Color)
-
-    private static var setBackground_MethodID_24: jmethodID?
-
-    open class func setBackground( a: MutableAttributeSet?, fg: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: fg != nil ? fg! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setBackground", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/awt/Color;)V", methodCache: &setBackground_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open class func setBackground( _ _a: MutableAttributeSet?, _ _fg: java_awt.Color? ) {
-        setBackground( a: _a, fg: _fg )
-    }
-
-    /// public static java.awt.Color javax.swing.text.StyleConstants.getForeground(javax.swing.text.AttributeSet)
-
-    private static var getForeground_MethodID_25: jmethodID?
-
-    open class func getForeground( a: AttributeSet? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getForeground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &getForeground_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open class func getForeground( _ _a: AttributeSet? ) -> java_awt.Color! {
-        return getForeground( a: _a )
-    }
-
-    /// public static void javax.swing.text.StyleConstants.setForeground(javax.swing.text.MutableAttributeSet,java.awt.Color)
-
-    private static var setForeground_MethodID_26: jmethodID?
-
-    open class func setForeground( a: MutableAttributeSet?, fg: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: fg != nil ? fg! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setForeground", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/awt/Color;)V", methodCache: &setForeground_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open class func setForeground( _ _a: MutableAttributeSet?, _ _fg: java_awt.Color? ) {
-        setForeground( a: _a, fg: _fg )
+    open class func isItalic( _ _a: AttributeSet? ) -> Bool {
+        return isItalic( a: _a )
     }
 
     /// public static float javax.swing.text.StyleConstants.getSpaceAbove(javax.swing.text.AttributeSet)
 
-    private static var getSpaceAbove_MethodID_27: jmethodID?
+    private static var getSpaceAbove_MethodID_6: jmethodID?
 
     open class func getSpaceAbove( a: AttributeSet? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getSpaceAbove", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getSpaceAbove_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getSpaceAbove", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getSpaceAbove_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -837,13 +497,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static float javax.swing.text.StyleConstants.getLeftIndent(javax.swing.text.AttributeSet)
 
-    private static var getLeftIndent_MethodID_28: jmethodID?
+    private static var getLeftIndent_MethodID_7: jmethodID?
 
     open class func getLeftIndent( a: AttributeSet? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getLeftIndent", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getLeftIndent_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getLeftIndent", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getLeftIndent_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -853,13 +513,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static float javax.swing.text.StyleConstants.getSpaceBelow(javax.swing.text.AttributeSet)
 
-    private static var getSpaceBelow_MethodID_29: jmethodID?
+    private static var getSpaceBelow_MethodID_8: jmethodID?
 
     open class func getSpaceBelow( a: AttributeSet? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getSpaceBelow", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getSpaceBelow_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getSpaceBelow", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getSpaceBelow_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -869,13 +529,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static float javax.swing.text.StyleConstants.getRightIndent(javax.swing.text.AttributeSet)
 
-    private static var getRightIndent_MethodID_30: jmethodID?
+    private static var getRightIndent_MethodID_9: jmethodID?
 
     open class func getRightIndent( a: AttributeSet? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getRightIndent", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getRightIndent_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getRightIndent", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getRightIndent_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -885,14 +545,14 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static void javax.swing.text.StyleConstants.setLineSpacing(javax.swing.text.MutableAttributeSet,float)
 
-    private static var setLineSpacing_MethodID_31: jmethodID?
+    private static var setLineSpacing_MethodID_10: jmethodID?
 
     open class func setLineSpacing( a: MutableAttributeSet?, i: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setLineSpacing", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setLineSpacing_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setLineSpacing", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setLineSpacing_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open class func setLineSpacing( _ _a: MutableAttributeSet?, _ _i: Float ) {
@@ -901,14 +561,14 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static void javax.swing.text.StyleConstants.setFirstLineIndent(javax.swing.text.MutableAttributeSet,float)
 
-    private static var setFirstLineIndent_MethodID_32: jmethodID?
+    private static var setFirstLineIndent_MethodID_11: jmethodID?
 
     open class func setFirstLineIndent( a: MutableAttributeSet?, i: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setFirstLineIndent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setFirstLineIndent_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setFirstLineIndent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setFirstLineIndent_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open class func setFirstLineIndent( _ _a: MutableAttributeSet?, _ _i: Float ) {
@@ -917,13 +577,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static javax.swing.text.TabSet javax.swing.text.StyleConstants.getTabSet(javax.swing.text.AttributeSet)
 
-    private static var getTabSet_MethodID_33: jmethodID?
+    private static var getTabSet_MethodID_12: jmethodID?
 
     open class func getTabSet( a: AttributeSet? ) -> JavaTabSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getTabSet", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/TabSet;", methodCache: &getTabSet_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getTabSet", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/TabSet;", methodCache: &getTabSet_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JavaTabSet( javaObject: __return ) : nil
     }
@@ -934,13 +594,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static float javax.swing.text.StyleConstants.getLineSpacing(javax.swing.text.AttributeSet)
 
-    private static var getLineSpacing_MethodID_34: jmethodID?
+    private static var getLineSpacing_MethodID_13: jmethodID?
 
     open class func getLineSpacing( a: AttributeSet? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getLineSpacing", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getLineSpacing_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getLineSpacing", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getLineSpacing_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -950,13 +610,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static float javax.swing.text.StyleConstants.getFirstLineIndent(javax.swing.text.AttributeSet)
 
-    private static var getFirstLineIndent_MethodID_35: jmethodID?
+    private static var getFirstLineIndent_MethodID_14: jmethodID?
 
     open class func getFirstLineIndent( a: AttributeSet? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getFirstLineIndent", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getFirstLineIndent_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticFloatMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getFirstLineIndent", methodSig: "(Ljavax/swing/text/AttributeSet;)F", methodCache: &getFirstLineIndent_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -964,32 +624,404 @@ open class StyleConstants: java_swift.JavaObject {
         return getFirstLineIndent( a: _a )
     }
 
-    /// public static void javax.swing.text.StyleConstants.setComponent(javax.swing.text.MutableAttributeSet,java.awt.Component)
+    /// public static java.lang.String javax.swing.text.StyleConstants.getFontFamily(javax.swing.text.AttributeSet)
 
-    private static var setComponent_MethodID_36: jmethodID?
+    private static var getFontFamily_MethodID_15: jmethodID?
 
-    open class func setComponent( a: MutableAttributeSet?, c: java_awt.Component? ) {
+    open class func getFontFamily( a: AttributeSet? ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getFontFamily", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/lang/String;", methodCache: &getFontFamily_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open class func getFontFamily( _ _a: AttributeSet? ) -> String! {
+        return getFontFamily( a: _a )
+    }
+
+    /// public static int javax.swing.text.StyleConstants.getFontSize(javax.swing.text.AttributeSet)
+
+    private static var getFontSize_MethodID_16: jmethodID?
+
+    open class func getFontSize( a: AttributeSet? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getFontSize", methodSig: "(Ljavax/swing/text/AttributeSet;)I", methodCache: &getFontSize_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func getFontSize( _ _a: AttributeSet? ) -> Int {
+        return getFontSize( a: _a )
+    }
+
+    /// public static boolean javax.swing.text.StyleConstants.isSuperscript(javax.swing.text.AttributeSet)
+
+    private static var isSuperscript_MethodID_17: jmethodID?
+
+    open class func isSuperscript( a: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isSuperscript", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isSuperscript_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open class func isSuperscript( _ _a: AttributeSet? ) -> Bool {
+        return isSuperscript( a: _a )
+    }
+
+    /// public static boolean javax.swing.text.StyleConstants.isSubscript(javax.swing.text.AttributeSet)
+
+    private static var isSubscript_MethodID_18: jmethodID?
+
+    open class func isSubscript( a: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isSubscript", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isSubscript_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open class func isSubscript( _ _a: AttributeSet? ) -> Bool {
+        return isSubscript( a: _a )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setBidiLevel(javax.swing.text.MutableAttributeSet,int)
+
+    private static var setBidiLevel_MethodID_19: jmethodID?
+
+    open class func setBidiLevel( a: MutableAttributeSet?, o: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setComponent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/awt/Component;)V", methodCache: &setComponent_MethodID_36, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: o, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setBidiLevel", methodSig: "(Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &setBidiLevel_MethodID_19, args: &__args, locals: &__locals )
     }
 
-    open class func setComponent( _ _a: MutableAttributeSet?, _ _c: java_awt.Component? ) {
-        setComponent( a: _a, c: _c )
+    open class func setBidiLevel( _ _a: MutableAttributeSet?, _ _o: Int ) {
+        setBidiLevel( a: _a, o: _o )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setFontFamily(javax.swing.text.MutableAttributeSet,java.lang.String)
+
+    private static var setFontFamily_MethodID_20: jmethodID?
+
+    open class func setFontFamily( a: MutableAttributeSet?, fam: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: fam, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setFontFamily", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/lang/String;)V", methodCache: &setFontFamily_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open class func setFontFamily( _ _a: MutableAttributeSet?, _ _fam: String? ) {
+        setFontFamily( a: _a, fam: _fam )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setFontSize(javax.swing.text.MutableAttributeSet,int)
+
+    private static var setFontSize_MethodID_21: jmethodID?
+
+    open class func setFontSize( a: MutableAttributeSet?, s: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setFontSize", methodSig: "(Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &setFontSize_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open class func setFontSize( _ _a: MutableAttributeSet?, _ _s: Int ) {
+        setFontSize( a: _a, s: _s )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setBold(javax.swing.text.MutableAttributeSet,boolean)
+
+    private static var setBold_MethodID_22: jmethodID?
+
+    open class func setBold( a: MutableAttributeSet?, b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setBold", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setBold_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open class func setBold( _ _a: MutableAttributeSet?, _ _b: Bool ) {
+        setBold( a: _a, b: _b )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setItalic(javax.swing.text.MutableAttributeSet,boolean)
+
+    private static var setItalic_MethodID_23: jmethodID?
+
+    open class func setItalic( a: MutableAttributeSet?, b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setItalic", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setItalic_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open class func setItalic( _ _a: MutableAttributeSet?, _ _b: Bool ) {
+        setItalic( a: _a, b: _b )
+    }
+
+    /// public static boolean javax.swing.text.StyleConstants.isUnderline(javax.swing.text.AttributeSet)
+
+    private static var isUnderline_MethodID_24: jmethodID?
+
+    open class func isUnderline( a: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isUnderline", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isUnderline_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open class func isUnderline( _ _a: AttributeSet? ) -> Bool {
+        return isUnderline( a: _a )
+    }
+
+    /// public static boolean javax.swing.text.StyleConstants.isStrikeThrough(javax.swing.text.AttributeSet)
+
+    private static var isStrikeThrough_MethodID_25: jmethodID?
+
+    open class func isStrikeThrough( a: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isStrikeThrough", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isStrikeThrough_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open class func isStrikeThrough( _ _a: AttributeSet? ) -> Bool {
+        return isStrikeThrough( a: _a )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setStrikeThrough(javax.swing.text.MutableAttributeSet,boolean)
+
+    private static var setStrikeThrough_MethodID_26: jmethodID?
+
+    open class func setStrikeThrough( a: MutableAttributeSet?, b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setStrikeThrough", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setStrikeThrough_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open class func setStrikeThrough( _ _a: MutableAttributeSet?, _ _b: Bool ) {
+        setStrikeThrough( a: _a, b: _b )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setSubscript(javax.swing.text.MutableAttributeSet,boolean)
+
+    private static var setSubscript_MethodID_27: jmethodID?
+
+    open class func setSubscript( a: MutableAttributeSet?, b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSubscript", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setSubscript_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open class func setSubscript( _ _a: MutableAttributeSet?, _ _b: Bool ) {
+        setSubscript( a: _a, b: _b )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setRightIndent(javax.swing.text.MutableAttributeSet,float)
+
+    private static var setRightIndent_MethodID_28: jmethodID?
+
+    open class func setRightIndent( a: MutableAttributeSet?, i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setRightIndent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setRightIndent_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open class func setRightIndent( _ _a: MutableAttributeSet?, _ _i: Float ) {
+        setRightIndent( a: _a, i: _i )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setLeftIndent(javax.swing.text.MutableAttributeSet,float)
+
+    private static var setLeftIndent_MethodID_29: jmethodID?
+
+    open class func setLeftIndent( a: MutableAttributeSet?, i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setLeftIndent", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setLeftIndent_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open class func setLeftIndent( _ _a: MutableAttributeSet?, _ _i: Float ) {
+        setLeftIndent( a: _a, i: _i )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setSpaceAbove(javax.swing.text.MutableAttributeSet,float)
+
+    private static var setSpaceAbove_MethodID_30: jmethodID?
+
+    open class func setSpaceAbove( a: MutableAttributeSet?, i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSpaceAbove", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setSpaceAbove_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open class func setSpaceAbove( _ _a: MutableAttributeSet?, _ _i: Float ) {
+        setSpaceAbove( a: _a, i: _i )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setSpaceBelow(javax.swing.text.MutableAttributeSet,float)
+
+    private static var setSpaceBelow_MethodID_31: jmethodID?
+
+    open class func setSpaceBelow( a: MutableAttributeSet?, i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSpaceBelow", methodSig: "(Ljavax/swing/text/MutableAttributeSet;F)V", methodCache: &setSpaceBelow_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open class func setSpaceBelow( _ _a: MutableAttributeSet?, _ _i: Float ) {
+        setSpaceBelow( a: _a, i: _i )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setTabSet(javax.swing.text.MutableAttributeSet,javax.swing.text.TabSet)
+
+    private static var setTabSet_MethodID_32: jmethodID?
+
+    open class func setTabSet( a: MutableAttributeSet?, tabs: JavaTabSet? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tabs != nil ? tabs! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setTabSet", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/text/TabSet;)V", methodCache: &setTabSet_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open class func setTabSet( _ _a: MutableAttributeSet?, _ _tabs: JavaTabSet? ) {
+        setTabSet( a: _a, tabs: _tabs )
+    }
+
+    /// public static javax.swing.Icon javax.swing.text.StyleConstants.getIcon(javax.swing.text.AttributeSet)
+
+    private static var getIcon_MethodID_33: jmethodID?
+
+    open class func getIcon( a: AttributeSet? ) -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getIcon", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/Icon;", methodCache: &getIcon_MethodID_33, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    open class func getIcon( _ _a: AttributeSet? ) -> Icon! {
+        return getIcon( a: _a )
+    }
+
+    /// public static java.awt.Color javax.swing.text.StyleConstants.getBackground(javax.swing.text.AttributeSet)
+
+    private static var getBackground_MethodID_34: jmethodID?
+
+    open class func getBackground( a: AttributeSet? ) -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getBackground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &getBackground_MethodID_34, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+    open class func getBackground( _ _a: AttributeSet? ) -> java_awt.Color! {
+        return getBackground( a: _a )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setBackground(javax.swing.text.MutableAttributeSet,java.awt.Color)
+
+    private static var setBackground_MethodID_35: jmethodID?
+
+    open class func setBackground( a: MutableAttributeSet?, fg: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: fg != nil ? fg! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setBackground", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/awt/Color;)V", methodCache: &setBackground_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+    open class func setBackground( _ _a: MutableAttributeSet?, _ _fg: java_awt.Color? ) {
+        setBackground( a: _a, fg: _fg )
+    }
+
+    /// public static java.awt.Color javax.swing.text.StyleConstants.getForeground(javax.swing.text.AttributeSet)
+
+    private static var getForeground_MethodID_36: jmethodID?
+
+    open class func getForeground( a: AttributeSet? ) -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getForeground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &getForeground_MethodID_36, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+    open class func getForeground( _ _a: AttributeSet? ) -> java_awt.Color! {
+        return getForeground( a: _a )
+    }
+
+    /// public static void javax.swing.text.StyleConstants.setForeground(javax.swing.text.MutableAttributeSet,java.awt.Color)
+
+    private static var setForeground_MethodID_37: jmethodID?
+
+    open class func setForeground( a: MutableAttributeSet?, fg: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: fg != nil ? fg! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setForeground", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljava/awt/Color;)V", methodCache: &setForeground_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    open class func setForeground( _ _a: MutableAttributeSet?, _ _fg: java_awt.Color? ) {
+        setForeground( a: _a, fg: _fg )
+    }
+
+    /// public static java.awt.Component javax.swing.text.StyleConstants.getComponent(javax.swing.text.AttributeSet)
+
+    private static var getComponent_MethodID_38: jmethodID?
+
+    open class func getComponent( a: AttributeSet? ) -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getComponent", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Component;", methodCache: &getComponent_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    open class func getComponent( _ _a: AttributeSet? ) -> java_awt.Component! {
+        return getComponent( a: _a )
     }
 
     /// public static void javax.swing.text.StyleConstants.setIcon(javax.swing.text.MutableAttributeSet,javax.swing.Icon)
 
-    private static var setIcon_MethodID_37: jmethodID?
+    private static var setIcon_MethodID_39: jmethodID?
 
     open class func setIcon( a: MutableAttributeSet?, c: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setIcon", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/Icon;)V", methodCache: &setIcon_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setIcon", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/Icon;)V", methodCache: &setIcon_MethodID_39, args: &__args, locals: &__locals )
     }
 
     open class func setIcon( _ _a: MutableAttributeSet?, _ _c: Icon? ) {
@@ -998,13 +1030,13 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static int javax.swing.text.StyleConstants.getBidiLevel(javax.swing.text.AttributeSet)
 
-    private static var getBidiLevel_MethodID_38: jmethodID?
+    private static var getBidiLevel_MethodID_40: jmethodID?
 
     open class func getBidiLevel( a: AttributeSet? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getBidiLevel", methodSig: "(Ljavax/swing/text/AttributeSet;)I", methodCache: &getBidiLevel_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "getBidiLevel", methodSig: "(Ljavax/swing/text/AttributeSet;)I", methodCache: &getBidiLevel_MethodID_40, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1014,14 +1046,14 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static void javax.swing.text.StyleConstants.setSuperscript(javax.swing.text.MutableAttributeSet,boolean)
 
-    private static var setSuperscript_MethodID_39: jmethodID?
+    private static var setSuperscript_MethodID_41: jmethodID?
 
     open class func setSuperscript( a: MutableAttributeSet?, b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSuperscript", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setSuperscript_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setSuperscript", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setSuperscript_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open class func setSuperscript( _ _a: MutableAttributeSet?, _ _b: Bool ) {
@@ -1030,50 +1062,18 @@ open class StyleConstants: java_swift.JavaObject {
 
     /// public static void javax.swing.text.StyleConstants.setUnderline(javax.swing.text.MutableAttributeSet,boolean)
 
-    private static var setUnderline_MethodID_40: jmethodID?
+    private static var setUnderline_MethodID_42: jmethodID?
 
     open class func setUnderline( a: MutableAttributeSet?, b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setUnderline", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setUnderline_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "setUnderline", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Z)V", methodCache: &setUnderline_MethodID_42, args: &__args, locals: &__locals )
     }
 
     open class func setUnderline( _ _a: MutableAttributeSet?, _ _b: Bool ) {
         setUnderline( a: _a, b: _b )
-    }
-
-    /// public static boolean javax.swing.text.StyleConstants.isBold(javax.swing.text.AttributeSet)
-
-    private static var isBold_MethodID_41: jmethodID?
-
-    open class func isBold( a: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isBold", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isBold_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isBold( _ _a: AttributeSet? ) -> Bool {
-        return isBold( a: _a )
-    }
-
-    /// public static boolean javax.swing.text.StyleConstants.isItalic(javax.swing.text.AttributeSet)
-
-    private static var isItalic_MethodID_42: jmethodID?
-
-    open class func isItalic( a: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass, methodName: "isItalic", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &isItalic_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isItalic( _ _a: AttributeSet? ) -> Bool {
-        return isItalic( a: _a )
     }
 
 }

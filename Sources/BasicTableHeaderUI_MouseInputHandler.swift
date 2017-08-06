@@ -40,12 +40,6 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
         self.init( this_0: _this_0 )
     }
 
-    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point,int)
-
-    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point)
-
-    /// private void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.swapCursor()
-
     /// public void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
 
     private static var mousePressed_MethodID_2: jmethodID?
@@ -151,7 +145,13 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
         mouseDragged( e: _e )
     }
 
+    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point)
+
+    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point,int)
+
     /// private void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.setDraggedDistance(int,int)
+
+    /// private void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.swapCursor()
 
 }
 

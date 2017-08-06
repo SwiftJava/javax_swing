@@ -63,6 +63,8 @@ open class BasicPopupMenuSeparatorUI: BasicSeparatorUI {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicPopupMenuSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicPopupMenuSeparatorUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -81,8 +83,6 @@ open class BasicPopupMenuSeparatorUI: BasicSeparatorUI {
     }
 
     /// public void javax.swing.plaf.basic.BasicPopupMenuSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicPopupMenuSeparatorUI.getPreferredSize(javax.swing.JComponent)
 
 }
 

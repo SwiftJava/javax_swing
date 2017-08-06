@@ -451,66 +451,18 @@ open class MetalToolBarUI: BasicToolBarUI {
     }
 
 
-    /// protected void javax.swing.plaf.metal.MetalToolBarUI.setDragOffset(java.awt.Point)
+    /// public void javax.swing.plaf.metal.MetalToolBarUI.installUI(javax.swing.JComponent)
 
-    private static var setDragOffset_MethodID_4: jmethodID?
-
-    open func setDragOffset( p: java_awt.Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragOffset", methodSig: "(Ljava/awt/Point;)V", methodCache: &MetalToolBarUI.setDragOffset_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setDragOffset( _ _p: java_awt.Point? ) {
-        setDragOffset( p: _p )
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalToolBarUI.createRolloverListener()
-
-    private static var createRolloverListener_MethodID_5: jmethodID?
-
-    open func createRolloverListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalToolBarUI.createRolloverListener_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.plaf.metal.MetalToolBarUI.setLastMenuBar(javax.swing.JMenuBar)
-
-    /// protected void javax.swing.plaf.metal.MetalToolBarUI.installListeners()
-
-    private static var installListeners_MethodID_6: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalToolBarUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalToolBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_7: jmethodID?
-
-    override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalToolBarUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
-    }
-
+    /// public void javax.swing.plaf.metal.MetalToolBarUI.uninstallUI(javax.swing.JComponent)
 
     /// protected javax.swing.border.Border javax.swing.plaf.metal.MetalToolBarUI.createRolloverBorder()
 
-    private static var createRolloverBorder_MethodID_8: jmethodID?
+    private static var createRolloverBorder_MethodID_4: jmethodID?
 
     override open func createRolloverBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createRolloverBorder_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createRolloverBorder_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -518,12 +470,12 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// protected javax.swing.border.Border javax.swing.plaf.metal.MetalToolBarUI.createNonRolloverBorder()
 
-    private static var createNonRolloverBorder_MethodID_9: jmethodID?
+    private static var createNonRolloverBorder_MethodID_5: jmethodID?
 
     override open func createNonRolloverBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNonRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createNonRolloverBorder_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNonRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createNonRolloverBorder_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -533,13 +485,13 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// protected void javax.swing.plaf.metal.MetalToolBarUI.setBorderToNonRollover(java.awt.Component)
 
-    private static var setBorderToNonRollover_MethodID_10: jmethodID?
+    private static var setBorderToNonRollover_MethodID_6: jmethodID?
 
     override open func setBorderToNonRollover( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &MetalToolBarUI.setBorderToNonRollover_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &MetalToolBarUI.setBorderToNonRollover_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func setBorderToNonRollover( _ _c: java_awt.Component? ) {
@@ -548,20 +500,68 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// protected javax.swing.event.MouseInputListener javax.swing.plaf.metal.MetalToolBarUI.createDockingListener()
 
-    private static var createDockingListener_MethodID_11: jmethodID?
+    private static var createDockingListener_MethodID_7: jmethodID?
 
     override open func createDockingListener() -> MouseInputListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDockingListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &MetalToolBarUI.createDockingListener_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDockingListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &MetalToolBarUI.createDockingListener_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.plaf.metal.MetalToolBarUI.installUI(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.metal.MetalToolBarUI.setDragOffset(java.awt.Point)
 
-    /// public void javax.swing.plaf.metal.MetalToolBarUI.uninstallUI(javax.swing.JComponent)
+    private static var setDragOffset_MethodID_8: jmethodID?
+
+    open func setDragOffset( p: java_awt.Point? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragOffset", methodSig: "(Ljava/awt/Point;)V", methodCache: &MetalToolBarUI.setDragOffset_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setDragOffset( _ _p: java_awt.Point? ) {
+        setDragOffset( p: _p )
+    }
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalToolBarUI.createRolloverListener()
+
+    private static var createRolloverListener_MethodID_9: jmethodID?
+
+    open func createRolloverListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalToolBarUI.createRolloverListener_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// private void javax.swing.plaf.metal.MetalToolBarUI.setLastMenuBar(javax.swing.JMenuBar)
+
+    /// protected void javax.swing.plaf.metal.MetalToolBarUI.installListeners()
+
+    private static var installListeners_MethodID_10: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalToolBarUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalToolBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_11: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalToolBarUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
 
 }
 

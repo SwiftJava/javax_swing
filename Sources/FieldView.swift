@@ -131,7 +131,13 @@ open class FieldView: PlainView {
         self.init( elem: _elem )
     }
 
-    /// public void javax.swing.text.FieldView.paint(java.awt.Graphics,java.awt.Shape)
+    /// public int javax.swing.text.FieldView.getResizeWeight(int)
+
+    /// public void javax.swing.text.FieldView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public void javax.swing.text.FieldView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    /// public float javax.swing.text.FieldView.getPreferredSpan(int)
 
     /// public int javax.swing.text.FieldView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
 
@@ -149,8 +155,6 @@ open class FieldView: PlainView {
         return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
     }
 
-
-    /// public int javax.swing.text.FieldView.getResizeWeight(int)
 
     /// protected java.awt.Shape javax.swing.text.FieldView.adjustAllocation(java.awt.Shape)
 
@@ -171,13 +175,9 @@ open class FieldView: PlainView {
 
     /// void javax.swing.text.FieldView.updateVisibilityModel()
 
+    /// public void javax.swing.text.FieldView.paint(java.awt.Graphics,java.awt.Shape)
+
     /// java.awt.Shape javax.swing.text.FieldView.adjustPaintRegion(java.awt.Shape)
-
-    /// public void javax.swing.text.FieldView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.FieldView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public float javax.swing.text.FieldView.getPreferredSpan(int)
 
 }
 

@@ -875,72 +875,35 @@ open class JTextField: JTextComponent, SwingConstants {
     }
 
 
+    /// public boolean javax.swing.JTextField.isValidateRoot()
+
+    /// public java.awt.Dimension javax.swing.JTextField.getPreferredSize()
+
     /// private boolean javax.swing.JTextField.isListener(java.lang.Class,java.awt.event.ActionListener)
-
-    /// protected void javax.swing.JTextField.fireActionPerformed()
-
-    private static var fireActionPerformed_MethodID_7: jmethodID?
-
-    open func fireActionPerformed() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "()V", methodCache: &JTextField.fireActionPerformed_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JTextField.setActionCommand(java.lang.String)
-
-    private static var setActionCommand_MethodID_8: jmethodID?
-
-    open func setActionCommand( command: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: command, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextField.setActionCommand_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setActionCommand( _ _command: String? ) {
-        setActionCommand( command: _command )
-    }
-
-    /// public synchronized void javax.swing.JTextField.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_9: jmethodID?
-
-    open func addActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JTextField.addActionListener_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: java_awt.ActionListener? ) {
-        addActionListener( l: _l )
-    }
 
     /// public javax.accessibility.AccessibleContext javax.swing.JTextField.getAccessibleContext()
 
     /// public int javax.swing.JTextField.getHorizontalAlignment()
 
-    private static var getHorizontalAlignment_MethodID_10: jmethodID?
+    private static var getHorizontalAlignment_MethodID_7: jmethodID?
 
     open func getHorizontalAlignment() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalAlignment", methodSig: "()I", methodCache: &JTextField.getHorizontalAlignment_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalAlignment", methodSig: "()I", methodCache: &JTextField.getHorizontalAlignment_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JTextField.setFont(java.awt.Font)
 
-    private static var setFont_MethodID_11: jmethodID?
+    private static var setFont_MethodID_8: jmethodID?
 
     open func setFont( f: java_awt.Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &JTextField.setFont_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &JTextField.setFont_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func setFont( _ _f: java_awt.Font? ) {
@@ -949,14 +912,14 @@ open class JTextField: JTextComponent, SwingConstants {
 
     /// protected void javax.swing.JTextField.actionPropertyChanged(javax.swing.Action,java.lang.String)
 
-    private static var actionPropertyChanged_MethodID_12: jmethodID?
+    private static var actionPropertyChanged_MethodID_9: jmethodID?
 
     open func actionPropertyChanged( action: Action?, propertyName: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: action, locals: &__locals )
         __args[1] = JNIType.toJava( value: propertyName, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPropertyChanged", methodSig: "(Ljavax/swing/Action;Ljava/lang/String;)V", methodCache: &JTextField.actionPropertyChanged_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPropertyChanged", methodSig: "(Ljavax/swing/Action;Ljava/lang/String;)V", methodCache: &JTextField.actionPropertyChanged_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func actionPropertyChanged( _ _action: Action?, _ _propertyName: String? ) {
@@ -965,13 +928,13 @@ open class JTextField: JTextComponent, SwingConstants {
 
     /// protected void javax.swing.JTextField.configurePropertiesFromAction(javax.swing.Action)
 
-    private static var configurePropertiesFromAction_MethodID_13: jmethodID?
+    private static var configurePropertiesFromAction_MethodID_10: jmethodID?
 
     open func configurePropertiesFromAction( a: Action? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePropertiesFromAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &JTextField.configurePropertiesFromAction_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePropertiesFromAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &JTextField.configurePropertiesFromAction_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func configurePropertiesFromAction( _ _a: Action? ) {
@@ -980,16 +943,57 @@ open class JTextField: JTextComponent, SwingConstants {
 
     /// public javax.swing.Action javax.swing.JTextField.getAction()
 
-    private static var getAction_MethodID_14: jmethodID?
+    private static var getAction_MethodID_11: jmethodID?
 
     open func getAction() -> Action! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "()Ljavax/swing/Action;", methodCache: &JTextField.getAction_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "()Ljavax/swing/Action;", methodCache: &JTextField.getAction_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionForward( javaObject: __return ) : nil
     }
 
+
+    /// protected void javax.swing.JTextField.fireActionPerformed()
+
+    private static var fireActionPerformed_MethodID_12: jmethodID?
+
+    open func fireActionPerformed() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "()V", methodCache: &JTextField.fireActionPerformed_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JTextField.setActionCommand(java.lang.String)
+
+    private static var setActionCommand_MethodID_13: jmethodID?
+
+    open func setActionCommand( command: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: command, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextField.setActionCommand_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setActionCommand( _ _command: String? ) {
+        setActionCommand( command: _command )
+    }
+
+    /// public synchronized void javax.swing.JTextField.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_14: jmethodID?
+
+    open func addActionListener( l: java_awt.ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JTextField.addActionListener_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: java_awt.ActionListener? ) {
+        addActionListener( l: _l )
+    }
 
     /// public java.lang.String javax.swing.JTextField.getUIClassID()
 
@@ -1203,10 +1207,6 @@ open class JTextField: JTextComponent, SwingConstants {
     }
 
     /// boolean javax.swing.JTextField.hasActionListener()
-
-    /// public boolean javax.swing.JTextField.isValidateRoot()
-
-    /// public java.awt.Dimension javax.swing.JTextField.getPreferredSize()
 
 }
 

@@ -20,10 +20,6 @@ public protocol ComboBoxEditor: JavaProtocol {
 
     func addActionListener( l: java_awt.ActionListener? )
 
-    /// public abstract java.lang.Object javax.swing.ComboBoxEditor.getItem()
-
-    func getItem() -> java_swift.JavaObject!
-
     /// public abstract void javax.swing.ComboBoxEditor.removeActionListener(java.awt.event.ActionListener)
 
     func removeActionListener( l: java_awt.ActionListener? )
@@ -31,6 +27,10 @@ public protocol ComboBoxEditor: JavaProtocol {
     /// public abstract void javax.swing.ComboBoxEditor.setItem(java.lang.Object)
 
     func setItem( anObject: java_swift.JavaObject? )
+
+    /// public abstract java.lang.Object javax.swing.ComboBoxEditor.getItem()
+
+    func getItem() -> java_swift.JavaObject!
 
 }
 
@@ -78,28 +78,15 @@ open class ComboBoxEditorForward: JNIObjectForward, ComboBoxEditor {
         addActionListener( l: _l )
     }
 
-    /// public abstract java.lang.Object javax.swing.ComboBoxEditor.getItem()
-
-    private static var getItem_MethodID_10: jmethodID?
-
-    open func getItem() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "()Ljava/lang/Object;", methodCache: &ComboBoxEditorForward.getItem_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
     /// public abstract void javax.swing.ComboBoxEditor.removeActionListener(java.awt.event.ActionListener)
 
-    private static var removeActionListener_MethodID_11: jmethodID?
+    private static var removeActionListener_MethodID_10: jmethodID?
 
     open func removeActionListener( l: java_awt.ActionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &ComboBoxEditorForward.removeActionListener_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &ComboBoxEditorForward.removeActionListener_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func removeActionListener( _ _l: java_awt.ActionListener? ) {
@@ -108,18 +95,31 @@ open class ComboBoxEditorForward: JNIObjectForward, ComboBoxEditor {
 
     /// public abstract void javax.swing.ComboBoxEditor.setItem(java.lang.Object)
 
-    private static var setItem_MethodID_12: jmethodID?
+    private static var setItem_MethodID_11: jmethodID?
 
     open func setItem( anObject: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &ComboBoxEditorForward.setItem_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &ComboBoxEditorForward.setItem_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setItem( _ _anObject: java_swift.JavaObject? ) {
         setItem( anObject: _anObject )
     }
+
+    /// public abstract java.lang.Object javax.swing.ComboBoxEditor.getItem()
+
+    private static var getItem_MethodID_12: jmethodID?
+
+    open func getItem() -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "()Ljava/lang/Object;", methodCache: &ComboBoxEditorForward.getItem_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
 
 }
 

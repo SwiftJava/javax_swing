@@ -505,88 +505,15 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
     }
 
 
-    /// public void javax.swing.JSpinner$DefaultEditor.propertyChange(java.beans.PropertyChangeEvent)
-
-    private static var propertyChange_MethodID_3: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &JSpinner_DefaultEditor.propertyChange_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
-
-    /// public void javax.swing.JSpinner$DefaultEditor.stateChanged(javax.swing.event.ChangeEvent)
-
-    private static var stateChanged_MethodID_4: jmethodID?
-
-    open func stateChanged( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &JSpinner_DefaultEditor.stateChanged_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func stateChanged( _ _e: ChangeEvent? ) {
-        stateChanged( e: _e )
-    }
-
-    /// public javax.swing.JFormattedTextField javax.swing.JSpinner$DefaultEditor.getTextField()
-
-    private static var getTextField_MethodID_5: jmethodID?
-
-    open func getTextField() -> JFormattedTextField! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextField", methodSig: "()Ljavax/swing/JFormattedTextField;", methodCache: &JSpinner_DefaultEditor.getTextField_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JFormattedTextField( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.JSpinner javax.swing.JSpinner$DefaultEditor.getSpinner()
-
-    private static var getSpinner_MethodID_6: jmethodID?
-
-    open func getSpinner() -> JSpinner! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSpinner", methodSig: "()Ljavax/swing/JSpinner;", methodCache: &JSpinner_DefaultEditor.getSpinner_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JSpinner( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSpinner$DefaultEditor.dismiss(javax.swing.JSpinner)
-
-    private static var dismiss_MethodID_7: jmethodID?
-
-    open func dismiss( arg0: JSpinner? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dismiss", methodSig: "(Ljavax/swing/JSpinner;)V", methodCache: &JSpinner_DefaultEditor.dismiss_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func dismiss( _ _arg0: JSpinner? ) {
-        dismiss( arg0: _arg0 )
-    }
-
-    /// private java.awt.Dimension javax.swing.JSpinner$DefaultEditor.insetSize(java.awt.Container)
-
     /// public void javax.swing.JSpinner$DefaultEditor.removeLayoutComponent(java.awt.Component)
 
-    private static var removeLayoutComponent_MethodID_8: jmethodID?
+    private static var removeLayoutComponent_MethodID_3: jmethodID?
 
     open func removeLayoutComponent( comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSpinner_DefaultEditor.removeLayoutComponent_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSpinner_DefaultEditor.removeLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
@@ -595,14 +522,14 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
 
     /// public void javax.swing.JSpinner$DefaultEditor.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    private static var addLayoutComponent_MethodID_9: jmethodID?
+    private static var addLayoutComponent_MethodID_4: jmethodID?
 
     open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &JSpinner_DefaultEditor.addLayoutComponent_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &JSpinner_DefaultEditor.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
@@ -611,13 +538,13 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
 
     /// public void javax.swing.JSpinner$DefaultEditor.layoutContainer(java.awt.Container)
 
-    private static var layoutContainer_MethodID_10: jmethodID?
+    private static var layoutContainer_MethodID_5: jmethodID?
 
     open func layoutContainer( parent: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &JSpinner_DefaultEditor.layoutContainer_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &JSpinner_DefaultEditor.layoutContainer_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func layoutContainer( _ _parent: java_awt.Container? ) {
@@ -626,13 +553,13 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
 
     /// public java.awt.Dimension javax.swing.JSpinner$DefaultEditor.preferredLayoutSize(java.awt.Container)
 
-    private static var preferredLayoutSize_MethodID_11: jmethodID?
+    private static var preferredLayoutSize_MethodID_6: jmethodID?
 
     open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &JSpinner_DefaultEditor.preferredLayoutSize_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &JSpinner_DefaultEditor.preferredLayoutSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -643,13 +570,13 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
 
     /// public java.awt.Dimension javax.swing.JSpinner$DefaultEditor.minimumLayoutSize(java.awt.Container)
 
-    private static var minimumLayoutSize_MethodID_12: jmethodID?
+    private static var minimumLayoutSize_MethodID_7: jmethodID?
 
     open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &JSpinner_DefaultEditor.minimumLayoutSize_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &JSpinner_DefaultEditor.minimumLayoutSize_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -660,14 +587,14 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
 
     /// public int javax.swing.JSpinner$DefaultEditor.getBaseline(int,int)
 
-    private static var getBaseline_MethodID_13: jmethodID?
+    private static var getBaseline_MethodID_8: jmethodID?
 
     override open func getBaseline( arg0: Int, arg1: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(II)I", methodCache: &JSpinner_DefaultEditor.getBaseline_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(II)I", methodCache: &JSpinner_DefaultEditor.getBaseline_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -676,6 +603,79 @@ open class JSpinner_DefaultEditor: JPanel, ChangeListener, java_awt.LayoutManage
     }
 
     /// public java.awt.Component$BaselineResizeBehavior javax.swing.JSpinner$DefaultEditor.getBaselineResizeBehavior()
+
+    /// public void javax.swing.JSpinner$DefaultEditor.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_9: jmethodID?
+
+    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &JSpinner_DefaultEditor.propertyChange_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// public void javax.swing.JSpinner$DefaultEditor.stateChanged(javax.swing.event.ChangeEvent)
+
+    private static var stateChanged_MethodID_10: jmethodID?
+
+    open func stateChanged( e: ChangeEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &JSpinner_DefaultEditor.stateChanged_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func stateChanged( _ _e: ChangeEvent? ) {
+        stateChanged( e: _e )
+    }
+
+    /// public javax.swing.JFormattedTextField javax.swing.JSpinner$DefaultEditor.getTextField()
+
+    private static var getTextField_MethodID_11: jmethodID?
+
+    open func getTextField() -> JFormattedTextField! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextField", methodSig: "()Ljavax/swing/JFormattedTextField;", methodCache: &JSpinner_DefaultEditor.getTextField_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JFormattedTextField( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JSpinner javax.swing.JSpinner$DefaultEditor.getSpinner()
+
+    private static var getSpinner_MethodID_12: jmethodID?
+
+    open func getSpinner() -> JSpinner! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSpinner", methodSig: "()Ljavax/swing/JSpinner;", methodCache: &JSpinner_DefaultEditor.getSpinner_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JSpinner( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSpinner$DefaultEditor.dismiss(javax.swing.JSpinner)
+
+    private static var dismiss_MethodID_13: jmethodID?
+
+    open func dismiss( arg0: JSpinner? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dismiss", methodSig: "(Ljavax/swing/JSpinner;)V", methodCache: &JSpinner_DefaultEditor.dismiss_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func dismiss( _ _arg0: JSpinner? ) {
+        dismiss( arg0: _arg0 )
+    }
+
+    /// private java.awt.Dimension javax.swing.JSpinner$DefaultEditor.insetSize(java.awt.Container)
 
 }
 

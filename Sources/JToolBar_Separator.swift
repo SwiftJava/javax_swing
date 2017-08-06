@@ -545,6 +545,14 @@ open class JToolBar_Separator: JSeparator {
         self.init( size: _size )
     }
 
+    /// public java.awt.Dimension javax.swing.JToolBar$Separator.getPreferredSize()
+
+    /// public java.awt.Dimension javax.swing.JToolBar$Separator.getMinimumSize()
+
+    /// public java.awt.Dimension javax.swing.JToolBar$Separator.getMaximumSize()
+
+    /// public java.lang.String javax.swing.JToolBar$Separator.getUIClassID()
+
     /// public java.awt.Dimension javax.swing.JToolBar$Separator.getSeparatorSize()
 
     private static var getSeparatorSize_MethodID_3: jmethodID?
@@ -572,14 +580,6 @@ open class JToolBar_Separator: JSeparator {
     open func setSeparatorSize( _ _size: java_awt.Dimension? ) {
         setSeparatorSize( size: _size )
     }
-
-    /// public java.lang.String javax.swing.JToolBar$Separator.getUIClassID()
-
-    /// public java.awt.Dimension javax.swing.JToolBar$Separator.getPreferredSize()
-
-    /// public java.awt.Dimension javax.swing.JToolBar$Separator.getMinimumSize()
-
-    /// public java.awt.Dimension javax.swing.JToolBar$Separator.getMaximumSize()
 
 }
 
