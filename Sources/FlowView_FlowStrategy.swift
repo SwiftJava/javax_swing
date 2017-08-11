@@ -35,85 +35,19 @@ open class FlowView_FlowStrategy: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.text.FlowView$FlowStrategy.layout(javax.swing.text.FlowView)
-
-    private static var layout_MethodID_2: jmethodID?
-
-    open func layout( fv: FlowView? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "(Ljavax/swing/text/FlowView;)V", methodCache: &FlowView_FlowStrategy.layout_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func layout( _ _fv: FlowView? ) {
-        layout( fv: _fv )
-    }
-
-    /// public void javax.swing.text.FlowView$FlowStrategy.insertUpdate(javax.swing.text.FlowView,javax.swing.event.DocumentEvent,java.awt.Rectangle)
-
-    private static var insertUpdate_MethodID_3: jmethodID?
-
-    open func insertUpdate( fv: FlowView?, e: DocumentEvent?, alloc: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: alloc != nil ? alloc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/FlowView;Ljavax/swing/event/DocumentEvent;Ljava/awt/Rectangle;)V", methodCache: &FlowView_FlowStrategy.insertUpdate_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func insertUpdate( _ _fv: FlowView?, _ _e: DocumentEvent?, _ _alloc: java_awt.Rectangle? ) {
-        insertUpdate( fv: _fv, e: _e, alloc: _alloc )
-    }
-
-    /// public void javax.swing.text.FlowView$FlowStrategy.removeUpdate(javax.swing.text.FlowView,javax.swing.event.DocumentEvent,java.awt.Rectangle)
-
-    private static var removeUpdate_MethodID_4: jmethodID?
-
-    open func removeUpdate( fv: FlowView?, e: DocumentEvent?, alloc: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: alloc != nil ? alloc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/FlowView;Ljavax/swing/event/DocumentEvent;Ljava/awt/Rectangle;)V", methodCache: &FlowView_FlowStrategy.removeUpdate_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func removeUpdate( _ _fv: FlowView?, _ _e: DocumentEvent?, _ _alloc: java_awt.Rectangle? ) {
-        removeUpdate( fv: _fv, e: _e, alloc: _alloc )
-    }
-
-    /// public void javax.swing.text.FlowView$FlowStrategy.changedUpdate(javax.swing.text.FlowView,javax.swing.event.DocumentEvent,java.awt.Rectangle)
-
-    private static var changedUpdate_MethodID_5: jmethodID?
-
-    open func changedUpdate( fv: FlowView?, e: DocumentEvent?, alloc: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: alloc != nil ? alloc! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/text/FlowView;Ljavax/swing/event/DocumentEvent;Ljava/awt/Rectangle;)V", methodCache: &FlowView_FlowStrategy.changedUpdate_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func changedUpdate( _ _fv: FlowView?, _ _e: DocumentEvent?, _ _alloc: java_awt.Rectangle? ) {
-        changedUpdate( fv: _fv, e: _e, alloc: _alloc )
-    }
-
     /// void javax.swing.text.FlowView$FlowStrategy.addDamage(javax.swing.text.FlowView,int)
 
     /// void javax.swing.text.FlowView$FlowStrategy.unsetDamage()
 
     /// protected javax.swing.text.View javax.swing.text.FlowView$FlowStrategy.getLogicalView(javax.swing.text.FlowView)
 
-    private static var getLogicalView_MethodID_6: jmethodID?
+    private static var getLogicalView_MethodID_2: jmethodID?
 
     open func getLogicalView( fv: FlowView? ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalView", methodSig: "(Ljavax/swing/text/FlowView;)Ljavax/swing/text/View;", methodCache: &FlowView_FlowStrategy.getLogicalView_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalView", methodSig: "(Ljavax/swing/text/FlowView;)Ljavax/swing/text/View;", methodCache: &FlowView_FlowStrategy.getLogicalView_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -124,15 +58,15 @@ open class FlowView_FlowStrategy: java_swift.JavaObject {
 
     /// protected int javax.swing.text.FlowView$FlowStrategy.layoutRow(javax.swing.text.FlowView,int,int)
 
-    private static var layoutRow_MethodID_7: jmethodID?
+    private static var layoutRow_MethodID_3: jmethodID?
 
     open func layoutRow( fv: FlowView?, rowIndex: Int, pos: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "layoutRow", methodSig: "(Ljavax/swing/text/FlowView;II)I", methodCache: &FlowView_FlowStrategy.layoutRow_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "layoutRow", methodSig: "(Ljavax/swing/text/FlowView;II)I", methodCache: &FlowView_FlowStrategy.layoutRow_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -142,16 +76,16 @@ open class FlowView_FlowStrategy: java_swift.JavaObject {
 
     /// protected void javax.swing.text.FlowView$FlowStrategy.adjustRow(javax.swing.text.FlowView,int,int,int)
 
-    private static var adjustRow_MethodID_8: jmethodID?
+    private static var adjustRow_MethodID_4: jmethodID?
 
     open func adjustRow( fv: FlowView?, rowIndex: Int, desiredSpan: Int, x: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: desiredSpan, locals: &__locals )
         __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustRow", methodSig: "(Ljavax/swing/text/FlowView;III)V", methodCache: &FlowView_FlowStrategy.adjustRow_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "adjustRow", methodSig: "(Ljavax/swing/text/FlowView;III)V", methodCache: &FlowView_FlowStrategy.adjustRow_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func adjustRow( _ _fv: FlowView?, _ _rowIndex: Int, _ _desiredSpan: Int, _ _x: Int ) {
@@ -162,22 +96,88 @@ open class FlowView_FlowStrategy: java_swift.JavaObject {
 
     /// protected javax.swing.text.View javax.swing.text.FlowView$FlowStrategy.createView(javax.swing.text.FlowView,int,int,int)
 
-    private static var createView_MethodID_9: jmethodID?
+    private static var createView_MethodID_5: jmethodID?
 
     open func createView( fv: FlowView?, startOffset: Int, spanLeft: Int, rowIndex: Int ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fv != nil ? fv! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
         __args[1] = JNIType.toJava( value: startOffset, locals: &__locals )
         __args[2] = JNIType.toJava( value: spanLeft, locals: &__locals )
         __args[3] = JNIType.toJava( value: rowIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createView", methodSig: "(Ljavax/swing/text/FlowView;III)Ljavax/swing/text/View;", methodCache: &FlowView_FlowStrategy.createView_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createView", methodSig: "(Ljavax/swing/text/FlowView;III)Ljavax/swing/text/View;", methodCache: &FlowView_FlowStrategy.createView_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
 
     open func createView( _ _fv: FlowView?, _ _startOffset: Int, _ _spanLeft: Int, _ _rowIndex: Int ) -> View! {
         return createView( fv: _fv, startOffset: _startOffset, spanLeft: _spanLeft, rowIndex: _rowIndex )
+    }
+
+    /// public void javax.swing.text.FlowView$FlowStrategy.layout(javax.swing.text.FlowView)
+
+    private static var layout_MethodID_6: jmethodID?
+
+    open func layout( fv: FlowView? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "(Ljavax/swing/text/FlowView;)V", methodCache: &FlowView_FlowStrategy.layout_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func layout( _ _fv: FlowView? ) {
+        layout( fv: _fv )
+    }
+
+    /// public void javax.swing.text.FlowView$FlowStrategy.insertUpdate(javax.swing.text.FlowView,javax.swing.event.DocumentEvent,java.awt.Rectangle)
+
+    private static var insertUpdate_MethodID_7: jmethodID?
+
+    open func insertUpdate( fv: FlowView?, e: DocumentEvent?, alloc: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/FlowView;Ljavax/swing/event/DocumentEvent;Ljava/awt/Rectangle;)V", methodCache: &FlowView_FlowStrategy.insertUpdate_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func insertUpdate( _ _fv: FlowView?, _ _e: DocumentEvent?, _ _alloc: java_awt.Rectangle? ) {
+        insertUpdate( fv: _fv, e: _e, alloc: _alloc )
+    }
+
+    /// public void javax.swing.text.FlowView$FlowStrategy.removeUpdate(javax.swing.text.FlowView,javax.swing.event.DocumentEvent,java.awt.Rectangle)
+
+    private static var removeUpdate_MethodID_8: jmethodID?
+
+    open func removeUpdate( fv: FlowView?, e: DocumentEvent?, alloc: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/FlowView;Ljavax/swing/event/DocumentEvent;Ljava/awt/Rectangle;)V", methodCache: &FlowView_FlowStrategy.removeUpdate_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func removeUpdate( _ _fv: FlowView?, _ _e: DocumentEvent?, _ _alloc: java_awt.Rectangle? ) {
+        removeUpdate( fv: _fv, e: _e, alloc: _alloc )
+    }
+
+    /// public void javax.swing.text.FlowView$FlowStrategy.changedUpdate(javax.swing.text.FlowView,javax.swing.event.DocumentEvent,java.awt.Rectangle)
+
+    private static var changedUpdate_MethodID_9: jmethodID?
+
+    open func changedUpdate( fv: FlowView?, e: DocumentEvent?, alloc: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fv, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/text/FlowView;Ljavax/swing/event/DocumentEvent;Ljava/awt/Rectangle;)V", methodCache: &FlowView_FlowStrategy.changedUpdate_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func changedUpdate( _ _fv: FlowView?, _ _e: DocumentEvent?, _ _alloc: java_awt.Rectangle? ) {
+        changedUpdate( fv: _fv, e: _e, alloc: _alloc )
     }
 
 }

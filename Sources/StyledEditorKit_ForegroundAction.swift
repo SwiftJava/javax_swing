@@ -52,7 +52,7 @@ open class StyledEditorKit_ForegroundAction: StyledEditorKit_StyledTextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &StyledEditorKit_ForegroundAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -87,7 +87,7 @@ open class StyledEditorKit_ForegroundAction: StyledEditorKit_StyledTextAction {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        __args[1] = JNIType.toJava( value: fg != nil ? fg! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: fg, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/StyledEditorKit$ForegroundAction", classCache: &StyledEditorKit_ForegroundAction.StyledEditorKit_ForegroundActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/Color;)V", methodCache: &StyledEditorKit_ForegroundAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

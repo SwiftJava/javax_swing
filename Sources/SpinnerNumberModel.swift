@@ -39,7 +39,7 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &SpinnerNumberModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -103,10 +103,10 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
     public convenience init( value: java_lang.Number?, minimum: java_lang.JavaComparable?, maximum: java_lang.JavaComparable?, stepSize: java_lang.Number? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
         __args[1] = JNIType.toJava( value: minimum, locals: &__locals )
         __args[2] = JNIType.toJava( value: maximum, locals: &__locals )
-        __args[3] = JNIType.toJava( value: stepSize != nil ? stepSize! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: stepSize, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/SpinnerNumberModel", classCache: &SpinnerNumberModel.SpinnerNumberModelJNIClass, methodSig: "(Ljava/lang/Number;Ljava/lang/Comparable;Ljava/lang/Comparable;Ljava/lang/Number;)V", methodCache: &SpinnerNumberModel.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -132,6 +132,10 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
         return __return != nil ? java_lang.Number( javaObject: __return ) : nil
     }
 
+
+    /// public java.lang.Object javax.swing.SpinnerNumberModel.getNextValue()
+
+    /// public java.lang.Object javax.swing.SpinnerNumberModel.getPreviousValue()
 
     /// public java.lang.Comparable javax.swing.SpinnerNumberModel.getMinimum()
 
@@ -189,10 +193,6 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
         setMaximum( maximum: _maximum )
     }
 
-    /// public java.lang.Object javax.swing.SpinnerNumberModel.getNextValue()
-
-    /// public java.lang.Object javax.swing.SpinnerNumberModel.getPreviousValue()
-
     /// public void javax.swing.SpinnerNumberModel.setStepSize(java.lang.Number)
 
     private static var setStepSize_MethodID_10: jmethodID?
@@ -200,7 +200,7 @@ open class SpinnerNumberModel: AbstractSpinnerModel {
     open func setStepSize( stepSize: java_lang.Number? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stepSize != nil ? stepSize! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: stepSize, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStepSize", methodSig: "(Ljava/lang/Number;)V", methodCache: &SpinnerNumberModel.setStepSize_MethodID_10, args: &__args, locals: &__locals )
     }
 

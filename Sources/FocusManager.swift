@@ -131,51 +131,15 @@ open class FocusManager: java_awt.DefaultKeyboardFocusManager {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public static void javax.swing.FocusManager.disableSwingFocusManager()
-
-    private static var disableSwingFocusManager_MethodID_2: jmethodID?
-
-    open class func disableSwingFocusManager() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "disableSwingFocusManager", methodSig: "()V", methodCache: &disableSwingFocusManager_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-
-    /// public static boolean javax.swing.FocusManager.isFocusManagerEnabled()
-
-    private static var isFocusManagerEnabled_MethodID_3: jmethodID?
-
-    open class func isFocusManagerEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "isFocusManagerEnabled", methodSig: "()Z", methodCache: &isFocusManagerEnabled_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public static javax.swing.FocusManager javax.swing.FocusManager.getCurrentManager()
-
-    private static var getCurrentManager_MethodID_4: jmethodID?
-
-    open class func getCurrentManager() -> FocusManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "getCurrentManager", methodSig: "()Ljavax/swing/FocusManager;", methodCache: &getCurrentManager_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FocusManager( javaObject: __return ) : nil
-    }
-
-
     /// public static void javax.swing.FocusManager.setCurrentManager(javax.swing.FocusManager) throws java.lang.SecurityException
 
-    private static var setCurrentManager_MethodID_5: jmethodID?
+    private static var setCurrentManager_MethodID_2: jmethodID?
 
     open class func setCurrentManager( aFocusManager: FocusManager? ) throws /* java.lang.SecurityException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aFocusManager != nil ? aFocusManager! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "setCurrentManager", methodSig: "(Ljavax/swing/FocusManager;)V", methodCache: &setCurrentManager_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aFocusManager, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "setCurrentManager", methodSig: "(Ljavax/swing/FocusManager;)V", methodCache: &setCurrentManager_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.JavaSecurityException( javaObject: throwable )
         }
@@ -184,6 +148,42 @@ open class FocusManager: java_awt.DefaultKeyboardFocusManager {
     open class func setCurrentManager( _ _aFocusManager: FocusManager? ) throws /* java.lang.SecurityException */ {
         try setCurrentManager( aFocusManager: _aFocusManager )
     }
+
+    /// public static javax.swing.FocusManager javax.swing.FocusManager.getCurrentManager()
+
+    private static var getCurrentManager_MethodID_3: jmethodID?
+
+    open class func getCurrentManager() -> FocusManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "getCurrentManager", methodSig: "()Ljavax/swing/FocusManager;", methodCache: &getCurrentManager_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FocusManager( javaObject: __return ) : nil
+    }
+
+
+    /// public static void javax.swing.FocusManager.disableSwingFocusManager()
+
+    private static var disableSwingFocusManager_MethodID_4: jmethodID?
+
+    open class func disableSwingFocusManager() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "disableSwingFocusManager", methodSig: "()V", methodCache: &disableSwingFocusManager_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// public static boolean javax.swing.FocusManager.isFocusManagerEnabled()
+
+    private static var isFocusManagerEnabled_MethodID_5: jmethodID?
+
+    open class func isFocusManagerEnabled() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass, methodName: "isFocusManagerEnabled", methodSig: "()Z", methodCache: &isFocusManagerEnabled_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
 }
 

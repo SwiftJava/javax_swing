@@ -70,7 +70,7 @@ open class BasicInternalFrameTitlePane_SystemMenuBar: JMenuBar {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &BasicInternalFrameTitlePane_SystemMenuBar.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -87,7 +87,7 @@ open class BasicInternalFrameTitlePane_SystemMenuBar: JMenuBar {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicInternalFrameTitlePane_SystemMenuBar.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -464,7 +464,7 @@ open class BasicInternalFrameTitlePane_SystemMenuBar: JMenuBar {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &BasicInternalFrameTitlePane_SystemMenuBar.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -494,7 +494,7 @@ open class BasicInternalFrameTitlePane_SystemMenuBar: JMenuBar {
     public convenience init( this_0: BasicInternalFrameTitlePane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicInternalFrameTitlePane$SystemMenuBar", classCache: &BasicInternalFrameTitlePane_SystemMenuBar.BasicInternalFrameTitlePane_SystemMenuBarJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;)V", methodCache: &BasicInternalFrameTitlePane_SystemMenuBar.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -506,11 +506,11 @@ open class BasicInternalFrameTitlePane_SystemMenuBar: JMenuBar {
 
     /// public boolean javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.isOpaque()
 
+    /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.paint(java.awt.Graphics)
+
     /// public boolean javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.isFocusTraversable()
 
     /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.requestFocus()
-
-    /// public void javax.swing.plaf.basic.BasicInternalFrameTitlePane$SystemMenuBar.paint(java.awt.Graphics)
 
 }
 

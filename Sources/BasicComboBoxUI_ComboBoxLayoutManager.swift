@@ -26,7 +26,7 @@ open class BasicComboBoxUI_ComboBoxLayoutManager: java_swift.JavaObject, java_aw
     public convenience init( this_0: BasicComboBoxUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboBoxUI$ComboBoxLayoutManager", classCache: &BasicComboBoxUI_ComboBoxLayoutManager.BasicComboBoxUI_ComboBoxLayoutManagerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicComboBoxUI;)V", methodCache: &BasicComboBoxUI_ComboBoxLayoutManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -43,7 +43,7 @@ open class BasicComboBoxUI_ComboBoxLayoutManager: java_swift.JavaObject, java_aw
     open func removeLayoutComponent( comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicComboBoxUI_ComboBoxLayoutManager.removeLayoutComponent_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -59,7 +59,7 @@ open class BasicComboBoxUI_ComboBoxLayoutManager: java_swift.JavaObject, java_aw
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicComboBoxUI_ComboBoxLayoutManager.addLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -74,7 +74,7 @@ open class BasicComboBoxUI_ComboBoxLayoutManager: java_swift.JavaObject, java_aw
     open func layoutContainer( parent: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicComboBoxUI_ComboBoxLayoutManager.layoutContainer_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -89,7 +89,7 @@ open class BasicComboBoxUI_ComboBoxLayoutManager: java_swift.JavaObject, java_aw
     open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicComboBoxUI_ComboBoxLayoutManager.preferredLayoutSize_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
@@ -106,7 +106,7 @@ open class BasicComboBoxUI_ComboBoxLayoutManager: java_swift.JavaObject, java_aw
     open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicComboBoxUI_ComboBoxLayoutManager.minimumLayoutSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil

@@ -96,7 +96,7 @@ open class ColorUIResource: java_awt.Color, UIResource {
     public convenience init( c: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/ColorUIResource", classCache: &ColorUIResource.ColorUIResourceJNIClass, methodSig: "(Ljava/awt/Color;)V", methodCache: &ColorUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

@@ -125,7 +125,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func setDragImage( arg0: java_awt.Image? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragImage", methodSig: "(Ljava/awt/Image;)V", methodCache: &TransferHandler.setDragImage_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -153,7 +153,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func setDragImageOffset( arg0: java_awt.Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragImageOffset", methodSig: "(Ljava/awt/Point;)V", methodCache: &TransferHandler.setDragImageOffset_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -181,8 +181,8 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func exportAsDrag( arg0: JComponent?, arg1: java_awt.InputEvent?, arg2: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "exportAsDrag", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/event/InputEvent;I)V", methodCache: &TransferHandler.exportAsDrag_MethodID_7, args: &__args, locals: &__locals )
     }
@@ -198,8 +198,8 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func exportToClipboard( arg0: JComponent?, arg1: java_awt.Clipboard?, arg2: Int ) throws /* java.lang.IllegalStateException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "exportToClipboard", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/datatransfer/Clipboard;I)V", methodCache: &TransferHandler.exportToClipboard_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
@@ -218,7 +218,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func importData( arg0: TransferHandler_TransferSupport? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "importData", methodSig: "(Ljavax/swing/TransferHandler$TransferSupport;)Z", methodCache: &TransferHandler.importData_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -234,7 +234,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func importData( arg0: JComponent?, arg1: java_awt.Transferable? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "importData", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/datatransfer/Transferable;)Z", methodCache: &TransferHandler.importData_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
@@ -251,7 +251,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func canImport( arg0: JComponent?, arg1: [DataFlavor]? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canImport", methodSig: "(Ljavax/swing/JComponent;[Ljava/awt/datatransfer/DataFlavor;)Z", methodCache: &TransferHandler.canImport_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
@@ -268,7 +268,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func canImport( arg0: TransferHandler_TransferSupport? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canImport", methodSig: "(Ljavax/swing/TransferHandler$TransferSupport;)Z", methodCache: &TransferHandler.canImport_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -284,7 +284,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func getSourceActions( arg0: JComponent? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSourceActions", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &TransferHandler.getSourceActions_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -317,7 +317,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func createTransferable( arg0: JComponent? ) -> java_awt.Transferable! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTransferable", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/datatransfer/Transferable;", methodCache: &TransferHandler.createTransferable_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.TransferableForward( javaObject: __return ) : nil
@@ -334,7 +334,7 @@ open class TransferHandler: java_swift.JavaObject, /* java.io.Serializable */ Un
     open func exportDone( arg0: JComponent?, arg1: java_awt.Transferable?, arg2: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "exportDone", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/datatransfer/Transferable;I)V", methodCache: &TransferHandler.exportDone_MethodID_16, args: &__args, locals: &__locals )

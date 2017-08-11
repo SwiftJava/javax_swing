@@ -8,6 +8,10 @@ import java_util
 
 public protocol TableColumnModel: JavaProtocol {
 
+    /// public abstract java.util.Enumeration javax.swing.table.TableColumnModel.getColumns()
+
+    func getColumns() -> java_util.Enumeration!
+
     /// public abstract void javax.swing.table.TableColumnModel.setColumnSelectionAllowed(boolean)
 
     func setColumnSelectionAllowed( flag: Bool )
@@ -80,10 +84,6 @@ public protocol TableColumnModel: JavaProtocol {
 
     func addColumnModelListener( x: TableColumnModelListener? )
 
-    /// public abstract java.util.Enumeration javax.swing.table.TableColumnModel.getColumns()
-
-    func getColumns() -> java_util.Enumeration!
-
 }
 
 
@@ -91,15 +91,28 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     private static var TableColumnModelJNIClass: jclass?
 
+    /// public abstract java.util.Enumeration javax.swing.table.TableColumnModel.getColumns()
+
+    private static var getColumns_MethodID_20: jmethodID?
+
+    open func getColumns() -> java_util.Enumeration! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumns", methodSig: "()Ljava/util/Enumeration;", methodCache: &TableColumnModelForward.getColumns_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
+    }
+
+
     /// public abstract void javax.swing.table.TableColumnModel.setColumnSelectionAllowed(boolean)
 
-    private static var setColumnSelectionAllowed_MethodID_20: jmethodID?
+    private static var setColumnSelectionAllowed_MethodID_21: jmethodID?
 
     open func setColumnSelectionAllowed( flag: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnSelectionAllowed", methodSig: "(Z)V", methodCache: &TableColumnModelForward.setColumnSelectionAllowed_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnSelectionAllowed", methodSig: "(Z)V", methodCache: &TableColumnModelForward.setColumnSelectionAllowed_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func setColumnSelectionAllowed( _ _flag: Bool ) {
@@ -108,49 +121,49 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract boolean javax.swing.table.TableColumnModel.getColumnSelectionAllowed()
 
-    private static var getColumnSelectionAllowed_MethodID_21: jmethodID?
+    private static var getColumnSelectionAllowed_MethodID_22: jmethodID?
 
     open func getColumnSelectionAllowed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getColumnSelectionAllowed", methodSig: "()Z", methodCache: &TableColumnModelForward.getColumnSelectionAllowed_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getColumnSelectionAllowed", methodSig: "()Z", methodCache: &TableColumnModelForward.getColumnSelectionAllowed_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public abstract int[] javax.swing.table.TableColumnModel.getSelectedColumns()
 
-    private static var getSelectedColumns_MethodID_22: jmethodID?
+    private static var getSelectedColumns_MethodID_23: jmethodID?
 
     open func getSelectedColumns() -> [Int32]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedColumns", methodSig: "()[I", methodCache: &TableColumnModelForward.getSelectedColumns_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedColumns", methodSig: "()[I", methodCache: &TableColumnModelForward.getSelectedColumns_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
 
     /// public abstract int javax.swing.table.TableColumnModel.getSelectedColumnCount()
 
-    private static var getSelectedColumnCount_MethodID_23: jmethodID?
+    private static var getSelectedColumnCount_MethodID_24: jmethodID?
 
     open func getSelectedColumnCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedColumnCount", methodSig: "()I", methodCache: &TableColumnModelForward.getSelectedColumnCount_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedColumnCount", methodSig: "()I", methodCache: &TableColumnModelForward.getSelectedColumnCount_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract javax.swing.table.TableColumn javax.swing.table.TableColumnModel.getColumn(int)
 
-    private static var getColumn_MethodID_24: jmethodID?
+    private static var getColumn_MethodID_25: jmethodID?
 
     open func getColumn( columnIndex: Int ) -> TableColumn! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columnIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumn", methodSig: "(I)Ljavax/swing/table/TableColumn;", methodCache: &TableColumnModelForward.getColumn_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumn", methodSig: "(I)Ljavax/swing/table/TableColumn;", methodCache: &TableColumnModelForward.getColumn_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableColumn( javaObject: __return ) : nil
     }
@@ -161,25 +174,25 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract int javax.swing.table.TableColumnModel.getColumnCount()
 
-    private static var getColumnCount_MethodID_25: jmethodID?
+    private static var getColumnCount_MethodID_26: jmethodID?
 
     open func getColumnCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnCount", methodSig: "()I", methodCache: &TableColumnModelForward.getColumnCount_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnCount", methodSig: "()I", methodCache: &TableColumnModelForward.getColumnCount_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract void javax.swing.table.TableColumnModel.addColumn(javax.swing.table.TableColumn)
 
-    private static var addColumn_MethodID_26: jmethodID?
+    private static var addColumn_MethodID_27: jmethodID?
 
     open func addColumn( aColumn: TableColumn? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aColumn != nil ? aColumn! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &TableColumnModelForward.addColumn_MethodID_26, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aColumn, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &TableColumnModelForward.addColumn_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func addColumn( _ _aColumn: TableColumn? ) {
@@ -188,13 +201,13 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract void javax.swing.table.TableColumnModel.removeColumn(javax.swing.table.TableColumn)
 
-    private static var removeColumn_MethodID_27: jmethodID?
+    private static var removeColumn_MethodID_28: jmethodID?
 
     open func removeColumn( column: TableColumn? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: column != nil ? column! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &TableColumnModelForward.removeColumn_MethodID_27, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: column, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &TableColumnModelForward.removeColumn_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func removeColumn( _ _column: TableColumn? ) {
@@ -203,14 +216,14 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract void javax.swing.table.TableColumnModel.moveColumn(int,int)
 
-    private static var moveColumn_MethodID_28: jmethodID?
+    private static var moveColumn_MethodID_29: jmethodID?
 
     open func moveColumn( columnIndex: Int, newIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: columnIndex, locals: &__locals )
         __args[1] = JNIType.toJava( value: newIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveColumn", methodSig: "(II)V", methodCache: &TableColumnModelForward.moveColumn_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveColumn", methodSig: "(II)V", methodCache: &TableColumnModelForward.moveColumn_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func moveColumn( _ _columnIndex: Int, _ _newIndex: Int ) {
@@ -219,13 +232,13 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract void javax.swing.table.TableColumnModel.setSelectionModel(javax.swing.ListSelectionModel)
 
-    private static var setSelectionModel_MethodID_29: jmethodID?
+    private static var setSelectionModel_MethodID_30: jmethodID?
 
     open func setSelectionModel( newModel: ListSelectionModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionModel", methodSig: "(Ljavax/swing/ListSelectionModel;)V", methodCache: &TableColumnModelForward.setSelectionModel_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionModel", methodSig: "(Ljavax/swing/ListSelectionModel;)V", methodCache: &TableColumnModelForward.setSelectionModel_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setSelectionModel( _ _newModel: ListSelectionModel? ) {
@@ -234,12 +247,12 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract javax.swing.ListSelectionModel javax.swing.table.TableColumnModel.getSelectionModel()
 
-    private static var getSelectionModel_MethodID_30: jmethodID?
+    private static var getSelectionModel_MethodID_31: jmethodID?
 
     open func getSelectionModel() -> ListSelectionModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionModel", methodSig: "()Ljavax/swing/ListSelectionModel;", methodCache: &TableColumnModelForward.getSelectionModel_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionModel", methodSig: "()Ljavax/swing/ListSelectionModel;", methodCache: &TableColumnModelForward.getSelectionModel_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ListSelectionModelForward( javaObject: __return ) : nil
     }
@@ -247,13 +260,13 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract void javax.swing.table.TableColumnModel.setColumnMargin(int)
 
-    private static var setColumnMargin_MethodID_31: jmethodID?
+    private static var setColumnMargin_MethodID_32: jmethodID?
 
     open func setColumnMargin( newMargin: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newMargin, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnMargin", methodSig: "(I)V", methodCache: &TableColumnModelForward.setColumnMargin_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnMargin", methodSig: "(I)V", methodCache: &TableColumnModelForward.setColumnMargin_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func setColumnMargin( _ _newMargin: Int ) {
@@ -262,25 +275,25 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract int javax.swing.table.TableColumnModel.getColumnMargin()
 
-    private static var getColumnMargin_MethodID_32: jmethodID?
+    private static var getColumnMargin_MethodID_33: jmethodID?
 
     open func getColumnMargin() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnMargin", methodSig: "()I", methodCache: &TableColumnModelForward.getColumnMargin_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnMargin", methodSig: "()I", methodCache: &TableColumnModelForward.getColumnMargin_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract int javax.swing.table.TableColumnModel.getColumnIndex(java.lang.Object)
 
-    private static var getColumnIndex_MethodID_33: jmethodID?
+    private static var getColumnIndex_MethodID_34: jmethodID?
 
     open func getColumnIndex( columnIdentifier: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnIdentifier != nil ? columnIdentifier! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnIndex", methodSig: "(Ljava/lang/Object;)I", methodCache: &TableColumnModelForward.getColumnIndex_MethodID_33, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnIdentifier, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnIndex", methodSig: "(Ljava/lang/Object;)I", methodCache: &TableColumnModelForward.getColumnIndex_MethodID_34, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -290,13 +303,13 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract int javax.swing.table.TableColumnModel.getColumnIndexAtX(int)
 
-    private static var getColumnIndexAtX_MethodID_34: jmethodID?
+    private static var getColumnIndexAtX_MethodID_35: jmethodID?
 
     open func getColumnIndexAtX( xPosition: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: xPosition, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnIndexAtX", methodSig: "(I)I", methodCache: &TableColumnModelForward.getColumnIndexAtX_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnIndexAtX", methodSig: "(I)I", methodCache: &TableColumnModelForward.getColumnIndexAtX_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -306,25 +319,25 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract int javax.swing.table.TableColumnModel.getTotalColumnWidth()
 
-    private static var getTotalColumnWidth_MethodID_35: jmethodID?
+    private static var getTotalColumnWidth_MethodID_36: jmethodID?
 
     open func getTotalColumnWidth() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTotalColumnWidth", methodSig: "()I", methodCache: &TableColumnModelForward.getTotalColumnWidth_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTotalColumnWidth", methodSig: "()I", methodCache: &TableColumnModelForward.getTotalColumnWidth_MethodID_36, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public abstract void javax.swing.table.TableColumnModel.removeColumnModelListener(javax.swing.event.TableColumnModelListener)
 
-    private static var removeColumnModelListener_MethodID_36: jmethodID?
+    private static var removeColumnModelListener_MethodID_37: jmethodID?
 
     open func removeColumnModelListener( x: TableColumnModelListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeColumnModelListener", methodSig: "(Ljavax/swing/event/TableColumnModelListener;)V", methodCache: &TableColumnModelForward.removeColumnModelListener_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeColumnModelListener", methodSig: "(Ljavax/swing/event/TableColumnModelListener;)V", methodCache: &TableColumnModelForward.removeColumnModelListener_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func removeColumnModelListener( _ _x: TableColumnModelListener? ) {
@@ -333,31 +346,18 @@ open class TableColumnModelForward: JNIObjectForward, TableColumnModel {
 
     /// public abstract void javax.swing.table.TableColumnModel.addColumnModelListener(javax.swing.event.TableColumnModelListener)
 
-    private static var addColumnModelListener_MethodID_37: jmethodID?
+    private static var addColumnModelListener_MethodID_38: jmethodID?
 
     open func addColumnModelListener( x: TableColumnModelListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumnModelListener", methodSig: "(Ljavax/swing/event/TableColumnModelListener;)V", methodCache: &TableColumnModelForward.addColumnModelListener_MethodID_37, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumnModelListener", methodSig: "(Ljavax/swing/event/TableColumnModelListener;)V", methodCache: &TableColumnModelForward.addColumnModelListener_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func addColumnModelListener( _ _x: TableColumnModelListener? ) {
         addColumnModelListener( x: _x )
     }
-
-    /// public abstract java.util.Enumeration javax.swing.table.TableColumnModel.getColumns()
-
-    private static var getColumns_MethodID_38: jmethodID?
-
-    open func getColumns() -> java_util.Enumeration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumns", methodSig: "()Ljava/util/Enumeration;", methodCache: &TableColumnModelForward.getColumns_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
-    }
-
 
 }
 

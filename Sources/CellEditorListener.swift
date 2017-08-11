@@ -30,7 +30,7 @@ open class CellEditorListenerForward: java_util.EventListenerForward, CellEditor
     open func editingStopped( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "editingStopped", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &CellEditorListenerForward.editingStopped_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -45,7 +45,7 @@ open class CellEditorListenerForward: java_util.EventListenerForward, CellEditor
     open func editingCanceled( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "editingCanceled", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &CellEditorListenerForward.editingCanceled_MethodID_4, args: &__args, locals: &__locals )
     }
 

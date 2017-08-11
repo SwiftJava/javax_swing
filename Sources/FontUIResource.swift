@@ -183,7 +183,7 @@ open class FontUIResource: java_awt.Font, UIResource {
     public convenience init( font: java_awt.Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/FontUIResource", classCache: &FontUIResource.FontUIResourceJNIClass, methodSig: "(Ljava/awt/Font;)V", methodCache: &FontUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

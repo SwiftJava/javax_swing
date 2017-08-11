@@ -127,7 +127,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JScrollBar.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -144,7 +144,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JScrollBar.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -521,7 +521,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JScrollBar.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -670,206 +670,27 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
     }
 
 
-    /// public int javax.swing.JScrollBar.getMinimum()
+    /// public int javax.swing.JScrollBar.getBlockIncrement()
 
-    private static var getMinimum_MethodID_7: jmethodID?
+    private static var getBlockIncrement_MethodID_7: jmethodID?
 
-    open func getMinimum() -> Int {
+    open func getBlockIncrement() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &JScrollBar.getMinimum_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlockIncrement", methodSig: "()I", methodCache: &JScrollBar.getBlockIncrement_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JScrollBar.setMinimum(int)
-
-    private static var setMinimum_MethodID_8: jmethodID?
-
-    open func setMinimum( min: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &JScrollBar.setMinimum_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setMinimum( _ _min: Int ) {
-        setMinimum( min: _min )
-    }
-
-    /// public int javax.swing.JScrollBar.getMaximum()
-
-    private static var getMaximum_MethodID_9: jmethodID?
-
-    open func getMaximum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &JScrollBar.getMaximum_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.Dimension javax.swing.JScrollBar.getMinimumSize()
-
-    /// public int javax.swing.JScrollBar.getOrientation()
-
-    private static var getOrientation_MethodID_10: jmethodID?
-
-    open func getOrientation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JScrollBar.getOrientation_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.Dimension javax.swing.JScrollBar.getMaximumSize()
-
-    /// public void javax.swing.JScrollBar.setMaximum(int)
-
-    private static var setMaximum_MethodID_11: jmethodID?
-
-    open func setMaximum( max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: max, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &JScrollBar.setMaximum_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximum( _ _max: Int ) {
-        setMaximum( max: _max )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JScrollBar.getAccessibleContext()
-
-    /// public javax.swing.BoundedRangeModel javax.swing.JScrollBar.getModel()
-
-    private static var getModel_MethodID_12: jmethodID?
-
-    open func getModel() -> BoundedRangeModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/BoundedRangeModel;", methodCache: &JScrollBar.getModel_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BoundedRangeModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JScrollBar.setEnabled(boolean)
-
-    private static var setEnabled_MethodID_13: jmethodID?
-
-    open func setEnabled( x: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &JScrollBar.setEnabled_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    override open func setEnabled( _ _x: Bool ) {
-        setEnabled( x: _x )
-    }
-
-    /// public void javax.swing.JScrollBar.setModel(javax.swing.BoundedRangeModel)
-
-    private static var setModel_MethodID_14: jmethodID?
-
-    open func setModel( newModel: BoundedRangeModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JScrollBar.setModel_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _newModel: BoundedRangeModel? ) {
-        setModel( newModel: _newModel )
-    }
-
-    /// public void javax.swing.JScrollBar.setValueIsAdjusting(boolean)
-
-    private static var setValueIsAdjusting_MethodID_15: jmethodID?
-
-    open func setValueIsAdjusting( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &JScrollBar.setValueIsAdjusting_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setValueIsAdjusting( _ _b: Bool ) {
-        setValueIsAdjusting( b: _b )
-    }
-
-    /// public void javax.swing.JScrollBar.setOrientation(int)
-
-    private static var setOrientation_MethodID_16: jmethodID?
-
-    open func setOrientation( orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JScrollBar.setOrientation_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setOrientation( _ _orientation: Int ) {
-        setOrientation( orientation: _orientation )
-    }
-
-    /// private void javax.swing.JScrollBar.checkOrientation(int)
-
-    /// public void javax.swing.JScrollBar.updateUI()
-
-    /// public void javax.swing.JScrollBar.setUI(javax.swing.plaf.ScrollBarUI)
-
-    private static var setUI_MethodID_17: jmethodID?
-
-    open func setUI( ui: ScrollBarUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ScrollBarUI;)V", methodCache: &JScrollBar.setUI_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _ui: ScrollBarUI? ) {
-        setUI( ui: _ui )
-    }
-
-    /// public java.lang.String javax.swing.JScrollBar.getUIClassID()
-
-    /// public javax.swing.plaf.ScrollBarUI javax.swing.JScrollBar.getUI()
-
-    private static var getUI_MethodID_18: jmethodID?
-
-    open func getUI() -> ScrollBarUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ScrollBarUI;", methodCache: &JScrollBar.getUI_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ScrollBarUI( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean javax.swing.JScrollBar.getValueIsAdjusting()
-
-    private static var getValueIsAdjusting_MethodID_19: jmethodID?
-
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &JScrollBar.getValueIsAdjusting_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public int javax.swing.JScrollBar.getBlockIncrement(int)
 
-    private static var getBlockIncrement_MethodID_20: jmethodID?
+    private static var getBlockIncrement_MethodID_8: jmethodID?
 
     open func getBlockIncrement( direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlockIncrement", methodSig: "(I)I", methodCache: &JScrollBar.getBlockIncrement_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlockIncrement", methodSig: "(I)I", methodCache: &JScrollBar.getBlockIncrement_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -877,39 +698,27 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
         return getBlockIncrement( direction: _direction )
     }
 
-    /// public int javax.swing.JScrollBar.getBlockIncrement()
-
-    private static var getBlockIncrement_MethodID_21: jmethodID?
-
-    open func getBlockIncrement() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBlockIncrement", methodSig: "()I", methodCache: &JScrollBar.getBlockIncrement_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public int javax.swing.JScrollBar.getUnitIncrement()
 
-    private static var getUnitIncrement_MethodID_22: jmethodID?
+    private static var getUnitIncrement_MethodID_9: jmethodID?
 
     open func getUnitIncrement() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitIncrement", methodSig: "()I", methodCache: &JScrollBar.getUnitIncrement_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitIncrement", methodSig: "()I", methodCache: &JScrollBar.getUnitIncrement_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JScrollBar.getUnitIncrement(int)
 
-    private static var getUnitIncrement_MethodID_23: jmethodID?
+    private static var getUnitIncrement_MethodID_10: jmethodID?
 
     open func getUnitIncrement( direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitIncrement", methodSig: "(I)I", methodCache: &JScrollBar.getUnitIncrement_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getUnitIncrement", methodSig: "(I)I", methodCache: &JScrollBar.getUnitIncrement_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -919,25 +728,25 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public int javax.swing.JScrollBar.getVisibleAmount()
 
-    private static var getVisibleAmount_MethodID_24: jmethodID?
+    private static var getVisibleAmount_MethodID_11: jmethodID?
 
     open func getVisibleAmount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVisibleAmount", methodSig: "()I", methodCache: &JScrollBar.getVisibleAmount_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVisibleAmount", methodSig: "()I", methodCache: &JScrollBar.getVisibleAmount_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JScrollBar.setUnitIncrement(int)
 
-    private static var setUnitIncrement_MethodID_25: jmethodID?
+    private static var setUnitIncrement_MethodID_12: jmethodID?
 
     open func setUnitIncrement( u: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: u, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnitIncrement", methodSig: "(I)V", methodCache: &JScrollBar.setUnitIncrement_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnitIncrement", methodSig: "(I)V", methodCache: &JScrollBar.setUnitIncrement_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setUnitIncrement( _ _u: Int ) {
@@ -946,13 +755,13 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public void javax.swing.JScrollBar.setBlockIncrement(int)
 
-    private static var setBlockIncrement_MethodID_26: jmethodID?
+    private static var setBlockIncrement_MethodID_13: jmethodID?
 
     open func setBlockIncrement( b: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBlockIncrement", methodSig: "(I)V", methodCache: &JScrollBar.setBlockIncrement_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBlockIncrement", methodSig: "(I)V", methodCache: &JScrollBar.setBlockIncrement_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setBlockIncrement( _ _b: Int ) {
@@ -961,13 +770,13 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public void javax.swing.JScrollBar.setVisibleAmount(int)
 
-    private static var setVisibleAmount_MethodID_27: jmethodID?
+    private static var setVisibleAmount_MethodID_14: jmethodID?
 
     open func setVisibleAmount( v: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleAmount", methodSig: "(I)V", methodCache: &JScrollBar.setVisibleAmount_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVisibleAmount", methodSig: "(I)V", methodCache: &JScrollBar.setVisibleAmount_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setVisibleAmount( _ _v: Int ) {
@@ -976,7 +785,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public void javax.swing.JScrollBar.setValues(int,int,int,int)
 
-    private static var setValues_MethodID_28: jmethodID?
+    private static var setValues_MethodID_15: jmethodID?
 
     open func setValues( newValue: Int, newExtent: Int, newMin: Int, newMax: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -985,7 +794,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
         __args[1] = JNIType.toJava( value: newExtent, locals: &__locals )
         __args[2] = JNIType.toJava( value: newMin, locals: &__locals )
         __args[3] = JNIType.toJava( value: newMax, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValues", methodSig: "(IIII)V", methodCache: &JScrollBar.setValues_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValues", methodSig: "(IIII)V", methodCache: &JScrollBar.setValues_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setValues( _ _newValue: Int, _ _newExtent: Int, _ _newMin: Int, _ _newMax: Int ) {
@@ -994,13 +803,13 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public void javax.swing.JScrollBar.addAdjustmentListener(java.awt.event.AdjustmentListener)
 
-    private static var addAdjustmentListener_MethodID_29: jmethodID?
+    private static var addAdjustmentListener_MethodID_16: jmethodID?
 
     open func addAdjustmentListener( l: java_awt.AdjustmentListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &JScrollBar.addAdjustmentListener_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &JScrollBar.addAdjustmentListener_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func addAdjustmentListener( _ _l: java_awt.AdjustmentListener? ) {
@@ -1009,13 +818,13 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public void javax.swing.JScrollBar.removeAdjustmentListener(java.awt.event.AdjustmentListener)
 
-    private static var removeAdjustmentListener_MethodID_30: jmethodID?
+    private static var removeAdjustmentListener_MethodID_17: jmethodID?
 
     open func removeAdjustmentListener( l: java_awt.AdjustmentListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &JScrollBar.removeAdjustmentListener_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAdjustmentListener", methodSig: "(Ljava/awt/event/AdjustmentListener;)V", methodCache: &JScrollBar.removeAdjustmentListener_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func removeAdjustmentListener( _ _l: java_awt.AdjustmentListener? ) {
@@ -1024,19 +833,21 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     /// public java.awt.event.AdjustmentListener[] javax.swing.JScrollBar.getAdjustmentListeners()
 
-    private static var getAdjustmentListeners_MethodID_31: jmethodID?
+    private static var getAdjustmentListeners_MethodID_18: jmethodID?
 
     open func getAdjustmentListeners() -> [AdjustmentListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAdjustmentListeners", methodSig: "()[Ljava/awt/event/AdjustmentListener;", methodCache: &JScrollBar.getAdjustmentListeners_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAdjustmentListeners", methodSig: "()[Ljava/awt/event/AdjustmentListener;", methodCache: &JScrollBar.getAdjustmentListeners_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [AdjustmentListenerForward](), from: __return )
     }
 
 
+    /// private void javax.swing.JScrollBar.fireAdjustmentValueChanged(int,int,int,boolean)
+
     /// protected void javax.swing.JScrollBar.fireAdjustmentValueChanged(int,int,int)
 
-    private static var fireAdjustmentValueChanged_MethodID_32: jmethodID?
+    private static var fireAdjustmentValueChanged_MethodID_19: jmethodID?
 
     open func fireAdjustmentValueChanged( id: Int, type: Int, value: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -1044,14 +855,203 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
         __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireAdjustmentValueChanged", methodSig: "(III)V", methodCache: &JScrollBar.fireAdjustmentValueChanged_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireAdjustmentValueChanged", methodSig: "(III)V", methodCache: &JScrollBar.fireAdjustmentValueChanged_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func fireAdjustmentValueChanged( _ _id: Int, _ _type: Int, _ _value: Int ) {
         fireAdjustmentValueChanged( id: _id, type: _type, value: _value )
     }
 
-    /// private void javax.swing.JScrollBar.fireAdjustmentValueChanged(int,int,int,boolean)
+    /// public javax.swing.plaf.ScrollBarUI javax.swing.JScrollBar.getUI()
+
+    private static var getUI_MethodID_20: jmethodID?
+
+    open func getUI() -> ScrollBarUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ScrollBarUI;", methodCache: &JScrollBar.getUI_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ScrollBarUI( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JScrollBar.setOrientation(int)
+
+    private static var setOrientation_MethodID_21: jmethodID?
+
+    open func setOrientation( orientation: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JScrollBar.setOrientation_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setOrientation( _ _orientation: Int ) {
+        setOrientation( orientation: _orientation )
+    }
+
+    /// private void javax.swing.JScrollBar.checkOrientation(int)
+
+    /// public int javax.swing.JScrollBar.getMinimum()
+
+    private static var getMinimum_MethodID_22: jmethodID?
+
+    open func getMinimum() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &JScrollBar.getMinimum_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JScrollBar.setMinimum(int)
+
+    private static var setMinimum_MethodID_23: jmethodID?
+
+    open func setMinimum( min: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: min, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &JScrollBar.setMinimum_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimum( _ _min: Int ) {
+        setMinimum( min: _min )
+    }
+
+    /// public int javax.swing.JScrollBar.getMaximum()
+
+    private static var getMaximum_MethodID_24: jmethodID?
+
+    open func getMaximum() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &JScrollBar.getMaximum_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JScrollBar.updateUI()
+
+    /// public void javax.swing.JScrollBar.setUI(javax.swing.plaf.ScrollBarUI)
+
+    private static var setUI_MethodID_25: jmethodID?
+
+    open func setUI( ui: ScrollBarUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ScrollBarUI;)V", methodCache: &JScrollBar.setUI_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: ScrollBarUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// public java.lang.String javax.swing.JScrollBar.getUIClassID()
+
+    /// public java.awt.Dimension javax.swing.JScrollBar.getMinimumSize()
+
+    /// public int javax.swing.JScrollBar.getOrientation()
+
+    private static var getOrientation_MethodID_26: jmethodID?
+
+    open func getOrientation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JScrollBar.getOrientation_MethodID_26, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.awt.Dimension javax.swing.JScrollBar.getMaximumSize()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JScrollBar.getAccessibleContext()
+
+    /// public javax.swing.BoundedRangeModel javax.swing.JScrollBar.getModel()
+
+    private static var getModel_MethodID_27: jmethodID?
+
+    open func getModel() -> BoundedRangeModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/BoundedRangeModel;", methodCache: &JScrollBar.getModel_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BoundedRangeModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JScrollBar.setEnabled(boolean)
+
+    private static var setEnabled_MethodID_28: jmethodID?
+
+    open func setEnabled( x: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &JScrollBar.setEnabled_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    override open func setEnabled( _ _x: Bool ) {
+        setEnabled( x: _x )
+    }
+
+    /// public void javax.swing.JScrollBar.setMaximum(int)
+
+    private static var setMaximum_MethodID_29: jmethodID?
+
+    open func setMaximum( max: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: max, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &JScrollBar.setMaximum_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximum( _ _max: Int ) {
+        setMaximum( max: _max )
+    }
+
+    /// public void javax.swing.JScrollBar.setModel(javax.swing.BoundedRangeModel)
+
+    private static var setModel_MethodID_30: jmethodID?
+
+    open func setModel( newModel: BoundedRangeModel? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JScrollBar.setModel_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setModel( _ _newModel: BoundedRangeModel? ) {
+        setModel( newModel: _newModel )
+    }
+
+    /// public void javax.swing.JScrollBar.setValueIsAdjusting(boolean)
+
+    private static var setValueIsAdjusting_MethodID_31: jmethodID?
+
+    open func setValueIsAdjusting( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &JScrollBar.setValueIsAdjusting_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func setValueIsAdjusting( _ _b: Bool ) {
+        setValueIsAdjusting( b: _b )
+    }
+
+    /// public boolean javax.swing.JScrollBar.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_32: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &JScrollBar.getValueIsAdjusting_MethodID_32, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
     /// In declared protocol but not defined.. ///
 

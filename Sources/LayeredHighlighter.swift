@@ -36,12 +36,12 @@ open class LayeredHighlighter: java_swift.JavaObject, Highlighter {
     open func paintLayeredHighlights( g: java_awt.Graphics?, p0: Int, p1: Int, viewBounds: java_awt.Shape?, editor: JTextComponent?, view: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: p0, locals: &__locals )
         __args[2] = JNIType.toJava( value: p1, locals: &__locals )
         __args[3] = JNIType.toJava( value: viewBounds, locals: &__locals )
-        __args[4] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: editor, locals: &__locals )
+        __args[5] = JNIType.toJava( value: view, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLayeredHighlights", methodSig: "(Ljava/awt/Graphics;IILjava/awt/Shape;Ljavax/swing/text/JTextComponent;Ljavax/swing/text/View;)V", methodCache: &LayeredHighlighter.paintLayeredHighlights_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -58,7 +58,7 @@ open class LayeredHighlighter: java_swift.JavaObject, Highlighter {
     open func changeHighlight( tag: java_swift.JavaObject?, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         __args[1] = JNIType.toJava( value: p0, locals: &__locals )
         __args[2] = JNIType.toJava( value: p1, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeHighlight", methodSig: "(Ljava/lang/Object;II)V", methodCache: &LayeredHighlighter.changeHighlight_MethodID_3, args: &__args, locals: &__locals )
@@ -101,7 +101,7 @@ open class LayeredHighlighter: java_swift.JavaObject, Highlighter {
     open func install( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &LayeredHighlighter.install_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -116,7 +116,7 @@ open class LayeredHighlighter: java_swift.JavaObject, Highlighter {
     open func deinstall( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &LayeredHighlighter.deinstall_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -153,7 +153,7 @@ open class LayeredHighlighter: java_swift.JavaObject, Highlighter {
     open func paint( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &LayeredHighlighter.paint_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -168,7 +168,7 @@ open class LayeredHighlighter: java_swift.JavaObject, Highlighter {
     open func removeHighlight( tag: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHighlight", methodSig: "(Ljava/lang/Object;)V", methodCache: &LayeredHighlighter.removeHighlight_MethodID_10, args: &__args, locals: &__locals )
     }
 

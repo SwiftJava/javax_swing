@@ -26,7 +26,7 @@ open class RowSorterListenerForward: java_util.EventListenerForward, RowSorterLi
     open func sorterChanged( e: RowSorterEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "sorterChanged", methodSig: "(Ljavax/swing/event/RowSorterEvent;)V", methodCache: &RowSorterListenerForward.sorterChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

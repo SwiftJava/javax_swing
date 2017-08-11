@@ -96,7 +96,7 @@ open class JPopupMenu_Separator: JSeparator {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JPopupMenu_Separator.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -113,7 +113,7 @@ open class JPopupMenu_Separator: JSeparator {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JPopupMenu_Separator.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -490,7 +490,7 @@ open class JPopupMenu_Separator: JSeparator {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JPopupMenu_Separator.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

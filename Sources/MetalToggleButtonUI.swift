@@ -31,7 +31,7 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "focusColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToggleButtonUI.focusColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -48,7 +48,7 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "selectColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToggleButtonUI.selectColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -65,7 +65,7 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "disabledTextColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToggleButtonUI.disabledTextColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -143,7 +143,7 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
     override open class func createUI( b: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalToggleButtonUI", classCache: &MetalToggleButtonUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -153,14 +153,14 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
         return createUI( b: _b )
     }
 
-    /// protected java.awt.Color javax.swing.plaf.metal.MetalToggleButtonUI.getSelectColor()
+    /// protected java.awt.Color javax.swing.plaf.metal.MetalToggleButtonUI.getFocusColor()
 
-    private static var getSelectColor_MethodID_3: jmethodID?
+    private static var getFocusColor_MethodID_3: jmethodID?
 
-    open func getSelectColor() -> java_awt.Color! {
+    open func getFocusColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalToggleButtonUI.getSelectColor_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalToggleButtonUI.getFocusColor_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -173,11 +173,11 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
     override open func paintFocus( g: java_awt.Graphics?, b: AbstractButton?, viewRect: java_awt.Rectangle?, textRect: java_awt.Rectangle?, iconRect: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: viewRect != nil ? viewRect! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: viewRect, locals: &__locals )
+        __args[3] = JNIType.toJava( value: textRect, locals: &__locals )
+        __args[4] = JNIType.toJava( value: iconRect, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;)V", methodCache: &MetalToggleButtonUI.paintFocus_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -198,50 +198,15 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
     }
 
 
-    /// protected void javax.swing.plaf.metal.MetalToggleButtonUI.paintIcon(java.awt.Graphics,javax.swing.AbstractButton,java.awt.Rectangle)
-
-    private static var paintIcon_MethodID_6: jmethodID?
-
-    override open func paintIcon( g: java_awt.Graphics?, b: AbstractButton?, iconRect: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;Ljava/awt/Rectangle;)V", methodCache: &MetalToggleButtonUI.paintIcon_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func paintIcon( _ _g: java_awt.Graphics?, _ _b: AbstractButton?, _ _iconRect: java_awt.Rectangle? ) {
-        paintIcon( g: _g, b: _b, iconRect: _iconRect )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalToggleButtonUI.paintText(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle,java.lang.String)
-
-    private static var paintText_MethodID_7: jmethodID?
-
-    override open func paintText( g: java_awt.Graphics?, c: JComponent?, textRect: java_awt.Rectangle?, text: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: textRect != nil ? textRect! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;Ljava/lang/String;)V", methodCache: &MetalToggleButtonUI.paintText_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func paintText( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _textRect: java_awt.Rectangle?, _ _text: String? ) {
-        paintText( g: _g, c: _c, textRect: _textRect, text: _text )
-    }
-
     /// public void javax.swing.plaf.metal.MetalToggleButtonUI.installDefaults(javax.swing.AbstractButton)
 
-    private static var installDefaults_MethodID_8: jmethodID?
+    private static var installDefaults_MethodID_6: jmethodID?
 
     override open func installDefaults( b: AbstractButton? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalToggleButtonUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalToggleButtonUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func installDefaults( _ _b: AbstractButton? ) {
@@ -250,13 +215,13 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
 
     /// protected void javax.swing.plaf.metal.MetalToggleButtonUI.uninstallDefaults(javax.swing.AbstractButton)
 
-    private static var uninstallDefaults_MethodID_9: jmethodID?
+    private static var uninstallDefaults_MethodID_7: jmethodID?
 
     override open func uninstallDefaults( b: AbstractButton? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalToggleButtonUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalToggleButtonUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
     }
 
     override open func uninstallDefaults( _ _b: AbstractButton? ) {
@@ -265,32 +230,67 @@ open class MetalToggleButtonUI: BasicToggleButtonUI {
 
     /// protected void javax.swing.plaf.metal.MetalToggleButtonUI.paintButtonPressed(java.awt.Graphics,javax.swing.AbstractButton)
 
-    private static var paintButtonPressed_MethodID_10: jmethodID?
+    private static var paintButtonPressed_MethodID_8: jmethodID?
 
     override open func paintButtonPressed( g: java_awt.Graphics?, b: AbstractButton? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintButtonPressed", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;)V", methodCache: &MetalToggleButtonUI.paintButtonPressed_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintButtonPressed", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;)V", methodCache: &MetalToggleButtonUI.paintButtonPressed_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func paintButtonPressed( _ _g: java_awt.Graphics?, _ _b: AbstractButton? ) {
         paintButtonPressed( g: _g, b: _b )
     }
 
-    /// protected java.awt.Color javax.swing.plaf.metal.MetalToggleButtonUI.getFocusColor()
+    /// protected void javax.swing.plaf.metal.MetalToggleButtonUI.paintText(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle,java.lang.String)
 
-    private static var getFocusColor_MethodID_11: jmethodID?
+    private static var paintText_MethodID_9: jmethodID?
 
-    open func getFocusColor() -> java_awt.Color! {
+    override open func paintText( g: java_awt.Graphics?, c: JComponent?, textRect: java_awt.Rectangle?, text: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
+        __args[2] = JNIType.toJava( value: textRect, locals: &__locals )
+        __args[3] = JNIType.toJava( value: text, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintText", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;Ljava/lang/String;)V", methodCache: &MetalToggleButtonUI.paintText_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func paintText( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _textRect: java_awt.Rectangle?, _ _text: String? ) {
+        paintText( g: _g, c: _c, textRect: _textRect, text: _text )
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.metal.MetalToggleButtonUI.getSelectColor()
+
+    private static var getSelectColor_MethodID_10: jmethodID?
+
+    open func getSelectColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalToggleButtonUI.getFocusColor_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectColor", methodSig: "()Ljava/awt/Color;", methodCache: &MetalToggleButtonUI.getSelectColor_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
+
+    /// protected void javax.swing.plaf.metal.MetalToggleButtonUI.paintIcon(java.awt.Graphics,javax.swing.AbstractButton,java.awt.Rectangle)
+
+    private static var paintIcon_MethodID_11: jmethodID?
+
+    override open func paintIcon( g: java_awt.Graphics?, b: AbstractButton?, iconRect: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: iconRect, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;Ljava/awt/Rectangle;)V", methodCache: &MetalToggleButtonUI.paintIcon_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func paintIcon( _ _g: java_awt.Graphics?, _ _b: AbstractButton?, _ _iconRect: java_awt.Rectangle? ) {
+        paintIcon( g: _g, b: _b, iconRect: _iconRect )
+    }
 
 }
 

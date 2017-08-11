@@ -66,8 +66,8 @@ open class GroupLayout_ParallelGroup: GroupLayout_Group {
     open func addGroup( alignment: GroupLayout_Alignment?, group: GroupLayout_Group? ) -> GroupLayout_ParallelGroup! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: alignment != nil ? alignment! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: group != nil ? group! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
+        __args[1] = JNIType.toJava( value: group, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addGroup", methodSig: "(Ljavax/swing/GroupLayout$Alignment;Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$ParallelGroup;", methodCache: &GroupLayout_ParallelGroup.addGroup_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_ParallelGroup( javaObject: __return ) : nil
@@ -90,8 +90,8 @@ open class GroupLayout_ParallelGroup: GroupLayout_Group {
     open func addComponent( component: java_awt.Component?, alignment: GroupLayout_Alignment?, min: Int, pref: Int, max: Int ) -> GroupLayout_ParallelGroup! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alignment != nil ? alignment! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
+        __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
         __args[2] = JNIType.toJava( value: min, locals: &__locals )
         __args[3] = JNIType.toJava( value: pref, locals: &__locals )
         __args[4] = JNIType.toJava( value: max, locals: &__locals )
@@ -113,8 +113,8 @@ open class GroupLayout_ParallelGroup: GroupLayout_Group {
     open func addComponent( component: java_awt.Component?, alignment: GroupLayout_Alignment? ) -> GroupLayout_ParallelGroup! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alignment != nil ? alignment! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
+        __args[1] = JNIType.toJava( value: alignment, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addComponent", methodSig: "(Ljava/awt/Component;Ljavax/swing/GroupLayout$Alignment;)Ljavax/swing/GroupLayout$ParallelGroup;", methodCache: &GroupLayout_ParallelGroup.addComponent_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_ParallelGroup( javaObject: __return ) : nil

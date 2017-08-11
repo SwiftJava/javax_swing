@@ -59,38 +59,74 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// private void javax.swing.plaf.nimbus.AbstractRegionPainter.prepare(float,float)
 
-    /// private java.awt.image.VolatileImage javax.swing.plaf.nimbus.AbstractRegionPainter.getImage(java.awt.GraphicsConfiguration,javax.swing.JComponent,int,int,java.lang.Object[])
-
     /// private void javax.swing.plaf.nimbus.AbstractRegionPainter.paint0(java.awt.Graphics2D,javax.swing.JComponent,int,int,java.lang.Object[])
+
+    /// public void javax.swing.plaf.nimbus.AbstractRegionPainter.paint(java.awt.Graphics2D,java.lang.Object,int,int)
+
+    private static var paint_MethodID_2: jmethodID?
+
+    open func paint( g: java_awt.Graphics2D?, object: java_swift.JavaObject?, width: Int, height: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: object, locals: &__locals )
+        __args[2] = JNIType.toJava( value: width, locals: &__locals )
+        __args[3] = JNIType.toJava( value: height, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics2D;Ljava/lang/Object;II)V", methodCache: &AbstractRegionPainter.paint_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _g: java_awt.Graphics2D?, _ _object: java_swift.JavaObject?, _ _width: Int, _ _height: Int ) {
+        paint( g: _g, object: _object, width: _width, height: _height )
+    }
+
+    /// public final void javax.swing.plaf.nimbus.AbstractRegionPainter.paint(java.awt.Graphics2D,javax.swing.JComponent,int,int)
+
+    private static var paint_MethodID_3: jmethodID?
+
+    open func paint( arg0: java_awt.Graphics2D?, arg1: JComponent?, arg2: Int, arg3: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics2D;Ljavax/swing/JComponent;II)V", methodCache: &AbstractRegionPainter.paint_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _arg0: java_awt.Graphics2D?, _ _arg1: JComponent?, _ _arg2: Int, _ _arg3: Int ) {
+        paint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
 
     /// protected abstract void javax.swing.plaf.nimbus.AbstractRegionPainter.doPaint(java.awt.Graphics2D,javax.swing.JComponent,int,int,java.lang.Object[])
 
-    private static var doPaint_MethodID_2: jmethodID?
+    private static var doPaint_MethodID_4: jmethodID?
 
     open func doPaint( arg0: java_awt.Graphics2D?, arg1: JComponent?, arg2: Int, arg3: Int, arg4: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doPaint", methodSig: "(Ljava/awt/Graphics2D;Ljavax/swing/JComponent;II[Ljava/lang/Object;)V", methodCache: &AbstractRegionPainter.doPaint_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doPaint", methodSig: "(Ljava/awt/Graphics2D;Ljavax/swing/JComponent;II[Ljava/lang/Object;)V", methodCache: &AbstractRegionPainter.doPaint_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func doPaint( _ _arg0: java_awt.Graphics2D?, _ _arg1: JComponent?, _ _arg2: Int, _ _arg3: Int, _ _arg4: [JavaObject]? ) {
         doPaint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
     }
 
+    /// private java.awt.image.VolatileImage javax.swing.plaf.nimbus.AbstractRegionPainter.getImage(java.awt.GraphicsConfiguration,javax.swing.JComponent,int,int,java.lang.Object[])
+
     /// protected java.lang.Object[] javax.swing.plaf.nimbus.AbstractRegionPainter.getExtendedCacheKeys(javax.swing.JComponent)
 
-    private static var getExtendedCacheKeys_MethodID_3: jmethodID?
+    private static var getExtendedCacheKeys_MethodID_5: jmethodID?
 
     open func getExtendedCacheKeys( arg0: JComponent? ) -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExtendedCacheKeys", methodSig: "(Ljavax/swing/JComponent;)[Ljava/lang/Object;", methodCache: &AbstractRegionPainter.getExtendedCacheKeys_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExtendedCacheKeys", methodSig: "(Ljavax/swing/JComponent;)[Ljava/lang/Object;", methodCache: &AbstractRegionPainter.getExtendedCacheKeys_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
@@ -100,12 +136,12 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected abstract javax.swing.plaf.nimbus.AbstractRegionPainter$PaintContext javax.swing.plaf.nimbus.AbstractRegionPainter.getPaintContext()
 
-    private static var getPaintContext_MethodID_4: jmethodID?
+    private static var getPaintContext_MethodID_6: jmethodID?
 
     open func getPaintContext() -> /* javax.swing.plaf.nimbus.AbstractRegionPainter$PaintContext */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPaintContext", methodSig: "()Ljavax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext;", methodCache: &AbstractRegionPainter.getPaintContext_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPaintContext", methodSig: "()Ljavax/swing/plaf/nimbus/AbstractRegionPainter$PaintContext;", methodCache: &AbstractRegionPainter.getPaintContext_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.plaf.nimbus.AbstractRegionPainter$PaintContext */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -113,13 +149,13 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected void javax.swing.plaf.nimbus.AbstractRegionPainter.configureGraphics(java.awt.Graphics2D)
 
-    private static var configureGraphics_MethodID_5: jmethodID?
+    private static var configureGraphics_MethodID_7: jmethodID?
 
     open func configureGraphics( arg0: java_awt.Graphics2D? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureGraphics", methodSig: "(Ljava/awt/Graphics2D;)V", methodCache: &AbstractRegionPainter.configureGraphics_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureGraphics", methodSig: "(Ljava/awt/Graphics2D;)V", methodCache: &AbstractRegionPainter.configureGraphics_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func configureGraphics( _ _arg0: java_awt.Graphics2D? ) {
@@ -128,13 +164,13 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final float javax.swing.plaf.nimbus.AbstractRegionPainter.decodeX(float)
 
-    private static var decodeX_MethodID_6: jmethodID?
+    private static var decodeX_MethodID_8: jmethodID?
 
     open func decodeX( arg0: Float ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeX", methodSig: "(F)F", methodCache: &AbstractRegionPainter.decodeX_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeX", methodSig: "(F)F", methodCache: &AbstractRegionPainter.decodeX_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -144,13 +180,13 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final float javax.swing.plaf.nimbus.AbstractRegionPainter.decodeY(float)
 
-    private static var decodeY_MethodID_7: jmethodID?
+    private static var decodeY_MethodID_9: jmethodID?
 
     open func decodeY( arg0: Float ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeY", methodSig: "(F)F", methodCache: &AbstractRegionPainter.decodeY_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeY", methodSig: "(F)F", methodCache: &AbstractRegionPainter.decodeY_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -160,14 +196,14 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final float javax.swing.plaf.nimbus.AbstractRegionPainter.decodeAnchorX(float,float)
 
-    private static var decodeAnchorX_MethodID_8: jmethodID?
+    private static var decodeAnchorX_MethodID_10: jmethodID?
 
     open func decodeAnchorX( arg0: Float, arg1: Float ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeAnchorX", methodSig: "(FF)F", methodCache: &AbstractRegionPainter.decodeAnchorX_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeAnchorX", methodSig: "(FF)F", methodCache: &AbstractRegionPainter.decodeAnchorX_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -177,14 +213,14 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final float javax.swing.plaf.nimbus.AbstractRegionPainter.decodeAnchorY(float,float)
 
-    private static var decodeAnchorY_MethodID_9: jmethodID?
+    private static var decodeAnchorY_MethodID_11: jmethodID?
 
     open func decodeAnchorY( arg0: Float, arg1: Float ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeAnchorY", methodSig: "(FF)F", methodCache: &AbstractRegionPainter.decodeAnchorY_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "decodeAnchorY", methodSig: "(FF)F", methodCache: &AbstractRegionPainter.decodeAnchorY_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -194,7 +230,7 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final java.awt.Color javax.swing.plaf.nimbus.AbstractRegionPainter.decodeColor(java.lang.String,float,float,float,int)
 
-    private static var decodeColor_MethodID_10: jmethodID?
+    private static var decodeColor_MethodID_12: jmethodID?
 
     open func decodeColor( arg0: String?, arg1: Float, arg2: Float, arg3: Float, arg4: Int ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -204,7 +240,7 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeColor", methodSig: "(Ljava/lang/String;FFFI)Ljava/awt/Color;", methodCache: &AbstractRegionPainter.decodeColor_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeColor", methodSig: "(Ljava/lang/String;FFFI)Ljava/awt/Color;", methodCache: &AbstractRegionPainter.decodeColor_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -215,15 +251,15 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final java.awt.Color javax.swing.plaf.nimbus.AbstractRegionPainter.decodeColor(java.awt.Color,java.awt.Color,float)
 
-    private static var decodeColor_MethodID_11: jmethodID?
+    private static var decodeColor_MethodID_13: jmethodID?
 
     open func decodeColor( arg0: java_awt.Color?, arg1: java_awt.Color?, arg2: Float ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeColor", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;F)Ljava/awt/Color;", methodCache: &AbstractRegionPainter.decodeColor_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeColor", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;F)Ljava/awt/Color;", methodCache: &AbstractRegionPainter.decodeColor_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -234,7 +270,7 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final java.awt.LinearGradientPaint javax.swing.plaf.nimbus.AbstractRegionPainter.decodeGradient(float,float,float,float,float[],java.awt.Color[])
 
-    private static var decodeGradient_MethodID_12: jmethodID?
+    private static var decodeGradient_MethodID_14: jmethodID?
 
     open func decodeGradient( arg0: Float, arg1: Float, arg2: Float, arg3: Float, arg4: [Float]?, arg5: [Color]? ) -> java_awt.LinearGradientPaint! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -245,7 +281,7 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
         __args[5] = JNIType.toJava( value: arg5, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeGradient", methodSig: "(FFFF[F[Ljava/awt/Color;)Ljava/awt/LinearGradientPaint;", methodCache: &AbstractRegionPainter.decodeGradient_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeGradient", methodSig: "(FFFF[F[Ljava/awt/Color;)Ljava/awt/LinearGradientPaint;", methodCache: &AbstractRegionPainter.decodeGradient_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.LinearGradientPaint( javaObject: __return ) : nil
     }
@@ -256,7 +292,7 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final java.awt.RadialGradientPaint javax.swing.plaf.nimbus.AbstractRegionPainter.decodeRadialGradient(float,float,float,float[],java.awt.Color[])
 
-    private static var decodeRadialGradient_MethodID_13: jmethodID?
+    private static var decodeRadialGradient_MethodID_15: jmethodID?
 
     open func decodeRadialGradient( arg0: Float, arg1: Float, arg2: Float, arg3: [Float]?, arg4: [Color]? ) -> java_awt.RadialGradientPaint! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -266,7 +302,7 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeRadialGradient", methodSig: "(FFF[F[Ljava/awt/Color;)Ljava/awt/RadialGradientPaint;", methodCache: &AbstractRegionPainter.decodeRadialGradient_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "decodeRadialGradient", methodSig: "(FFF[F[Ljava/awt/Color;)Ljava/awt/RadialGradientPaint;", methodCache: &AbstractRegionPainter.decodeRadialGradient_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.RadialGradientPaint( javaObject: __return ) : nil
     }
@@ -277,18 +313,18 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
 
     /// protected final java.awt.Color javax.swing.plaf.nimbus.AbstractRegionPainter.getComponentColor(javax.swing.JComponent,java.lang.String,java.awt.Color,float,float,int)
 
-    private static var getComponentColor_MethodID_14: jmethodID?
+    private static var getComponentColor_MethodID_16: jmethodID?
 
     open func getComponentColor( arg0: JComponent?, arg1: String?, arg2: java_awt.Color?, arg3: Float, arg4: Float, arg5: Int ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2 != nil ? arg2! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
         __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
         __args[5] = JNIType.toJava( value: arg5, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentColor", methodSig: "(Ljavax/swing/JComponent;Ljava/lang/String;Ljava/awt/Color;FFI)Ljava/awt/Color;", methodCache: &AbstractRegionPainter.getComponentColor_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentColor", methodSig: "(Ljavax/swing/JComponent;Ljava/lang/String;Ljava/awt/Color;FFI)Ljava/awt/Color;", methodCache: &AbstractRegionPainter.getComponentColor_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -304,42 +340,6 @@ open class AbstractRegionPainter: java_swift.JavaObject, Painter {
     /// private int javax.swing.plaf.nimbus.AbstractRegionPainter.clamp(int)
 
     /// private float javax.swing.plaf.nimbus.AbstractRegionPainter.clamp(float)
-
-    /// public final void javax.swing.plaf.nimbus.AbstractRegionPainter.paint(java.awt.Graphics2D,javax.swing.JComponent,int,int)
-
-    private static var paint_MethodID_15: jmethodID?
-
-    open func paint( arg0: java_awt.Graphics2D?, arg1: JComponent?, arg2: Int, arg3: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1 != nil ? arg1! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics2D;Ljavax/swing/JComponent;II)V", methodCache: &AbstractRegionPainter.paint_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _arg0: java_awt.Graphics2D?, _ _arg1: JComponent?, _ _arg2: Int, _ _arg3: Int ) {
-        paint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// public void javax.swing.plaf.nimbus.AbstractRegionPainter.paint(java.awt.Graphics2D,java.lang.Object,int,int)
-
-    private static var paint_MethodID_16: jmethodID?
-
-    open func paint( g: java_awt.Graphics2D?, object: java_swift.JavaObject?, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: object != nil ? object! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics2D;Ljava/lang/Object;II)V", methodCache: &AbstractRegionPainter.paint_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _g: java_awt.Graphics2D?, _ _object: java_swift.JavaObject?, _ _width: Int, _ _height: Int ) {
-        paint( g: _g, object: _object, width: _width, height: _height )
-    }
 
 }
 

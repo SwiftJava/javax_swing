@@ -44,7 +44,7 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
     open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &JavaTabSet.equals_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -110,7 +110,7 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
     open func getTabIndex( tab: TabStop? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tab != nil ? tab! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tab, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabIndex", methodSig: "(Ljavax/swing/text/TabStop;)I", methodCache: &JavaTabSet.getTabIndex_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }

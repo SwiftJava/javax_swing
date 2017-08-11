@@ -68,7 +68,7 @@ open class BevelBorder: AbstractBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BevelBorder.highlightOuter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -85,7 +85,7 @@ open class BevelBorder: AbstractBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlightInner", fieldType: "Ljava/awt/Color;", fieldCache: &BevelBorder.highlightInner_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -102,7 +102,7 @@ open class BevelBorder: AbstractBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadowInner", fieldType: "Ljava/awt/Color;", fieldCache: &BevelBorder.shadowInner_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -119,7 +119,7 @@ open class BevelBorder: AbstractBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadowOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BevelBorder.shadowOuter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -132,10 +132,10 @@ open class BevelBorder: AbstractBorder {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlightOuterColor != nil ? highlightOuterColor! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: highlightInnerColor != nil ? highlightInnerColor! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: shadowOuterColor != nil ? shadowOuterColor! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: shadowInnerColor != nil ? shadowInnerColor! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlightOuterColor, locals: &__locals )
+        __args[2] = JNIType.toJava( value: highlightInnerColor, locals: &__locals )
+        __args[3] = JNIType.toJava( value: shadowOuterColor, locals: &__locals )
+        __args[4] = JNIType.toJava( value: shadowInnerColor, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/BevelBorder", classCache: &BevelBorder.BevelBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BevelBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -153,8 +153,8 @@ open class BevelBorder: AbstractBorder {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/BevelBorder", classCache: &BevelBorder.BevelBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &BevelBorder.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -188,7 +188,7 @@ open class BevelBorder: AbstractBorder {
     open func getHighlightOuterColor( c: java_awt.Component? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightOuterColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &BevelBorder.getHighlightOuterColor_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
@@ -218,7 +218,7 @@ open class BevelBorder: AbstractBorder {
     open func getHighlightInnerColor( c: java_awt.Component? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightInnerColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &BevelBorder.getHighlightInnerColor_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
@@ -261,7 +261,7 @@ open class BevelBorder: AbstractBorder {
     open func getShadowOuterColor( c: java_awt.Component? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowOuterColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &BevelBorder.getShadowOuterColor_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
@@ -278,7 +278,7 @@ open class BevelBorder: AbstractBorder {
     open func getShadowInnerColor( c: java_awt.Component? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowInnerColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &BevelBorder.getShadowInnerColor_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
@@ -320,8 +320,8 @@ open class BevelBorder: AbstractBorder {
     open func paintRaisedBevel( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: width, locals: &__locals )
@@ -340,8 +340,8 @@ open class BevelBorder: AbstractBorder {
     open func paintLoweredBevel( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: width, locals: &__locals )

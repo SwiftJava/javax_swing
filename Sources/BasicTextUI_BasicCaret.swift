@@ -34,7 +34,7 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicTextUI_BasicCaret.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -51,7 +51,7 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &BasicTextUI_BasicCaret.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

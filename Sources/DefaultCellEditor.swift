@@ -30,7 +30,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editorComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &DefaultCellEditor.editorComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -47,7 +47,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "delegate", fieldType: "Ljavax/swing/DefaultCellEditor$EditorDelegate;", fieldCache: &DefaultCellEditor.delegate_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -81,7 +81,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultCellEditor.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -98,7 +98,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultCellEditor.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -110,7 +110,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
     public convenience init( comboBox: JComboBox? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comboBox != nil ? comboBox! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comboBox, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JComboBox;)V", methodCache: &DefaultCellEditor.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -127,7 +127,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
     public convenience init( checkBox: JCheckBox? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: checkBox != nil ? checkBox! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: checkBox, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JCheckBox;)V", methodCache: &DefaultCellEditor.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -144,7 +144,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
     public convenience init( textField: JTextField? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: textField != nil ? textField! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: textField, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JTextField;)V", methodCache: &DefaultCellEditor.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -161,7 +161,7 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
     override open func isCellEditable( anEvent: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultCellEditor.isCellEditable_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -212,8 +212,8 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
     open func getTreeCellEditorComponent( tree: JTree?, value: java_swift.JavaObject?, isSelected: Bool, expanded: Bool, leaf: Bool, row: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree != nil ? tree! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
         __args[4] = JNIType.toJava( value: leaf, locals: &__locals )
@@ -234,8 +234,8 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
     open func getTableCellEditorComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, row: Int, column: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: table != nil ? table! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: table, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[3] = JNIType.toJava( value: row, locals: &__locals )
         __args[4] = JNIType.toJava( value: column, locals: &__locals )

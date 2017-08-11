@@ -31,7 +31,7 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "elementInfo", fieldType: "Ljavax/swing/text/html/AccessibleHTML$ElementInfo;", fieldCache: &AccessibleHTML_TextElementInfo_TextAccessibleContext.elementInfo_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -148,8 +148,8 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
     public convenience init( this_1: /* javax.swing.text.html.AccessibleHTML$TextElementInfo */ UnclassedObject?, elementInfo: /* javax.swing.text.html.AccessibleHTML$ElementInfo */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_1 != nil ? this_1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: elementInfo != nil ? elementInfo! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: elementInfo, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/AccessibleHTML$TextElementInfo$TextAccessibleContext", classCache: &AccessibleHTML_TextElementInfo_TextAccessibleContext.AccessibleHTML_TextElementInfo_TextAccessibleContextJNIClass, methodSig: "(Ljavax/swing/text/html/AccessibleHTML$TextElementInfo;Ljavax/swing/text/html/AccessibleHTML$ElementInfo;)V", methodCache: &AccessibleHTML_TextElementInfo_TextAccessibleContext.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -167,11 +167,9 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
 
     /// public void javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.setSize(java.awt.Dimension)
 
-    /// private javax.swing.text.Element javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElement(int)
+    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleName()
 
-    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElementText(int) throws javax.swing.text.BadLocationException
-
-    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getSegmentAt(int,int) throws javax.swing.text.BadLocationException
+    /// public javax.accessibility.AccessibleStateSet javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleStateSet()
 
     /// public javax.accessibility.AccessibleText javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleText()
 
@@ -182,7 +180,7 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
     open func getIndexAtPoint( p: java_awt.Point? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexAtPoint", methodSig: "(Ljava/awt/Point;)I", methodCache: &AccessibleHTML_TextElementInfo_TextAccessibleContext.getIndexAtPoint_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -232,8 +230,6 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
     }
 
 
-    /// private java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAtIndex(int,int,int)
-
     /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAtIndex(int,int)
 
     private static var getAtIndex_MethodID_6: jmethodID?
@@ -250,6 +246,8 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
     open func getAtIndex( _ _part: Int, _ _index: Int ) -> String! {
         return getAtIndex( part: _part, index: _index )
     }
+
+    /// private java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAtIndex(int,int,int)
 
     /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAfterIndex(int,int)
 
@@ -402,9 +400,11 @@ open class AccessibleHTML_TextElementInfo_TextAccessibleContext: /* javax.swing.
 
     /// public int javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleIndexInParent()
 
-    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleName()
+    /// private javax.swing.text.Element javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElement(int)
 
-    /// public javax.accessibility.AccessibleStateSet javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getAccessibleStateSet()
+    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getParagraphElementText(int) throws javax.swing.text.BadLocationException
+
+    /// private javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext$IndexedSegment javax.swing.text.html.AccessibleHTML$TextElementInfo$TextAccessibleContext.getSegmentAt(int,int) throws javax.swing.text.BadLocationException
 
 }
 

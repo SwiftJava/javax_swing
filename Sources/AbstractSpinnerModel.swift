@@ -31,7 +31,7 @@ open class AbstractSpinnerModel: java_swift.JavaObject, SpinnerModel, /* java.io
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractSpinnerModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -48,31 +48,15 @@ open class AbstractSpinnerModel: java_swift.JavaObject, SpinnerModel, /* java.io
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.util.EventListener[] javax.swing.AbstractSpinnerModel.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_2: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractSpinnerModel.getListeners_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
     /// public void javax.swing.AbstractSpinnerModel.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_3: jmethodID?
+    private static var addChangeListener_MethodID_2: jmethodID?
 
     open func addChangeListener( l: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractSpinnerModel.addChangeListener_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractSpinnerModel.addChangeListener_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _l: ChangeListener? ) {
@@ -81,13 +65,13 @@ open class AbstractSpinnerModel: java_swift.JavaObject, SpinnerModel, /* java.io
 
     /// public void javax.swing.AbstractSpinnerModel.removeChangeListener(javax.swing.event.ChangeListener)
 
-    private static var removeChangeListener_MethodID_4: jmethodID?
+    private static var removeChangeListener_MethodID_3: jmethodID?
 
     open func removeChangeListener( l: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractSpinnerModel.removeChangeListener_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractSpinnerModel.removeChangeListener_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func removeChangeListener( _ _l: ChangeListener? ) {
@@ -96,26 +80,42 @@ open class AbstractSpinnerModel: java_swift.JavaObject, SpinnerModel, /* java.io
 
     /// public javax.swing.event.ChangeListener[] javax.swing.AbstractSpinnerModel.getChangeListeners()
 
-    private static var getChangeListeners_MethodID_5: jmethodID?
+    private static var getChangeListeners_MethodID_4: jmethodID?
 
     open func getChangeListeners() -> [ChangeListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &AbstractSpinnerModel.getChangeListeners_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &AbstractSpinnerModel.getChangeListeners_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
     }
 
 
     /// protected void javax.swing.AbstractSpinnerModel.fireStateChanged()
 
-    private static var fireStateChanged_MethodID_6: jmethodID?
+    private static var fireStateChanged_MethodID_5: jmethodID?
 
     open func fireStateChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &AbstractSpinnerModel.fireStateChanged_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &AbstractSpinnerModel.fireStateChanged_MethodID_5, args: &__args, locals: &__locals )
     }
 
+
+    /// public java.util.EventListener[] javax.swing.AbstractSpinnerModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_6: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractSpinnerModel.getListeners_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
 
     /// In declared protocol but not defined.. ///
 
@@ -139,7 +139,7 @@ open class AbstractSpinnerModel: java_swift.JavaObject, SpinnerModel, /* java.io
     open func setValue( value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &AbstractSpinnerModel.setValue_MethodID_8, args: &__args, locals: &__locals )
     }
 

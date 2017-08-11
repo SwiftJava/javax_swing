@@ -130,7 +130,7 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
     override open class func createUI( b: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicCheckBoxUI", classCache: &BasicCheckBoxUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil

@@ -30,7 +30,7 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "uis", fieldType: "Ljava/util/Vector;", fieldCache: &MultiTabbedPaneUI.uis_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -54,8 +54,8 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
     open func update( a: java_awt.Graphics?, b: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.update_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -70,7 +70,7 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
     open func contains( a: JComponent?, b: Int, c: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljavax/swing/JComponent;II)Z", methodCache: &MultiTabbedPaneUI.contains_MethodID_3, args: &__args, locals: &__locals )
@@ -81,15 +81,78 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
         return contains( a: _a, b: _b, c: _c )
     }
 
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiTabbedPaneUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_4: jmethodID?
+
+    open class func createUI( a: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiTabbedPaneUI", classCache: &MultiTabbedPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _a: JComponent? ) -> ComponentUI! {
+        return createUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiTabbedPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paint_MethodID_5: jmethodID?
+
+    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.paint_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
+        paint( a: _a, b: _b )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiTabbedPaneUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_6: jmethodID?
+
+    open func installUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.installUI_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func installUI( _ _a: JComponent? ) {
+        installUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiTabbedPaneUI.uninstallUI(javax.swing.JComponent)
+
+    private static var uninstallUI_MethodID_7: jmethodID?
+
+    open func uninstallUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.uninstallUI_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallUI( _ _a: JComponent? ) {
+        uninstallUI( a: _a )
+    }
+
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiTabbedPaneUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var getPreferredSize_MethodID_4: jmethodID?
+    private static var getPreferredSize_MethodID_8: jmethodID?
 
     open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTabbedPaneUI.getPreferredSize_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTabbedPaneUI.getPreferredSize_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -100,13 +163,13 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiTabbedPaneUI.getMinimumSize(javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_5: jmethodID?
+    private static var getMinimumSize_MethodID_9: jmethodID?
 
     open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTabbedPaneUI.getMinimumSize_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTabbedPaneUI.getMinimumSize_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -117,13 +180,13 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiTabbedPaneUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var getMaximumSize_MethodID_6: jmethodID?
+    private static var getMaximumSize_MethodID_10: jmethodID?
 
     open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTabbedPaneUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTabbedPaneUI.getMaximumSize_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -132,32 +195,15 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
         return getMaximumSize( a: _a )
     }
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiTabbedPaneUI.createUI(javax.swing.JComponent)
-
-    private static var createUI_MethodID_7: jmethodID?
-
-    open class func createUI( a: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiTabbedPaneUI", classCache: &MultiTabbedPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    override open class func createUI( _ _a: JComponent? ) -> ComponentUI! {
-        return createUI( a: _a )
-    }
-
     /// public int javax.swing.plaf.multi.MultiTabbedPaneUI.getAccessibleChildrenCount(javax.swing.JComponent)
 
-    private static var getAccessibleChildrenCount_MethodID_8: jmethodID?
+    private static var getAccessibleChildrenCount_MethodID_11: jmethodID?
 
     open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiTabbedPaneUI.getAccessibleChildrenCount_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiTabbedPaneUI.getAccessibleChildrenCount_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -167,14 +213,14 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
 
     /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiTabbedPaneUI.getAccessibleChild(javax.swing.JComponent,int)
 
-    private static var getAccessibleChild_MethodID_9: jmethodID?
+    private static var getAccessibleChild_MethodID_12: jmethodID?
 
     open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiTabbedPaneUI.getAccessibleChild_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiTabbedPaneUI.getAccessibleChild_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -183,75 +229,17 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
         return getAccessibleChild( a: _a, b: _b )
     }
 
-    /// public void javax.swing.plaf.multi.MultiTabbedPaneUI.installUI(javax.swing.JComponent)
-
-    private static var installUI_MethodID_10: jmethodID?
-
-    open func installUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.installUI_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    override open func installUI( _ _a: JComponent? ) {
-        installUI( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiTabbedPaneUI.uninstallUI(javax.swing.JComponent)
-
-    private static var uninstallUI_MethodID_11: jmethodID?
-
-    open func uninstallUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.uninstallUI_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func uninstallUI( _ _a: JComponent? ) {
-        uninstallUI( a: _a )
-    }
-
-    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiTabbedPaneUI.getUIs()
-
-    private static var getUIs_MethodID_12: jmethodID?
-
-    open func getUIs() -> [ComponentUI]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiTabbedPaneUI.getUIs_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ComponentUI](), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.multi.MultiTabbedPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_13: jmethodID?
-
-    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTabbedPaneUI.paint_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
-        paint( a: _a, b: _b )
-    }
-
     /// public int javax.swing.plaf.multi.MultiTabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int)
 
-    private static var tabForCoordinate_MethodID_14: jmethodID?
+    private static var tabForCoordinate_MethodID_13: jmethodID?
 
     open func tabForCoordinate( a: JTabbedPane?, b: Int, c: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "tabForCoordinate", methodSig: "(Ljavax/swing/JTabbedPane;II)I", methodCache: &MultiTabbedPaneUI.tabForCoordinate_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "tabForCoordinate", methodSig: "(Ljavax/swing/JTabbedPane;II)I", methodCache: &MultiTabbedPaneUI.tabForCoordinate_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -261,14 +249,14 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
 
     /// public java.awt.Rectangle javax.swing.plaf.multi.MultiTabbedPaneUI.getTabBounds(javax.swing.JTabbedPane,int)
 
-    private static var getTabBounds_MethodID_15: jmethodID?
+    private static var getTabBounds_MethodID_14: jmethodID?
 
     open func getTabBounds( a: JTabbedPane?, b: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(Ljavax/swing/JTabbedPane;I)Ljava/awt/Rectangle;", methodCache: &MultiTabbedPaneUI.getTabBounds_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(Ljavax/swing/JTabbedPane;I)Ljava/awt/Rectangle;", methodCache: &MultiTabbedPaneUI.getTabBounds_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -279,19 +267,31 @@ open class MultiTabbedPaneUI: TabbedPaneUI {
 
     /// public int javax.swing.plaf.multi.MultiTabbedPaneUI.getTabRunCount(javax.swing.JTabbedPane)
 
-    private static var getTabRunCount_MethodID_16: jmethodID?
+    private static var getTabRunCount_MethodID_15: jmethodID?
 
     open func getTabRunCount( a: JTabbedPane? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunCount", methodSig: "(Ljavax/swing/JTabbedPane;)I", methodCache: &MultiTabbedPaneUI.getTabRunCount_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunCount", methodSig: "(Ljavax/swing/JTabbedPane;)I", methodCache: &MultiTabbedPaneUI.getTabRunCount_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     override open func getTabRunCount( _ _a: JTabbedPane? ) -> Int {
         return getTabRunCount( a: _a )
     }
+
+    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiTabbedPaneUI.getUIs()
+
+    private static var getUIs_MethodID_16: jmethodID?
+
+    open func getUIs() -> [ComponentUI]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiTabbedPaneUI.getUIs_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ComponentUI](), from: __return )
+    }
+
 
 }
 

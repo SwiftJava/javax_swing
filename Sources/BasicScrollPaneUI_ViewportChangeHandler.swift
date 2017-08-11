@@ -25,7 +25,7 @@ open class BasicScrollPaneUI_ViewportChangeHandler: java_swift.JavaObject, Chang
     public convenience init( this_0: BasicScrollPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicScrollPaneUI$ViewportChangeHandler", classCache: &BasicScrollPaneUI_ViewportChangeHandler.BasicScrollPaneUI_ViewportChangeHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicScrollPaneUI;)V", methodCache: &BasicScrollPaneUI_ViewportChangeHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,7 +42,7 @@ open class BasicScrollPaneUI_ViewportChangeHandler: java_swift.JavaObject, Chang
     open func stateChanged( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicScrollPaneUI_ViewportChangeHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

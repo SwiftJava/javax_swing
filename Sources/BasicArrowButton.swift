@@ -218,7 +218,7 @@ open class BasicArrowButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &BasicArrowButton.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -305,7 +305,7 @@ open class BasicArrowButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &BasicArrowButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -322,7 +322,7 @@ open class BasicArrowButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicArrowButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -699,7 +699,7 @@ open class BasicArrowButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &BasicArrowButton.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -730,10 +730,10 @@ open class BasicArrowButton: JButton {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        __args[1] = JNIType.toJava( value: background != nil ? background! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: darkShadow != nil ? darkShadow! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: background, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
+        __args[3] = JNIType.toJava( value: darkShadow, locals: &__locals )
+        __args[4] = JNIType.toJava( value: highlight, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicArrowButton", classCache: &BasicArrowButton.BasicArrowButtonJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BasicArrowButton.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -759,6 +759,8 @@ open class BasicArrowButton: JButton {
     public convenience init( _ _direction: Int ) {
         self.init( direction: _direction )
     }
+
+    /// public void javax.swing.plaf.basic.BasicArrowButton.paint(java.awt.Graphics)
 
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicArrowButton.getPreferredSize()
 
@@ -802,7 +804,7 @@ open class BasicArrowButton: JButton {
     open func paintTriangle( g: java_awt.Graphics?, x: Int, y: Int, size: Int, direction: Int, isEnabled: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: size, locals: &__locals )
@@ -814,8 +816,6 @@ open class BasicArrowButton: JButton {
     open func paintTriangle( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _size: Int, _ _direction: Int, _ _isEnabled: Bool ) {
         paintTriangle( g: _g, x: _x, y: _y, size: _size, direction: _direction, isEnabled: _isEnabled )
     }
-
-    /// public void javax.swing.plaf.basic.BasicArrowButton.paint(java.awt.Graphics)
 
 }
 

@@ -33,7 +33,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "splitPane", fieldType: "Ljavax/swing/JSplitPane;", fieldCache: &MetalSplitPaneUI.splitPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -50,7 +50,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "layoutManager", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneUI$BasicHorizontalLayoutManager;", fieldCache: &MetalSplitPaneUI.layoutManager_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -67,7 +67,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "divider", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider;", fieldCache: &MetalSplitPaneUI.divider_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -141,7 +141,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "nonContinuousLayoutDivider", fieldType: "Ljava/awt/Component;", fieldCache: &MetalSplitPaneUI.nonContinuousLayoutDivider_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -192,7 +192,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.upKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -209,7 +209,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "downKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.downKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -226,7 +226,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "leftKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.leftKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -243,7 +243,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.rightKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -260,7 +260,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "homeKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.homeKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -277,7 +277,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "endKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.endKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -294,7 +294,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dividerResizeToggleKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalSplitPaneUI.dividerResizeToggleKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -423,7 +423,7 @@ open class MetalSplitPaneUI: BasicSplitPaneUI {
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalSplitPaneUI", classCache: &MetalSplitPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil

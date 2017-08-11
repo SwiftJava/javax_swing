@@ -29,7 +29,7 @@ open class ComboBoxModelForward: ListModelForward, ComboBoxModel {
     open func setSelectedItem( anItem: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anItem != nil ? anItem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anItem, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &ComboBoxModelForward.setSelectedItem_MethodID_3, args: &__args, locals: &__locals )
     }
 

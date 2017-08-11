@@ -57,8 +57,8 @@ open class TreePath: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     public convenience init( parent: TreePath?, lastPathComponent: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: lastPathComponent != nil ? lastPathComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: lastPathComponent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/TreePath", classCache: &TreePath.TreePathJNIClass, methodSig: "(Ljavax/swing/tree/TreePath;Ljava/lang/Object;)V", methodCache: &TreePath.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -75,7 +75,7 @@ open class TreePath: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     public convenience init( lastPathComponent: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: lastPathComponent != nil ? lastPathComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: lastPathComponent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/TreePath", classCache: &TreePath.TreePathJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &TreePath.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -109,7 +109,7 @@ open class TreePath: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func equals( o: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TreePath.equals_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -167,7 +167,7 @@ open class TreePath: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func isDescendant( aTreePath: TreePath? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aTreePath != nil ? aTreePath! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aTreePath, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDescendant", methodSig: "(Ljavax/swing/tree/TreePath;)Z", methodCache: &TreePath.isDescendant_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -212,7 +212,7 @@ open class TreePath: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func pathByAddingChild( child: java_swift.JavaObject? ) -> TreePath! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: child != nil ? child! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: child, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "pathByAddingChild", methodSig: "(Ljava/lang/Object;)Ljavax/swing/tree/TreePath;", methodCache: &TreePath.pathByAddingChild_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreePath( javaObject: __return ) : nil

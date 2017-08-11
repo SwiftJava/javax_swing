@@ -68,7 +68,7 @@ open class EtchedBorder: AbstractBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &EtchedBorder.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -85,7 +85,7 @@ open class EtchedBorder: AbstractBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &EtchedBorder.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -98,8 +98,8 @@ open class EtchedBorder: AbstractBorder {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: etchType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &EtchedBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -116,8 +116,8 @@ open class EtchedBorder: AbstractBorder {
     public convenience init( highlight: java_awt.Color?, shadow: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[1] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &EtchedBorder.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -156,12 +156,6 @@ open class EtchedBorder: AbstractBorder {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.border.EtchedBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
-
-    /// public java.awt.Insets javax.swing.border.EtchedBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
-
-    /// public boolean javax.swing.border.EtchedBorder.isBorderOpaque()
-
     /// public int javax.swing.border.EtchedBorder.getEtchType()
 
     private static var getEtchType_MethodID_5: jmethodID?
@@ -194,7 +188,7 @@ open class EtchedBorder: AbstractBorder {
     open func getHighlightColor( c: java_awt.Component? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &EtchedBorder.getHighlightColor_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
@@ -211,7 +205,7 @@ open class EtchedBorder: AbstractBorder {
     open func getShadowColor( c: java_awt.Component? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &EtchedBorder.getShadowColor_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
@@ -233,6 +227,12 @@ open class EtchedBorder: AbstractBorder {
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.border.EtchedBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    /// public java.awt.Insets javax.swing.border.EtchedBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    /// public boolean javax.swing.border.EtchedBorder.isBorderOpaque()
 
 }
 

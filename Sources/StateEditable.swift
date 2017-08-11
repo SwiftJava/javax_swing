@@ -12,13 +12,13 @@ public protocol StateEditable: JavaProtocol {
 
     static var RCSID: String! { get }
 
-    /// public abstract void javax.swing.undo.StateEditable.storeState(java.util.Hashtable)
-
-    func storeState( state: java_util.Hashtable? )
-
     /// public abstract void javax.swing.undo.StateEditable.restoreState(java.util.Hashtable)
 
     func restoreState( state: java_util.Hashtable? )
+
+    /// public abstract void javax.swing.undo.StateEditable.storeState(java.util.Hashtable)
+
+    func storeState( state: java_util.Hashtable? )
 
 }
 
@@ -38,34 +38,34 @@ open class StateEditableForward: JNIObjectForward, StateEditable {
         }
     }
 
-    /// public abstract void javax.swing.undo.StateEditable.storeState(java.util.Hashtable)
-
-    private static var storeState_MethodID_3: jmethodID?
-
-    open func storeState( state: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: state, mapClass: "java/util/Hashtable", locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "storeState", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &StateEditableForward.storeState_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func storeState( _ _state: java_util.Hashtable? ) {
-        storeState( state: _state )
-    }
-
     /// public abstract void javax.swing.undo.StateEditable.restoreState(java.util.Hashtable)
 
-    private static var restoreState_MethodID_4: jmethodID?
+    private static var restoreState_MethodID_3: jmethodID?
 
     open func restoreState( state: java_util.Hashtable? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: state, mapClass: "java/util/Hashtable", locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreState", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &StateEditableForward.restoreState_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreState", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &StateEditableForward.restoreState_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func restoreState( _ _state: java_util.Hashtable? ) {
         restoreState( state: _state )
+    }
+
+    /// public abstract void javax.swing.undo.StateEditable.storeState(java.util.Hashtable)
+
+    private static var storeState_MethodID_4: jmethodID?
+
+    open func storeState( state: java_util.Hashtable? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: state, mapClass: "java/util/Hashtable", locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "storeState", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &StateEditableForward.storeState_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func storeState( _ _state: java_util.Hashtable? ) {
+        storeState( state: _state )
     }
 
 }

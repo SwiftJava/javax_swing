@@ -36,8 +36,8 @@ open class MetalComboBoxIcon: java_swift.JavaObject, Icon, /* java.io.Serializab
     open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &MetalComboBoxIcon.paintIcon_MethodID_2, args: &__args, locals: &__locals )

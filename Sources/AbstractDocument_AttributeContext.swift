@@ -24,6 +24,10 @@ public protocol AbstractDocument_AttributeContext: JavaProtocol {
 
     func removeAttributes( old: AttributeSet?, names: java_util.Enumeration? ) -> AttributeSet!
 
+    /// public abstract javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AttributeContext.addAttribute(javax.swing.text.AttributeSet,java.lang.Object,java.lang.Object)
+
+    func addAttribute( old: AttributeSet?, name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> AttributeSet!
+
     /// public abstract javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AttributeContext.getEmptySet()
 
     func getEmptySet() -> AttributeSet!
@@ -31,10 +35,6 @@ public protocol AbstractDocument_AttributeContext: JavaProtocol {
     /// public abstract void javax.swing.text.AbstractDocument$AttributeContext.reclaim(javax.swing.text.AttributeSet)
 
     func reclaim( a: AttributeSet? )
-
-    /// public abstract javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AttributeContext.addAttribute(javax.swing.text.AttributeSet,java.lang.Object,java.lang.Object)
-
-    func addAttribute( old: AttributeSet?, name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> AttributeSet!
 
 }
 
@@ -69,7 +69,7 @@ open class AbstractDocument_AttributeContextForward: JNIObjectForward, AbstractD
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: old, locals: &__locals )
-        __args[1] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: name, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &AbstractDocument_AttributeContextForward.removeAttribute_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
@@ -115,14 +115,33 @@ open class AbstractDocument_AttributeContextForward: JNIObjectForward, AbstractD
         return removeAttributes( old: _old, names: _names )
     }
 
+    /// public abstract javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AttributeContext.addAttribute(javax.swing.text.AttributeSet,java.lang.Object,java.lang.Object)
+
+    private static var addAttribute_MethodID_12: jmethodID?
+
+    open func addAttribute( old: AttributeSet?, name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> AttributeSet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: old, locals: &__locals )
+        __args[1] = JNIType.toJava( value: name, locals: &__locals )
+        __args[2] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &AbstractDocument_AttributeContextForward.addAttribute_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
+    }
+
+    open func addAttribute( _ _old: AttributeSet?, _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> AttributeSet! {
+        return addAttribute( old: _old, name: _name, value: _value )
+    }
+
     /// public abstract javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AttributeContext.getEmptySet()
 
-    private static var getEmptySet_MethodID_12: jmethodID?
+    private static var getEmptySet_MethodID_13: jmethodID?
 
     open func getEmptySet() -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEmptySet", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &AbstractDocument_AttributeContextForward.getEmptySet_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEmptySet", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &AbstractDocument_AttributeContextForward.getEmptySet_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -130,36 +149,17 @@ open class AbstractDocument_AttributeContextForward: JNIObjectForward, AbstractD
 
     /// public abstract void javax.swing.text.AbstractDocument$AttributeContext.reclaim(javax.swing.text.AttributeSet)
 
-    private static var reclaim_MethodID_13: jmethodID?
+    private static var reclaim_MethodID_14: jmethodID?
 
     open func reclaim( a: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reclaim", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument_AttributeContextForward.reclaim_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reclaim", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument_AttributeContextForward.reclaim_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func reclaim( _ _a: AttributeSet? ) {
         reclaim( a: _a )
-    }
-
-    /// public abstract javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AttributeContext.addAttribute(javax.swing.text.AttributeSet,java.lang.Object,java.lang.Object)
-
-    private static var addAttribute_MethodID_14: jmethodID?
-
-    open func addAttribute( old: AttributeSet?, name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: old, locals: &__locals )
-        __args[1] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &AbstractDocument_AttributeContextForward.addAttribute_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
-    }
-
-    open func addAttribute( _ _old: AttributeSet?, _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> AttributeSet! {
-        return addAttribute( old: _old, name: _name, value: _value )
     }
 
 }

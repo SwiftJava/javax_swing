@@ -58,7 +58,7 @@ open class JSeparator: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSeparator.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -75,7 +75,7 @@ open class JSeparator: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSeparator.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -452,7 +452,7 @@ open class JSeparator: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSeparator.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -727,19 +727,18 @@ open class JSeparator: JComponent, SwingConstants {
     }
 
 
-    /// public int javax.swing.JSeparator.getOrientation()
+    /// public javax.swing.plaf.SeparatorUI javax.swing.JSeparator.getUI()
 
-    private static var getOrientation_MethodID_4: jmethodID?
+    private static var getUI_MethodID_4: jmethodID?
 
-    open func getOrientation() -> Int {
+    open func getUI() -> SeparatorUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSeparator.getOrientation_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SeparatorUI;", methodCache: &JSeparator.getUI_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SeparatorUI( javaObject: __return ) : nil
     }
 
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JSeparator.getAccessibleContext()
 
     /// public void javax.swing.JSeparator.setOrientation(int)
 
@@ -767,7 +766,7 @@ open class JSeparator: JComponent, SwingConstants {
     open func setUI( ui: SeparatorUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SeparatorUI;)V", methodCache: &JSeparator.setUI_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -777,18 +776,19 @@ open class JSeparator: JComponent, SwingConstants {
 
     /// public java.lang.String javax.swing.JSeparator.getUIClassID()
 
-    /// public javax.swing.plaf.SeparatorUI javax.swing.JSeparator.getUI()
+    /// public int javax.swing.JSeparator.getOrientation()
 
-    private static var getUI_MethodID_7: jmethodID?
+    private static var getOrientation_MethodID_7: jmethodID?
 
-    open func getUI() -> SeparatorUI! {
+    open func getOrientation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SeparatorUI;", methodCache: &JSeparator.getUI_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SeparatorUI( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSeparator.getOrientation_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JSeparator.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

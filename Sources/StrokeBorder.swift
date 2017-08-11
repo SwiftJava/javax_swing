@@ -28,7 +28,7 @@ open class StrokeBorder: AbstractBorder {
     public convenience init( stroke: java_awt.BasicStroke? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stroke != nil ? stroke! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: stroke, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/StrokeBorder", classCache: &StrokeBorder.StrokeBorderJNIClass, methodSig: "(Ljava/awt/BasicStroke;)V", methodCache: &StrokeBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -45,7 +45,7 @@ open class StrokeBorder: AbstractBorder {
     public convenience init( stroke: java_awt.BasicStroke?, paint: java_awt.Paint? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stroke != nil ? stroke! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: stroke, locals: &__locals )
         __args[1] = JNIType.toJava( value: paint, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/StrokeBorder", classCache: &StrokeBorder.StrokeBorderJNIClass, methodSig: "(Ljava/awt/BasicStroke;Ljava/awt/Paint;)V", methodCache: &StrokeBorder.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

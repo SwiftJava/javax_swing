@@ -36,11 +36,11 @@ open class AbstractLayoutCache_NodeDimensions: java_swift.JavaObject {
     open func getNodeDimensions( value: java_swift.JavaObject?, row: Int, depth: Int, expanded: Bool, bounds: java_awt.Rectangle? ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
         __args[1] = JNIType.toJava( value: row, locals: &__locals )
         __args[2] = JNIType.toJava( value: depth, locals: &__locals )
         __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
-        __args[4] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: bounds, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNodeDimensions", methodSig: "(Ljava/lang/Object;IIZLjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &AbstractLayoutCache_NodeDimensions.getNodeDimensions_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil

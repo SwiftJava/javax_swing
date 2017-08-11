@@ -94,8 +94,6 @@ open class OceanTheme: DefaultMetalTheme {
 
     /// static javax.swing.Icon javax.swing.plaf.metal.OceanTheme.access$000(javax.swing.plaf.metal.OceanTheme,java.lang.String,javax.swing.UIDefaults)
 
-    /// public javax.swing.plaf.ColorUIResource javax.swing.plaf.metal.OceanTheme.getInactiveControlTextColor()
-
     /// protected javax.swing.plaf.ColorUIResource javax.swing.plaf.metal.OceanTheme.getPrimary1()
 
     private static var getPrimary1_MethodID_2: jmethodID?
@@ -196,6 +194,8 @@ open class OceanTheme: DefaultMetalTheme {
     /// public javax.swing.plaf.ColorUIResource javax.swing.plaf.metal.OceanTheme.getControlTextColor()
 
     /// public javax.swing.plaf.ColorUIResource javax.swing.plaf.metal.OceanTheme.getMenuDisabledForeground()
+
+    /// public javax.swing.plaf.ColorUIResource javax.swing.plaf.metal.OceanTheme.getInactiveControlTextColor()
 
     /// private java.lang.Object javax.swing.plaf.metal.OceanTheme.getIconResource(java.lang.String)
 

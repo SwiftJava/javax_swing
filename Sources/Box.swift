@@ -55,7 +55,7 @@ open class Box: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &Box.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -72,7 +72,7 @@ open class Box: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &Box.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -449,7 +449,7 @@ open class Box: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Box.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -489,45 +489,15 @@ open class Box: JComponent {
         self.init( axis: _axis )
     }
 
-    /// public static javax.swing.Box javax.swing.Box.createHorizontalBox()
-
-    private static var createHorizontalBox_MethodID_2: jmethodID?
-
-    open class func createHorizontalBox() -> Box! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createHorizontalBox", methodSig: "()Ljavax/swing/Box;", methodCache: &createHorizontalBox_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Box( javaObject: __return ) : nil
-    }
-
-
-    /// public static java.awt.Component javax.swing.Box.createHorizontalStrut(int)
-
-    private static var createHorizontalStrut_MethodID_3: jmethodID?
-
-    open class func createHorizontalStrut( width: Int ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createHorizontalStrut", methodSig: "(I)Ljava/awt/Component;", methodCache: &createHorizontalStrut_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open class func createHorizontalStrut( _ _width: Int ) -> java_awt.Component! {
-        return createHorizontalStrut( width: _width )
-    }
-
     /// public static java.awt.Component javax.swing.Box.createRigidArea(java.awt.Dimension)
 
-    private static var createRigidArea_MethodID_4: jmethodID?
+    private static var createRigidArea_MethodID_2: jmethodID?
 
     open class func createRigidArea( d: java_awt.Dimension? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createRigidArea", methodSig: "(Ljava/awt/Dimension;)Ljava/awt/Component;", methodCache: &createRigidArea_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createRigidArea", methodSig: "(Ljava/awt/Dimension;)Ljava/awt/Component;", methodCache: &createRigidArea_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -536,46 +506,31 @@ open class Box: JComponent {
         return createRigidArea( d: _d )
     }
 
-    /// public javax.accessibility.AccessibleContext javax.swing.Box.getAccessibleContext()
-
-    /// public void javax.swing.Box.setLayout(java.awt.LayoutManager)
-
-    private static var setLayout_MethodID_5: jmethodID?
-
-    open func setLayout( l: java_awt.LayoutManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &Box.setLayout_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func setLayout( _ _l: java_awt.LayoutManager? ) {
-        setLayout( l: _l )
-    }
-
     /// protected void javax.swing.Box.paintComponent(java.awt.Graphics)
 
-    private static var paintComponent_MethodID_6: jmethodID?
+    private static var paintComponent_MethodID_3: jmethodID?
 
     override open func paintComponent( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Box.paintComponent_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Box.paintComponent_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func paintComponent( _ _g: java_awt.Graphics? ) {
         paintComponent( g: _g )
     }
 
+    /// public javax.accessibility.AccessibleContext javax.swing.Box.getAccessibleContext()
+
     /// public static java.awt.Component javax.swing.Box.createGlue()
 
-    private static var createGlue_MethodID_7: jmethodID?
+    private static var createGlue_MethodID_4: jmethodID?
 
     open class func createGlue() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createGlue", methodSig: "()Ljava/awt/Component;", methodCache: &createGlue_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createGlue", methodSig: "()Ljava/awt/Component;", methodCache: &createGlue_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -583,12 +538,12 @@ open class Box: JComponent {
 
     /// public static java.awt.Component javax.swing.Box.createHorizontalGlue()
 
-    private static var createHorizontalGlue_MethodID_8: jmethodID?
+    private static var createHorizontalGlue_MethodID_5: jmethodID?
 
     open class func createHorizontalGlue() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createHorizontalGlue", methodSig: "()Ljava/awt/Component;", methodCache: &createHorizontalGlue_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createHorizontalGlue", methodSig: "()Ljava/awt/Component;", methodCache: &createHorizontalGlue_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -596,26 +551,56 @@ open class Box: JComponent {
 
     /// public static java.awt.Component javax.swing.Box.createVerticalGlue()
 
-    private static var createVerticalGlue_MethodID_9: jmethodID?
+    private static var createVerticalGlue_MethodID_6: jmethodID?
 
     open class func createVerticalGlue() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createVerticalGlue", methodSig: "()Ljava/awt/Component;", methodCache: &createVerticalGlue_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createVerticalGlue", methodSig: "()Ljava/awt/Component;", methodCache: &createVerticalGlue_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
+    /// public static javax.swing.Box javax.swing.Box.createHorizontalBox()
+
+    private static var createHorizontalBox_MethodID_7: jmethodID?
+
+    open class func createHorizontalBox() -> Box! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createHorizontalBox", methodSig: "()Ljavax/swing/Box;", methodCache: &createHorizontalBox_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Box( javaObject: __return ) : nil
+    }
+
+
+    /// public static java.awt.Component javax.swing.Box.createHorizontalStrut(int)
+
+    private static var createHorizontalStrut_MethodID_8: jmethodID?
+
+    open class func createHorizontalStrut( width: Int ) -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: width, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createHorizontalStrut", methodSig: "(I)Ljava/awt/Component;", methodCache: &createHorizontalStrut_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    open class func createHorizontalStrut( _ _width: Int ) -> java_awt.Component! {
+        return createHorizontalStrut( width: _width )
+    }
+
     /// public static java.awt.Component javax.swing.Box.createVerticalStrut(int)
 
-    private static var createVerticalStrut_MethodID_10: jmethodID?
+    private static var createVerticalStrut_MethodID_9: jmethodID?
 
     open class func createVerticalStrut( height: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createVerticalStrut", methodSig: "(I)Ljava/awt/Component;", methodCache: &createVerticalStrut_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createVerticalStrut", methodSig: "(I)Ljava/awt/Component;", methodCache: &createVerticalStrut_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -626,16 +611,31 @@ open class Box: JComponent {
 
     /// public static javax.swing.Box javax.swing.Box.createVerticalBox()
 
-    private static var createVerticalBox_MethodID_11: jmethodID?
+    private static var createVerticalBox_MethodID_10: jmethodID?
 
     open class func createVerticalBox() -> Box! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createVerticalBox", methodSig: "()Ljavax/swing/Box;", methodCache: &createVerticalBox_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Box", classCache: &BoxJNIClass, methodName: "createVerticalBox", methodSig: "()Ljavax/swing/Box;", methodCache: &createVerticalBox_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Box( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.Box.setLayout(java.awt.LayoutManager)
+
+    private static var setLayout_MethodID_11: jmethodID?
+
+    open func setLayout( l: java_awt.LayoutManager? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &Box.setLayout_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func setLayout( _ _l: java_awt.LayoutManager? ) {
+        setLayout( l: _l )
+    }
 
     /// In declared protocol but not defined.. ///
 

@@ -41,7 +41,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "splitPane", fieldType: "Ljavax/swing/JSplitPane;", fieldCache: &SynthSplitPaneUI.splitPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -58,7 +58,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "layoutManager", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneUI$BasicHorizontalLayoutManager;", fieldCache: &SynthSplitPaneUI.layoutManager_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -75,7 +75,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "divider", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider;", fieldCache: &SynthSplitPaneUI.divider_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -149,7 +149,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "nonContinuousLayoutDivider", fieldType: "Ljava/awt/Component;", fieldCache: &SynthSplitPaneUI.nonContinuousLayoutDivider_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -200,7 +200,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.upKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -217,7 +217,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "downKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.downKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -234,7 +234,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "leftKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.leftKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -251,7 +251,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.rightKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -268,7 +268,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "homeKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.homeKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -285,7 +285,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "endKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.endKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -302,7 +302,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dividerResizeToggleKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthSplitPaneUI.dividerResizeToggleKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -505,6 +505,8 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
 
     /// static void javax.swing.plaf.synth.SynthSplitPaneUI.access$000(javax.swing.plaf.synth.SynthSplitPaneUI,java.awt.Graphics,int,int,int,int)
 
+    /// javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSplitPaneUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region)
+
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSplitPaneUI.getContext(javax.swing.JComponent,int)
 
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSplitPaneUI.getContext(javax.swing.JComponent)
@@ -514,7 +516,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
     open func getContext( c: JComponent? ) -> SynthContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthSplitPaneUI.getContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
@@ -523,8 +525,6 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
     open func getContext( _ _c: JComponent? ) -> SynthContext! {
         return getContext( c: _c )
     }
-
-    /// javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSplitPaneUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSplitPaneUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
 
@@ -535,7 +535,7 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthSplitPaneUI", classCache: &SynthSplitPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -545,17 +545,128 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
         return createUI( x: _x )
     }
 
-    /// private void javax.swing.plaf.synth.SynthSplitPaneUI.updateStyle(javax.swing.JSplitPane)
+    /// protected java.awt.Component javax.swing.plaf.synth.SynthSplitPaneUI.createDefaultNonContinuousLayoutDivider()
+
+    private static var createDefaultNonContinuousLayoutDivider_MethodID_4: jmethodID?
+
+    override open func createDefaultNonContinuousLayoutDivider() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultNonContinuousLayoutDivider", methodSig: "()Ljava/awt/Component;", methodCache: &SynthSplitPaneUI.createDefaultNonContinuousLayoutDivider_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.plaf.basic.BasicSplitPaneDivider javax.swing.plaf.synth.SynthSplitPaneUI.createDefaultDivider()
+
+    /// public void javax.swing.plaf.synth.SynthSplitPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paint_MethodID_5: jmethodID?
+
+    override open func paint( g: java_awt.Graphics?, c: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &SynthSplitPaneUI.paint_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
+        paint( g: _g, c: _c )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthSplitPaneUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// private int javax.swing.plaf.synth.SynthSplitPaneUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
+
+    /// public void javax.swing.plaf.synth.SynthSplitPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_7: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthSplitPaneUI.paintBorder_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.installDefaults()
+
+    private static var installDefaults_MethodID_8: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthSplitPaneUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.installListeners()
+
+    private static var installListeners_MethodID_9: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthSplitPaneUI.installListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_10: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthSplitPaneUI.uninstallDefaults_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_11: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthSplitPaneUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
 
     /// public void javax.swing.plaf.synth.SynthSplitPaneUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_4: jmethodID?
+    private static var propertyChange_MethodID_12: jmethodID?
 
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSplitPaneUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSplitPaneUI.propertyChange_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
@@ -564,134 +675,23 @@ open class SynthSplitPaneUI: BasicSplitPaneUI, /* java.beans.PropertyChangeListe
 
     /// public void javax.swing.plaf.synth.SynthSplitPaneUI.finishedPaintingChildren(javax.swing.JSplitPane,java.awt.Graphics)
 
-    private static var finishedPaintingChildren_MethodID_5: jmethodID?
+    private static var finishedPaintingChildren_MethodID_13: jmethodID?
 
     override open func finishedPaintingChildren( jc: JSplitPane?, g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: jc != nil ? jc! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &SynthSplitPaneUI.finishedPaintingChildren_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: jc, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &SynthSplitPaneUI.finishedPaintingChildren_MethodID_13, args: &__args, locals: &__locals )
     }
 
     override open func finishedPaintingChildren( _ _jc: JSplitPane?, _ _g: java_awt.Graphics? ) {
         finishedPaintingChildren( jc: _jc, g: _g )
     }
 
-    /// public void javax.swing.plaf.synth.SynthSplitPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_6: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthSplitPaneUI.paintBorder_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// private int javax.swing.plaf.synth.SynthSplitPaneUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
-
     /// private void javax.swing.plaf.synth.SynthSplitPaneUI.paintDragDivider(java.awt.Graphics,int,int,int,int)
 
-    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_7: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthSplitPaneUI.paint_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthSplitPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_8: jmethodID?
-
-    override open func paint( g: java_awt.Graphics?, c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &SynthSplitPaneUI.paint_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
-        paint( g: _g, c: _c )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.installDefaults()
-
-    private static var installDefaults_MethodID_9: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthSplitPaneUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.installListeners()
-
-    private static var installListeners_MethodID_10: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthSplitPaneUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_11: jmethodID?
-
-    override open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthSplitPaneUI.uninstallDefaults_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthSplitPaneUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_12: jmethodID?
-
-    override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthSplitPaneUI.uninstallListeners_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.awt.Component javax.swing.plaf.synth.SynthSplitPaneUI.createDefaultNonContinuousLayoutDivider()
-
-    private static var createDefaultNonContinuousLayoutDivider_MethodID_13: jmethodID?
-
-    override open func createDefaultNonContinuousLayoutDivider() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultNonContinuousLayoutDivider", methodSig: "()Ljava/awt/Component;", methodCache: &SynthSplitPaneUI.createDefaultNonContinuousLayoutDivider_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.plaf.basic.BasicSplitPaneDivider javax.swing.plaf.synth.SynthSplitPaneUI.createDefaultDivider()
+    /// private void javax.swing.plaf.synth.SynthSplitPaneUI.updateStyle(javax.swing.JSplitPane)
 
 }
 

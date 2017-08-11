@@ -63,7 +63,7 @@ open class TreeSelectionEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "oldLeadSelectionPath", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &TreeSelectionEvent.oldLeadSelectionPath_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,7 +80,7 @@ open class TreeSelectionEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "newLeadSelectionPath", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &TreeSelectionEvent.newLeadSelectionPath_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -99,7 +99,7 @@ open class TreeSelectionEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &TreeSelectionEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -111,11 +111,11 @@ open class TreeSelectionEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, paths: [TreePath]?, areNew: [Bool]?, oldLeadSelectionPath: TreePath?, newLeadSelectionPath: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: paths, locals: &__locals )
         __args[2] = JNIType.toJava( value: areNew, locals: &__locals )
-        __args[3] = JNIType.toJava( value: oldLeadSelectionPath != nil ? oldLeadSelectionPath! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: newLeadSelectionPath != nil ? newLeadSelectionPath! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: oldLeadSelectionPath, locals: &__locals )
+        __args[4] = JNIType.toJava( value: newLeadSelectionPath, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TreeSelectionEvent", classCache: &TreeSelectionEvent.TreeSelectionEventJNIClass, methodSig: "(Ljava/lang/Object;[Ljavax/swing/tree/TreePath;[ZLjavax/swing/tree/TreePath;Ljavax/swing/tree/TreePath;)V", methodCache: &TreeSelectionEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -132,11 +132,11 @@ open class TreeSelectionEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, path: TreePath?, isNew: Bool, oldLeadSelectionPath: TreePath?, newLeadSelectionPath: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: path, locals: &__locals )
         __args[2] = JNIType.toJava( value: isNew, locals: &__locals )
-        __args[3] = JNIType.toJava( value: oldLeadSelectionPath != nil ? oldLeadSelectionPath! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: newLeadSelectionPath != nil ? newLeadSelectionPath! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: oldLeadSelectionPath, locals: &__locals )
+        __args[4] = JNIType.toJava( value: newLeadSelectionPath, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TreeSelectionEvent", classCache: &TreeSelectionEvent.TreeSelectionEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/tree/TreePath;ZLjavax/swing/tree/TreePath;Ljavax/swing/tree/TreePath;)V", methodCache: &TreeSelectionEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -166,7 +166,7 @@ open class TreeSelectionEvent: java_util.EventObject {
     open func cloneWithSource( newSource: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newSource != nil ? newSource! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newSource, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "cloneWithSource", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &TreeSelectionEvent.cloneWithSource_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -195,7 +195,7 @@ open class TreeSelectionEvent: java_util.EventObject {
     open func isAddedPath( path: TreePath? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAddedPath", methodSig: "(Ljavax/swing/tree/TreePath;)Z", methodCache: &TreeSelectionEvent.isAddedPath_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

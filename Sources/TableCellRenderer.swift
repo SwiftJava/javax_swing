@@ -26,8 +26,8 @@ open class TableCellRendererForward: JNIObjectForward, TableCellRenderer {
     open func getTableCellRendererComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, hasFocus: Bool, row: Int, column: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: table != nil ? table! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: table, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[3] = JNIType.toJava( value: hasFocus, locals: &__locals )
         __args[4] = JNIType.toJava( value: row, locals: &__locals )

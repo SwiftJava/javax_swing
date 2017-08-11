@@ -77,7 +77,7 @@ open class MinimalHTMLWriter: AbstractWriter {
     public convenience init( w: /* java.io.Writer */ UnclassedObject?, doc: StyledDocument? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w != nil ? w! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/MinimalHTMLWriter", classCache: &MinimalHTMLWriter.MinimalHTMLWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/StyledDocument;)V", methodCache: &MinimalHTMLWriter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -95,7 +95,7 @@ open class MinimalHTMLWriter: AbstractWriter {
     public convenience init( w: /* java.io.Writer */ UnclassedObject?, doc: StyledDocument?, pos: Int, len: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w != nil ? w! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         __args[3] = JNIType.toJava( value: len, locals: &__locals )
@@ -122,33 +122,17 @@ open class MinimalHTMLWriter: AbstractWriter {
     }
 
 
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
-
-    private static var writeAttributes_MethodID_4: jmethodID?
-
-    override open func writeAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeAttributes_MethodID_4, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    override open func writeAttributes( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
-        try writeAttributes( attr: _attr )
-    }
+    /// private boolean javax.swing.text.html.MinimalHTMLWriter.isValidCharacter(char)
 
     /// protected void javax.swing.text.html.MinimalHTMLWriter.text(javax.swing.text.Element) throws java.io.IOException,javax.swing.text.BadLocationException
 
-    private static var text_MethodID_5: jmethodID?
+    private static var text_MethodID_4: jmethodID?
 
     override open func text( elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.text_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.text_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -156,6 +140,24 @@ open class MinimalHTMLWriter: AbstractWriter {
 
     override open func text( _ _elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
         try text( elem: _elem )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
+
+    private static var writeAttributes_MethodID_5: jmethodID?
+
+    override open func writeAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeAttributes_MethodID_5, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+    override open func writeAttributes( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
+        try writeAttributes( attr: _attr )
     }
 
     /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStyles() throws java.io.IOException
@@ -450,8 +452,6 @@ open class MinimalHTMLWriter: AbstractWriter {
     /// private java.lang.String javax.swing.text.html.MinimalHTMLWriter.addStyleName(java.lang.String)
 
     /// private java.lang.String javax.swing.text.html.MinimalHTMLWriter.mapStyleName(java.lang.String)
-
-    /// private boolean javax.swing.text.html.MinimalHTMLWriter.isValidCharacter(char)
 
 }
 

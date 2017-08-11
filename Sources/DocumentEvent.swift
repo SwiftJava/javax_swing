@@ -19,13 +19,13 @@ public protocol DocumentEvent: JavaProtocol {
 
     func getOffset() -> Int
 
-    /// public abstract javax.swing.event.DocumentEvent$ElementChange javax.swing.event.DocumentEvent.getChange(javax.swing.text.Element)
-
-    func getChange( elem: Element? ) -> DocumentEvent_ElementChange!
-
     /// public abstract javax.swing.text.Document javax.swing.event.DocumentEvent.getDocument()
 
     func getDocument() -> Document!
+
+    /// public abstract javax.swing.event.DocumentEvent$ElementChange javax.swing.event.DocumentEvent.getChange(javax.swing.text.Element)
+
+    func getChange( elem: Element? ) -> DocumentEvent_ElementChange!
 
 }
 
@@ -71,15 +71,28 @@ open class DocumentEventForward: JNIObjectForward, DocumentEvent {
     }
 
 
+    /// public abstract javax.swing.text.Document javax.swing.event.DocumentEvent.getDocument()
+
+    private static var getDocument_MethodID_9: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &DocumentEventForward.getDocument_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
     /// public abstract javax.swing.event.DocumentEvent$ElementChange javax.swing.event.DocumentEvent.getChange(javax.swing.text.Element)
 
-    private static var getChange_MethodID_9: jmethodID?
+    private static var getChange_MethodID_10: jmethodID?
 
     open func getChange( elem: Element? ) -> DocumentEvent_ElementChange! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChange", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/event/DocumentEvent$ElementChange;", methodCache: &DocumentEventForward.getChange_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChange", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/event/DocumentEvent$ElementChange;", methodCache: &DocumentEventForward.getChange_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DocumentEvent_ElementChangeForward( javaObject: __return ) : nil
     }
@@ -87,19 +100,6 @@ open class DocumentEventForward: JNIObjectForward, DocumentEvent {
     open func getChange( _ _elem: Element? ) -> DocumentEvent_ElementChange! {
         return getChange( elem: _elem )
     }
-
-    /// public abstract javax.swing.text.Document javax.swing.event.DocumentEvent.getDocument()
-
-    private static var getDocument_MethodID_10: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &DocumentEventForward.getDocument_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
 
 }
 

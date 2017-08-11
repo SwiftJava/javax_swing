@@ -29,7 +29,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "viewport", fieldType: "Ljavax/swing/JViewport;", fieldCache: &ScrollPaneLayout_UIResource.viewport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "vsb", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &ScrollPaneLayout_UIResource.vsb_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "hsb", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &ScrollPaneLayout_UIResource.hsb_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,7 +80,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rowHead", fieldType: "Ljavax/swing/JViewport;", fieldCache: &ScrollPaneLayout_UIResource.rowHead_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -97,7 +97,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "colHead", fieldType: "Ljavax/swing/JViewport;", fieldCache: &ScrollPaneLayout_UIResource.colHead_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -114,7 +114,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lowerLeft", fieldType: "Ljava/awt/Component;", fieldCache: &ScrollPaneLayout_UIResource.lowerLeft_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -131,7 +131,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lowerRight", fieldType: "Ljava/awt/Component;", fieldCache: &ScrollPaneLayout_UIResource.lowerRight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -148,7 +148,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "upperLeft", fieldType: "Ljava/awt/Component;", fieldCache: &ScrollPaneLayout_UIResource.upperLeft_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -165,7 +165,7 @@ open class ScrollPaneLayout_UIResource: ScrollPaneLayout, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "upperRight", fieldType: "Ljava/awt/Component;", fieldCache: &ScrollPaneLayout_UIResource.upperRight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

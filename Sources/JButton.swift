@@ -195,7 +195,7 @@ open class JButton: AbstractButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JButton.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -282,7 +282,7 @@ open class JButton: AbstractButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -299,7 +299,7 @@ open class JButton: AbstractButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -676,7 +676,7 @@ open class JButton: AbstractButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JButton.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -794,10 +794,6 @@ open class JButton: AbstractButton {
     }
 
 
-    /// public void javax.swing.JButton.removeNotify()
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JButton.getAccessibleContext()
-
     /// public void javax.swing.JButton.updateUI()
 
     /// public java.lang.String javax.swing.JButton.getUIClassID()
@@ -840,6 +836,10 @@ open class JButton: AbstractButton {
     open func setDefaultCapable( _ _defaultCapable: Bool ) {
         setDefaultCapable( defaultCapable: _defaultCapable )
     }
+
+    /// public void javax.swing.JButton.removeNotify()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JButton.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

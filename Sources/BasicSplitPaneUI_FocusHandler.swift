@@ -26,7 +26,7 @@ open class BasicSplitPaneUI_FocusHandler: java_awt.FocusAdapter {
     public convenience init( this_0: BasicSplitPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSplitPaneUI$FocusHandler", classCache: &BasicSplitPaneUI_FocusHandler.BasicSplitPaneUI_FocusHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneUI_FocusHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -43,7 +43,7 @@ open class BasicSplitPaneUI_FocusHandler: java_awt.FocusAdapter {
     open func focusGained( ev: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ev != nil ? ev! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ev, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicSplitPaneUI_FocusHandler.focusGained_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -58,7 +58,7 @@ open class BasicSplitPaneUI_FocusHandler: java_awt.FocusAdapter {
     open func focusLost( ev: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ev != nil ? ev! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ev, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicSplitPaneUI_FocusHandler.focusLost_MethodID_3, args: &__args, locals: &__locals )
     }
 

@@ -76,6 +76,28 @@ open class DefaultRowSorter: RowSorter {
     }
 
 
+    /// public final java.lang.Object javax.swing.DefaultRowSorter.getModel()
+
+    /// public int javax.swing.DefaultRowSorter.convertRowIndexToView(int)
+
+    /// public int javax.swing.DefaultRowSorter.convertRowIndexToModel(int)
+
+    /// public int javax.swing.DefaultRowSorter.getViewRowCount()
+
+    /// public void javax.swing.DefaultRowSorter.allRowsChanged()
+
+    /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int,int)
+
+    /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int)
+
+    /// public void javax.swing.DefaultRowSorter.rowsInserted(int,int)
+
+    /// public void javax.swing.DefaultRowSorter.rowsDeleted(int,int)
+
+    /// public void javax.swing.DefaultRowSorter.modelStructureChanged()
+
+    /// private void javax.swing.DefaultRowSorter.allChanged()
+
     /// protected final javax.swing.DefaultRowSorter$ModelWrapper javax.swing.DefaultRowSorter.getModelWrapper()
 
     private static var getModelWrapper_MethodID_3: jmethodID?
@@ -128,7 +150,7 @@ open class DefaultRowSorter: RowSorter {
     open func setModelWrapper( modelWrapper: /* javax.swing.DefaultRowSorter$ModelWrapper */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modelWrapper != nil ? modelWrapper! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: modelWrapper, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModelWrapper", methodSig: "(Ljavax/swing/DefaultRowSorter$ModelWrapper;)V", methodCache: &DefaultRowSorter.setModelWrapper_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -230,7 +252,7 @@ open class DefaultRowSorter: RowSorter {
     open func setRowFilter( filter: RowFilter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: filter != nil ? filter! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: filter, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowFilter", methodSig: "(Ljavax/swing/RowFilter;)V", methodCache: &DefaultRowSorter.setRowFilter_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -329,28 +351,6 @@ open class DefaultRowSorter: RowSorter {
     /// private void javax.swing.DefaultRowSorter.checkColumn(int)
 
     /// private boolean javax.swing.DefaultRowSorter.isTransformed()
-
-    /// public final java.lang.Object javax.swing.DefaultRowSorter.getModel()
-
-    /// public int javax.swing.DefaultRowSorter.convertRowIndexToView(int)
-
-    /// public int javax.swing.DefaultRowSorter.convertRowIndexToModel(int)
-
-    /// public int javax.swing.DefaultRowSorter.getViewRowCount()
-
-    /// public void javax.swing.DefaultRowSorter.allRowsChanged()
-
-    /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int,int)
-
-    /// public void javax.swing.DefaultRowSorter.rowsUpdated(int,int)
-
-    /// public void javax.swing.DefaultRowSorter.rowsInserted(int,int)
-
-    /// public void javax.swing.DefaultRowSorter.rowsDeleted(int,int)
-
-    /// public void javax.swing.DefaultRowSorter.modelStructureChanged()
-
-    /// private void javax.swing.DefaultRowSorter.allChanged()
 
 }
 

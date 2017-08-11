@@ -141,7 +141,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "preferredMinSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalTreeUI.preferredMinSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -175,7 +175,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "tree", fieldType: "Ljavax/swing/JTree;", fieldCache: &MetalTreeUI.tree_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -277,7 +277,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rendererPane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &MetalTreeUI.rendererPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -294,7 +294,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "preferredSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalTreeUI.preferredSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -328,7 +328,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "treeState", fieldType: "Ljavax/swing/tree/AbstractLayoutCache;", fieldCache: &MetalTreeUI.treeState_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -379,7 +379,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "nodeDimensions", fieldType: "Ljavax/swing/tree/AbstractLayoutCache$NodeDimensions;", fieldCache: &MetalTreeUI.nodeDimensions_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -447,7 +447,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editingComponent", fieldType: "Ljava/awt/Component;", fieldCache: &MetalTreeUI.editingComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -464,7 +464,7 @@ open class MetalTreeUI: BasicTreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editingPath", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &MetalTreeUI.editingPath_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -560,7 +560,7 @@ open class MetalTreeUI: BasicTreeUI {
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalTreeUI", classCache: &MetalTreeUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -570,6 +570,12 @@ open class MetalTreeUI: BasicTreeUI {
         return createUI( x: _x )
     }
 
+    /// public void javax.swing.plaf.metal.MetalTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.metal.MetalTreeUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.metal.MetalTreeUI.uninstallUI(javax.swing.JComponent)
+
     /// protected void javax.swing.plaf.metal.MetalTreeUI.paintHorizontalPartOfLeg(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
 
     private static var paintHorizontalPartOfLeg_MethodID_3: jmethodID?
@@ -577,11 +583,11 @@ open class MetalTreeUI: BasicTreeUI {
     override open func paintHorizontalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 9 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: clipBounds != nil ? clipBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: clipBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bounds, locals: &__locals )
+        __args[4] = JNIType.toJava( value: path, locals: &__locals )
         __args[5] = JNIType.toJava( value: row, locals: &__locals )
         __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
         __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
@@ -600,10 +606,10 @@ open class MetalTreeUI: BasicTreeUI {
     override open func paintVerticalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, path: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: clipBounds != nil ? clipBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: clipBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: path, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljavax/swing/tree/TreePath;)V", methodCache: &MetalTreeUI.paintVerticalPartOfLeg_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -642,10 +648,6 @@ open class MetalTreeUI: BasicTreeUI {
         return isLocationInExpandControl( row: _row, rowLevel: _rowLevel, mouseX: _mouseX, mouseY: _mouseY )
     }
 
-    /// public void javax.swing.plaf.metal.MetalTreeUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.metal.MetalTreeUI.uninstallUI(javax.swing.JComponent)
-
     /// protected void javax.swing.plaf.metal.MetalTreeUI.decodeLineStyle(java.lang.Object)
 
     private static var decodeLineStyle_MethodID_7: jmethodID?
@@ -653,7 +655,7 @@ open class MetalTreeUI: BasicTreeUI {
     open func decodeLineStyle( lineStyleFlag: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: lineStyleFlag != nil ? lineStyleFlag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: lineStyleFlag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "decodeLineStyle", methodSig: "(Ljava/lang/Object;)V", methodCache: &MetalTreeUI.decodeLineStyle_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -668,16 +670,14 @@ open class MetalTreeUI: BasicTreeUI {
     open func paintHorizontalSeparators( g: java_awt.Graphics?, c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalSeparators", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MetalTreeUI.paintHorizontalSeparators_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func paintHorizontalSeparators( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
         paintHorizontalSeparators( g: _g, c: _c )
     }
-
-    /// public void javax.swing.plaf.metal.MetalTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
 }
 

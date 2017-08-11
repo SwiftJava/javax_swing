@@ -70,7 +70,7 @@ open class ListDataEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ListDataEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -82,7 +82,7 @@ open class ListDataEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, type: Int, index0: Int, index1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: index0, locals: &__locals )
         __args[3] = JNIType.toJava( value: index1, locals: &__locals )

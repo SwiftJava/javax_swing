@@ -25,7 +25,7 @@ open class BasicInternalFrameUI_InternalFramePropertyChangeListener: java_swift.
     public convenience init( this_0: BasicInternalFrameUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicInternalFrameUI$InternalFramePropertyChangeListener", classCache: &BasicInternalFrameUI_InternalFramePropertyChangeListener.BasicInternalFrameUI_InternalFramePropertyChangeListenerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicInternalFrameUI;)V", methodCache: &BasicInternalFrameUI_InternalFramePropertyChangeListener.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,7 +42,7 @@ open class BasicInternalFrameUI_InternalFramePropertyChangeListener: java_swift.
     open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicInternalFrameUI_InternalFramePropertyChangeListener.propertyChange_MethodID_2, args: &__args, locals: &__locals )
     }
 

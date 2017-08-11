@@ -34,7 +34,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "desktop", fieldType: "Ljavax/swing/JDesktopPane;", fieldCache: &BasicDesktopPaneUI.desktop_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -68,7 +68,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "minimizeKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicDesktopPaneUI.minimizeKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -85,7 +85,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "maximizeKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicDesktopPaneUI.maximizeKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -102,7 +102,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "closeKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicDesktopPaneUI.closeKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -119,7 +119,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "navigateKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicDesktopPaneUI.navigateKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -136,7 +136,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "navigateKey2", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicDesktopPaneUI.navigateKey2_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -155,12 +155,6 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
 
     /// private javax.swing.plaf.basic.BasicDesktopPaneUI$Handler javax.swing.plaf.basic.BasicDesktopPaneUI.getHandler()
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMaximumSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicDesktopPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -168,7 +162,7 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicDesktopPaneUI", classCache: &BasicDesktopPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -178,13 +172,11 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         return createUI( c: _c )
     }
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicDesktopPaneUI.getInputMap(int)
+    /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.uninstallUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// static void javax.swing.plaf.basic.BasicDesktopPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
@@ -314,6 +306,14 @@ open class BasicDesktopPaneUI: DesktopPaneUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "unregisterKeyboardActions", methodSig: "()V", methodCache: &BasicDesktopPaneUI.unregisterKeyboardActions_MethodID_13, args: &__args, locals: &__locals )
     }
 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicDesktopPaneUI.getMaximumSize(javax.swing.JComponent)
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicDesktopPaneUI.getInputMap(int)
 
 }
 

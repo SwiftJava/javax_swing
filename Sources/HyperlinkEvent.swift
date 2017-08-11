@@ -42,7 +42,7 @@ open class HyperlinkEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HyperlinkEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -54,12 +54,12 @@ open class HyperlinkEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject?, desc: String?, sourceElement: Element?, inputEvent: java_awt.InputEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u != nil ? u! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
-        __args[5] = JNIType.toJava( value: inputEvent != nil ? inputEvent! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: inputEvent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;Ljava/awt/event/InputEvent;)V", methodCache: &HyperlinkEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -76,9 +76,9 @@ open class HyperlinkEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject?, desc: String?, sourceElement: Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u != nil ? u! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;)V", methodCache: &HyperlinkEvent.new_MethodID_2, args: &__args, locals: &__locals )
@@ -97,9 +97,9 @@ open class HyperlinkEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject?, desc: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u != nil ? u! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;)V", methodCache: &HyperlinkEvent.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -117,9 +117,9 @@ open class HyperlinkEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u != nil ? u! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;)V", methodCache: &HyperlinkEvent.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

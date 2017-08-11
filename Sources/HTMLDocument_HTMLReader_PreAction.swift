@@ -29,7 +29,7 @@ open class HTMLDocument_HTMLReader_PreAction: HTMLDocument_HTMLReader_BlockActio
     public convenience init( this_1: HTMLDocument_HTMLReader? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_1 != nil ? this_1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$HTMLReader$PreAction", classCache: &HTMLDocument_HTMLReader_PreAction.HTMLDocument_HTMLReader_PreActionJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument$HTMLReader;)V", methodCache: &HTMLDocument_HTMLReader_PreAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

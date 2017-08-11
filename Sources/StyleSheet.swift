@@ -73,18 +73,53 @@ open class StyleSheet: StyleContext {
 
     /// static javax.swing.text.html.CSS javax.swing.text.html.StyleSheet.access$000(javax.swing.text.html.StyleSheet)
 
+    /// public javax.swing.text.Style javax.swing.text.html.StyleSheet.getRule(javax.swing.text.html.HTML$Tag,javax.swing.text.Element)
+
+    private static var getRule_MethodID_2: jmethodID?
+
+    open func getRule( t: HTML_Tag?, e: Element? ) -> Style! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRule", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/Element;)Ljavax/swing/text/Style;", methodCache: &StyleSheet.getRule_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleForward( javaObject: __return ) : nil
+    }
+
+    open func getRule( _ _t: HTML_Tag?, _ _e: Element? ) -> Style! {
+        return getRule( t: _t, e: _e )
+    }
+
+    /// public javax.swing.text.Style javax.swing.text.html.StyleSheet.getRule(java.lang.String)
+
+    private static var getRule_MethodID_3: jmethodID?
+
+    open func getRule( selector: String? ) -> Style! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: selector, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRule", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Style;", methodCache: &StyleSheet.getRule_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleForward( javaObject: __return ) : nil
+    }
+
+    open func getRule( _ _selector: String? ) -> Style! {
+        return getRule( selector: _selector )
+    }
+
     /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.addAttributes(javax.swing.text.AttributeSet,javax.swing.text.AttributeSet)
 
     /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.removeAttribute(javax.swing.text.AttributeSet,java.lang.Object)
 
-    private static var removeAttribute_MethodID_2: jmethodID?
+    private static var removeAttribute_MethodID_4: jmethodID?
 
     open func removeAttribute( old: AttributeSet?, key: java_swift.JavaObject? ) -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: old, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.removeAttribute_MethodID_2, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.removeAttribute_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -93,36 +128,108 @@ open class StyleSheet: StyleContext {
         return removeAttribute( old: _old, key: _key )
     }
 
+    /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.removeAttributes(javax.swing.text.AttributeSet,java.util.Enumeration)
+
     /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.removeAttributes(javax.swing.text.AttributeSet,javax.swing.text.AttributeSet)
 
-    /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.removeAttributes(javax.swing.text.AttributeSet,java.util.Enumeration)
+    /// public void javax.swing.text.html.StyleSheet.removeStyle(java.lang.String)
+
+    /// public java.awt.Font javax.swing.text.html.StyleSheet.getFont(javax.swing.text.AttributeSet)
+
+    private static var getFont_MethodID_5: jmethodID?
+
+    open func getFont( a: AttributeSet? ) -> java_awt.Font! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Font;", methodCache: &StyleSheet.getFont_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
+    }
+
+    override open func getFont( _ _a: AttributeSet? ) -> java_awt.Font! {
+        return getFont( a: _a )
+    }
+
+    /// public java.awt.Color javax.swing.text.html.StyleSheet.getBackground(javax.swing.text.AttributeSet)
+
+    private static var getBackground_MethodID_6: jmethodID?
+
+    open func getBackground( a: AttributeSet? ) -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyleSheet.getBackground_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+    override open func getBackground( _ _a: AttributeSet? ) -> java_awt.Color! {
+        return getBackground( a: _a )
+    }
+
+    /// public java.awt.Color javax.swing.text.html.StyleSheet.getForeground(javax.swing.text.AttributeSet)
+
+    private static var getForeground_MethodID_7: jmethodID?
+
+    open func getForeground( a: AttributeSet? ) -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyleSheet.getForeground_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+    override open func getForeground( _ _a: AttributeSet? ) -> java_awt.Color! {
+        return getForeground( a: _a )
+    }
+
+    /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.addAttribute(javax.swing.text.AttributeSet,java.lang.Object,java.lang.Object)
+
+    private static var addAttribute_MethodID_8: jmethodID?
+
+    open func addAttribute( old: AttributeSet?, key: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> AttributeSet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: old, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
+        __args[2] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.addAttribute_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
+    }
+
+    override open func addAttribute( _ _old: AttributeSet?, _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> AttributeSet! {
+        return addAttribute( old: _old, key: _key, value: _value )
+    }
+
+    /// void javax.swing.text.html.StyleSheet.addRule(java.lang.String[],javax.swing.text.AttributeSet,boolean)
 
     /// public void javax.swing.text.html.StyleSheet.addRule(java.lang.String)
 
-    private static var addRule_MethodID_3: jmethodID?
+    private static var addRule_MethodID_9: jmethodID?
 
     open func addRule( rule: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: rule, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRule", methodSig: "(Ljava/lang/String;)V", methodCache: &StyleSheet.addRule_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRule", methodSig: "(Ljava/lang/String;)V", methodCache: &StyleSheet.addRule_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func addRule( _ _rule: String? ) {
         addRule( rule: _rule )
     }
 
-    /// void javax.swing.text.html.StyleSheet.addRule(java.lang.String[],javax.swing.text.AttributeSet,boolean)
-
     /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.getDeclaration(java.lang.String)
 
-    private static var getDeclaration_MethodID_4: jmethodID?
+    private static var getDeclaration_MethodID_10: jmethodID?
 
     open func getDeclaration( decl: String? ) -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: decl, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDeclaration", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.getDeclaration_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDeclaration", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.getDeclaration_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -133,14 +240,14 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.loadRules(java.io.Reader,java.net.URL) throws java.io.IOException
 
-    private static var loadRules_MethodID_5: jmethodID?
+    private static var loadRules_MethodID_11: jmethodID?
 
     open func loadRules( _in: /* java.io.Reader */ UnclassedObject?, ref: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _in != nil ? _in! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: ref != nil ? ref! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadRules", methodSig: "(Ljava/io/Reader;Ljava/net/URL;)V", methodCache: &StyleSheet.loadRules_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
+        __args[1] = JNIType.toJava( value: ref, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadRules", methodSig: "(Ljava/io/Reader;Ljava/net/URL;)V", methodCache: &StyleSheet.loadRules_MethodID_11, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
         }
@@ -152,13 +259,13 @@ open class StyleSheet: StyleContext {
 
     /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.getViewAttributes(javax.swing.text.View)
 
-    private static var getViewAttributes_MethodID_6: jmethodID?
+    private static var getViewAttributes_MethodID_12: jmethodID?
 
     open func getViewAttributes( v: View? ) -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAttributes", methodSig: "(Ljavax/swing/text/View;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.getViewAttributes_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAttributes", methodSig: "(Ljavax/swing/text/View;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.getViewAttributes_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -169,13 +276,13 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.addStyleSheet(javax.swing.text.html.StyleSheet)
 
-    private static var addStyleSheet_MethodID_7: jmethodID?
+    private static var addStyleSheet_MethodID_13: jmethodID?
 
     open func addStyleSheet( ss: StyleSheet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addStyleSheet", methodSig: "(Ljavax/swing/text/html/StyleSheet;)V", methodCache: &StyleSheet.addStyleSheet_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ss, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addStyleSheet", methodSig: "(Ljavax/swing/text/html/StyleSheet;)V", methodCache: &StyleSheet.addStyleSheet_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func addStyleSheet( _ _ss: StyleSheet? ) {
@@ -184,13 +291,13 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.removeStyleSheet(javax.swing.text.html.StyleSheet)
 
-    private static var removeStyleSheet_MethodID_8: jmethodID?
+    private static var removeStyleSheet_MethodID_14: jmethodID?
 
     open func removeStyleSheet( ss: StyleSheet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ss != nil ? ss! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeStyleSheet", methodSig: "(Ljavax/swing/text/html/StyleSheet;)V", methodCache: &StyleSheet.removeStyleSheet_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ss, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeStyleSheet", methodSig: "(Ljavax/swing/text/html/StyleSheet;)V", methodCache: &StyleSheet.removeStyleSheet_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func removeStyleSheet( _ _ss: StyleSheet? ) {
@@ -199,25 +306,25 @@ open class StyleSheet: StyleContext {
 
     /// public javax.swing.text.html.StyleSheet[] javax.swing.text.html.StyleSheet.getStyleSheets()
 
-    private static var getStyleSheets_MethodID_9: jmethodID?
+    private static var getStyleSheets_MethodID_15: jmethodID?
 
     open func getStyleSheets() -> [StyleSheet]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheets", methodSig: "()[Ljavax/swing/text/html/StyleSheet;", methodCache: &StyleSheet.getStyleSheets_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheets", methodSig: "()[Ljavax/swing/text/html/StyleSheet;", methodCache: &StyleSheet.getStyleSheets_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [StyleSheet](), from: __return )
     }
 
 
     /// public void javax.swing.text.html.StyleSheet.importStyleSheet(java.net.URL)
 
-    private static var importStyleSheet_MethodID_10: jmethodID?
+    private static var importStyleSheet_MethodID_16: jmethodID?
 
     open func importStyleSheet( url: /* java.net.URL */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: url != nil ? url! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "importStyleSheet", methodSig: "(Ljava/net/URL;)V", methodCache: &StyleSheet.importStyleSheet_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: url, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "importStyleSheet", methodSig: "(Ljava/net/URL;)V", methodCache: &StyleSheet.importStyleSheet_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func importStyleSheet( _ _url: /* java.net.URL */ UnclassedObject? ) {
@@ -226,13 +333,13 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.setBase(java.net.URL)
 
-    private static var setBase_MethodID_11: jmethodID?
+    private static var setBase_MethodID_17: jmethodID?
 
     open func setBase( base: /* java.net.URL */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: base != nil ? base! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBase", methodSig: "(Ljava/net/URL;)V", methodCache: &StyleSheet.setBase_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: base, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBase", methodSig: "(Ljava/net/URL;)V", methodCache: &StyleSheet.setBase_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setBase( _ _base: /* java.net.URL */ UnclassedObject? ) {
@@ -241,12 +348,12 @@ open class StyleSheet: StyleContext {
 
     /// public java.net.URL javax.swing.text.html.StyleSheet.getBase()
 
-    private static var getBase_MethodID_12: jmethodID?
+    private static var getBase_MethodID_18: jmethodID?
 
     open func getBase() -> /* java.net.URL */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBase", methodSig: "()Ljava/net/URL;", methodCache: &StyleSheet.getBase_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBase", methodSig: "()Ljava/net/URL;", methodCache: &StyleSheet.getBase_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -254,15 +361,15 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.addCSSAttribute(javax.swing.text.MutableAttributeSet,javax.swing.text.html.CSS$Attribute,java.lang.String)
 
-    private static var addCSSAttribute_MethodID_13: jmethodID?
+    private static var addCSSAttribute_MethodID_19: jmethodID?
 
     open func addCSSAttribute( attr: MutableAttributeSet?, key: CSS_Attribute?, value: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         __args[2] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addCSSAttribute", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/text/html/CSS$Attribute;Ljava/lang/String;)V", methodCache: &StyleSheet.addCSSAttribute_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addCSSAttribute", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/text/html/CSS$Attribute;Ljava/lang/String;)V", methodCache: &StyleSheet.addCSSAttribute_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func addCSSAttribute( _ _attr: MutableAttributeSet?, _ _key: CSS_Attribute?, _ _value: String? ) {
@@ -271,15 +378,15 @@ open class StyleSheet: StyleContext {
 
     /// public boolean javax.swing.text.html.StyleSheet.addCSSAttributeFromHTML(javax.swing.text.MutableAttributeSet,javax.swing.text.html.CSS$Attribute,java.lang.String)
 
-    private static var addCSSAttributeFromHTML_MethodID_14: jmethodID?
+    private static var addCSSAttributeFromHTML_MethodID_20: jmethodID?
 
     open func addCSSAttributeFromHTML( attr: MutableAttributeSet?, key: CSS_Attribute?, value: String? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         __args[2] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "addCSSAttributeFromHTML", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/text/html/CSS$Attribute;Ljava/lang/String;)Z", methodCache: &StyleSheet.addCSSAttributeFromHTML_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "addCSSAttributeFromHTML", methodSig: "(Ljavax/swing/text/MutableAttributeSet;Ljavax/swing/text/html/CSS$Attribute;Ljava/lang/String;)Z", methodCache: &StyleSheet.addCSSAttributeFromHTML_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -289,13 +396,13 @@ open class StyleSheet: StyleContext {
 
     /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.translateHTMLToCSS(javax.swing.text.AttributeSet)
 
-    private static var translateHTMLToCSS_MethodID_15: jmethodID?
+    private static var translateHTMLToCSS_MethodID_21: jmethodID?
 
     open func translateHTMLToCSS( htmlAttrSet: AttributeSet? ) -> AttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: htmlAttrSet, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "translateHTMLToCSS", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.translateHTMLToCSS_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "translateHTMLToCSS", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.translateHTMLToCSS_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
@@ -306,13 +413,13 @@ open class StyleSheet: StyleContext {
 
     /// protected javax.swing.text.StyleContext$SmallAttributeSet javax.swing.text.html.StyleSheet.createSmallAttributeSet(javax.swing.text.AttributeSet)
 
-    private static var createSmallAttributeSet_MethodID_16: jmethodID?
+    private static var createSmallAttributeSet_MethodID_22: jmethodID?
 
     override open func createSmallAttributeSet( a: AttributeSet? ) -> StyleContext_SmallAttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSmallAttributeSet", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/StyleContext$SmallAttributeSet;", methodCache: &StyleSheet.createSmallAttributeSet_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSmallAttributeSet", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/StyleContext$SmallAttributeSet;", methodCache: &StyleSheet.createSmallAttributeSet_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleContext_SmallAttributeSet( javaObject: __return ) : nil
     }
@@ -323,13 +430,13 @@ open class StyleSheet: StyleContext {
 
     /// protected javax.swing.text.MutableAttributeSet javax.swing.text.html.StyleSheet.createLargeAttributeSet(javax.swing.text.AttributeSet)
 
-    private static var createLargeAttributeSet_MethodID_17: jmethodID?
+    private static var createLargeAttributeSet_MethodID_23: jmethodID?
 
     override open func createLargeAttributeSet( a: AttributeSet? ) -> MutableAttributeSet! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLargeAttributeSet", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/MutableAttributeSet;", methodCache: &StyleSheet.createLargeAttributeSet_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLargeAttributeSet", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/MutableAttributeSet;", methodCache: &StyleSheet.createLargeAttributeSet_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MutableAttributeSetForward( javaObject: __return ) : nil
     }
@@ -344,13 +451,13 @@ open class StyleSheet: StyleContext {
 
     /// public javax.swing.text.html.StyleSheet$BoxPainter javax.swing.text.html.StyleSheet.getBoxPainter(javax.swing.text.AttributeSet)
 
-    private static var getBoxPainter_MethodID_18: jmethodID?
+    private static var getBoxPainter_MethodID_24: jmethodID?
 
     open func getBoxPainter( a: AttributeSet? ) -> StyleSheet_BoxPainter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoxPainter", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/html/StyleSheet$BoxPainter;", methodCache: &StyleSheet.getBoxPainter_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoxPainter", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/html/StyleSheet$BoxPainter;", methodCache: &StyleSheet.getBoxPainter_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleSheet_BoxPainter( javaObject: __return ) : nil
     }
@@ -361,13 +468,13 @@ open class StyleSheet: StyleContext {
 
     /// public javax.swing.text.html.StyleSheet$ListPainter javax.swing.text.html.StyleSheet.getListPainter(javax.swing.text.AttributeSet)
 
-    private static var getListPainter_MethodID_19: jmethodID?
+    private static var getListPainter_MethodID_25: jmethodID?
 
     open func getListPainter( a: AttributeSet? ) -> StyleSheet_ListPainter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListPainter", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/html/StyleSheet$ListPainter;", methodCache: &StyleSheet.getListPainter_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListPainter", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljavax/swing/text/html/StyleSheet$ListPainter;", methodCache: &StyleSheet.getListPainter_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleSheet_ListPainter( javaObject: __return ) : nil
     }
@@ -378,13 +485,13 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.setBaseFontSize(java.lang.String)
 
-    private static var setBaseFontSize_MethodID_20: jmethodID?
+    private static var setBaseFontSize_MethodID_26: jmethodID?
 
     open func setBaseFontSize( size: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBaseFontSize", methodSig: "(Ljava/lang/String;)V", methodCache: &StyleSheet.setBaseFontSize_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBaseFontSize", methodSig: "(Ljava/lang/String;)V", methodCache: &StyleSheet.setBaseFontSize_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setBaseFontSize( _ _size: String? ) {
@@ -393,13 +500,13 @@ open class StyleSheet: StyleContext {
 
     /// public void javax.swing.text.html.StyleSheet.setBaseFontSize(int)
 
-    private static var setBaseFontSize_MethodID_21: jmethodID?
+    private static var setBaseFontSize_MethodID_27: jmethodID?
 
     open func setBaseFontSize( sz: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: sz, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBaseFontSize", methodSig: "(I)V", methodCache: &StyleSheet.setBaseFontSize_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBaseFontSize", methodSig: "(I)V", methodCache: &StyleSheet.setBaseFontSize_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setBaseFontSize( _ _sz: Int ) {
@@ -408,13 +515,13 @@ open class StyleSheet: StyleContext {
 
     /// public static int javax.swing.text.html.StyleSheet.getIndexOfSize(float)
 
-    private static var getIndexOfSize_MethodID_22: jmethodID?
+    private static var getIndexOfSize_MethodID_28: jmethodID?
 
     open class func getIndexOfSize( pt: Float ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pt, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/StyleSheet", classCache: &StyleSheetJNIClass, methodName: "getIndexOfSize", methodSig: "(F)I", methodCache: &getIndexOfSize_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/StyleSheet", classCache: &StyleSheetJNIClass, methodName: "getIndexOfSize", methodSig: "(F)I", methodCache: &getIndexOfSize_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -422,31 +529,15 @@ open class StyleSheet: StyleContext {
         return getIndexOfSize( pt: _pt )
     }
 
-    /// public float javax.swing.text.html.StyleSheet.getPointSize(java.lang.String)
-
-    private static var getPointSize_MethodID_23: jmethodID?
-
-    open func getPointSize( size: String? ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPointSize", methodSig: "(Ljava/lang/String;)F", methodCache: &StyleSheet.getPointSize_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getPointSize( _ _size: String? ) -> Float {
-        return getPointSize( size: _size )
-    }
-
     /// public float javax.swing.text.html.StyleSheet.getPointSize(int)
 
-    private static var getPointSize_MethodID_24: jmethodID?
+    private static var getPointSize_MethodID_29: jmethodID?
 
     open func getPointSize( index: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPointSize", methodSig: "(I)F", methodCache: &StyleSheet.getPointSize_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPointSize", methodSig: "(I)F", methodCache: &StyleSheet.getPointSize_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
@@ -454,15 +545,31 @@ open class StyleSheet: StyleContext {
         return getPointSize( index: _index )
     }
 
+    /// public float javax.swing.text.html.StyleSheet.getPointSize(java.lang.String)
+
+    private static var getPointSize_MethodID_30: jmethodID?
+
+    open func getPointSize( size: String? ) -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: size, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPointSize", methodSig: "(Ljava/lang/String;)F", methodCache: &StyleSheet.getPointSize_MethodID_30, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+    open func getPointSize( _ _size: String? ) -> Float {
+        return getPointSize( size: _size )
+    }
+
     /// public java.awt.Color javax.swing.text.html.StyleSheet.stringToColor(java.lang.String)
 
-    private static var stringToColor_MethodID_25: jmethodID?
+    private static var stringToColor_MethodID_31: jmethodID?
 
     open func stringToColor( string: String? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: string, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToColor", methodSig: "(Ljava/lang/String;)Ljava/awt/Color;", methodCache: &StyleSheet.stringToColor_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToColor", methodSig: "(Ljava/lang/String;)Ljava/awt/Color;", methodCache: &StyleSheet.stringToColor_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -497,11 +604,11 @@ open class StyleSheet: StyleContext {
 
     /// private synchronized void javax.swing.text.html.StyleSheet.getStyles(javax.swing.text.html.StyleSheet$SelectorMapping,java.util.Vector,java.lang.String[],java.lang.String[],java.lang.String[],int,int,java.util.Hashtable)
 
+    /// private synchronized javax.swing.text.Style javax.swing.text.html.StyleSheet.createResolvedStyle(java.lang.String,java.lang.String[],java.lang.String[],java.lang.String[])
+
     /// private javax.swing.text.Style javax.swing.text.html.StyleSheet.createResolvedStyle(java.lang.String)
 
     /// private javax.swing.text.Style javax.swing.text.html.StyleSheet.createResolvedStyle(java.lang.String,java.util.Vector,javax.swing.text.html.HTML$Tag)
-
-    /// private synchronized javax.swing.text.Style javax.swing.text.html.StyleSheet.createResolvedStyle(java.lang.String,java.lang.String[],java.lang.String[],java.lang.String[])
 
     /// private synchronized void javax.swing.text.html.StyleSheet.refreshResolvedRules(java.lang.String,java.lang.String[],javax.swing.text.Style,int)
 
@@ -510,113 +617,6 @@ open class StyleSheet: StyleContext {
     /// int[] javax.swing.text.html.StyleSheet.getSizeMap()
 
     /// boolean javax.swing.text.html.StyleSheet.isW3CLengthUnits()
-
-    /// public javax.swing.text.AttributeSet javax.swing.text.html.StyleSheet.addAttribute(javax.swing.text.AttributeSet,java.lang.Object,java.lang.Object)
-
-    private static var addAttribute_MethodID_26: jmethodID?
-
-    open func addAttribute( old: AttributeSet?, key: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: old, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljavax/swing/text/AttributeSet;Ljava/lang/Object;Ljava/lang/Object;)Ljavax/swing/text/AttributeSet;", methodCache: &StyleSheet.addAttribute_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
-    }
-
-    override open func addAttribute( _ _old: AttributeSet?, _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> AttributeSet! {
-        return addAttribute( old: _old, key: _key, value: _value )
-    }
-
-    /// public java.awt.Font javax.swing.text.html.StyleSheet.getFont(javax.swing.text.AttributeSet)
-
-    private static var getFont_MethodID_27: jmethodID?
-
-    open func getFont( a: AttributeSet? ) -> java_awt.Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Font;", methodCache: &StyleSheet.getFont_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
-    }
-
-    override open func getFont( _ _a: AttributeSet? ) -> java_awt.Font! {
-        return getFont( a: _a )
-    }
-
-    /// public java.awt.Color javax.swing.text.html.StyleSheet.getBackground(javax.swing.text.AttributeSet)
-
-    private static var getBackground_MethodID_28: jmethodID?
-
-    open func getBackground( a: AttributeSet? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyleSheet.getBackground_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    override open func getBackground( _ _a: AttributeSet? ) -> java_awt.Color! {
-        return getBackground( a: _a )
-    }
-
-    /// public java.awt.Color javax.swing.text.html.StyleSheet.getForeground(javax.swing.text.AttributeSet)
-
-    private static var getForeground_MethodID_29: jmethodID?
-
-    open func getForeground( a: AttributeSet? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyleSheet.getForeground_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    override open func getForeground( _ _a: AttributeSet? ) -> java_awt.Color! {
-        return getForeground( a: _a )
-    }
-
-    /// public void javax.swing.text.html.StyleSheet.removeStyle(java.lang.String)
-
-    /// public javax.swing.text.Style javax.swing.text.html.StyleSheet.getRule(java.lang.String)
-
-    private static var getRule_MethodID_30: jmethodID?
-
-    open func getRule( selector: String? ) -> Style! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selector, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRule", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Style;", methodCache: &StyleSheet.getRule_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleForward( javaObject: __return ) : nil
-    }
-
-    open func getRule( _ _selector: String? ) -> Style! {
-        return getRule( selector: _selector )
-    }
-
-    /// public javax.swing.text.Style javax.swing.text.html.StyleSheet.getRule(javax.swing.text.html.HTML$Tag,javax.swing.text.Element)
-
-    private static var getRule_MethodID_31: jmethodID?
-
-    open func getRule( t: HTML_Tag?, e: Element? ) -> Style! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRule", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/Element;)Ljavax/swing/text/Style;", methodCache: &StyleSheet.getRule_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleForward( javaObject: __return ) : nil
-    }
-
-    open func getRule( _ _t: HTML_Tag?, _ _e: Element? ) -> Style! {
-        return getRule( t: _t, e: _e )
-    }
 
 }
 

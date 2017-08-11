@@ -72,12 +72,6 @@ open class DefaultMetalTheme: MetalTheme {
 
     /// public javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getControlTextFont()
 
-    /// static java.lang.String javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontName(int)
-
-    /// static int javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontStyle(int)
-
-    /// static int javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontSize(int)
-
     /// protected javax.swing.plaf.ColorUIResource javax.swing.plaf.metal.DefaultMetalTheme.getPrimary1()
 
     private static var getPrimary1_MethodID_2: jmethodID?
@@ -170,9 +164,15 @@ open class DefaultMetalTheme: MetalTheme {
 
     /// public javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getSubTextFont()
 
+    /// private javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getFont(int)
+
     /// void javax.swing.plaf.metal.DefaultMetalTheme.install()
 
-    /// private javax.swing.plaf.FontUIResource javax.swing.plaf.metal.DefaultMetalTheme.getFont(int)
+    /// static java.lang.String javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontName(int)
+
+    /// static int javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontStyle(int)
+
+    /// static int javax.swing.plaf.metal.DefaultMetalTheme.getDefaultFontSize(int)
 
 }
 

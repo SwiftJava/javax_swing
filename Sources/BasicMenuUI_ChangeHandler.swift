@@ -29,7 +29,7 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "menu", fieldType: "Ljavax/swing/JMenu;", fieldCache: &BasicMenuUI_ChangeHandler.menu_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/basic/BasicMenuUI;", fieldCache: &BasicMenuUI_ChangeHandler.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,7 +80,7 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "wasFocused", fieldType: "Ljava/awt/Component;", fieldCache: &BasicMenuUI_ChangeHandler.wasFocused_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -94,9 +94,9 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
     public convenience init( this_0: BasicMenuUI?, m: JMenu?, ui: BasicMenuUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: m, locals: &__locals )
+        __args[2] = JNIType.toJava( value: ui, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicMenuUI$ChangeHandler", classCache: &BasicMenuUI_ChangeHandler.BasicMenuUI_ChangeHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicMenuUI;Ljavax/swing/JMenu;Ljavax/swing/plaf/basic/BasicMenuUI;)V", methodCache: &BasicMenuUI_ChangeHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -113,7 +113,7 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
     open func stateChanged( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicMenuUI_ChangeHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

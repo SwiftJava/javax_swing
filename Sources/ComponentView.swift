@@ -105,7 +105,7 @@ open class ComponentView: View {
     open func setParent( p: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParent", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ComponentView.setParent_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -113,26 +113,21 @@ open class ComponentView: View {
         setParent( p: _p )
     }
 
-    /// protected java.awt.Component javax.swing.text.ComponentView.createComponent()
+    /// public void javax.swing.text.ComponentView.paint(java.awt.Graphics,java.awt.Shape)
 
-    private static var createComponent_MethodID_3: jmethodID?
+    private static var paint_MethodID_3: jmethodID?
 
-    open func createComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.createComponent_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ComponentView.paint_MethodID_3, args: &__args, locals: &__locals )
     }
 
-
-    /// public float javax.swing.text.ComponentView.getAlignment(int)
-
-    /// public float javax.swing.text.ComponentView.getMinimumSpan(int)
-
-    /// public float javax.swing.text.ComponentView.getMaximumSpan(int)
-
-    /// public float javax.swing.text.ComponentView.getPreferredSpan(int)
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
 
     /// public int javax.swing.text.ComponentView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
 
@@ -155,36 +150,41 @@ open class ComponentView: View {
 
     /// public java.awt.Shape javax.swing.text.ComponentView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    /// public final java.awt.Component javax.swing.text.ComponentView.getComponent()
+    /// public float javax.swing.text.ComponentView.getMinimumSpan(int)
 
-    private static var getComponent_MethodID_5: jmethodID?
+    /// public float javax.swing.text.ComponentView.getMaximumSpan(int)
 
-    open func getComponent() -> java_awt.Component! {
+    /// void javax.swing.text.ComponentView.setComponentParent()
+
+    /// public float javax.swing.text.ComponentView.getAlignment(int)
+
+    /// protected java.awt.Component javax.swing.text.ComponentView.createComponent()
+
+    private static var createComponent_MethodID_5: jmethodID?
+
+    open func createComponent() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.getComponent_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.createComponent_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
-    /// void javax.swing.text.ComponentView.setComponentParent()
+    /// public final java.awt.Component javax.swing.text.ComponentView.getComponent()
 
-    /// public void javax.swing.text.ComponentView.paint(java.awt.Graphics,java.awt.Shape)
+    private static var getComponent_MethodID_6: jmethodID?
 
-    private static var paint_MethodID_6: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ComponentView.paint_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &ComponentView.getComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
+
+    /// public float javax.swing.text.ComponentView.getPreferredSpan(int)
 
 }
 

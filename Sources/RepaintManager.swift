@@ -107,14 +107,6 @@ open class RepaintManager: java_swift.JavaObject {
 
     /// static javax.swing.RepaintManager$PaintManager javax.swing.RepaintManager.access$600(javax.swing.RepaintManager)
 
-    /// static int javax.swing.RepaintManager.access$800()
-
-    /// static void javax.swing.RepaintManager.access$1100(javax.swing.RepaintManager)
-
-    /// static boolean javax.swing.RepaintManager.access$900(javax.swing.RepaintManager)
-
-    /// static void javax.swing.RepaintManager.access$1200(javax.swing.RepaintManager)
-
     /// boolean javax.swing.RepaintManager.show(java.awt.Container,int,int,int,int)
 
     /// void javax.swing.RepaintManager.paint(javax.swing.JComponent,javax.swing.JComponent,java.awt.Graphics,int,int,int,int)
@@ -138,7 +130,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func getVolatileOffscreenBuffer( c: java_awt.Component?, proposedWidth: Int, proposedHeight: Int ) -> java_awt.Image! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: proposedWidth, locals: &__locals )
         __args[2] = JNIType.toJava( value: proposedHeight, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getVolatileOffscreenBuffer", methodSig: "(Ljava/awt/Component;II)Ljava/awt/Image;", methodCache: &RepaintManager.getVolatileOffscreenBuffer_MethodID_2, args: &__args, locals: &__locals )
@@ -159,7 +151,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func getOffscreenBuffer( c: java_awt.Component?, proposedWidth: Int, proposedHeight: Int ) -> java_awt.Image! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: proposedWidth, locals: &__locals )
         __args[2] = JNIType.toJava( value: proposedHeight, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOffscreenBuffer", methodSig: "(Ljava/awt/Component;II)Ljava/awt/Image;", methodCache: &RepaintManager.getOffscreenBuffer_MethodID_3, args: &__args, locals: &__locals )
@@ -178,7 +170,7 @@ open class RepaintManager: java_swift.JavaObject {
     open class func currentManager( c: java_awt.Component? ) -> RepaintManager! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RepaintManager", classCache: &RepaintManagerJNIClass, methodName: "currentManager", methodSig: "(Ljava/awt/Component;)Ljavax/swing/RepaintManager;", methodCache: &currentManager_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RepaintManager( javaObject: __return ) : nil
@@ -188,6 +180,8 @@ open class RepaintManager: java_swift.JavaObject {
         return currentManager( c: _c )
     }
 
+    /// static javax.swing.RepaintManager javax.swing.RepaintManager.currentManager(sun.awt.AppContext)
+
     /// public static javax.swing.RepaintManager javax.swing.RepaintManager.currentManager(javax.swing.JComponent)
 
     private static var currentManager_MethodID_5: jmethodID?
@@ -195,7 +189,7 @@ open class RepaintManager: java_swift.JavaObject {
     open class func currentManager( c: JComponent? ) -> RepaintManager! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RepaintManager", classCache: &RepaintManagerJNIClass, methodName: "currentManager", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/RepaintManager;", methodCache: &currentManager_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RepaintManager( javaObject: __return ) : nil
@@ -205,8 +199,6 @@ open class RepaintManager: java_swift.JavaObject {
         return currentManager( c: _c )
     }
 
-    /// static javax.swing.RepaintManager javax.swing.RepaintManager.currentManager(sun.awt.AppContext)
-
     /// public static void javax.swing.RepaintManager.setCurrentManager(javax.swing.RepaintManager)
 
     private static var setCurrentManager_MethodID_6: jmethodID?
@@ -214,7 +206,7 @@ open class RepaintManager: java_swift.JavaObject {
     open class func setCurrentManager( aRepaintManager: RepaintManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aRepaintManager != nil ? aRepaintManager! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aRepaintManager, locals: &__locals )
         JNIMethod.CallStaticVoidMethod( className: "javax/swing/RepaintManager", classCache: &RepaintManagerJNIClass, methodName: "setCurrentManager", methodSig: "(Ljavax/swing/RepaintManager;)V", methodCache: &setCurrentManager_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -231,7 +223,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func addInvalidComponent( invalidComponent: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: invalidComponent != nil ? invalidComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: invalidComponent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addInvalidComponent", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &RepaintManager.addInvalidComponent_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -246,7 +238,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func removeInvalidComponent( component: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeInvalidComponent", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &RepaintManager.removeInvalidComponent_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -256,19 +248,38 @@ open class RepaintManager: java_swift.JavaObject {
 
     /// private void javax.swing.RepaintManager.addDirtyRegion0(java.awt.Container,int,int,int,int)
 
-    /// public void javax.swing.RepaintManager.addDirtyRegion(javax.swing.JComponent,int,int,int,int)
+    /// public void javax.swing.RepaintManager.addDirtyRegion(java.awt.Window,int,int,int,int)
 
     private static var addDirtyRegion_MethodID_9: jmethodID?
 
-    open func addDirtyRegion( c: JComponent?, x: Int, y: Int, w: Int, h: Int ) {
+    open func addDirtyRegion( window: java_awt.Window?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: window, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
         __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDirtyRegion", methodSig: "(Ljavax/swing/JComponent;IIII)V", methodCache: &RepaintManager.addDirtyRegion_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDirtyRegion", methodSig: "(Ljava/awt/Window;IIII)V", methodCache: &RepaintManager.addDirtyRegion_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func addDirtyRegion( _ _window: java_awt.Window?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        addDirtyRegion( window: _window, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.RepaintManager.addDirtyRegion(javax.swing.JComponent,int,int,int,int)
+
+    private static var addDirtyRegion_MethodID_10: jmethodID?
+
+    open func addDirtyRegion( c: JComponent?, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: x, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        __args[3] = JNIType.toJava( value: w, locals: &__locals )
+        __args[4] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDirtyRegion", methodSig: "(Ljavax/swing/JComponent;IIII)V", methodCache: &RepaintManager.addDirtyRegion_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func addDirtyRegion( _ _c: JComponent?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -277,40 +288,21 @@ open class RepaintManager: java_swift.JavaObject {
 
     /// public void javax.swing.RepaintManager.addDirtyRegion(java.applet.Applet,int,int,int,int)
 
-    private static var addDirtyRegion_MethodID_10: jmethodID?
+    private static var addDirtyRegion_MethodID_11: jmethodID?
 
     open func addDirtyRegion( applet: /* java.applet.Applet */ UnclassedObject?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: applet != nil ? applet! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: applet, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
         __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDirtyRegion", methodSig: "(Ljava/applet/Applet;IIII)V", methodCache: &RepaintManager.addDirtyRegion_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDirtyRegion", methodSig: "(Ljava/applet/Applet;IIII)V", methodCache: &RepaintManager.addDirtyRegion_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func addDirtyRegion( _ _applet: /* java.applet.Applet */ UnclassedObject?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         addDirtyRegion( applet: _applet, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.RepaintManager.addDirtyRegion(java.awt.Window,int,int,int,int)
-
-    private static var addDirtyRegion_MethodID_11: jmethodID?
-
-    open func addDirtyRegion( window: java_awt.Window?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: window != nil ? window! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: w, locals: &__locals )
-        __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDirtyRegion", methodSig: "(Ljava/awt/Window;IIII)V", methodCache: &RepaintManager.addDirtyRegion_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func addDirtyRegion( _ _window: java_awt.Window?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        addDirtyRegion( window: _window, x: _x, y: _y, w: _w, h: _h )
     }
 
     /// void javax.swing.RepaintManager.scheduleHeavyWeightPaints()
@@ -328,7 +320,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func getDirtyRegion( aComponent: JComponent? ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aComponent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDirtyRegion", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Rectangle;", methodCache: &RepaintManager.getDirtyRegion_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
@@ -345,7 +337,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func markCompletelyDirty( aComponent: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aComponent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "markCompletelyDirty", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &RepaintManager.markCompletelyDirty_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -360,7 +352,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func markCompletelyClean( aComponent: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aComponent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "markCompletelyClean", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &RepaintManager.markCompletelyClean_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -375,7 +367,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func isCompletelyDirty( aComponent: JComponent? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aComponent != nil ? aComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aComponent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCompletelyDirty", methodSig: "(Ljavax/swing/JComponent;)Z", methodCache: &RepaintManager.isCompletelyDirty_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -401,8 +393,6 @@ open class RepaintManager: java_swift.JavaObject {
 
     /// boolean javax.swing.RepaintManager.isPainting()
 
-    /// private void javax.swing.RepaintManager.paintDirtyRegions(java.util.Map)
-
     /// public void javax.swing.RepaintManager.paintDirtyRegions()
 
     private static var paintDirtyRegions_MethodID_17: jmethodID?
@@ -413,6 +403,8 @@ open class RepaintManager: java_swift.JavaObject {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDirtyRegions", methodSig: "()V", methodCache: &RepaintManager.paintDirtyRegions_MethodID_17, args: &__args, locals: &__locals )
     }
 
+
+    /// private void javax.swing.RepaintManager.paintDirtyRegions(java.util.Map)
 
     /// private void javax.swing.RepaintManager.adjustRoots(javax.swing.JComponent,java.util.List,int)
 
@@ -427,7 +419,7 @@ open class RepaintManager: java_swift.JavaObject {
     open func setDoubleBufferMaximumSize( d: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d != nil ? d! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDoubleBufferMaximumSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &RepaintManager.setDoubleBufferMaximumSize_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -494,6 +486,14 @@ open class RepaintManager: java_swift.JavaObject {
     /// private void javax.swing.RepaintManager.scheduleProcessingRunnable(sun.awt.AppContext)
 
     /// private javax.swing.RepaintManager javax.swing.RepaintManager.getDelegate(java.awt.Component)
+
+    /// static int javax.swing.RepaintManager.access$800()
+
+    /// static void javax.swing.RepaintManager.access$1100(javax.swing.RepaintManager)
+
+    /// static boolean javax.swing.RepaintManager.access$900(javax.swing.RepaintManager)
+
+    /// static void javax.swing.RepaintManager.access$1200(javax.swing.RepaintManager)
 
 }
 

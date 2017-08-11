@@ -43,7 +43,7 @@ open class HTMLDocument_BlockElement: AbstractDocument_BranchElement {
     public convenience init( this_0: HTMLDocument?, parent: Element?, a: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$BlockElement", classCache: &HTMLDocument_BlockElement.HTMLDocument_BlockElementJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument;Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)V", methodCache: &HTMLDocument_BlockElement.new_MethodID_1, args: &__args, locals: &__locals )

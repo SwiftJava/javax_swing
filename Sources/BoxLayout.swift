@@ -82,7 +82,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     public convenience init( target: java_awt.Container?, axis: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         __args[1] = JNIType.toJava( value: axis, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/BoxLayout", classCache: &BoxLayout.BoxLayoutJNIClass, methodSig: "(Ljava/awt/Container;I)V", methodCache: &BoxLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -108,6 +108,8 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     }
 
 
+    /// void javax.swing.BoxLayout.checkContainer(java.awt.Container)
+
     /// public void javax.swing.BoxLayout.removeLayoutComponent(java.awt.Component)
 
     private static var removeLayoutComponent_MethodID_3: jmethodID?
@@ -115,7 +117,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func removeLayoutComponent( comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BoxLayout.removeLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -123,36 +125,36 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
         removeLayoutComponent( comp: _comp )
     }
 
-    /// public void javax.swing.BoxLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
-
-    private static var addLayoutComponent_MethodID_4: jmethodID?
-
-    open func addLayoutComponent( comp: java_awt.Component?, constraints: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &BoxLayout.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func addLayoutComponent( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject? ) {
-        addLayoutComponent( comp: _comp, constraints: _constraints )
-    }
-
     /// public void javax.swing.BoxLayout.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    private static var addLayoutComponent_MethodID_5: jmethodID?
+    private static var addLayoutComponent_MethodID_4: jmethodID?
 
     open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BoxLayout.addLayoutComponent_MethodID_5, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BoxLayout.addLayoutComponent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
         addLayoutComponent( name: _name, comp: _comp )
+    }
+
+    /// public void javax.swing.BoxLayout.addLayoutComponent(java.awt.Component,java.lang.Object)
+
+    private static var addLayoutComponent_MethodID_5: jmethodID?
+
+    open func addLayoutComponent( comp: java_awt.Component?, constraints: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &BoxLayout.addLayoutComponent_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func addLayoutComponent( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject? ) {
+        addLayoutComponent( comp: _comp, constraints: _constraints )
     }
 
     /// public void javax.swing.BoxLayout.layoutContainer(java.awt.Container)
@@ -162,7 +164,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func layoutContainer( parent: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BoxLayout.layoutContainer_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -177,7 +179,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func invalidateLayout( target: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &BoxLayout.invalidateLayout_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -192,7 +194,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BoxLayout.preferredLayoutSize_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
@@ -209,7 +211,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BoxLayout.minimumLayoutSize_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
@@ -226,7 +228,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func maximumLayoutSize( target: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BoxLayout.maximumLayoutSize_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
@@ -243,7 +245,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func getLayoutAlignmentX( target: java_awt.Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &BoxLayout.getLayoutAlignmentX_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
@@ -259,7 +261,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     open func getLayoutAlignmentY( target: java_awt.Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &BoxLayout.getLayoutAlignmentY_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
@@ -283,8 +285,6 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* java.io
     /// void javax.swing.BoxLayout.checkRequests()
 
     /// private int javax.swing.BoxLayout.resolveAxis(int,java.awt.ComponentOrientation)
-
-    /// void javax.swing.BoxLayout.checkContainer(java.awt.Container)
 
 }
 

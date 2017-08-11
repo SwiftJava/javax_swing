@@ -54,7 +54,7 @@ open class JLabel: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &JLabel.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -99,7 +99,7 @@ open class JLabel: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JLabel.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -116,7 +116,7 @@ open class JLabel: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JLabel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -493,7 +493,7 @@ open class JLabel: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JLabel.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -842,127 +842,16 @@ open class JLabel: JComponent, SwingConstants {
     }
 
 
-    /// public boolean javax.swing.JLabel.imageUpdate(java.awt.Image,int,int,int,int,int)
+    /// public javax.swing.plaf.LabelUI javax.swing.JLabel.getUI()
 
-    private static var imageUpdate_MethodID_8: jmethodID?
+    private static var getUI_MethodID_8: jmethodID?
 
-    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &JLabel.imageUpdate_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
-        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public java.lang.String javax.swing.JLabel.getText()
-
-    private static var getText_MethodID_9: jmethodID?
-
-    open func getText() -> String! {
+    open func getUI() -> LabelUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &JLabel.getText_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public javax.swing.Icon javax.swing.JLabel.getIcon()
-
-    private static var getIcon_MethodID_10: jmethodID?
-
-    open func getIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JLabel.getIcon_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/LabelUI;", methodCache: &JLabel.getUI_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JLabel.getAccessibleContext()
-
-    /// public void javax.swing.JLabel.setText(java.lang.String)
-
-    private static var setText_MethodID_11: jmethodID?
-
-    open func setText( text: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JLabel.setText_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setText( _ _text: String? ) {
-        setText( text: _text )
-    }
-
-    /// public javax.swing.Icon javax.swing.JLabel.getDisabledIcon()
-
-    private static var getDisabledIcon_MethodID_12: jmethodID?
-
-    open func getDisabledIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JLabel.getDisabledIcon_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.JLabel.getVerticalAlignment()
-
-    private static var getVerticalAlignment_MethodID_13: jmethodID?
-
-    open func getVerticalAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalAlignment", methodSig: "()I", methodCache: &JLabel.getVerticalAlignment_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.JLabel.getHorizontalAlignment()
-
-    private static var getHorizontalAlignment_MethodID_14: jmethodID?
-
-    open func getHorizontalAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalAlignment", methodSig: "()I", methodCache: &JLabel.getHorizontalAlignment_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.JLabel.getVerticalTextPosition()
-
-    private static var getVerticalTextPosition_MethodID_15: jmethodID?
-
-    open func getVerticalTextPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalTextPosition", methodSig: "()I", methodCache: &JLabel.getVerticalTextPosition_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.JLabel.getHorizontalTextPosition()
-
-    private static var getHorizontalTextPosition_MethodID_16: jmethodID?
-
-    open func getHorizontalTextPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalTextPosition", methodSig: "()I", methodCache: &JLabel.getHorizontalTextPosition_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return __return != nil ? LabelUI( javaObject: __return ) : nil
     }
 
 
@@ -970,13 +859,13 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setUI(javax.swing.plaf.LabelUI)
 
-    private static var setUI_MethodID_17: jmethodID?
+    private static var setUI_MethodID_9: jmethodID?
 
     open func setUI( ui: LabelUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/LabelUI;)V", methodCache: &JLabel.setUI_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/LabelUI;)V", methodCache: &JLabel.setUI_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: LabelUI? ) {
@@ -987,13 +876,13 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setIcon(javax.swing.Icon)
 
-    private static var setIcon_MethodID_18: jmethodID?
+    private static var setIcon_MethodID_10: jmethodID?
 
     open func setIcon( icon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: icon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JLabel.setIcon_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JLabel.setIcon_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setIcon( _ _icon: Icon? ) {
@@ -1002,70 +891,70 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setDisabledIcon(javax.swing.Icon)
 
-    private static var setDisabledIcon_MethodID_19: jmethodID?
+    private static var setDisabledIcon_MethodID_11: jmethodID?
 
     open func setDisabledIcon( disabledIcon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: disabledIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JLabel.setDisabledIcon_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JLabel.setDisabledIcon_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setDisabledIcon( _ _disabledIcon: Icon? ) {
         setDisabledIcon( disabledIcon: _disabledIcon )
     }
 
-    /// public void javax.swing.JLabel.setDisplayedMnemonic(char)
-
-    private static var setDisplayedMnemonic_MethodID_20: jmethodID?
-
-    open func setDisplayedMnemonic( aChar: UInt16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aChar, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonic", methodSig: "(C)V", methodCache: &JLabel.setDisplayedMnemonic_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func setDisplayedMnemonic( _ _aChar: UInt16 ) {
-        setDisplayedMnemonic( aChar: _aChar )
-    }
-
     /// public void javax.swing.JLabel.setDisplayedMnemonic(int)
 
-    private static var setDisplayedMnemonic_MethodID_21: jmethodID?
+    private static var setDisplayedMnemonic_MethodID_12: jmethodID?
 
     open func setDisplayedMnemonic( key: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonic", methodSig: "(I)V", methodCache: &JLabel.setDisplayedMnemonic_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonic", methodSig: "(I)V", methodCache: &JLabel.setDisplayedMnemonic_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setDisplayedMnemonic( _ _key: Int ) {
         setDisplayedMnemonic( key: _key )
     }
 
+    /// public void javax.swing.JLabel.setDisplayedMnemonic(char)
+
+    private static var setDisplayedMnemonic_MethodID_13: jmethodID?
+
+    open func setDisplayedMnemonic( aChar: UInt16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: aChar, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonic", methodSig: "(C)V", methodCache: &JLabel.setDisplayedMnemonic_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setDisplayedMnemonic( _ _aChar: UInt16 ) {
+        setDisplayedMnemonic( aChar: _aChar )
+    }
+
     /// public int javax.swing.JLabel.getDisplayedMnemonic()
 
-    private static var getDisplayedMnemonic_MethodID_22: jmethodID?
+    private static var getDisplayedMnemonic_MethodID_14: jmethodID?
 
     open func getDisplayedMnemonic() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonic", methodSig: "()I", methodCache: &JLabel.getDisplayedMnemonic_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonic", methodSig: "()I", methodCache: &JLabel.getDisplayedMnemonic_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JLabel.setDisplayedMnemonicIndex(int) throws java.lang.IllegalArgumentException
 
-    private static var setDisplayedMnemonicIndex_MethodID_23: jmethodID?
+    private static var setDisplayedMnemonicIndex_MethodID_15: jmethodID?
 
     open func setDisplayedMnemonicIndex( index: Int ) throws /* java.lang.IllegalArgumentException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonicIndex", methodSig: "(I)V", methodCache: &JLabel.setDisplayedMnemonicIndex_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonicIndex", methodSig: "(I)V", methodCache: &JLabel.setDisplayedMnemonicIndex_MethodID_15, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_lang.IllegalArgumentException( javaObject: throwable )
         }
@@ -1077,26 +966,26 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public int javax.swing.JLabel.getDisplayedMnemonicIndex()
 
-    private static var getDisplayedMnemonicIndex_MethodID_24: jmethodID?
+    private static var getDisplayedMnemonicIndex_MethodID_16: jmethodID?
 
     open func getDisplayedMnemonicIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonicIndex", methodSig: "()I", methodCache: &JLabel.getDisplayedMnemonicIndex_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonicIndex", methodSig: "()I", methodCache: &JLabel.getDisplayedMnemonicIndex_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected int javax.swing.JLabel.checkHorizontalKey(int,java.lang.String)
 
-    private static var checkHorizontalKey_MethodID_25: jmethodID?
+    private static var checkHorizontalKey_MethodID_17: jmethodID?
 
     open func checkHorizontalKey( key: Int, message: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: message, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkHorizontalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &JLabel.checkHorizontalKey_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkHorizontalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &JLabel.checkHorizontalKey_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1106,14 +995,14 @@ open class JLabel: JComponent, SwingConstants {
 
     /// protected int javax.swing.JLabel.checkVerticalKey(int,java.lang.String)
 
-    private static var checkVerticalKey_MethodID_26: jmethodID?
+    private static var checkVerticalKey_MethodID_18: jmethodID?
 
     open func checkVerticalKey( key: Int, message: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: message, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkVerticalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &JLabel.checkVerticalKey_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkVerticalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &JLabel.checkVerticalKey_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1123,25 +1012,25 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public int javax.swing.JLabel.getIconTextGap()
 
-    private static var getIconTextGap_MethodID_27: jmethodID?
+    private static var getIconTextGap_MethodID_19: jmethodID?
 
     open func getIconTextGap() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconTextGap", methodSig: "()I", methodCache: &JLabel.getIconTextGap_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconTextGap", methodSig: "()I", methodCache: &JLabel.getIconTextGap_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JLabel.setIconTextGap(int)
 
-    private static var setIconTextGap_MethodID_28: jmethodID?
+    private static var setIconTextGap_MethodID_20: jmethodID?
 
     open func setIconTextGap( iconTextGap: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: iconTextGap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconTextGap", methodSig: "(I)V", methodCache: &JLabel.setIconTextGap_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconTextGap", methodSig: "(I)V", methodCache: &JLabel.setIconTextGap_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setIconTextGap( _ _iconTextGap: Int ) {
@@ -1150,13 +1039,13 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setVerticalAlignment(int)
 
-    private static var setVerticalAlignment_MethodID_29: jmethodID?
+    private static var setVerticalAlignment_MethodID_21: jmethodID?
 
     open func setVerticalAlignment( alignment: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalAlignment", methodSig: "(I)V", methodCache: &JLabel.setVerticalAlignment_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalAlignment", methodSig: "(I)V", methodCache: &JLabel.setVerticalAlignment_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func setVerticalAlignment( _ _alignment: Int ) {
@@ -1165,13 +1054,13 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setHorizontalAlignment(int)
 
-    private static var setHorizontalAlignment_MethodID_30: jmethodID?
+    private static var setHorizontalAlignment_MethodID_22: jmethodID?
 
     open func setHorizontalAlignment( alignment: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalAlignment", methodSig: "(I)V", methodCache: &JLabel.setHorizontalAlignment_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalAlignment", methodSig: "(I)V", methodCache: &JLabel.setHorizontalAlignment_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setHorizontalAlignment( _ _alignment: Int ) {
@@ -1180,13 +1069,13 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setVerticalTextPosition(int)
 
-    private static var setVerticalTextPosition_MethodID_31: jmethodID?
+    private static var setVerticalTextPosition_MethodID_23: jmethodID?
 
     open func setVerticalTextPosition( textPosition: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: textPosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalTextPosition", methodSig: "(I)V", methodCache: &JLabel.setVerticalTextPosition_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalTextPosition", methodSig: "(I)V", methodCache: &JLabel.setVerticalTextPosition_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func setVerticalTextPosition( _ _textPosition: Int ) {
@@ -1195,13 +1084,13 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setHorizontalTextPosition(int)
 
-    private static var setHorizontalTextPosition_MethodID_32: jmethodID?
+    private static var setHorizontalTextPosition_MethodID_24: jmethodID?
 
     open func setHorizontalTextPosition( textPosition: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: textPosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalTextPosition", methodSig: "(I)V", methodCache: &JLabel.setHorizontalTextPosition_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalTextPosition", methodSig: "(I)V", methodCache: &JLabel.setHorizontalTextPosition_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setHorizontalTextPosition( _ _textPosition: Int ) {
@@ -1210,12 +1099,12 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public java.awt.Component javax.swing.JLabel.getLabelFor()
 
-    private static var getLabelFor_MethodID_33: jmethodID?
+    private static var getLabelFor_MethodID_25: jmethodID?
 
     open func getLabelFor() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabelFor", methodSig: "()Ljava/awt/Component;", methodCache: &JLabel.getLabelFor_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabelFor", methodSig: "()Ljava/awt/Component;", methodCache: &JLabel.getLabelFor_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -1223,29 +1112,140 @@ open class JLabel: JComponent, SwingConstants {
 
     /// public void javax.swing.JLabel.setLabelFor(java.awt.Component)
 
-    private static var setLabelFor_MethodID_34: jmethodID?
+    private static var setLabelFor_MethodID_26: jmethodID?
 
     open func setLabelFor( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabelFor", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLabel.setLabelFor_MethodID_34, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabelFor", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLabel.setLabelFor_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setLabelFor( _ _c: java_awt.Component? ) {
         setLabelFor( c: _c )
     }
 
-    /// public javax.swing.plaf.LabelUI javax.swing.JLabel.getUI()
+    /// public boolean javax.swing.JLabel.imageUpdate(java.awt.Image,int,int,int,int,int)
 
-    private static var getUI_MethodID_35: jmethodID?
+    private static var imageUpdate_MethodID_27: jmethodID?
 
-    open func getUI() -> LabelUI! {
+    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &JLabel.imageUpdate_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
+        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public java.lang.String javax.swing.JLabel.getText()
+
+    private static var getText_MethodID_28: jmethodID?
+
+    open func getText() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/LabelUI;", methodCache: &JLabel.getUI_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &JLabel.getText_MethodID_28, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public javax.swing.Icon javax.swing.JLabel.getIcon()
+
+    private static var getIcon_MethodID_29: jmethodID?
+
+    open func getIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JLabel.getIcon_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LabelUI( javaObject: __return ) : nil
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JLabel.getAccessibleContext()
+
+    /// public void javax.swing.JLabel.setText(java.lang.String)
+
+    private static var setText_MethodID_30: jmethodID?
+
+    open func setText( text: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JLabel.setText_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setText( _ _text: String? ) {
+        setText( text: _text )
+    }
+
+    /// public javax.swing.Icon javax.swing.JLabel.getDisabledIcon()
+
+    private static var getDisabledIcon_MethodID_31: jmethodID?
+
+    open func getDisabledIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JLabel.getDisabledIcon_MethodID_31, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.JLabel.getVerticalAlignment()
+
+    private static var getVerticalAlignment_MethodID_32: jmethodID?
+
+    open func getVerticalAlignment() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalAlignment", methodSig: "()I", methodCache: &JLabel.getVerticalAlignment_MethodID_32, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.JLabel.getHorizontalAlignment()
+
+    private static var getHorizontalAlignment_MethodID_33: jmethodID?
+
+    open func getHorizontalAlignment() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalAlignment", methodSig: "()I", methodCache: &JLabel.getHorizontalAlignment_MethodID_33, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.JLabel.getVerticalTextPosition()
+
+    private static var getVerticalTextPosition_MethodID_34: jmethodID?
+
+    open func getVerticalTextPosition() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalTextPosition", methodSig: "()I", methodCache: &JLabel.getVerticalTextPosition_MethodID_34, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.JLabel.getHorizontalTextPosition()
+
+    private static var getHorizontalTextPosition_MethodID_35: jmethodID?
+
+    open func getHorizontalTextPosition() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalTextPosition", methodSig: "()I", methodCache: &JLabel.getHorizontalTextPosition_MethodID_35, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
 

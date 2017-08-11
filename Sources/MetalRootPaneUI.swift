@@ -71,7 +71,7 @@ open class MetalRootPaneUI: BasicRootPaneUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalRootPaneUI", classCache: &MetalRootPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -81,13 +81,19 @@ open class MetalRootPaneUI: BasicRootPaneUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.metal.MetalRootPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+    /// void javax.swing.plaf.metal.MetalRootPaneUI.installBorder(javax.swing.JRootPane)
 
-    /// private javax.swing.JRootPane javax.swing.plaf.metal.MetalRootPaneUI.getRootPane()
+    /// private void javax.swing.plaf.metal.MetalRootPaneUI.uninstallBorder(javax.swing.JRootPane)
 
     /// public void javax.swing.plaf.metal.MetalRootPaneUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.metal.MetalRootPaneUI.uninstallUI(javax.swing.JComponent)
+
+    /// private java.awt.LayoutManager javax.swing.plaf.metal.MetalRootPaneUI.createLayoutManager()
+
+    /// public void javax.swing.plaf.metal.MetalRootPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    /// private javax.swing.JRootPane javax.swing.plaf.metal.MetalRootPaneUI.getRootPane()
 
     /// private void javax.swing.plaf.metal.MetalRootPaneUI.installWindowListeners(javax.swing.JRootPane,java.awt.Component)
 
@@ -108,12 +114,6 @@ open class MetalRootPaneUI: BasicRootPaneUI {
     /// private void javax.swing.plaf.metal.MetalRootPaneUI.setTitlePane(javax.swing.JRootPane,javax.swing.JComponent)
 
     /// private javax.swing.JComponent javax.swing.plaf.metal.MetalRootPaneUI.getTitlePane()
-
-    /// void javax.swing.plaf.metal.MetalRootPaneUI.installBorder(javax.swing.JRootPane)
-
-    /// private void javax.swing.plaf.metal.MetalRootPaneUI.uninstallBorder(javax.swing.JRootPane)
-
-    /// private java.awt.LayoutManager javax.swing.plaf.metal.MetalRootPaneUI.createLayoutManager()
 
 }
 

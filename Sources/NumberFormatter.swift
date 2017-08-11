@@ -71,7 +71,7 @@ open class NumberFormatter: InternationalFormatter {
     public convenience init( arg0: /* java.text.NumberFormat */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/NumberFormatter", classCache: &NumberFormatter.NumberFormatterJNIClass, methodSig: "(Ljava/text/NumberFormat;)V", methodCache: &NumberFormatter.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -83,6 +83,8 @@ open class NumberFormatter: InternationalFormatter {
 
     /// void javax.swing.text.NumberFormatter.replace(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
+    /// java.lang.Object javax.swing.text.NumberFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
+
     /// public void javax.swing.text.NumberFormatter.setFormat(java.text.Format)
 
     private static var setFormat_MethodID_3: jmethodID?
@@ -90,15 +92,13 @@ open class NumberFormatter: InternationalFormatter {
     open func setFormat( arg0: /* java.text.Format */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/Format;)V", methodCache: &NumberFormatter.setFormat_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func setFormat( _ _arg0: /* java.text.Format */ UnclassedObject? ) {
         setFormat( arg0: _arg0 )
     }
-
-    /// java.lang.Object javax.swing.text.NumberFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
 
     /// private java.text.DecimalFormatSymbols javax.swing.text.NumberFormatter.getDecimalFormatSymbols()
 

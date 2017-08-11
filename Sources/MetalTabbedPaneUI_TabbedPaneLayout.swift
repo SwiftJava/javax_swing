@@ -27,7 +27,7 @@ open class MetalTabbedPaneUI_TabbedPaneLayout: BasicTabbedPaneUI_TabbedPaneLayou
     public convenience init( this_0: MetalTabbedPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalTabbedPaneUI$TabbedPaneLayout", classCache: &MetalTabbedPaneUI_TabbedPaneLayout.MetalTabbedPaneUI_TabbedPaneLayoutJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalTabbedPaneUI;)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

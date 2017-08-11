@@ -41,7 +41,7 @@ open class HTMLDocument_RunElement: AbstractDocument_LeafElement {
     public convenience init( this_0: HTMLDocument?, parent: Element?, a: AttributeSet?, offs0: Int, offs1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         __args[3] = JNIType.toJava( value: offs0, locals: &__locals )

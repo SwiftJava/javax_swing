@@ -86,7 +86,7 @@ open class DebugGraphics: java_awt.Graphics {
     public convenience init( graphics: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: graphics != nil ? graphics! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: graphics, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DebugGraphics", classCache: &DebugGraphics.DebugGraphicsJNIClass, methodSig: "(Ljava/awt/Graphics;)V", methodCache: &DebugGraphics.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -103,8 +103,8 @@ open class DebugGraphics: java_awt.Graphics {
     public convenience init( graphics: java_awt.Graphics?, component: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: graphics != nil ? graphics! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: graphics, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DebugGraphics", classCache: &DebugGraphics.DebugGraphicsJNIClass, methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &DebugGraphics.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -126,61 +126,19 @@ open class DebugGraphics: java_awt.Graphics {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.Graphics javax.swing.DebugGraphics.create(int,int,int,int)
-
     /// public java.awt.Graphics javax.swing.DebugGraphics.create()
+
+    /// public java.awt.Graphics javax.swing.DebugGraphics.create(int,int,int,int)
 
     /// final void javax.swing.DebugGraphics.sleep(int)
 
     /// static javax.swing.DebugGraphicsInfo javax.swing.DebugGraphics.info()
 
-    /// public java.awt.Shape javax.swing.DebugGraphics.getClip()
-
-    /// public void javax.swing.DebugGraphics.fillRect(int,int,int,int)
-
-    /// public java.awt.Font javax.swing.DebugGraphics.getFont()
-
-    /// public java.awt.FontMetrics javax.swing.DebugGraphics.getFontMetrics(java.awt.Font)
-
-    /// public java.awt.FontMetrics javax.swing.DebugGraphics.getFontMetrics()
-
-    /// public void javax.swing.DebugGraphics.setFont(java.awt.Font)
-
-    private static var setFont_MethodID_4: jmethodID?
-
-    open func setFont( aFont: java_awt.Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aFont != nil ? aFont! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &DebugGraphics.setFont_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func setFont( _ _aFont: java_awt.Font? ) {
-        setFont( aFont: _aFont )
-    }
-
-    /// public java.awt.Color javax.swing.DebugGraphics.getColor()
-
-    /// public void javax.swing.DebugGraphics.setColor(java.awt.Color)
-
-    private static var setColor_MethodID_5: jmethodID?
-
-    open func setColor( aColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aColor != nil ? aColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DebugGraphics.setColor_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func setColor( _ _aColor: java_awt.Color? ) {
-        setColor( aColor: _aColor )
-    }
-
     /// public void javax.swing.DebugGraphics.dispose()
 
     /// public void javax.swing.DebugGraphics.copyArea(int,int,int,int,int,int)
 
-    private static var copyArea_MethodID_6: jmethodID?
+    private static var copyArea_MethodID_4: jmethodID?
 
     open func copyArea( x: Int, y: Int, width: Int, height: Int, destX: Int, destY: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
@@ -191,7 +149,7 @@ open class DebugGraphics: java_awt.Graphics {
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
         __args[4] = JNIType.toJava( value: destX, locals: &__locals )
         __args[5] = JNIType.toJava( value: destY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "copyArea", methodSig: "(IIIIII)V", methodCache: &DebugGraphics.copyArea_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "copyArea", methodSig: "(IIIIII)V", methodCache: &DebugGraphics.copyArea_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func copyArea( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int, _ _destX: Int, _ _destY: Int ) {
@@ -208,20 +166,16 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public void javax.swing.DebugGraphics.clearRect(int,int,int,int)
 
-    /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,int,int,java.awt.image.ImageObserver)
-
     /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,java.awt.image.ImageObserver)
-
-    /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,int,int,int,int,int,int,java.awt.image.ImageObserver)
 
     /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,int,int,int,int,int,int,java.awt.Color,java.awt.image.ImageObserver)
 
-    private static var drawImage_MethodID_7: jmethodID?
+    private static var drawImage_MethodID_5: jmethodID?
 
     override open func drawImage( img: java_awt.Image?, dx1: Int, dy1: Int, dx2: Int, dy2: Int, sx1: Int, sy1: Int, sx2: Int, sy2: Int, bgcolor: java_awt.Color?, observer: java_awt.ImageObserver? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 11 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img != nil ? img! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
         __args[1] = JNIType.toJava( value: dx1, locals: &__locals )
         __args[2] = JNIType.toJava( value: dy1, locals: &__locals )
         __args[3] = JNIType.toJava( value: dx2, locals: &__locals )
@@ -230,9 +184,9 @@ open class DebugGraphics: java_awt.Graphics {
         __args[6] = JNIType.toJava( value: sy1, locals: &__locals )
         __args[7] = JNIType.toJava( value: sx2, locals: &__locals )
         __args[8] = JNIType.toJava( value: sy2, locals: &__locals )
-        __args[9] = JNIType.toJava( value: bgcolor != nil ? bgcolor! as JNIObject : nil, locals: &__locals )
+        __args[9] = JNIType.toJava( value: bgcolor, locals: &__locals )
         __args[10] = JNIType.toJava( value: observer, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIIIIIILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &DebugGraphics.drawImage_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "drawImage", methodSig: "(Ljava/awt/Image;IIIIIIIILjava/awt/Color;Ljava/awt/image/ImageObserver;)Z", methodCache: &DebugGraphics.drawImage_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -240,21 +194,48 @@ open class DebugGraphics: java_awt.Graphics {
         return drawImage( img: _img, dx1: _dx1, dy1: _dy1, dx2: _dx2, dy2: _dy2, sx1: _sx1, sy1: _sy1, sx2: _sx2, sy2: _sy2, bgcolor: _bgcolor, observer: _observer )
     }
 
+    /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,int,int,int,int,int,int,java.awt.image.ImageObserver)
+
+    /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,int,int,java.awt.image.ImageObserver)
+
     /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,java.awt.Color,java.awt.image.ImageObserver)
 
     /// public boolean javax.swing.DebugGraphics.drawImage(java.awt.Image,int,int,int,int,java.awt.Color,java.awt.image.ImageObserver)
+
+    /// public void javax.swing.DebugGraphics.fillRect(int,int,int,int)
+
+    /// public java.awt.Font javax.swing.DebugGraphics.getFont()
+
+    /// public java.awt.FontMetrics javax.swing.DebugGraphics.getFontMetrics(java.awt.Font)
+
+    /// public java.awt.FontMetrics javax.swing.DebugGraphics.getFontMetrics()
+
+    /// public void javax.swing.DebugGraphics.setFont(java.awt.Font)
+
+    private static var setFont_MethodID_6: jmethodID?
+
+    open func setFont( aFont: java_awt.Font? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: aFont, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &DebugGraphics.setFont_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func setFont( _ _aFont: java_awt.Font? ) {
+        setFont( aFont: _aFont )
+    }
 
     /// private java.awt.Graphics javax.swing.DebugGraphics.debugGraphics()
 
     /// public static void javax.swing.DebugGraphics.setFlashColor(java.awt.Color)
 
-    private static var setFlashColor_MethodID_8: jmethodID?
+    private static var setFlashColor_MethodID_7: jmethodID?
 
     open class func setFlashColor( flashColor: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: flashColor != nil ? flashColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setFlashColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &setFlashColor_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: flashColor, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setFlashColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &setFlashColor_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open class func setFlashColor( _ _flashColor: java_awt.Color? ) {
@@ -263,12 +244,12 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public static java.awt.Color javax.swing.DebugGraphics.flashColor()
 
-    private static var flashColor_MethodID_9: jmethodID?
+    private static var flashColor_MethodID_8: jmethodID?
 
     open class func flashColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "flashColor", methodSig: "()Ljava/awt/Color;", methodCache: &flashColor_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "flashColor", methodSig: "()Ljava/awt/Color;", methodCache: &flashColor_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -276,13 +257,13 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public static void javax.swing.DebugGraphics.setFlashTime(int)
 
-    private static var setFlashTime_MethodID_10: jmethodID?
+    private static var setFlashTime_MethodID_9: jmethodID?
 
     open class func setFlashTime( flashTime: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flashTime, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setFlashTime", methodSig: "(I)V", methodCache: &setFlashTime_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setFlashTime", methodSig: "(I)V", methodCache: &setFlashTime_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open class func setFlashTime( _ _flashTime: Int ) {
@@ -291,25 +272,25 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public static int javax.swing.DebugGraphics.flashTime()
 
-    private static var flashTime_MethodID_11: jmethodID?
+    private static var flashTime_MethodID_10: jmethodID?
 
     open class func flashTime() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "flashTime", methodSig: "()I", methodCache: &flashTime_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "flashTime", methodSig: "()I", methodCache: &flashTime_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public static void javax.swing.DebugGraphics.setFlashCount(int)
 
-    private static var setFlashCount_MethodID_12: jmethodID?
+    private static var setFlashCount_MethodID_11: jmethodID?
 
     open class func setFlashCount( flashCount: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flashCount, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setFlashCount", methodSig: "(I)V", methodCache: &setFlashCount_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setFlashCount", methodSig: "(I)V", methodCache: &setFlashCount_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open class func setFlashCount( _ _flashCount: Int ) {
@@ -318,25 +299,25 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public static int javax.swing.DebugGraphics.flashCount()
 
-    private static var flashCount_MethodID_13: jmethodID?
+    private static var flashCount_MethodID_12: jmethodID?
 
     open class func flashCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "flashCount", methodSig: "()I", methodCache: &flashCount_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "flashCount", methodSig: "()I", methodCache: &flashCount_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public static void javax.swing.DebugGraphics.setLogStream(java.io.PrintStream)
 
-    private static var setLogStream_MethodID_14: jmethodID?
+    private static var setLogStream_MethodID_13: jmethodID?
 
     open class func setLogStream( stream: /* java.io.PrintStream */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stream != nil ? stream! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setLogStream", methodSig: "(Ljava/io/PrintStream;)V", methodCache: &setLogStream_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: stream, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "setLogStream", methodSig: "(Ljava/io/PrintStream;)V", methodCache: &setLogStream_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open class func setLogStream( _ _stream: /* java.io.PrintStream */ UnclassedObject? ) {
@@ -345,12 +326,12 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public static java.io.PrintStream javax.swing.DebugGraphics.logStream()
 
-    private static var logStream_MethodID_15: jmethodID?
+    private static var logStream_MethodID_14: jmethodID?
 
     open class func logStream() -> /* java.io.PrintStream */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "logStream", methodSig: "()Ljava/io/PrintStream;", methodCache: &logStream_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass, methodName: "logStream", methodSig: "()Ljava/io/PrintStream;", methodCache: &logStream_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.io.PrintStream */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -360,13 +341,13 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public void javax.swing.DebugGraphics.setXORMode(java.awt.Color)
 
-    private static var setXORMode_MethodID_16: jmethodID?
+    private static var setXORMode_MethodID_15: jmethodID?
 
     open func setXORMode( aColor: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aColor != nil ? aColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setXORMode", methodSig: "(Ljava/awt/Color;)V", methodCache: &DebugGraphics.setXORMode_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aColor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setXORMode", methodSig: "(Ljava/awt/Color;)V", methodCache: &DebugGraphics.setXORMode_MethodID_15, args: &__args, locals: &__locals )
     }
 
     override open func setXORMode( _ _aColor: java_awt.Color? ) {
@@ -403,7 +384,7 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public void javax.swing.DebugGraphics.drawString(java.lang.String,int,int)
 
-    private static var drawString_MethodID_17: jmethodID?
+    private static var drawString_MethodID_16: jmethodID?
 
     open func drawString( aString: String?, x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -411,7 +392,7 @@ open class DebugGraphics: java_awt.Graphics {
         __args[0] = JNIType.toJava( value: aString, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawString", methodSig: "(Ljava/lang/String;II)V", methodCache: &DebugGraphics.drawString_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawString", methodSig: "(Ljava/lang/String;II)V", methodCache: &DebugGraphics.drawString_MethodID_16, args: &__args, locals: &__locals )
     }
 
     override open func drawString( _ _aString: String?, _ _x: Int, _ _y: Int ) {
@@ -428,12 +409,12 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// public boolean javax.swing.DebugGraphics.isDrawingBuffer()
 
-    private static var isDrawingBuffer_MethodID_18: jmethodID?
+    private static var isDrawingBuffer_MethodID_17: jmethodID?
 
     open func isDrawingBuffer() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDrawingBuffer", methodSig: "()Z", methodCache: &DebugGraphics.isDrawingBuffer_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDrawingBuffer", methodSig: "()Z", methodCache: &DebugGraphics.isDrawingBuffer_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -442,33 +423,33 @@ open class DebugGraphics: java_awt.Graphics {
 
     /// java.lang.String javax.swing.DebugGraphics.pointToString(int,int)
 
+    /// static void javax.swing.DebugGraphics.setDebugOptions(javax.swing.JComponent,int)
+
     /// public void javax.swing.DebugGraphics.setDebugOptions(int)
 
-    private static var setDebugOptions_MethodID_19: jmethodID?
+    private static var setDebugOptions_MethodID_18: jmethodID?
 
     open func setDebugOptions( options: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: options, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDebugOptions", methodSig: "(I)V", methodCache: &DebugGraphics.setDebugOptions_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDebugOptions", methodSig: "(I)V", methodCache: &DebugGraphics.setDebugOptions_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setDebugOptions( _ _options: Int ) {
         setDebugOptions( options: _options )
     }
 
-    /// static void javax.swing.DebugGraphics.setDebugOptions(javax.swing.JComponent,int)
-
     /// static int javax.swing.DebugGraphics.getDebugOptions(javax.swing.JComponent)
 
     /// public int javax.swing.DebugGraphics.getDebugOptions()
 
-    private static var getDebugOptions_MethodID_20: jmethodID?
+    private static var getDebugOptions_MethodID_19: jmethodID?
 
     open func getDebugOptions() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDebugOptions", methodSig: "()I", methodCache: &DebugGraphics.getDebugOptions_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDebugOptions", methodSig: "()I", methodCache: &DebugGraphics.getDebugOptions_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -482,6 +463,25 @@ open class DebugGraphics: java_awt.Graphics {
     /// boolean javax.swing.DebugGraphics.debugFlash()
 
     /// boolean javax.swing.DebugGraphics.debugBuffered()
+
+    /// public java.awt.Shape javax.swing.DebugGraphics.getClip()
+
+    /// public java.awt.Color javax.swing.DebugGraphics.getColor()
+
+    /// public void javax.swing.DebugGraphics.setColor(java.awt.Color)
+
+    private static var setColor_MethodID_20: jmethodID?
+
+    open func setColor( aColor: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: aColor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DebugGraphics.setColor_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    override open func setColor( _ _aColor: java_awt.Color? ) {
+        setColor( aColor: _aColor )
+    }
 
 }
 

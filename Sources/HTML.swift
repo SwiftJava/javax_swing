@@ -82,7 +82,7 @@ open class HTML: java_swift.JavaObject {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         __args[2] = JNIType.toJava( value: def, locals: &__locals )
         let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getIntegerAttributeValue", methodSig: "(Ljavax/swing/text/AttributeSet;Ljavax/swing/text/html/HTML$Attribute;I)I", methodCache: &getIntegerAttributeValue_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
@@ -109,8 +109,6 @@ open class HTML: java_swift.JavaObject {
         return getAttributeKey( attName: _attName )
     }
 
-    /// static javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML.getTagForStyleConstantsKey(javax.swing.text.StyleConstants)
-
     /// public static javax.swing.text.html.HTML$Attribute[] javax.swing.text.html.HTML.getAllAttributeKeys()
 
     private static var getAllAttributeKeys_MethodID_6: jmethodID?
@@ -122,6 +120,8 @@ open class HTML: java_swift.JavaObject {
         return JNIType.toSwift( type: [HTML_Attribute](), from: __return )
     }
 
+
+    /// static javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML.getTagForStyleConstantsKey(javax.swing.text.StyleConstants)
 
 }
 

@@ -29,7 +29,7 @@ open class BasicMenuBarUI: MenuBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "menuBar", fieldType: "Ljavax/swing/JMenuBar;", fieldCache: &BasicMenuBarUI.menuBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -84,10 +84,6 @@ open class BasicMenuBarUI: MenuBarUI {
 
     /// private javax.swing.plaf.basic.BasicMenuBarUI$Handler javax.swing.plaf.basic.BasicMenuBarUI.getHandler()
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMaximumSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicMenuBarUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -95,7 +91,7 @@ open class BasicMenuBarUI: MenuBarUI {
     open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicMenuBarUI", classCache: &BasicMenuBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -118,12 +114,6 @@ open class BasicMenuBarUI: MenuBarUI {
     }
 
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicMenuBarUI.getInputMap(int)
-
-    /// public void javax.swing.plaf.basic.BasicMenuBarUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicMenuBarUI.uninstallUI(javax.swing.JComponent)
-
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicMenuBarUI.createChangeListener()
 
     private static var createChangeListener_MethodID_4: jmethodID?
@@ -136,6 +126,10 @@ open class BasicMenuBarUI: MenuBarUI {
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.plaf.basic.BasicMenuBarUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicMenuBarUI.uninstallUI(javax.swing.JComponent)
 
     /// static void javax.swing.plaf.basic.BasicMenuBarUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
@@ -204,6 +198,12 @@ open class BasicMenuBarUI: MenuBarUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicMenuBarUI.uninstallKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
     }
 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuBarUI.getMaximumSize(javax.swing.JComponent)
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicMenuBarUI.getInputMap(int)
 
 }
 

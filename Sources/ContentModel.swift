@@ -46,7 +46,7 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "content", fieldType: "Ljava/lang/Object;", fieldCache: &ContentModel.content_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "next", fieldType: "Ljavax/swing/text/html/parser/ContentModel;", fieldCache: &ContentModel.next_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,8 +80,8 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: content != nil ? content! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: next != nil ? next! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: content, locals: &__locals )
+        __args[2] = JNIType.toJava( value: next, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/parser/ContentModel", classCache: &ContentModel.ContentModelJNIClass, methodSig: "(ILjava/lang/Object;Ljavax/swing/text/html/parser/ContentModel;)V", methodCache: &ContentModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -99,7 +99,7 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: content != nil ? content! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: content, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/parser/ContentModel", classCache: &ContentModel.ContentModelJNIClass, methodSig: "(ILjavax/swing/text/html/parser/ContentModel;)V", methodCache: &ContentModel.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -116,7 +116,7 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     public convenience init( content: text_html_parser_Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: content != nil ? content! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: content, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/parser/ContentModel", classCache: &ContentModel.ContentModelJNIClass, methodSig: "(Ljavax/swing/text/html/parser/Element;)V", methodCache: &ContentModel.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -160,7 +160,7 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     open func first( token: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: token != nil ? token! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: token, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "first", methodSig: "(Ljava/lang/Object;)Z", methodCache: &ContentModel.first_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -188,7 +188,7 @@ open class ContentModel: java_swift.JavaObject, /* java.io.Serializable */ Uncla
     open func getElements( elemVec: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elemVec != nil ? elemVec! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elemVec, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "getElements", methodSig: "(Ljava/util/Vector;)V", methodCache: &ContentModel.getElements_MethodID_8, args: &__args, locals: &__locals )
     }
 

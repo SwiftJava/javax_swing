@@ -36,12 +36,12 @@ open class LayeredHighlighter_LayerPainter: java_swift.JavaObject, Highlighter_H
     open func paintLayer( g: java_awt.Graphics?, p0: Int, p1: Int, viewBounds: java_awt.Shape?, editor: JTextComponent?, view: View? ) -> java_awt.Shape! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: p0, locals: &__locals )
         __args[2] = JNIType.toJava( value: p1, locals: &__locals )
         __args[3] = JNIType.toJava( value: viewBounds, locals: &__locals )
-        __args[4] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: editor, locals: &__locals )
+        __args[5] = JNIType.toJava( value: view, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paintLayer", methodSig: "(Ljava/awt/Graphics;IILjava/awt/Shape;Ljavax/swing/text/JTextComponent;Ljavax/swing/text/View;)Ljava/awt/Shape;", methodCache: &LayeredHighlighter_LayerPainter.paintLayer_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
@@ -60,11 +60,11 @@ open class LayeredHighlighter_LayerPainter: java_swift.JavaObject, Highlighter_H
     open func paint( g: java_awt.Graphics?, p0: Int, p1: Int, bounds: java_awt.Shape?, c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: p0, locals: &__locals )
         __args[2] = JNIType.toJava( value: p1, locals: &__locals )
         __args[3] = JNIType.toJava( value: bounds, locals: &__locals )
-        __args[4] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;IILjava/awt/Shape;Ljavax/swing/text/JTextComponent;)V", methodCache: &LayeredHighlighter_LayerPainter.paint_MethodID_3, args: &__args, locals: &__locals )
     }
 

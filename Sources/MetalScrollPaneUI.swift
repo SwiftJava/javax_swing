@@ -30,7 +30,7 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &MetalScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -178,7 +178,7 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalScrollPaneUI", classCache: &MetalScrollPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -195,7 +195,7 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
     override open func installUI( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.installUI_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -205,30 +205,15 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     /// public void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallUI(javax.swing.JComponent)
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollPaneUI.createScrollBarSwapListener()
-
-    private static var createScrollBarSwapListener_MethodID_4: jmethodID?
-
-    open func createScrollBarSwapListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollBarSwapListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollPaneUI.createScrollBarSwapListener_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.plaf.metal.MetalScrollPaneUI.updateScrollbarsFreeStanding()
-
     /// public void javax.swing.plaf.metal.MetalScrollPaneUI.installListeners(javax.swing.JScrollPane)
 
-    private static var installListeners_MethodID_5: jmethodID?
+    private static var installListeners_MethodID_4: jmethodID?
 
     open func installListeners( scrollPane: JScrollPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scrollPane != nil ? scrollPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: scrollPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func installListeners( _ _scrollPane: JScrollPane? ) {
@@ -237,13 +222,13 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     /// protected void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallListeners(javax.swing.JComponent)
 
-    private static var uninstallListeners_MethodID_6: jmethodID?
+    private static var uninstallListeners_MethodID_5: jmethodID?
 
     override open func uninstallListeners( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func uninstallListeners( _ _c: JComponent? ) {
@@ -252,18 +237,33 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     /// public void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallListeners(javax.swing.JScrollPane)
 
-    private static var uninstallListeners_MethodID_7: jmethodID?
+    private static var uninstallListeners_MethodID_6: jmethodID?
 
     open func uninstallListeners( scrollPane: JScrollPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scrollPane != nil ? scrollPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: scrollPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func uninstallListeners( _ _scrollPane: JScrollPane? ) {
         uninstallListeners( scrollPane: _scrollPane )
     }
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollPaneUI.createScrollBarSwapListener()
+
+    private static var createScrollBarSwapListener_MethodID_7: jmethodID?
+
+    open func createScrollBarSwapListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollBarSwapListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollPaneUI.createScrollBarSwapListener_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// private void javax.swing.plaf.metal.MetalScrollPaneUI.updateScrollbarsFreeStanding()
 
 }
 

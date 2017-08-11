@@ -8,6 +8,10 @@ import java_awt
 
 public protocol Highlighter: JavaProtocol {
 
+    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
+
+    func paint( g: java_awt.Graphics? )
+
     /// public abstract java.lang.Object javax.swing.text.Highlighter.addHighlight(int,int,javax.swing.text.Highlighter$HighlightPainter) throws javax.swing.text.BadLocationException
 
     func addHighlight( p0: Int, p1: Int, p: Highlighter_HighlightPainter? ) throws /* javax.swing.text.BadLocationException */ -> java_swift.JavaObject!
@@ -36,10 +40,6 @@ public protocol Highlighter: JavaProtocol {
 
     func install( c: JTextComponent? )
 
-    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
-
-    func paint( g: java_awt.Graphics? )
-
 }
 
 
@@ -47,9 +47,24 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
 
     private static var HighlighterJNIClass: jclass?
 
+    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
+
+    private static var paint_MethodID_9: jmethodID?
+
+    open func paint( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &HighlighterForward.paint_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _g: java_awt.Graphics? ) {
+        paint( g: _g )
+    }
+
     /// public abstract java.lang.Object javax.swing.text.Highlighter.addHighlight(int,int,javax.swing.text.Highlighter$HighlightPainter) throws javax.swing.text.BadLocationException
 
-    private static var addHighlight_MethodID_9: jmethodID?
+    private static var addHighlight_MethodID_10: jmethodID?
 
     open func addHighlight( p0: Int, p1: Int, p: Highlighter_HighlightPainter? ) throws /* javax.swing.text.BadLocationException */ -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -57,7 +72,7 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
         __args[0] = JNIType.toJava( value: p0, locals: &__locals )
         __args[1] = JNIType.toJava( value: p1, locals: &__locals )
         __args[2] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addHighlight", methodSig: "(IILjavax/swing/text/Highlighter$HighlightPainter;)Ljava/lang/Object;", methodCache: &HighlighterForward.addHighlight_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addHighlight", methodSig: "(IILjavax/swing/text/Highlighter$HighlightPainter;)Ljava/lang/Object;", methodCache: &HighlighterForward.addHighlight_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -71,13 +86,13 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
 
     /// public abstract void javax.swing.text.Highlighter.removeHighlight(java.lang.Object)
 
-    private static var removeHighlight_MethodID_10: jmethodID?
+    private static var removeHighlight_MethodID_11: jmethodID?
 
     open func removeHighlight( tag: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHighlight", methodSig: "(Ljava/lang/Object;)V", methodCache: &HighlighterForward.removeHighlight_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHighlight", methodSig: "(Ljava/lang/Object;)V", methodCache: &HighlighterForward.removeHighlight_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func removeHighlight( _ _tag: java_swift.JavaObject? ) {
@@ -86,26 +101,26 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
 
     /// public abstract void javax.swing.text.Highlighter.removeAllHighlights()
 
-    private static var removeAllHighlights_MethodID_11: jmethodID?
+    private static var removeAllHighlights_MethodID_12: jmethodID?
 
     open func removeAllHighlights() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAllHighlights", methodSig: "()V", methodCache: &HighlighterForward.removeAllHighlights_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAllHighlights", methodSig: "()V", methodCache: &HighlighterForward.removeAllHighlights_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract void javax.swing.text.Highlighter.changeHighlight(java.lang.Object,int,int) throws javax.swing.text.BadLocationException
 
-    private static var changeHighlight_MethodID_12: jmethodID?
+    private static var changeHighlight_MethodID_13: jmethodID?
 
     open func changeHighlight( tag: java_swift.JavaObject?, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         __args[1] = JNIType.toJava( value: p0, locals: &__locals )
         __args[2] = JNIType.toJava( value: p1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeHighlight", methodSig: "(Ljava/lang/Object;II)V", methodCache: &HighlighterForward.changeHighlight_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeHighlight", methodSig: "(Ljava/lang/Object;II)V", methodCache: &HighlighterForward.changeHighlight_MethodID_13, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -117,25 +132,25 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
 
     /// public abstract javax.swing.text.Highlighter$Highlight[] javax.swing.text.Highlighter.getHighlights()
 
-    private static var getHighlights_MethodID_13: jmethodID?
+    private static var getHighlights_MethodID_14: jmethodID?
 
     open func getHighlights() -> [Highlighter_Highlight]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlights", methodSig: "()[Ljavax/swing/text/Highlighter$Highlight;", methodCache: &HighlighterForward.getHighlights_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlights", methodSig: "()[Ljavax/swing/text/Highlighter$Highlight;", methodCache: &HighlighterForward.getHighlights_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Highlighter_HighlightForward](), from: __return )
     }
 
 
     /// public abstract void javax.swing.text.Highlighter.deinstall(javax.swing.text.JTextComponent)
 
-    private static var deinstall_MethodID_14: jmethodID?
+    private static var deinstall_MethodID_15: jmethodID?
 
     open func deinstall( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.deinstall_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.deinstall_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func deinstall( _ _c: JTextComponent? ) {
@@ -144,32 +159,17 @@ open class HighlighterForward: JNIObjectForward, Highlighter {
 
     /// public abstract void javax.swing.text.Highlighter.install(javax.swing.text.JTextComponent)
 
-    private static var install_MethodID_15: jmethodID?
+    private static var install_MethodID_16: jmethodID?
 
     open func install( c: JTextComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.install_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &HighlighterForward.install_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func install( _ _c: JTextComponent? ) {
         install( c: _c )
-    }
-
-    /// public abstract void javax.swing.text.Highlighter.paint(java.awt.Graphics)
-
-    private static var paint_MethodID_16: jmethodID?
-
-    open func paint( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &HighlighterForward.paint_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _g: java_awt.Graphics? ) {
-        paint( g: _g )
     }
 
 }

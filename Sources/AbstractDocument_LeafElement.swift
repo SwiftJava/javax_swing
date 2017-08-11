@@ -39,7 +39,7 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
     public convenience init( this_0: AbstractDocument?, parent: Element?, a: AttributeSet?, offs0: Int, offs1: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         __args[3] = JNIType.toJava( value: offs0, locals: &__locals )
@@ -60,6 +60,14 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
     /// private void javax.swing.text.AbstractDocument$LeafElement.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
 
     /// private void javax.swing.text.AbstractDocument$LeafElement.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+
+    /// public boolean javax.swing.text.AbstractDocument$LeafElement.isLeaf()
+
+    /// public java.util.Enumeration javax.swing.text.AbstractDocument$LeafElement.children()
+
+    /// public boolean javax.swing.text.AbstractDocument$LeafElement.getAllowsChildren()
+
+    /// public int javax.swing.text.AbstractDocument$LeafElement.getElementCount()
 
     /// public int javax.swing.text.AbstractDocument$LeafElement.getElementIndex(int)
 
@@ -82,14 +90,6 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
     /// public int javax.swing.text.AbstractDocument$LeafElement.getEndOffset()
 
     /// public int javax.swing.text.AbstractDocument$LeafElement.getStartOffset()
-
-    /// public int javax.swing.text.AbstractDocument$LeafElement.getElementCount()
-
-    /// public java.util.Enumeration javax.swing.text.AbstractDocument$LeafElement.children()
-
-    /// public boolean javax.swing.text.AbstractDocument$LeafElement.getAllowsChildren()
-
-    /// public boolean javax.swing.text.AbstractDocument$LeafElement.isLeaf()
 
 }
 

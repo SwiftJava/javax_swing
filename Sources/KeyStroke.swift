@@ -51,7 +51,7 @@ open class KeyStroke: java_awt.AWTKeyStroke {
     open class func getKeyStrokeForEvent( anEvent: java_awt.KeyEvent? ) -> KeyStroke! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/KeyStroke", classCache: &KeyStrokeJNIClass, methodName: "getKeyStrokeForEvent", methodSig: "(Ljava/awt/event/KeyEvent;)Ljavax/swing/KeyStroke;", methodCache: &getKeyStrokeForEvent_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? KeyStroke( javaObject: __return ) : nil
@@ -122,7 +122,7 @@ open class KeyStroke: java_awt.AWTKeyStroke {
     open class func getKeyStroke( keyChar: java_lang.Character?, modifiers: Int ) -> KeyStroke! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyChar != nil ? keyChar! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
         __args[1] = JNIType.toJava( value: modifiers, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/KeyStroke", classCache: &KeyStrokeJNIClass, methodName: "getKeyStroke", methodSig: "(Ljava/lang/Character;I)Ljavax/swing/KeyStroke;", methodCache: &getKeyStroke_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

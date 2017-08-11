@@ -39,7 +39,7 @@ open class AsyncBoxView: View {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "locator", fieldType: "Ljavax/swing/text/AsyncBoxView$ChildLocator;", fieldCache: &AsyncBoxView.locator_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -148,6 +148,26 @@ open class AsyncBoxView: View {
 
     /// public void javax.swing.text.AsyncBoxView.setParent(javax.swing.text.View)
 
+    /// public void javax.swing.text.AsyncBoxView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_2: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, alloc: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: alloc, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &AsyncBoxView.paint_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _alloc: java_awt.Shape? ) {
+        paint( g: _g, alloc: _alloc )
+    }
+
+    /// public int javax.swing.text.AsyncBoxView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    /// public java.awt.Shape javax.swing.text.AsyncBoxView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
+
     /// public float javax.swing.text.AsyncBoxView.getMinimumSpan(int)
 
     /// public float javax.swing.text.AsyncBoxView.getMaximumSpan(int)
@@ -156,7 +176,7 @@ open class AsyncBoxView: View {
 
     /// protected void javax.swing.text.AsyncBoxView.updateLayout(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape)
 
-    private static var updateLayout_MethodID_2: jmethodID?
+    private static var updateLayout_MethodID_3: jmethodID?
 
     override open func updateLayout( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -164,7 +184,7 @@ open class AsyncBoxView: View {
         __args[0] = JNIType.toJava( value: ec, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayout", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;)V", methodCache: &AsyncBoxView.updateLayout_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayout", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;)V", methodCache: &AsyncBoxView.updateLayout_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func updateLayout( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape? ) {
@@ -175,16 +195,232 @@ open class AsyncBoxView: View {
 
     /// float javax.swing.text.AsyncBoxView.getSpanOnAxis(int)
 
+    /// protected javax.swing.text.AsyncBoxView$ChildState javax.swing.text.AsyncBoxView.getChildState(int)
+
+    private static var getChildState_MethodID_4: jmethodID?
+
+    open func getChildState( index: Int ) -> AsyncBoxView_ChildState! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildState", methodSig: "(I)Ljavax/swing/text/AsyncBoxView$ChildState;", methodCache: &AsyncBoxView.getChildState_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AsyncBoxView_ChildState( javaObject: __return ) : nil
+    }
+
+    open func getChildState( _ _index: Int ) -> AsyncBoxView_ChildState! {
+        return getChildState( index: _index )
+    }
+
+    /// public int javax.swing.text.AsyncBoxView.getMinorAxis()
+
+    private static var getMinorAxis_MethodID_5: jmethodID?
+
+    open func getMinorAxis() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinorAxis", methodSig: "()I", methodCache: &AsyncBoxView.getMinorAxis_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected synchronized void javax.swing.text.AsyncBoxView.minorRequirementChange(javax.swing.text.AsyncBoxView$ChildState)
+
+    private static var minorRequirementChange_MethodID_6: jmethodID?
+
+    open func minorRequirementChange( cs: AsyncBoxView_ChildState? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: cs, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "minorRequirementChange", methodSig: "(Ljavax/swing/text/AsyncBoxView$ChildState;)V", methodCache: &AsyncBoxView.minorRequirementChange_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func minorRequirementChange( _ _cs: AsyncBoxView_ChildState? ) {
+        minorRequirementChange( cs: _cs )
+    }
+
+    /// protected synchronized void javax.swing.text.AsyncBoxView.majorRequirementChange(javax.swing.text.AsyncBoxView$ChildState,float)
+
+    private static var majorRequirementChange_MethodID_7: jmethodID?
+
+    open func majorRequirementChange( cs: AsyncBoxView_ChildState?, delta: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: cs, locals: &__locals )
+        __args[1] = JNIType.toJava( value: delta, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "majorRequirementChange", methodSig: "(Ljavax/swing/text/AsyncBoxView$ChildState;F)V", methodCache: &AsyncBoxView.majorRequirementChange_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func majorRequirementChange( _ _cs: AsyncBoxView_ChildState?, _ _delta: Float ) {
+        majorRequirementChange( cs: _cs, delta: _delta )
+    }
+
+    /// public int javax.swing.text.AsyncBoxView.getMajorAxis()
+
+    private static var getMajorAxis_MethodID_8: jmethodID?
+
+    open func getMajorAxis() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMajorAxis", methodSig: "()I", methodCache: &AsyncBoxView.getMajorAxis_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.text.AsyncBoxView.setTopInset(float)
+
+    private static var setTopInset_MethodID_9: jmethodID?
+
+    open func setTopInset( i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTopInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setTopInset_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setTopInset( _ _i: Float ) {
+        setTopInset( i: _i )
+    }
+
+    /// public void javax.swing.text.AsyncBoxView.setBottomInset(float)
+
+    private static var setBottomInset_MethodID_10: jmethodID?
+
+    open func setBottomInset( i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBottomInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setBottomInset_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setBottomInset( _ _i: Float ) {
+        setBottomInset( i: _i )
+    }
+
+    /// public void javax.swing.text.AsyncBoxView.setLeftInset(float)
+
+    private static var setLeftInset_MethodID_11: jmethodID?
+
+    open func setLeftInset( i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeftInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setLeftInset_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setLeftInset( _ _i: Float ) {
+        setLeftInset( i: _i )
+    }
+
+    /// public void javax.swing.text.AsyncBoxView.setRightInset(float)
+
+    private static var setRightInset_MethodID_12: jmethodID?
+
+    open func setRightInset( i: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRightInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setRightInset_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setRightInset( _ _i: Float ) {
+        setRightInset( i: _i )
+    }
+
+    /// protected float javax.swing.text.AsyncBoxView.getInsetSpan(int)
+
+    private static var getInsetSpan_MethodID_13: jmethodID?
+
+    open func getInsetSpan( axis: Int ) -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getInsetSpan", methodSig: "(I)F", methodCache: &AsyncBoxView.getInsetSpan_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+    open func getInsetSpan( _ _axis: Int ) -> Float {
+        return getInsetSpan( axis: _axis )
+    }
+
+    /// protected void javax.swing.text.AsyncBoxView.setEstimatedMajorSpan(boolean)
+
+    private static var setEstimatedMajorSpan_MethodID_14: jmethodID?
+
+    open func setEstimatedMajorSpan( isEstimated: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: isEstimated, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEstimatedMajorSpan", methodSig: "(Z)V", methodCache: &AsyncBoxView.setEstimatedMajorSpan_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func setEstimatedMajorSpan( _ _isEstimated: Bool ) {
+        setEstimatedMajorSpan( isEstimated: _isEstimated )
+    }
+
+    /// protected boolean javax.swing.text.AsyncBoxView.getEstimatedMajorSpan()
+
+    private static var getEstimatedMajorSpan_MethodID_15: jmethodID?
+
+    open func getEstimatedMajorSpan() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getEstimatedMajorSpan", methodSig: "()Z", methodCache: &AsyncBoxView.getEstimatedMajorSpan_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected javax.swing.text.LayoutQueue javax.swing.text.AsyncBoxView.getLayoutQueue()
+
+    private static var getLayoutQueue_MethodID_16: jmethodID?
+
+    open func getLayoutQueue() -> LayoutQueue! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutQueue", methodSig: "()Ljavax/swing/text/LayoutQueue;", methodCache: &AsyncBoxView.getLayoutQueue_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? LayoutQueue( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.text.AsyncBoxView$ChildState javax.swing.text.AsyncBoxView.createChildState(javax.swing.text.View)
+
+    private static var createChildState_MethodID_17: jmethodID?
+
+    open func createChildState( v: View? ) -> AsyncBoxView_ChildState! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChildState", methodSig: "(Ljavax/swing/text/View;)Ljavax/swing/text/AsyncBoxView$ChildState;", methodCache: &AsyncBoxView.createChildState_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AsyncBoxView_ChildState( javaObject: __return ) : nil
+    }
+
+    open func createChildState( _ _v: View? ) -> AsyncBoxView_ChildState! {
+        return createChildState( v: _v )
+    }
+
+    /// protected void javax.swing.text.AsyncBoxView.flushRequirementChanges()
+
+    private static var flushRequirementChanges_MethodID_18: jmethodID?
+
+    open func flushRequirementChanges() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "flushRequirementChanges", methodSig: "()V", methodCache: &AsyncBoxView.flushRequirementChanges_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+
     /// protected synchronized int javax.swing.text.AsyncBoxView.getViewIndexAtPosition(int,javax.swing.text.Position$Bias)
 
-    private static var getViewIndexAtPosition_MethodID_3: jmethodID?
+    private static var getViewIndexAtPosition_MethodID_19: jmethodID?
 
     open func getViewIndexAtPosition( pos: Int, b: Position_Bias? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(ILjavax/swing/text/Position$Bias;)I", methodCache: &AsyncBoxView.getViewIndexAtPosition_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(ILjavax/swing/text/Position$Bias;)I", methodCache: &AsyncBoxView.getViewIndexAtPosition_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -194,13 +430,13 @@ open class AsyncBoxView: View {
 
     /// protected void javax.swing.text.AsyncBoxView.loadChildren(javax.swing.text.ViewFactory)
 
-    private static var loadChildren_MethodID_4: jmethodID?
+    private static var loadChildren_MethodID_20: jmethodID?
 
     open func loadChildren( f: ViewFactory? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &AsyncBoxView.loadChildren_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &AsyncBoxView.loadChildren_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func loadChildren( _ _f: ViewFactory? ) {
@@ -221,287 +457,51 @@ open class AsyncBoxView: View {
 
     /// public float javax.swing.text.AsyncBoxView.getLeftInset()
 
-    private static var getLeftInset_MethodID_5: jmethodID?
+    private static var getLeftInset_MethodID_21: jmethodID?
 
     open func getLeftInset() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLeftInset", methodSig: "()F", methodCache: &AsyncBoxView.getLeftInset_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLeftInset", methodSig: "()F", methodCache: &AsyncBoxView.getLeftInset_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public float javax.swing.text.AsyncBoxView.getRightInset()
 
-    private static var getRightInset_MethodID_6: jmethodID?
+    private static var getRightInset_MethodID_22: jmethodID?
 
     open func getRightInset() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getRightInset", methodSig: "()F", methodCache: &AsyncBoxView.getRightInset_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getRightInset", methodSig: "()F", methodCache: &AsyncBoxView.getRightInset_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public float javax.swing.text.AsyncBoxView.getTopInset()
 
-    private static var getTopInset_MethodID_7: jmethodID?
+    private static var getTopInset_MethodID_23: jmethodID?
 
     open func getTopInset() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getTopInset", methodSig: "()F", methodCache: &AsyncBoxView.getTopInset_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getTopInset", methodSig: "()F", methodCache: &AsyncBoxView.getTopInset_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public float javax.swing.text.AsyncBoxView.getBottomInset()
 
-    private static var getBottomInset_MethodID_8: jmethodID?
+    private static var getBottomInset_MethodID_24: jmethodID?
 
     open func getBottomInset() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getBottomInset", methodSig: "()F", methodCache: &AsyncBoxView.getBottomInset_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getBottomInset", methodSig: "()F", methodCache: &AsyncBoxView.getBottomInset_MethodID_24, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
-
-    /// public int javax.swing.text.AsyncBoxView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    /// public java.awt.Shape javax.swing.text.AsyncBoxView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
-
-    /// protected javax.swing.text.AsyncBoxView$ChildState javax.swing.text.AsyncBoxView.getChildState(int)
-
-    private static var getChildState_MethodID_9: jmethodID?
-
-    open func getChildState( index: Int ) -> AsyncBoxView_ChildState! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildState", methodSig: "(I)Ljavax/swing/text/AsyncBoxView$ChildState;", methodCache: &AsyncBoxView.getChildState_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AsyncBoxView_ChildState( javaObject: __return ) : nil
-    }
-
-    open func getChildState( _ _index: Int ) -> AsyncBoxView_ChildState! {
-        return getChildState( index: _index )
-    }
-
-    /// public int javax.swing.text.AsyncBoxView.getMinorAxis()
-
-    private static var getMinorAxis_MethodID_10: jmethodID?
-
-    open func getMinorAxis() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinorAxis", methodSig: "()I", methodCache: &AsyncBoxView.getMinorAxis_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected synchronized void javax.swing.text.AsyncBoxView.minorRequirementChange(javax.swing.text.AsyncBoxView$ChildState)
-
-    private static var minorRequirementChange_MethodID_11: jmethodID?
-
-    open func minorRequirementChange( cs: AsyncBoxView_ChildState? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cs != nil ? cs! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "minorRequirementChange", methodSig: "(Ljavax/swing/text/AsyncBoxView$ChildState;)V", methodCache: &AsyncBoxView.minorRequirementChange_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func minorRequirementChange( _ _cs: AsyncBoxView_ChildState? ) {
-        minorRequirementChange( cs: _cs )
-    }
-
-    /// protected synchronized void javax.swing.text.AsyncBoxView.majorRequirementChange(javax.swing.text.AsyncBoxView$ChildState,float)
-
-    private static var majorRequirementChange_MethodID_12: jmethodID?
-
-    open func majorRequirementChange( cs: AsyncBoxView_ChildState?, delta: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cs != nil ? cs! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: delta, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "majorRequirementChange", methodSig: "(Ljavax/swing/text/AsyncBoxView$ChildState;F)V", methodCache: &AsyncBoxView.majorRequirementChange_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func majorRequirementChange( _ _cs: AsyncBoxView_ChildState?, _ _delta: Float ) {
-        majorRequirementChange( cs: _cs, delta: _delta )
-    }
-
-    /// public int javax.swing.text.AsyncBoxView.getMajorAxis()
-
-    private static var getMajorAxis_MethodID_13: jmethodID?
-
-    open func getMajorAxis() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMajorAxis", methodSig: "()I", methodCache: &AsyncBoxView.getMajorAxis_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.AsyncBoxView.setTopInset(float)
-
-    private static var setTopInset_MethodID_14: jmethodID?
-
-    open func setTopInset( i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTopInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setTopInset_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setTopInset( _ _i: Float ) {
-        setTopInset( i: _i )
-    }
-
-    /// public void javax.swing.text.AsyncBoxView.setBottomInset(float)
-
-    private static var setBottomInset_MethodID_15: jmethodID?
-
-    open func setBottomInset( i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBottomInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setBottomInset_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setBottomInset( _ _i: Float ) {
-        setBottomInset( i: _i )
-    }
-
-    /// public void javax.swing.text.AsyncBoxView.setLeftInset(float)
-
-    private static var setLeftInset_MethodID_16: jmethodID?
-
-    open func setLeftInset( i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeftInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setLeftInset_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setLeftInset( _ _i: Float ) {
-        setLeftInset( i: _i )
-    }
-
-    /// public void javax.swing.text.AsyncBoxView.setRightInset(float)
-
-    private static var setRightInset_MethodID_17: jmethodID?
-
-    open func setRightInset( i: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRightInset", methodSig: "(F)V", methodCache: &AsyncBoxView.setRightInset_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setRightInset( _ _i: Float ) {
-        setRightInset( i: _i )
-    }
-
-    /// protected float javax.swing.text.AsyncBoxView.getInsetSpan(int)
-
-    private static var getInsetSpan_MethodID_18: jmethodID?
-
-    open func getInsetSpan( axis: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getInsetSpan", methodSig: "(I)F", methodCache: &AsyncBoxView.getInsetSpan_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getInsetSpan( _ _axis: Int ) -> Float {
-        return getInsetSpan( axis: _axis )
-    }
-
-    /// protected void javax.swing.text.AsyncBoxView.setEstimatedMajorSpan(boolean)
-
-    private static var setEstimatedMajorSpan_MethodID_19: jmethodID?
-
-    open func setEstimatedMajorSpan( isEstimated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isEstimated, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEstimatedMajorSpan", methodSig: "(Z)V", methodCache: &AsyncBoxView.setEstimatedMajorSpan_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setEstimatedMajorSpan( _ _isEstimated: Bool ) {
-        setEstimatedMajorSpan( isEstimated: _isEstimated )
-    }
-
-    /// protected boolean javax.swing.text.AsyncBoxView.getEstimatedMajorSpan()
-
-    private static var getEstimatedMajorSpan_MethodID_20: jmethodID?
-
-    open func getEstimatedMajorSpan() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getEstimatedMajorSpan", methodSig: "()Z", methodCache: &AsyncBoxView.getEstimatedMajorSpan_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected javax.swing.text.LayoutQueue javax.swing.text.AsyncBoxView.getLayoutQueue()
-
-    private static var getLayoutQueue_MethodID_21: jmethodID?
-
-    open func getLayoutQueue() -> LayoutQueue! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutQueue", methodSig: "()Ljavax/swing/text/LayoutQueue;", methodCache: &AsyncBoxView.getLayoutQueue_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LayoutQueue( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.text.AsyncBoxView$ChildState javax.swing.text.AsyncBoxView.createChildState(javax.swing.text.View)
-
-    private static var createChildState_MethodID_22: jmethodID?
-
-    open func createChildState( v: View? ) -> AsyncBoxView_ChildState! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChildState", methodSig: "(Ljavax/swing/text/View;)Ljavax/swing/text/AsyncBoxView$ChildState;", methodCache: &AsyncBoxView.createChildState_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AsyncBoxView_ChildState( javaObject: __return ) : nil
-    }
-
-    open func createChildState( _ _v: View? ) -> AsyncBoxView_ChildState! {
-        return createChildState( v: _v )
-    }
-
-    /// protected void javax.swing.text.AsyncBoxView.flushRequirementChanges()
-
-    private static var flushRequirementChanges_MethodID_23: jmethodID?
-
-    open func flushRequirementChanges() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "flushRequirementChanges", methodSig: "()V", methodCache: &AsyncBoxView.flushRequirementChanges_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.text.AsyncBoxView.paint(java.awt.Graphics,java.awt.Shape)
-
-    private static var paint_MethodID_24: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, alloc: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alloc, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &AsyncBoxView.paint_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _alloc: java_awt.Shape? ) {
-        paint( g: _g, alloc: _alloc )
-    }
 
 }
 

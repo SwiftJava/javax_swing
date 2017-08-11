@@ -73,7 +73,7 @@ open class SynthFormattedTextFieldUI: SynthTextFieldUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthFormattedTextFieldUI", classCache: &SynthFormattedTextFieldUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -82,6 +82,10 @@ open class SynthFormattedTextFieldUI: SynthTextFieldUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
+
+    /// public void javax.swing.plaf.synth.SynthFormattedTextFieldUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    /// void javax.swing.plaf.synth.SynthFormattedTextFieldUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
     /// protected java.lang.String javax.swing.plaf.synth.SynthFormattedTextFieldUI.getPropertyPrefix()
 
@@ -94,10 +98,6 @@ open class SynthFormattedTextFieldUI: SynthTextFieldUI {
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// public void javax.swing.plaf.synth.SynthFormattedTextFieldUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    /// void javax.swing.plaf.synth.SynthFormattedTextFieldUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

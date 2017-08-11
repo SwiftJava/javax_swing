@@ -63,7 +63,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &DefaultTableCellRenderer.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -146,7 +146,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &DefaultTableCellRenderer.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -163,7 +163,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultTableCellRenderer.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -540,7 +540,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &DefaultTableCellRenderer.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -582,7 +582,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
     open func setValue( value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultTableCellRenderer.setValue_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -591,6 +591,18 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
     }
 
     /// public boolean javax.swing.table.DefaultTableCellRenderer.isOpaque()
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(long,int,int,int,int)
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(java.awt.Rectangle)
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.repaint()
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.validate()
+
+    /// public void javax.swing.table.DefaultTableCellRenderer.updateUI()
+
+    /// private javax.swing.border.Border javax.swing.table.DefaultTableCellRenderer.getNoFocusBorder()
 
     /// public void javax.swing.table.DefaultTableCellRenderer.invalidate()
 
@@ -603,7 +615,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
     open func setBackground( c: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTableCellRenderer.setBackground_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -618,7 +630,7 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
     open func setForeground( c: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForeground", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTableCellRenderer.setForeground_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -634,8 +646,8 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultTableCellRenderer.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -652,8 +664,8 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
     open func getTableCellRendererComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, hasFocus: Bool, row: Int, column: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: table != nil ? table! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: table, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[3] = JNIType.toJava( value: hasFocus, locals: &__locals )
         __args[4] = JNIType.toJava( value: row, locals: &__locals )
@@ -667,18 +679,6 @@ open class DefaultTableCellRenderer: JLabel, TableCellRenderer {
         return getTableCellRendererComponent( table: _table, value: _value, isSelected: _isSelected, hasFocus: _hasFocus, row: _row, column: _column )
     }
 
-    /// public void javax.swing.table.DefaultTableCellRenderer.updateUI()
-
-    /// private javax.swing.border.Border javax.swing.table.DefaultTableCellRenderer.getNoFocusBorder()
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(long,int,int,int,int)
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.repaint(java.awt.Rectangle)
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.repaint()
-
-    /// public void javax.swing.table.DefaultTableCellRenderer.validate()
-
 }
 
 private typealias DefaultTableCellRenderer_getTableCellRendererComponent_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jobject?, _: jboolean, _: jboolean, _: jint, _: jint ) -> jobject?
@@ -688,7 +688,7 @@ private func DefaultTableCellRenderer_getTableCellRendererComponent_0( _ __env: 
     let __return = DefaultTableCellRendererLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).getTableCellRendererComponent( table: table != nil ? JTable( javaObject: table ) : nil, value: value != nil ? java_swift.JavaObject( javaObject: value ) : nil, isSelected: JNIType.toSwift( type: Bool(), from: isSelected ), hasFocus: JNIType.toSwift( type: Bool(), from: hasFocus ), row: JNIType.toSwift( type: Int(), from: row ), column: JNIType.toSwift( type: Int(), from: column ) )
     JNI.inNative = false;
     var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return != nil ? __return! as JNIObject : nil, locals: &locals ).l, &locals, removeLast: true )
+    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
 }
 
 fileprivate class DefaultTableCellRendererLocal_: JNIObjectProxy<DefaultTableCellRenderer> {

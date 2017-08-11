@@ -134,14 +134,78 @@ open class LabelView: GlyphView {
 
     /// final void javax.swing.text.LabelView.sync()
 
+    /// protected void javax.swing.text.LabelView.setSuperscript(boolean)
+
+    private static var setSuperscript_MethodID_2: jmethodID?
+
+    open func setSuperscript( s: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSuperscript", methodSig: "(Z)V", methodCache: &LabelView.setSuperscript_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func setSuperscript( _ _s: Bool ) {
+        setSuperscript( s: _s )
+    }
+
+    /// protected void javax.swing.text.LabelView.setUnderline(boolean)
+
+    private static var setUnderline_MethodID_3: jmethodID?
+
+    open func setUnderline( u: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: u, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnderline", methodSig: "(Z)V", methodCache: &LabelView.setUnderline_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func setUnderline( _ _u: Bool ) {
+        setUnderline( u: _u )
+    }
+
+    /// public java.awt.Font javax.swing.text.LabelView.getFont()
+
+    /// protected java.awt.FontMetrics javax.swing.text.LabelView.getFontMetrics()
+
+    private static var getFontMetrics_MethodID_4: jmethodID?
+
+    open func getFontMetrics() -> java_awt.FontMetrics! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &LabelView.getFontMetrics_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Color javax.swing.text.LabelView.getBackground()
+
+    /// protected void javax.swing.text.LabelView.setBackground(java.awt.Color)
+
+    private static var setBackground_MethodID_5: jmethodID?
+
+    open func setBackground( bg: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: bg, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &LabelView.setBackground_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func setBackground( _ _bg: java_awt.Color? ) {
+        setBackground( bg: _bg )
+    }
+
+    /// public java.awt.Color javax.swing.text.LabelView.getForeground()
+
     /// protected void javax.swing.text.LabelView.setPropertiesFromAttributes()
 
-    private static var setPropertiesFromAttributes_MethodID_2: jmethodID?
+    private static var setPropertiesFromAttributes_MethodID_6: jmethodID?
 
     open func setPropertiesFromAttributes() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &LabelView.setPropertiesFromAttributes_MethodID_2, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &LabelView.setPropertiesFromAttributes_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
@@ -155,13 +219,13 @@ open class LabelView: GlyphView {
 
     /// protected void javax.swing.text.LabelView.setStrikeThrough(boolean)
 
-    private static var setStrikeThrough_MethodID_3: jmethodID?
+    private static var setStrikeThrough_MethodID_7: jmethodID?
 
     open func setStrikeThrough( s: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStrikeThrough", methodSig: "(Z)V", methodCache: &LabelView.setStrikeThrough_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStrikeThrough", methodSig: "(Z)V", methodCache: &LabelView.setStrikeThrough_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setStrikeThrough( _ _s: Bool ) {
@@ -170,13 +234,13 @@ open class LabelView: GlyphView {
 
     /// protected void javax.swing.text.LabelView.setSubscript(boolean)
 
-    private static var setSubscript_MethodID_4: jmethodID?
+    private static var setSubscript_MethodID_8: jmethodID?
 
     open func setSubscript( s: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSubscript", methodSig: "(Z)V", methodCache: &LabelView.setSubscript_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSubscript", methodSig: "(Z)V", methodCache: &LabelView.setSubscript_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setSubscript( _ _s: Bool ) {
@@ -184,70 +248,6 @@ open class LabelView: GlyphView {
     }
 
     /// public void javax.swing.text.LabelView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public java.awt.Font javax.swing.text.LabelView.getFont()
-
-    /// protected java.awt.FontMetrics javax.swing.text.LabelView.getFontMetrics()
-
-    private static var getFontMetrics_MethodID_5: jmethodID?
-
-    open func getFontMetrics() -> java_awt.FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &LabelView.getFontMetrics_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Color javax.swing.text.LabelView.getBackground()
-
-    /// protected void javax.swing.text.LabelView.setBackground(java.awt.Color)
-
-    private static var setBackground_MethodID_6: jmethodID?
-
-    open func setBackground( bg: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bg != nil ? bg! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &LabelView.setBackground_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setBackground( _ _bg: java_awt.Color? ) {
-        setBackground( bg: _bg )
-    }
-
-    /// public java.awt.Color javax.swing.text.LabelView.getForeground()
-
-    /// protected void javax.swing.text.LabelView.setSuperscript(boolean)
-
-    private static var setSuperscript_MethodID_7: jmethodID?
-
-    open func setSuperscript( s: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSuperscript", methodSig: "(Z)V", methodCache: &LabelView.setSuperscript_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setSuperscript( _ _s: Bool ) {
-        setSuperscript( s: _s )
-    }
-
-    /// protected void javax.swing.text.LabelView.setUnderline(boolean)
-
-    private static var setUnderline_MethodID_8: jmethodID?
-
-    open func setUnderline( u: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: u, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnderline", methodSig: "(Z)V", methodCache: &LabelView.setUnderline_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setUnderline( _ _u: Bool ) {
-        setUnderline( u: _u )
-    }
 
     /// In declared protocol but not defined.. ///
 

@@ -34,7 +34,7 @@ open class PopupMenuListenerForward: java_util.EventListenerForward, PopupMenuLi
     open func popupMenuWillBecomeVisible( e: PopupMenuEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuWillBecomeVisible", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuWillBecomeVisible_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -49,7 +49,7 @@ open class PopupMenuListenerForward: java_util.EventListenerForward, PopupMenuLi
     open func popupMenuWillBecomeInvisible( e: PopupMenuEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuWillBecomeInvisible", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuWillBecomeInvisible_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -64,7 +64,7 @@ open class PopupMenuListenerForward: java_util.EventListenerForward, PopupMenuLi
     open func popupMenuCanceled( e: PopupMenuEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuCanceled", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuCanceled_MethodID_6, args: &__args, locals: &__locals )
     }
 

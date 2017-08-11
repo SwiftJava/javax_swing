@@ -37,7 +37,7 @@ open class ListSelectionEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ListSelectionEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -49,7 +49,7 @@ open class ListSelectionEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, firstIndex: Int, lastIndex: Int, isAdjusting: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: firstIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: lastIndex, locals: &__locals )
         __args[3] = JNIType.toJava( value: isAdjusting, locals: &__locals )

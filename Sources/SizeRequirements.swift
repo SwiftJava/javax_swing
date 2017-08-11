@@ -118,37 +118,20 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public java.lang.String javax.swing.SizeRequirements.toString()
 
-    /// public static int[] javax.swing.SizeRequirements.adjustSizes(int,javax.swing.SizeRequirements[])
-
-    private static var adjustSizes_MethodID_3: jmethodID?
-
-    open class func adjustSizes( delta: Int, children: [SizeRequirements]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: delta, locals: &__locals )
-        __args[1] = JNIType.toJava( value: children, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "adjustSizes", methodSig: "(I[Ljavax/swing/SizeRequirements;)[I", methodCache: &adjustSizes_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-    open class func adjustSizes( _ _delta: Int, _ _children: [SizeRequirements]? ) -> [Int32]! {
-        return adjustSizes( delta: _delta, children: _children )
-    }
-
     /// public static void javax.swing.SizeRequirements.calculateAlignedPositions(int,javax.swing.SizeRequirements,javax.swing.SizeRequirements[],int[],int[],boolean)
 
-    private static var calculateAlignedPositions_MethodID_4: jmethodID?
+    private static var calculateAlignedPositions_MethodID_3: jmethodID?
 
     open class func calculateAlignedPositions( allocated: Int, total: SizeRequirements?, children: [SizeRequirements]?, offsets: [Int32]?, spans: [Int32]?, normal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: allocated, locals: &__locals )
-        __args[1] = JNIType.toJava( value: total != nil ? total! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: total, locals: &__locals )
         __args[2] = JNIType.toJava( value: children, locals: &__locals )
         __args[3] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[4] = JNIType.toJava( value: spans, locals: &__locals )
         __args[5] = JNIType.toJava( value: normal, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateAlignedPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[IZ)V", methodCache: &calculateAlignedPositions_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateAlignedPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[IZ)V", methodCache: &calculateAlignedPositions_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open class func calculateAlignedPositions( _ _allocated: Int, _ _total: SizeRequirements?, _ _children: [SizeRequirements]?, _ _offsets: [Int32]?, _ _spans: [Int32]?, _ _normal: Bool ) {
@@ -157,17 +140,17 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static void javax.swing.SizeRequirements.calculateAlignedPositions(int,javax.swing.SizeRequirements,javax.swing.SizeRequirements[],int[],int[])
 
-    private static var calculateAlignedPositions_MethodID_5: jmethodID?
+    private static var calculateAlignedPositions_MethodID_4: jmethodID?
 
     open class func calculateAlignedPositions( allocated: Int, total: SizeRequirements?, children: [SizeRequirements]?, offsets: [Int32]?, spans: [Int32]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: allocated, locals: &__locals )
-        __args[1] = JNIType.toJava( value: total != nil ? total! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: total, locals: &__locals )
         __args[2] = JNIType.toJava( value: children, locals: &__locals )
         __args[3] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[4] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateAlignedPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[I)V", methodCache: &calculateAlignedPositions_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateAlignedPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[I)V", methodCache: &calculateAlignedPositions_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open class func calculateAlignedPositions( _ _allocated: Int, _ _total: SizeRequirements?, _ _children: [SizeRequirements]?, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
@@ -176,13 +159,13 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.SizeRequirements javax.swing.SizeRequirements.getAlignedSizeRequirements(javax.swing.SizeRequirements[])
 
-    private static var getAlignedSizeRequirements_MethodID_6: jmethodID?
+    private static var getAlignedSizeRequirements_MethodID_5: jmethodID?
 
     open class func getAlignedSizeRequirements( children: [SizeRequirements]? ) -> SizeRequirements! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: children, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "getAlignedSizeRequirements", methodSig: "([Ljavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &getAlignedSizeRequirements_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "getAlignedSizeRequirements", methodSig: "([Ljavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &getAlignedSizeRequirements_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -193,13 +176,13 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static javax.swing.SizeRequirements javax.swing.SizeRequirements.getTiledSizeRequirements(javax.swing.SizeRequirements[])
 
-    private static var getTiledSizeRequirements_MethodID_7: jmethodID?
+    private static var getTiledSizeRequirements_MethodID_6: jmethodID?
 
     open class func getTiledSizeRequirements( children: [SizeRequirements]? ) -> SizeRequirements! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: children, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "getTiledSizeRequirements", methodSig: "([Ljavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &getTiledSizeRequirements_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "getTiledSizeRequirements", methodSig: "([Ljavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &getTiledSizeRequirements_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -210,18 +193,18 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static void javax.swing.SizeRequirements.calculateTiledPositions(int,javax.swing.SizeRequirements,javax.swing.SizeRequirements[],int[],int[],boolean)
 
-    private static var calculateTiledPositions_MethodID_8: jmethodID?
+    private static var calculateTiledPositions_MethodID_7: jmethodID?
 
     open class func calculateTiledPositions( allocated: Int, total: SizeRequirements?, children: [SizeRequirements]?, offsets: [Int32]?, spans: [Int32]?, forward: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: allocated, locals: &__locals )
-        __args[1] = JNIType.toJava( value: total != nil ? total! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: total, locals: &__locals )
         __args[2] = JNIType.toJava( value: children, locals: &__locals )
         __args[3] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[4] = JNIType.toJava( value: spans, locals: &__locals )
         __args[5] = JNIType.toJava( value: forward, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateTiledPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[IZ)V", methodCache: &calculateTiledPositions_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateTiledPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[IZ)V", methodCache: &calculateTiledPositions_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open class func calculateTiledPositions( _ _allocated: Int, _ _total: SizeRequirements?, _ _children: [SizeRequirements]?, _ _offsets: [Int32]?, _ _spans: [Int32]?, _ _forward: Bool ) {
@@ -230,17 +213,17 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
 
     /// public static void javax.swing.SizeRequirements.calculateTiledPositions(int,javax.swing.SizeRequirements,javax.swing.SizeRequirements[],int[],int[])
 
-    private static var calculateTiledPositions_MethodID_9: jmethodID?
+    private static var calculateTiledPositions_MethodID_8: jmethodID?
 
     open class func calculateTiledPositions( allocated: Int, total: SizeRequirements?, children: [SizeRequirements]?, offsets: [Int32]?, spans: [Int32]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: allocated, locals: &__locals )
-        __args[1] = JNIType.toJava( value: total != nil ? total! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: total, locals: &__locals )
         __args[2] = JNIType.toJava( value: children, locals: &__locals )
         __args[3] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[4] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateTiledPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[I)V", methodCache: &calculateTiledPositions_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "calculateTiledPositions", methodSig: "(ILjavax/swing/SizeRequirements;[Ljavax/swing/SizeRequirements;[I[I)V", methodCache: &calculateTiledPositions_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open class func calculateTiledPositions( _ _allocated: Int, _ _total: SizeRequirements?, _ _children: [SizeRequirements]?, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
@@ -250,6 +233,23 @@ open class SizeRequirements: java_swift.JavaObject, /* java.io.Serializable */ U
     /// private static void javax.swing.SizeRequirements.compressedTile(int,long,long,long,javax.swing.SizeRequirements[],int[],int[],boolean)
 
     /// private static void javax.swing.SizeRequirements.expandedTile(int,long,long,long,javax.swing.SizeRequirements[],int[],int[],boolean)
+
+    /// public static int[] javax.swing.SizeRequirements.adjustSizes(int,javax.swing.SizeRequirements[])
+
+    private static var adjustSizes_MethodID_9: jmethodID?
+
+    open class func adjustSizes( delta: Int, children: [SizeRequirements]? ) -> [Int32]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: delta, locals: &__locals )
+        __args[1] = JNIType.toJava( value: children, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SizeRequirements", classCache: &SizeRequirementsJNIClass, methodName: "adjustSizes", methodSig: "(I[Ljavax/swing/SizeRequirements;)[I", methodCache: &adjustSizes_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32](), from: __return )
+    }
+
+    open class func adjustSizes( _ _delta: Int, _ _children: [SizeRequirements]? ) -> [Int32]! {
+        return adjustSizes( delta: _delta, children: _children )
+    }
 
 }
 

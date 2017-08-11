@@ -56,7 +56,7 @@ open class ParserDelegator: HTMLEditorKit_Parser, /* java.io.Serializable */ Unc
     open class func createDTD( dtd: DTD?, name: String? ) -> DTD! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtd != nil ? dtd! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtd, locals: &__locals )
         __args[1] = JNIType.toJava( value: name, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/parser/ParserDelegator", classCache: &ParserDelegatorJNIClass, methodName: "createDTD", methodSig: "(Ljavax/swing/text/html/parser/DTD;Ljava/lang/String;)Ljavax/swing/text/html/parser/DTD;", methodCache: &createDTD_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

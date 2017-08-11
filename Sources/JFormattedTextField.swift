@@ -249,7 +249,7 @@ open class JFormattedTextField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JFormattedTextField.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -266,7 +266,7 @@ open class JFormattedTextField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JFormattedTextField.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -643,7 +643,7 @@ open class JFormattedTextField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JFormattedTextField.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -673,8 +673,8 @@ open class JFormattedTextField: JTextField {
     public convenience init( factory: JFormattedTextField_AbstractFormatterFactory?, currentValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: factory != nil ? factory! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: currentValue != nil ? currentValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: factory, locals: &__locals )
+        __args[1] = JNIType.toJava( value: currentValue, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextField.JFormattedTextFieldJNIClass, methodSig: "(Ljavax/swing/JFormattedTextField$AbstractFormatterFactory;Ljava/lang/Object;)V", methodCache: &JFormattedTextField.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -691,7 +691,7 @@ open class JFormattedTextField: JTextField {
     public convenience init( factory: JFormattedTextField_AbstractFormatterFactory? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: factory != nil ? factory! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: factory, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextField.JFormattedTextFieldJNIClass, methodSig: "(Ljavax/swing/JFormattedTextField$AbstractFormatterFactory;)V", methodCache: &JFormattedTextField.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -708,7 +708,7 @@ open class JFormattedTextField: JTextField {
     public convenience init( formatter: JFormattedTextField_AbstractFormatter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: formatter != nil ? formatter! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: formatter, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextField.JFormattedTextFieldJNIClass, methodSig: "(Ljavax/swing/JFormattedTextField$AbstractFormatter;)V", methodCache: &JFormattedTextField.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -737,7 +737,7 @@ open class JFormattedTextField: JTextField {
     public convenience init( value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextField.JFormattedTextFieldJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &JFormattedTextField.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -754,7 +754,7 @@ open class JFormattedTextField: JTextField {
     public convenience init( format: /* java.text.Format */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: format, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextField.JFormattedTextFieldJNIClass, methodSig: "(Ljava/text/Format;)V", methodCache: &JFormattedTextField.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -798,7 +798,7 @@ open class JFormattedTextField: JTextField {
     open func setValue( value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JFormattedTextField.setValue_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -855,7 +855,7 @@ open class JFormattedTextField: JTextField {
     open func setFormatterFactory( tf: JFormattedTextField_AbstractFormatterFactory? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tf != nil ? tf! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tf, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormatterFactory", methodSig: "(Ljavax/swing/JFormattedTextField$AbstractFormatterFactory;)V", methodCache: &JFormattedTextField.setFormatterFactory_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -883,7 +883,7 @@ open class JFormattedTextField: JTextField {
     open func setFormatter( format: JFormattedTextField_AbstractFormatter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: format, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormatter", methodSig: "(Ljavax/swing/JFormattedTextField$AbstractFormatter;)V", methodCache: &JFormattedTextField.setFormatter_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -938,6 +938,10 @@ open class JFormattedTextField: JTextField {
 
     /// private javax.swing.JFormattedTextField$AbstractFormatterFactory javax.swing.JFormattedTextField.getDefaultFormatterFactory(java.lang.Object)
 
+    /// public void javax.swing.JFormattedTextField.setDocument(javax.swing.text.Document)
+
+    /// public java.lang.String javax.swing.JFormattedTextField.getUIClassID()
+
     /// protected void javax.swing.JFormattedTextField.processFocusEvent(java.awt.event.FocusEvent)
 
     private static var processFocusEvent_MethodID_18: jmethodID?
@@ -945,7 +949,7 @@ open class JFormattedTextField: JTextField {
     open func processFocusEvent( e: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processFocusEvent", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &JFormattedTextField.processFocusEvent_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -960,17 +964,13 @@ open class JFormattedTextField: JTextField {
     open func processInputMethodEvent( e: java_awt.InputMethodEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processInputMethodEvent", methodSig: "(Ljava/awt/event/InputMethodEvent;)V", methodCache: &JFormattedTextField.processInputMethodEvent_MethodID_19, args: &__args, locals: &__locals )
     }
 
     override open func processInputMethodEvent( _ _e: java_awt.InputMethodEvent? ) {
         processInputMethodEvent( e: _e )
     }
-
-    /// public java.lang.String javax.swing.JFormattedTextField.getUIClassID()
-
-    /// public void javax.swing.JFormattedTextField.setDocument(javax.swing.text.Document)
 
 }
 

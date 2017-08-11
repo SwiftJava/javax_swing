@@ -29,7 +29,7 @@ open class MatteBorder: EmptyBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "color", fieldType: "Ljava/awt/Color;", fieldCache: &MatteBorder.color_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -143,7 +143,7 @@ open class MatteBorder: EmptyBorder {
     public convenience init( borderInsets: java_awt.Insets?, tileIcon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: borderInsets != nil ? borderInsets! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: borderInsets, locals: &__locals )
         __args[1] = JNIType.toJava( value: tileIcon, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/MatteBorder", classCache: &MatteBorder.MatteBorderJNIClass, methodSig: "(Ljava/awt/Insets;Ljavax/swing/Icon;)V", methodCache: &MatteBorder.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -182,8 +182,8 @@ open class MatteBorder: EmptyBorder {
     public convenience init( borderInsets: java_awt.Insets?, matteColor: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: borderInsets != nil ? borderInsets! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: matteColor != nil ? matteColor! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: borderInsets, locals: &__locals )
+        __args[1] = JNIType.toJava( value: matteColor, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/MatteBorder", classCache: &MatteBorder.MatteBorderJNIClass, methodSig: "(Ljava/awt/Insets;Ljava/awt/Color;)V", methodCache: &MatteBorder.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -204,7 +204,7 @@ open class MatteBorder: EmptyBorder {
         __args[1] = JNIType.toJava( value: left, locals: &__locals )
         __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
         __args[3] = JNIType.toJava( value: right, locals: &__locals )
-        __args[4] = JNIType.toJava( value: matteColor != nil ? matteColor! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: matteColor, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/MatteBorder", classCache: &MatteBorder.MatteBorderJNIClass, methodSig: "(IIIILjava/awt/Color;)V", methodCache: &MatteBorder.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -213,6 +213,14 @@ open class MatteBorder: EmptyBorder {
     public convenience init( _ _top: Int, _ _left: Int, _ _bottom: Int, _ _right: Int, _ _matteColor: java_awt.Color? ) {
         self.init( top: _top, left: _left, bottom: _bottom, right: _right, matteColor: _matteColor )
     }
+
+    /// public void javax.swing.border.MatteBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    /// public java.awt.Insets javax.swing.border.MatteBorder.getBorderInsets()
+
+    /// public java.awt.Insets javax.swing.border.MatteBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    /// public boolean javax.swing.border.MatteBorder.isBorderOpaque()
 
     /// private void javax.swing.border.MatteBorder.paintEdge(java.awt.Component,java.awt.Graphics,int,int,int,int,int,int)
 
@@ -243,14 +251,6 @@ open class MatteBorder: EmptyBorder {
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.border.MatteBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
-
-    /// public java.awt.Insets javax.swing.border.MatteBorder.getBorderInsets()
-
-    /// public java.awt.Insets javax.swing.border.MatteBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
-
-    /// public boolean javax.swing.border.MatteBorder.isBorderOpaque()
 
 }
 

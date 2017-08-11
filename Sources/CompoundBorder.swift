@@ -80,6 +80,12 @@ open class CompoundBorder: AbstractBorder {
         self.init( outsideBorder: _outsideBorder, insideBorder: _insideBorder )
     }
 
+    /// public void javax.swing.border.CompoundBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    /// public java.awt.Insets javax.swing.border.CompoundBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    /// public boolean javax.swing.border.CompoundBorder.isBorderOpaque()
+
     /// public javax.swing.border.Border javax.swing.border.CompoundBorder.getInsideBorder()
 
     private static var getInsideBorder_MethodID_3: jmethodID?
@@ -105,12 +111,6 @@ open class CompoundBorder: AbstractBorder {
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.border.CompoundBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
-
-    /// public java.awt.Insets javax.swing.border.CompoundBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
-
-    /// public boolean javax.swing.border.CompoundBorder.isBorderOpaque()
 
 }
 

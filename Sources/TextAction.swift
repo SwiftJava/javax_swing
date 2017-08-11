@@ -50,7 +50,7 @@ open class TextAction: AbstractAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &TextAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -94,21 +94,21 @@ open class TextAction: AbstractAction {
         self.init( name: _name )
     }
 
-    /// protected final javax.swing.text.JTextComponent javax.swing.text.TextAction.getTextComponent(java.awt.event.ActionEvent)
+    /// public static final javax.swing.Action[] javax.swing.text.TextAction.augmentList(javax.swing.Action[],javax.swing.Action[])
 
-    private static var getTextComponent_MethodID_2: jmethodID?
+    private static var augmentList_MethodID_2: jmethodID?
 
-    open func getTextComponent( e: java_awt.ActionEvent? ) -> JTextComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func augmentList( list1: [Action]?, list2: [Action]? ) -> [Action]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextComponent", methodSig: "(Ljava/awt/event/ActionEvent;)Ljavax/swing/text/JTextComponent;", methodCache: &TextAction.getTextComponent_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JTextComponent( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: list1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: list2, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/TextAction", classCache: &TextActionJNIClass, methodName: "augmentList", methodSig: "([Ljavax/swing/Action;[Ljavax/swing/Action;)[Ljavax/swing/Action;", methodCache: &augmentList_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionForward](), from: __return )
     }
 
-    open func getTextComponent( _ _e: java_awt.ActionEvent? ) -> JTextComponent! {
-        return getTextComponent( e: _e )
+    open class func augmentList( _ _list1: [Action]?, _ _list2: [Action]? ) -> [Action]! {
+        return augmentList( list1: _list1, list2: _list2 )
     }
 
     /// protected final javax.swing.text.JTextComponent javax.swing.text.TextAction.getFocusedComponent()
@@ -124,21 +124,21 @@ open class TextAction: AbstractAction {
     }
 
 
-    /// public static final javax.swing.Action[] javax.swing.text.TextAction.augmentList(javax.swing.Action[],javax.swing.Action[])
+    /// protected final javax.swing.text.JTextComponent javax.swing.text.TextAction.getTextComponent(java.awt.event.ActionEvent)
 
-    private static var augmentList_MethodID_4: jmethodID?
+    private static var getTextComponent_MethodID_4: jmethodID?
 
-    open class func augmentList( list1: [Action]?, list2: [Action]? ) -> [Action]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getTextComponent( e: java_awt.ActionEvent? ) -> JTextComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: list2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/TextAction", classCache: &TextActionJNIClass, methodName: "augmentList", methodSig: "([Ljavax/swing/Action;[Ljavax/swing/Action;)[Ljavax/swing/Action;", methodCache: &augmentList_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionForward](), from: __return )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextComponent", methodSig: "(Ljava/awt/event/ActionEvent;)Ljavax/swing/text/JTextComponent;", methodCache: &TextAction.getTextComponent_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JTextComponent( javaObject: __return ) : nil
     }
 
-    open class func augmentList( _ _list1: [Action]?, _ _list2: [Action]? ) -> [Action]! {
-        return augmentList( list1: _list1, list2: _list2 )
+    open func getTextComponent( _ _e: java_awt.ActionEvent? ) -> JTextComponent! {
+        return getTextComponent( e: _e )
     }
 
 }

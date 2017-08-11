@@ -35,8 +35,8 @@ open class HTMLEditorKit_Parser: java_swift.JavaObject {
     open func parse( r: /* java.io.Reader */ UnclassedObject?, cb: HTMLEditorKit_ParserCallback?, ignoreCharSet: Bool ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cb != nil ? cb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        __args[1] = JNIType.toJava( value: cb, locals: &__locals )
         __args[2] = JNIType.toJava( value: ignoreCharSet, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "parse", methodSig: "(Ljava/io/Reader;Ljavax/swing/text/html/HTMLEditorKit$ParserCallback;Z)V", methodCache: &HTMLEditorKit_Parser.parse_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {

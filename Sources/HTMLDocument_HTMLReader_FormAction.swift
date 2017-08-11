@@ -33,7 +33,7 @@ open class HTMLDocument_HTMLReader_FormAction: HTMLDocument_HTMLReader_SpecialAc
     public convenience init( this_1: HTMLDocument_HTMLReader? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_1 != nil ? this_1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$HTMLReader$FormAction", classCache: &HTMLDocument_HTMLReader_FormAction.HTMLDocument_HTMLReader_FormActionJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument$HTMLReader;)V", methodCache: &HTMLDocument_HTMLReader_FormAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -52,7 +52,7 @@ open class HTMLDocument_HTMLReader_FormAction: HTMLDocument_HTMLReader_SpecialAc
     open func start( t: HTML_Tag?, attr: MutableAttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: attr, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "start", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &HTMLDocument_HTMLReader_FormAction.start_MethodID_2, args: &__args, locals: &__locals )
     }

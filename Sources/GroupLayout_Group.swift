@@ -64,7 +64,7 @@ open class GroupLayout_Group: /* javax.swing.GroupLayout$Spring */ UnclassedObje
     open func addGroup( group: GroupLayout_Group? ) -> GroupLayout_Group! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: group != nil ? group! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: group, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addGroup", methodSig: "(Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$Group;", methodCache: &GroupLayout_Group.addGroup_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_Group( javaObject: __return ) : nil
@@ -81,7 +81,7 @@ open class GroupLayout_Group: /* javax.swing.GroupLayout$Spring */ UnclassedObje
     open func addComponent( component: java_awt.Component? ) -> GroupLayout_Group! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addComponent", methodSig: "(Ljava/awt/Component;)Ljavax/swing/GroupLayout$Group;", methodCache: &GroupLayout_Group.addComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_Group( javaObject: __return ) : nil
@@ -98,7 +98,7 @@ open class GroupLayout_Group: /* javax.swing.GroupLayout$Spring */ UnclassedObje
     open func addComponent( component: java_awt.Component?, min: Int, pref: Int, max: Int ) -> GroupLayout_Group! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         __args[1] = JNIType.toJava( value: min, locals: &__locals )
         __args[2] = JNIType.toJava( value: pref, locals: &__locals )
         __args[3] = JNIType.toJava( value: max, locals: &__locals )

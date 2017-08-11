@@ -28,7 +28,7 @@ open class MetalComboBoxUI_MetalComboBoxLayoutManager: BasicComboBoxUI_ComboBoxL
     public convenience init( this_0: MetalComboBoxUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxUI$MetalComboBoxLayoutManager", classCache: &MetalComboBoxUI_MetalComboBoxLayoutManager.MetalComboBoxUI_MetalComboBoxLayoutManagerJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalComboBoxUI;)V", methodCache: &MetalComboBoxUI_MetalComboBoxLayoutManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -47,7 +47,7 @@ open class MetalComboBoxUI_MetalComboBoxLayoutManager: BasicComboBoxUI_ComboBoxL
     open func superLayout( parent: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "superLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &MetalComboBoxUI_MetalComboBoxLayoutManager.superLayout_MethodID_2, args: &__args, locals: &__locals )
     }
 

@@ -69,7 +69,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "toolBar", fieldType: "Ljavax/swing/JToolBar;", fieldCache: &MetalToolBarUI.toolBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -96,7 +96,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dragWindow", fieldType: "Ljavax/swing/plaf/basic/BasicToolBarUI$DragWindow;", fieldCache: &MetalToolBarUI.dragWindow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -134,7 +134,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dockingColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToolBarUI.dockingColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -151,7 +151,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "floatingColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToolBarUI.floatingColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -168,7 +168,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dockingBorderColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToolBarUI.dockingBorderColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -185,7 +185,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "floatingBorderColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalToolBarUI.floatingBorderColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -303,7 +303,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalToolBarUI.upKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -320,7 +320,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "downKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalToolBarUI.downKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -337,7 +337,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "leftKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalToolBarUI.leftKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -354,7 +354,7 @@ open class MetalToolBarUI: BasicToolBarUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalToolBarUI.rightKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -422,7 +422,7 @@ open class MetalToolBarUI: BasicToolBarUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalToolBarUI", classCache: &MetalToolBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -431,8 +431,6 @@ open class MetalToolBarUI: BasicToolBarUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
-
-    /// static boolean javax.swing.plaf.metal.MetalToolBarUI.doesMenuBarBorderToolBar(javax.swing.JMenuBar)
 
     /// static synchronized void javax.swing.plaf.metal.MetalToolBarUI.unregister(javax.swing.JComponent)
 
@@ -455,14 +453,68 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// public void javax.swing.plaf.metal.MetalToolBarUI.uninstallUI(javax.swing.JComponent)
 
+    /// protected void javax.swing.plaf.metal.MetalToolBarUI.installListeners()
+
+    private static var installListeners_MethodID_4: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalToolBarUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalToolBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_5: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalToolBarUI.uninstallListeners_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// static boolean javax.swing.plaf.metal.MetalToolBarUI.doesMenuBarBorderToolBar(javax.swing.JMenuBar)
+
+    /// protected void javax.swing.plaf.metal.MetalToolBarUI.setDragOffset(java.awt.Point)
+
+    private static var setDragOffset_MethodID_6: jmethodID?
+
+    open func setDragOffset( p: java_awt.Point? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragOffset", methodSig: "(Ljava/awt/Point;)V", methodCache: &MetalToolBarUI.setDragOffset_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func setDragOffset( _ _p: java_awt.Point? ) {
+        setDragOffset( p: _p )
+    }
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalToolBarUI.createRolloverListener()
+
+    private static var createRolloverListener_MethodID_7: jmethodID?
+
+    open func createRolloverListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalToolBarUI.createRolloverListener_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// private void javax.swing.plaf.metal.MetalToolBarUI.setLastMenuBar(javax.swing.JMenuBar)
+
     /// protected javax.swing.border.Border javax.swing.plaf.metal.MetalToolBarUI.createRolloverBorder()
 
-    private static var createRolloverBorder_MethodID_4: jmethodID?
+    private static var createRolloverBorder_MethodID_8: jmethodID?
 
     override open func createRolloverBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createRolloverBorder_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createRolloverBorder_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -470,12 +522,12 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// protected javax.swing.border.Border javax.swing.plaf.metal.MetalToolBarUI.createNonRolloverBorder()
 
-    private static var createNonRolloverBorder_MethodID_5: jmethodID?
+    private static var createNonRolloverBorder_MethodID_9: jmethodID?
 
     override open func createNonRolloverBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNonRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createNonRolloverBorder_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNonRolloverBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &MetalToolBarUI.createNonRolloverBorder_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -485,13 +537,13 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// protected void javax.swing.plaf.metal.MetalToolBarUI.setBorderToNonRollover(java.awt.Component)
 
-    private static var setBorderToNonRollover_MethodID_6: jmethodID?
+    private static var setBorderToNonRollover_MethodID_10: jmethodID?
 
     override open func setBorderToNonRollover( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &MetalToolBarUI.setBorderToNonRollover_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &MetalToolBarUI.setBorderToNonRollover_MethodID_10, args: &__args, locals: &__locals )
     }
 
     override open func setBorderToNonRollover( _ _c: java_awt.Component? ) {
@@ -500,66 +552,14 @@ open class MetalToolBarUI: BasicToolBarUI {
 
     /// protected javax.swing.event.MouseInputListener javax.swing.plaf.metal.MetalToolBarUI.createDockingListener()
 
-    private static var createDockingListener_MethodID_7: jmethodID?
+    private static var createDockingListener_MethodID_11: jmethodID?
 
     override open func createDockingListener() -> MouseInputListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDockingListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &MetalToolBarUI.createDockingListener_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDockingListener", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &MetalToolBarUI.createDockingListener_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalToolBarUI.setDragOffset(java.awt.Point)
-
-    private static var setDragOffset_MethodID_8: jmethodID?
-
-    open func setDragOffset( p: java_awt.Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDragOffset", methodSig: "(Ljava/awt/Point;)V", methodCache: &MetalToolBarUI.setDragOffset_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setDragOffset( _ _p: java_awt.Point? ) {
-        setDragOffset( p: _p )
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalToolBarUI.createRolloverListener()
-
-    private static var createRolloverListener_MethodID_9: jmethodID?
-
-    open func createRolloverListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRolloverListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalToolBarUI.createRolloverListener_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.plaf.metal.MetalToolBarUI.setLastMenuBar(javax.swing.JMenuBar)
-
-    /// protected void javax.swing.plaf.metal.MetalToolBarUI.installListeners()
-
-    private static var installListeners_MethodID_10: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalToolBarUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.metal.MetalToolBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_11: jmethodID?
-
-    override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalToolBarUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
     }
 
 

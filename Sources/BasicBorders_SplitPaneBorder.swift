@@ -29,7 +29,7 @@ open class BasicBorders_SplitPaneBorder: java_swift.JavaObject, Border, UIResour
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_SplitPaneBorder.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class BasicBorders_SplitPaneBorder: java_swift.JavaObject, Border, UIResour
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_SplitPaneBorder.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -58,8 +58,8 @@ open class BasicBorders_SplitPaneBorder: java_swift.JavaObject, Border, UIResour
     public convenience init( highlight: java_awt.Color?, shadow: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[1] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicBorders$SplitPaneBorder", classCache: &BasicBorders_SplitPaneBorder.BasicBorders_SplitPaneBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BasicBorders_SplitPaneBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -76,8 +76,8 @@ open class BasicBorders_SplitPaneBorder: java_swift.JavaObject, Border, UIResour
     open func paintBorder( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: width, locals: &__locals )
@@ -96,7 +96,7 @@ open class BasicBorders_SplitPaneBorder: java_swift.JavaObject, Border, UIResour
     open func getBorderInsets( c: java_awt.Component? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;)Ljava/awt/Insets;", methodCache: &BasicBorders_SplitPaneBorder.getBorderInsets_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil

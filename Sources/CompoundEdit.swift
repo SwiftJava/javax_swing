@@ -31,7 +31,7 @@ open class CompoundEdit: AbstractUndoableEdit {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "edits", fieldType: "Ljava/util/Vector;", fieldCache: &CompoundEdit.edits_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -69,26 +69,6 @@ open class CompoundEdit: AbstractUndoableEdit {
     }
 
 
-    /// public void javax.swing.undo.CompoundEdit.die()
-
-    /// public void javax.swing.undo.CompoundEdit.undo() throws javax.swing.undo.CannotUndoException
-
-    /// public boolean javax.swing.undo.CompoundEdit.canUndo()
-
-    /// public void javax.swing.undo.CompoundEdit.redo() throws javax.swing.undo.CannotRedoException
-
-    /// public boolean javax.swing.undo.CompoundEdit.canRedo()
-
-    /// public boolean javax.swing.undo.CompoundEdit.addEdit(javax.swing.undo.UndoableEdit)
-
-    /// public boolean javax.swing.undo.CompoundEdit.isSignificant()
-
-    /// public java.lang.String javax.swing.undo.CompoundEdit.getPresentationName()
-
-    /// public java.lang.String javax.swing.undo.CompoundEdit.getUndoPresentationName()
-
-    /// public java.lang.String javax.swing.undo.CompoundEdit.getRedoPresentationName()
-
     /// protected javax.swing.undo.UndoableEdit javax.swing.undo.CompoundEdit.lastEdit()
 
     private static var lastEdit_MethodID_3: jmethodID?
@@ -113,6 +93,26 @@ open class CompoundEdit: AbstractUndoableEdit {
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
+
+    /// public void javax.swing.undo.CompoundEdit.die()
+
+    /// public void javax.swing.undo.CompoundEdit.undo() throws javax.swing.undo.CannotUndoException
+
+    /// public boolean javax.swing.undo.CompoundEdit.canUndo()
+
+    /// public void javax.swing.undo.CompoundEdit.redo() throws javax.swing.undo.CannotRedoException
+
+    /// public boolean javax.swing.undo.CompoundEdit.canRedo()
+
+    /// public boolean javax.swing.undo.CompoundEdit.addEdit(javax.swing.undo.UndoableEdit)
+
+    /// public boolean javax.swing.undo.CompoundEdit.isSignificant()
+
+    /// public java.lang.String javax.swing.undo.CompoundEdit.getPresentationName()
+
+    /// public java.lang.String javax.swing.undo.CompoundEdit.getUndoPresentationName()
+
+    /// public java.lang.String javax.swing.undo.CompoundEdit.getRedoPresentationName()
 
 }
 

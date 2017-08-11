@@ -26,7 +26,7 @@ open class TableModelListenerForward: java_util.EventListenerForward, TableModel
     open func tableChanged( e: TableModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "tableChanged", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &TableModelListenerForward.tableChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

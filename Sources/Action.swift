@@ -286,7 +286,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &ActionForward.putValue_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -301,7 +301,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
     override open func actionPerformed( e: java_awt.ActionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &ActionForward.actionPerformed_MethodID_13, args: &__args, locals: &__locals )
     }
 

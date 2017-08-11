@@ -33,7 +33,7 @@ open class GrayFilter: java_awt.RGBImageFilter {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "origmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.origmodel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -50,7 +50,7 @@ open class GrayFilter: java_awt.RGBImageFilter {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "newmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.newmodel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -125,8 +125,6 @@ open class GrayFilter: java_awt.RGBImageFilter {
         self.init( b: _b, p: _p )
     }
 
-    /// public int javax.swing.GrayFilter.filterRGB(int,int,int)
-
     /// public static java.awt.Image javax.swing.GrayFilter.createDisabledImage(java.awt.Image)
 
     private static var createDisabledImage_MethodID_2: jmethodID?
@@ -134,7 +132,7 @@ open class GrayFilter: java_awt.RGBImageFilter {
     open class func createDisabledImage( i: java_awt.Image? ) -> java_awt.Image! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i != nil ? i! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/GrayFilter", classCache: &GrayFilterJNIClass, methodName: "createDisabledImage", methodSig: "(Ljava/awt/Image;)Ljava/awt/Image;", methodCache: &createDisabledImage_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Image( javaObject: __return ) : nil
@@ -143,6 +141,8 @@ open class GrayFilter: java_awt.RGBImageFilter {
     open class func createDisabledImage( _ _i: java_awt.Image? ) -> java_awt.Image! {
         return createDisabledImage( i: _i )
     }
+
+    /// public int javax.swing.GrayFilter.filterRGB(int,int,int)
 
 }
 

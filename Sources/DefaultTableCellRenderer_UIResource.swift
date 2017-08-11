@@ -63,7 +63,7 @@ open class DefaultTableCellRenderer_UIResource: DefaultTableCellRenderer, UIReso
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &DefaultTableCellRenderer_UIResource.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -146,7 +146,7 @@ open class DefaultTableCellRenderer_UIResource: DefaultTableCellRenderer, UIReso
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &DefaultTableCellRenderer_UIResource.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -163,7 +163,7 @@ open class DefaultTableCellRenderer_UIResource: DefaultTableCellRenderer, UIReso
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultTableCellRenderer_UIResource.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -540,7 +540,7 @@ open class DefaultTableCellRenderer_UIResource: DefaultTableCellRenderer, UIReso
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &DefaultTableCellRenderer_UIResource.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -584,7 +584,7 @@ private func DefaultTableCellRenderer_UIResource_getTableCellRendererComponent_0
     let __return = DefaultTableCellRenderer_UIResourceLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).getTableCellRendererComponent( table: table != nil ? JTable( javaObject: table ) : nil, value: value != nil ? java_swift.JavaObject( javaObject: value ) : nil, isSelected: JNIType.toSwift( type: Bool(), from: isSelected ), hasFocus: JNIType.toSwift( type: Bool(), from: hasFocus ), row: JNIType.toSwift( type: Int(), from: row ), column: JNIType.toSwift( type: Int(), from: column ) )
     JNI.inNative = false;
     var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return != nil ? __return! as JNIObject : nil, locals: &locals ).l, &locals, removeLast: true )
+    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).l, &locals, removeLast: true )
 }
 
 fileprivate class DefaultTableCellRenderer_UIResourceLocal_: JNIObjectProxy<DefaultTableCellRenderer_UIResource> {

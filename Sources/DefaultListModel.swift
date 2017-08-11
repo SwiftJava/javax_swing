@@ -31,7 +31,7 @@ open class DefaultListModel: AbstractListModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultListModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -56,7 +56,7 @@ open class DefaultListModel: AbstractListModel {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: element != nil ? element! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: element, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(ILjava/lang/Object;)V", methodCache: &DefaultListModel.add_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -107,7 +107,7 @@ open class DefaultListModel: AbstractListModel {
     open func indexOf( elem: java_swift.JavaObject?, index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOf", methodSig: "(Ljava/lang/Object;I)I", methodCache: &DefaultListModel.indexOf_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
@@ -124,7 +124,7 @@ open class DefaultListModel: AbstractListModel {
     open func indexOf( elem: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &DefaultListModel.indexOf_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -163,7 +163,7 @@ open class DefaultListModel: AbstractListModel {
     open func lastIndexOf( elem: java_swift.JavaObject?, index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "lastIndexOf", methodSig: "(Ljava/lang/Object;I)I", methodCache: &DefaultListModel.lastIndexOf_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
@@ -180,7 +180,7 @@ open class DefaultListModel: AbstractListModel {
     open func lastIndexOf( elem: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "lastIndexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &DefaultListModel.lastIndexOf_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -196,7 +196,7 @@ open class DefaultListModel: AbstractListModel {
     open func contains( elem: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/lang/Object;)Z", methodCache: &DefaultListModel.contains_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -249,7 +249,7 @@ open class DefaultListModel: AbstractListModel {
     open func addElement( element: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: element != nil ? element! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: element, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addElement", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultListModel.addElement_MethodID_15, args: &__args, locals: &__locals )
     }
 
@@ -282,7 +282,7 @@ open class DefaultListModel: AbstractListModel {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: element != nil ? element! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: element, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "set", methodSig: "(ILjava/lang/Object;)Ljava/lang/Object;", methodCache: &DefaultListModel.set_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -395,7 +395,7 @@ open class DefaultListModel: AbstractListModel {
     open func setElementAt( element: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: element != nil ? element! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: element, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setElementAt", methodSig: "(Ljava/lang/Object;I)V", methodCache: &DefaultListModel.setElementAt_MethodID_25, args: &__args, locals: &__locals )
     }
@@ -426,7 +426,7 @@ open class DefaultListModel: AbstractListModel {
     open func insertElementAt( element: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: element != nil ? element! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: element, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertElementAt", methodSig: "(Ljava/lang/Object;I)V", methodCache: &DefaultListModel.insertElementAt_MethodID_27, args: &__args, locals: &__locals )
     }
@@ -442,7 +442,7 @@ open class DefaultListModel: AbstractListModel {
     open func removeElement( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "removeElement", methodSig: "(Ljava/lang/Object;)Z", methodCache: &DefaultListModel.removeElement_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

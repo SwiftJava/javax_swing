@@ -42,37 +42,17 @@ open class LayoutStyle: java_swift.JavaObject {
     }
 
 
-    /// public abstract int javax.swing.LayoutStyle.getPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement,int,java.awt.Container)
-
-    private static var getPreferredGap_MethodID_3: jmethodID?
-
-    open func getPreferredGap( component1: JComponent?, component2: JComponent?, type: LayoutStyle_ComponentPlacement?, position: Int, parent: java_awt.Container? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component1 != nil ? component1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component2 != nil ? component2! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: position, locals: &__locals )
-        __args[4] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getPreferredGap_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getPreferredGap( _ _component1: JComponent?, _ _component2: JComponent?, _ _type: LayoutStyle_ComponentPlacement?, _ _position: Int, _ _parent: java_awt.Container? ) -> Int {
-        return getPreferredGap( component1: _component1, component2: _component2, type: _type, position: _position, parent: _parent )
-    }
-
     /// public abstract int javax.swing.LayoutStyle.getContainerGap(javax.swing.JComponent,int,java.awt.Container)
 
-    private static var getContainerGap_MethodID_4: jmethodID?
+    private static var getContainerGap_MethodID_3: jmethodID?
 
     open func getContainerGap( component: JComponent?, position: Int, parent: java_awt.Container? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         __args[1] = JNIType.toJava( value: position, locals: &__locals )
-        __args[2] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getContainerGap", methodSig: "(Ljavax/swing/JComponent;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getContainerGap_MethodID_4, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getContainerGap", methodSig: "(Ljavax/swing/JComponent;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getContainerGap_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -82,17 +62,37 @@ open class LayoutStyle: java_swift.JavaObject {
 
     /// public static void javax.swing.LayoutStyle.setInstance(javax.swing.LayoutStyle)
 
-    private static var setInstance_MethodID_5: jmethodID?
+    private static var setInstance_MethodID_4: jmethodID?
 
     open class func setInstance( style: LayoutStyle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: style != nil ? style! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/LayoutStyle", classCache: &LayoutStyleJNIClass, methodName: "setInstance", methodSig: "(Ljavax/swing/LayoutStyle;)V", methodCache: &setInstance_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: style, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/LayoutStyle", classCache: &LayoutStyleJNIClass, methodName: "setInstance", methodSig: "(Ljavax/swing/LayoutStyle;)V", methodCache: &setInstance_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open class func setInstance( _ _style: LayoutStyle? ) {
         setInstance( style: _style )
+    }
+
+    /// public abstract int javax.swing.LayoutStyle.getPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement,int,java.awt.Container)
+
+    private static var getPreferredGap_MethodID_5: jmethodID?
+
+    open func getPreferredGap( component1: JComponent?, component2: JComponent?, type: LayoutStyle_ComponentPlacement?, position: Int, parent: java_awt.Container? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: component1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: type, locals: &__locals )
+        __args[3] = JNIType.toJava( value: position, locals: &__locals )
+        __args[4] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getPreferredGap_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getPreferredGap( _ _component1: JComponent?, _ _component2: JComponent?, _ _type: LayoutStyle_ComponentPlacement?, _ _position: Int, _ _parent: java_awt.Container? ) -> Int {
+        return getPreferredGap( component1: _component1, component2: _component2, type: _type, position: _position, parent: _parent )
     }
 
 }

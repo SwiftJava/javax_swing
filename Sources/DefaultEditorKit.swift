@@ -591,15 +591,15 @@ open class DefaultEditorKit: EditorKit {
 
     /// public javax.swing.Action[] javax.swing.text.DefaultEditorKit.getActions()
 
+    /// public java.lang.String javax.swing.text.DefaultEditorKit.getContentType()
+
+    /// public javax.swing.text.Document javax.swing.text.DefaultEditorKit.createDefaultDocument()
+
     /// public javax.swing.text.Caret javax.swing.text.DefaultEditorKit.createCaret()
 
     /// javax.swing.text.MutableAttributeSet javax.swing.text.DefaultEditorKit.getInputAttributes()
 
-    /// public javax.swing.text.Document javax.swing.text.DefaultEditorKit.createDefaultDocument()
-
     /// public javax.swing.text.ViewFactory javax.swing.text.DefaultEditorKit.getViewFactory()
-
-    /// public java.lang.String javax.swing.text.DefaultEditorKit.getContentType()
 
 }
 

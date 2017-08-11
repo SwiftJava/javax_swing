@@ -61,7 +61,7 @@ open class AbstractColorChooserPanel: JPanel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &AbstractColorChooserPanel.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -78,7 +78,7 @@ open class AbstractColorChooserPanel: JPanel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractColorChooserPanel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -455,7 +455,7 @@ open class AbstractColorChooserPanel: JPanel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &AbstractColorChooserPanel.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -492,15 +492,42 @@ open class AbstractColorChooserPanel: JPanel {
 
     /// int javax.swing.colorchooser.AbstractColorChooserPanel.getInt(java.lang.Object,int)
 
+    /// protected java.awt.Color javax.swing.colorchooser.AbstractColorChooserPanel.getColorFromModel()
+
+    private static var getColorFromModel_MethodID_2: jmethodID?
+
+    open func getColorFromModel() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorFromModel", methodSig: "()Ljava/awt/Color;", methodCache: &AbstractColorChooserPanel.getColorFromModel_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.colorchooser.AbstractColorChooserPanel.paint(java.awt.Graphics)
+
     /// public abstract java.lang.String javax.swing.colorchooser.AbstractColorChooserPanel.getDisplayName()
 
-    private static var getDisplayName_MethodID_2: jmethodID?
+    private static var getDisplayName_MethodID_3: jmethodID?
 
     open func getDisplayName() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisplayName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractColorChooserPanel.getDisplayName_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisplayName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractColorChooserPanel.getDisplayName_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// public int javax.swing.colorchooser.AbstractColorChooserPanel.getDisplayedMnemonicIndex()
+
+    private static var getDisplayedMnemonicIndex_MethodID_4: jmethodID?
+
+    open func getDisplayedMnemonicIndex() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonicIndex", methodSig: "()I", methodCache: &AbstractColorChooserPanel.getDisplayedMnemonicIndex_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
@@ -508,34 +535,34 @@ open class AbstractColorChooserPanel: JPanel {
 
     /// public abstract void javax.swing.colorchooser.AbstractColorChooserPanel.updateChooser()
 
-    private static var updateChooser_MethodID_3: jmethodID?
+    private static var updateChooser_MethodID_5: jmethodID?
 
     open func updateChooser() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateChooser", methodSig: "()V", methodCache: &AbstractColorChooserPanel.updateChooser_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateChooser", methodSig: "()V", methodCache: &AbstractColorChooserPanel.updateChooser_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
     /// protected abstract void javax.swing.colorchooser.AbstractColorChooserPanel.buildChooser()
 
-    private static var buildChooser_MethodID_4: jmethodID?
+    private static var buildChooser_MethodID_6: jmethodID?
 
     open func buildChooser() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "buildChooser", methodSig: "()V", methodCache: &AbstractColorChooserPanel.buildChooser_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "buildChooser", methodSig: "()V", methodCache: &AbstractColorChooserPanel.buildChooser_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
     /// public abstract javax.swing.Icon javax.swing.colorchooser.AbstractColorChooserPanel.getSmallDisplayIcon()
 
-    private static var getSmallDisplayIcon_MethodID_5: jmethodID?
+    private static var getSmallDisplayIcon_MethodID_7: jmethodID?
 
     open func getSmallDisplayIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSmallDisplayIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractColorChooserPanel.getSmallDisplayIcon_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSmallDisplayIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractColorChooserPanel.getSmallDisplayIcon_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -543,12 +570,12 @@ open class AbstractColorChooserPanel: JPanel {
 
     /// public abstract javax.swing.Icon javax.swing.colorchooser.AbstractColorChooserPanel.getLargeDisplayIcon()
 
-    private static var getLargeDisplayIcon_MethodID_6: jmethodID?
+    private static var getLargeDisplayIcon_MethodID_8: jmethodID?
 
     open func getLargeDisplayIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLargeDisplayIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractColorChooserPanel.getLargeDisplayIcon_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLargeDisplayIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractColorChooserPanel.getLargeDisplayIcon_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -556,13 +583,13 @@ open class AbstractColorChooserPanel: JPanel {
 
     /// public void javax.swing.colorchooser.AbstractColorChooserPanel.installChooserPanel(javax.swing.JColorChooser)
 
-    private static var installChooserPanel_MethodID_7: jmethodID?
+    private static var installChooserPanel_MethodID_9: jmethodID?
 
     open func installChooserPanel( enclosingChooser: JColorChooser? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enclosingChooser != nil ? enclosingChooser! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installChooserPanel", methodSig: "(Ljavax/swing/JColorChooser;)V", methodCache: &AbstractColorChooserPanel.installChooserPanel_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: enclosingChooser, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installChooserPanel", methodSig: "(Ljavax/swing/JColorChooser;)V", methodCache: &AbstractColorChooserPanel.installChooserPanel_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func installChooserPanel( _ _enclosingChooser: JColorChooser? ) {
@@ -571,13 +598,13 @@ open class AbstractColorChooserPanel: JPanel {
 
     /// public void javax.swing.colorchooser.AbstractColorChooserPanel.uninstallChooserPanel(javax.swing.JColorChooser)
 
-    private static var uninstallChooserPanel_MethodID_8: jmethodID?
+    private static var uninstallChooserPanel_MethodID_10: jmethodID?
 
     open func uninstallChooserPanel( enclosingChooser: JColorChooser? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enclosingChooser != nil ? enclosingChooser! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallChooserPanel", methodSig: "(Ljavax/swing/JColorChooser;)V", methodCache: &AbstractColorChooserPanel.uninstallChooserPanel_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: enclosingChooser, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallChooserPanel", methodSig: "(Ljavax/swing/JColorChooser;)V", methodCache: &AbstractColorChooserPanel.uninstallChooserPanel_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func uninstallChooserPanel( _ _enclosingChooser: JColorChooser? ) {
@@ -586,55 +613,28 @@ open class AbstractColorChooserPanel: JPanel {
 
     /// public javax.swing.colorchooser.ColorSelectionModel javax.swing.colorchooser.AbstractColorChooserPanel.getColorSelectionModel()
 
-    private static var getColorSelectionModel_MethodID_9: jmethodID?
+    private static var getColorSelectionModel_MethodID_11: jmethodID?
 
     open func getColorSelectionModel() -> ColorSelectionModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorSelectionModel", methodSig: "()Ljavax/swing/colorchooser/ColorSelectionModel;", methodCache: &AbstractColorChooserPanel.getColorSelectionModel_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorSelectionModel", methodSig: "()Ljavax/swing/colorchooser/ColorSelectionModel;", methodCache: &AbstractColorChooserPanel.getColorSelectionModel_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ColorSelectionModelForward( javaObject: __return ) : nil
     }
 
 
-    /// protected java.awt.Color javax.swing.colorchooser.AbstractColorChooserPanel.getColorFromModel()
-
-    private static var getColorFromModel_MethodID_10: jmethodID?
-
-    open func getColorFromModel() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorFromModel", methodSig: "()Ljava/awt/Color;", methodCache: &AbstractColorChooserPanel.getColorFromModel_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
     /// public int javax.swing.colorchooser.AbstractColorChooserPanel.getMnemonic()
 
-    private static var getMnemonic_MethodID_11: jmethodID?
+    private static var getMnemonic_MethodID_12: jmethodID?
 
     open func getMnemonic() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMnemonic", methodSig: "()I", methodCache: &AbstractColorChooserPanel.getMnemonic_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMnemonic", methodSig: "()I", methodCache: &AbstractColorChooserPanel.getMnemonic_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-
-    /// public int javax.swing.colorchooser.AbstractColorChooserPanel.getDisplayedMnemonicIndex()
-
-    private static var getDisplayedMnemonicIndex_MethodID_12: jmethodID?
-
-    open func getDisplayedMnemonicIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonicIndex", methodSig: "()I", methodCache: &AbstractColorChooserPanel.getDisplayedMnemonicIndex_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.colorchooser.AbstractColorChooserPanel.paint(java.awt.Graphics)
 
 }
 

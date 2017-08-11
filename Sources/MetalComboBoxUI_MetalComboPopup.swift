@@ -35,7 +35,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "comboBox", fieldType: "Ljavax/swing/JComboBox;", fieldCache: &MetalComboBoxUI_MetalComboPopup.comboBox_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -52,7 +52,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "list", fieldType: "Ljavax/swing/JList;", fieldCache: &MetalComboBoxUI_MetalComboPopup.list_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -69,7 +69,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "scroller", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &MetalComboBoxUI_MetalComboPopup.scroller_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -260,7 +260,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "autoscrollTimer", fieldType: "Ljavax/swing/Timer;", fieldCache: &MetalComboBoxUI_MetalComboPopup.autoscrollTimer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -392,7 +392,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &MetalComboBoxUI_MetalComboPopup.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -409,7 +409,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &MetalComboBoxUI_MetalComboPopup.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -786,7 +786,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &MetalComboBoxUI_MetalComboPopup.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -816,8 +816,8 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
     public convenience init( this_0: MetalComboBoxUI?, cBox: JComboBox? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: cBox != nil ? cBox! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: cBox, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxUI$MetalComboPopup", classCache: &MetalComboBoxUI_MetalComboPopup.MetalComboBoxUI_MetalComboPopupJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalComboBoxUI;Ljavax/swing/JComboBox;)V", methodCache: &MetalComboBoxUI_MetalComboPopup.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -834,7 +834,7 @@ open class MetalComboBoxUI_MetalComboPopup: BasicComboPopup {
     override open func delegateFocus( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "delegateFocus", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MetalComboBoxUI_MetalComboPopup.delegateFocus_MethodID_2, args: &__args, locals: &__locals )
     }
 

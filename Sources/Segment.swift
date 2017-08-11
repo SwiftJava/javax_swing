@@ -239,15 +239,54 @@ open class Segment: java_swift.JavaObject, java_lang.Cloneable, /* java.text.Cha
     }
 
 
+    /// public void javax.swing.text.Segment.setPartialReturn(boolean)
+
+    private static var setPartialReturn_MethodID_12: jmethodID?
+
+    open func setPartialReturn( p: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPartialReturn", methodSig: "(Z)V", methodCache: &Segment.setPartialReturn_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setPartialReturn( _ _p: Bool ) {
+        setPartialReturn( p: _p )
+    }
+
+    /// public boolean javax.swing.text.Segment.isPartialReturn()
+
+    private static var isPartialReturn_MethodID_13: jmethodID?
+
+    open func isPartialReturn() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPartialReturn", methodSig: "()Z", methodCache: &Segment.isPartialReturn_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.Segment.getIndex()
+
+    private static var getIndex_MethodID_14: jmethodID?
+
+    open func getIndex() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &Segment.getIndex_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
     /// public char javax.swing.text.Segment.setIndex(int)
 
-    private static var setIndex_MethodID_12: jmethodID?
+    private static var setIndex_MethodID_15: jmethodID?
 
     open func setIndex( position: Int ) -> UInt16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "setIndex", methodSig: "(I)C", methodCache: &Segment.setIndex_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "setIndex", methodSig: "(I)C", methodCache: &Segment.setIndex_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: UInt16(), from: __return )
     }
 
@@ -257,63 +296,24 @@ open class Segment: java_swift.JavaObject, java_lang.Cloneable, /* java.text.Cha
 
     /// public int javax.swing.text.Segment.getBeginIndex()
 
-    private static var getBeginIndex_MethodID_13: jmethodID?
+    private static var getBeginIndex_MethodID_16: jmethodID?
 
     open func getBeginIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBeginIndex", methodSig: "()I", methodCache: &Segment.getBeginIndex_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBeginIndex", methodSig: "()I", methodCache: &Segment.getBeginIndex_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.text.Segment.getEndIndex()
 
-    private static var getEndIndex_MethodID_14: jmethodID?
+    private static var getEndIndex_MethodID_17: jmethodID?
 
     open func getEndIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndIndex", methodSig: "()I", methodCache: &Segment.getEndIndex_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.Segment.setPartialReturn(boolean)
-
-    private static var setPartialReturn_MethodID_15: jmethodID?
-
-    open func setPartialReturn( p: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPartialReturn", methodSig: "(Z)V", methodCache: &Segment.setPartialReturn_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setPartialReturn( _ _p: Bool ) {
-        setPartialReturn( p: _p )
-    }
-
-    /// public boolean javax.swing.text.Segment.isPartialReturn()
-
-    private static var isPartialReturn_MethodID_16: jmethodID?
-
-    open func isPartialReturn() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPartialReturn", methodSig: "()Z", methodCache: &Segment.isPartialReturn_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public int javax.swing.text.Segment.getIndex()
-
-    private static var getIndex_MethodID_17: jmethodID?
-
-    open func getIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &Segment.getIndex_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndIndex", methodSig: "()I", methodCache: &Segment.getEndIndex_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 

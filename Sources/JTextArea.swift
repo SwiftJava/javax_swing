@@ -135,7 +135,7 @@ open class JTextArea: JTextComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JTextArea.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -152,7 +152,7 @@ open class JTextArea: JTextComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JTextArea.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -529,7 +529,7 @@ open class JTextArea: JTextComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JTextArea.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -700,155 +700,9 @@ open class JTextArea: JTextComponent {
     }
 
 
-    /// public java.awt.Dimension javax.swing.JTextArea.getPreferredSize()
-
-    /// public boolean javax.swing.JTextArea.getLineWrap()
-
-    private static var getLineWrap_MethodID_10: jmethodID?
-
-    open func getLineWrap() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getLineWrap", methodSig: "()Z", methodCache: &JTextArea.getLineWrap_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JTextArea.setRows(int)
-
-    private static var setRows_MethodID_11: jmethodID?
-
-    open func setRows( rows: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rows, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRows", methodSig: "(I)V", methodCache: &JTextArea.setRows_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setRows( _ _rows: Int ) {
-        setRows( rows: _rows )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JTextArea.getAccessibleContext()
-
-    /// public void javax.swing.JTextArea.setFont(java.awt.Font)
-
-    private static var setFont_MethodID_12: jmethodID?
-
-    open func setFont( f: java_awt.Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &JTextArea.setFont_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    override open func setFont( _ _f: java_awt.Font? ) {
-        setFont( f: _f )
-    }
-
-    /// protected int javax.swing.JTextArea.getRowHeight()
-
-    private static var getRowHeight_MethodID_13: jmethodID?
-
-    open func getRowHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "()I", methodCache: &JTextArea.getRowHeight_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.Dimension javax.swing.JTextArea.getPreferredScrollableViewportSize()
-
-    /// public int javax.swing.JTextArea.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
-
-    private static var getScrollableUnitIncrement_MethodID_14: jmethodID?
-
-    override open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
-        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTextArea.getScrollableUnitIncrement_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getScrollableUnitIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
-        return getScrollableUnitIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
-    }
-
-    /// public boolean javax.swing.JTextArea.getScrollableTracksViewportWidth()
-
-    /// public java.lang.String javax.swing.JTextArea.getUIClassID()
-
-    /// public boolean javax.swing.JTextArea.getWrapStyleWord()
-
-    private static var getWrapStyleWord_MethodID_15: jmethodID?
-
-    open func getWrapStyleWord() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getWrapStyleWord", methodSig: "()Z", methodCache: &JTextArea.getWrapStyleWord_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected javax.swing.text.Document javax.swing.JTextArea.createDefaultModel()
-
-    private static var createDefaultModel_MethodID_16: jmethodID?
-
-    open func createDefaultModel() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultModel", methodSig: "()Ljavax/swing/text/Document;", methodCache: &JTextArea.createDefaultModel_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.JTextArea.getColumns()
-
-    private static var getColumns_MethodID_17: jmethodID?
-
-    open func getColumns() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumns", methodSig: "()I", methodCache: &JTextArea.getColumns_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JTextArea.setColumns(int)
-
-    private static var setColumns_MethodID_18: jmethodID?
-
-    open func setColumns( columns: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columns, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumns", methodSig: "(I)V", methodCache: &JTextArea.setColumns_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func setColumns( _ _columns: Int ) {
-        setColumns( columns: _columns )
-    }
-
-    /// protected int javax.swing.JTextArea.getColumnWidth()
-
-    private static var getColumnWidth_MethodID_19: jmethodID?
-
-    open func getColumnWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnWidth", methodSig: "()I", methodCache: &JTextArea.getColumnWidth_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public void javax.swing.JTextArea.replaceRange(java.lang.String,int,int)
 
-    private static var replaceRange_MethodID_20: jmethodID?
+    private static var replaceRange_MethodID_10: jmethodID?
 
     open func replaceRange( str: String?, start: Int, end: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -856,7 +710,7 @@ open class JTextArea: JTextComponent {
         __args[0] = JNIType.toJava( value: str, locals: &__locals )
         __args[1] = JNIType.toJava( value: start, locals: &__locals )
         __args[2] = JNIType.toJava( value: end, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceRange", methodSig: "(Ljava/lang/String;II)V", methodCache: &JTextArea.replaceRange_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceRange", methodSig: "(Ljava/lang/String;II)V", methodCache: &JTextArea.replaceRange_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func replaceRange( _ _str: String?, _ _start: Int, _ _end: Int ) {
@@ -865,13 +719,13 @@ open class JTextArea: JTextComponent {
 
     /// public void javax.swing.JTextArea.setTabSize(int)
 
-    private static var setTabSize_MethodID_21: jmethodID?
+    private static var setTabSize_MethodID_11: jmethodID?
 
     open func setTabSize( size: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTabSize", methodSig: "(I)V", methodCache: &JTextArea.setTabSize_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTabSize", methodSig: "(I)V", methodCache: &JTextArea.setTabSize_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setTabSize( _ _size: Int ) {
@@ -880,13 +734,13 @@ open class JTextArea: JTextComponent {
 
     /// public void javax.swing.JTextArea.setLineWrap(boolean)
 
-    private static var setLineWrap_MethodID_22: jmethodID?
+    private static var setLineWrap_MethodID_12: jmethodID?
 
     open func setLineWrap( wrap: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: wrap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineWrap", methodSig: "(Z)V", methodCache: &JTextArea.setLineWrap_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineWrap", methodSig: "(Z)V", methodCache: &JTextArea.setLineWrap_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setLineWrap( _ _wrap: Bool ) {
@@ -895,13 +749,13 @@ open class JTextArea: JTextComponent {
 
     /// public void javax.swing.JTextArea.setWrapStyleWord(boolean)
 
-    private static var setWrapStyleWord_MethodID_23: jmethodID?
+    private static var setWrapStyleWord_MethodID_13: jmethodID?
 
     open func setWrapStyleWord( word: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: word, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWrapStyleWord", methodSig: "(Z)V", methodCache: &JTextArea.setWrapStyleWord_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWrapStyleWord", methodSig: "(Z)V", methodCache: &JTextArea.setWrapStyleWord_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setWrapStyleWord( _ _word: Bool ) {
@@ -910,13 +764,13 @@ open class JTextArea: JTextComponent {
 
     /// public int javax.swing.JTextArea.getLineOfOffset(int) throws javax.swing.text.BadLocationException
 
-    private static var getLineOfOffset_MethodID_24: jmethodID?
+    private static var getLineOfOffset_MethodID_14: jmethodID?
 
     open func getLineOfOffset( offset: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineOfOffset", methodSig: "(I)I", methodCache: &JTextArea.getLineOfOffset_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineOfOffset", methodSig: "(I)I", methodCache: &JTextArea.getLineOfOffset_MethodID_14, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -929,25 +783,25 @@ open class JTextArea: JTextComponent {
 
     /// public int javax.swing.JTextArea.getLineCount()
 
-    private static var getLineCount_MethodID_25: jmethodID?
+    private static var getLineCount_MethodID_15: jmethodID?
 
     open func getLineCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineCount", methodSig: "()I", methodCache: &JTextArea.getLineCount_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineCount", methodSig: "()I", methodCache: &JTextArea.getLineCount_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JTextArea.getLineStartOffset(int) throws javax.swing.text.BadLocationException
 
-    private static var getLineStartOffset_MethodID_26: jmethodID?
+    private static var getLineStartOffset_MethodID_16: jmethodID?
 
     open func getLineStartOffset( line: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: line, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineStartOffset", methodSig: "(I)I", methodCache: &JTextArea.getLineStartOffset_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineStartOffset", methodSig: "(I)I", methodCache: &JTextArea.getLineStartOffset_MethodID_16, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -960,13 +814,13 @@ open class JTextArea: JTextComponent {
 
     /// public int javax.swing.JTextArea.getLineEndOffset(int) throws javax.swing.text.BadLocationException
 
-    private static var getLineEndOffset_MethodID_27: jmethodID?
+    private static var getLineEndOffset_MethodID_17: jmethodID?
 
     open func getLineEndOffset( line: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: line, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineEndOffset", methodSig: "(I)I", methodCache: &JTextArea.getLineEndOffset_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineEndOffset", methodSig: "(I)I", methodCache: &JTextArea.getLineEndOffset_MethodID_17, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -979,25 +833,171 @@ open class JTextArea: JTextComponent {
 
     /// public int javax.swing.JTextArea.getRows()
 
-    private static var getRows_MethodID_28: jmethodID?
+    private static var getRows_MethodID_18: jmethodID?
 
     open func getRows() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRows", methodSig: "()I", methodCache: &JTextArea.getRows_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRows", methodSig: "()I", methodCache: &JTextArea.getRows_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JTextArea.getTabSize()
 
-    private static var getTabSize_MethodID_29: jmethodID?
+    private static var getTabSize_MethodID_19: jmethodID?
 
     open func getTabSize() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &JTextArea.getTabSize_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &JTextArea.getTabSize_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected javax.swing.text.Document javax.swing.JTextArea.createDefaultModel()
+
+    private static var createDefaultModel_MethodID_20: jmethodID?
+
+    open func createDefaultModel() -> Document! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultModel", methodSig: "()Ljavax/swing/text/Document;", methodCache: &JTextArea.createDefaultModel_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.JTextArea.getColumns()
+
+    private static var getColumns_MethodID_21: jmethodID?
+
+    open func getColumns() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumns", methodSig: "()I", methodCache: &JTextArea.getColumns_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JTextArea.setColumns(int)
+
+    private static var setColumns_MethodID_22: jmethodID?
+
+    open func setColumns( columns: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: columns, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumns", methodSig: "(I)V", methodCache: &JTextArea.setColumns_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setColumns( _ _columns: Int ) {
+        setColumns( columns: _columns )
+    }
+
+    /// protected int javax.swing.JTextArea.getColumnWidth()
+
+    private static var getColumnWidth_MethodID_23: jmethodID?
+
+    open func getColumnWidth() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnWidth", methodSig: "()I", methodCache: &JTextArea.getColumnWidth_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.lang.String javax.swing.JTextArea.getUIClassID()
+
+    /// public java.awt.Dimension javax.swing.JTextArea.getPreferredSize()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JTextArea.getAccessibleContext()
+
+    /// public void javax.swing.JTextArea.setFont(java.awt.Font)
+
+    private static var setFont_MethodID_24: jmethodID?
+
+    open func setFont( f: java_awt.Font? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &JTextArea.setFont_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    override open func setFont( _ _f: java_awt.Font? ) {
+        setFont( f: _f )
+    }
+
+    /// public boolean javax.swing.JTextArea.getLineWrap()
+
+    private static var getLineWrap_MethodID_25: jmethodID?
+
+    open func getLineWrap() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getLineWrap", methodSig: "()Z", methodCache: &JTextArea.getLineWrap_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JTextArea.setRows(int)
+
+    private static var setRows_MethodID_26: jmethodID?
+
+    open func setRows( rows: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: rows, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRows", methodSig: "(I)V", methodCache: &JTextArea.setRows_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setRows( _ _rows: Int ) {
+        setRows( rows: _rows )
+    }
+
+    /// protected int javax.swing.JTextArea.getRowHeight()
+
+    private static var getRowHeight_MethodID_27: jmethodID?
+
+    open func getRowHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "()I", methodCache: &JTextArea.getRowHeight_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.awt.Dimension javax.swing.JTextArea.getPreferredScrollableViewportSize()
+
+    /// public int javax.swing.JTextArea.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
+
+    private static var getScrollableUnitIncrement_MethodID_28: jmethodID?
+
+    override open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: visibleRect, locals: &__locals )
+        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &JTextArea.getScrollableUnitIncrement_MethodID_28, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getScrollableUnitIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
+        return getScrollableUnitIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
+    }
+
+    /// public boolean javax.swing.JTextArea.getScrollableTracksViewportWidth()
+
+    /// public boolean javax.swing.JTextArea.getWrapStyleWord()
+
+    private static var getWrapStyleWord_MethodID_29: jmethodID?
+
+    open func getWrapStyleWord() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getWrapStyleWord", methodSig: "()Z", methodCache: &JTextArea.getWrapStyleWord_MethodID_29, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 

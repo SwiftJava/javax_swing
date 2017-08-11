@@ -26,7 +26,7 @@ open class TransferHandler_DropLocation: java_swift.JavaObject {
     public convenience init( arg0: java_awt.Point? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/TransferHandler$DropLocation", classCache: &TransferHandler_DropLocation.TransferHandler_DropLocationJNIClass, methodSig: "(Ljava/awt/Point;)V", methodCache: &TransferHandler_DropLocation.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

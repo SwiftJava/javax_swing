@@ -34,7 +34,7 @@ open class MenuListenerForward: java_util.EventListenerForward, MenuListener {
     open func menuSelected( e: MenuEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuSelected", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuSelected_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -49,7 +49,7 @@ open class MenuListenerForward: java_util.EventListenerForward, MenuListener {
     open func menuDeselected( e: MenuEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDeselected", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuDeselected_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -64,7 +64,7 @@ open class MenuListenerForward: java_util.EventListenerForward, MenuListener {
     open func menuCanceled( e: MenuEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuCanceled", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuCanceled_MethodID_6, args: &__args, locals: &__locals )
     }
 

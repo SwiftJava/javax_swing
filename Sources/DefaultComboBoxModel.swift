@@ -33,7 +33,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultComboBoxModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -45,7 +45,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     public convenience init( v: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultComboBoxModel", classCache: &DefaultComboBoxModel.DefaultComboBoxModelJNIClass, methodSig: "(Ljava/util/Vector;)V", methodCache: &DefaultComboBoxModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -91,7 +91,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     open func addElement( item: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addElement", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultComboBoxModel.addElement_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -123,7 +123,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     open func insertElementAt( item: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertElementAt", methodSig: "(Ljava/lang/Object;I)V", methodCache: &DefaultComboBoxModel.insertElementAt_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -139,7 +139,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     open func removeElement( obj: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeElement", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultComboBoxModel.removeElement_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -158,6 +158,8 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     }
 
 
+    /// public java.lang.Object javax.swing.DefaultComboBoxModel.getElementAt(int)
+
     /// public int javax.swing.DefaultComboBoxModel.getIndexOf(java.lang.Object)
 
     private static var getIndexOf_MethodID_9: jmethodID?
@@ -165,7 +167,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     open func getIndexOf( anObject: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anObject != nil ? anObject! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &DefaultComboBoxModel.getIndexOf_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -181,7 +183,7 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
     open func setSelectedItem( anItem: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anItem != nil ? anItem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anItem, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultComboBoxModel.setSelectedItem_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -201,8 +203,6 @@ open class DefaultComboBoxModel: AbstractListModel, MutableComboBoxModel {
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
-
-    /// public java.lang.Object javax.swing.DefaultComboBoxModel.getElementAt(int)
 
     /// In declared protocol but not defined.. ///
 

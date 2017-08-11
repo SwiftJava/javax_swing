@@ -43,6 +43,10 @@ public protocol Keymap: JavaProtocol {
 
     func setResolveParent( parent: Keymap? )
 
+    /// public abstract javax.swing.Action javax.swing.text.Keymap.getAction(javax.swing.KeyStroke)
+
+    func getAction( key: KeyStroke? ) -> Action!
+
     /// public abstract void javax.swing.text.Keymap.setDefaultAction(javax.swing.Action)
 
     func setDefaultAction( a: Action? )
@@ -54,10 +58,6 @@ public protocol Keymap: JavaProtocol {
     /// public abstract javax.swing.Action javax.swing.text.Keymap.getDefaultAction()
 
     func getDefaultAction() -> Action!
-
-    /// public abstract javax.swing.Action javax.swing.text.Keymap.getAction(javax.swing.KeyStroke)
-
-    func getAction( key: KeyStroke? ) -> Action!
 
 }
 
@@ -125,7 +125,7 @@ open class KeymapForward: JNIObjectForward, Keymap {
     open func isLocallyDefined( key: KeyStroke? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLocallyDefined", methodSig: "(Ljavax/swing/KeyStroke;)Z", methodCache: &KeymapForward.isLocallyDefined_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -141,7 +141,7 @@ open class KeymapForward: JNIObjectForward, Keymap {
     open func removeKeyStrokeBinding( keys: KeyStroke? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keys != nil ? keys! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: keys, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeKeyStrokeBinding", methodSig: "(Ljavax/swing/KeyStroke;)V", methodCache: &KeymapForward.removeKeyStrokeBinding_MethodID_19, args: &__args, locals: &__locals )
     }
 
@@ -188,15 +188,32 @@ open class KeymapForward: JNIObjectForward, Keymap {
         setResolveParent( parent: _parent )
     }
 
+    /// public abstract javax.swing.Action javax.swing.text.Keymap.getAction(javax.swing.KeyStroke)
+
+    private static var getAction_MethodID_23: jmethodID?
+
+    open func getAction( key: KeyStroke? ) -> Action! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "(Ljavax/swing/KeyStroke;)Ljavax/swing/Action;", methodCache: &KeymapForward.getAction_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ActionForward( javaObject: __return ) : nil
+    }
+
+    open func getAction( _ _key: KeyStroke? ) -> Action! {
+        return getAction( key: _key )
+    }
+
     /// public abstract void javax.swing.text.Keymap.setDefaultAction(javax.swing.Action)
 
-    private static var setDefaultAction_MethodID_23: jmethodID?
+    private static var setDefaultAction_MethodID_24: jmethodID?
 
     open func setDefaultAction( a: Action? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &KeymapForward.setDefaultAction_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &KeymapForward.setDefaultAction_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setDefaultAction( _ _a: Action? ) {
@@ -205,14 +222,14 @@ open class KeymapForward: JNIObjectForward, Keymap {
 
     /// public abstract void javax.swing.text.Keymap.addActionForKeyStroke(javax.swing.KeyStroke,javax.swing.Action)
 
-    private static var addActionForKeyStroke_MethodID_24: jmethodID?
+    private static var addActionForKeyStroke_MethodID_25: jmethodID?
 
     open func addActionForKeyStroke( key: KeyStroke?, a: Action? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionForKeyStroke", methodSig: "(Ljavax/swing/KeyStroke;Ljavax/swing/Action;)V", methodCache: &KeymapForward.addActionForKeyStroke_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionForKeyStroke", methodSig: "(Ljavax/swing/KeyStroke;Ljavax/swing/Action;)V", methodCache: &KeymapForward.addActionForKeyStroke_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func addActionForKeyStroke( _ _key: KeyStroke?, _ _a: Action? ) {
@@ -221,33 +238,16 @@ open class KeymapForward: JNIObjectForward, Keymap {
 
     /// public abstract javax.swing.Action javax.swing.text.Keymap.getDefaultAction()
 
-    private static var getDefaultAction_MethodID_25: jmethodID?
+    private static var getDefaultAction_MethodID_26: jmethodID?
 
     open func getDefaultAction() -> Action! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultAction", methodSig: "()Ljavax/swing/Action;", methodCache: &KeymapForward.getDefaultAction_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultAction", methodSig: "()Ljavax/swing/Action;", methodCache: &KeymapForward.getDefaultAction_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionForward( javaObject: __return ) : nil
     }
 
-
-    /// public abstract javax.swing.Action javax.swing.text.Keymap.getAction(javax.swing.KeyStroke)
-
-    private static var getAction_MethodID_26: jmethodID?
-
-    open func getAction( key: KeyStroke? ) -> Action! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "(Ljavax/swing/KeyStroke;)Ljavax/swing/Action;", methodCache: &KeymapForward.getAction_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ActionForward( javaObject: __return ) : nil
-    }
-
-    open func getAction( _ _key: KeyStroke? ) -> Action! {
-        return getAction( key: _key )
-    }
 
 }
 

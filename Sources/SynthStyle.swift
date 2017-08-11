@@ -40,8 +40,8 @@ open class SynthStyle: java_swift.JavaObject {
     open func get( context: SynthContext?, key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "get", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &SynthStyle.get_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -58,8 +58,8 @@ open class SynthStyle: java_swift.JavaObject {
     open func getBoolean( context: SynthContext?, key: java_swift.JavaObject?, defaultValue: Bool ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         __args[2] = JNIType.toJava( value: defaultValue, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getBoolean", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Z)Z", methodCache: &SynthStyle.getBoolean_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
@@ -76,8 +76,8 @@ open class SynthStyle: java_swift.JavaObject {
     open func getInt( context: SynthContext?, key: java_swift.JavaObject?, defaultValue: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         __args[2] = JNIType.toJava( value: defaultValue, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInt", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;I)I", methodCache: &SynthStyle.getInt_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
@@ -96,7 +96,7 @@ open class SynthStyle: java_swift.JavaObject {
     open func isOpaque( context: SynthContext? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isOpaque", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Z", methodCache: &SynthStyle.isOpaque_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -112,7 +112,7 @@ open class SynthStyle: java_swift.JavaObject {
     open func getPainter( context: SynthContext? ) -> SynthPainter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPainter", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljavax/swing/plaf/synth/SynthPainter;", methodCache: &SynthStyle.getPainter_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthPainter( javaObject: __return ) : nil
@@ -122,16 +122,48 @@ open class SynthStyle: java_swift.JavaObject {
         return getPainter( context: _context )
     }
 
+    /// public void javax.swing.plaf.synth.SynthStyle.installDefaults(javax.swing.plaf.synth.SynthContext)
+
+    private static var installDefaults_MethodID_7: jmethodID?
+
+    open func installDefaults( context: SynthContext? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)V", methodCache: &SynthStyle.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func installDefaults( _ _context: SynthContext? ) {
+        installDefaults( context: _context )
+    }
+
+    /// void javax.swing.plaf.synth.SynthStyle.installDefaults(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthUI)
+
+    /// public void javax.swing.plaf.synth.SynthStyle.uninstallDefaults(javax.swing.plaf.synth.SynthContext)
+
+    private static var uninstallDefaults_MethodID_8: jmethodID?
+
+    open func uninstallDefaults( context: SynthContext? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)V", methodCache: &SynthStyle.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func uninstallDefaults( _ _context: SynthContext? ) {
+        uninstallDefaults( context: _context )
+    }
+
     /// public javax.swing.Icon javax.swing.plaf.synth.SynthStyle.getIcon(javax.swing.plaf.synth.SynthContext,java.lang.Object)
 
-    private static var getIcon_MethodID_7: jmethodID?
+    private static var getIcon_MethodID_9: jmethodID?
 
     open func getIcon( context: SynthContext?, key: java_swift.JavaObject? ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;)Ljavax/swing/Icon;", methodCache: &SynthStyle.getIcon_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;)Ljavax/swing/Icon;", methodCache: &SynthStyle.getIcon_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -142,14 +174,14 @@ open class SynthStyle: java_swift.JavaObject {
 
     /// public java.awt.Insets javax.swing.plaf.synth.SynthStyle.getInsets(javax.swing.plaf.synth.SynthContext,java.awt.Insets)
 
-    private static var getInsets_MethodID_8: jmethodID?
+    private static var getInsets_MethodID_10: jmethodID?
 
     open func getInsets( context: SynthContext?, insets: java_awt.Insets? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Insets;)Ljava/awt/Insets;", methodCache: &SynthStyle.getInsets_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: insets, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsets", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Insets;)Ljava/awt/Insets;", methodCache: &SynthStyle.getInsets_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -160,13 +192,13 @@ open class SynthStyle: java_swift.JavaObject {
 
     /// public java.awt.Font javax.swing.plaf.synth.SynthStyle.getFont(javax.swing.plaf.synth.SynthContext)
 
-    private static var getFont_MethodID_9: jmethodID?
+    private static var getFont_MethodID_11: jmethodID?
 
     open func getFont( context: SynthContext? ) -> java_awt.Font! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljava/awt/Font;", methodCache: &SynthStyle.getFont_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljava/awt/Font;", methodCache: &SynthStyle.getFont_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Font( javaObject: __return ) : nil
     }
@@ -175,34 +207,16 @@ open class SynthStyle: java_swift.JavaObject {
         return getFont( context: _context )
     }
 
-    /// public java.awt.Color javax.swing.plaf.synth.SynthStyle.getColor(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.ColorType)
-
-    private static var getColor_MethodID_10: jmethodID?
-
-    open func getColor( context: SynthContext?, type: ColorType? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljavax/swing/plaf/synth/ColorType;)Ljava/awt/Color;", methodCache: &SynthStyle.getColor_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open func getColor( _ _context: SynthContext?, _ _type: ColorType? ) -> java_awt.Color! {
-        return getColor( context: _context, type: _type )
-    }
-
     /// protected abstract java.awt.Color javax.swing.plaf.synth.SynthStyle.getColorForState(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.ColorType)
 
-    private static var getColorForState_MethodID_11: jmethodID?
+    private static var getColorForState_MethodID_12: jmethodID?
 
     open func getColorForState( context: SynthContext?, type: ColorType? ) -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorForState", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljavax/swing/plaf/synth/ColorType;)Ljava/awt/Color;", methodCache: &SynthStyle.getColorForState_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorForState", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljavax/swing/plaf/synth/ColorType;)Ljava/awt/Color;", methodCache: &SynthStyle.getColorForState_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -213,13 +227,13 @@ open class SynthStyle: java_swift.JavaObject {
 
     /// protected abstract java.awt.Font javax.swing.plaf.synth.SynthStyle.getFontForState(javax.swing.plaf.synth.SynthContext)
 
-    private static var getFontForState_MethodID_12: jmethodID?
+    private static var getFontForState_MethodID_13: jmethodID?
 
     open func getFontForState( context: SynthContext? ) -> java_awt.Font! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontForState", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljava/awt/Font;", methodCache: &SynthStyle.getFontForState_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontForState", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljava/awt/Font;", methodCache: &SynthStyle.getFontForState_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Font( javaObject: __return ) : nil
     }
@@ -232,13 +246,13 @@ open class SynthStyle: java_swift.JavaObject {
 
     /// public javax.swing.plaf.synth.SynthGraphicsUtils javax.swing.plaf.synth.SynthStyle.getGraphicsUtils(javax.swing.plaf.synth.SynthContext)
 
-    private static var getGraphicsUtils_MethodID_13: jmethodID?
+    private static var getGraphicsUtils_MethodID_14: jmethodID?
 
     open func getGraphicsUtils( context: SynthContext? ) -> SynthGraphicsUtils! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphicsUtils", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljavax/swing/plaf/synth/SynthGraphicsUtils;", methodCache: &SynthStyle.getGraphicsUtils_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphicsUtils", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)Ljavax/swing/plaf/synth/SynthGraphicsUtils;", methodCache: &SynthStyle.getGraphicsUtils_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthGraphicsUtils( javaObject: __return ) : nil
     }
@@ -249,15 +263,15 @@ open class SynthStyle: java_swift.JavaObject {
 
     /// public java.lang.String javax.swing.plaf.synth.SynthStyle.getString(javax.swing.plaf.synth.SynthContext,java.lang.Object,java.lang.String)
 
-    private static var getString_MethodID_14: jmethodID?
+    private static var getString_MethodID_15: jmethodID?
 
     open func getString( context: SynthContext?, key: java_swift.JavaObject?, defaultValue: String? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
         __args[2] = JNIType.toJava( value: defaultValue, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;", methodCache: &SynthStyle.getString_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;", methodCache: &SynthStyle.getString_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -265,36 +279,22 @@ open class SynthStyle: java_swift.JavaObject {
         return getString( context: _context, key: _key, defaultValue: _defaultValue )
     }
 
-    /// public void javax.swing.plaf.synth.SynthStyle.installDefaults(javax.swing.plaf.synth.SynthContext)
+    /// public java.awt.Color javax.swing.plaf.synth.SynthStyle.getColor(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.ColorType)
 
-    private static var installDefaults_MethodID_15: jmethodID?
+    private static var getColor_MethodID_16: jmethodID?
 
-    open func installDefaults( context: SynthContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getColor( context: SynthContext?, type: ColorType? ) -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)V", methodCache: &SynthStyle.installDefaults_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColor", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljavax/swing/plaf/synth/ColorType;)Ljava/awt/Color;", methodCache: &SynthStyle.getColor_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
-    open func installDefaults( _ _context: SynthContext? ) {
-        installDefaults( context: _context )
-    }
-
-    /// void javax.swing.plaf.synth.SynthStyle.installDefaults(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthUI)
-
-    /// public void javax.swing.plaf.synth.SynthStyle.uninstallDefaults(javax.swing.plaf.synth.SynthContext)
-
-    private static var uninstallDefaults_MethodID_16: jmethodID?
-
-    open func uninstallDefaults( context: SynthContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;)V", methodCache: &SynthStyle.uninstallDefaults_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallDefaults( _ _context: SynthContext? ) {
-        uninstallDefaults( context: _context )
+    open func getColor( _ _context: SynthContext?, _ _type: ColorType? ) -> java_awt.Color! {
+        return getColor( context: _context, type: _type )
     }
 
 }

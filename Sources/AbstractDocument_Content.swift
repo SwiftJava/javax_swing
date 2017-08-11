@@ -80,7 +80,7 @@ open class AbstractDocument_ContentForward: JNIObjectForward, AbstractDocument_C
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt != nil ? txt! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "getChars", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &AbstractDocument_ContentForward.getChars_MethodID_9, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )

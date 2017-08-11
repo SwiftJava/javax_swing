@@ -46,7 +46,7 @@ open class FlowView: BoxView {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "layoutPool", fieldType: "Ljavax/swing/text/View;", fieldCache: &FlowView.layoutPool_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class FlowView: BoxView {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "strategy", fieldType: "Ljavax/swing/text/FlowView$FlowStrategy;", fieldCache: &FlowView.strategy_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -232,7 +232,7 @@ open class FlowView: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &FlowView.calculateMinorAxisRequirements_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil

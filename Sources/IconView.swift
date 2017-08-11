@@ -96,13 +96,25 @@ open class IconView: View {
         self.init( elem: _elem )
     }
 
-    /// public float javax.swing.text.IconView.getAlignment(int)
+    /// public void javax.swing.text.IconView.paint(java.awt.Graphics,java.awt.Shape)
 
-    /// public float javax.swing.text.IconView.getPreferredSpan(int)
+    private static var paint_MethodID_2: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &IconView.paint_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
 
     /// public int javax.swing.text.IconView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
 
-    private static var viewToModel_MethodID_2: jmethodID?
+    private static var viewToModel_MethodID_3: jmethodID?
 
     open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -111,7 +123,7 @@ open class IconView: View {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         __args[3] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &IconView.viewToModel_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &IconView.viewToModel_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -121,21 +133,9 @@ open class IconView: View {
 
     /// public java.awt.Shape javax.swing.text.IconView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    /// public void javax.swing.text.IconView.paint(java.awt.Graphics,java.awt.Shape)
+    /// public float javax.swing.text.IconView.getAlignment(int)
 
-    private static var paint_MethodID_3: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &IconView.paint_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
+    /// public float javax.swing.text.IconView.getPreferredSpan(int)
 
 }
 

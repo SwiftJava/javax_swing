@@ -42,7 +42,7 @@ open class TableColumnModelListenerForward: java_util.EventListenerForward, Tabl
     open func columnAdded( e: TableColumnModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnAdded", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &TableColumnModelListenerForward.columnAdded_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -57,7 +57,7 @@ open class TableColumnModelListenerForward: java_util.EventListenerForward, Tabl
     open func columnRemoved( e: TableColumnModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnRemoved", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &TableColumnModelListenerForward.columnRemoved_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -72,7 +72,7 @@ open class TableColumnModelListenerForward: java_util.EventListenerForward, Tabl
     open func columnMoved( e: TableColumnModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnMoved", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &TableColumnModelListenerForward.columnMoved_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -87,7 +87,7 @@ open class TableColumnModelListenerForward: java_util.EventListenerForward, Tabl
     open func columnMarginChanged( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnMarginChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &TableColumnModelListenerForward.columnMarginChanged_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -102,7 +102,7 @@ open class TableColumnModelListenerForward: java_util.EventListenerForward, Tabl
     open func columnSelectionChanged( e: ListSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnSelectionChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &TableColumnModelListenerForward.columnSelectionChanged_MethodID_10, args: &__args, locals: &__locals )
     }
 

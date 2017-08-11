@@ -29,7 +29,7 @@ open class TreeModelEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "path", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &TreeModelEvent.path_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -82,7 +82,7 @@ open class TreeModelEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &TreeModelEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -94,8 +94,8 @@ open class TreeModelEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, path: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: path, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TreeModelEvent", classCache: &TreeModelEvent.TreeModelEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/tree/TreePath;)V", methodCache: &TreeModelEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -112,7 +112,7 @@ open class TreeModelEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, path: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: path, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TreeModelEvent", classCache: &TreeModelEvent.TreeModelEventJNIClass, methodSig: "(Ljava/lang/Object;[Ljava/lang/Object;)V", methodCache: &TreeModelEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -130,8 +130,8 @@ open class TreeModelEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, path: TreePath?, childIndices: [Int32]?, children: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: path, locals: &__locals )
         __args[2] = JNIType.toJava( value: childIndices, locals: &__locals )
         __args[3] = JNIType.toJava( value: children, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TreeModelEvent", classCache: &TreeModelEvent.TreeModelEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/tree/TreePath;[I[Ljava/lang/Object;)V", methodCache: &TreeModelEvent.new_MethodID_3, args: &__args, locals: &__locals )
@@ -150,7 +150,7 @@ open class TreeModelEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, path: [JavaObject]?, childIndices: [Int32]?, children: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: path, locals: &__locals )
         __args[2] = JNIType.toJava( value: childIndices, locals: &__locals )
         __args[3] = JNIType.toJava( value: children, locals: &__locals )
@@ -177,26 +177,14 @@ open class TreeModelEvent: java_util.EventObject {
     }
 
 
-    /// public int[] javax.swing.event.TreeModelEvent.getChildIndices()
-
-    private static var getChildIndices_MethodID_6: jmethodID?
-
-    open func getChildIndices() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildIndices", methodSig: "()[I", methodCache: &TreeModelEvent.getChildIndices_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
-    }
-
-
     /// public javax.swing.tree.TreePath javax.swing.event.TreeModelEvent.getTreePath()
 
-    private static var getTreePath_MethodID_7: jmethodID?
+    private static var getTreePath_MethodID_6: jmethodID?
 
     open func getTreePath() -> TreePath! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTreePath", methodSig: "()Ljavax/swing/tree/TreePath;", methodCache: &TreeModelEvent.getTreePath_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTreePath", methodSig: "()Ljavax/swing/tree/TreePath;", methodCache: &TreeModelEvent.getTreePath_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreePath( javaObject: __return ) : nil
     }
@@ -204,13 +192,25 @@ open class TreeModelEvent: java_util.EventObject {
 
     /// public java.lang.Object[] javax.swing.event.TreeModelEvent.getChildren()
 
-    private static var getChildren_MethodID_8: jmethodID?
+    private static var getChildren_MethodID_7: jmethodID?
 
     open func getChildren() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildren", methodSig: "()[Ljava/lang/Object;", methodCache: &TreeModelEvent.getChildren_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildren", methodSig: "()[Ljava/lang/Object;", methodCache: &TreeModelEvent.getChildren_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
+    }
+
+
+    /// public int[] javax.swing.event.TreeModelEvent.getChildIndices()
+
+    private static var getChildIndices_MethodID_8: jmethodID?
+
+    open func getChildIndices() -> [Int32]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildIndices", methodSig: "()[I", methodCache: &TreeModelEvent.getChildIndices_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32](), from: __return )
     }
 
 

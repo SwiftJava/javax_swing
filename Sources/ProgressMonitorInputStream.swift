@@ -35,7 +35,7 @@ open class ProgressMonitorInputStream: /* java.io.FilterInputStream */ Unclassed
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "in", fieldType: "Ljava/io/InputStream;", fieldCache: &ProgressMonitorInputStream._in_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -49,9 +49,9 @@ open class ProgressMonitorInputStream: /* java.io.FilterInputStream */ Unclassed
     public convenience init( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, _in: /* java.io.InputStream */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: _in != nil ? _in! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: _in, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/ProgressMonitorInputStream", classCache: &ProgressMonitorInputStream.ProgressMonitorInputStreamJNIClass, methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/io/InputStream;)V", methodCache: &ProgressMonitorInputStream.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

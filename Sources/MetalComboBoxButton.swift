@@ -29,7 +29,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "comboBox", fieldType: "Ljavax/swing/JComboBox;", fieldCache: &MetalComboBoxButton.comboBox_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listBox", fieldType: "Ljavax/swing/JList;", fieldCache: &MetalComboBoxButton.listBox_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rendererPane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &MetalComboBoxButton.rendererPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -280,7 +280,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &MetalComboBoxButton.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -367,7 +367,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &MetalComboBoxButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -384,7 +384,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &MetalComboBoxButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -761,7 +761,7 @@ open class MetalComboBoxButton: JButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &MetalComboBoxButton.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -791,10 +791,10 @@ open class MetalComboBoxButton: JButton {
     public convenience init( cb: JComboBox?, i: Icon?, pane: CellRendererPane?, list: JList? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cb != nil ? cb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cb, locals: &__locals )
         __args[1] = JNIType.toJava( value: i, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pane != nil ? pane! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: pane, locals: &__locals )
+        __args[3] = JNIType.toJava( value: list, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxButton", classCache: &MetalComboBoxButton.MetalComboBoxButtonJNIClass, methodSig: "(Ljavax/swing/JComboBox;Ljavax/swing/Icon;Ljavax/swing/CellRendererPane;Ljavax/swing/JList;)V", methodCache: &MetalComboBoxButton.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -811,11 +811,11 @@ open class MetalComboBoxButton: JButton {
     public convenience init( cb: JComboBox?, i: Icon?, onlyIcon: Bool, pane: CellRendererPane?, list: JList? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cb != nil ? cb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cb, locals: &__locals )
         __args[1] = JNIType.toJava( value: i, locals: &__locals )
         __args[2] = JNIType.toJava( value: onlyIcon, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pane != nil ? pane! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: pane, locals: &__locals )
+        __args[4] = JNIType.toJava( value: list, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxButton", classCache: &MetalComboBoxButton.MetalComboBoxButtonJNIClass, methodSig: "(Ljavax/swing/JComboBox;Ljavax/swing/Icon;ZLjavax/swing/CellRendererPane;Ljavax/swing/JList;)V", methodCache: &MetalComboBoxButton.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -827,100 +827,32 @@ open class MetalComboBoxButton: JButton {
 
     /// javax.swing.plaf.metal.MetalComboBoxButton()
 
+    /// public void javax.swing.plaf.metal.MetalComboBoxButton.paintComponent(java.awt.Graphics)
+
+    private static var paintComponent_MethodID_3: jmethodID?
+
+    override open func paintComponent( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &MetalComboBoxButton.paintComponent_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func paintComponent( _ _g: java_awt.Graphics? ) {
+        paintComponent( g: _g )
+    }
+
     /// public java.awt.Dimension javax.swing.plaf.metal.MetalComboBoxButton.getMinimumSize()
-
-    /// public final javax.swing.JComboBox javax.swing.plaf.metal.MetalComboBoxButton.getComboBox()
-
-    private static var getComboBox_MethodID_3: jmethodID?
-
-    open func getComboBox() -> JComboBox! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComboBox", methodSig: "()Ljavax/swing/JComboBox;", methodCache: &MetalComboBoxButton.getComboBox_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComboBox( javaObject: __return ) : nil
-    }
-
-
-    /// public final void javax.swing.plaf.metal.MetalComboBoxButton.setComboBox(javax.swing.JComboBox)
-
-    private static var setComboBox_MethodID_4: jmethodID?
-
-    open func setComboBox( cb: JComboBox? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cb != nil ? cb! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComboBox", methodSig: "(Ljavax/swing/JComboBox;)V", methodCache: &MetalComboBoxButton.setComboBox_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setComboBox( _ _cb: JComboBox? ) {
-        setComboBox( cb: _cb )
-    }
-
-    /// public final javax.swing.Icon javax.swing.plaf.metal.MetalComboBoxButton.getComboIcon()
-
-    private static var getComboIcon_MethodID_5: jmethodID?
-
-    open func getComboIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComboIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &MetalComboBoxButton.getComboIcon_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public final void javax.swing.plaf.metal.MetalComboBoxButton.setComboIcon(javax.swing.Icon)
-
-    private static var setComboIcon_MethodID_6: jmethodID?
-
-    open func setComboIcon( i: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComboIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &MetalComboBoxButton.setComboIcon_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setComboIcon( _ _i: Icon? ) {
-        setComboIcon( i: _i )
-    }
-
-    /// public final boolean javax.swing.plaf.metal.MetalComboBoxButton.isIconOnly()
-
-    private static var isIconOnly_MethodID_7: jmethodID?
-
-    open func isIconOnly() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIconOnly", methodSig: "()Z", methodCache: &MetalComboBoxButton.isIconOnly_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public final void javax.swing.plaf.metal.MetalComboBoxButton.setIconOnly(boolean)
-
-    private static var setIconOnly_MethodID_8: jmethodID?
-
-    open func setIconOnly( isIconOnly: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isIconOnly, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconOnly", methodSig: "(Z)V", methodCache: &MetalComboBoxButton.setIconOnly_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setIconOnly( _ _isIconOnly: Bool ) {
-        setIconOnly( isIconOnly: _isIconOnly )
-    }
 
     /// public void javax.swing.plaf.metal.MetalComboBoxButton.setEnabled(boolean)
 
-    private static var setEnabled_MethodID_9: jmethodID?
+    private static var setEnabled_MethodID_4: jmethodID?
 
     override open func setEnabled( enabled: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MetalComboBoxButton.setEnabled_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &MetalComboBoxButton.setEnabled_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func setEnabled( _ _enabled: Bool ) {
@@ -929,19 +861,87 @@ open class MetalComboBoxButton: JButton {
 
     /// public boolean javax.swing.plaf.metal.MetalComboBoxButton.isFocusTraversable()
 
-    /// public void javax.swing.plaf.metal.MetalComboBoxButton.paintComponent(java.awt.Graphics)
+    /// public final javax.swing.JComboBox javax.swing.plaf.metal.MetalComboBoxButton.getComboBox()
 
-    private static var paintComponent_MethodID_10: jmethodID?
+    private static var getComboBox_MethodID_5: jmethodID?
 
-    override open func paintComponent( g: java_awt.Graphics? ) {
+    open func getComboBox() -> JComboBox! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &MetalComboBoxButton.paintComponent_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComboBox", methodSig: "()Ljavax/swing/JComboBox;", methodCache: &MetalComboBoxButton.getComboBox_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComboBox( javaObject: __return ) : nil
     }
 
-    override open func paintComponent( _ _g: java_awt.Graphics? ) {
-        paintComponent( g: _g )
+
+    /// public final void javax.swing.plaf.metal.MetalComboBoxButton.setComboBox(javax.swing.JComboBox)
+
+    private static var setComboBox_MethodID_6: jmethodID?
+
+    open func setComboBox( cb: JComboBox? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: cb, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComboBox", methodSig: "(Ljavax/swing/JComboBox;)V", methodCache: &MetalComboBoxButton.setComboBox_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func setComboBox( _ _cb: JComboBox? ) {
+        setComboBox( cb: _cb )
+    }
+
+    /// public final javax.swing.Icon javax.swing.plaf.metal.MetalComboBoxButton.getComboIcon()
+
+    private static var getComboIcon_MethodID_7: jmethodID?
+
+    open func getComboIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComboIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &MetalComboBoxButton.getComboIcon_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public final void javax.swing.plaf.metal.MetalComboBoxButton.setComboIcon(javax.swing.Icon)
+
+    private static var setComboIcon_MethodID_8: jmethodID?
+
+    open func setComboIcon( i: Icon? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComboIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &MetalComboBoxButton.setComboIcon_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setComboIcon( _ _i: Icon? ) {
+        setComboIcon( i: _i )
+    }
+
+    /// public final boolean javax.swing.plaf.metal.MetalComboBoxButton.isIconOnly()
+
+    private static var isIconOnly_MethodID_9: jmethodID?
+
+    open func isIconOnly() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIconOnly", methodSig: "()Z", methodCache: &MetalComboBoxButton.isIconOnly_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public final void javax.swing.plaf.metal.MetalComboBoxButton.setIconOnly(boolean)
+
+    private static var setIconOnly_MethodID_10: jmethodID?
+
+    open func setIconOnly( isIconOnly: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: isIconOnly, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconOnly", methodSig: "(Z)V", methodCache: &MetalComboBoxButton.setIconOnly_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setIconOnly( _ _isIconOnly: Bool ) {
+        setIconOnly( isIconOnly: _isIconOnly )
     }
 
 }

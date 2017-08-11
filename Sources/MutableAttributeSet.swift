@@ -76,7 +76,7 @@ open class MutableAttributeSetForward: AttributeSetForward, MutableAttributeSet 
     open func removeAttribute( name: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljava/lang/Object;)V", methodCache: &MutableAttributeSetForward.removeAttribute_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -121,8 +121,8 @@ open class MutableAttributeSetForward: AttributeSetForward, MutableAttributeSet 
     open func addAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &MutableAttributeSetForward.addAttribute_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -137,7 +137,7 @@ open class MutableAttributeSetForward: AttributeSetForward, MutableAttributeSet 
     override open func isDefined( attrName: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attrName != nil ? attrName! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: attrName, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDefined", methodSig: "(Ljava/lang/Object;)Z", methodCache: &MutableAttributeSetForward.isDefined_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -204,8 +204,8 @@ open class MutableAttributeSetForward: AttributeSetForward, MutableAttributeSet 
     override open func containsAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &MutableAttributeSetForward.containsAttribute_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -230,37 +230,37 @@ open class MutableAttributeSetForward: AttributeSetForward, MutableAttributeSet 
         return containsAttributes( attributes: _attributes )
     }
 
-    /// public abstract boolean javax.swing.text.AttributeSet.isEqual(javax.swing.text.AttributeSet)
-
-    private static var isEqual_MethodID_20: jmethodID?
-
-    override open func isEqual( attr: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &MutableAttributeSetForward.isEqual_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func isEqual( _ _attr: AttributeSet? ) -> Bool {
-        return isEqual( attr: _attr )
-    }
-
     /// public abstract java.lang.Object javax.swing.text.AttributeSet.getAttribute(java.lang.Object)
 
-    private static var getAttribute_MethodID_21: jmethodID?
+    private static var getAttribute_MethodID_20: jmethodID?
 
     override open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &MutableAttributeSetForward.getAttribute_MethodID_21, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &MutableAttributeSetForward.getAttribute_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
     override open func getAttribute( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         return getAttribute( key: _key )
+    }
+
+    /// public abstract boolean javax.swing.text.AttributeSet.isEqual(javax.swing.text.AttributeSet)
+
+    private static var isEqual_MethodID_21: jmethodID?
+
+    override open func isEqual( attr: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &MutableAttributeSetForward.isEqual_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    override open func isEqual( _ _attr: AttributeSet? ) -> Bool {
+        return isEqual( attr: _attr )
     }
 
 }

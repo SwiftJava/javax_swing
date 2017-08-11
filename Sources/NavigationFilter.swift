@@ -35,9 +35,9 @@ open class NavigationFilter: java_swift.JavaObject {
     open func setDot( fb: NavigationFilter_FilterBypass?, dot: Int, bias: Position_Bias? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fb != nil ? fb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fb, locals: &__locals )
         __args[1] = JNIType.toJava( value: dot, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bias != nil ? bias! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bias, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDot", methodSig: "(Ljavax/swing/text/NavigationFilter$FilterBypass;ILjavax/swing/text/Position$Bias;)V", methodCache: &NavigationFilter.setDot_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -52,9 +52,9 @@ open class NavigationFilter: java_swift.JavaObject {
     open func moveDot( fb: NavigationFilter_FilterBypass?, dot: Int, bias: Position_Bias? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fb != nil ? fb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fb, locals: &__locals )
         __args[1] = JNIType.toJava( value: dot, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bias != nil ? bias! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bias, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveDot", methodSig: "(Ljavax/swing/text/NavigationFilter$FilterBypass;ILjavax/swing/text/Position$Bias;)V", methodCache: &NavigationFilter.moveDot_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -69,9 +69,9 @@ open class NavigationFilter: java_swift.JavaObject {
     open func getNextVisualPositionFrom( text: JTextComponent?, pos: Int, bias: Position_Bias?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text != nil ? text! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
         __args[1] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bias != nil ? bias! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bias, locals: &__locals )
         __args[3] = JNIType.toJava( value: direction, locals: &__locals )
         __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextVisualPositionFrom", methodSig: "(Ljavax/swing/text/JTextComponent;ILjavax/swing/text/Position$Bias;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &NavigationFilter.getNextVisualPositionFrom_MethodID_4, args: &__args, locals: &__locals )

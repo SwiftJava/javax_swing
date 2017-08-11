@@ -50,7 +50,7 @@ open class BorderUIResource_LineBorderUIResource: LineBorder, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lineColor", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_LineBorderUIResource.lineColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -79,7 +79,7 @@ open class BorderUIResource_LineBorderUIResource: LineBorder, UIResource {
     public convenience init( color: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$LineBorderUIResource", classCache: &BorderUIResource_LineBorderUIResource.BorderUIResource_LineBorderUIResourceJNIClass, methodSig: "(Ljava/awt/Color;)V", methodCache: &BorderUIResource_LineBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -96,7 +96,7 @@ open class BorderUIResource_LineBorderUIResource: LineBorder, UIResource {
     public convenience init( color: java_awt.Color?, thickness: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
         __args[1] = JNIType.toJava( value: thickness, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$LineBorderUIResource", classCache: &BorderUIResource_LineBorderUIResource.BorderUIResource_LineBorderUIResourceJNIClass, methodSig: "(Ljava/awt/Color;I)V", methodCache: &BorderUIResource_LineBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

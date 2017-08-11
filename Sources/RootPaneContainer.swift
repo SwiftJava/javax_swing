@@ -76,7 +76,7 @@ open class RootPaneContainerForward: JNIObjectForward, RootPaneContainer {
     open func setContentPane( contentPane: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: contentPane != nil ? contentPane! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: contentPane, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &RootPaneContainerForward.setContentPane_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -104,7 +104,7 @@ open class RootPaneContainerForward: JNIObjectForward, RootPaneContainer {
     open func setLayeredPane( layeredPane: JLayeredPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: layeredPane != nil ? layeredPane! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: layeredPane, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &RootPaneContainerForward.setLayeredPane_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -132,7 +132,7 @@ open class RootPaneContainerForward: JNIObjectForward, RootPaneContainer {
     open func setGlassPane( glassPane: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: glassPane != nil ? glassPane! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: glassPane, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &RootPaneContainerForward.setGlassPane_MethodID_14, args: &__args, locals: &__locals )
     }
 

@@ -112,7 +112,7 @@ open class BorderUIResource_EmptyBorderUIResource: EmptyBorder, UIResource {
     public convenience init( insets: java_awt.Insets? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: insets, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$EmptyBorderUIResource", classCache: &BorderUIResource_EmptyBorderUIResource.BorderUIResource_EmptyBorderUIResourceJNIClass, methodSig: "(Ljava/awt/Insets;)V", methodCache: &BorderUIResource_EmptyBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

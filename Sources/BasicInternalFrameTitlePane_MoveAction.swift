@@ -51,7 +51,7 @@ open class BasicInternalFrameTitlePane_MoveAction: AbstractAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &BasicInternalFrameTitlePane_MoveAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -85,7 +85,7 @@ open class BasicInternalFrameTitlePane_MoveAction: AbstractAction {
     public convenience init( this_0: BasicInternalFrameTitlePane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicInternalFrameTitlePane$MoveAction", classCache: &BasicInternalFrameTitlePane_MoveAction.BasicInternalFrameTitlePane_MoveActionJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;)V", methodCache: &BasicInternalFrameTitlePane_MoveAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

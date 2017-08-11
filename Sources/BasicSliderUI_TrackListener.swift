@@ -76,7 +76,7 @@ open class BasicSliderUI_TrackListener: MouseInputAdapter {
     public convenience init( this_0: BasicSliderUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSliderUI$TrackListener", classCache: &BasicSliderUI_TrackListener.BasicSliderUI_TrackListenerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSliderUI;)V", methodCache: &BasicSliderUI_TrackListener.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -85,14 +85,6 @@ open class BasicSliderUI_TrackListener: MouseInputAdapter {
     public convenience init( _ _this_0: BasicSliderUI? ) {
         self.init( this_0: _this_0 )
     }
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mousePressed(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseReleased(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseMoved(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseDragged(java.awt.event.MouseEvent)
 
     /// public boolean javax.swing.plaf.basic.BasicSliderUI$TrackListener.shouldScroll(int)
 
@@ -109,6 +101,14 @@ open class BasicSliderUI_TrackListener: MouseInputAdapter {
     open func shouldScroll( _ _direction: Int ) -> Bool {
         return shouldScroll( direction: _direction )
     }
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mousePressed(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseReleased(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseMoved(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicSliderUI$TrackListener.mouseDragged(java.awt.event.MouseEvent)
 
 }
 

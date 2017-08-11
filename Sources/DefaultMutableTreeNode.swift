@@ -65,7 +65,7 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "userObject", fieldType: "Ljava/lang/Object;", fieldCache: &DefaultMutableTreeNode.userObject_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -94,7 +94,7 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
     public convenience init( userObject: java_swift.JavaObject?, allowsChildren: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: userObject != nil ? userObject! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: userObject, locals: &__locals )
         __args[1] = JNIType.toJava( value: allowsChildren, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/DefaultMutableTreeNode", classCache: &DefaultMutableTreeNode.DefaultMutableTreeNodeJNIClass, methodSig: "(Ljava/lang/Object;Z)V", methodCache: &DefaultMutableTreeNode.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -112,7 +112,7 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
     public convenience init( userObject: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: userObject != nil ? userObject! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: userObject, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/DefaultMutableTreeNode", classCache: &DefaultMutableTreeNode.DefaultMutableTreeNodeJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultMutableTreeNode.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -267,55 +267,38 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
         setParent( newParent: _newParent )
     }
 
-    /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getChildAt(int)
+    /// public boolean javax.swing.tree.DefaultMutableTreeNode.isLeaf()
 
-    private static var getChildAt_MethodID_13: jmethodID?
+    private static var isLeaf_MethodID_13: jmethodID?
 
-    open func getChildAt( childIndex: Int ) -> TreeNode! {
+    open func isLeaf() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: childIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAt", methodSig: "(I)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getChildAt_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
-    }
-
-    open func getChildAt( _ _childIndex: Int ) -> TreeNode! {
-        return getChildAt( childIndex: _childIndex )
-    }
-
-    /// public boolean javax.swing.tree.DefaultMutableTreeNode.isRoot()
-
-    private static var isRoot_MethodID_14: jmethodID?
-
-    open func isRoot() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRoot", methodSig: "()Z", methodCache: &DefaultMutableTreeNode.isRoot_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "()Z", methodCache: &DefaultMutableTreeNode.isLeaf_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
-    /// public int javax.swing.tree.DefaultMutableTreeNode.getLevel()
+    /// public int javax.swing.tree.DefaultMutableTreeNode.getChildCount()
 
-    private static var getLevel_MethodID_15: jmethodID?
+    private static var getChildCount_MethodID_14: jmethodID?
 
-    open func getLevel() -> Int {
+    open func getChildCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLevel", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getLevel_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getChildCount", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getChildCount_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.children()
 
-    private static var children_MethodID_16: jmethodID?
+    private static var children_MethodID_15: jmethodID?
 
     open func children() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "children", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.children_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "children", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.children_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -323,13 +306,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public void javax.swing.tree.DefaultMutableTreeNode.setAllowsChildren(boolean)
 
-    private static var setAllowsChildren_MethodID_17: jmethodID?
+    private static var setAllowsChildren_MethodID_16: jmethodID?
 
     open func setAllowsChildren( allows: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: allows, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllowsChildren", methodSig: "(Z)V", methodCache: &DefaultMutableTreeNode.setAllowsChildren_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllowsChildren", methodSig: "(Z)V", methodCache: &DefaultMutableTreeNode.setAllowsChildren_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setAllowsChildren( _ _allows: Bool ) {
@@ -338,25 +321,25 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public boolean javax.swing.tree.DefaultMutableTreeNode.getAllowsChildren()
 
-    private static var getAllowsChildren_MethodID_18: jmethodID?
+    private static var getAllowsChildren_MethodID_17: jmethodID?
 
     open func getAllowsChildren() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsChildren", methodSig: "()Z", methodCache: &DefaultMutableTreeNode.getAllowsChildren_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsChildren", methodSig: "()Z", methodCache: &DefaultMutableTreeNode.getAllowsChildren_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.tree.DefaultMutableTreeNode.setUserObject(java.lang.Object)
 
-    private static var setUserObject_MethodID_19: jmethodID?
+    private static var setUserObject_MethodID_18: jmethodID?
 
     open func setUserObject( object: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: object != nil ? object! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUserObject", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultMutableTreeNode.setUserObject_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: object, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUserObject", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultMutableTreeNode.setUserObject_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setUserObject( _ _object: java_swift.JavaObject? ) {
@@ -365,12 +348,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.lang.Object javax.swing.tree.DefaultMutableTreeNode.getUserObject()
 
-    private static var getUserObject_MethodID_20: jmethodID?
+    private static var getUserObject_MethodID_19: jmethodID?
 
     open func getUserObject() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUserObject", methodSig: "()Ljava/lang/Object;", methodCache: &DefaultMutableTreeNode.getUserObject_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUserObject", methodSig: "()Ljava/lang/Object;", methodCache: &DefaultMutableTreeNode.getUserObject_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -378,35 +361,35 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public void javax.swing.tree.DefaultMutableTreeNode.removeFromParent()
 
-    private static var removeFromParent_MethodID_21: jmethodID?
+    private static var removeFromParent_MethodID_20: jmethodID?
 
     open func removeFromParent() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeFromParent", methodSig: "()V", methodCache: &DefaultMutableTreeNode.removeFromParent_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeFromParent", methodSig: "()V", methodCache: &DefaultMutableTreeNode.removeFromParent_MethodID_20, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.tree.DefaultMutableTreeNode.removeAllChildren()
 
-    private static var removeAllChildren_MethodID_22: jmethodID?
+    private static var removeAllChildren_MethodID_21: jmethodID?
 
     open func removeAllChildren() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAllChildren", methodSig: "()V", methodCache: &DefaultMutableTreeNode.removeAllChildren_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAllChildren", methodSig: "()V", methodCache: &DefaultMutableTreeNode.removeAllChildren_MethodID_21, args: &__args, locals: &__locals )
     }
 
 
     /// public boolean javax.swing.tree.DefaultMutableTreeNode.isNodeAncestor(javax.swing.tree.TreeNode)
 
-    private static var isNodeAncestor_MethodID_23: jmethodID?
+    private static var isNodeAncestor_MethodID_22: jmethodID?
 
     open func isNodeAncestor( anotherNode: TreeNode? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anotherNode, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeAncestor", methodSig: "(Ljavax/swing/tree/TreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeAncestor_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeAncestor", methodSig: "(Ljavax/swing/tree/TreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeAncestor_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -416,13 +399,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public boolean javax.swing.tree.DefaultMutableTreeNode.isNodeDescendant(javax.swing.tree.DefaultMutableTreeNode)
 
-    private static var isNodeDescendant_MethodID_24: jmethodID?
+    private static var isNodeDescendant_MethodID_23: jmethodID?
 
     open func isNodeDescendant( anotherNode: DefaultMutableTreeNode? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anotherNode != nil ? anotherNode! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeDescendant", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeDescendant_MethodID_24, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anotherNode, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeDescendant", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeDescendant_MethodID_23, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -432,13 +415,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getSharedAncestor(javax.swing.tree.DefaultMutableTreeNode)
 
-    private static var getSharedAncestor_MethodID_25: jmethodID?
+    private static var getSharedAncestor_MethodID_24: jmethodID?
 
     open func getSharedAncestor( aNode: DefaultMutableTreeNode? ) -> TreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aNode != nil ? aNode! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSharedAncestor", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getSharedAncestor_MethodID_25, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aNode, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSharedAncestor", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getSharedAncestor_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
     }
@@ -449,13 +432,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public boolean javax.swing.tree.DefaultMutableTreeNode.isNodeRelated(javax.swing.tree.DefaultMutableTreeNode)
 
-    private static var isNodeRelated_MethodID_26: jmethodID?
+    private static var isNodeRelated_MethodID_25: jmethodID?
 
     open func isNodeRelated( aNode: DefaultMutableTreeNode? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aNode != nil ? aNode! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeRelated", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeRelated_MethodID_26, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aNode, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeRelated", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeRelated_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -465,26 +448,26 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public int javax.swing.tree.DefaultMutableTreeNode.getDepth()
 
-    private static var getDepth_MethodID_27: jmethodID?
+    private static var getDepth_MethodID_26: jmethodID?
 
     open func getDepth() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDepth", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getDepth_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDepth", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getDepth_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// protected javax.swing.tree.TreeNode[] javax.swing.tree.DefaultMutableTreeNode.getPathToRoot(javax.swing.tree.TreeNode,int)
 
-    private static var getPathToRoot_MethodID_28: jmethodID?
+    private static var getPathToRoot_MethodID_27: jmethodID?
 
     open func getPathToRoot( aNode: TreeNode?, depth: Int ) -> [TreeNode]! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aNode, locals: &__locals )
         __args[1] = JNIType.toJava( value: depth, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathToRoot", methodSig: "(Ljavax/swing/tree/TreeNode;I)[Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getPathToRoot_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathToRoot", methodSig: "(Ljavax/swing/tree/TreeNode;I)[Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getPathToRoot_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [TreeNodeForward](), from: __return )
     }
 
@@ -494,24 +477,24 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.lang.Object[] javax.swing.tree.DefaultMutableTreeNode.getUserObjectPath()
 
-    private static var getUserObjectPath_MethodID_29: jmethodID?
+    private static var getUserObjectPath_MethodID_28: jmethodID?
 
     open func getUserObjectPath() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUserObjectPath", methodSig: "()[Ljava/lang/Object;", methodCache: &DefaultMutableTreeNode.getUserObjectPath_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUserObjectPath", methodSig: "()[Ljava/lang/Object;", methodCache: &DefaultMutableTreeNode.getUserObjectPath_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getNextNode()
 
-    private static var getNextNode_MethodID_30: jmethodID?
+    private static var getNextNode_MethodID_29: jmethodID?
 
     open func getNextNode() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextNode", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getNextNode_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextNode", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getNextNode_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -519,12 +502,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getPreviousNode()
 
-    private static var getPreviousNode_MethodID_31: jmethodID?
+    private static var getPreviousNode_MethodID_30: jmethodID?
 
     open func getPreviousNode() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousNode", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getPreviousNode_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousNode", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getPreviousNode_MethodID_30, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -532,12 +515,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.preorderEnumeration()
 
-    private static var preorderEnumeration_MethodID_32: jmethodID?
+    private static var preorderEnumeration_MethodID_31: jmethodID?
 
     open func preorderEnumeration() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preorderEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.preorderEnumeration_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preorderEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.preorderEnumeration_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -545,12 +528,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.postorderEnumeration()
 
-    private static var postorderEnumeration_MethodID_33: jmethodID?
+    private static var postorderEnumeration_MethodID_32: jmethodID?
 
     open func postorderEnumeration() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "postorderEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.postorderEnumeration_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "postorderEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.postorderEnumeration_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -558,12 +541,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.breadthFirstEnumeration()
 
-    private static var breadthFirstEnumeration_MethodID_34: jmethodID?
+    private static var breadthFirstEnumeration_MethodID_33: jmethodID?
 
     open func breadthFirstEnumeration() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breadthFirstEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.breadthFirstEnumeration_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breadthFirstEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.breadthFirstEnumeration_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -571,12 +554,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.depthFirstEnumeration()
 
-    private static var depthFirstEnumeration_MethodID_35: jmethodID?
+    private static var depthFirstEnumeration_MethodID_34: jmethodID?
 
     open func depthFirstEnumeration() -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "depthFirstEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.depthFirstEnumeration_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "depthFirstEnumeration", methodSig: "()Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.depthFirstEnumeration_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -584,13 +567,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.pathFromAncestorEnumeration(javax.swing.tree.TreeNode)
 
-    private static var pathFromAncestorEnumeration_MethodID_36: jmethodID?
+    private static var pathFromAncestorEnumeration_MethodID_35: jmethodID?
 
     open func pathFromAncestorEnumeration( ancestor: TreeNode? ) -> java_util.Enumeration! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: ancestor, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "pathFromAncestorEnumeration", methodSig: "(Ljavax/swing/tree/TreeNode;)Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.pathFromAncestorEnumeration_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "pathFromAncestorEnumeration", methodSig: "(Ljavax/swing/tree/TreeNode;)Ljava/util/Enumeration;", methodCache: &DefaultMutableTreeNode.pathFromAncestorEnumeration_MethodID_35, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
     }
@@ -601,13 +584,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public boolean javax.swing.tree.DefaultMutableTreeNode.isNodeChild(javax.swing.tree.TreeNode)
 
-    private static var isNodeChild_MethodID_37: jmethodID?
+    private static var isNodeChild_MethodID_36: jmethodID?
 
     open func isNodeChild( aNode: TreeNode? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aNode, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeChild", methodSig: "(Ljavax/swing/tree/TreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeChild_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeChild", methodSig: "(Ljavax/swing/tree/TreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeChild_MethodID_36, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -617,12 +600,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getFirstChild()
 
-    private static var getFirstChild_MethodID_38: jmethodID?
+    private static var getFirstChild_MethodID_37: jmethodID?
 
     open func getFirstChild() -> TreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstChild", methodSig: "()Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getFirstChild_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstChild", methodSig: "()Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getFirstChild_MethodID_37, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
     }
@@ -630,12 +613,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getLastChild()
 
-    private static var getLastChild_MethodID_39: jmethodID?
+    private static var getLastChild_MethodID_38: jmethodID?
 
     open func getLastChild() -> TreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastChild", methodSig: "()Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getLastChild_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastChild", methodSig: "()Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getLastChild_MethodID_38, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
     }
@@ -643,13 +626,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getChildAfter(javax.swing.tree.TreeNode)
 
-    private static var getChildAfter_MethodID_40: jmethodID?
+    private static var getChildAfter_MethodID_39: jmethodID?
 
     open func getChildAfter( aChild: TreeNode? ) -> TreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aChild, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAfter", methodSig: "(Ljavax/swing/tree/TreeNode;)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getChildAfter_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAfter", methodSig: "(Ljavax/swing/tree/TreeNode;)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getChildAfter_MethodID_39, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
     }
@@ -660,13 +643,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getChildBefore(javax.swing.tree.TreeNode)
 
-    private static var getChildBefore_MethodID_41: jmethodID?
+    private static var getChildBefore_MethodID_40: jmethodID?
 
     open func getChildBefore( aChild: TreeNode? ) -> TreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: aChild, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildBefore", methodSig: "(Ljavax/swing/tree/TreeNode;)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getChildBefore_MethodID_41, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildBefore", methodSig: "(Ljavax/swing/tree/TreeNode;)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getChildBefore_MethodID_40, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
     }
@@ -677,13 +660,13 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public boolean javax.swing.tree.DefaultMutableTreeNode.isNodeSibling(javax.swing.tree.TreeNode)
 
-    private static var isNodeSibling_MethodID_42: jmethodID?
+    private static var isNodeSibling_MethodID_41: jmethodID?
 
     open func isNodeSibling( anotherNode: TreeNode? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anotherNode, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeSibling", methodSig: "(Ljavax/swing/tree/TreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeSibling_MethodID_42, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNodeSibling", methodSig: "(Ljavax/swing/tree/TreeNode;)Z", methodCache: &DefaultMutableTreeNode.isNodeSibling_MethodID_41, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -693,24 +676,24 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public int javax.swing.tree.DefaultMutableTreeNode.getSiblingCount()
 
-    private static var getSiblingCount_MethodID_43: jmethodID?
+    private static var getSiblingCount_MethodID_42: jmethodID?
 
     open func getSiblingCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSiblingCount", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getSiblingCount_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSiblingCount", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getSiblingCount_MethodID_42, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getNextSibling()
 
-    private static var getNextSibling_MethodID_44: jmethodID?
+    private static var getNextSibling_MethodID_43: jmethodID?
 
     open func getNextSibling() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextSibling", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getNextSibling_MethodID_44, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextSibling", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getNextSibling_MethodID_43, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -718,12 +701,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getPreviousSibling()
 
-    private static var getPreviousSibling_MethodID_45: jmethodID?
+    private static var getPreviousSibling_MethodID_44: jmethodID?
 
     open func getPreviousSibling() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousSibling", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getPreviousSibling_MethodID_45, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousSibling", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getPreviousSibling_MethodID_44, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -731,12 +714,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getFirstLeaf()
 
-    private static var getFirstLeaf_MethodID_46: jmethodID?
+    private static var getFirstLeaf_MethodID_45: jmethodID?
 
     open func getFirstLeaf() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getFirstLeaf_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getFirstLeaf_MethodID_45, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -744,12 +727,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getLastLeaf()
 
-    private static var getLastLeaf_MethodID_47: jmethodID?
+    private static var getLastLeaf_MethodID_46: jmethodID?
 
     open func getLastLeaf() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getLastLeaf_MethodID_47, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getLastLeaf_MethodID_46, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -757,12 +740,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getNextLeaf()
 
-    private static var getNextLeaf_MethodID_48: jmethodID?
+    private static var getNextLeaf_MethodID_47: jmethodID?
 
     open func getNextLeaf() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getNextLeaf_MethodID_48, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getNextLeaf_MethodID_47, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -770,12 +753,12 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public javax.swing.tree.DefaultMutableTreeNode javax.swing.tree.DefaultMutableTreeNode.getPreviousLeaf()
 
-    private static var getPreviousLeaf_MethodID_49: jmethodID?
+    private static var getPreviousLeaf_MethodID_48: jmethodID?
 
     open func getPreviousLeaf() -> DefaultMutableTreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getPreviousLeaf_MethodID_49, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousLeaf", methodSig: "()Ljavax/swing/tree/DefaultMutableTreeNode;", methodCache: &DefaultMutableTreeNode.getPreviousLeaf_MethodID_48, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DefaultMutableTreeNode( javaObject: __return ) : nil
     }
@@ -783,25 +766,54 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     /// public int javax.swing.tree.DefaultMutableTreeNode.getLeafCount()
 
-    private static var getLeafCount_MethodID_50: jmethodID?
+    private static var getLeafCount_MethodID_49: jmethodID?
 
     open func getLeafCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeafCount", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getLeafCount_MethodID_50, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeafCount", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getLeafCount_MethodID_49, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public javax.swing.tree.TreeNode javax.swing.tree.DefaultMutableTreeNode.getChildAt(int)
+
+    private static var getChildAt_MethodID_50: jmethodID?
+
+    open func getChildAt( childIndex: Int ) -> TreeNode! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: childIndex, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAt", methodSig: "(I)Ljavax/swing/tree/TreeNode;", methodCache: &DefaultMutableTreeNode.getChildAt_MethodID_50, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
+    }
+
+    open func getChildAt( _ _childIndex: Int ) -> TreeNode! {
+        return getChildAt( childIndex: _childIndex )
+    }
+
+    /// public boolean javax.swing.tree.DefaultMutableTreeNode.isRoot()
+
+    private static var isRoot_MethodID_51: jmethodID?
+
+    open func isRoot() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRoot", methodSig: "()Z", methodCache: &DefaultMutableTreeNode.isRoot_MethodID_51, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public int javax.swing.tree.DefaultMutableTreeNode.getIndex(javax.swing.tree.TreeNode)
 
-    private static var getIndex_MethodID_51: jmethodID?
+    private static var getIndex_MethodID_52: jmethodID?
 
     open func getIndex( node: TreeNode? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: node, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "(Ljavax/swing/tree/TreeNode;)I", methodCache: &DefaultMutableTreeNode.getIndex_MethodID_51, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "(Ljavax/swing/tree/TreeNode;)I", methodCache: &DefaultMutableTreeNode.getIndex_MethodID_52, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -809,26 +821,14 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
         return getIndex( node: _node )
     }
 
-    /// public boolean javax.swing.tree.DefaultMutableTreeNode.isLeaf()
+    /// public int javax.swing.tree.DefaultMutableTreeNode.getLevel()
 
-    private static var isLeaf_MethodID_52: jmethodID?
+    private static var getLevel_MethodID_53: jmethodID?
 
-    open func isLeaf() -> Bool {
+    open func getLevel() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "()Z", methodCache: &DefaultMutableTreeNode.isLeaf_MethodID_52, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public int javax.swing.tree.DefaultMutableTreeNode.getChildCount()
-
-    private static var getChildCount_MethodID_53: jmethodID?
-
-    open func getChildCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getChildCount", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getChildCount_MethodID_53, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLevel", methodSig: "()I", methodCache: &DefaultMutableTreeNode.getLevel_MethodID_53, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 

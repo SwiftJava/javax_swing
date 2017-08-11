@@ -39,7 +39,7 @@ open class MenuSelectionManager: java_swift.JavaObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &MenuSelectionManager.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -56,7 +56,7 @@ open class MenuSelectionManager: java_swift.JavaObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &MenuSelectionManager.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -73,70 +73,15 @@ open class MenuSelectionManager: java_swift.JavaObject {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public static javax.swing.MenuSelectionManager javax.swing.MenuSelectionManager.defaultManager()
-
-    private static var defaultManager_MethodID_2: jmethodID?
-
-    open class func defaultManager() -> MenuSelectionManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/MenuSelectionManager", classCache: &MenuSelectionManagerJNIClass, methodName: "defaultManager", methodSig: "()Ljavax/swing/MenuSelectionManager;", methodCache: &defaultManager_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MenuSelectionManager( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.MenuElement[] javax.swing.MenuSelectionManager.getSelectedPath()
-
-    private static var getSelectedPath_MethodID_3: jmethodID?
-
-    open func getSelectedPath() -> [MenuElement]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedPath", methodSig: "()[Ljavax/swing/MenuElement;", methodCache: &MenuSelectionManager.getSelectedPath_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MenuElementForward](), from: __return )
-    }
-
-
-    /// public void javax.swing.MenuSelectionManager.processKeyEvent(java.awt.event.KeyEvent)
-
-    private static var processKeyEvent_MethodID_4: jmethodID?
-
-    open func processKeyEvent( e: java_awt.KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &MenuSelectionManager.processKeyEvent_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func processKeyEvent( _ _e: java_awt.KeyEvent? ) {
-        processKeyEvent( e: _e )
-    }
-
-    /// public void javax.swing.MenuSelectionManager.processMouseEvent(java.awt.event.MouseEvent)
-
-    private static var processMouseEvent_MethodID_5: jmethodID?
-
-    open func processMouseEvent( event: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MenuSelectionManager.processMouseEvent_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func processMouseEvent( _ _event: java_awt.MouseEvent? ) {
-        processMouseEvent( event: _event )
-    }
-
     /// public void javax.swing.MenuSelectionManager.setSelectedPath(javax.swing.MenuElement[])
 
-    private static var setSelectedPath_MethodID_6: jmethodID?
+    private static var setSelectedPath_MethodID_2: jmethodID?
 
     open func setSelectedPath( path: [MenuElement]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: path, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedPath", methodSig: "([Ljavax/swing/MenuElement;)V", methodCache: &MenuSelectionManager.setSelectedPath_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedPath", methodSig: "([Ljavax/swing/MenuElement;)V", methodCache: &MenuSelectionManager.setSelectedPath_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func setSelectedPath( _ _path: [MenuElement]? ) {
@@ -145,24 +90,24 @@ open class MenuSelectionManager: java_swift.JavaObject {
 
     /// public void javax.swing.MenuSelectionManager.clearSelectedPath()
 
-    private static var clearSelectedPath_MethodID_7: jmethodID?
+    private static var clearSelectedPath_MethodID_3: jmethodID?
 
     open func clearSelectedPath() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelectedPath", methodSig: "()V", methodCache: &MenuSelectionManager.clearSelectedPath_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelectedPath", methodSig: "()V", methodCache: &MenuSelectionManager.clearSelectedPath_MethodID_3, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.MenuSelectionManager.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_8: jmethodID?
+    private static var addChangeListener_MethodID_4: jmethodID?
 
     open func addChangeListener( l: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &MenuSelectionManager.addChangeListener_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &MenuSelectionManager.addChangeListener_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _l: ChangeListener? ) {
@@ -171,13 +116,13 @@ open class MenuSelectionManager: java_swift.JavaObject {
 
     /// public void javax.swing.MenuSelectionManager.removeChangeListener(javax.swing.event.ChangeListener)
 
-    private static var removeChangeListener_MethodID_9: jmethodID?
+    private static var removeChangeListener_MethodID_5: jmethodID?
 
     open func removeChangeListener( l: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &MenuSelectionManager.removeChangeListener_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &MenuSelectionManager.removeChangeListener_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func removeChangeListener( _ _l: ChangeListener? ) {
@@ -186,24 +131,79 @@ open class MenuSelectionManager: java_swift.JavaObject {
 
     /// public javax.swing.event.ChangeListener[] javax.swing.MenuSelectionManager.getChangeListeners()
 
-    private static var getChangeListeners_MethodID_10: jmethodID?
+    private static var getChangeListeners_MethodID_6: jmethodID?
 
     open func getChangeListeners() -> [ChangeListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &MenuSelectionManager.getChangeListeners_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &MenuSelectionManager.getChangeListeners_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
     }
 
 
     /// protected void javax.swing.MenuSelectionManager.fireStateChanged()
 
-    private static var fireStateChanged_MethodID_11: jmethodID?
+    private static var fireStateChanged_MethodID_7: jmethodID?
 
     open func fireStateChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &MenuSelectionManager.fireStateChanged_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &MenuSelectionManager.fireStateChanged_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.MenuSelectionManager.processKeyEvent(java.awt.event.KeyEvent)
+
+    private static var processKeyEvent_MethodID_8: jmethodID?
+
+    open func processKeyEvent( e: java_awt.KeyEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &MenuSelectionManager.processKeyEvent_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func processKeyEvent( _ _e: java_awt.KeyEvent? ) {
+        processKeyEvent( e: _e )
+    }
+
+    /// public void javax.swing.MenuSelectionManager.processMouseEvent(java.awt.event.MouseEvent)
+
+    private static var processMouseEvent_MethodID_9: jmethodID?
+
+    open func processMouseEvent( event: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MenuSelectionManager.processMouseEvent_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func processMouseEvent( _ _event: java_awt.MouseEvent? ) {
+        processMouseEvent( event: _event )
+    }
+
+    /// public static javax.swing.MenuSelectionManager javax.swing.MenuSelectionManager.defaultManager()
+
+    private static var defaultManager_MethodID_10: jmethodID?
+
+    open class func defaultManager() -> MenuSelectionManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/MenuSelectionManager", classCache: &MenuSelectionManagerJNIClass, methodName: "defaultManager", methodSig: "()Ljavax/swing/MenuSelectionManager;", methodCache: &defaultManager_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MenuSelectionManager( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.MenuElement[] javax.swing.MenuSelectionManager.getSelectedPath()
+
+    private static var getSelectedPath_MethodID_11: jmethodID?
+
+    open func getSelectedPath() -> [MenuElement]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedPath", methodSig: "()[Ljavax/swing/MenuElement;", methodCache: &MenuSelectionManager.getSelectedPath_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MenuElementForward](), from: __return )
     }
 
 
@@ -218,8 +218,8 @@ open class MenuSelectionManager: java_swift.JavaObject {
     open func componentForPoint( source: java_awt.Component?, sourcePoint: java_awt.Point? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: sourcePoint != nil ? sourcePoint! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: sourcePoint, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "componentForPoint", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;)Ljava/awt/Component;", methodCache: &MenuSelectionManager.componentForPoint_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -238,7 +238,7 @@ open class MenuSelectionManager: java_swift.JavaObject {
     open func isComponentPartOfCurrentMenu( c: java_awt.Component? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isComponentPartOfCurrentMenu", methodSig: "(Ljava/awt/Component;)Z", methodCache: &MenuSelectionManager.isComponentPartOfCurrentMenu_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

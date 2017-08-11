@@ -334,7 +334,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "message", fieldType: "Ljava/lang/Object;", fieldCache: &JOptionPane.message_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -368,7 +368,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "initialValue", fieldType: "Ljava/lang/Object;", fieldCache: &JOptionPane.initialValue_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -419,7 +419,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "value", fieldType: "Ljava/lang/Object;", fieldCache: &JOptionPane.value_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -453,7 +453,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "inputValue", fieldType: "Ljava/lang/Object;", fieldCache: &JOptionPane.inputValue_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -470,7 +470,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "initialSelectionValue", fieldType: "Ljava/lang/Object;", fieldCache: &JOptionPane.initialSelectionValue_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -532,7 +532,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JOptionPane.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -549,7 +549,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JOptionPane.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -926,7 +926,7 @@ open class JOptionPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JOptionPane.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -956,7 +956,7 @@ open class JOptionPane: JComponent {
     public convenience init( message: java_swift.JavaObject?, messageType: Int, optionType: Int, icon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
         __args[1] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[2] = JNIType.toJava( value: optionType, locals: &__locals )
         __args[3] = JNIType.toJava( value: icon, locals: &__locals )
@@ -988,7 +988,7 @@ open class JOptionPane: JComponent {
     public convenience init( message: java_swift.JavaObject?, messageType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
         __args[1] = JNIType.toJava( value: messageType, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JOptionPane", classCache: &JOptionPane.JOptionPaneJNIClass, methodSig: "(Ljava/lang/Object;I)V", methodCache: &JOptionPane.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -1006,7 +1006,7 @@ open class JOptionPane: JComponent {
     public convenience init( message: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JOptionPane", classCache: &JOptionPane.JOptionPaneJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -1023,7 +1023,7 @@ open class JOptionPane: JComponent {
     public convenience init( message: java_swift.JavaObject?, messageType: Int, optionType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
         __args[1] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[2] = JNIType.toJava( value: optionType, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JOptionPane", classCache: &JOptionPane.JOptionPaneJNIClass, methodSig: "(Ljava/lang/Object;II)V", methodCache: &JOptionPane.new_MethodID_5, args: &__args, locals: &__locals )
@@ -1042,12 +1042,12 @@ open class JOptionPane: JComponent {
     public convenience init( message: java_swift.JavaObject?, messageType: Int, optionType: Int, icon: Icon?, options: [JavaObject]?, initialValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
         __args[1] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[2] = JNIType.toJava( value: optionType, locals: &__locals )
         __args[3] = JNIType.toJava( value: icon, locals: &__locals )
         __args[4] = JNIType.toJava( value: options, locals: &__locals )
-        __args[5] = JNIType.toJava( value: initialValue != nil ? initialValue! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: initialValue, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JOptionPane", classCache: &JOptionPane.JOptionPaneJNIClass, methodSig: "(Ljava/lang/Object;IILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &JOptionPane.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -1064,7 +1064,7 @@ open class JOptionPane: JComponent {
     public convenience init( message: java_swift.JavaObject?, messageType: Int, optionType: Int, icon: Icon?, options: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
         __args[1] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[2] = JNIType.toJava( value: optionType, locals: &__locals )
         __args[3] = JNIType.toJava( value: icon, locals: &__locals )
@@ -1115,7 +1115,7 @@ open class JOptionPane: JComponent {
     open func setValue( newValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setValue_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -1142,7 +1142,7 @@ open class JOptionPane: JComponent {
     open func setInitialValue( newInitialValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newInitialValue != nil ? newInitialValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newInitialValue, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInitialValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setInitialValue_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -1150,95 +1150,93 @@ open class JOptionPane: JComponent {
         setInitialValue( newInitialValue: _newInitialValue )
     }
 
-    /// static java.awt.Window javax.swing.JOptionPane.getWindowForComponent(java.awt.Component) throws java.awt.HeadlessException
+    /// public javax.swing.plaf.OptionPaneUI javax.swing.JOptionPane.getUI()
 
-    /// public javax.swing.Icon javax.swing.JOptionPane.getIcon()
+    private static var getUI_MethodID_13: jmethodID?
 
-    private static var getIcon_MethodID_13: jmethodID?
-
-    open func getIcon() -> Icon! {
+    open func getUI() -> OptionPaneUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JOptionPane.getIcon_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/OptionPaneUI;", methodCache: &JOptionPane.getUI_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
+        return __return != nil ? OptionPaneUI( javaObject: __return ) : nil
     }
 
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JOptionPane.getAccessibleContext()
-
-    /// public javax.swing.JDialog javax.swing.JOptionPane.createDialog(java.awt.Component,java.lang.String) throws java.awt.HeadlessException
-
-    private static var createDialog_MethodID_14: jmethodID?
-
-    open func createDialog( parentComponent: java_awt.Component?, title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/String;)Ljavax/swing/JDialog;", methodCache: &JOptionPane.createDialog_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? JDialog( javaObject: __return ) : nil
-    }
-
-    open func createDialog( _ _parentComponent: java_awt.Component?, _ _title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
-        return try createDialog( parentComponent: _parentComponent, title: _title )
-    }
-
-    /// public javax.swing.JDialog javax.swing.JOptionPane.createDialog(java.lang.String) throws java.awt.HeadlessException
-
-    private static var createDialog_MethodID_15: jmethodID?
-
-    open func createDialog( title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/lang/String;)Ljavax/swing/JDialog;", methodCache: &JOptionPane.createDialog_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? JDialog( javaObject: __return ) : nil
-    }
-
-    open func createDialog( _ _title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
-        return try createDialog( title: _title )
-    }
-
-    /// private javax.swing.JDialog javax.swing.JOptionPane.createDialog(java.awt.Component,java.lang.String,int) throws java.awt.HeadlessException
 
     /// private void javax.swing.JOptionPane.initDialog(javax.swing.JDialog,int,java.awt.Component)
 
     /// public void javax.swing.JOptionPane.selectInitialValue()
 
-    private static var selectInitialValue_MethodID_16: jmethodID?
+    private static var selectInitialValue_MethodID_14: jmethodID?
 
     open func selectInitialValue() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectInitialValue", methodSig: "()V", methodCache: &JOptionPane.selectInitialValue_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectInitialValue", methodSig: "()V", methodCache: &JOptionPane.selectInitialValue_MethodID_14, args: &__args, locals: &__locals )
     }
 
 
     /// public javax.swing.JInternalFrame javax.swing.JOptionPane.createInternalFrame(java.awt.Component,java.lang.String)
 
-    private static var createInternalFrame_MethodID_17: jmethodID?
+    private static var createInternalFrame_MethodID_15: jmethodID?
 
     open func createInternalFrame( parentComponent: java_awt.Component?, title: String? ) -> JInternalFrame! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInternalFrame", methodSig: "(Ljava/awt/Component;Ljava/lang/String;)Ljavax/swing/JInternalFrame;", methodCache: &JOptionPane.createInternalFrame_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createInternalFrame", methodSig: "(Ljava/awt/Component;Ljava/lang/String;)Ljavax/swing/JInternalFrame;", methodCache: &JOptionPane.createInternalFrame_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JInternalFrame( javaObject: __return ) : nil
     }
 
     open func createInternalFrame( _ _parentComponent: java_awt.Component?, _ _title: String? ) -> JInternalFrame! {
         return createInternalFrame( parentComponent: _parentComponent, title: _title )
+    }
+
+    /// public static java.lang.Object javax.swing.JOptionPane.showInputDialog(java.awt.Component,java.lang.Object,java.lang.String,int,javax.swing.Icon,java.lang.Object[],java.lang.Object) throws java.awt.HeadlessException
+
+    private static var showInputDialog_MethodID_16: jmethodID?
+
+    open class func showInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int, icon: Icon?, selectionValues: [JavaObject]?, initialSelectionValue: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
+        __args[4] = JNIType.toJava( value: icon, locals: &__locals )
+        __args[5] = JNIType.toJava( value: selectionValues, locals: &__locals )
+        __args[6] = JNIType.toJava( value: initialSelectionValue, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &showInputDialog_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open class func showInputDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int, _ _icon: Icon?, _ _selectionValues: [JavaObject]?, _ _initialSelectionValue: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> java_swift.JavaObject! {
+        return try showInputDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType, icon: _icon, selectionValues: _selectionValues, initialSelectionValue: _initialSelectionValue )
+    }
+
+    /// public static java.lang.String javax.swing.JOptionPane.showInputDialog(java.lang.Object) throws java.awt.HeadlessException
+
+    private static var showInputDialog_MethodID_17: jmethodID?
+
+    open class func showInputDialog( message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_17, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open class func showInputDialog( _ _message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> String! {
+        return try showInputDialog( message: _message )
     }
 
     /// public static java.lang.String javax.swing.JOptionPane.showInputDialog(java.awt.Component,java.lang.Object,java.lang.Object)
@@ -1248,9 +1246,9 @@ open class JOptionPane: JComponent {
     open class func showInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, initialSelectionValue: java_swift.JavaObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: initialSelectionValue != nil ? initialSelectionValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: initialSelectionValue, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
@@ -1266,8 +1264,8 @@ open class JOptionPane: JComponent {
     open class func showInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int ) throws /* java.awt.HeadlessException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_19, args: &__args, locals: &__locals )
@@ -1281,61 +1279,16 @@ open class JOptionPane: JComponent {
         return try showInputDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType )
     }
 
-    /// public static java.lang.Object javax.swing.JOptionPane.showInputDialog(java.awt.Component,java.lang.Object,java.lang.String,int,javax.swing.Icon,java.lang.Object[],java.lang.Object) throws java.awt.HeadlessException
-
-    private static var showInputDialog_MethodID_20: jmethodID?
-
-    open class func showInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int, icon: Icon?, selectionValues: [JavaObject]?, initialSelectionValue: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
-        __args[4] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[5] = JNIType.toJava( value: selectionValues, locals: &__locals )
-        __args[6] = JNIType.toJava( value: initialSelectionValue != nil ? initialSelectionValue! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &showInputDialog_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open class func showInputDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int, _ _icon: Icon?, _ _selectionValues: [JavaObject]?, _ _initialSelectionValue: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> java_swift.JavaObject! {
-        return try showInputDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType, icon: _icon, selectionValues: _selectionValues, initialSelectionValue: _initialSelectionValue )
-    }
-
-    /// public static java.lang.String javax.swing.JOptionPane.showInputDialog(java.lang.Object) throws java.awt.HeadlessException
-
-    private static var showInputDialog_MethodID_21: jmethodID?
-
-    open class func showInputDialog( message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_21, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func showInputDialog( _ _message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> String! {
-        return try showInputDialog( message: _message )
-    }
-
     /// public static java.lang.String javax.swing.JOptionPane.showInputDialog(java.lang.Object,java.lang.Object)
 
-    private static var showInputDialog_MethodID_22: jmethodID?
+    private static var showInputDialog_MethodID_20: jmethodID?
 
     open class func showInputDialog( message: java_swift.JavaObject?, initialSelectionValue: java_swift.JavaObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: initialSelectionValue != nil ? initialSelectionValue! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: message, locals: &__locals )
+        __args[1] = JNIType.toJava( value: initialSelectionValue, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -1345,14 +1298,14 @@ open class JOptionPane: JComponent {
 
     /// public static java.lang.String javax.swing.JOptionPane.showInputDialog(java.awt.Component,java.lang.Object) throws java.awt.HeadlessException
 
-    private static var showInputDialog_MethodID_23: jmethodID?
+    private static var showInputDialog_MethodID_21: jmethodID?
 
     open class func showInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_23, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInputDialog_MethodID_21, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1363,18 +1316,40 @@ open class JOptionPane: JComponent {
         return try showInputDialog( parentComponent: _parentComponent, message: _message )
     }
 
+    /// public static void javax.swing.JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int,javax.swing.Icon) throws java.awt.HeadlessException
+
+    private static var showMessageDialog_MethodID_22: jmethodID?
+
+    open class func showMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int, icon: Icon? ) throws /* java.awt.HeadlessException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
+        __args[4] = JNIType.toJava( value: icon, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;)V", methodCache: &showMessageDialog_MethodID_22, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+    }
+
+    open class func showMessageDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int, _ _icon: Icon? ) throws /* java.awt.HeadlessException */ {
+        try showMessageDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType, icon: _icon )
+    }
+
     /// public static void javax.swing.JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int) throws java.awt.HeadlessException
 
-    private static var showMessageDialog_MethodID_24: jmethodID?
+    private static var showMessageDialog_MethodID_23: jmethodID?
 
     open class func showMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int ) throws /* java.awt.HeadlessException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)V", methodCache: &showMessageDialog_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)V", methodCache: &showMessageDialog_MethodID_23, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1386,14 +1361,14 @@ open class JOptionPane: JComponent {
 
     /// public static void javax.swing.JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object) throws java.awt.HeadlessException
 
-    private static var showMessageDialog_MethodID_25: jmethodID?
+    private static var showMessageDialog_MethodID_24: jmethodID?
 
     open class func showMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &showMessageDialog_MethodID_25, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &showMessageDialog_MethodID_24, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1403,41 +1378,19 @@ open class JOptionPane: JComponent {
         try showMessageDialog( parentComponent: _parentComponent, message: _message )
     }
 
-    /// public static void javax.swing.JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int,javax.swing.Icon) throws java.awt.HeadlessException
-
-    private static var showMessageDialog_MethodID_26: jmethodID?
-
-    open class func showMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int, icon: Icon? ) throws /* java.awt.HeadlessException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
-        __args[4] = JNIType.toJava( value: icon, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;)V", methodCache: &showMessageDialog_MethodID_26, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-    }
-
-    open class func showMessageDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int, _ _icon: Icon? ) throws /* java.awt.HeadlessException */ {
-        try showMessageDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType, icon: _icon )
-    }
-
     /// public static int javax.swing.JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int) throws java.awt.HeadlessException
 
-    private static var showConfirmDialog_MethodID_27: jmethodID?
+    private static var showConfirmDialog_MethodID_25: jmethodID?
 
     open class func showConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int ) throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
         __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I", methodCache: &showConfirmDialog_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I", methodCache: &showConfirmDialog_MethodID_25, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1448,6 +1401,50 @@ open class JOptionPane: JComponent {
         return try showConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType )
     }
 
+    /// public static int javax.swing.JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object) throws java.awt.HeadlessException
+
+    private static var showConfirmDialog_MethodID_26: jmethodID?
+
+    open class func showConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)I", methodCache: &showConfirmDialog_MethodID_26, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func showConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> Int {
+        return try showConfirmDialog( parentComponent: _parentComponent, message: _message )
+    }
+
+    /// public static int javax.swing.JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int,javax.swing.Icon) throws java.awt.HeadlessException
+
+    private static var showConfirmDialog_MethodID_27: jmethodID?
+
+    open class func showConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int, icon: Icon? ) throws /* java.awt.HeadlessException */ -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
+        __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
+        __args[5] = JNIType.toJava( value: icon, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;)I", methodCache: &showConfirmDialog_MethodID_27, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func showConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _optionType: Int, _ _messageType: Int, _ _icon: Icon? ) throws /* java.awt.HeadlessException */ -> Int {
+        return try showConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType, icon: _icon )
+    }
+
     /// public static int javax.swing.JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int) throws java.awt.HeadlessException
 
     private static var showConfirmDialog_MethodID_28: jmethodID?
@@ -1455,8 +1452,8 @@ open class JOptionPane: JComponent {
     open class func showConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int ) throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
         let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)I", methodCache: &showConfirmDialog_MethodID_28, args: &__args, locals: &__locals )
@@ -1470,66 +1467,22 @@ open class JOptionPane: JComponent {
         return try showConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType )
     }
 
-    /// public static int javax.swing.JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int,javax.swing.Icon) throws java.awt.HeadlessException
-
-    private static var showConfirmDialog_MethodID_29: jmethodID?
-
-    open class func showConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int, icon: Icon? ) throws /* java.awt.HeadlessException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
-        __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
-        __args[5] = JNIType.toJava( value: icon, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;)I", methodCache: &showConfirmDialog_MethodID_29, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func showConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _optionType: Int, _ _messageType: Int, _ _icon: Icon? ) throws /* java.awt.HeadlessException */ -> Int {
-        return try showConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType, icon: _icon )
-    }
-
-    /// public static int javax.swing.JOptionPane.showConfirmDialog(java.awt.Component,java.lang.Object) throws java.awt.HeadlessException
-
-    private static var showConfirmDialog_MethodID_30: jmethodID?
-
-    open class func showConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)I", methodCache: &showConfirmDialog_MethodID_30, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_awt.HeadlessException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func showConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> Int {
-        return try showConfirmDialog( parentComponent: _parentComponent, message: _message )
-    }
-
     /// public static int javax.swing.JOptionPane.showOptionDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int,javax.swing.Icon,java.lang.Object[],java.lang.Object) throws java.awt.HeadlessException
 
-    private static var showOptionDialog_MethodID_31: jmethodID?
+    private static var showOptionDialog_MethodID_29: jmethodID?
 
     open class func showOptionDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int, icon: Icon?, options: [JavaObject]?, initialValue: java_swift.JavaObject? ) throws /* java.awt.HeadlessException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
         __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[5] = JNIType.toJava( value: icon, locals: &__locals )
         __args[6] = JNIType.toJava( value: options, locals: &__locals )
-        __args[7] = JNIType.toJava( value: initialValue != nil ? initialValue! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showOptionDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)I", methodCache: &showOptionDialog_MethodID_31, args: &__args, locals: &__locals )
+        __args[7] = JNIType.toJava( value: initialValue, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showOptionDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)I", methodCache: &showOptionDialog_MethodID_29, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
         }
@@ -1542,16 +1495,16 @@ open class JOptionPane: JComponent {
 
     /// public static void javax.swing.JOptionPane.showInternalMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int)
 
-    private static var showInternalMessageDialog_MethodID_32: jmethodID?
+    private static var showInternalMessageDialog_MethodID_30: jmethodID?
 
     open class func showInternalMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)V", methodCache: &showInternalMessageDialog_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)V", methodCache: &showInternalMessageDialog_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open class func showInternalMessageDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int ) {
@@ -1560,17 +1513,17 @@ open class JOptionPane: JComponent {
 
     /// public static void javax.swing.JOptionPane.showInternalMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int,javax.swing.Icon)
 
-    private static var showInternalMessageDialog_MethodID_33: jmethodID?
+    private static var showInternalMessageDialog_MethodID_31: jmethodID?
 
     open class func showInternalMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int, icon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[4] = JNIType.toJava( value: icon, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;)V", methodCache: &showInternalMessageDialog_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;)V", methodCache: &showInternalMessageDialog_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open class func showInternalMessageDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int, _ _icon: Icon? ) {
@@ -1579,14 +1532,14 @@ open class JOptionPane: JComponent {
 
     /// public static void javax.swing.JOptionPane.showInternalMessageDialog(java.awt.Component,java.lang.Object)
 
-    private static var showInternalMessageDialog_MethodID_34: jmethodID?
+    private static var showInternalMessageDialog_MethodID_32: jmethodID?
 
     open class func showInternalMessageDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &showInternalMessageDialog_MethodID_34, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalMessageDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &showInternalMessageDialog_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open class func showInternalMessageDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject? ) {
@@ -1595,19 +1548,60 @@ open class JOptionPane: JComponent {
 
     /// public static int javax.swing.JOptionPane.showInternalConfirmDialog(java.awt.Component,java.lang.Object)
 
-    private static var showInternalConfirmDialog_MethodID_35: jmethodID?
+    private static var showInternalConfirmDialog_MethodID_33: jmethodID?
 
     open class func showInternalConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)I", methodCache: &showInternalConfirmDialog_MethodID_35, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)I", methodCache: &showInternalConfirmDialog_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     open class func showInternalConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject? ) -> Int {
         return showInternalConfirmDialog( parentComponent: _parentComponent, message: _message )
+    }
+
+    /// public static int javax.swing.JOptionPane.showInternalConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int)
+
+    private static var showInternalConfirmDialog_MethodID_34: jmethodID?
+
+    open class func showInternalConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
+        __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I", methodCache: &showInternalConfirmDialog_MethodID_34, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func showInternalConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _optionType: Int, _ _messageType: Int ) -> Int {
+        return showInternalConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType )
+    }
+
+    /// public static int javax.swing.JOptionPane.showInternalConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int,javax.swing.Icon)
+
+    private static var showInternalConfirmDialog_MethodID_35: jmethodID?
+
+    open class func showInternalConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int, icon: Icon? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
+        __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
+        __args[5] = JNIType.toJava( value: icon, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;)I", methodCache: &showInternalConfirmDialog_MethodID_35, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func showInternalConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _optionType: Int, _ _messageType: Int, _ _icon: Icon? ) -> Int {
+        return showInternalConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType, icon: _icon )
     }
 
     /// public static int javax.swing.JOptionPane.showInternalConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int)
@@ -1617,8 +1611,8 @@ open class JOptionPane: JComponent {
     open class func showInternalConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
         let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)I", methodCache: &showInternalConfirmDialog_MethodID_36, args: &__args, locals: &__locals )
@@ -1629,63 +1623,22 @@ open class JOptionPane: JComponent {
         return showInternalConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType )
     }
 
-    /// public static int javax.swing.JOptionPane.showInternalConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int,javax.swing.Icon)
-
-    private static var showInternalConfirmDialog_MethodID_37: jmethodID?
-
-    open class func showInternalConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int, icon: Icon? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
-        __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
-        __args[5] = JNIType.toJava( value: icon, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;)I", methodCache: &showInternalConfirmDialog_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func showInternalConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _optionType: Int, _ _messageType: Int, _ _icon: Icon? ) -> Int {
-        return showInternalConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType, icon: _icon )
-    }
-
-    /// public static int javax.swing.JOptionPane.showInternalConfirmDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int)
-
-    private static var showInternalConfirmDialog_MethodID_38: jmethodID?
-
-    open class func showInternalConfirmDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
-        __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalConfirmDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;II)I", methodCache: &showInternalConfirmDialog_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func showInternalConfirmDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _optionType: Int, _ _messageType: Int ) -> Int {
-        return showInternalConfirmDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType )
-    }
-
     /// public static int javax.swing.JOptionPane.showInternalOptionDialog(java.awt.Component,java.lang.Object,java.lang.String,int,int,javax.swing.Icon,java.lang.Object[],java.lang.Object)
 
-    private static var showInternalOptionDialog_MethodID_39: jmethodID?
+    private static var showInternalOptionDialog_MethodID_37: jmethodID?
 
     open class func showInternalOptionDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, optionType: Int, messageType: Int, icon: Icon?, options: [JavaObject]?, initialValue: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: optionType, locals: &__locals )
         __args[4] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[5] = JNIType.toJava( value: icon, locals: &__locals )
         __args[6] = JNIType.toJava( value: options, locals: &__locals )
-        __args[7] = JNIType.toJava( value: initialValue != nil ? initialValue! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalOptionDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)I", methodCache: &showInternalOptionDialog_MethodID_39, args: &__args, locals: &__locals )
+        __args[7] = JNIType.toJava( value: initialValue, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalOptionDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;IILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)I", methodCache: &showInternalOptionDialog_MethodID_37, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -1693,16 +1646,35 @@ open class JOptionPane: JComponent {
         return showInternalOptionDialog( parentComponent: _parentComponent, message: _message, title: _title, optionType: _optionType, messageType: _messageType, icon: _icon, options: _options, initialValue: _initialValue )
     }
 
+    /// public static java.lang.String javax.swing.JOptionPane.showInternalInputDialog(java.awt.Component,java.lang.Object,java.lang.String,int)
+
+    private static var showInternalInputDialog_MethodID_38: jmethodID?
+
+    open class func showInternalInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int ) -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        __args[2] = JNIType.toJava( value: title, locals: &__locals )
+        __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)Ljava/lang/String;", methodCache: &showInternalInputDialog_MethodID_38, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open class func showInternalInputDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int ) -> String! {
+        return showInternalInputDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType )
+    }
+
     /// public static java.lang.String javax.swing.JOptionPane.showInternalInputDialog(java.awt.Component,java.lang.Object)
 
-    private static var showInternalInputDialog_MethodID_40: jmethodID?
+    private static var showInternalInputDialog_MethodID_39: jmethodID?
 
     open class func showInternalInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInternalInputDialog_MethodID_40, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)Ljava/lang/String;", methodCache: &showInternalInputDialog_MethodID_39, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -1712,19 +1684,19 @@ open class JOptionPane: JComponent {
 
     /// public static java.lang.Object javax.swing.JOptionPane.showInternalInputDialog(java.awt.Component,java.lang.Object,java.lang.String,int,javax.swing.Icon,java.lang.Object[],java.lang.Object)
 
-    private static var showInternalInputDialog_MethodID_41: jmethodID?
+    private static var showInternalInputDialog_MethodID_40: jmethodID?
 
     open class func showInternalInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int, icon: Icon?, selectionValues: [JavaObject]?, initialSelectionValue: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: title, locals: &__locals )
         __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
         __args[4] = JNIType.toJava( value: icon, locals: &__locals )
         __args[5] = JNIType.toJava( value: selectionValues, locals: &__locals )
-        __args[6] = JNIType.toJava( value: initialSelectionValue != nil ? initialSelectionValue! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &showInternalInputDialog_MethodID_41, args: &__args, locals: &__locals )
+        __args[6] = JNIType.toJava( value: initialSelectionValue, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;ILjavax/swing/Icon;[Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &showInternalInputDialog_MethodID_40, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -1733,34 +1705,15 @@ open class JOptionPane: JComponent {
         return showInternalInputDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType, icon: _icon, selectionValues: _selectionValues, initialSelectionValue: _initialSelectionValue )
     }
 
-    /// public static java.lang.String javax.swing.JOptionPane.showInternalInputDialog(java.awt.Component,java.lang.Object,java.lang.String,int)
-
-    private static var showInternalInputDialog_MethodID_42: jmethodID?
-
-    open class func showInternalInputDialog( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, title: String?, messageType: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: title, locals: &__locals )
-        __args[3] = JNIType.toJava( value: messageType, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "showInternalInputDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;Ljava/lang/String;I)Ljava/lang/String;", methodCache: &showInternalInputDialog_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func showInternalInputDialog( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ _title: String?, _ _messageType: Int ) -> String! {
-        return showInternalInputDialog( parentComponent: _parentComponent, message: _message, title: _title, messageType: _messageType )
-    }
-
     /// public static java.awt.Frame javax.swing.JOptionPane.getFrameForComponent(java.awt.Component) throws java.awt.HeadlessException
 
-    private static var getFrameForComponent_MethodID_43: jmethodID?
+    private static var getFrameForComponent_MethodID_41: jmethodID?
 
     open class func getFrameForComponent( parentComponent: java_awt.Component? ) throws /* java.awt.HeadlessException */ -> java_awt.Frame! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "getFrameForComponent", methodSig: "(Ljava/awt/Component;)Ljava/awt/Frame;", methodCache: &getFrameForComponent_MethodID_43, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "getFrameForComponent", methodSig: "(Ljava/awt/Component;)Ljava/awt/Frame;", methodCache: &getFrameForComponent_MethodID_41, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
@@ -1774,13 +1727,13 @@ open class JOptionPane: JComponent {
 
     /// public static javax.swing.JDesktopPane javax.swing.JOptionPane.getDesktopPaneForComponent(java.awt.Component)
 
-    private static var getDesktopPaneForComponent_MethodID_44: jmethodID?
+    private static var getDesktopPaneForComponent_MethodID_42: jmethodID?
 
     open class func getDesktopPaneForComponent( parentComponent: java_awt.Component? ) -> JDesktopPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "getDesktopPaneForComponent", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JDesktopPane;", methodCache: &getDesktopPaneForComponent_MethodID_44, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "getDesktopPaneForComponent", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JDesktopPane;", methodCache: &getDesktopPaneForComponent_MethodID_42, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JDesktopPane( javaObject: __return ) : nil
     }
@@ -1791,13 +1744,13 @@ open class JOptionPane: JComponent {
 
     /// public static void javax.swing.JOptionPane.setRootFrame(java.awt.Frame)
 
-    private static var setRootFrame_MethodID_45: jmethodID?
+    private static var setRootFrame_MethodID_43: jmethodID?
 
     open class func setRootFrame( newRootFrame: java_awt.Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newRootFrame != nil ? newRootFrame! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "setRootFrame", methodSig: "(Ljava/awt/Frame;)V", methodCache: &setRootFrame_MethodID_45, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newRootFrame, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "setRootFrame", methodSig: "(Ljava/awt/Frame;)V", methodCache: &setRootFrame_MethodID_43, args: &__args, locals: &__locals )
     }
 
     open class func setRootFrame( _ _newRootFrame: java_awt.Frame? ) {
@@ -1806,12 +1759,12 @@ open class JOptionPane: JComponent {
 
     /// public static java.awt.Frame javax.swing.JOptionPane.getRootFrame() throws java.awt.HeadlessException
 
-    private static var getRootFrame_MethodID_46: jmethodID?
+    private static var getRootFrame_MethodID_44: jmethodID?
 
     open class func getRootFrame() throws /* java.awt.HeadlessException */ -> java_awt.Frame! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "getRootFrame", methodSig: "()Ljava/awt/Frame;", methodCache: &getRootFrame_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass, methodName: "getRootFrame", methodSig: "()Ljava/awt/Frame;", methodCache: &getRootFrame_MethodID_44, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw java_awt.HeadlessException( javaObject: throwable )
@@ -1822,13 +1775,13 @@ open class JOptionPane: JComponent {
 
     /// public void javax.swing.JOptionPane.setMessage(java.lang.Object)
 
-    private static var setMessage_MethodID_47: jmethodID?
+    private static var setMessage_MethodID_45: jmethodID?
 
     open func setMessage( newMessage: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newMessage != nil ? newMessage! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMessage", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setMessage_MethodID_47, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newMessage, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMessage", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setMessage_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func setMessage( _ _newMessage: java_swift.JavaObject? ) {
@@ -1837,13 +1790,13 @@ open class JOptionPane: JComponent {
 
     /// public void javax.swing.JOptionPane.setOptions(java.lang.Object[])
 
-    private static var setOptions_MethodID_48: jmethodID?
+    private static var setOptions_MethodID_46: jmethodID?
 
     open func setOptions( newOptions: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newOptions, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOptions", methodSig: "([Ljava/lang/Object;)V", methodCache: &JOptionPane.setOptions_MethodID_48, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOptions", methodSig: "([Ljava/lang/Object;)V", methodCache: &JOptionPane.setOptions_MethodID_46, args: &__args, locals: &__locals )
     }
 
     open func setOptions( _ _newOptions: [JavaObject]? ) {
@@ -1852,24 +1805,24 @@ open class JOptionPane: JComponent {
 
     /// public java.lang.Object[] javax.swing.JOptionPane.getOptions()
 
-    private static var getOptions_MethodID_49: jmethodID?
+    private static var getOptions_MethodID_47: jmethodID?
 
     open func getOptions() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOptions", methodSig: "()[Ljava/lang/Object;", methodCache: &JOptionPane.getOptions_MethodID_49, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getOptions", methodSig: "()[Ljava/lang/Object;", methodCache: &JOptionPane.getOptions_MethodID_47, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 
     /// public java.lang.Object javax.swing.JOptionPane.getInitialValue()
 
-    private static var getInitialValue_MethodID_50: jmethodID?
+    private static var getInitialValue_MethodID_48: jmethodID?
 
     open func getInitialValue() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialValue", methodSig: "()Ljava/lang/Object;", methodCache: &JOptionPane.getInitialValue_MethodID_50, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialValue", methodSig: "()Ljava/lang/Object;", methodCache: &JOptionPane.getInitialValue_MethodID_48, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -1877,13 +1830,13 @@ open class JOptionPane: JComponent {
 
     /// public void javax.swing.JOptionPane.setMessageType(int)
 
-    private static var setMessageType_MethodID_51: jmethodID?
+    private static var setMessageType_MethodID_49: jmethodID?
 
     open func setMessageType( newType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMessageType", methodSig: "(I)V", methodCache: &JOptionPane.setMessageType_MethodID_51, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMessageType", methodSig: "(I)V", methodCache: &JOptionPane.setMessageType_MethodID_49, args: &__args, locals: &__locals )
     }
 
     open func setMessageType( _ _newType: Int ) {
@@ -1892,25 +1845,25 @@ open class JOptionPane: JComponent {
 
     /// public int javax.swing.JOptionPane.getMessageType()
 
-    private static var getMessageType_MethodID_52: jmethodID?
+    private static var getMessageType_MethodID_50: jmethodID?
 
     open func getMessageType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMessageType", methodSig: "()I", methodCache: &JOptionPane.getMessageType_MethodID_52, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMessageType", methodSig: "()I", methodCache: &JOptionPane.getMessageType_MethodID_50, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JOptionPane.setOptionType(int)
 
-    private static var setOptionType_MethodID_53: jmethodID?
+    private static var setOptionType_MethodID_51: jmethodID?
 
     open func setOptionType( newType: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newType, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOptionType", methodSig: "(I)V", methodCache: &JOptionPane.setOptionType_MethodID_53, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOptionType", methodSig: "(I)V", methodCache: &JOptionPane.setOptionType_MethodID_51, args: &__args, locals: &__locals )
     }
 
     open func setOptionType( _ _newType: Int ) {
@@ -1919,25 +1872,25 @@ open class JOptionPane: JComponent {
 
     /// public int javax.swing.JOptionPane.getOptionType()
 
-    private static var getOptionType_MethodID_54: jmethodID?
+    private static var getOptionType_MethodID_52: jmethodID?
 
     open func getOptionType() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOptionType", methodSig: "()I", methodCache: &JOptionPane.getOptionType_MethodID_54, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOptionType", methodSig: "()I", methodCache: &JOptionPane.getOptionType_MethodID_52, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JOptionPane.setSelectionValues(java.lang.Object[])
 
-    private static var setSelectionValues_MethodID_55: jmethodID?
+    private static var setSelectionValues_MethodID_53: jmethodID?
 
     open func setSelectionValues( newValues: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newValues, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionValues", methodSig: "([Ljava/lang/Object;)V", methodCache: &JOptionPane.setSelectionValues_MethodID_55, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionValues", methodSig: "([Ljava/lang/Object;)V", methodCache: &JOptionPane.setSelectionValues_MethodID_53, args: &__args, locals: &__locals )
     }
 
     open func setSelectionValues( _ _newValues: [JavaObject]? ) {
@@ -1946,25 +1899,25 @@ open class JOptionPane: JComponent {
 
     /// public java.lang.Object[] javax.swing.JOptionPane.getSelectionValues()
 
-    private static var getSelectionValues_MethodID_56: jmethodID?
+    private static var getSelectionValues_MethodID_54: jmethodID?
 
     open func getSelectionValues() -> [JavaObject]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionValues", methodSig: "()[Ljava/lang/Object;", methodCache: &JOptionPane.getSelectionValues_MethodID_56, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionValues", methodSig: "()[Ljava/lang/Object;", methodCache: &JOptionPane.getSelectionValues_MethodID_54, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [JavaObject](), from: __return )
     }
 
 
     /// public void javax.swing.JOptionPane.setInitialSelectionValue(java.lang.Object)
 
-    private static var setInitialSelectionValue_MethodID_57: jmethodID?
+    private static var setInitialSelectionValue_MethodID_55: jmethodID?
 
     open func setInitialSelectionValue( newValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInitialSelectionValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setInitialSelectionValue_MethodID_57, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInitialSelectionValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setInitialSelectionValue_MethodID_55, args: &__args, locals: &__locals )
     }
 
     open func setInitialSelectionValue( _ _newValue: java_swift.JavaObject? ) {
@@ -1973,12 +1926,12 @@ open class JOptionPane: JComponent {
 
     /// public java.lang.Object javax.swing.JOptionPane.getInitialSelectionValue()
 
-    private static var getInitialSelectionValue_MethodID_58: jmethodID?
+    private static var getInitialSelectionValue_MethodID_56: jmethodID?
 
     open func getInitialSelectionValue() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialSelectionValue", methodSig: "()Ljava/lang/Object;", methodCache: &JOptionPane.getInitialSelectionValue_MethodID_58, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialSelectionValue", methodSig: "()Ljava/lang/Object;", methodCache: &JOptionPane.getInitialSelectionValue_MethodID_56, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -1986,13 +1939,13 @@ open class JOptionPane: JComponent {
 
     /// public void javax.swing.JOptionPane.setInputValue(java.lang.Object)
 
-    private static var setInputValue_MethodID_59: jmethodID?
+    private static var setInputValue_MethodID_57: jmethodID?
 
     open func setInputValue( newValue: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInputValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setInputValue_MethodID_59, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInputValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JOptionPane.setInputValue_MethodID_57, args: &__args, locals: &__locals )
     }
 
     open func setInputValue( _ _newValue: java_swift.JavaObject? ) {
@@ -2001,12 +1954,12 @@ open class JOptionPane: JComponent {
 
     /// public java.lang.Object javax.swing.JOptionPane.getInputValue()
 
-    private static var getInputValue_MethodID_60: jmethodID?
+    private static var getInputValue_MethodID_58: jmethodID?
 
     open func getInputValue() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputValue", methodSig: "()Ljava/lang/Object;", methodCache: &JOptionPane.getInputValue_MethodID_60, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputValue", methodSig: "()Ljava/lang/Object;", methodCache: &JOptionPane.getInputValue_MethodID_58, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -2014,25 +1967,25 @@ open class JOptionPane: JComponent {
 
     /// public int javax.swing.JOptionPane.getMaxCharactersPerLineCount()
 
-    private static var getMaxCharactersPerLineCount_MethodID_61: jmethodID?
+    private static var getMaxCharactersPerLineCount_MethodID_59: jmethodID?
 
     open func getMaxCharactersPerLineCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxCharactersPerLineCount", methodSig: "()I", methodCache: &JOptionPane.getMaxCharactersPerLineCount_MethodID_61, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxCharactersPerLineCount", methodSig: "()I", methodCache: &JOptionPane.getMaxCharactersPerLineCount_MethodID_59, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.JOptionPane.setWantsInput(boolean)
 
-    private static var setWantsInput_MethodID_62: jmethodID?
+    private static var setWantsInput_MethodID_60: jmethodID?
 
     open func setWantsInput( newValue: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWantsInput", methodSig: "(Z)V", methodCache: &JOptionPane.setWantsInput_MethodID_62, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWantsInput", methodSig: "(Z)V", methodCache: &JOptionPane.setWantsInput_MethodID_60, args: &__args, locals: &__locals )
     }
 
     open func setWantsInput( _ _newValue: Bool ) {
@@ -2041,12 +1994,12 @@ open class JOptionPane: JComponent {
 
     /// public boolean javax.swing.JOptionPane.getWantsInput()
 
-    private static var getWantsInput_MethodID_63: jmethodID?
+    private static var getWantsInput_MethodID_61: jmethodID?
 
     open func getWantsInput() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getWantsInput", methodSig: "()Z", methodCache: &JOptionPane.getWantsInput_MethodID_63, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getWantsInput", methodSig: "()Z", methodCache: &JOptionPane.getWantsInput_MethodID_61, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -2057,13 +2010,13 @@ open class JOptionPane: JComponent {
 
     /// public void javax.swing.JOptionPane.setUI(javax.swing.plaf.OptionPaneUI)
 
-    private static var setUI_MethodID_64: jmethodID?
+    private static var setUI_MethodID_62: jmethodID?
 
     open func setUI( ui: OptionPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/OptionPaneUI;)V", methodCache: &JOptionPane.setUI_MethodID_64, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/OptionPaneUI;)V", methodCache: &JOptionPane.setUI_MethodID_62, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: OptionPaneUI? ) {
@@ -2074,31 +2027,78 @@ open class JOptionPane: JComponent {
 
     /// public void javax.swing.JOptionPane.setIcon(javax.swing.Icon)
 
-    private static var setIcon_MethodID_65: jmethodID?
+    private static var setIcon_MethodID_63: jmethodID?
 
     open func setIcon( newIcon: Icon? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JOptionPane.setIcon_MethodID_65, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &JOptionPane.setIcon_MethodID_63, args: &__args, locals: &__locals )
     }
 
     open func setIcon( _ _newIcon: Icon? ) {
         setIcon( newIcon: _newIcon )
     }
 
-    /// public javax.swing.plaf.OptionPaneUI javax.swing.JOptionPane.getUI()
+    /// static java.awt.Window javax.swing.JOptionPane.getWindowForComponent(java.awt.Component) throws java.awt.HeadlessException
 
-    private static var getUI_MethodID_66: jmethodID?
+    /// public javax.swing.Icon javax.swing.JOptionPane.getIcon()
 
-    open func getUI() -> OptionPaneUI! {
+    private static var getIcon_MethodID_64: jmethodID?
+
+    open func getIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/OptionPaneUI;", methodCache: &JOptionPane.getUI_MethodID_66, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &JOptionPane.getIcon_MethodID_64, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? OptionPaneUI( javaObject: __return ) : nil
+        return __return != nil ? IconForward( javaObject: __return ) : nil
     }
 
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JOptionPane.getAccessibleContext()
+
+    /// public javax.swing.JDialog javax.swing.JOptionPane.createDialog(java.lang.String) throws java.awt.HeadlessException
+
+    private static var createDialog_MethodID_65: jmethodID?
+
+    open func createDialog( title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/lang/String;)Ljavax/swing/JDialog;", methodCache: &JOptionPane.createDialog_MethodID_65, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? JDialog( javaObject: __return ) : nil
+    }
+
+    open func createDialog( _ _title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
+        return try createDialog( title: _title )
+    }
+
+    /// public javax.swing.JDialog javax.swing.JOptionPane.createDialog(java.awt.Component,java.lang.String) throws java.awt.HeadlessException
+
+    private static var createDialog_MethodID_66: jmethodID?
+
+    open func createDialog( parentComponent: java_awt.Component?, title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: title, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDialog", methodSig: "(Ljava/awt/Component;Ljava/lang/String;)Ljavax/swing/JDialog;", methodCache: &JOptionPane.createDialog_MethodID_66, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw java_awt.HeadlessException( javaObject: throwable )
+        }
+        return __return != nil ? JDialog( javaObject: __return ) : nil
+    }
+
+    open func createDialog( _ _parentComponent: java_awt.Component?, _ _title: String? ) throws /* java.awt.HeadlessException */ -> JDialog! {
+        return try createDialog( parentComponent: _parentComponent, title: _title )
+    }
+
+    /// private javax.swing.JDialog javax.swing.JOptionPane.createDialog(java.awt.Component,java.lang.String,int) throws java.awt.HeadlessException
 
     /// In declared protocol but not defined.. ///
 

@@ -37,7 +37,7 @@ open class MutableComboBoxModelForward: ComboBoxModelForward, MutableComboBoxMod
     open func addElement( item: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addElement", methodSig: "(Ljava/lang/Object;)V", methodCache: &MutableComboBoxModelForward.addElement_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -67,7 +67,7 @@ open class MutableComboBoxModelForward: ComboBoxModelForward, MutableComboBoxMod
     open func insertElementAt( item: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertElementAt", methodSig: "(Ljava/lang/Object;I)V", methodCache: &MutableComboBoxModelForward.insertElementAt_MethodID_7, args: &__args, locals: &__locals )
     }
@@ -83,7 +83,7 @@ open class MutableComboBoxModelForward: ComboBoxModelForward, MutableComboBoxMod
     open func removeElement( obj: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeElement", methodSig: "(Ljava/lang/Object;)V", methodCache: &MutableComboBoxModelForward.removeElement_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -98,7 +98,7 @@ open class MutableComboBoxModelForward: ComboBoxModelForward, MutableComboBoxMod
     override open func setSelectedItem( anItem: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anItem != nil ? anItem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anItem, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &MutableComboBoxModelForward.setSelectedItem_MethodID_9, args: &__args, locals: &__locals )
     }
 

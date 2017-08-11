@@ -43,7 +43,7 @@ open class HTMLFrameHyperlinkEvent: HyperlinkEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HTMLFrameHyperlinkEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -55,12 +55,12 @@ open class HTMLFrameHyperlinkEvent: HyperlinkEvent {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, targetURL: /* java.net.URL */ UnclassedObject?, desc: String?, sourceElement: Element?, inputEvent: java_awt.InputEvent?, targetFrame: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: targetURL != nil ? targetURL! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: targetURL, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
-        __args[5] = JNIType.toJava( value: inputEvent != nil ? inputEvent! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: inputEvent, locals: &__locals )
         __args[6] = JNIType.toJava( value: targetFrame, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLFrameHyperlinkEvent", classCache: &HTMLFrameHyperlinkEvent.HTMLFrameHyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;Ljava/awt/event/InputEvent;Ljava/lang/String;)V", methodCache: &HTMLFrameHyperlinkEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -78,9 +78,9 @@ open class HTMLFrameHyperlinkEvent: HyperlinkEvent {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, targetURL: /* java.net.URL */ UnclassedObject?, desc: String?, sourceElement: Element?, targetFrame: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: targetURL != nil ? targetURL! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: targetURL, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
         __args[5] = JNIType.toJava( value: targetFrame, locals: &__locals )
@@ -100,9 +100,9 @@ open class HTMLFrameHyperlinkEvent: HyperlinkEvent {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, targetURL: /* java.net.URL */ UnclassedObject?, sourceElement: Element?, targetFrame: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: targetURL != nil ? targetURL! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: targetURL, locals: &__locals )
         __args[3] = JNIType.toJava( value: sourceElement, locals: &__locals )
         __args[4] = JNIType.toJava( value: targetFrame, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLFrameHyperlinkEvent", classCache: &HTMLFrameHyperlinkEvent.HTMLFrameHyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljavax/swing/text/Element;Ljava/lang/String;)V", methodCache: &HTMLFrameHyperlinkEvent.new_MethodID_3, args: &__args, locals: &__locals )
@@ -121,9 +121,9 @@ open class HTMLFrameHyperlinkEvent: HyperlinkEvent {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, targetURL: /* java.net.URL */ UnclassedObject?, desc: String?, targetFrame: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: targetURL != nil ? targetURL! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: targetURL, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         __args[4] = JNIType.toJava( value: targetFrame, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLFrameHyperlinkEvent", classCache: &HTMLFrameHyperlinkEvent.HTMLFrameHyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &HTMLFrameHyperlinkEvent.new_MethodID_4, args: &__args, locals: &__locals )
@@ -142,9 +142,9 @@ open class HTMLFrameHyperlinkEvent: HyperlinkEvent {
     public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, targetURL: /* java.net.URL */ UnclassedObject?, targetFrame: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: targetURL != nil ? targetURL! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: targetURL, locals: &__locals )
         __args[3] = JNIType.toJava( value: targetFrame, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLFrameHyperlinkEvent", classCache: &HTMLFrameHyperlinkEvent.HTMLFrameHyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;)V", methodCache: &HTMLFrameHyperlinkEvent.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

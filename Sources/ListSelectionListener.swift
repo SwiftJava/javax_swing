@@ -26,7 +26,7 @@ open class ListSelectionListenerForward: java_util.EventListenerForward, ListSel
     open func valueChanged( e: ListSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &ListSelectionListenerForward.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

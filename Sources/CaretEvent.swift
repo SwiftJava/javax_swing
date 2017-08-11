@@ -31,7 +31,7 @@ open class CaretEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &CaretEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -43,7 +43,7 @@ open class CaretEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/CaretEvent", classCache: &CaretEvent.CaretEventJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &CaretEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

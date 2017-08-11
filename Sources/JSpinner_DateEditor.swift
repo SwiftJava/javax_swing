@@ -56,7 +56,7 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSpinner_DateEditor.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -73,7 +73,7 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSpinner_DateEditor.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -450,7 +450,7 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSpinner_DateEditor.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -480,7 +480,7 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
     public convenience init( arg0: JSpinner?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JSpinner$DateEditor", classCache: &JSpinner_DateEditor.JSpinner_DateEditorJNIClass, methodSig: "(Ljavax/swing/JSpinner;Ljava/lang/String;)V", methodCache: &JSpinner_DateEditor.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -498,7 +498,7 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
     public convenience init( arg0: JSpinner? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JSpinner$DateEditor", classCache: &JSpinner_DateEditor.JSpinner_DateEditorJNIClass, methodSig: "(Ljavax/swing/JSpinner;)V", methodCache: &JSpinner_DateEditor.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -510,33 +510,33 @@ open class JSpinner_DateEditor: JSpinner_DefaultEditor {
 
     /// private javax.swing.JSpinner$DateEditor(javax.swing.JSpinner,java.text.DateFormat)
 
-    /// public java.text.SimpleDateFormat javax.swing.JSpinner$DateEditor.getFormat()
-
-    private static var getFormat_MethodID_3: jmethodID?
-
-    open func getFormat() -> /* java.text.SimpleDateFormat */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/SimpleDateFormat;", methodCache: &JSpinner_DateEditor.getFormat_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.text.SimpleDateFormat */ UnclassedObject( javaObject: __return ) : nil
-    }
-
+    /// private static java.lang.String javax.swing.JSpinner$DateEditor.getDefaultPattern(java.util.Locale)
 
     /// public javax.swing.SpinnerDateModel javax.swing.JSpinner$DateEditor.getModel()
 
-    private static var getModel_MethodID_4: jmethodID?
+    private static var getModel_MethodID_3: jmethodID?
 
     open func getModel() -> SpinnerDateModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerDateModel;", methodCache: &JSpinner_DateEditor.getModel_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerDateModel;", methodCache: &JSpinner_DateEditor.getModel_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SpinnerDateModel( javaObject: __return ) : nil
     }
 
 
-    /// private static java.lang.String javax.swing.JSpinner$DateEditor.getDefaultPattern(java.util.Locale)
+    /// public java.text.SimpleDateFormat javax.swing.JSpinner$DateEditor.getFormat()
+
+    private static var getFormat_MethodID_4: jmethodID?
+
+    open func getFormat() -> /* java.text.SimpleDateFormat */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormat", methodSig: "()Ljava/text/SimpleDateFormat;", methodCache: &JSpinner_DateEditor.getFormat_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.text.SimpleDateFormat */ UnclassedObject( javaObject: __return ) : nil
+    }
+
 
 }
 

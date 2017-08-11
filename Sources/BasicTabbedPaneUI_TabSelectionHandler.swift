@@ -25,7 +25,7 @@ open class BasicTabbedPaneUI_TabSelectionHandler: java_swift.JavaObject, ChangeL
     public convenience init( this_0: BasicTabbedPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTabbedPaneUI$TabSelectionHandler", classCache: &BasicTabbedPaneUI_TabSelectionHandler.BasicTabbedPaneUI_TabSelectionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTabbedPaneUI;)V", methodCache: &BasicTabbedPaneUI_TabSelectionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,7 +42,7 @@ open class BasicTabbedPaneUI_TabSelectionHandler: java_swift.JavaObject, ChangeL
     open func stateChanged( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicTabbedPaneUI_TabSelectionHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

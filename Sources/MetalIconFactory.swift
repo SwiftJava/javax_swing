@@ -371,10 +371,6 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
     }
 
 
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1500()
-
-    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1600()
-
     /// public static javax.swing.Icon javax.swing.plaf.metal.MetalIconFactory.getTreeFolderIcon()
 
     private static var getTreeFolderIcon_MethodID_21: jmethodID?
@@ -458,6 +454,10 @@ open class MetalIconFactory: java_swift.JavaObject, /* java.io.Serializable */ U
     /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1800()
 
     /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1900()
+
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1500()
+
+    /// static java.awt.Dimension javax.swing.plaf.metal.MetalIconFactory.access$1600()
 
 }
 

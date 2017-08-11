@@ -133,7 +133,7 @@ open class TableView_TableCell: BoxView {
     public convenience init( this_0: TableView?, elem: Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TableView$TableCell", classCache: &TableView_TableCell.TableView_TableCellJNIClass, methodSig: "(Ljavax/swing/text/TableView;Ljavax/swing/text/Element;)V", methodCache: &TableView_TableCell.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -144,40 +144,16 @@ open class TableView_TableCell: BoxView {
         self.init( this_0: _this_0, elem: _elem )
     }
 
-    /// public int javax.swing.text.TableView$TableCell.getRowCount()
-
-    private static var getRowCount_MethodID_2: jmethodID?
-
-    open func getRowCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "()I", methodCache: &TableView_TableCell.getRowCount_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.text.TableView$TableCell.getColumnCount()
-
-    private static var getColumnCount_MethodID_3: jmethodID?
-
-    open func getColumnCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnCount", methodSig: "()I", methodCache: &TableView_TableCell.getColumnCount_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public void javax.swing.text.TableView$TableCell.setGridLocation(int,int)
 
-    private static var setGridLocation_MethodID_4: jmethodID?
+    private static var setGridLocation_MethodID_2: jmethodID?
 
     open func setGridLocation( row: Int, col: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
         __args[1] = JNIType.toJava( value: col, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGridLocation", methodSig: "(II)V", methodCache: &TableView_TableCell.setGridLocation_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGridLocation", methodSig: "(II)V", methodCache: &TableView_TableCell.setGridLocation_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func setGridLocation( _ _row: Int, _ _col: Int ) {
@@ -186,24 +162,48 @@ open class TableView_TableCell: BoxView {
 
     /// public int javax.swing.text.TableView$TableCell.getGridRow()
 
-    private static var getGridRow_MethodID_5: jmethodID?
+    private static var getGridRow_MethodID_3: jmethodID?
 
     open func getGridRow() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGridRow", methodSig: "()I", methodCache: &TableView_TableCell.getGridRow_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGridRow", methodSig: "()I", methodCache: &TableView_TableCell.getGridRow_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.text.TableView$TableCell.getGridColumn()
 
-    private static var getGridColumn_MethodID_6: jmethodID?
+    private static var getGridColumn_MethodID_4: jmethodID?
 
     open func getGridColumn() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGridColumn", methodSig: "()I", methodCache: &TableView_TableCell.getGridColumn_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getGridColumn", methodSig: "()I", methodCache: &TableView_TableCell.getGridColumn_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.TableView$TableCell.getRowCount()
+
+    private static var getRowCount_MethodID_5: jmethodID?
+
+    open func getRowCount() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "()I", methodCache: &TableView_TableCell.getRowCount_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.TableView$TableCell.getColumnCount()
+
+    private static var getColumnCount_MethodID_6: jmethodID?
+
+    open func getColumnCount() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumnCount", methodSig: "()I", methodCache: &TableView_TableCell.getColumnCount_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 

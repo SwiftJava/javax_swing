@@ -55,7 +55,7 @@ open class ScrollableForward: JNIObjectForward, Scrollable {
     open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: visibleRect, locals: &__locals )
         __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
         __args[2] = JNIType.toJava( value: direction, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &ScrollableForward.getScrollableUnitIncrement_MethodID_7, args: &__args, locals: &__locals )
@@ -73,7 +73,7 @@ open class ScrollableForward: JNIObjectForward, Scrollable {
     open func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: visibleRect != nil ? visibleRect! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: visibleRect, locals: &__locals )
         __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
         __args[2] = JNIType.toJava( value: direction, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &ScrollableForward.getScrollableBlockIncrement_MethodID_8, args: &__args, locals: &__locals )

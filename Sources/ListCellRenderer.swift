@@ -26,8 +26,8 @@ open class ListCellRendererForward: JNIObjectForward, ListCellRenderer {
     open func getListCellRendererComponent( list: JList?, value: java_swift.JavaObject?, index: Int, isSelected: Bool, cellHasFocus: Bool ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
         __args[3] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[4] = JNIType.toJava( value: cellHasFocus, locals: &__locals )

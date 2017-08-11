@@ -51,6 +51,8 @@ open class DefaultHighlighter: LayeredHighlighter {
 
     /// static javax.swing.text.JTextComponent javax.swing.text.DefaultHighlighter.access$000(javax.swing.text.DefaultHighlighter)
 
+    /// public void javax.swing.text.DefaultHighlighter.paint(java.awt.Graphics)
+
     /// public java.lang.Object javax.swing.text.DefaultHighlighter.addHighlight(int,int,javax.swing.text.Highlighter$HighlightPainter) throws javax.swing.text.BadLocationException
 
     /// public void javax.swing.text.DefaultHighlighter.removeHighlight(java.lang.Object)
@@ -97,8 +99,6 @@ open class DefaultHighlighter: LayeredHighlighter {
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// public void javax.swing.text.DefaultHighlighter.paint(java.awt.Graphics)
 
 }
 

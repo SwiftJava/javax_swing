@@ -50,16 +50,6 @@ open class BasicTextAreaUI: BasicTextUI {
 
     /// public javax.swing.text.View javax.swing.plaf.basic.BasicTextAreaUI.create(javax.swing.text.Element)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.basic.BasicTextAreaUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextAreaUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
-    /// javax.swing.text.View javax.swing.plaf.basic.BasicTextAreaUI.createI18N(javax.swing.text.Element)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTextAreaUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -67,7 +57,7 @@ open class BasicTextAreaUI: BasicTextUI {
     open class func createUI( ta: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ta != nil ? ta! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ta, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTextAreaUI", classCache: &BasicTextAreaUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -77,41 +67,51 @@ open class BasicTextAreaUI: BasicTextUI {
         return createUI( ta: _ta )
     }
 
+    /// protected void javax.swing.plaf.basic.BasicTextAreaUI.installDefaults()
+
+    private static var installDefaults_MethodID_3: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTextAreaUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTextAreaUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicTextAreaUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextAreaUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
     /// protected void javax.swing.plaf.basic.BasicTextAreaUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_3: jmethodID?
+    private static var propertyChange_MethodID_4: jmethodID?
 
     override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicTextAreaUI.propertyChange_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicTextAreaUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         propertyChange( evt: _evt )
     }
 
+    /// javax.swing.text.View javax.swing.plaf.basic.BasicTextAreaUI.createI18N(javax.swing.text.Element)
+
     /// protected java.lang.String javax.swing.plaf.basic.BasicTextAreaUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_4: jmethodID?
+    private static var getPropertyPrefix_MethodID_5: jmethodID?
 
     override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextAreaUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicTextAreaUI.getPropertyPrefix_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTextAreaUI.installDefaults()
-
-    private static var installDefaults_MethodID_5: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTextAreaUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
     }
 
 

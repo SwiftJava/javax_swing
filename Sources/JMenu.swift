@@ -47,7 +47,7 @@ open class JMenu: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "popupListener", fieldType: "Ljavax/swing/JMenu$WinListener;", fieldCache: &JMenu.popupListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -240,7 +240,7 @@ open class JMenu: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JMenu.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -327,7 +327,7 @@ open class JMenu: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JMenu.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -344,7 +344,7 @@ open class JMenu: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JMenu.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -721,7 +721,7 @@ open class JMenu: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JMenu.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -849,7 +849,7 @@ open class JMenu: JMenuItem {
     open func add( c: java_awt.Component?, index: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;I)Ljava/awt/Component;", methodCache: &JMenu.add_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -867,7 +867,7 @@ open class JMenu: JMenuItem {
     open func add( c: java_awt.Component? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &JMenu.add_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -884,7 +884,7 @@ open class JMenu: JMenuItem {
     open func add( menuItem: JMenuItem? ) -> JMenuItem! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: menuItem != nil ? menuItem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: menuItem, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljavax/swing/JMenuItem;)Ljavax/swing/JMenuItem;", methodCache: &JMenu.add_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JMenuItem( javaObject: __return ) : nil
@@ -901,7 +901,7 @@ open class JMenu: JMenuItem {
     open func remove( item: JMenuItem? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item != nil ? item! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljavax/swing/JMenuItem;)V", methodCache: &JMenu.remove_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -916,7 +916,7 @@ open class JMenu: JMenuItem {
     open func remove( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JMenu.remove_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -943,16 +943,34 @@ open class JMenu: JMenuItem {
 
     /// private void javax.swing.JMenu.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public javax.swing.JMenuItem javax.swing.JMenu.insert(javax.swing.Action,int)
+    /// public javax.swing.JMenuItem javax.swing.JMenu.insert(javax.swing.JMenuItem,int)
 
     private static var insert_MethodID_13: jmethodID?
+
+    open func insert( mi: JMenuItem?, pos: Int ) -> JMenuItem! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: mi, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pos, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insert", methodSig: "(Ljavax/swing/JMenuItem;I)Ljavax/swing/JMenuItem;", methodCache: &JMenu.insert_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JMenuItem( javaObject: __return ) : nil
+    }
+
+    open func insert( _ _mi: JMenuItem?, _ _pos: Int ) -> JMenuItem! {
+        return insert( mi: _mi, pos: _pos )
+    }
+
+    /// public javax.swing.JMenuItem javax.swing.JMenu.insert(javax.swing.Action,int)
+
+    private static var insert_MethodID_14: jmethodID?
 
     open func insert( a: Action?, pos: Int ) -> JMenuItem! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insert", methodSig: "(Ljavax/swing/Action;I)Ljavax/swing/JMenuItem;", methodCache: &JMenu.insert_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insert", methodSig: "(Ljavax/swing/Action;I)Ljavax/swing/JMenuItem;", methodCache: &JMenu.insert_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JMenuItem( javaObject: __return ) : nil
     }
@@ -963,36 +981,18 @@ open class JMenu: JMenuItem {
 
     /// public void javax.swing.JMenu.insert(java.lang.String,int)
 
-    private static var insert_MethodID_14: jmethodID?
+    private static var insert_MethodID_15: jmethodID?
 
     open func insert( s: String?, pos: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
         __args[1] = JNIType.toJava( value: pos, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insert", methodSig: "(Ljava/lang/String;I)V", methodCache: &JMenu.insert_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insert", methodSig: "(Ljava/lang/String;I)V", methodCache: &JMenu.insert_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func insert( _ _s: String?, _ _pos: Int ) {
         insert( s: _s, pos: _pos )
-    }
-
-    /// public javax.swing.JMenuItem javax.swing.JMenu.insert(javax.swing.JMenuItem,int)
-
-    private static var insert_MethodID_15: jmethodID?
-
-    open func insert( mi: JMenuItem?, pos: Int ) -> JMenuItem! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mi != nil ? mi! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insert", methodSig: "(Ljavax/swing/JMenuItem;I)Ljavax/swing/JMenuItem;", methodCache: &JMenu.insert_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JMenuItem( javaObject: __return ) : nil
-    }
-
-    open func insert( _ _mi: JMenuItem?, _ _pos: Int ) -> JMenuItem! {
-        return insert( mi: _mi, pos: _pos )
     }
 
     /// protected java.lang.String javax.swing.JMenu.paramString()
@@ -1009,114 +1009,15 @@ open class JMenu: JMenuItem {
 
     /// public void javax.swing.JMenu.removeAll()
 
-    /// public void javax.swing.JMenu.setComponentOrientation(java.awt.ComponentOrientation)
-
-    private static var setComponentOrientation_MethodID_17: jmethodID?
-
-    open func setComponentOrientation( o: java_awt.ComponentOrientation? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &JMenu.setComponentOrientation_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    override open func setComponentOrientation( _ _o: java_awt.ComponentOrientation? ) {
-        setComponentOrientation( o: _o )
-    }
-
-    /// public void javax.swing.JMenu.menuSelectionChanged(boolean)
-
-    /// public javax.swing.MenuElement[] javax.swing.JMenu.getSubElements()
-
-    /// public boolean javax.swing.JMenu.isTearOff()
-
-    private static var isTearOff_MethodID_18: jmethodID?
-
-    open func isTearOff() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTearOff", methodSig: "()Z", methodCache: &JMenu.isTearOff_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JMenu.addSeparator()
-
-    private static var addSeparator_MethodID_19: jmethodID?
-
-    open func addSeparator() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "()V", methodCache: &JMenu.addSeparator_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JMenu.insertSeparator(int)
-
-    private static var insertSeparator_MethodID_20: jmethodID?
-
-    open func insertSeparator( index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertSeparator", methodSig: "(I)V", methodCache: &JMenu.insertSeparator_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func insertSeparator( _ _index: Int ) {
-        insertSeparator( index: _index )
-    }
-
-    /// public void javax.swing.JMenu.setDelay(int)
-
-    private static var setDelay_MethodID_21: jmethodID?
-
-    open func setDelay( d: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: d, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDelay", methodSig: "(I)V", methodCache: &JMenu.setDelay_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func setDelay( _ _d: Int ) {
-        setDelay( d: _d )
-    }
-
-    /// public int javax.swing.JMenu.getDelay()
-
-    private static var getDelay_MethodID_22: jmethodID?
-
-    open func getDelay() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDelay", methodSig: "()I", methodCache: &JMenu.getDelay_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.JMenu.processKeyEvent(java.awt.event.KeyEvent)
-
-    private static var processKeyEvent_MethodID_23: jmethodID?
-
-    open func processKeyEvent( evt: java_awt.KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &JMenu.processKeyEvent_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    override open func processKeyEvent( _ _evt: java_awt.KeyEvent? ) {
-        processKeyEvent( evt: _evt )
-    }
-
     /// protected javax.swing.JMenuItem javax.swing.JMenu.createActionComponent(javax.swing.Action)
 
-    private static var createActionComponent_MethodID_24: jmethodID?
+    private static var createActionComponent_MethodID_17: jmethodID?
 
     open func createActionComponent( a: Action? ) -> JMenuItem! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionComponent", methodSig: "(Ljavax/swing/Action;)Ljavax/swing/JMenuItem;", methodCache: &JMenu.createActionComponent_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionComponent", methodSig: "(Ljavax/swing/Action;)Ljavax/swing/JMenuItem;", methodCache: &JMenu.createActionComponent_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JMenuItem( javaObject: __return ) : nil
     }
@@ -1127,13 +1028,13 @@ open class JMenu: JMenuItem {
 
     /// protected java.beans.PropertyChangeListener javax.swing.JMenu.createActionChangeListener(javax.swing.JMenuItem)
 
-    private static var createActionChangeListener_MethodID_25: jmethodID?
+    private static var createActionChangeListener_MethodID_18: jmethodID?
 
     open func createActionChangeListener( b: JMenuItem? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionChangeListener", methodSig: "(Ljavax/swing/JMenuItem;)Ljava/beans/PropertyChangeListener;", methodCache: &JMenu.createActionChangeListener_MethodID_25, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionChangeListener", methodSig: "(Ljavax/swing/JMenuItem;)Ljava/beans/PropertyChangeListener;", methodCache: &JMenu.createActionChangeListener_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -1144,12 +1045,12 @@ open class JMenu: JMenuItem {
 
     /// public javax.swing.JPopupMenu javax.swing.JMenu.getPopupMenu()
 
-    private static var getPopupMenu_MethodID_26: jmethodID?
+    private static var getPopupMenu_MethodID_19: jmethodID?
 
     open func getPopupMenu() -> JPopupMenu! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenu", methodSig: "()Ljavax/swing/JPopupMenu;", methodCache: &JMenu.getPopupMenu_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenu", methodSig: "()Ljavax/swing/JPopupMenu;", methodCache: &JMenu.getPopupMenu_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JPopupMenu( javaObject: __return ) : nil
     }
@@ -1157,17 +1058,147 @@ open class JMenu: JMenuItem {
 
     /// public void javax.swing.JMenu.setPopupMenuVisible(boolean)
 
-    private static var setPopupMenuVisible_MethodID_27: jmethodID?
+    private static var setPopupMenuVisible_MethodID_20: jmethodID?
 
     open func setPopupMenuVisible( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupMenuVisible", methodSig: "(Z)V", methodCache: &JMenu.setPopupMenuVisible_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupMenuVisible", methodSig: "(Z)V", methodCache: &JMenu.setPopupMenuVisible_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func setPopupMenuVisible( _ _b: Bool ) {
         setPopupMenuVisible( b: _b )
+    }
+
+    /// void javax.swing.JMenu.initFocusability()
+
+    /// public void javax.swing.JMenu.setAccelerator(javax.swing.KeyStroke)
+
+    /// void javax.swing.JMenu.configureAcceleratorFromAction(javax.swing.Action)
+
+    /// public java.awt.Component[] javax.swing.JMenu.getMenuComponents()
+
+    private static var getMenuComponents_MethodID_21: jmethodID?
+
+    open func getMenuComponents() -> [Component]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuComponents", methodSig: "()[Ljava/awt/Component;", methodCache: &JMenu.getMenuComponents_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Component](), from: __return )
+    }
+
+
+    /// public void javax.swing.JMenu.setDelay(int)
+
+    private static var setDelay_MethodID_22: jmethodID?
+
+    open func setDelay( d: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: d, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDelay", methodSig: "(I)V", methodCache: &JMenu.setDelay_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setDelay( _ _d: Int ) {
+        setDelay( d: _d )
+    }
+
+    /// public int javax.swing.JMenu.getDelay()
+
+    private static var getDelay_MethodID_23: jmethodID?
+
+    open func getDelay() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDelay", methodSig: "()I", methodCache: &JMenu.getDelay_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.JMenu.getItemCount()
+
+    private static var getItemCount_MethodID_24: jmethodID?
+
+    open func getItemCount() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &JMenu.getItemCount_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JMenu.updateUI()
+
+    /// public java.lang.String javax.swing.JMenu.getUIClassID()
+
+    /// public boolean javax.swing.JMenu.isTopLevelMenu()
+
+    private static var isTopLevelMenu_MethodID_25: jmethodID?
+
+    open func isTopLevelMenu() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTopLevelMenu", methodSig: "()Z", methodCache: &JMenu.isTopLevelMenu_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected void javax.swing.JMenu.processKeyEvent(java.awt.event.KeyEvent)
+
+    private static var processKeyEvent_MethodID_26: jmethodID?
+
+    open func processKeyEvent( evt: java_awt.KeyEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &JMenu.processKeyEvent_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    override open func processKeyEvent( _ _evt: java_awt.KeyEvent? ) {
+        processKeyEvent( evt: _evt )
+    }
+
+    /// public void javax.swing.JMenu.menuSelectionChanged(boolean)
+
+    /// public javax.swing.MenuElement[] javax.swing.JMenu.getSubElements()
+
+    /// public boolean javax.swing.JMenu.isTearOff()
+
+    private static var isTearOff_MethodID_27: jmethodID?
+
+    open func isTearOff() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTearOff", methodSig: "()Z", methodCache: &JMenu.isTearOff_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JMenu.addSeparator()
+
+    private static var addSeparator_MethodID_28: jmethodID?
+
+    open func addSeparator() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "()V", methodCache: &JMenu.addSeparator_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JMenu.insertSeparator(int)
+
+    private static var insertSeparator_MethodID_29: jmethodID?
+
+    open func insertSeparator( index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertSeparator", methodSig: "(I)V", methodCache: &JMenu.insertSeparator_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func insertSeparator( _ _index: Int ) {
+        insertSeparator( index: _index )
     }
 
     /// public javax.accessibility.AccessibleContext javax.swing.JMenu.getAccessibleContext()
@@ -1180,94 +1211,26 @@ open class JMenu: JMenuItem {
 
     /// public void javax.swing.JMenu.setModel(javax.swing.ButtonModel)
 
-    /// public java.awt.Component javax.swing.JMenu.getComponent()
-
-    /// public void javax.swing.JMenu.applyComponentOrientation(java.awt.ComponentOrientation)
-
-    private static var applyComponentOrientation_MethodID_28: jmethodID?
-
-    open func applyComponentOrientation( o: java_awt.ComponentOrientation? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o != nil ? o! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &JMenu.applyComponentOrientation_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    override open func applyComponentOrientation( _ _o: java_awt.ComponentOrientation? ) {
-        applyComponentOrientation( o: _o )
-    }
-
-    /// void javax.swing.JMenu.initFocusability()
-
-    /// public void javax.swing.JMenu.setAccelerator(javax.swing.KeyStroke)
-
-    /// void javax.swing.JMenu.configureAcceleratorFromAction(javax.swing.Action)
-
-    /// public java.awt.Component[] javax.swing.JMenu.getMenuComponents()
-
-    private static var getMenuComponents_MethodID_29: jmethodID?
-
-    open func getMenuComponents() -> [Component]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuComponents", methodSig: "()[Ljava/awt/Component;", methodCache: &JMenu.getMenuComponents_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Component](), from: __return )
-    }
-
-
-    /// public void javax.swing.JMenu.updateUI()
-
-    /// public java.lang.String javax.swing.JMenu.getUIClassID()
-
-    /// public int javax.swing.JMenu.getItemCount()
-
-    private static var getItemCount_MethodID_30: jmethodID?
-
-    open func getItemCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &JMenu.getItemCount_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public javax.swing.JMenuItem javax.swing.JMenu.getItem(int)
-
-    private static var getItem_MethodID_31: jmethodID?
-
-    open func getItem( pos: Int ) -> JMenuItem! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "(I)Ljavax/swing/JMenuItem;", methodCache: &JMenu.getItem_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JMenuItem( javaObject: __return ) : nil
-    }
-
-    open func getItem( _ _pos: Int ) -> JMenuItem! {
-        return getItem( pos: _pos )
-    }
-
     /// public boolean javax.swing.JMenu.isPopupMenuVisible()
 
-    private static var isPopupMenuVisible_MethodID_32: jmethodID?
+    private static var isPopupMenuVisible_MethodID_30: jmethodID?
 
     open func isPopupMenuVisible() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupMenuVisible", methodSig: "()Z", methodCache: &JMenu.isPopupMenuVisible_MethodID_32, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupMenuVisible", methodSig: "()Z", methodCache: &JMenu.isPopupMenuVisible_MethodID_30, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// protected java.awt.Point javax.swing.JMenu.getPopupMenuOrigin()
 
-    private static var getPopupMenuOrigin_MethodID_33: jmethodID?
+    private static var getPopupMenuOrigin_MethodID_31: jmethodID?
 
     open func getPopupMenuOrigin() -> java_awt.Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenuOrigin", methodSig: "()Ljava/awt/Point;", methodCache: &JMenu.getPopupMenuOrigin_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenuOrigin", methodSig: "()Ljava/awt/Point;", methodCache: &JMenu.getPopupMenuOrigin_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
@@ -1279,14 +1242,14 @@ open class JMenu: JMenuItem {
 
     /// public void javax.swing.JMenu.setMenuLocation(int,int)
 
-    private static var setMenuLocation_MethodID_34: jmethodID?
+    private static var setMenuLocation_MethodID_32: jmethodID?
 
     open func setMenuLocation( x: Int, y: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuLocation", methodSig: "(II)V", methodCache: &JMenu.setMenuLocation_MethodID_34, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMenuLocation", methodSig: "(II)V", methodCache: &JMenu.setMenuLocation_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func setMenuLocation( _ _x: Int, _ _y: Int ) {
@@ -1295,25 +1258,25 @@ open class JMenu: JMenuItem {
 
     /// public int javax.swing.JMenu.getMenuComponentCount()
 
-    private static var getMenuComponentCount_MethodID_35: jmethodID?
+    private static var getMenuComponentCount_MethodID_33: jmethodID?
 
     open func getMenuComponentCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuComponentCount", methodSig: "()I", methodCache: &JMenu.getMenuComponentCount_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMenuComponentCount", methodSig: "()I", methodCache: &JMenu.getMenuComponentCount_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public java.awt.Component javax.swing.JMenu.getMenuComponent(int)
 
-    private static var getMenuComponent_MethodID_36: jmethodID?
+    private static var getMenuComponent_MethodID_34: jmethodID?
 
     open func getMenuComponent( n: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuComponent", methodSig: "(I)Ljava/awt/Component;", methodCache: &JMenu.getMenuComponent_MethodID_36, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuComponent", methodSig: "(I)Ljava/awt/Component;", methodCache: &JMenu.getMenuComponent_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -1324,13 +1287,13 @@ open class JMenu: JMenuItem {
 
     /// public boolean javax.swing.JMenu.isMenuComponent(java.awt.Component)
 
-    private static var isMenuComponent_MethodID_37: jmethodID?
+    private static var isMenuComponent_MethodID_35: jmethodID?
 
     open func isMenuComponent( c: java_awt.Component? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMenuComponent", methodSig: "(Ljava/awt/Component;)Z", methodCache: &JMenu.isMenuComponent_MethodID_37, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMenuComponent", methodSig: "(Ljava/awt/Component;)Z", methodCache: &JMenu.isMenuComponent_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1338,19 +1301,19 @@ open class JMenu: JMenuItem {
         return isMenuComponent( c: _c )
     }
 
-    /// private java.awt.Point javax.swing.JMenu.translateToPopupMenu(java.awt.Point)
-
     /// private java.awt.Point javax.swing.JMenu.translateToPopupMenu(int,int)
+
+    /// private java.awt.Point javax.swing.JMenu.translateToPopupMenu(java.awt.Point)
 
     /// public void javax.swing.JMenu.addMenuListener(javax.swing.event.MenuListener)
 
-    private static var addMenuListener_MethodID_38: jmethodID?
+    private static var addMenuListener_MethodID_36: jmethodID?
 
     open func addMenuListener( l: MenuListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMenuListener", methodSig: "(Ljavax/swing/event/MenuListener;)V", methodCache: &JMenu.addMenuListener_MethodID_38, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addMenuListener", methodSig: "(Ljavax/swing/event/MenuListener;)V", methodCache: &JMenu.addMenuListener_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func addMenuListener( _ _l: MenuListener? ) {
@@ -1359,13 +1322,13 @@ open class JMenu: JMenuItem {
 
     /// public void javax.swing.JMenu.removeMenuListener(javax.swing.event.MenuListener)
 
-    private static var removeMenuListener_MethodID_39: jmethodID?
+    private static var removeMenuListener_MethodID_37: jmethodID?
 
     open func removeMenuListener( l: MenuListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMenuListener", methodSig: "(Ljavax/swing/event/MenuListener;)V", methodCache: &JMenu.removeMenuListener_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeMenuListener", methodSig: "(Ljavax/swing/event/MenuListener;)V", methodCache: &JMenu.removeMenuListener_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func removeMenuListener( _ _l: MenuListener? ) {
@@ -1374,46 +1337,46 @@ open class JMenu: JMenuItem {
 
     /// public javax.swing.event.MenuListener[] javax.swing.JMenu.getMenuListeners()
 
-    private static var getMenuListeners_MethodID_40: jmethodID?
+    private static var getMenuListeners_MethodID_38: jmethodID?
 
     open func getMenuListeners() -> [MenuListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuListeners", methodSig: "()[Ljavax/swing/event/MenuListener;", methodCache: &JMenu.getMenuListeners_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuListeners", methodSig: "()[Ljavax/swing/event/MenuListener;", methodCache: &JMenu.getMenuListeners_MethodID_38, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [MenuListenerForward](), from: __return )
     }
 
 
     /// protected void javax.swing.JMenu.fireMenuSelected()
 
-    private static var fireMenuSelected_MethodID_41: jmethodID?
+    private static var fireMenuSelected_MethodID_39: jmethodID?
 
     open func fireMenuSelected() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireMenuSelected", methodSig: "()V", methodCache: &JMenu.fireMenuSelected_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireMenuSelected", methodSig: "()V", methodCache: &JMenu.fireMenuSelected_MethodID_39, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.JMenu.fireMenuDeselected()
 
-    private static var fireMenuDeselected_MethodID_42: jmethodID?
+    private static var fireMenuDeselected_MethodID_40: jmethodID?
 
     open func fireMenuDeselected() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireMenuDeselected", methodSig: "()V", methodCache: &JMenu.fireMenuDeselected_MethodID_42, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireMenuDeselected", methodSig: "()V", methodCache: &JMenu.fireMenuDeselected_MethodID_40, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.JMenu.fireMenuCanceled()
 
-    private static var fireMenuCanceled_MethodID_43: jmethodID?
+    private static var fireMenuCanceled_MethodID_41: jmethodID?
 
     open func fireMenuCanceled() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireMenuCanceled", methodSig: "()V", methodCache: &JMenu.fireMenuCanceled_MethodID_43, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireMenuCanceled", methodSig: "()V", methodCache: &JMenu.fireMenuCanceled_MethodID_41, args: &__args, locals: &__locals )
     }
 
 
@@ -1421,13 +1384,13 @@ open class JMenu: JMenuItem {
 
     /// protected javax.swing.JMenu$WinListener javax.swing.JMenu.createWinListener(javax.swing.JPopupMenu)
 
-    private static var createWinListener_MethodID_44: jmethodID?
+    private static var createWinListener_MethodID_42: jmethodID?
 
     open func createWinListener( p: JPopupMenu? ) -> /* javax.swing.JMenu$WinListener */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createWinListener", methodSig: "(Ljavax/swing/JPopupMenu;)Ljavax/swing/JMenu$WinListener;", methodCache: &JMenu.createWinListener_MethodID_44, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createWinListener", methodSig: "(Ljavax/swing/JPopupMenu;)Ljavax/swing/JMenu$WinListener;", methodCache: &JMenu.createWinListener_MethodID_42, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.swing.JMenu$WinListener */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -1438,17 +1401,54 @@ open class JMenu: JMenuItem {
 
     /// private javax.swing.MenuElement[] javax.swing.JMenu.buildMenuElementArray(javax.swing.JMenu)
 
-    /// public boolean javax.swing.JMenu.isTopLevelMenu()
+    /// public javax.swing.JMenuItem javax.swing.JMenu.getItem(int)
 
-    private static var isTopLevelMenu_MethodID_45: jmethodID?
+    private static var getItem_MethodID_43: jmethodID?
 
-    open func isTopLevelMenu() -> Bool {
+    open func getItem( pos: Int ) -> JMenuItem! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isTopLevelMenu", methodSig: "()Z", methodCache: &JMenu.isTopLevelMenu_MethodID_45, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItem", methodSig: "(I)Ljavax/swing/JMenuItem;", methodCache: &JMenu.getItem_MethodID_43, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JMenuItem( javaObject: __return ) : nil
     }
 
+    open func getItem( _ _pos: Int ) -> JMenuItem! {
+        return getItem( pos: _pos )
+    }
+
+    /// public void javax.swing.JMenu.setComponentOrientation(java.awt.ComponentOrientation)
+
+    private static var setComponentOrientation_MethodID_44: jmethodID?
+
+    open func setComponentOrientation( o: java_awt.ComponentOrientation? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &JMenu.setComponentOrientation_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    override open func setComponentOrientation( _ _o: java_awt.ComponentOrientation? ) {
+        setComponentOrientation( o: _o )
+    }
+
+    /// public java.awt.Component javax.swing.JMenu.getComponent()
+
+    /// public void javax.swing.JMenu.applyComponentOrientation(java.awt.ComponentOrientation)
+
+    private static var applyComponentOrientation_MethodID_45: jmethodID?
+
+    open func applyComponentOrientation( o: java_awt.ComponentOrientation? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "applyComponentOrientation", methodSig: "(Ljava/awt/ComponentOrientation;)V", methodCache: &JMenu.applyComponentOrientation_MethodID_45, args: &__args, locals: &__locals )
+    }
+
+    override open func applyComponentOrientation( _ _o: java_awt.ComponentOrientation? ) {
+        applyComponentOrientation( o: _o )
+    }
 
     /// In declared protocol but not defined.. ///
 
@@ -1459,9 +1459,9 @@ open class JMenu: JMenuItem {
     override open func processKeyEvent( event: java_awt.KeyEvent?, path: [MenuElement]?, manager: MenuSelectionManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         __args[1] = JNIType.toJava( value: path, locals: &__locals )
-        __args[2] = JNIType.toJava( value: manager != nil ? manager! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: manager, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &JMenu.processKeyEvent_MethodID_46, args: &__args, locals: &__locals )
     }
 
@@ -1484,9 +1484,9 @@ open class JMenu: JMenuItem {
     override open func processMouseEvent( event: java_awt.MouseEvent?, path: [MenuElement]?, manager: MenuSelectionManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         __args[1] = JNIType.toJava( value: path, locals: &__locals )
-        __args[2] = JNIType.toJava( value: manager != nil ? manager! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: manager, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljava/awt/event/MouseEvent;[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &JMenu.processMouseEvent_MethodID_47, args: &__args, locals: &__locals )
     }
 

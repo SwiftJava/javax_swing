@@ -47,7 +47,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "renderer", fieldType: "Ljavax/swing/tree/DefaultTreeCellRenderer;", fieldCache: &DefaultTreeCellEditor.renderer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -64,7 +64,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editingContainer", fieldType: "Ljava/awt/Container;", fieldCache: &DefaultTreeCellEditor.editingContainer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -81,7 +81,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editingComponent", fieldType: "Ljava/awt/Component;", fieldCache: &DefaultTreeCellEditor.editingComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -132,7 +132,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "tree", fieldType: "Ljavax/swing/JTree;", fieldCache: &DefaultTreeCellEditor.tree_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -149,7 +149,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lastPath", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &DefaultTreeCellEditor.lastPath_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -166,7 +166,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "timer", fieldType: "Ljavax/swing/Timer;", fieldCache: &DefaultTreeCellEditor.timer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -200,7 +200,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "borderSelectionColor", fieldType: "Ljava/awt/Color;", fieldCache: &DefaultTreeCellEditor.borderSelectionColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -234,7 +234,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "font", fieldType: "Ljava/awt/Font;", fieldCache: &DefaultTreeCellEditor.font_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -246,8 +246,8 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     public convenience init( tree: JTree?, renderer: DefaultTreeCellRenderer? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree != nil ? tree! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: renderer != nil ? renderer! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: renderer, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/DefaultTreeCellEditor", classCache: &DefaultTreeCellEditor.DefaultTreeCellEditorJNIClass, methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/DefaultTreeCellRenderer;)V", methodCache: &DefaultTreeCellEditor.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -264,8 +264,8 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     public convenience init( tree: JTree?, renderer: DefaultTreeCellRenderer?, editor: TreeCellEditor? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree != nil ? tree! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: renderer != nil ? renderer! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: renderer, locals: &__locals )
         __args[2] = JNIType.toJava( value: editor, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/DefaultTreeCellEditor", classCache: &DefaultTreeCellEditor.DefaultTreeCellEditorJNIClass, methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/DefaultTreeCellRenderer;Ljavax/swing/tree/TreeCellEditor;)V", methodCache: &DefaultTreeCellEditor.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -300,7 +300,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     open func setFont( font: java_awt.Font? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: font != nil ? font! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: font, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFont", methodSig: "(Ljava/awt/Font;)V", methodCache: &DefaultTreeCellEditor.setFont_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -315,7 +315,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     open func isCellEditable( anEvent: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultTreeCellEditor.isCellEditable_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -331,7 +331,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     open func shouldSelectCell( anEvent: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldSelectCell", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultTreeCellEditor.shouldSelectCell_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -425,8 +425,8 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     open func getTreeCellEditorComponent( tree: JTree?, value: java_swift.JavaObject?, isSelected: Bool, expanded: Bool, leaf: Bool, row: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree != nil ? tree! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
         __args[4] = JNIType.toJava( value: leaf, locals: &__locals )
@@ -447,7 +447,7 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
     open func valueChanged( e: TreeSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/TreeSelectionEvent;)V", methodCache: &DefaultTreeCellEditor.valueChanged_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -455,29 +455,14 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
         valueChanged( e: _e )
     }
 
-    /// public void javax.swing.tree.DefaultTreeCellEditor.actionPerformed(java.awt.event.ActionEvent)
-
-    private static var actionPerformed_MethodID_15: jmethodID?
-
-    open func actionPerformed( e: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &DefaultTreeCellEditor.actionPerformed_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
-        actionPerformed( e: _e )
-    }
-
     /// protected javax.swing.tree.TreeCellEditor javax.swing.tree.DefaultTreeCellEditor.createTreeCellEditor()
 
-    private static var createTreeCellEditor_MethodID_16: jmethodID?
+    private static var createTreeCellEditor_MethodID_15: jmethodID?
 
     open func createTreeCellEditor() -> TreeCellEditor! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &DefaultTreeCellEditor.createTreeCellEditor_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &DefaultTreeCellEditor.createTreeCellEditor_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeCellEditorForward( javaObject: __return ) : nil
     }
@@ -485,13 +470,13 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// public void javax.swing.tree.DefaultTreeCellEditor.setBorderSelectionColor(java.awt.Color)
 
-    private static var setBorderSelectionColor_MethodID_17: jmethodID?
+    private static var setBorderSelectionColor_MethodID_16: jmethodID?
 
     open func setBorderSelectionColor( newColor: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newColor != nil ? newColor! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellEditor.setBorderSelectionColor_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newColor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderSelectionColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &DefaultTreeCellEditor.setBorderSelectionColor_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setBorderSelectionColor( _ _newColor: java_awt.Color? ) {
@@ -500,12 +485,12 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// public java.awt.Color javax.swing.tree.DefaultTreeCellEditor.getBorderSelectionColor()
 
-    private static var getBorderSelectionColor_MethodID_18: jmethodID?
+    private static var getBorderSelectionColor_MethodID_17: jmethodID?
 
     open func getBorderSelectionColor() -> java_awt.Color! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellEditor.getBorderSelectionColor_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderSelectionColor", methodSig: "()Ljava/awt/Color;", methodCache: &DefaultTreeCellEditor.getBorderSelectionColor_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -513,13 +498,13 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// protected void javax.swing.tree.DefaultTreeCellEditor.setTree(javax.swing.JTree)
 
-    private static var setTree_MethodID_19: jmethodID?
+    private static var setTree_MethodID_18: jmethodID?
 
     open func setTree( newTree: JTree? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newTree != nil ? newTree! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTree", methodSig: "(Ljavax/swing/JTree;)V", methodCache: &DefaultTreeCellEditor.setTree_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: newTree, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTree", methodSig: "(Ljavax/swing/JTree;)V", methodCache: &DefaultTreeCellEditor.setTree_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setTree( _ _newTree: JTree? ) {
@@ -528,13 +513,13 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// protected boolean javax.swing.tree.DefaultTreeCellEditor.shouldStartEditingTimer(java.util.EventObject)
 
-    private static var shouldStartEditingTimer_MethodID_20: jmethodID?
+    private static var shouldStartEditingTimer_MethodID_19: jmethodID?
 
     open func shouldStartEditingTimer( event: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldStartEditingTimer", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultTreeCellEditor.shouldStartEditingTimer_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldStartEditingTimer", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultTreeCellEditor.shouldStartEditingTimer_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -544,24 +529,24 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// protected void javax.swing.tree.DefaultTreeCellEditor.startEditingTimer()
 
-    private static var startEditingTimer_MethodID_21: jmethodID?
+    private static var startEditingTimer_MethodID_20: jmethodID?
 
     open func startEditingTimer() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startEditingTimer", methodSig: "()V", methodCache: &DefaultTreeCellEditor.startEditingTimer_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startEditingTimer", methodSig: "()V", methodCache: &DefaultTreeCellEditor.startEditingTimer_MethodID_20, args: &__args, locals: &__locals )
     }
 
 
     /// protected boolean javax.swing.tree.DefaultTreeCellEditor.canEditImmediately(java.util.EventObject)
 
-    private static var canEditImmediately_MethodID_22: jmethodID?
+    private static var canEditImmediately_MethodID_21: jmethodID?
 
     open func canEditImmediately( event: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canEditImmediately", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultTreeCellEditor.canEditImmediately_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canEditImmediately", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultTreeCellEditor.canEditImmediately_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -571,14 +556,14 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// protected boolean javax.swing.tree.DefaultTreeCellEditor.inHitRegion(int,int)
 
-    private static var inHitRegion_MethodID_23: jmethodID?
+    private static var inHitRegion_MethodID_22: jmethodID?
 
     open func inHitRegion( x: Int, y: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inHitRegion", methodSig: "(II)Z", methodCache: &DefaultTreeCellEditor.inHitRegion_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inHitRegion", methodSig: "(II)Z", methodCache: &DefaultTreeCellEditor.inHitRegion_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -588,18 +573,18 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// protected void javax.swing.tree.DefaultTreeCellEditor.determineOffset(javax.swing.JTree,java.lang.Object,boolean,boolean,boolean,int)
 
-    private static var determineOffset_MethodID_24: jmethodID?
+    private static var determineOffset_MethodID_23: jmethodID?
 
     open func determineOffset( tree: JTree?, value: java_swift.JavaObject?, isSelected: Bool, expanded: Bool, leaf: Bool, row: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree != nil ? tree! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
         __args[4] = JNIType.toJava( value: leaf, locals: &__locals )
         __args[5] = JNIType.toJava( value: row, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "determineOffset", methodSig: "(Ljavax/swing/JTree;Ljava/lang/Object;ZZZI)V", methodCache: &DefaultTreeCellEditor.determineOffset_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "determineOffset", methodSig: "(Ljavax/swing/JTree;Ljava/lang/Object;ZZZI)V", methodCache: &DefaultTreeCellEditor.determineOffset_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func determineOffset( _ _tree: JTree?, _ _value: java_swift.JavaObject?, _ _isSelected: Bool, _ _expanded: Bool, _ _leaf: Bool, _ _row: Int ) {
@@ -608,29 +593,44 @@ open class DefaultTreeCellEditor: java_swift.JavaObject, java_awt.ActionListener
 
     /// protected void javax.swing.tree.DefaultTreeCellEditor.prepareForEditing()
 
-    private static var prepareForEditing_MethodID_25: jmethodID?
+    private static var prepareForEditing_MethodID_24: jmethodID?
 
     open func prepareForEditing() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForEditing", methodSig: "()V", methodCache: &DefaultTreeCellEditor.prepareForEditing_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForEditing", methodSig: "()V", methodCache: &DefaultTreeCellEditor.prepareForEditing_MethodID_24, args: &__args, locals: &__locals )
     }
 
 
     /// protected java.awt.Container javax.swing.tree.DefaultTreeCellEditor.createContainer()
 
-    private static var createContainer_MethodID_26: jmethodID?
+    private static var createContainer_MethodID_25: jmethodID?
 
     open func createContainer() -> java_awt.Container! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContainer", methodSig: "()Ljava/awt/Container;", methodCache: &DefaultTreeCellEditor.createContainer_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createContainer", methodSig: "()Ljava/awt/Container;", methodCache: &DefaultTreeCellEditor.createContainer_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Container( javaObject: __return ) : nil
     }
 
 
     /// private void javax.swing.tree.DefaultTreeCellEditor.cleanupAfterEditing()
+
+    /// public void javax.swing.tree.DefaultTreeCellEditor.actionPerformed(java.awt.event.ActionEvent)
+
+    private static var actionPerformed_MethodID_26: jmethodID?
+
+    open func actionPerformed( e: java_awt.ActionEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &DefaultTreeCellEditor.actionPerformed_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
+        actionPerformed( e: _e )
+    }
 
 }
 

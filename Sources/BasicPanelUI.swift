@@ -30,10 +30,6 @@ open class BasicPanelUI: PanelUI {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public int javax.swing.plaf.basic.BasicPanelUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicPanelUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicPanelUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -41,7 +37,7 @@ open class BasicPanelUI: PanelUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicPanelUI", classCache: &BasicPanelUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -62,7 +58,7 @@ open class BasicPanelUI: PanelUI {
     open func installDefaults( p: JPanel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JPanel;)V", methodCache: &BasicPanelUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -77,13 +73,17 @@ open class BasicPanelUI: PanelUI {
     open func uninstallDefaults( p: JPanel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p != nil ? p! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JPanel;)V", methodCache: &BasicPanelUI.uninstallDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func uninstallDefaults( _ _p: JPanel? ) {
         uninstallDefaults( p: _p )
     }
+
+    /// public int javax.swing.plaf.basic.BasicPanelUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicPanelUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
 }
 

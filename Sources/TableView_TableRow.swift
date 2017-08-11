@@ -134,7 +134,7 @@ open class TableView_TableRow: BoxView {
     public convenience init( this_0: TableView?, elem: Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TableView$TableRow", classCache: &TableView_TableRow.TableView_TableRowJNIClass, methodSig: "(Ljavax/swing/text/TableView;Ljavax/swing/text/Element;)V", methodCache: &TableView_TableRow.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -161,6 +161,14 @@ open class TableView_TableRow: BoxView {
     override open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
         replace( offset: _offset, length: _length, views: _views )
     }
+
+    /// void javax.swing.text.TableView$TableRow.clearFilledColumns()
+
+    /// void javax.swing.text.TableView$TableRow.setRow(int)
+
+    /// boolean javax.swing.text.TableView$TableRow.isFilled(int)
+
+    /// void javax.swing.text.TableView$TableRow.fillColumn(int)
 
     /// public int javax.swing.text.TableView$TableRow.getResizeWeight(int)
 
@@ -200,6 +208,10 @@ open class TableView_TableRow: BoxView {
         layoutMinorAxis( targetSpan: _targetSpan, axis: _axis, offsets: _offsets, spans: _spans )
     }
 
+    /// int javax.swing.text.TableView$TableRow.getColumnCount()
+
+    /// int javax.swing.text.TableView$TableRow.getRow()
+
     /// protected javax.swing.text.View javax.swing.text.TableView$TableRow.getViewAtPosition(int,java.awt.Rectangle)
 
     private static var getViewAtPosition_MethodID_5: jmethodID?
@@ -208,7 +220,7 @@ open class TableView_TableRow: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView_TableRow.getViewAtPosition_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
@@ -217,18 +229,6 @@ open class TableView_TableRow: BoxView {
     override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
         return getViewAtPosition( pos: _pos, a: _a )
     }
-
-    /// int javax.swing.text.TableView$TableRow.getColumnCount()
-
-    /// int javax.swing.text.TableView$TableRow.getRow()
-
-    /// void javax.swing.text.TableView$TableRow.clearFilledColumns()
-
-    /// void javax.swing.text.TableView$TableRow.setRow(int)
-
-    /// boolean javax.swing.text.TableView$TableRow.isFilled(int)
-
-    /// void javax.swing.text.TableView$TableRow.fillColumn(int)
 
 }
 

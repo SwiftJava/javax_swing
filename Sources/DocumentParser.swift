@@ -58,7 +58,7 @@ open class DocumentParser: Parser {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dtd", fieldType: "Ljavax/swing/text/html/parser/DTD;", fieldCache: &DocumentParser.dtd_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -209,7 +209,7 @@ open class DocumentParser: Parser {
     public convenience init( dtd: DTD? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtd != nil ? dtd! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtd, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/parser/DocumentParser", classCache: &DocumentParser.DocumentParserJNIClass, methodSig: "(Ljavax/swing/text/html/parser/DTD;)V", methodCache: &DocumentParser.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -228,8 +228,8 @@ open class DocumentParser: Parser {
     open func parse( _in: /* java.io.Reader */ UnclassedObject?, callback: HTMLEditorKit_ParserCallback?, ignoreCharSet: Bool ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _in != nil ? _in! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: callback != nil ? callback! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
+        __args[1] = JNIType.toJava( value: callback, locals: &__locals )
         __args[2] = JNIType.toJava( value: ignoreCharSet, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "parse", methodSig: "(Ljava/io/Reader;Ljavax/swing/text/html/HTMLEditorKit$ParserCallback;Z)V", methodCache: &DocumentParser.parse_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
@@ -263,7 +263,7 @@ open class DocumentParser: Parser {
     override open func handleStartTag( tag: TagElement? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleStartTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &DocumentParser.handleStartTag_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -293,7 +293,7 @@ open class DocumentParser: Parser {
     override open func handleEndTag( tag: TagElement? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEndTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &DocumentParser.handleEndTag_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -324,7 +324,7 @@ open class DocumentParser: Parser {
     override open func handleEmptyTag( tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEmptyTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &DocumentParser.handleEmptyTag_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw ChangedCharSetException( javaObject: throwable )

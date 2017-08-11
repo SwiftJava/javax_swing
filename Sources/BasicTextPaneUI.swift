@@ -57,7 +57,7 @@ open class BasicTextPaneUI: BasicEditorPaneUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTextPaneUI", classCache: &BasicTextPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -67,6 +67,8 @@ open class BasicTextPaneUI: BasicEditorPaneUI {
         return createUI( c: _c )
     }
 
+    /// public void javax.swing.plaf.basic.BasicTextPaneUI.installUI(javax.swing.JComponent)
+
     /// protected void javax.swing.plaf.basic.BasicTextPaneUI.propertyChange(java.beans.PropertyChangeEvent)
 
     private static var propertyChange_MethodID_3: jmethodID?
@@ -74,7 +76,7 @@ open class BasicTextPaneUI: BasicEditorPaneUI {
     override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicTextPaneUI.propertyChange_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -93,8 +95,6 @@ open class BasicTextPaneUI: BasicEditorPaneUI {
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// public void javax.swing.plaf.basic.BasicTextPaneUI.installUI(javax.swing.JComponent)
 
 }
 

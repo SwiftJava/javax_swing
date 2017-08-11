@@ -57,7 +57,7 @@ open class BasicComboBoxRenderer_UIResource: BasicComboBoxRenderer, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &BasicComboBoxRenderer_UIResource.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -140,7 +140,7 @@ open class BasicComboBoxRenderer_UIResource: BasicComboBoxRenderer, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &BasicComboBoxRenderer_UIResource.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -157,7 +157,7 @@ open class BasicComboBoxRenderer_UIResource: BasicComboBoxRenderer, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicComboBoxRenderer_UIResource.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -534,7 +534,7 @@ open class BasicComboBoxRenderer_UIResource: BasicComboBoxRenderer, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &BasicComboBoxRenderer_UIResource.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

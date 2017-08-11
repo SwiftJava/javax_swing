@@ -62,7 +62,7 @@ open class JToggleButton_ToggleButtonModel: DefaultButtonModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "group", fieldType: "Ljavax/swing/ButtonGroup;", fieldCache: &JToggleButton_ToggleButtonModel.group_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -96,7 +96,7 @@ open class JToggleButton_ToggleButtonModel: DefaultButtonModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JToggleButton_ToggleButtonModel.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -113,7 +113,7 @@ open class JToggleButton_ToggleButtonModel: DefaultButtonModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JToggleButton_ToggleButtonModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -142,11 +142,11 @@ open class JToggleButton_ToggleButtonModel: DefaultButtonModel {
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public void javax.swing.JToggleButton$ToggleButtonModel.setPressed(boolean)
+
     /// public boolean javax.swing.JToggleButton$ToggleButtonModel.isSelected()
 
     /// public void javax.swing.JToggleButton$ToggleButtonModel.setSelected(boolean)
-
-    /// public void javax.swing.JToggleButton$ToggleButtonModel.setPressed(boolean)
 
 }
 

@@ -35,7 +35,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameOpened( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameOpened", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameOpened_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -50,7 +50,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameClosing( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameClosing", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameClosing_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -65,7 +65,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameClosed( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameClosed", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameClosed_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -80,7 +80,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameIconified( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameIconified", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameIconified_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -95,7 +95,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameDeiconified( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameDeiconified", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameDeiconified_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -110,7 +110,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameActivated( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameActivated", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameActivated_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -125,7 +125,7 @@ open class InternalFrameAdapter: java_swift.JavaObject, InternalFrameListener {
     open func internalFrameDeactivated( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameDeactivated", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameAdapter.internalFrameDeactivated_MethodID_8, args: &__args, locals: &__locals )
     }
 

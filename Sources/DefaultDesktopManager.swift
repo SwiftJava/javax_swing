@@ -61,7 +61,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func openFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "openFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.openFrame_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -76,7 +76,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func closeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.closeFrame_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -91,7 +91,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func maximizeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "maximizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.maximizeFrame_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -106,7 +106,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func minimizeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "minimizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.minimizeFrame_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -121,7 +121,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func iconifyFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "iconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.iconifyFrame_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -136,7 +136,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func deiconifyFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deiconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.deiconifyFrame_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -151,7 +151,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func activateFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.activateFrame_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -166,7 +166,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func deactivateFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deactivateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.deactivateFrame_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -181,7 +181,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func beginDraggingFrame( f: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DefaultDesktopManager.beginDraggingFrame_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -198,7 +198,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func dragFrame( f: JComponent?, newX: Int, newY: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragFrame", methodSig: "(Ljavax/swing/JComponent;II)V", methodCache: &DefaultDesktopManager.dragFrame_MethodID_11, args: &__args, locals: &__locals )
@@ -215,7 +215,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func endDraggingFrame( f: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "endDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DefaultDesktopManager.endDraggingFrame_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -230,7 +230,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func beginResizingFrame( f: JComponent?, direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: direction, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginResizingFrame", methodSig: "(Ljavax/swing/JComponent;I)V", methodCache: &DefaultDesktopManager.beginResizingFrame_MethodID_13, args: &__args, locals: &__locals )
     }
@@ -246,7 +246,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )
@@ -265,7 +265,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func endResizingFrame( f: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "endResizingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DefaultDesktopManager.endResizingFrame_MethodID_15, args: &__args, locals: &__locals )
     }
 
@@ -280,7 +280,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func setBoundsForFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )
@@ -299,7 +299,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func removeIconFor( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeIconFor", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DefaultDesktopManager.removeIconFor_MethodID_17, args: &__args, locals: &__locals )
     }
 
@@ -314,7 +314,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func getBoundsForIconOf( f: JInternalFrame? ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBoundsForIconOf", methodSig: "(Ljavax/swing/JInternalFrame;)Ljava/awt/Rectangle;", methodCache: &DefaultDesktopManager.getBoundsForIconOf_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
@@ -331,8 +331,8 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func setPreviousBounds( f: JInternalFrame?, r: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreviousBounds", methodSig: "(Ljavax/swing/JInternalFrame;Ljava/awt/Rectangle;)V", methodCache: &DefaultDesktopManager.setPreviousBounds_MethodID_19, args: &__args, locals: &__locals )
     }
 
@@ -347,7 +347,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func getPreviousBounds( f: JInternalFrame? ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousBounds", methodSig: "(Ljavax/swing/JInternalFrame;)Ljava/awt/Rectangle;", methodCache: &DefaultDesktopManager.getPreviousBounds_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
@@ -364,8 +364,8 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func setWasIcon( f: JInternalFrame?, value: java_lang.Boolean? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWasIcon", methodSig: "(Ljavax/swing/JInternalFrame;Ljava/lang/Boolean;)V", methodCache: &DefaultDesktopManager.setWasIcon_MethodID_21, args: &__args, locals: &__locals )
     }
 
@@ -380,7 +380,7 @@ open class DefaultDesktopManager: java_swift.JavaObject, DesktopManager, /* java
     open func wasIcon( f: JInternalFrame? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "wasIcon", methodSig: "(Ljavax/swing/JInternalFrame;)Z", methodCache: &DefaultDesktopManager.wasIcon_MethodID_22, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

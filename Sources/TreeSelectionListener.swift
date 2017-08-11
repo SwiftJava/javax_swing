@@ -26,7 +26,7 @@ open class TreeSelectionListenerForward: java_util.EventListenerForward, TreeSel
     open func valueChanged( e: TreeSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/TreeSelectionEvent;)V", methodCache: &TreeSelectionListenerForward.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

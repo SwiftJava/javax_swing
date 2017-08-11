@@ -70,7 +70,7 @@ open class PlainDocument: AbstractDocument {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &PlainDocument.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -138,9 +138,24 @@ open class PlainDocument: AbstractDocument {
         self.init( c: _c )
     }
 
+    /// protected javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.PlainDocument.createDefaultRoot()
+
+    private static var createDefaultRoot_MethodID_3: jmethodID?
+
+    open func createDefaultRoot() -> AbstractDocument_AbstractElement! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &PlainDocument.createDefaultRoot_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AbstractDocument_AbstractElement( javaObject: __return ) : nil
+    }
+
+
+    /// private void javax.swing.text.PlainDocument.insertComposedTextUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
+
     /// public void javax.swing.text.PlainDocument.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    private static var insertString_MethodID_3: jmethodID?
+    private static var insertString_MethodID_4: jmethodID?
 
     open func insertString( offs: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -148,7 +163,7 @@ open class PlainDocument: AbstractDocument {
         __args[0] = JNIType.toJava( value: offs, locals: &__locals )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertString_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertString_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -160,14 +175,14 @@ open class PlainDocument: AbstractDocument {
 
     /// protected void javax.swing.text.PlainDocument.insertUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
 
-    private static var insertUpdate_MethodID_4: jmethodID?
+    private static var insertUpdate_MethodID_5: jmethodID?
 
     override open func insertUpdate( chng: AbstractDocument_DefaultDocumentEvent?, attr: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: chng, locals: &__locals )
         __args[1] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertUpdate_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertUpdate_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func insertUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent?, _ _attr: AttributeSet? ) {
@@ -176,13 +191,13 @@ open class PlainDocument: AbstractDocument {
 
     /// protected void javax.swing.text.PlainDocument.removeUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent)
 
-    private static var removeUpdate_MethodID_5: jmethodID?
+    private static var removeUpdate_MethodID_6: jmethodID?
 
     override open func removeUpdate( chng: AbstractDocument_DefaultDocumentEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chng != nil ? chng! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &PlainDocument.removeUpdate_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: chng, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &PlainDocument.removeUpdate_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func removeUpdate( _ _chng: AbstractDocument_DefaultDocumentEvent? ) {
@@ -193,29 +208,22 @@ open class PlainDocument: AbstractDocument {
 
     /// public javax.swing.text.Element javax.swing.text.PlainDocument.getDefaultRootElement()
 
-    /// protected javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.PlainDocument.createDefaultRoot()
-
-    private static var createDefaultRoot_MethodID_6: jmethodID?
-
-    open func createDefaultRoot() -> AbstractDocument_AbstractElement! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &PlainDocument.createDefaultRoot_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AbstractDocument_AbstractElement( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.text.PlainDocument.insertComposedTextUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
-
 }
 
 private typealias PlainDocument_insertString_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jint, _: jobject?, _: jobject? ) -> ()
 
 private func PlainDocument_insertString_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ offs: jint, _ str: jobject?, _ a: jobject? ) -> () {
+    do {
     JNI.inNative = true;
-    try! PlainDocumentLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).insertString( offs: JNIType.toSwift( type: Int(), from: offs ), str: JNIType.toSwift( type: String(), from: str ), a: a != nil ? AttributeSetForward( javaObject: a ) : nil )
+    try PlainDocumentLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).insertString( offs: JNIType.toSwift( type: Int(), from: offs ), str: JNIType.toSwift( type: String(), from: str ), a: a != nil ? AttributeSetForward( javaObject: a ) : nil )
     JNI.inNative = false;
+    }
+    catch let exception as Throwable {
+        _ = exception.withJavaObject { JNI.api.Throw( JNI.env, $0 ) }
+    }
+    catch {
+        _ = Exception("Unknown exception").withJavaObject { JNI.api.Throw( JNI.env, $0 ) }
+    }
 }
 
 fileprivate class PlainDocumentLocal_: JNIObjectProxy<PlainDocument> {

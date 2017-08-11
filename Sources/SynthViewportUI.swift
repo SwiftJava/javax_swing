@@ -110,6 +110,8 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
 
     /// public void javax.swing.plaf.synth.SynthViewportUI.update(java.awt.Graphics,javax.swing.JComponent)
 
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthViewportUI.getContext(javax.swing.JComponent,int)
+
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthViewportUI.getContext(javax.swing.JComponent)
 
     private static var getContext_MethodID_2: jmethodID?
@@ -117,7 +119,7 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
     open func getContext( c: JComponent? ) -> SynthContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthViewportUI.getContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
@@ -127,10 +129,6 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
         return getContext( c: _c )
     }
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthViewportUI.getContext(javax.swing.JComponent,int)
-
-    /// private javax.swing.plaf.synth.Region javax.swing.plaf.synth.SynthViewportUI.getRegion(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthViewportUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
@@ -138,7 +136,7 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthViewportUI", classCache: &SynthViewportUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -148,22 +146,25 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
         return createUI( c: _c )
     }
 
-    /// private void javax.swing.plaf.synth.SynthViewportUI.updateStyle(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.synth.SynthViewportUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    /// public void javax.swing.plaf.synth.SynthViewportUI.propertyChange(java.beans.PropertyChangeEvent)
+    private static var paint_MethodID_4: jmethodID?
 
-    private static var propertyChange_MethodID_4: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthViewportUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthViewportUI.paint_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
     }
+
+    /// public void javax.swing.plaf.synth.SynthViewportUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// private javax.swing.plaf.synth.Region javax.swing.plaf.synth.SynthViewportUI.getRegion(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.synth.SynthViewportUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
@@ -172,8 +173,8 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
@@ -189,33 +190,15 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
 
     /// public void javax.swing.plaf.synth.SynthViewportUI.uninstallUI(javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.synth.SynthViewportUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthViewportUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_6: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthViewportUI.paint_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
     /// protected void javax.swing.plaf.synth.SynthViewportUI.installDefaults(javax.swing.JComponent)
 
-    private static var installDefaults_MethodID_7: jmethodID?
+    private static var installDefaults_MethodID_6: jmethodID?
 
     open func installDefaults( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func installDefaults( _ _c: JComponent? ) {
@@ -224,13 +207,13 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
 
     /// protected void javax.swing.plaf.synth.SynthViewportUI.installListeners(javax.swing.JComponent)
 
-    private static var installListeners_MethodID_8: jmethodID?
+    private static var installListeners_MethodID_7: jmethodID?
 
     open func installListeners( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func installListeners( _ _c: JComponent? ) {
@@ -239,13 +222,13 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
 
     /// protected void javax.swing.plaf.synth.SynthViewportUI.uninstallDefaults(javax.swing.JComponent)
 
-    private static var uninstallDefaults_MethodID_9: jmethodID?
+    private static var uninstallDefaults_MethodID_8: jmethodID?
 
     open func uninstallDefaults( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func uninstallDefaults( _ _c: JComponent? ) {
@@ -254,18 +237,35 @@ open class SynthViewportUI: ViewportUI, /* java.beans.PropertyChangeListener */ 
 
     /// protected void javax.swing.plaf.synth.SynthViewportUI.uninstallListeners(javax.swing.JComponent)
 
-    private static var uninstallListeners_MethodID_10: jmethodID?
+    private static var uninstallListeners_MethodID_9: jmethodID?
 
     open func uninstallListeners( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthViewportUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func uninstallListeners( _ _c: JComponent? ) {
         uninstallListeners( c: _c )
     }
+
+    /// public void javax.swing.plaf.synth.SynthViewportUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_10: jmethodID?
+
+    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthViewportUI.propertyChange_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// private void javax.swing.plaf.synth.SynthViewportUI.updateStyle(javax.swing.JComponent)
 
 }
 

@@ -52,7 +52,7 @@ open class EditorKit: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Ser
     open func write( out: /* java.io.Writer */ UnclassedObject?, doc: Document?, pos: Int, len: Int ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: out != nil ? out! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: out, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         __args[3] = JNIType.toJava( value: len, locals: &__locals )
@@ -75,7 +75,7 @@ open class EditorKit: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Ser
     open func read( _in: /* java.io.InputStream */ UnclassedObject?, doc: Document?, pos: Int ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _in != nil ? _in! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "read", methodSig: "(Ljava/io/InputStream;Ljavax/swing/text/Document;I)V", methodCache: &EditorKit.read_MethodID_4, args: &__args, locals: &__locals )
@@ -102,16 +102,15 @@ open class EditorKit: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Ser
     }
 
 
-    /// public abstract javax.swing.text.Caret javax.swing.text.EditorKit.createCaret()
+    /// public abstract java.lang.String javax.swing.text.EditorKit.getContentType()
 
-    private static var createCaret_MethodID_6: jmethodID?
+    private static var getContentType_MethodID_6: jmethodID?
 
-    open func createCaret() -> Caret! {
+    open func getContentType() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCaret", methodSig: "()Ljavax/swing/text/Caret;", methodCache: &EditorKit.createCaret_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CaretForward( javaObject: __return ) : nil
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentType", methodSig: "()Ljava/lang/String;", methodCache: &EditorKit.getContentType_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
     }
 
 
@@ -122,7 +121,7 @@ open class EditorKit: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Ser
     open func deinstall( c: JEditorPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstall", methodSig: "(Ljavax/swing/JEditorPane;)V", methodCache: &EditorKit.deinstall_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -137,7 +136,7 @@ open class EditorKit: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Ser
     open func install( c: JEditorPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JEditorPane;)V", methodCache: &EditorKit.install_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -158,28 +157,29 @@ open class EditorKit: java_swift.JavaObject, java_lang.Cloneable, /* java.io.Ser
     }
 
 
+    /// public abstract javax.swing.text.Caret javax.swing.text.EditorKit.createCaret()
+
+    private static var createCaret_MethodID_10: jmethodID?
+
+    open func createCaret() -> Caret! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCaret", methodSig: "()Ljavax/swing/text/Caret;", methodCache: &EditorKit.createCaret_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? CaretForward( javaObject: __return ) : nil
+    }
+
+
     /// public abstract javax.swing.text.ViewFactory javax.swing.text.EditorKit.getViewFactory()
 
-    private static var getViewFactory_MethodID_10: jmethodID?
+    private static var getViewFactory_MethodID_11: jmethodID?
 
     open func getViewFactory() -> ViewFactory! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewFactory", methodSig: "()Ljavax/swing/text/ViewFactory;", methodCache: &EditorKit.getViewFactory_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewFactory", methodSig: "()Ljavax/swing/text/ViewFactory;", methodCache: &EditorKit.getViewFactory_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ViewFactoryForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract java.lang.String javax.swing.text.EditorKit.getContentType()
-
-    private static var getContentType_MethodID_11: jmethodID?
-
-    open func getContentType() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentType", methodSig: "()Ljava/lang/String;", methodCache: &EditorKit.getContentType_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
     }
 
 

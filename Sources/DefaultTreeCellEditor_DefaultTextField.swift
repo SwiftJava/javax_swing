@@ -197,7 +197,7 @@ open class DefaultTreeCellEditor_DefaultTextField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &DefaultTreeCellEditor_DefaultTextField.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -214,7 +214,7 @@ open class DefaultTreeCellEditor_DefaultTextField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultTreeCellEditor_DefaultTextField.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -591,7 +591,7 @@ open class DefaultTreeCellEditor_DefaultTextField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &DefaultTreeCellEditor_DefaultTextField.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -621,7 +621,7 @@ open class DefaultTreeCellEditor_DefaultTextField: JTextField {
     public convenience init( this_0: DefaultTreeCellEditor?, border: Border? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: border, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/DefaultTreeCellEditor$DefaultTextField", classCache: &DefaultTreeCellEditor_DefaultTextField.DefaultTreeCellEditor_DefaultTextFieldJNIClass, methodSig: "(Ljavax/swing/tree/DefaultTreeCellEditor;Ljavax/swing/border/Border;)V", methodCache: &DefaultTreeCellEditor_DefaultTextField.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -632,13 +632,13 @@ open class DefaultTreeCellEditor_DefaultTextField: JTextField {
         self.init( this_0: _this_0, border: _border )
     }
 
+    /// public void javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.setBorder(javax.swing.border.Border)
+
     /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getPreferredSize()
 
     /// public java.awt.Font javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getFont()
 
     /// public javax.swing.border.Border javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.getBorder()
-
-    /// public void javax.swing.tree.DefaultTreeCellEditor$DefaultTextField.setBorder(javax.swing.border.Border)
 
 }
 

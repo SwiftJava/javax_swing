@@ -180,62 +180,49 @@ open class ImageView: View {
 
     /// private void javax.swing.text.html.ImageView.sync()
 
+    /// public void javax.swing.text.html.ImageView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_2: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ImageView.paint_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
+
+    /// private void javax.swing.text.html.ImageView.repaint(long)
+
+    /// private int javax.swing.text.html.ImageView.getIntAttr(javax.swing.text.html.HTML$Attribute,int)
+
+    /// public java.lang.String javax.swing.text.html.ImageView.getAltText()
+
+    private static var getAltText_MethodID_3: jmethodID?
+
+    open func getAltText() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAltText", methodSig: "()Ljava/lang/String;", methodCache: &ImageView.getAltText_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
     /// static void javax.swing.text.html.ImageView.access$800(javax.swing.text.html.ImageView)
 
-    /// public java.awt.Image javax.swing.text.html.ImageView.getImage()
-
-    private static var getImage_MethodID_2: jmethodID?
-
-    open func getImage() -> java_awt.Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/Image;", methodCache: &ImageView.getImage_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Image( javaObject: __return ) : nil
-    }
-
-
-    /// private java.awt.Image javax.swing.text.html.ImageView.getImage(boolean)
-
-    /// public float javax.swing.text.html.ImageView.getAlignment(int)
+    /// private void javax.swing.text.html.ImageView.paintBorder(java.awt.Graphics,java.awt.Rectangle)
 
     /// static int javax.swing.text.html.ImageView.access$702(javax.swing.text.html.ImageView,int)
-
-    /// protected void javax.swing.text.html.ImageView.setPropertiesFromAttributes()
-
-    private static var setPropertiesFromAttributes_MethodID_3: jmethodID?
-
-    open func setPropertiesFromAttributes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &ImageView.setPropertiesFromAttributes_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// private boolean javax.swing.text.html.ImageView.isLink()
-
-    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.ImageView.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_4: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &ImageView.getStyleSheet_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.html.ImageView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public float javax.swing.text.html.ImageView.getPreferredSpan(int)
 
     /// public java.lang.String javax.swing.text.html.ImageView.getToolTipText(float,float,java.awt.Shape)
 
     /// public int javax.swing.text.html.ImageView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
 
-    private static var viewToModel_MethodID_5: jmethodID?
+    private static var viewToModel_MethodID_4: jmethodID?
 
     open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -244,7 +231,7 @@ open class ImageView: View {
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         __args[3] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &ImageView.viewToModel_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &ImageView.viewToModel_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -254,44 +241,57 @@ open class ImageView: View {
 
     /// public java.awt.Shape javax.swing.text.html.ImageView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    /// private void javax.swing.text.html.ImageView.paintBorder(java.awt.Graphics,java.awt.Rectangle)
+    /// protected void javax.swing.text.html.ImageView.setPropertiesFromAttributes()
 
-    /// static boolean javax.swing.text.html.ImageView.access$900()
+    private static var setPropertiesFromAttributes_MethodID_5: jmethodID?
 
-    /// static int javax.swing.text.html.ImageView.access$1000()
-
-    /// static int javax.swing.text.html.ImageView.access$602(javax.swing.text.html.ImageView,int)
-
-    /// public void javax.swing.text.html.ImageView.paint(java.awt.Graphics,java.awt.Shape)
-
-    private static var paint_MethodID_6: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func setPropertiesFromAttributes() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ImageView.paint_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &ImageView.setPropertiesFromAttributes_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
+
+    /// private boolean javax.swing.text.html.ImageView.isLink()
+
+    /// public void javax.swing.text.html.ImageView.setLoadsSynchronously(boolean)
+
+    private static var setLoadsSynchronously_MethodID_6: jmethodID?
+
+    open func setLoadsSynchronously( newValue: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLoadsSynchronously", methodSig: "(Z)V", methodCache: &ImageView.setLoadsSynchronously_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    /// private void javax.swing.text.html.ImageView.repaint(long)
+    open func setLoadsSynchronously( _ _newValue: Bool ) {
+        setLoadsSynchronously( newValue: _newValue )
+    }
 
-    /// private void javax.swing.text.html.ImageView.loadImage()
+    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.ImageView.getStyleSheet()
+
+    private static var getStyleSheet_MethodID_7: jmethodID?
+
+    open func getStyleSheet() -> StyleSheet! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &ImageView.getStyleSheet_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
+    }
+
 
     /// private void javax.swing.text.html.ImageView.safePreferenceChanged()
 
     /// public java.net.URL javax.swing.text.html.ImageView.getImageURL()
 
-    private static var getImageURL_MethodID_7: jmethodID?
+    private static var getImageURL_MethodID_8: jmethodID?
 
     open func getImageURL() -> /* java.net.URL */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageURL", methodSig: "()Ljava/net/URL;", methodCache: &ImageView.getImageURL_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImageURL", methodSig: "()Ljava/net/URL;", methodCache: &ImageView.getImageURL_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
     }
@@ -299,12 +299,12 @@ open class ImageView: View {
 
     /// public javax.swing.Icon javax.swing.text.html.ImageView.getNoImageIcon()
 
-    private static var getNoImageIcon_MethodID_8: jmethodID?
+    private static var getNoImageIcon_MethodID_9: jmethodID?
 
     open func getNoImageIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNoImageIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &ImageView.getNoImageIcon_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNoImageIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &ImageView.getNoImageIcon_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -312,12 +312,12 @@ open class ImageView: View {
 
     /// public javax.swing.Icon javax.swing.text.html.ImageView.getLoadingImageIcon()
 
-    private static var getLoadingImageIcon_MethodID_9: jmethodID?
+    private static var getLoadingImageIcon_MethodID_10: jmethodID?
 
     open func getLoadingImageIcon() -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLoadingImageIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &ImageView.getLoadingImageIcon_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLoadingImageIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &ImageView.getLoadingImageIcon_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
     }
@@ -325,12 +325,12 @@ open class ImageView: View {
 
     /// public boolean javax.swing.text.html.ImageView.getLoadsSynchronously()
 
-    private static var getLoadsSynchronously_MethodID_10: jmethodID?
+    private static var getLoadsSynchronously_MethodID_11: jmethodID?
 
     open func getLoadsSynchronously() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getLoadsSynchronously", methodSig: "()Z", methodCache: &ImageView.getLoadsSynchronously_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getLoadsSynchronously", methodSig: "()Z", methodCache: &ImageView.getLoadsSynchronously_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -349,34 +349,34 @@ open class ImageView: View {
 
     /// private javax.swing.text.View javax.swing.text.html.ImageView.getAltView()
 
-    /// public void javax.swing.text.html.ImageView.setLoadsSynchronously(boolean)
+    /// public float javax.swing.text.html.ImageView.getAlignment(int)
 
-    private static var setLoadsSynchronously_MethodID_11: jmethodID?
+    /// static boolean javax.swing.text.html.ImageView.access$900()
 
-    open func setLoadsSynchronously( newValue: Bool ) {
+    /// static int javax.swing.text.html.ImageView.access$1000()
+
+    /// static int javax.swing.text.html.ImageView.access$602(javax.swing.text.html.ImageView,int)
+
+    /// private void javax.swing.text.html.ImageView.loadImage()
+
+    /// public java.awt.Image javax.swing.text.html.ImageView.getImage()
+
+    private static var getImage_MethodID_12: jmethodID?
+
+    open func getImage() -> java_awt.Image! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLoadsSynchronously", methodSig: "(Z)V", methodCache: &ImageView.setLoadsSynchronously_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getImage", methodSig: "()Ljava/awt/Image;", methodCache: &ImageView.getImage_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Image( javaObject: __return ) : nil
     }
 
-    open func setLoadsSynchronously( _ _newValue: Bool ) {
-        setLoadsSynchronously( newValue: _newValue )
-    }
 
-    /// private int javax.swing.text.html.ImageView.getIntAttr(javax.swing.text.html.HTML$Attribute,int)
+    /// private java.awt.Image javax.swing.text.html.ImageView.getImage(boolean)
 
-    /// public java.lang.String javax.swing.text.html.ImageView.getAltText()
+    /// public void javax.swing.text.html.ImageView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var getAltText_MethodID_12: jmethodID?
-
-    open func getAltText() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAltText", methodSig: "()Ljava/lang/String;", methodCache: &ImageView.getAltText_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
+    /// public float javax.swing.text.html.ImageView.getPreferredSpan(int)
 
 }
 

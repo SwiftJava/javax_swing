@@ -30,7 +30,7 @@ open class MultiTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "uis", fieldType: "Ljava/util/Vector;", fieldCache: &MultiTreeUI.uis_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -54,8 +54,8 @@ open class MultiTreeUI: TreeUI {
     open func update( a: java_awt.Graphics?, b: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.update_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -70,7 +70,7 @@ open class MultiTreeUI: TreeUI {
     open func contains( a: JComponent?, b: Int, c: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljavax/swing/JComponent;II)Z", methodCache: &MultiTreeUI.contains_MethodID_3, args: &__args, locals: &__locals )
@@ -81,66 +81,15 @@ open class MultiTreeUI: TreeUI {
         return contains( a: _a, b: _b, c: _c )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTreeUI.getPreferredSize(javax.swing.JComponent)
-
-    private static var getPreferredSize_MethodID_4: jmethodID?
-
-    open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTreeUI.getPreferredSize_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getPreferredSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getPreferredSize( a: _a )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTreeUI.getMinimumSize(javax.swing.JComponent)
-
-    private static var getMinimumSize_MethodID_5: jmethodID?
-
-    open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTreeUI.getMinimumSize_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getMinimumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getMinimumSize( a: _a )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTreeUI.getMaximumSize(javax.swing.JComponent)
-
-    private static var getMaximumSize_MethodID_6: jmethodID?
-
-    open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTreeUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getMaximumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getMaximumSize( a: _a )
-    }
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiTreeUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_7: jmethodID?
+    private static var createUI_MethodID_4: jmethodID?
 
     open class func createUI( a: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiTreeUI", classCache: &MultiTreeUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiTreeUI", classCache: &MultiTreeUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -149,124 +98,16 @@ open class MultiTreeUI: TreeUI {
         return createUI( a: _a )
     }
 
-    /// public int javax.swing.plaf.multi.MultiTreeUI.getAccessibleChildrenCount(javax.swing.JComponent)
-
-    private static var getAccessibleChildrenCount_MethodID_8: jmethodID?
-
-    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiTreeUI.getAccessibleChildrenCount_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
-        return getAccessibleChildrenCount( a: _a )
-    }
-
-    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiTreeUI.getAccessibleChild(javax.swing.JComponent,int)
-
-    private static var getAccessibleChild_MethodID_9: jmethodID?
-
-    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiTreeUI.getAccessibleChild_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        return getAccessibleChild( a: _a, b: _b )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiTreeUI.getRowCount(javax.swing.JTree)
-
-    private static var getRowCount_MethodID_10: jmethodID?
-
-    open func getRowCount( a: JTree? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "(Ljavax/swing/JTree;)I", methodCache: &MultiTreeUI.getRowCount_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getRowCount( _ _a: JTree? ) -> Int {
-        return getRowCount( a: _a )
-    }
-
-    /// public boolean javax.swing.plaf.multi.MultiTreeUI.isEditing(javax.swing.JTree)
-
-    private static var isEditing_MethodID_11: jmethodID?
-
-    open func isEditing( a: JTree? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &MultiTreeUI.isEditing_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func isEditing( _ _a: JTree? ) -> Bool {
-        return isEditing( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiTreeUI.installUI(javax.swing.JComponent)
-
-    private static var installUI_MethodID_12: jmethodID?
-
-    open func installUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.installUI_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    override open func installUI( _ _a: JComponent? ) {
-        installUI( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiTreeUI.uninstallUI(javax.swing.JComponent)
-
-    private static var uninstallUI_MethodID_13: jmethodID?
-
-    open func uninstallUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.uninstallUI_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    override open func uninstallUI( _ _a: JComponent? ) {
-        uninstallUI( a: _a )
-    }
-
-    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiTreeUI.getUIs()
-
-    private static var getUIs_MethodID_14: jmethodID?
-
-    open func getUIs() -> [ComponentUI]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiTreeUI.getUIs_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ComponentUI](), from: __return )
-    }
-
-
     /// public void javax.swing.plaf.multi.MultiTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var paint_MethodID_15: jmethodID?
+    private static var paint_MethodID_5: jmethodID?
 
     open func paint( a: java_awt.Graphics?, b: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.paint_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.paint_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
@@ -275,14 +116,14 @@ open class MultiTreeUI: TreeUI {
 
     /// public java.awt.Rectangle javax.swing.plaf.multi.MultiTreeUI.getPathBounds(javax.swing.JTree,javax.swing.tree.TreePath)
 
-    private static var getPathBounds_MethodID_16: jmethodID?
+    private static var getPathBounds_MethodID_6: jmethodID?
 
     open func getPathBounds( a: JTree?, b: TreePath? ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathBounds", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)Ljava/awt/Rectangle;", methodCache: &MultiTreeUI.getPathBounds_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathBounds", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)Ljava/awt/Rectangle;", methodCache: &MultiTreeUI.getPathBounds_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -293,14 +134,14 @@ open class MultiTreeUI: TreeUI {
 
     /// public javax.swing.tree.TreePath javax.swing.plaf.multi.MultiTreeUI.getPathForRow(javax.swing.JTree,int)
 
-    private static var getPathForRow_MethodID_17: jmethodID?
+    private static var getPathForRow_MethodID_7: jmethodID?
 
     open func getPathForRow( a: JTree?, b: Int ) -> TreePath! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathForRow", methodSig: "(Ljavax/swing/JTree;I)Ljavax/swing/tree/TreePath;", methodCache: &MultiTreeUI.getPathForRow_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathForRow", methodSig: "(Ljavax/swing/JTree;I)Ljavax/swing/tree/TreePath;", methodCache: &MultiTreeUI.getPathForRow_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreePath( javaObject: __return ) : nil
     }
@@ -311,14 +152,14 @@ open class MultiTreeUI: TreeUI {
 
     /// public int javax.swing.plaf.multi.MultiTreeUI.getRowForPath(javax.swing.JTree,javax.swing.tree.TreePath)
 
-    private static var getRowForPath_MethodID_18: jmethodID?
+    private static var getRowForPath_MethodID_8: jmethodID?
 
     open func getRowForPath( a: JTree?, b: TreePath? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowForPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)I", methodCache: &MultiTreeUI.getRowForPath_MethodID_18, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowForPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)I", methodCache: &MultiTreeUI.getRowForPath_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -328,15 +169,15 @@ open class MultiTreeUI: TreeUI {
 
     /// public javax.swing.tree.TreePath javax.swing.plaf.multi.MultiTreeUI.getClosestPathForLocation(javax.swing.JTree,int,int)
 
-    private static var getClosestPathForLocation_MethodID_19: jmethodID?
+    private static var getClosestPathForLocation_MethodID_9: jmethodID?
 
     open func getClosestPathForLocation( a: JTree?, b: Int, c: Int ) -> TreePath! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClosestPathForLocation", methodSig: "(Ljavax/swing/JTree;II)Ljavax/swing/tree/TreePath;", methodCache: &MultiTreeUI.getClosestPathForLocation_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClosestPathForLocation", methodSig: "(Ljavax/swing/JTree;II)Ljavax/swing/tree/TreePath;", methodCache: &MultiTreeUI.getClosestPathForLocation_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreePath( javaObject: __return ) : nil
     }
@@ -347,13 +188,13 @@ open class MultiTreeUI: TreeUI {
 
     /// public boolean javax.swing.plaf.multi.MultiTreeUI.stopEditing(javax.swing.JTree)
 
-    private static var stopEditing_MethodID_20: jmethodID?
+    private static var stopEditing_MethodID_10: jmethodID?
 
     open func stopEditing( a: JTree? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "stopEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &MultiTreeUI.stopEditing_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "stopEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &MultiTreeUI.stopEditing_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -363,13 +204,13 @@ open class MultiTreeUI: TreeUI {
 
     /// public void javax.swing.plaf.multi.MultiTreeUI.cancelEditing(javax.swing.JTree)
 
-    private static var cancelEditing_MethodID_21: jmethodID?
+    private static var cancelEditing_MethodID_11: jmethodID?
 
     open func cancelEditing( a: JTree? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancelEditing", methodSig: "(Ljavax/swing/JTree;)V", methodCache: &MultiTreeUI.cancelEditing_MethodID_21, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancelEditing", methodSig: "(Ljavax/swing/JTree;)V", methodCache: &MultiTreeUI.cancelEditing_MethodID_11, args: &__args, locals: &__locals )
     }
 
     override open func cancelEditing( _ _a: JTree? ) {
@@ -378,14 +219,14 @@ open class MultiTreeUI: TreeUI {
 
     /// public void javax.swing.plaf.multi.MultiTreeUI.startEditingAtPath(javax.swing.JTree,javax.swing.tree.TreePath)
 
-    private static var startEditingAtPath_MethodID_22: jmethodID?
+    private static var startEditingAtPath_MethodID_12: jmethodID?
 
     open func startEditingAtPath( a: JTree?, b: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startEditingAtPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)V", methodCache: &MultiTreeUI.startEditingAtPath_MethodID_22, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startEditingAtPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)V", methodCache: &MultiTreeUI.startEditingAtPath_MethodID_12, args: &__args, locals: &__locals )
     }
 
     override open func startEditingAtPath( _ _a: JTree?, _ _b: TreePath? ) {
@@ -394,13 +235,13 @@ open class MultiTreeUI: TreeUI {
 
     /// public javax.swing.tree.TreePath javax.swing.plaf.multi.MultiTreeUI.getEditingPath(javax.swing.JTree)
 
-    private static var getEditingPath_MethodID_23: jmethodID?
+    private static var getEditingPath_MethodID_13: jmethodID?
 
     open func getEditingPath( a: JTree? ) -> TreePath! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditingPath", methodSig: "(Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;", methodCache: &MultiTreeUI.getEditingPath_MethodID_23, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditingPath", methodSig: "(Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;", methodCache: &MultiTreeUI.getEditingPath_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreePath( javaObject: __return ) : nil
     }
@@ -408,6 +249,165 @@ open class MultiTreeUI: TreeUI {
     override open func getEditingPath( _ _a: JTree? ) -> TreePath! {
         return getEditingPath( a: _a )
     }
+
+    /// public void javax.swing.plaf.multi.MultiTreeUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_14: jmethodID?
+
+    open func installUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.installUI_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    override open func installUI( _ _a: JComponent? ) {
+        installUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiTreeUI.uninstallUI(javax.swing.JComponent)
+
+    private static var uninstallUI_MethodID_15: jmethodID?
+
+    open func uninstallUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiTreeUI.uninstallUI_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallUI( _ _a: JComponent? ) {
+        uninstallUI( a: _a )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTreeUI.getPreferredSize(javax.swing.JComponent)
+
+    private static var getPreferredSize_MethodID_16: jmethodID?
+
+    open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTreeUI.getPreferredSize_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getPreferredSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getPreferredSize( a: _a )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTreeUI.getMinimumSize(javax.swing.JComponent)
+
+    private static var getMinimumSize_MethodID_17: jmethodID?
+
+    open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTreeUI.getMinimumSize_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getMinimumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getMinimumSize( a: _a )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiTreeUI.getMaximumSize(javax.swing.JComponent)
+
+    private static var getMaximumSize_MethodID_18: jmethodID?
+
+    open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiTreeUI.getMaximumSize_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getMaximumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getMaximumSize( a: _a )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiTreeUI.getAccessibleChildrenCount(javax.swing.JComponent)
+
+    private static var getAccessibleChildrenCount_MethodID_19: jmethodID?
+
+    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiTreeUI.getAccessibleChildrenCount_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
+        return getAccessibleChildrenCount( a: _a )
+    }
+
+    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiTreeUI.getAccessibleChild(javax.swing.JComponent,int)
+
+    private static var getAccessibleChild_MethodID_20: jmethodID?
+
+    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiTreeUI.getAccessibleChild_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        return getAccessibleChild( a: _a, b: _b )
+    }
+
+    /// public int javax.swing.plaf.multi.MultiTreeUI.getRowCount(javax.swing.JTree)
+
+    private static var getRowCount_MethodID_21: jmethodID?
+
+    open func getRowCount( a: JTree? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "(Ljavax/swing/JTree;)I", methodCache: &MultiTreeUI.getRowCount_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getRowCount( _ _a: JTree? ) -> Int {
+        return getRowCount( a: _a )
+    }
+
+    /// public boolean javax.swing.plaf.multi.MultiTreeUI.isEditing(javax.swing.JTree)
+
+    private static var isEditing_MethodID_22: jmethodID?
+
+    open func isEditing( a: JTree? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &MultiTreeUI.isEditing_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    override open func isEditing( _ _a: JTree? ) -> Bool {
+        return isEditing( a: _a )
+    }
+
+    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiTreeUI.getUIs()
+
+    private static var getUIs_MethodID_23: jmethodID?
+
+    open func getUIs() -> [ComponentUI]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiTreeUI.getUIs_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ComponentUI](), from: __return )
+    }
+
 
 }
 

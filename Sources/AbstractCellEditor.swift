@@ -29,7 +29,7 @@ open class AbstractCellEditor: java_swift.JavaObject, CellEditor, /* java.io.Ser
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractCellEditor.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class AbstractCellEditor: java_swift.JavaObject, CellEditor, /* java.io.Ser
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &AbstractCellEditor.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -70,7 +70,7 @@ open class AbstractCellEditor: java_swift.JavaObject, CellEditor, /* java.io.Ser
     open func isCellEditable( anEvent: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &AbstractCellEditor.isCellEditable_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -86,7 +86,7 @@ open class AbstractCellEditor: java_swift.JavaObject, CellEditor, /* java.io.Ser
     open func shouldSelectCell( anEvent: java_util.EventObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent != nil ? anEvent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldSelectCell", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &AbstractCellEditor.shouldSelectCell_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

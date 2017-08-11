@@ -41,7 +41,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dtd", fieldType: "Ljavax/swing/text/html/parser/DTD;", fieldCache: &Parser.dtd_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -507,7 +507,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     public convenience init( dtd: DTD? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dtd != nil ? dtd! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dtd, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/parser/Parser", classCache: &Parser.ParserJNIClass, methodSig: "(Ljavax/swing/text/html/parser/DTD;)V", methodCache: &Parser.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -517,45 +517,13 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         self.init( dtd: _dtd )
     }
 
-    /// char[] javax.swing.text.html.parser.Parser.getChars(int,int)
-
     /// char[] javax.swing.text.html.parser.Parser.getChars(int)
 
-    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String)
-
-    private static var error_MethodID_2: jmethodID?
-
-    open func error( err: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func error( _ _err: String? ) {
-        error( err: _err )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String)
-
-    private static var error_MethodID_3: jmethodID?
-
-    open func error( err: String?, arg1: String?, arg2: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String? ) {
-        error( err: _err, arg1: _arg1, arg2: _arg2 )
-    }
+    /// char[] javax.swing.text.html.parser.Parser.getChars(int,int)
 
     /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
 
-    private static var error_MethodID_4: jmethodID?
+    private static var error_MethodID_2: jmethodID?
 
     open func error( err: String?, arg1: String?, arg2: String?, arg3: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -564,7 +532,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String?, _ _arg3: String? ) {
@@ -573,18 +541,50 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String)
 
-    private static var error_MethodID_5: jmethodID?
+    private static var error_MethodID_3: jmethodID?
 
     open func error( err: String?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: err, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func error( _ _err: String?, _ _arg1: String? ) {
         error( err: _err, arg1: _arg1 )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String)
+
+    private static var error_MethodID_4: jmethodID?
+
+    open func error( err: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: err, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func error( _ _err: String? ) {
+        error( err: _err )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String)
+
+    private static var error_MethodID_5: jmethodID?
+
+    open func error( err: String?, arg1: String?, arg2: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: err, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String? ) {
+        error( err: _err, arg1: _arg1, arg2: _arg2 )
     }
 
     /// protected javax.swing.text.SimpleAttributeSet javax.swing.text.html.parser.Parser.getAttributes()
@@ -607,7 +607,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func parse( _in: /* java.io.Reader */ UnclassedObject? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _in != nil ? _in! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "parse", methodSig: "(Ljava/io/Reader;)V", methodCache: &Parser.parse_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -617,12 +617,6 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func parse( _ __in: /* java.io.Reader */ UnclassedObject? ) throws /* java.io.IOException */ {
         try parse( _in: __in )
     }
-
-    /// void javax.swing.text.html.parser.Parser.parseContent() throws java.io.IOException
-
-    /// private final int javax.swing.text.html.parser.Parser.readCh() throws java.io.IOException
-
-    /// java.lang.String javax.swing.text.html.parser.Parser.getString(int)
 
     /// void javax.swing.text.html.parser.Parser.handleText(javax.swing.text.html.parser.TagElement)
 
@@ -648,7 +642,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func handleStartTag( tag: TagElement? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleStartTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleStartTag_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -678,7 +672,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func handleEndTag( tag: TagElement? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEndTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleEndTag_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -724,7 +718,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func startTag( tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.startTag_MethodID_14, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw ChangedCharSetException( javaObject: throwable )
@@ -742,7 +736,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func handleEmptyTag( tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag != nil ? tag! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEmptyTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleEmptyTag_MethodID_15, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw ChangedCharSetException( javaObject: throwable )
@@ -799,7 +793,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func makeTag( elem: text_html_parser_Element? ) -> TagElement! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeTag", methodSig: "(Ljavax/swing/text/html/parser/Element;)Ljavax/swing/text/html/parser/TagElement;", methodCache: &Parser.makeTag_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TagElement( javaObject: __return ) : nil
@@ -816,7 +810,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func makeTag( elem: text_html_parser_Element?, fictional: Bool ) -> TagElement! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         __args[1] = JNIType.toJava( value: fictional, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeTag", methodSig: "(Ljavax/swing/text/html/parser/Element;Z)Ljavax/swing/text/html/parser/TagElement;", methodCache: &Parser.makeTag_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -862,7 +856,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func markFirstTime( elem: text_html_parser_Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem != nil ? elem! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "markFirstTime", methodSig: "(Ljavax/swing/text/html/parser/Element;)V", methodCache: &Parser.markFirstTime_MethodID_23, args: &__args, locals: &__locals )
     }
 
@@ -920,7 +914,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open func parseMarkupDeclarations( strBuff: java_lang.StringBuffer? ) throws /* java.io.IOException */ -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: strBuff != nil ? strBuff! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: strBuff, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "parseMarkupDeclarations", methodSig: "(Ljava/lang/StringBuffer;)Z", methodCache: &Parser.parseMarkupDeclarations_MethodID_25, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
@@ -937,6 +931,12 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     /// void javax.swing.text.html.parser.Parser.parseTag() throws java.io.IOException
 
     /// void javax.swing.text.html.parser.Parser.parseScript() throws java.io.IOException
+
+    /// void javax.swing.text.html.parser.Parser.parseContent() throws java.io.IOException
+
+    /// private final int javax.swing.text.html.parser.Parser.readCh() throws java.io.IOException
+
+    /// java.lang.String javax.swing.text.html.parser.Parser.getString(int)
 
 }
 

@@ -43,8 +43,8 @@ open class AsyncBoxView_ChildState: java_swift.JavaObject, java_swift.Runnable {
     public convenience init( this_0: AsyncBoxView?, v: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: v, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/AsyncBoxView$ChildState", classCache: &AsyncBoxView_ChildState.AsyncBoxView_ChildStateJNIClass, methodSig: "(Ljavax/swing/text/AsyncBoxView;Ljavax/swing/text/View;)V", methodCache: &AsyncBoxView_ChildState.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

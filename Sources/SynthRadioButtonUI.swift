@@ -97,7 +97,7 @@ open class SynthRadioButtonUI: SynthToggleButtonUI {
     override open class func createUI( b: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthRadioButtonUI", classCache: &SynthRadioButtonUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -106,6 +106,10 @@ open class SynthRadioButtonUI: SynthToggleButtonUI {
     override open class func createUI( _ _b: JComponent? ) -> ComponentUI! {
         return createUI( b: _b )
     }
+
+    /// public void javax.swing.plaf.synth.SynthRadioButtonUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    /// void javax.swing.plaf.synth.SynthRadioButtonUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
     /// protected java.lang.String javax.swing.plaf.synth.SynthRadioButtonUI.getPropertyPrefix()
 
@@ -119,8 +123,6 @@ open class SynthRadioButtonUI: SynthToggleButtonUI {
     }
 
 
-    /// public void javax.swing.plaf.synth.SynthRadioButtonUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
     /// protected javax.swing.Icon javax.swing.plaf.synth.SynthRadioButtonUI.getSizingIcon(javax.swing.AbstractButton)
 
     private static var getSizingIcon_MethodID_4: jmethodID?
@@ -128,7 +130,7 @@ open class SynthRadioButtonUI: SynthToggleButtonUI {
     override open func getSizingIcon( b: AbstractButton? ) -> Icon! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSizingIcon", methodSig: "(Ljavax/swing/AbstractButton;)Ljavax/swing/Icon;", methodCache: &SynthRadioButtonUI.getSizingIcon_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? IconForward( javaObject: __return ) : nil
@@ -137,8 +139,6 @@ open class SynthRadioButtonUI: SynthToggleButtonUI {
     override open func getSizingIcon( _ _b: AbstractButton? ) -> Icon! {
         return getSizingIcon( b: _b )
     }
-
-    /// void javax.swing.plaf.synth.SynthRadioButtonUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
 
 }
 

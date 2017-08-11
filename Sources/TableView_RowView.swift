@@ -142,7 +142,7 @@ open class TableView_RowView: BoxView {
     public convenience init( this_0: /* javax.swing.text.html.TableView */ UnclassedObject?, elem: Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/TableView$RowView", classCache: &TableView_RowView.TableView_RowViewJNIClass, methodSig: "(Ljavax/swing/text/html/TableView;Ljavax/swing/text/Element;)V", methodCache: &TableView_RowView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -172,6 +172,14 @@ open class TableView_RowView: BoxView {
 
     /// public javax.swing.text.AttributeSet javax.swing.text.html.TableView$RowView.getAttributes()
 
+    /// public void javax.swing.text.html.TableView$RowView.paint(java.awt.Graphics,java.awt.Shape)
+
+    /// void javax.swing.text.html.TableView$RowView.clearFilledColumns()
+
+    /// boolean javax.swing.text.html.TableView$RowView.isFilled(int)
+
+    /// void javax.swing.text.html.TableView$RowView.fillColumn(int)
+
     /// public float javax.swing.text.html.TableView$RowView.getMinimumSpan(int)
 
     /// public float javax.swing.text.html.TableView$RowView.getMaximumSpan(int)
@@ -190,7 +198,7 @@ open class TableView_RowView: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
@@ -244,7 +252,7 @@ open class TableView_RowView: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMajorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMajorAxisRequirements_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
@@ -253,6 +261,8 @@ open class TableView_RowView: BoxView {
     override open func calculateMajorAxisRequirements( _ _axis: Int, _ _r: SizeRequirements? ) -> SizeRequirements! {
         return calculateMajorAxisRequirements( axis: _axis, r: _r )
     }
+
+    /// int javax.swing.text.html.TableView$RowView.getColumnCount()
 
     /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.TableView$RowView.getStyleSheet()
 
@@ -267,6 +277,8 @@ open class TableView_RowView: BoxView {
     }
 
 
+    /// javax.swing.text.View javax.swing.text.html.TableView$RowView.findViewAtPoint(int,int,java.awt.Rectangle)
+
     /// public void javax.swing.text.html.TableView$RowView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
     /// public float javax.swing.text.html.TableView$RowView.getPreferredSpan(int)
@@ -279,7 +291,7 @@ open class TableView_RowView: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView_RowView.getViewAtPosition_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
@@ -288,18 +300,6 @@ open class TableView_RowView: BoxView {
     override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
         return getViewAtPosition( pos: _pos, a: _a )
     }
-
-    /// int javax.swing.text.html.TableView$RowView.getColumnCount()
-
-    /// public void javax.swing.text.html.TableView$RowView.paint(java.awt.Graphics,java.awt.Shape)
-
-    /// javax.swing.text.View javax.swing.text.html.TableView$RowView.findViewAtPoint(int,int,java.awt.Rectangle)
-
-    /// void javax.swing.text.html.TableView$RowView.clearFilledColumns()
-
-    /// boolean javax.swing.text.html.TableView$RowView.isFilled(int)
-
-    /// void javax.swing.text.html.TableView$RowView.fillColumn(int)
 
 }
 

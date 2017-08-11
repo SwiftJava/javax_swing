@@ -28,7 +28,7 @@ open class JTextComponent_KeyBinding: java_swift.JavaObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "key", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &JTextComponent_KeyBinding.key_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -57,7 +57,7 @@ open class JTextComponent_KeyBinding: java_swift.JavaObject {
     public convenience init( arg0: KeyStroke?, arg1: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/JTextComponent$KeyBinding", classCache: &JTextComponent_KeyBinding.JTextComponent_KeyBindingJNIClass, methodSig: "(Ljavax/swing/KeyStroke;Ljava/lang/String;)V", methodCache: &JTextComponent_KeyBinding.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

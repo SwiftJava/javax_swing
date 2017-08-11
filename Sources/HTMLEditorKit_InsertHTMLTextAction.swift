@@ -46,7 +46,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "parentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.parentTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "addTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.addTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,7 +80,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "alternateParentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateParentTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -97,7 +97,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "alternateAddTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateAddTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -137,7 +137,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -175,10 +175,10 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: html, locals: &__locals )
-        __args[2] = JNIType.toJava( value: parentTag != nil ? parentTag! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: alternateParentTag != nil ? alternateParentTag! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: alternateAddTag != nil ? alternateAddTag! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: parentTag, locals: &__locals )
+        __args[3] = JNIType.toJava( value: addTag, locals: &__locals )
+        __args[4] = JNIType.toJava( value: alternateParentTag, locals: &__locals )
+        __args[5] = JNIType.toJava( value: alternateAddTag, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$InsertHTMLTextAction", classCache: &HTMLEditorKit_InsertHTMLTextAction.HTMLEditorKit_InsertHTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -197,8 +197,8 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: html, locals: &__locals )
-        __args[2] = JNIType.toJava( value: parentTag != nil ? parentTag! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: parentTag, locals: &__locals )
+        __args[3] = JNIType.toJava( value: addTag, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$InsertHTMLTextAction", classCache: &HTMLEditorKit_InsertHTMLTextAction.HTMLEditorKit_InsertHTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -215,13 +215,13 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
     open func insertHTML( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, html: String?, popDepth: Int, pushDepth: Int, addTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: doc != nil ? doc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         __args[2] = JNIType.toJava( value: offset, locals: &__locals )
         __args[3] = JNIType.toJava( value: html, locals: &__locals )
         __args[4] = JNIType.toJava( value: popDepth, locals: &__locals )
         __args[5] = JNIType.toJava( value: pushDepth, locals: &__locals )
-        __args[6] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
+        __args[6] = JNIType.toJava( value: addTag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertHTML_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -238,13 +238,13 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
     open func insertAtBoundary( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, insertElement: Element?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: doc != nil ? doc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         __args[2] = JNIType.toJava( value: offset, locals: &__locals )
         __args[3] = JNIType.toJava( value: insertElement, locals: &__locals )
         __args[4] = JNIType.toJava( value: html, locals: &__locals )
-        __args[5] = JNIType.toJava( value: parentTag != nil ? parentTag! as JNIObject : nil, locals: &__locals )
-        __args[6] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: parentTag, locals: &__locals )
+        __args[6] = JNIType.toJava( value: addTag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAtBoundary", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/Element;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertAtBoundary_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -259,13 +259,13 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
     open func insertAtBoundry( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, insertElement: Element?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: doc != nil ? doc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         __args[2] = JNIType.toJava( value: offset, locals: &__locals )
         __args[3] = JNIType.toJava( value: insertElement, locals: &__locals )
         __args[4] = JNIType.toJava( value: html, locals: &__locals )
-        __args[5] = JNIType.toJava( value: parentTag != nil ? parentTag! as JNIObject : nil, locals: &__locals )
-        __args[6] = JNIType.toJava( value: addTag != nil ? addTag! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: parentTag, locals: &__locals )
+        __args[6] = JNIType.toJava( value: addTag, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertAtBoundry", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/Element;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertAtBoundry_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -282,7 +282,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
     open func actionPerformed( ae: java_awt.ActionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ae != nil ? ae! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ae, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.actionPerformed_MethodID_6, args: &__args, locals: &__locals )
     }
 

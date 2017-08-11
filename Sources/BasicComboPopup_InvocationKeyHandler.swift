@@ -26,7 +26,7 @@ open class BasicComboPopup_InvocationKeyHandler: java_awt.KeyAdapter {
     public convenience init( this_0: BasicComboPopup? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboPopup$InvocationKeyHandler", classCache: &BasicComboPopup_InvocationKeyHandler.BasicComboPopup_InvocationKeyHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicComboPopup;)V", methodCache: &BasicComboPopup_InvocationKeyHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

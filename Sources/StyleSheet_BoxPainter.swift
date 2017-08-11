@@ -43,12 +43,6 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
 
     /// float javax.swing.text.html.StyleSheet$BoxPainter.getLength(javax.swing.text.html.CSS$Attribute,javax.swing.text.AttributeSet)
 
-    /// static boolean javax.swing.text.html.StyleSheet$BoxPainter.isOrientationAware(javax.swing.text.View)
-
-    /// float javax.swing.text.html.StyleSheet$BoxPainter.getOrientationMargin(javax.swing.text.html.StyleSheet$BoxPainter$HorizontalMargin,float,javax.swing.text.AttributeSet,boolean)
-
-    /// java.awt.Color javax.swing.text.html.StyleSheet$BoxPainter.getBorderColor(javax.swing.text.AttributeSet)
-
     /// public float javax.swing.text.html.StyleSheet$BoxPainter.getInset(int,javax.swing.text.View)
 
     private static var getInset_MethodID_1: jmethodID?
@@ -57,7 +51,7 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: side, locals: &__locals )
-        __args[1] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: v, locals: &__locals )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getInset", methodSig: "(ILjavax/swing/text/View;)F", methodCache: &StyleSheet_BoxPainter.getInset_MethodID_1, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
@@ -66,8 +60,6 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
         return getInset( side: _side, v: _v )
     }
 
-    /// javax.swing.border.Border javax.swing.text.html.StyleSheet$BoxPainter.getBorder(javax.swing.text.AttributeSet)
-
     /// public void javax.swing.text.html.StyleSheet$BoxPainter.paint(java.awt.Graphics,float,float,float,float,javax.swing.text.View)
 
     private static var paint_MethodID_2: jmethodID?
@@ -75,18 +67,26 @@ open class StyleSheet_BoxPainter: java_swift.JavaObject, /* java.io.Serializable
     open func paint( g: java_awt.Graphics?, x: Float, y: Float, w: Float, h: Float, v: View? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
         __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        __args[5] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: v, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;FFFFLjavax/swing/text/View;)V", methodCache: &StyleSheet_BoxPainter.paint_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func paint( _ _g: java_awt.Graphics?, _ _x: Float, _ _y: Float, _ _w: Float, _ _h: Float, _ _v: View? ) {
         paint( g: _g, x: _x, y: _y, w: _w, h: _h, v: _v )
     }
+
+    /// javax.swing.border.Border javax.swing.text.html.StyleSheet$BoxPainter.getBorder(javax.swing.text.AttributeSet)
+
+    /// static boolean javax.swing.text.html.StyleSheet$BoxPainter.isOrientationAware(javax.swing.text.View)
+
+    /// float javax.swing.text.html.StyleSheet$BoxPainter.getOrientationMargin(javax.swing.text.html.StyleSheet$BoxPainter$HorizontalMargin,float,javax.swing.text.AttributeSet,boolean)
+
+    /// java.awt.Color javax.swing.text.html.StyleSheet$BoxPainter.getBorderColor(javax.swing.text.AttributeSet)
 
     /// static boolean javax.swing.text.html.StyleSheet$BoxPainter.isLeftToRight(javax.swing.text.View)
 

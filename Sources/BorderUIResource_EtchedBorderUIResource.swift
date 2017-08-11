@@ -50,7 +50,7 @@ open class BorderUIResource_EtchedBorderUIResource: EtchedBorder, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_EtchedBorderUIResource.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -67,7 +67,7 @@ open class BorderUIResource_EtchedBorderUIResource: EtchedBorder, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_EtchedBorderUIResource.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,8 +80,8 @@ open class BorderUIResource_EtchedBorderUIResource: EtchedBorder, UIResource {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: etchType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$EtchedBorderUIResource", classCache: &BorderUIResource_EtchedBorderUIResource.BorderUIResource_EtchedBorderUIResourceJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &BorderUIResource_EtchedBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -98,8 +98,8 @@ open class BorderUIResource_EtchedBorderUIResource: EtchedBorder, UIResource {
     public convenience init( highlight: java_awt.Color?, shadow: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[1] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$EtchedBorderUIResource", classCache: &BorderUIResource_EtchedBorderUIResource.BorderUIResource_EtchedBorderUIResourceJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BorderUIResource_EtchedBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

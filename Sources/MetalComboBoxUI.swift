@@ -29,7 +29,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "comboBox", fieldType: "Ljavax/swing/JComboBox;", fieldCache: &MetalComboBoxUI.comboBox_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -67,7 +67,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listBox", fieldType: "Ljavax/swing/JList;", fieldCache: &MetalComboBoxUI.listBox_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -84,7 +84,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "currentValuePane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &MetalComboBoxUI.currentValuePane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -118,7 +118,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editor", fieldType: "Ljava/awt/Component;", fieldCache: &MetalComboBoxUI.editor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -135,7 +135,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "arrowButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalComboBoxUI.arrowButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -317,7 +317,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "cachedMinimumSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalComboBoxUI.cachedMinimumSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -361,7 +361,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "padding", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalComboBoxUI.padding_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -392,14 +392,6 @@ open class MetalComboBoxUI: BasicComboBoxUI {
 
     /// static javax.swing.JButton javax.swing.plaf.metal.MetalComboBoxUI.access$600(javax.swing.plaf.metal.MetalComboBoxUI)
 
-    /// static javax.swing.JList javax.swing.plaf.metal.MetalComboBoxUI.access$700(javax.swing.plaf.metal.MetalComboBoxUI)
-
-    /// static javax.swing.JButton javax.swing.plaf.metal.MetalComboBoxUI.access$800(javax.swing.plaf.metal.MetalComboBoxUI)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalComboBoxUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.metal.MetalComboBoxUI.getBaseline(javax.swing.JComponent,int,int)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalComboBoxUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -407,7 +399,7 @@ open class MetalComboBoxUI: BasicComboBoxUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalComboBoxUI", classCache: &MetalComboBoxUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -417,16 +409,117 @@ open class MetalComboBoxUI: BasicComboBoxUI {
         return createUI( c: _c )
     }
 
+    /// public void javax.swing.plaf.metal.MetalComboBoxUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected javax.swing.ComboBoxEditor javax.swing.plaf.metal.MetalComboBoxUI.createEditor()
+
+    private static var createEditor_MethodID_3: jmethodID?
+
+    override open func createEditor() -> ComboBoxEditor! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/ComboBoxEditor;", methodCache: &MetalComboBoxUI.createEditor_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComboBoxEditorForward( javaObject: __return ) : nil
+    }
+
+
+    /// static javax.swing.JList javax.swing.plaf.metal.MetalComboBoxUI.access$700(javax.swing.plaf.metal.MetalComboBoxUI)
+
+    /// static javax.swing.JButton javax.swing.plaf.metal.MetalComboBoxUI.access$800(javax.swing.plaf.metal.MetalComboBoxUI)
+
+    /// public void javax.swing.plaf.metal.MetalComboBoxUI.configureEditor()
+
+    private static var configureEditor_MethodID_4: jmethodID?
+
+    override open func configureEditor() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureEditor", methodSig: "()V", methodCache: &MetalComboBoxUI.configureEditor_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalComboBoxUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_5: jmethodID?
+
+    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalComboBoxUI.createPropertyChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.plaf.basic.ComboPopup javax.swing.plaf.metal.MetalComboBoxUI.createPopup()
+
+    private static var createPopup_MethodID_6: jmethodID?
+
+    override open func createPopup() -> ComboPopup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPopup", methodSig: "()Ljavax/swing/plaf/basic/ComboPopup;", methodCache: &MetalComboBoxUI.createPopup_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComboPopupForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.metal.MetalComboBoxUI.createLayoutManager()
+
+    private static var createLayoutManager_MethodID_7: jmethodID?
+
+    override open func createLayoutManager() -> java_awt.LayoutManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &MetalComboBoxUI.createLayoutManager_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.metal.MetalComboBoxUI.unconfigureEditor()
+
+    private static var unconfigureEditor_MethodID_8: jmethodID?
+
+    override open func unconfigureEditor() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "unconfigureEditor", methodSig: "()V", methodCache: &MetalComboBoxUI.unconfigureEditor_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.JButton javax.swing.plaf.metal.MetalComboBoxUI.createArrowButton()
+
+    private static var createArrowButton_MethodID_9: jmethodID?
+
+    override open func createArrowButton() -> JButton! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createArrowButton", methodSig: "()Ljavax/swing/JButton;", methodCache: &MetalComboBoxUI.createArrowButton_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JButton( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.metal.MetalComboBoxUI.paintCurrentValue(java.awt.Graphics,java.awt.Rectangle,boolean)
+
+    /// public void javax.swing.plaf.metal.MetalComboBoxUI.paintCurrentValueBackground(java.awt.Graphics,java.awt.Rectangle,boolean)
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalComboBoxUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.metal.MetalComboBoxUI.getBaseline(javax.swing.JComponent,int,int)
+
     /// public void javax.swing.plaf.metal.MetalComboBoxUI.layoutComboBox(java.awt.Container,javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager)
 
-    private static var layoutComboBox_MethodID_3: jmethodID?
+    private static var layoutComboBox_MethodID_10: jmethodID?
 
     open func layoutComboBox( parent: java_awt.Container?, manager: MetalComboBoxUI_MetalComboBoxLayoutManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: manager != nil ? manager! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutComboBox", methodSig: "(Ljava/awt/Container;Ljavax/swing/plaf/metal/MetalComboBoxUI$MetalComboBoxLayoutManager;)V", methodCache: &MetalComboBoxUI.layoutComboBox_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: manager, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutComboBox", methodSig: "(Ljava/awt/Container;Ljavax/swing/plaf/metal/MetalComboBoxUI$MetalComboBoxLayoutManager;)V", methodCache: &MetalComboBoxUI.layoutComboBox_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func layoutComboBox( _ _parent: java_awt.Container?, _ _manager: MetalComboBoxUI_MetalComboBoxLayoutManager? ) {
@@ -437,13 +530,13 @@ open class MetalComboBoxUI: BasicComboBoxUI {
 
     /// protected void javax.swing.plaf.metal.MetalComboBoxUI.editablePropertyChanged(java.beans.PropertyChangeEvent)
 
-    private static var editablePropertyChanged_MethodID_4: jmethodID?
+    private static var editablePropertyChanged_MethodID_11: jmethodID?
 
     open func editablePropertyChanged( e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "editablePropertyChanged", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &MetalComboBoxUI.editablePropertyChanged_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "editablePropertyChanged", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &MetalComboBoxUI.editablePropertyChanged_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func editablePropertyChanged( _ _e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
@@ -452,109 +545,16 @@ open class MetalComboBoxUI: BasicComboBoxUI {
 
     /// protected void javax.swing.plaf.metal.MetalComboBoxUI.removeListeners()
 
-    private static var removeListeners_MethodID_5: jmethodID?
+    private static var removeListeners_MethodID_12: jmethodID?
 
     open func removeListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListeners", methodSig: "()V", methodCache: &MetalComboBoxUI.removeListeners_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.ComboBoxEditor javax.swing.plaf.metal.MetalComboBoxUI.createEditor()
-
-    private static var createEditor_MethodID_6: jmethodID?
-
-    override open func createEditor() -> ComboBoxEditor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/ComboBoxEditor;", methodCache: &MetalComboBoxUI.createEditor_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboBoxEditorForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListeners", methodSig: "()V", methodCache: &MetalComboBoxUI.removeListeners_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
     /// static javax.swing.JList javax.swing.plaf.metal.MetalComboBoxUI.access$900(javax.swing.plaf.metal.MetalComboBoxUI)
-
-    /// public void javax.swing.plaf.metal.MetalComboBoxUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.metal.MetalComboBoxUI.configureEditor()
-
-    private static var configureEditor_MethodID_7: jmethodID?
-
-    override open func configureEditor() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureEditor", methodSig: "()V", methodCache: &MetalComboBoxUI.configureEditor_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalComboBoxUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_8: jmethodID?
-
-    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalComboBoxUI.createPropertyChangeListener_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.plaf.basic.ComboPopup javax.swing.plaf.metal.MetalComboBoxUI.createPopup()
-
-    private static var createPopup_MethodID_9: jmethodID?
-
-    override open func createPopup() -> ComboPopup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPopup", methodSig: "()Ljavax/swing/plaf/basic/ComboPopup;", methodCache: &MetalComboBoxUI.createPopup_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboPopupForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.metal.MetalComboBoxUI.createLayoutManager()
-
-    private static var createLayoutManager_MethodID_10: jmethodID?
-
-    override open func createLayoutManager() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &MetalComboBoxUI.createLayoutManager_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.metal.MetalComboBoxUI.unconfigureEditor()
-
-    private static var unconfigureEditor_MethodID_11: jmethodID?
-
-    override open func unconfigureEditor() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "unconfigureEditor", methodSig: "()V", methodCache: &MetalComboBoxUI.unconfigureEditor_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.JButton javax.swing.plaf.metal.MetalComboBoxUI.createArrowButton()
-
-    private static var createArrowButton_MethodID_12: jmethodID?
-
-    override open func createArrowButton() -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createArrowButton", methodSig: "()Ljavax/swing/JButton;", methodCache: &MetalComboBoxUI.createArrowButton_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JButton( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.metal.MetalComboBoxUI.paintCurrentValue(java.awt.Graphics,java.awt.Rectangle,boolean)
-
-    /// public void javax.swing.plaf.metal.MetalComboBoxUI.paintCurrentValueBackground(java.awt.Graphics,java.awt.Rectangle,boolean)
 
 }
 

@@ -106,7 +106,7 @@ open class GapContent: /* javax.swing.text.GapVector */ UnclassedObject, Abstrac
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt != nil ? txt! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "getChars", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &GapContent.getChars_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -121,16 +121,160 @@ open class GapContent: /* javax.swing.text.GapVector */ UnclassedObject, Abstrac
 
     /// private void javax.swing.text.GapContent.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
 
+    /// protected java.lang.Object javax.swing.text.GapContent.allocateArray(int)
+
+    private static var allocateArray_MethodID_6: jmethodID?
+
+    open func allocateArray( len: Int ) -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: len, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "allocateArray", methodSig: "(I)Ljava/lang/Object;", methodCache: &GapContent.allocateArray_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func allocateArray( _ _len: Int ) -> java_swift.JavaObject! {
+        return allocateArray( len: _len )
+    }
+
+    /// protected int javax.swing.text.GapContent.getArrayLength()
+
+    private static var getArrayLength_MethodID_7: jmethodID?
+
+    open func getArrayLength() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getArrayLength", methodSig: "()I", methodCache: &GapContent.getArrayLength_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected void javax.swing.text.GapContent.shiftEnd(int)
+
+    private static var shiftEnd_MethodID_8: jmethodID?
+
+    open func shiftEnd( newSize: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newSize, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftEnd", methodSig: "(I)V", methodCache: &GapContent.shiftEnd_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func shiftEnd( _ _newSize: Int ) {
+        shiftEnd( newSize: _newSize )
+    }
+
+    /// int javax.swing.text.GapContent.getNewArraySize(int)
+
+    /// protected void javax.swing.text.GapContent.shiftGap(int)
+
+    private static var shiftGap_MethodID_9: jmethodID?
+
+    open func shiftGap( newGapStart: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newGapStart, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftGap", methodSig: "(I)V", methodCache: &GapContent.shiftGap_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func shiftGap( _ _newGapStart: Int ) {
+        shiftGap( newGapStart: _newGapStart )
+    }
+
+    /// protected void javax.swing.text.GapContent.shiftGapStartDown(int)
+
+    private static var shiftGapStartDown_MethodID_10: jmethodID?
+
+    open func shiftGapStartDown( newGapStart: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newGapStart, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftGapStartDown", methodSig: "(I)V", methodCache: &GapContent.shiftGapStartDown_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func shiftGapStartDown( _ _newGapStart: Int ) {
+        shiftGapStartDown( newGapStart: _newGapStart )
+    }
+
+    /// protected void javax.swing.text.GapContent.shiftGapEndUp(int)
+
+    private static var shiftGapEndUp_MethodID_11: jmethodID?
+
+    open func shiftGapEndUp( newGapEnd: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newGapEnd, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftGapEndUp", methodSig: "(I)V", methodCache: &GapContent.shiftGapEndUp_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func shiftGapEndUp( _ _newGapEnd: Int ) {
+        shiftGapEndUp( newGapEnd: _newGapEnd )
+    }
+
+    /// protected void javax.swing.text.GapContent.resetMarksAtZero()
+
+    private static var resetMarksAtZero_MethodID_12: jmethodID?
+
+    open func resetMarksAtZero() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetMarksAtZero", methodSig: "()V", methodCache: &GapContent.resetMarksAtZero_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
+    /// final int javax.swing.text.GapContent.findMarkAdjustIndex(int)
+
+    /// final int javax.swing.text.GapContent.findSortIndex(javax.swing.text.GapContent$MarkData)
+
+    /// final void javax.swing.text.GapContent.removeUnusedMarks()
+
+    /// protected java.util.Vector javax.swing.text.GapContent.getPositionsInRange(java.util.Vector,int,int)
+
+    private static var getPositionsInRange_MethodID_13: jmethodID?
+
+    open func getPositionsInRange( v: java_util.Vector?, offset: Int, length: Int ) -> java_util.Vector! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[2] = JNIType.toJava( value: length, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPositionsInRange", methodSig: "(Ljava/util/Vector;II)Ljava/util/Vector;", methodCache: &GapContent.getPositionsInRange_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
+    }
+
+    open func getPositionsInRange( _ _v: java_util.Vector?, _ _offset: Int, _ _length: Int ) -> java_util.Vector! {
+        return getPositionsInRange( v: _v, offset: _offset, length: _length )
+    }
+
+    /// protected void javax.swing.text.GapContent.updateUndoPositions(java.util.Vector,int,int)
+
+    private static var updateUndoPositions_MethodID_14: jmethodID?
+
+    open func updateUndoPositions( positions: java_util.Vector?, offset: Int, length: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: positions, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[2] = JNIType.toJava( value: length, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateUndoPositions", methodSig: "(Ljava/util/Vector;II)V", methodCache: &GapContent.updateUndoPositions_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func updateUndoPositions( _ _positions: java_util.Vector?, _ _offset: Int, _ _length: Int ) {
+        updateUndoPositions( positions: _positions, offset: _offset, length: _length )
+    }
+
     /// public javax.swing.undo.UndoableEdit javax.swing.text.GapContent.insertString(int,java.lang.String) throws javax.swing.text.BadLocationException
 
-    private static var insertString_MethodID_6: jmethodID?
+    private static var insertString_MethodID_15: jmethodID?
 
     open func insertString( _where: Int, str: String? ) throws /* javax.swing.text.BadLocationException */ -> UndoableEdit! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;)Ljavax/swing/undo/UndoableEdit;", methodCache: &GapContent.insertString_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;)Ljavax/swing/undo/UndoableEdit;", methodCache: &GapContent.insertString_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -144,13 +288,13 @@ open class GapContent: /* javax.swing.text.GapVector */ UnclassedObject, Abstrac
 
     /// public javax.swing.text.Position javax.swing.text.GapContent.createPosition(int) throws javax.swing.text.BadLocationException
 
-    private static var createPosition_MethodID_7: jmethodID?
+    private static var createPosition_MethodID_16: jmethodID?
 
     open func createPosition( offset: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &GapContent.createPosition_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &GapContent.createPosition_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -164,14 +308,14 @@ open class GapContent: /* javax.swing.text.GapVector */ UnclassedObject, Abstrac
 
     /// public java.lang.String javax.swing.text.GapContent.getString(int,int) throws javax.swing.text.BadLocationException
 
-    private static var getString_MethodID_8: jmethodID?
+    private static var getString_MethodID_17: jmethodID?
 
     open func getString( _where: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(II)Ljava/lang/String;", methodCache: &GapContent.getString_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(II)Ljava/lang/String;", methodCache: &GapContent.getString_MethodID_17, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -180,150 +324,6 @@ open class GapContent: /* javax.swing.text.GapVector */ UnclassedObject, Abstrac
 
     open func getString( _ __where: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         return try getString( _where: __where, len: _len )
-    }
-
-    /// protected java.lang.Object javax.swing.text.GapContent.allocateArray(int)
-
-    private static var allocateArray_MethodID_9: jmethodID?
-
-    open func allocateArray( len: Int ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "allocateArray", methodSig: "(I)Ljava/lang/Object;", methodCache: &GapContent.allocateArray_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func allocateArray( _ _len: Int ) -> java_swift.JavaObject! {
-        return allocateArray( len: _len )
-    }
-
-    /// protected int javax.swing.text.GapContent.getArrayLength()
-
-    private static var getArrayLength_MethodID_10: jmethodID?
-
-    open func getArrayLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getArrayLength", methodSig: "()I", methodCache: &GapContent.getArrayLength_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.GapContent.shiftEnd(int)
-
-    private static var shiftEnd_MethodID_11: jmethodID?
-
-    open func shiftEnd( newSize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newSize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftEnd", methodSig: "(I)V", methodCache: &GapContent.shiftEnd_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func shiftEnd( _ _newSize: Int ) {
-        shiftEnd( newSize: _newSize )
-    }
-
-    /// int javax.swing.text.GapContent.getNewArraySize(int)
-
-    /// protected void javax.swing.text.GapContent.shiftGap(int)
-
-    private static var shiftGap_MethodID_12: jmethodID?
-
-    open func shiftGap( newGapStart: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newGapStart, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftGap", methodSig: "(I)V", methodCache: &GapContent.shiftGap_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func shiftGap( _ _newGapStart: Int ) {
-        shiftGap( newGapStart: _newGapStart )
-    }
-
-    /// protected void javax.swing.text.GapContent.shiftGapStartDown(int)
-
-    private static var shiftGapStartDown_MethodID_13: jmethodID?
-
-    open func shiftGapStartDown( newGapStart: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newGapStart, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftGapStartDown", methodSig: "(I)V", methodCache: &GapContent.shiftGapStartDown_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func shiftGapStartDown( _ _newGapStart: Int ) {
-        shiftGapStartDown( newGapStart: _newGapStart )
-    }
-
-    /// protected void javax.swing.text.GapContent.shiftGapEndUp(int)
-
-    private static var shiftGapEndUp_MethodID_14: jmethodID?
-
-    open func shiftGapEndUp( newGapEnd: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newGapEnd, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "shiftGapEndUp", methodSig: "(I)V", methodCache: &GapContent.shiftGapEndUp_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func shiftGapEndUp( _ _newGapEnd: Int ) {
-        shiftGapEndUp( newGapEnd: _newGapEnd )
-    }
-
-    /// protected void javax.swing.text.GapContent.resetMarksAtZero()
-
-    private static var resetMarksAtZero_MethodID_15: jmethodID?
-
-    open func resetMarksAtZero() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetMarksAtZero", methodSig: "()V", methodCache: &GapContent.resetMarksAtZero_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// final int javax.swing.text.GapContent.findMarkAdjustIndex(int)
-
-    /// final int javax.swing.text.GapContent.findSortIndex(javax.swing.text.GapContent$MarkData)
-
-    /// final void javax.swing.text.GapContent.removeUnusedMarks()
-
-    /// protected java.util.Vector javax.swing.text.GapContent.getPositionsInRange(java.util.Vector,int,int)
-
-    private static var getPositionsInRange_MethodID_16: jmethodID?
-
-    open func getPositionsInRange( v: java_util.Vector?, offset: Int, length: Int ) -> java_util.Vector! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPositionsInRange", methodSig: "(Ljava/util/Vector;II)Ljava/util/Vector;", methodCache: &GapContent.getPositionsInRange_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
-    }
-
-    open func getPositionsInRange( _ _v: java_util.Vector?, _ _offset: Int, _ _length: Int ) -> java_util.Vector! {
-        return getPositionsInRange( v: _v, offset: _offset, length: _length )
-    }
-
-    /// protected void javax.swing.text.GapContent.updateUndoPositions(java.util.Vector,int,int)
-
-    private static var updateUndoPositions_MethodID_17: jmethodID?
-
-    open func updateUndoPositions( positions: java_util.Vector?, offset: Int, length: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: positions != nil ? positions! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateUndoPositions", methodSig: "(Ljava/util/Vector;II)V", methodCache: &GapContent.updateUndoPositions_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func updateUndoPositions( _ _positions: java_util.Vector?, _ _offset: Int, _ _length: Int ) {
-        updateUndoPositions( positions: _positions, offset: _offset, length: _length )
     }
 
 }

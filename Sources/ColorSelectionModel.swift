@@ -8,14 +8,6 @@ import java_awt
 
 public protocol ColorSelectionModel: JavaProtocol {
 
-    /// public abstract java.awt.Color javax.swing.colorchooser.ColorSelectionModel.getSelectedColor()
-
-    func getSelectedColor() -> java_awt.Color!
-
-    /// public abstract void javax.swing.colorchooser.ColorSelectionModel.setSelectedColor(java.awt.Color)
-
-    func setSelectedColor( color: java_awt.Color? )
-
     /// public abstract void javax.swing.colorchooser.ColorSelectionModel.addChangeListener(javax.swing.event.ChangeListener)
 
     func addChangeListener( listener: ChangeListener? )
@@ -24,6 +16,14 @@ public protocol ColorSelectionModel: JavaProtocol {
 
     func removeChangeListener( listener: ChangeListener? )
 
+    /// public abstract java.awt.Color javax.swing.colorchooser.ColorSelectionModel.getSelectedColor()
+
+    func getSelectedColor() -> java_awt.Color!
+
+    /// public abstract void javax.swing.colorchooser.ColorSelectionModel.setSelectedColor(java.awt.Color)
+
+    func setSelectedColor( color: java_awt.Color? )
+
 }
 
 
@@ -31,43 +31,15 @@ open class ColorSelectionModelForward: JNIObjectForward, ColorSelectionModel {
 
     private static var ColorSelectionModelJNIClass: jclass?
 
-    /// public abstract java.awt.Color javax.swing.colorchooser.ColorSelectionModel.getSelectedColor()
-
-    private static var getSelectedColor_MethodID_5: jmethodID?
-
-    open func getSelectedColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedColor", methodSig: "()Ljava/awt/Color;", methodCache: &ColorSelectionModelForward.getSelectedColor_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract void javax.swing.colorchooser.ColorSelectionModel.setSelectedColor(java.awt.Color)
-
-    private static var setSelectedColor_MethodID_6: jmethodID?
-
-    open func setSelectedColor( color: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &ColorSelectionModelForward.setSelectedColor_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedColor( _ _color: java_awt.Color? ) {
-        setSelectedColor( color: _color )
-    }
-
     /// public abstract void javax.swing.colorchooser.ColorSelectionModel.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_7: jmethodID?
+    private static var addChangeListener_MethodID_5: jmethodID?
 
     open func addChangeListener( listener: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ColorSelectionModelForward.addChangeListener_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ColorSelectionModelForward.addChangeListener_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _listener: ChangeListener? ) {
@@ -76,17 +48,45 @@ open class ColorSelectionModelForward: JNIObjectForward, ColorSelectionModel {
 
     /// public abstract void javax.swing.colorchooser.ColorSelectionModel.removeChangeListener(javax.swing.event.ChangeListener)
 
-    private static var removeChangeListener_MethodID_8: jmethodID?
+    private static var removeChangeListener_MethodID_6: jmethodID?
 
     open func removeChangeListener( listener: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ColorSelectionModelForward.removeChangeListener_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &ColorSelectionModelForward.removeChangeListener_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func removeChangeListener( _ _listener: ChangeListener? ) {
         removeChangeListener( listener: _listener )
+    }
+
+    /// public abstract java.awt.Color javax.swing.colorchooser.ColorSelectionModel.getSelectedColor()
+
+    private static var getSelectedColor_MethodID_7: jmethodID?
+
+    open func getSelectedColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedColor", methodSig: "()Ljava/awt/Color;", methodCache: &ColorSelectionModelForward.getSelectedColor_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract void javax.swing.colorchooser.ColorSelectionModel.setSelectedColor(java.awt.Color)
+
+    private static var setSelectedColor_MethodID_8: jmethodID?
+
+    open func setSelectedColor( color: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &ColorSelectionModelForward.setSelectedColor_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedColor( _ _color: java_awt.Color? ) {
+        setSelectedColor( color: _color )
     }
 
 }

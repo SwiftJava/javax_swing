@@ -29,7 +29,7 @@ open class PlainView: View, TabExpander {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "metrics", fieldType: "Ljava/awt/FontMetrics;", fieldCache: &PlainView.metrics_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -133,146 +133,37 @@ open class PlainView: View, TabExpander {
 
     /// public void javax.swing.text.PlainView.setSize(float,float)
 
-    /// public float javax.swing.text.PlainView.nextTabStop(float,int)
-
-    private static var nextTabStop_MethodID_2: jmethodID?
-
-    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &PlainView.nextTabStop_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
-        return nextTabStop( x: _x, tabOffset: _tabOffset )
-    }
-
     /// private int javax.swing.text.PlainView.getLineWidth(javax.swing.text.Element)
-
-    /// public void javax.swing.text.PlainView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var insertUpdate_MethodID_3: jmethodID?
-
-    open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.insertUpdate_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        insertUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// public void javax.swing.text.PlainView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var removeUpdate_MethodID_4: jmethodID?
-
-    open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.removeUpdate_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        removeUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// public void javax.swing.text.PlainView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var changedUpdate_MethodID_5: jmethodID?
-
-    open func changedUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.changedUpdate_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func changedUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        changedUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// public float javax.swing.text.PlainView.getPreferredSpan(int)
-
-    /// public int javax.swing.text.PlainView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    private static var viewToModel_MethodID_6: jmethodID?
-
-    open func viewToModel( fx: Float, fy: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fx, locals: &__locals )
-        __args[1] = JNIType.toJava( value: fy, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &PlainView.viewToModel_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func viewToModel( _ _fx: Float, _ _fy: Float, _ _a: java_awt.Shape?, _ _bias: [Position_Bias]? ) -> Int {
-        return viewToModel( fx: _fx, fy: _fy, a: _a, bias: _bias )
-    }
-
-    /// public java.awt.Shape javax.swing.text.PlainView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
     /// public void javax.swing.text.PlainView.paint(java.awt.Graphics,java.awt.Shape)
 
-    private static var paint_MethodID_7: jmethodID?
+    private static var paint_MethodID_2: jmethodID?
 
     open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &PlainView.paint_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &PlainView.paint_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
         paint( g: _g, a: _a )
     }
 
-    /// protected void javax.swing.text.PlainView.drawLine(int,java.awt.Graphics,int,int)
-
-    private static var drawLine_MethodID_8: jmethodID?
-
-    open func drawLine( lineIndex: Int, g: java_awt.Graphics?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: lineIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(ILjava/awt/Graphics;II)V", methodCache: &PlainView.drawLine_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func drawLine( _ _lineIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
-        drawLine( lineIndex: _lineIndex, g: _g, x: _x, y: _y )
-    }
-
     /// protected int javax.swing.text.PlainView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
-    private static var drawUnselectedText_MethodID_9: jmethodID?
+    private static var drawUnselectedText_MethodID_3: jmethodID?
 
     open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: p0, locals: &__locals )
         __args[4] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PlainView.drawUnselectedText_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PlainView.drawUnselectedText_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -285,17 +176,17 @@ open class PlainView: View, TabExpander {
 
     /// protected int javax.swing.text.PlainView.drawSelectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
-    private static var drawSelectedText_MethodID_10: jmethodID?
+    private static var drawSelectedText_MethodID_4: jmethodID?
 
     open func drawSelectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: p0, locals: &__locals )
         __args[4] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawSelectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PlainView.drawSelectedText_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawSelectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PlainView.drawSelectedText_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -310,12 +201,12 @@ open class PlainView: View, TabExpander {
 
     /// protected int javax.swing.text.PlainView.getTabSize()
 
-    private static var getTabSize_MethodID_11: jmethodID?
+    private static var getTabSize_MethodID_5: jmethodID?
 
     open func getTabSize() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &PlainView.getTabSize_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &PlainView.getTabSize_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -324,12 +215,12 @@ open class PlainView: View, TabExpander {
 
     /// protected final javax.swing.text.Segment javax.swing.text.PlainView.getLineBuffer()
 
-    private static var getLineBuffer_MethodID_12: jmethodID?
+    private static var getLineBuffer_MethodID_6: jmethodID?
 
     open func getLineBuffer() -> Segment! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineBuffer", methodSig: "()Ljavax/swing/text/Segment;", methodCache: &PlainView.getLineBuffer_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineBuffer", methodSig: "()Ljavax/swing/text/Segment;", methodCache: &PlainView.getLineBuffer_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Segment( javaObject: __return ) : nil
     }
@@ -337,18 +228,18 @@ open class PlainView: View, TabExpander {
 
     /// protected void javax.swing.text.PlainView.updateMetrics()
 
-    private static var updateMetrics_MethodID_13: jmethodID?
+    private static var updateMetrics_MethodID_7: jmethodID?
 
     open func updateMetrics() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateMetrics", methodSig: "()V", methodCache: &PlainView.updateMetrics_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateMetrics", methodSig: "()V", methodCache: &PlainView.updateMetrics_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.text.PlainView.updateDamage(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var updateDamage_MethodID_14: jmethodID?
+    private static var updateDamage_MethodID_8: jmethodID?
 
     open func updateDamage( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -356,7 +247,7 @@ open class PlainView: View, TabExpander {
         __args[0] = JNIType.toJava( value: changes, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateDamage", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.updateDamage_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateDamage", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.updateDamage_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func updateDamage( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
@@ -365,7 +256,7 @@ open class PlainView: View, TabExpander {
 
     /// protected void javax.swing.text.PlainView.damageLineRange(int,int,java.awt.Shape,java.awt.Component)
 
-    private static var damageLineRange_MethodID_15: jmethodID?
+    private static var damageLineRange_MethodID_9: jmethodID?
 
     open func damageLineRange( line0: Int, line1: Int, a: java_awt.Shape?, host: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -373,8 +264,8 @@ open class PlainView: View, TabExpander {
         __args[0] = JNIType.toJava( value: line0, locals: &__locals )
         __args[1] = JNIType.toJava( value: line1, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: host != nil ? host! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageLineRange", methodSig: "(IILjava/awt/Shape;Ljava/awt/Component;)V", methodCache: &PlainView.damageLineRange_MethodID_15, args: &__args, locals: &__locals )
+        __args[3] = JNIType.toJava( value: host, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "damageLineRange", methodSig: "(IILjava/awt/Shape;Ljava/awt/Component;)V", methodCache: &PlainView.damageLineRange_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func damageLineRange( _ _line0: Int, _ _line1: Int, _ _a: java_awt.Shape?, _ _host: java_awt.Component? ) {
@@ -383,14 +274,14 @@ open class PlainView: View, TabExpander {
 
     /// protected java.awt.Rectangle javax.swing.text.PlainView.lineToRect(java.awt.Shape,int)
 
-    private static var lineToRect_MethodID_16: jmethodID?
+    private static var lineToRect_MethodID_10: jmethodID?
 
     open func lineToRect( a: java_awt.Shape?, line: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: line, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lineToRect", methodSig: "(Ljava/awt/Shape;I)Ljava/awt/Rectangle;", methodCache: &PlainView.lineToRect_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "lineToRect", methodSig: "(Ljava/awt/Shape;I)Ljava/awt/Rectangle;", methodCache: &PlainView.lineToRect_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -400,6 +291,115 @@ open class PlainView: View, TabExpander {
     }
 
     /// private void javax.swing.text.PlainView.calculateLongestLine()
+
+    /// public int javax.swing.text.PlainView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    private static var viewToModel_MethodID_11: jmethodID?
+
+    open func viewToModel( fx: Float, fy: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: fx, locals: &__locals )
+        __args[1] = JNIType.toJava( value: fy, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bias, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &PlainView.viewToModel_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func viewToModel( _ _fx: Float, _ _fy: Float, _ _a: java_awt.Shape?, _ _bias: [Position_Bias]? ) -> Int {
+        return viewToModel( fx: _fx, fy: _fy, a: _a, bias: _bias )
+    }
+
+    /// public java.awt.Shape javax.swing.text.PlainView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
+
+    /// public float javax.swing.text.PlainView.nextTabStop(float,int)
+
+    private static var nextTabStop_MethodID_12: jmethodID?
+
+    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &PlainView.nextTabStop_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Float(), from: __return )
+    }
+
+    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
+        return nextTabStop( x: _x, tabOffset: _tabOffset )
+    }
+
+    /// protected void javax.swing.text.PlainView.drawLine(int,java.awt.Graphics,int,int)
+
+    private static var drawLine_MethodID_13: jmethodID?
+
+    open func drawLine( lineIndex: Int, g: java_awt.Graphics?, x: Int, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: lineIndex, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(ILjava/awt/Graphics;II)V", methodCache: &PlainView.drawLine_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func drawLine( _ _lineIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
+        drawLine( lineIndex: _lineIndex, g: _g, x: _x, y: _y )
+    }
+
+    /// public void javax.swing.text.PlainView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var insertUpdate_MethodID_14: jmethodID?
+
+    open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.insertUpdate_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        insertUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// public void javax.swing.text.PlainView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var removeUpdate_MethodID_15: jmethodID?
+
+    open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.removeUpdate_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        removeUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// public void javax.swing.text.PlainView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var changedUpdate_MethodID_16: jmethodID?
+
+    open func changedUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &PlainView.changedUpdate_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    override open func changedUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        changedUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// public float javax.swing.text.PlainView.getPreferredSpan(int)
 
 }
 

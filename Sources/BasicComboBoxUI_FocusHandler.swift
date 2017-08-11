@@ -26,7 +26,7 @@ open class BasicComboBoxUI_FocusHandler: java_swift.JavaObject, java_awt.FocusLi
     public convenience init( this_0: BasicComboBoxUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboBoxUI$FocusHandler", classCache: &BasicComboBoxUI_FocusHandler.BasicComboBoxUI_FocusHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicComboBoxUI;)V", methodCache: &BasicComboBoxUI_FocusHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -43,7 +43,7 @@ open class BasicComboBoxUI_FocusHandler: java_swift.JavaObject, java_awt.FocusLi
     open func focusGained( e: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicComboBoxUI_FocusHandler.focusGained_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -58,7 +58,7 @@ open class BasicComboBoxUI_FocusHandler: java_swift.JavaObject, java_awt.FocusLi
     open func focusLost( e: java_awt.FocusEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicComboBoxUI_FocusHandler.focusLost_MethodID_3, args: &__args, locals: &__locals )
     }
 

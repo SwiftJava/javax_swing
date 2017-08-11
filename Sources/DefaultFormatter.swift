@@ -105,7 +105,7 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
     open func valueToString( arg0: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &DefaultFormatter.valueToString_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
@@ -139,7 +139,7 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
     open func setValueClass( arg0: java_swift.JavaClass? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueClass", methodSig: "(Ljava/lang/Class;)V", methodCache: &DefaultFormatter.setValueClass_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -147,15 +147,28 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
         setValueClass( arg0: _arg0 )
     }
 
+    /// protected javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.getNavigationFilter()
+
+    private static var getNavigationFilter_MethodID_7: jmethodID?
+
+    override open func getNavigationFilter() -> NavigationFilter! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &DefaultFormatter.getNavigationFilter_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+    }
+
+
     /// public void javax.swing.text.DefaultFormatter.install(javax.swing.JFormattedTextField)
 
-    private static var install_MethodID_7: jmethodID?
+    private static var install_MethodID_8: jmethodID?
 
     open func install( arg0: JFormattedTextField? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &DefaultFormatter.install_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &DefaultFormatter.install_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func install( _ _arg0: JFormattedTextField? ) {
@@ -167,19 +180,6 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
     /// void javax.swing.text.DefaultFormatter.moveDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
 
     /// int javax.swing.text.DefaultFormatter.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    /// protected javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.getNavigationFilter()
-
-    private static var getNavigationFilter_MethodID_8: jmethodID?
-
-    override open func getNavigationFilter() -> NavigationFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &DefaultFormatter.getNavigationFilter_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
-    }
-
 
     /// boolean javax.swing.text.DefaultFormatter.isNavigatable(int)
 

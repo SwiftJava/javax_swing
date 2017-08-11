@@ -35,7 +35,7 @@ open class JFormattedTextField_AbstractFormatterFactory: java_swift.JavaObject {
     open func getFormatter( tf: JFormattedTextField? ) -> JFormattedTextField_AbstractFormatter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tf != nil ? tf! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tf, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormatter", methodSig: "(Ljavax/swing/JFormattedTextField;)Ljavax/swing/JFormattedTextField$AbstractFormatter;", methodCache: &JFormattedTextField_AbstractFormatterFactory.getFormatter_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JFormattedTextField_AbstractFormatter( javaObject: __return ) : nil

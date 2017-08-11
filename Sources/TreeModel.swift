@@ -11,10 +11,6 @@ public protocol TreeModel: JavaProtocol {
 
     func getRoot() -> java_swift.JavaObject!
 
-    /// public abstract void javax.swing.tree.TreeModel.valueForPathChanged(javax.swing.tree.TreePath,java.lang.Object)
-
-    func valueForPathChanged( path: TreePath?, newValue: java_swift.JavaObject? )
-
     /// public abstract void javax.swing.tree.TreeModel.removeTreeModelListener(javax.swing.event.TreeModelListener)
 
     func removeTreeModelListener( l: TreeModelListener? )
@@ -39,6 +35,10 @@ public protocol TreeModel: JavaProtocol {
 
     func getChild( parent: java_swift.JavaObject?, index: Int ) -> java_swift.JavaObject!
 
+    /// public abstract void javax.swing.tree.TreeModel.valueForPathChanged(javax.swing.tree.TreePath,java.lang.Object)
+
+    func valueForPathChanged( path: TreePath?, newValue: java_swift.JavaObject? )
+
 }
 
 
@@ -59,31 +59,15 @@ open class TreeModelForward: JNIObjectForward, TreeModel {
     }
 
 
-    /// public abstract void javax.swing.tree.TreeModel.valueForPathChanged(javax.swing.tree.TreePath,java.lang.Object)
-
-    private static var valueForPathChanged_MethodID_10: jmethodID?
-
-    open func valueForPathChanged( path: TreePath?, newValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueForPathChanged", methodSig: "(Ljavax/swing/tree/TreePath;Ljava/lang/Object;)V", methodCache: &TreeModelForward.valueForPathChanged_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func valueForPathChanged( _ _path: TreePath?, _ _newValue: java_swift.JavaObject? ) {
-        valueForPathChanged( path: _path, newValue: _newValue )
-    }
-
     /// public abstract void javax.swing.tree.TreeModel.removeTreeModelListener(javax.swing.event.TreeModelListener)
 
-    private static var removeTreeModelListener_MethodID_11: jmethodID?
+    private static var removeTreeModelListener_MethodID_10: jmethodID?
 
     open func removeTreeModelListener( l: TreeModelListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTreeModelListener", methodSig: "(Ljavax/swing/event/TreeModelListener;)V", methodCache: &TreeModelForward.removeTreeModelListener_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeTreeModelListener", methodSig: "(Ljavax/swing/event/TreeModelListener;)V", methodCache: &TreeModelForward.removeTreeModelListener_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func removeTreeModelListener( _ _l: TreeModelListener? ) {
@@ -92,13 +76,13 @@ open class TreeModelForward: JNIObjectForward, TreeModel {
 
     /// public abstract void javax.swing.tree.TreeModel.addTreeModelListener(javax.swing.event.TreeModelListener)
 
-    private static var addTreeModelListener_MethodID_12: jmethodID?
+    private static var addTreeModelListener_MethodID_11: jmethodID?
 
     open func addTreeModelListener( l: TreeModelListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTreeModelListener", methodSig: "(Ljavax/swing/event/TreeModelListener;)V", methodCache: &TreeModelForward.addTreeModelListener_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTreeModelListener", methodSig: "(Ljavax/swing/event/TreeModelListener;)V", methodCache: &TreeModelForward.addTreeModelListener_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func addTreeModelListener( _ _l: TreeModelListener? ) {
@@ -107,13 +91,13 @@ open class TreeModelForward: JNIObjectForward, TreeModel {
 
     /// public abstract boolean javax.swing.tree.TreeModel.isLeaf(java.lang.Object)
 
-    private static var isLeaf_MethodID_13: jmethodID?
+    private static var isLeaf_MethodID_12: jmethodID?
 
     open func isLeaf( node: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: node != nil ? node! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TreeModelForward.isLeaf_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: node, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TreeModelForward.isLeaf_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -123,13 +107,13 @@ open class TreeModelForward: JNIObjectForward, TreeModel {
 
     /// public abstract int javax.swing.tree.TreeModel.getChildCount(java.lang.Object)
 
-    private static var getChildCount_MethodID_14: jmethodID?
+    private static var getChildCount_MethodID_13: jmethodID?
 
     open func getChildCount( parent: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getChildCount", methodSig: "(Ljava/lang/Object;)I", methodCache: &TreeModelForward.getChildCount_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getChildCount", methodSig: "(Ljava/lang/Object;)I", methodCache: &TreeModelForward.getChildCount_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -139,14 +123,14 @@ open class TreeModelForward: JNIObjectForward, TreeModel {
 
     /// public abstract int javax.swing.tree.TreeModel.getIndexOfChild(java.lang.Object,java.lang.Object)
 
-    private static var getIndexOfChild_MethodID_15: jmethodID?
+    private static var getIndexOfChild_MethodID_14: jmethodID?
 
     open func getIndexOfChild( parent: java_swift.JavaObject?, child: java_swift.JavaObject? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: child != nil ? child! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOfChild", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)I", methodCache: &TreeModelForward.getIndexOfChild_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: child, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOfChild", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)I", methodCache: &TreeModelForward.getIndexOfChild_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -156,20 +140,36 @@ open class TreeModelForward: JNIObjectForward, TreeModel {
 
     /// public abstract java.lang.Object javax.swing.tree.TreeModel.getChild(java.lang.Object,int)
 
-    private static var getChild_MethodID_16: jmethodID?
+    private static var getChild_MethodID_15: jmethodID?
 
     open func getChild( parent: java_swift.JavaObject?, index: Int ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChild", methodSig: "(Ljava/lang/Object;I)Ljava/lang/Object;", methodCache: &TreeModelForward.getChild_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChild", methodSig: "(Ljava/lang/Object;I)Ljava/lang/Object;", methodCache: &TreeModelForward.getChild_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
     open func getChild( _ _parent: java_swift.JavaObject?, _ _index: Int ) -> java_swift.JavaObject! {
         return getChild( parent: _parent, index: _index )
+    }
+
+    /// public abstract void javax.swing.tree.TreeModel.valueForPathChanged(javax.swing.tree.TreePath,java.lang.Object)
+
+    private static var valueForPathChanged_MethodID_16: jmethodID?
+
+    open func valueForPathChanged( path: TreePath?, newValue: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueForPathChanged", methodSig: "(Ljavax/swing/tree/TreePath;Ljava/lang/Object;)V", methodCache: &TreeModelForward.valueForPathChanged_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func valueForPathChanged( _ _path: TreePath?, _ _newValue: java_swift.JavaObject? ) {
+        valueForPathChanged( path: _path, newValue: _newValue )
     }
 
 }

@@ -40,7 +40,7 @@ open class FixedHeightLayoutCache: AbstractLayoutCache {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "nodeDimensions", fieldType: "Ljavax/swing/tree/AbstractLayoutCache$NodeDimensions;", fieldCache: &FixedHeightLayoutCache.nodeDimensions_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -139,17 +139,17 @@ open class FixedHeightLayoutCache: AbstractLayoutCache {
 
     /// private void javax.swing.tree.FixedHeightLayoutCache.removeMapping(javax.swing.tree.FixedHeightLayoutCache$FHTreeStateNode)
 
-    /// public void javax.swing.tree.FixedHeightLayoutCache.invalidateSizes()
+    /// private void javax.swing.tree.FixedHeightLayoutCache.addMapping(javax.swing.tree.FixedHeightLayoutCache$FHTreeStateNode)
 
-    /// public javax.swing.tree.TreePath javax.swing.tree.FixedHeightLayoutCache.getPathClosestTo(int,int)
+    /// public void javax.swing.tree.FixedHeightLayoutCache.setRootVisible(boolean)
 
-    /// public java.util.Enumeration javax.swing.tree.FixedHeightLayoutCache.getVisiblePathsFrom(javax.swing.tree.TreePath)
+    /// public boolean javax.swing.tree.FixedHeightLayoutCache.isExpanded(javax.swing.tree.TreePath)
 
-    /// public boolean javax.swing.tree.FixedHeightLayoutCache.getExpandedState(javax.swing.tree.TreePath)
+    /// public javax.swing.tree.TreePath javax.swing.tree.FixedHeightLayoutCache.getPathForRow(int)
 
-    /// public void javax.swing.tree.FixedHeightLayoutCache.invalidatePathBounds(javax.swing.tree.TreePath)
+    /// public int javax.swing.tree.FixedHeightLayoutCache.getRowForPath(javax.swing.tree.TreePath)
 
-    /// public int javax.swing.tree.FixedHeightLayoutCache.getVisibleChildCount(javax.swing.tree.TreePath)
+    /// public void javax.swing.tree.FixedHeightLayoutCache.setExpandedState(javax.swing.tree.TreePath,boolean)
 
     /// private void javax.swing.tree.FixedHeightLayoutCache.visibleNodesChanged()
 
@@ -167,16 +167,6 @@ open class FixedHeightLayoutCache: AbstractLayoutCache {
 
     /// private javax.swing.tree.FixedHeightLayoutCache$FHTreeStateNode javax.swing.tree.FixedHeightLayoutCache.getNodeForPath(javax.swing.tree.TreePath,boolean,boolean)
 
-    /// private java.awt.Rectangle javax.swing.tree.FixedHeightLayoutCache.getBounds(javax.swing.tree.FixedHeightLayoutCache$FHTreeStateNode,int,java.awt.Rectangle)
-
-    /// public java.awt.Rectangle javax.swing.tree.FixedHeightLayoutCache.getBounds(javax.swing.tree.TreePath,java.awt.Rectangle)
-
-    /// public void javax.swing.tree.FixedHeightLayoutCache.setRowHeight(int)
-
-    /// public int javax.swing.tree.FixedHeightLayoutCache.getRowCount()
-
-    /// public void javax.swing.tree.FixedHeightLayoutCache.setModel(javax.swing.tree.TreeModel)
-
     /// public void javax.swing.tree.FixedHeightLayoutCache.treeNodesChanged(javax.swing.event.TreeModelEvent)
 
     /// public void javax.swing.tree.FixedHeightLayoutCache.treeNodesInserted(javax.swing.event.TreeModelEvent)
@@ -185,17 +175,27 @@ open class FixedHeightLayoutCache: AbstractLayoutCache {
 
     /// public void javax.swing.tree.FixedHeightLayoutCache.treeStructureChanged(javax.swing.event.TreeModelEvent)
 
-    /// private void javax.swing.tree.FixedHeightLayoutCache.addMapping(javax.swing.tree.FixedHeightLayoutCache$FHTreeStateNode)
+    /// public java.awt.Rectangle javax.swing.tree.FixedHeightLayoutCache.getBounds(javax.swing.tree.TreePath,java.awt.Rectangle)
 
-    /// public void javax.swing.tree.FixedHeightLayoutCache.setRootVisible(boolean)
+    /// private java.awt.Rectangle javax.swing.tree.FixedHeightLayoutCache.getBounds(javax.swing.tree.FixedHeightLayoutCache$FHTreeStateNode,int,java.awt.Rectangle)
 
-    /// public boolean javax.swing.tree.FixedHeightLayoutCache.isExpanded(javax.swing.tree.TreePath)
+    /// public void javax.swing.tree.FixedHeightLayoutCache.setRowHeight(int)
 
-    /// public javax.swing.tree.TreePath javax.swing.tree.FixedHeightLayoutCache.getPathForRow(int)
+    /// public int javax.swing.tree.FixedHeightLayoutCache.getRowCount()
 
-    /// public int javax.swing.tree.FixedHeightLayoutCache.getRowForPath(javax.swing.tree.TreePath)
+    /// public void javax.swing.tree.FixedHeightLayoutCache.setModel(javax.swing.tree.TreeModel)
 
-    /// public void javax.swing.tree.FixedHeightLayoutCache.setExpandedState(javax.swing.tree.TreePath,boolean)
+    /// public void javax.swing.tree.FixedHeightLayoutCache.invalidateSizes()
+
+    /// public javax.swing.tree.TreePath javax.swing.tree.FixedHeightLayoutCache.getPathClosestTo(int,int)
+
+    /// public java.util.Enumeration javax.swing.tree.FixedHeightLayoutCache.getVisiblePathsFrom(javax.swing.tree.TreePath)
+
+    /// public boolean javax.swing.tree.FixedHeightLayoutCache.getExpandedState(javax.swing.tree.TreePath)
+
+    /// public void javax.swing.tree.FixedHeightLayoutCache.invalidatePathBounds(javax.swing.tree.TreePath)
+
+    /// public int javax.swing.tree.FixedHeightLayoutCache.getVisibleChildCount(javax.swing.tree.TreePath)
 
 }
 

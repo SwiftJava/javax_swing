@@ -55,7 +55,7 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &AbstractAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -344,8 +344,8 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractAction.firePropertyChange_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -369,7 +369,7 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &AbstractAction.putValue_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -398,7 +398,7 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
     open func actionPerformed( e: java_awt.ActionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &AbstractAction.actionPerformed_MethodID_14, args: &__args, locals: &__locals )
     }
 

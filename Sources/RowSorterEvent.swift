@@ -35,7 +35,7 @@ open class RowSorterEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &RowSorterEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -47,7 +47,7 @@ open class RowSorterEvent: java_util.EventObject {
     public convenience init( source: RowSorter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/RowSorterEvent", classCache: &RowSorterEvent.RowSorterEventJNIClass, methodSig: "(Ljavax/swing/RowSorter;)V", methodCache: &RowSorterEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -64,8 +64,8 @@ open class RowSorterEvent: java_util.EventObject {
     public convenience init( source: RowSorter?, type: RowSorterEvent_Type?, previousRowIndexToModel: [Int32]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: previousRowIndexToModel, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/RowSorterEvent", classCache: &RowSorterEvent.RowSorterEventJNIClass, methodSig: "(Ljavax/swing/RowSorter;Ljavax/swing/event/RowSorterEvent$Type;[I)V", methodCache: &RowSorterEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

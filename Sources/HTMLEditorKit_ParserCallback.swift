@@ -76,7 +76,7 @@ open class HTMLEditorKit_ParserCallback: java_swift.JavaObject {
     open func handleStartTag( t: HTML_Tag?, a: MutableAttributeSet?, pos: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleStartTag", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &HTMLEditorKit_ParserCallback.handleStartTag_MethodID_4, args: &__args, locals: &__locals )
@@ -109,7 +109,7 @@ open class HTMLEditorKit_ParserCallback: java_swift.JavaObject {
     open func handleEndTag( t: HTML_Tag?, pos: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: pos, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEndTag", methodSig: "(Ljavax/swing/text/html/HTML$Tag;I)V", methodCache: &HTMLEditorKit_ParserCallback.handleEndTag_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -125,7 +125,7 @@ open class HTMLEditorKit_ParserCallback: java_swift.JavaObject {
     open func handleSimpleTag( t: HTML_Tag?, a: MutableAttributeSet?, pos: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: pos, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleSimpleTag", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/MutableAttributeSet;I)V", methodCache: &HTMLEditorKit_ParserCallback.handleSimpleTag_MethodID_7, args: &__args, locals: &__locals )

@@ -38,7 +38,7 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
     open func menuDragMouseEntered( e: MenuDragMouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseEntered", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseEntered_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -53,7 +53,7 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
     open func menuDragMouseExited( e: MenuDragMouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseExited", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseExited_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -68,7 +68,7 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
     open func menuDragMouseDragged( e: MenuDragMouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseDragged", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseDragged_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -83,7 +83,7 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
     open func menuDragMouseReleased( e: MenuDragMouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseReleased", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseReleased_MethodID_8, args: &__args, locals: &__locals )
     }
 

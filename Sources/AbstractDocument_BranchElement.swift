@@ -41,7 +41,7 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
     public convenience init( this_0: AbstractDocument?, parent: Element?, a: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractDocument$BranchElement", classCache: &AbstractDocument_BranchElement.AbstractDocument_BranchElementJNIClass, methodSig: "(Ljavax/swing/text/AbstractDocument;Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument_BranchElement.new_MethodID_1, args: &__args, locals: &__locals )
@@ -74,22 +74,6 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
         replace( offset: _offset, length: _length, elems: _elems )
     }
 
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementIndex(int)
-
-    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.getElement(int)
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getEndOffset()
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getStartOffset()
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementCount()
-
-    /// public java.util.Enumeration javax.swing.text.AbstractDocument$BranchElement.children()
-
-    /// public boolean javax.swing.text.AbstractDocument$BranchElement.getAllowsChildren()
-
-    /// public boolean javax.swing.text.AbstractDocument$BranchElement.isLeaf()
-
     /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.positionToElement(int)
 
     private static var positionToElement_MethodID_3: jmethodID?
@@ -106,6 +90,22 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
     open func positionToElement( _ _pos: Int ) -> Element! {
         return positionToElement( pos: _pos )
     }
+
+    /// public boolean javax.swing.text.AbstractDocument$BranchElement.isLeaf()
+
+    /// public java.util.Enumeration javax.swing.text.AbstractDocument$BranchElement.children()
+
+    /// public boolean javax.swing.text.AbstractDocument$BranchElement.getAllowsChildren()
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementCount()
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementIndex(int)
+
+    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.getElement(int)
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getEndOffset()
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getStartOffset()
 
 }
 

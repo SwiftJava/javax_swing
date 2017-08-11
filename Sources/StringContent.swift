@@ -96,7 +96,7 @@ open class StringContent: java_swift.JavaObject, AbstractDocument_Content, /* ja
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt != nil ? txt! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "getChars", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &StringContent.getChars_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -111,16 +111,54 @@ open class StringContent: java_swift.JavaObject, AbstractDocument_Content, /* ja
 
     /// void javax.swing.text.StringContent.resize(int)
 
+    /// protected java.util.Vector javax.swing.text.StringContent.getPositionsInRange(java.util.Vector,int,int)
+
+    private static var getPositionsInRange_MethodID_6: jmethodID?
+
+    open func getPositionsInRange( v: java_util.Vector?, offset: Int, length: Int ) -> java_util.Vector! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[2] = JNIType.toJava( value: length, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPositionsInRange", methodSig: "(Ljava/util/Vector;II)Ljava/util/Vector;", methodCache: &StringContent.getPositionsInRange_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
+    }
+
+    open func getPositionsInRange( _ _v: java_util.Vector?, _ _offset: Int, _ _length: Int ) -> java_util.Vector! {
+        return getPositionsInRange( v: _v, offset: _offset, length: _length )
+    }
+
+    /// protected void javax.swing.text.StringContent.updateUndoPositions(java.util.Vector)
+
+    private static var updateUndoPositions_MethodID_7: jmethodID?
+
+    open func updateUndoPositions( positions: java_util.Vector? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: positions, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateUndoPositions", methodSig: "(Ljava/util/Vector;)V", methodCache: &StringContent.updateUndoPositions_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func updateUndoPositions( _ _positions: java_util.Vector? ) {
+        updateUndoPositions( positions: _positions )
+    }
+
+    /// synchronized void javax.swing.text.StringContent.updateMarksForInsert(int,int)
+
+    /// synchronized void javax.swing.text.StringContent.updateMarksForRemove(int,int)
+
     /// public javax.swing.undo.UndoableEdit javax.swing.text.StringContent.insertString(int,java.lang.String) throws javax.swing.text.BadLocationException
 
-    private static var insertString_MethodID_6: jmethodID?
+    private static var insertString_MethodID_8: jmethodID?
 
     open func insertString( _where: Int, str: String? ) throws /* javax.swing.text.BadLocationException */ -> UndoableEdit! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;)Ljavax/swing/undo/UndoableEdit;", methodCache: &StringContent.insertString_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;)Ljavax/swing/undo/UndoableEdit;", methodCache: &StringContent.insertString_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -134,13 +172,13 @@ open class StringContent: java_swift.JavaObject, AbstractDocument_Content, /* ja
 
     /// public javax.swing.text.Position javax.swing.text.StringContent.createPosition(int) throws javax.swing.text.BadLocationException
 
-    private static var createPosition_MethodID_7: jmethodID?
+    private static var createPosition_MethodID_9: jmethodID?
 
     open func createPosition( offset: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &StringContent.createPosition_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &StringContent.createPosition_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -154,14 +192,14 @@ open class StringContent: java_swift.JavaObject, AbstractDocument_Content, /* ja
 
     /// public java.lang.String javax.swing.text.StringContent.getString(int,int) throws javax.swing.text.BadLocationException
 
-    private static var getString_MethodID_8: jmethodID?
+    private static var getString_MethodID_10: jmethodID?
 
     open func getString( _where: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: _where, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(II)Ljava/lang/String;", methodCache: &StringContent.getString_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "(II)Ljava/lang/String;", methodCache: &StringContent.getString_MethodID_10, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -171,44 +209,6 @@ open class StringContent: java_swift.JavaObject, AbstractDocument_Content, /* ja
     open func getString( _ __where: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         return try getString( _where: __where, len: _len )
     }
-
-    /// protected java.util.Vector javax.swing.text.StringContent.getPositionsInRange(java.util.Vector,int,int)
-
-    private static var getPositionsInRange_MethodID_9: jmethodID?
-
-    open func getPositionsInRange( v: java_util.Vector?, offset: Int, length: Int ) -> java_util.Vector! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPositionsInRange", methodSig: "(Ljava/util/Vector;II)Ljava/util/Vector;", methodCache: &StringContent.getPositionsInRange_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
-    }
-
-    open func getPositionsInRange( _ _v: java_util.Vector?, _ _offset: Int, _ _length: Int ) -> java_util.Vector! {
-        return getPositionsInRange( v: _v, offset: _offset, length: _length )
-    }
-
-    /// protected void javax.swing.text.StringContent.updateUndoPositions(java.util.Vector)
-
-    private static var updateUndoPositions_MethodID_10: jmethodID?
-
-    open func updateUndoPositions( positions: java_util.Vector? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: positions != nil ? positions! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateUndoPositions", methodSig: "(Ljava/util/Vector;)V", methodCache: &StringContent.updateUndoPositions_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func updateUndoPositions( _ _positions: java_util.Vector? ) {
-        updateUndoPositions( positions: _positions )
-    }
-
-    /// synchronized void javax.swing.text.StringContent.updateMarksForInsert(int,int)
-
-    /// synchronized void javax.swing.text.StringContent.updateMarksForRemove(int,int)
 
 }
 

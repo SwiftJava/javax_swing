@@ -207,7 +207,7 @@ open class JRadioButtonMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JRadioButtonMenuItem.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -294,7 +294,7 @@ open class JRadioButtonMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JRadioButtonMenuItem.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -311,7 +311,7 @@ open class JRadioButtonMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JRadioButtonMenuItem.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -688,7 +688,7 @@ open class JRadioButtonMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JRadioButtonMenuItem.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -861,11 +861,11 @@ open class JRadioButtonMenuItem: JMenuItem {
     }
 
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JRadioButtonMenuItem.getAccessibleContext()
+    /// boolean javax.swing.JRadioButtonMenuItem.shouldUpdateSelectedStateFromAction()
 
     /// public java.lang.String javax.swing.JRadioButtonMenuItem.getUIClassID()
 
-    /// boolean javax.swing.JRadioButtonMenuItem.shouldUpdateSelectedStateFromAction()
+    /// public javax.accessibility.AccessibleContext javax.swing.JRadioButtonMenuItem.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

@@ -37,7 +37,7 @@ open class JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLink: /* javax.
     public convenience init( this_1: /* javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport */ UnclassedObject?, e: Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_1 != nil ? this_1! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink", classCache: &JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLink.JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLinkJNIClass, methodSig: "(Ljavax/swing/JEditorPane$JEditorPaneAccessibleHypertextSupport;Ljavax/swing/text/Element;)V", methodCache: &JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLink.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -48,21 +48,21 @@ open class JEditorPane_JEditorPaneAccessibleHypertextSupport_HTMLLink: /* javax.
         self.init( this_1: _this_1, e: _e )
     }
 
-    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getEndIndex()
-
     /// public boolean javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.isValid()
-
-    /// public java.lang.Object javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionObject(int)
-
-    /// public java.lang.Object javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionAnchor(int)
-
-    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getStartIndex()
 
     /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionCount()
 
     /// public java.lang.String javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionDescription(int)
 
     /// public boolean javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.doAccessibleAction(int)
+
+    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getEndIndex()
+
+    /// public java.lang.Object javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionObject(int)
+
+    /// public java.lang.Object javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getAccessibleActionAnchor(int)
+
+    /// public int javax.swing.JEditorPane$JEditorPaneAccessibleHypertextSupport$HTMLLink.getStartIndex()
 
 }
 

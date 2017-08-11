@@ -51,7 +51,7 @@ open class BasicTreeUI_TreeToggleAction: AbstractAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &BasicTreeUI_TreeToggleAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -85,7 +85,7 @@ open class BasicTreeUI_TreeToggleAction: AbstractAction {
     public convenience init( this_0: BasicTreeUI?, name: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: name, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$TreeToggleAction", classCache: &BasicTreeUI_TreeToggleAction.BasicTreeUI_TreeToggleActionJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;Ljava/lang/String;)V", methodCache: &BasicTreeUI_TreeToggleAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

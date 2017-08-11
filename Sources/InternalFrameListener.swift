@@ -50,7 +50,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameOpened( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameOpened", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameOpened_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -65,7 +65,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameClosing( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameClosing", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameClosing_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -80,7 +80,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameClosed( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameClosed", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameClosed_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -95,7 +95,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameIconified( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameIconified", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameIconified_MethodID_11, args: &__args, locals: &__locals )
     }
 
@@ -110,7 +110,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameDeiconified( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameDeiconified", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameDeiconified_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -125,7 +125,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameActivated( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameActivated", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameActivated_MethodID_13, args: &__args, locals: &__locals )
     }
 
@@ -140,7 +140,7 @@ open class InternalFrameListenerForward: java_util.EventListenerForward, Interna
     open func internalFrameDeactivated( e: InternalFrameEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "internalFrameDeactivated", methodSig: "(Ljavax/swing/event/InternalFrameEvent;)V", methodCache: &InternalFrameListenerForward.internalFrameDeactivated_MethodID_14, args: &__args, locals: &__locals )
     }
 

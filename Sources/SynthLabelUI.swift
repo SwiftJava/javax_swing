@@ -118,8 +118,6 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
 
     /// public void javax.swing.plaf.synth.SynthLabelUI.update(java.awt.Graphics,javax.swing.JComponent)
 
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthLabelUI.getContext(javax.swing.JComponent,int)
-
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthLabelUI.getContext(javax.swing.JComponent)
 
     private static var getContext_MethodID_2: jmethodID?
@@ -127,7 +125,7 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
     open func getContext( c: JComponent? ) -> SynthContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthLabelUI.getContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
@@ -137,13 +135,7 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
         return getContext( c: _c )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthLabelUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthLabelUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthLabelUI.getMaximumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.synth.SynthLabelUI.getBaseline(javax.swing.JComponent,int,int)
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthLabelUI.getContext(javax.swing.JComponent,int)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthLabelUI.createUI(javax.swing.JComponent)
 
@@ -152,7 +144,7 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLabelUI", classCache: &SynthLabelUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -162,42 +154,16 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
         return createUI( c: _c )
     }
 
-    /// void javax.swing.plaf.synth.SynthLabelUI.updateStyle(javax.swing.JLabel)
-
-    /// public void javax.swing.plaf.synth.SynthLabelUI.propertyChange(java.beans.PropertyChangeEvent)
-
-    /// public void javax.swing.plaf.synth.SynthLabelUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_4: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthLabelUI.paintBorder_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// private int javax.swing.plaf.synth.SynthLabelUI.getComponentState(javax.swing.JComponent)
-
     /// protected void javax.swing.plaf.synth.SynthLabelUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    private static var paint_MethodID_5: jmethodID?
+    private static var paint_MethodID_4: jmethodID?
 
     open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthLabelUI.paint_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthLabelUI.paint_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
@@ -206,6 +172,28 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
 
     /// public void javax.swing.plaf.synth.SynthLabelUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
+    /// private int javax.swing.plaf.synth.SynthLabelUI.getComponentState(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.synth.SynthLabelUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_5: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y, locals: &__locals )
+        __args[4] = JNIType.toJava( value: w, locals: &__locals )
+        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthLabelUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
     /// protected void javax.swing.plaf.synth.SynthLabelUI.installDefaults(javax.swing.JLabel)
 
     private static var installDefaults_MethodID_6: jmethodID?
@@ -213,7 +201,7 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
     override open func installDefaults( c: JLabel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &SynthLabelUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -228,13 +216,25 @@ open class SynthLabelUI: BasicLabelUI, SynthUI {
     override open func uninstallDefaults( c: JLabel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &SynthLabelUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
     }
 
     override open func uninstallDefaults( _ _c: JLabel? ) {
         uninstallDefaults( c: _c )
     }
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthLabelUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthLabelUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthLabelUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.synth.SynthLabelUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public void javax.swing.plaf.synth.SynthLabelUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    /// void javax.swing.plaf.synth.SynthLabelUI.updateStyle(javax.swing.JLabel)
 
 }
 

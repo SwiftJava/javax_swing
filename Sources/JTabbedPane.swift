@@ -112,7 +112,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JTabbedPane.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -155,7 +155,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JTabbedPane.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -172,7 +172,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JTabbedPane.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -549,7 +549,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JTabbedPane.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -835,8 +835,8 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func add( component: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JTabbedPane.add_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -852,8 +852,8 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func add( component: java_awt.Component?, constraints: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &JTabbedPane.add_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -868,7 +868,7 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func add( component: java_awt.Component?, index: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;I)Ljava/awt/Component;", methodCache: &JTabbedPane.add_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -887,7 +887,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &JTabbedPane.add_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -904,7 +904,7 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func add( component: java_awt.Component? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "add", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &JTabbedPane.add_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -936,7 +936,7 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func remove( component: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JTabbedPane.remove_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -970,17 +970,152 @@ open class JTabbedPane: JComponent, SwingConstants {
 
     /// public void javax.swing.JTabbedPane.removeAll()
 
-    /// void javax.swing.JTabbedPane.compWriteObjectNotify()
+    /// public int javax.swing.JTabbedPane.getTabCount()
+
+    private static var getTabCount_MethodID_12: jmethodID?
+
+    open func getTabCount() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabCount", methodSig: "()I", methodCache: &JTabbedPane.getTabCount_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JTabbedPane.addChangeListener(javax.swing.event.ChangeListener)
+
+    private static var addChangeListener_MethodID_13: jmethodID?
+
+    open func addChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JTabbedPane.addChangeListener_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func addChangeListener( _ _l: ChangeListener? ) {
+        addChangeListener( l: _l )
+    }
+
+    /// public void javax.swing.JTabbedPane.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_14: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JTabbedPane.removeChangeListener_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
+    /// public javax.swing.event.ChangeListener[] javax.swing.JTabbedPane.getChangeListeners()
+
+    private static var getChangeListeners_MethodID_15: jmethodID?
+
+    open func getChangeListeners() -> [ChangeListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JTabbedPane.getChangeListeners_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
+    }
+
+
+    /// protected void javax.swing.JTabbedPane.fireStateChanged()
+
+    private static var fireStateChanged_MethodID_16: jmethodID?
+
+    open func fireStateChanged() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JTabbedPane.fireStateChanged_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// public javax.swing.plaf.TabbedPaneUI javax.swing.JTabbedPane.getUI()
+
+    private static var getUI_MethodID_17: jmethodID?
+
+    open func getUI() -> TabbedPaneUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TabbedPaneUI;", methodCache: &JTabbedPane.getUI_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TabbedPaneUI( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JTabbedPane.setSelectedIndex(int)
+
+    private static var setSelectedIndex_MethodID_18: jmethodID?
+
+    open func setSelectedIndex( index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &JTabbedPane.setSelectedIndex_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedIndex( _ _index: Int ) {
+        setSelectedIndex( index: _index )
+    }
+
+    /// public int javax.swing.JTabbedPane.getSelectedIndex()
+
+    private static var getSelectedIndex_MethodID_19: jmethodID?
+
+    open func getSelectedIndex() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &JTabbedPane.getSelectedIndex_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected javax.swing.event.ChangeListener javax.swing.JTabbedPane.createChangeListener()
+
+    private static var createChangeListener_MethodID_20: jmethodID?
+
+    open func createChangeListener() -> ChangeListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &JTabbedPane.createChangeListener_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JTabbedPane.updateUI()
+
+    /// public void javax.swing.JTabbedPane.setUI(javax.swing.plaf.TabbedPaneUI)
+
+    private static var setUI_MethodID_21: jmethodID?
+
+    open func setUI( ui: TabbedPaneUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TabbedPaneUI;)V", methodCache: &JTabbedPane.setUI_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: TabbedPaneUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// public java.lang.String javax.swing.JTabbedPane.getUIClassID()
 
     /// public java.awt.Component javax.swing.JTabbedPane.getComponentAt(int)
 
-    private static var getComponentAt_MethodID_12: jmethodID?
+    private static var getComponentAt_MethodID_22: jmethodID?
 
     open func getComponentAt( index: Int ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAt", methodSig: "(I)Ljava/awt/Component;", methodCache: &JTabbedPane.getComponentAt_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAt", methodSig: "(I)Ljava/awt/Component;", methodCache: &JTabbedPane.getComponentAt_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -995,12 +1130,12 @@ open class JTabbedPane: JComponent, SwingConstants {
 
     /// public javax.swing.SingleSelectionModel javax.swing.JTabbedPane.getModel()
 
-    private static var getModel_MethodID_13: jmethodID?
+    private static var getModel_MethodID_23: jmethodID?
 
     open func getModel() -> SingleSelectionModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SingleSelectionModel;", methodCache: &JTabbedPane.getModel_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SingleSelectionModel;", methodCache: &JTabbedPane.getModel_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SingleSelectionModelForward( javaObject: __return ) : nil
     }
@@ -1008,186 +1143,51 @@ open class JTabbedPane: JComponent, SwingConstants {
 
     /// public void javax.swing.JTabbedPane.setModel(javax.swing.SingleSelectionModel)
 
-    private static var setModel_MethodID_14: jmethodID?
+    private static var setModel_MethodID_24: jmethodID?
 
     open func setModel( model: SingleSelectionModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/SingleSelectionModel;)V", methodCache: &JTabbedPane.setModel_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/SingleSelectionModel;)V", methodCache: &JTabbedPane.setModel_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func setModel( _ _model: SingleSelectionModel? ) {
         setModel( model: _model )
     }
 
-    /// public void javax.swing.JTabbedPane.updateUI()
-
-    /// public void javax.swing.JTabbedPane.setUI(javax.swing.plaf.TabbedPaneUI)
-
-    private static var setUI_MethodID_15: jmethodID?
-
-    open func setUI( ui: TabbedPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TabbedPaneUI;)V", methodCache: &JTabbedPane.setUI_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _ui: TabbedPaneUI? ) {
-        setUI( ui: _ui )
-    }
-
-    /// public java.lang.String javax.swing.JTabbedPane.getUIClassID()
-
-    /// public javax.swing.plaf.TabbedPaneUI javax.swing.JTabbedPane.getUI()
-
-    private static var getUI_MethodID_16: jmethodID?
-
-    open func getUI() -> TabbedPaneUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TabbedPaneUI;", methodCache: &JTabbedPane.getUI_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TabbedPaneUI( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.JTabbedPane.getTabCount()
-
-    private static var getTabCount_MethodID_17: jmethodID?
-
-    open func getTabCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabCount", methodSig: "()I", methodCache: &JTabbedPane.getTabCount_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JTabbedPane.addChangeListener(javax.swing.event.ChangeListener)
-
-    private static var addChangeListener_MethodID_18: jmethodID?
-
-    open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JTabbedPane.addChangeListener_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func addChangeListener( _ _l: ChangeListener? ) {
-        addChangeListener( l: _l )
-    }
-
-    /// public void javax.swing.JTabbedPane.removeChangeListener(javax.swing.event.ChangeListener)
-
-    private static var removeChangeListener_MethodID_19: jmethodID?
-
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JTabbedPane.removeChangeListener_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.JTabbedPane.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_20: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JTabbedPane.getChangeListeners_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.JTabbedPane.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_21: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JTabbedPane.fireStateChanged_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JTabbedPane.setSelectedIndex(int)
-
-    private static var setSelectedIndex_MethodID_22: jmethodID?
-
-    open func setSelectedIndex( index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &JTabbedPane.setSelectedIndex_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedIndex( _ _index: Int ) {
-        setSelectedIndex( index: _index )
-    }
-
-    /// public int javax.swing.JTabbedPane.getSelectedIndex()
-
-    private static var getSelectedIndex_MethodID_23: jmethodID?
-
-    open func getSelectedIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &JTabbedPane.getSelectedIndex_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected javax.swing.event.ChangeListener javax.swing.JTabbedPane.createChangeListener()
-
-    private static var createChangeListener_MethodID_24: jmethodID?
-
-    open func createChangeListener() -> ChangeListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &JTabbedPane.createChangeListener_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.JTabbedPane.indexOfTab(javax.swing.Icon)
-
-    private static var indexOfTab_MethodID_25: jmethodID?
-
-    open func indexOfTab( icon: Icon? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: icon, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOfTab", methodSig: "(Ljavax/swing/Icon;)I", methodCache: &JTabbedPane.indexOfTab_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func indexOfTab( _ _icon: Icon? ) -> Int {
-        return indexOfTab( icon: _icon )
-    }
+    /// void javax.swing.JTabbedPane.compWriteObjectNotify()
 
     /// public int javax.swing.JTabbedPane.indexOfTab(java.lang.String)
 
-    private static var indexOfTab_MethodID_26: jmethodID?
+    private static var indexOfTab_MethodID_25: jmethodID?
 
     open func indexOfTab( title: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOfTab", methodSig: "(Ljava/lang/String;)I", methodCache: &JTabbedPane.indexOfTab_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOfTab", methodSig: "(Ljava/lang/String;)I", methodCache: &JTabbedPane.indexOfTab_MethodID_25, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     open func indexOfTab( _ _title: String? ) -> Int {
         return indexOfTab( title: _title )
+    }
+
+    /// public int javax.swing.JTabbedPane.indexOfTab(javax.swing.Icon)
+
+    private static var indexOfTab_MethodID_26: jmethodID?
+
+    open func indexOfTab( icon: Icon? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: icon, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOfTab", methodSig: "(Ljavax/swing/Icon;)I", methodCache: &JTabbedPane.indexOfTab_MethodID_26, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func indexOfTab( _ _icon: Icon? ) -> Int {
+        return indexOfTab( icon: _icon )
     }
 
     /// public int javax.swing.JTabbedPane.getTabPlacement()
@@ -1268,7 +1268,7 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func setSelectedComponent( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JTabbedPane.setSelectedComponent_MethodID_32, args: &__args, locals: &__locals )
     }
 
@@ -1285,7 +1285,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
         __args[1] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[2] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: component, locals: &__locals )
         __args[3] = JNIType.toJava( value: tip, locals: &__locals )
         __args[4] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertTab", methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Component;Ljava/lang/String;I)V", methodCache: &JTabbedPane.insertTab_MethodID_33, args: &__args, locals: &__locals )
@@ -1303,7 +1303,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTab", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &JTabbedPane.addTab_MethodID_34, args: &__args, locals: &__locals )
     }
 
@@ -1311,39 +1311,39 @@ open class JTabbedPane: JComponent, SwingConstants {
         addTab( title: _title, component: _component )
     }
 
-    /// public void javax.swing.JTabbedPane.addTab(java.lang.String,javax.swing.Icon,java.awt.Component,java.lang.String)
-
-    private static var addTab_MethodID_35: jmethodID?
-
-    open func addTab( title: String?, icon: Icon?, component: java_awt.Component?, tip: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[2] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: tip, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTab", methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Component;Ljava/lang/String;)V", methodCache: &JTabbedPane.addTab_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func addTab( _ _title: String?, _ _icon: Icon?, _ _component: java_awt.Component?, _ _tip: String? ) {
-        addTab( title: _title, icon: _icon, component: _component, tip: _tip )
-    }
-
     /// public void javax.swing.JTabbedPane.addTab(java.lang.String,javax.swing.Icon,java.awt.Component)
 
-    private static var addTab_MethodID_36: jmethodID?
+    private static var addTab_MethodID_35: jmethodID?
 
     open func addTab( title: String?, icon: Icon?, component: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
         __args[1] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[2] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTab", methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Component;)V", methodCache: &JTabbedPane.addTab_MethodID_36, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: component, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTab", methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Component;)V", methodCache: &JTabbedPane.addTab_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func addTab( _ _title: String?, _ _icon: Icon?, _ _component: java_awt.Component? ) {
         addTab( title: _title, icon: _icon, component: _component )
+    }
+
+    /// public void javax.swing.JTabbedPane.addTab(java.lang.String,javax.swing.Icon,java.awt.Component,java.lang.String)
+
+    private static var addTab_MethodID_36: jmethodID?
+
+    open func addTab( title: String?, icon: Icon?, component: java_awt.Component?, tip: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: icon, locals: &__locals )
+        __args[2] = JNIType.toJava( value: component, locals: &__locals )
+        __args[3] = JNIType.toJava( value: tip, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTab", methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Component;Ljava/lang/String;)V", methodCache: &JTabbedPane.addTab_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func addTab( _ _title: String?, _ _icon: Icon?, _ _component: java_awt.Component?, _ _tip: String? ) {
+        addTab( title: _title, icon: _icon, component: _component, tip: _tip )
     }
 
     /// public void javax.swing.JTabbedPane.removeTabAt(int)
@@ -1610,7 +1610,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: background != nil ? background! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: background, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackgroundAt", methodSig: "(ILjava/awt/Color;)V", methodCache: &JTabbedPane.setBackgroundAt_MethodID_53, args: &__args, locals: &__locals )
     }
 
@@ -1626,7 +1626,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: foreground != nil ? foreground! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: foreground, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setForegroundAt", methodSig: "(ILjava/awt/Color;)V", methodCache: &JTabbedPane.setForegroundAt_MethodID_54, args: &__args, locals: &__locals )
     }
 
@@ -1658,7 +1658,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentAt", methodSig: "(ILjava/awt/Component;)V", methodCache: &JTabbedPane.setComponentAt_MethodID_56, args: &__args, locals: &__locals )
     }
 
@@ -1705,7 +1705,7 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func indexOfComponent( component: java_awt.Component? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOfComponent", methodSig: "(Ljava/awt/Component;)I", methodCache: &JTabbedPane.indexOfComponent_MethodID_59, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -1739,7 +1739,7 @@ open class JTabbedPane: JComponent, SwingConstants {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTabComponentAt", methodSig: "(ILjava/awt/Component;)V", methodCache: &JTabbedPane.setTabComponentAt_MethodID_61, args: &__args, locals: &__locals )
     }
 
@@ -1771,7 +1771,7 @@ open class JTabbedPane: JComponent, SwingConstants {
     open func indexOfTabComponent( tabComponent: java_awt.Component? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabComponent != nil ? tabComponent! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tabComponent, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOfTabComponent", methodSig: "(Ljava/awt/Component;)I", methodCache: &JTabbedPane.indexOfTabComponent_MethodID_63, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }

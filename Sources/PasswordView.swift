@@ -31,7 +31,7 @@ open class PasswordView: FieldView {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "metrics", fieldType: "Ljava/awt/FontMetrics;", fieldCache: &PasswordView.metrics_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -133,12 +133,6 @@ open class PasswordView: FieldView {
         self.init( elem: _elem )
     }
 
-    /// public float javax.swing.text.PasswordView.getPreferredSpan(int)
-
-    /// public int javax.swing.text.PasswordView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    /// public java.awt.Shape javax.swing.text.PasswordView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
-
     /// protected int javax.swing.text.PasswordView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
     private static var drawUnselectedText_MethodID_2: jmethodID?
@@ -146,7 +140,7 @@ open class PasswordView: FieldView {
     override open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: p0, locals: &__locals )
@@ -169,7 +163,7 @@ open class PasswordView: FieldView {
     override open func drawSelectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: p0, locals: &__locals )
@@ -192,7 +186,7 @@ open class PasswordView: FieldView {
     open func drawEchoCharacter( g: java_awt.Graphics?, x: Int, y: Int, c: UInt16 ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: c, locals: &__locals )
@@ -203,6 +197,12 @@ open class PasswordView: FieldView {
     open func drawEchoCharacter( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _c: UInt16 ) -> Int {
         return drawEchoCharacter( g: _g, x: _x, y: _y, c: _c )
     }
+
+    /// public int javax.swing.text.PasswordView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    /// public java.awt.Shape javax.swing.text.PasswordView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
+
+    /// public float javax.swing.text.PasswordView.getPreferredSpan(int)
 
 }
 

@@ -53,8 +53,6 @@ open class MetalToolTipUI: BasicToolTipUI {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalToolTipUI.getPreferredSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalToolTipUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -62,7 +60,7 @@ open class MetalToolTipUI: BasicToolTipUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalToolTipUI", classCache: &MetalToolTipUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -72,9 +70,13 @@ open class MetalToolTipUI: BasicToolTipUI {
         return createUI( c: _c )
     }
 
+    /// public void javax.swing.plaf.metal.MetalToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
     /// public void javax.swing.plaf.metal.MetalToolTipUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.metal.MetalToolTipUI.uninstallUI(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalToolTipUI.getPreferredSize(javax.swing.JComponent)
 
     /// private int javax.swing.plaf.metal.MetalToolTipUI.calcAccelSpacing(javax.swing.JComponent,java.awt.FontMetrics,java.lang.String)
 
@@ -90,6 +92,8 @@ open class MetalToolTipUI: BasicToolTipUI {
     }
 
 
+    /// private java.lang.String javax.swing.plaf.metal.MetalToolTipUI.getAcceleratorString(javax.swing.JToolTip)
+
     /// public java.lang.String javax.swing.plaf.metal.MetalToolTipUI.getAcceleratorString()
 
     private static var getAcceleratorString_MethodID_4: jmethodID?
@@ -101,10 +105,6 @@ open class MetalToolTipUI: BasicToolTipUI {
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// private java.lang.String javax.swing.plaf.metal.MetalToolTipUI.getAcceleratorString(javax.swing.JToolTip)
-
-    /// public void javax.swing.plaf.metal.MetalToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
 }
 

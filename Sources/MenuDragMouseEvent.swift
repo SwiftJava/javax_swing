@@ -239,7 +239,7 @@ open class MenuDragMouseEvent: java_awt.MouseEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MenuDragMouseEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -251,7 +251,7 @@ open class MenuDragMouseEvent: java_awt.MouseEvent {
     public convenience init( source: java_awt.Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, clickCount: Int, popupTrigger: Bool, p: [MenuElement]?, m: MenuSelectionManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 10 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -260,7 +260,7 @@ open class MenuDragMouseEvent: java_awt.MouseEvent {
         __args[6] = JNIType.toJava( value: clickCount, locals: &__locals )
         __args[7] = JNIType.toJava( value: popupTrigger, locals: &__locals )
         __args[8] = JNIType.toJava( value: p, locals: &__locals )
-        __args[9] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        __args[9] = JNIType.toJava( value: m, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/MenuDragMouseEvent", classCache: &MenuDragMouseEvent.MenuDragMouseEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIZ[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &MenuDragMouseEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -277,7 +277,7 @@ open class MenuDragMouseEvent: java_awt.MouseEvent {
     public convenience init( source: java_awt.Component?, id: Int, when: Int64, modifiers: Int, x: Int, y: Int, xAbs: Int, yAbs: Int, clickCount: Int, popupTrigger: Bool, p: [MenuElement]?, m: MenuSelectionManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 12 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
@@ -288,7 +288,7 @@ open class MenuDragMouseEvent: java_awt.MouseEvent {
         __args[8] = JNIType.toJava( value: clickCount, locals: &__locals )
         __args[9] = JNIType.toJava( value: popupTrigger, locals: &__locals )
         __args[10] = JNIType.toJava( value: p, locals: &__locals )
-        __args[11] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        __args[11] = JNIType.toJava( value: m, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/MenuDragMouseEvent", classCache: &MenuDragMouseEvent.MenuDragMouseEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIIIIIZ[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &MenuDragMouseEvent.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

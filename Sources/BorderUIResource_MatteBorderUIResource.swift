@@ -29,7 +29,7 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "color", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_MatteBorderUIResource.color_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -130,7 +130,7 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
         __args[1] = JNIType.toJava( value: left, locals: &__locals )
         __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
         __args[3] = JNIType.toJava( value: right, locals: &__locals )
-        __args[4] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: color, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$MatteBorderUIResource", classCache: &BorderUIResource_MatteBorderUIResource.BorderUIResource_MatteBorderUIResourceJNIClass, methodSig: "(IIIILjava/awt/Color;)V", methodCache: &BorderUIResource_MatteBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

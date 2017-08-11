@@ -149,7 +149,7 @@ open class TableModelForward: JNIObjectForward, TableModel {
     open func setValueAt( aValue: java_swift.JavaObject?, rowIndex: Int, columnIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aValue != nil ? aValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aValue, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: columnIndex, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueAt", methodSig: "(Ljava/lang/Object;II)V", methodCache: &TableModelForward.setValueAt_MethodID_16, args: &__args, locals: &__locals )

@@ -219,7 +219,7 @@ open class JSplitPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "leftComponent", fieldType: "Ljava/awt/Component;", fieldCache: &JSplitPane.leftComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -236,7 +236,7 @@ open class JSplitPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rightComponent", fieldType: "Ljava/awt/Component;", fieldCache: &JSplitPane.rightComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -338,7 +338,7 @@ open class JSplitPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSplitPane.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -355,7 +355,7 @@ open class JSplitPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSplitPane.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -732,7 +732,7 @@ open class JSplitPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSplitPane.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -764,8 +764,8 @@ open class JSplitPane: JComponent {
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newOrientation, locals: &__locals )
         __args[1] = JNIType.toJava( value: newContinuousLayout, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newLeftComponent != nil ? newLeftComponent! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: newRightComponent != nil ? newRightComponent! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newLeftComponent, locals: &__locals )
+        __args[3] = JNIType.toJava( value: newRightComponent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JSplitPane", classCache: &JSplitPane.JSplitPaneJNIClass, methodSig: "(IZLjava/awt/Component;Ljava/awt/Component;)V", methodCache: &JSplitPane.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -783,8 +783,8 @@ open class JSplitPane: JComponent {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newOrientation, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newLeftComponent != nil ? newLeftComponent! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newRightComponent != nil ? newRightComponent! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newLeftComponent, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newRightComponent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JSplitPane", classCache: &JSplitPane.JSplitPaneJNIClass, methodSig: "(ILjava/awt/Component;Ljava/awt/Component;)V", methodCache: &JSplitPane.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -841,34 +841,34 @@ open class JSplitPane: JComponent {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.JSplitPane.remove(java.awt.Component)
-
-    private static var remove_MethodID_6: jmethodID?
-
-    open func remove( component: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.remove_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func remove( _ _component: java_awt.Component? ) {
-        remove( component: _component )
-    }
-
     /// public void javax.swing.JSplitPane.remove(int)
 
-    private static var remove_MethodID_7: jmethodID?
+    private static var remove_MethodID_6: jmethodID?
 
     open func remove( index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &JSplitPane.remove_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &JSplitPane.remove_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func remove( _ _index: Int ) {
         remove( index: _index )
+    }
+
+    /// public void javax.swing.JSplitPane.remove(java.awt.Component)
+
+    private static var remove_MethodID_7: jmethodID?
+
+    open func remove( component: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.remove_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func remove( _ _component: java_awt.Component? ) {
+        remove( component: _component )
     }
 
     /// private void javax.swing.JSplitPane.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
@@ -887,323 +887,45 @@ open class JSplitPane: JComponent {
 
     /// public void javax.swing.JSplitPane.removeAll()
 
-    /// public boolean javax.swing.JSplitPane.isValidateRoot()
+    /// public javax.swing.plaf.SplitPaneUI javax.swing.JSplitPane.getUI()
 
-    /// public int javax.swing.JSplitPane.getOrientation()
+    private static var getUI_MethodID_9: jmethodID?
 
-    private static var getOrientation_MethodID_9: jmethodID?
-
-    open func getOrientation() -> Int {
+    open func getUI() -> SplitPaneUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSplitPane.getOrientation_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SplitPaneUI;", methodCache: &JSplitPane.getUI_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SplitPaneUI( javaObject: __return ) : nil
     }
 
-
-    /// public double javax.swing.JSplitPane.getResizeWeight()
-
-    private static var getResizeWeight_MethodID_10: jmethodID?
-
-    open func getResizeWeight() -> Double {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getResizeWeight", methodSig: "()D", methodCache: &JSplitPane.getResizeWeight_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Double(), from: __return )
-    }
-
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JSplitPane.getAccessibleContext()
-
-    /// protected void javax.swing.JSplitPane.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_11: jmethodID?
-
-    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JSplitPane.addImpl_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
-    }
 
     /// public void javax.swing.JSplitPane.setOrientation(int)
 
-    private static var setOrientation_MethodID_12: jmethodID?
+    private static var setOrientation_MethodID_10: jmethodID?
 
     open func setOrientation( orientation: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JSplitPane.setOrientation_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JSplitPane.setOrientation_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setOrientation( _ _orientation: Int ) {
         setOrientation( orientation: _orientation )
     }
 
-    /// public void javax.swing.JSplitPane.resetToPreferredSizes()
-
-    private static var resetToPreferredSizes_MethodID_13: jmethodID?
-
-    open func resetToPreferredSizes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "()V", methodCache: &JSplitPane.resetToPreferredSizes_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JSplitPane.setDividerSize(int)
-
-    private static var setDividerSize_MethodID_14: jmethodID?
-
-    open func setDividerSize( newSize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newSize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerSize", methodSig: "(I)V", methodCache: &JSplitPane.setDividerSize_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setDividerSize( _ _newSize: Int ) {
-        setDividerSize( newSize: _newSize )
-    }
-
-    /// public int javax.swing.JSplitPane.getDividerSize()
-
-    private static var getDividerSize_MethodID_15: jmethodID?
-
-    open func getDividerSize() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerSize", methodSig: "()I", methodCache: &JSplitPane.getDividerSize_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSplitPane.setLeftComponent(java.awt.Component)
-
-    private static var setLeftComponent_MethodID_16: jmethodID?
-
-    open func setLeftComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeftComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setLeftComponent_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func setLeftComponent( _ _comp: java_awt.Component? ) {
-        setLeftComponent( comp: _comp )
-    }
-
-    /// public java.awt.Component javax.swing.JSplitPane.getLeftComponent()
-
-    private static var getLeftComponent_MethodID_17: jmethodID?
-
-    open func getLeftComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLeftComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getLeftComponent_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSplitPane.setTopComponent(java.awt.Component)
-
-    private static var setTopComponent_MethodID_18: jmethodID?
-
-    open func setTopComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTopComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setTopComponent_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func setTopComponent( _ _comp: java_awt.Component? ) {
-        setTopComponent( comp: _comp )
-    }
-
-    /// public java.awt.Component javax.swing.JSplitPane.getTopComponent()
-
-    private static var getTopComponent_MethodID_19: jmethodID?
-
-    open func getTopComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTopComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getTopComponent_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSplitPane.setRightComponent(java.awt.Component)
-
-    private static var setRightComponent_MethodID_20: jmethodID?
-
-    open func setRightComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRightComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setRightComponent_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func setRightComponent( _ _comp: java_awt.Component? ) {
-        setRightComponent( comp: _comp )
-    }
-
-    /// public java.awt.Component javax.swing.JSplitPane.getRightComponent()
-
-    private static var getRightComponent_MethodID_21: jmethodID?
-
-    open func getRightComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRightComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getRightComponent_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSplitPane.setBottomComponent(java.awt.Component)
-
-    private static var setBottomComponent_MethodID_22: jmethodID?
-
-    open func setBottomComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBottomComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setBottomComponent_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setBottomComponent( _ _comp: java_awt.Component? ) {
-        setBottomComponent( comp: _comp )
-    }
-
-    /// public java.awt.Component javax.swing.JSplitPane.getBottomComponent()
-
-    private static var getBottomComponent_MethodID_23: jmethodID?
-
-    open func getBottomComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBottomComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getBottomComponent_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSplitPane.setOneTouchExpandable(boolean)
-
-    private static var setOneTouchExpandable_MethodID_24: jmethodID?
-
-    open func setOneTouchExpandable( newValue: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOneTouchExpandable", methodSig: "(Z)V", methodCache: &JSplitPane.setOneTouchExpandable_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setOneTouchExpandable( _ _newValue: Bool ) {
-        setOneTouchExpandable( newValue: _newValue )
-    }
-
-    /// public boolean javax.swing.JSplitPane.isOneTouchExpandable()
-
-    private static var isOneTouchExpandable_MethodID_25: jmethodID?
-
-    open func isOneTouchExpandable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isOneTouchExpandable", methodSig: "()Z", methodCache: &JSplitPane.isOneTouchExpandable_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSplitPane.setLastDividerLocation(int)
-
-    private static var setLastDividerLocation_MethodID_26: jmethodID?
-
-    open func setLastDividerLocation( newLastLocation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newLastLocation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLastDividerLocation", methodSig: "(I)V", methodCache: &JSplitPane.setLastDividerLocation_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func setLastDividerLocation( _ _newLastLocation: Int ) {
-        setLastDividerLocation( newLastLocation: _newLastLocation )
-    }
-
-    /// public int javax.swing.JSplitPane.getLastDividerLocation()
-
-    private static var getLastDividerLocation_MethodID_27: jmethodID?
-
-    open func getLastDividerLocation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastDividerLocation", methodSig: "()I", methodCache: &JSplitPane.getLastDividerLocation_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSplitPane.setContinuousLayout(boolean)
-
-    private static var setContinuousLayout_MethodID_28: jmethodID?
-
-    open func setContinuousLayout( newContinuousLayout: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newContinuousLayout, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContinuousLayout", methodSig: "(Z)V", methodCache: &JSplitPane.setContinuousLayout_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func setContinuousLayout( _ _newContinuousLayout: Bool ) {
-        setContinuousLayout( newContinuousLayout: _newContinuousLayout )
-    }
-
-    /// public boolean javax.swing.JSplitPane.isContinuousLayout()
-
-    private static var isContinuousLayout_MethodID_29: jmethodID?
-
-    open func isContinuousLayout() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContinuousLayout", methodSig: "()Z", methodCache: &JSplitPane.isContinuousLayout_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSplitPane.setResizeWeight(double)
-
-    private static var setResizeWeight_MethodID_30: jmethodID?
-
-    open func setResizeWeight( value: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizeWeight", methodSig: "(D)V", methodCache: &JSplitPane.setResizeWeight_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func setResizeWeight( _ _value: Double ) {
-        setResizeWeight( value: _value )
-    }
-
     /// public void javax.swing.JSplitPane.updateUI()
 
     /// public void javax.swing.JSplitPane.setUI(javax.swing.plaf.SplitPaneUI)
 
-    private static var setUI_MethodID_31: jmethodID?
+    private static var setUI_MethodID_11: jmethodID?
 
     open func setUI( ui: SplitPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SplitPaneUI;)V", methodCache: &JSplitPane.setUI_MethodID_31, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SplitPaneUI;)V", methodCache: &JSplitPane.setUI_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: SplitPaneUI? ) {
@@ -1214,13 +936,13 @@ open class JSplitPane: JComponent {
 
     /// protected void javax.swing.JSplitPane.paintChildren(java.awt.Graphics)
 
-    private static var paintChildren_MethodID_32: jmethodID?
+    private static var paintChildren_MethodID_12: jmethodID?
 
     override open func paintChildren( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChildren", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JSplitPane.paintChildren_MethodID_32, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChildren", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JSplitPane.paintChildren_MethodID_12, args: &__args, locals: &__locals )
     }
 
     override open func paintChildren( _ _g: java_awt.Graphics? ) {
@@ -1229,18 +951,296 @@ open class JSplitPane: JComponent {
 
     /// void javax.swing.JSplitPane.setUIProperty(java.lang.String,java.lang.Object)
 
-    /// public javax.swing.plaf.SplitPaneUI javax.swing.JSplitPane.getUI()
+    /// public boolean javax.swing.JSplitPane.isValidateRoot()
 
-    private static var getUI_MethodID_33: jmethodID?
+    /// public int javax.swing.JSplitPane.getOrientation()
 
-    open func getUI() -> SplitPaneUI! {
+    private static var getOrientation_MethodID_13: jmethodID?
+
+    open func getOrientation() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SplitPaneUI;", methodCache: &JSplitPane.getUI_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SplitPaneUI( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSplitPane.getOrientation_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
     }
 
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JSplitPane.getAccessibleContext()
+
+    /// public double javax.swing.JSplitPane.getResizeWeight()
+
+    private static var getResizeWeight_MethodID_14: jmethodID?
+
+    open func getResizeWeight() -> Double {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getResizeWeight", methodSig: "()D", methodCache: &JSplitPane.getResizeWeight_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Double(), from: __return )
+    }
+
+
+    /// public void javax.swing.JSplitPane.resetToPreferredSizes()
+
+    private static var resetToPreferredSizes_MethodID_15: jmethodID?
+
+    open func resetToPreferredSizes() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "()V", methodCache: &JSplitPane.resetToPreferredSizes_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JSplitPane.setDividerSize(int)
+
+    private static var setDividerSize_MethodID_16: jmethodID?
+
+    open func setDividerSize( newSize: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newSize, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerSize", methodSig: "(I)V", methodCache: &JSplitPane.setDividerSize_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setDividerSize( _ _newSize: Int ) {
+        setDividerSize( newSize: _newSize )
+    }
+
+    /// public int javax.swing.JSplitPane.getDividerSize()
+
+    private static var getDividerSize_MethodID_17: jmethodID?
+
+    open func getDividerSize() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerSize", methodSig: "()I", methodCache: &JSplitPane.getDividerSize_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JSplitPane.setLeftComponent(java.awt.Component)
+
+    private static var setLeftComponent_MethodID_18: jmethodID?
+
+    open func setLeftComponent( comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeftComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setLeftComponent_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setLeftComponent( _ _comp: java_awt.Component? ) {
+        setLeftComponent( comp: _comp )
+    }
+
+    /// public java.awt.Component javax.swing.JSplitPane.getLeftComponent()
+
+    private static var getLeftComponent_MethodID_19: jmethodID?
+
+    open func getLeftComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLeftComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getLeftComponent_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSplitPane.setTopComponent(java.awt.Component)
+
+    private static var setTopComponent_MethodID_20: jmethodID?
+
+    open func setTopComponent( comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTopComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setTopComponent_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func setTopComponent( _ _comp: java_awt.Component? ) {
+        setTopComponent( comp: _comp )
+    }
+
+    /// public java.awt.Component javax.swing.JSplitPane.getTopComponent()
+
+    private static var getTopComponent_MethodID_21: jmethodID?
+
+    open func getTopComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTopComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getTopComponent_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSplitPane.setRightComponent(java.awt.Component)
+
+    private static var setRightComponent_MethodID_22: jmethodID?
+
+    open func setRightComponent( comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRightComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setRightComponent_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setRightComponent( _ _comp: java_awt.Component? ) {
+        setRightComponent( comp: _comp )
+    }
+
+    /// public java.awt.Component javax.swing.JSplitPane.getRightComponent()
+
+    private static var getRightComponent_MethodID_23: jmethodID?
+
+    open func getRightComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRightComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getRightComponent_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSplitPane.setBottomComponent(java.awt.Component)
+
+    private static var setBottomComponent_MethodID_24: jmethodID?
+
+    open func setBottomComponent( comp: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBottomComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &JSplitPane.setBottomComponent_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setBottomComponent( _ _comp: java_awt.Component? ) {
+        setBottomComponent( comp: _comp )
+    }
+
+    /// public java.awt.Component javax.swing.JSplitPane.getBottomComponent()
+
+    private static var getBottomComponent_MethodID_25: jmethodID?
+
+    open func getBottomComponent() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBottomComponent", methodSig: "()Ljava/awt/Component;", methodCache: &JSplitPane.getBottomComponent_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSplitPane.setOneTouchExpandable(boolean)
+
+    private static var setOneTouchExpandable_MethodID_26: jmethodID?
+
+    open func setOneTouchExpandable( newValue: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOneTouchExpandable", methodSig: "(Z)V", methodCache: &JSplitPane.setOneTouchExpandable_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setOneTouchExpandable( _ _newValue: Bool ) {
+        setOneTouchExpandable( newValue: _newValue )
+    }
+
+    /// public boolean javax.swing.JSplitPane.isOneTouchExpandable()
+
+    private static var isOneTouchExpandable_MethodID_27: jmethodID?
+
+    open func isOneTouchExpandable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isOneTouchExpandable", methodSig: "()Z", methodCache: &JSplitPane.isOneTouchExpandable_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JSplitPane.setLastDividerLocation(int)
+
+    private static var setLastDividerLocation_MethodID_28: jmethodID?
+
+    open func setLastDividerLocation( newLastLocation: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newLastLocation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLastDividerLocation", methodSig: "(I)V", methodCache: &JSplitPane.setLastDividerLocation_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func setLastDividerLocation( _ _newLastLocation: Int ) {
+        setLastDividerLocation( newLastLocation: _newLastLocation )
+    }
+
+    /// public int javax.swing.JSplitPane.getLastDividerLocation()
+
+    private static var getLastDividerLocation_MethodID_29: jmethodID?
+
+    open func getLastDividerLocation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastDividerLocation", methodSig: "()I", methodCache: &JSplitPane.getLastDividerLocation_MethodID_29, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JSplitPane.setContinuousLayout(boolean)
+
+    private static var setContinuousLayout_MethodID_30: jmethodID?
+
+    open func setContinuousLayout( newContinuousLayout: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newContinuousLayout, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContinuousLayout", methodSig: "(Z)V", methodCache: &JSplitPane.setContinuousLayout_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setContinuousLayout( _ _newContinuousLayout: Bool ) {
+        setContinuousLayout( newContinuousLayout: _newContinuousLayout )
+    }
+
+    /// public boolean javax.swing.JSplitPane.isContinuousLayout()
+
+    private static var isContinuousLayout_MethodID_31: jmethodID?
+
+    open func isContinuousLayout() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContinuousLayout", methodSig: "()Z", methodCache: &JSplitPane.isContinuousLayout_MethodID_31, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JSplitPane.setResizeWeight(double)
+
+    private static var setResizeWeight_MethodID_32: jmethodID?
+
+    open func setResizeWeight( value: Double ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizeWeight", methodSig: "(D)V", methodCache: &JSplitPane.setResizeWeight_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func setResizeWeight( _ _value: Double ) {
+        setResizeWeight( value: _value )
+    }
+
+    /// protected void javax.swing.JSplitPane.addImpl(java.awt.Component,java.lang.Object,int)
+
+    private static var addImpl_MethodID_33: jmethodID?
+
+    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JSplitPane.addImpl_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    }
 
     /// public int javax.swing.JSplitPane.getDividerLocation()
 
@@ -1254,34 +1254,34 @@ open class JSplitPane: JComponent {
     }
 
 
-    /// public void javax.swing.JSplitPane.setDividerLocation(int)
-
-    private static var setDividerLocation_MethodID_35: jmethodID?
-
-    open func setDividerLocation( location: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(I)V", methodCache: &JSplitPane.setDividerLocation_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func setDividerLocation( _ _location: Int ) {
-        setDividerLocation( location: _location )
-    }
-
     /// public void javax.swing.JSplitPane.setDividerLocation(double)
 
-    private static var setDividerLocation_MethodID_36: jmethodID?
+    private static var setDividerLocation_MethodID_35: jmethodID?
 
     open func setDividerLocation( proportionalLocation: Double ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: proportionalLocation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(D)V", methodCache: &JSplitPane.setDividerLocation_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(D)V", methodCache: &JSplitPane.setDividerLocation_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func setDividerLocation( _ _proportionalLocation: Double ) {
         setDividerLocation( proportionalLocation: _proportionalLocation )
+    }
+
+    /// public void javax.swing.JSplitPane.setDividerLocation(int)
+
+    private static var setDividerLocation_MethodID_36: jmethodID?
+
+    open func setDividerLocation( location: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: location, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(I)V", methodCache: &JSplitPane.setDividerLocation_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func setDividerLocation( _ _location: Int ) {
+        setDividerLocation( location: _location )
     }
 
     /// public int javax.swing.JSplitPane.getMinimumDividerLocation()

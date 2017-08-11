@@ -57,7 +57,7 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &ProgressMonitor.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -71,8 +71,8 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
     public convenience init( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, note: String?, min: Int, max: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parentComponent != nil ? parentComponent! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: message != nil ? message! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
+        __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: note, locals: &__locals )
         __args[3] = JNIType.toJava( value: min, locals: &__locals )
         __args[4] = JNIType.toJava( value: max, locals: &__locals )
@@ -110,68 +110,27 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
 
     /// static javax.accessibility.AccessibleContext javax.swing.ProgressMonitor.access$202(javax.swing.ProgressMonitor,javax.accessibility.AccessibleContext)
 
-    /// static javax.swing.JDialog javax.swing.ProgressMonitor.access$700(javax.swing.ProgressMonitor)
-
-    /// public int javax.swing.ProgressMonitor.getMinimum()
-
-    private static var getMinimum_MethodID_3: jmethodID?
-
-    open func getMinimum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &ProgressMonitor.getMinimum_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.ProgressMonitor.setMinimum(int)
-
-    private static var setMinimum_MethodID_4: jmethodID?
-
-    open func setMinimum( m: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &ProgressMonitor.setMinimum_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setMinimum( _ _m: Int ) {
-        setMinimum( m: _m )
-    }
-
-    /// public int javax.swing.ProgressMonitor.getMaximum()
-
-    private static var getMaximum_MethodID_5: jmethodID?
-
-    open func getMaximum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &ProgressMonitor.getMaximum_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public boolean javax.swing.ProgressMonitor.isCanceled()
 
-    private static var isCanceled_MethodID_6: jmethodID?
+    private static var isCanceled_MethodID_3: jmethodID?
 
     open func isCanceled() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCanceled", methodSig: "()Z", methodCache: &ProgressMonitor.isCanceled_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCanceled", methodSig: "()Z", methodCache: &ProgressMonitor.isCanceled_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.ProgressMonitor.setMillisToDecideToPopup(int)
 
-    private static var setMillisToDecideToPopup_MethodID_7: jmethodID?
+    private static var setMillisToDecideToPopup_MethodID_4: jmethodID?
 
     open func setMillisToDecideToPopup( millisToDecideToPopup: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: millisToDecideToPopup, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMillisToDecideToPopup", methodSig: "(I)V", methodCache: &ProgressMonitor.setMillisToDecideToPopup_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMillisToDecideToPopup", methodSig: "(I)V", methodCache: &ProgressMonitor.setMillisToDecideToPopup_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setMillisToDecideToPopup( _ _millisToDecideToPopup: Int ) {
@@ -180,25 +139,25 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
 
     /// public int javax.swing.ProgressMonitor.getMillisToDecideToPopup()
 
-    private static var getMillisToDecideToPopup_MethodID_8: jmethodID?
+    private static var getMillisToDecideToPopup_MethodID_5: jmethodID?
 
     open func getMillisToDecideToPopup() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMillisToDecideToPopup", methodSig: "()I", methodCache: &ProgressMonitor.getMillisToDecideToPopup_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMillisToDecideToPopup", methodSig: "()I", methodCache: &ProgressMonitor.getMillisToDecideToPopup_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.ProgressMonitor.setMillisToPopup(int)
 
-    private static var setMillisToPopup_MethodID_9: jmethodID?
+    private static var setMillisToPopup_MethodID_6: jmethodID?
 
     open func setMillisToPopup( millisToPopup: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: millisToPopup, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMillisToPopup", methodSig: "(I)V", methodCache: &ProgressMonitor.setMillisToPopup_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMillisToPopup", methodSig: "(I)V", methodCache: &ProgressMonitor.setMillisToPopup_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setMillisToPopup( _ _millisToPopup: Int ) {
@@ -207,25 +166,25 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
 
     /// public int javax.swing.ProgressMonitor.getMillisToPopup()
 
-    private static var getMillisToPopup_MethodID_10: jmethodID?
+    private static var getMillisToPopup_MethodID_7: jmethodID?
 
     open func getMillisToPopup() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMillisToPopup", methodSig: "()I", methodCache: &ProgressMonitor.getMillisToPopup_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMillisToPopup", methodSig: "()I", methodCache: &ProgressMonitor.getMillisToPopup_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.ProgressMonitor.setNote(java.lang.String)
 
-    private static var setNote_MethodID_11: jmethodID?
+    private static var setNote_MethodID_8: jmethodID?
 
     open func setNote( note: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: note, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNote", methodSig: "(Ljava/lang/String;)V", methodCache: &ProgressMonitor.setNote_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNote", methodSig: "(Ljava/lang/String;)V", methodCache: &ProgressMonitor.setNote_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setNote( _ _note: String? ) {
@@ -234,25 +193,79 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
 
     /// public java.lang.String javax.swing.ProgressMonitor.getNote()
 
-    private static var getNote_MethodID_12: jmethodID?
+    private static var getNote_MethodID_9: jmethodID?
 
     open func getNote() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNote", methodSig: "()Ljava/lang/String;", methodCache: &ProgressMonitor.getNote_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNote", methodSig: "()Ljava/lang/String;", methodCache: &ProgressMonitor.getNote_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// static javax.swing.JDialog javax.swing.ProgressMonitor.access$700(javax.swing.ProgressMonitor)
+
+    /// public int javax.swing.ProgressMonitor.getMinimum()
+
+    private static var getMinimum_MethodID_10: jmethodID?
+
+    open func getMinimum() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &ProgressMonitor.getMinimum_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.ProgressMonitor.setMinimum(int)
+
+    private static var setMinimum_MethodID_11: jmethodID?
+
+    open func setMinimum( m: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &ProgressMonitor.setMinimum_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimum( _ _m: Int ) {
+        setMinimum( m: _m )
+    }
+
+    /// public int javax.swing.ProgressMonitor.getMaximum()
+
+    private static var getMaximum_MethodID_12: jmethodID?
+
+    open func getMaximum() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &ProgressMonitor.getMaximum_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.ProgressMonitor.getAccessibleContext()
+
+    private static var getAccessibleContext_MethodID_13: jmethodID?
+
+    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &ProgressMonitor.getAccessibleContext_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
     }
 
 
     /// public void javax.swing.ProgressMonitor.setMaximum(int)
 
-    private static var setMaximum_MethodID_13: jmethodID?
+    private static var setMaximum_MethodID_14: jmethodID?
 
     open func setMaximum( m: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &ProgressMonitor.setMaximum_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &ProgressMonitor.setMaximum_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setMaximum( _ _m: Int ) {
@@ -261,31 +274,18 @@ open class ProgressMonitor: java_swift.JavaObject, /* javax.accessibility.Access
 
     /// public void javax.swing.ProgressMonitor.setProgress(int)
 
-    private static var setProgress_MethodID_14: jmethodID?
+    private static var setProgress_MethodID_15: jmethodID?
 
     open func setProgress( nv: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nv, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setProgress", methodSig: "(I)V", methodCache: &ProgressMonitor.setProgress_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setProgress", methodSig: "(I)V", methodCache: &ProgressMonitor.setProgress_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setProgress( _ _nv: Int ) {
         setProgress( nv: _nv )
     }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.ProgressMonitor.getAccessibleContext()
-
-    private static var getAccessibleContext_MethodID_15: jmethodID?
-
-    open func getAccessibleContext() -> /* javax.accessibility.AccessibleContext */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleContext", methodSig: "()Ljavax/accessibility/AccessibleContext;", methodCache: &ProgressMonitor.getAccessibleContext_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __return ) : nil
-    }
-
 
 }
 

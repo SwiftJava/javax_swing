@@ -207,7 +207,7 @@ open class JCheckBoxMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JCheckBoxMenuItem.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -294,7 +294,7 @@ open class JCheckBoxMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JCheckBoxMenuItem.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -311,7 +311,7 @@ open class JCheckBoxMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JCheckBoxMenuItem.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -688,7 +688,7 @@ open class JCheckBoxMenuItem: JMenuItem {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JCheckBoxMenuItem.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -855,13 +855,13 @@ open class JCheckBoxMenuItem: JMenuItem {
     }
 
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JCheckBoxMenuItem.getAccessibleContext()
-
-    /// public java.lang.String javax.swing.JCheckBoxMenuItem.getUIClassID()
-
     /// public java.lang.Object[] javax.swing.JCheckBoxMenuItem.getSelectedObjects()
 
     /// boolean javax.swing.JCheckBoxMenuItem.shouldUpdateSelectedStateFromAction()
+
+    /// public java.lang.String javax.swing.JCheckBoxMenuItem.getUIClassID()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JCheckBoxMenuItem.getAccessibleContext()
 
     /// public synchronized void javax.swing.JCheckBoxMenuItem.setState(boolean)
 

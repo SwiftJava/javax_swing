@@ -29,7 +29,7 @@ open class TreeExpansionEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "path", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &TreeExpansionEvent.path_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -48,7 +48,7 @@ open class TreeExpansionEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &TreeExpansionEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -60,8 +60,8 @@ open class TreeExpansionEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, path: TreePath? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: path, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TreeExpansionEvent", classCache: &TreeExpansionEvent.TreeExpansionEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/tree/TreePath;)V", methodCache: &TreeExpansionEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

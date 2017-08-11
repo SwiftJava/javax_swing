@@ -100,143 +100,77 @@ open class MaskFormatter: DefaultFormatter {
 
     /// private void javax.swing.text.MaskFormatter.readObject(java.io.ObjectInputStream) throws java.io.IOException,java.lang.ClassNotFoundException
 
-    /// public java.lang.Object javax.swing.text.MaskFormatter.stringToValue(java.lang.String) throws java.text.ParseException
-
-    private static var stringToValue_MethodID_3: jmethodID?
-
-    open func stringToValue( value: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &MaskFormatter.stringToValue_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    override open func stringToValue( _ _value: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
-        return try stringToValue( value: _value )
-    }
-
-    /// private java.lang.Object javax.swing.text.MaskFormatter.stringToValue(java.lang.String,boolean) throws java.text.ParseException
-
-    /// public java.lang.String javax.swing.text.MaskFormatter.valueToString(java.lang.Object) throws java.text.ParseException
-
-    private static var valueToString_MethodID_4: jmethodID?
-
-    override open func valueToString( value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &MaskFormatter.valueToString_MethodID_4, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    override open func valueToString( _ _value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
-        return try valueToString( value: _value )
-    }
-
-    /// public void javax.swing.text.MaskFormatter.install(javax.swing.JFormattedTextField)
-
-    private static var install_MethodID_5: jmethodID?
-
-    override open func install( ftf: JFormattedTextField? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ftf != nil ? ftf! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &MaskFormatter.install_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func install( _ _ftf: JFormattedTextField? ) {
-        install( ftf: _ftf )
-    }
-
     /// public java.lang.String javax.swing.text.MaskFormatter.getMask()
 
-    private static var getMask_MethodID_6: jmethodID?
+    private static var getMask_MethodID_3: jmethodID?
 
     open func getMask() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMask", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getMask_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMask", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getMask_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
-
-    /// private boolean javax.swing.text.MaskFormatter.isLiteral(int)
-
-    /// private char javax.swing.text.MaskFormatter.getLiteral(int)
-
-    /// boolean javax.swing.text.MaskFormatter.isNavigatable(int)
-
-    /// boolean javax.swing.text.MaskFormatter.canReplace(javax.swing.text.DefaultFormatter$ReplaceHolder)
-
-    /// boolean javax.swing.text.MaskFormatter.isValidEdit(javax.swing.text.DefaultFormatter$ReplaceHolder)
 
     /// private boolean javax.swing.text.MaskFormatter.isValidCharacter(int,char)
 
     /// public java.lang.String javax.swing.text.MaskFormatter.getValidCharacters()
 
-    private static var getValidCharacters_MethodID_7: jmethodID?
+    private static var getValidCharacters_MethodID_4: jmethodID?
 
     open func getValidCharacters() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValidCharacters", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getValidCharacters_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValidCharacters", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getValidCharacters_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public java.lang.String javax.swing.text.MaskFormatter.getInvalidCharacters()
 
-    private static var getInvalidCharacters_MethodID_8: jmethodID?
+    private static var getInvalidCharacters_MethodID_5: jmethodID?
 
     open func getInvalidCharacters() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInvalidCharacters", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getInvalidCharacters_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInvalidCharacters", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getInvalidCharacters_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public boolean javax.swing.text.MaskFormatter.getValueContainsLiteralCharacters()
 
-    private static var getValueContainsLiteralCharacters_MethodID_9: jmethodID?
+    private static var getValueContainsLiteralCharacters_MethodID_6: jmethodID?
 
     open func getValueContainsLiteralCharacters() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueContainsLiteralCharacters", methodSig: "()Z", methodCache: &MaskFormatter.getValueContainsLiteralCharacters_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueContainsLiteralCharacters", methodSig: "()Z", methodCache: &MaskFormatter.getValueContainsLiteralCharacters_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public char javax.swing.text.MaskFormatter.getPlaceholderCharacter()
 
-    private static var getPlaceholderCharacter_MethodID_10: jmethodID?
+    private static var getPlaceholderCharacter_MethodID_7: jmethodID?
 
     open func getPlaceholderCharacter() -> UInt16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getPlaceholderCharacter", methodSig: "()C", methodCache: &MaskFormatter.getPlaceholderCharacter_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getPlaceholderCharacter", methodSig: "()C", methodCache: &MaskFormatter.getPlaceholderCharacter_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: UInt16(), from: __return )
     }
 
 
     /// public void javax.swing.text.MaskFormatter.setMask(java.lang.String) throws java.text.ParseException
 
-    private static var setMask_MethodID_11: jmethodID?
+    private static var setMask_MethodID_8: jmethodID?
 
     open func setMask( mask: String? ) throws /* java.text.ParseException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: mask, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMask", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setMask_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMask", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setMask_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
         }
@@ -248,13 +182,13 @@ open class MaskFormatter: DefaultFormatter {
 
     /// public void javax.swing.text.MaskFormatter.setValidCharacters(java.lang.String)
 
-    private static var setValidCharacters_MethodID_12: jmethodID?
+    private static var setValidCharacters_MethodID_9: jmethodID?
 
     open func setValidCharacters( validCharacters: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: validCharacters, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValidCharacters", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setValidCharacters_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValidCharacters", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setValidCharacters_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setValidCharacters( _ _validCharacters: String? ) {
@@ -263,13 +197,13 @@ open class MaskFormatter: DefaultFormatter {
 
     /// public void javax.swing.text.MaskFormatter.setInvalidCharacters(java.lang.String)
 
-    private static var setInvalidCharacters_MethodID_13: jmethodID?
+    private static var setInvalidCharacters_MethodID_10: jmethodID?
 
     open func setInvalidCharacters( invalidCharacters: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: invalidCharacters, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInvalidCharacters", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setInvalidCharacters_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInvalidCharacters", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setInvalidCharacters_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setInvalidCharacters( _ _invalidCharacters: String? ) {
@@ -278,13 +212,13 @@ open class MaskFormatter: DefaultFormatter {
 
     /// public void javax.swing.text.MaskFormatter.setPlaceholder(java.lang.String)
 
-    private static var setPlaceholder_MethodID_14: jmethodID?
+    private static var setPlaceholder_MethodID_11: jmethodID?
 
     open func setPlaceholder( placeholder: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: placeholder, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPlaceholder", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setPlaceholder_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPlaceholder", methodSig: "(Ljava/lang/String;)V", methodCache: &MaskFormatter.setPlaceholder_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setPlaceholder( _ _placeholder: String? ) {
@@ -293,25 +227,25 @@ open class MaskFormatter: DefaultFormatter {
 
     /// public java.lang.String javax.swing.text.MaskFormatter.getPlaceholder()
 
-    private static var getPlaceholder_MethodID_15: jmethodID?
+    private static var getPlaceholder_MethodID_12: jmethodID?
 
     open func getPlaceholder() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPlaceholder", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getPlaceholder_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPlaceholder", methodSig: "()Ljava/lang/String;", methodCache: &MaskFormatter.getPlaceholder_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
     /// public void javax.swing.text.MaskFormatter.setPlaceholderCharacter(char)
 
-    private static var setPlaceholderCharacter_MethodID_16: jmethodID?
+    private static var setPlaceholderCharacter_MethodID_13: jmethodID?
 
     open func setPlaceholderCharacter( placeholder: UInt16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: placeholder, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPlaceholderCharacter", methodSig: "(C)V", methodCache: &MaskFormatter.setPlaceholderCharacter_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPlaceholderCharacter", methodSig: "(C)V", methodCache: &MaskFormatter.setPlaceholderCharacter_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setPlaceholderCharacter( _ _placeholder: UInt16 ) {
@@ -320,13 +254,13 @@ open class MaskFormatter: DefaultFormatter {
 
     /// public void javax.swing.text.MaskFormatter.setValueContainsLiteralCharacters(boolean)
 
-    private static var setValueContainsLiteralCharacters_MethodID_17: jmethodID?
+    private static var setValueContainsLiteralCharacters_MethodID_14: jmethodID?
 
     open func setValueContainsLiteralCharacters( containsLiteralChars: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: containsLiteralChars, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueContainsLiteralCharacters", methodSig: "(Z)V", methodCache: &MaskFormatter.setValueContainsLiteralCharacters_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueContainsLiteralCharacters", methodSig: "(Z)V", methodCache: &MaskFormatter.setValueContainsLiteralCharacters_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setValueContainsLiteralCharacters( _ _containsLiteralChars: Bool ) {
@@ -346,6 +280,72 @@ open class MaskFormatter: DefaultFormatter {
     /// private char javax.swing.text.MaskFormatter.getCharacter(int,char)
 
     /// private java.lang.String javax.swing.text.MaskFormatter.stripLiteralChars(java.lang.String)
+
+    /// public java.lang.Object javax.swing.text.MaskFormatter.stringToValue(java.lang.String) throws java.text.ParseException
+
+    private static var stringToValue_MethodID_15: jmethodID?
+
+    open func stringToValue( value: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &MaskFormatter.stringToValue_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
+        }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    override open func stringToValue( _ _value: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
+        return try stringToValue( value: _value )
+    }
+
+    /// private java.lang.Object javax.swing.text.MaskFormatter.stringToValue(java.lang.String,boolean) throws java.text.ParseException
+
+    /// public java.lang.String javax.swing.text.MaskFormatter.valueToString(java.lang.Object) throws java.text.ParseException
+
+    private static var valueToString_MethodID_16: jmethodID?
+
+    override open func valueToString( value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &MaskFormatter.valueToString_MethodID_16, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    override open func valueToString( _ _value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
+        return try valueToString( value: _value )
+    }
+
+    /// public void javax.swing.text.MaskFormatter.install(javax.swing.JFormattedTextField)
+
+    private static var install_MethodID_17: jmethodID?
+
+    override open func install( ftf: JFormattedTextField? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ftf, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &MaskFormatter.install_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    override open func install( _ _ftf: JFormattedTextField? ) {
+        install( ftf: _ftf )
+    }
+
+    /// private boolean javax.swing.text.MaskFormatter.isLiteral(int)
+
+    /// private char javax.swing.text.MaskFormatter.getLiteral(int)
+
+    /// boolean javax.swing.text.MaskFormatter.isNavigatable(int)
+
+    /// boolean javax.swing.text.MaskFormatter.canReplace(javax.swing.text.DefaultFormatter$ReplaceHolder)
+
+    /// boolean javax.swing.text.MaskFormatter.isValidEdit(javax.swing.text.DefaultFormatter$ReplaceHolder)
 
 }
 

@@ -86,7 +86,7 @@ open class BasicToggleButtonUI: BasicButtonUI {
     open class func createUI( b: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicToggleButtonUI", classCache: &BasicToggleButtonUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -96,48 +96,48 @@ open class BasicToggleButtonUI: BasicButtonUI {
         return createUI( b: _b )
     }
 
+    /// public void javax.swing.plaf.basic.BasicToggleButtonUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected int javax.swing.plaf.basic.BasicToggleButtonUI.getTextShiftOffset()
+
+    private static var getTextShiftOffset_MethodID_3: jmethodID?
+
+    override open func getTextShiftOffset() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTextShiftOffset", methodSig: "()I", methodCache: &BasicToggleButtonUI.getTextShiftOffset_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
     /// protected java.lang.String javax.swing.plaf.basic.BasicToggleButtonUI.getPropertyPrefix()
 
-    private static var getPropertyPrefix_MethodID_3: jmethodID?
+    private static var getPropertyPrefix_MethodID_4: jmethodID?
 
     override open func getPropertyPrefix() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicToggleButtonUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicToggleButtonUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
 
-    /// public void javax.swing.plaf.basic.BasicToggleButtonUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
     /// protected void javax.swing.plaf.basic.BasicToggleButtonUI.paintIcon(java.awt.Graphics,javax.swing.AbstractButton,java.awt.Rectangle)
 
-    private static var paintIcon_MethodID_4: jmethodID?
+    private static var paintIcon_MethodID_5: jmethodID?
 
     open func paintIcon( g: java_awt.Graphics?, b: AbstractButton?, iconRect: java_awt.Rectangle? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: iconRect != nil ? iconRect! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;Ljava/awt/Rectangle;)V", methodCache: &BasicToggleButtonUI.paintIcon_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: iconRect, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/AbstractButton;Ljava/awt/Rectangle;)V", methodCache: &BasicToggleButtonUI.paintIcon_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintIcon( _ _g: java_awt.Graphics?, _ _b: AbstractButton?, _ _iconRect: java_awt.Rectangle? ) {
         paintIcon( g: _g, b: _b, iconRect: _iconRect )
     }
-
-    /// protected int javax.swing.plaf.basic.BasicToggleButtonUI.getTextShiftOffset()
-
-    private static var getTextShiftOffset_MethodID_5: jmethodID?
-
-    override open func getTextShiftOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTextShiftOffset", methodSig: "()I", methodCache: &BasicToggleButtonUI.getTextShiftOffset_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
 
 }
 

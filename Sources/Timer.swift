@@ -30,7 +30,7 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &Timer.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -109,6 +109,8 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// private java.lang.Object javax.swing.Timer.readResolve()
 
+    /// final java.security.AccessControlContext javax.swing.Timer.getAccessControlContext()
+
     /// public void javax.swing.Timer.setDelay(int)
 
     private static var setDelay_MethodID_4: jmethodID?
@@ -147,88 +149,54 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
     }
 
 
-    /// public java.util.EventListener[] javax.swing.Timer.getListeners(java.lang.Class)
+    /// public void javax.swing.Timer.removeActionListener(java.awt.event.ActionListener)
 
-    private static var getListeners_MethodID_7: jmethodID?
+    private static var removeActionListener_MethodID_7: jmethodID?
 
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Timer.getListeners_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
-    /// protected void javax.swing.Timer.fireActionPerformed(java.awt.event.ActionEvent)
-
-    private static var fireActionPerformed_MethodID_8: jmethodID?
-
-    open func fireActionPerformed( e: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &Timer.fireActionPerformed_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func fireActionPerformed( _ _e: java_awt.ActionEvent? ) {
-        fireActionPerformed( e: _e )
-    }
-
-    /// public void javax.swing.Timer.setActionCommand(java.lang.String)
-
-    private static var setActionCommand_MethodID_9: jmethodID?
-
-    open func setActionCommand( command: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: command, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &Timer.setActionCommand_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setActionCommand( _ _command: String? ) {
-        setActionCommand( command: _command )
-    }
-
-    /// public void javax.swing.Timer.addActionListener(java.awt.event.ActionListener)
-
-    private static var addActionListener_MethodID_10: jmethodID?
-
-    open func addActionListener( listener: java_awt.ActionListener? ) {
+    open func removeActionListener( listener: java_awt.ActionListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Timer.addActionListener_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Timer.removeActionListener_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func addActionListener( _ _listener: java_awt.ActionListener? ) {
-        addActionListener( listener: _listener )
+    open func removeActionListener( _ _listener: java_awt.ActionListener? ) {
+        removeActionListener( listener: _listener )
     }
+
+    /// public java.awt.event.ActionListener[] javax.swing.Timer.getActionListeners()
+
+    private static var getActionListeners_MethodID_8: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &Timer.getActionListeners_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
+    }
+
 
     /// public boolean javax.swing.Timer.isRunning()
 
-    private static var isRunning_MethodID_11: jmethodID?
+    private static var isRunning_MethodID_9: jmethodID?
 
     open func isRunning() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRunning", methodSig: "()Z", methodCache: &Timer.isRunning_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRunning", methodSig: "()Z", methodCache: &Timer.isRunning_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.Timer.setRepeats(boolean)
 
-    private static var setRepeats_MethodID_12: jmethodID?
+    private static var setRepeats_MethodID_10: jmethodID?
 
     open func setRepeats( flag: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRepeats", methodSig: "(Z)V", methodCache: &Timer.setRepeats_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRepeats", methodSig: "(Z)V", methodCache: &Timer.setRepeats_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setRepeats( _ _flag: Bool ) {
@@ -239,13 +207,13 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// public static void javax.swing.Timer.setLogTimers(boolean)
 
-    private static var setLogTimers_MethodID_13: jmethodID?
+    private static var setLogTimers_MethodID_11: jmethodID?
 
     open class func setLogTimers( flag: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flag, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/Timer", classCache: &TimerJNIClass, methodName: "setLogTimers", methodSig: "(Z)V", methodCache: &setLogTimers_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/Timer", classCache: &TimerJNIClass, methodName: "setLogTimers", methodSig: "(Z)V", methodCache: &setLogTimers_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open class func setLogTimers( _ _flag: Bool ) {
@@ -254,25 +222,25 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// public static boolean javax.swing.Timer.getLogTimers()
 
-    private static var getLogTimers_MethodID_14: jmethodID?
+    private static var getLogTimers_MethodID_12: jmethodID?
 
     open class func getLogTimers() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/Timer", classCache: &TimerJNIClass, methodName: "getLogTimers", methodSig: "()Z", methodCache: &getLogTimers_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/Timer", classCache: &TimerJNIClass, methodName: "getLogTimers", methodSig: "()Z", methodCache: &getLogTimers_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.Timer.setInitialDelay(int)
 
-    private static var setInitialDelay_MethodID_15: jmethodID?
+    private static var setInitialDelay_MethodID_13: jmethodID?
 
     open func setInitialDelay( initialDelay: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: initialDelay, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInitialDelay", methodSig: "(I)V", methodCache: &Timer.setInitialDelay_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInitialDelay", methodSig: "(I)V", methodCache: &Timer.setInitialDelay_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setInitialDelay( _ _initialDelay: Int ) {
@@ -281,37 +249,37 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// public int javax.swing.Timer.getInitialDelay()
 
-    private static var getInitialDelay_MethodID_16: jmethodID?
+    private static var getInitialDelay_MethodID_14: jmethodID?
 
     open func getInitialDelay() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInitialDelay", methodSig: "()I", methodCache: &Timer.getInitialDelay_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInitialDelay", methodSig: "()I", methodCache: &Timer.getInitialDelay_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public boolean javax.swing.Timer.isRepeats()
 
-    private static var isRepeats_MethodID_17: jmethodID?
+    private static var isRepeats_MethodID_15: jmethodID?
 
     open func isRepeats() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepeats", methodSig: "()Z", methodCache: &Timer.isRepeats_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRepeats", methodSig: "()Z", methodCache: &Timer.isRepeats_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.Timer.setCoalesce(boolean)
 
-    private static var setCoalesce_MethodID_18: jmethodID?
+    private static var setCoalesce_MethodID_16: jmethodID?
 
     open func setCoalesce( flag: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: flag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCoalesce", methodSig: "(Z)V", methodCache: &Timer.setCoalesce_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCoalesce", methodSig: "(Z)V", methodCache: &Timer.setCoalesce_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setCoalesce( _ _flag: Bool ) {
@@ -320,12 +288,12 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// public boolean javax.swing.Timer.isCoalesce()
 
-    private static var isCoalesce_MethodID_19: jmethodID?
+    private static var isCoalesce_MethodID_17: jmethodID?
 
     open func isCoalesce() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCoalesce", methodSig: "()Z", methodCache: &Timer.isCoalesce_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCoalesce", methodSig: "()Z", methodCache: &Timer.isCoalesce_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -336,46 +304,78 @@ open class Timer: java_swift.JavaObject, /* java.io.Serializable */ UnclassedPro
 
     /// java.util.concurrent.locks.Lock javax.swing.Timer.getLock()
 
-    /// final java.security.AccessControlContext javax.swing.Timer.getAccessControlContext()
+    /// public java.util.EventListener[] javax.swing.Timer.getListeners(java.lang.Class)
 
-    /// public void javax.swing.Timer.removeActionListener(java.awt.event.ActionListener)
+    private static var getListeners_MethodID_18: jmethodID?
 
-    private static var removeActionListener_MethodID_20: jmethodID?
-
-    open func removeActionListener( listener: java_awt.ActionListener? ) {
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Timer.removeActionListener_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &Timer.getListeners_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
 
-    open func removeActionListener( _ _listener: java_awt.ActionListener? ) {
-        removeActionListener( listener: _listener )
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
     }
-
-    /// public java.awt.event.ActionListener[] javax.swing.Timer.getActionListeners()
-
-    private static var getActionListeners_MethodID_21: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &Timer.getActionListeners_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
-    }
-
 
     /// public java.lang.String javax.swing.Timer.getActionCommand()
 
-    private static var getActionCommand_MethodID_22: jmethodID?
+    private static var getActionCommand_MethodID_19: jmethodID?
 
     open func getActionCommand() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &Timer.getActionCommand_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &Timer.getActionCommand_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
+
+    /// protected void javax.swing.Timer.fireActionPerformed(java.awt.event.ActionEvent)
+
+    private static var fireActionPerformed_MethodID_20: jmethodID?
+
+    open func fireActionPerformed( e: java_awt.ActionEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &Timer.fireActionPerformed_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func fireActionPerformed( _ _e: java_awt.ActionEvent? ) {
+        fireActionPerformed( e: _e )
+    }
+
+    /// public void javax.swing.Timer.setActionCommand(java.lang.String)
+
+    private static var setActionCommand_MethodID_21: jmethodID?
+
+    open func setActionCommand( command: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: command, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &Timer.setActionCommand_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func setActionCommand( _ _command: String? ) {
+        setActionCommand( command: _command )
+    }
+
+    /// public void javax.swing.Timer.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_22: jmethodID?
+
+    open func addActionListener( listener: java_awt.ActionListener? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &Timer.addActionListener_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _listener: java_awt.ActionListener? ) {
+        addActionListener( listener: _listener )
+    }
 
 }
 

@@ -64,6 +64,8 @@ open class CSS: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProto
 
     /// static java.util.Hashtable javax.swing.text.html.CSS.access$700()
 
+    /// java.awt.Font javax.swing.text.html.CSS.getFont(javax.swing.text.StyleContext,javax.swing.text.AttributeSet,int,javax.swing.text.html.StyleSheet)
+
     /// static java.lang.String[] javax.swing.text.html.CSS.parseStrings(java.lang.String)
 
     /// static java.lang.String javax.swing.text.html.CSS.colorToHex(java.awt.Color)
@@ -104,36 +106,6 @@ open class CSS: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProto
 
     /// static void javax.swing.text.html.CSS.calculateTiledLayout(javax.swing.text.html.CSS$LayoutIterator,int)
 
-    /// javax.swing.text.AttributeSet javax.swing.text.html.CSS.translateHTMLToCSS(javax.swing.text.AttributeSet)
-
-    /// void javax.swing.text.html.CSS.setBaseFontSize(java.lang.String)
-
-    /// void javax.swing.text.html.CSS.setBaseFontSize(int)
-
-    /// static int javax.swing.text.html.CSS.getIndexOfSize(float,int[])
-
-    /// static int javax.swing.text.html.CSS.getIndexOfSize(float,javax.swing.text.html.StyleSheet)
-
-    /// float javax.swing.text.html.CSS.getPointSize(int,javax.swing.text.html.StyleSheet)
-
-    /// float javax.swing.text.html.CSS.getPointSize(java.lang.String,javax.swing.text.html.StyleSheet)
-
-    /// static java.awt.Color javax.swing.text.html.CSS.stringToColor(java.lang.String)
-
-    /// void javax.swing.text.html.CSS.addInternalCSSValue(javax.swing.text.MutableAttributeSet,javax.swing.text.html.CSS$Attribute,java.lang.String)
-
-    /// java.lang.Object javax.swing.text.html.CSS.getCssValue(javax.swing.text.html.CSS$Attribute,java.lang.String)
-
-    /// java.lang.Object javax.swing.text.html.CSS.styleConstantsValueToCSSValue(javax.swing.text.StyleConstants,java.lang.Object)
-
-    /// javax.swing.text.html.CSS$Attribute javax.swing.text.html.CSS.styleConstantsKeyToCSSKey(javax.swing.text.StyleConstants)
-
-    /// static int javax.swing.text.html.CSS.getFontSize(javax.swing.text.AttributeSet,int,javax.swing.text.html.StyleSheet)
-
-    /// private javax.swing.text.html.StyleSheet javax.swing.text.html.CSS.getStyleSheet(javax.swing.text.html.StyleSheet)
-
-    /// java.awt.Font javax.swing.text.html.CSS.getFont(javax.swing.text.StyleContext,javax.swing.text.AttributeSet,int,javax.swing.text.html.StyleSheet)
-
     /// public static final javax.swing.text.html.CSS$Attribute javax.swing.text.html.CSS.getAttribute(java.lang.String)
 
     private static var getAttribute_MethodID_2: jmethodID?
@@ -162,6 +134,34 @@ open class CSS: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProto
         return JNIType.toSwift( type: [CSS_Attribute](), from: __return )
     }
 
+
+    /// javax.swing.text.AttributeSet javax.swing.text.html.CSS.translateHTMLToCSS(javax.swing.text.AttributeSet)
+
+    /// void javax.swing.text.html.CSS.setBaseFontSize(int)
+
+    /// void javax.swing.text.html.CSS.setBaseFontSize(java.lang.String)
+
+    /// static int javax.swing.text.html.CSS.getIndexOfSize(float,int[])
+
+    /// static int javax.swing.text.html.CSS.getIndexOfSize(float,javax.swing.text.html.StyleSheet)
+
+    /// float javax.swing.text.html.CSS.getPointSize(int,javax.swing.text.html.StyleSheet)
+
+    /// float javax.swing.text.html.CSS.getPointSize(java.lang.String,javax.swing.text.html.StyleSheet)
+
+    /// static java.awt.Color javax.swing.text.html.CSS.stringToColor(java.lang.String)
+
+    /// void javax.swing.text.html.CSS.addInternalCSSValue(javax.swing.text.MutableAttributeSet,javax.swing.text.html.CSS$Attribute,java.lang.String)
+
+    /// java.lang.Object javax.swing.text.html.CSS.getCssValue(javax.swing.text.html.CSS$Attribute,java.lang.String)
+
+    /// java.lang.Object javax.swing.text.html.CSS.styleConstantsValueToCSSValue(javax.swing.text.StyleConstants,java.lang.Object)
+
+    /// javax.swing.text.html.CSS$Attribute javax.swing.text.html.CSS.styleConstantsKeyToCSSKey(javax.swing.text.StyleConstants)
+
+    /// static int javax.swing.text.html.CSS.getFontSize(javax.swing.text.AttributeSet,int,javax.swing.text.html.StyleSheet)
+
+    /// private javax.swing.text.html.StyleSheet javax.swing.text.html.CSS.getStyleSheet(javax.swing.text.html.StyleSheet)
 
     /// java.awt.Color javax.swing.text.html.CSS.getColor(javax.swing.text.AttributeSet,javax.swing.text.html.CSS$Attribute)
 

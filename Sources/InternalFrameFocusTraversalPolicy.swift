@@ -36,7 +36,7 @@ open class InternalFrameFocusTraversalPolicy: java_awt.FocusTraversalPolicy {
     open func getInitialComponent( frame: JInternalFrame? ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: frame != nil ? frame! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: frame, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInitialComponent", methodSig: "(Ljavax/swing/JInternalFrame;)Ljava/awt/Component;", methodCache: &InternalFrameFocusTraversalPolicy.getInitialComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil

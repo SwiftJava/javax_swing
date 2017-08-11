@@ -59,7 +59,7 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &DefaultListCellRenderer.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -142,7 +142,7 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &DefaultListCellRenderer.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -159,7 +159,7 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultListCellRenderer.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -536,7 +536,7 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &DefaultListCellRenderer.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -573,133 +573,29 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
 
     /// public boolean javax.swing.DefaultListCellRenderer.isOpaque()
 
-    /// public void javax.swing.DefaultListCellRenderer.invalidate()
+    /// public void javax.swing.DefaultListCellRenderer.repaint()
 
-    /// public void javax.swing.DefaultListCellRenderer.revalidate()
+    /// public void javax.swing.DefaultListCellRenderer.repaint(long,int,int,int,int)
 
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,long,long)
+    /// public void javax.swing.DefaultListCellRenderer.repaint(java.awt.Rectangle)
 
-    private static var firePropertyChange_MethodID_2: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: Int64, newValue: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int64, _ _newValue: Int64 ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,int,int)
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,short,short)
-
-    private static var firePropertyChange_MethodID_3: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: Int16, newValue: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int16, _ _newValue: Int16 ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,char,char)
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,float,float)
-
-    private static var firePropertyChange_MethodID_4: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: Float, newValue: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;FF)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Float, _ _newValue: Float ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,double,double)
-
-    private static var firePropertyChange_MethodID_5: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: Double, newValue: Double ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;DD)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Double, _ _newValue: Double ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,byte,byte)
-
-    private static var firePropertyChange_MethodID_6: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: Int8, newValue: Int8 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;BB)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int8, _ _newValue: Int8 ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// protected void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_7: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue != nil ? oldValue! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
+    /// public void javax.swing.DefaultListCellRenderer.validate()
 
     /// private javax.swing.border.Border javax.swing.DefaultListCellRenderer.getNoFocusBorder()
 
     /// public java.awt.Component javax.swing.DefaultListCellRenderer.getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
 
-    private static var getListCellRendererComponent_MethodID_8: jmethodID?
+    private static var getListCellRendererComponent_MethodID_2: jmethodID?
 
     open func getListCellRendererComponent( list: JList?, value: java_swift.JavaObject?, index: Int, isSelected: Bool, cellHasFocus: Bool ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
         __args[3] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[4] = JNIType.toJava( value: cellHasFocus, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListCellRendererComponent", methodSig: "(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;", methodCache: &DefaultListCellRenderer.getListCellRendererComponent_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListCellRendererComponent", methodSig: "(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;", methodCache: &DefaultListCellRenderer.getListCellRendererComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -708,13 +604,117 @@ open class DefaultListCellRenderer: JLabel, ListCellRenderer {
         return getListCellRendererComponent( list: _list, value: _value, index: _index, isSelected: _isSelected, cellHasFocus: _cellHasFocus )
     }
 
-    /// public void javax.swing.DefaultListCellRenderer.repaint()
+    /// public void javax.swing.DefaultListCellRenderer.invalidate()
 
-    /// public void javax.swing.DefaultListCellRenderer.repaint(java.awt.Rectangle)
+    /// public void javax.swing.DefaultListCellRenderer.revalidate()
 
-    /// public void javax.swing.DefaultListCellRenderer.repaint(long,int,int,int,int)
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,float,float)
 
-    /// public void javax.swing.DefaultListCellRenderer.validate()
+    private static var firePropertyChange_MethodID_3: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: Float, newValue: Float ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;FF)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Float, _ _newValue: Float ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,double,double)
+
+    private static var firePropertyChange_MethodID_4: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: Double, newValue: Double ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;DD)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Double, _ _newValue: Double ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,long,long)
+
+    private static var firePropertyChange_MethodID_5: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: Int64, newValue: Int64 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;JJ)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int64, _ _newValue: Int64 ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,boolean,boolean)
+
+    /// protected void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_6: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,byte,byte)
+
+    private static var firePropertyChange_MethodID_7: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: Int8, newValue: Int8 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;BB)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int8, _ _newValue: Int8 ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,char,char)
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,short,short)
+
+    private static var firePropertyChange_MethodID_8: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: Int16, newValue: Int16 ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;SS)V", methodCache: &DefaultListCellRenderer.firePropertyChange_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func firePropertyChange( _ _propertyName: String?, _ _oldValue: Int16, _ _newValue: Int16 ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public void javax.swing.DefaultListCellRenderer.firePropertyChange(java.lang.String,int,int)
 
 }
 

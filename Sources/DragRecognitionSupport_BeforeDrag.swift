@@ -26,7 +26,7 @@ open class DragRecognitionSupport_BeforeDragForward: JNIObjectForward, DragRecog
     open func dragStarting( me: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: me != nil ? me! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: me, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragStarting", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &DragRecognitionSupport_BeforeDragForward.dragStarting_MethodID_2, args: &__args, locals: &__locals )
     }
 

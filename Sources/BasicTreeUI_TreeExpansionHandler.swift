@@ -25,7 +25,7 @@ open class BasicTreeUI_TreeExpansionHandler: java_swift.JavaObject, TreeExpansio
     public convenience init( this_0: BasicTreeUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$TreeExpansionHandler", classCache: &BasicTreeUI_TreeExpansionHandler.BasicTreeUI_TreeExpansionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,7 +42,7 @@ open class BasicTreeUI_TreeExpansionHandler: java_swift.JavaObject, TreeExpansio
     open func treeExpanded( event: TreeExpansionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeExpanded", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.treeExpanded_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -57,7 +57,7 @@ open class BasicTreeUI_TreeExpansionHandler: java_swift.JavaObject, TreeExpansio
     open func treeCollapsed( event: TreeExpansionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeCollapsed", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.treeCollapsed_MethodID_3, args: &__args, locals: &__locals )
     }
 

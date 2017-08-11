@@ -57,7 +57,7 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &BasicComboBoxRenderer.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -140,7 +140,7 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &BasicComboBoxRenderer.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -157,7 +157,7 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicComboBoxRenderer.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -534,7 +534,7 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &BasicComboBoxRenderer.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -569,8 +569,6 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicComboBoxRenderer.getPreferredSize()
-
     /// private static javax.swing.border.Border javax.swing.plaf.basic.BasicComboBoxRenderer.getNoFocusBorder()
 
     /// public java.awt.Component javax.swing.plaf.basic.BasicComboBoxRenderer.getListCellRendererComponent(javax.swing.JList,java.lang.Object,int,boolean,boolean)
@@ -580,8 +578,8 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
     open func getListCellRendererComponent( list: JList?, value: java_swift.JavaObject?, index: Int, isSelected: Bool, cellHasFocus: Bool ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
         __args[3] = JNIType.toJava( value: isSelected, locals: &__locals )
         __args[4] = JNIType.toJava( value: cellHasFocus, locals: &__locals )
@@ -593,6 +591,8 @@ open class BasicComboBoxRenderer: JLabel, ListCellRenderer {
     open func getListCellRendererComponent( _ _list: JList?, _ _value: java_swift.JavaObject?, _ _index: Int, _ _isSelected: Bool, _ _cellHasFocus: Bool ) -> java_awt.Component! {
         return getListCellRendererComponent( list: _list, value: _value, index: _index, isSelected: _isSelected, cellHasFocus: _cellHasFocus )
     }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicComboBoxRenderer.getPreferredSize()
 
 }
 

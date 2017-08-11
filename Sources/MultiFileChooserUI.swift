@@ -30,7 +30,7 @@ open class MultiFileChooserUI: FileChooserUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "uis", fieldType: "Ljava/util/Vector;", fieldCache: &MultiFileChooserUI.uis_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -54,8 +54,8 @@ open class MultiFileChooserUI: FileChooserUI {
     open func update( a: java_awt.Graphics?, b: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.update_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -70,7 +70,7 @@ open class MultiFileChooserUI: FileChooserUI {
     open func contains( a: JComponent?, b: Int, c: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljavax/swing/JComponent;II)Z", methodCache: &MultiFileChooserUI.contains_MethodID_3, args: &__args, locals: &__locals )
@@ -81,15 +81,78 @@ open class MultiFileChooserUI: FileChooserUI {
         return contains( a: _a, b: _b, c: _c )
     }
 
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiFileChooserUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_4: jmethodID?
+
+    open class func createUI( a: JComponent? ) -> ComponentUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiFileChooserUI", classCache: &MultiFileChooserUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _a: JComponent? ) -> ComponentUI! {
+        return createUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiFileChooserUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paint_MethodID_5: jmethodID?
+
+    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.paint_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
+        paint( a: _a, b: _b )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiFileChooserUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_6: jmethodID?
+
+    open func installUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.installUI_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func installUI( _ _a: JComponent? ) {
+        installUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiFileChooserUI.uninstallUI(javax.swing.JComponent)
+
+    private static var uninstallUI_MethodID_7: jmethodID?
+
+    open func uninstallUI( a: JComponent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.uninstallUI_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallUI( _ _a: JComponent? ) {
+        uninstallUI( a: _a )
+    }
+
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiFileChooserUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var getPreferredSize_MethodID_4: jmethodID?
+    private static var getPreferredSize_MethodID_8: jmethodID?
 
     open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiFileChooserUI.getPreferredSize_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiFileChooserUI.getPreferredSize_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -100,13 +163,13 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiFileChooserUI.getMinimumSize(javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_5: jmethodID?
+    private static var getMinimumSize_MethodID_9: jmethodID?
 
     open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiFileChooserUI.getMinimumSize_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiFileChooserUI.getMinimumSize_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -117,13 +180,13 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiFileChooserUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var getMaximumSize_MethodID_6: jmethodID?
+    private static var getMaximumSize_MethodID_10: jmethodID?
 
     open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiFileChooserUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiFileChooserUI.getMaximumSize_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -132,15 +195,49 @@ open class MultiFileChooserUI: FileChooserUI {
         return getMaximumSize( a: _a )
     }
 
+    /// public int javax.swing.plaf.multi.MultiFileChooserUI.getAccessibleChildrenCount(javax.swing.JComponent)
+
+    private static var getAccessibleChildrenCount_MethodID_11: jmethodID?
+
+    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiFileChooserUI.getAccessibleChildrenCount_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
+        return getAccessibleChildrenCount( a: _a )
+    }
+
+    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiFileChooserUI.getAccessibleChild(javax.swing.JComponent,int)
+
+    private static var getAccessibleChild_MethodID_12: jmethodID?
+
+    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiFileChooserUI.getAccessibleChild_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+        return getAccessibleChild( a: _a, b: _b )
+    }
+
     /// public void javax.swing.plaf.multi.MultiFileChooserUI.rescanCurrentDirectory(javax.swing.JFileChooser)
 
-    private static var rescanCurrentDirectory_MethodID_7: jmethodID?
+    private static var rescanCurrentDirectory_MethodID_13: jmethodID?
 
     open func rescanCurrentDirectory( a: JFileChooser? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rescanCurrentDirectory", methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &MultiFileChooserUI.rescanCurrentDirectory_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rescanCurrentDirectory", methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &MultiFileChooserUI.rescanCurrentDirectory_MethodID_13, args: &__args, locals: &__locals )
     }
 
     override open func rescanCurrentDirectory( _ _a: JFileChooser? ) {
@@ -149,14 +246,14 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public void javax.swing.plaf.multi.MultiFileChooserUI.ensureFileIsVisible(javax.swing.JFileChooser,java.io.File)
 
-    private static var ensureFileIsVisible_MethodID_8: jmethodID?
+    private static var ensureFileIsVisible_MethodID_14: jmethodID?
 
     open func ensureFileIsVisible( a: JFileChooser?, b: /* java.io.File */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureFileIsVisible", methodSig: "(Ljavax/swing/JFileChooser;Ljava/io/File;)V", methodCache: &MultiFileChooserUI.ensureFileIsVisible_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureFileIsVisible", methodSig: "(Ljavax/swing/JFileChooser;Ljava/io/File;)V", methodCache: &MultiFileChooserUI.ensureFileIsVisible_MethodID_14, args: &__args, locals: &__locals )
     }
 
     override open func ensureFileIsVisible( _ _a: JFileChooser?, _ _b: /* java.io.File */ UnclassedObject? ) {
@@ -165,13 +262,13 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public java.lang.String javax.swing.plaf.multi.MultiFileChooserUI.getDialogTitle(javax.swing.JFileChooser)
 
-    private static var getDialogTitle_MethodID_9: jmethodID?
+    private static var getDialogTitle_MethodID_15: jmethodID?
 
     open func getDialogTitle( a: JFileChooser? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDialogTitle", methodSig: "(Ljavax/swing/JFileChooser;)Ljava/lang/String;", methodCache: &MultiFileChooserUI.getDialogTitle_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDialogTitle", methodSig: "(Ljavax/swing/JFileChooser;)Ljava/lang/String;", methodCache: &MultiFileChooserUI.getDialogTitle_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -181,13 +278,13 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public java.lang.String javax.swing.plaf.multi.MultiFileChooserUI.getApproveButtonText(javax.swing.JFileChooser)
 
-    private static var getApproveButtonText_MethodID_10: jmethodID?
+    private static var getApproveButtonText_MethodID_16: jmethodID?
 
     open func getApproveButtonText( a: JFileChooser? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButtonText", methodSig: "(Ljavax/swing/JFileChooser;)Ljava/lang/String;", methodCache: &MultiFileChooserUI.getApproveButtonText_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getApproveButtonText", methodSig: "(Ljavax/swing/JFileChooser;)Ljava/lang/String;", methodCache: &MultiFileChooserUI.getApproveButtonText_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -197,13 +294,13 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public javax.swing.filechooser.FileFilter javax.swing.plaf.multi.MultiFileChooserUI.getAcceptAllFileFilter(javax.swing.JFileChooser)
 
-    private static var getAcceptAllFileFilter_MethodID_11: jmethodID?
+    private static var getAcceptAllFileFilter_MethodID_17: jmethodID?
 
     open func getAcceptAllFileFilter( a: JFileChooser? ) -> FileFilter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAcceptAllFileFilter", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/filechooser/FileFilter;", methodCache: &MultiFileChooserUI.getAcceptAllFileFilter_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAcceptAllFileFilter", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/filechooser/FileFilter;", methodCache: &MultiFileChooserUI.getAcceptAllFileFilter_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FileFilter( javaObject: __return ) : nil
     }
@@ -214,13 +311,13 @@ open class MultiFileChooserUI: FileChooserUI {
 
     /// public javax.swing.filechooser.FileView javax.swing.plaf.multi.MultiFileChooserUI.getFileView(javax.swing.JFileChooser)
 
-    private static var getFileView_MethodID_12: jmethodID?
+    private static var getFileView_MethodID_18: jmethodID?
 
     open func getFileView( a: JFileChooser? ) -> FileView! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileView", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/filechooser/FileView;", methodCache: &MultiFileChooserUI.getFileView_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFileView", methodSig: "(Ljavax/swing/JFileChooser;)Ljavax/swing/filechooser/FileView;", methodCache: &MultiFileChooserUI.getFileView_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? FileView( javaObject: __return ) : nil
     }
@@ -229,114 +326,17 @@ open class MultiFileChooserUI: FileChooserUI {
         return getFileView( a: _a )
     }
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiFileChooserUI.createUI(javax.swing.JComponent)
-
-    private static var createUI_MethodID_13: jmethodID?
-
-    open class func createUI( a: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiFileChooserUI", classCache: &MultiFileChooserUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    override open class func createUI( _ _a: JComponent? ) -> ComponentUI! {
-        return createUI( a: _a )
-    }
-
-    /// public int javax.swing.plaf.multi.MultiFileChooserUI.getAccessibleChildrenCount(javax.swing.JComponent)
-
-    private static var getAccessibleChildrenCount_MethodID_14: jmethodID?
-
-    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiFileChooserUI.getAccessibleChildrenCount_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
-        return getAccessibleChildrenCount( a: _a )
-    }
-
-    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiFileChooserUI.getAccessibleChild(javax.swing.JComponent,int)
-
-    private static var getAccessibleChild_MethodID_15: jmethodID?
-
-    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiFileChooserUI.getAccessibleChild_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        return getAccessibleChild( a: _a, b: _b )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiFileChooserUI.installUI(javax.swing.JComponent)
-
-    private static var installUI_MethodID_16: jmethodID?
-
-    open func installUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.installUI_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    override open func installUI( _ _a: JComponent? ) {
-        installUI( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiFileChooserUI.uninstallUI(javax.swing.JComponent)
-
-    private static var uninstallUI_MethodID_17: jmethodID?
-
-    open func uninstallUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.uninstallUI_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    override open func uninstallUI( _ _a: JComponent? ) {
-        uninstallUI( a: _a )
-    }
-
     /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiFileChooserUI.getUIs()
 
-    private static var getUIs_MethodID_18: jmethodID?
+    private static var getUIs_MethodID_19: jmethodID?
 
     open func getUIs() -> [ComponentUI]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiFileChooserUI.getUIs_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiFileChooserUI.getUIs_MethodID_19, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ComponentUI](), from: __return )
     }
 
-
-    /// public void javax.swing.plaf.multi.MultiFileChooserUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paint_MethodID_19: jmethodID?
-
-    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiFileChooserUI.paint_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
-        paint( a: _a, b: _b )
-    }
 
 }
 

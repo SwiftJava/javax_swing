@@ -264,7 +264,7 @@ open class MetalScrollButton: BasicArrowButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &MetalScrollButton.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -351,7 +351,7 @@ open class MetalScrollButton: BasicArrowButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &MetalScrollButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -368,7 +368,7 @@ open class MetalScrollButton: BasicArrowButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &MetalScrollButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -745,7 +745,7 @@ open class MetalScrollButton: BasicArrowButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &MetalScrollButton.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -787,6 +787,8 @@ open class MetalScrollButton: BasicArrowButton {
         self.init( direction: _direction, width: _width, freeStanding: _freeStanding )
     }
 
+    /// public void javax.swing.plaf.metal.MetalScrollButton.paint(java.awt.Graphics)
+
     /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getPreferredSize()
 
     /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollButton.getMinimumSize()
@@ -819,8 +821,6 @@ open class MetalScrollButton: BasicArrowButton {
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-
-    /// public void javax.swing.plaf.metal.MetalScrollButton.paint(java.awt.Graphics)
 
 }
 

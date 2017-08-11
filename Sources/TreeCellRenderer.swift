@@ -26,8 +26,8 @@ open class TreeCellRendererForward: JNIObjectForward, TreeCellRenderer {
     open func getTreeCellRendererComponent( tree: JTree?, value: java_swift.JavaObject?, selected: Bool, expanded: Bool, leaf: Bool, row: Int, hasFocus: Bool ) -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree != nil ? tree! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         __args[2] = JNIType.toJava( value: selected, locals: &__locals )
         __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
         __args[4] = JNIType.toJava( value: leaf, locals: &__locals )

@@ -69,7 +69,7 @@ open class DateFormatter: InternationalFormatter {
     public convenience init( format: /* java.text.DateFormat */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: format, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DateFormatter", classCache: &DateFormatter.DateFormatterJNIClass, methodSig: "(Ljava/text/DateFormat;)V", methodCache: &DateFormatter.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -79,6 +79,8 @@ open class DateFormatter: InternationalFormatter {
         self.init( format: _format )
     }
 
+    /// private java.util.Calendar javax.swing.text.DateFormatter.getCalendar()
+
     /// public void javax.swing.text.DateFormatter.setFormat(java.text.DateFormat)
 
     private static var setFormat_MethodID_3: jmethodID?
@@ -86,15 +88,13 @@ open class DateFormatter: InternationalFormatter {
     override open func setFormat( format: /* java.text.DateFormat */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: format != nil ? format! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: format, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/DateFormat;)V", methodCache: &DateFormatter.setFormat_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func setFormat( _ _format: /* java.text.DateFormat */ UnclassedObject? ) {
         setFormat( format: _format )
     }
-
-    /// private java.util.Calendar javax.swing.text.DateFormatter.getCalendar()
 
     /// boolean javax.swing.text.DateFormatter.getSupportsIncrement()
 

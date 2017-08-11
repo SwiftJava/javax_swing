@@ -32,7 +32,7 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "elementInfo", fieldType: "Ljavax/swing/text/html/AccessibleHTML$ElementInfo;", fieldCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.elementInfo_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -149,8 +149,8 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
     public convenience init( this_1: /* javax.swing.text.html.AccessibleHTML$TableElementInfo */ UnclassedObject?, elementInfo: /* javax.swing.text.html.AccessibleHTML$ElementInfo */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_1 != nil ? this_1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: elementInfo != nil ? elementInfo! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: elementInfo, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/AccessibleHTML$TableElementInfo$TableAccessibleContext", classCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.AccessibleHTML_TableElementInfo_TableAccessibleContextJNIClass, methodSig: "(Ljavax/swing/text/html/AccessibleHTML$TableElementInfo;Ljavax/swing/text/html/AccessibleHTML$ElementInfo;)V", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -326,34 +326,34 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
         setAccessibleRowHeader( table: _table )
     }
 
-    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleColumnHeader(int)
+    /// public javax.accessibility.AccessibleTable javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleColumnHeader()
 
     private static var getAccessibleColumnHeader_MethodID_13: jmethodID?
+
+    open func getAccessibleColumnHeader() -> /* javax.accessibility.AccessibleTable */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleColumnHeader", methodSig: "()Ljavax/accessibility/AccessibleTable;", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleColumnHeader_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* javax.accessibility.AccessibleTable */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleColumnHeader(int)
+
+    private static var getAccessibleColumnHeader_MethodID_14: jmethodID?
 
     open func getAccessibleColumnHeader( c: Int ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleColumnHeader", methodSig: "(I)Ljava/lang/String;", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleColumnHeader_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleColumnHeader", methodSig: "(I)Ljava/lang/String;", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleColumnHeader_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
     open func getAccessibleColumnHeader( _ _c: Int ) -> String! {
         return getAccessibleColumnHeader( c: _c )
     }
-
-    /// public javax.accessibility.AccessibleTable javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleColumnHeader()
-
-    private static var getAccessibleColumnHeader_MethodID_14: jmethodID?
-
-    open func getAccessibleColumnHeader() -> /* javax.accessibility.AccessibleTable */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleColumnHeader", methodSig: "()Ljavax/accessibility/AccessibleTable;", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleColumnHeader_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleTable */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
 
     /// public void javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.setAccessibleColumnHeader(javax.accessibility.AccessibleTable)
 
@@ -509,6 +509,26 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
     }
 
 
+    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleName()
+
+    /// public javax.accessibility.AccessibleStateSet javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleStateSet()
+
+    /// public void javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.addRowHeader(javax.swing.text.html.AccessibleHTML$TableElementInfo$TableCellElementInfo,int)
+
+    private static var addRowHeader_MethodID_25: jmethodID?
+
+    open func addRowHeader( cellInfo: /* javax.swing.text.html.AccessibleHTML$TableElementInfo$TableCellElementInfo */ UnclassedObject?, rowNumber: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: cellInfo, locals: &__locals )
+        __args[1] = JNIType.toJava( value: rowNumber, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRowHeader", methodSig: "(Ljavax/swing/text/html/AccessibleHTML$TableElementInfo$TableCellElementInfo;I)V", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.addRowHeader_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func addRowHeader( _ _cellInfo: /* javax.swing.text.html.AccessibleHTML$TableElementInfo$TableCellElementInfo */ UnclassedObject?, _ _rowNumber: Int ) {
+        addRowHeader( cellInfo: _cellInfo, rowNumber: _rowNumber )
+    }
+
     /// public javax.accessibility.AccessibleContext javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleContext()
 
     /// public java.awt.Rectangle javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getBounds()
@@ -549,16 +569,18 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
 
     /// public void javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.setBounds(java.awt.Rectangle)
 
+    /// public javax.accessibility.Accessible javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleAt(java.awt.Point)
+
     /// public javax.accessibility.Accessible javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleAt(int,int)
 
-    private static var getAccessibleAt_MethodID_25: jmethodID?
+    private static var getAccessibleAt_MethodID_26: jmethodID?
 
     open func getAccessibleAt( r: Int, c: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: r, locals: &__locals )
         __args[1] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleAt", methodSig: "(II)Ljavax/accessibility/Accessible;", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleAt_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleAt", methodSig: "(II)Ljavax/accessibility/Accessible;", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleAt_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -566,8 +588,6 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
     open func getAccessibleAt( _ _r: Int, _ _c: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
         return getAccessibleAt( r: _r, c: _c )
     }
-
-    /// public javax.accessibility.Accessible javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleAt(java.awt.Point)
 
     /// public boolean javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.isFocusTraversable()
 
@@ -591,19 +611,15 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
 
     /// public javax.accessibility.AccessibleTable javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleTable()
 
-    /// public java.lang.String javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleName()
-
-    /// public javax.accessibility.AccessibleStateSet javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleStateSet()
-
     /// public int javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleRow(int)
 
-    private static var getAccessibleRow_MethodID_26: jmethodID?
+    private static var getAccessibleRow_MethodID_27: jmethodID?
 
     open func getAccessibleRow( index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleRow", methodSig: "(I)I", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleRow_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleRow", methodSig: "(I)I", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleRow_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -613,13 +629,13 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
 
     /// public int javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleColumn(int)
 
-    private static var getAccessibleColumn_MethodID_27: jmethodID?
+    private static var getAccessibleColumn_MethodID_28: jmethodID?
 
     open func getAccessibleColumn( index: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleColumn", methodSig: "(I)I", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleColumn_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleColumn", methodSig: "(I)I", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleColumn_MethodID_28, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -629,35 +645,19 @@ open class AccessibleHTML_TableElementInfo_TableAccessibleContext: /* javax.swin
 
     /// public int javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.getAccessibleIndex(int,int)
 
-    private static var getAccessibleIndex_MethodID_28: jmethodID?
+    private static var getAccessibleIndex_MethodID_29: jmethodID?
 
     open func getAccessibleIndex( r: Int, c: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: r, locals: &__locals )
         __args[1] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleIndex", methodSig: "(II)I", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleIndex_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleIndex", methodSig: "(II)I", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.getAccessibleIndex_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
     open func getAccessibleIndex( _ _r: Int, _ _c: Int ) -> Int {
         return getAccessibleIndex( r: _r, c: _c )
-    }
-
-    /// public void javax.swing.text.html.AccessibleHTML$TableElementInfo$TableAccessibleContext.addRowHeader(javax.swing.text.html.AccessibleHTML$TableElementInfo$TableCellElementInfo,int)
-
-    private static var addRowHeader_MethodID_29: jmethodID?
-
-    open func addRowHeader( cellInfo: /* javax.swing.text.html.AccessibleHTML$TableElementInfo$TableCellElementInfo */ UnclassedObject?, rowNumber: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cellInfo != nil ? cellInfo! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: rowNumber, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRowHeader", methodSig: "(Ljavax/swing/text/html/AccessibleHTML$TableElementInfo$TableCellElementInfo;I)V", methodCache: &AccessibleHTML_TableElementInfo_TableAccessibleContext.addRowHeader_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func addRowHeader( _ _cellInfo: /* javax.swing.text.html.AccessibleHTML$TableElementInfo$TableCellElementInfo */ UnclassedObject?, _ _rowNumber: Int ) {
-        addRowHeader( cellInfo: _cellInfo, rowNumber: _rowNumber )
     }
 
 }

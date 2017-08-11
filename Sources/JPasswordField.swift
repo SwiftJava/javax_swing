@@ -184,7 +184,7 @@ open class JPasswordField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JPasswordField.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -201,7 +201,7 @@ open class JPasswordField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JPasswordField.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -578,7 +578,7 @@ open class JPasswordField: JTextField {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JPasswordField.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -700,30 +700,60 @@ open class JPasswordField: JTextField {
     }
 
 
+    /// public char[] javax.swing.JPasswordField.getPassword()
+
+    private static var getPassword_MethodID_7: jmethodID?
+
+    open func getPassword() -> [UInt16]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPassword", methodSig: "()[C", methodCache: &JPasswordField.getPassword_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [UInt16](), from: __return )
+    }
+
+
+    /// public boolean javax.swing.JPasswordField.echoCharIsSet()
+
+    private static var echoCharIsSet_MethodID_8: jmethodID?
+
+    open func echoCharIsSet() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "echoCharIsSet", methodSig: "()Z", methodCache: &JPasswordField.echoCharIsSet_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// boolean javax.swing.JPasswordField.customSetUIProperty(java.lang.String,java.lang.Object)
+
     /// public char javax.swing.JPasswordField.getEchoChar()
 
-    private static var getEchoChar_MethodID_7: jmethodID?
+    private static var getEchoChar_MethodID_9: jmethodID?
 
     open func getEchoChar() -> UInt16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getEchoChar", methodSig: "()C", methodCache: &JPasswordField.getEchoChar_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallCharMethod( object: javaObject, methodName: "getEchoChar", methodSig: "()C", methodCache: &JPasswordField.getEchoChar_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: UInt16(), from: __return )
     }
 
 
-    /// public java.lang.String javax.swing.JPasswordField.getText()
+    /// public void javax.swing.JPasswordField.cut()
+
+    /// public void javax.swing.JPasswordField.updateUI()
+
+    /// public java.lang.String javax.swing.JPasswordField.getUIClassID()
 
     /// public java.lang.String javax.swing.JPasswordField.getText(int,int) throws javax.swing.text.BadLocationException
 
-    private static var getText_MethodID_8: jmethodID?
+    private static var getText_MethodID_10: jmethodID?
 
     open func getText( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offs, locals: &__locals )
         __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &JPasswordField.getText_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &JPasswordField.getText_MethodID_10, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -734,54 +764,24 @@ open class JPasswordField: JTextField {
         return try getText( offs: _offs, len: _len )
     }
 
+    /// public java.lang.String javax.swing.JPasswordField.getText()
+
     /// public javax.accessibility.AccessibleContext javax.swing.JPasswordField.getAccessibleContext()
-
-    /// public char[] javax.swing.JPasswordField.getPassword()
-
-    private static var getPassword_MethodID_9: jmethodID?
-
-    open func getPassword() -> [UInt16]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPassword", methodSig: "()[C", methodCache: &JPasswordField.getPassword_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [UInt16](), from: __return )
-    }
-
-
-    /// public void javax.swing.JPasswordField.updateUI()
-
-    /// public java.lang.String javax.swing.JPasswordField.getUIClassID()
 
     /// public void javax.swing.JPasswordField.setEchoChar(char)
 
-    private static var setEchoChar_MethodID_10: jmethodID?
+    private static var setEchoChar_MethodID_11: jmethodID?
 
     open func setEchoChar( c: UInt16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoChar", methodSig: "(C)V", methodCache: &JPasswordField.setEchoChar_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEchoChar", methodSig: "(C)V", methodCache: &JPasswordField.setEchoChar_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setEchoChar( _ _c: UInt16 ) {
         setEchoChar( c: _c )
     }
-
-    /// public void javax.swing.JPasswordField.cut()
-
-    /// boolean javax.swing.JPasswordField.customSetUIProperty(java.lang.String,java.lang.Object)
-
-    /// public boolean javax.swing.JPasswordField.echoCharIsSet()
-
-    private static var echoCharIsSet_MethodID_11: jmethodID?
-
-    open func echoCharIsSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "echoCharIsSet", methodSig: "()Z", methodCache: &JPasswordField.echoCharIsSet_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
 
 }
 

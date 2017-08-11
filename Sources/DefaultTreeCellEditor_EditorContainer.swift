@@ -281,7 +281,7 @@ open class DefaultTreeCellEditor_EditorContainer: java_awt.Container {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &DefaultTreeCellEditor_EditorContainer.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -311,7 +311,7 @@ open class DefaultTreeCellEditor_EditorContainer: java_awt.Container {
     public convenience init( this_0: DefaultTreeCellEditor? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/DefaultTreeCellEditor$EditorContainer", classCache: &DefaultTreeCellEditor_EditorContainer.DefaultTreeCellEditor_EditorContainerJNIClass, methodSig: "(Ljavax/swing/tree/DefaultTreeCellEditor;)V", methodCache: &DefaultTreeCellEditor_EditorContainer.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -321,37 +321,37 @@ open class DefaultTreeCellEditor_EditorContainer: java_awt.Container {
         self.init( this_0: _this_0 )
     }
 
-    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$EditorContainer.getPreferredSize()
-
-    /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.doLayout()
-
-    /// private int javax.swing.tree.DefaultTreeCellEditor$EditorContainer.calculateIconY(javax.swing.Icon)
-
-    /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.EditorContainer()
-
-    private static var EditorContainer_MethodID_2: jmethodID?
-
-    open func EditorContainer() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "EditorContainer", methodSig: "()V", methodCache: &DefaultTreeCellEditor_EditorContainer.EditorContainer_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-
     /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.paint(java.awt.Graphics)
 
-    private static var paint_MethodID_3: jmethodID?
+    private static var paint_MethodID_2: jmethodID?
 
     open func paint( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &DefaultTreeCellEditor_EditorContainer.paint_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &DefaultTreeCellEditor_EditorContainer.paint_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func paint( _ _g: java_awt.Graphics? ) {
         paint( g: _g )
     }
+
+    /// private int javax.swing.tree.DefaultTreeCellEditor$EditorContainer.calculateIconY(javax.swing.Icon)
+
+    /// public java.awt.Dimension javax.swing.tree.DefaultTreeCellEditor$EditorContainer.getPreferredSize()
+
+    /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.doLayout()
+
+    /// public void javax.swing.tree.DefaultTreeCellEditor$EditorContainer.EditorContainer()
+
+    private static var EditorContainer_MethodID_3: jmethodID?
+
+    open func EditorContainer() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "EditorContainer", methodSig: "()V", methodCache: &DefaultTreeCellEditor_EditorContainer.EditorContainer_MethodID_3, args: &__args, locals: &__locals )
+    }
+
 
 }
 

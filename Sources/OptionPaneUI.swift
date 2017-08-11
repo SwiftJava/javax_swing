@@ -35,7 +35,7 @@ open class OptionPaneUI: ComponentUI {
     open func selectInitialValue( op: JOptionPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: op != nil ? op! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: op, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectInitialValue", methodSig: "(Ljavax/swing/JOptionPane;)V", methodCache: &OptionPaneUI.selectInitialValue_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -50,7 +50,7 @@ open class OptionPaneUI: ComponentUI {
     open func containsCustomComponents( op: JOptionPane? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: op != nil ? op! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: op, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsCustomComponents", methodSig: "(Ljavax/swing/JOptionPane;)Z", methodCache: &OptionPaneUI.containsCustomComponents_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }

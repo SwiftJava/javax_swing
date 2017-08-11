@@ -85,33 +85,15 @@ open class TableRowSorter: DefaultRowSorter {
 
     /// static javax.swing.table.TableModel javax.swing.table.TableRowSorter.access$200(javax.swing.table.TableRowSorter)
 
-    /// protected boolean javax.swing.table.TableRowSorter.useToString(int)
-
-    private static var useToString_MethodID_3: jmethodID?
-
-    override open func useToString( column: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: column, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "useToString", methodSig: "(I)Z", methodCache: &TableRowSorter.useToString_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func useToString( _ _column: Int ) -> Bool {
-        return useToString( column: _column )
-    }
-
-    /// public java.util.Comparator javax.swing.table.TableRowSorter.getComparator(int)
-
     /// public void javax.swing.table.TableRowSorter.setModel(javax.swing.table.TableModel)
 
-    private static var setModel_MethodID_4: jmethodID?
+    private static var setModel_MethodID_3: jmethodID?
 
     open func setModel( model: TableModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/table/TableModel;)V", methodCache: &TableRowSorter.setModel_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/table/TableModel;)V", methodCache: &TableRowSorter.setModel_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func setModel( _ _model: TableModel? ) {
@@ -120,12 +102,12 @@ open class TableRowSorter: DefaultRowSorter {
 
     /// public javax.swing.table.TableStringConverter javax.swing.table.TableRowSorter.getStringConverter()
 
-    private static var getStringConverter_MethodID_5: jmethodID?
+    private static var getStringConverter_MethodID_4: jmethodID?
 
     open func getStringConverter() -> TableStringConverter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringConverter", methodSig: "()Ljavax/swing/table/TableStringConverter;", methodCache: &TableRowSorter.getStringConverter_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStringConverter", methodSig: "()Ljavax/swing/table/TableStringConverter;", methodCache: &TableRowSorter.getStringConverter_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableStringConverter( javaObject: __return ) : nil
     }
@@ -133,18 +115,36 @@ open class TableRowSorter: DefaultRowSorter {
 
     /// public void javax.swing.table.TableRowSorter.setStringConverter(javax.swing.table.TableStringConverter)
 
-    private static var setStringConverter_MethodID_6: jmethodID?
+    private static var setStringConverter_MethodID_5: jmethodID?
 
     open func setStringConverter( stringConverter: TableStringConverter? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stringConverter != nil ? stringConverter! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStringConverter", methodSig: "(Ljavax/swing/table/TableStringConverter;)V", methodCache: &TableRowSorter.setStringConverter_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: stringConverter, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStringConverter", methodSig: "(Ljavax/swing/table/TableStringConverter;)V", methodCache: &TableRowSorter.setStringConverter_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setStringConverter( _ _stringConverter: TableStringConverter? ) {
         setStringConverter( stringConverter: _stringConverter )
     }
+
+    /// protected boolean javax.swing.table.TableRowSorter.useToString(int)
+
+    private static var useToString_MethodID_6: jmethodID?
+
+    override open func useToString( column: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: column, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "useToString", methodSig: "(I)Z", methodCache: &TableRowSorter.useToString_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    override open func useToString( _ _column: Int ) -> Bool {
+        return useToString( column: _column )
+    }
+
+    /// public java.util.Comparator javax.swing.table.TableRowSorter.getComparator(int)
 
 }
 

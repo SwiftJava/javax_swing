@@ -30,7 +30,7 @@ open class RendererForward: JNIObjectForward, Renderer {
     open func setValue( aValue: java_swift.JavaObject?, isSelected: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aValue != nil ? aValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aValue, locals: &__locals )
         __args[1] = JNIType.toJava( value: isSelected, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;Z)V", methodCache: &RendererForward.setValue_MethodID_3, args: &__args, locals: &__locals )
     }

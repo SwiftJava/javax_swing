@@ -197,7 +197,7 @@ open class JRadioButton: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JRadioButton.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -284,7 +284,7 @@ open class JRadioButton: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JRadioButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -301,7 +301,7 @@ open class JRadioButton: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JRadioButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -678,7 +678,7 @@ open class JRadioButton: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JRadioButton.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -851,13 +851,13 @@ open class JRadioButton: JToggleButton {
     }
 
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JRadioButton.getAccessibleContext()
+    /// void javax.swing.JRadioButton.setIconFromAction(javax.swing.Action)
 
     /// public void javax.swing.JRadioButton.updateUI()
 
     /// public java.lang.String javax.swing.JRadioButton.getUIClassID()
 
-    /// void javax.swing.JRadioButton.setIconFromAction(javax.swing.Action)
+    /// public javax.accessibility.AccessibleContext javax.swing.JRadioButton.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

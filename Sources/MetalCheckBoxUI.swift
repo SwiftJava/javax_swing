@@ -37,7 +37,7 @@ open class MetalCheckBoxUI: MetalRadioButtonUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "focusColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalCheckBoxUI.focusColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -54,7 +54,7 @@ open class MetalCheckBoxUI: MetalRadioButtonUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "selectColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalCheckBoxUI.selectColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -71,7 +71,7 @@ open class MetalCheckBoxUI: MetalRadioButtonUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "disabledTextColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalCheckBoxUI.disabledTextColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -188,7 +188,7 @@ open class MetalCheckBoxUI: MetalRadioButtonUI {
     override open class func createUI( b: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalCheckBoxUI", classCache: &MetalCheckBoxUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -198,34 +198,34 @@ open class MetalCheckBoxUI: MetalRadioButtonUI {
         return createUI( b: _b )
     }
 
-    /// public java.lang.String javax.swing.plaf.metal.MetalCheckBoxUI.getPropertyPrefix()
-
-    private static var getPropertyPrefix_MethodID_3: jmethodID?
-
-    override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &MetalCheckBoxUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
     /// public void javax.swing.plaf.metal.MetalCheckBoxUI.installDefaults(javax.swing.AbstractButton)
 
     /// protected void javax.swing.plaf.metal.MetalCheckBoxUI.uninstallDefaults(javax.swing.AbstractButton)
 
-    private static var uninstallDefaults_MethodID_4: jmethodID?
+    private static var uninstallDefaults_MethodID_3: jmethodID?
 
     override open func uninstallDefaults( b: AbstractButton? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalCheckBoxUI.uninstallDefaults_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &MetalCheckBoxUI.uninstallDefaults_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func uninstallDefaults( _ _b: AbstractButton? ) {
         uninstallDefaults( b: _b )
     }
+
+    /// public java.lang.String javax.swing.plaf.metal.MetalCheckBoxUI.getPropertyPrefix()
+
+    private static var getPropertyPrefix_MethodID_4: jmethodID?
+
+    override open func getPropertyPrefix() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &MetalCheckBoxUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
 
 }
 

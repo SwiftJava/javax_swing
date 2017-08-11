@@ -61,7 +61,7 @@ open class MetalFileChooserUI_FilterComboBoxRenderer: DefaultListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "labelFor", fieldType: "Ljava/awt/Component;", fieldCache: &MetalFileChooserUI_FilterComboBoxRenderer.labelFor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -144,7 +144,7 @@ open class MetalFileChooserUI_FilterComboBoxRenderer: DefaultListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &MetalFileChooserUI_FilterComboBoxRenderer.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -161,7 +161,7 @@ open class MetalFileChooserUI_FilterComboBoxRenderer: DefaultListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &MetalFileChooserUI_FilterComboBoxRenderer.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -538,7 +538,7 @@ open class MetalFileChooserUI_FilterComboBoxRenderer: DefaultListCellRenderer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &MetalFileChooserUI_FilterComboBoxRenderer.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -568,7 +568,7 @@ open class MetalFileChooserUI_FilterComboBoxRenderer: DefaultListCellRenderer {
     public convenience init( this_0: MetalFileChooserUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalFileChooserUI$FilterComboBoxRenderer", classCache: &MetalFileChooserUI_FilterComboBoxRenderer.MetalFileChooserUI_FilterComboBoxRendererJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalFileChooserUI;)V", methodCache: &MetalFileChooserUI_FilterComboBoxRenderer.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

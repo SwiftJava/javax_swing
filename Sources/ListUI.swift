@@ -36,7 +36,7 @@ open class ListUI: ComponentUI {
     open func indexToLocation( list: JList?, index: Int ) -> java_awt.Point! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
         __args[1] = JNIType.toJava( value: index, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "indexToLocation", methodSig: "(Ljavax/swing/JList;I)Ljava/awt/Point;", methodCache: &ListUI.indexToLocation_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -54,7 +54,7 @@ open class ListUI: ComponentUI {
     open func getCellBounds( list: JList?, index1: Int, index2: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
         __args[1] = JNIType.toJava( value: index1, locals: &__locals )
         __args[2] = JNIType.toJava( value: index2, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellBounds", methodSig: "(Ljavax/swing/JList;II)Ljava/awt/Rectangle;", methodCache: &ListUI.getCellBounds_MethodID_3, args: &__args, locals: &__locals )
@@ -73,8 +73,8 @@ open class ListUI: ComponentUI {
     open func locationToIndex( list: JList?, location: java_awt.Point? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list != nil ? list! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: location != nil ? location! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
+        __args[1] = JNIType.toJava( value: location, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "locationToIndex", methodSig: "(Ljavax/swing/JList;Ljava/awt/Point;)I", methodCache: &ListUI.locationToIndex_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }

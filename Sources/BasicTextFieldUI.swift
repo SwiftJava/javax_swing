@@ -50,10 +50,6 @@ open class BasicTextFieldUI: BasicTextUI {
 
     /// public javax.swing.text.View javax.swing.plaf.basic.BasicTextFieldUI.create(javax.swing.text.Element)
 
-    /// public int javax.swing.plaf.basic.BasicTextFieldUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextFieldUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTextFieldUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -61,7 +57,7 @@ open class BasicTextFieldUI: BasicTextUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTextFieldUI", classCache: &BasicTextFieldUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -70,6 +66,10 @@ open class BasicTextFieldUI: BasicTextUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
+
+    /// public int javax.swing.plaf.basic.BasicTextFieldUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTextFieldUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
     /// protected java.lang.String javax.swing.plaf.basic.BasicTextFieldUI.getPropertyPrefix()
 

@@ -62,23 +62,41 @@ open class BasicHTML: java_swift.JavaObject {
 
     /// static javax.swing.text.ViewFactory javax.swing.plaf.basic.BasicHTML.access$000()
 
-    /// private static int javax.swing.plaf.basic.BasicHTML.getBaseline(javax.swing.text.View,java.awt.Shape)
+    /// private static boolean javax.swing.plaf.basic.BasicHTML.hasParagraph(javax.swing.text.View)
 
-    /// static int javax.swing.plaf.basic.BasicHTML.getBaseline(javax.swing.text.View,int,int)
+    /// public static void javax.swing.plaf.basic.BasicHTML.updateRenderer(javax.swing.JComponent,java.lang.String)
+
+    private static var updateRenderer_MethodID_2: jmethodID?
+
+    open class func updateRenderer( c: JComponent?, text: String? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: text, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "updateRenderer", methodSig: "(Ljavax/swing/JComponent;Ljava/lang/String;)V", methodCache: &updateRenderer_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open class func updateRenderer( _ _c: JComponent?, _ _text: String? ) {
+        updateRenderer( c: _c, text: _text )
+    }
+
+    /// private static int javax.swing.plaf.basic.BasicHTML.getBaseline(javax.swing.text.View,java.awt.Shape)
 
     /// static int javax.swing.plaf.basic.BasicHTML.getBaseline(javax.swing.JComponent,int,int,int,int)
 
+    /// static int javax.swing.plaf.basic.BasicHTML.getBaseline(javax.swing.text.View,int,int)
+
     /// public static int javax.swing.plaf.basic.BasicHTML.getHTMLBaseline(javax.swing.text.View,int,int)
 
-    private static var getHTMLBaseline_MethodID_2: jmethodID?
+    private static var getHTMLBaseline_MethodID_3: jmethodID?
 
     open class func getHTMLBaseline( view: View?, w: Int, h: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: view != nil ? view! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: view, locals: &__locals )
         __args[1] = JNIType.toJava( value: w, locals: &__locals )
         __args[2] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "getHTMLBaseline", methodSig: "(Ljavax/swing/text/View;II)I", methodCache: &getHTMLBaseline_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "getHTMLBaseline", methodSig: "(Ljavax/swing/text/View;II)I", methodCache: &getHTMLBaseline_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -88,13 +106,13 @@ open class BasicHTML: java_swift.JavaObject {
 
     /// public static boolean javax.swing.plaf.basic.BasicHTML.isHTMLString(java.lang.String)
 
-    private static var isHTMLString_MethodID_3: jmethodID?
+    private static var isHTMLString_MethodID_4: jmethodID?
 
     open class func isHTMLString( s: String? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "isHTMLString", methodSig: "(Ljava/lang/String;)Z", methodCache: &isHTMLString_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "isHTMLString", methodSig: "(Ljava/lang/String;)Z", methodCache: &isHTMLString_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -104,38 +122,20 @@ open class BasicHTML: java_swift.JavaObject {
 
     /// public static javax.swing.text.View javax.swing.plaf.basic.BasicHTML.createHTMLView(javax.swing.JComponent,java.lang.String)
 
-    private static var createHTMLView_MethodID_4: jmethodID?
+    private static var createHTMLView_MethodID_5: jmethodID?
 
     open class func createHTMLView( c: JComponent?, html: String? ) -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: html, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "createHTMLView", methodSig: "(Ljavax/swing/JComponent;Ljava/lang/String;)Ljavax/swing/text/View;", methodCache: &createHTMLView_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "createHTMLView", methodSig: "(Ljavax/swing/JComponent;Ljava/lang/String;)Ljavax/swing/text/View;", methodCache: &createHTMLView_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
 
     open class func createHTMLView( _ _c: JComponent?, _ _html: String? ) -> View! {
         return createHTMLView( c: _c, html: _html )
-    }
-
-    /// private static boolean javax.swing.plaf.basic.BasicHTML.hasParagraph(javax.swing.text.View)
-
-    /// public static void javax.swing.plaf.basic.BasicHTML.updateRenderer(javax.swing.JComponent,java.lang.String)
-
-    private static var updateRenderer_MethodID_5: jmethodID?
-
-    open class func updateRenderer( c: JComponent?, text: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass, methodName: "updateRenderer", methodSig: "(Ljavax/swing/JComponent;Ljava/lang/String;)V", methodCache: &updateRenderer_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open class func updateRenderer( _ _c: JComponent?, _ _text: String? ) {
-        updateRenderer( c: _c, text: _text )
     }
 
 }

@@ -38,7 +38,7 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     open func treeNodesChanged( e: TreeModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesChanged", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeNodesChanged_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -53,7 +53,7 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     open func treeNodesInserted( e: TreeModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesInserted", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeNodesInserted_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -68,7 +68,7 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     open func treeNodesRemoved( e: TreeModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesRemoved", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeNodesRemoved_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -83,7 +83,7 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     open func treeStructureChanged( e: TreeModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeStructureChanged", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeStructureChanged_MethodID_8, args: &__args, locals: &__locals )
     }
 

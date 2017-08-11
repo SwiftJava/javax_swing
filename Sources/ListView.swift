@@ -148,7 +148,7 @@ open class ListView: BlockView {
         self.init( elem: _elem )
     }
 
-    /// public float javax.swing.text.html.ListView.getAlignment(int)
+    /// public void javax.swing.text.html.ListView.paint(java.awt.Graphics,java.awt.Shape)
 
     /// protected void javax.swing.text.html.ListView.setPropertiesFromAttributes()
 
@@ -168,8 +168,8 @@ open class ListView: BlockView {
     override open func paintChild( g: java_awt.Graphics?, alloc: java_awt.Rectangle?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: alloc != nil ? alloc! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: alloc, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChild", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &ListView.paintChild_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -178,7 +178,7 @@ open class ListView: BlockView {
         paintChild( g: _g, alloc: _alloc, index: _index )
     }
 
-    /// public void javax.swing.text.html.ListView.paint(java.awt.Graphics,java.awt.Shape)
+    /// public float javax.swing.text.html.ListView.getAlignment(int)
 
 }
 

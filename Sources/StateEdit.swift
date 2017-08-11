@@ -157,6 +157,12 @@ open class StateEdit: AbstractUndoableEdit {
         _init( anObject: _anObject, name: _name )
     }
 
+    /// public void javax.swing.undo.StateEdit.undo()
+
+    /// public void javax.swing.undo.StateEdit.redo()
+
+    /// public java.lang.String javax.swing.undo.StateEdit.getPresentationName()
+
     /// protected void javax.swing.undo.StateEdit.removeRedundantState()
 
     private static var removeRedundantState_MethodID_5: jmethodID?
@@ -167,12 +173,6 @@ open class StateEdit: AbstractUndoableEdit {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeRedundantState", methodSig: "()V", methodCache: &StateEdit.removeRedundantState_MethodID_5, args: &__args, locals: &__locals )
     }
 
-
-    /// public void javax.swing.undo.StateEdit.undo()
-
-    /// public void javax.swing.undo.StateEdit.redo()
-
-    /// public java.lang.String javax.swing.undo.StateEdit.getPresentationName()
 
 }
 

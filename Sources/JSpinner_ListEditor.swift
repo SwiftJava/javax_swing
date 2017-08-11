@@ -56,7 +56,7 @@ open class JSpinner_ListEditor: JSpinner_DefaultEditor {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSpinner_ListEditor.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -73,7 +73,7 @@ open class JSpinner_ListEditor: JSpinner_DefaultEditor {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSpinner_ListEditor.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -450,7 +450,7 @@ open class JSpinner_ListEditor: JSpinner_DefaultEditor {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSpinner_ListEditor.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -480,7 +480,7 @@ open class JSpinner_ListEditor: JSpinner_DefaultEditor {
     public convenience init( arg0: JSpinner? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JSpinner$ListEditor", classCache: &JSpinner_ListEditor.JSpinner_ListEditorJNIClass, methodSig: "(Ljavax/swing/JSpinner;)V", methodCache: &JSpinner_ListEditor.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

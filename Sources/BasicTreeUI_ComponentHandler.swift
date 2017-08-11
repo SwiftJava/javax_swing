@@ -29,7 +29,7 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "timer", fieldType: "Ljavax/swing/Timer;", fieldCache: &BasicTreeUI_ComponentHandler.timer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "scrollBar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &BasicTreeUI_ComponentHandler.scrollBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -60,7 +60,7 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
     public convenience init( this_0: BasicTreeUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$ComponentHandler", classCache: &BasicTreeUI_ComponentHandler.BasicTreeUI_ComponentHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_ComponentHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -69,6 +69,8 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
     public convenience init( _ _this_0: BasicTreeUI? ) {
         self.init( this_0: _this_0 )
     }
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.componentMoved(java.awt.event.ComponentEvent)
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.startTimer()
 
@@ -101,15 +103,13 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
     open func actionPerformed( e: java_awt.ActionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &BasicTreeUI_ComponentHandler.actionPerformed_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
         actionPerformed( e: _e )
     }
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.componentMoved(java.awt.event.ComponentEvent)
 
 }
 

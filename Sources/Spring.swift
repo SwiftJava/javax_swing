@@ -47,8 +47,8 @@ open class Spring: java_swift.JavaObject {
     open class func max( s1: Spring?, s2: Spring? ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s1 != nil ? s1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s2 != nil ? s2! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: s2, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "max", methodSig: "(Ljavax/swing/Spring;Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &max_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
@@ -92,8 +92,8 @@ open class Spring: java_swift.JavaObject {
     open class func sum( s1: Spring?, s2: Spring? ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s1 != nil ? s1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s2 != nil ? s2! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: s2, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "sum", methodSig: "(Ljavax/swing/Spring;Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &sum_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
@@ -148,7 +148,7 @@ open class Spring: java_swift.JavaObject {
     open class func scale( s: Spring?, factor: Float ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
         __args[1] = JNIType.toJava( value: factor, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "scale", methodSig: "(Ljavax/swing/Spring;F)Ljavax/swing/Spring;", methodCache: &scale_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -208,7 +208,7 @@ open class Spring: java_swift.JavaObject {
     open class func minus( s: Spring? ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "minus", methodSig: "(Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &minus_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
@@ -229,7 +229,7 @@ open class Spring: java_swift.JavaObject {
     open class func width( c: java_awt.Component? ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "width", methodSig: "(Ljava/awt/Component;)Ljavax/swing/Spring;", methodCache: &width_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
@@ -246,7 +246,7 @@ open class Spring: java_swift.JavaObject {
     open class func height( c: java_awt.Component? ) -> Spring! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "height", methodSig: "(Ljava/awt/Component;)Ljavax/swing/Spring;", methodCache: &height_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil

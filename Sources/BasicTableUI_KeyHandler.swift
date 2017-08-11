@@ -26,7 +26,7 @@ open class BasicTableUI_KeyHandler: java_swift.JavaObject, java_awt.KeyListener 
     public convenience init( this_0: BasicTableUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTableUI$KeyHandler", classCache: &BasicTableUI_KeyHandler.BasicTableUI_KeyHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTableUI;)V", methodCache: &BasicTableUI_KeyHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -43,7 +43,7 @@ open class BasicTableUI_KeyHandler: java_swift.JavaObject, java_awt.KeyListener 
     open func keyTyped( e: java_awt.KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyTyped", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &BasicTableUI_KeyHandler.keyTyped_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -58,7 +58,7 @@ open class BasicTableUI_KeyHandler: java_swift.JavaObject, java_awt.KeyListener 
     open func keyPressed( e: java_awt.KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyPressed", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &BasicTableUI_KeyHandler.keyPressed_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -73,7 +73,7 @@ open class BasicTableUI_KeyHandler: java_swift.JavaObject, java_awt.KeyListener 
     open func keyReleased( e: java_awt.KeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "keyReleased", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &BasicTableUI_KeyHandler.keyReleased_MethodID_4, args: &__args, locals: &__locals )
     }
 

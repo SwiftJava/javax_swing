@@ -35,7 +35,7 @@ open class BasicDesktopIconUI_MouseInputHandler: MouseInputAdapter {
     public convenience init( this_0: BasicDesktopIconUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicDesktopIconUI$MouseInputHandler", classCache: &BasicDesktopIconUI_MouseInputHandler.BasicDesktopIconUI_MouseInputHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicDesktopIconUI;)V", methodCache: &BasicDesktopIconUI_MouseInputHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -45,14 +45,6 @@ open class BasicDesktopIconUI_MouseInputHandler: MouseInputAdapter {
         self.init( this_0: _this_0 )
     }
 
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseReleased(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseMoved(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseDragged(java.awt.event.MouseEvent)
-
     /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.moveAndRepaint(javax.swing.JComponent,int,int,int,int)
 
     private static var moveAndRepaint_MethodID_2: jmethodID?
@@ -60,7 +52,7 @@ open class BasicDesktopIconUI_MouseInputHandler: MouseInputAdapter {
     open func moveAndRepaint( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )
@@ -71,6 +63,14 @@ open class BasicDesktopIconUI_MouseInputHandler: MouseInputAdapter {
     open func moveAndRepaint( _ _f: JComponent?, _ _newX: Int, _ _newY: Int, _ _newWidth: Int, _ _newHeight: Int ) {
         moveAndRepaint( f: _f, newX: _newX, newY: _newY, newWidth: _newWidth, newHeight: _newHeight )
     }
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseReleased(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseMoved(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.plaf.basic.BasicDesktopIconUI$MouseInputHandler.mouseDragged(java.awt.event.MouseEvent)
 
 }
 

@@ -25,7 +25,7 @@ open class BasicListUI_ListSelectionHandler: java_swift.JavaObject, ListSelectio
     public convenience init( this_0: BasicListUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicListUI$ListSelectionHandler", classCache: &BasicListUI_ListSelectionHandler.BasicListUI_ListSelectionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicListUI;)V", methodCache: &BasicListUI_ListSelectionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,7 +42,7 @@ open class BasicListUI_ListSelectionHandler: java_swift.JavaObject, ListSelectio
     open func valueChanged( e: ListSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &BasicListUI_ListSelectionHandler.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

@@ -141,7 +141,7 @@ open class SynthEditorPaneUI: BasicEditorPaneUI, SynthUI {
     open func getContext( c: JComponent? ) -> SynthContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthEditorPaneUI.getContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
@@ -160,7 +160,7 @@ open class SynthEditorPaneUI: BasicEditorPaneUI, SynthUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthEditorPaneUI", classCache: &SynthEditorPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -170,22 +170,23 @@ open class SynthEditorPaneUI: BasicEditorPaneUI, SynthUI {
         return createUI( c: _c )
     }
 
-    /// private void javax.swing.plaf.synth.SynthEditorPaneUI.updateStyle(javax.swing.text.JTextComponent)
+    /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+    private static var paint_MethodID_4: jmethodID?
 
-    private static var propertyChange_MethodID_4: jmethodID?
-
-    override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthEditorPaneUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthEditorPaneUI.paint_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
     }
+
+    /// private int javax.swing.plaf.synth.SynthEditorPaneUI.getComponentState(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.synth.SynthEditorPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
@@ -194,8 +195,8 @@ open class SynthEditorPaneUI: BasicEditorPaneUI, SynthUI {
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
@@ -207,55 +208,37 @@ open class SynthEditorPaneUI: BasicEditorPaneUI, SynthUI {
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// private int javax.swing.plaf.synth.SynthEditorPaneUI.getComponentState(javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_6: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthEditorPaneUI.paint_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
     /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.installDefaults()
 
-    private static var installDefaults_MethodID_7: jmethodID?
+    private static var installDefaults_MethodID_6: jmethodID?
 
     override open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthEditorPaneUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthEditorPaneUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.uninstallDefaults()
 
-    private static var uninstallDefaults_MethodID_8: jmethodID?
+    private static var uninstallDefaults_MethodID_7: jmethodID?
 
     override open func uninstallDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthEditorPaneUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthEditorPaneUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.paintBackground(java.awt.Graphics)
 
-    private static var paintBackground_MethodID_9: jmethodID?
+    private static var paintBackground_MethodID_8: jmethodID?
 
     override open func paintBackground( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthEditorPaneUI.paintBackground_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthEditorPaneUI.paintBackground_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func paintBackground( _ _g: java_awt.Graphics? ) {
@@ -263,6 +246,23 @@ open class SynthEditorPaneUI: BasicEditorPaneUI, SynthUI {
     }
 
     /// void javax.swing.plaf.synth.SynthEditorPaneUI.paintBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.synth.SynthEditorPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_9: jmethodID?
+
+    override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthEditorPaneUI.propertyChange_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// private void javax.swing.plaf.synth.SynthEditorPaneUI.updateStyle(javax.swing.text.JTextComponent)
 
 }
 

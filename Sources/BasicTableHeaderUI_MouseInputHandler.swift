@@ -30,7 +30,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     public convenience init( this_0: BasicTableHeaderUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTableHeaderUI$MouseInputHandler", classCache: &BasicTableHeaderUI_MouseInputHandler.BasicTableHeaderUI_MouseInputHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTableHeaderUI;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -40,6 +40,12 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
         self.init( this_0: _this_0 )
     }
 
+    /// private void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.setDraggedDistance(int,int)
+
+    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point)
+
+    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point,int)
+
     /// public void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.mousePressed(java.awt.event.MouseEvent)
 
     private static var mousePressed_MethodID_2: jmethodID?
@@ -47,7 +53,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mousePressed( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mousePressed_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -62,7 +68,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mouseReleased( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mouseReleased_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -77,7 +83,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mouseClicked( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mouseClicked_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -92,7 +98,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mouseExited( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mouseExited_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -107,7 +113,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mouseEntered( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mouseEntered_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -122,7 +128,7 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mouseMoved( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mouseMoved_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -137,19 +143,13 @@ open class BasicTableHeaderUI_MouseInputHandler: java_swift.JavaObject, MouseInp
     open func mouseDragged( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableHeaderUI_MouseInputHandler.mouseDragged_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func mouseDragged( _ _e: java_awt.MouseEvent? ) {
         mouseDragged( e: _e )
     }
-
-    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point)
-
-    /// private javax.swing.table.TableColumn javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.getResizingColumn(java.awt.Point,int)
-
-    /// private void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.setDraggedDistance(int,int)
 
     /// private void javax.swing.plaf.basic.BasicTableHeaderUI$MouseInputHandler.swapCursor()
 

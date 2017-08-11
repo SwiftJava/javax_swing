@@ -117,7 +117,7 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
     open func getContext( c: JComponent? ) -> SynthContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthSeparatorUI.getContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
@@ -129,12 +129,6 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthSeparatorUI.getContext(javax.swing.JComponent,int)
 
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSeparatorUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSeparatorUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSeparatorUI.getMaximumSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthSeparatorUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_3: jmethodID?
@@ -142,7 +136,7 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthSeparatorUI", classCache: &SynthSeparatorUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -152,22 +146,23 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
         return createUI( c: _c )
     }
 
-    /// private void javax.swing.plaf.synth.SynthSeparatorUI.updateStyle(javax.swing.JSeparator)
+    /// protected void javax.swing.plaf.synth.SynthSeparatorUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    /// public void javax.swing.plaf.synth.SynthSeparatorUI.propertyChange(java.beans.PropertyChangeEvent)
+    private static var paint_MethodID_4: jmethodID?
 
-    private static var propertyChange_MethodID_4: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSeparatorUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthSeparatorUI.paint_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
     }
+
+    /// public void javax.swing.plaf.synth.SynthSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// public void javax.swing.plaf.synth.SynthSeparatorUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
@@ -176,8 +171,8 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
@@ -193,33 +188,15 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
 
     /// public void javax.swing.plaf.synth.SynthSeparatorUI.uninstallUI(javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.synth.SynthSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthSeparatorUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_6: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthSeparatorUI.paint_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
     /// public void javax.swing.plaf.synth.SynthSeparatorUI.installDefaults(javax.swing.JSeparator)
 
-    private static var installDefaults_MethodID_7: jmethodID?
+    private static var installDefaults_MethodID_6: jmethodID?
 
     open func installDefaults( c: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func installDefaults( _ _c: JSeparator? ) {
@@ -228,13 +205,13 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
 
     /// public void javax.swing.plaf.synth.SynthSeparatorUI.installListeners(javax.swing.JSeparator)
 
-    private static var installListeners_MethodID_8: jmethodID?
+    private static var installListeners_MethodID_7: jmethodID?
 
     open func installListeners( c: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func installListeners( _ _c: JSeparator? ) {
@@ -243,13 +220,13 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
 
     /// public void javax.swing.plaf.synth.SynthSeparatorUI.uninstallDefaults(javax.swing.JSeparator)
 
-    private static var uninstallDefaults_MethodID_9: jmethodID?
+    private static var uninstallDefaults_MethodID_8: jmethodID?
 
     open func uninstallDefaults( c: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func uninstallDefaults( _ _c: JSeparator? ) {
@@ -258,18 +235,41 @@ open class SynthSeparatorUI: SeparatorUI, /* java.beans.PropertyChangeListener *
 
     /// public void javax.swing.plaf.synth.SynthSeparatorUI.uninstallListeners(javax.swing.JSeparator)
 
-    private static var uninstallListeners_MethodID_10: jmethodID?
+    private static var uninstallListeners_MethodID_9: jmethodID?
 
     open func uninstallListeners( c: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &SynthSeparatorUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func uninstallListeners( _ _c: JSeparator? ) {
         uninstallListeners( c: _c )
     }
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSeparatorUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.synth.SynthSeparatorUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.synth.SynthSeparatorUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_10: jmethodID?
+
+    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthSeparatorUI.propertyChange_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// private void javax.swing.plaf.synth.SynthSeparatorUI.updateStyle(javax.swing.JSeparator)
 
 }
 

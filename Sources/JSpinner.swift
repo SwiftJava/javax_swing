@@ -68,7 +68,7 @@ open class JSpinner: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSpinner.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -85,7 +85,7 @@ open class JSpinner: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSpinner.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -462,7 +462,7 @@ open class JSpinner: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSpinner.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -540,7 +540,7 @@ open class JSpinner: JComponent {
     open func setValue( arg0: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JSpinner.setValue_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -550,108 +550,15 @@ open class JSpinner: JComponent {
 
     /// static javax.swing.JComponent javax.swing.JSpinner.access$600(javax.swing.JSpinner)
 
-    /// public void javax.swing.JSpinner.commitEdit() throws java.text.ParseException
-
-    private static var commitEdit_MethodID_5: jmethodID?
-
-    open func commitEdit() throws /* java.text.ParseException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "commitEdit", methodSig: "()V", methodCache: &JSpinner.commitEdit_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JSpinner.getAccessibleContext()
-
-    /// public javax.swing.SpinnerModel javax.swing.JSpinner.getModel()
-
-    private static var getModel_MethodID_6: jmethodID?
-
-    open func getModel() -> SpinnerModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerModel;", methodCache: &JSpinner.getModel_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SpinnerModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSpinner.setModel(javax.swing.SpinnerModel)
-
-    private static var setModel_MethodID_7: jmethodID?
-
-    open func setModel( arg0: SpinnerModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/SpinnerModel;)V", methodCache: &JSpinner.setModel_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _arg0: SpinnerModel? ) {
-        setModel( arg0: _arg0 )
-    }
-
-    /// protected javax.swing.JComponent javax.swing.JSpinner.createEditor(javax.swing.SpinnerModel)
-
-    private static var createEditor_MethodID_8: jmethodID?
-
-    open func createEditor( arg0: SpinnerModel? ) -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "(Ljavax/swing/SpinnerModel;)Ljavax/swing/JComponent;", methodCache: &JSpinner.createEditor_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
-    }
-
-    open func createEditor( _ _arg0: SpinnerModel? ) -> JComponent! {
-        return createEditor( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.JSpinner.updateUI()
-
-    /// public void javax.swing.JSpinner.setUI(javax.swing.plaf.SpinnerUI)
-
-    private static var setUI_MethodID_9: jmethodID?
-
-    open func setUI( arg0: SpinnerUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SpinnerUI;)V", methodCache: &JSpinner.setUI_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _arg0: SpinnerUI? ) {
-        setUI( arg0: _arg0 )
-    }
-
-    /// public java.lang.String javax.swing.JSpinner.getUIClassID()
-
-    /// public javax.swing.plaf.SpinnerUI javax.swing.JSpinner.getUI()
-
-    private static var getUI_MethodID_10: jmethodID?
-
-    open func getUI() -> SpinnerUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SpinnerUI;", methodCache: &JSpinner.getUI_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SpinnerUI( javaObject: __return ) : nil
-    }
-
-
     /// public void javax.swing.JSpinner.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_11: jmethodID?
+    private static var addChangeListener_MethodID_5: jmethodID?
 
     open func addChangeListener( arg0: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSpinner.addChangeListener_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSpinner.addChangeListener_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _arg0: ChangeListener? ) {
@@ -660,13 +567,13 @@ open class JSpinner: JComponent {
 
     /// public void javax.swing.JSpinner.removeChangeListener(javax.swing.event.ChangeListener)
 
-    private static var removeChangeListener_MethodID_12: jmethodID?
+    private static var removeChangeListener_MethodID_6: jmethodID?
 
     open func removeChangeListener( arg0: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSpinner.removeChangeListener_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSpinner.removeChangeListener_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func removeChangeListener( _ _arg0: ChangeListener? ) {
@@ -675,35 +582,35 @@ open class JSpinner: JComponent {
 
     /// public javax.swing.event.ChangeListener[] javax.swing.JSpinner.getChangeListeners()
 
-    private static var getChangeListeners_MethodID_13: jmethodID?
+    private static var getChangeListeners_MethodID_7: jmethodID?
 
     open func getChangeListeners() -> [ChangeListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JSpinner.getChangeListeners_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JSpinner.getChangeListeners_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
     }
 
 
     /// protected void javax.swing.JSpinner.fireStateChanged()
 
-    private static var fireStateChanged_MethodID_14: jmethodID?
+    private static var fireStateChanged_MethodID_8: jmethodID?
 
     open func fireStateChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JSpinner.fireStateChanged_MethodID_14, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JSpinner.fireStateChanged_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
     /// public java.lang.Object javax.swing.JSpinner.getNextValue()
 
-    private static var getNextValue_MethodID_15: jmethodID?
+    private static var getNextValue_MethodID_9: jmethodID?
 
     open func getNextValue() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextValue", methodSig: "()Ljava/lang/Object;", methodCache: &JSpinner.getNextValue_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNextValue", methodSig: "()Ljava/lang/Object;", methodCache: &JSpinner.getNextValue_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -711,26 +618,70 @@ open class JSpinner: JComponent {
 
     /// public java.lang.Object javax.swing.JSpinner.getPreviousValue()
 
-    private static var getPreviousValue_MethodID_16: jmethodID?
+    private static var getPreviousValue_MethodID_10: jmethodID?
 
     open func getPreviousValue() -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousValue", methodSig: "()Ljava/lang/Object;", methodCache: &JSpinner.getPreviousValue_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreviousValue", methodSig: "()Ljava/lang/Object;", methodCache: &JSpinner.getPreviousValue_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
+    /// public javax.swing.plaf.SpinnerUI javax.swing.JSpinner.getUI()
+
+    private static var getUI_MethodID_11: jmethodID?
+
+    open func getUI() -> SpinnerUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SpinnerUI;", methodCache: &JSpinner.getUI_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SpinnerUI( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.JComponent javax.swing.JSpinner.createEditor(javax.swing.SpinnerModel)
+
+    private static var createEditor_MethodID_12: jmethodID?
+
+    open func createEditor( arg0: SpinnerModel? ) -> JComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "(Ljavax/swing/SpinnerModel;)Ljavax/swing/JComponent;", methodCache: &JSpinner.createEditor_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+    open func createEditor( _ _arg0: SpinnerModel? ) -> JComponent! {
+        return createEditor( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.JSpinner.commitEdit() throws java.text.ParseException
+
+    private static var commitEdit_MethodID_13: jmethodID?
+
+    open func commitEdit() throws /* java.text.ParseException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "commitEdit", methodSig: "()V", methodCache: &JSpinner.commitEdit_MethodID_13, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
+        }
+    }
+
+
     /// public void javax.swing.JSpinner.setEditor(javax.swing.JComponent)
 
-    private static var setEditor_MethodID_17: jmethodID?
+    private static var setEditor_MethodID_14: jmethodID?
 
     open func setEditor( arg0: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditor", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &JSpinner.setEditor_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditor", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &JSpinner.setEditor_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setEditor( _ _arg0: JComponent? ) {
@@ -739,16 +690,65 @@ open class JSpinner: JComponent {
 
     /// public javax.swing.JComponent javax.swing.JSpinner.getEditor()
 
-    private static var getEditor_MethodID_18: jmethodID?
+    private static var getEditor_MethodID_15: jmethodID?
 
     open func getEditor() -> JComponent! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditor", methodSig: "()Ljavax/swing/JComponent;", methodCache: &JSpinner.getEditor_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditor", methodSig: "()Ljavax/swing/JComponent;", methodCache: &JSpinner.getEditor_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.JSpinner.updateUI()
+
+    /// public void javax.swing.JSpinner.setUI(javax.swing.plaf.SpinnerUI)
+
+    private static var setUI_MethodID_16: jmethodID?
+
+    open func setUI( arg0: SpinnerUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SpinnerUI;)V", methodCache: &JSpinner.setUI_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _arg0: SpinnerUI? ) {
+        setUI( arg0: _arg0 )
+    }
+
+    /// public java.lang.String javax.swing.JSpinner.getUIClassID()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JSpinner.getAccessibleContext()
+
+    /// public javax.swing.SpinnerModel javax.swing.JSpinner.getModel()
+
+    private static var getModel_MethodID_17: jmethodID?
+
+    open func getModel() -> SpinnerModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/SpinnerModel;", methodCache: &JSpinner.getModel_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SpinnerModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSpinner.setModel(javax.swing.SpinnerModel)
+
+    private static var setModel_MethodID_18: jmethodID?
+
+    open func setModel( arg0: SpinnerModel? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/SpinnerModel;)V", methodCache: &JSpinner.setModel_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setModel( _ _arg0: SpinnerModel? ) {
+        setModel( arg0: _arg0 )
+    }
 
     /// In declared protocol but not defined.. ///
 

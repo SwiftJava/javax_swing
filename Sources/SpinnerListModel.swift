@@ -35,7 +35,7 @@ open class SpinnerListModel: AbstractSpinnerModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &SpinnerListModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -95,7 +95,7 @@ open class SpinnerListModel: AbstractSpinnerModel {
     open func setValue( elt: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elt != nil ? elt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: elt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &SpinnerListModel.setValue_MethodID_4, args: &__args, locals: &__locals )
     }
 

@@ -51,6 +51,18 @@ public protocol Document: JavaProtocol {
 
     func render( r: java_swift.Runnable? )
 
+    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
+
+    func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? )
+
+    /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
+
+    func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String!
+
+    /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
+
+    func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */
+
     /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
 
     func removeDocumentListener( listener: DocumentListener? )
@@ -70,18 +82,6 @@ public protocol Document: JavaProtocol {
     /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
 
     func getDefaultRootElement() -> Element!
-
-    /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
-
-    func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String!
-
-    /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
-
-    func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */
-
-    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
-
-    func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? )
 
 }
 
@@ -138,7 +138,7 @@ open class DocumentForward: JNIObjectForward, Document {
     open func getProperty( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &DocumentForward.getProperty_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -243,15 +243,71 @@ open class DocumentForward: JNIObjectForward, Document {
         render( r: _r )
     }
 
+    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
+
+    private static var putProperty_MethodID_27: jmethodID?
+
+    open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DocumentForward.putProperty_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
+        putProperty( key: _key, value: _value )
+    }
+
+    /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_28: jmethodID?
+
+    open func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = JNIType.toJava( value: length, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &DocumentForward.getText_MethodID_28, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+    open func getText( _ _offset: Int, _ _length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        return try getText( offset: _offset, length: _length )
+    }
+
+    /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_29: jmethodID?
+
+    open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = JNIType.toJava( value: length, locals: &__locals )
+        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &DocumentForward.getText_MethodID_29, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func getText( _ _offset: Int, _ _length: Int, _ _txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+        try getText( offset: _offset, length: _length, txt: _txt )
+    }
+
     /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
 
-    private static var removeDocumentListener_MethodID_27: jmethodID?
+    private static var removeDocumentListener_MethodID_30: jmethodID?
 
     open func removeDocumentListener( listener: DocumentListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.removeDocumentListener_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.removeDocumentListener_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func removeDocumentListener( _ _listener: DocumentListener? ) {
@@ -260,13 +316,13 @@ open class DocumentForward: JNIObjectForward, Document {
 
     /// public abstract void javax.swing.text.Document.addDocumentListener(javax.swing.event.DocumentListener)
 
-    private static var addDocumentListener_MethodID_28: jmethodID?
+    private static var addDocumentListener_MethodID_31: jmethodID?
 
     open func addDocumentListener( listener: DocumentListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.addDocumentListener_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.addDocumentListener_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open func addDocumentListener( _ _listener: DocumentListener? ) {
@@ -275,7 +331,7 @@ open class DocumentForward: JNIObjectForward, Document {
 
     /// public abstract void javax.swing.text.Document.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    private static var insertString_MethodID_29: jmethodID?
+    private static var insertString_MethodID_32: jmethodID?
 
     open func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -283,7 +339,7 @@ open class DocumentForward: JNIObjectForward, Document {
         __args[0] = JNIType.toJava( value: offset, locals: &__locals )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentForward.insertString_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentForward.insertString_MethodID_32, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
         }
@@ -295,13 +351,13 @@ open class DocumentForward: JNIObjectForward, Document {
 
     /// public abstract javax.swing.text.Position javax.swing.text.Document.createPosition(int) throws javax.swing.text.BadLocationException
 
-    private static var createPosition_MethodID_30: jmethodID?
+    private static var createPosition_MethodID_33: jmethodID?
 
     open func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &DocumentForward.createPosition_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &DocumentForward.createPosition_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
             throw BadLocationException( javaObject: throwable )
@@ -315,72 +371,16 @@ open class DocumentForward: JNIObjectForward, Document {
 
     /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
 
-    private static var getDefaultRootElement_MethodID_31: jmethodID?
+    private static var getDefaultRootElement_MethodID_34: jmethodID?
 
     open func getDefaultRootElement() -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DocumentForward.getDefaultRootElement_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DocumentForward.getDefaultRootElement_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
 
-
-    /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
-
-    private static var getText_MethodID_32: jmethodID?
-
-    open func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &DocumentForward.getText_MethodID_32, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getText( _ _offset: Int, _ _length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        return try getText( offset: _offset, length: _length )
-    }
-
-    /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
-
-    private static var getText_MethodID_33: jmethodID?
-
-    open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt != nil ? txt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &DocumentForward.getText_MethodID_33, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func getText( _ _offset: Int, _ _length: Int, _ _txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
-        try getText( offset: _offset, length: _length, txt: _txt )
-    }
-
-    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
-
-    private static var putProperty_MethodID_34: jmethodID?
-
-    open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DocumentForward.putProperty_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
-        putProperty( key: _key, value: _value )
-    }
 
 }
 

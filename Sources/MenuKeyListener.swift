@@ -34,7 +34,7 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
     open func menuKeyPressed( e: MenuKeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuKeyPressed", methodSig: "(Ljavax/swing/event/MenuKeyEvent;)V", methodCache: &MenuKeyListenerForward.menuKeyPressed_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -49,7 +49,7 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
     open func menuKeyReleased( e: MenuKeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuKeyReleased", methodSig: "(Ljavax/swing/event/MenuKeyEvent;)V", methodCache: &MenuKeyListenerForward.menuKeyReleased_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -64,7 +64,7 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
     open func menuKeyTyped( e: MenuKeyEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuKeyTyped", methodSig: "(Ljavax/swing/event/MenuKeyEvent;)V", methodCache: &MenuKeyListenerForward.menuKeyTyped_MethodID_6, args: &__args, locals: &__locals )
     }
 

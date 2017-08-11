@@ -98,6 +98,10 @@ open class ObjectView: ComponentView {
         self.init( arg0: _arg0 )
     }
 
+    /// java.awt.Component javax.swing.text.html.ObjectView.getUnloadableRepresentation()
+
+    /// private void javax.swing.text.html.ObjectView.setParameters(java.awt.Component,javax.swing.text.AttributeSet)
+
     /// protected java.awt.Component javax.swing.text.html.ObjectView.createComponent()
 
     private static var createComponent_MethodID_2: jmethodID?
@@ -110,10 +114,6 @@ open class ObjectView: ComponentView {
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-
-    /// java.awt.Component javax.swing.text.html.ObjectView.getUnloadableRepresentation()
-
-    /// private void javax.swing.text.html.ObjectView.setParameters(java.awt.Component,javax.swing.text.AttributeSet)
 
 }
 

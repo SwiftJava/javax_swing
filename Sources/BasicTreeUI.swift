@@ -121,7 +121,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "preferredMinSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &BasicTreeUI.preferredMinSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -155,7 +155,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "tree", fieldType: "Ljavax/swing/JTree;", fieldCache: &BasicTreeUI.tree_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -257,7 +257,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rendererPane", fieldType: "Ljavax/swing/CellRendererPane;", fieldCache: &BasicTreeUI.rendererPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -274,7 +274,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "preferredSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &BasicTreeUI.preferredSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -308,7 +308,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "treeState", fieldType: "Ljavax/swing/tree/AbstractLayoutCache;", fieldCache: &BasicTreeUI.treeState_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -359,7 +359,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "nodeDimensions", fieldType: "Ljavax/swing/tree/AbstractLayoutCache$NodeDimensions;", fieldCache: &BasicTreeUI.nodeDimensions_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -427,7 +427,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editingComponent", fieldType: "Ljava/awt/Component;", fieldCache: &BasicTreeUI.editingComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -444,7 +444,7 @@ open class BasicTreeUI: TreeUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editingPath", fieldType: "Ljavax/swing/tree/TreePath;", fieldCache: &BasicTreeUI.editingPath_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -539,54 +539,15 @@ open class BasicTreeUI: TreeUI {
 
     /// private javax.swing.plaf.basic.BasicTreeUI$Handler javax.swing.plaf.basic.BasicTreeUI.getHandler()
 
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateSize()
-
-    private static var updateSize_MethodID_2: jmethodID?
-
-    open func updateSize() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateSize", methodSig: "()V", methodCache: &BasicTreeUI.updateSize_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getPreferredSize(javax.swing.JComponent,boolean)
-
-    private static var getPreferredSize_MethodID_3: jmethodID?
-
-    open func getPreferredSize( c: JComponent?, checkConsistency: Bool ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: checkConsistency, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;Z)Ljava/awt/Dimension;", methodCache: &BasicTreeUI.getPreferredSize_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func getPreferredSize( _ _c: JComponent?, _ _checkConsistency: Bool ) -> java_awt.Dimension! {
-        return getPreferredSize( c: _c, checkConsistency: _checkConsistency )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getMaximumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.basic.BasicTreeUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTreeUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicTreeUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_4: jmethodID?
+    private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTreeUI", classCache: &BasicTreeUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicTreeUI", classCache: &BasicTreeUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -595,1084 +556,36 @@ open class BasicTreeUI: TreeUI {
         return createUI( x: _x )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.ensureRowsAreVisible(int,int)
+    /// public void javax.swing.plaf.basic.BasicTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var ensureRowsAreVisible_MethodID_5: jmethodID?
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.startEditing(javax.swing.tree.TreePath,java.awt.event.MouseEvent)
 
-    open func ensureRowsAreVisible( beginRow: Int, endRow: Int ) {
+    private static var startEditing_MethodID_3: jmethodID?
+
+    open func startEditing( path: TreePath?, event: java_awt.MouseEvent? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: beginRow, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureRowsAreVisible", methodSig: "(II)V", methodCache: &BasicTreeUI.ensureRowsAreVisible_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func ensureRowsAreVisible( _ _beginRow: Int, _ _endRow: Int ) {
-        ensureRowsAreVisible( beginRow: _beginRow, endRow: _endRow )
-    }
-
-    /// private void javax.swing.plaf.basic.BasicTreeUI.extendSelection(javax.swing.tree.TreePath)
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.toggleExpandState(javax.swing.tree.TreePath)
-
-    private static var toggleExpandState_MethodID_6: jmethodID?
-
-    open func toggleExpandState( path: TreePath? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toggleExpandState", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.toggleExpandState_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func toggleExpandState( _ _path: TreePath? ) {
-        toggleExpandState( path: _path )
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicTreeUI.getHashColor()
-
-    private static var getHashColor_MethodID_7: jmethodID?
-
-    open func getHashColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHashColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicTreeUI.getHashColor_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.setHashColor(java.awt.Color)
-
-    private static var setHashColor_MethodID_8: jmethodID?
-
-    open func setHashColor( color: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHashColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &BasicTreeUI.setHashColor_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setHashColor( _ _color: java_awt.Color? ) {
-        setHashColor( color: _color )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.setLeftChildIndent(int)
-
-    private static var setLeftChildIndent_MethodID_9: jmethodID?
-
-    open func setLeftChildIndent( newAmount: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newAmount, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeftChildIndent", methodSig: "(I)V", methodCache: &BasicTreeUI.setLeftChildIndent_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setLeftChildIndent( _ _newAmount: Int ) {
-        setLeftChildIndent( newAmount: _newAmount )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicTreeUI.getLeftChildIndent()
-
-    private static var getLeftChildIndent_MethodID_10: jmethodID?
-
-    open func getLeftChildIndent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeftChildIndent", methodSig: "()I", methodCache: &BasicTreeUI.getLeftChildIndent_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.setRightChildIndent(int)
-
-    private static var setRightChildIndent_MethodID_11: jmethodID?
-
-    open func setRightChildIndent( newAmount: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newAmount, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRightChildIndent", methodSig: "(I)V", methodCache: &BasicTreeUI.setRightChildIndent_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setRightChildIndent( _ _newAmount: Int ) {
-        setRightChildIndent( newAmount: _newAmount )
-    }
-
-    /// public int javax.swing.plaf.basic.BasicTreeUI.getRightChildIndent()
-
-    private static var getRightChildIndent_MethodID_12: jmethodID?
-
-    open func getRightChildIndent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRightChildIndent", methodSig: "()I", methodCache: &BasicTreeUI.getRightChildIndent_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.setExpandedIcon(javax.swing.Icon)
-
-    private static var setExpandedIcon_MethodID_13: jmethodID?
-
-    open func setExpandedIcon( newG: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newG, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExpandedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &BasicTreeUI.setExpandedIcon_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setExpandedIcon( _ _newG: Icon? ) {
-        setExpandedIcon( newG: _newG )
-    }
-
-    /// public javax.swing.Icon javax.swing.plaf.basic.BasicTreeUI.getExpandedIcon()
-
-    private static var getExpandedIcon_MethodID_14: jmethodID?
-
-    open func getExpandedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExpandedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &BasicTreeUI.getExpandedIcon_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.setCollapsedIcon(javax.swing.Icon)
-
-    private static var setCollapsedIcon_MethodID_15: jmethodID?
-
-    open func setCollapsedIcon( newG: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newG, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCollapsedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &BasicTreeUI.setCollapsedIcon_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setCollapsedIcon( _ _newG: Icon? ) {
-        setCollapsedIcon( newG: _newG )
-    }
-
-    /// public javax.swing.Icon javax.swing.plaf.basic.BasicTreeUI.getCollapsedIcon()
-
-    private static var getCollapsedIcon_MethodID_16: jmethodID?
-
-    open func getCollapsedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCollapsedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &BasicTreeUI.getCollapsedIcon_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.prepareForUIInstall()
-
-    private static var prepareForUIInstall_MethodID_17: jmethodID?
-
-    open func prepareForUIInstall() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForUIInstall", methodSig: "()V", methodCache: &BasicTreeUI.prepareForUIInstall_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeUIInstall()
-
-    private static var completeUIInstall_MethodID_18: jmethodID?
-
-    open func completeUIInstall() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeUIInstall", methodSig: "()V", methodCache: &BasicTreeUI.completeUIInstall_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.tree.AbstractLayoutCache$NodeDimensions javax.swing.plaf.basic.BasicTreeUI.createNodeDimensions()
-
-    private static var createNodeDimensions_MethodID_19: jmethodID?
-
-    open func createNodeDimensions() -> AbstractLayoutCache_NodeDimensions! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNodeDimensions", methodSig: "()Ljavax/swing/tree/AbstractLayoutCache$NodeDimensions;", methodCache: &BasicTreeUI.createNodeDimensions_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AbstractLayoutCache_NodeDimensions( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTreeUI.createSelectionModelPropertyChangeListener()
-
-    private static var createSelectionModelPropertyChangeListener_MethodID_20: jmethodID?
-
-    open func createSelectionModelPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSelectionModelPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicTreeUI.createSelectionModelPropertyChangeListener_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.event.TreeSelectionListener javax.swing.plaf.basic.BasicTreeUI.createTreeSelectionListener()
-
-    private static var createTreeSelectionListener_MethodID_21: jmethodID?
-
-    open func createTreeSelectionListener() -> TreeSelectionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeSelectionListener", methodSig: "()Ljavax/swing/event/TreeSelectionListener;", methodCache: &BasicTreeUI.createTreeSelectionListener_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeSelectionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.event.CellEditorListener javax.swing.plaf.basic.BasicTreeUI.createCellEditorListener()
-
-    private static var createCellEditorListener_MethodID_22: jmethodID?
-
-    open func createCellEditorListener() -> CellEditorListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCellEditorListener", methodSig: "()Ljavax/swing/event/CellEditorListener;", methodCache: &BasicTreeUI.createCellEditorListener_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CellEditorListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.event.TreeExpansionListener javax.swing.plaf.basic.BasicTreeUI.createTreeExpansionListener()
-
-    private static var createTreeExpansionListener_MethodID_23: jmethodID?
-
-    open func createTreeExpansionListener() -> TreeExpansionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeExpansionListener", methodSig: "()Ljavax/swing/event/TreeExpansionListener;", methodCache: &BasicTreeUI.createTreeExpansionListener_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeExpansionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.tree.AbstractLayoutCache javax.swing.plaf.basic.BasicTreeUI.createLayoutCache()
-
-    private static var createLayoutCache_MethodID_24: jmethodID?
-
-    open func createLayoutCache() -> AbstractLayoutCache! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutCache", methodSig: "()Ljavax/swing/tree/AbstractLayoutCache;", methodCache: &BasicTreeUI.createLayoutCache_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AbstractLayoutCache( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.CellRendererPane javax.swing.plaf.basic.BasicTreeUI.createCellRendererPane()
-
-    private static var createCellRendererPane_MethodID_25: jmethodID?
-
-    open func createCellRendererPane() -> CellRendererPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCellRendererPane", methodSig: "()Ljavax/swing/CellRendererPane;", methodCache: &BasicTreeUI.createCellRendererPane_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? CellRendererPane( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.tree.TreeCellEditor javax.swing.plaf.basic.BasicTreeUI.createDefaultCellEditor()
-
-    private static var createDefaultCellEditor_MethodID_26: jmethodID?
-
-    open func createDefaultCellEditor() -> TreeCellEditor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &BasicTreeUI.createDefaultCellEditor_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeCellEditorForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.tree.TreeCellRenderer javax.swing.plaf.basic.BasicTreeUI.createDefaultCellRenderer()
-
-    private static var createDefaultCellRenderer_MethodID_27: jmethodID?
-
-    open func createDefaultCellRenderer() -> TreeCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &BasicTreeUI.createDefaultCellRenderer_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeCellRendererForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.prepareForUIUninstall()
-
-    private static var prepareForUIUninstall_MethodID_28: jmethodID?
-
-    open func prepareForUIUninstall() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForUIUninstall", methodSig: "()V", methodCache: &BasicTreeUI.prepareForUIUninstall_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeUIUninstall()
-
-    private static var completeUIUninstall_MethodID_29: jmethodID?
-
-    open func completeUIUninstall() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeUIUninstall", methodSig: "()V", methodCache: &BasicTreeUI.completeUIUninstall_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-
-    /// private void javax.swing.plaf.basic.BasicTreeUI.redoTheLayout()
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isDropLine(javax.swing.JTree$DropLocation)
-
-    private static var isDropLine_MethodID_30: jmethodID?
-
-    open func isDropLine( loc: JTree_DropLocation? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: loc != nil ? loc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDropLine", methodSig: "(Ljavax/swing/JTree$DropLocation;)Z", methodCache: &BasicTreeUI.isDropLine_MethodID_30, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: event, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "startEditing", methodSig: "(Ljavax/swing/tree/TreePath;Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.startEditing_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-    open func isDropLine( _ _loc: JTree_DropLocation? ) -> Bool {
-        return isDropLine( loc: _loc )
+    open func startEditing( _ _path: TreePath?, _ _event: java_awt.MouseEvent? ) -> Bool {
+        return startEditing( path: _path, event: _event )
     }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintHorizontalPartOfLeg(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
-
-    private static var paintHorizontalPartOfLeg_MethodID_31: jmethodID?
-
-    open func paintHorizontalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: clipBounds != nil ? clipBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: row, locals: &__locals )
-        __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
-        __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isLeaf, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &BasicTreeUI.paintHorizontalPartOfLeg_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func paintHorizontalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
-        paintHorizontalPartOfLeg( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintVerticalPartOfLeg(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,javax.swing.tree.TreePath)
-
-    private static var paintVerticalPartOfLeg_MethodID_32: jmethodID?
-
-    open func paintVerticalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, path: TreePath? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: clipBounds != nil ? clipBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.paintVerticalPartOfLeg_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func paintVerticalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _path: TreePath? ) {
-        paintVerticalPartOfLeg( g: _g, clipBounds: _clipBounds, insets: _insets, path: _path )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintExpandControl(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
-
-    private static var paintExpandControl_MethodID_33: jmethodID?
-
-    open func paintExpandControl( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: clipBounds != nil ? clipBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: row, locals: &__locals )
-        __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
-        __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isLeaf, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintExpandControl", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &BasicTreeUI.paintExpandControl_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func paintExpandControl( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
-        paintExpandControl( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintRow(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
-
-    private static var paintRow_MethodID_34: jmethodID?
-
-    open func paintRow( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: clipBounds != nil ? clipBounds! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: row, locals: &__locals )
-        __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
-        __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isLeaf, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRow", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &BasicTreeUI.paintRow_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func paintRow( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
-        paintRow( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.shouldPaintExpandControl(javax.swing.tree.TreePath,int,boolean,boolean,boolean)
-
-    private static var shouldPaintExpandControl_MethodID_35: jmethodID?
-
-    open func shouldPaintExpandControl( path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: row, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isExpanded, locals: &__locals )
-        __args[3] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
-        __args[4] = JNIType.toJava( value: isLeaf, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldPaintExpandControl", methodSig: "(Ljavax/swing/tree/TreePath;IZZZ)Z", methodCache: &BasicTreeUI.shouldPaintExpandControl_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func shouldPaintExpandControl( _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) -> Bool {
-        return shouldPaintExpandControl( path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintVerticalLine(java.awt.Graphics,javax.swing.JComponent,int,int,int)
-
-    private static var paintVerticalLine_MethodID_36: jmethodID?
-
-    open func paintVerticalLine( g: java_awt.Graphics?, c: JComponent?, x: Int, top: Int, bottom: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: top, locals: &__locals )
-        __args[4] = JNIType.toJava( value: bottom, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalLine", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;III)V", methodCache: &BasicTreeUI.paintVerticalLine_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func paintVerticalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _x: Int, _ _top: Int, _ _bottom: Int ) {
-        paintVerticalLine( g: _g, c: _c, x: _x, top: _top, bottom: _bottom )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintHorizontalLine(java.awt.Graphics,javax.swing.JComponent,int,int,int)
-
-    private static var paintHorizontalLine_MethodID_37: jmethodID?
-
-    open func paintHorizontalLine( g: java_awt.Graphics?, c: JComponent?, y: Int, left: Int, right: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: left, locals: &__locals )
-        __args[4] = JNIType.toJava( value: right, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalLine", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;III)V", methodCache: &BasicTreeUI.paintHorizontalLine_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func paintHorizontalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _y: Int, _ _left: Int, _ _right: Int ) {
-        paintHorizontalLine( g: _g, c: _c, y: _y, left: _left, right: _right )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTreeUI.getVerticalLegBuffer()
-
-    private static var getVerticalLegBuffer_MethodID_38: jmethodID?
-
-    open func getVerticalLegBuffer() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalLegBuffer", methodSig: "()I", methodCache: &BasicTreeUI.getVerticalLegBuffer_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected int javax.swing.plaf.basic.BasicTreeUI.getHorizontalLegBuffer()
-
-    private static var getHorizontalLegBuffer_MethodID_39: jmethodID?
-
-    open func getHorizontalLegBuffer() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalLegBuffer", methodSig: "()I", methodCache: &BasicTreeUI.getHorizontalLegBuffer_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private int javax.swing.plaf.basic.BasicTreeUI.findCenteredX(int,int)
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.drawCentered(java.awt.Component,java.awt.Graphics,javax.swing.Icon,int,int)
-
-    private static var drawCentered_MethodID_40: jmethodID?
-
-    open func drawCentered( c: java_awt.Component?, graphics: java_awt.Graphics?, icon: Icon?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: graphics != nil ? graphics! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: icon, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawCentered", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;Ljavax/swing/Icon;II)V", methodCache: &BasicTreeUI.drawCentered_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func drawCentered( _ _c: java_awt.Component?, _ _graphics: java_awt.Graphics?, _ _icon: Icon?, _ _x: Int, _ _y: Int ) {
-        drawCentered( c: _c, graphics: _graphics, icon: _icon, x: _x, y: _y )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.drawDashedHorizontalLine(java.awt.Graphics,int,int,int)
-
-    private static var drawDashedHorizontalLine_MethodID_41: jmethodID?
-
-    open func drawDashedHorizontalLine( g: java_awt.Graphics?, y: Int, x1: Int, x2: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawDashedHorizontalLine", methodSig: "(Ljava/awt/Graphics;III)V", methodCache: &BasicTreeUI.drawDashedHorizontalLine_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-    open func drawDashedHorizontalLine( _ _g: java_awt.Graphics?, _ _y: Int, _ _x1: Int, _ _x2: Int ) {
-        drawDashedHorizontalLine( g: _g, y: _y, x1: _x1, x2: _x2 )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.drawDashedVerticalLine(java.awt.Graphics,int,int,int)
-
-    private static var drawDashedVerticalLine_MethodID_42: jmethodID?
-
-    open func drawDashedVerticalLine( g: java_awt.Graphics?, x: Int, y1: Int, y2: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y1, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawDashedVerticalLine", methodSig: "(Ljava/awt/Graphics;III)V", methodCache: &BasicTreeUI.drawDashedVerticalLine_MethodID_42, args: &__args, locals: &__locals )
-    }
-
-    open func drawDashedVerticalLine( _ _g: java_awt.Graphics?, _ _x: Int, _ _y1: Int, _ _y2: Int ) {
-        drawDashedVerticalLine( g: _g, x: _x, y1: _y1, y2: _y2 )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTreeUI.getRowX(int,int)
-
-    private static var getRowX_MethodID_43: jmethodID?
-
-    open func getRowX( row: Int, depth: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        __args[1] = JNIType.toJava( value: depth, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowX", methodSig: "(II)I", methodCache: &BasicTreeUI.getRowX_MethodID_43, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getRowX( _ _row: Int, _ _depth: Int ) -> Int {
-        return getRowX( row: _row, depth: _depth )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateLayoutCacheExpandedNodes()
-
-    private static var updateLayoutCacheExpandedNodes_MethodID_44: jmethodID?
-
-    open func updateLayoutCacheExpandedNodes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayoutCacheExpandedNodes", methodSig: "()V", methodCache: &BasicTreeUI.updateLayoutCacheExpandedNodes_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-
-    /// private void javax.swing.plaf.basic.BasicTreeUI.updateLayoutCacheExpandedNodesIfNecessary()
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateExpandedDescendants(javax.swing.tree.TreePath)
-
-    private static var updateExpandedDescendants_MethodID_45: jmethodID?
-
-    open func updateExpandedDescendants( path: TreePath? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateExpandedDescendants", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.updateExpandedDescendants_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-    open func updateExpandedDescendants( _ _path: TreePath? ) {
-        updateExpandedDescendants( path: _path )
-    }
-
-    /// protected javax.swing.tree.TreePath javax.swing.plaf.basic.BasicTreeUI.getLastChildPath(javax.swing.tree.TreePath)
-
-    private static var getLastChildPath_MethodID_46: jmethodID?
-
-    open func getLastChildPath( parent: TreePath? ) -> TreePath! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent != nil ? parent! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastChildPath", methodSig: "(Ljavax/swing/tree/TreePath;)Ljavax/swing/tree/TreePath;", methodCache: &BasicTreeUI.getLastChildPath_MethodID_46, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreePath( javaObject: __return ) : nil
-    }
-
-    open func getLastChildPath( _ _parent: TreePath? ) -> TreePath! {
-        return getLastChildPath( parent: _parent )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateDepthOffset()
-
-    private static var updateDepthOffset_MethodID_47: jmethodID?
-
-    open func updateDepthOffset() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateDepthOffset", methodSig: "()V", methodCache: &BasicTreeUI.updateDepthOffset_MethodID_47, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateCellEditor()
-
-    private static var updateCellEditor_MethodID_48: jmethodID?
-
-    open func updateCellEditor() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCellEditor", methodSig: "()V", methodCache: &BasicTreeUI.updateCellEditor_MethodID_48, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.configureLayoutCache()
-
-    private static var configureLayoutCache_MethodID_49: jmethodID?
-
-    open func configureLayoutCache() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureLayoutCache", methodSig: "()V", methodCache: &BasicTreeUI.configureLayoutCache_MethodID_49, args: &__args, locals: &__locals )
-    }
-
-
-    /// private void javax.swing.plaf.basic.BasicTreeUI.updateSize0()
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateCachedPreferredSize()
-
-    private static var updateCachedPreferredSize_MethodID_50: jmethodID?
-
-    open func updateCachedPreferredSize() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCachedPreferredSize", methodSig: "()V", methodCache: &BasicTreeUI.updateCachedPreferredSize_MethodID_50, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.pathWasExpanded(javax.swing.tree.TreePath)
-
-    private static var pathWasExpanded_MethodID_51: jmethodID?
-
-    open func pathWasExpanded( path: TreePath? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pathWasExpanded", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.pathWasExpanded_MethodID_51, args: &__args, locals: &__locals )
-    }
-
-    open func pathWasExpanded( _ _path: TreePath? ) {
-        pathWasExpanded( path: _path )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.pathWasCollapsed(javax.swing.tree.TreePath)
-
-    private static var pathWasCollapsed_MethodID_52: jmethodID?
-
-    open func pathWasCollapsed( path: TreePath? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pathWasCollapsed", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.pathWasCollapsed_MethodID_52, args: &__args, locals: &__locals )
-    }
-
-    open func pathWasCollapsed( _ _path: TreePath? ) {
-        pathWasCollapsed( path: _path )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.setPreferredMinSize(java.awt.Dimension)
-
-    private static var setPreferredMinSize_MethodID_53: jmethodID?
-
-    open func setPreferredMinSize( newSize: java_awt.Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newSize != nil ? newSize! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreferredMinSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &BasicTreeUI.setPreferredMinSize_MethodID_53, args: &__args, locals: &__locals )
-    }
-
-    open func setPreferredMinSize( _ _newSize: java_awt.Dimension? ) {
-        setPreferredMinSize( newSize: _newSize )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getPreferredMinSize()
-
-    private static var getPreferredMinSize_MethodID_54: jmethodID?
-
-    open func getPreferredMinSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredMinSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicTreeUI.getPreferredMinSize_MethodID_54, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeEditing(boolean,boolean,boolean)
-
-    private static var completeEditing_MethodID_55: jmethodID?
-
-    open func completeEditing( messageStop: Bool, messageCancel: Bool, messageTree: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: messageStop, locals: &__locals )
-        __args[1] = JNIType.toJava( value: messageCancel, locals: &__locals )
-        __args[2] = JNIType.toJava( value: messageTree, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeEditing", methodSig: "(ZZZ)V", methodCache: &BasicTreeUI.completeEditing_MethodID_55, args: &__args, locals: &__locals )
-    }
-
-    open func completeEditing( _ _messageStop: Bool, _ _messageCancel: Bool, _ _messageTree: Bool ) {
-        completeEditing( messageStop: _messageStop, messageCancel: _messageCancel, messageTree: _messageTree )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeEditing()
-
-    private static var completeEditing_MethodID_56: jmethodID?
-
-    open func completeEditing() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeEditing", methodSig: "()V", methodCache: &BasicTreeUI.completeEditing_MethodID_56, args: &__args, locals: &__locals )
-    }
-
-
-    /// private boolean javax.swing.plaf.basic.BasicTreeUI.startEditingOnRelease(javax.swing.tree.TreePath,java.awt.event.MouseEvent,java.awt.event.MouseEvent)
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.checkForClickInExpandControl(javax.swing.tree.TreePath,int,int)
-
-    private static var checkForClickInExpandControl_MethodID_57: jmethodID?
-
-    open func checkForClickInExpandControl( path: TreePath?, mouseX: Int, mouseY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: mouseX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: mouseY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "checkForClickInExpandControl", methodSig: "(Ljavax/swing/tree/TreePath;II)V", methodCache: &BasicTreeUI.checkForClickInExpandControl_MethodID_57, args: &__args, locals: &__locals )
-    }
-
-    open func checkForClickInExpandControl( _ _path: TreePath?, _ _mouseX: Int, _ _mouseY: Int ) {
-        checkForClickInExpandControl( path: _path, mouseX: _mouseX, mouseY: _mouseY )
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isLocationInExpandControl(javax.swing.tree.TreePath,int,int)
-
-    private static var isLocationInExpandControl_MethodID_58: jmethodID?
-
-    open func isLocationInExpandControl( path: TreePath?, mouseX: Int, mouseY: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: mouseX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: mouseY, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLocationInExpandControl", methodSig: "(Ljavax/swing/tree/TreePath;II)Z", methodCache: &BasicTreeUI.isLocationInExpandControl_MethodID_58, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isLocationInExpandControl( _ _path: TreePath?, _ _mouseX: Int, _ _mouseY: Int ) -> Bool {
-        return isLocationInExpandControl( path: _path, mouseX: _mouseX, mouseY: _mouseY )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.handleExpandControlClick(javax.swing.tree.TreePath,int,int)
-
-    private static var handleExpandControlClick_MethodID_59: jmethodID?
-
-    open func handleExpandControlClick( path: TreePath?, mouseX: Int, mouseY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: mouseX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: mouseY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleExpandControlClick", methodSig: "(Ljavax/swing/tree/TreePath;II)V", methodCache: &BasicTreeUI.handleExpandControlClick_MethodID_59, args: &__args, locals: &__locals )
-    }
-
-    open func handleExpandControlClick( _ _path: TreePath?, _ _mouseX: Int, _ _mouseY: Int ) {
-        handleExpandControlClick( path: _path, mouseX: _mouseX, mouseY: _mouseY )
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isToggleSelectionEvent(java.awt.event.MouseEvent)
-
-    private static var isToggleSelectionEvent_MethodID_60: jmethodID?
-
-    open func isToggleSelectionEvent( event: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isToggleSelectionEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.isToggleSelectionEvent_MethodID_60, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isToggleSelectionEvent( _ _event: java_awt.MouseEvent? ) -> Bool {
-        return isToggleSelectionEvent( event: _event )
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isMultiSelectEvent(java.awt.event.MouseEvent)
-
-    private static var isMultiSelectEvent_MethodID_61: jmethodID?
-
-    open func isMultiSelectEvent( event: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMultiSelectEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.isMultiSelectEvent_MethodID_61, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isMultiSelectEvent( _ _event: java_awt.MouseEvent? ) -> Bool {
-        return isMultiSelectEvent( event: _event )
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isToggleEvent(java.awt.event.MouseEvent)
-
-    private static var isToggleEvent_MethodID_62: jmethodID?
-
-    open func isToggleEvent( event: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isToggleEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.isToggleEvent_MethodID_62, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isToggleEvent( _ _event: java_awt.MouseEvent? ) -> Bool {
-        return isToggleEvent( event: _event )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.selectPathForEvent(javax.swing.tree.TreePath,java.awt.event.MouseEvent)
-
-    private static var selectPathForEvent_MethodID_63: jmethodID?
-
-    open func selectPathForEvent( path: TreePath?, event: java_awt.MouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPathForEvent", methodSig: "(Ljavax/swing/tree/TreePath;Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI.selectPathForEvent_MethodID_63, args: &__args, locals: &__locals )
-    }
-
-    open func selectPathForEvent( _ _path: TreePath?, _ _event: java_awt.MouseEvent? ) {
-        selectPathForEvent( path: _path, event: _event )
-    }
-
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getRepaintPathBounds(java.awt.Rectangle)
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateLeadSelectionRow()
-
-    private static var updateLeadSelectionRow_MethodID_64: jmethodID?
-
-    open func updateLeadSelectionRow() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLeadSelectionRow", methodSig: "()V", methodCache: &BasicTreeUI.updateLeadSelectionRow_MethodID_64, args: &__args, locals: &__locals )
-    }
-
-
-    /// private void javax.swing.plaf.basic.BasicTreeUI.repaintPath(javax.swing.tree.TreePath)
-
-    /// static boolean javax.swing.plaf.basic.BasicTreeUI.access$1302(javax.swing.plaf.basic.BasicTreeUI,boolean)
-
-    /// protected javax.swing.tree.TreeModel javax.swing.plaf.basic.BasicTreeUI.getModel()
-
-    private static var getModel_MethodID_65: jmethodID?
-
-    open func getModel() -> TreeModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/tree/TreeModel;", methodCache: &BasicTreeUI.getModel_MethodID_65, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isEditable()
-
-    private static var isEditable_MethodID_66: jmethodID?
-
-    open func isEditable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &BasicTreeUI.isEditable_MethodID_66, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected javax.swing.tree.TreeCellRenderer javax.swing.plaf.basic.BasicTreeUI.getCellRenderer()
-
-    private static var getCellRenderer_MethodID_67: jmethodID?
-
-    open func getCellRenderer() -> TreeCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &BasicTreeUI.getCellRenderer_MethodID_67, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeCellRendererForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.setRowHeight(int)
-
-    private static var setRowHeight_MethodID_68: jmethodID?
-
-    open func setRowHeight( rowHeight: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rowHeight, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeight", methodSig: "(I)V", methodCache: &BasicTreeUI.setRowHeight_MethodID_68, args: &__args, locals: &__locals )
-    }
-
-    open func setRowHeight( _ _rowHeight: Int ) {
-        setRowHeight( rowHeight: _rowHeight )
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTreeUI.getRowHeight()
-
-    private static var getRowHeight_MethodID_69: jmethodID?
-
-    open func getRowHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "()I", methodCache: &BasicTreeUI.getRowHeight_MethodID_69, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.plaf.basic.BasicTreeUI.getRowCount(javax.swing.JTree)
-
-    /// public boolean javax.swing.plaf.basic.BasicTreeUI.isEditing(javax.swing.JTree)
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.setModel(javax.swing.tree.TreeModel)
-
-    private static var setModel_MethodID_70: jmethodID?
-
-    open func setModel( model: TreeModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/tree/TreeModel;)V", methodCache: &BasicTreeUI.setModel_MethodID_70, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _model: TreeModel? ) {
-        setModel( model: _model )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.setSelectionModel(javax.swing.tree.TreeSelectionModel)
-
-    private static var setSelectionModel_MethodID_71: jmethodID?
-
-    open func setSelectionModel( newLSM: TreeSelectionModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newLSM, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionModel", methodSig: "(Ljavax/swing/tree/TreeSelectionModel;)V", methodCache: &BasicTreeUI.setSelectionModel_MethodID_71, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectionModel( _ _newLSM: TreeSelectionModel? ) {
-        setSelectionModel( newLSM: _newLSM )
-    }
-
-    /// protected javax.swing.tree.TreeSelectionModel javax.swing.plaf.basic.BasicTreeUI.getSelectionModel()
-
-    private static var getSelectionModel_MethodID_72: jmethodID?
-
-    open func getSelectionModel() -> TreeSelectionModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionModel", methodSig: "()Ljavax/swing/tree/TreeSelectionModel;", methodCache: &BasicTreeUI.getSelectionModel_MethodID_72, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeSelectionModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected javax.swing.tree.TreeCellEditor javax.swing.plaf.basic.BasicTreeUI.getCellEditor()
-
-    private static var getCellEditor_MethodID_73: jmethodID?
-
-    open func getCellEditor() -> TreeCellEditor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &BasicTreeUI.getCellEditor_MethodID_73, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreeCellEditorForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.setCellEditor(javax.swing.tree.TreeCellEditor)
-
-    private static var setCellEditor_MethodID_74: jmethodID?
-
-    open func setCellEditor( editor: TreeCellEditor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellEditor", methodSig: "(Ljavax/swing/tree/TreeCellEditor;)V", methodCache: &BasicTreeUI.setCellEditor_MethodID_74, args: &__args, locals: &__locals )
-    }
-
-    open func setCellEditor( _ _editor: TreeCellEditor? ) {
-        setCellEditor( editor: _editor )
-    }
-
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTreeUI.getInputMap(int)
 
     /// static void javax.swing.plaf.basic.BasicTreeUI.access$1100(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath)
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.uninstallUI(javax.swing.JComponent)
-
-    /// static void javax.swing.plaf.basic.BasicTreeUI.access$2000(javax.swing.plaf.basic.BasicTreeUI)
-
-    /// static long javax.swing.plaf.basic.BasicTreeUI.access$900(javax.swing.plaf.basic.BasicTreeUI)
-
-    /// static boolean javax.swing.plaf.basic.BasicTreeUI.access$1000(javax.swing.plaf.basic.BasicTreeUI)
-
-    /// static void javax.swing.plaf.basic.BasicTreeUI.access$1200(javax.swing.plaf.basic.BasicTreeUI)
-
-    /// static void javax.swing.plaf.basic.BasicTreeUI.access$1400(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath)
-
-    /// static void javax.swing.plaf.basic.BasicTreeUI.access$1500(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath,boolean)
-
-    /// static boolean javax.swing.plaf.basic.BasicTreeUI.access$1600(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath,java.awt.event.MouseEvent,java.awt.event.MouseEvent)
-
-    /// public void javax.swing.plaf.basic.BasicTreeUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
     /// protected void javax.swing.plaf.basic.BasicTreeUI.setCellRenderer(javax.swing.tree.TreeCellRenderer)
 
-    private static var setCellRenderer_MethodID_75: jmethodID?
+    private static var setCellRenderer_MethodID_4: jmethodID?
 
     open func setCellRenderer( tcr: TreeCellRenderer? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: tcr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellRenderer", methodSig: "(Ljavax/swing/tree/TreeCellRenderer;)V", methodCache: &BasicTreeUI.setCellRenderer_MethodID_75, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellRenderer", methodSig: "(Ljavax/swing/tree/TreeCellRenderer;)V", methodCache: &BasicTreeUI.setCellRenderer_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setCellRenderer( _ _tcr: TreeCellRenderer? ) {
@@ -1681,13 +594,13 @@ open class BasicTreeUI: TreeUI {
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.setEditable(boolean)
 
-    private static var setEditable_MethodID_76: jmethodID?
+    private static var setEditable_MethodID_5: jmethodID?
 
     open func setEditable( newValue: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &BasicTreeUI.setEditable_MethodID_76, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &BasicTreeUI.setEditable_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setEditable( _ _newValue: Bool ) {
@@ -1696,25 +609,25 @@ open class BasicTreeUI: TreeUI {
 
     /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isRootVisible()
 
-    private static var isRootVisible_MethodID_77: jmethodID?
+    private static var isRootVisible_MethodID_6: jmethodID?
 
     open func isRootVisible() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootVisible", methodSig: "()Z", methodCache: &BasicTreeUI.isRootVisible_MethodID_77, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootVisible", methodSig: "()Z", methodCache: &BasicTreeUI.isRootVisible_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.setRootVisible(boolean)
 
-    private static var setRootVisible_MethodID_78: jmethodID?
+    private static var setRootVisible_MethodID_7: jmethodID?
 
     open func setRootVisible( newValue: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootVisible", methodSig: "(Z)V", methodCache: &BasicTreeUI.setRootVisible_MethodID_78, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootVisible", methodSig: "(Z)V", methodCache: &BasicTreeUI.setRootVisible_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setRootVisible( _ _newValue: Bool ) {
@@ -1723,13 +636,13 @@ open class BasicTreeUI: TreeUI {
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.setShowsRootHandles(boolean)
 
-    private static var setShowsRootHandles_MethodID_79: jmethodID?
+    private static var setShowsRootHandles_MethodID_8: jmethodID?
 
     open func setShowsRootHandles( newValue: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShowsRootHandles", methodSig: "(Z)V", methodCache: &BasicTreeUI.setShowsRootHandles_MethodID_79, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setShowsRootHandles", methodSig: "(Z)V", methodCache: &BasicTreeUI.setShowsRootHandles_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func setShowsRootHandles( _ _newValue: Bool ) {
@@ -1738,25 +651,25 @@ open class BasicTreeUI: TreeUI {
 
     /// protected boolean javax.swing.plaf.basic.BasicTreeUI.getShowsRootHandles()
 
-    private static var getShowsRootHandles_MethodID_80: jmethodID?
+    private static var getShowsRootHandles_MethodID_9: jmethodID?
 
     open func getShowsRootHandles() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getShowsRootHandles", methodSig: "()Z", methodCache: &BasicTreeUI.getShowsRootHandles_MethodID_80, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getShowsRootHandles", methodSig: "()Z", methodCache: &BasicTreeUI.getShowsRootHandles_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.setLargeModel(boolean)
 
-    private static var setLargeModel_MethodID_81: jmethodID?
+    private static var setLargeModel_MethodID_10: jmethodID?
 
     open func setLargeModel( largeModel: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: largeModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLargeModel", methodSig: "(Z)V", methodCache: &BasicTreeUI.setLargeModel_MethodID_81, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLargeModel", methodSig: "(Z)V", methodCache: &BasicTreeUI.setLargeModel_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setLargeModel( _ _largeModel: Bool ) {
@@ -1765,12 +678,12 @@ open class BasicTreeUI: TreeUI {
 
     /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isLargeModel()
 
-    private static var isLargeModel_MethodID_82: jmethodID?
+    private static var isLargeModel_MethodID_11: jmethodID?
 
     open func isLargeModel() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLargeModel", methodSig: "()Z", methodCache: &BasicTreeUI.isLargeModel_MethodID_82, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLargeModel", methodSig: "()Z", methodCache: &BasicTreeUI.isLargeModel_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1787,19 +700,19 @@ open class BasicTreeUI: TreeUI {
 
     /// protected int javax.swing.plaf.basic.BasicTreeUI.getLeadSelectionRow()
 
-    private static var getLeadSelectionRow_MethodID_83: jmethodID?
+    private static var getLeadSelectionRow_MethodID_12: jmethodID?
 
     open func getLeadSelectionRow() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeadSelectionRow", methodSig: "()I", methodCache: &BasicTreeUI.getLeadSelectionRow_MethodID_83, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeadSelectionRow", methodSig: "()I", methodCache: &BasicTreeUI.getLeadSelectionRow_MethodID_12, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
-    /// public java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getPathBounds(javax.swing.JTree,javax.swing.tree.TreePath)
-
     /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getPathBounds(javax.swing.tree.TreePath,java.awt.Insets,java.awt.Rectangle)
+
+    /// public java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getPathBounds(javax.swing.JTree,javax.swing.tree.TreePath)
 
     /// public javax.swing.tree.TreePath javax.swing.plaf.basic.BasicTreeUI.getPathForRow(javax.swing.JTree,int)
 
@@ -1817,12 +730,12 @@ open class BasicTreeUI: TreeUI {
 
     /// protected javax.swing.event.TreeModelListener javax.swing.plaf.basic.BasicTreeUI.createTreeModelListener()
 
-    private static var createTreeModelListener_MethodID_84: jmethodID?
+    private static var createTreeModelListener_MethodID_13: jmethodID?
 
     open func createTreeModelListener() -> TreeModelListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeModelListener", methodSig: "()Ljavax/swing/event/TreeModelListener;", methodCache: &BasicTreeUI.createTreeModelListener_MethodID_84, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeModelListener", methodSig: "()Ljavax/swing/event/TreeModelListener;", methodCache: &BasicTreeUI.createTreeModelListener_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeModelListenerForward( javaObject: __return ) : nil
     }
@@ -1830,13 +743,13 @@ open class BasicTreeUI: TreeUI {
 
     /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isLeaf(int)
 
-    private static var isLeaf_MethodID_85: jmethodID?
+    private static var isLeaf_MethodID_14: jmethodID?
 
     open func isLeaf( row: Int ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "(I)Z", methodCache: &BasicTreeUI.isLeaf_MethodID_85, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "(I)Z", methodCache: &BasicTreeUI.isLeaf_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
@@ -1844,166 +757,108 @@ open class BasicTreeUI: TreeUI {
         return isLeaf( row: _row )
     }
 
-    /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicTreeUI.createComponentListener()
+    /// public void javax.swing.plaf.basic.BasicTreeUI.installUI(javax.swing.JComponent)
 
-    private static var createComponentListener_MethodID_86: jmethodID?
-
-    open func createComponentListener() -> java_awt.ComponentListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "()Ljava/awt/event/ComponentListener;", methodCache: &BasicTreeUI.createComponentListener_MethodID_86, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintDropLine(java.awt.Graphics)
-
-    private static var paintDropLine_MethodID_87: jmethodID?
-
-    open func paintDropLine( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDropLine", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicTreeUI.paintDropLine_MethodID_87, args: &__args, locals: &__locals )
-    }
-
-    open func paintDropLine( _ _g: java_awt.Graphics? ) {
-        paintDropLine( g: _g )
-    }
-
-    /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getDropLineRect(javax.swing.JTree$DropLocation)
-
-    private static var getDropLineRect_MethodID_88: jmethodID?
-
-    open func getDropLineRect( loc: JTree_DropLocation? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: loc != nil ? loc! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLineRect", methodSig: "(Ljavax/swing/JTree$DropLocation;)Ljava/awt/Rectangle;", methodCache: &BasicTreeUI.getDropLineRect_MethodID_88, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func getDropLineRect( _ _loc: JTree_DropLocation? ) -> java_awt.Rectangle! {
-        return getDropLineRect( loc: _loc )
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.startEditing(javax.swing.tree.TreePath,java.awt.event.MouseEvent)
-
-    private static var startEditing_MethodID_89: jmethodID?
-
-    open func startEditing( path: TreePath?, event: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: path != nil ? path! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "startEditing", methodSig: "(Ljavax/swing/tree/TreePath;Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.startEditing_MethodID_89, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func startEditing( _ _path: TreePath?, _ _event: java_awt.MouseEvent? ) -> Bool {
-        return startEditing( path: _path, event: _event )
-    }
+    /// public void javax.swing.plaf.basic.BasicTreeUI.uninstallUI(javax.swing.JComponent)
 
     /// static void javax.swing.plaf.basic.BasicTreeUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.installDefaults()
 
-    private static var installDefaults_MethodID_90: jmethodID?
+    private static var installDefaults_MethodID_15: jmethodID?
 
     open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTreeUI.installDefaults_MethodID_90, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicTreeUI.installDefaults_MethodID_15, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.installComponents()
 
-    private static var installComponents_MethodID_91: jmethodID?
+    private static var installComponents_MethodID_16: jmethodID?
 
     open func installComponents() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicTreeUI.installComponents_MethodID_91, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicTreeUI.installComponents_MethodID_16, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.installListeners()
 
-    private static var installListeners_MethodID_92: jmethodID?
+    private static var installListeners_MethodID_17: jmethodID?
 
     open func installListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTreeUI.installListeners_MethodID_92, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicTreeUI.installListeners_MethodID_17, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.installKeyboardActions()
 
-    private static var installKeyboardActions_MethodID_93: jmethodID?
+    private static var installKeyboardActions_MethodID_18: jmethodID?
 
     open func installKeyboardActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTreeUI.installKeyboardActions_MethodID_93, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicTreeUI.installKeyboardActions_MethodID_18, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.uninstallDefaults()
 
-    private static var uninstallDefaults_MethodID_94: jmethodID?
+    private static var uninstallDefaults_MethodID_19: jmethodID?
 
     open func uninstallDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTreeUI.uninstallDefaults_MethodID_94, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicTreeUI.uninstallDefaults_MethodID_19, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.uninstallComponents()
 
-    private static var uninstallComponents_MethodID_95: jmethodID?
+    private static var uninstallComponents_MethodID_20: jmethodID?
 
     open func uninstallComponents() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicTreeUI.uninstallComponents_MethodID_95, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicTreeUI.uninstallComponents_MethodID_20, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.uninstallListeners()
 
-    private static var uninstallListeners_MethodID_96: jmethodID?
+    private static var uninstallListeners_MethodID_21: jmethodID?
 
     open func uninstallListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTreeUI.uninstallListeners_MethodID_96, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicTreeUI.uninstallListeners_MethodID_21, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.uninstallKeyboardActions()
 
-    private static var uninstallKeyboardActions_MethodID_97: jmethodID?
+    private static var uninstallKeyboardActions_MethodID_22: jmethodID?
 
     open func uninstallKeyboardActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTreeUI.uninstallKeyboardActions_MethodID_97, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicTreeUI.uninstallKeyboardActions_MethodID_22, args: &__args, locals: &__locals )
     }
 
 
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTreeUI.createPropertyChangeListener()
 
-    private static var createPropertyChangeListener_MethodID_98: jmethodID?
+    private static var createPropertyChangeListener_MethodID_23: jmethodID?
 
     open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicTreeUI.createPropertyChangeListener_MethodID_98, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicTreeUI.createPropertyChangeListener_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -2011,23 +866,23 @@ open class BasicTreeUI: TreeUI {
 
     /// protected void javax.swing.plaf.basic.BasicTreeUI.updateRenderer()
 
-    private static var updateRenderer_MethodID_99: jmethodID?
+    private static var updateRenderer_MethodID_24: jmethodID?
 
     open func updateRenderer() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateRenderer", methodSig: "()V", methodCache: &BasicTreeUI.updateRenderer_MethodID_99, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateRenderer", methodSig: "()V", methodCache: &BasicTreeUI.updateRenderer_MethodID_24, args: &__args, locals: &__locals )
     }
 
 
     /// protected java.awt.event.KeyListener javax.swing.plaf.basic.BasicTreeUI.createKeyListener()
 
-    private static var createKeyListener_MethodID_100: jmethodID?
+    private static var createKeyListener_MethodID_25: jmethodID?
 
     open func createKeyListener() -> java_awt.KeyListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyListener", methodSig: "()Ljava/awt/event/KeyListener;", methodCache: &BasicTreeUI.createKeyListener_MethodID_100, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createKeyListener", methodSig: "()Ljava/awt/event/KeyListener;", methodCache: &BasicTreeUI.createKeyListener_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.KeyListenerForward( javaObject: __return ) : nil
     }
@@ -2035,12 +890,12 @@ open class BasicTreeUI: TreeUI {
 
     /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicTreeUI.createFocusListener()
 
-    private static var createFocusListener_MethodID_101: jmethodID?
+    private static var createFocusListener_MethodID_26: jmethodID?
 
     open func createFocusListener() -> java_awt.FocusListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicTreeUI.createFocusListener_MethodID_101, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFocusListener", methodSig: "()Ljava/awt/event/FocusListener;", methodCache: &BasicTreeUI.createFocusListener_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.FocusListenerForward( javaObject: __return ) : nil
     }
@@ -2048,12 +903,12 @@ open class BasicTreeUI: TreeUI {
 
     /// protected java.awt.event.MouseListener javax.swing.plaf.basic.BasicTreeUI.createMouseListener()
 
-    private static var createMouseListener_MethodID_102: jmethodID?
+    private static var createMouseListener_MethodID_27: jmethodID?
 
     open func createMouseListener() -> java_awt.MouseListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicTreeUI.createMouseListener_MethodID_102, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseListener", methodSig: "()Ljava/awt/event/MouseListener;", methodCache: &BasicTreeUI.createMouseListener_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.MouseListenerForward( javaObject: __return ) : nil
     }
@@ -2068,6 +923,1151 @@ open class BasicTreeUI: TreeUI {
     /// static void javax.swing.plaf.basic.BasicTreeUI.access$2200(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath)
 
     /// static javax.swing.tree.TreePath javax.swing.plaf.basic.BasicTreeUI.access$2100(javax.swing.plaf.basic.BasicTreeUI)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getPreferredSize(javax.swing.JComponent,boolean)
+
+    private static var getPreferredSize_MethodID_28: jmethodID?
+
+    open func getPreferredSize( c: JComponent?, checkConsistency: Bool ) -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: checkConsistency, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;Z)Ljava/awt/Dimension;", methodCache: &BasicTreeUI.getPreferredSize_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func getPreferredSize( _ _c: JComponent?, _ _checkConsistency: Bool ) -> java_awt.Dimension! {
+        return getPreferredSize( c: _c, checkConsistency: _checkConsistency )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getMaximumSize(javax.swing.JComponent)
+
+    /// public int javax.swing.plaf.basic.BasicTreeUI.getBaseline(javax.swing.JComponent,int,int)
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicTreeUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateSize()
+
+    private static var updateSize_MethodID_29: jmethodID?
+
+    open func updateSize() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateSize", methodSig: "()V", methodCache: &BasicTreeUI.updateSize_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.tree.TreeModel javax.swing.plaf.basic.BasicTreeUI.getModel()
+
+    private static var getModel_MethodID_30: jmethodID?
+
+    open func getModel() -> TreeModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/tree/TreeModel;", methodCache: &BasicTreeUI.getModel_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isEditable()
+
+    private static var isEditable_MethodID_31: jmethodID?
+
+    open func isEditable() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditable", methodSig: "()Z", methodCache: &BasicTreeUI.isEditable_MethodID_31, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected javax.swing.tree.TreeCellRenderer javax.swing.plaf.basic.BasicTreeUI.getCellRenderer()
+
+    private static var getCellRenderer_MethodID_32: jmethodID?
+
+    open func getCellRenderer() -> TreeCellRenderer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &BasicTreeUI.getCellRenderer_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.setRowHeight(int)
+
+    private static var setRowHeight_MethodID_33: jmethodID?
+
+    open func setRowHeight( rowHeight: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: rowHeight, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRowHeight", methodSig: "(I)V", methodCache: &BasicTreeUI.setRowHeight_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func setRowHeight( _ _rowHeight: Int ) {
+        setRowHeight( rowHeight: _rowHeight )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicTreeUI.getRowHeight()
+
+    private static var getRowHeight_MethodID_34: jmethodID?
+
+    open func getRowHeight() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowHeight", methodSig: "()I", methodCache: &BasicTreeUI.getRowHeight_MethodID_34, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.plaf.basic.BasicTreeUI.getRowCount(javax.swing.JTree)
+
+    /// public boolean javax.swing.plaf.basic.BasicTreeUI.isEditing(javax.swing.JTree)
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.setModel(javax.swing.tree.TreeModel)
+
+    private static var setModel_MethodID_35: jmethodID?
+
+    open func setModel( model: TreeModel? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: model, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/tree/TreeModel;)V", methodCache: &BasicTreeUI.setModel_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+    open func setModel( _ _model: TreeModel? ) {
+        setModel( model: _model )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.setSelectionModel(javax.swing.tree.TreeSelectionModel)
+
+    private static var setSelectionModel_MethodID_36: jmethodID?
+
+    open func setSelectionModel( newLSM: TreeSelectionModel? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newLSM, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectionModel", methodSig: "(Ljavax/swing/tree/TreeSelectionModel;)V", methodCache: &BasicTreeUI.setSelectionModel_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectionModel( _ _newLSM: TreeSelectionModel? ) {
+        setSelectionModel( newLSM: _newLSM )
+    }
+
+    /// protected javax.swing.tree.TreeSelectionModel javax.swing.plaf.basic.BasicTreeUI.getSelectionModel()
+
+    private static var getSelectionModel_MethodID_37: jmethodID?
+
+    open func getSelectionModel() -> TreeSelectionModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectionModel", methodSig: "()Ljavax/swing/tree/TreeSelectionModel;", methodCache: &BasicTreeUI.getSelectionModel_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeSelectionModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.tree.TreeCellEditor javax.swing.plaf.basic.BasicTreeUI.getCellEditor()
+
+    private static var getCellEditor_MethodID_38: jmethodID?
+
+    open func getCellEditor() -> TreeCellEditor! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &BasicTreeUI.getCellEditor_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeCellEditorForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.setCellEditor(javax.swing.tree.TreeCellEditor)
+
+    private static var setCellEditor_MethodID_39: jmethodID?
+
+    open func setCellEditor( editor: TreeCellEditor? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellEditor", methodSig: "(Ljavax/swing/tree/TreeCellEditor;)V", methodCache: &BasicTreeUI.setCellEditor_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+    open func setCellEditor( _ _editor: TreeCellEditor? ) {
+        setCellEditor( editor: _editor )
+    }
+
+    /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicTreeUI.createComponentListener()
+
+    private static var createComponentListener_MethodID_40: jmethodID?
+
+    open func createComponentListener() -> java_awt.ComponentListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "()Ljava/awt/event/ComponentListener;", methodCache: &BasicTreeUI.createComponentListener_MethodID_40, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintDropLine(java.awt.Graphics)
+
+    private static var paintDropLine_MethodID_41: jmethodID?
+
+    open func paintDropLine( g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDropLine", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicTreeUI.paintDropLine_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func paintDropLine( _ _g: java_awt.Graphics? ) {
+        paintDropLine( g: _g )
+    }
+
+    /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getDropLineRect(javax.swing.JTree$DropLocation)
+
+    private static var getDropLineRect_MethodID_42: jmethodID?
+
+    open func getDropLineRect( loc: JTree_DropLocation? ) -> java_awt.Rectangle! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: loc, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropLineRect", methodSig: "(Ljavax/swing/JTree$DropLocation;)Ljava/awt/Rectangle;", methodCache: &BasicTreeUI.getDropLineRect_MethodID_42, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    open func getDropLineRect( _ _loc: JTree_DropLocation? ) -> java_awt.Rectangle! {
+        return getDropLineRect( loc: _loc )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.ensureRowsAreVisible(int,int)
+
+    private static var ensureRowsAreVisible_MethodID_43: jmethodID?
+
+    open func ensureRowsAreVisible( beginRow: Int, endRow: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: beginRow, locals: &__locals )
+        __args[1] = JNIType.toJava( value: endRow, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "ensureRowsAreVisible", methodSig: "(II)V", methodCache: &BasicTreeUI.ensureRowsAreVisible_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func ensureRowsAreVisible( _ _beginRow: Int, _ _endRow: Int ) {
+        ensureRowsAreVisible( beginRow: _beginRow, endRow: _endRow )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicTreeUI.extendSelection(javax.swing.tree.TreePath)
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.toggleExpandState(javax.swing.tree.TreePath)
+
+    private static var toggleExpandState_MethodID_44: jmethodID?
+
+    open func toggleExpandState( path: TreePath? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toggleExpandState", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.toggleExpandState_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    open func toggleExpandState( _ _path: TreePath? ) {
+        toggleExpandState( path: _path )
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicTreeUI.getHashColor()
+
+    private static var getHashColor_MethodID_45: jmethodID?
+
+    open func getHashColor() -> java_awt.Color! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHashColor", methodSig: "()Ljava/awt/Color;", methodCache: &BasicTreeUI.getHashColor_MethodID_45, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.setHashColor(java.awt.Color)
+
+    private static var setHashColor_MethodID_46: jmethodID?
+
+    open func setHashColor( color: java_awt.Color? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHashColor", methodSig: "(Ljava/awt/Color;)V", methodCache: &BasicTreeUI.setHashColor_MethodID_46, args: &__args, locals: &__locals )
+    }
+
+    open func setHashColor( _ _color: java_awt.Color? ) {
+        setHashColor( color: _color )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI.setLeftChildIndent(int)
+
+    private static var setLeftChildIndent_MethodID_47: jmethodID?
+
+    open func setLeftChildIndent( newAmount: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newAmount, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLeftChildIndent", methodSig: "(I)V", methodCache: &BasicTreeUI.setLeftChildIndent_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+    open func setLeftChildIndent( _ _newAmount: Int ) {
+        setLeftChildIndent( newAmount: _newAmount )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicTreeUI.getLeftChildIndent()
+
+    private static var getLeftChildIndent_MethodID_48: jmethodID?
+
+    open func getLeftChildIndent() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeftChildIndent", methodSig: "()I", methodCache: &BasicTreeUI.getLeftChildIndent_MethodID_48, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI.setRightChildIndent(int)
+
+    private static var setRightChildIndent_MethodID_49: jmethodID?
+
+    open func setRightChildIndent( newAmount: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newAmount, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRightChildIndent", methodSig: "(I)V", methodCache: &BasicTreeUI.setRightChildIndent_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+    open func setRightChildIndent( _ _newAmount: Int ) {
+        setRightChildIndent( newAmount: _newAmount )
+    }
+
+    /// public int javax.swing.plaf.basic.BasicTreeUI.getRightChildIndent()
+
+    private static var getRightChildIndent_MethodID_50: jmethodID?
+
+    open func getRightChildIndent() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRightChildIndent", methodSig: "()I", methodCache: &BasicTreeUI.getRightChildIndent_MethodID_50, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI.setExpandedIcon(javax.swing.Icon)
+
+    private static var setExpandedIcon_MethodID_51: jmethodID?
+
+    open func setExpandedIcon( newG: Icon? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newG, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExpandedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &BasicTreeUI.setExpandedIcon_MethodID_51, args: &__args, locals: &__locals )
+    }
+
+    open func setExpandedIcon( _ _newG: Icon? ) {
+        setExpandedIcon( newG: _newG )
+    }
+
+    /// public javax.swing.Icon javax.swing.plaf.basic.BasicTreeUI.getExpandedIcon()
+
+    private static var getExpandedIcon_MethodID_52: jmethodID?
+
+    open func getExpandedIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExpandedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &BasicTreeUI.getExpandedIcon_MethodID_52, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI.setCollapsedIcon(javax.swing.Icon)
+
+    private static var setCollapsedIcon_MethodID_53: jmethodID?
+
+    open func setCollapsedIcon( newG: Icon? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newG, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCollapsedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &BasicTreeUI.setCollapsedIcon_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+    open func setCollapsedIcon( _ _newG: Icon? ) {
+        setCollapsedIcon( newG: _newG )
+    }
+
+    /// public javax.swing.Icon javax.swing.plaf.basic.BasicTreeUI.getCollapsedIcon()
+
+    private static var getCollapsedIcon_MethodID_54: jmethodID?
+
+    open func getCollapsedIcon() -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCollapsedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &BasicTreeUI.getCollapsedIcon_MethodID_54, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.prepareForUIInstall()
+
+    private static var prepareForUIInstall_MethodID_55: jmethodID?
+
+    open func prepareForUIInstall() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForUIInstall", methodSig: "()V", methodCache: &BasicTreeUI.prepareForUIInstall_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeUIInstall()
+
+    private static var completeUIInstall_MethodID_56: jmethodID?
+
+    open func completeUIInstall() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeUIInstall", methodSig: "()V", methodCache: &BasicTreeUI.completeUIInstall_MethodID_56, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.tree.AbstractLayoutCache$NodeDimensions javax.swing.plaf.basic.BasicTreeUI.createNodeDimensions()
+
+    private static var createNodeDimensions_MethodID_57: jmethodID?
+
+    open func createNodeDimensions() -> AbstractLayoutCache_NodeDimensions! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNodeDimensions", methodSig: "()Ljavax/swing/tree/AbstractLayoutCache$NodeDimensions;", methodCache: &BasicTreeUI.createNodeDimensions_MethodID_57, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AbstractLayoutCache_NodeDimensions( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTreeUI.createSelectionModelPropertyChangeListener()
+
+    private static var createSelectionModelPropertyChangeListener_MethodID_58: jmethodID?
+
+    open func createSelectionModelPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSelectionModelPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicTreeUI.createSelectionModelPropertyChangeListener_MethodID_58, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.event.TreeSelectionListener javax.swing.plaf.basic.BasicTreeUI.createTreeSelectionListener()
+
+    private static var createTreeSelectionListener_MethodID_59: jmethodID?
+
+    open func createTreeSelectionListener() -> TreeSelectionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeSelectionListener", methodSig: "()Ljavax/swing/event/TreeSelectionListener;", methodCache: &BasicTreeUI.createTreeSelectionListener_MethodID_59, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeSelectionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.event.CellEditorListener javax.swing.plaf.basic.BasicTreeUI.createCellEditorListener()
+
+    private static var createCellEditorListener_MethodID_60: jmethodID?
+
+    open func createCellEditorListener() -> CellEditorListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCellEditorListener", methodSig: "()Ljavax/swing/event/CellEditorListener;", methodCache: &BasicTreeUI.createCellEditorListener_MethodID_60, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? CellEditorListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.event.TreeExpansionListener javax.swing.plaf.basic.BasicTreeUI.createTreeExpansionListener()
+
+    private static var createTreeExpansionListener_MethodID_61: jmethodID?
+
+    open func createTreeExpansionListener() -> TreeExpansionListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTreeExpansionListener", methodSig: "()Ljavax/swing/event/TreeExpansionListener;", methodCache: &BasicTreeUI.createTreeExpansionListener_MethodID_61, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeExpansionListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.tree.AbstractLayoutCache javax.swing.plaf.basic.BasicTreeUI.createLayoutCache()
+
+    private static var createLayoutCache_MethodID_62: jmethodID?
+
+    open func createLayoutCache() -> AbstractLayoutCache! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutCache", methodSig: "()Ljavax/swing/tree/AbstractLayoutCache;", methodCache: &BasicTreeUI.createLayoutCache_MethodID_62, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AbstractLayoutCache( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.CellRendererPane javax.swing.plaf.basic.BasicTreeUI.createCellRendererPane()
+
+    private static var createCellRendererPane_MethodID_63: jmethodID?
+
+    open func createCellRendererPane() -> CellRendererPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createCellRendererPane", methodSig: "()Ljavax/swing/CellRendererPane;", methodCache: &BasicTreeUI.createCellRendererPane_MethodID_63, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? CellRendererPane( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.tree.TreeCellEditor javax.swing.plaf.basic.BasicTreeUI.createDefaultCellEditor()
+
+    private static var createDefaultCellEditor_MethodID_64: jmethodID?
+
+    open func createDefaultCellEditor() -> TreeCellEditor! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultCellEditor", methodSig: "()Ljavax/swing/tree/TreeCellEditor;", methodCache: &BasicTreeUI.createDefaultCellEditor_MethodID_64, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeCellEditorForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.tree.TreeCellRenderer javax.swing.plaf.basic.BasicTreeUI.createDefaultCellRenderer()
+
+    private static var createDefaultCellRenderer_MethodID_65: jmethodID?
+
+    open func createDefaultCellRenderer() -> TreeCellRenderer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultCellRenderer", methodSig: "()Ljavax/swing/tree/TreeCellRenderer;", methodCache: &BasicTreeUI.createDefaultCellRenderer_MethodID_65, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreeCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.prepareForUIUninstall()
+
+    private static var prepareForUIUninstall_MethodID_66: jmethodID?
+
+    open func prepareForUIUninstall() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForUIUninstall", methodSig: "()V", methodCache: &BasicTreeUI.prepareForUIUninstall_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeUIUninstall()
+
+    private static var completeUIUninstall_MethodID_67: jmethodID?
+
+    open func completeUIUninstall() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeUIUninstall", methodSig: "()V", methodCache: &BasicTreeUI.completeUIUninstall_MethodID_67, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.plaf.basic.BasicTreeUI.redoTheLayout()
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isDropLine(javax.swing.JTree$DropLocation)
+
+    private static var isDropLine_MethodID_68: jmethodID?
+
+    open func isDropLine( loc: JTree_DropLocation? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: loc, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDropLine", methodSig: "(Ljavax/swing/JTree$DropLocation;)Z", methodCache: &BasicTreeUI.isDropLine_MethodID_68, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isDropLine( _ _loc: JTree_DropLocation? ) -> Bool {
+        return isDropLine( loc: _loc )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintHorizontalPartOfLeg(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
+
+    private static var paintHorizontalPartOfLeg_MethodID_69: jmethodID?
+
+    open func paintHorizontalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: clipBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bounds, locals: &__locals )
+        __args[4] = JNIType.toJava( value: path, locals: &__locals )
+        __args[5] = JNIType.toJava( value: row, locals: &__locals )
+        __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
+        __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
+        __args[8] = JNIType.toJava( value: isLeaf, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &BasicTreeUI.paintHorizontalPartOfLeg_MethodID_69, args: &__args, locals: &__locals )
+    }
+
+    open func paintHorizontalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
+        paintHorizontalPartOfLeg( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintVerticalPartOfLeg(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,javax.swing.tree.TreePath)
+
+    private static var paintVerticalPartOfLeg_MethodID_70: jmethodID?
+
+    open func paintVerticalPartOfLeg( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, path: TreePath? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: clipBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: path, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalPartOfLeg", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.paintVerticalPartOfLeg_MethodID_70, args: &__args, locals: &__locals )
+    }
+
+    open func paintVerticalPartOfLeg( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _path: TreePath? ) {
+        paintVerticalPartOfLeg( g: _g, clipBounds: _clipBounds, insets: _insets, path: _path )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintExpandControl(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
+
+    private static var paintExpandControl_MethodID_71: jmethodID?
+
+    open func paintExpandControl( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: clipBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bounds, locals: &__locals )
+        __args[4] = JNIType.toJava( value: path, locals: &__locals )
+        __args[5] = JNIType.toJava( value: row, locals: &__locals )
+        __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
+        __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
+        __args[8] = JNIType.toJava( value: isLeaf, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintExpandControl", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &BasicTreeUI.paintExpandControl_MethodID_71, args: &__args, locals: &__locals )
+    }
+
+    open func paintExpandControl( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
+        paintExpandControl( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintRow(java.awt.Graphics,java.awt.Rectangle,java.awt.Insets,java.awt.Rectangle,javax.swing.tree.TreePath,int,boolean,boolean,boolean)
+
+    private static var paintRow_MethodID_72: jmethodID?
+
+    open func paintRow( g: java_awt.Graphics?, clipBounds: java_awt.Rectangle?, insets: java_awt.Insets?, bounds: java_awt.Rectangle?, path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: clipBounds, locals: &__locals )
+        __args[2] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bounds, locals: &__locals )
+        __args[4] = JNIType.toJava( value: path, locals: &__locals )
+        __args[5] = JNIType.toJava( value: row, locals: &__locals )
+        __args[6] = JNIType.toJava( value: isExpanded, locals: &__locals )
+        __args[7] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
+        __args[8] = JNIType.toJava( value: isLeaf, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRow", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Insets;Ljava/awt/Rectangle;Ljavax/swing/tree/TreePath;IZZZ)V", methodCache: &BasicTreeUI.paintRow_MethodID_72, args: &__args, locals: &__locals )
+    }
+
+    open func paintRow( _ _g: java_awt.Graphics?, _ _clipBounds: java_awt.Rectangle?, _ _insets: java_awt.Insets?, _ _bounds: java_awt.Rectangle?, _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) {
+        paintRow( g: _g, clipBounds: _clipBounds, insets: _insets, bounds: _bounds, path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
+    }
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.shouldPaintExpandControl(javax.swing.tree.TreePath,int,boolean,boolean,boolean)
+
+    private static var shouldPaintExpandControl_MethodID_73: jmethodID?
+
+    open func shouldPaintExpandControl( path: TreePath?, row: Int, isExpanded: Bool, hasBeenExpanded: Bool, isLeaf: Bool ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: row, locals: &__locals )
+        __args[2] = JNIType.toJava( value: isExpanded, locals: &__locals )
+        __args[3] = JNIType.toJava( value: hasBeenExpanded, locals: &__locals )
+        __args[4] = JNIType.toJava( value: isLeaf, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldPaintExpandControl", methodSig: "(Ljavax/swing/tree/TreePath;IZZZ)Z", methodCache: &BasicTreeUI.shouldPaintExpandControl_MethodID_73, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func shouldPaintExpandControl( _ _path: TreePath?, _ _row: Int, _ _isExpanded: Bool, _ _hasBeenExpanded: Bool, _ _isLeaf: Bool ) -> Bool {
+        return shouldPaintExpandControl( path: _path, row: _row, isExpanded: _isExpanded, hasBeenExpanded: _hasBeenExpanded, isLeaf: _isLeaf )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintVerticalLine(java.awt.Graphics,javax.swing.JComponent,int,int,int)
+
+    private static var paintVerticalLine_MethodID_74: jmethodID?
+
+    open func paintVerticalLine( g: java_awt.Graphics?, c: JComponent?, x: Int, top: Int, bottom: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x, locals: &__locals )
+        __args[3] = JNIType.toJava( value: top, locals: &__locals )
+        __args[4] = JNIType.toJava( value: bottom, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintVerticalLine", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;III)V", methodCache: &BasicTreeUI.paintVerticalLine_MethodID_74, args: &__args, locals: &__locals )
+    }
+
+    open func paintVerticalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _x: Int, _ _top: Int, _ _bottom: Int ) {
+        paintVerticalLine( g: _g, c: _c, x: _x, top: _top, bottom: _bottom )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.paintHorizontalLine(java.awt.Graphics,javax.swing.JComponent,int,int,int)
+
+    private static var paintHorizontalLine_MethodID_75: jmethodID?
+
+    open func paintHorizontalLine( g: java_awt.Graphics?, c: JComponent?, y: Int, left: Int, right: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y, locals: &__locals )
+        __args[3] = JNIType.toJava( value: left, locals: &__locals )
+        __args[4] = JNIType.toJava( value: right, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHorizontalLine", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;III)V", methodCache: &BasicTreeUI.paintHorizontalLine_MethodID_75, args: &__args, locals: &__locals )
+    }
+
+    open func paintHorizontalLine( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _y: Int, _ _left: Int, _ _right: Int ) {
+        paintHorizontalLine( g: _g, c: _c, y: _y, left: _left, right: _right )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicTreeUI.getVerticalLegBuffer()
+
+    private static var getVerticalLegBuffer_MethodID_76: jmethodID?
+
+    open func getVerticalLegBuffer() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalLegBuffer", methodSig: "()I", methodCache: &BasicTreeUI.getVerticalLegBuffer_MethodID_76, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// protected int javax.swing.plaf.basic.BasicTreeUI.getHorizontalLegBuffer()
+
+    private static var getHorizontalLegBuffer_MethodID_77: jmethodID?
+
+    open func getHorizontalLegBuffer() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalLegBuffer", methodSig: "()I", methodCache: &BasicTreeUI.getHorizontalLegBuffer_MethodID_77, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// private int javax.swing.plaf.basic.BasicTreeUI.findCenteredX(int,int)
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.drawCentered(java.awt.Component,java.awt.Graphics,javax.swing.Icon,int,int)
+
+    private static var drawCentered_MethodID_78: jmethodID?
+
+    open func drawCentered( c: java_awt.Component?, graphics: java_awt.Graphics?, icon: Icon?, x: Int, y: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: graphics, locals: &__locals )
+        __args[2] = JNIType.toJava( value: icon, locals: &__locals )
+        __args[3] = JNIType.toJava( value: x, locals: &__locals )
+        __args[4] = JNIType.toJava( value: y, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawCentered", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;Ljavax/swing/Icon;II)V", methodCache: &BasicTreeUI.drawCentered_MethodID_78, args: &__args, locals: &__locals )
+    }
+
+    open func drawCentered( _ _c: java_awt.Component?, _ _graphics: java_awt.Graphics?, _ _icon: Icon?, _ _x: Int, _ _y: Int ) {
+        drawCentered( c: _c, graphics: _graphics, icon: _icon, x: _x, y: _y )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.drawDashedHorizontalLine(java.awt.Graphics,int,int,int)
+
+    private static var drawDashedHorizontalLine_MethodID_79: jmethodID?
+
+    open func drawDashedHorizontalLine( g: java_awt.Graphics?, y: Int, x1: Int, x2: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        __args[2] = JNIType.toJava( value: x1, locals: &__locals )
+        __args[3] = JNIType.toJava( value: x2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawDashedHorizontalLine", methodSig: "(Ljava/awt/Graphics;III)V", methodCache: &BasicTreeUI.drawDashedHorizontalLine_MethodID_79, args: &__args, locals: &__locals )
+    }
+
+    open func drawDashedHorizontalLine( _ _g: java_awt.Graphics?, _ _y: Int, _ _x1: Int, _ _x2: Int ) {
+        drawDashedHorizontalLine( g: _g, y: _y, x1: _x1, x2: _x2 )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.drawDashedVerticalLine(java.awt.Graphics,int,int,int)
+
+    private static var drawDashedVerticalLine_MethodID_80: jmethodID?
+
+    open func drawDashedVerticalLine( g: java_awt.Graphics?, x: Int, y1: Int, y2: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: x, locals: &__locals )
+        __args[2] = JNIType.toJava( value: y1, locals: &__locals )
+        __args[3] = JNIType.toJava( value: y2, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawDashedVerticalLine", methodSig: "(Ljava/awt/Graphics;III)V", methodCache: &BasicTreeUI.drawDashedVerticalLine_MethodID_80, args: &__args, locals: &__locals )
+    }
+
+    open func drawDashedVerticalLine( _ _g: java_awt.Graphics?, _ _x: Int, _ _y1: Int, _ _y2: Int ) {
+        drawDashedVerticalLine( g: _g, x: _x, y1: _y1, y2: _y2 )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicTreeUI.getRowX(int,int)
+
+    private static var getRowX_MethodID_81: jmethodID?
+
+    open func getRowX( row: Int, depth: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: row, locals: &__locals )
+        __args[1] = JNIType.toJava( value: depth, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowX", methodSig: "(II)I", methodCache: &BasicTreeUI.getRowX_MethodID_81, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getRowX( _ _row: Int, _ _depth: Int ) -> Int {
+        return getRowX( row: _row, depth: _depth )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateLayoutCacheExpandedNodes()
+
+    private static var updateLayoutCacheExpandedNodes_MethodID_82: jmethodID?
+
+    open func updateLayoutCacheExpandedNodes() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayoutCacheExpandedNodes", methodSig: "()V", methodCache: &BasicTreeUI.updateLayoutCacheExpandedNodes_MethodID_82, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.plaf.basic.BasicTreeUI.updateLayoutCacheExpandedNodesIfNecessary()
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateExpandedDescendants(javax.swing.tree.TreePath)
+
+    private static var updateExpandedDescendants_MethodID_83: jmethodID?
+
+    open func updateExpandedDescendants( path: TreePath? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateExpandedDescendants", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.updateExpandedDescendants_MethodID_83, args: &__args, locals: &__locals )
+    }
+
+    open func updateExpandedDescendants( _ _path: TreePath? ) {
+        updateExpandedDescendants( path: _path )
+    }
+
+    /// protected javax.swing.tree.TreePath javax.swing.plaf.basic.BasicTreeUI.getLastChildPath(javax.swing.tree.TreePath)
+
+    private static var getLastChildPath_MethodID_84: jmethodID?
+
+    open func getLastChildPath( parent: TreePath? ) -> TreePath! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastChildPath", methodSig: "(Ljavax/swing/tree/TreePath;)Ljavax/swing/tree/TreePath;", methodCache: &BasicTreeUI.getLastChildPath_MethodID_84, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreePath( javaObject: __return ) : nil
+    }
+
+    open func getLastChildPath( _ _parent: TreePath? ) -> TreePath! {
+        return getLastChildPath( parent: _parent )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateDepthOffset()
+
+    private static var updateDepthOffset_MethodID_85: jmethodID?
+
+    open func updateDepthOffset() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateDepthOffset", methodSig: "()V", methodCache: &BasicTreeUI.updateDepthOffset_MethodID_85, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateCellEditor()
+
+    private static var updateCellEditor_MethodID_86: jmethodID?
+
+    open func updateCellEditor() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCellEditor", methodSig: "()V", methodCache: &BasicTreeUI.updateCellEditor_MethodID_86, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.configureLayoutCache()
+
+    private static var configureLayoutCache_MethodID_87: jmethodID?
+
+    open func configureLayoutCache() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureLayoutCache", methodSig: "()V", methodCache: &BasicTreeUI.configureLayoutCache_MethodID_87, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.plaf.basic.BasicTreeUI.updateSize0()
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateCachedPreferredSize()
+
+    private static var updateCachedPreferredSize_MethodID_88: jmethodID?
+
+    open func updateCachedPreferredSize() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateCachedPreferredSize", methodSig: "()V", methodCache: &BasicTreeUI.updateCachedPreferredSize_MethodID_88, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.pathWasExpanded(javax.swing.tree.TreePath)
+
+    private static var pathWasExpanded_MethodID_89: jmethodID?
+
+    open func pathWasExpanded( path: TreePath? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pathWasExpanded", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.pathWasExpanded_MethodID_89, args: &__args, locals: &__locals )
+    }
+
+    open func pathWasExpanded( _ _path: TreePath? ) {
+        pathWasExpanded( path: _path )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.pathWasCollapsed(javax.swing.tree.TreePath)
+
+    private static var pathWasCollapsed_MethodID_90: jmethodID?
+
+    open func pathWasCollapsed( path: TreePath? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "pathWasCollapsed", methodSig: "(Ljavax/swing/tree/TreePath;)V", methodCache: &BasicTreeUI.pathWasCollapsed_MethodID_90, args: &__args, locals: &__locals )
+    }
+
+    open func pathWasCollapsed( _ _path: TreePath? ) {
+        pathWasCollapsed( path: _path )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI.setPreferredMinSize(java.awt.Dimension)
+
+    private static var setPreferredMinSize_MethodID_91: jmethodID?
+
+    open func setPreferredMinSize( newSize: java_awt.Dimension? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newSize, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreferredMinSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &BasicTreeUI.setPreferredMinSize_MethodID_91, args: &__args, locals: &__locals )
+    }
+
+    open func setPreferredMinSize( _ _newSize: java_awt.Dimension? ) {
+        setPreferredMinSize( newSize: _newSize )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTreeUI.getPreferredMinSize()
+
+    private static var getPreferredMinSize_MethodID_92: jmethodID?
+
+    open func getPreferredMinSize() -> java_awt.Dimension! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredMinSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &BasicTreeUI.getPreferredMinSize_MethodID_92, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeEditing()
+
+    private static var completeEditing_MethodID_93: jmethodID?
+
+    open func completeEditing() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeEditing", methodSig: "()V", methodCache: &BasicTreeUI.completeEditing_MethodID_93, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.completeEditing(boolean,boolean,boolean)
+
+    private static var completeEditing_MethodID_94: jmethodID?
+
+    open func completeEditing( messageStop: Bool, messageCancel: Bool, messageTree: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: messageStop, locals: &__locals )
+        __args[1] = JNIType.toJava( value: messageCancel, locals: &__locals )
+        __args[2] = JNIType.toJava( value: messageTree, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "completeEditing", methodSig: "(ZZZ)V", methodCache: &BasicTreeUI.completeEditing_MethodID_94, args: &__args, locals: &__locals )
+    }
+
+    open func completeEditing( _ _messageStop: Bool, _ _messageCancel: Bool, _ _messageTree: Bool ) {
+        completeEditing( messageStop: _messageStop, messageCancel: _messageCancel, messageTree: _messageTree )
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicTreeUI.startEditingOnRelease(javax.swing.tree.TreePath,java.awt.event.MouseEvent,java.awt.event.MouseEvent)
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.checkForClickInExpandControl(javax.swing.tree.TreePath,int,int)
+
+    private static var checkForClickInExpandControl_MethodID_95: jmethodID?
+
+    open func checkForClickInExpandControl( path: TreePath?, mouseX: Int, mouseY: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: mouseX, locals: &__locals )
+        __args[2] = JNIType.toJava( value: mouseY, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "checkForClickInExpandControl", methodSig: "(Ljavax/swing/tree/TreePath;II)V", methodCache: &BasicTreeUI.checkForClickInExpandControl_MethodID_95, args: &__args, locals: &__locals )
+    }
+
+    open func checkForClickInExpandControl( _ _path: TreePath?, _ _mouseX: Int, _ _mouseY: Int ) {
+        checkForClickInExpandControl( path: _path, mouseX: _mouseX, mouseY: _mouseY )
+    }
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isLocationInExpandControl(javax.swing.tree.TreePath,int,int)
+
+    private static var isLocationInExpandControl_MethodID_96: jmethodID?
+
+    open func isLocationInExpandControl( path: TreePath?, mouseX: Int, mouseY: Int ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: mouseX, locals: &__locals )
+        __args[2] = JNIType.toJava( value: mouseY, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLocationInExpandControl", methodSig: "(Ljavax/swing/tree/TreePath;II)Z", methodCache: &BasicTreeUI.isLocationInExpandControl_MethodID_96, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isLocationInExpandControl( _ _path: TreePath?, _ _mouseX: Int, _ _mouseY: Int ) -> Bool {
+        return isLocationInExpandControl( path: _path, mouseX: _mouseX, mouseY: _mouseY )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.handleExpandControlClick(javax.swing.tree.TreePath,int,int)
+
+    private static var handleExpandControlClick_MethodID_97: jmethodID?
+
+    open func handleExpandControlClick( path: TreePath?, mouseX: Int, mouseY: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: mouseX, locals: &__locals )
+        __args[2] = JNIType.toJava( value: mouseY, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleExpandControlClick", methodSig: "(Ljavax/swing/tree/TreePath;II)V", methodCache: &BasicTreeUI.handleExpandControlClick_MethodID_97, args: &__args, locals: &__locals )
+    }
+
+    open func handleExpandControlClick( _ _path: TreePath?, _ _mouseX: Int, _ _mouseY: Int ) {
+        handleExpandControlClick( path: _path, mouseX: _mouseX, mouseY: _mouseY )
+    }
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isToggleSelectionEvent(java.awt.event.MouseEvent)
+
+    private static var isToggleSelectionEvent_MethodID_98: jmethodID?
+
+    open func isToggleSelectionEvent( event: java_awt.MouseEvent? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isToggleSelectionEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.isToggleSelectionEvent_MethodID_98, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isToggleSelectionEvent( _ _event: java_awt.MouseEvent? ) -> Bool {
+        return isToggleSelectionEvent( event: _event )
+    }
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isMultiSelectEvent(java.awt.event.MouseEvent)
+
+    private static var isMultiSelectEvent_MethodID_99: jmethodID?
+
+    open func isMultiSelectEvent( event: java_awt.MouseEvent? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMultiSelectEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.isMultiSelectEvent_MethodID_99, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isMultiSelectEvent( _ _event: java_awt.MouseEvent? ) -> Bool {
+        return isMultiSelectEvent( event: _event )
+    }
+
+    /// protected boolean javax.swing.plaf.basic.BasicTreeUI.isToggleEvent(java.awt.event.MouseEvent)
+
+    private static var isToggleEvent_MethodID_100: jmethodID?
+
+    open func isToggleEvent( event: java_awt.MouseEvent? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isToggleEvent", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &BasicTreeUI.isToggleEvent_MethodID_100, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isToggleEvent( _ _event: java_awt.MouseEvent? ) -> Bool {
+        return isToggleEvent( event: _event )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.selectPathForEvent(javax.swing.tree.TreePath,java.awt.event.MouseEvent)
+
+    private static var selectPathForEvent_MethodID_101: jmethodID?
+
+    open func selectPathForEvent( path: TreePath?, event: java_awt.MouseEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: path, locals: &__locals )
+        __args[1] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectPathForEvent", methodSig: "(Ljavax/swing/tree/TreePath;Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTreeUI.selectPathForEvent_MethodID_101, args: &__args, locals: &__locals )
+    }
+
+    open func selectPathForEvent( _ _path: TreePath?, _ _event: java_awt.MouseEvent? ) {
+        selectPathForEvent( path: _path, event: _event )
+    }
+
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI.getRepaintPathBounds(java.awt.Rectangle)
+
+    /// protected void javax.swing.plaf.basic.BasicTreeUI.updateLeadSelectionRow()
+
+    private static var updateLeadSelectionRow_MethodID_102: jmethodID?
+
+    open func updateLeadSelectionRow() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLeadSelectionRow", methodSig: "()V", methodCache: &BasicTreeUI.updateLeadSelectionRow_MethodID_102, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.plaf.basic.BasicTreeUI.repaintPath(javax.swing.tree.TreePath)
+
+    /// static boolean javax.swing.plaf.basic.BasicTreeUI.access$1302(javax.swing.plaf.basic.BasicTreeUI,boolean)
+
+    /// static long javax.swing.plaf.basic.BasicTreeUI.access$900(javax.swing.plaf.basic.BasicTreeUI)
+
+    /// static boolean javax.swing.plaf.basic.BasicTreeUI.access$1000(javax.swing.plaf.basic.BasicTreeUI)
+
+    /// static void javax.swing.plaf.basic.BasicTreeUI.access$1200(javax.swing.plaf.basic.BasicTreeUI)
+
+    /// static void javax.swing.plaf.basic.BasicTreeUI.access$1400(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath)
+
+    /// static void javax.swing.plaf.basic.BasicTreeUI.access$1500(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath,boolean)
+
+    /// static boolean javax.swing.plaf.basic.BasicTreeUI.access$1600(javax.swing.plaf.basic.BasicTreeUI,javax.swing.tree.TreePath,java.awt.event.MouseEvent,java.awt.event.MouseEvent)
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicTreeUI.getInputMap(int)
+
+    /// static void javax.swing.plaf.basic.BasicTreeUI.access$2000(javax.swing.plaf.basic.BasicTreeUI)
 
 }
 

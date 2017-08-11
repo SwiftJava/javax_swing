@@ -51,14 +51,40 @@ open class MetalBorders: java_swift.JavaObject {
     }
 
 
+    /// public static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getButtonBorder()
+
+    private static var getButtonBorder_MethodID_3: jmethodID?
+
+    open class func getButtonBorder() -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getButtonBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getButtonBorder_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getToggleButtonBorder()
+
+    private static var getToggleButtonBorder_MethodID_4: jmethodID?
+
+    open class func getToggleButtonBorder() -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getToggleButtonBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getToggleButtonBorder_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+
     /// public static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getTextBorder()
 
-    private static var getTextBorder_MethodID_3: jmethodID?
+    private static var getTextBorder_MethodID_5: jmethodID?
 
     open class func getTextBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getTextBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getTextBorder_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getTextBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getTextBorder_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -66,12 +92,12 @@ open class MetalBorders: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getDesktopIconBorder()
 
-    private static var getDesktopIconBorder_MethodID_4: jmethodID?
+    private static var getDesktopIconBorder_MethodID_6: jmethodID?
 
     open class func getDesktopIconBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getDesktopIconBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getDesktopIconBorder_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getDesktopIconBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getDesktopIconBorder_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -80,32 +106,6 @@ open class MetalBorders: java_swift.JavaObject {
     /// static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getToolBarRolloverBorder()
 
     /// static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getToolBarNonrolloverBorder()
-
-    /// public static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getButtonBorder()
-
-    private static var getButtonBorder_MethodID_5: jmethodID?
-
-    open class func getButtonBorder() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getButtonBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getButtonBorder_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-
-    /// public static javax.swing.border.Border javax.swing.plaf.metal.MetalBorders.getToggleButtonBorder()
-
-    private static var getToggleButtonBorder_MethodID_6: jmethodID?
-
-    open class func getToggleButtonBorder() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalBorders", classCache: &MetalBordersJNIClass, methodName: "getToggleButtonBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &getToggleButtonBorder_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
 
 }
 

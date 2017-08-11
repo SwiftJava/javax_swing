@@ -29,7 +29,7 @@ open class DefaultTableModel: AbstractTableModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dataVector", fieldType: "Ljava/util/Vector;", fieldCache: &DefaultTableModel.dataVector_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class DefaultTableModel: AbstractTableModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "columnIdentifiers", fieldType: "Ljava/util/Vector;", fieldCache: &DefaultTableModel.columnIdentifiers_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class DefaultTableModel: AbstractTableModel {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultTableModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -75,7 +75,7 @@ open class DefaultTableModel: AbstractTableModel {
     public convenience init( columnNames: java_util.Vector?, rowCount: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnNames != nil ? columnNames! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnNames, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowCount, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/table/DefaultTableModel", classCache: &DefaultTableModel.DefaultTableModelJNIClass, methodSig: "(Ljava/util/Vector;I)V", methodCache: &DefaultTableModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -111,8 +111,8 @@ open class DefaultTableModel: AbstractTableModel {
     public convenience init( data: java_util.Vector?, columnNames: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: data != nil ? data! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: columnNames != nil ? columnNames! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: data, locals: &__locals )
+        __args[1] = JNIType.toJava( value: columnNames, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/table/DefaultTableModel", classCache: &DefaultTableModel.DefaultTableModelJNIClass, methodSig: "(Ljava/util/Vector;Ljava/util/Vector;)V", methodCache: &DefaultTableModel.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -220,7 +220,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func setValueAt( aValue: java_swift.JavaObject?, row: Int, column: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aValue != nil ? aValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aValue, locals: &__locals )
         __args[1] = JNIType.toJava( value: row, locals: &__locals )
         __args[2] = JNIType.toJava( value: column, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueAt", methodSig: "(Ljava/lang/Object;II)V", methodCache: &DefaultTableModel.setValueAt_MethodID_9, args: &__args, locals: &__locals )
@@ -237,8 +237,8 @@ open class DefaultTableModel: AbstractTableModel {
     open func addColumn( columnName: java_swift.JavaObject?, columnData: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnName != nil ? columnName! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: columnData != nil ? columnData! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: columnData, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumn", methodSig: "(Ljava/lang/Object;Ljava/util/Vector;)V", methodCache: &DefaultTableModel.addColumn_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -253,7 +253,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func addColumn( columnName: java_swift.JavaObject?, columnData: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnName != nil ? columnName! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnName, locals: &__locals )
         __args[1] = JNIType.toJava( value: columnData, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumn", methodSig: "(Ljava/lang/Object;[Ljava/lang/Object;)V", methodCache: &DefaultTableModel.addColumn_MethodID_11, args: &__args, locals: &__locals )
     }
@@ -269,7 +269,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func addColumn( columnName: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnName != nil ? columnName! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnName, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addColumn", methodSig: "(Ljava/lang/Object;)V", methodCache: &DefaultTableModel.addColumn_MethodID_12, args: &__args, locals: &__locals )
     }
 
@@ -301,8 +301,8 @@ open class DefaultTableModel: AbstractTableModel {
     open func setDataVector( dataVector: java_util.Vector?, columnIdentifiers: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: dataVector != nil ? dataVector! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: columnIdentifiers != nil ? columnIdentifiers! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: dataVector, locals: &__locals )
+        __args[1] = JNIType.toJava( value: columnIdentifiers, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDataVector", methodSig: "(Ljava/util/Vector;Ljava/util/Vector;)V", methodCache: &DefaultTableModel.setDataVector_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -333,7 +333,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func newDataAvailable( event: TableModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "newDataAvailable", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &DefaultTableModel.newDataAvailable_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -350,7 +350,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func newRowsAdded( e: TableModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "newRowsAdded", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &DefaultTableModel.newRowsAdded_MethodID_17, args: &__args, locals: &__locals )
     }
 
@@ -365,7 +365,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func rowsRemoved( event: TableModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsRemoved", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &DefaultTableModel.rowsRemoved_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -425,7 +425,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func addRow( rowData: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rowData != nil ? rowData! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: rowData, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRow", methodSig: "(Ljava/util/Vector;)V", methodCache: &DefaultTableModel.addRow_MethodID_22, args: &__args, locals: &__locals )
     }
 
@@ -457,7 +457,7 @@ open class DefaultTableModel: AbstractTableModel {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        __args[1] = JNIType.toJava( value: rowData != nil ? rowData! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: rowData, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertRow", methodSig: "(ILjava/util/Vector;)V", methodCache: &DefaultTableModel.insertRow_MethodID_24, args: &__args, locals: &__locals )
     }
 
@@ -506,7 +506,7 @@ open class DefaultTableModel: AbstractTableModel {
     open func setColumnIdentifiers( columnIdentifiers: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnIdentifiers != nil ? columnIdentifiers! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnIdentifiers, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnIdentifiers", methodSig: "(Ljava/util/Vector;)V", methodCache: &DefaultTableModel.setColumnIdentifiers_MethodID_27, args: &__args, locals: &__locals )
     }
 
@@ -641,7 +641,7 @@ open class DefaultTableModelBase: DefaultTableModel {
     public convenience init( columnNames: java_util.Vector?, rowCount: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: columnNames != nil ? columnNames! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: columnNames, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowCount, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -685,8 +685,8 @@ open class DefaultTableModelBase: DefaultTableModel {
     public convenience init( data: java_util.Vector?, columnNames: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: data != nil ? data! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: columnNames != nil ? columnNames! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: data, locals: &__locals )
+        __args[1] = JNIType.toJava( value: columnNames, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[2] = __local!.swiftValue()

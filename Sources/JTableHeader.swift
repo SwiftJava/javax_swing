@@ -31,7 +31,7 @@ open class JTableHeader: JComponent, TableColumnModelListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "table", fieldType: "Ljavax/swing/JTable;", fieldCache: &JTableHeader.table_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -116,7 +116,7 @@ open class JTableHeader: JComponent, TableColumnModelListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "resizingColumn", fieldType: "Ljavax/swing/table/TableColumn;", fieldCache: &JTableHeader.resizingColumn_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -133,7 +133,7 @@ open class JTableHeader: JComponent, TableColumnModelListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "draggedColumn", fieldType: "Ljavax/swing/table/TableColumn;", fieldCache: &JTableHeader.draggedColumn_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -195,7 +195,7 @@ open class JTableHeader: JComponent, TableColumnModelListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JTableHeader.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -212,7 +212,7 @@ open class JTableHeader: JComponent, TableColumnModelListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JTableHeader.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -589,7 +589,7 @@ open class JTableHeader: JComponent, TableColumnModelListener {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JTableHeader.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -670,15 +670,107 @@ open class JTableHeader: JComponent, TableColumnModelListener {
     }
 
 
+    /// protected javax.swing.table.TableCellRenderer javax.swing.table.JTableHeader.createDefaultRenderer()
+
+    private static var createDefaultRenderer_MethodID_5: jmethodID?
+
+    open func createDefaultRenderer() -> TableCellRenderer! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &JTableHeader.createDefaultRenderer_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.table.JTableHeader.setDraggedColumn(javax.swing.table.TableColumn)
+
+    private static var setDraggedColumn_MethodID_6: jmethodID?
+
+    open func setDraggedColumn( arg0: TableColumn? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDraggedColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &JTableHeader.setDraggedColumn_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func setDraggedColumn( _ _arg0: TableColumn? ) {
+        setDraggedColumn( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.table.JTableHeader.setDraggedDistance(int)
+
+    private static var setDraggedDistance_MethodID_7: jmethodID?
+
+    open func setDraggedDistance( arg0: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDraggedDistance", methodSig: "(I)V", methodCache: &JTableHeader.setDraggedDistance_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func setDraggedDistance( _ _arg0: Int ) {
+        setDraggedDistance( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.table.JTableHeader.setResizingColumn(javax.swing.table.TableColumn)
+
+    private static var setResizingColumn_MethodID_8: jmethodID?
+
+    open func setResizingColumn( arg0: TableColumn? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizingColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &JTableHeader.setResizingColumn_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setResizingColumn( _ _arg0: TableColumn? ) {
+        setResizingColumn( arg0: _arg0 )
+    }
+
+    /// private int javax.swing.table.JTableHeader.getWidthInRightToLeft()
+
+    /// public javax.swing.plaf.TableHeaderUI javax.swing.table.JTableHeader.getUI()
+
+    private static var getUI_MethodID_9: jmethodID?
+
+    open func getUI() -> TableHeaderUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TableHeaderUI;", methodCache: &JTableHeader.getUI_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TableHeaderUI( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.table.JTableHeader.updateUI()
+
+    /// public void javax.swing.table.JTableHeader.setUI(javax.swing.plaf.TableHeaderUI)
+
+    private static var setUI_MethodID_10: jmethodID?
+
+    open func setUI( arg0: TableHeaderUI? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TableHeaderUI;)V", methodCache: &JTableHeader.setUI_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _arg0: TableHeaderUI? ) {
+        setUI( arg0: _arg0 )
+    }
+
+    /// public java.lang.String javax.swing.table.JTableHeader.getUIClassID()
+
     /// public java.lang.String javax.swing.table.JTableHeader.getToolTipText(java.awt.event.MouseEvent)
 
-    private static var getToolTipText_MethodID_5: jmethodID?
+    private static var getToolTipText_MethodID_11: jmethodID?
 
     open func getToolTipText( arg0: java_awt.MouseEvent? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(Ljava/awt/event/MouseEvent;)Ljava/lang/String;", methodCache: &JTableHeader.getToolTipText_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(Ljava/awt/event/MouseEvent;)Ljava/lang/String;", methodCache: &JTableHeader.getToolTipText_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -690,13 +782,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.setDefaultRenderer(javax.swing.table.TableCellRenderer)
 
-    private static var setDefaultRenderer_MethodID_6: jmethodID?
+    private static var setDefaultRenderer_MethodID_12: jmethodID?
 
     open func setDefaultRenderer( arg0: TableCellRenderer? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultRenderer", methodSig: "(Ljavax/swing/table/TableCellRenderer;)V", methodCache: &JTableHeader.setDefaultRenderer_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultRenderer", methodSig: "(Ljavax/swing/table/TableCellRenderer;)V", methodCache: &JTableHeader.setDefaultRenderer_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func setDefaultRenderer( _ _arg0: TableCellRenderer? ) {
@@ -705,12 +797,12 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public javax.swing.table.TableCellRenderer javax.swing.table.JTableHeader.getDefaultRenderer()
 
-    private static var getDefaultRenderer_MethodID_7: jmethodID?
+    private static var getDefaultRenderer_MethodID_13: jmethodID?
 
     open func getDefaultRenderer() -> TableCellRenderer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &JTableHeader.getDefaultRenderer_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &JTableHeader.getDefaultRenderer_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
     }
@@ -718,13 +810,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public int javax.swing.table.JTableHeader.columnAtPoint(java.awt.Point)
 
-    private static var columnAtPoint_MethodID_8: jmethodID?
+    private static var columnAtPoint_MethodID_14: jmethodID?
 
     open func columnAtPoint( arg0: java_awt.Point? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "columnAtPoint", methodSig: "(Ljava/awt/Point;)I", methodCache: &JTableHeader.columnAtPoint_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "columnAtPoint", methodSig: "(Ljava/awt/Point;)I", methodCache: &JTableHeader.columnAtPoint_MethodID_14, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -734,12 +826,12 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public javax.swing.table.TableColumn javax.swing.table.JTableHeader.getResizingColumn()
 
-    private static var getResizingColumn_MethodID_9: jmethodID?
+    private static var getResizingColumn_MethodID_15: jmethodID?
 
     open func getResizingColumn() -> TableColumn! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResizingColumn", methodSig: "()Ljavax/swing/table/TableColumn;", methodCache: &JTableHeader.getResizingColumn_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResizingColumn", methodSig: "()Ljavax/swing/table/TableColumn;", methodCache: &JTableHeader.getResizingColumn_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableColumn( javaObject: __return ) : nil
     }
@@ -747,13 +839,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.setColumnModel(javax.swing.table.TableColumnModel)
 
-    private static var setColumnModel_MethodID_10: jmethodID?
+    private static var setColumnModel_MethodID_16: jmethodID?
 
     open func setColumnModel( arg0: TableColumnModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnModel", methodSig: "(Ljavax/swing/table/TableColumnModel;)V", methodCache: &JTableHeader.setColumnModel_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setColumnModel", methodSig: "(Ljavax/swing/table/TableColumnModel;)V", methodCache: &JTableHeader.setColumnModel_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setColumnModel( _ _arg0: TableColumnModel? ) {
@@ -762,12 +854,12 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public javax.swing.table.TableColumnModel javax.swing.table.JTableHeader.getColumnModel()
 
-    private static var getColumnModel_MethodID_11: jmethodID?
+    private static var getColumnModel_MethodID_17: jmethodID?
 
     open func getColumnModel() -> TableColumnModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnModel", methodSig: "()Ljavax/swing/table/TableColumnModel;", methodCache: &JTableHeader.getColumnModel_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColumnModel", methodSig: "()Ljavax/swing/table/TableColumnModel;", methodCache: &JTableHeader.getColumnModel_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableColumnModelForward( javaObject: __return ) : nil
     }
@@ -775,13 +867,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.columnAdded(javax.swing.event.TableColumnModelEvent)
 
-    private static var columnAdded_MethodID_12: jmethodID?
+    private static var columnAdded_MethodID_18: jmethodID?
 
     open func columnAdded( e: TableColumnModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnAdded", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &JTableHeader.columnAdded_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnAdded", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &JTableHeader.columnAdded_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func columnAdded( _ _e: TableColumnModelEvent? ) {
@@ -790,13 +882,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.columnRemoved(javax.swing.event.TableColumnModelEvent)
 
-    private static var columnRemoved_MethodID_13: jmethodID?
+    private static var columnRemoved_MethodID_19: jmethodID?
 
     open func columnRemoved( e: TableColumnModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnRemoved", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &JTableHeader.columnRemoved_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnRemoved", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &JTableHeader.columnRemoved_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func columnRemoved( _ _e: TableColumnModelEvent? ) {
@@ -805,13 +897,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.columnMoved(javax.swing.event.TableColumnModelEvent)
 
-    private static var columnMoved_MethodID_14: jmethodID?
+    private static var columnMoved_MethodID_20: jmethodID?
 
     open func columnMoved( e: TableColumnModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnMoved", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &JTableHeader.columnMoved_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnMoved", methodSig: "(Ljavax/swing/event/TableColumnModelEvent;)V", methodCache: &JTableHeader.columnMoved_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func columnMoved( _ _e: TableColumnModelEvent? ) {
@@ -820,13 +912,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.columnMarginChanged(javax.swing.event.ChangeEvent)
 
-    private static var columnMarginChanged_MethodID_15: jmethodID?
+    private static var columnMarginChanged_MethodID_21: jmethodID?
 
     open func columnMarginChanged( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnMarginChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &JTableHeader.columnMarginChanged_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnMarginChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &JTableHeader.columnMarginChanged_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func columnMarginChanged( _ _e: ChangeEvent? ) {
@@ -835,13 +927,13 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.columnSelectionChanged(javax.swing.event.ListSelectionEvent)
 
-    private static var columnSelectionChanged_MethodID_16: jmethodID?
+    private static var columnSelectionChanged_MethodID_22: jmethodID?
 
     open func columnSelectionChanged( e: ListSelectionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnSelectionChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &JTableHeader.columnSelectionChanged_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "columnSelectionChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &JTableHeader.columnSelectionChanged_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func columnSelectionChanged( _ _e: ListSelectionEvent? ) {
@@ -850,23 +942,23 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// protected void javax.swing.table.JTableHeader.initializeLocalVars()
 
-    private static var initializeLocalVars_MethodID_17: jmethodID?
+    private static var initializeLocalVars_MethodID_23: jmethodID?
 
     open func initializeLocalVars() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initializeLocalVars", methodSig: "()V", methodCache: &JTableHeader.initializeLocalVars_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "initializeLocalVars", methodSig: "()V", methodCache: &JTableHeader.initializeLocalVars_MethodID_23, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.table.TableColumnModel javax.swing.table.JTableHeader.createDefaultColumnModel()
 
-    private static var createDefaultColumnModel_MethodID_18: jmethodID?
+    private static var createDefaultColumnModel_MethodID_24: jmethodID?
 
     open func createDefaultColumnModel() -> TableColumnModel! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultColumnModel", methodSig: "()Ljavax/swing/table/TableColumnModel;", methodCache: &JTableHeader.createDefaultColumnModel_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultColumnModel", methodSig: "()Ljavax/swing/table/TableColumnModel;", methodCache: &JTableHeader.createDefaultColumnModel_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableColumnModelForward( javaObject: __return ) : nil
     }
@@ -874,58 +966,56 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public void javax.swing.table.JTableHeader.resizeAndRepaint()
 
-    private static var resizeAndRepaint_MethodID_19: jmethodID?
+    private static var resizeAndRepaint_MethodID_25: jmethodID?
 
     open func resizeAndRepaint() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resizeAndRepaint", methodSig: "()V", methodCache: &JTableHeader.resizeAndRepaint_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resizeAndRepaint", methodSig: "()V", methodCache: &JTableHeader.resizeAndRepaint_MethodID_25, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.table.JTableHeader.setTable(javax.swing.JTable)
 
-    private static var setTable_MethodID_20: jmethodID?
+    private static var setTable_MethodID_26: jmethodID?
 
     open func setTable( arg0: JTable? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTable", methodSig: "(Ljavax/swing/JTable;)V", methodCache: &JTableHeader.setTable_MethodID_20, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTable", methodSig: "(Ljavax/swing/JTable;)V", methodCache: &JTableHeader.setTable_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func setTable( _ _arg0: JTable? ) {
         setTable( arg0: _arg0 )
     }
 
-    /// public void javax.swing.table.JTableHeader.updateUI()
+    /// public java.awt.Rectangle javax.swing.table.JTableHeader.getHeaderRect(int)
 
-    /// public void javax.swing.table.JTableHeader.setUI(javax.swing.plaf.TableHeaderUI)
+    private static var getHeaderRect_MethodID_27: jmethodID?
 
-    private static var setUI_MethodID_21: jmethodID?
-
-    open func setUI( arg0: TableHeaderUI? ) {
+    open func getHeaderRect( arg0: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/TableHeaderUI;)V", methodCache: &JTableHeader.setUI_MethodID_21, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeaderRect", methodSig: "(I)Ljava/awt/Rectangle;", methodCache: &JTableHeader.getHeaderRect_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
 
-    open func setUI( _ _arg0: TableHeaderUI? ) {
-        setUI( arg0: _arg0 )
+    open func getHeaderRect( _ _arg0: Int ) -> java_awt.Rectangle! {
+        return getHeaderRect( arg0: _arg0 )
     }
-
-    /// public java.lang.String javax.swing.table.JTableHeader.getUIClassID()
 
     /// public void javax.swing.table.JTableHeader.setReorderingAllowed(boolean)
 
-    private static var setReorderingAllowed_MethodID_22: jmethodID?
+    private static var setReorderingAllowed_MethodID_28: jmethodID?
 
     open func setReorderingAllowed( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setReorderingAllowed", methodSig: "(Z)V", methodCache: &JTableHeader.setReorderingAllowed_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setReorderingAllowed", methodSig: "(Z)V", methodCache: &JTableHeader.setReorderingAllowed_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func setReorderingAllowed( _ _arg0: Bool ) {
@@ -934,25 +1024,25 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public boolean javax.swing.table.JTableHeader.getReorderingAllowed()
 
-    private static var getReorderingAllowed_MethodID_23: jmethodID?
+    private static var getReorderingAllowed_MethodID_29: jmethodID?
 
     open func getReorderingAllowed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getReorderingAllowed", methodSig: "()Z", methodCache: &JTableHeader.getReorderingAllowed_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getReorderingAllowed", methodSig: "()Z", methodCache: &JTableHeader.getReorderingAllowed_MethodID_29, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.table.JTableHeader.setResizingAllowed(boolean)
 
-    private static var setResizingAllowed_MethodID_24: jmethodID?
+    private static var setResizingAllowed_MethodID_30: jmethodID?
 
     open func setResizingAllowed( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizingAllowed", methodSig: "(Z)V", methodCache: &JTableHeader.setResizingAllowed_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizingAllowed", methodSig: "(Z)V", methodCache: &JTableHeader.setResizingAllowed_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setResizingAllowed( _ _arg0: Bool ) {
@@ -961,24 +1051,24 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public boolean javax.swing.table.JTableHeader.getResizingAllowed()
 
-    private static var getResizingAllowed_MethodID_25: jmethodID?
+    private static var getResizingAllowed_MethodID_31: jmethodID?
 
     open func getResizingAllowed() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getResizingAllowed", methodSig: "()Z", methodCache: &JTableHeader.getResizingAllowed_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getResizingAllowed", methodSig: "()Z", methodCache: &JTableHeader.getResizingAllowed_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public javax.swing.table.TableColumn javax.swing.table.JTableHeader.getDraggedColumn()
 
-    private static var getDraggedColumn_MethodID_26: jmethodID?
+    private static var getDraggedColumn_MethodID_32: jmethodID?
 
     open func getDraggedColumn() -> TableColumn! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDraggedColumn", methodSig: "()Ljavax/swing/table/TableColumn;", methodCache: &JTableHeader.getDraggedColumn_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDraggedColumn", methodSig: "()Ljavax/swing/table/TableColumn;", methodCache: &JTableHeader.getDraggedColumn_MethodID_32, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableColumn( javaObject: __return ) : nil
     }
@@ -986,25 +1076,25 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public int javax.swing.table.JTableHeader.getDraggedDistance()
 
-    private static var getDraggedDistance_MethodID_27: jmethodID?
+    private static var getDraggedDistance_MethodID_33: jmethodID?
 
     open func getDraggedDistance() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDraggedDistance", methodSig: "()I", methodCache: &JTableHeader.getDraggedDistance_MethodID_27, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDraggedDistance", methodSig: "()I", methodCache: &JTableHeader.getDraggedDistance_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public void javax.swing.table.JTableHeader.setUpdateTableInRealTime(boolean)
 
-    private static var setUpdateTableInRealTime_MethodID_28: jmethodID?
+    private static var setUpdateTableInRealTime_MethodID_34: jmethodID?
 
     open func setUpdateTableInRealTime( arg0: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUpdateTableInRealTime", methodSig: "(Z)V", methodCache: &JTableHeader.setUpdateTableInRealTime_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUpdateTableInRealTime", methodSig: "(Z)V", methodCache: &JTableHeader.setUpdateTableInRealTime_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open func setUpdateTableInRealTime( _ _arg0: Bool ) {
@@ -1013,105 +1103,15 @@ open class JTableHeader: JComponent, TableColumnModelListener {
 
     /// public boolean javax.swing.table.JTableHeader.getUpdateTableInRealTime()
 
-    private static var getUpdateTableInRealTime_MethodID_29: jmethodID?
+    private static var getUpdateTableInRealTime_MethodID_35: jmethodID?
 
     open func getUpdateTableInRealTime() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getUpdateTableInRealTime", methodSig: "()Z", methodCache: &JTableHeader.getUpdateTableInRealTime_MethodID_29, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getUpdateTableInRealTime", methodSig: "()Z", methodCache: &JTableHeader.getUpdateTableInRealTime_MethodID_35, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// protected javax.swing.table.TableCellRenderer javax.swing.table.JTableHeader.createDefaultRenderer()
-
-    private static var createDefaultRenderer_MethodID_30: jmethodID?
-
-    open func createDefaultRenderer() -> TableCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &JTableHeader.createDefaultRenderer_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.table.JTableHeader.setDraggedColumn(javax.swing.table.TableColumn)
-
-    private static var setDraggedColumn_MethodID_31: jmethodID?
-
-    open func setDraggedColumn( arg0: TableColumn? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDraggedColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &JTableHeader.setDraggedColumn_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func setDraggedColumn( _ _arg0: TableColumn? ) {
-        setDraggedColumn( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.table.JTableHeader.setDraggedDistance(int)
-
-    private static var setDraggedDistance_MethodID_32: jmethodID?
-
-    open func setDraggedDistance( arg0: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDraggedDistance", methodSig: "(I)V", methodCache: &JTableHeader.setDraggedDistance_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setDraggedDistance( _ _arg0: Int ) {
-        setDraggedDistance( arg0: _arg0 )
-    }
-
-    /// public void javax.swing.table.JTableHeader.setResizingColumn(javax.swing.table.TableColumn)
-
-    private static var setResizingColumn_MethodID_33: jmethodID?
-
-    open func setResizingColumn( arg0: TableColumn? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0 != nil ? arg0! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizingColumn", methodSig: "(Ljavax/swing/table/TableColumn;)V", methodCache: &JTableHeader.setResizingColumn_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func setResizingColumn( _ _arg0: TableColumn? ) {
-        setResizingColumn( arg0: _arg0 )
-    }
-
-    /// private int javax.swing.table.JTableHeader.getWidthInRightToLeft()
-
-    /// public javax.swing.plaf.TableHeaderUI javax.swing.table.JTableHeader.getUI()
-
-    private static var getUI_MethodID_34: jmethodID?
-
-    open func getUI() -> TableHeaderUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/TableHeaderUI;", methodCache: &JTableHeader.getUI_MethodID_34, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TableHeaderUI( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Rectangle javax.swing.table.JTableHeader.getHeaderRect(int)
-
-    private static var getHeaderRect_MethodID_35: jmethodID?
-
-    open func getHeaderRect( arg0: Int ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeaderRect", methodSig: "(I)Ljava/awt/Rectangle;", methodCache: &JTableHeader.getHeaderRect_MethodID_35, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func getHeaderRect( _ _arg0: Int ) -> java_awt.Rectangle! {
-        return getHeaderRect( arg0: _arg0 )
-    }
 
     /// In declared protocol but not defined.. ///
 

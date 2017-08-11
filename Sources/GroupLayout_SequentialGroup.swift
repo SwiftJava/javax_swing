@@ -47,22 +47,139 @@ open class GroupLayout_SequentialGroup: GroupLayout_Group {
 
     /// int javax.swing.GroupLayout$SequentialGroup.operator(int,int)
 
-    /// void javax.swing.GroupLayout$SequentialGroup.setValidSize(int,int,int)
+    /// int javax.swing.GroupLayout$SequentialGroup.getBaseline()
 
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGroup(javax.swing.GroupLayout$Group)
+    /// java.awt.Component$BaselineResizeBehavior javax.swing.GroupLayout$SequentialGroup.getBaselineResizeBehavior()
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement)
+
+    private static var addPreferredGap_MethodID_1: jmethodID?
+
+    open func addPreferredGap( comp1: JComponent?, comp2: JComponent?, type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: type, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
+    }
+
+    open func addPreferredGap( _ _comp1: JComponent?, _ _comp2: JComponent?, _ _type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
+        return addPreferredGap( comp1: _comp1, comp2: _comp2, type: _type )
+    }
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement,int,int)
+
+    private static var addPreferredGap_MethodID_2: jmethodID?
+
+    open func addPreferredGap( comp1: JComponent?, comp2: JComponent?, type: LayoutStyle_ComponentPlacement?, pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp2, locals: &__locals )
+        __args[2] = JNIType.toJava( value: type, locals: &__locals )
+        __args[3] = JNIType.toJava( value: pref, locals: &__locals )
+        __args[4] = JNIType.toJava( value: max, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;II)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
+    }
+
+    open func addPreferredGap( _ _comp1: JComponent?, _ _comp2: JComponent?, _ _type: LayoutStyle_ComponentPlacement?, _ _pref: Int, _ _max: Int ) -> GroupLayout_SequentialGroup! {
+        return addPreferredGap( comp1: _comp1, comp2: _comp2, type: _type, pref: _pref, max: _max )
+    }
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.LayoutStyle$ComponentPlacement)
+
+    private static var addPreferredGap_MethodID_3: jmethodID?
+
+    open func addPreferredGap( type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/LayoutStyle$ComponentPlacement;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
+    }
+
+    open func addPreferredGap( _ _type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
+        return addPreferredGap( type: _type )
+    }
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.LayoutStyle$ComponentPlacement,int,int)
+
+    private static var addPreferredGap_MethodID_4: jmethodID?
+
+    open func addPreferredGap( type: LayoutStyle_ComponentPlacement?, pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pref, locals: &__locals )
+        __args[2] = JNIType.toJava( value: max, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/LayoutStyle$ComponentPlacement;II)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
+    }
+
+    open func addPreferredGap( _ _type: LayoutStyle_ComponentPlacement?, _ _pref: Int, _ _max: Int ) -> GroupLayout_SequentialGroup! {
+        return addPreferredGap( type: _type, pref: _pref, max: _max )
+    }
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addContainerGap()
+
+    private static var addContainerGap_MethodID_5: jmethodID?
+
+    open func addContainerGap() -> GroupLayout_SequentialGroup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addContainerGap", methodSig: "()Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addContainerGap_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addContainerGap(int,int)
+
+    private static var addContainerGap_MethodID_6: jmethodID?
+
+    open func addContainerGap( pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pref, locals: &__locals )
+        __args[1] = JNIType.toJava( value: max, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addContainerGap", methodSig: "(II)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addContainerGap_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
+    }
+
+    open func addContainerGap( _ _pref: Int, _ _max: Int ) -> GroupLayout_SequentialGroup! {
+        return addContainerGap( pref: _pref, max: _max )
+    }
+
+    /// private void javax.swing.GroupLayout$SequentialGroup.setValidSizeNotPreferred(int,int,int)
+
+    /// private java.util.List javax.swing.GroupLayout$SequentialGroup.buildResizableList(int,boolean)
+
+    /// private int javax.swing.GroupLayout$SequentialGroup.indexOfNextNonZeroSpring(int,boolean)
+
+    /// private void javax.swing.GroupLayout$SequentialGroup.checkPreferredGapValues(int,int)
+
+    /// void javax.swing.GroupLayout$SequentialGroup.setValidSize(int,int,int)
 
     /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addGroup(javax.swing.GroupLayout$Group)
 
     /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGroup(boolean,javax.swing.GroupLayout$Group)
 
-    private static var addGroup_MethodID_1: jmethodID?
+    private static var addGroup_MethodID_7: jmethodID?
 
     open func addGroup( useAsBaseline: Bool, group: GroupLayout_Group? ) -> GroupLayout_SequentialGroup! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: useAsBaseline, locals: &__locals )
-        __args[1] = JNIType.toJava( value: group != nil ? group! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addGroup", methodSig: "(ZLjavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addGroup_MethodID_1, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: group, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addGroup", methodSig: "(ZLjavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addGroup_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
     }
@@ -71,20 +188,18 @@ open class GroupLayout_SequentialGroup: GroupLayout_Group {
         return addGroup( useAsBaseline: _useAsBaseline, group: _group )
     }
 
-    /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component)
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGroup(javax.swing.GroupLayout$Group)
 
     /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(boolean,java.awt.Component)
 
-    private static var addComponent_MethodID_2: jmethodID?
+    private static var addComponent_MethodID_8: jmethodID?
 
     open func addComponent( useAsBaseline: Bool, component: java_awt.Component? ) -> GroupLayout_SequentialGroup! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: useAsBaseline, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addComponent", methodSig: "(ZLjava/awt/Component;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addComponent_MethodID_2, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addComponent", methodSig: "(ZLjava/awt/Component;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addComponent_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
     }
@@ -93,21 +208,25 @@ open class GroupLayout_SequentialGroup: GroupLayout_Group {
         return addComponent( useAsBaseline: _useAsBaseline, component: _component )
     }
 
+    /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
+
     /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component)
+
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component)
 
     /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(boolean,java.awt.Component,int,int,int)
 
-    private static var addComponent_MethodID_3: jmethodID?
+    private static var addComponent_MethodID_9: jmethodID?
 
     open func addComponent( useAsBaseline: Bool, component: java_awt.Component?, min: Int, pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: useAsBaseline, locals: &__locals )
-        __args[1] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: component, locals: &__locals )
         __args[2] = JNIType.toJava( value: min, locals: &__locals )
         __args[3] = JNIType.toJava( value: pref, locals: &__locals )
         __args[4] = JNIType.toJava( value: max, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addComponent", methodSig: "(ZLjava/awt/Component;III)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addComponent_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addComponent", methodSig: "(ZLjava/awt/Component;III)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addComponent_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
     }
@@ -118,134 +237,15 @@ open class GroupLayout_SequentialGroup: GroupLayout_Group {
 
     /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
 
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGap(int)
+
     /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGap(int,int,int)
 
     /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addGap(int,int,int)
 
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGap(int)
-
     /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addGap(int)
 
     /// void javax.swing.GroupLayout$SequentialGroup.insertAutopadding(int,java.util.List,java.util.List,java.util.List,java.util.List,boolean)
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.LayoutStyle$ComponentPlacement)
-
-    private static var addPreferredGap_MethodID_4: jmethodID?
-
-    open func addPreferredGap( type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/LayoutStyle$ComponentPlacement;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
-    }
-
-    open func addPreferredGap( _ _type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
-        return addPreferredGap( type: _type )
-    }
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement,int,int)
-
-    private static var addPreferredGap_MethodID_5: jmethodID?
-
-    open func addPreferredGap( comp1: JComponent?, comp2: JComponent?, type: LayoutStyle_ComponentPlacement?, pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp1 != nil ? comp1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp2 != nil ? comp2! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pref, locals: &__locals )
-        __args[4] = JNIType.toJava( value: max, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;II)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
-    }
-
-    open func addPreferredGap( _ _comp1: JComponent?, _ _comp2: JComponent?, _ _type: LayoutStyle_ComponentPlacement?, _ _pref: Int, _ _max: Int ) -> GroupLayout_SequentialGroup! {
-        return addPreferredGap( comp1: _comp1, comp2: _comp2, type: _type, pref: _pref, max: _max )
-    }
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.LayoutStyle$ComponentPlacement,int,int)
-
-    private static var addPreferredGap_MethodID_6: jmethodID?
-
-    open func addPreferredGap( type: LayoutStyle_ComponentPlacement?, pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pref, locals: &__locals )
-        __args[2] = JNIType.toJava( value: max, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/LayoutStyle$ComponentPlacement;II)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
-    }
-
-    open func addPreferredGap( _ _type: LayoutStyle_ComponentPlacement?, _ _pref: Int, _ _max: Int ) -> GroupLayout_SequentialGroup! {
-        return addPreferredGap( type: _type, pref: _pref, max: _max )
-    }
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement)
-
-    private static var addPreferredGap_MethodID_7: jmethodID?
-
-    open func addPreferredGap( comp1: JComponent?, comp2: JComponent?, type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp1 != nil ? comp1! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp2 != nil ? comp2! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addPreferredGap_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
-    }
-
-    open func addPreferredGap( _ _comp1: JComponent?, _ _comp2: JComponent?, _ _type: LayoutStyle_ComponentPlacement? ) -> GroupLayout_SequentialGroup! {
-        return addPreferredGap( comp1: _comp1, comp2: _comp2, type: _type )
-    }
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addContainerGap(int,int)
-
-    private static var addContainerGap_MethodID_8: jmethodID?
-
-    open func addContainerGap( pref: Int, max: Int ) -> GroupLayout_SequentialGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pref, locals: &__locals )
-        __args[1] = JNIType.toJava( value: max, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addContainerGap", methodSig: "(II)Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addContainerGap_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
-    }
-
-    open func addContainerGap( _ _pref: Int, _ _max: Int ) -> GroupLayout_SequentialGroup! {
-        return addContainerGap( pref: _pref, max: _max )
-    }
-
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addContainerGap()
-
-    private static var addContainerGap_MethodID_9: jmethodID?
-
-    open func addContainerGap() -> GroupLayout_SequentialGroup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addContainerGap", methodSig: "()Ljavax/swing/GroupLayout$SequentialGroup;", methodCache: &GroupLayout_SequentialGroup.addContainerGap_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? GroupLayout_SequentialGroup( javaObject: __return ) : nil
-    }
-
-
-    /// private void javax.swing.GroupLayout$SequentialGroup.setValidSizeNotPreferred(int,int,int)
-
-    /// private java.util.List javax.swing.GroupLayout$SequentialGroup.buildResizableList(int,boolean)
-
-    /// private int javax.swing.GroupLayout$SequentialGroup.indexOfNextNonZeroSpring(int,boolean)
-
-    /// private void javax.swing.GroupLayout$SequentialGroup.checkPreferredGapValues(int,int)
-
-    /// int javax.swing.GroupLayout$SequentialGroup.getBaseline()
-
-    /// java.awt.Component$BaselineResizeBehavior javax.swing.GroupLayout$SequentialGroup.getBaselineResizeBehavior()
 
 }
 

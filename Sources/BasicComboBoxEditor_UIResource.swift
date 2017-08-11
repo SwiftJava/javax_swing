@@ -28,7 +28,7 @@ open class BasicComboBoxEditor_UIResource: BasicComboBoxEditor, UIResource {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/JTextField;", fieldCache: &BasicComboBoxEditor_UIResource.editor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

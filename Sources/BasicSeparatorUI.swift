@@ -29,7 +29,7 @@ open class BasicSeparatorUI: SeparatorUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicSeparatorUI.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class BasicSeparatorUI: SeparatorUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicSeparatorUI.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,12 +63,6 @@ open class BasicSeparatorUI: SeparatorUI {
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMaximumSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicSeparatorUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -76,7 +70,7 @@ open class BasicSeparatorUI: SeparatorUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicSeparatorUI", classCache: &BasicSeparatorUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -86,11 +80,11 @@ open class BasicSeparatorUI: SeparatorUI {
         return createUI( c: _c )
     }
 
+    /// public void javax.swing.plaf.basic.BasicSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
     /// public void javax.swing.plaf.basic.BasicSeparatorUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicSeparatorUI.uninstallUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.basic.BasicSeparatorUI.installDefaults(javax.swing.JSeparator)
 
@@ -99,7 +93,7 @@ open class BasicSeparatorUI: SeparatorUI {
     open func installDefaults( s: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &BasicSeparatorUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -114,7 +108,7 @@ open class BasicSeparatorUI: SeparatorUI {
     open func installListeners( s: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &BasicSeparatorUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -129,7 +123,7 @@ open class BasicSeparatorUI: SeparatorUI {
     open func uninstallDefaults( s: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &BasicSeparatorUI.uninstallDefaults_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -144,13 +138,19 @@ open class BasicSeparatorUI: SeparatorUI {
     open func uninstallListeners( s: JSeparator? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s != nil ? s! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &BasicSeparatorUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func uninstallListeners( _ _s: JSeparator? ) {
         uninstallListeners( s: _s )
     }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSeparatorUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

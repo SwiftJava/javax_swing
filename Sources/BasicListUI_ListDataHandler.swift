@@ -25,7 +25,7 @@ open class BasicListUI_ListDataHandler: java_swift.JavaObject, ListDataListener 
     public convenience init( this_0: BasicListUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicListUI$ListDataHandler", classCache: &BasicListUI_ListDataHandler.BasicListUI_ListDataHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicListUI;)V", methodCache: &BasicListUI_ListDataHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,7 +42,7 @@ open class BasicListUI_ListDataHandler: java_swift.JavaObject, ListDataListener 
     open func contentsChanged( e: ListDataEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "contentsChanged", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicListUI_ListDataHandler.contentsChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -57,7 +57,7 @@ open class BasicListUI_ListDataHandler: java_swift.JavaObject, ListDataListener 
     open func intervalAdded( e: ListDataEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicListUI_ListDataHandler.intervalAdded_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -72,7 +72,7 @@ open class BasicListUI_ListDataHandler: java_swift.JavaObject, ListDataListener 
     open func intervalRemoved( e: ListDataEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicListUI_ListDataHandler.intervalRemoved_MethodID_4, args: &__args, locals: &__locals )
     }
 

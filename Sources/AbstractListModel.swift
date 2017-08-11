@@ -29,7 +29,7 @@ open class AbstractListModel: java_swift.JavaObject, ListModel, /* java.io.Seria
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractListModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,94 +46,15 @@ open class AbstractListModel: java_swift.JavaObject, ListModel, /* java.io.Seria
         JNI.DeleteLocalRef( __object )
     }
 
-    /// protected void javax.swing.AbstractListModel.fireIntervalRemoved(java.lang.Object,int,int)
-
-    private static var fireIntervalRemoved_MethodID_2: jmethodID?
-
-    open func fireIntervalRemoved( source: java_swift.JavaObject?, index0: Int, index1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireIntervalRemoved", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractListModel.fireIntervalRemoved_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func fireIntervalRemoved( _ _source: java_swift.JavaObject?, _ _index0: Int, _ _index1: Int ) {
-        fireIntervalRemoved( source: _source, index0: _index0, index1: _index1 )
-    }
-
-    /// protected void javax.swing.AbstractListModel.fireIntervalAdded(java.lang.Object,int,int)
-
-    private static var fireIntervalAdded_MethodID_3: jmethodID?
-
-    open func fireIntervalAdded( source: java_swift.JavaObject?, index0: Int, index1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireIntervalAdded", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractListModel.fireIntervalAdded_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func fireIntervalAdded( _ _source: java_swift.JavaObject?, _ _index0: Int, _ _index1: Int ) {
-        fireIntervalAdded( source: _source, index0: _index0, index1: _index1 )
-    }
-
-    /// protected void javax.swing.AbstractListModel.fireContentsChanged(java.lang.Object,int,int)
-
-    private static var fireContentsChanged_MethodID_4: jmethodID?
-
-    open func fireContentsChanged( source: java_swift.JavaObject?, index0: Int, index1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireContentsChanged", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractListModel.fireContentsChanged_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func fireContentsChanged( _ _source: java_swift.JavaObject?, _ _index0: Int, _ _index1: Int ) {
-        fireContentsChanged( source: _source, index0: _index0, index1: _index1 )
-    }
-
-    /// public javax.swing.event.ListDataListener[] javax.swing.AbstractListModel.getListDataListeners()
-
-    private static var getListDataListeners_MethodID_5: jmethodID?
-
-    open func getListDataListeners() -> [ListDataListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListDataListeners", methodSig: "()[Ljavax/swing/event/ListDataListener;", methodCache: &AbstractListModel.getListDataListeners_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ListDataListenerForward](), from: __return )
-    }
-
-
-    /// public java.util.EventListener[] javax.swing.AbstractListModel.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_6: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractListModel.getListeners_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
     /// public void javax.swing.AbstractListModel.removeListDataListener(javax.swing.event.ListDataListener)
 
-    private static var removeListDataListener_MethodID_7: jmethodID?
+    private static var removeListDataListener_MethodID_2: jmethodID?
 
     open func removeListDataListener( l: ListDataListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &AbstractListModel.removeListDataListener_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &AbstractListModel.removeListDataListener_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func removeListDataListener( _ _l: ListDataListener? ) {
@@ -142,18 +63,97 @@ open class AbstractListModel: java_swift.JavaObject, ListModel, /* java.io.Seria
 
     /// public void javax.swing.AbstractListModel.addListDataListener(javax.swing.event.ListDataListener)
 
-    private static var addListDataListener_MethodID_8: jmethodID?
+    private static var addListDataListener_MethodID_3: jmethodID?
 
     open func addListDataListener( l: ListDataListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &AbstractListModel.addListDataListener_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &AbstractListModel.addListDataListener_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func addListDataListener( _ _l: ListDataListener? ) {
         addListDataListener( l: _l )
     }
+
+    /// public java.util.EventListener[] javax.swing.AbstractListModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_4: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractListModel.getListeners_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
+    /// protected void javax.swing.AbstractListModel.fireIntervalRemoved(java.lang.Object,int,int)
+
+    private static var fireIntervalRemoved_MethodID_5: jmethodID?
+
+    open func fireIntervalRemoved( source: java_swift.JavaObject?, index0: Int, index1: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: index0, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireIntervalRemoved", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractListModel.fireIntervalRemoved_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func fireIntervalRemoved( _ _source: java_swift.JavaObject?, _ _index0: Int, _ _index1: Int ) {
+        fireIntervalRemoved( source: _source, index0: _index0, index1: _index1 )
+    }
+
+    /// protected void javax.swing.AbstractListModel.fireIntervalAdded(java.lang.Object,int,int)
+
+    private static var fireIntervalAdded_MethodID_6: jmethodID?
+
+    open func fireIntervalAdded( source: java_swift.JavaObject?, index0: Int, index1: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: index0, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireIntervalAdded", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractListModel.fireIntervalAdded_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func fireIntervalAdded( _ _source: java_swift.JavaObject?, _ _index0: Int, _ _index1: Int ) {
+        fireIntervalAdded( source: _source, index0: _index0, index1: _index1 )
+    }
+
+    /// protected void javax.swing.AbstractListModel.fireContentsChanged(java.lang.Object,int,int)
+
+    private static var fireContentsChanged_MethodID_7: jmethodID?
+
+    open func fireContentsChanged( source: java_swift.JavaObject?, index0: Int, index1: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: index0, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireContentsChanged", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractListModel.fireContentsChanged_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func fireContentsChanged( _ _source: java_swift.JavaObject?, _ _index0: Int, _ _index1: Int ) {
+        fireContentsChanged( source: _source, index0: _index0, index1: _index1 )
+    }
+
+    /// public javax.swing.event.ListDataListener[] javax.swing.AbstractListModel.getListDataListeners()
+
+    private static var getListDataListeners_MethodID_8: jmethodID?
+
+    open func getListDataListeners() -> [ListDataListener]! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListDataListeners", methodSig: "()[Ljavax/swing/event/ListDataListener;", methodCache: &AbstractListModel.getListDataListeners_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ListDataListenerForward](), from: __return )
+    }
+
 
     /// In declared protocol but not defined.. ///
 

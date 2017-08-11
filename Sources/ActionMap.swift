@@ -39,7 +39,7 @@ open class ActionMap: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
     open func remove( key: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/lang/Object;)V", methodCache: &ActionMap.remove_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -54,7 +54,7 @@ open class ActionMap: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
     open func get( key: java_swift.JavaObject? ) -> Action! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "get", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Action;", methodCache: &ActionMap.get_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ActionForward( javaObject: __return ) : nil
@@ -71,7 +71,7 @@ open class ActionMap: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
     open func put( key: java_swift.JavaObject?, action: Action? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: action, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "put", methodSig: "(Ljava/lang/Object;Ljavax/swing/Action;)V", methodCache: &ActionMap.put_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -139,7 +139,7 @@ open class ActionMap: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
     open func setParent( map: ActionMap? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: map != nil ? map! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: map, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParent", methodSig: "(Ljavax/swing/ActionMap;)V", methodCache: &ActionMap.setParent_MethodID_9, args: &__args, locals: &__locals )
     }
 

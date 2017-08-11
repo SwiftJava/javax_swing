@@ -82,7 +82,7 @@ open class text_html_ParagraphView: ParagraphView {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "layoutPool", fieldType: "Ljavax/swing/text/View;", fieldCache: &text_html_ParagraphView.layoutPool_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -99,7 +99,7 @@ open class text_html_ParagraphView: ParagraphView {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "strategy", fieldType: "Ljavax/swing/text/FlowView$FlowStrategy;", fieldCache: &text_html_ParagraphView.strategy_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -229,6 +229,10 @@ open class text_html_ParagraphView: ParagraphView {
 
     /// public void javax.swing.text.html.ParagraphView.setParent(javax.swing.text.View)
 
+    /// public void javax.swing.text.html.ParagraphView.paint(java.awt.Graphics,java.awt.Shape)
+
+    /// public boolean javax.swing.text.html.ParagraphView.isVisible()
+
     /// public float javax.swing.text.html.ParagraphView.getMinimumSpan(int)
 
     /// public float javax.swing.text.html.ParagraphView.getMaximumSpan(int)
@@ -252,7 +256,7 @@ open class text_html_ParagraphView: ParagraphView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &text_html_ParagraphView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
@@ -276,10 +280,6 @@ open class text_html_ParagraphView: ParagraphView {
 
 
     /// public float javax.swing.text.html.ParagraphView.getPreferredSpan(int)
-
-    /// public boolean javax.swing.text.html.ParagraphView.isVisible()
-
-    /// public void javax.swing.text.html.ParagraphView.paint(java.awt.Graphics,java.awt.Shape)
 
 }
 

@@ -33,7 +33,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rootPane", fieldType: "Ljavax/swing/JRootPane;", fieldCache: &JDialog.rootPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -69,7 +69,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JDialog.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -519,10 +519,10 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Dialog?, title: String?, modal: Bool, gc: java_awt.GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: gc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;ZLjava/awt/GraphicsConfiguration;)V", methodCache: &JDialog.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -539,7 +539,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Dialog?, title: String?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;Z)V", methodCache: &JDialog.new_MethodID_2, args: &__args, locals: &__locals )
@@ -558,7 +558,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Dialog?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Dialog;Ljava/lang/String;)V", methodCache: &JDialog.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -576,10 +576,10 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Window?, title: String?, modalityType: java_awt.Dialog_ModalityType?, gc: java_awt.GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: modalityType, locals: &__locals )
+        __args[3] = JNIType.toJava( value: gc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/lang/String;Ljava/awt/Dialog$ModalityType;Ljava/awt/GraphicsConfiguration;)V", methodCache: &JDialog.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -596,9 +596,9 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Window?, title: String?, modalityType: java_awt.Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: modalityType, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/lang/String;Ljava/awt/Dialog$ModalityType;)V", methodCache: &JDialog.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -617,8 +617,8 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Window?, modalityType: java_awt.Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
+        __args[1] = JNIType.toJava( value: modalityType, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Window;Ljava/awt/Dialog$ModalityType;)V", methodCache: &JDialog.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -635,7 +635,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Frame?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;)V", methodCache: &JDialog.new_MethodID_7, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -653,7 +653,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Frame?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: modal, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Frame;Z)V", methodCache: &JDialog.new_MethodID_8, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -671,7 +671,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Frame;)V", methodCache: &JDialog.new_MethodID_9, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -700,7 +700,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Dialog?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: modal, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Dialog;Z)V", methodCache: &JDialog.new_MethodID_11, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -718,7 +718,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Dialog? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Dialog;)V", methodCache: &JDialog.new_MethodID_12, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -735,10 +735,10 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Frame?, title: String?, modal: Bool, gc: java_awt.GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: gc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;ZLjava/awt/GraphicsConfiguration;)V", methodCache: &JDialog.new_MethodID_13, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -755,7 +755,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     public convenience init( owner: java_awt.Frame?, title: String?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JDialog", classCache: &JDialog.JDialogJNIClass, methodSig: "(Ljava/awt/Frame;Ljava/lang/String;Z)V", methodCache: &JDialog.new_MethodID_14, args: &__args, locals: &__locals )
@@ -774,7 +774,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     open func remove( comp: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JDialog.remove_MethodID_15, args: &__args, locals: &__locals )
     }
 
@@ -789,7 +789,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     open func update( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JDialog.update_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -809,331 +809,9 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     }
 
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JDialog.getAccessibleContext()
-
-    /// public java.awt.Container javax.swing.JDialog.getContentPane()
-
-    private static var getContentPane_MethodID_18: jmethodID?
-
-    open func getContentPane() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JDialog.getContentPane_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JDialog.setLayout(java.awt.LayoutManager)
-
-    private static var setLayout_MethodID_19: jmethodID?
-
-    open func setLayout( manager: java_awt.LayoutManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: manager, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JDialog.setLayout_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
-        setLayout( manager: _manager )
-    }
-
-    /// public javax.swing.JRootPane javax.swing.JDialog.getRootPane()
-
-    private static var getRootPane_MethodID_20: jmethodID?
-
-    open func getRootPane() -> JRootPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JDialog.getRootPane_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JRootPane( javaObject: __return ) : nil
-    }
-
-
-    /// public static boolean javax.swing.JDialog.isDefaultLookAndFeelDecorated()
-
-    private static var isDefaultLookAndFeelDecorated_MethodID_21: jmethodID?
-
-    open class func isDefaultLookAndFeelDecorated() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/JDialog", classCache: &JDialogJNIClass, methodName: "isDefaultLookAndFeelDecorated", methodSig: "()Z", methodCache: &isDefaultLookAndFeelDecorated_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.JDialog.dialogInit()
-
-    private static var dialogInit_MethodID_22: jmethodID?
-
-    open func dialogInit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dialogInit", methodSig: "()V", methodCache: &JDialog.dialogInit_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.JRootPane javax.swing.JDialog.createRootPane()
-
-    private static var createRootPane_MethodID_23: jmethodID?
-
-    open func createRootPane() -> JRootPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JDialog.createRootPane_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JRootPane( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.JDialog.processWindowEvent(java.awt.event.WindowEvent)
-
-    private static var processWindowEvent_MethodID_24: jmethodID?
-
-    open func processWindowEvent( e: java_awt.WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &JDialog.processWindowEvent_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    override open func processWindowEvent( _ _e: java_awt.WindowEvent? ) {
-        processWindowEvent( e: _e )
-    }
-
-    /// public void javax.swing.JDialog.setDefaultCloseOperation(int)
-
-    private static var setDefaultCloseOperation_MethodID_25: jmethodID?
-
-    open func setDefaultCloseOperation( operation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: operation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCloseOperation", methodSig: "(I)V", methodCache: &JDialog.setDefaultCloseOperation_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setDefaultCloseOperation( _ _operation: Int ) {
-        setDefaultCloseOperation( operation: _operation )
-    }
-
-    /// public int javax.swing.JDialog.getDefaultCloseOperation()
-
-    private static var getDefaultCloseOperation_MethodID_26: jmethodID?
-
-    open func getDefaultCloseOperation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDefaultCloseOperation", methodSig: "()I", methodCache: &JDialog.getDefaultCloseOperation_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JDialog.setTransferHandler(javax.swing.TransferHandler)
-
-    private static var setTransferHandler_MethodID_27: jmethodID?
-
-    open func setTransferHandler( newHandler: TransferHandler? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newHandler != nil ? newHandler! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransferHandler", methodSig: "(Ljavax/swing/TransferHandler;)V", methodCache: &JDialog.setTransferHandler_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func setTransferHandler( _ _newHandler: TransferHandler? ) {
-        setTransferHandler( newHandler: _newHandler )
-    }
-
-    /// public javax.swing.TransferHandler javax.swing.JDialog.getTransferHandler()
-
-    private static var getTransferHandler_MethodID_28: jmethodID?
-
-    open func getTransferHandler() -> TransferHandler! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferHandler", methodSig: "()Ljavax/swing/TransferHandler;", methodCache: &JDialog.getTransferHandler_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TransferHandler( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JDialog.setJMenuBar(javax.swing.JMenuBar)
-
-    private static var setJMenuBar_MethodID_29: jmethodID?
-
-    open func setJMenuBar( menu: JMenuBar? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: menu != nil ? menu! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JDialog.setJMenuBar_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func setJMenuBar( _ _menu: JMenuBar? ) {
-        setJMenuBar( menu: _menu )
-    }
-
-    /// public javax.swing.JMenuBar javax.swing.JDialog.getJMenuBar()
-
-    private static var getJMenuBar_MethodID_30: jmethodID?
-
-    open func getJMenuBar() -> JMenuBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JDialog.getJMenuBar_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JMenuBar( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.JDialog.isRootPaneCheckingEnabled()
-
-    private static var isRootPaneCheckingEnabled_MethodID_31: jmethodID?
-
-    open func isRootPaneCheckingEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JDialog.isRootPaneCheckingEnabled_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.JDialog.setRootPaneCheckingEnabled(boolean)
-
-    private static var setRootPaneCheckingEnabled_MethodID_32: jmethodID?
-
-    open func setRootPaneCheckingEnabled( enabled: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JDialog.setRootPaneCheckingEnabled_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
-        setRootPaneCheckingEnabled( enabled: _enabled )
-    }
-
-    /// protected void javax.swing.JDialog.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_33: jmethodID?
-
-    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JDialog.addImpl_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
-    }
-
-    /// protected void javax.swing.JDialog.setRootPane(javax.swing.JRootPane)
-
-    private static var setRootPane_MethodID_34: jmethodID?
-
-    open func setRootPane( root: JRootPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: root != nil ? root! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JDialog.setRootPane_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func setRootPane( _ _root: JRootPane? ) {
-        setRootPane( root: _root )
-    }
-
-    /// public void javax.swing.JDialog.setContentPane(java.awt.Container)
-
-    private static var setContentPane_MethodID_35: jmethodID?
-
-    open func setContentPane( contentPane: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: contentPane != nil ? contentPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JDialog.setContentPane_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func setContentPane( _ _contentPane: java_awt.Container? ) {
-        setContentPane( contentPane: _contentPane )
-    }
-
-    /// public javax.swing.JLayeredPane javax.swing.JDialog.getLayeredPane()
-
-    private static var getLayeredPane_MethodID_36: jmethodID?
-
-    open func getLayeredPane() -> JLayeredPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JDialog.getLayeredPane_MethodID_36, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JLayeredPane( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JDialog.setLayeredPane(javax.swing.JLayeredPane)
-
-    private static var setLayeredPane_MethodID_37: jmethodID?
-
-    open func setLayeredPane( layeredPane: JLayeredPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: layeredPane != nil ? layeredPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JDialog.setLayeredPane_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
-        setLayeredPane( layeredPane: _layeredPane )
-    }
-
-    /// public java.awt.Component javax.swing.JDialog.getGlassPane()
-
-    private static var getGlassPane_MethodID_38: jmethodID?
-
-    open func getGlassPane() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JDialog.getGlassPane_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JDialog.setGlassPane(java.awt.Component)
-
-    private static var setGlassPane_MethodID_39: jmethodID?
-
-    open func setGlassPane( glassPane: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: glassPane != nil ? glassPane! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JDialog.setGlassPane_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func setGlassPane( _ _glassPane: java_awt.Component? ) {
-        setGlassPane( glassPane: _glassPane )
-    }
-
-    /// public static void javax.swing.JDialog.setDefaultLookAndFeelDecorated(boolean)
-
-    private static var setDefaultLookAndFeelDecorated_MethodID_40: jmethodID?
-
-    open class func setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: defaultLookAndFeelDecorated, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JDialog", classCache: &JDialogJNIClass, methodName: "setDefaultLookAndFeelDecorated", methodSig: "(Z)V", methodCache: &setDefaultLookAndFeelDecorated_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open class func setDefaultLookAndFeelDecorated( _ _defaultLookAndFeelDecorated: Bool ) {
-        setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: _defaultLookAndFeelDecorated )
-    }
-
     /// public void javax.swing.JDialog.repaint(long,int,int,int,int)
 
-    private static var repaint_MethodID_41: jmethodID?
+    private static var repaint_MethodID_18: jmethodID?
 
     open func repaint( time: Int64, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -1143,7 +821,7 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: width, locals: &__locals )
         __args[4] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JDialog.repaint_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JDialog.repaint_MethodID_18, args: &__args, locals: &__locals )
     }
 
     override open func repaint( _ _time: Int64, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -1151,6 +829,328 @@ open class JDialog: java_awt.Dialog, WindowConstants, RootPaneContainer {
     }
 
     /// public java.awt.Graphics javax.swing.JDialog.getGraphics()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JDialog.getAccessibleContext()
+
+    /// public java.awt.Container javax.swing.JDialog.getContentPane()
+
+    private static var getContentPane_MethodID_19: jmethodID?
+
+    open func getContentPane() -> java_awt.Container! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JDialog.getContentPane_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JDialog.setLayout(java.awt.LayoutManager)
+
+    private static var setLayout_MethodID_20: jmethodID?
+
+    open func setLayout( manager: java_awt.LayoutManager? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: manager, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JDialog.setLayout_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
+        setLayout( manager: _manager )
+    }
+
+    /// public javax.swing.JRootPane javax.swing.JDialog.getRootPane()
+
+    private static var getRootPane_MethodID_21: jmethodID?
+
+    open func getRootPane() -> JRootPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JDialog.getRootPane_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JRootPane( javaObject: __return ) : nil
+    }
+
+
+    /// public static boolean javax.swing.JDialog.isDefaultLookAndFeelDecorated()
+
+    private static var isDefaultLookAndFeelDecorated_MethodID_22: jmethodID?
+
+    open class func isDefaultLookAndFeelDecorated() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/JDialog", classCache: &JDialogJNIClass, methodName: "isDefaultLookAndFeelDecorated", methodSig: "()Z", methodCache: &isDefaultLookAndFeelDecorated_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected void javax.swing.JDialog.dialogInit()
+
+    private static var dialogInit_MethodID_23: jmethodID?
+
+    open func dialogInit() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dialogInit", methodSig: "()V", methodCache: &JDialog.dialogInit_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected javax.swing.JRootPane javax.swing.JDialog.createRootPane()
+
+    private static var createRootPane_MethodID_24: jmethodID?
+
+    open func createRootPane() -> JRootPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JDialog.createRootPane_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JRootPane( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.JDialog.processWindowEvent(java.awt.event.WindowEvent)
+
+    private static var processWindowEvent_MethodID_25: jmethodID?
+
+    open func processWindowEvent( e: java_awt.WindowEvent? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &JDialog.processWindowEvent_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    override open func processWindowEvent( _ _e: java_awt.WindowEvent? ) {
+        processWindowEvent( e: _e )
+    }
+
+    /// public void javax.swing.JDialog.setDefaultCloseOperation(int)
+
+    private static var setDefaultCloseOperation_MethodID_26: jmethodID?
+
+    open func setDefaultCloseOperation( operation: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: operation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCloseOperation", methodSig: "(I)V", methodCache: &JDialog.setDefaultCloseOperation_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setDefaultCloseOperation( _ _operation: Int ) {
+        setDefaultCloseOperation( operation: _operation )
+    }
+
+    /// public int javax.swing.JDialog.getDefaultCloseOperation()
+
+    private static var getDefaultCloseOperation_MethodID_27: jmethodID?
+
+    open func getDefaultCloseOperation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDefaultCloseOperation", methodSig: "()I", methodCache: &JDialog.getDefaultCloseOperation_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JDialog.setTransferHandler(javax.swing.TransferHandler)
+
+    private static var setTransferHandler_MethodID_28: jmethodID?
+
+    open func setTransferHandler( newHandler: TransferHandler? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newHandler, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransferHandler", methodSig: "(Ljavax/swing/TransferHandler;)V", methodCache: &JDialog.setTransferHandler_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func setTransferHandler( _ _newHandler: TransferHandler? ) {
+        setTransferHandler( newHandler: _newHandler )
+    }
+
+    /// public javax.swing.TransferHandler javax.swing.JDialog.getTransferHandler()
+
+    private static var getTransferHandler_MethodID_29: jmethodID?
+
+    open func getTransferHandler() -> TransferHandler! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferHandler", methodSig: "()Ljavax/swing/TransferHandler;", methodCache: &JDialog.getTransferHandler_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TransferHandler( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JDialog.setJMenuBar(javax.swing.JMenuBar)
+
+    private static var setJMenuBar_MethodID_30: jmethodID?
+
+    open func setJMenuBar( menu: JMenuBar? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: menu, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JDialog.setJMenuBar_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setJMenuBar( _ _menu: JMenuBar? ) {
+        setJMenuBar( menu: _menu )
+    }
+
+    /// public javax.swing.JMenuBar javax.swing.JDialog.getJMenuBar()
+
+    private static var getJMenuBar_MethodID_31: jmethodID?
+
+    open func getJMenuBar() -> JMenuBar! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JDialog.getJMenuBar_MethodID_31, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JMenuBar( javaObject: __return ) : nil
+    }
+
+
+    /// protected boolean javax.swing.JDialog.isRootPaneCheckingEnabled()
+
+    private static var isRootPaneCheckingEnabled_MethodID_32: jmethodID?
+
+    open func isRootPaneCheckingEnabled() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JDialog.isRootPaneCheckingEnabled_MethodID_32, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// protected void javax.swing.JDialog.setRootPaneCheckingEnabled(boolean)
+
+    private static var setRootPaneCheckingEnabled_MethodID_33: jmethodID?
+
+    open func setRootPaneCheckingEnabled( enabled: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JDialog.setRootPaneCheckingEnabled_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
+        setRootPaneCheckingEnabled( enabled: _enabled )
+    }
+
+    /// protected void javax.swing.JDialog.addImpl(java.awt.Component,java.lang.Object,int)
+
+    private static var addImpl_MethodID_34: jmethodID?
+
+    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JDialog.addImpl_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    }
+
+    /// protected void javax.swing.JDialog.setRootPane(javax.swing.JRootPane)
+
+    private static var setRootPane_MethodID_35: jmethodID?
+
+    open func setRootPane( root: JRootPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: root, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JDialog.setRootPane_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+    open func setRootPane( _ _root: JRootPane? ) {
+        setRootPane( root: _root )
+    }
+
+    /// public void javax.swing.JDialog.setContentPane(java.awt.Container)
+
+    private static var setContentPane_MethodID_36: jmethodID?
+
+    open func setContentPane( contentPane: java_awt.Container? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: contentPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JDialog.setContentPane_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func setContentPane( _ _contentPane: java_awt.Container? ) {
+        setContentPane( contentPane: _contentPane )
+    }
+
+    /// public javax.swing.JLayeredPane javax.swing.JDialog.getLayeredPane()
+
+    private static var getLayeredPane_MethodID_37: jmethodID?
+
+    open func getLayeredPane() -> JLayeredPane! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JDialog.getLayeredPane_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JLayeredPane( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JDialog.setLayeredPane(javax.swing.JLayeredPane)
+
+    private static var setLayeredPane_MethodID_38: jmethodID?
+
+    open func setLayeredPane( layeredPane: JLayeredPane? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: layeredPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JDialog.setLayeredPane_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+    open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
+        setLayeredPane( layeredPane: _layeredPane )
+    }
+
+    /// public java.awt.Component javax.swing.JDialog.getGlassPane()
+
+    private static var getGlassPane_MethodID_39: jmethodID?
+
+    open func getGlassPane() -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JDialog.getGlassPane_MethodID_39, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JDialog.setGlassPane(java.awt.Component)
+
+    private static var setGlassPane_MethodID_40: jmethodID?
+
+    open func setGlassPane( glassPane: java_awt.Component? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: glassPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JDialog.setGlassPane_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open func setGlassPane( _ _glassPane: java_awt.Component? ) {
+        setGlassPane( glassPane: _glassPane )
+    }
+
+    /// public static void javax.swing.JDialog.setDefaultLookAndFeelDecorated(boolean)
+
+    private static var setDefaultLookAndFeelDecorated_MethodID_41: jmethodID?
+
+    open class func setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: defaultLookAndFeelDecorated, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JDialog", classCache: &JDialogJNIClass, methodName: "setDefaultLookAndFeelDecorated", methodSig: "(Z)V", methodCache: &setDefaultLookAndFeelDecorated_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open class func setDefaultLookAndFeelDecorated( _ _defaultLookAndFeelDecorated: Bool ) {
+        setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: _defaultLookAndFeelDecorated )
+    }
 
     /// In declared protocol but not defined.. ///
 
@@ -1219,10 +1219,10 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Dialog?, title: String?, modal: Bool, gc: java_awt.GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[4] = __local!.swiftValue()
@@ -1243,7 +1243,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Dialog?, title: String?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
 
@@ -1266,7 +1266,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Dialog?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1288,10 +1288,10 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Window?, title: String?, modalityType: java_awt.Dialog_ModalityType?, gc: java_awt.GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: modalityType, locals: &__locals )
+        __args[3] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[4] = __local!.swiftValue()
@@ -1312,9 +1312,9 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Window?, title: String?, modalityType: java_awt.Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: modalityType, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[3] = __local!.swiftValue()
@@ -1337,8 +1337,8 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Window?, modalityType: java_awt.Dialog_ModalityType? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: modalityType != nil ? modalityType! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
+        __args[1] = JNIType.toJava( value: modalityType, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[2] = __local!.swiftValue()
@@ -1359,7 +1359,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Frame?, title: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1381,7 +1381,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Frame?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: modal, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1403,7 +1403,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Frame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -1440,7 +1440,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Dialog?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: modal, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1462,7 +1462,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Dialog? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
@@ -1483,10 +1483,10 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Frame?, title: String?, modal: Bool, gc: java_awt.GraphicsConfiguration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
-        __args[3] = JNIType.toJava( value: gc != nil ? gc! as JNIObject : nil, locals: &__locals )
+        __args[3] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[4] = __local!.swiftValue()
@@ -1507,7 +1507,7 @@ open class JDialogBase: JDialog {
     public convenience init( owner: java_awt.Frame?, title: String?, modal: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: owner != nil ? owner! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: modal, locals: &__locals )
 

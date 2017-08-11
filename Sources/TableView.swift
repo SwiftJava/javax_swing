@@ -169,93 +169,15 @@ open class TableView: BoxView {
 
     /// static java.util.BitSet javax.swing.text.TableView.access$000()
 
-    /// protected void javax.swing.text.TableView.forwardUpdate(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var forwardUpdate_MethodID_3: jmethodID?
-
-    override open func forwardUpdate( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forwardUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &TableView.forwardUpdate_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func forwardUpdate( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        forwardUpdate( ec: _ec, e: _e, a: _a, f: _f )
-    }
-
-    /// protected javax.swing.SizeRequirements javax.swing.text.TableView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
-
-    private static var calculateMinorAxisRequirements_MethodID_4: jmethodID?
-
-    override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView.calculateMinorAxisRequirements_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SizeRequirements( javaObject: __return ) : nil
-    }
-
-    override open func calculateMinorAxisRequirements( _ _axis: Int, _ _r: SizeRequirements? ) -> SizeRequirements! {
-        return calculateMinorAxisRequirements( axis: _axis, r: _r )
-    }
-
-    /// protected void javax.swing.text.TableView.layoutMinorAxis(int,int,int[],int[])
-
-    private static var layoutMinorAxis_MethodID_5: jmethodID?
-
-    override open func layoutMinorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: targetSpan, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
-        __args[3] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView.layoutMinorAxis_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func layoutMinorAxis( _ _targetSpan: Int, _ _axis: Int, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
-        layoutMinorAxis( targetSpan: _targetSpan, axis: _axis, offsets: _offsets, spans: _spans )
-    }
-
-    /// protected javax.swing.text.View javax.swing.text.TableView.getViewAtPosition(int,java.awt.Rectangle)
-
-    private static var getViewAtPosition_MethodID_6: jmethodID?
-
-    override open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView.getViewAtPosition_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
-        return getViewAtPosition( pos: _pos, a: _a )
-    }
-
-    /// int javax.swing.text.TableView.getRowCount()
-
-    /// int javax.swing.text.TableView.getColumnCount()
-
-    /// javax.swing.text.TableView$TableRow javax.swing.text.TableView.getRow(int)
-
     /// protected javax.swing.text.TableView$TableRow javax.swing.text.TableView.createTableRow(javax.swing.text.Element)
 
-    private static var createTableRow_MethodID_7: jmethodID?
+    private static var createTableRow_MethodID_3: jmethodID?
 
     open func createTableRow( elem: Element? ) -> TableView_TableRow! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTableRow", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/text/TableView$TableRow;", methodCache: &TableView.createTableRow_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTableRow", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/text/TableView$TableRow;", methodCache: &TableView.createTableRow_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableView_TableRow( javaObject: __return ) : nil
     }
@@ -266,13 +188,13 @@ open class TableView: BoxView {
 
     /// protected javax.swing.text.TableView$TableCell javax.swing.text.TableView.createTableCell(javax.swing.text.Element)
 
-    private static var createTableCell_MethodID_8: jmethodID?
+    private static var createTableCell_MethodID_4: jmethodID?
 
     open func createTableCell( elem: Element? ) -> TableView_TableCell! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTableCell", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/text/TableView$TableCell;", methodCache: &TableView.createTableCell_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createTableCell", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/text/TableView$TableCell;", methodCache: &TableView.createTableCell_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableView_TableCell( javaObject: __return ) : nil
     }
@@ -297,7 +219,7 @@ open class TableView: BoxView {
 
     /// protected void javax.swing.text.TableView.layoutColumns(int,int[],int[],javax.swing.SizeRequirements[])
 
-    private static var layoutColumns_MethodID_9: jmethodID?
+    private static var layoutColumns_MethodID_5: jmethodID?
 
     open func layoutColumns( targetSpan: Int, offsets: [Int32]?, spans: [Int32]?, reqs: [SizeRequirements]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -306,7 +228,7 @@ open class TableView: BoxView {
         __args[1] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[2] = JNIType.toJava( value: spans, locals: &__locals )
         __args[3] = JNIType.toJava( value: reqs, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutColumns", methodSig: "(I[I[I[Ljavax/swing/SizeRequirements;)V", methodCache: &TableView.layoutColumns_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutColumns", methodSig: "(I[I[I[Ljavax/swing/SizeRequirements;)V", methodCache: &TableView.layoutColumns_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func layoutColumns( _ _targetSpan: Int, _ _offsets: [Int32]?, _ _spans: [Int32]?, _ _reqs: [SizeRequirements]? ) {
@@ -318,6 +240,84 @@ open class TableView: BoxView {
     /// void javax.swing.text.TableView.checkSingleColumnCell(int,int,javax.swing.text.View)
 
     /// void javax.swing.text.TableView.checkMultiColumnCell(int,int,int,javax.swing.text.View)
+
+    /// protected void javax.swing.text.TableView.forwardUpdate(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var forwardUpdate_MethodID_6: jmethodID?
+
+    override open func forwardUpdate( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forwardUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &TableView.forwardUpdate_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func forwardUpdate( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        forwardUpdate( ec: _ec, e: _e, a: _a, f: _f )
+    }
+
+    /// protected javax.swing.SizeRequirements javax.swing.text.TableView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
+
+    private static var calculateMinorAxisRequirements_MethodID_7: jmethodID?
+
+    override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView.calculateMinorAxisRequirements_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SizeRequirements( javaObject: __return ) : nil
+    }
+
+    override open func calculateMinorAxisRequirements( _ _axis: Int, _ _r: SizeRequirements? ) -> SizeRequirements! {
+        return calculateMinorAxisRequirements( axis: _axis, r: _r )
+    }
+
+    /// protected void javax.swing.text.TableView.layoutMinorAxis(int,int,int[],int[])
+
+    private static var layoutMinorAxis_MethodID_8: jmethodID?
+
+    override open func layoutMinorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: targetSpan, locals: &__locals )
+        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
+        __args[3] = JNIType.toJava( value: spans, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView.layoutMinorAxis_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func layoutMinorAxis( _ _targetSpan: Int, _ _axis: Int, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
+        layoutMinorAxis( targetSpan: _targetSpan, axis: _axis, offsets: _offsets, spans: _spans )
+    }
+
+    /// int javax.swing.text.TableView.getRowCount()
+
+    /// int javax.swing.text.TableView.getColumnCount()
+
+    /// javax.swing.text.TableView$TableRow javax.swing.text.TableView.getRow(int)
+
+    /// protected javax.swing.text.View javax.swing.text.TableView.getViewAtPosition(int,java.awt.Rectangle)
+
+    private static var getViewAtPosition_MethodID_9: jmethodID?
+
+    override open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView.getViewAtPosition_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
+        return getViewAtPosition( pos: _pos, a: _a )
+    }
 
 }
 

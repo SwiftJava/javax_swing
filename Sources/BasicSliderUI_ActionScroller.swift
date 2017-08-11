@@ -57,7 +57,7 @@ open class BasicSliderUI_ActionScroller: AbstractAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &BasicSliderUI_ActionScroller.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -91,8 +91,8 @@ open class BasicSliderUI_ActionScroller: AbstractAction {
     public convenience init( this_0: BasicSliderUI?, slider: JSlider?, dir: Int, block: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: slider != nil ? slider! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: slider, locals: &__locals )
         __args[2] = JNIType.toJava( value: dir, locals: &__locals )
         __args[3] = JNIType.toJava( value: block, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSliderUI$ActionScroller", classCache: &BasicSliderUI_ActionScroller.BasicSliderUI_ActionScrollerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSliderUI;Ljavax/swing/JSlider;IZ)V", methodCache: &BasicSliderUI_ActionScroller.new_MethodID_1, args: &__args, locals: &__locals )

@@ -52,7 +52,7 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
     public convenience init( this_0: AbstractDocument?, parent: Element?, a: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractDocument$AbstractElement", classCache: &AbstractDocument_AbstractElement.AbstractDocument_AbstractElementJNIClass, methodSig: "(Ljavax/swing/text/AbstractDocument;Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument_AbstractElement.new_MethodID_1, args: &__args, locals: &__locals )
@@ -115,7 +115,7 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
     open func isDefined( attrName: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attrName != nil ? attrName! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: attrName, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDefined", methodSig: "(Ljava/lang/Object;)Z", methodCache: &AbstractDocument_AbstractElement.isDefined_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -123,6 +123,8 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
     open func isDefined( _ _attrName: java_swift.JavaObject? ) -> Bool {
         return isDefined( attrName: _attrName )
     }
+
+    /// private final void javax.swing.text.AbstractDocument$AbstractElement.checkForIllegalCast()
 
     /// public javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AbstractElement.getResolveParent()
 
@@ -197,8 +199,8 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
     open func containsAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &AbstractDocument_AbstractElement.containsAttribute_MethodID_11, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -245,7 +247,7 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
     open func removeAttribute( name: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljava/lang/Object;)V", methodCache: &AbstractDocument_AbstractElement.removeAttribute_MethodID_14, args: &__args, locals: &__locals )
     }
 
@@ -253,45 +255,94 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
         removeAttribute( name: _name )
     }
 
-    /// public void javax.swing.text.AbstractDocument$AbstractElement.removeAttributes(javax.swing.text.AttributeSet)
-
-    private static var removeAttributes_MethodID_15: jmethodID?
-
-    open func removeAttributes( attributes: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument_AbstractElement.removeAttributes_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func removeAttributes( _ _attributes: AttributeSet? ) {
-        removeAttributes( attributes: _attributes )
-    }
-
     /// public void javax.swing.text.AbstractDocument$AbstractElement.removeAttributes(java.util.Enumeration)
 
-    private static var removeAttributes_MethodID_16: jmethodID?
+    private static var removeAttributes_MethodID_15: jmethodID?
 
     open func removeAttributes( names: java_util.Enumeration? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: names, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljava/util/Enumeration;)V", methodCache: &AbstractDocument_AbstractElement.removeAttributes_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljava/util/Enumeration;)V", methodCache: &AbstractDocument_AbstractElement.removeAttributes_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func removeAttributes( _ _names: java_util.Enumeration? ) {
         removeAttributes( names: _names )
     }
 
+    /// public void javax.swing.text.AbstractDocument$AbstractElement.removeAttributes(javax.swing.text.AttributeSet)
+
+    private static var removeAttributes_MethodID_16: jmethodID?
+
+    open func removeAttributes( attributes: AttributeSet? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractDocument_AbstractElement.removeAttributes_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func removeAttributes( _ _attributes: AttributeSet? ) {
+        removeAttributes( attributes: _attributes )
+    }
+
+    /// public abstract boolean javax.swing.text.AbstractDocument$AbstractElement.isLeaf()
+
+    private static var isLeaf_MethodID_17: jmethodID?
+
+    open func isLeaf() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "()Z", methodCache: &AbstractDocument_AbstractElement.isLeaf_MethodID_17, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.AbstractDocument$AbstractElement.getChildCount()
+
+    private static var getChildCount_MethodID_18: jmethodID?
+
+    open func getChildCount() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getChildCount", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getChildCount_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public abstract java.util.Enumeration javax.swing.text.AbstractDocument$AbstractElement.children()
+
+    private static var children_MethodID_19: jmethodID?
+
+    open func children() -> java_util.Enumeration! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "children", methodSig: "()Ljava/util/Enumeration;", methodCache: &AbstractDocument_AbstractElement.children_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract boolean javax.swing.text.AbstractDocument$AbstractElement.getAllowsChildren()
+
+    private static var getAllowsChildren_MethodID_20: jmethodID?
+
+    open func getAllowsChildren() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsChildren", methodSig: "()Z", methodCache: &AbstractDocument_AbstractElement.getAllowsChildren_MethodID_20, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
     /// public javax.swing.tree.TreeNode javax.swing.text.AbstractDocument$AbstractElement.getChildAt(int)
 
-    private static var getChildAt_MethodID_17: jmethodID?
+    private static var getChildAt_MethodID_21: jmethodID?
 
     open func getChildAt( childIndex: Int ) -> TreeNode! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: childIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAt", methodSig: "(I)Ljavax/swing/tree/TreeNode;", methodCache: &AbstractDocument_AbstractElement.getChildAt_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAt", methodSig: "(I)Ljavax/swing/tree/TreeNode;", methodCache: &AbstractDocument_AbstractElement.getChildAt_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreeNodeForward( javaObject: __return ) : nil
     }
@@ -300,146 +351,60 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
         return getChildAt( childIndex: _childIndex )
     }
 
-    /// public void javax.swing.text.AbstractDocument$AbstractElement.dump(java.io.PrintStream,int)
+    /// public javax.swing.text.Document javax.swing.text.AbstractDocument$AbstractElement.getDocument()
 
-    private static var dump_MethodID_18: jmethodID?
+    private static var getDocument_MethodID_22: jmethodID?
 
-    open func dump( psOut: /* java.io.PrintStream */ UnclassedObject?, indentAmount: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getDocument() -> Document! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: psOut != nil ? psOut! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: indentAmount, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dump", methodSig: "(Ljava/io/PrintStream;I)V", methodCache: &AbstractDocument_AbstractElement.dump_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractDocument_AbstractElement.getDocument_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
     }
 
-    open func dump( _ _psOut: /* java.io.PrintStream */ UnclassedObject?, _ _indentAmount: Int ) {
-        dump( psOut: _psOut, indentAmount: _indentAmount )
-    }
 
     /// public void javax.swing.text.AbstractDocument$AbstractElement.addAttribute(java.lang.Object,java.lang.Object)
 
-    private static var addAttribute_MethodID_19: jmethodID?
+    private static var addAttribute_MethodID_23: jmethodID?
 
     open func addAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractDocument_AbstractElement.addAttribute_MethodID_19, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractDocument_AbstractElement.addAttribute_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func addAttribute( _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
         addAttribute( name: _name, value: _value )
     }
 
-    /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getElementIndex(int)
+    /// public void javax.swing.text.AbstractDocument$AbstractElement.dump(java.io.PrintStream,int)
 
-    private static var getElementIndex_MethodID_20: jmethodID?
+    private static var dump_MethodID_24: jmethodID?
 
-    open func getElementIndex( offset: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func dump( psOut: /* java.io.PrintStream */ UnclassedObject?, indentAmount: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getElementIndex", methodSig: "(I)I", methodCache: &AbstractDocument_AbstractElement.getElementIndex_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = JNIType.toJava( value: psOut, locals: &__locals )
+        __args[1] = JNIType.toJava( value: indentAmount, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dump", methodSig: "(Ljava/io/PrintStream;I)V", methodCache: &AbstractDocument_AbstractElement.dump_MethodID_24, args: &__args, locals: &__locals )
     }
 
-    open func getElementIndex( _ _offset: Int ) -> Int {
-        return getElementIndex( offset: _offset )
+    open func dump( _ _psOut: /* java.io.PrintStream */ UnclassedObject?, _ _indentAmount: Int ) {
+        dump( psOut: _psOut, indentAmount: _indentAmount )
     }
-
-    /// public abstract javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.getElement(int)
-
-    private static var getElement_MethodID_21: jmethodID?
-
-    open func getElement( index: Int ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &AbstractDocument_AbstractElement.getElement_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-    open func getElement( _ _index: Int ) -> Element! {
-        return getElement( index: _index )
-    }
-
-    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.getParentElement()
-
-    private static var getParentElement_MethodID_22: jmethodID?
-
-    open func getParentElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParentElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &AbstractDocument_AbstractElement.getParentElement_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getEndOffset()
-
-    private static var getEndOffset_MethodID_23: jmethodID?
-
-    open func getEndOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getEndOffset_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getStartOffset()
-
-    private static var getStartOffset_MethodID_24: jmethodID?
-
-    open func getStartOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getStartOffset_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.text.AbstractDocument$AbstractElement.isEqual(javax.swing.text.AttributeSet)
-
-    private static var isEqual_MethodID_25: jmethodID?
-
-    open func isEqual( attr: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &AbstractDocument_AbstractElement.isEqual_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isEqual( _ _attr: AttributeSet? ) -> Bool {
-        return isEqual( attr: _attr )
-    }
-
-    /// public javax.swing.text.Document javax.swing.text.AbstractDocument$AbstractElement.getDocument()
-
-    private static var getDocument_MethodID_26: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractDocument_AbstractElement.getDocument_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
 
     /// public java.lang.Object javax.swing.text.AbstractDocument$AbstractElement.getAttribute(java.lang.Object)
 
-    private static var getAttribute_MethodID_27: jmethodID?
+    private static var getAttribute_MethodID_25: jmethodID?
 
     open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &AbstractDocument_AbstractElement.getAttribute_MethodID_27, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &AbstractDocument_AbstractElement.getAttribute_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -450,50 +415,25 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
 
     /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getElementCount()
 
-    private static var getElementCount_MethodID_28: jmethodID?
+    private static var getElementCount_MethodID_26: jmethodID?
 
     open func getElementCount() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getElementCount", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getElementCount_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getElementCount", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getElementCount_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract java.util.Enumeration javax.swing.text.AbstractDocument$AbstractElement.children()
-
-    private static var children_MethodID_29: jmethodID?
-
-    open func children() -> java_util.Enumeration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "children", methodSig: "()Ljava/util/Enumeration;", methodCache: &AbstractDocument_AbstractElement.children_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract boolean javax.swing.text.AbstractDocument$AbstractElement.getAllowsChildren()
-
-    private static var getAllowsChildren_MethodID_30: jmethodID?
-
-    open func getAllowsChildren() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsChildren", methodSig: "()Z", methodCache: &AbstractDocument_AbstractElement.getAllowsChildren_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public int javax.swing.text.AbstractDocument$AbstractElement.getIndex(javax.swing.tree.TreeNode)
 
-    private static var getIndex_MethodID_31: jmethodID?
+    private static var getIndex_MethodID_27: jmethodID?
 
     open func getIndex( node: TreeNode? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: node, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "(Ljavax/swing/tree/TreeNode;)I", methodCache: &AbstractDocument_AbstractElement.getIndex_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "(Ljavax/swing/tree/TreeNode;)I", methodCache: &AbstractDocument_AbstractElement.getIndex_MethodID_27, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -501,31 +441,91 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
         return getIndex( node: _node )
     }
 
-    /// public abstract boolean javax.swing.text.AbstractDocument$AbstractElement.isLeaf()
+    /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getElementIndex(int)
 
-    private static var isLeaf_MethodID_32: jmethodID?
+    private static var getElementIndex_MethodID_28: jmethodID?
 
-    open func isLeaf() -> Bool {
+    open func getElementIndex( offset: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLeaf", methodSig: "()Z", methodCache: &AbstractDocument_AbstractElement.isLeaf_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getElementIndex", methodSig: "(I)I", methodCache: &AbstractDocument_AbstractElement.getElementIndex_MethodID_28, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getElementIndex( _ _offset: Int ) -> Int {
+        return getElementIndex( offset: _offset )
+    }
+
+    /// public abstract javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.getElement(int)
+
+    private static var getElement_MethodID_29: jmethodID?
+
+    open func getElement( index: Int ) -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &AbstractDocument_AbstractElement.getElement_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+    open func getElement( _ _index: Int ) -> Element! {
+        return getElement( index: _index )
+    }
+
+    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.getParentElement()
+
+    private static var getParentElement_MethodID_30: jmethodID?
+
+    open func getParentElement() -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParentElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &AbstractDocument_AbstractElement.getParentElement_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
 
 
-    /// public int javax.swing.text.AbstractDocument$AbstractElement.getChildCount()
+    /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getEndOffset()
 
-    private static var getChildCount_MethodID_33: jmethodID?
+    private static var getEndOffset_MethodID_31: jmethodID?
 
-    open func getChildCount() -> Int {
+    open func getEndOffset() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getChildCount", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getChildCount_MethodID_33, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getEndOffset_MethodID_31, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
-    /// private final void javax.swing.text.AbstractDocument$AbstractElement.checkForIllegalCast()
+    /// public abstract int javax.swing.text.AbstractDocument$AbstractElement.getStartOffset()
+
+    private static var getStartOffset_MethodID_32: jmethodID?
+
+    open func getStartOffset() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &AbstractDocument_AbstractElement.getStartOffset_MethodID_32, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.text.AbstractDocument$AbstractElement.isEqual(javax.swing.text.AttributeSet)
+
+    private static var isEqual_MethodID_33: jmethodID?
+
+    open func isEqual( attr: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &AbstractDocument_AbstractElement.isEqual_MethodID_33, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isEqual( _ _attr: AttributeSet? ) -> Bool {
+        return isEqual( attr: _attr )
+    }
 
 }
 

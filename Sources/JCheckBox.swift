@@ -210,7 +210,7 @@ open class JCheckBox: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JCheckBox.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -297,7 +297,7 @@ open class JCheckBox: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JCheckBox.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -314,7 +314,7 @@ open class JCheckBox: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JCheckBox.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -691,7 +691,7 @@ open class JCheckBox: JToggleButton {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JCheckBox.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -866,12 +866,6 @@ open class JCheckBox: JToggleButton {
     }
 
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JCheckBox.getAccessibleContext()
-
-    /// public void javax.swing.JCheckBox.updateUI()
-
-    /// public java.lang.String javax.swing.JCheckBox.getUIClassID()
-
     /// public void javax.swing.JCheckBox.setBorderPaintedFlat(boolean)
 
     private static var setBorderPaintedFlat_MethodID_10: jmethodID?
@@ -900,6 +894,12 @@ open class JCheckBox: JToggleButton {
 
 
     /// void javax.swing.JCheckBox.setIconFromAction(javax.swing.Action)
+
+    /// public void javax.swing.JCheckBox.updateUI()
+
+    /// public java.lang.String javax.swing.JCheckBox.getUIClassID()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JCheckBox.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

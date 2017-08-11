@@ -611,7 +611,7 @@ open class MenuKeyEvent: java_awt.KeyEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MenuKeyEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -623,14 +623,14 @@ open class MenuKeyEvent: java_awt.KeyEvent {
     public convenience init( source: java_awt.Component?, id: Int, when: Int64, modifiers: Int, keyCode: Int, keyChar: UInt16, p: [MenuElement]?, m: MenuSelectionManager? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         __args[2] = JNIType.toJava( value: when, locals: &__locals )
         __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
         __args[4] = JNIType.toJava( value: keyCode, locals: &__locals )
         __args[5] = JNIType.toJava( value: keyChar, locals: &__locals )
         __args[6] = JNIType.toJava( value: p, locals: &__locals )
-        __args[7] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
+        __args[7] = JNIType.toJava( value: m, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/MenuKeyEvent", classCache: &MenuKeyEvent.MenuKeyEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIC[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &MenuKeyEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

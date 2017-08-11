@@ -36,7 +36,7 @@ open class FileView: java_swift.JavaObject {
     open func getName( f: /* java.io.File */ UnclassedObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &FileView.getName_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
@@ -45,15 +45,32 @@ open class FileView: java_swift.JavaObject {
         return getName( f: _f )
     }
 
+    /// public javax.swing.Icon javax.swing.filechooser.FileView.getIcon(java.io.File)
+
+    private static var getIcon_MethodID_3: jmethodID?
+
+    open func getIcon( f: /* java.io.File */ UnclassedObject? ) -> Icon! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/io/File;)Ljavax/swing/Icon;", methodCache: &FileView.getIcon_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    open func getIcon( _ _f: /* java.io.File */ UnclassedObject? ) -> Icon! {
+        return getIcon( f: _f )
+    }
+
     /// public java.lang.String javax.swing.filechooser.FileView.getTypeDescription(java.io.File)
 
-    private static var getTypeDescription_MethodID_3: jmethodID?
+    private static var getTypeDescription_MethodID_4: jmethodID?
 
     open func getTypeDescription( f: /* java.io.File */ UnclassedObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTypeDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &FileView.getTypeDescription_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTypeDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &FileView.getTypeDescription_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }
 
@@ -63,36 +80,19 @@ open class FileView: java_swift.JavaObject {
 
     /// public java.lang.Boolean javax.swing.filechooser.FileView.isTraversable(java.io.File)
 
-    private static var isTraversable_MethodID_4: jmethodID?
+    private static var isTraversable_MethodID_5: jmethodID?
 
     open func isTraversable( f: /* java.io.File */ UnclassedObject? ) -> java_lang.Boolean! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "isTraversable", methodSig: "(Ljava/io/File;)Ljava/lang/Boolean;", methodCache: &FileView.isTraversable_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "isTraversable", methodSig: "(Ljava/io/File;)Ljava/lang/Boolean;", methodCache: &FileView.isTraversable_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.Boolean( javaObject: __return ) : nil
     }
 
     open func isTraversable( _ _f: /* java.io.File */ UnclassedObject? ) -> java_lang.Boolean! {
         return isTraversable( f: _f )
-    }
-
-    /// public javax.swing.Icon javax.swing.filechooser.FileView.getIcon(java.io.File)
-
-    private static var getIcon_MethodID_5: jmethodID?
-
-    open func getIcon( f: /* java.io.File */ UnclassedObject? ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "(Ljava/io/File;)Ljavax/swing/Icon;", methodCache: &FileView.getIcon_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    open func getIcon( _ _f: /* java.io.File */ UnclassedObject? ) -> Icon! {
-        return getIcon( f: _f )
     }
 
     /// public java.lang.String javax.swing.filechooser.FileView.getDescription(java.io.File)
@@ -102,7 +102,7 @@ open class FileView: java_swift.JavaObject {
     open func getDescription( f: /* java.io.File */ UnclassedObject? ) -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "(Ljava/io/File;)Ljava/lang/String;", methodCache: &FileView.getDescription_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
     }

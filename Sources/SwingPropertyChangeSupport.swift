@@ -35,7 +35,7 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
     public convenience init( sourceBean: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sourceBean != nil ? sourceBean! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sourceBean, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/SwingPropertyChangeSupport", classCache: &SwingPropertyChangeSupport.SwingPropertyChangeSupportJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &SwingPropertyChangeSupport.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -52,7 +52,7 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
     public convenience init( sourceBean: java_swift.JavaObject?, notifyOnEDT: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: sourceBean != nil ? sourceBean! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: sourceBean, locals: &__locals )
         __args[1] = JNIType.toJava( value: notifyOnEDT, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/SwingPropertyChangeSupport", classCache: &SwingPropertyChangeSupport.SwingPropertyChangeSupportJNIClass, methodSig: "(Ljava/lang/Object;Z)V", methodCache: &SwingPropertyChangeSupport.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -70,7 +70,7 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
     open func firePropertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SwingPropertyChangeSupport.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
     }
 

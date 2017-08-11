@@ -15,13 +15,13 @@ public protocol DocumentEvent_ElementChange: JavaProtocol {
 
     func getChildrenAdded() -> [Element]!
 
-    /// public abstract javax.swing.text.Element javax.swing.event.DocumentEvent$ElementChange.getElement()
-
-    func getElement() -> Element!
-
     /// public abstract int javax.swing.event.DocumentEvent$ElementChange.getIndex()
 
     func getIndex() -> Int
+
+    /// public abstract javax.swing.text.Element javax.swing.event.DocumentEvent$ElementChange.getElement()
+
+    func getElement() -> Element!
 
 }
 
@@ -54,28 +54,28 @@ open class DocumentEvent_ElementChangeForward: JNIObjectForward, DocumentEvent_E
     }
 
 
-    /// public abstract javax.swing.text.Element javax.swing.event.DocumentEvent$ElementChange.getElement()
-
-    private static var getElement_MethodID_7: jmethodID?
-
-    open func getElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DocumentEvent_ElementChangeForward.getElement_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-
     /// public abstract int javax.swing.event.DocumentEvent$ElementChange.getIndex()
 
-    private static var getIndex_MethodID_8: jmethodID?
+    private static var getIndex_MethodID_7: jmethodID?
 
     open func getIndex() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &DocumentEvent_ElementChangeForward.getIndex_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &DocumentEvent_ElementChangeForward.getIndex_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public abstract javax.swing.text.Element javax.swing.event.DocumentEvent$ElementChange.getElement()
+
+    private static var getElement_MethodID_8: jmethodID?
+
+    open func getElement() -> Element! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DocumentEvent_ElementChangeForward.getElement_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
 
 

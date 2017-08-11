@@ -52,7 +52,7 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
     public convenience init( this_0: StyleContext?, attributes: [JavaObject]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: attributes, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$SmallAttributeSet", classCache: &StyleContext_SmallAttributeSet.StyleContext_SmallAttributeSetJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;[Ljava/lang/Object;)V", methodCache: &StyleContext_SmallAttributeSet.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -70,7 +70,7 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
     public convenience init( this_0: StyleContext?, attrs: AttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: attrs, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$SmallAttributeSet", classCache: &StyleContext_SmallAttributeSet.StyleContext_SmallAttributeSetJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_SmallAttributeSet.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -88,7 +88,7 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: obj != nil ? obj! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &StyleContext_SmallAttributeSet.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -121,7 +121,7 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
     open func isDefined( attrName: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attrName != nil ? attrName! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: attrName, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDefined", methodSig: "(Ljava/lang/Object;)Z", methodCache: &StyleContext_SmallAttributeSet.isDefined_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -188,8 +188,8 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
     open func containsAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name != nil ? name! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value != nil ? value! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &StyleContext_SmallAttributeSet.containsAttribute_MethodID_10, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -214,31 +214,15 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
         return containsAttributes( attributes: _attributes )
     }
 
-    /// public boolean javax.swing.text.StyleContext$SmallAttributeSet.isEqual(javax.swing.text.AttributeSet)
-
-    private static var isEqual_MethodID_12: jmethodID?
-
-    open func isEqual( attr: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_SmallAttributeSet.isEqual_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isEqual( _ _attr: AttributeSet? ) -> Bool {
-        return isEqual( attr: _attr )
-    }
-
     /// public java.lang.Object javax.swing.text.StyleContext$SmallAttributeSet.getAttribute(java.lang.Object)
 
-    private static var getAttribute_MethodID_13: jmethodID?
+    private static var getAttribute_MethodID_12: jmethodID?
 
     open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyleContext_SmallAttributeSet.getAttribute_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyleContext_SmallAttributeSet.getAttribute_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -250,6 +234,22 @@ open class StyleContext_SmallAttributeSet: java_swift.JavaObject, AttributeSet {
     /// private void javax.swing.text.StyleContext$SmallAttributeSet.updateResolveParent()
 
     /// java.lang.Object javax.swing.text.StyleContext$SmallAttributeSet.getLocalAttribute(java.lang.Object)
+
+    /// public boolean javax.swing.text.StyleContext$SmallAttributeSet.isEqual(javax.swing.text.AttributeSet)
+
+    private static var isEqual_MethodID_13: jmethodID?
+
+    open func isEqual( attr: AttributeSet? ) -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_SmallAttributeSet.isEqual_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+    open func isEqual( _ _attr: AttributeSet? ) -> Bool {
+        return isEqual( attr: _attr )
+    }
 
 }
 

@@ -686,6 +686,14 @@ open class Region: java_swift.JavaObject {
     }
 
 
+    /// static void javax.swing.plaf.synth.Region.registerUIs(javax.swing.UIDefaults)
+
+    /// private static java.util.Map javax.swing.plaf.synth.Region.getUItoRegionMap()
+
+    /// private static java.util.Map javax.swing.plaf.synth.Region.getLowerCaseNameMap()
+
+    /// java.lang.String javax.swing.plaf.synth.Region.getLowerCaseName()
+
     /// static javax.swing.plaf.synth.Region javax.swing.plaf.synth.Region.getRegion(javax.swing.JComponent)
 
     /// public boolean javax.swing.plaf.synth.Region.isSubregion()
@@ -699,14 +707,6 @@ open class Region: java_swift.JavaObject {
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
-
-    /// java.lang.String javax.swing.plaf.synth.Region.getLowerCaseName()
-
-    /// static void javax.swing.plaf.synth.Region.registerUIs(javax.swing.UIDefaults)
-
-    /// private static java.util.Map javax.swing.plaf.synth.Region.getUItoRegionMap()
-
-    /// private static java.util.Map javax.swing.plaf.synth.Region.getLowerCaseNameMap()
 
 }
 

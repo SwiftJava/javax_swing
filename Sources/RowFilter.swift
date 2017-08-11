@@ -39,7 +39,7 @@ open class RowFilter: java_swift.JavaObject {
     open func include( entry: RowFilter_Entry? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: entry != nil ? entry! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: entry, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "include", methodSig: "(Ljavax/swing/RowFilter$Entry;)Z", methodCache: &RowFilter.include_MethodID_2, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -75,8 +75,8 @@ open class RowFilter: java_swift.JavaObject {
     open class func dateFilter( type: RowFilter_ComparisonType?, date: java_util.Date?, indices: [Int32]? ) -> RowFilter! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: date != nil ? date! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: date, locals: &__locals )
         __args[2] = JNIType.toJava( value: indices, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "dateFilter", methodSig: "(Ljavax/swing/RowFilter$ComparisonType;Ljava/util/Date;[I)Ljavax/swing/RowFilter;", methodCache: &dateFilter_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -94,8 +94,8 @@ open class RowFilter: java_swift.JavaObject {
     open class func numberFilter( type: RowFilter_ComparisonType?, number: java_lang.Number?, indices: [Int32]? ) -> RowFilter! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type != nil ? type! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: number != nil ? number! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: number, locals: &__locals )
         __args[2] = JNIType.toJava( value: indices, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "numberFilter", methodSig: "(Ljavax/swing/RowFilter$ComparisonType;Ljava/lang/Number;[I)Ljavax/swing/RowFilter;", methodCache: &numberFilter_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -147,7 +147,7 @@ open class RowFilter: java_swift.JavaObject {
     open class func notFilter( filter: RowFilter? ) -> RowFilter! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: filter != nil ? filter! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: filter, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "notFilter", methodSig: "(Ljavax/swing/RowFilter;)Ljavax/swing/RowFilter;", methodCache: &notFilter_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RowFilter( javaObject: __return ) : nil

@@ -57,7 +57,7 @@ open class JPanel: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JPanel.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -74,7 +74,7 @@ open class JPanel: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JPanel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -451,7 +451,7 @@ open class JPanel: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JPanel.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -552,19 +552,30 @@ open class JPanel: JComponent {
     }
 
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JPanel.getAccessibleContext()
+    /// public javax.swing.plaf.PanelUI javax.swing.JPanel.getUI()
+
+    private static var getUI_MethodID_6: jmethodID?
+
+    open func getUI() -> PanelUI! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/PanelUI;", methodCache: &JPanel.getUI_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PanelUI( javaObject: __return ) : nil
+    }
+
 
     /// public void javax.swing.JPanel.updateUI()
 
     /// public void javax.swing.JPanel.setUI(javax.swing.plaf.PanelUI)
 
-    private static var setUI_MethodID_6: jmethodID?
+    private static var setUI_MethodID_7: jmethodID?
 
     open func setUI( ui: PanelUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/PanelUI;)V", methodCache: &JPanel.setUI_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/PanelUI;)V", methodCache: &JPanel.setUI_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: PanelUI? ) {
@@ -573,18 +584,7 @@ open class JPanel: JComponent {
 
     /// public java.lang.String javax.swing.JPanel.getUIClassID()
 
-    /// public javax.swing.plaf.PanelUI javax.swing.JPanel.getUI()
-
-    private static var getUI_MethodID_7: jmethodID?
-
-    open func getUI() -> PanelUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/PanelUI;", methodCache: &JPanel.getUI_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PanelUI( javaObject: __return ) : nil
-    }
-
+    /// public javax.accessibility.AccessibleContext javax.swing.JPanel.getAccessibleContext()
 
     /// In declared protocol but not defined.. ///
 

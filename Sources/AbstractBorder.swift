@@ -29,55 +29,20 @@ open class AbstractBorder: java_swift.JavaObject, Border, /* java.io.Serializabl
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public int javax.swing.border.AbstractBorder.getBaseline(java.awt.Component,int,int)
-
-    private static var getBaseline_MethodID_2: jmethodID?
-
-    open func getBaseline( c: java_awt.Component?, width: Int, height: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        __args[2] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(Ljava/awt/Component;II)I", methodCache: &AbstractBorder.getBaseline_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getBaseline( _ _c: java_awt.Component?, _ _width: Int, _ _height: Int ) -> Int {
-        return getBaseline( c: _c, width: _width, height: _height )
-    }
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.border.AbstractBorder.getBaselineResizeBehavior(java.awt.Component)
-
-    private static var getBaselineResizeBehavior_MethodID_3: jmethodID?
-
-    open func getBaselineResizeBehavior( c: java_awt.Component? ) -> java_awt.Component_BaselineResizeBehavior! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineResizeBehavior", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component$BaselineResizeBehavior;", methodCache: &AbstractBorder.getBaselineResizeBehavior_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component_BaselineResizeBehavior( javaObject: __return ) : nil
-    }
-
-    open func getBaselineResizeBehavior( _ _c: java_awt.Component? ) -> java_awt.Component_BaselineResizeBehavior! {
-        return getBaselineResizeBehavior( c: _c )
-    }
-
     /// public void javax.swing.border.AbstractBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
-    private static var paintBorder_MethodID_4: jmethodID?
+    private static var paintBorder_MethodID_2: jmethodID?
 
     open func paintBorder( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: width, locals: &__locals )
         __args[5] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;IIII)V", methodCache: &AbstractBorder.paintBorder_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;IIII)V", methodCache: &AbstractBorder.paintBorder_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func paintBorder( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
@@ -86,14 +51,14 @@ open class AbstractBorder: java_swift.JavaObject, Border, /* java.io.Serializabl
 
     /// public java.awt.Insets javax.swing.border.AbstractBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
 
-    private static var getBorderInsets_MethodID_5: jmethodID?
+    private static var getBorderInsets_MethodID_3: jmethodID?
 
     open func getBorderInsets( c: java_awt.Component?, insets: java_awt.Insets? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: insets != nil ? insets! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;Ljava/awt/Insets;)Ljava/awt/Insets;", methodCache: &AbstractBorder.getBorderInsets_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: insets, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;Ljava/awt/Insets;)Ljava/awt/Insets;", methodCache: &AbstractBorder.getBorderInsets_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -104,13 +69,13 @@ open class AbstractBorder: java_swift.JavaObject, Border, /* java.io.Serializabl
 
     /// public java.awt.Insets javax.swing.border.AbstractBorder.getBorderInsets(java.awt.Component)
 
-    private static var getBorderInsets_MethodID_6: jmethodID?
+    private static var getBorderInsets_MethodID_4: jmethodID?
 
     open func getBorderInsets( c: java_awt.Component? ) -> java_awt.Insets! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;)Ljava/awt/Insets;", methodCache: &AbstractBorder.getBorderInsets_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorderInsets", methodSig: "(Ljava/awt/Component;)Ljava/awt/Insets;", methodCache: &AbstractBorder.getBorderInsets_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
     }
@@ -121,30 +86,30 @@ open class AbstractBorder: java_swift.JavaObject, Border, /* java.io.Serializabl
 
     /// public boolean javax.swing.border.AbstractBorder.isBorderOpaque()
 
-    private static var isBorderOpaque_MethodID_7: jmethodID?
+    private static var isBorderOpaque_MethodID_5: jmethodID?
 
     open func isBorderOpaque() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderOpaque", methodSig: "()Z", methodCache: &AbstractBorder.isBorderOpaque_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderOpaque", methodSig: "()Z", methodCache: &AbstractBorder.isBorderOpaque_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public static java.awt.Rectangle javax.swing.border.AbstractBorder.getInteriorRectangle(java.awt.Component,javax.swing.border.Border,int,int,int,int)
 
-    private static var getInteriorRectangle_MethodID_8: jmethodID?
+    private static var getInteriorRectangle_MethodID_6: jmethodID?
 
     open class func getInteriorRectangle( c: java_awt.Component?, b: Border?, x: Int, y: Int, width: Int, height: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: width, locals: &__locals )
         __args[5] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/border/AbstractBorder", classCache: &AbstractBorderJNIClass, methodName: "getInteriorRectangle", methodSig: "(Ljava/awt/Component;Ljavax/swing/border/Border;IIII)Ljava/awt/Rectangle;", methodCache: &getInteriorRectangle_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/border/AbstractBorder", classCache: &AbstractBorderJNIClass, methodName: "getInteriorRectangle", methodSig: "(Ljava/awt/Component;Ljavax/swing/border/Border;IIII)Ljava/awt/Rectangle;", methodCache: &getInteriorRectangle_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -155,23 +120,58 @@ open class AbstractBorder: java_swift.JavaObject, Border, /* java.io.Serializabl
 
     /// public java.awt.Rectangle javax.swing.border.AbstractBorder.getInteriorRectangle(java.awt.Component,int,int,int,int)
 
-    private static var getInteriorRectangle_MethodID_9: jmethodID?
+    private static var getInteriorRectangle_MethodID_7: jmethodID?
 
     open func getInteriorRectangle( c: java_awt.Component?, x: Int, y: Int, width: Int, height: Int ) -> java_awt.Rectangle! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: width, locals: &__locals )
         __args[4] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInteriorRectangle", methodSig: "(Ljava/awt/Component;IIII)Ljava/awt/Rectangle;", methodCache: &AbstractBorder.getInteriorRectangle_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInteriorRectangle", methodSig: "(Ljava/awt/Component;IIII)Ljava/awt/Rectangle;", methodCache: &AbstractBorder.getInteriorRectangle_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
 
     open func getInteriorRectangle( _ _c: java_awt.Component?, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) -> java_awt.Rectangle! {
         return getInteriorRectangle( c: _c, x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// public int javax.swing.border.AbstractBorder.getBaseline(java.awt.Component,int,int)
+
+    private static var getBaseline_MethodID_8: jmethodID?
+
+    open func getBaseline( c: java_awt.Component?, width: Int, height: Int ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: width, locals: &__locals )
+        __args[2] = JNIType.toJava( value: height, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaseline", methodSig: "(Ljava/awt/Component;II)I", methodCache: &AbstractBorder.getBaseline_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getBaseline( _ _c: java_awt.Component?, _ _width: Int, _ _height: Int ) -> Int {
+        return getBaseline( c: _c, width: _width, height: _height )
+    }
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.border.AbstractBorder.getBaselineResizeBehavior(java.awt.Component)
+
+    private static var getBaselineResizeBehavior_MethodID_9: jmethodID?
+
+    open func getBaselineResizeBehavior( c: java_awt.Component? ) -> java_awt.Component_BaselineResizeBehavior! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBaselineResizeBehavior", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component$BaselineResizeBehavior;", methodCache: &AbstractBorder.getBaselineResizeBehavior_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component_BaselineResizeBehavior( javaObject: __return ) : nil
+    }
+
+    open func getBaselineResizeBehavior( _ _c: java_awt.Component? ) -> java_awt.Component_BaselineResizeBehavior! {
+        return getBaselineResizeBehavior( c: _c )
     }
 
     /// static boolean javax.swing.border.AbstractBorder.isLeftToRight(java.awt.Component)

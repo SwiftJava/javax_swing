@@ -138,7 +138,7 @@ open class JLayeredPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JLayeredPane.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -155,7 +155,7 @@ open class JLayeredPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JLayeredPane.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -532,7 +532,7 @@ open class JLayeredPane: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JLayeredPane.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -596,21 +596,27 @@ open class JLayeredPane: JComponent {
 
     /// public void javax.swing.JLayeredPane.removeAll()
 
-    /// public static int javax.swing.JLayeredPane.getLayer(javax.swing.JComponent)
+    /// public int javax.swing.JLayeredPane.getPosition(java.awt.Component)
 
-    private static var getLayer_MethodID_4: jmethodID?
+    private static var getPosition_MethodID_4: jmethodID?
 
-    open class func getLayer( c: JComponent? ) -> Int {
+    open func getPosition( c: java_awt.Component? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass, methodName: "getLayer", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &getLayer_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPosition", methodSig: "(Ljava/awt/Component;)I", methodCache: &JLayeredPane.getPosition_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
-    open class func getLayer( _ _c: JComponent? ) -> Int {
-        return getLayer( c: _c )
+    open func getPosition( _ _c: java_awt.Component? ) -> Int {
+        return getPosition( c: _c )
     }
+
+    /// public void javax.swing.JLayeredPane.paint(java.awt.Graphics)
+
+    /// public boolean javax.swing.JLayeredPane.isOptimizedDrawingEnabled()
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JLayeredPane.getAccessibleContext()
 
     /// public int javax.swing.JLayeredPane.getLayer(java.awt.Component)
 
@@ -619,7 +625,7 @@ open class JLayeredPane: JComponent {
     open func getLayer( c: java_awt.Component? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayer", methodSig: "(Ljava/awt/Component;)I", methodCache: &JLayeredPane.getLayer_MethodID_5, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
@@ -628,16 +634,32 @@ open class JLayeredPane: JComponent {
         return getLayer( c: _c )
     }
 
+    /// public static int javax.swing.JLayeredPane.getLayer(javax.swing.JComponent)
+
+    private static var getLayer_MethodID_6: jmethodID?
+
+    open class func getLayer( c: JComponent? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass, methodName: "getLayer", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &getLayer_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open class func getLayer( _ _c: JComponent? ) -> Int {
+        return getLayer( c: _c )
+    }
+
     /// public static void javax.swing.JLayeredPane.putLayer(javax.swing.JComponent,int)
 
-    private static var putLayer_MethodID_6: jmethodID?
+    private static var putLayer_MethodID_7: jmethodID?
 
     open class func putLayer( c: JComponent?, layer: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: layer, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass, methodName: "putLayer", methodSig: "(Ljavax/swing/JComponent;I)V", methodCache: &putLayer_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass, methodName: "putLayer", methodSig: "(Ljavax/swing/JComponent;I)V", methodCache: &putLayer_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open class func putLayer( _ _c: JComponent?, _ _layer: Int ) {
@@ -646,13 +668,13 @@ open class JLayeredPane: JComponent {
 
     /// public void javax.swing.JLayeredPane.moveToFront(java.awt.Component)
 
-    private static var moveToFront_MethodID_7: jmethodID?
+    private static var moveToFront_MethodID_8: jmethodID?
 
     open func moveToFront( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToFront", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLayeredPane.moveToFront_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToFront", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLayeredPane.moveToFront_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func moveToFront( _ _c: java_awt.Component? ) {
@@ -661,13 +683,13 @@ open class JLayeredPane: JComponent {
 
     /// public void javax.swing.JLayeredPane.moveToBack(java.awt.Component)
 
-    private static var moveToBack_MethodID_8: jmethodID?
+    private static var moveToBack_MethodID_9: jmethodID?
 
     open func moveToBack( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToBack", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLayeredPane.moveToBack_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "moveToBack", methodSig: "(Ljava/awt/Component;)V", methodCache: &JLayeredPane.moveToBack_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func moveToBack( _ _c: java_awt.Component? ) {
@@ -676,15 +698,15 @@ open class JLayeredPane: JComponent {
 
     /// public void javax.swing.JLayeredPane.setLayer(java.awt.Component,int,int)
 
-    private static var setLayer_MethodID_9: jmethodID?
+    private static var setLayer_MethodID_10: jmethodID?
 
     open func setLayer( c: java_awt.Component?, layer: Int, position: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: layer, locals: &__locals )
         __args[2] = JNIType.toJava( value: position, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(Ljava/awt/Component;II)V", methodCache: &JLayeredPane.setLayer_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(Ljava/awt/Component;II)V", methodCache: &JLayeredPane.setLayer_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setLayer( _ _c: java_awt.Component?, _ _layer: Int, _ _position: Int ) {
@@ -693,14 +715,14 @@ open class JLayeredPane: JComponent {
 
     /// public void javax.swing.JLayeredPane.setLayer(java.awt.Component,int)
 
-    private static var setLayer_MethodID_10: jmethodID?
+    private static var setLayer_MethodID_11: jmethodID?
 
     open func setLayer( c: java_awt.Component?, layer: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: layer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(Ljava/awt/Component;I)V", methodCache: &JLayeredPane.setLayer_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayer", methodSig: "(Ljava/awt/Component;I)V", methodCache: &JLayeredPane.setLayer_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setLayer( _ _c: java_awt.Component?, _ _layer: Int ) {
@@ -711,13 +733,13 @@ open class JLayeredPane: JComponent {
 
     /// public static javax.swing.JLayeredPane javax.swing.JLayeredPane.getLayeredPaneAbove(java.awt.Component)
 
-    private static var getLayeredPaneAbove_MethodID_11: jmethodID?
+    private static var getLayeredPaneAbove_MethodID_12: jmethodID?
 
     open class func getLayeredPaneAbove( c: java_awt.Component? ) -> JLayeredPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass, methodName: "getLayeredPaneAbove", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JLayeredPane;", methodCache: &getLayeredPaneAbove_MethodID_11, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass, methodName: "getLayeredPaneAbove", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JLayeredPane;", methodCache: &getLayeredPaneAbove_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JLayeredPane( javaObject: __return ) : nil
     }
@@ -728,13 +750,13 @@ open class JLayeredPane: JComponent {
 
     /// public int javax.swing.JLayeredPane.getIndexOf(java.awt.Component)
 
-    private static var getIndexOf_MethodID_12: jmethodID?
+    private static var getIndexOf_MethodID_13: jmethodID?
 
     open func getIndexOf( c: java_awt.Component? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOf", methodSig: "(Ljava/awt/Component;)I", methodCache: &JLayeredPane.getIndexOf_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexOf", methodSig: "(Ljava/awt/Component;)I", methodCache: &JLayeredPane.getIndexOf_MethodID_13, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -744,14 +766,14 @@ open class JLayeredPane: JComponent {
 
     /// public void javax.swing.JLayeredPane.setPosition(java.awt.Component,int)
 
-    private static var setPosition_MethodID_13: jmethodID?
+    private static var setPosition_MethodID_14: jmethodID?
 
     open func setPosition( c: java_awt.Component?, position: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: position, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPosition", methodSig: "(Ljava/awt/Component;I)V", methodCache: &JLayeredPane.setPosition_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPosition", methodSig: "(Ljava/awt/Component;I)V", methodCache: &JLayeredPane.setPosition_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setPosition( _ _c: java_awt.Component?, _ _position: Int ) {
@@ -760,37 +782,37 @@ open class JLayeredPane: JComponent {
 
     /// public int javax.swing.JLayeredPane.highestLayer()
 
-    private static var highestLayer_MethodID_14: jmethodID?
+    private static var highestLayer_MethodID_15: jmethodID?
 
     open func highestLayer() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "highestLayer", methodSig: "()I", methodCache: &JLayeredPane.highestLayer_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "highestLayer", methodSig: "()I", methodCache: &JLayeredPane.highestLayer_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JLayeredPane.lowestLayer()
 
-    private static var lowestLayer_MethodID_15: jmethodID?
+    private static var lowestLayer_MethodID_16: jmethodID?
 
     open func lowestLayer() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "lowestLayer", methodSig: "()I", methodCache: &JLayeredPane.lowestLayer_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "lowestLayer", methodSig: "()I", methodCache: &JLayeredPane.lowestLayer_MethodID_16, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
 
     /// public int javax.swing.JLayeredPane.getComponentCountInLayer(int)
 
-    private static var getComponentCountInLayer_MethodID_16: jmethodID?
+    private static var getComponentCountInLayer_MethodID_17: jmethodID?
 
     open func getComponentCountInLayer( layer: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layer, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentCountInLayer", methodSig: "(I)I", methodCache: &JLayeredPane.getComponentCountInLayer_MethodID_16, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentCountInLayer", methodSig: "(I)I", methodCache: &JLayeredPane.getComponentCountInLayer_MethodID_17, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -800,13 +822,13 @@ open class JLayeredPane: JComponent {
 
     /// public java.awt.Component[] javax.swing.JLayeredPane.getComponentsInLayer(int)
 
-    private static var getComponentsInLayer_MethodID_17: jmethodID?
+    private static var getComponentsInLayer_MethodID_18: jmethodID?
 
     open func getComponentsInLayer( layer: Int ) -> [Component]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentsInLayer", methodSig: "(I)[Ljava/awt/Component;", methodCache: &JLayeredPane.getComponentsInLayer_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentsInLayer", methodSig: "(I)[Ljava/awt/Component;", methodCache: &JLayeredPane.getComponentsInLayer_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [Component](), from: __return )
     }
 
@@ -816,12 +838,12 @@ open class JLayeredPane: JComponent {
 
     /// protected java.util.Hashtable javax.swing.JLayeredPane.getComponentToLayer()
 
-    private static var getComponentToLayer_MethodID_18: jmethodID?
+    private static var getComponentToLayer_MethodID_19: jmethodID?
 
     open func getComponentToLayer() -> java_util.Hashtable! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentToLayer", methodSig: "()Ljava/util/Hashtable;", methodCache: &JLayeredPane.getComponentToLayer_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentToLayer", methodSig: "()Ljava/util/Hashtable;", methodCache: &JLayeredPane.getComponentToLayer_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return JNIType.toSwift( type: java_util.Hashtable(), from: __return )
     }
@@ -829,13 +851,13 @@ open class JLayeredPane: JComponent {
 
     /// protected java.lang.Integer javax.swing.JLayeredPane.getObjectForLayer(int)
 
-    private static var getObjectForLayer_MethodID_19: jmethodID?
+    private static var getObjectForLayer_MethodID_20: jmethodID?
 
     open func getObjectForLayer( layer: Int ) -> java_lang.Integer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getObjectForLayer", methodSig: "(I)Ljava/lang/Integer;", methodCache: &JLayeredPane.getObjectForLayer_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getObjectForLayer", methodSig: "(I)Ljava/lang/Integer;", methodCache: &JLayeredPane.getObjectForLayer_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.Integer( javaObject: __return ) : nil
     }
@@ -844,16 +866,18 @@ open class JLayeredPane: JComponent {
         return getObjectForLayer( layer: _layer )
     }
 
+    /// private int javax.swing.JLayeredPane.insertIndexForLayer(java.awt.Component,int,int)
+
     /// protected int javax.swing.JLayeredPane.insertIndexForLayer(int,int)
 
-    private static var insertIndexForLayer_MethodID_20: jmethodID?
+    private static var insertIndexForLayer_MethodID_21: jmethodID?
 
     open func insertIndexForLayer( layer: Int, position: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: layer, locals: &__locals )
         __args[1] = JNIType.toJava( value: position, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "insertIndexForLayer", methodSig: "(II)I", methodCache: &JLayeredPane.insertIndexForLayer_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "insertIndexForLayer", methodSig: "(II)I", methodCache: &JLayeredPane.insertIndexForLayer_MethodID_21, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -861,46 +885,22 @@ open class JLayeredPane: JComponent {
         return insertIndexForLayer( layer: _layer, position: _position )
     }
 
-    /// private int javax.swing.JLayeredPane.insertIndexForLayer(java.awt.Component,int,int)
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JLayeredPane.getAccessibleContext()
-
     /// protected void javax.swing.JLayeredPane.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var addImpl_MethodID_21: jmethodID?
+    private static var addImpl_MethodID_22: jmethodID?
 
     open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
         __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JLayeredPane.addImpl_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JLayeredPane.addImpl_MethodID_22, args: &__args, locals: &__locals )
     }
 
     override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
         addImpl( comp: _comp, constraints: _constraints, index: _index )
     }
-
-    /// public boolean javax.swing.JLayeredPane.isOptimizedDrawingEnabled()
-
-    /// public int javax.swing.JLayeredPane.getPosition(java.awt.Component)
-
-    private static var getPosition_MethodID_22: jmethodID?
-
-    open func getPosition( c: java_awt.Component? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPosition", methodSig: "(Ljava/awt/Component;)I", methodCache: &JLayeredPane.getPosition_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getPosition( _ _c: java_awt.Component? ) -> Int {
-        return getPosition( c: _c )
-    }
-
-    /// public void javax.swing.JLayeredPane.paint(java.awt.Graphics)
 
     /// In declared protocol but not defined.. ///
 

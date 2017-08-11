@@ -75,7 +75,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &BasicMenuUI.menuItem_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -92,7 +92,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicMenuUI.selectionBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -109,7 +109,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicMenuUI.selectionForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -126,7 +126,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicMenuUI.disabledForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -143,7 +143,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "acceleratorForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicMenuUI.acceleratorForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -160,7 +160,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "acceleratorSelectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicMenuUI.acceleratorSelectionForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -211,7 +211,7 @@ open class BasicMenuUI: BasicMenuItemUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &BasicMenuUI.acceleratorFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -363,8 +363,6 @@ open class BasicMenuUI: BasicMenuItemUI {
 
     /// javax.swing.plaf.basic.BasicMenuItemUI$Handler javax.swing.plaf.basic.BasicMenuUI.getHandler()
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuUI.getMaximumSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicMenuUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -372,7 +370,7 @@ open class BasicMenuUI: BasicMenuItemUI {
     open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicMenuUI", classCache: &BasicMenuUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -382,65 +380,15 @@ open class BasicMenuUI: BasicMenuItemUI {
         return createUI( x: _x )
     }
 
-    /// void javax.swing.plaf.basic.BasicMenuUI.updateMnemonicBinding()
-
-    /// protected java.lang.String javax.swing.plaf.basic.BasicMenuUI.getPropertyPrefix()
-
-    private static var getPropertyPrefix_MethodID_3: jmethodID?
-
-    override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicMenuUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// private static void javax.swing.plaf.basic.BasicMenuUI.appendPath(javax.swing.MenuElement[],javax.swing.MenuElement)
-
-    /// protected javax.swing.event.MenuListener javax.swing.plaf.basic.BasicMenuUI.createMenuListener(javax.swing.JComponent)
-
-    private static var createMenuListener_MethodID_4: jmethodID?
-
-    open func createMenuListener( c: JComponent? ) -> MenuListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MenuListener;", methodCache: &BasicMenuUI.createMenuListener_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MenuListenerForward( javaObject: __return ) : nil
-    }
-
-    open func createMenuListener( _ _c: JComponent? ) -> MenuListener! {
-        return createMenuListener( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicMenuUI.setupPostTimer(javax.swing.JMenu)
-
-    private static var setupPostTimer_MethodID_5: jmethodID?
-
-    open func setupPostTimer( menu: JMenu? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: menu != nil ? menu! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setupPostTimer", methodSig: "(Ljavax/swing/JMenu;)V", methodCache: &BasicMenuUI.setupPostTimer_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setupPostTimer( _ _menu: JMenu? ) {
-        setupPostTimer( menu: _menu )
-    }
-
-    /// private void javax.swing.plaf.basic.BasicMenuUI.updateDefaultBackgroundColor()
-
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicMenuUI.createChangeListener(javax.swing.JComponent)
 
-    private static var createChangeListener_MethodID_6: jmethodID?
+    private static var createChangeListener_MethodID_3: jmethodID?
 
     open func createChangeListener( c: JComponent? ) -> ChangeListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/ChangeListener;", methodCache: &BasicMenuUI.createChangeListener_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/ChangeListener;", methodCache: &BasicMenuUI.createChangeListener_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
@@ -449,38 +397,40 @@ open class BasicMenuUI: BasicMenuItemUI {
         return createChangeListener( c: _c )
     }
 
+    /// private static void javax.swing.plaf.basic.BasicMenuUI.appendPath(javax.swing.MenuElement[],javax.swing.MenuElement)
+
     /// static void javax.swing.plaf.basic.BasicMenuUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
     /// protected void javax.swing.plaf.basic.BasicMenuUI.installDefaults()
 
-    private static var installDefaults_MethodID_7: jmethodID?
+    private static var installDefaults_MethodID_4: jmethodID?
 
     override open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicMenuUI.installDefaults_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicMenuUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicMenuUI.installListeners()
 
-    private static var installListeners_MethodID_8: jmethodID?
+    private static var installListeners_MethodID_5: jmethodID?
 
     override open func installListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicMenuUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicMenuUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicMenuUI.installKeyboardActions()
 
-    private static var installKeyboardActions_MethodID_9: jmethodID?
+    private static var installKeyboardActions_MethodID_6: jmethodID?
 
     override open func installKeyboardActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicMenuUI.installKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicMenuUI.installKeyboardActions_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
@@ -488,46 +438,46 @@ open class BasicMenuUI: BasicMenuItemUI {
 
     /// protected void javax.swing.plaf.basic.BasicMenuUI.uninstallDefaults()
 
-    private static var uninstallDefaults_MethodID_10: jmethodID?
+    private static var uninstallDefaults_MethodID_7: jmethodID?
 
     override open func uninstallDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicMenuUI.uninstallDefaults_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicMenuUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicMenuUI.uninstallListeners()
 
-    private static var uninstallListeners_MethodID_11: jmethodID?
+    private static var uninstallListeners_MethodID_8: jmethodID?
 
     override open func uninstallListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicMenuUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicMenuUI.uninstallListeners_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicMenuUI.uninstallKeyboardActions()
 
-    private static var uninstallKeyboardActions_MethodID_12: jmethodID?
+    private static var uninstallKeyboardActions_MethodID_9: jmethodID?
 
     override open func uninstallKeyboardActions() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicMenuUI.uninstallKeyboardActions_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicMenuUI.uninstallKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicMenuUI.createMouseInputListener(javax.swing.JComponent)
 
-    private static var createMouseInputListener_MethodID_13: jmethodID?
+    private static var createMouseInputListener_MethodID_10: jmethodID?
 
     override open func createMouseInputListener( c: JComponent? ) -> MouseInputListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseInputListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MouseInputListener;", methodCache: &BasicMenuUI.createMouseInputListener_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseInputListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MouseInputListener;", methodCache: &BasicMenuUI.createMouseInputListener_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
     }
@@ -538,13 +488,13 @@ open class BasicMenuUI: BasicMenuItemUI {
 
     /// protected javax.swing.event.MenuDragMouseListener javax.swing.plaf.basic.BasicMenuUI.createMenuDragMouseListener(javax.swing.JComponent)
 
-    private static var createMenuDragMouseListener_MethodID_14: jmethodID?
+    private static var createMenuDragMouseListener_MethodID_11: jmethodID?
 
     override open func createMenuDragMouseListener( c: JComponent? ) -> MenuDragMouseListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuDragMouseListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MenuDragMouseListener;", methodCache: &BasicMenuUI.createMenuDragMouseListener_MethodID_14, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuDragMouseListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MenuDragMouseListener;", methodCache: &BasicMenuUI.createMenuDragMouseListener_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MenuDragMouseListenerForward( javaObject: __return ) : nil
     }
@@ -555,13 +505,13 @@ open class BasicMenuUI: BasicMenuItemUI {
 
     /// protected javax.swing.event.MenuKeyListener javax.swing.plaf.basic.BasicMenuUI.createMenuKeyListener(javax.swing.JComponent)
 
-    private static var createMenuKeyListener_MethodID_15: jmethodID?
+    private static var createMenuKeyListener_MethodID_12: jmethodID?
 
     override open func createMenuKeyListener( c: JComponent? ) -> MenuKeyListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuKeyListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MenuKeyListener;", methodCache: &BasicMenuUI.createMenuKeyListener_MethodID_15, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuKeyListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MenuKeyListener;", methodCache: &BasicMenuUI.createMenuKeyListener_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MenuKeyListenerForward( javaObject: __return ) : nil
     }
@@ -572,13 +522,13 @@ open class BasicMenuUI: BasicMenuItemUI {
 
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicMenuUI.createPropertyChangeListener(javax.swing.JComponent)
 
-    private static var createPropertyChangeListener_MethodID_16: jmethodID?
+    private static var createPropertyChangeListener_MethodID_13: jmethodID?
 
     override open func createPropertyChangeListener( c: JComponent? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "(Ljavax/swing/JComponent;)Ljava/beans/PropertyChangeListener;", methodCache: &BasicMenuUI.createPropertyChangeListener_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "(Ljavax/swing/JComponent;)Ljava/beans/PropertyChangeListener;", methodCache: &BasicMenuUI.createPropertyChangeListener_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -586,6 +536,56 @@ open class BasicMenuUI: BasicMenuItemUI {
     override open func createPropertyChangeListener( _ _c: JComponent? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         return createPropertyChangeListener( c: _c )
     }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicMenuUI.getMaximumSize(javax.swing.JComponent)
+
+    /// protected java.lang.String javax.swing.plaf.basic.BasicMenuUI.getPropertyPrefix()
+
+    private static var getPropertyPrefix_MethodID_14: jmethodID?
+
+    override open func getPropertyPrefix() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicMenuUI.getPropertyPrefix_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
+
+    /// protected javax.swing.event.MenuListener javax.swing.plaf.basic.BasicMenuUI.createMenuListener(javax.swing.JComponent)
+
+    private static var createMenuListener_MethodID_15: jmethodID?
+
+    open func createMenuListener( c: JComponent? ) -> MenuListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMenuListener", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/event/MenuListener;", methodCache: &BasicMenuUI.createMenuListener_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MenuListenerForward( javaObject: __return ) : nil
+    }
+
+    open func createMenuListener( _ _c: JComponent? ) -> MenuListener! {
+        return createMenuListener( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicMenuUI.setupPostTimer(javax.swing.JMenu)
+
+    private static var setupPostTimer_MethodID_16: jmethodID?
+
+    open func setupPostTimer( menu: JMenu? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: menu, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setupPostTimer", methodSig: "(Ljavax/swing/JMenu;)V", methodCache: &BasicMenuUI.setupPostTimer_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setupPostTimer( _ _menu: JMenu? ) {
+        setupPostTimer( menu: _menu )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicMenuUI.updateDefaultBackgroundColor()
+
+    /// void javax.swing.plaf.basic.BasicMenuUI.updateMnemonicBinding()
 
 }
 

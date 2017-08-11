@@ -55,7 +55,7 @@ open class Box_Filler: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &Box_Filler.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -72,7 +72,7 @@ open class Box_Filler: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &Box_Filler.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -449,7 +449,7 @@ open class Box_Filler: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &Box_Filler.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -479,9 +479,9 @@ open class Box_Filler: JComponent {
     public convenience init( min: java_awt.Dimension?, pref: java_awt.Dimension?, max: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min != nil ? min! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pref != nil ? pref! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: max != nil ? max! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: min, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pref, locals: &__locals )
+        __args[2] = JNIType.toJava( value: max, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/Box$Filler", classCache: &Box_Filler.Box_FillerJNIClass, methodSig: "(Ljava/awt/Dimension;Ljava/awt/Dimension;Ljava/awt/Dimension;)V", methodCache: &Box_Filler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -491,8 +491,6 @@ open class Box_Filler: JComponent {
         self.init( min: _min, pref: _pref, max: _max )
     }
 
-    /// public javax.accessibility.AccessibleContext javax.swing.Box$Filler.getAccessibleContext()
-
     /// protected void javax.swing.Box$Filler.paintComponent(java.awt.Graphics)
 
     private static var paintComponent_MethodID_2: jmethodID?
@@ -500,13 +498,15 @@ open class Box_Filler: JComponent {
     override open func paintComponent( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &Box_Filler.paintComponent_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func paintComponent( _ _g: java_awt.Graphics? ) {
         paintComponent( g: _g )
     }
+
+    /// public javax.accessibility.AccessibleContext javax.swing.Box$Filler.getAccessibleContext()
 
     /// public void javax.swing.Box$Filler.changeShape(java.awt.Dimension,java.awt.Dimension,java.awt.Dimension)
 
@@ -515,9 +515,9 @@ open class Box_Filler: JComponent {
     open func changeShape( min: java_awt.Dimension?, pref: java_awt.Dimension?, max: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min != nil ? min! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pref != nil ? pref! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: max != nil ? max! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: min, locals: &__locals )
+        __args[1] = JNIType.toJava( value: pref, locals: &__locals )
+        __args[2] = JNIType.toJava( value: max, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "changeShape", methodSig: "(Ljava/awt/Dimension;Ljava/awt/Dimension;Ljava/awt/Dimension;)V", methodCache: &Box_Filler.changeShape_MethodID_3, args: &__args, locals: &__locals )
     }
 

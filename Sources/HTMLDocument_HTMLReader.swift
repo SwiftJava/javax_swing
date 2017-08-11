@@ -91,7 +91,7 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "parseBuffer", fieldType: "Ljava/util/Vector;", fieldCache: &HTMLDocument_HTMLReader.parseBuffer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -134,11 +134,11 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     public convenience init( this_0: HTMLDocument?, offset: Int, popDepth: Int, pushDepth: Int, insertTag: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
         __args[2] = JNIType.toJava( value: popDepth, locals: &__locals )
         __args[3] = JNIType.toJava( value: pushDepth, locals: &__locals )
-        __args[4] = JNIType.toJava( value: insertTag != nil ? insertTag! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: insertTag, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$HTMLReader", classCache: &HTMLDocument_HTMLReader.HTMLDocument_HTMLReaderJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument;IIILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLDocument_HTMLReader.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -155,7 +155,7 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     public convenience init( this_0: HTMLDocument?, offset: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$HTMLReader", classCache: &HTMLDocument_HTMLReader.HTMLDocument_HTMLReaderJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument;I)V", methodCache: &HTMLDocument_HTMLReader.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -238,7 +238,7 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     open func blockOpen( t: HTML_Tag?, attr: MutableAttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: attr, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "blockOpen", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &HTMLDocument_HTMLReader.blockOpen_MethodID_7, args: &__args, locals: &__locals )
     }
@@ -254,15 +254,13 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     open func blockClose( t: HTML_Tag? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "blockClose", methodSig: "(Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLDocument_HTMLReader.blockClose_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func blockClose( _ _t: HTML_Tag? ) {
         blockClose( t: _t )
     }
-
-    /// static boolean javax.swing.text.html.HTMLDocument$HTMLReader.access$900(javax.swing.text.html.HTMLDocument$HTMLReader,javax.swing.text.html.HTML$Tag,javax.swing.text.AttributeSet,boolean)
 
     /// private void javax.swing.text.html.HTMLDocument$HTMLReader.generateEndsSpecsForMidInsert()
 
@@ -295,8 +293,8 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     open func registerTag( t: HTML_Tag?, a: HTMLDocument_HTMLReader_TagAction? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a != nil ? a! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "registerTag", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTMLDocument$HTMLReader$TagAction;)V", methodCache: &HTMLDocument_HTMLReader.registerTag_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -341,7 +339,7 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     open func addSpecialElement( t: HTML_Tag?, a: MutableAttributeSet? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t != nil ? t! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSpecialElement", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &HTMLDocument_HTMLReader.addSpecialElement_MethodID_12, args: &__args, locals: &__locals )
     }
@@ -359,6 +357,8 @@ open class HTMLDocument_HTMLReader: HTMLEditorKit_ParserCallback {
     /// private boolean javax.swing.text.html.HTMLDocument$HTMLReader.canInsertTag(javax.swing.text.html.HTML$Tag,javax.swing.text.AttributeSet,boolean)
 
     /// private boolean javax.swing.text.html.HTMLDocument$HTMLReader.isInsertTag(javax.swing.text.html.HTML$Tag)
+
+    /// static boolean javax.swing.text.html.HTMLDocument$HTMLReader.access$900(javax.swing.text.html.HTMLDocument$HTMLReader,javax.swing.text.html.HTML$Tag,javax.swing.text.AttributeSet,boolean)
 
 }
 

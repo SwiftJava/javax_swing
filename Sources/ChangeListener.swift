@@ -26,7 +26,7 @@ open class ChangeListenerForward: java_util.EventListenerForward, ChangeListener
     open func stateChanged( e: ChangeEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &ChangeListenerForward.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
 

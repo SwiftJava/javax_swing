@@ -65,7 +65,7 @@ open class JToolBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JToolBar.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -82,7 +82,7 @@ open class JToolBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JToolBar.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -459,7 +459,7 @@ open class JToolBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JToolBar.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -786,86 +786,15 @@ open class JToolBar: JComponent, SwingConstants {
     }
 
 
-    /// public java.awt.Component javax.swing.JToolBar.getComponentAtIndex(int)
-
-    private static var getComponentAtIndex_MethodID_7: jmethodID?
-
-    open func getComponentAtIndex( i: Int ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAtIndex", methodSig: "(I)Ljava/awt/Component;", methodCache: &JToolBar.getComponentAtIndex_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open func getComponentAtIndex( _ _i: Int ) -> java_awt.Component! {
-        return getComponentAtIndex( i: _i )
-    }
-
-    /// public int javax.swing.JToolBar.getComponentIndex(java.awt.Component)
-
-    private static var getComponentIndex_MethodID_8: jmethodID?
-
-    open func getComponentIndex( c: java_awt.Component? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentIndex", methodSig: "(Ljava/awt/Component;)I", methodCache: &JToolBar.getComponentIndex_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getComponentIndex( _ _c: java_awt.Component? ) -> Int {
-        return getComponentIndex( c: _c )
-    }
-
-    /// public void javax.swing.JToolBar.addSeparator()
-
-    private static var addSeparator_MethodID_9: jmethodID?
-
-    open func addSeparator() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "()V", methodCache: &JToolBar.addSeparator_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JToolBar.addSeparator(java.awt.Dimension)
-
-    private static var addSeparator_MethodID_10: jmethodID?
-
-    open func addSeparator( size: java_awt.Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size != nil ? size! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JToolBar.addSeparator_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func addSeparator( _ _size: java_awt.Dimension? ) {
-        addSeparator( size: _size )
-    }
-
-    /// public int javax.swing.JToolBar.getOrientation()
-
-    private static var getOrientation_MethodID_11: jmethodID?
-
-    open func getOrientation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JToolBar.getOrientation_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// protected javax.swing.JButton javax.swing.JToolBar.createActionComponent(javax.swing.Action)
 
-    private static var createActionComponent_MethodID_12: jmethodID?
+    private static var createActionComponent_MethodID_7: jmethodID?
 
     open func createActionComponent( a: Action? ) -> JButton! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionComponent", methodSig: "(Ljavax/swing/Action;)Ljavax/swing/JButton;", methodCache: &JToolBar.createActionComponent_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionComponent", methodSig: "(Ljavax/swing/Action;)Ljavax/swing/JButton;", methodCache: &JToolBar.createActionComponent_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
     }
@@ -876,13 +805,13 @@ open class JToolBar: JComponent, SwingConstants {
 
     /// protected java.beans.PropertyChangeListener javax.swing.JToolBar.createActionChangeListener(javax.swing.JButton)
 
-    private static var createActionChangeListener_MethodID_13: jmethodID?
+    private static var createActionChangeListener_MethodID_8: jmethodID?
 
     open func createActionChangeListener( b: JButton? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b != nil ? b! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionChangeListener", methodSig: "(Ljavax/swing/JButton;)Ljava/beans/PropertyChangeListener;", methodCache: &JToolBar.createActionChangeListener_MethodID_13, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionChangeListener", methodSig: "(Ljavax/swing/JButton;)Ljava/beans/PropertyChangeListener;", methodCache: &JToolBar.createActionChangeListener_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
     }
@@ -891,49 +820,28 @@ open class JToolBar: JComponent, SwingConstants {
         return createActionChangeListener( b: _b )
     }
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JToolBar.getAccessibleContext()
+    /// public javax.swing.plaf.ToolBarUI javax.swing.JToolBar.getUI()
 
-    /// public void javax.swing.JToolBar.setLayout(java.awt.LayoutManager)
+    private static var getUI_MethodID_9: jmethodID?
 
-    private static var setLayout_MethodID_14: jmethodID?
-
-    open func setLayout( mgr: java_awt.LayoutManager? ) {
+    open func getUI() -> ToolBarUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JToolBar.setLayout_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ToolBarUI;", methodCache: &JToolBar.getUI_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ToolBarUI( javaObject: __return ) : nil
     }
 
-    override open func setLayout( _ _mgr: java_awt.LayoutManager? ) {
-        setLayout( mgr: _mgr )
-    }
-
-    /// protected void javax.swing.JToolBar.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_15: jmethodID?
-
-    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp != nil ? comp! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints != nil ? constraints! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JToolBar.addImpl_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
-    }
 
     /// public void javax.swing.JToolBar.setOrientation(int)
 
-    private static var setOrientation_MethodID_16: jmethodID?
+    private static var setOrientation_MethodID_10: jmethodID?
 
     open func setOrientation( o: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JToolBar.setOrientation_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JToolBar.setOrientation_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func setOrientation( _ _o: Int ) {
@@ -941,6 +849,88 @@ open class JToolBar: JComponent, SwingConstants {
     }
 
     /// private void javax.swing.JToolBar.checkOrientation(int)
+
+    /// public void javax.swing.JToolBar.setMargin(java.awt.Insets)
+
+    private static var setMargin_MethodID_11: jmethodID?
+
+    open func setMargin( m: java_awt.Insets? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMargin", methodSig: "(Ljava/awt/Insets;)V", methodCache: &JToolBar.setMargin_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setMargin( _ _m: java_awt.Insets? ) {
+        setMargin( m: _m )
+    }
+
+    /// public java.awt.Insets javax.swing.JToolBar.getMargin()
+
+    private static var getMargin_MethodID_12: jmethodID?
+
+    open func getMargin() -> java_awt.Insets! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMargin", methodSig: "()Ljava/awt/Insets;", methodCache: &JToolBar.getMargin_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean javax.swing.JToolBar.isBorderPainted()
+
+    private static var isBorderPainted_MethodID_13: jmethodID?
+
+    open func isBorderPainted() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderPainted", methodSig: "()Z", methodCache: &JToolBar.isBorderPainted_MethodID_13, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JToolBar.setBorderPainted(boolean)
+
+    private static var setBorderPainted_MethodID_14: jmethodID?
+
+    open func setBorderPainted( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderPainted", methodSig: "(Z)V", methodCache: &JToolBar.setBorderPainted_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func setBorderPainted( _ _b: Bool ) {
+        setBorderPainted( b: _b )
+    }
+
+    /// public void javax.swing.JToolBar.setRollover(boolean)
+
+    private static var setRollover_MethodID_15: jmethodID?
+
+    open func setRollover( rollover: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: rollover, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRollover", methodSig: "(Z)V", methodCache: &JToolBar.setRollover_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setRollover( _ _rollover: Bool ) {
+        setRollover( rollover: _rollover )
+    }
+
+    /// public boolean javax.swing.JToolBar.isRollover()
+
+    private static var isRollover_MethodID_16: jmethodID?
+
+    open func isRollover() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRollover", methodSig: "()Z", methodCache: &JToolBar.isRollover_MethodID_16, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
 
     /// public void javax.swing.JToolBar.updateUI()
 
@@ -951,7 +941,7 @@ open class JToolBar: JComponent, SwingConstants {
     open func setUI( ui: ToolBarUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ToolBarUI;)V", methodCache: &JToolBar.setUI_MethodID_17, args: &__args, locals: &__locals )
     }
 
@@ -968,7 +958,7 @@ open class JToolBar: JComponent, SwingConstants {
     override open func paintBorder( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JToolBar.paintBorder_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -976,127 +966,137 @@ open class JToolBar: JComponent, SwingConstants {
         paintBorder( g: _g )
     }
 
+    /// public int javax.swing.JToolBar.getOrientation()
+
+    private static var getOrientation_MethodID_19: jmethodID?
+
+    open func getOrientation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JToolBar.getOrientation_MethodID_19, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public java.awt.Component javax.swing.JToolBar.getComponentAtIndex(int)
+
+    private static var getComponentAtIndex_MethodID_20: jmethodID?
+
+    open func getComponentAtIndex( i: Int ) -> java_awt.Component! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAtIndex", methodSig: "(I)Ljava/awt/Component;", methodCache: &JToolBar.getComponentAtIndex_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    open func getComponentAtIndex( _ _i: Int ) -> java_awt.Component! {
+        return getComponentAtIndex( i: _i )
+    }
+
+    /// public int javax.swing.JToolBar.getComponentIndex(java.awt.Component)
+
+    private static var getComponentIndex_MethodID_21: jmethodID?
+
+    open func getComponentIndex( c: java_awt.Component? ) -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentIndex", methodSig: "(Ljava/awt/Component;)I", methodCache: &JToolBar.getComponentIndex_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+    open func getComponentIndex( _ _c: java_awt.Component? ) -> Int {
+        return getComponentIndex( c: _c )
+    }
+
+    /// public void javax.swing.JToolBar.addSeparator(java.awt.Dimension)
+
+    private static var addSeparator_MethodID_22: jmethodID?
+
+    open func addSeparator( size: java_awt.Dimension? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: size, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JToolBar.addSeparator_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func addSeparator( _ _size: java_awt.Dimension? ) {
+        addSeparator( size: _size )
+    }
+
+    /// public void javax.swing.JToolBar.addSeparator()
+
+    private static var addSeparator_MethodID_23: jmethodID?
+
+    open func addSeparator() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addSeparator", methodSig: "()V", methodCache: &JToolBar.addSeparator_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JToolBar.getAccessibleContext()
+
+    /// public void javax.swing.JToolBar.setLayout(java.awt.LayoutManager)
+
+    private static var setLayout_MethodID_24: jmethodID?
+
+    open func setLayout( mgr: java_awt.LayoutManager? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JToolBar.setLayout_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    override open func setLayout( _ _mgr: java_awt.LayoutManager? ) {
+        setLayout( mgr: _mgr )
+    }
+
+    /// protected void javax.swing.JToolBar.addImpl(java.awt.Component,java.lang.Object,int)
+
+    private static var addImpl_MethodID_25: jmethodID?
+
+    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[2] = JNIType.toJava( value: index, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JToolBar.addImpl_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    }
+
     /// public boolean javax.swing.JToolBar.isFloatable()
 
-    private static var isFloatable_MethodID_19: jmethodID?
+    private static var isFloatable_MethodID_26: jmethodID?
 
     open func isFloatable() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFloatable", methodSig: "()Z", methodCache: &JToolBar.isFloatable_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFloatable", methodSig: "()Z", methodCache: &JToolBar.isFloatable_MethodID_26, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JToolBar.setFloatable(boolean)
 
-    private static var setFloatable_MethodID_20: jmethodID?
+    private static var setFloatable_MethodID_27: jmethodID?
 
     open func setFloatable( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloatable", methodSig: "(Z)V", methodCache: &JToolBar.setFloatable_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFloatable", methodSig: "(Z)V", methodCache: &JToolBar.setFloatable_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setFloatable( _ _b: Bool ) {
         setFloatable( b: _b )
     }
-
-    /// public javax.swing.plaf.ToolBarUI javax.swing.JToolBar.getUI()
-
-    private static var getUI_MethodID_21: jmethodID?
-
-    open func getUI() -> ToolBarUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ToolBarUI;", methodCache: &JToolBar.getUI_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ToolBarUI( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JToolBar.setMargin(java.awt.Insets)
-
-    private static var setMargin_MethodID_22: jmethodID?
-
-    open func setMargin( m: java_awt.Insets? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m != nil ? m! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMargin", methodSig: "(Ljava/awt/Insets;)V", methodCache: &JToolBar.setMargin_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setMargin( _ _m: java_awt.Insets? ) {
-        setMargin( m: _m )
-    }
-
-    /// public java.awt.Insets javax.swing.JToolBar.getMargin()
-
-    private static var getMargin_MethodID_23: jmethodID?
-
-    open func getMargin() -> java_awt.Insets! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMargin", methodSig: "()Ljava/awt/Insets;", methodCache: &JToolBar.getMargin_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean javax.swing.JToolBar.isBorderPainted()
-
-    private static var isBorderPainted_MethodID_24: jmethodID?
-
-    open func isBorderPainted() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderPainted", methodSig: "()Z", methodCache: &JToolBar.isBorderPainted_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JToolBar.setBorderPainted(boolean)
-
-    private static var setBorderPainted_MethodID_25: jmethodID?
-
-    open func setBorderPainted( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderPainted", methodSig: "(Z)V", methodCache: &JToolBar.setBorderPainted_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setBorderPainted( _ _b: Bool ) {
-        setBorderPainted( b: _b )
-    }
-
-    /// public void javax.swing.JToolBar.setRollover(boolean)
-
-    private static var setRollover_MethodID_26: jmethodID?
-
-    open func setRollover( rollover: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rollover, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRollover", methodSig: "(Z)V", methodCache: &JToolBar.setRollover_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func setRollover( _ _rollover: Bool ) {
-        setRollover( rollover: _rollover )
-    }
-
-    /// public boolean javax.swing.JToolBar.isRollover()
-
-    private static var isRollover_MethodID_27: jmethodID?
-
-    open func isRollover() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRollover", methodSig: "()Z", methodCache: &JToolBar.isRollover_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
 
     /// In declared protocol but not defined.. ///
 

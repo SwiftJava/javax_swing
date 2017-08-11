@@ -99,7 +99,7 @@ open class JToolBar_Separator: JSeparator {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JToolBar_Separator.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -116,7 +116,7 @@ open class JToolBar_Separator: JSeparator {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JToolBar_Separator.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -493,7 +493,7 @@ open class JToolBar_Separator: JSeparator {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JToolBar_Separator.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -535,7 +535,7 @@ open class JToolBar_Separator: JSeparator {
     public convenience init( size: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size != nil ? size! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: size, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JToolBar$Separator", classCache: &JToolBar_Separator.JToolBar_SeparatorJNIClass, methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JToolBar_Separator.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -545,13 +545,13 @@ open class JToolBar_Separator: JSeparator {
         self.init( size: _size )
     }
 
+    /// public java.lang.String javax.swing.JToolBar$Separator.getUIClassID()
+
     /// public java.awt.Dimension javax.swing.JToolBar$Separator.getPreferredSize()
 
     /// public java.awt.Dimension javax.swing.JToolBar$Separator.getMinimumSize()
 
     /// public java.awt.Dimension javax.swing.JToolBar$Separator.getMaximumSize()
-
-    /// public java.lang.String javax.swing.JToolBar$Separator.getUIClassID()
 
     /// public java.awt.Dimension javax.swing.JToolBar$Separator.getSeparatorSize()
 
@@ -573,7 +573,7 @@ open class JToolBar_Separator: JSeparator {
     open func setSeparatorSize( size: java_awt.Dimension? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size != nil ? size! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: size, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSeparatorSize", methodSig: "(Ljava/awt/Dimension;)V", methodCache: &JToolBar_Separator.setSeparatorSize_MethodID_4, args: &__args, locals: &__locals )
     }
 

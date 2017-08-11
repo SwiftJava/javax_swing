@@ -26,8 +26,8 @@ open class PainterForward: JNIObjectForward, Painter {
     open func paint( g: java_awt.Graphics2D?, object: java_swift.JavaObject?, width: Int, height: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: object != nil ? object! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: object, locals: &__locals )
         __args[2] = JNIType.toJava( value: width, locals: &__locals )
         __args[3] = JNIType.toJava( value: height, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics2D;Ljava/lang/Object;II)V", methodCache: &PainterForward.paint_MethodID_2, args: &__args, locals: &__locals )

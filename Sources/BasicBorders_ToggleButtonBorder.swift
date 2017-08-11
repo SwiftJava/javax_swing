@@ -29,7 +29,7 @@ open class BasicBorders_ToggleButtonBorder: BasicBorders_ButtonBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_ToggleButtonBorder.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class BasicBorders_ToggleButtonBorder: BasicBorders_ButtonBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_ToggleButtonBorder.darkShadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class BasicBorders_ToggleButtonBorder: BasicBorders_ButtonBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_ToggleButtonBorder.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -80,7 +80,7 @@ open class BasicBorders_ToggleButtonBorder: BasicBorders_ButtonBorder {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_ToggleButtonBorder.lightHighlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -92,10 +92,10 @@ open class BasicBorders_ToggleButtonBorder: BasicBorders_ButtonBorder {
     public convenience init( shadow: java_awt.Color?, darkShadow: java_awt.Color?, highlight: java_awt.Color?, lightHighlight: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: darkShadow != nil ? darkShadow! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: lightHighlight != nil ? lightHighlight! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: shadow, locals: &__locals )
+        __args[1] = JNIType.toJava( value: darkShadow, locals: &__locals )
+        __args[2] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[3] = JNIType.toJava( value: lightHighlight, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicBorders$ToggleButtonBorder", classCache: &BasicBorders_ToggleButtonBorder.BasicBorders_ToggleButtonBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BasicBorders_ToggleButtonBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

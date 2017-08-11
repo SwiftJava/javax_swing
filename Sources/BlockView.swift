@@ -151,7 +151,7 @@ open class BlockView: BoxView {
 
     /// public void javax.swing.text.html.BlockView.setParent(javax.swing.text.View)
 
-    /// public float javax.swing.text.html.BlockView.getAlignment(int)
+    /// public void javax.swing.text.html.BlockView.paint(java.awt.Graphics,java.awt.Shape)
 
     /// public float javax.swing.text.html.BlockView.getMinimumSpan(int)
 
@@ -178,7 +178,7 @@ open class BlockView: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &BlockView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
@@ -214,7 +214,7 @@ open class BlockView: BoxView {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r != nil ? r! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMajorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &BlockView.calculateMajorAxisRequirements_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
@@ -243,6 +243,8 @@ open class BlockView: BoxView {
     }
 
 
+    /// public float javax.swing.text.html.BlockView.getAlignment(int)
+
     /// public void javax.swing.text.html.BlockView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
     private static var changedUpdate_MethodID_7: jmethodID?
@@ -261,8 +263,6 @@ open class BlockView: BoxView {
     }
 
     /// public float javax.swing.text.html.BlockView.getPreferredSpan(int)
-
-    /// public void javax.swing.text.html.BlockView.paint(java.awt.Graphics,java.awt.Shape)
 
 }
 

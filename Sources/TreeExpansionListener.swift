@@ -30,7 +30,7 @@ open class TreeExpansionListenerForward: java_util.EventListenerForward, TreeExp
     open func treeExpanded( event: TreeExpansionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeExpanded", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &TreeExpansionListenerForward.treeExpanded_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -45,7 +45,7 @@ open class TreeExpansionListenerForward: java_util.EventListenerForward, TreeExp
     open func treeCollapsed( event: TreeExpansionEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event != nil ? event! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeCollapsed", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &TreeExpansionListenerForward.treeCollapsed_MethodID_4, args: &__args, locals: &__locals )
     }
 

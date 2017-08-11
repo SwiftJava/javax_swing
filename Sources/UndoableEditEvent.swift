@@ -33,7 +33,7 @@ open class UndoableEditEvent: java_util.EventObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &UndoableEditEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -45,7 +45,7 @@ open class UndoableEditEvent: java_util.EventObject {
     public convenience init( source: java_swift.JavaObject?, edit: UndoableEdit? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: edit, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/UndoableEditEvent", classCache: &UndoableEditEvent.UndoableEditEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/undo/UndoableEdit;)V", methodCache: &UndoableEditEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

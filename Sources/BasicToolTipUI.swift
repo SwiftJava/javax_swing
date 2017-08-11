@@ -36,12 +36,6 @@ open class BasicToolTipUI: ToolTipUI {
 
     /// static void javax.swing.plaf.basic.BasicToolTipUI.access$100(javax.swing.plaf.basic.BasicToolTipUI,javax.swing.JComponent)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMaximumSize(javax.swing.JComponent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicToolTipUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -49,7 +43,7 @@ open class BasicToolTipUI: ToolTipUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicToolTipUI", classCache: &BasicToolTipUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -59,13 +53,11 @@ open class BasicToolTipUI: ToolTipUI {
         return createUI( c: _c )
     }
 
-    /// private void javax.swing.plaf.basic.BasicToolTipUI.componentChanged(javax.swing.JComponent)
+    /// public void javax.swing.plaf.basic.BasicToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicToolTipUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicToolTipUI.uninstallUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicToolTipUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// protected void javax.swing.plaf.basic.BasicToolTipUI.installDefaults(javax.swing.JComponent)
 
@@ -74,7 +66,7 @@ open class BasicToolTipUI: ToolTipUI {
     open func installDefaults( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolTipUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -91,7 +83,7 @@ open class BasicToolTipUI: ToolTipUI {
     open func installListeners( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolTipUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -106,7 +98,7 @@ open class BasicToolTipUI: ToolTipUI {
     open func uninstallDefaults( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolTipUI.uninstallDefaults_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -123,7 +115,7 @@ open class BasicToolTipUI: ToolTipUI {
     open func uninstallListeners( c: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicToolTipUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -132,6 +124,14 @@ open class BasicToolTipUI: ToolTipUI {
     }
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicToolTipUI.createPropertyChangeListener(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getPreferredSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMinimumSize(javax.swing.JComponent)
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolTipUI.getMaximumSize(javax.swing.JComponent)
+
+    /// private void javax.swing.plaf.basic.BasicToolTipUI.componentChanged(javax.swing.JComponent)
 
 }
 

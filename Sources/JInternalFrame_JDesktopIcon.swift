@@ -56,7 +56,7 @@ open class JInternalFrame_JDesktopIcon: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JInternalFrame_JDesktopIcon.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -73,7 +73,7 @@ open class JInternalFrame_JDesktopIcon: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JInternalFrame_JDesktopIcon.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -450,7 +450,7 @@ open class JInternalFrame_JDesktopIcon: JComponent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JInternalFrame_JDesktopIcon.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -480,7 +480,7 @@ open class JInternalFrame_JDesktopIcon: JComponent {
     public convenience init( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JInternalFrame$JDesktopIcon", classCache: &JInternalFrame_JDesktopIcon.JInternalFrame_JDesktopIconJNIClass, methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JInternalFrame_JDesktopIcon.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -492,45 +492,28 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// private void javax.swing.JInternalFrame$JDesktopIcon.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
-    /// public javax.swing.JDesktopPane javax.swing.JInternalFrame$JDesktopIcon.getDesktopPane()
+    /// public javax.swing.plaf.DesktopIconUI javax.swing.JInternalFrame$JDesktopIcon.getUI()
 
-    private static var getDesktopPane_MethodID_2: jmethodID?
+    private static var getUI_MethodID_2: jmethodID?
 
-    open func getDesktopPane() -> JDesktopPane! {
+    open func getUI() -> DesktopIconUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopPane", methodSig: "()Ljavax/swing/JDesktopPane;", methodCache: &JInternalFrame_JDesktopIcon.getDesktopPane_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/DesktopIconUI;", methodCache: &JInternalFrame_JDesktopIcon.getUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JDesktopPane( javaObject: __return ) : nil
+        return __return != nil ? DesktopIconUI( javaObject: __return ) : nil
     }
 
-
-    /// void javax.swing.JInternalFrame$JDesktopIcon.updateUIWhenHidden()
-
-    /// public javax.swing.JInternalFrame javax.swing.JInternalFrame$JDesktopIcon.getInternalFrame()
-
-    private static var getInternalFrame_MethodID_3: jmethodID?
-
-    open func getInternalFrame() -> JInternalFrame! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInternalFrame", methodSig: "()Ljavax/swing/JInternalFrame;", methodCache: &JInternalFrame_JDesktopIcon.getInternalFrame_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JInternalFrame( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JInternalFrame$JDesktopIcon.getAccessibleContext()
 
     /// public void javax.swing.JInternalFrame$JDesktopIcon.setInternalFrame(javax.swing.JInternalFrame)
 
-    private static var setInternalFrame_MethodID_4: jmethodID?
+    private static var setInternalFrame_MethodID_3: jmethodID?
 
     open func setInternalFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInternalFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JInternalFrame_JDesktopIcon.setInternalFrame_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInternalFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &JInternalFrame_JDesktopIcon.setInternalFrame_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func setInternalFrame( _ _f: JInternalFrame? ) {
@@ -541,13 +524,13 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// public void javax.swing.JInternalFrame$JDesktopIcon.setUI(javax.swing.plaf.DesktopIconUI)
 
-    private static var setUI_MethodID_5: jmethodID?
+    private static var setUI_MethodID_4: jmethodID?
 
     open func setUI( ui: DesktopIconUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/DesktopIconUI;)V", methodCache: &JInternalFrame_JDesktopIcon.setUI_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/DesktopIconUI;)V", methodCache: &JInternalFrame_JDesktopIcon.setUI_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: DesktopIconUI? ) {
@@ -556,16 +539,33 @@ open class JInternalFrame_JDesktopIcon: JComponent {
 
     /// public java.lang.String javax.swing.JInternalFrame$JDesktopIcon.getUIClassID()
 
-    /// public javax.swing.plaf.DesktopIconUI javax.swing.JInternalFrame$JDesktopIcon.getUI()
+    /// public javax.accessibility.AccessibleContext javax.swing.JInternalFrame$JDesktopIcon.getAccessibleContext()
 
-    private static var getUI_MethodID_6: jmethodID?
+    /// public javax.swing.JDesktopPane javax.swing.JInternalFrame$JDesktopIcon.getDesktopPane()
 
-    open func getUI() -> DesktopIconUI! {
+    private static var getDesktopPane_MethodID_5: jmethodID?
+
+    open func getDesktopPane() -> JDesktopPane! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/DesktopIconUI;", methodCache: &JInternalFrame_JDesktopIcon.getUI_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopPane", methodSig: "()Ljavax/swing/JDesktopPane;", methodCache: &JInternalFrame_JDesktopIcon.getDesktopPane_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DesktopIconUI( javaObject: __return ) : nil
+        return __return != nil ? JDesktopPane( javaObject: __return ) : nil
+    }
+
+
+    /// void javax.swing.JInternalFrame$JDesktopIcon.updateUIWhenHidden()
+
+    /// public javax.swing.JInternalFrame javax.swing.JInternalFrame$JDesktopIcon.getInternalFrame()
+
+    private static var getInternalFrame_MethodID_6: jmethodID?
+
+    open func getInternalFrame() -> JInternalFrame! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInternalFrame", methodSig: "()Ljavax/swing/JInternalFrame;", methodCache: &JInternalFrame_JDesktopIcon.getInternalFrame_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JInternalFrame( javaObject: __return ) : nil
     }
 
 

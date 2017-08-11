@@ -40,12 +40,6 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseClicked(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseMoved(java.awt.event.MouseEvent)
-
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseDragged(java.awt.event.MouseEvent)
-
     /// protected void javax.swing.text.html.HTMLEditorKit$LinkController.activateLink(int,javax.swing.JEditorPane)
 
     private static var activateLink_MethodID_2: jmethodID?
@@ -54,7 +48,7 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: editor != nil ? editor! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: editor, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateLink", methodSig: "(ILjavax/swing/JEditorPane;)V", methodCache: &HTMLEditorKit_LinkController.activateLink_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -71,6 +65,12 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
     /// javax.swing.event.HyperlinkEvent javax.swing.text.html.HTMLEditorKit$LinkController.createHyperlinkEvent(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.AttributeSet,javax.swing.text.Element,java.awt.event.MouseEvent)
 
     /// void javax.swing.text.html.HTMLEditorKit$LinkController.fireEvents(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.Element,java.awt.event.MouseEvent)
+
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseClicked(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseMoved(java.awt.event.MouseEvent)
+
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseDragged(java.awt.event.MouseEvent)
 
     /// In declared protocol but not defined.. ///
 

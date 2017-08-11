@@ -39,8 +39,6 @@ open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializabl
 
     /// javax.swing.text.html.StyleSheet$ListPainter(javax.swing.text.AttributeSet,javax.swing.text.html.StyleSheet)
 
-    /// private void javax.swing.text.html.StyleSheet$ListPainter.getStart(javax.swing.text.View)
-
     /// public void javax.swing.text.html.StyleSheet$ListPainter.paint(java.awt.Graphics,float,float,float,float,javax.swing.text.View,int)
 
     private static var paint_MethodID_1: jmethodID?
@@ -48,12 +46,12 @@ open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializabl
     open func paint( g: java_awt.Graphics?, x: Float, y: Float, w: Float, h: Float, v: View?, item: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: x, locals: &__locals )
         __args[2] = JNIType.toJava( value: y, locals: &__locals )
         __args[3] = JNIType.toJava( value: w, locals: &__locals )
         __args[4] = JNIType.toJava( value: h, locals: &__locals )
-        __args[5] = JNIType.toJava( value: v != nil ? v! as JNIObject : nil, locals: &__locals )
+        __args[5] = JNIType.toJava( value: v, locals: &__locals )
         __args[6] = JNIType.toJava( value: item, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;FFFFLjavax/swing/text/View;I)V", methodCache: &StyleSheet_ListPainter.paint_MethodID_1, args: &__args, locals: &__locals )
     }
@@ -61,6 +59,8 @@ open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializabl
     open func paint( _ _g: java_awt.Graphics?, _ _x: Float, _ _y: Float, _ _w: Float, _ _h: Float, _ _v: View?, _ _item: Int ) {
         paint( g: _g, x: _x, y: _y, w: _w, h: _h, v: _v, item: _item )
     }
+
+    /// private void javax.swing.text.html.StyleSheet$ListPainter.getStart(javax.swing.text.View)
 
     /// private javax.swing.text.html.CSS$Value javax.swing.text.html.StyleSheet$ListPainter.getChildType(javax.swing.text.View)
 

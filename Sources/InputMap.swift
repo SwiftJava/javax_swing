@@ -39,7 +39,7 @@ open class InputMap: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func remove( key: KeyStroke? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key != nil ? key! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljavax/swing/KeyStroke;)V", methodCache: &InputMap.remove_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -54,7 +54,7 @@ open class InputMap: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func get( keyStroke: KeyStroke? ) -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyStroke != nil ? keyStroke! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: keyStroke, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "get", methodSig: "(Ljavax/swing/KeyStroke;)Ljava/lang/Object;", methodCache: &InputMap.get_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -71,8 +71,8 @@ open class InputMap: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func put( keyStroke: KeyStroke?, actionMapKey: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyStroke != nil ? keyStroke! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: actionMapKey != nil ? actionMapKey! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: keyStroke, locals: &__locals )
+        __args[1] = JNIType.toJava( value: actionMapKey, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "put", methodSig: "(Ljavax/swing/KeyStroke;Ljava/lang/Object;)V", methodCache: &InputMap.put_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -139,7 +139,7 @@ open class InputMap: java_swift.JavaObject, /* java.io.Serializable */ Unclassed
     open func setParent( map: InputMap? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: map != nil ? map! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: map, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParent", methodSig: "(Ljavax/swing/InputMap;)V", methodCache: &InputMap.setParent_MethodID_9, args: &__args, locals: &__locals )
     }
 

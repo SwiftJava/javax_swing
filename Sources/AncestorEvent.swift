@@ -160,7 +160,7 @@ open class AncestorEvent: java_awt.AWTEvent {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &AncestorEvent.source_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -172,10 +172,10 @@ open class AncestorEvent: java_awt.AWTEvent {
     public convenience init( source: JComponent?, id: Int, ancestor: java_awt.Container?, ancestorParent: java_awt.Container? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source != nil ? source! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: ancestor != nil ? ancestor! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: ancestorParent != nil ? ancestorParent! as JNIObject : nil, locals: &__locals )
+        __args[2] = JNIType.toJava( value: ancestor, locals: &__locals )
+        __args[3] = JNIType.toJava( value: ancestorParent, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/AncestorEvent", classCache: &AncestorEvent.AncestorEventJNIClass, methodSig: "(Ljavax/swing/JComponent;ILjava/awt/Container;Ljava/awt/Container;)V", methodCache: &AncestorEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -185,27 +185,14 @@ open class AncestorEvent: java_awt.AWTEvent {
         self.init( source: _source, id: _id, ancestor: _ancestor, ancestorParent: _ancestorParent )
     }
 
-    /// public javax.swing.JComponent javax.swing.event.AncestorEvent.getComponent()
-
-    private static var getComponent_MethodID_2: jmethodID?
-
-    open func getComponent() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &AncestorEvent.getComponent_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
-    }
-
-
     /// public java.awt.Container javax.swing.event.AncestorEvent.getAncestor()
 
-    private static var getAncestor_MethodID_3: jmethodID?
+    private static var getAncestor_MethodID_2: jmethodID?
 
     open func getAncestor() -> java_awt.Container! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAncestor", methodSig: "()Ljava/awt/Container;", methodCache: &AncestorEvent.getAncestor_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAncestor", methodSig: "()Ljava/awt/Container;", methodCache: &AncestorEvent.getAncestor_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Container( javaObject: __return ) : nil
     }
@@ -213,14 +200,27 @@ open class AncestorEvent: java_awt.AWTEvent {
 
     /// public java.awt.Container javax.swing.event.AncestorEvent.getAncestorParent()
 
-    private static var getAncestorParent_MethodID_4: jmethodID?
+    private static var getAncestorParent_MethodID_3: jmethodID?
 
     open func getAncestorParent() -> java_awt.Container! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAncestorParent", methodSig: "()Ljava/awt/Container;", methodCache: &AncestorEvent.getAncestorParent_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAncestorParent", methodSig: "()Ljava/awt/Container;", methodCache: &AncestorEvent.getAncestorParent_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JComponent javax.swing.event.AncestorEvent.getComponent()
+
+    private static var getComponent_MethodID_4: jmethodID?
+
+    open func getComponent() -> JComponent! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &AncestorEvent.getComponent_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
 

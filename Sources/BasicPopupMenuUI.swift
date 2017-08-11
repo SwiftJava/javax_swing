@@ -32,7 +32,7 @@ open class BasicPopupMenuUI: PopupMenuUI {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "popupMenu", fieldType: "Ljavax/swing/JPopupMenu;", fieldCache: &BasicPopupMenuUI.popupMenu_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -59,8 +59,6 @@ open class BasicPopupMenuUI: PopupMenuUI {
 
     /// static boolean javax.swing.plaf.basic.BasicPopupMenuUI.access$300(javax.swing.MenuElement,javax.swing.MenuElement)
 
-    /// public boolean javax.swing.plaf.basic.BasicPopupMenuUI.isPopupTrigger(java.awt.event.MouseEvent)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicPopupMenuUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
@@ -68,7 +66,7 @@ open class BasicPopupMenuUI: PopupMenuUI {
     open class func createUI( x: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x != nil ? x! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicPopupMenuUI", classCache: &BasicPopupMenuUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -78,29 +76,9 @@ open class BasicPopupMenuUI: PopupMenuUI {
         return createUI( x: _x )
     }
 
-    /// static javax.swing.InputMap javax.swing.plaf.basic.BasicPopupMenuUI.getInputMap(javax.swing.JPopupMenu,javax.swing.JComponent)
-
-    /// static javax.swing.ActionMap javax.swing.plaf.basic.BasicPopupMenuUI.getActionMap()
-
     /// public void javax.swing.plaf.basic.BasicPopupMenuUI.installUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicPopupMenuUI.uninstallUI(javax.swing.JComponent)
-
-    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.getFirstPopup()
-
-    /// static java.util.List javax.swing.plaf.basic.BasicPopupMenuUI.getPopups()
-
-    /// private static boolean javax.swing.plaf.basic.BasicPopupMenuUI.checkInvokerEqual(javax.swing.MenuElement,javax.swing.MenuElement)
-
-    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.nextEnabledChild(javax.swing.MenuElement[],int,int)
-
-    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.previousEnabledChild(javax.swing.MenuElement[],int,int)
-
-    /// static javax.swing.JPopupMenu javax.swing.plaf.basic.BasicPopupMenuUI.getLastPopup()
-
-    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],javax.swing.MenuElement,boolean)
-
-    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],int,boolean)
 
     /// static void javax.swing.plaf.basic.BasicPopupMenuUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
@@ -169,6 +147,28 @@ open class BasicPopupMenuUI: PopupMenuUI {
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicPopupMenuUI.uninstallKeyboardActions_MethodID_8, args: &__args, locals: &__locals )
     }
 
+
+    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.getFirstPopup()
+
+    /// static java.util.List javax.swing.plaf.basic.BasicPopupMenuUI.getPopups()
+
+    /// private static boolean javax.swing.plaf.basic.BasicPopupMenuUI.checkInvokerEqual(javax.swing.MenuElement,javax.swing.MenuElement)
+
+    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.nextEnabledChild(javax.swing.MenuElement[],int,int)
+
+    /// private static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.previousEnabledChild(javax.swing.MenuElement[],int,int)
+
+    /// static javax.swing.JPopupMenu javax.swing.plaf.basic.BasicPopupMenuUI.getLastPopup()
+
+    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],javax.swing.MenuElement,boolean)
+
+    /// static javax.swing.MenuElement javax.swing.plaf.basic.BasicPopupMenuUI.findEnabledChild(javax.swing.MenuElement[],int,boolean)
+
+    /// public boolean javax.swing.plaf.basic.BasicPopupMenuUI.isPopupTrigger(java.awt.event.MouseEvent)
+
+    /// static javax.swing.InputMap javax.swing.plaf.basic.BasicPopupMenuUI.getInputMap(javax.swing.JPopupMenu,javax.swing.JComponent)
+
+    /// static javax.swing.ActionMap javax.swing.plaf.basic.BasicPopupMenuUI.getActionMap()
 
 }
 

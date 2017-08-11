@@ -29,7 +29,7 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractTableModel.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -70,7 +70,7 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
     open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType != nil ? listenerType! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &AbstractTableModel.getListeners_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: [EventListenerForward](), from: __return )
     }
@@ -119,7 +119,7 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
     open func setValueAt( aValue: java_swift.JavaObject?, rowIndex: Int, columnIndex: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aValue != nil ? aValue! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: aValue, locals: &__locals )
         __args[1] = JNIType.toJava( value: rowIndex, locals: &__locals )
         __args[2] = JNIType.toJava( value: columnIndex, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueAt", methodSig: "(Ljava/lang/Object;II)V", methodCache: &AbstractTableModel.setValueAt_MethodID_6, args: &__args, locals: &__locals )
@@ -280,7 +280,7 @@ open class AbstractTableModel: java_swift.JavaObject, TableModel, /* java.io.Ser
     open func fireTableChanged( e: TableModelEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireTableChanged", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &AbstractTableModel.fireTableChanged_MethodID_17, args: &__args, locals: &__locals )
     }
 

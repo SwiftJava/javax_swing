@@ -57,7 +57,7 @@ open class BasicEditorPaneUI: BasicTextUI {
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicEditorPaneUI", classCache: &BasicEditorPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -66,6 +66,39 @@ open class BasicEditorPaneUI: BasicTextUI {
     override open class func createUI( _ _c: JComponent? ) -> ComponentUI! {
         return createUI( c: _c )
     }
+
+    /// public void javax.swing.plaf.basic.BasicEditorPaneUI.installUI(javax.swing.JComponent)
+
+    /// public void javax.swing.plaf.basic.BasicEditorPaneUI.uninstallUI(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.basic.BasicEditorPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_3: jmethodID?
+
+    override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicEditorPaneUI.propertyChange_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// public javax.swing.text.EditorKit javax.swing.plaf.basic.BasicEditorPaneUI.getEditorKit(javax.swing.text.JTextComponent)
+
+    /// protected java.lang.String javax.swing.plaf.basic.BasicEditorPaneUI.getPropertyPrefix()
+
+    private static var getPropertyPrefix_MethodID_4: jmethodID?
+
+    override open func getPropertyPrefix() -> String! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicEditorPaneUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: String(), from: __return )
+    }
+
 
     /// void javax.swing.plaf.basic.BasicEditorPaneUI.removeActions(javax.swing.ActionMap,javax.swing.Action[])
 
@@ -83,40 +116,7 @@ open class BasicEditorPaneUI: BasicTextUI {
 
     /// private void javax.swing.plaf.basic.BasicEditorPaneUI.updateFont(java.awt.Font)
 
-    /// public javax.swing.text.EditorKit javax.swing.plaf.basic.BasicEditorPaneUI.getEditorKit(javax.swing.text.JTextComponent)
-
-    /// protected void javax.swing.plaf.basic.BasicEditorPaneUI.propertyChange(java.beans.PropertyChangeEvent)
-
-    private static var propertyChange_MethodID_3: jmethodID?
-
-    override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicEditorPaneUI.propertyChange_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
-
     /// javax.swing.ActionMap javax.swing.plaf.basic.BasicEditorPaneUI.getActionMap()
-
-    /// protected java.lang.String javax.swing.plaf.basic.BasicEditorPaneUI.getPropertyPrefix()
-
-    private static var getPropertyPrefix_MethodID_4: jmethodID?
-
-    override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicEditorPaneUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicEditorPaneUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicEditorPaneUI.uninstallUI(javax.swing.JComponent)
 
 }
 

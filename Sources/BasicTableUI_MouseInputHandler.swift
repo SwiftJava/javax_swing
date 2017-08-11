@@ -26,7 +26,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     public convenience init( this_0: BasicTableUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTableUI$MouseInputHandler", classCache: &BasicTableUI_MouseInputHandler.BasicTableUI_MouseInputHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTableUI;)V", methodCache: &BasicTableUI_MouseInputHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -43,7 +43,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mousePressed( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mousePressed_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -58,7 +58,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mouseReleased( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mouseReleased_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -73,7 +73,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mouseClicked( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mouseClicked_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -88,7 +88,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mouseExited( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mouseExited_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -103,7 +103,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mouseEntered( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mouseEntered_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -118,7 +118,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mouseMoved( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mouseMoved_MethodID_7, args: &__args, locals: &__locals )
     }
 
@@ -133,7 +133,7 @@ open class BasicTableUI_MouseInputHandler: java_swift.JavaObject, MouseInputList
     open func mouseDragged( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &BasicTableUI_MouseInputHandler.mouseDragged_MethodID_8, args: &__args, locals: &__locals )
     }
 

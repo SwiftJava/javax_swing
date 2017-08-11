@@ -122,7 +122,7 @@ open class JProgressBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JProgressBar.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -186,7 +186,7 @@ open class JProgressBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JProgressBar.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -203,7 +203,7 @@ open class JProgressBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JProgressBar.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -580,7 +580,7 @@ open class JProgressBar: JComponent, SwingConstants {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JProgressBar.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -936,111 +936,81 @@ open class JProgressBar: JComponent, SwingConstants {
     }
 
 
-    /// public int javax.swing.JProgressBar.getMinimum()
+    /// public void javax.swing.JProgressBar.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var getMinimum_MethodID_9: jmethodID?
+    private static var addChangeListener_MethodID_9: jmethodID?
 
-    open func getMinimum() -> Int {
+    open func addChangeListener( l: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &JProgressBar.getMinimum_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JProgressBar.addChangeListener_MethodID_9, args: &__args, locals: &__locals )
     }
 
+    open func addChangeListener( _ _l: ChangeListener? ) {
+        addChangeListener( l: _l )
+    }
 
-    /// public void javax.swing.JProgressBar.setMinimum(int)
+    /// public void javax.swing.JProgressBar.removeChangeListener(javax.swing.event.ChangeListener)
 
-    private static var setMinimum_MethodID_10: jmethodID?
+    private static var removeChangeListener_MethodID_10: jmethodID?
 
-    open func setMinimum( n: Int ) {
+    open func removeChangeListener( l: ChangeListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &JProgressBar.setMinimum_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JProgressBar.removeChangeListener_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func setMinimum( _ _n: Int ) {
-        setMinimum( n: _n )
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
     }
 
-    /// public int javax.swing.JProgressBar.getMaximum()
+    /// public javax.swing.event.ChangeListener[] javax.swing.JProgressBar.getChangeListeners()
 
-    private static var getMaximum_MethodID_11: jmethodID?
+    private static var getChangeListeners_MethodID_11: jmethodID?
 
-    open func getMaximum() -> Int {
+    open func getChangeListeners() -> [ChangeListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &JProgressBar.getMaximum_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JProgressBar.getChangeListeners_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
     }
 
 
-    /// public int javax.swing.JProgressBar.getOrientation()
+    /// protected void javax.swing.JProgressBar.fireStateChanged()
 
-    private static var getOrientation_MethodID_12: jmethodID?
+    private static var fireStateChanged_MethodID_12: jmethodID?
 
-    open func getOrientation() -> Int {
+    open func fireStateChanged() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JProgressBar.getOrientation_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JProgressBar.fireStateChanged_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
-    /// public void javax.swing.JProgressBar.setMaximum(int)
+    /// public javax.swing.plaf.ProgressBarUI javax.swing.JProgressBar.getUI()
 
-    private static var setMaximum_MethodID_13: jmethodID?
+    private static var getUI_MethodID_13: jmethodID?
 
-    open func setMaximum( n: Int ) {
+    open func getUI() -> ProgressBarUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &JProgressBar.setMaximum_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximum( _ _n: Int ) {
-        setMaximum( n: _n )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JProgressBar.getAccessibleContext()
-
-    /// public javax.swing.BoundedRangeModel javax.swing.JProgressBar.getModel()
-
-    private static var getModel_MethodID_14: jmethodID?
-
-    open func getModel() -> BoundedRangeModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/BoundedRangeModel;", methodCache: &JProgressBar.getModel_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ProgressBarUI;", methodCache: &JProgressBar.getUI_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BoundedRangeModelForward( javaObject: __return ) : nil
+        return __return != nil ? ProgressBarUI( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.JProgressBar.setModel(javax.swing.BoundedRangeModel)
-
-    private static var setModel_MethodID_15: jmethodID?
-
-    open func setModel( newModel: BoundedRangeModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JProgressBar.setModel_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _newModel: BoundedRangeModel? ) {
-        setModel( newModel: _newModel )
-    }
 
     /// public void javax.swing.JProgressBar.setOrientation(int)
 
-    private static var setOrientation_MethodID_16: jmethodID?
+    private static var setOrientation_MethodID_14: jmethodID?
 
     open func setOrientation( newOrientation: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newOrientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JProgressBar.setOrientation_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JProgressBar.setOrientation_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setOrientation( _ _newOrientation: Int ) {
@@ -1049,25 +1019,25 @@ open class JProgressBar: JComponent, SwingConstants {
 
     /// public boolean javax.swing.JProgressBar.isStringPainted()
 
-    private static var isStringPainted_MethodID_17: jmethodID?
+    private static var isStringPainted_MethodID_15: jmethodID?
 
     open func isStringPainted() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isStringPainted", methodSig: "()Z", methodCache: &JProgressBar.isStringPainted_MethodID_17, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isStringPainted", methodSig: "()Z", methodCache: &JProgressBar.isStringPainted_MethodID_15, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public void javax.swing.JProgressBar.setStringPainted(boolean)
 
-    private static var setStringPainted_MethodID_18: jmethodID?
+    private static var setStringPainted_MethodID_16: jmethodID?
 
     open func setStringPainted( b: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStringPainted", methodSig: "(Z)V", methodCache: &JProgressBar.setStringPainted_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStringPainted", methodSig: "(Z)V", methodCache: &JProgressBar.setStringPainted_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setStringPainted( _ _b: Bool ) {
@@ -1076,13 +1046,13 @@ open class JProgressBar: JComponent, SwingConstants {
 
     /// public void javax.swing.JProgressBar.setString(java.lang.String)
 
-    private static var setString_MethodID_19: jmethodID?
+    private static var setString_MethodID_17: jmethodID?
 
     open func setString( s: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setString", methodSig: "(Ljava/lang/String;)V", methodCache: &JProgressBar.setString_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setString", methodSig: "(Ljava/lang/String;)V", methodCache: &JProgressBar.setString_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func setString( _ _s: String? ) {
@@ -1091,25 +1061,25 @@ open class JProgressBar: JComponent, SwingConstants {
 
     /// public double javax.swing.JProgressBar.getPercentComplete()
 
-    private static var getPercentComplete_MethodID_20: jmethodID?
+    private static var getPercentComplete_MethodID_18: jmethodID?
 
     open func getPercentComplete() -> Double {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getPercentComplete", methodSig: "()D", methodCache: &JProgressBar.getPercentComplete_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallDoubleMethod( object: javaObject, methodName: "getPercentComplete", methodSig: "()D", methodCache: &JProgressBar.getPercentComplete_MethodID_18, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Double(), from: __return )
     }
 
 
     /// public void javax.swing.JProgressBar.setIndeterminate(boolean)
 
-    private static var setIndeterminate_MethodID_21: jmethodID?
+    private static var setIndeterminate_MethodID_19: jmethodID?
 
     open func setIndeterminate( newValue: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIndeterminate", methodSig: "(Z)V", methodCache: &JProgressBar.setIndeterminate_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIndeterminate", methodSig: "(Z)V", methodCache: &JProgressBar.setIndeterminate_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setIndeterminate( _ _newValue: Bool ) {
@@ -1118,13 +1088,92 @@ open class JProgressBar: JComponent, SwingConstants {
 
     /// public boolean javax.swing.JProgressBar.isIndeterminate()
 
-    private static var isIndeterminate_MethodID_22: jmethodID?
+    private static var isIndeterminate_MethodID_20: jmethodID?
 
     open func isIndeterminate() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIndeterminate", methodSig: "()Z", methodCache: &JProgressBar.isIndeterminate_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isIndeterminate", methodSig: "()Z", methodCache: &JProgressBar.isIndeterminate_MethodID_20, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public int javax.swing.JProgressBar.getMinimum()
+
+    private static var getMinimum_MethodID_21: jmethodID?
+
+    open func getMinimum() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &JProgressBar.getMinimum_MethodID_21, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public void javax.swing.JProgressBar.setMinimum(int)
+
+    private static var setMinimum_MethodID_22: jmethodID?
+
+    open func setMinimum( n: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: n, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &JProgressBar.setMinimum_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimum( _ _n: Int ) {
+        setMinimum( n: _n )
+    }
+
+    /// public int javax.swing.JProgressBar.getMaximum()
+
+    private static var getMaximum_MethodID_23: jmethodID?
+
+    open func getMaximum() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &JProgressBar.getMaximum_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public boolean javax.swing.JProgressBar.isBorderPainted()
+
+    private static var isBorderPainted_MethodID_24: jmethodID?
+
+    open func isBorderPainted() -> Bool {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderPainted", methodSig: "()Z", methodCache: &JProgressBar.isBorderPainted_MethodID_24, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Bool(), from: __return )
+    }
+
+
+    /// public void javax.swing.JProgressBar.setBorderPainted(boolean)
+
+    private static var setBorderPainted_MethodID_25: jmethodID?
+
+    open func setBorderPainted( b: Bool ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderPainted", methodSig: "(Z)V", methodCache: &JProgressBar.setBorderPainted_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setBorderPainted( _ _b: Bool ) {
+        setBorderPainted( b: _b )
+    }
+
+    /// protected javax.swing.event.ChangeListener javax.swing.JProgressBar.createChangeListener()
+
+    private static var createChangeListener_MethodID_26: jmethodID?
+
+    open func createChangeListener() -> ChangeListener! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &JProgressBar.createChangeListener_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
 
@@ -1132,13 +1181,13 @@ open class JProgressBar: JComponent, SwingConstants {
 
     /// public void javax.swing.JProgressBar.setUI(javax.swing.plaf.ProgressBarUI)
 
-    private static var setUI_MethodID_23: jmethodID?
+    private static var setUI_MethodID_27: jmethodID?
 
     open func setUI( ui: ProgressBarUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui != nil ? ui! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ProgressBarUI;)V", methodCache: &JProgressBar.setUI_MethodID_23, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ProgressBarUI;)V", methodCache: &JProgressBar.setUI_MethodID_27, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: ProgressBarUI? ) {
@@ -1149,134 +1198,85 @@ open class JProgressBar: JComponent, SwingConstants {
 
     /// protected void javax.swing.JProgressBar.paintBorder(java.awt.Graphics)
 
-    private static var paintBorder_MethodID_24: jmethodID?
+    private static var paintBorder_MethodID_28: jmethodID?
 
     override open func paintBorder( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JProgressBar.paintBorder_MethodID_24, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JProgressBar.paintBorder_MethodID_28, args: &__args, locals: &__locals )
     }
 
     override open func paintBorder( _ _g: java_awt.Graphics? ) {
         paintBorder( g: _g )
     }
 
+    /// public int javax.swing.JProgressBar.getOrientation()
+
+    private static var getOrientation_MethodID_29: jmethodID?
+
+    open func getOrientation() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JProgressBar.getOrientation_MethodID_29, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JProgressBar.getAccessibleContext()
+
+    /// public javax.swing.BoundedRangeModel javax.swing.JProgressBar.getModel()
+
+    private static var getModel_MethodID_30: jmethodID?
+
+    open func getModel() -> BoundedRangeModel! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/BoundedRangeModel;", methodCache: &JProgressBar.getModel_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BoundedRangeModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JProgressBar.setMaximum(int)
+
+    private static var setMaximum_MethodID_31: jmethodID?
+
+    open func setMaximum( n: Int ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: n, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &JProgressBar.setMaximum_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximum( _ _n: Int ) {
+        setMaximum( n: _n )
+    }
+
+    /// public void javax.swing.JProgressBar.setModel(javax.swing.BoundedRangeModel)
+
+    private static var setModel_MethodID_32: jmethodID?
+
+    open func setModel( newModel: BoundedRangeModel? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JProgressBar.setModel_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func setModel( _ _newModel: BoundedRangeModel? ) {
+        setModel( newModel: _newModel )
+    }
+
     /// public java.lang.String javax.swing.JProgressBar.getString()
 
-    private static var getString_MethodID_25: jmethodID?
+    private static var getString_MethodID_33: jmethodID?
 
     open func getString() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "()Ljava/lang/String;", methodCache: &JProgressBar.getString_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getString", methodSig: "()Ljava/lang/String;", methodCache: &JProgressBar.getString_MethodID_33, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public javax.swing.plaf.ProgressBarUI javax.swing.JProgressBar.getUI()
-
-    private static var getUI_MethodID_26: jmethodID?
-
-    open func getUI() -> ProgressBarUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ProgressBarUI;", methodCache: &JProgressBar.getUI_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ProgressBarUI( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JProgressBar.addChangeListener(javax.swing.event.ChangeListener)
-
-    private static var addChangeListener_MethodID_27: jmethodID?
-
-    open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JProgressBar.addChangeListener_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func addChangeListener( _ _l: ChangeListener? ) {
-        addChangeListener( l: _l )
-    }
-
-    /// public void javax.swing.JProgressBar.removeChangeListener(javax.swing.event.ChangeListener)
-
-    private static var removeChangeListener_MethodID_28: jmethodID?
-
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JProgressBar.removeChangeListener_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.JProgressBar.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_29: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JProgressBar.getChangeListeners_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.JProgressBar.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_30: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JProgressBar.fireStateChanged_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean javax.swing.JProgressBar.isBorderPainted()
-
-    private static var isBorderPainted_MethodID_31: jmethodID?
-
-    open func isBorderPainted() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderPainted", methodSig: "()Z", methodCache: &JProgressBar.isBorderPainted_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JProgressBar.setBorderPainted(boolean)
-
-    private static var setBorderPainted_MethodID_32: jmethodID?
-
-    open func setBorderPainted( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderPainted", methodSig: "(Z)V", methodCache: &JProgressBar.setBorderPainted_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setBorderPainted( _ _b: Bool ) {
-        setBorderPainted( b: _b )
-    }
-
-    /// protected javax.swing.event.ChangeListener javax.swing.JProgressBar.createChangeListener()
-
-    private static var createChangeListener_MethodID_33: jmethodID?
-
-    open func createChangeListener() -> ChangeListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &JProgressBar.createChangeListener_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
 

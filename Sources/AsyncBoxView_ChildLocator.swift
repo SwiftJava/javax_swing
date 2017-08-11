@@ -29,7 +29,7 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lastValidOffset", fieldType: "Ljavax/swing/text/AsyncBoxView$ChildState;", fieldCache: &AsyncBoxView_ChildLocator.lastValidOffset_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -46,7 +46,7 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "lastAlloc", fieldType: "Ljava/awt/Rectangle;", fieldCache: &AsyncBoxView_ChildLocator.lastAlloc_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -63,7 +63,7 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "childAlloc", fieldType: "Ljava/awt/Rectangle;", fieldCache: &AsyncBoxView_ChildLocator.childAlloc_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -77,7 +77,7 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
     public convenience init( this_0: AsyncBoxView? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0 != nil ? this_0! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/AsyncBoxView$ChildLocator", classCache: &AsyncBoxView_ChildLocator.AsyncBoxView_ChildLocatorJNIClass, methodSig: "(Ljavax/swing/text/AsyncBoxView;)V", methodCache: &AsyncBoxView_ChildLocator.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -87,50 +87,15 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
         self.init( this_0: _this_0 )
     }
 
-    /// protected java.awt.Shape javax.swing.text.AsyncBoxView$ChildLocator.getChildAllocation(int)
-
-    private static var getChildAllocation_MethodID_2: jmethodID?
-
-    open func getChildAllocation( index: Int ) -> java_awt.Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAllocation", methodSig: "(I)Ljava/awt/Shape;", methodCache: &AsyncBoxView_ChildLocator.getChildAllocation_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
-    }
-
-    open func getChildAllocation( _ _index: Int ) -> java_awt.Shape! {
-        return getChildAllocation( index: _index )
-    }
-
-    /// public synchronized java.awt.Shape javax.swing.text.AsyncBoxView$ChildLocator.getChildAllocation(int,java.awt.Shape)
-
-    private static var getChildAllocation_MethodID_3: jmethodID?
-
-    open func getChildAllocation( index: Int, a: java_awt.Shape? ) -> java_awt.Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAllocation", methodSig: "(ILjava/awt/Shape;)Ljava/awt/Shape;", methodCache: &AsyncBoxView_ChildLocator.getChildAllocation_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
-    }
-
-    open func getChildAllocation( _ _index: Int, _ _a: java_awt.Shape? ) -> java_awt.Shape! {
-        return getChildAllocation( index: _index, a: _a )
-    }
-
     /// public synchronized void javax.swing.text.AsyncBoxView$ChildLocator.paintChildren(java.awt.Graphics)
 
-    private static var paintChildren_MethodID_4: jmethodID?
+    private static var paintChildren_MethodID_2: jmethodID?
 
     open func paintChildren( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChildren", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &AsyncBoxView_ChildLocator.paintChildren_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChildren", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &AsyncBoxView_ChildLocator.paintChildren_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func paintChildren( _ _g: java_awt.Graphics? ) {
@@ -139,13 +104,13 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
 
     /// public synchronized void javax.swing.text.AsyncBoxView$ChildLocator.childChanged(javax.swing.text.AsyncBoxView$ChildState)
 
-    private static var childChanged_MethodID_5: jmethodID?
+    private static var childChanged_MethodID_3: jmethodID?
 
     open func childChanged( cs: AsyncBoxView_ChildState? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cs != nil ? cs! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "childChanged", methodSig: "(Ljavax/swing/text/AsyncBoxView$ChildState;)V", methodCache: &AsyncBoxView_ChildLocator.childChanged_MethodID_5, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: cs, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "childChanged", methodSig: "(Ljavax/swing/text/AsyncBoxView$ChildState;)V", methodCache: &AsyncBoxView_ChildLocator.childChanged_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func childChanged( _ _cs: AsyncBoxView_ChildState? ) {
@@ -154,7 +119,7 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
 
     /// public int javax.swing.text.AsyncBoxView$ChildLocator.getViewIndexAtPoint(float,float,java.awt.Shape)
 
-    private static var getViewIndexAtPoint_MethodID_6: jmethodID?
+    private static var getViewIndexAtPoint_MethodID_4: jmethodID?
 
     open func getViewIndexAtPoint( x: Float, y: Float, a: java_awt.Shape? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
@@ -162,7 +127,7 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         __args[1] = JNIType.toJava( value: y, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPoint", methodSig: "(FFLjava/awt/Shape;)I", methodCache: &AsyncBoxView_ChildLocator.getViewIndexAtPoint_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPoint", methodSig: "(FFLjava/awt/Shape;)I", methodCache: &AsyncBoxView_ChildLocator.getViewIndexAtPoint_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -172,13 +137,13 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
 
     /// protected void javax.swing.text.AsyncBoxView$ChildLocator.setAllocation(java.awt.Shape)
 
-    private static var setAllocation_MethodID_7: jmethodID?
+    private static var setAllocation_MethodID_5: jmethodID?
 
     open func setAllocation( a: java_awt.Shape? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllocation", methodSig: "(Ljava/awt/Shape;)V", methodCache: &AsyncBoxView_ChildLocator.setAllocation_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllocation", methodSig: "(Ljava/awt/Shape;)V", methodCache: &AsyncBoxView_ChildLocator.setAllocation_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setAllocation( _ _a: java_awt.Shape? ) {
@@ -187,13 +152,13 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
 
     /// protected int javax.swing.text.AsyncBoxView$ChildLocator.getViewIndexAtVisualOffset(float)
 
-    private static var getViewIndexAtVisualOffset_MethodID_8: jmethodID?
+    private static var getViewIndexAtVisualOffset_MethodID_6: jmethodID?
 
     open func getViewIndexAtVisualOffset( targetOffset: Float ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: targetOffset, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtVisualOffset", methodSig: "(F)I", methodCache: &AsyncBoxView_ChildLocator.getViewIndexAtVisualOffset_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtVisualOffset", methodSig: "(F)I", methodCache: &AsyncBoxView_ChildLocator.getViewIndexAtVisualOffset_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -206,6 +171,41 @@ open class AsyncBoxView_ChildLocator: java_swift.JavaObject {
     /// void javax.swing.text.AsyncBoxView$ChildLocator.updateChildOffsetsToIndex(int)
 
     /// boolean javax.swing.text.AsyncBoxView$ChildLocator.intersectsClip(java.awt.Shape,java.awt.Rectangle)
+
+    /// public synchronized java.awt.Shape javax.swing.text.AsyncBoxView$ChildLocator.getChildAllocation(int,java.awt.Shape)
+
+    private static var getChildAllocation_MethodID_7: jmethodID?
+
+    open func getChildAllocation( index: Int, a: java_awt.Shape? ) -> java_awt.Shape! {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAllocation", methodSig: "(ILjava/awt/Shape;)Ljava/awt/Shape;", methodCache: &AsyncBoxView_ChildLocator.getChildAllocation_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
+    }
+
+    open func getChildAllocation( _ _index: Int, _ _a: java_awt.Shape? ) -> java_awt.Shape! {
+        return getChildAllocation( index: _index, a: _a )
+    }
+
+    /// protected java.awt.Shape javax.swing.text.AsyncBoxView$ChildLocator.getChildAllocation(int)
+
+    private static var getChildAllocation_MethodID_8: jmethodID?
+
+    open func getChildAllocation( index: Int ) -> java_awt.Shape! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAllocation", methodSig: "(I)Ljava/awt/Shape;", methodCache: &AsyncBoxView_ChildLocator.getChildAllocation_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
+    }
+
+    open func getChildAllocation( _ _index: Int ) -> java_awt.Shape! {
+        return getChildAllocation( index: _index )
+    }
 
 }
 

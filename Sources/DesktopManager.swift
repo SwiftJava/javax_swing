@@ -81,7 +81,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func openFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "openFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.openFrame_MethodID_16, args: &__args, locals: &__locals )
     }
 
@@ -96,7 +96,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func closeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.closeFrame_MethodID_17, args: &__args, locals: &__locals )
     }
 
@@ -111,7 +111,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func maximizeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "maximizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.maximizeFrame_MethodID_18, args: &__args, locals: &__locals )
     }
 
@@ -126,7 +126,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func minimizeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "minimizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.minimizeFrame_MethodID_19, args: &__args, locals: &__locals )
     }
 
@@ -141,7 +141,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func iconifyFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "iconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.iconifyFrame_MethodID_20, args: &__args, locals: &__locals )
     }
 
@@ -156,7 +156,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func deiconifyFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deiconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.deiconifyFrame_MethodID_21, args: &__args, locals: &__locals )
     }
 
@@ -171,7 +171,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func activateFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.activateFrame_MethodID_22, args: &__args, locals: &__locals )
     }
 
@@ -186,7 +186,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func deactivateFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deactivateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.deactivateFrame_MethodID_23, args: &__args, locals: &__locals )
     }
 
@@ -201,7 +201,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func beginDraggingFrame( f: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.beginDraggingFrame_MethodID_24, args: &__args, locals: &__locals )
     }
 
@@ -216,7 +216,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func dragFrame( f: JComponent?, newX: Int, newY: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragFrame", methodSig: "(Ljavax/swing/JComponent;II)V", methodCache: &DesktopManagerForward.dragFrame_MethodID_25, args: &__args, locals: &__locals )
@@ -233,7 +233,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func endDraggingFrame( f: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "endDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.endDraggingFrame_MethodID_26, args: &__args, locals: &__locals )
     }
 
@@ -248,7 +248,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func beginResizingFrame( f: JComponent?, direction: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: direction, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginResizingFrame", methodSig: "(Ljavax/swing/JComponent;I)V", methodCache: &DesktopManagerForward.beginResizingFrame_MethodID_27, args: &__args, locals: &__locals )
     }
@@ -264,7 +264,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )
@@ -283,7 +283,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func endResizingFrame( f: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "endResizingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.endResizingFrame_MethodID_29, args: &__args, locals: &__locals )
     }
 
@@ -298,7 +298,7 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     open func setBoundsForFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f != nil ? f! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
         __args[1] = JNIType.toJava( value: newX, locals: &__locals )
         __args[2] = JNIType.toJava( value: newY, locals: &__locals )
         __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )

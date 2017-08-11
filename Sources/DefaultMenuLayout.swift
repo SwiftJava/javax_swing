@@ -46,7 +46,7 @@ open class DefaultMenuLayout: BoxLayout, UIResource {
     public convenience init( target: java_awt.Container?, axis: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target != nil ? target! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
         __args[1] = JNIType.toJava( value: axis, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/DefaultMenuLayout", classCache: &DefaultMenuLayout.DefaultMenuLayoutJNIClass, methodSig: "(Ljava/awt/Container;I)V", methodCache: &DefaultMenuLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

@@ -97,7 +97,7 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "inclusions", fieldType: "Ljava/util/BitSet;", fieldCache: &text_html_parser_Element.inclusions_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -114,7 +114,7 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "exclusions", fieldType: "Ljava/util/BitSet;", fieldCache: &text_html_parser_Element.exclusions_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -148,7 +148,7 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "content", fieldType: "Ljavax/swing/text/html/parser/ContentModel;", fieldCache: &text_html_parser_Element.content_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -165,7 +165,7 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "atts", fieldType: "Ljavax/swing/text/html/parser/AttributeList;", fieldCache: &text_html_parser_Element.atts_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -182,7 +182,7 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "data", fieldType: "Ljava/lang/Object;", fieldCache: &text_html_parser_Element.data_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -661,27 +661,15 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
         return getAttribute( name: _name )
     }
 
-    /// public int javax.swing.text.html.parser.Element.getIndex()
-
-    private static var getIndex_MethodID_7: jmethodID?
-
-    open func getIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &text_html_parser_Element.getIndex_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public static int javax.swing.text.html.parser.Element.name2type(java.lang.String)
 
-    private static var name2type_MethodID_8: jmethodID?
+    private static var name2type_MethodID_7: jmethodID?
 
     open class func name2type( nm: String? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/parser/Element", classCache: &text_html_parser_ElementJNIClass, methodName: "name2type", methodSig: "(Ljava/lang/String;)I", methodCache: &name2type_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/parser/Element", classCache: &text_html_parser_ElementJNIClass, methodName: "name2type", methodSig: "(Ljava/lang/String;)I", methodCache: &name2type_MethodID_7, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 
@@ -693,37 +681,37 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
 
     /// public boolean javax.swing.text.html.parser.Element.omitStart()
 
-    private static var omitStart_MethodID_9: jmethodID?
+    private static var omitStart_MethodID_8: jmethodID?
 
     open func omitStart() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "omitStart", methodSig: "()Z", methodCache: &text_html_parser_Element.omitStart_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "omitStart", methodSig: "()Z", methodCache: &text_html_parser_Element.omitStart_MethodID_8, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public boolean javax.swing.text.html.parser.Element.omitEnd()
 
-    private static var omitEnd_MethodID_10: jmethodID?
+    private static var omitEnd_MethodID_9: jmethodID?
 
     open func omitEnd() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "omitEnd", methodSig: "()Z", methodCache: &text_html_parser_Element.omitEnd_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "omitEnd", methodSig: "()Z", methodCache: &text_html_parser_Element.omitEnd_MethodID_9, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
 
 
     /// public javax.swing.text.html.parser.AttributeList javax.swing.text.html.parser.Element.getAttributeByValue(java.lang.String)
 
-    private static var getAttributeByValue_MethodID_11: jmethodID?
+    private static var getAttributeByValue_MethodID_10: jmethodID?
 
     open func getAttributeByValue( name: String? ) -> AttributeList! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeByValue", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/AttributeList;", methodCache: &text_html_parser_Element.getAttributeByValue_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeByValue", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/parser/AttributeList;", methodCache: &text_html_parser_Element.getAttributeByValue_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeList( javaObject: __return ) : nil
     }
@@ -731,6 +719,18 @@ open class text_html_parser_Element: java_swift.JavaObject, DTDConstants, /* jav
     open func getAttributeByValue( _ _name: String? ) -> AttributeList! {
         return getAttributeByValue( name: _name )
     }
+
+    /// public int javax.swing.text.html.parser.Element.getIndex()
+
+    private static var getIndex_MethodID_11: jmethodID?
+
+    open func getIndex() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &text_html_parser_Element.getIndex_MethodID_11, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
 
 }
 

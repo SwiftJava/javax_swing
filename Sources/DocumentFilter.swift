@@ -35,7 +35,7 @@ open class DocumentFilter: java_swift.JavaObject {
     open func remove( fb: DocumentFilter_FilterBypass?, offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fb != nil ? fb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fb, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
         __args[2] = JNIType.toJava( value: length, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljavax/swing/text/DocumentFilter$FilterBypass;II)V", methodCache: &DocumentFilter.remove_MethodID_2, args: &__args, locals: &__locals )
@@ -55,7 +55,7 @@ open class DocumentFilter: java_swift.JavaObject {
     open func replace( fb: DocumentFilter_FilterBypass?, offset: Int, length: Int, text: String?, attrs: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fb != nil ? fb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fb, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
         __args[2] = JNIType.toJava( value: length, locals: &__locals )
         __args[3] = JNIType.toJava( value: text, locals: &__locals )
@@ -77,7 +77,7 @@ open class DocumentFilter: java_swift.JavaObject {
     open func insertString( fb: DocumentFilter_FilterBypass?, offset: Int, string: String?, attr: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fb != nil ? fb! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: fb, locals: &__locals )
         __args[1] = JNIType.toJava( value: offset, locals: &__locals )
         __args[2] = JNIType.toJava( value: string, locals: &__locals )
         __args[3] = JNIType.toJava( value: attr, locals: &__locals )

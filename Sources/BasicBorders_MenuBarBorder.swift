@@ -28,8 +28,8 @@ open class BasicBorders_MenuBarBorder: AbstractBorder, UIResource {
     public convenience init( shadow: java_awt.Color?, highlight: java_awt.Color? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: shadow, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicBorders$MenuBarBorder", classCache: &BasicBorders_MenuBarBorder.BasicBorders_MenuBarBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BasicBorders_MenuBarBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

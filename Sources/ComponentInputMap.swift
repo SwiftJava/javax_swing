@@ -29,7 +29,7 @@ open class ComponentInputMap: InputMap {
     public convenience init( component: JComponent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component != nil ? component! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/ComponentInputMap", classCache: &ComponentInputMap.ComponentInputMapJNIClass, methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &ComponentInputMap.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

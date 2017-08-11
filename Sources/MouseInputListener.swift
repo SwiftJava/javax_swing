@@ -22,7 +22,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     override open func mousePressed( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mousePressed", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mousePressed_MethodID_1, args: &__args, locals: &__locals )
     }
 
@@ -37,7 +37,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     override open func mouseReleased( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseReleased", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mouseReleased_MethodID_2, args: &__args, locals: &__locals )
     }
 
@@ -52,7 +52,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     override open func mouseClicked( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseClicked", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mouseClicked_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -67,7 +67,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     override open func mouseExited( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseExited", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mouseExited_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -82,7 +82,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     override open func mouseEntered( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseEntered", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mouseEntered_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -97,7 +97,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     open func mouseMoved( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseMoved", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mouseMoved_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -112,7 +112,7 @@ open class MouseInputListenerForward: java_awt.MouseListenerForward, MouseInputL
     open func mouseDragged( e: java_awt.MouseEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e != nil ? e! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "mouseDragged", methodSig: "(Ljava/awt/event/MouseEvent;)V", methodCache: &MouseInputListenerForward.mouseDragged_MethodID_7, args: &__args, locals: &__locals )
     }
 

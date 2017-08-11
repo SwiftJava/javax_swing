@@ -186,7 +186,7 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     open func equals( other: java_swift.JavaObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: other != nil ? other! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: other, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TabStop.equals_MethodID_3, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Bool(), from: __return )
     }
@@ -199,38 +199,38 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
 
     /// public int javax.swing.text.TabStop.hashCode()
 
-    /// public int javax.swing.text.TabStop.getAlignment()
-
-    private static var getAlignment_MethodID_4: jmethodID?
-
-    open func getAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &TabStop.getAlignment_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public float javax.swing.text.TabStop.getPosition()
 
-    private static var getPosition_MethodID_5: jmethodID?
+    private static var getPosition_MethodID_4: jmethodID?
 
     open func getPosition() -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPosition", methodSig: "()F", methodCache: &TabStop.getPosition_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPosition", methodSig: "()F", methodCache: &TabStop.getPosition_MethodID_4, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Float(), from: __return )
     }
 
 
     /// public int javax.swing.text.TabStop.getLeader()
 
-    private static var getLeader_MethodID_6: jmethodID?
+    private static var getLeader_MethodID_5: jmethodID?
 
     open func getLeader() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeader", methodSig: "()I", methodCache: &TabStop.getLeader_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeader", methodSig: "()I", methodCache: &TabStop.getLeader_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: Int(), from: __return )
+    }
+
+
+    /// public int javax.swing.text.TabStop.getAlignment()
+
+    private static var getAlignment_MethodID_6: jmethodID?
+
+    open func getAlignment() -> Int {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &TabStop.getAlignment_MethodID_6, args: &__args, locals: &__locals )
         return JNIType.toSwift( type: Int(), from: __return )
     }
 

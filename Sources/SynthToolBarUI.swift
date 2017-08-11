@@ -39,7 +39,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "toolBar", fieldType: "Ljavax/swing/JToolBar;", fieldCache: &SynthToolBarUI.toolBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -66,7 +66,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dragWindow", fieldType: "Ljavax/swing/plaf/basic/BasicToolBarUI$DragWindow;", fieldCache: &SynthToolBarUI.dragWindow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -104,7 +104,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dockingColor", fieldType: "Ljava/awt/Color;", fieldCache: &SynthToolBarUI.dockingColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -121,7 +121,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "floatingColor", fieldType: "Ljava/awt/Color;", fieldCache: &SynthToolBarUI.floatingColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -138,7 +138,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "dockingBorderColor", fieldType: "Ljava/awt/Color;", fieldCache: &SynthToolBarUI.dockingBorderColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -155,7 +155,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "floatingBorderColor", fieldType: "Ljava/awt/Color;", fieldCache: &SynthToolBarUI.floatingBorderColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -273,7 +273,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthToolBarUI.upKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -290,7 +290,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "downKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthToolBarUI.downKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -307,7 +307,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "leftKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthToolBarUI.leftKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -324,7 +324,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &SynthToolBarUI.rightKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
@@ -475,7 +475,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
     open func getContext( c: JComponent? ) -> SynthContext! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthToolBarUI.getContext_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
@@ -494,7 +494,7 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthToolBarUI", classCache: &SynthToolBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
@@ -504,22 +504,25 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         return createUI( c: _c )
     }
 
-    /// private void javax.swing.plaf.synth.SynthToolBarUI.updateStyle(javax.swing.JToolBar)
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    /// public void javax.swing.plaf.synth.SynthToolBarUI.propertyChange(java.beans.PropertyChangeEvent)
+    private static var paint_MethodID_4: jmethodID?
 
-    private static var propertyChange_MethodID_4: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt != nil ? evt! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthToolBarUI.propertyChange_MethodID_4, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthToolBarUI.paint_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
     }
+
+    /// public void javax.swing.plaf.synth.SynthToolBarUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    /// private int javax.swing.plaf.synth.SynthToolBarUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
     /// public void javax.swing.plaf.synth.SynthToolBarUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
@@ -528,8 +531,8 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
     open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: x, locals: &__locals )
         __args[3] = JNIType.toJava( value: y, locals: &__locals )
         __args[4] = JNIType.toJava( value: w, locals: &__locals )
@@ -541,15 +544,128 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
         paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.installDefaults()
+
+    private static var installDefaults_MethodID_6: jmethodID?
+
+    override open func installDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthToolBarUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.installComponents()
+
+    private static var installComponents_MethodID_7: jmethodID?
+
+    override open func installComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &SynthToolBarUI.installComponents_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.installListeners()
+
+    private static var installListeners_MethodID_8: jmethodID?
+
+    override open func installListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthToolBarUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_9: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthToolBarUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.uninstallComponents()
+
+    private static var uninstallComponents_MethodID_10: jmethodID?
+
+    override open func uninstallComponents() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &SynthToolBarUI.uninstallComponents_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_11: jmethodID?
+
+    override open func uninstallListeners() {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthToolBarUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthToolBarUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_12: jmethodID?
+
+    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthToolBarUI.propertyChange_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.synth.SynthToolBarUI.createLayout()
+
+    private static var createLayout_MethodID_13: jmethodID?
+
+    open func createLayout() -> java_awt.LayoutManager! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &SynthToolBarUI.createLayout_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthToolBarUI.paintContent(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
+
+    private static var paintContent_MethodID_14: jmethodID?
+
+    open func paintContent( context: SynthContext?, g: java_awt.Graphics?, bounds: java_awt.Rectangle? ) {
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bounds, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContent", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/awt/Rectangle;)V", methodCache: &SynthToolBarUI.paintContent_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func paintContent( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _bounds: java_awt.Rectangle? ) {
+        paintContent( context: _context, g: _g, bounds: _bounds )
+    }
+
+    /// private void javax.swing.plaf.synth.SynthToolBarUI.updateStyle(javax.swing.JToolBar)
+
     /// protected void javax.swing.plaf.synth.SynthToolBarUI.setBorderToRollover(java.awt.Component)
 
-    private static var setBorderToRollover_MethodID_6: jmethodID?
+    private static var setBorderToRollover_MethodID_15: jmethodID?
 
     override open func setBorderToRollover( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &SynthToolBarUI.setBorderToRollover_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &SynthToolBarUI.setBorderToRollover_MethodID_15, args: &__args, locals: &__locals )
     }
 
     override open func setBorderToRollover( _ _c: java_awt.Component? ) {
@@ -558,13 +674,13 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
 
     /// protected void javax.swing.plaf.synth.SynthToolBarUI.setBorderToNonRollover(java.awt.Component)
 
-    private static var setBorderToNonRollover_MethodID_7: jmethodID?
+    private static var setBorderToNonRollover_MethodID_16: jmethodID?
 
     override open func setBorderToNonRollover( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &SynthToolBarUI.setBorderToNonRollover_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNonRollover", methodSig: "(Ljava/awt/Component;)V", methodCache: &SynthToolBarUI.setBorderToNonRollover_MethodID_16, args: &__args, locals: &__locals )
     }
 
     override open func setBorderToNonRollover( _ _c: java_awt.Component? ) {
@@ -573,13 +689,13 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
 
     /// protected void javax.swing.plaf.synth.SynthToolBarUI.setBorderToNormal(java.awt.Component)
 
-    private static var setBorderToNormal_MethodID_8: jmethodID?
+    private static var setBorderToNormal_MethodID_17: jmethodID?
 
     override open func setBorderToNormal( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c != nil ? c! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNormal", methodSig: "(Ljava/awt/Component;)V", methodCache: &SynthToolBarUI.setBorderToNormal_MethodID_8, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderToNormal", methodSig: "(Ljava/awt/Component;)V", methodCache: &SynthToolBarUI.setBorderToNormal_MethodID_17, args: &__args, locals: &__locals )
     }
 
     override open func setBorderToNormal( _ _c: java_awt.Component? ) {
@@ -588,134 +704,18 @@ open class SynthToolBarUI: BasicToolBarUI, /* java.beans.PropertyChangeListener 
 
     /// protected void javax.swing.plaf.synth.SynthToolBarUI.paintDragWindow(java.awt.Graphics)
 
-    private static var paintDragWindow_MethodID_9: jmethodID?
+    private static var paintDragWindow_MethodID_18: jmethodID?
 
     override open func paintDragWindow( g: java_awt.Graphics? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDragWindow", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthToolBarUI.paintDragWindow_MethodID_9, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDragWindow", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthToolBarUI.paintDragWindow_MethodID_18, args: &__args, locals: &__locals )
     }
 
     override open func paintDragWindow( _ _g: java_awt.Graphics? ) {
         paintDragWindow( g: _g )
     }
-
-    /// private int javax.swing.plaf.synth.SynthToolBarUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.paintContent(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
-
-    private static var paintContent_MethodID_10: jmethodID?
-
-    open func paintContent( context: SynthContext?, g: java_awt.Graphics?, bounds: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bounds != nil ? bounds! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContent", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;Ljava/awt/Rectangle;)V", methodCache: &SynthToolBarUI.paintContent_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func paintContent( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _bounds: java_awt.Rectangle? ) {
-        paintContent( context: _context, g: _g, bounds: _bounds )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthToolBarUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_11: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context != nil ? context! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g != nil ? g! as JNIObject : nil, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthToolBarUI.paint_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.synth.SynthToolBarUI.createLayout()
-
-    private static var createLayout_MethodID_12: jmethodID?
-
-    open func createLayout() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &SynthToolBarUI.createLayout_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.installDefaults()
-
-    private static var installDefaults_MethodID_13: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthToolBarUI.installDefaults_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.installComponents()
-
-    private static var installComponents_MethodID_14: jmethodID?
-
-    override open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &SynthToolBarUI.installComponents_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.installListeners()
-
-    private static var installListeners_MethodID_15: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthToolBarUI.installListeners_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_16: jmethodID?
-
-    override open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthToolBarUI.uninstallDefaults_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_17: jmethodID?
-
-    override open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &SynthToolBarUI.uninstallComponents_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthToolBarUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_18: jmethodID?
-
-    override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthToolBarUI.uninstallListeners_MethodID_18, args: &__args, locals: &__locals )
-    }
-
 
 }
 

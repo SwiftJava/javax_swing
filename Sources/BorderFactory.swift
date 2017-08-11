@@ -35,28 +35,48 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// private javax.swing.BorderFactory()
 
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createRaisedBevelBorder()
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEmptyBorder()
 
-    private static var createRaisedBevelBorder_MethodID_1: jmethodID?
+    private static var createEmptyBorder_MethodID_1: jmethodID?
 
-    open class func createRaisedBevelBorder() -> Border! {
+    open class func createEmptyBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createRaisedBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createRaisedBevelBorder_MethodID_1, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEmptyBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createEmptyBorder_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
 
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEmptyBorder(int,int,int,int)
+
+    private static var createEmptyBorder_MethodID_2: jmethodID?
+
+    open class func createEmptyBorder( top: Int, left: Int, bottom: Int, right: Int ) -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: top, locals: &__locals )
+        __args[1] = JNIType.toJava( value: left, locals: &__locals )
+        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
+        __args[3] = JNIType.toJava( value: right, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEmptyBorder", methodSig: "(IIII)Ljavax/swing/border/Border;", methodCache: &createEmptyBorder_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+    open class func createEmptyBorder( _ _top: Int, _ _left: Int, _ _bottom: Int, _ _right: Int ) -> Border! {
+        return createEmptyBorder( top: _top, left: _left, bottom: _bottom, right: _right )
+    }
+
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createLineBorder(java.awt.Color)
 
-    private static var createLineBorder_MethodID_2: jmethodID?
+    private static var createLineBorder_MethodID_3: jmethodID?
 
     open class func createLineBorder( color: java_awt.Color? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLineBorder", methodSig: "(Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createLineBorder_MethodID_2, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLineBorder", methodSig: "(Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createLineBorder_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -67,14 +87,14 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createLineBorder(java.awt.Color,int)
 
-    private static var createLineBorder_MethodID_3: jmethodID?
+    private static var createLineBorder_MethodID_4: jmethodID?
 
     open class func createLineBorder( color: java_awt.Color?, thickness: Int ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
         __args[1] = JNIType.toJava( value: thickness, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLineBorder", methodSig: "(Ljava/awt/Color;I)Ljavax/swing/border/Border;", methodCache: &createLineBorder_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLineBorder", methodSig: "(Ljava/awt/Color;I)Ljavax/swing/border/Border;", methodCache: &createLineBorder_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -85,15 +105,15 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createLineBorder(java.awt.Color,int,boolean)
 
-    private static var createLineBorder_MethodID_4: jmethodID?
+    private static var createLineBorder_MethodID_5: jmethodID?
 
     open class func createLineBorder( color: java_awt.Color?, thickness: Int, rounded: Bool ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
         __args[1] = JNIType.toJava( value: thickness, locals: &__locals )
         __args[2] = JNIType.toJava( value: rounded, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLineBorder", methodSig: "(Ljava/awt/Color;IZ)Ljavax/swing/border/Border;", methodCache: &createLineBorder_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLineBorder", methodSig: "(Ljava/awt/Color;IZ)Ljavax/swing/border/Border;", methodCache: &createLineBorder_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -104,12 +124,12 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createLoweredBevelBorder()
 
-    private static var createLoweredBevelBorder_MethodID_5: jmethodID?
+    private static var createLoweredBevelBorder_MethodID_6: jmethodID?
 
     open class func createLoweredBevelBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLoweredBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createLoweredBevelBorder_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLoweredBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createLoweredBevelBorder_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -117,17 +137,17 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createBevelBorder(int,java.awt.Color,java.awt.Color,java.awt.Color,java.awt.Color)
 
-    private static var createBevelBorder_MethodID_6: jmethodID?
+    private static var createBevelBorder_MethodID_7: jmethodID?
 
     open class func createBevelBorder( type: Int, highlightOuter: java_awt.Color?, highlightInner: java_awt.Color?, shadowOuter: java_awt.Color?, shadowInner: java_awt.Color? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlightOuter != nil ? highlightOuter! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: highlightInner != nil ? highlightInner! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: shadowOuter != nil ? shadowOuter! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: shadowInner != nil ? shadowInner! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createBevelBorder_MethodID_6, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlightOuter, locals: &__locals )
+        __args[2] = JNIType.toJava( value: highlightInner, locals: &__locals )
+        __args[3] = JNIType.toJava( value: shadowOuter, locals: &__locals )
+        __args[4] = JNIType.toJava( value: shadowInner, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createBevelBorder_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -138,13 +158,13 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createBevelBorder(int)
 
-    private static var createBevelBorder_MethodID_7: jmethodID?
+    private static var createBevelBorder_MethodID_8: jmethodID?
 
     open class func createBevelBorder( type: Int ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createBevelBorder", methodSig: "(I)Ljavax/swing/border/Border;", methodCache: &createBevelBorder_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createBevelBorder", methodSig: "(I)Ljavax/swing/border/Border;", methodCache: &createBevelBorder_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -155,15 +175,15 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createBevelBorder(int,java.awt.Color,java.awt.Color)
 
-    private static var createBevelBorder_MethodID_8: jmethodID?
+    private static var createBevelBorder_MethodID_9: jmethodID?
 
     open class func createBevelBorder( type: Int, highlight: java_awt.Color?, shadow: java_awt.Color? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createBevelBorder_MethodID_8, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createBevelBorder_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -176,12 +196,12 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createRaisedSoftBevelBorder()
 
-    private static var createRaisedSoftBevelBorder_MethodID_9: jmethodID?
+    private static var createRaisedSoftBevelBorder_MethodID_10: jmethodID?
 
     open class func createRaisedSoftBevelBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createRaisedSoftBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createRaisedSoftBevelBorder_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createRaisedSoftBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createRaisedSoftBevelBorder_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -189,37 +209,16 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createLoweredSoftBevelBorder()
 
-    private static var createLoweredSoftBevelBorder_MethodID_10: jmethodID?
+    private static var createLoweredSoftBevelBorder_MethodID_11: jmethodID?
 
     open class func createLoweredSoftBevelBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLoweredSoftBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createLoweredSoftBevelBorder_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createLoweredSoftBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createLoweredSoftBevelBorder_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
-
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createSoftBevelBorder(int,java.awt.Color,java.awt.Color,java.awt.Color,java.awt.Color)
-
-    private static var createSoftBevelBorder_MethodID_11: jmethodID?
-
-    open class func createSoftBevelBorder( type: Int, highlightOuter: java_awt.Color?, highlightInner: java_awt.Color?, shadowOuter: java_awt.Color?, shadowInner: java_awt.Color? ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlightOuter != nil ? highlightOuter! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: highlightInner != nil ? highlightInner! as JNIObject : nil, locals: &__locals )
-        __args[3] = JNIType.toJava( value: shadowOuter != nil ? shadowOuter! as JNIObject : nil, locals: &__locals )
-        __args[4] = JNIType.toJava( value: shadowInner != nil ? shadowInner! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createSoftBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createSoftBevelBorder_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-    open class func createSoftBevelBorder( _ _type: Int, _ _highlightOuter: java_awt.Color?, _ _highlightInner: java_awt.Color?, _ _shadowOuter: java_awt.Color?, _ _shadowInner: java_awt.Color? ) -> Border! {
-        return createSoftBevelBorder( type: _type, highlightOuter: _highlightOuter, highlightInner: _highlightInner, shadowOuter: _shadowOuter, shadowInner: _shadowInner )
-    }
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createSoftBevelBorder(int)
 
@@ -246,8 +245,8 @@ open class BorderFactory: java_swift.JavaObject {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createSoftBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createSoftBevelBorder_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
@@ -257,17 +256,38 @@ open class BorderFactory: java_swift.JavaObject {
         return createSoftBevelBorder( type: _type, highlight: _highlight, shadow: _shadow )
     }
 
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createSoftBevelBorder(int,java.awt.Color,java.awt.Color,java.awt.Color,java.awt.Color)
+
+    private static var createSoftBevelBorder_MethodID_14: jmethodID?
+
+    open class func createSoftBevelBorder( type: Int, highlightOuter: java_awt.Color?, highlightInner: java_awt.Color?, shadowOuter: java_awt.Color?, shadowInner: java_awt.Color? ) -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlightOuter, locals: &__locals )
+        __args[2] = JNIType.toJava( value: highlightInner, locals: &__locals )
+        __args[3] = JNIType.toJava( value: shadowOuter, locals: &__locals )
+        __args[4] = JNIType.toJava( value: shadowInner, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createSoftBevelBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createSoftBevelBorder_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+    open class func createSoftBevelBorder( _ _type: Int, _ _highlightOuter: java_awt.Color?, _ _highlightInner: java_awt.Color?, _ _shadowOuter: java_awt.Color?, _ _shadowInner: java_awt.Color? ) -> Border! {
+        return createSoftBevelBorder( type: _type, highlightOuter: _highlightOuter, highlightInner: _highlightInner, shadowOuter: _shadowOuter, shadowInner: _shadowInner )
+    }
+
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createEtchedBorder(int,java.awt.Color,java.awt.Color)
 
-    private static var createEtchedBorder_MethodID_14: jmethodID?
+    private static var createEtchedBorder_MethodID_15: jmethodID?
 
     open class func createEtchedBorder( type: Int, highlight: java_awt.Color?, shadow: java_awt.Color? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[2] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_14, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -276,33 +296,29 @@ open class BorderFactory: java_swift.JavaObject {
         return createEtchedBorder( type: _type, highlight: _highlight, shadow: _shadow )
     }
 
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEtchedBorder(int)
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEtchedBorder()
 
-    private static var createEtchedBorder_MethodID_15: jmethodID?
+    private static var createEtchedBorder_MethodID_16: jmethodID?
 
-    open class func createEtchedBorder( type: Int ) -> Border! {
+    open class func createEtchedBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "(I)Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_15, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
-    open class func createEtchedBorder( _ _type: Int ) -> Border! {
-        return createEtchedBorder( type: _type )
-    }
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createEtchedBorder(java.awt.Color,java.awt.Color)
 
-    private static var createEtchedBorder_MethodID_16: jmethodID?
+    private static var createEtchedBorder_MethodID_17: jmethodID?
 
     open class func createEtchedBorder( highlight: java_awt.Color?, shadow: java_awt.Color? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: highlight != nil ? highlight! as JNIObject : nil, locals: &__locals )
-        __args[1] = JNIType.toJava( value: shadow != nil ? shadow! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: highlight, locals: &__locals )
+        __args[1] = JNIType.toJava( value: shadow, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -311,39 +327,21 @@ open class BorderFactory: java_swift.JavaObject {
         return createEtchedBorder( highlight: _highlight, shadow: _shadow )
     }
 
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEtchedBorder()
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEtchedBorder(int)
 
-    private static var createEtchedBorder_MethodID_17: jmethodID?
+    private static var createEtchedBorder_MethodID_18: jmethodID?
 
-    open class func createEtchedBorder() -> Border! {
+    open class func createEtchedBorder( type: Int ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_17, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEtchedBorder", methodSig: "(I)Ljavax/swing/border/Border;", methodCache: &createEtchedBorder_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
-
-    /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font,java.awt.Color)
-
-    private static var createTitledBorder_MethodID_18: jmethodID?
-
-    open class func createTitledBorder( border: Border?, title: String?, titleJustification: Int, titlePosition: Int, titleFont: java_awt.Font?, titleColor: java_awt.Color? ) -> TitledBorder! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: border, locals: &__locals )
-        __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
-        __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
-        __args[4] = JNIType.toJava( value: titleFont != nil ? titleFont! as JNIObject : nil, locals: &__locals )
-        __args[5] = JNIType.toJava( value: titleColor != nil ? titleColor! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;Ljava/awt/Color;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TitledBorder( javaObject: __return ) : nil
-    }
-
-    open class func createTitledBorder( _ _border: Border?, _ _title: String?, _ _titleJustification: Int, _ _titlePosition: Int, _ _titleFont: java_awt.Font?, _ _titleColor: java_awt.Color? ) -> TitledBorder! {
-        return createTitledBorder( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont, titleColor: _titleColor )
+    open class func createEtchedBorder( _ _type: Int ) -> Border! {
+        return createEtchedBorder( type: _type )
     }
 
     /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font)
@@ -357,7 +355,7 @@ open class BorderFactory: java_swift.JavaObject {
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
         __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
-        __args[4] = JNIType.toJava( value: titleFont != nil ? titleFont! as JNIObject : nil, locals: &__locals )
+        __args[4] = JNIType.toJava( value: titleFont, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TitledBorder( javaObject: __return ) : nil
@@ -367,15 +365,37 @@ open class BorderFactory: java_swift.JavaObject {
         return createTitledBorder( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont )
     }
 
-    /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(java.lang.String)
+    /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font,java.awt.Color)
 
     private static var createTitledBorder_MethodID_20: jmethodID?
+
+    open class func createTitledBorder( border: Border?, title: String?, titleJustification: Int, titlePosition: Int, titleFont: java_awt.Font?, titleColor: java_awt.Color? ) -> TitledBorder! {
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: border, locals: &__locals )
+        __args[1] = JNIType.toJava( value: title, locals: &__locals )
+        __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
+        __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
+        __args[4] = JNIType.toJava( value: titleFont, locals: &__locals )
+        __args[5] = JNIType.toJava( value: titleColor, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;Ljava/awt/Color;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TitledBorder( javaObject: __return ) : nil
+    }
+
+    open class func createTitledBorder( _ _border: Border?, _ _title: String?, _ _titleJustification: Int, _ _titlePosition: Int, _ _titleFont: java_awt.Font?, _ _titleColor: java_awt.Color? ) -> TitledBorder! {
+        return createTitledBorder( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont, titleColor: _titleColor )
+    }
+
+    /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(java.lang.String)
+
+    private static var createTitledBorder_MethodID_21: jmethodID?
 
     open class func createTitledBorder( title: String? ) -> TitledBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljava/lang/String;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljava/lang/String;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TitledBorder( javaObject: __return ) : nil
     }
@@ -386,13 +406,13 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(javax.swing.border.Border)
 
-    private static var createTitledBorder_MethodID_21: jmethodID?
+    private static var createTitledBorder_MethodID_22: jmethodID?
 
     open class func createTitledBorder( border: Border? ) -> TitledBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TitledBorder( javaObject: __return ) : nil
     }
@@ -403,14 +423,14 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(javax.swing.border.Border,java.lang.String)
 
-    private static var createTitledBorder_MethodID_22: jmethodID?
+    private static var createTitledBorder_MethodID_23: jmethodID?
 
     open class func createTitledBorder( border: Border?, title: String? ) -> TitledBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TitledBorder( javaObject: __return ) : nil
     }
@@ -421,7 +441,7 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.TitledBorder javax.swing.BorderFactory.createTitledBorder(javax.swing.border.Border,java.lang.String,int,int)
 
-    private static var createTitledBorder_MethodID_23: jmethodID?
+    private static var createTitledBorder_MethodID_24: jmethodID?
 
     open class func createTitledBorder( border: Border?, title: String?, titleJustification: Int, titlePosition: Int ) -> TitledBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 4 )
@@ -430,7 +450,7 @@ open class BorderFactory: java_swift.JavaObject {
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
         __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
         __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;II)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_23, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createTitledBorder", methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;II)Ljavax/swing/border/TitledBorder;", methodCache: &createTitledBorder_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TitledBorder( javaObject: __return ) : nil
     }
@@ -441,14 +461,14 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.CompoundBorder javax.swing.BorderFactory.createCompoundBorder(javax.swing.border.Border,javax.swing.border.Border)
 
-    private static var createCompoundBorder_MethodID_24: jmethodID?
+    private static var createCompoundBorder_MethodID_25: jmethodID?
 
     open class func createCompoundBorder( outsideBorder: Border?, insideBorder: Border? ) -> CompoundBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: outsideBorder, locals: &__locals )
         __args[1] = JNIType.toJava( value: insideBorder, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createCompoundBorder", methodSig: "(Ljavax/swing/border/Border;Ljavax/swing/border/Border;)Ljavax/swing/border/CompoundBorder;", methodCache: &createCompoundBorder_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createCompoundBorder", methodSig: "(Ljavax/swing/border/Border;Ljavax/swing/border/Border;)Ljavax/swing/border/CompoundBorder;", methodCache: &createCompoundBorder_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? CompoundBorder( javaObject: __return ) : nil
     }
@@ -459,12 +479,12 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.CompoundBorder javax.swing.BorderFactory.createCompoundBorder()
 
-    private static var createCompoundBorder_MethodID_25: jmethodID?
+    private static var createCompoundBorder_MethodID_26: jmethodID?
 
     open class func createCompoundBorder() -> CompoundBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createCompoundBorder", methodSig: "()Ljavax/swing/border/CompoundBorder;", methodCache: &createCompoundBorder_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createCompoundBorder", methodSig: "()Ljavax/swing/border/CompoundBorder;", methodCache: &createCompoundBorder_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? CompoundBorder( javaObject: __return ) : nil
     }
@@ -472,7 +492,7 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.MatteBorder javax.swing.BorderFactory.createMatteBorder(int,int,int,int,javax.swing.Icon)
 
-    private static var createMatteBorder_MethodID_26: jmethodID?
+    private static var createMatteBorder_MethodID_27: jmethodID?
 
     open class func createMatteBorder( top: Int, left: Int, bottom: Int, right: Int, tileIcon: Icon? ) -> MatteBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -482,7 +502,7 @@ open class BorderFactory: java_swift.JavaObject {
         __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
         __args[3] = JNIType.toJava( value: right, locals: &__locals )
         __args[4] = JNIType.toJava( value: tileIcon, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createMatteBorder", methodSig: "(IIIILjavax/swing/Icon;)Ljavax/swing/border/MatteBorder;", methodCache: &createMatteBorder_MethodID_26, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createMatteBorder", methodSig: "(IIIILjavax/swing/Icon;)Ljavax/swing/border/MatteBorder;", methodCache: &createMatteBorder_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MatteBorder( javaObject: __return ) : nil
     }
@@ -493,7 +513,7 @@ open class BorderFactory: java_swift.JavaObject {
 
     /// public static javax.swing.border.MatteBorder javax.swing.BorderFactory.createMatteBorder(int,int,int,int,java.awt.Color)
 
-    private static var createMatteBorder_MethodID_27: jmethodID?
+    private static var createMatteBorder_MethodID_28: jmethodID?
 
     open class func createMatteBorder( top: Int, left: Int, bottom: Int, right: Int, color: java_awt.Color? ) -> MatteBorder! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -502,31 +522,14 @@ open class BorderFactory: java_swift.JavaObject {
         __args[1] = JNIType.toJava( value: left, locals: &__locals )
         __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
         __args[3] = JNIType.toJava( value: right, locals: &__locals )
-        __args[4] = JNIType.toJava( value: color != nil ? color! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createMatteBorder", methodSig: "(IIIILjava/awt/Color;)Ljavax/swing/border/MatteBorder;", methodCache: &createMatteBorder_MethodID_27, args: &__args, locals: &__locals )
+        __args[4] = JNIType.toJava( value: color, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createMatteBorder", methodSig: "(IIIILjava/awt/Color;)Ljavax/swing/border/MatteBorder;", methodCache: &createMatteBorder_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MatteBorder( javaObject: __return ) : nil
     }
 
     open class func createMatteBorder( _ _top: Int, _ _left: Int, _ _bottom: Int, _ _right: Int, _ _color: java_awt.Color? ) -> MatteBorder! {
         return createMatteBorder( top: _top, left: _left, bottom: _bottom, right: _right, color: _color )
-    }
-
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createStrokeBorder(java.awt.BasicStroke)
-
-    private static var createStrokeBorder_MethodID_28: jmethodID?
-
-    open class func createStrokeBorder( stroke: java_awt.BasicStroke? ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stroke != nil ? stroke! as JNIObject : nil, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createStrokeBorder", methodSig: "(Ljava/awt/BasicStroke;)Ljavax/swing/border/Border;", methodCache: &createStrokeBorder_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-    open class func createStrokeBorder( _ _stroke: java_awt.BasicStroke? ) -> Border! {
-        return createStrokeBorder( stroke: _stroke )
     }
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createStrokeBorder(java.awt.BasicStroke,java.awt.Paint)
@@ -536,7 +539,7 @@ open class BorderFactory: java_swift.JavaObject {
     open class func createStrokeBorder( stroke: java_awt.BasicStroke?, paint: java_awt.Paint? ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: stroke != nil ? stroke! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: stroke, locals: &__locals )
         __args[1] = JNIType.toJava( value: paint, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createStrokeBorder", methodSig: "(Ljava/awt/BasicStroke;Ljava/awt/Paint;)Ljavax/swing/border/Border;", methodCache: &createStrokeBorder_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -547,9 +550,26 @@ open class BorderFactory: java_swift.JavaObject {
         return createStrokeBorder( stroke: _stroke, paint: _paint )
     }
 
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createStrokeBorder(java.awt.BasicStroke)
+
+    private static var createStrokeBorder_MethodID_30: jmethodID?
+
+    open class func createStrokeBorder( stroke: java_awt.BasicStroke? ) -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        var __locals = [jobject]()
+        __args[0] = JNIType.toJava( value: stroke, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createStrokeBorder", methodSig: "(Ljava/awt/BasicStroke;)Ljavax/swing/border/Border;", methodCache: &createStrokeBorder_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
+    }
+
+    open class func createStrokeBorder( _ _stroke: java_awt.BasicStroke? ) -> Border! {
+        return createStrokeBorder( stroke: _stroke )
+    }
+
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createDashedBorder(java.awt.Paint,float,float,float,boolean)
 
-    private static var createDashedBorder_MethodID_30: jmethodID?
+    private static var createDashedBorder_MethodID_31: jmethodID?
 
     open class func createDashedBorder( paint: java_awt.Paint?, thickness: Float, length: Float, spacing: Float, rounded: Bool ) -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
@@ -559,30 +579,13 @@ open class BorderFactory: java_swift.JavaObject {
         __args[2] = JNIType.toJava( value: length, locals: &__locals )
         __args[3] = JNIType.toJava( value: spacing, locals: &__locals )
         __args[4] = JNIType.toJava( value: rounded, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createDashedBorder", methodSig: "(Ljava/awt/Paint;FFFZ)Ljavax/swing/border/Border;", methodCache: &createDashedBorder_MethodID_30, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createDashedBorder", methodSig: "(Ljava/awt/Paint;FFFZ)Ljavax/swing/border/Border;", methodCache: &createDashedBorder_MethodID_31, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
     open class func createDashedBorder( _ _paint: java_awt.Paint?, _ _thickness: Float, _ _length: Float, _ _spacing: Float, _ _rounded: Bool ) -> Border! {
         return createDashedBorder( paint: _paint, thickness: _thickness, length: _length, spacing: _spacing, rounded: _rounded )
-    }
-
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createDashedBorder(java.awt.Paint)
-
-    private static var createDashedBorder_MethodID_31: jmethodID?
-
-    open class func createDashedBorder( paint: java_awt.Paint? ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: paint, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createDashedBorder", methodSig: "(Ljava/awt/Paint;)Ljavax/swing/border/Border;", methodCache: &createDashedBorder_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-    open class func createDashedBorder( _ _paint: java_awt.Paint? ) -> Border! {
-        return createDashedBorder( paint: _paint )
     }
 
     /// public static javax.swing.border.Border javax.swing.BorderFactory.createDashedBorder(java.awt.Paint,float,float)
@@ -604,34 +607,31 @@ open class BorderFactory: java_swift.JavaObject {
         return createDashedBorder( paint: _paint, length: _length, spacing: _spacing )
     }
 
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEmptyBorder(int,int,int,int)
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createDashedBorder(java.awt.Paint)
 
-    private static var createEmptyBorder_MethodID_33: jmethodID?
+    private static var createDashedBorder_MethodID_33: jmethodID?
 
-    open class func createEmptyBorder( top: Int, left: Int, bottom: Int, right: Int ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open class func createDashedBorder( paint: java_awt.Paint? ) -> Border! {
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEmptyBorder", methodSig: "(IIII)Ljavax/swing/border/Border;", methodCache: &createEmptyBorder_MethodID_33, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: paint, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createDashedBorder", methodSig: "(Ljava/awt/Paint;)Ljavax/swing/border/Border;", methodCache: &createDashedBorder_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
-    open class func createEmptyBorder( _ _top: Int, _ _left: Int, _ _bottom: Int, _ _right: Int ) -> Border! {
-        return createEmptyBorder( top: _top, left: _left, bottom: _bottom, right: _right )
+    open class func createDashedBorder( _ _paint: java_awt.Paint? ) -> Border! {
+        return createDashedBorder( paint: _paint )
     }
 
-    /// public static javax.swing.border.Border javax.swing.BorderFactory.createEmptyBorder()
+    /// public static javax.swing.border.Border javax.swing.BorderFactory.createRaisedBevelBorder()
 
-    private static var createEmptyBorder_MethodID_34: jmethodID?
+    private static var createRaisedBevelBorder_MethodID_34: jmethodID?
 
-    open class func createEmptyBorder() -> Border! {
+    open class func createRaisedBevelBorder() -> Border! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createEmptyBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createEmptyBorder_MethodID_34, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/BorderFactory", classCache: &BorderFactoryJNIClass, methodName: "createRaisedBevelBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createRaisedBevelBorder_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }

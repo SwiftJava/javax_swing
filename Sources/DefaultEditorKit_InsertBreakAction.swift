@@ -49,7 +49,7 @@ open class DefaultEditorKit_InsertBreakAction: TextAction {
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue != nil ? newValue! as JNIObject : nil, locals: &__locals )
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &DefaultEditorKit_InsertBreakAction.changeSupport_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }

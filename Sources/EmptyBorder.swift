@@ -112,7 +112,7 @@ open class EmptyBorder: AbstractBorder {
     public convenience init( borderInsets: java_awt.Insets? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: borderInsets != nil ? borderInsets! as JNIObject : nil, locals: &__locals )
+        __args[0] = JNIType.toJava( value: borderInsets, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/EmptyBorder", classCache: &EmptyBorder.EmptyBorderJNIClass, methodSig: "(Ljava/awt/Insets;)V", methodCache: &EmptyBorder.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
