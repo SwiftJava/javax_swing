@@ -21,42 +21,42 @@ open class OptionPaneUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/OptionPaneUI", classCache: &OptionPaneUI.OptionPaneUIJNIClass, methodSig: "()V", methodCache: &OptionPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract void javax.swing.plaf.OptionPaneUI.selectInitialValue(javax.swing.JOptionPane)
-
-    private static var selectInitialValue_MethodID_2: jmethodID?
-
-    open func selectInitialValue( op: JOptionPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: op, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectInitialValue", methodSig: "(Ljavax/swing/JOptionPane;)V", methodCache: &OptionPaneUI.selectInitialValue_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func selectInitialValue( _ _op: JOptionPane? ) {
-        selectInitialValue( op: _op )
-    }
-
     /// public abstract boolean javax.swing.plaf.OptionPaneUI.containsCustomComponents(javax.swing.JOptionPane)
 
-    private static var containsCustomComponents_MethodID_3: jmethodID?
+    private static var containsCustomComponents_MethodID_2: jmethodID?
 
     open func containsCustomComponents( op: JOptionPane? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: op, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsCustomComponents", methodSig: "(Ljavax/swing/JOptionPane;)Z", methodCache: &OptionPaneUI.containsCustomComponents_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsCustomComponents", methodSig: "(Ljavax/swing/JOptionPane;)Z", methodCache: &OptionPaneUI.containsCustomComponents_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func containsCustomComponents( _ _op: JOptionPane? ) -> Bool {
         return containsCustomComponents( op: _op )
+    }
+
+    /// public abstract void javax.swing.plaf.OptionPaneUI.selectInitialValue(javax.swing.JOptionPane)
+
+    private static var selectInitialValue_MethodID_3: jmethodID?
+
+    open func selectInitialValue( op: JOptionPane? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: op, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectInitialValue", methodSig: "(Ljavax/swing/JOptionPane;)V", methodCache: &OptionPaneUI.selectInitialValue_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func selectInitialValue( _ _op: JOptionPane? ) {
+        selectInitialValue( op: _op )
     }
 
 }

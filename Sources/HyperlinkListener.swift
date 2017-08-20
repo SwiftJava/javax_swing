@@ -24,8 +24,8 @@ open class HyperlinkListenerForward: java_util.EventListenerForward, HyperlinkLi
     private static var hyperlinkUpdate_MethodID_2: jmethodID?
 
     open func hyperlinkUpdate( e: HyperlinkEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "hyperlinkUpdate", methodSig: "(Ljavax/swing/event/HyperlinkEvent;)V", methodCache: &HyperlinkListenerForward.hyperlinkUpdate_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class HyperlinkListenerForward: java_util.EventListenerForward, HyperlinkLi
 
 }
 
-
 private typealias HyperlinkListener_hyperlinkUpdate_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func HyperlinkListener_hyperlinkUpdate_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     HyperlinkListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).hyperlinkUpdate( e: e != nil ? HyperlinkEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class HyperlinkListenerLocal_: JNILocalProxy<HyperlinkListener, Any> {
@@ -89,8 +86,5 @@ open class HyperlinkListenerBase: HyperlinkListener {
     open func hyperlinkUpdate( e: HyperlinkEvent? ) /**/ {
     }
 
-    open func hyperlinkUpdate( _ _e: HyperlinkEvent? ) /**/ {
-        hyperlinkUpdate( e: _e )
-    }
 
 }

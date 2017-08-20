@@ -17,9 +17,9 @@ open class SpinnerListModel: AbstractSpinnerModel {
 
     private static var SpinnerListModelJNIClass: jclass?
 
-    /// private java.util.List javax.swing.SpinnerListModel.list
-
     /// private int javax.swing.SpinnerListModel.index
+
+    /// private java.util.List javax.swing.SpinnerListModel.list
 
     /// private transient javax.swing.event.ChangeEvent javax.swing.AbstractSpinnerModel.changeEvent
 
@@ -29,8 +29,8 @@ open class SpinnerListModel: AbstractSpinnerModel {
 
     override open var listenerList: EventListenerList! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &SpinnerListModel.listenerList_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &SpinnerListModel.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? EventListenerList( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -45,8 +45,8 @@ open class SpinnerListModel: AbstractSpinnerModel {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/SpinnerListModel", classCache: &SpinnerListModel.SpinnerListModelJNIClass, methodSig: "()V", methodCache: &SpinnerListModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -57,8 +57,8 @@ open class SpinnerListModel: AbstractSpinnerModel {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( values: [JavaObject]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: values, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/SpinnerListModel", classCache: &SpinnerListModel.SpinnerListModelJNIClass, methodSig: "([Ljava/lang/Object;)V", methodCache: &SpinnerListModel.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -74,8 +74,8 @@ open class SpinnerListModel: AbstractSpinnerModel {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( values: java_util.List? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: values, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/SpinnerListModel", classCache: &SpinnerListModel.SpinnerListModelJNIClass, methodSig: "(Ljava/util/List;)V", methodCache: &SpinnerListModel.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -86,31 +86,18 @@ open class SpinnerListModel: AbstractSpinnerModel {
         self.init( values: _values )
     }
 
-    /// public java.lang.Object javax.swing.SpinnerListModel.getValue()
+    /// java.lang.Object javax.swing.SpinnerListModel.findNextMatch(java.lang.String)
 
-    /// public void javax.swing.SpinnerListModel.setValue(java.lang.Object)
-
-    private static var setValue_MethodID_4: jmethodID?
-
-    open func setValue( elt: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &SpinnerListModel.setValue_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    override open func setValue( _ _elt: java_swift.JavaObject? ) {
-        setValue( elt: _elt )
-    }
+    // Skipping method: true false false false false 
 
     /// public java.util.List javax.swing.SpinnerListModel.getList()
 
-    private static var getList_MethodID_5: jmethodID?
+    private static var getList_MethodID_4: jmethodID?
 
     open func getList() -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getList", methodSig: "()Ljava/util/List;", methodCache: &SpinnerListModel.getList_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getList", methodSig: "()Ljava/util/List;", methodCache: &SpinnerListModel.getList_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
     }
@@ -118,23 +105,44 @@ open class SpinnerListModel: AbstractSpinnerModel {
 
     /// public java.lang.Object javax.swing.SpinnerListModel.getNextValue()
 
+    // Skipping method: false true false false false 
+
     /// public java.lang.Object javax.swing.SpinnerListModel.getPreviousValue()
 
-    /// java.lang.Object javax.swing.SpinnerListModel.findNextMatch(java.lang.String)
+    // Skipping method: false true false false false 
+
+    /// public java.lang.Object javax.swing.SpinnerListModel.getValue()
+
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.SpinnerListModel.setList(java.util.List)
 
-    private static var setList_MethodID_6: jmethodID?
+    private static var setList_MethodID_5: jmethodID?
 
     open func setList( list: java_util.List? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: list, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setList", methodSig: "(Ljava/util/List;)V", methodCache: &SpinnerListModel.setList_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setList", methodSig: "(Ljava/util/List;)V", methodCache: &SpinnerListModel.setList_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setList( _ _list: java_util.List? ) {
         setList( list: _list )
+    }
+
+    /// public void javax.swing.SpinnerListModel.setValue(java.lang.Object)
+
+    private static var setValue_MethodID_6: jmethodID?
+
+    open func setValue( elt: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &SpinnerListModel.setValue_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    override open func setValue( _ _elt: java_swift.JavaObject? ) {
+        setValue( elt: _elt )
     }
 
 }

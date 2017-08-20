@@ -6,7 +6,7 @@ import java_lang
 
 /// class javax.swing.JFormattedTextField$AbstractFormatter ///
 
-open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -24,8 +24,8 @@ open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField$AbstractFormatter", classCache: &JFormattedTextField_AbstractFormatter.JFormattedTextField_AbstractFormatterJNIClass, methodSig: "()V", methodCache: &JFormattedTextField_AbstractFormatter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -36,11 +36,12 @@ open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java
     private static var clone_MethodID_2: jmethodID?
 
     override open func clone() throws /* java.lang.CloneNotSupportedException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &JFormattedTextField_AbstractFormatter.clone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.CloneNotSupportedException( javaObject: throwable )
         }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
@@ -52,83 +53,76 @@ open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java
     private static var getActions_MethodID_3: jmethodID?
 
     open func getActions() -> [Action]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActions", methodSig: "()[Ljavax/swing/Action;", methodCache: &JFormattedTextField_AbstractFormatter.getActions_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionForward](), from: __return )
+        return JNIType.toSwift( type: [ActionForward].self, from: __return )
     }
 
 
-    /// public void javax.swing.JFormattedTextField$AbstractFormatter.uninstall()
+    /// protected javax.swing.text.DocumentFilter javax.swing.JFormattedTextField$AbstractFormatter.getDocumentFilter()
 
-    private static var uninstall_MethodID_4: jmethodID?
+    private static var getDocumentFilter_MethodID_4: jmethodID?
 
-    open func uninstall() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getDocumentFilter() -> DocumentFilter! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstall", methodSig: "()V", methodCache: &JFormattedTextField_AbstractFormatter.uninstall_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract java.lang.Object javax.swing.JFormattedTextField$AbstractFormatter.stringToValue(java.lang.String) throws java.text.ParseException
-
-    private static var stringToValue_MethodID_5: jmethodID?
-
-    open func stringToValue( text: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &JFormattedTextField_AbstractFormatter.stringToValue_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentFilter", methodSig: "()Ljavax/swing/text/DocumentFilter;", methodCache: &JFormattedTextField_AbstractFormatter.getDocumentFilter_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+        return __return != nil ? DocumentFilter( javaObject: __return ) : nil
     }
 
-    open func stringToValue( _ _text: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
-        return try stringToValue( text: _text )
-    }
-
-    /// public abstract java.lang.String javax.swing.JFormattedTextField$AbstractFormatter.valueToString(java.lang.Object) throws java.text.ParseException
-
-    private static var valueToString_MethodID_6: jmethodID?
-
-    open func valueToString( value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &JFormattedTextField_AbstractFormatter.valueToString_MethodID_6, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func valueToString( _ _value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
-        return try valueToString( value: _value )
-    }
 
     /// protected javax.swing.JFormattedTextField javax.swing.JFormattedTextField$AbstractFormatter.getFormattedTextField()
 
-    private static var getFormattedTextField_MethodID_7: jmethodID?
+    private static var getFormattedTextField_MethodID_5: jmethodID?
 
     open func getFormattedTextField() -> JFormattedTextField! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormattedTextField", methodSig: "()Ljavax/swing/JFormattedTextField;", methodCache: &JFormattedTextField_AbstractFormatter.getFormattedTextField_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormattedTextField", methodSig: "()Ljavax/swing/JFormattedTextField;", methodCache: &JFormattedTextField_AbstractFormatter.getFormattedTextField_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JFormattedTextField( javaObject: __return ) : nil
     }
 
+
+    /// protected javax.swing.text.NavigationFilter javax.swing.JFormattedTextField$AbstractFormatter.getNavigationFilter()
+
+    private static var getNavigationFilter_MethodID_6: jmethodID?
+
+    open func getNavigationFilter() -> NavigationFilter! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &JFormattedTextField_AbstractFormatter.getNavigationFilter_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JFormattedTextField$AbstractFormatter.install(javax.swing.JFormattedTextField)
+
+    private static var install_MethodID_7: jmethodID?
+
+    open func install( ftf: JFormattedTextField? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ftf, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &JFormattedTextField_AbstractFormatter.install_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func install( _ _ftf: JFormattedTextField? ) {
+        install( ftf: _ftf )
+    }
+
+    /// private void javax.swing.JFormattedTextField$AbstractFormatter.installDocumentFilter(javax.swing.text.DocumentFilter)
 
     /// protected void javax.swing.JFormattedTextField$AbstractFormatter.invalidEdit()
 
     private static var invalidEdit_MethodID_8: jmethodID?
 
     open func invalidEdit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidEdit", methodSig: "()V", methodCache: &JFormattedTextField_AbstractFormatter.invalidEdit_MethodID_8, args: &__args, locals: &__locals )
     }
 
@@ -138,9 +132,9 @@ open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java
     private static var setEditValid_MethodID_9: jmethodID?
 
     open func setEditValid( valid: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: valid, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(valid ? JNI_TRUE : JNI_FALSE) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditValid", methodSig: "(Z)V", methodCache: &JFormattedTextField_AbstractFormatter.setEditValid_MethodID_9, args: &__args, locals: &__locals )
     }
 
@@ -148,47 +142,57 @@ open class JFormattedTextField_AbstractFormatter: java_swift.JavaObject, /* java
         setEditValid( valid: _valid )
     }
 
-    /// protected javax.swing.text.DocumentFilter javax.swing.JFormattedTextField$AbstractFormatter.getDocumentFilter()
+    /// public abstract java.lang.Object javax.swing.JFormattedTextField$AbstractFormatter.stringToValue(java.lang.String) throws java.text.ParseException
 
-    private static var getDocumentFilter_MethodID_10: jmethodID?
+    private static var stringToValue_MethodID_10: jmethodID?
 
-    open func getDocumentFilter() -> DocumentFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func stringToValue( text: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentFilter", methodSig: "()Ljavax/swing/text/DocumentFilter;", methodCache: &JFormattedTextField_AbstractFormatter.getDocumentFilter_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &JFormattedTextField_AbstractFormatter.stringToValue_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentFilter( javaObject: __return ) : nil
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.text.ParseException */ UnavailableObject( javaObject: throwable )
+        }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func stringToValue( _ _text: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
+        return try stringToValue( text: _text )
+    }
+
+    /// public void javax.swing.JFormattedTextField$AbstractFormatter.uninstall()
+
+    private static var uninstall_MethodID_11: jmethodID?
+
+    open func uninstall() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstall", methodSig: "()V", methodCache: &JFormattedTextField_AbstractFormatter.uninstall_MethodID_11, args: &__args, locals: &__locals )
     }
 
 
-    /// private void javax.swing.JFormattedTextField$AbstractFormatter.installDocumentFilter(javax.swing.text.DocumentFilter)
+    /// public abstract java.lang.String javax.swing.JFormattedTextField$AbstractFormatter.valueToString(java.lang.Object) throws java.text.ParseException
 
-    /// protected javax.swing.text.NavigationFilter javax.swing.JFormattedTextField$AbstractFormatter.getNavigationFilter()
+    private static var valueToString_MethodID_12: jmethodID?
 
-    private static var getNavigationFilter_MethodID_11: jmethodID?
-
-    open func getNavigationFilter() -> NavigationFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func valueToString( value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &JFormattedTextField_AbstractFormatter.getNavigationFilter_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &JFormattedTextField_AbstractFormatter.valueToString_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.text.ParseException */ UnavailableObject( javaObject: throwable )
+        }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.JFormattedTextField$AbstractFormatter.install(javax.swing.JFormattedTextField)
-
-    private static var install_MethodID_12: jmethodID?
-
-    open func install( ftf: JFormattedTextField? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ftf, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &JFormattedTextField_AbstractFormatter.install_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func install( _ _ftf: JFormattedTextField? ) {
-        install( ftf: _ftf )
+    open func valueToString( _ _value: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
+        return try valueToString( value: _value )
     }
 
 }

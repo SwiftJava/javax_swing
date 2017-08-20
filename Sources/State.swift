@@ -16,21 +16,37 @@ open class State: java_swift.JavaObject {
 
     private static var StateJNIClass: jclass?
 
-    /// static final java.util.Map javax.swing.plaf.nimbus.State.standardStates
+    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Default
 
-    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Enabled
-
-    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.MouseOver
-
-    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Pressed
+    // Skipping field: true false false false false false 
 
     /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Disabled
 
+    // Skipping field: true false false false false false 
+
+    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Enabled
+
+    // Skipping field: true false false false false false 
+
     /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Focused
+
+    // Skipping field: true false false false false false 
+
+    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.MouseOver
+
+    // Skipping field: true false false false false false 
+
+    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Pressed
+
+    // Skipping field: true false false false false false 
 
     /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Selected
 
-    /// static final javax.swing.plaf.nimbus.State javax.swing.plaf.nimbus.State.Default
+    // Skipping field: true false false false false false 
+
+    /// static final java.util.Map javax.swing.plaf.nimbus.State.standardStates
+
+    // Skipping field: true false false false false false 
 
     /// private java.lang.String javax.swing.plaf.nimbus.State.name
 
@@ -39,8 +55,8 @@ open class State: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/nimbus/State", classCache: &State.StateJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &State.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -51,31 +67,41 @@ open class State: java_swift.JavaObject {
         self.init( name: _name )
     }
 
-    /// public java.lang.String javax.swing.plaf.nimbus.State.toString()
+    /// static javax.swing.plaf.nimbus.State$StandardState javax.swing.plaf.nimbus.State.getStandardState(java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean javax.swing.plaf.nimbus.State.isStandardStateName(java.lang.String)
+
+    // Skipping method: true false false false false 
 
     /// java.lang.String javax.swing.plaf.nimbus.State.getName()
 
-    /// boolean javax.swing.plaf.nimbus.State.isInState(javax.swing.JComponent,int)
+    // Skipping method: true false false false false 
 
     /// protected abstract boolean javax.swing.plaf.nimbus.State.isInState(javax.swing.JComponent)
 
     private static var isInState_MethodID_2: jmethodID?
 
     open func isInState( c: JComponent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isInState", methodSig: "(Ljavax/swing/JComponent;)Z", methodCache: &State.isInState_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isInState( _ _c: JComponent? ) -> Bool {
         return isInState( c: _c )
     }
 
-    /// static boolean javax.swing.plaf.nimbus.State.isStandardStateName(java.lang.String)
+    /// boolean javax.swing.plaf.nimbus.State.isInState(javax.swing.JComponent,int)
 
-    /// static javax.swing.plaf.nimbus.State$StandardState javax.swing.plaf.nimbus.State.getStandardState(java.lang.String)
+    // Skipping method: true false false false false 
+
+    /// public java.lang.String javax.swing.plaf.nimbus.State.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

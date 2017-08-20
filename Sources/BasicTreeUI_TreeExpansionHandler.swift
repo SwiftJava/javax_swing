@@ -18,13 +18,15 @@ open class BasicTreeUI_TreeExpansionHandler: java_swift.JavaObject, TreeExpansio
 
     /// final javax.swing.plaf.basic.BasicTreeUI javax.swing.plaf.basic.BasicTreeUI$TreeExpansionHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTreeUI$TreeExpansionHandler(javax.swing.plaf.basic.BasicTreeUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTreeUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$TreeExpansionHandler", classCache: &BasicTreeUI_TreeExpansionHandler.BasicTreeUI_TreeExpansionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -35,34 +37,34 @@ open class BasicTreeUI_TreeExpansionHandler: java_swift.JavaObject, TreeExpansio
         self.init( this_0: _this_0 )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeExpansionHandler.treeExpanded(javax.swing.event.TreeExpansionEvent)
-
-    private static var treeExpanded_MethodID_2: jmethodID?
-
-    open func treeExpanded( event: TreeExpansionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeExpanded", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.treeExpanded_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func treeExpanded( _ _event: TreeExpansionEvent? ) {
-        treeExpanded( event: _event )
-    }
-
     /// public void javax.swing.plaf.basic.BasicTreeUI$TreeExpansionHandler.treeCollapsed(javax.swing.event.TreeExpansionEvent)
 
-    private static var treeCollapsed_MethodID_3: jmethodID?
+    private static var treeCollapsed_MethodID_2: jmethodID?
 
     open func treeCollapsed( event: TreeExpansionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeCollapsed", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.treeCollapsed_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeCollapsed", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.treeCollapsed_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func treeCollapsed( _ _event: TreeExpansionEvent? ) {
         treeCollapsed( event: _event )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$TreeExpansionHandler.treeExpanded(javax.swing.event.TreeExpansionEvent)
+
+    private static var treeExpanded_MethodID_3: jmethodID?
+
+    open func treeExpanded( event: TreeExpansionEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeExpanded", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &BasicTreeUI_TreeExpansionHandler.treeExpanded_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func treeExpanded( _ _event: TreeExpansionEvent? ) {
+        treeExpanded( event: _event )
     }
 
 }

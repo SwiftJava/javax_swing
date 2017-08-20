@@ -8,17 +8,17 @@ import java_awt
 
 public protocol Icon: JavaProtocol {
 
-    /// public abstract void javax.swing.Icon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
+    /// public abstract int javax.swing.Icon.getIconHeight()
 
-    func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int )
+    func getIconHeight() -> Int
 
     /// public abstract int javax.swing.Icon.getIconWidth()
 
     func getIconWidth() -> Int
 
-    /// public abstract int javax.swing.Icon.getIconHeight()
+    /// public abstract void javax.swing.Icon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
 
-    func getIconHeight() -> Int
+    func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int )
 
 }
 
@@ -27,48 +27,47 @@ open class IconForward: JNIObjectForward, Icon {
 
     private static var IconJNIClass: jclass?
 
-    /// public abstract void javax.swing.Icon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
+    /// public abstract int javax.swing.Icon.getIconHeight()
 
-    private static var paintIcon_MethodID_4: jmethodID?
+    private static var getIconHeight_MethodID_4: jmethodID?
 
-    open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func getIconHeight() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &IconForward.paintIcon_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &IconForward.getIconHeight_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func paintIcon( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
-        paintIcon( c: _c, g: _g, x: _x, y: _y )
-    }
 
     /// public abstract int javax.swing.Icon.getIconWidth()
 
     private static var getIconWidth_MethodID_5: jmethodID?
 
     open func getIconWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconWidth", methodSig: "()I", methodCache: &IconForward.getIconWidth_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// public abstract int javax.swing.Icon.getIconHeight()
+    /// public abstract void javax.swing.Icon.paintIcon(java.awt.Component,java.awt.Graphics,int,int)
 
-    private static var getIconHeight_MethodID_6: jmethodID?
+    private static var paintIcon_MethodID_6: jmethodID?
 
-    open func getIconHeight() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paintIcon( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconHeight", methodSig: "()I", methodCache: &IconForward.getIconHeight_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIcon", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;II)V", methodCache: &IconForward.paintIcon_MethodID_6, args: &__args, locals: &__locals )
     }
 
+    open func paintIcon( _ _c: java_awt.Component?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
+        paintIcon( c: _c, g: _g, x: _x, y: _y )
+    }
 
 }
-
 

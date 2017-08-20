@@ -17,111 +17,183 @@ open class LabelView: GlyphView {
 
     private static var LabelViewJNIClass: jclass?
 
-    /// private java.awt.Font javax.swing.text.LabelView.font
+    /// private java.awt.Color javax.swing.text.LabelView.bg
 
     /// private java.awt.Color javax.swing.text.LabelView.fg
 
-    /// private java.awt.Color javax.swing.text.LabelView.bg
-
-    /// private boolean javax.swing.text.LabelView.underline
+    /// private java.awt.Font javax.swing.text.LabelView.font
 
     /// private boolean javax.swing.text.LabelView.strike
 
-    /// private boolean javax.swing.text.LabelView.superscript
-
     /// private boolean javax.swing.text.LabelView.subscript
 
-    /// private byte[] javax.swing.text.GlyphView.selections
+    /// private boolean javax.swing.text.LabelView.superscript
 
-    /// int javax.swing.text.GlyphView.offset
-
-    /// int javax.swing.text.GlyphView.length
-
-    /// boolean javax.swing.text.GlyphView.impliedCR
-
-    /// boolean javax.swing.text.GlyphView.skipWidth
-
-    /// javax.swing.text.TabExpander javax.swing.text.GlyphView.expander
-
-    /// private float javax.swing.text.GlyphView.minimumSpan
-
-    /// private int[] javax.swing.text.GlyphView.breakSpots
-
-    /// int javax.swing.text.GlyphView.x
-
-    /// javax.swing.text.GlyphView$GlyphPainter javax.swing.text.GlyphView.painter
+    /// private boolean javax.swing.text.LabelView.underline
 
     /// static javax.swing.text.GlyphView$GlyphPainter javax.swing.text.GlyphView.defaultPainter
 
+    // Skipping field: true false false false false false 
+
+    /// private int[] javax.swing.text.GlyphView.breakSpots
+
+    /// javax.swing.text.TabExpander javax.swing.text.GlyphView.expander
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.GlyphView.impliedCR
+
+    // Skipping field: true false false false false false 
+
     /// private javax.swing.text.GlyphView$JustificationInfo javax.swing.text.GlyphView.justificationInfo
+
+    /// int javax.swing.text.GlyphView.length
+
+    // Skipping field: true false false false false false 
+
+    /// private float javax.swing.text.GlyphView.minimumSpan
+
+    /// int javax.swing.text.GlyphView.offset
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.GlyphView$GlyphPainter javax.swing.text.GlyphView.painter
+
+    // Skipping field: true false false false false false 
+
+    /// private byte[] javax.swing.text.GlyphView.selections
+
+    /// boolean javax.swing.text.GlyphView.skipWidth
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.GlyphView.x
+
+    // Skipping field: true false false false false false 
 
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.LabelView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/LabelView", classCache: &LabelView.LabelViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &LabelView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -132,100 +204,86 @@ open class LabelView: GlyphView {
         self.init( elem: _elem )
     }
 
-    /// final void javax.swing.text.LabelView.sync()
+    /// public void javax.swing.text.LabelView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    /// protected void javax.swing.text.LabelView.setSuperscript(boolean)
+    // Skipping method: false true false false false 
 
-    private static var setSuperscript_MethodID_2: jmethodID?
+    /// public java.awt.Color javax.swing.text.LabelView.getBackground()
 
-    open func setSuperscript( s: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSuperscript", methodSig: "(Z)V", methodCache: &LabelView.setSuperscript_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func setSuperscript( _ _s: Bool ) {
-        setSuperscript( s: _s )
-    }
-
-    /// protected void javax.swing.text.LabelView.setUnderline(boolean)
-
-    private static var setUnderline_MethodID_3: jmethodID?
-
-    open func setUnderline( u: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: u, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnderline", methodSig: "(Z)V", methodCache: &LabelView.setUnderline_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func setUnderline( _ _u: Bool ) {
-        setUnderline( u: _u )
-    }
+    // Skipping method: false true false false false 
 
     /// public java.awt.Font javax.swing.text.LabelView.getFont()
 
+    // Skipping method: false true false false false 
+
     /// protected java.awt.FontMetrics javax.swing.text.LabelView.getFontMetrics()
 
-    private static var getFontMetrics_MethodID_4: jmethodID?
+    private static var getFontMetrics_MethodID_2: jmethodID?
 
     open func getFontMetrics() -> java_awt.FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &LabelView.getFontMetrics_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &LabelView.getFontMetrics_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
     }
 
 
-    /// public java.awt.Color javax.swing.text.LabelView.getBackground()
+    /// public java.awt.Color javax.swing.text.LabelView.getForeground()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.LabelView.isStrikeThrough()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.LabelView.isSubscript()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.LabelView.isSuperscript()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.LabelView.isUnderline()
+
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.text.LabelView.setBackground(java.awt.Color)
 
-    private static var setBackground_MethodID_5: jmethodID?
+    private static var setBackground_MethodID_3: jmethodID?
 
     open func setBackground( bg: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: bg, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &LabelView.setBackground_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBackground", methodSig: "(Ljava/awt/Color;)V", methodCache: &LabelView.setBackground_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func setBackground( _ _bg: java_awt.Color? ) {
         setBackground( bg: _bg )
     }
 
-    /// public java.awt.Color javax.swing.text.LabelView.getForeground()
-
     /// protected void javax.swing.text.LabelView.setPropertiesFromAttributes()
 
-    private static var setPropertiesFromAttributes_MethodID_6: jmethodID?
+    private static var setPropertiesFromAttributes_MethodID_4: jmethodID?
 
     open func setPropertiesFromAttributes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &LabelView.setPropertiesFromAttributes_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &LabelView.setPropertiesFromAttributes_MethodID_4, args: &__args, locals: &__locals )
     }
 
 
-    /// public boolean javax.swing.text.LabelView.isSuperscript()
-
-    /// public boolean javax.swing.text.LabelView.isSubscript()
-
-    /// public boolean javax.swing.text.LabelView.isUnderline()
-
-    /// public boolean javax.swing.text.LabelView.isStrikeThrough()
-
     /// protected void javax.swing.text.LabelView.setStrikeThrough(boolean)
 
-    private static var setStrikeThrough_MethodID_7: jmethodID?
+    private static var setStrikeThrough_MethodID_5: jmethodID?
 
     open func setStrikeThrough( s: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStrikeThrough", methodSig: "(Z)V", methodCache: &LabelView.setStrikeThrough_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(s ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStrikeThrough", methodSig: "(Z)V", methodCache: &LabelView.setStrikeThrough_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func setStrikeThrough( _ _s: Bool ) {
@@ -234,26 +292,62 @@ open class LabelView: GlyphView {
 
     /// protected void javax.swing.text.LabelView.setSubscript(boolean)
 
-    private static var setSubscript_MethodID_8: jmethodID?
+    private static var setSubscript_MethodID_6: jmethodID?
 
     open func setSubscript( s: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSubscript", methodSig: "(Z)V", methodCache: &LabelView.setSubscript_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(s ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSubscript", methodSig: "(Z)V", methodCache: &LabelView.setSubscript_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func setSubscript( _ _s: Bool ) {
         setSubscript( s: _s )
     }
 
-    /// public void javax.swing.text.LabelView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+    /// protected void javax.swing.text.LabelView.setSuperscript(boolean)
+
+    private static var setSuperscript_MethodID_7: jmethodID?
+
+    open func setSuperscript( s: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(s ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSuperscript", methodSig: "(Z)V", methodCache: &LabelView.setSuperscript_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func setSuperscript( _ _s: Bool ) {
+        setSuperscript( s: _s )
+    }
+
+    /// protected void javax.swing.text.LabelView.setUnderline(boolean)
+
+    private static var setUnderline_MethodID_8: jmethodID?
+
+    open func setUnderline( u: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(u ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUnderline", methodSig: "(Z)V", methodCache: &LabelView.setUnderline_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setUnderline( _ _u: Bool ) {
+        setUnderline( u: _u )
+    }
+
+    /// final void javax.swing.text.LabelView.sync()
+
+    // Skipping method: true false false false false 
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract float javax.swing.text.TabableView.getPartialSpan(int,int)
 
+    // Skipping method: false true false false false 
+
     /// public abstract float javax.swing.text.TabableView.getTabbedSpan(float,javax.swing.text.TabExpander)
+
+    // Skipping method: false true false false false 
 
 }
 

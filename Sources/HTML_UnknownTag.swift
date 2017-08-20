@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.text.html.HTML$UnknownTag ///
 
-open class HTML_UnknownTag: HTML_Tag, /* java.io.Serializable */ UnclassedProtocol {
+open class HTML_UnknownTag: HTML_Tag, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,177 +16,341 @@ open class HTML_UnknownTag: HTML_Tag, /* java.io.Serializable */ UnclassedProtoc
 
     private static var HTML_UnknownTagJNIClass: jclass?
 
-    /// boolean javax.swing.text.html.HTML$Tag.blockTag
-
-    /// boolean javax.swing.text.html.HTML$Tag.breakTag
-
-    /// java.lang.String javax.swing.text.html.HTML$Tag.name
-
-    /// boolean javax.swing.text.html.HTML$Tag.unknown
-
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.A
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.ADDRESS
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.APPLET
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.AREA
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.B
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.BASE
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.BASEFONT
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.BIG
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.BLOCKQUOTE
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.BODY
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.BR
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.CAPTION
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.CENTER
+
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.CITE
 
+    // Skipping field: false true false false false false 
+
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.CODE
 
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DD
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DFN
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DIR
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DIV
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DL
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.EM
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FONT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FORM
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FRAME
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FRAMESET
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H1
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H2
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H3
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H4
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H5
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H6
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.HEAD
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.HR
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.HTML
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.I
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.IMG
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.INPUT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.ISINDEX
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.KBD
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.LI
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.LINK
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.MAP
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.MENU
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.META
-
-    /// static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.NOBR
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.NOFRAMES
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.OBJECT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.OL
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.OPTION
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.P
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.PARAM
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.PRE
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SAMP
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SCRIPT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SELECT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SMALL
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SPAN
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.STRIKE
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.S
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.STRONG
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.STYLE
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SUB
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SUP
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TABLE
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TD
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TEXTAREA
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TH
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TITLE
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TR
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TT
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.U
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.UL
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.VAR
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.IMPLIED
-
-    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.CONTENT
+    // Skipping field: false true false false false false 
 
     /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.COMMENT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.CONTENT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DFN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DIR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DIV
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.DT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.EM
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FONT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FORM
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FRAME
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.FRAMESET
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H1
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H2
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H3
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H4
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H5
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.H6
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.HEAD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.HR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.HTML
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.I
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.IMG
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.IMPLIED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.INPUT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.ISINDEX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.KBD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.LI
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.LINK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.MAP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.MENU
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.META
+
+    // Skipping field: false true false false false false 
+
+    /// static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.NOBR
+
+    // Skipping field: true false false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.NOFRAMES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.OBJECT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.OL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.OPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.P
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.PARAM
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.PRE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.S
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SAMP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SCRIPT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SELECT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SMALL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SPAN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.STRIKE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.STRONG
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.STYLE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SUB
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.SUP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TABLE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TEXTAREA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TITLE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.TT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.U
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.UL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML$Tag.VAR
+
+    // Skipping field: false true false false false false 
+
     /// static final javax.swing.text.html.HTML$Tag[] javax.swing.text.html.HTML$Tag.allTags
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.html.HTML$Tag.blockTag
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.html.HTML$Tag.breakTag
+
+    // Skipping field: true false false false false false 
+
+    /// java.lang.String javax.swing.text.html.HTML$Tag.name
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.html.HTML$Tag.unknown
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.text.html.HTML$UnknownTag(java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( id: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: id, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTML$UnknownTag", classCache: &HTML_UnknownTag.HTML_UnknownTagJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &HTML_UnknownTag.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -202,11 +366,11 @@ open class HTML_UnknownTag: HTML_Tag, /* java.io.Serializable */ UnclassedProtoc
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( obj: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: obj, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &HTML_UnknownTag.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _obj: java_swift.JavaObject? ) -> Bool {
@@ -214,6 +378,8 @@ open class HTML_UnknownTag: HTML_Tag, /* java.io.Serializable */ UnclassedProtoc
     }
 
     /// public int javax.swing.text.html.HTML$UnknownTag.hashCode()
+
+    // Skipping method: false true false false false 
 
     /// private void javax.swing.text.html.HTML$UnknownTag.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
 

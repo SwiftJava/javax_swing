@@ -24,15 +24,15 @@ open class TreeCellRendererForward: JNIObjectForward, TreeCellRenderer {
     private static var getTreeCellRendererComponent_MethodID_2: jmethodID?
 
     open func getTreeCellRendererComponent( tree: JTree?, value: java_swift.JavaObject?, selected: Bool, expanded: Bool, leaf: Bool, row: Int, hasFocus: Bool ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: tree, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: selected, locals: &__locals )
-        __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
-        __args[4] = JNIType.toJava( value: leaf, locals: &__locals )
-        __args[5] = JNIType.toJava( value: row, locals: &__locals )
-        __args[6] = JNIType.toJava( value: hasFocus, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(selected ? JNI_TRUE : JNI_FALSE) )
+        __args[3] = jvalue( z: jboolean(expanded ? JNI_TRUE : JNI_FALSE) )
+        __args[4] = jvalue( z: jboolean(leaf ? JNI_TRUE : JNI_FALSE) )
+        __args[5] = jvalue( i: jint(row) )
+        __args[6] = jvalue( z: jboolean(hasFocus ? JNI_TRUE : JNI_FALSE) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTreeCellRendererComponent", methodSig: "(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;", methodCache: &TreeCellRendererForward.getTreeCellRendererComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -43,5 +43,4 @@ open class TreeCellRendererForward: JNIObjectForward, TreeCellRenderer {
     }
 
 }
-
 

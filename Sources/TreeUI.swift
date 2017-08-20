@@ -22,23 +22,74 @@ open class TreeUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/TreeUI", classCache: &TreeUI.TreeUIJNIClass, methodSig: "()V", methodCache: &TreeUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public abstract void javax.swing.plaf.TreeUI.cancelEditing(javax.swing.JTree)
+
+    private static var cancelEditing_MethodID_2: jmethodID?
+
+    open func cancelEditing( tree: JTree? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancelEditing", methodSig: "(Ljavax/swing/JTree;)V", methodCache: &TreeUI.cancelEditing_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func cancelEditing( _ _tree: JTree? ) {
+        cancelEditing( tree: _tree )
+    }
+
+    /// public abstract javax.swing.tree.TreePath javax.swing.plaf.TreeUI.getClosestPathForLocation(javax.swing.JTree,int,int)
+
+    private static var getClosestPathForLocation_MethodID_3: jmethodID?
+
+    open func getClosestPathForLocation( tree: JTree?, x: Int, y: Int ) -> TreePath! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClosestPathForLocation", methodSig: "(Ljavax/swing/JTree;II)Ljavax/swing/tree/TreePath;", methodCache: &TreeUI.getClosestPathForLocation_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreePath( javaObject: __return ) : nil
+    }
+
+    open func getClosestPathForLocation( _ _tree: JTree?, _ _x: Int, _ _y: Int ) -> TreePath! {
+        return getClosestPathForLocation( tree: _tree, x: _x, y: _y )
+    }
+
+    /// public abstract javax.swing.tree.TreePath javax.swing.plaf.TreeUI.getEditingPath(javax.swing.JTree)
+
+    private static var getEditingPath_MethodID_4: jmethodID?
+
+    open func getEditingPath( tree: JTree? ) -> TreePath! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditingPath", methodSig: "(Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;", methodCache: &TreeUI.getEditingPath_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TreePath( javaObject: __return ) : nil
+    }
+
+    open func getEditingPath( _ _tree: JTree? ) -> TreePath! {
+        return getEditingPath( tree: _tree )
+    }
+
     /// public abstract java.awt.Rectangle javax.swing.plaf.TreeUI.getPathBounds(javax.swing.JTree,javax.swing.tree.TreePath)
 
-    private static var getPathBounds_MethodID_2: jmethodID?
+    private static var getPathBounds_MethodID_5: jmethodID?
 
     open func getPathBounds( tree: JTree?, path: TreePath? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: tree, locals: &__locals )
         __args[1] = JNIType.toJava( value: path, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathBounds", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)Ljava/awt/Rectangle;", methodCache: &TreeUI.getPathBounds_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathBounds", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)Ljava/awt/Rectangle;", methodCache: &TreeUI.getPathBounds_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -49,14 +100,14 @@ open class TreeUI: ComponentUI {
 
     /// public abstract javax.swing.tree.TreePath javax.swing.plaf.TreeUI.getPathForRow(javax.swing.JTree,int)
 
-    private static var getPathForRow_MethodID_3: jmethodID?
+    private static var getPathForRow_MethodID_6: jmethodID?
 
     open func getPathForRow( tree: JTree?, row: Int ) -> TreePath! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        __args[1] = JNIType.toJava( value: row, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathForRow", methodSig: "(Ljavax/swing/JTree;I)Ljavax/swing/tree/TreePath;", methodCache: &TreeUI.getPathForRow_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(row) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPathForRow", methodSig: "(Ljavax/swing/JTree;I)Ljavax/swing/tree/TreePath;", methodCache: &TreeUI.getPathForRow_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TreePath( javaObject: __return ) : nil
     }
@@ -65,136 +116,85 @@ open class TreeUI: ComponentUI {
         return getPathForRow( tree: _tree, row: _row )
     }
 
-    /// public abstract int javax.swing.plaf.TreeUI.getRowForPath(javax.swing.JTree,javax.swing.tree.TreePath)
-
-    private static var getRowForPath_MethodID_4: jmethodID?
-
-    open func getRowForPath( tree: JTree?, path: TreePath? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        __args[1] = JNIType.toJava( value: path, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowForPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)I", methodCache: &TreeUI.getRowForPath_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getRowForPath( _ _tree: JTree?, _ _path: TreePath? ) -> Int {
-        return getRowForPath( tree: _tree, path: _path )
-    }
-
-    /// public abstract javax.swing.tree.TreePath javax.swing.plaf.TreeUI.getClosestPathForLocation(javax.swing.JTree,int,int)
-
-    private static var getClosestPathForLocation_MethodID_5: jmethodID?
-
-    open func getClosestPathForLocation( tree: JTree?, x: Int, y: Int ) -> TreePath! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClosestPathForLocation", methodSig: "(Ljavax/swing/JTree;II)Ljavax/swing/tree/TreePath;", methodCache: &TreeUI.getClosestPathForLocation_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreePath( javaObject: __return ) : nil
-    }
-
-    open func getClosestPathForLocation( _ _tree: JTree?, _ _x: Int, _ _y: Int ) -> TreePath! {
-        return getClosestPathForLocation( tree: _tree, x: _x, y: _y )
-    }
-
-    /// public abstract boolean javax.swing.plaf.TreeUI.stopEditing(javax.swing.JTree)
-
-    private static var stopEditing_MethodID_6: jmethodID?
-
-    open func stopEditing( tree: JTree? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "stopEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &TreeUI.stopEditing_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func stopEditing( _ _tree: JTree? ) -> Bool {
-        return stopEditing( tree: _tree )
-    }
-
-    /// public abstract void javax.swing.plaf.TreeUI.cancelEditing(javax.swing.JTree)
-
-    private static var cancelEditing_MethodID_7: jmethodID?
-
-    open func cancelEditing( tree: JTree? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cancelEditing", methodSig: "(Ljavax/swing/JTree;)V", methodCache: &TreeUI.cancelEditing_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func cancelEditing( _ _tree: JTree? ) {
-        cancelEditing( tree: _tree )
-    }
-
-    /// public abstract void javax.swing.plaf.TreeUI.startEditingAtPath(javax.swing.JTree,javax.swing.tree.TreePath)
-
-    private static var startEditingAtPath_MethodID_8: jmethodID?
-
-    open func startEditingAtPath( tree: JTree?, path: TreePath? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        __args[1] = JNIType.toJava( value: path, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startEditingAtPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)V", methodCache: &TreeUI.startEditingAtPath_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func startEditingAtPath( _ _tree: JTree?, _ _path: TreePath? ) {
-        startEditingAtPath( tree: _tree, path: _path )
-    }
-
-    /// public abstract javax.swing.tree.TreePath javax.swing.plaf.TreeUI.getEditingPath(javax.swing.JTree)
-
-    private static var getEditingPath_MethodID_9: jmethodID?
-
-    open func getEditingPath( tree: JTree? ) -> TreePath! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditingPath", methodSig: "(Ljavax/swing/JTree;)Ljavax/swing/tree/TreePath;", methodCache: &TreeUI.getEditingPath_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TreePath( javaObject: __return ) : nil
-    }
-
-    open func getEditingPath( _ _tree: JTree? ) -> TreePath! {
-        return getEditingPath( tree: _tree )
-    }
-
     /// public abstract int javax.swing.plaf.TreeUI.getRowCount(javax.swing.JTree)
 
-    private static var getRowCount_MethodID_10: jmethodID?
+    private static var getRowCount_MethodID_7: jmethodID?
 
     open func getRowCount( tree: JTree? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "(Ljavax/swing/JTree;)I", methodCache: &TreeUI.getRowCount_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowCount", methodSig: "(Ljavax/swing/JTree;)I", methodCache: &TreeUI.getRowCount_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getRowCount( _ _tree: JTree? ) -> Int {
         return getRowCount( tree: _tree )
     }
 
+    /// public abstract int javax.swing.plaf.TreeUI.getRowForPath(javax.swing.JTree,javax.swing.tree.TreePath)
+
+    private static var getRowForPath_MethodID_8: jmethodID?
+
+    open func getRowForPath( tree: JTree?, path: TreePath? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: path, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowForPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)I", methodCache: &TreeUI.getRowForPath_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getRowForPath( _ _tree: JTree?, _ _path: TreePath? ) -> Int {
+        return getRowForPath( tree: _tree, path: _path )
+    }
+
     /// public abstract boolean javax.swing.plaf.TreeUI.isEditing(javax.swing.JTree)
 
-    private static var isEditing_MethodID_11: jmethodID?
+    private static var isEditing_MethodID_9: jmethodID?
 
     open func isEditing( tree: JTree? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: tree, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &TreeUI.isEditing_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &TreeUI.isEditing_MethodID_9, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isEditing( _ _tree: JTree? ) -> Bool {
         return isEditing( tree: _tree )
+    }
+
+    /// public abstract void javax.swing.plaf.TreeUI.startEditingAtPath(javax.swing.JTree,javax.swing.tree.TreePath)
+
+    private static var startEditingAtPath_MethodID_10: jmethodID?
+
+    open func startEditingAtPath( tree: JTree?, path: TreePath? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        __args[1] = JNIType.toJava( value: path, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startEditingAtPath", methodSig: "(Ljavax/swing/JTree;Ljavax/swing/tree/TreePath;)V", methodCache: &TreeUI.startEditingAtPath_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func startEditingAtPath( _ _tree: JTree?, _ _path: TreePath? ) {
+        startEditingAtPath( tree: _tree, path: _path )
+    }
+
+    /// public abstract boolean javax.swing.plaf.TreeUI.stopEditing(javax.swing.JTree)
+
+    private static var stopEditing_MethodID_11: jmethodID?
+
+    open func stopEditing( tree: JTree? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tree, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "stopEditing", methodSig: "(Ljavax/swing/JTree;)Z", methodCache: &TreeUI.stopEditing_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func stopEditing( _ _tree: JTree? ) -> Bool {
+        return stopEditing( tree: _tree )
     }
 
 }

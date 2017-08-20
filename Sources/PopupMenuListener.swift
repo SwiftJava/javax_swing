@@ -8,17 +8,17 @@ import java_util
 
 public protocol PopupMenuListener: java_util.EventListener {
 
-    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
+    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuCanceled(javax.swing.event.PopupMenuEvent)
 
-    func popupMenuWillBecomeVisible( e: PopupMenuEvent? )
+    func popupMenuCanceled( e: PopupMenuEvent? )
 
     /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent)
 
     func popupMenuWillBecomeInvisible( e: PopupMenuEvent? )
 
-    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuCanceled(javax.swing.event.PopupMenuEvent)
+    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
 
-    func popupMenuCanceled( e: PopupMenuEvent? )
+    func popupMenuWillBecomeVisible( e: PopupMenuEvent? )
 
 }
 
@@ -27,19 +27,19 @@ open class PopupMenuListenerForward: java_util.EventListenerForward, PopupMenuLi
 
     private static var PopupMenuListenerJNIClass: jclass?
 
-    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
+    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuCanceled(javax.swing.event.PopupMenuEvent)
 
-    private static var popupMenuWillBecomeVisible_MethodID_4: jmethodID?
+    private static var popupMenuCanceled_MethodID_4: jmethodID?
 
-    open func popupMenuWillBecomeVisible( e: PopupMenuEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func popupMenuCanceled( e: PopupMenuEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuWillBecomeVisible", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuWillBecomeVisible_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuCanceled", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuCanceled_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func popupMenuWillBecomeVisible( _ _e: PopupMenuEvent? ) {
-        popupMenuWillBecomeVisible( e: _e )
+    open func popupMenuCanceled( _ _e: PopupMenuEvent? ) {
+        popupMenuCanceled( e: _e )
     }
 
     /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent)
@@ -47,8 +47,8 @@ open class PopupMenuListenerForward: java_util.EventListenerForward, PopupMenuLi
     private static var popupMenuWillBecomeInvisible_MethodID_5: jmethodID?
 
     open func popupMenuWillBecomeInvisible( e: PopupMenuEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuWillBecomeInvisible", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuWillBecomeInvisible_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -57,46 +57,39 @@ open class PopupMenuListenerForward: java_util.EventListenerForward, PopupMenuLi
         popupMenuWillBecomeInvisible( e: _e )
     }
 
-    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuCanceled(javax.swing.event.PopupMenuEvent)
+    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
 
-    private static var popupMenuCanceled_MethodID_6: jmethodID?
+    private static var popupMenuWillBecomeVisible_MethodID_6: jmethodID?
 
-    open func popupMenuCanceled( e: PopupMenuEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func popupMenuWillBecomeVisible( e: PopupMenuEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuCanceled", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuCanceled_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "popupMenuWillBecomeVisible", methodSig: "(Ljavax/swing/event/PopupMenuEvent;)V", methodCache: &PopupMenuListenerForward.popupMenuWillBecomeVisible_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func popupMenuCanceled( _ _e: PopupMenuEvent? ) {
-        popupMenuCanceled( e: _e )
+    open func popupMenuWillBecomeVisible( _ _e: PopupMenuEvent? ) {
+        popupMenuWillBecomeVisible( e: _e )
     }
 
 }
 
+private typealias PopupMenuListener_popupMenuCanceled_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias PopupMenuListener_popupMenuWillBecomeVisible_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func PopupMenuListener_popupMenuWillBecomeVisible_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    PopupMenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).popupMenuWillBecomeVisible( e: e != nil ? PopupMenuEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+private func PopupMenuListener_popupMenuCanceled_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    PopupMenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).popupMenuCanceled( e: e != nil ? PopupMenuEvent( javaObject: e ) : nil )
 }
 
 private typealias PopupMenuListener_popupMenuWillBecomeInvisible_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func PopupMenuListener_popupMenuWillBecomeInvisible_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     PopupMenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).popupMenuWillBecomeInvisible( e: e != nil ? PopupMenuEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias PopupMenuListener_popupMenuCanceled_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias PopupMenuListener_popupMenuWillBecomeVisible_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func PopupMenuListener_popupMenuCanceled_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    PopupMenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).popupMenuCanceled( e: e != nil ? PopupMenuEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+private func PopupMenuListener_popupMenuWillBecomeVisible_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    PopupMenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).popupMenuWillBecomeVisible( e: e != nil ? PopupMenuEvent( javaObject: e ) : nil )
 }
 
 fileprivate class PopupMenuListenerLocal_: JNILocalProxy<PopupMenuListener, Any> {
@@ -104,14 +97,14 @@ fileprivate class PopupMenuListenerLocal_: JNILocalProxy<PopupMenuListener, Any>
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let PopupMenuListener_popupMenuWillBecomeVisible_0_thunk: PopupMenuListener_popupMenuWillBecomeVisible_0_type = PopupMenuListener_popupMenuWillBecomeVisible_0
-        natives.append( JNINativeMethod( name: strdup("__popupMenuWillBecomeVisible"), signature: strdup("(JLjavax/swing/event/PopupMenuEvent;)V"), fnPtr: unsafeBitCast( PopupMenuListener_popupMenuWillBecomeVisible_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let PopupMenuListener_popupMenuCanceled_0_thunk: PopupMenuListener_popupMenuCanceled_0_type = PopupMenuListener_popupMenuCanceled_0
+        natives.append( JNINativeMethod( name: strdup("__popupMenuCanceled"), signature: strdup("(JLjavax/swing/event/PopupMenuEvent;)V"), fnPtr: unsafeBitCast( PopupMenuListener_popupMenuCanceled_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let PopupMenuListener_popupMenuWillBecomeInvisible_1_thunk: PopupMenuListener_popupMenuWillBecomeInvisible_1_type = PopupMenuListener_popupMenuWillBecomeInvisible_1
         natives.append( JNINativeMethod( name: strdup("__popupMenuWillBecomeInvisible"), signature: strdup("(JLjavax/swing/event/PopupMenuEvent;)V"), fnPtr: unsafeBitCast( PopupMenuListener_popupMenuWillBecomeInvisible_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let PopupMenuListener_popupMenuCanceled_2_thunk: PopupMenuListener_popupMenuCanceled_2_type = PopupMenuListener_popupMenuCanceled_2
-        natives.append( JNINativeMethod( name: strdup("__popupMenuCanceled"), signature: strdup("(JLjavax/swing/event/PopupMenuEvent;)V"), fnPtr: unsafeBitCast( PopupMenuListener_popupMenuCanceled_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let PopupMenuListener_popupMenuWillBecomeVisible_2_thunk: PopupMenuListener_popupMenuWillBecomeVisible_2_type = PopupMenuListener_popupMenuWillBecomeVisible_2
+        natives.append( JNINativeMethod( name: strdup("__popupMenuWillBecomeVisible"), signature: strdup("(JLjavax/swing/event/PopupMenuEvent;)V"), fnPtr: unsafeBitCast( PopupMenuListener_popupMenuWillBecomeVisible_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -144,31 +137,22 @@ open class PopupMenuListenerBase: PopupMenuListener {
 
     public init() {}
 
-    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
+    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuCanceled(javax.swing.event.PopupMenuEvent)
 
-    open func popupMenuWillBecomeVisible( e: PopupMenuEvent? ) /**/ {
+    open func popupMenuCanceled( e: PopupMenuEvent? ) /**/ {
     }
 
-    open func popupMenuWillBecomeVisible( _ _e: PopupMenuEvent? ) /**/ {
-        popupMenuWillBecomeVisible( e: _e )
-    }
 
     /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent)
 
     open func popupMenuWillBecomeInvisible( e: PopupMenuEvent? ) /**/ {
     }
 
-    open func popupMenuWillBecomeInvisible( _ _e: PopupMenuEvent? ) /**/ {
-        popupMenuWillBecomeInvisible( e: _e )
+
+    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent)
+
+    open func popupMenuWillBecomeVisible( e: PopupMenuEvent? ) /**/ {
     }
 
-    /// public abstract void javax.swing.event.PopupMenuListener.popupMenuCanceled(javax.swing.event.PopupMenuEvent)
-
-    open func popupMenuCanceled( e: PopupMenuEvent? ) /**/ {
-    }
-
-    open func popupMenuCanceled( _ _e: PopupMenuEvent? ) /**/ {
-        popupMenuCanceled( e: _e )
-    }
 
 }

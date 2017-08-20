@@ -19,13 +19,15 @@ open class BasicComboPopup_InvocationKeyHandler: java_awt.KeyAdapter {
 
     /// final javax.swing.plaf.basic.BasicComboPopup javax.swing.plaf.basic.BasicComboPopup$InvocationKeyHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicComboPopup$InvocationKeyHandler(javax.swing.plaf.basic.BasicComboPopup)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicComboPopup? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboPopup$InvocationKeyHandler", classCache: &BasicComboPopup_InvocationKeyHandler.BasicComboPopup_InvocationKeyHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicComboPopup;)V", methodCache: &BasicComboPopup_InvocationKeyHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -37,6 +39,8 @@ open class BasicComboPopup_InvocationKeyHandler: java_awt.KeyAdapter {
     }
 
     /// public void javax.swing.plaf.basic.BasicComboPopup$InvocationKeyHandler.keyReleased(java.awt.event.KeyEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

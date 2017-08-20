@@ -7,13 +7,13 @@ import java_swift
 
 public protocol ComboBoxModel: ListModel {
 
-    /// public abstract void javax.swing.ComboBoxModel.setSelectedItem(java.lang.Object)
-
-    func setSelectedItem( anItem: java_swift.JavaObject? )
-
     /// public abstract java.lang.Object javax.swing.ComboBoxModel.getSelectedItem()
 
     func getSelectedItem() -> java_swift.JavaObject!
+
+    /// public abstract void javax.swing.ComboBoxModel.setSelectedItem(java.lang.Object)
+
+    func setSelectedItem( anItem: java_swift.JavaObject? )
 
 }
 
@@ -22,70 +22,15 @@ open class ComboBoxModelForward: ListModelForward, ComboBoxModel {
 
     private static var ComboBoxModelJNIClass: jclass?
 
-    /// public abstract void javax.swing.ComboBoxModel.setSelectedItem(java.lang.Object)
-
-    private static var setSelectedItem_MethodID_3: jmethodID?
-
-    open func setSelectedItem( anItem: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anItem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &ComboBoxModelForward.setSelectedItem_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedItem( _ _anItem: java_swift.JavaObject? ) {
-        setSelectedItem( anItem: _anItem )
-    }
-
-    /// public abstract java.lang.Object javax.swing.ComboBoxModel.getSelectedItem()
-
-    private static var getSelectedItem_MethodID_4: jmethodID?
-
-    open func getSelectedItem() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/Object;", methodCache: &ComboBoxModelForward.getSelectedItem_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract int javax.swing.ListModel.getSize()
-
-    private static var getSize_MethodID_5: jmethodID?
-
-    override open func getSize() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSize", methodSig: "()I", methodCache: &ComboBoxModelForward.getSize_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.ListModel.removeListDataListener(javax.swing.event.ListDataListener)
-
-    private static var removeListDataListener_MethodID_6: jmethodID?
-
-    override open func removeListDataListener( l: ListDataListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &ComboBoxModelForward.removeListDataListener_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func removeListDataListener( _ _l: ListDataListener? ) {
-        removeListDataListener( l: _l )
-    }
-
     /// public abstract void javax.swing.ListModel.addListDataListener(javax.swing.event.ListDataListener)
 
-    private static var addListDataListener_MethodID_7: jmethodID?
+    private static var addListDataListener_MethodID_3: jmethodID?
 
     override open func addListDataListener( l: ListDataListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &ComboBoxModelForward.addListDataListener_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &ComboBoxModelForward.addListDataListener_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func addListDataListener( _ _l: ListDataListener? ) {
@@ -94,13 +39,13 @@ open class ComboBoxModelForward: ListModelForward, ComboBoxModel {
 
     /// public abstract java.lang.Object javax.swing.ListModel.getElementAt(int)
 
-    private static var getElementAt_MethodID_8: jmethodID?
+    private static var getElementAt_MethodID_4: jmethodID?
 
     override open func getElementAt( index: Int ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElementAt", methodSig: "(I)Ljava/lang/Object;", methodCache: &ComboBoxModelForward.getElementAt_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElementAt", methodSig: "(I)Ljava/lang/Object;", methodCache: &ComboBoxModelForward.getElementAt_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -109,6 +54,60 @@ open class ComboBoxModelForward: ListModelForward, ComboBoxModel {
         return getElementAt( index: _index )
     }
 
-}
+    /// public abstract java.lang.Object javax.swing.ComboBoxModel.getSelectedItem()
 
+    private static var getSelectedItem_MethodID_5: jmethodID?
+
+    open func getSelectedItem() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/Object;", methodCache: &ComboBoxModelForward.getSelectedItem_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract int javax.swing.ListModel.getSize()
+
+    private static var getSize_MethodID_6: jmethodID?
+
+    override open func getSize() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSize", methodSig: "()I", methodCache: &ComboBoxModelForward.getSize_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract void javax.swing.ListModel.removeListDataListener(javax.swing.event.ListDataListener)
+
+    private static var removeListDataListener_MethodID_7: jmethodID?
+
+    override open func removeListDataListener( l: ListDataListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeListDataListener", methodSig: "(Ljavax/swing/event/ListDataListener;)V", methodCache: &ComboBoxModelForward.removeListDataListener_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    override open func removeListDataListener( _ _l: ListDataListener? ) {
+        removeListDataListener( l: _l )
+    }
+
+    /// public abstract void javax.swing.ComboBoxModel.setSelectedItem(java.lang.Object)
+
+    private static var setSelectedItem_MethodID_8: jmethodID?
+
+    open func setSelectedItem( anItem: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: anItem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &ComboBoxModelForward.setSelectedItem_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedItem( _ _anItem: java_swift.JavaObject? ) {
+        setSelectedItem( anItem: _anItem )
+    }
+
+}
 

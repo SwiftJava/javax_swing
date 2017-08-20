@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.undo.AbstractUndoableEdit ///
 
-open class AbstractUndoableEdit: java_swift.JavaObject, UndoableEdit, /* java.io.Serializable */ UnclassedProtocol {
+open class AbstractUndoableEdit: java_swift.JavaObject, UndoableEdit, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,50 +16,59 @@ open class AbstractUndoableEdit: java_swift.JavaObject, UndoableEdit, /* java.io
 
     private static var AbstractUndoableEditJNIClass: jclass?
 
+    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
+
+    // Skipping field: false false false false false true 
+
     /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
 
-    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
+    // Skipping field: false false false false false true 
+
+    /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
 
-    /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.undo.AbstractUndoableEdit()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/undo/AbstractUndoableEdit", classCache: &AbstractUndoableEdit.AbstractUndoableEditJNIClass, methodSig: "()V", methodCache: &AbstractUndoableEdit.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.toString()
+    /// public boolean javax.swing.undo.AbstractUndoableEdit.addEdit(javax.swing.undo.UndoableEdit)
 
-    /// public void javax.swing.undo.AbstractUndoableEdit.die()
+    private static var addEdit_MethodID_2: jmethodID?
 
-    private static var die_MethodID_2: jmethodID?
-
-    open func die() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addEdit( anEdit: UndoableEdit? ) -> Bool {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "die", methodSig: "()V", methodCache: &AbstractUndoableEdit.die_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: anEdit, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "addEdit", methodSig: "(Ljavax/swing/undo/UndoableEdit;)Z", methodCache: &AbstractUndoableEdit.addEdit_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
+    open func addEdit( _ _anEdit: UndoableEdit? ) -> Bool {
+        return addEdit( anEdit: _anEdit )
+    }
 
-    /// public void javax.swing.undo.AbstractUndoableEdit.undo() throws javax.swing.undo.CannotUndoException
+    /// public boolean javax.swing.undo.AbstractUndoableEdit.canRedo()
 
-    private static var undo_MethodID_3: jmethodID?
+    private static var canRedo_MethodID_3: jmethodID?
 
-    open func undo() throws /* javax.swing.undo.CannotUndoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func canRedo() -> Bool {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "undo", methodSig: "()V", methodCache: &AbstractUndoableEdit.undo_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw CannotUndoException( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canRedo", methodSig: "()Z", methodCache: &AbstractUndoableEdit.canRedo_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
@@ -68,116 +77,122 @@ open class AbstractUndoableEdit: java_swift.JavaObject, UndoableEdit, /* java.io
     private static var canUndo_MethodID_4: jmethodID?
 
     open func canUndo() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canUndo", methodSig: "()Z", methodCache: &AbstractUndoableEdit.canUndo_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public void javax.swing.undo.AbstractUndoableEdit.redo() throws javax.swing.undo.CannotRedoException
+    /// public void javax.swing.undo.AbstractUndoableEdit.die()
 
-    private static var redo_MethodID_5: jmethodID?
+    private static var die_MethodID_5: jmethodID?
 
-    open func redo() throws /* javax.swing.undo.CannotRedoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func die() {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "redo", methodSig: "()V", methodCache: &AbstractUndoableEdit.redo_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw CannotRedoException( javaObject: throwable )
-        }
-    }
-
-
-    /// public boolean javax.swing.undo.AbstractUndoableEdit.canRedo()
-
-    private static var canRedo_MethodID_6: jmethodID?
-
-    open func canRedo() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canRedo", methodSig: "()Z", methodCache: &AbstractUndoableEdit.canRedo_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "die", methodSig: "()V", methodCache: &AbstractUndoableEdit.die_MethodID_5, args: &__args, locals: &__locals )
     }
 
 
-    /// public boolean javax.swing.undo.AbstractUndoableEdit.addEdit(javax.swing.undo.UndoableEdit)
+    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.getPresentationName()
 
-    private static var addEdit_MethodID_7: jmethodID?
+    private static var getPresentationName_MethodID_6: jmethodID?
 
-    open func addEdit( anEdit: UndoableEdit? ) -> Bool {
+    open func getPresentationName() -> String! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractUndoableEdit.getPresentationName_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.getRedoPresentationName()
+
+    private static var getRedoPresentationName_MethodID_7: jmethodID?
+
+    open func getRedoPresentationName() -> String! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEdit, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "addEdit", methodSig: "(Ljavax/swing/undo/UndoableEdit;)Z", methodCache: &AbstractUndoableEdit.addEdit_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func addEdit( _ _anEdit: UndoableEdit? ) -> Bool {
-        return addEdit( anEdit: _anEdit )
-    }
-
-    /// public boolean javax.swing.undo.AbstractUndoableEdit.replaceEdit(javax.swing.undo.UndoableEdit)
-
-    private static var replaceEdit_MethodID_8: jmethodID?
-
-    open func replaceEdit( anEdit: UndoableEdit? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEdit, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "replaceEdit", methodSig: "(Ljavax/swing/undo/UndoableEdit;)Z", methodCache: &AbstractUndoableEdit.replaceEdit_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRedoPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractUndoableEdit.getRedoPresentationName_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
-    open func replaceEdit( _ _anEdit: UndoableEdit? ) -> Bool {
-        return replaceEdit( anEdit: _anEdit )
+
+    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.getUndoPresentationName()
+
+    private static var getUndoPresentationName_MethodID_8: jmethodID?
+
+    open func getUndoPresentationName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUndoPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractUndoableEdit.getUndoPresentationName_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
+
 
     /// public boolean javax.swing.undo.AbstractUndoableEdit.isSignificant()
 
     private static var isSignificant_MethodID_9: jmethodID?
 
     open func isSignificant() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSignificant", methodSig: "()Z", methodCache: &AbstractUndoableEdit.isSignificant_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.getPresentationName()
+    /// public void javax.swing.undo.AbstractUndoableEdit.redo() throws javax.swing.undo.CannotRedoException
 
-    private static var getPresentationName_MethodID_10: jmethodID?
+    private static var redo_MethodID_10: jmethodID?
 
-    open func getPresentationName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func redo() throws /* javax.swing.undo.CannotRedoException */ {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractUndoableEdit.getPresentationName_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "redo", methodSig: "()V", methodCache: &AbstractUndoableEdit.redo_MethodID_10, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw CannotRedoException( javaObject: throwable )
+        }
     }
 
 
-    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.getUndoPresentationName()
+    /// public boolean javax.swing.undo.AbstractUndoableEdit.replaceEdit(javax.swing.undo.UndoableEdit)
 
-    private static var getUndoPresentationName_MethodID_11: jmethodID?
+    private static var replaceEdit_MethodID_11: jmethodID?
 
-    open func getUndoPresentationName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func replaceEdit( anEdit: UndoableEdit? ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUndoPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractUndoableEdit.getUndoPresentationName_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: anEdit, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "replaceEdit", methodSig: "(Ljavax/swing/undo/UndoableEdit;)Z", methodCache: &AbstractUndoableEdit.replaceEdit_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
+    open func replaceEdit( _ _anEdit: UndoableEdit? ) -> Bool {
+        return replaceEdit( anEdit: _anEdit )
+    }
 
-    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.getRedoPresentationName()
+    /// public java.lang.String javax.swing.undo.AbstractUndoableEdit.toString()
 
-    private static var getRedoPresentationName_MethodID_12: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func getRedoPresentationName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public void javax.swing.undo.AbstractUndoableEdit.undo() throws javax.swing.undo.CannotUndoException
+
+    private static var undo_MethodID_12: jmethodID?
+
+    open func undo() throws /* javax.swing.undo.CannotUndoException */ {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRedoPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &AbstractUndoableEdit.getRedoPresentationName_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "undo", methodSig: "()V", methodCache: &AbstractUndoableEdit.undo_MethodID_12, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw CannotUndoException( javaObject: throwable )
+        }
     }
 
 

@@ -8,6 +8,10 @@ import java_util
 
 public protocol MenuDragMouseListener: java_util.EventListener {
 
+    /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseDragged(javax.swing.event.MenuDragMouseEvent)
+
+    func menuDragMouseDragged( e: MenuDragMouseEvent? )
+
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseEntered(javax.swing.event.MenuDragMouseEvent)
 
     func menuDragMouseEntered( e: MenuDragMouseEvent? )
@@ -15,10 +19,6 @@ public protocol MenuDragMouseListener: java_util.EventListener {
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseExited(javax.swing.event.MenuDragMouseEvent)
 
     func menuDragMouseExited( e: MenuDragMouseEvent? )
-
-    /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseDragged(javax.swing.event.MenuDragMouseEvent)
-
-    func menuDragMouseDragged( e: MenuDragMouseEvent? )
 
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseReleased(javax.swing.event.MenuDragMouseEvent)
 
@@ -31,15 +31,30 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
 
     private static var MenuDragMouseListenerJNIClass: jclass?
 
+    /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseDragged(javax.swing.event.MenuDragMouseEvent)
+
+    private static var menuDragMouseDragged_MethodID_5: jmethodID?
+
+    open func menuDragMouseDragged( e: MenuDragMouseEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseDragged", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseDragged_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func menuDragMouseDragged( _ _e: MenuDragMouseEvent? ) {
+        menuDragMouseDragged( e: _e )
+    }
+
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseEntered(javax.swing.event.MenuDragMouseEvent)
 
-    private static var menuDragMouseEntered_MethodID_5: jmethodID?
+    private static var menuDragMouseEntered_MethodID_6: jmethodID?
 
     open func menuDragMouseEntered( e: MenuDragMouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseEntered", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseEntered_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseEntered", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseEntered_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func menuDragMouseEntered( _ _e: MenuDragMouseEvent? ) {
@@ -48,32 +63,17 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
 
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseExited(javax.swing.event.MenuDragMouseEvent)
 
-    private static var menuDragMouseExited_MethodID_6: jmethodID?
+    private static var menuDragMouseExited_MethodID_7: jmethodID?
 
     open func menuDragMouseExited( e: MenuDragMouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseExited", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseExited_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseExited", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseExited_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func menuDragMouseExited( _ _e: MenuDragMouseEvent? ) {
         menuDragMouseExited( e: _e )
-    }
-
-    /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseDragged(javax.swing.event.MenuDragMouseEvent)
-
-    private static var menuDragMouseDragged_MethodID_7: jmethodID?
-
-    open func menuDragMouseDragged( e: MenuDragMouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseDragged", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseDragged_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func menuDragMouseDragged( _ _e: MenuDragMouseEvent? ) {
-        menuDragMouseDragged( e: _e )
     }
 
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseReleased(javax.swing.event.MenuDragMouseEvent)
@@ -81,8 +81,8 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
     private static var menuDragMouseReleased_MethodID_8: jmethodID?
 
     open func menuDragMouseReleased( e: MenuDragMouseEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDragMouseReleased", methodSig: "(Ljavax/swing/event/MenuDragMouseEvent;)V", methodCache: &MenuDragMouseListenerForward.menuDragMouseReleased_MethodID_8, args: &__args, locals: &__locals )
     }
@@ -93,37 +93,28 @@ open class MenuDragMouseListenerForward: java_util.EventListenerForward, MenuDra
 
 }
 
+private typealias MenuDragMouseListener_menuDragMouseDragged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias MenuDragMouseListener_menuDragMouseEntered_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MenuDragMouseListener_menuDragMouseEntered_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MenuDragMouseListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDragMouseEntered( e: e != nil ? MenuDragMouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MenuDragMouseListener_menuDragMouseExited_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MenuDragMouseListener_menuDragMouseExited_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MenuDragMouseListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDragMouseExited( e: e != nil ? MenuDragMouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias MenuDragMouseListener_menuDragMouseDragged_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MenuDragMouseListener_menuDragMouseDragged_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func MenuDragMouseListener_menuDragMouseDragged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     MenuDragMouseListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDragMouseDragged( e: e != nil ? MenuDragMouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias MenuDragMouseListener_menuDragMouseEntered_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MenuDragMouseListener_menuDragMouseEntered_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MenuDragMouseListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDragMouseEntered( e: e != nil ? MenuDragMouseEvent( javaObject: e ) : nil )
+}
+
+private typealias MenuDragMouseListener_menuDragMouseExited_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func MenuDragMouseListener_menuDragMouseExited_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MenuDragMouseListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDragMouseExited( e: e != nil ? MenuDragMouseEvent( javaObject: e ) : nil )
 }
 
 private typealias MenuDragMouseListener_menuDragMouseReleased_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func MenuDragMouseListener_menuDragMouseReleased_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     MenuDragMouseListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDragMouseReleased( e: e != nil ? MenuDragMouseEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class MenuDragMouseListenerLocal_: JNILocalProxy<MenuDragMouseListener, Any> {
@@ -131,14 +122,14 @@ fileprivate class MenuDragMouseListenerLocal_: JNILocalProxy<MenuDragMouseListen
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let MenuDragMouseListener_menuDragMouseEntered_0_thunk: MenuDragMouseListener_menuDragMouseEntered_0_type = MenuDragMouseListener_menuDragMouseEntered_0
-        natives.append( JNINativeMethod( name: strdup("__menuDragMouseEntered"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseEntered_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MenuDragMouseListener_menuDragMouseDragged_0_thunk: MenuDragMouseListener_menuDragMouseDragged_0_type = MenuDragMouseListener_menuDragMouseDragged_0
+        natives.append( JNINativeMethod( name: strdup("__menuDragMouseDragged"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseDragged_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MenuDragMouseListener_menuDragMouseExited_1_thunk: MenuDragMouseListener_menuDragMouseExited_1_type = MenuDragMouseListener_menuDragMouseExited_1
-        natives.append( JNINativeMethod( name: strdup("__menuDragMouseExited"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseExited_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MenuDragMouseListener_menuDragMouseEntered_1_thunk: MenuDragMouseListener_menuDragMouseEntered_1_type = MenuDragMouseListener_menuDragMouseEntered_1
+        natives.append( JNINativeMethod( name: strdup("__menuDragMouseEntered"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseEntered_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MenuDragMouseListener_menuDragMouseDragged_2_thunk: MenuDragMouseListener_menuDragMouseDragged_2_type = MenuDragMouseListener_menuDragMouseDragged_2
-        natives.append( JNINativeMethod( name: strdup("__menuDragMouseDragged"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseDragged_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MenuDragMouseListener_menuDragMouseExited_2_thunk: MenuDragMouseListener_menuDragMouseExited_2_type = MenuDragMouseListener_menuDragMouseExited_2
+        natives.append( JNINativeMethod( name: strdup("__menuDragMouseExited"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseExited_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let MenuDragMouseListener_menuDragMouseReleased_3_thunk: MenuDragMouseListener_menuDragMouseReleased_3_type = MenuDragMouseListener_menuDragMouseReleased_3
         natives.append( JNINativeMethod( name: strdup("__menuDragMouseReleased"), signature: strdup("(JLjavax/swing/event/MenuDragMouseEvent;)V"), fnPtr: unsafeBitCast( MenuDragMouseListener_menuDragMouseReleased_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
@@ -174,40 +165,28 @@ open class MenuDragMouseListenerBase: MenuDragMouseListener {
 
     public init() {}
 
+    /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseDragged(javax.swing.event.MenuDragMouseEvent)
+
+    open func menuDragMouseDragged( e: MenuDragMouseEvent? ) /**/ {
+    }
+
+
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseEntered(javax.swing.event.MenuDragMouseEvent)
 
     open func menuDragMouseEntered( e: MenuDragMouseEvent? ) /**/ {
     }
 
-    open func menuDragMouseEntered( _ _e: MenuDragMouseEvent? ) /**/ {
-        menuDragMouseEntered( e: _e )
-    }
 
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseExited(javax.swing.event.MenuDragMouseEvent)
 
     open func menuDragMouseExited( e: MenuDragMouseEvent? ) /**/ {
     }
 
-    open func menuDragMouseExited( _ _e: MenuDragMouseEvent? ) /**/ {
-        menuDragMouseExited( e: _e )
-    }
-
-    /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseDragged(javax.swing.event.MenuDragMouseEvent)
-
-    open func menuDragMouseDragged( e: MenuDragMouseEvent? ) /**/ {
-    }
-
-    open func menuDragMouseDragged( _ _e: MenuDragMouseEvent? ) /**/ {
-        menuDragMouseDragged( e: _e )
-    }
 
     /// public abstract void javax.swing.event.MenuDragMouseListener.menuDragMouseReleased(javax.swing.event.MenuDragMouseEvent)
 
     open func menuDragMouseReleased( e: MenuDragMouseEvent? ) /**/ {
     }
 
-    open func menuDragMouseReleased( _ _e: MenuDragMouseEvent? ) /**/ {
-        menuDragMouseReleased( e: _e )
-    }
 
 }

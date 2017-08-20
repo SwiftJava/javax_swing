@@ -17,22 +17,69 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
 
     private static var BorderUIResource_TitledBorderUIResourceJNIClass: jclass?
 
-    /// protected java.lang.String javax.swing.border.TitledBorder.title
+    /// public static final int javax.swing.border.TitledBorder.ABOVE_BOTTOM
 
-    private static var title_FieldID: jfieldID?
+    // Skipping field: false true false false false false 
 
-    override open var title: String! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "title", fieldType: "Ljava/lang/String;", fieldCache: &BorderUIResource_TitledBorderUIResource.title_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "title", fieldType: "Ljava/lang/String;", fieldCache: &BorderUIResource_TitledBorderUIResource.title_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// public static final int javax.swing.border.TitledBorder.ABOVE_TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.BELOW_BOTTOM
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.BELOW_TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.BOTTOM
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.CENTER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.DEFAULT_POSITION
+
+    // Skipping field: false true false false false false 
+
+    /// protected static final int javax.swing.border.TitledBorder.EDGE_SPACING
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int javax.swing.border.TitledBorder.LEADING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.LEFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// protected static final int javax.swing.border.TitledBorder.TEXT_INSET_H
+
+    // Skipping field: false false false false false true 
+
+    /// protected static final int javax.swing.border.TitledBorder.TEXT_SPACING
+
+    // Skipping field: false false false false false true 
+
+    /// public static final int javax.swing.border.TitledBorder.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.border.TitledBorder.TRAILING
+
+    // Skipping field: false true false false false false 
 
     /// protected javax.swing.border.Border javax.swing.border.TitledBorder.border
 
@@ -40,8 +87,8 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
 
     override open var border: Border! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "border", fieldType: "Ljavax/swing/border/Border;", fieldCache: &BorderUIResource_TitledBorderUIResource.border_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "border", fieldType: "Ljavax/swing/border/Border;", fieldCache: &BorderUIResource_TitledBorderUIResource.border_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? BorderForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,54 +98,22 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
         }
     }
 
-    /// protected int javax.swing.border.TitledBorder.titlePosition
+    /// private final javax.swing.JLabel javax.swing.border.TitledBorder.label
 
-    private static var titlePosition_FieldID: jfieldID?
+    /// protected java.lang.String javax.swing.border.TitledBorder.title
 
-    override open var titlePosition: Int {
+    private static var title_FieldID: jfieldID?
+
+    override open var title: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "titlePosition", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titlePosition_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "title", fieldType: "Ljava/lang/String;", fieldCache: &BorderUIResource_TitledBorderUIResource.title_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "titlePosition", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titlePosition_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.border.TitledBorder.titleJustification
-
-    private static var titleJustification_FieldID: jfieldID?
-
-    override open var titleJustification: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "titleJustification", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titleJustification_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "titleJustification", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titleJustification_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Font javax.swing.border.TitledBorder.titleFont
-
-    private static var titleFont_FieldID: jfieldID?
-
-    override open var titleFont: java_awt.Font! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "titleFont", fieldType: "Ljava/awt/Font;", fieldCache: &BorderUIResource_TitledBorderUIResource.titleFont_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Font( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "titleFont", fieldType: "Ljava/awt/Font;", fieldCache: &BorderUIResource_TitledBorderUIResource.titleFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "title", fieldType: "Ljava/lang/String;", fieldCache: &BorderUIResource_TitledBorderUIResource.title_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -108,8 +123,8 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
 
     override open var titleColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "titleColor", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_TitledBorderUIResource.titleColor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "titleColor", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_TitledBorderUIResource.titleColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -119,81 +134,88 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
         }
     }
 
-    /// private final javax.swing.JLabel javax.swing.border.TitledBorder.label
+    /// protected java.awt.Font javax.swing.border.TitledBorder.titleFont
 
-    /// public static final int javax.swing.border.TitledBorder.DEFAULT_POSITION
+    private static var titleFont_FieldID: jfieldID?
 
-    /// public static final int javax.swing.border.TitledBorder.ABOVE_TOP
+    override open var titleFont: java_awt.Font! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "titleFont", fieldType: "Ljava/awt/Font;", fieldCache: &BorderUIResource_TitledBorderUIResource.titleFont_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Font( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "titleFont", fieldType: "Ljava/awt/Font;", fieldCache: &BorderUIResource_TitledBorderUIResource.titleFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
-    /// public static final int javax.swing.border.TitledBorder.TOP
+    /// protected int javax.swing.border.TitledBorder.titleJustification
 
-    /// public static final int javax.swing.border.TitledBorder.BELOW_TOP
+    private static var titleJustification_FieldID: jfieldID?
 
-    /// public static final int javax.swing.border.TitledBorder.ABOVE_BOTTOM
+    override open var titleJustification: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "titleJustification", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titleJustification_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "titleJustification", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titleJustification_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
-    /// public static final int javax.swing.border.TitledBorder.BOTTOM
+    /// protected int javax.swing.border.TitledBorder.titlePosition
 
-    /// public static final int javax.swing.border.TitledBorder.BELOW_BOTTOM
+    private static var titlePosition_FieldID: jfieldID?
 
-    /// public static final int javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION
+    override open var titlePosition: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "titlePosition", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titlePosition_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "titlePosition", fieldType: "I", fieldCache: &BorderUIResource_TitledBorderUIResource.titlePosition_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
-    /// public static final int javax.swing.border.TitledBorder.LEFT
-
-    /// public static final int javax.swing.border.TitledBorder.CENTER
-
-    /// public static final int javax.swing.border.TitledBorder.RIGHT
-
-    /// public static final int javax.swing.border.TitledBorder.LEADING
-
-    /// public static final int javax.swing.border.TitledBorder.TRAILING
-
-    /// protected static final int javax.swing.border.TitledBorder.EDGE_SPACING
-
-    /// protected static final int javax.swing.border.TitledBorder.TEXT_SPACING
-
-    /// protected static final int javax.swing.border.TitledBorder.TEXT_INSET_H
-
-    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font,java.awt.Color)
+    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( border: Border?, title: String?, titleJustification: Int, titlePosition: Int, titleFont: java_awt.Font?, titleColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    public convenience init( border: Border? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
-        __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
-        __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
-        __args[4] = JNIType.toJava( value: titleFont, locals: &__locals )
-        __args[5] = JNIType.toJava( value: titleColor, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;Ljava/awt/Color;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _border: Border?, _ _title: String?, _ _titleJustification: Int, _ _titlePosition: Int, _ _titleFont: java_awt.Font?, _ _titleColor: java_awt.Color? ) {
-        self.init( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont, titleColor: _titleColor )
+    public convenience init( _ _border: Border? ) {
+        self.init( border: _border )
     }
 
-    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font)
+    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( border: Border?, title: String?, titleJustification: Int, titlePosition: Int, titleFont: java_awt.Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( border: Border?, title: String? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
-        __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
-        __args[4] = JNIType.toJava( value: titleFont, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _border: Border?, _ _title: String?, _ _titleJustification: Int, _ _titlePosition: Int, _ _titleFont: java_awt.Font? ) {
-        self.init( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont )
+    public convenience init( _ _border: Border?, _ _title: String? ) {
+        self.init( border: _border, title: _title )
     }
 
     /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String,int,int)
@@ -201,12 +223,12 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( border: Border?, title: String?, titleJustification: Int, titlePosition: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        __args[2] = JNIType.toJava( value: titleJustification, locals: &__locals )
-        __args[3] = JNIType.toJava( value: titlePosition, locals: &__locals )
+        __args[2] = jvalue( i: jint(titleJustification) )
+        __args[3] = jvalue( i: jint(titlePosition) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;II)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -216,39 +238,47 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
         self.init( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition )
     }
 
-    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String)
+    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init( border: Border?, title: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( border: Border?, title: String?, titleJustification: Int, titlePosition: Int, titleFont: java_awt.Font? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
         __args[1] = JNIType.toJava( value: title, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_4, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(titleJustification) )
+        __args[3] = jvalue( i: jint(titlePosition) )
+        __args[4] = JNIType.toJava( value: titleFont, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _border: Border?, _ _title: String? ) {
-        self.init( border: _border, title: _title )
+    public convenience init( _ _border: Border?, _ _title: String?, _ _titleJustification: Int, _ _titlePosition: Int, _ _titleFont: java_awt.Font? ) {
+        self.init( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont )
     }
 
-    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border)
+    /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(javax.swing.border.Border,java.lang.String,int,int,java.awt.Font,java.awt.Color)
 
     private static var new_MethodID_5: jmethodID?
 
-    public convenience init( border: Border? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( border: Border?, title: String?, titleJustification: Int, titlePosition: Int, titleFont: java_awt.Font?, titleColor: java_awt.Color? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_5, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: title, locals: &__locals )
+        __args[2] = jvalue( i: jint(titleJustification) )
+        __args[3] = jvalue( i: jint(titlePosition) )
+        __args[4] = JNIType.toJava( value: titleFont, locals: &__locals )
+        __args[5] = JNIType.toJava( value: titleColor, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;Ljava/awt/Color;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _border: Border? ) {
-        self.init( border: _border )
+    public convenience init( _ _border: Border?, _ _title: String?, _ _titleJustification: Int, _ _titlePosition: Int, _ _titleFont: java_awt.Font?, _ _titleColor: java_awt.Color? ) {
+        self.init( border: _border, title: _title, titleJustification: _titleJustification, titlePosition: _titlePosition, titleFont: _titleFont, titleColor: _titleColor )
     }
 
     /// public javax.swing.plaf.BorderUIResource$TitledBorderUIResource(java.lang.String)
@@ -256,8 +286,8 @@ open class BorderUIResource_TitledBorderUIResource: TitledBorder, UIResource {
     private static var new_MethodID_6: jmethodID?
 
     public convenience init( title: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$TitledBorderUIResource", classCache: &BorderUIResource_TitledBorderUIResource.BorderUIResource_TitledBorderUIResourceJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &BorderUIResource_TitledBorderUIResource.new_MethodID_6, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

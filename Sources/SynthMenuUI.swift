@@ -6,7 +6,7 @@ import java_awt
 
 /// class javax.swing.plaf.synth.SynthMenuUI ///
 
-open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ UnclassedProtocol, SynthUI {
+open class SynthMenuUI: BasicMenuUI, /* interface java.beans.PropertyChangeListener */ UnavailableProtocol, SynthUI {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -17,9 +17,17 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
 
     private static var SynthMenuUIJNIClass: jclass?
 
+    /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthMenuUI.accStyle
+
     /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthMenuUI.style
 
-    /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthMenuUI.accStyle
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuUI.DEBUG
+
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuUI.TRACE
+
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuUI.VERBOSE
+
+    /// private static boolean javax.swing.plaf.basic.BasicMenuUI.crossMenuMnemonic
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicMenuUI.changeListener
 
@@ -27,8 +35,8 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
 
     override open var changeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthMenuUI.changeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthMenuUI.changeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -38,14 +46,16 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
         }
     }
 
+    /// private int javax.swing.plaf.basic.BasicMenuUI.lastMnemonic
+
     /// protected javax.swing.event.MenuListener javax.swing.plaf.basic.BasicMenuUI.menuListener
 
     private static var menuListener_FieldID: jfieldID?
 
     override open var menuListener: MenuListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuListener", fieldType: "Ljavax/swing/event/MenuListener;", fieldCache: &SynthMenuUI.menuListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "menuListener", fieldType: "Ljavax/swing/event/MenuListener;", fieldCache: &SynthMenuUI.menuListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? MenuListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -55,83 +65,45 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
         }
     }
 
-    /// private int javax.swing.plaf.basic.BasicMenuUI.lastMnemonic
-
     /// private javax.swing.InputMap javax.swing.plaf.basic.BasicMenuUI.selectedWindowInputMap
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuUI.TRACE
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.DEBUG
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuUI.VERBOSE
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.TRACE
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuUI.DEBUG
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.VERBOSE
 
-    /// private static boolean javax.swing.plaf.basic.BasicMenuUI.crossMenuMnemonic
+    /// protected java.lang.String javax.swing.plaf.basic.BasicMenuItemUI.acceleratorDelimiter
 
-    /// protected javax.swing.JMenuItem javax.swing.plaf.basic.BasicMenuItemUI.menuItem
+    private static var acceleratorDelimiter_FieldID: jfieldID?
 
-    private static var menuItem_FieldID: jfieldID?
-
-    override open var menuItem: JMenuItem! {
+    override open var acceleratorDelimiter: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &SynthMenuUI.menuItem_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JMenuItem( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &SynthMenuUI.acceleratorDelimiter_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &SynthMenuUI.menuItem_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &SynthMenuUI.acceleratorDelimiter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionBackground
+    /// protected java.awt.Font javax.swing.plaf.basic.BasicMenuItemUI.acceleratorFont
 
-    private static var selectionBackground_FieldID: jfieldID?
+    private static var acceleratorFont_FieldID: jfieldID?
 
-    override open var selectionBackground: java_awt.Color! {
+    override open var acceleratorFont: java_awt.Font! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionBackground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &SynthMenuUI.acceleratorFont_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Font( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionForeground
-
-    private static var selectionForeground_FieldID: jfieldID?
-
-    override open var selectionForeground: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionForeground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.disabledForeground
-
-    private static var disabledForeground_FieldID: jfieldID?
-
-    override open var disabledForeground: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.disabledForeground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.disabledForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &SynthMenuUI.acceleratorFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -141,8 +113,8 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
 
     override open var acceleratorForeground: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.acceleratorForeground_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.acceleratorForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -158,8 +130,8 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
 
     override open var acceleratorSelectionForeground: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorSelectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.acceleratorSelectionForeground_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorSelectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.acceleratorSelectionForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -169,135 +141,14 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
         }
     }
 
-    /// protected java.lang.String javax.swing.plaf.basic.BasicMenuItemUI.acceleratorDelimiter
-
-    private static var acceleratorDelimiter_FieldID: jfieldID?
-
-    override open var acceleratorDelimiter: String! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &SynthMenuUI.acceleratorDelimiter_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &SynthMenuUI.acceleratorDelimiter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicMenuItemUI.defaultTextIconGap
-
-    private static var defaultTextIconGap_FieldID: jfieldID?
-
-    override open var defaultTextIconGap: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &SynthMenuUI.defaultTextIconGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &SynthMenuUI.defaultTextIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Font javax.swing.plaf.basic.BasicMenuItemUI.acceleratorFont
-
-    private static var acceleratorFont_FieldID: jfieldID?
-
-    override open var acceleratorFont: java_awt.Font! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &SynthMenuUI.acceleratorFont_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Font( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &SynthMenuUI.acceleratorFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicMenuItemUI.mouseInputListener
-
-    private static var mouseInputListener_FieldID: jfieldID?
-
-    override open var mouseInputListener: MouseInputListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthMenuUI.mouseInputListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MouseInputListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthMenuUI.mouseInputListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.MenuDragMouseListener javax.swing.plaf.basic.BasicMenuItemUI.menuDragMouseListener
-
-    private static var menuDragMouseListener_FieldID: jfieldID?
-
-    override open var menuDragMouseListener: MenuDragMouseListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &SynthMenuUI.menuDragMouseListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MenuDragMouseListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &SynthMenuUI.menuDragMouseListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.MenuKeyListener javax.swing.plaf.basic.BasicMenuItemUI.menuKeyListener
-
-    private static var menuKeyListener_FieldID: jfieldID?
-
-    override open var menuKeyListener: MenuKeyListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &SynthMenuUI.menuKeyListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MenuKeyListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &SynthMenuUI.menuKeyListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicMenuItemUI.propertyChangeListener
-
-    private static var propertyChangeListener_FieldID: jfieldID?
-
-    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthMenuUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthMenuUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// javax.swing.plaf.basic.BasicMenuItemUI$Handler javax.swing.plaf.basic.BasicMenuItemUI.handler
-
     /// protected javax.swing.Icon javax.swing.plaf.basic.BasicMenuItemUI.arrowIcon
 
     private static var arrowIcon_FieldID: jfieldID?
 
     override open var arrowIcon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "arrowIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthMenuUI.arrowIcon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "arrowIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthMenuUI.arrowIcon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -313,8 +164,8 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
 
     override open var checkIcon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "checkIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthMenuUI.checkIcon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "checkIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &SynthMenuUI.checkIcon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -324,92 +175,175 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
         }
     }
 
+    /// protected int javax.swing.plaf.basic.BasicMenuItemUI.defaultTextIconGap
+
+    private static var defaultTextIconGap_FieldID: jfieldID?
+
+    override open var defaultTextIconGap: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &SynthMenuUI.defaultTextIconGap_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &SynthMenuUI.defaultTextIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.disabledForeground
+
+    private static var disabledForeground_FieldID: jfieldID?
+
+    override open var disabledForeground: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.disabledForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.disabledForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// javax.swing.plaf.basic.BasicMenuItemUI$Handler javax.swing.plaf.basic.BasicMenuItemUI.handler
+
+    // Skipping field: true false false false false false 
+
+    /// protected javax.swing.event.MenuDragMouseListener javax.swing.plaf.basic.BasicMenuItemUI.menuDragMouseListener
+
+    private static var menuDragMouseListener_FieldID: jfieldID?
+
+    override open var menuDragMouseListener: MenuDragMouseListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &SynthMenuUI.menuDragMouseListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MenuDragMouseListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &SynthMenuUI.menuDragMouseListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JMenuItem javax.swing.plaf.basic.BasicMenuItemUI.menuItem
+
+    private static var menuItem_FieldID: jfieldID?
+
+    override open var menuItem: JMenuItem! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &SynthMenuUI.menuItem_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JMenuItem( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &SynthMenuUI.menuItem_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.event.MenuKeyListener javax.swing.plaf.basic.BasicMenuItemUI.menuKeyListener
+
+    private static var menuKeyListener_FieldID: jfieldID?
+
+    override open var menuKeyListener: MenuKeyListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &SynthMenuUI.menuKeyListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MenuKeyListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &SynthMenuUI.menuKeyListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicMenuItemUI.mouseInputListener
+
+    private static var mouseInputListener_FieldID: jfieldID?
+
+    override open var mouseInputListener: MouseInputListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthMenuUI.mouseInputListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MouseInputListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &SynthMenuUI.mouseInputListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected boolean javax.swing.plaf.basic.BasicMenuItemUI.oldBorderPainted
 
     private static var oldBorderPainted_FieldID: jfieldID?
 
     override open var oldBorderPainted: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &SynthMenuUI.oldBorderPainted_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &SynthMenuUI.oldBorderPainted_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &SynthMenuUI.oldBorderPainted_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.TRACE
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicMenuItemUI.propertyChangeListener
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.VERBOSE
+    private static var propertyChangeListener_FieldID: jfieldID?
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.DEBUG
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
-
-    private static var ENABLED_FieldID: jfieldID?
-
-    open static var ENABLED: Int {
+    override open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthMenuUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthMenuUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionBackground
 
-    private static var MOUSE_OVER_FieldID: jfieldID?
+    private static var selectionBackground_FieldID: jfieldID?
 
-    open static var MOUSE_OVER: Int {
+    override open var selectionBackground: java_awt.Color! {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionBackground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionForeground
 
-    private static var PRESSED_FieldID: jfieldID?
+    private static var selectionForeground_FieldID: jfieldID?
 
-    open static var PRESSED: Int {
+    override open var selectionForeground: java_awt.Color! {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.DISABLED
-
-    private static var DISABLED_FieldID: jfieldID?
-
-    open static var DISABLED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.FOCUSED
-
-    private static var FOCUSED_FieldID: jfieldID?
-
-    open static var FOCUSED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.SELECTED
-
-    private static var SELECTED_FieldID: jfieldID?
-
-    open static var SELECTED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &SynthMenuUI.selectionForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -420,7 +354,73 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
     open static var DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.DISABLED
+
+    private static var DISABLED_FieldID: jfieldID?
+
+    open static var DISABLED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
+
+    private static var ENABLED_FieldID: jfieldID?
+
+    open static var ENABLED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.FOCUSED
+
+    private static var FOCUSED_FieldID: jfieldID?
+
+    open static var FOCUSED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
+
+    private static var MOUSE_OVER_FieldID: jfieldID?
+
+    open static var MOUSE_OVER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
+
+    private static var PRESSED_FieldID: jfieldID?
+
+    open static var PRESSED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.SELECTED
+
+    private static var SELECTED_FieldID: jfieldID?
+
+    open static var SELECTED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -429,47 +429,22 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUI.SynthMenuUIJNIClass, methodSig: "()V", methodCache: &SynthMenuUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.synth.SynthMenuUI.update(java.awt.Graphics,javax.swing.JComponent)
-
-    /// javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent,int)
-
-    /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent)
-
-    private static var getContext_MethodID_2: jmethodID?
-
-    open func getContext( c: JComponent? ) -> SynthContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthMenuUI.getContext_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SynthContext( javaObject: __return ) : nil
-    }
-
-    open func getContext( _ _c: JComponent? ) -> SynthContext! {
-        return getContext( c: _c )
-    }
-
-    /// javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region)
-
-    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthMenuUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_3: jmethodID?
+    private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthMenuUI", classCache: &SynthMenuUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -478,106 +453,49 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
         return createUI( x: _x )
     }
 
-    /// protected void javax.swing.plaf.synth.SynthMenuUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthMenuUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthMenuUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// private int javax.swing.plaf.synth.SynthMenuUI.getComponentState(javax.swing.JComponent)
 
     /// private int javax.swing.plaf.synth.SynthMenuUI.getComponentState(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
-    /// private int javax.swing.plaf.synth.SynthMenuUI.getComponentState(javax.swing.JComponent)
+    /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent)
 
-    /// public void javax.swing.plaf.synth.SynthMenuUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+    private static var getContext_MethodID_3: jmethodID?
 
-    private static var paintBorder_MethodID_5: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func getContext( c: JComponent? ) -> SynthContext! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthMenuUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthMenuUI.uninstallUI(javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthMenuUI.installDefaults()
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    override open func installDefaults() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthMenuUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthMenuUI.getContext_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SynthContext( javaObject: __return ) : nil
     }
 
-
-    /// protected void javax.swing.plaf.synth.SynthMenuUI.installListeners()
-
-    private static var installListeners_MethodID_7: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthMenuUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
+    open func getContext( _ _c: JComponent? ) -> SynthContext! {
+        return getContext( c: _c )
     }
 
+    /// javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent,int)
 
-    /// protected void javax.swing.plaf.synth.SynthMenuUI.uninstallDefaults()
+    // Skipping method: true false false false false 
 
-    private static var uninstallDefaults_MethodID_8: jmethodID?
+    /// javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
-    override open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthMenuUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
-    }
+    // Skipping method: true false false false false 
 
-
-    /// protected void javax.swing.plaf.synth.SynthMenuUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthMenuUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
+    /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthMenuUI.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,int)
 
     /// protected java.awt.Dimension javax.swing.plaf.synth.SynthMenuUI.getPreferredMenuItemSize(javax.swing.JComponent,javax.swing.Icon,javax.swing.Icon,int)
 
-    private static var getPreferredMenuItemSize_MethodID_10: jmethodID?
+    private static var getPreferredMenuItemSize_MethodID_4: jmethodID?
 
     override open func getPreferredMenuItemSize( c: JComponent?, checkIcon: Icon?, arrowIcon: Icon?, defaultTextIconGap: Int ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: checkIcon, locals: &__locals )
         __args[2] = JNIType.toJava( value: arrowIcon, locals: &__locals )
-        __args[3] = JNIType.toJava( value: defaultTextIconGap, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredMenuItemSize", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/Icon;Ljavax/swing/Icon;I)Ljava/awt/Dimension;", methodCache: &SynthMenuUI.getPreferredMenuItemSize_MethodID_10, args: &__args, locals: &__locals )
+        __args[3] = jvalue( i: jint(defaultTextIconGap) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredMenuItemSize", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/Icon;Ljavax/swing/Icon;I)Ljava/awt/Dimension;", methodCache: &SynthMenuUI.getPreferredMenuItemSize_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -586,20 +504,112 @@ open class SynthMenuUI: BasicMenuUI, /* java.beans.PropertyChangeListener */ Unc
         return getPreferredMenuItemSize( c: _c, checkIcon: _checkIcon, arrowIcon: _arrowIcon, defaultTextIconGap: _defaultTextIconGap )
     }
 
+    /// protected void javax.swing.plaf.synth.SynthMenuUI.installDefaults()
+
+    private static var installDefaults_MethodID_5: jmethodID?
+
+    override open func installDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthMenuUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthMenuUI.installListeners()
+
+    private static var installListeners_MethodID_6: jmethodID?
+
+    override open func installListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthMenuUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthMenuUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_7: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthMenuUI.paint_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthMenuUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.synth.SynthMenuUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_8: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthMenuUI.paintBorder_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
     /// public void javax.swing.plaf.synth.SynthMenuUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_11: jmethodID?
+    private static var propertyChange_MethodID_9: jmethodID?
 
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthMenuUI.propertyChange_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthMenuUI.propertyChange_MethodID_9, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         propertyChange( evt: _evt )
     }
+
+    /// protected void javax.swing.plaf.synth.SynthMenuUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_10: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthMenuUI.uninstallDefaults_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthMenuUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_11: jmethodID?
+
+    override open func uninstallListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthMenuUI.uninstallListeners_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthMenuUI.uninstallUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.synth.SynthMenuUI.update(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
     /// private void javax.swing.plaf.synth.SynthMenuUI.updateStyle(javax.swing.JMenuItem)
 

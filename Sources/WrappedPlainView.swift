@@ -17,137 +17,241 @@ open class WrappedPlainView: BoxView, TabExpander {
 
     private static var WrappedPlainViewJNIClass: jclass?
 
-    /// java.awt.FontMetrics javax.swing.text.WrappedPlainView.metrics
-
     /// javax.swing.text.Segment javax.swing.text.WrappedPlainView.lineBuffer
 
-    /// boolean javax.swing.text.WrappedPlainView.widthChanging
+    // Skipping field: true false false false false false 
 
-    /// int javax.swing.text.WrappedPlainView.tabBase
+    /// java.awt.FontMetrics javax.swing.text.WrappedPlainView.metrics
 
-    /// int javax.swing.text.WrappedPlainView.tabSize
-
-    /// boolean javax.swing.text.WrappedPlainView.wordWrap
+    // Skipping field: true false false false false false 
 
     /// int javax.swing.text.WrappedPlainView.sel0
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.WrappedPlainView.sel1
 
-    /// java.awt.Color javax.swing.text.WrappedPlainView.unselected
+    // Skipping field: true false false false false false 
 
     /// java.awt.Color javax.swing.text.WrappedPlainView.selected
 
-    /// int javax.swing.text.BoxView.majorAxis
+    // Skipping field: true false false false false false 
 
-    /// int javax.swing.text.BoxView.majorSpan
+    /// int javax.swing.text.WrappedPlainView.tabBase
 
-    /// int javax.swing.text.BoxView.minorSpan
+    // Skipping field: true false false false false false 
 
-    /// boolean javax.swing.text.BoxView.majorReqValid
+    /// int javax.swing.text.WrappedPlainView.tabSize
 
-    /// boolean javax.swing.text.BoxView.minorReqValid
+    // Skipping field: true false false false false false 
 
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+    /// java.awt.Color javax.swing.text.WrappedPlainView.unselected
 
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.WrappedPlainView.widthChanging
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.WrappedPlainView.wordWrap
+
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.BoxView.majorAllocValid
 
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorAxis
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorSpans
 
+    // Skipping field: true false false false false false 
+
     /// boolean javax.swing.text.BoxView.minorAllocValid
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorSpans
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.WrappedPlainView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/WrappedPlainView", classCache: &WrappedPlainView.WrappedPlainViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &WrappedPlainView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -163,10 +267,10 @@ open class WrappedPlainView: BoxView, TabExpander {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( elem: Element?, wordWrap: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        __args[1] = JNIType.toJava( value: wordWrap, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(wordWrap ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/WrappedPlainView", classCache: &WrappedPlainView.WrappedPlainViewJNIClass, methodSig: "(Ljavax/swing/text/Element;Z)V", methodCache: &WrappedPlainView.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -176,45 +280,44 @@ open class WrappedPlainView: BoxView, TabExpander {
         self.init( elem: _elem, wordWrap: _wordWrap )
     }
 
-    /// public void javax.swing.text.WrappedPlainView.setSize(float,float)
+    /// protected int javax.swing.text.WrappedPlainView.calculateBreakPosition(int,int)
 
-    /// public void javax.swing.text.WrappedPlainView.paint(java.awt.Graphics,java.awt.Shape)
+    private static var calculateBreakPosition_MethodID_3: jmethodID?
 
-    private static var paint_MethodID_3: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+    open func calculateBreakPosition( p0: Int, p1: Int ) -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(p0) )
+        __args[1] = jvalue( i: jint(p1) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateBreakPosition", methodSig: "(II)I", methodCache: &WrappedPlainView.calculateBreakPosition_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func calculateBreakPosition( _ _p0: Int, _ _p1: Int ) -> Int {
+        return calculateBreakPosition( p0: _p0, p1: _p1 )
+    }
+
+    /// public void javax.swing.text.WrappedPlainView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.text.WrappedPlainView.drawLine(int,int,java.awt.Graphics,int,int)
+
+    private static var drawLine_MethodID_4: jmethodID?
+
+    open func drawLine( p0: Int, p1: Int, g: java_awt.Graphics?, x: Int, y: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &WrappedPlainView.paint_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
-
-    /// protected int javax.swing.text.WrappedPlainView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
-
-    private static var drawUnselectedText_MethodID_4: jmethodID?
-
-    open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[4] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawUnselectedText_MethodID_4, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = jvalue( i: jint(p0) )
+        __args[1] = jvalue( i: jint(p1) )
+        __args[2] = JNIType.toJava( value: g, locals: &__locals )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(IILjava/awt/Graphics;II)V", methodCache: &WrappedPlainView.drawLine_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func drawUnselectedText( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _p0: Int, _ _p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try drawUnselectedText( g: _g, x: _x, y: _y, p0: _p0, p1: _p1 )
+    open func drawLine( _ _p0: Int, _ _p1: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
+        drawLine( p0: _p0, p1: _p1, g: _g, x: _x, y: _y )
     }
 
     /// protected int javax.swing.text.WrappedPlainView.drawSelectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
@@ -222,136 +325,159 @@ open class WrappedPlainView: BoxView, TabExpander {
     private static var drawSelectedText_MethodID_5: jmethodID?
 
     open func drawSelectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[4] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(p0) )
+        __args[4] = jvalue( i: jint(p1) )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawSelectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawSelectedText_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func drawSelectedText( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _p0: Int, _ _p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         return try drawSelectedText( g: _g, x: _x, y: _y, p0: _p0, p1: _p1 )
     }
 
-    /// protected int javax.swing.text.WrappedPlainView.getTabSize()
+    /// private int javax.swing.text.WrappedPlainView.drawText(javax.swing.text.Element,int,int,java.awt.Graphics,int,int) throws javax.swing.text.BadLocationException
 
-    private static var getTabSize_MethodID_6: jmethodID?
+    /// protected int javax.swing.text.WrappedPlainView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
-    open func getTabSize() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var drawUnselectedText_MethodID_6: jmethodID?
+
+    open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &WrappedPlainView.getTabSize_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(p0) )
+        __args[4] = jvalue( i: jint(p1) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &WrappedPlainView.drawUnselectedText_MethodID_6, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return Int(__return)
     }
 
+    open func drawUnselectedText( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _p0: Int, _ _p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try drawUnselectedText( g: _g, x: _x, y: _y, p0: _p0, p1: _p1 )
+    }
 
     /// protected final javax.swing.text.Segment javax.swing.text.WrappedPlainView.getLineBuffer()
 
     private static var getLineBuffer_MethodID_7: jmethodID?
 
     open func getLineBuffer() -> Segment! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineBuffer", methodSig: "()Ljavax/swing/text/Segment;", methodCache: &WrappedPlainView.getLineBuffer_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Segment( javaObject: __return ) : nil
     }
 
 
-    /// final void javax.swing.text.WrappedPlainView.updateMetrics()
+    /// public float javax.swing.text.WrappedPlainView.getMaximumSpan(int)
 
-    /// final void javax.swing.text.WrappedPlainView.loadText(javax.swing.text.Segment,int,int)
-
-    /// protected int javax.swing.text.WrappedPlainView.calculateBreakPosition(int,int)
-
-    private static var calculateBreakPosition_MethodID_8: jmethodID?
-
-    open func calculateBreakPosition( p0: Int, p1: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateBreakPosition", methodSig: "(II)I", methodCache: &WrappedPlainView.calculateBreakPosition_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func calculateBreakPosition( _ _p0: Int, _ _p1: Int ) -> Int {
-        return calculateBreakPosition( p0: _p0, p1: _p1 )
-    }
-
-    /// private int javax.swing.text.WrappedPlainView.drawText(javax.swing.text.Element,int,int,java.awt.Graphics,int,int) throws javax.swing.text.BadLocationException
+    // Skipping method: false true false false false 
 
     /// public float javax.swing.text.WrappedPlainView.getMinimumSpan(int)
 
-    /// public float javax.swing.text.WrappedPlainView.getMaximumSpan(int)
+    // Skipping method: false true false false false 
 
-    /// public float javax.swing.text.WrappedPlainView.nextTabStop(float,int)
+    /// public float javax.swing.text.WrappedPlainView.getPreferredSpan(int)
 
-    private static var nextTabStop_MethodID_9: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    /// protected int javax.swing.text.WrappedPlainView.getTabSize()
+
+    private static var getTabSize_MethodID_8: jmethodID?
+
+    open func getTabSize() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &WrappedPlainView.nextTabStop_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabSize", methodSig: "()I", methodCache: &WrappedPlainView.getTabSize_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
-        return nextTabStop( x: _x, tabOffset: _tabOffset )
-    }
-
-    /// protected void javax.swing.text.WrappedPlainView.drawLine(int,int,java.awt.Graphics,int,int)
-
-    private static var drawLine_MethodID_10: jmethodID?
-
-    open func drawLine( p0: Int, p1: Int, g: java_awt.Graphics?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: g, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "drawLine", methodSig: "(IILjava/awt/Graphics;II)V", methodCache: &WrappedPlainView.drawLine_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func drawLine( _ _p0: Int, _ _p1: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int ) {
-        drawLine( p0: _p0, p1: _p1, g: _g, x: _x, y: _y )
-    }
 
     /// public void javax.swing.text.WrappedPlainView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    /// public void javax.swing.text.WrappedPlainView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.WrappedPlainView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// void javax.swing.text.WrappedPlainView.updateChildren(javax.swing.event.DocumentEvent,java.awt.Shape)
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.text.WrappedPlainView.loadChildren(javax.swing.text.ViewFactory)
 
-    private static var loadChildren_MethodID_11: jmethodID?
+    private static var loadChildren_MethodID_9: jmethodID?
 
     override open func loadChildren( f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &WrappedPlainView.loadChildren_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &WrappedPlainView.loadChildren_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func loadChildren( _ _f: ViewFactory? ) {
         loadChildren( f: _f )
     }
 
-    /// public float javax.swing.text.WrappedPlainView.getPreferredSpan(int)
+    /// final void javax.swing.text.WrappedPlainView.loadText(javax.swing.text.Segment,int,int)
+
+    // Skipping method: true false false false false 
+
+    /// public float javax.swing.text.WrappedPlainView.nextTabStop(float,int)
+
+    private static var nextTabStop_MethodID_10: jmethodID?
+
+    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( i: jint(tabOffset) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &WrappedPlainView.nextTabStop_MethodID_10, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
+        return nextTabStop( x: _x, tabOffset: _tabOffset )
+    }
+
+    /// public void javax.swing.text.WrappedPlainView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_11: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &WrappedPlainView.paint_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
+
+    /// public void javax.swing.text.WrappedPlainView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.WrappedPlainView.setSize(float,float)
+
+    // Skipping method: false true false false false 
+
+    /// void javax.swing.text.WrappedPlainView.updateChildren(javax.swing.event.DocumentEvent,java.awt.Shape)
+
+    // Skipping method: true false false false false 
+
+    /// final void javax.swing.text.WrappedPlainView.updateMetrics()
+
+    // Skipping method: true false false false false 
 
 }
 

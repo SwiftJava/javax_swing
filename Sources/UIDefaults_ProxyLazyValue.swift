@@ -18,23 +18,58 @@ open class UIDefaults_ProxyLazyValue: java_swift.JavaObject, UIDefaults_LazyValu
 
     /// private java.security.AccessControlContext javax.swing.UIDefaults$ProxyLazyValue.acc
 
+    /// private java.lang.Object[] javax.swing.UIDefaults$ProxyLazyValue.args
+
     /// private java.lang.String javax.swing.UIDefaults$ProxyLazyValue.className
 
     /// private java.lang.String javax.swing.UIDefaults$ProxyLazyValue.methodName
 
-    /// private java.lang.Object[] javax.swing.UIDefaults$ProxyLazyValue.args
-
-    /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String,java.lang.String,java.lang.Object[])
+    /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( arg0: String?, arg1: String?, arg2: [JavaObject]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init( arg0: String? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _arg0: String? ) {
+        self.init( arg0: _arg0 )
+    }
+
+    /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String,java.lang.String)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( arg0: String?, arg1: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _arg0: String?, _ _arg1: String? ) {
+        self.init( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String,java.lang.String,java.lang.Object[])
+
+    private static var new_MethodID_3: jmethodID?
+
+    public convenience init( arg0: String?, arg1: String?, arg2: [JavaObject]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -45,14 +80,14 @@ open class UIDefaults_ProxyLazyValue: java_swift.JavaObject, UIDefaults_LazyValu
 
     /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String,java.lang.Object[])
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_4: jmethodID?
 
     public convenience init( arg0: String?, arg1: [JavaObject]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;[Ljava/lang/Object;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;[Ljava/lang/Object;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -61,60 +96,29 @@ open class UIDefaults_ProxyLazyValue: java_swift.JavaObject, UIDefaults_LazyValu
         self.init( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String,java.lang.String)
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( arg0: String?, arg1: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _arg0: String?, _ _arg1: String? ) {
-        self.init( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public javax.swing.UIDefaults$ProxyLazyValue(java.lang.String)
-
-    private static var new_MethodID_4: jmethodID?
-
-    public convenience init( arg0: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$ProxyLazyValue", classCache: &UIDefaults_ProxyLazyValue.UIDefaults_ProxyLazyValueJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &UIDefaults_ProxyLazyValue.new_MethodID_4, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _arg0: String? ) {
-        self.init( arg0: _arg0 )
-    }
-
     /// static java.lang.String javax.swing.UIDefaults$ProxyLazyValue.access$100(javax.swing.UIDefaults$ProxyLazyValue)
+
+    // Skipping method: true false false false false 
 
     /// static java.lang.String javax.swing.UIDefaults$ProxyLazyValue.access$200(javax.swing.UIDefaults$ProxyLazyValue)
 
+    // Skipping method: true false false false false 
+
     /// static java.lang.Object[] javax.swing.UIDefaults$ProxyLazyValue.access$300(javax.swing.UIDefaults$ProxyLazyValue)
+
+    // Skipping method: true false false false false 
 
     /// static java.lang.Class[] javax.swing.UIDefaults$ProxyLazyValue.access$400(javax.swing.UIDefaults$ProxyLazyValue,java.lang.Object[])
 
-    /// private java.lang.Class[] javax.swing.UIDefaults$ProxyLazyValue.getClassArray(java.lang.Object[])
-
-    /// private java.lang.String javax.swing.UIDefaults$ProxyLazyValue.printArgs(java.lang.Object[])
+    // Skipping method: true false false false false 
 
     /// public java.lang.Object javax.swing.UIDefaults$ProxyLazyValue.createValue(javax.swing.UIDefaults)
 
     private static var createValue_MethodID_5: jmethodID?
 
     open func createValue( arg0: UIDefaults? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, mapClass: "javax/swing/UIDefaults", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createValue", methodSig: "(Ljavax/swing/UIDefaults;)Ljava/lang/Object;", methodCache: &UIDefaults_ProxyLazyValue.createValue_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -124,6 +128,10 @@ open class UIDefaults_ProxyLazyValue: java_swift.JavaObject, UIDefaults_LazyValu
     open func createValue( _ _arg0: UIDefaults? ) -> java_swift.JavaObject! {
         return createValue( arg0: _arg0 )
     }
+
+    /// private java.lang.Class[] javax.swing.UIDefaults$ProxyLazyValue.getClassArray(java.lang.Object[])
+
+    /// private java.lang.String javax.swing.UIDefaults$ProxyLazyValue.printArgs(java.lang.Object[])
 
 }
 

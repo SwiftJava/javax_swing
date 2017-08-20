@@ -18,13 +18,15 @@ open class BasicTreeUI_CellEditorHandler: java_swift.JavaObject, CellEditorListe
 
     /// final javax.swing.plaf.basic.BasicTreeUI javax.swing.plaf.basic.BasicTreeUI$CellEditorHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTreeUI$CellEditorHandler(javax.swing.plaf.basic.BasicTreeUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTreeUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$CellEditorHandler", classCache: &BasicTreeUI_CellEditorHandler.BasicTreeUI_CellEditorHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_CellEditorHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -35,34 +37,34 @@ open class BasicTreeUI_CellEditorHandler: java_swift.JavaObject, CellEditorListe
         self.init( this_0: _this_0 )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$CellEditorHandler.editingStopped(javax.swing.event.ChangeEvent)
-
-    private static var editingStopped_MethodID_2: jmethodID?
-
-    open func editingStopped( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "editingStopped", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicTreeUI_CellEditorHandler.editingStopped_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func editingStopped( _ _e: ChangeEvent? ) {
-        editingStopped( e: _e )
-    }
-
     /// public void javax.swing.plaf.basic.BasicTreeUI$CellEditorHandler.editingCanceled(javax.swing.event.ChangeEvent)
 
-    private static var editingCanceled_MethodID_3: jmethodID?
+    private static var editingCanceled_MethodID_2: jmethodID?
 
     open func editingCanceled( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "editingCanceled", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicTreeUI_CellEditorHandler.editingCanceled_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "editingCanceled", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicTreeUI_CellEditorHandler.editingCanceled_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func editingCanceled( _ _e: ChangeEvent? ) {
         editingCanceled( e: _e )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$CellEditorHandler.editingStopped(javax.swing.event.ChangeEvent)
+
+    private static var editingStopped_MethodID_3: jmethodID?
+
+    open func editingStopped( e: ChangeEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "editingStopped", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicTreeUI_CellEditorHandler.editingStopped_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open func editingStopped( _ _e: ChangeEvent? ) {
+        editingStopped( e: _e )
     }
 
 }

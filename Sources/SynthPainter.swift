@@ -19,52 +19,34 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// static javax.swing.plaf.synth.SynthPainter javax.swing.plaf.synth.SynthPainter.NULL_PAINTER
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.synth.SynthPainter()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthPainter", classCache: &SynthPainter.SynthPainterJNIClass, methodSig: "()V", methodCache: &SynthPainter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintMenuItemBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintMenuItemBackground_MethodID_2: jmethodID?
-
-    open func paintMenuItemBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuItemBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuItemBackground_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func paintMenuItemBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintMenuItemBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintArrowButtonBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintArrowButtonBackground_MethodID_3: jmethodID?
+    private static var paintArrowButtonBackground_MethodID_2: jmethodID?
 
     open func paintArrowButtonBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintArrowButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintArrowButtonBackground_MethodID_3, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintArrowButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintArrowButtonBackground_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func paintArrowButtonBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -73,18 +55,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintArrowButtonBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintArrowButtonBorder_MethodID_4: jmethodID?
+    private static var paintArrowButtonBorder_MethodID_3: jmethodID?
 
     open func paintArrowButtonBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintArrowButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintArrowButtonBorder_MethodID_4, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintArrowButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintArrowButtonBorder_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func paintArrowButtonBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -93,19 +75,19 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintArrowButtonForeground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
 
-    private static var paintArrowButtonForeground_MethodID_5: jmethodID?
+    private static var paintArrowButtonForeground_MethodID_4: jmethodID?
 
     open func paintArrowButtonForeground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, direction: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintArrowButtonForeground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintArrowButtonForeground_MethodID_5, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(direction) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintArrowButtonForeground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintArrowButtonForeground_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func paintArrowButtonForeground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _direction: Int ) {
@@ -114,18 +96,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintButtonBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintButtonBackground_MethodID_6: jmethodID?
+    private static var paintButtonBackground_MethodID_5: jmethodID?
 
     open func paintButtonBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintButtonBackground_MethodID_6, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintButtonBackground_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paintButtonBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -134,78 +116,38 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintButtonBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintButtonBorder_MethodID_7: jmethodID?
+    private static var paintButtonBorder_MethodID_6: jmethodID?
 
     open func paintButtonBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintButtonBorder_MethodID_7, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintButtonBorder_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func paintButtonBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintButtonBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintCheckBoxMenuItemBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintCheckBoxMenuItemBackground_MethodID_8: jmethodID?
-
-    open func paintCheckBoxMenuItemBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxMenuItemBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxMenuItemBackground_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func paintCheckBoxMenuItemBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintCheckBoxMenuItemBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintCheckBoxMenuItemBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintCheckBoxMenuItemBorder_MethodID_9: jmethodID?
-
-    open func paintCheckBoxMenuItemBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxMenuItemBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxMenuItemBorder_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func paintCheckBoxMenuItemBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintCheckBoxMenuItemBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintCheckBoxBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintCheckBoxBackground_MethodID_10: jmethodID?
+    private static var paintCheckBoxBackground_MethodID_7: jmethodID?
 
     open func paintCheckBoxBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxBackground_MethodID_10, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxBackground_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func paintCheckBoxBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -214,38 +156,78 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintCheckBoxBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintCheckBoxBorder_MethodID_11: jmethodID?
+    private static var paintCheckBoxBorder_MethodID_8: jmethodID?
 
     open func paintCheckBoxBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxBorder_MethodID_11, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxBorder_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func paintCheckBoxBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintCheckBoxBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintColorChooserBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintCheckBoxMenuItemBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintColorChooserBackground_MethodID_12: jmethodID?
+    private static var paintCheckBoxMenuItemBackground_MethodID_9: jmethodID?
 
-    open func paintColorChooserBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func paintCheckBoxMenuItemBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintColorChooserBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintColorChooserBackground_MethodID_12, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxMenuItemBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxMenuItemBackground_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func paintCheckBoxMenuItemBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintCheckBoxMenuItemBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintCheckBoxMenuItemBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintCheckBoxMenuItemBorder_MethodID_10: jmethodID?
+
+    open func paintCheckBoxMenuItemBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintCheckBoxMenuItemBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintCheckBoxMenuItemBorder_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func paintCheckBoxMenuItemBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintCheckBoxMenuItemBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintColorChooserBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintColorChooserBackground_MethodID_11: jmethodID?
+
+    open func paintColorChooserBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintColorChooserBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintColorChooserBackground_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func paintColorChooserBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -254,18 +236,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintColorChooserBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintColorChooserBorder_MethodID_13: jmethodID?
+    private static var paintColorChooserBorder_MethodID_12: jmethodID?
 
     open func paintColorChooserBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintColorChooserBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintColorChooserBorder_MethodID_13, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintColorChooserBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintColorChooserBorder_MethodID_12, args: &__args, locals: &__locals )
     }
 
     open func paintColorChooserBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -274,18 +256,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintComboBoxBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintComboBoxBackground_MethodID_14: jmethodID?
+    private static var paintComboBoxBackground_MethodID_13: jmethodID?
 
     open func paintComboBoxBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComboBoxBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintComboBoxBackground_MethodID_14, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComboBoxBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintComboBoxBackground_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func paintComboBoxBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -294,18 +276,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintComboBoxBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintComboBoxBorder_MethodID_15: jmethodID?
+    private static var paintComboBoxBorder_MethodID_14: jmethodID?
 
     open func paintComboBoxBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComboBoxBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintComboBoxBorder_MethodID_15, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintComboBoxBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintComboBoxBorder_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func paintComboBoxBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -314,18 +296,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintDesktopIconBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintDesktopIconBackground_MethodID_16: jmethodID?
+    private static var paintDesktopIconBackground_MethodID_15: jmethodID?
 
     open func paintDesktopIconBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopIconBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopIconBackground_MethodID_16, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopIconBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopIconBackground_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func paintDesktopIconBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -334,18 +316,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintDesktopIconBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintDesktopIconBorder_MethodID_17: jmethodID?
+    private static var paintDesktopIconBorder_MethodID_16: jmethodID?
 
     open func paintDesktopIconBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopIconBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopIconBorder_MethodID_17, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopIconBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopIconBorder_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func paintDesktopIconBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -354,18 +336,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintDesktopPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintDesktopPaneBackground_MethodID_18: jmethodID?
+    private static var paintDesktopPaneBackground_MethodID_17: jmethodID?
 
     open func paintDesktopPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopPaneBackground_MethodID_18, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopPaneBackground_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func paintDesktopPaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -374,18 +356,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintDesktopPaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintDesktopPaneBorder_MethodID_19: jmethodID?
+    private static var paintDesktopPaneBorder_MethodID_18: jmethodID?
 
     open func paintDesktopPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopPaneBorder_MethodID_19, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDesktopPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintDesktopPaneBorder_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func paintDesktopPaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -394,18 +376,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintEditorPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintEditorPaneBackground_MethodID_20: jmethodID?
+    private static var paintEditorPaneBackground_MethodID_19: jmethodID?
 
     open func paintEditorPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintEditorPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintEditorPaneBackground_MethodID_20, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintEditorPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintEditorPaneBackground_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func paintEditorPaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -414,18 +396,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintEditorPaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintEditorPaneBorder_MethodID_21: jmethodID?
+    private static var paintEditorPaneBorder_MethodID_20: jmethodID?
 
     open func paintEditorPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintEditorPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintEditorPaneBorder_MethodID_21, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintEditorPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintEditorPaneBorder_MethodID_20, args: &__args, locals: &__locals )
     }
 
     open func paintEditorPaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -434,18 +416,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintFileChooserBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintFileChooserBackground_MethodID_22: jmethodID?
+    private static var paintFileChooserBackground_MethodID_21: jmethodID?
 
     open func paintFileChooserBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFileChooserBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFileChooserBackground_MethodID_22, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFileChooserBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFileChooserBackground_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func paintFileChooserBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -454,18 +436,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintFileChooserBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintFileChooserBorder_MethodID_23: jmethodID?
+    private static var paintFileChooserBorder_MethodID_22: jmethodID?
 
     open func paintFileChooserBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFileChooserBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFileChooserBorder_MethodID_23, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFileChooserBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFileChooserBorder_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func paintFileChooserBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -474,18 +456,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintFormattedTextFieldBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintFormattedTextFieldBackground_MethodID_24: jmethodID?
+    private static var paintFormattedTextFieldBackground_MethodID_23: jmethodID?
 
     open func paintFormattedTextFieldBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFormattedTextFieldBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFormattedTextFieldBackground_MethodID_24, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFormattedTextFieldBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFormattedTextFieldBackground_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func paintFormattedTextFieldBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -494,78 +476,38 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintFormattedTextFieldBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintFormattedTextFieldBorder_MethodID_25: jmethodID?
+    private static var paintFormattedTextFieldBorder_MethodID_24: jmethodID?
 
     open func paintFormattedTextFieldBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFormattedTextFieldBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFormattedTextFieldBorder_MethodID_25, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFormattedTextFieldBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintFormattedTextFieldBorder_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func paintFormattedTextFieldBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintFormattedTextFieldBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintInternalFrameTitlePaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintInternalFrameTitlePaneBackground_MethodID_26: jmethodID?
-
-    open func paintInternalFrameTitlePaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameTitlePaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameTitlePaneBackground_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func paintInternalFrameTitlePaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintInternalFrameTitlePaneBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintInternalFrameTitlePaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintInternalFrameTitlePaneBorder_MethodID_27: jmethodID?
-
-    open func paintInternalFrameTitlePaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameTitlePaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameTitlePaneBorder_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func paintInternalFrameTitlePaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintInternalFrameTitlePaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintInternalFrameBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintInternalFrameBackground_MethodID_28: jmethodID?
+    private static var paintInternalFrameBackground_MethodID_25: jmethodID?
 
     open func paintInternalFrameBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameBackground_MethodID_28, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameBackground_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func paintInternalFrameBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -574,38 +516,78 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintInternalFrameBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintInternalFrameBorder_MethodID_29: jmethodID?
+    private static var paintInternalFrameBorder_MethodID_26: jmethodID?
 
     open func paintInternalFrameBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameBorder_MethodID_29, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameBorder_MethodID_26, args: &__args, locals: &__locals )
     }
 
     open func paintInternalFrameBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintInternalFrameBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintLabelBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintInternalFrameTitlePaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintLabelBackground_MethodID_30: jmethodID?
+    private static var paintInternalFrameTitlePaneBackground_MethodID_27: jmethodID?
 
-    open func paintLabelBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func paintInternalFrameTitlePaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLabelBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintLabelBackground_MethodID_30, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameTitlePaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameTitlePaneBackground_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func paintInternalFrameTitlePaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintInternalFrameTitlePaneBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintInternalFrameTitlePaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintInternalFrameTitlePaneBorder_MethodID_28: jmethodID?
+
+    open func paintInternalFrameTitlePaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintInternalFrameTitlePaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintInternalFrameTitlePaneBorder_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func paintInternalFrameTitlePaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintInternalFrameTitlePaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintLabelBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintLabelBackground_MethodID_29: jmethodID?
+
+    open func paintLabelBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLabelBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintLabelBackground_MethodID_29, args: &__args, locals: &__locals )
     }
 
     open func paintLabelBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -614,18 +596,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintLabelBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintLabelBorder_MethodID_31: jmethodID?
+    private static var paintLabelBorder_MethodID_30: jmethodID?
 
     open func paintLabelBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLabelBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintLabelBorder_MethodID_31, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLabelBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintLabelBorder_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func paintLabelBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -634,18 +616,18 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintListBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintListBackground_MethodID_32: jmethodID?
+    private static var paintListBackground_MethodID_31: jmethodID?
 
     open func paintListBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintListBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintListBackground_MethodID_32, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintListBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintListBackground_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open func paintListBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -654,22 +636,42 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintListBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintListBorder_MethodID_33: jmethodID?
+    private static var paintListBorder_MethodID_32: jmethodID?
 
     open func paintListBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintListBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintListBorder_MethodID_33, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintListBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintListBorder_MethodID_32, args: &__args, locals: &__locals )
     }
 
     open func paintListBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintListBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintMenuBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintMenuBackground_MethodID_33: jmethodID?
+
+    open func paintMenuBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuBackground_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func paintMenuBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintMenuBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintMenuBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -677,14 +679,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintMenuBarBackground_MethodID_34: jmethodID?
 
     open func paintMenuBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuBarBackground_MethodID_34, args: &__args, locals: &__locals )
     }
 
@@ -697,14 +699,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintMenuBarBorder_MethodID_35: jmethodID?
 
     open func paintMenuBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuBarBorder_MethodID_35, args: &__args, locals: &__locals )
     }
 
@@ -712,64 +714,64 @@ open class SynthPainter: java_swift.JavaObject {
         paintMenuBarBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintMenuItemBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintMenuItemBorder_MethodID_36: jmethodID?
-
-    open func paintMenuItemBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuItemBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuItemBorder_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func paintMenuItemBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintMenuItemBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintMenuBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintMenuBackground_MethodID_37: jmethodID?
-
-    open func paintMenuBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuBackground_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func paintMenuBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintMenuBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintMenuBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintMenuBorder_MethodID_38: jmethodID?
+    private static var paintMenuBorder_MethodID_36: jmethodID?
 
     open func paintMenuBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuBorder_MethodID_38, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuBorder_MethodID_36, args: &__args, locals: &__locals )
     }
 
     open func paintMenuBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintMenuBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintMenuItemBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintMenuItemBackground_MethodID_37: jmethodID?
+
+    open func paintMenuItemBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuItemBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuItemBackground_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    open func paintMenuItemBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintMenuItemBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintMenuItemBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintMenuItemBorder_MethodID_38: jmethodID?
+
+    open func paintMenuItemBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintMenuItemBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintMenuItemBorder_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+    open func paintMenuItemBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintMenuItemBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintOptionPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -777,14 +779,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintOptionPaneBackground_MethodID_39: jmethodID?
 
     open func paintOptionPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintOptionPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintOptionPaneBackground_MethodID_39, args: &__args, locals: &__locals )
     }
 
@@ -797,14 +799,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintOptionPaneBorder_MethodID_40: jmethodID?
 
     open func paintOptionPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintOptionPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintOptionPaneBorder_MethodID_40, args: &__args, locals: &__locals )
     }
 
@@ -817,14 +819,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintPanelBackground_MethodID_41: jmethodID?
 
     open func paintPanelBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPanelBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintPanelBackground_MethodID_41, args: &__args, locals: &__locals )
     }
 
@@ -837,14 +839,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintPanelBorder_MethodID_42: jmethodID?
 
     open func paintPanelBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPanelBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintPanelBorder_MethodID_42, args: &__args, locals: &__locals )
     }
 
@@ -857,14 +859,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintPasswordFieldBackground_MethodID_43: jmethodID?
 
     open func paintPasswordFieldBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPasswordFieldBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintPasswordFieldBackground_MethodID_43, args: &__args, locals: &__locals )
     }
 
@@ -877,14 +879,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintPasswordFieldBorder_MethodID_44: jmethodID?
 
     open func paintPasswordFieldBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPasswordFieldBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintPasswordFieldBorder_MethodID_44, args: &__args, locals: &__locals )
     }
 
@@ -897,14 +899,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintPopupMenuBackground_MethodID_45: jmethodID?
 
     open func paintPopupMenuBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPopupMenuBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintPopupMenuBackground_MethodID_45, args: &__args, locals: &__locals )
     }
 
@@ -917,14 +919,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintPopupMenuBorder_MethodID_46: jmethodID?
 
     open func paintPopupMenuBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintPopupMenuBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintPopupMenuBorder_MethodID_46, args: &__args, locals: &__locals )
     }
 
@@ -937,14 +939,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintProgressBarBackground_MethodID_47: jmethodID?
 
     open func paintProgressBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintProgressBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintProgressBarBackground_MethodID_47, args: &__args, locals: &__locals )
     }
 
@@ -957,15 +959,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintProgressBarBackground_MethodID_48: jmethodID?
 
     open func paintProgressBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintProgressBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintProgressBarBackground_MethodID_48, args: &__args, locals: &__locals )
     }
 
@@ -978,14 +980,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintProgressBarBorder_MethodID_49: jmethodID?
 
     open func paintProgressBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintProgressBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintProgressBarBorder_MethodID_49, args: &__args, locals: &__locals )
     }
 
@@ -998,15 +1000,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintProgressBarBorder_MethodID_50: jmethodID?
 
     open func paintProgressBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintProgressBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintProgressBarBorder_MethodID_50, args: &__args, locals: &__locals )
     }
 
@@ -1019,15 +1021,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintProgressBarForeground_MethodID_51: jmethodID?
 
     open func paintProgressBarForeground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintProgressBarForeground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintProgressBarForeground_MethodID_51, args: &__args, locals: &__locals )
     }
 
@@ -1035,60 +1037,20 @@ open class SynthPainter: java_swift.JavaObject {
         paintProgressBarForeground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintRadioButtonMenuItemBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintRadioButtonMenuItemBackground_MethodID_52: jmethodID?
-
-    open func paintRadioButtonMenuItemBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonMenuItemBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonMenuItemBackground_MethodID_52, args: &__args, locals: &__locals )
-    }
-
-    open func paintRadioButtonMenuItemBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintRadioButtonMenuItemBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintRadioButtonMenuItemBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintRadioButtonMenuItemBorder_MethodID_53: jmethodID?
-
-    open func paintRadioButtonMenuItemBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonMenuItemBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonMenuItemBorder_MethodID_53, args: &__args, locals: &__locals )
-    }
-
-    open func paintRadioButtonMenuItemBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintRadioButtonMenuItemBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintRadioButtonBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintRadioButtonBackground_MethodID_54: jmethodID?
+    private static var paintRadioButtonBackground_MethodID_52: jmethodID?
 
     open func paintRadioButtonBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonBackground_MethodID_54, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonBackground_MethodID_52, args: &__args, locals: &__locals )
     }
 
     open func paintRadioButtonBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -1097,22 +1059,62 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintRadioButtonBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintRadioButtonBorder_MethodID_55: jmethodID?
+    private static var paintRadioButtonBorder_MethodID_53: jmethodID?
 
     open func paintRadioButtonBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonBorder_MethodID_55, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonBorder_MethodID_53, args: &__args, locals: &__locals )
     }
 
     open func paintRadioButtonBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintRadioButtonBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintRadioButtonMenuItemBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintRadioButtonMenuItemBackground_MethodID_54: jmethodID?
+
+    open func paintRadioButtonMenuItemBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonMenuItemBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonMenuItemBackground_MethodID_54, args: &__args, locals: &__locals )
+    }
+
+    open func paintRadioButtonMenuItemBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintRadioButtonMenuItemBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintRadioButtonMenuItemBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintRadioButtonMenuItemBorder_MethodID_55: jmethodID?
+
+    open func paintRadioButtonMenuItemBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRadioButtonMenuItemBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRadioButtonMenuItemBorder_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+    open func paintRadioButtonMenuItemBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintRadioButtonMenuItemBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintRootPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -1120,14 +1122,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintRootPaneBackground_MethodID_56: jmethodID?
 
     open func paintRootPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRootPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRootPaneBackground_MethodID_56, args: &__args, locals: &__locals )
     }
 
@@ -1140,14 +1142,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintRootPaneBorder_MethodID_57: jmethodID?
 
     open func paintRootPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRootPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintRootPaneBorder_MethodID_57, args: &__args, locals: &__locals )
     }
 
@@ -1155,86 +1157,86 @@ open class SynthPainter: java_swift.JavaObject {
         paintRootPaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
     private static var paintScrollBarBackground_MethodID_58: jmethodID?
 
-    open func paintScrollBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarBackground_MethodID_58, args: &__args, locals: &__locals )
-    }
-
-    open func paintScrollBarBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintScrollBarBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintScrollBarBackground_MethodID_59: jmethodID?
-
     open func paintScrollBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarBackground_MethodID_59, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarBackground_MethodID_58, args: &__args, locals: &__locals )
     }
 
     open func paintScrollBarBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintScrollBarBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
 
-    private static var paintScrollBarBorder_MethodID_60: jmethodID?
+    private static var paintScrollBarBackground_MethodID_59: jmethodID?
 
-    open func paintScrollBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    open func paintScrollBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarBorder_MethodID_60, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarBackground_MethodID_59, args: &__args, locals: &__locals )
     }
 
-    open func paintScrollBarBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintScrollBarBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
+    open func paintScrollBarBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintScrollBarBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintScrollBarBorder_MethodID_61: jmethodID?
+    private static var paintScrollBarBorder_MethodID_60: jmethodID?
 
     open func paintScrollBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarBorder_MethodID_61, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarBorder_MethodID_60, args: &__args, locals: &__locals )
     }
 
     open func paintScrollBarBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintScrollBarBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintScrollBarBorder_MethodID_61: jmethodID?
+
+    open func paintScrollBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarBorder_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func paintScrollBarBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintScrollBarBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarThumbBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
@@ -1242,15 +1244,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintScrollBarThumbBackground_MethodID_62: jmethodID?
 
     open func paintScrollBarThumbBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarThumbBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarThumbBackground_MethodID_62, args: &__args, locals: &__locals )
     }
 
@@ -1263,15 +1265,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintScrollBarThumbBorder_MethodID_63: jmethodID?
 
     open func paintScrollBarThumbBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarThumbBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarThumbBorder_MethodID_63, args: &__args, locals: &__locals )
     }
 
@@ -1279,45 +1281,45 @@ open class SynthPainter: java_swift.JavaObject {
         paintScrollBarThumbBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
     private static var paintScrollBarTrackBackground_MethodID_64: jmethodID?
 
-    open func paintScrollBarTrackBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarTrackBackground_MethodID_64, args: &__args, locals: &__locals )
-    }
-
-    open func paintScrollBarTrackBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintScrollBarTrackBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintScrollBarTrackBackground_MethodID_65: jmethodID?
-
     open func paintScrollBarTrackBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarTrackBackground_MethodID_65, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarTrackBackground_MethodID_64, args: &__args, locals: &__locals )
     }
 
     open func paintScrollBarTrackBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintScrollBarTrackBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintScrollBarTrackBackground_MethodID_65: jmethodID?
+
+    open func paintScrollBarTrackBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarTrackBackground_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+    open func paintScrollBarTrackBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintScrollBarTrackBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintScrollBarTrackBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -1325,14 +1327,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintScrollBarTrackBorder_MethodID_66: jmethodID?
 
     open func paintScrollBarTrackBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarTrackBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollBarTrackBorder_MethodID_66, args: &__args, locals: &__locals )
     }
 
@@ -1345,15 +1347,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintScrollBarTrackBorder_MethodID_67: jmethodID?
 
     open func paintScrollBarTrackBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollBarTrackBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintScrollBarTrackBorder_MethodID_67, args: &__args, locals: &__locals )
     }
 
@@ -1366,14 +1368,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintScrollPaneBackground_MethodID_68: jmethodID?
 
     open func paintScrollPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollPaneBackground_MethodID_68, args: &__args, locals: &__locals )
     }
 
@@ -1386,14 +1388,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintScrollPaneBorder_MethodID_69: jmethodID?
 
     open func paintScrollPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintScrollPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintScrollPaneBorder_MethodID_69, args: &__args, locals: &__locals )
     }
 
@@ -1406,14 +1408,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSeparatorBackground_MethodID_70: jmethodID?
 
     open func paintSeparatorBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSeparatorBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSeparatorBackground_MethodID_70, args: &__args, locals: &__locals )
     }
 
@@ -1426,15 +1428,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSeparatorBackground_MethodID_71: jmethodID?
 
     open func paintSeparatorBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSeparatorBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSeparatorBackground_MethodID_71, args: &__args, locals: &__locals )
     }
 
@@ -1447,14 +1449,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSeparatorBorder_MethodID_72: jmethodID?
 
     open func paintSeparatorBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSeparatorBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSeparatorBorder_MethodID_72, args: &__args, locals: &__locals )
     }
 
@@ -1467,15 +1469,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSeparatorBorder_MethodID_73: jmethodID?
 
     open func paintSeparatorBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSeparatorBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSeparatorBorder_MethodID_73, args: &__args, locals: &__locals )
     }
 
@@ -1488,15 +1490,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSeparatorForeground_MethodID_74: jmethodID?
 
     open func paintSeparatorForeground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSeparatorForeground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSeparatorForeground_MethodID_74, args: &__args, locals: &__locals )
     }
 
@@ -1509,14 +1511,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderBackground_MethodID_75: jmethodID?
 
     open func paintSliderBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSliderBackground_MethodID_75, args: &__args, locals: &__locals )
     }
 
@@ -1529,15 +1531,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderBackground_MethodID_76: jmethodID?
 
     open func paintSliderBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderBackground_MethodID_76, args: &__args, locals: &__locals )
     }
 
@@ -1550,14 +1552,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderBorder_MethodID_77: jmethodID?
 
     open func paintSliderBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSliderBorder_MethodID_77, args: &__args, locals: &__locals )
     }
 
@@ -1570,15 +1572,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderBorder_MethodID_78: jmethodID?
 
     open func paintSliderBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderBorder_MethodID_78, args: &__args, locals: &__locals )
     }
 
@@ -1591,15 +1593,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderThumbBackground_MethodID_79: jmethodID?
 
     open func paintSliderThumbBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderThumbBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderThumbBackground_MethodID_79, args: &__args, locals: &__locals )
     }
 
@@ -1612,15 +1614,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderThumbBorder_MethodID_80: jmethodID?
 
     open func paintSliderThumbBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderThumbBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderThumbBorder_MethodID_80, args: &__args, locals: &__locals )
     }
 
@@ -1628,45 +1630,45 @@ open class SynthPainter: java_swift.JavaObject {
         paintSliderThumbBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintSliderTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintSliderTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
     private static var paintSliderTrackBackground_MethodID_81: jmethodID?
 
-    open func paintSliderTrackBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderTrackBackground_MethodID_81, args: &__args, locals: &__locals )
-    }
-
-    open func paintSliderTrackBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintSliderTrackBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintSliderTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintSliderTrackBackground_MethodID_82: jmethodID?
-
     open func paintSliderTrackBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSliderTrackBackground_MethodID_82, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSliderTrackBackground_MethodID_81, args: &__args, locals: &__locals )
     }
 
     open func paintSliderTrackBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintSliderTrackBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintSliderTrackBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintSliderTrackBackground_MethodID_82: jmethodID?
+
+    open func paintSliderTrackBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderTrackBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderTrackBackground_MethodID_82, args: &__args, locals: &__locals )
+    }
+
+    open func paintSliderTrackBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintSliderTrackBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintSliderTrackBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -1674,14 +1676,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderTrackBorder_MethodID_83: jmethodID?
 
     open func paintSliderTrackBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderTrackBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSliderTrackBorder_MethodID_83, args: &__args, locals: &__locals )
     }
 
@@ -1694,15 +1696,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSliderTrackBorder_MethodID_84: jmethodID?
 
     open func paintSliderTrackBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSliderTrackBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSliderTrackBorder_MethodID_84, args: &__args, locals: &__locals )
     }
 
@@ -1715,14 +1717,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSpinnerBackground_MethodID_85: jmethodID?
 
     open func paintSpinnerBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSpinnerBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSpinnerBackground_MethodID_85, args: &__args, locals: &__locals )
     }
 
@@ -1735,14 +1737,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintSpinnerBorder_MethodID_86: jmethodID?
 
     open func paintSpinnerBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSpinnerBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSpinnerBorder_MethodID_86, args: &__args, locals: &__locals )
     }
 
@@ -1750,103 +1752,20 @@ open class SynthPainter: java_swift.JavaObject {
         paintSpinnerBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDividerBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintSplitPaneDividerBackground_MethodID_87: jmethodID?
-
-    open func paintSplitPaneDividerBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDividerBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSplitPaneDividerBackground_MethodID_87, args: &__args, locals: &__locals )
-    }
-
-    open func paintSplitPaneDividerBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintSplitPaneDividerBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDividerBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintSplitPaneDividerBackground_MethodID_88: jmethodID?
-
-    open func paintSplitPaneDividerBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDividerBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSplitPaneDividerBackground_MethodID_88, args: &__args, locals: &__locals )
-    }
-
-    open func paintSplitPaneDividerBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintSplitPaneDividerBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDividerForeground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintSplitPaneDividerForeground_MethodID_89: jmethodID?
-
-    open func paintSplitPaneDividerForeground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDividerForeground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSplitPaneDividerForeground_MethodID_89, args: &__args, locals: &__locals )
-    }
-
-    open func paintSplitPaneDividerForeground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintSplitPaneDividerForeground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDragDivider(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintSplitPaneDragDivider_MethodID_90: jmethodID?
-
-    open func paintSplitPaneDragDivider( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDragDivider", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSplitPaneDragDivider_MethodID_90, args: &__args, locals: &__locals )
-    }
-
-    open func paintSplitPaneDragDivider( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintSplitPaneDragDivider( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintSplitPaneBackground_MethodID_91: jmethodID?
+    private static var paintSplitPaneBackground_MethodID_87: jmethodID?
 
     open func paintSplitPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSplitPaneBackground_MethodID_91, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSplitPaneBackground_MethodID_87, args: &__args, locals: &__locals )
     }
 
     open func paintSplitPaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -1855,22 +1774,105 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintSplitPaneBorder_MethodID_92: jmethodID?
+    private static var paintSplitPaneBorder_MethodID_88: jmethodID?
 
     open func paintSplitPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSplitPaneBorder_MethodID_92, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSplitPaneBorder_MethodID_88, args: &__args, locals: &__locals )
     }
 
     open func paintSplitPaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintSplitPaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDividerBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintSplitPaneDividerBackground_MethodID_89: jmethodID?
+
+    open func paintSplitPaneDividerBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDividerBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintSplitPaneDividerBackground_MethodID_89, args: &__args, locals: &__locals )
+    }
+
+    open func paintSplitPaneDividerBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintSplitPaneDividerBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDividerBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintSplitPaneDividerBackground_MethodID_90: jmethodID?
+
+    open func paintSplitPaneDividerBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDividerBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSplitPaneDividerBackground_MethodID_90, args: &__args, locals: &__locals )
+    }
+
+    open func paintSplitPaneDividerBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintSplitPaneDividerBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDividerForeground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintSplitPaneDividerForeground_MethodID_91: jmethodID?
+
+    open func paintSplitPaneDividerForeground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDividerForeground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSplitPaneDividerForeground_MethodID_91, args: &__args, locals: &__locals )
+    }
+
+    open func paintSplitPaneDividerForeground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintSplitPaneDividerForeground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintSplitPaneDragDivider(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintSplitPaneDragDivider_MethodID_92: jmethodID?
+
+    open func paintSplitPaneDragDivider( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintSplitPaneDragDivider", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintSplitPaneDragDivider_MethodID_92, args: &__args, locals: &__locals )
+    }
+
+    open func paintSplitPaneDragDivider( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintSplitPaneDragDivider( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -1878,14 +1880,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTabbedPaneBackground_MethodID_93: jmethodID?
 
     open func paintTabbedPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneBackground_MethodID_93, args: &__args, locals: &__locals )
     }
 
@@ -1898,14 +1900,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTabbedPaneBorder_MethodID_94: jmethodID?
 
     open func paintTabbedPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneBorder_MethodID_94, args: &__args, locals: &__locals )
     }
 
@@ -1913,188 +1915,20 @@ open class SynthPainter: java_swift.JavaObject {
         paintTabbedPaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintTabbedPaneTabAreaBackground_MethodID_95: jmethodID?
-
-    open func paintTabbedPaneTabAreaBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBackground_MethodID_95, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabAreaBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintTabbedPaneTabAreaBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintTabbedPaneTabAreaBackground_MethodID_96: jmethodID?
-
-    open func paintTabbedPaneTabAreaBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBackground_MethodID_96, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabAreaBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintTabbedPaneTabAreaBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintTabbedPaneTabAreaBorder_MethodID_97: jmethodID?
-
-    open func paintTabbedPaneTabAreaBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBorder_MethodID_97, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabAreaBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintTabbedPaneTabAreaBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintTabbedPaneTabAreaBorder_MethodID_98: jmethodID?
-
-    open func paintTabbedPaneTabAreaBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBorder_MethodID_98, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabAreaBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintTabbedPaneTabAreaBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int,int)
-
-    private static var paintTabbedPaneTabBackground_MethodID_99: jmethodID?
-
-    open func paintTabbedPaneTabBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[7] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBackground_MethodID_99, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int, _ _orientation: Int ) {
-        paintTabbedPaneTabBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintTabbedPaneTabBackground_MethodID_100: jmethodID?
-
-    open func paintTabbedPaneTabBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBackground_MethodID_100, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int ) {
-        paintTabbedPaneTabBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
-
-    private static var paintTabbedPaneTabBorder_MethodID_101: jmethodID?
-
-    open func paintTabbedPaneTabBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBorder_MethodID_101, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int ) {
-        paintTabbedPaneTabBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int,int)
-
-    private static var paintTabbedPaneTabBorder_MethodID_102: jmethodID?
-
-    open func paintTabbedPaneTabBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[7] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBorder_MethodID_102, args: &__args, locals: &__locals )
-    }
-
-    open func paintTabbedPaneTabBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int, _ _orientation: Int ) {
-        paintTabbedPaneTabBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex, orientation: _orientation )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneContentBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTabbedPaneContentBackground_MethodID_103: jmethodID?
+    private static var paintTabbedPaneContentBackground_MethodID_95: jmethodID?
 
     open func paintTabbedPaneContentBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneContentBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneContentBackground_MethodID_103, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneContentBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneContentBackground_MethodID_95, args: &__args, locals: &__locals )
     }
 
     open func paintTabbedPaneContentBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -2103,78 +1937,206 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneContentBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTabbedPaneContentBorder_MethodID_104: jmethodID?
+    private static var paintTabbedPaneContentBorder_MethodID_96: jmethodID?
 
     open func paintTabbedPaneContentBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneContentBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneContentBorder_MethodID_104, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneContentBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneContentBorder_MethodID_96, args: &__args, locals: &__locals )
     }
 
     open func paintTabbedPaneContentBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintTabbedPaneContentBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTableHeaderBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTableHeaderBackground_MethodID_105: jmethodID?
+    private static var paintTabbedPaneTabAreaBackground_MethodID_97: jmethodID?
 
-    open func paintTableHeaderBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func paintTabbedPaneTabAreaBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableHeaderBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableHeaderBackground_MethodID_105, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBackground_MethodID_97, args: &__args, locals: &__locals )
     }
 
-    open func paintTableHeaderBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintTableHeaderBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    open func paintTabbedPaneTabAreaBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintTabbedPaneTabAreaBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTableHeaderBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
 
-    private static var paintTableHeaderBorder_MethodID_106: jmethodID?
+    private static var paintTabbedPaneTabAreaBackground_MethodID_98: jmethodID?
 
-    open func paintTableHeaderBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    open func paintTabbedPaneTabAreaBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableHeaderBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableHeaderBorder_MethodID_106, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBackground_MethodID_98, args: &__args, locals: &__locals )
     }
 
-    open func paintTableHeaderBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintTableHeaderBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    open func paintTabbedPaneTabAreaBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintTabbedPaneTabAreaBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintTabbedPaneTabAreaBorder_MethodID_99: jmethodID?
+
+    open func paintTabbedPaneTabAreaBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBorder_MethodID_99, args: &__args, locals: &__locals )
+    }
+
+    open func paintTabbedPaneTabAreaBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintTabbedPaneTabAreaBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabAreaBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintTabbedPaneTabAreaBorder_MethodID_100: jmethodID?
+
+    open func paintTabbedPaneTabAreaBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabAreaBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabAreaBorder_MethodID_100, args: &__args, locals: &__locals )
+    }
+
+    open func paintTabbedPaneTabAreaBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintTabbedPaneTabAreaBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintTabbedPaneTabBackground_MethodID_101: jmethodID?
+
+    open func paintTabbedPaneTabBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(tabIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBackground_MethodID_101, args: &__args, locals: &__locals )
+    }
+
+    open func paintTabbedPaneTabBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int ) {
+        paintTabbedPaneTabBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int,int)
+
+    private static var paintTabbedPaneTabBackground_MethodID_102: jmethodID?
+
+    open func paintTabbedPaneTabBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(tabIndex) )
+        __args[7] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBackground_MethodID_102, args: &__args, locals: &__locals )
+    }
+
+    open func paintTabbedPaneTabBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int, _ _orientation: Int ) {
+        paintTabbedPaneTabBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex, orientation: _orientation )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintTabbedPaneTabBorder_MethodID_103: jmethodID?
+
+    open func paintTabbedPaneTabBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(tabIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBorder_MethodID_103, args: &__args, locals: &__locals )
+    }
+
+    open func paintTabbedPaneTabBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int ) {
+        paintTabbedPaneTabBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTabbedPaneTabBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int,int)
+
+    private static var paintTabbedPaneTabBorder_MethodID_104: jmethodID?
+
+    open func paintTabbedPaneTabBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, tabIndex: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(tabIndex) )
+        __args[7] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabbedPaneTabBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIIII)V", methodCache: &SynthPainter.paintTabbedPaneTabBorder_MethodID_104, args: &__args, locals: &__locals )
+    }
+
+    open func paintTabbedPaneTabBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _tabIndex: Int, _ _orientation: Int ) {
+        paintTabbedPaneTabBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, tabIndex: _tabIndex, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintTableBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTableBackground_MethodID_107: jmethodID?
+    private static var paintTableBackground_MethodID_105: jmethodID?
 
     open func paintTableBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableBackground_MethodID_107, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableBackground_MethodID_105, args: &__args, locals: &__locals )
     }
 
     open func paintTableBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -2183,22 +2145,62 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintTableBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTableBorder_MethodID_108: jmethodID?
+    private static var paintTableBorder_MethodID_106: jmethodID?
 
     open func paintTableBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableBorder_MethodID_108, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableBorder_MethodID_106, args: &__args, locals: &__locals )
     }
 
     open func paintTableBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintTableBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTableHeaderBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintTableHeaderBackground_MethodID_107: jmethodID?
+
+    open func paintTableHeaderBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableHeaderBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableHeaderBackground_MethodID_107, args: &__args, locals: &__locals )
+    }
+
+    open func paintTableHeaderBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintTableHeaderBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTableHeaderBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintTableHeaderBorder_MethodID_108: jmethodID?
+
+    open func paintTableHeaderBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTableHeaderBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTableHeaderBorder_MethodID_108, args: &__args, locals: &__locals )
+    }
+
+    open func paintTableHeaderBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintTableHeaderBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintTextAreaBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -2206,14 +2208,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTextAreaBackground_MethodID_109: jmethodID?
 
     open func paintTextAreaBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextAreaBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextAreaBackground_MethodID_109, args: &__args, locals: &__locals )
     }
 
@@ -2226,14 +2228,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTextAreaBorder_MethodID_110: jmethodID?
 
     open func paintTextAreaBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextAreaBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextAreaBorder_MethodID_110, args: &__args, locals: &__locals )
     }
 
@@ -2241,60 +2243,20 @@ open class SynthPainter: java_swift.JavaObject {
         paintTextAreaBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTextPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintTextPaneBackground_MethodID_111: jmethodID?
-
-    open func paintTextPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextPaneBackground_MethodID_111, args: &__args, locals: &__locals )
-    }
-
-    open func paintTextPaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintTextPaneBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintTextPaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintTextPaneBorder_MethodID_112: jmethodID?
-
-    open func paintTextPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextPaneBorder_MethodID_112, args: &__args, locals: &__locals )
-    }
-
-    open func paintTextPaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintTextPaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// public void javax.swing.plaf.synth.SynthPainter.paintTextFieldBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTextFieldBackground_MethodID_113: jmethodID?
+    private static var paintTextFieldBackground_MethodID_111: jmethodID?
 
     open func paintTextFieldBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextFieldBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextFieldBackground_MethodID_113, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextFieldBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextFieldBackground_MethodID_111, args: &__args, locals: &__locals )
     }
 
     open func paintTextFieldBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
@@ -2303,22 +2265,62 @@ open class SynthPainter: java_swift.JavaObject {
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintTextFieldBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
-    private static var paintTextFieldBorder_MethodID_114: jmethodID?
+    private static var paintTextFieldBorder_MethodID_112: jmethodID?
 
     open func paintTextFieldBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextFieldBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextFieldBorder_MethodID_114, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextFieldBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextFieldBorder_MethodID_112, args: &__args, locals: &__locals )
     }
 
     open func paintTextFieldBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintTextFieldBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTextPaneBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintTextPaneBackground_MethodID_113: jmethodID?
+
+    open func paintTextPaneBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextPaneBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextPaneBackground_MethodID_113, args: &__args, locals: &__locals )
+    }
+
+    open func paintTextPaneBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintTextPaneBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintTextPaneBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintTextPaneBorder_MethodID_114: jmethodID?
+
+    open func paintTextPaneBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTextPaneBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTextPaneBorder_MethodID_114, args: &__args, locals: &__locals )
+    }
+
+    open func paintTextPaneBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintTextPaneBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintToggleButtonBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -2326,14 +2328,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToggleButtonBackground_MethodID_115: jmethodID?
 
     open func paintToggleButtonBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToggleButtonBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToggleButtonBackground_MethodID_115, args: &__args, locals: &__locals )
     }
 
@@ -2346,14 +2348,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToggleButtonBorder_MethodID_116: jmethodID?
 
     open func paintToggleButtonBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToggleButtonBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToggleButtonBorder_MethodID_116, args: &__args, locals: &__locals )
     }
 
@@ -2361,45 +2363,45 @@ open class SynthPainter: java_swift.JavaObject {
         paintToggleButtonBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
     private static var paintToolBarBackground_MethodID_117: jmethodID?
 
-    open func paintToolBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarBackground_MethodID_117, args: &__args, locals: &__locals )
-    }
-
-    open func paintToolBarBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintToolBarBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintToolBarBackground_MethodID_118: jmethodID?
-
     open func paintToolBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarBackground_MethodID_118, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarBackground_MethodID_117, args: &__args, locals: &__locals )
     }
 
     open func paintToolBarBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintToolBarBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintToolBarBackground_MethodID_118: jmethodID?
+
+    open func paintToolBarBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarBackground_MethodID_118, args: &__args, locals: &__locals )
+    }
+
+    open func paintToolBarBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintToolBarBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -2407,14 +2409,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarBorder_MethodID_119: jmethodID?
 
     open func paintToolBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarBorder_MethodID_119, args: &__args, locals: &__locals )
     }
 
@@ -2427,15 +2429,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarBorder_MethodID_120: jmethodID?
 
     open func paintToolBarBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarBorder_MethodID_120, args: &__args, locals: &__locals )
     }
 
@@ -2443,45 +2445,45 @@ open class SynthPainter: java_swift.JavaObject {
         paintToolBarBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
-    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarContentBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarContentBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
 
     private static var paintToolBarContentBackground_MethodID_121: jmethodID?
 
-    open func paintToolBarContentBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarContentBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarContentBackground_MethodID_121, args: &__args, locals: &__locals )
-    }
-
-    open func paintToolBarContentBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
-        paintToolBarContentBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarContentBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintToolBarContentBackground_MethodID_122: jmethodID?
-
     open func paintToolBarContentBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarContentBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarContentBackground_MethodID_122, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarContentBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarContentBackground_MethodID_121, args: &__args, locals: &__locals )
     }
 
     open func paintToolBarContentBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
         paintToolBarContentBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarContentBackground(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int,int)
+
+    private static var paintToolBarContentBackground_MethodID_122: jmethodID?
+
+    open func paintToolBarContentBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarContentBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarContentBackground_MethodID_122, args: &__args, locals: &__locals )
+    }
+
+    open func paintToolBarContentBackground( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _orientation: Int ) {
+        paintToolBarContentBackground( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h, orientation: _orientation )
     }
 
     /// public void javax.swing.plaf.synth.SynthPainter.paintToolBarContentBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
@@ -2489,14 +2491,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarContentBorder_MethodID_123: jmethodID?
 
     open func paintToolBarContentBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarContentBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarContentBorder_MethodID_123, args: &__args, locals: &__locals )
     }
 
@@ -2509,15 +2511,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarContentBorder_MethodID_124: jmethodID?
 
     open func paintToolBarContentBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarContentBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarContentBorder_MethodID_124, args: &__args, locals: &__locals )
     }
 
@@ -2530,14 +2532,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarDragWindowBackground_MethodID_125: jmethodID?
 
     open func paintToolBarDragWindowBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarDragWindowBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarDragWindowBackground_MethodID_125, args: &__args, locals: &__locals )
     }
 
@@ -2550,15 +2552,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarDragWindowBackground_MethodID_126: jmethodID?
 
     open func paintToolBarDragWindowBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarDragWindowBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarDragWindowBackground_MethodID_126, args: &__args, locals: &__locals )
     }
 
@@ -2571,14 +2573,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarDragWindowBorder_MethodID_127: jmethodID?
 
     open func paintToolBarDragWindowBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarDragWindowBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolBarDragWindowBorder_MethodID_127, args: &__args, locals: &__locals )
     }
 
@@ -2591,15 +2593,15 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolBarDragWindowBorder_MethodID_128: jmethodID?
 
     open func paintToolBarDragWindowBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: orientation, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(orientation) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolBarDragWindowBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIIII)V", methodCache: &SynthPainter.paintToolBarDragWindowBorder_MethodID_128, args: &__args, locals: &__locals )
     }
 
@@ -2612,14 +2614,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolTipBackground_MethodID_129: jmethodID?
 
     open func paintToolTipBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolTipBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolTipBackground_MethodID_129, args: &__args, locals: &__locals )
     }
 
@@ -2632,14 +2634,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintToolTipBorder_MethodID_130: jmethodID?
 
     open func paintToolTipBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintToolTipBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintToolTipBorder_MethodID_130, args: &__args, locals: &__locals )
     }
 
@@ -2652,14 +2654,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTreeBackground_MethodID_131: jmethodID?
 
     open func paintTreeBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTreeBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTreeBackground_MethodID_131, args: &__args, locals: &__locals )
     }
 
@@ -2672,14 +2674,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTreeBorder_MethodID_132: jmethodID?
 
     open func paintTreeBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTreeBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTreeBorder_MethodID_132, args: &__args, locals: &__locals )
     }
 
@@ -2692,14 +2694,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTreeCellBackground_MethodID_133: jmethodID?
 
     open func paintTreeCellBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTreeCellBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTreeCellBackground_MethodID_133, args: &__args, locals: &__locals )
     }
 
@@ -2712,14 +2714,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTreeCellBorder_MethodID_134: jmethodID?
 
     open func paintTreeCellBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTreeCellBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTreeCellBorder_MethodID_134, args: &__args, locals: &__locals )
     }
 
@@ -2732,14 +2734,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintTreeCellFocus_MethodID_135: jmethodID?
 
     open func paintTreeCellFocus( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTreeCellFocus", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintTreeCellFocus_MethodID_135, args: &__args, locals: &__locals )
     }
 
@@ -2752,14 +2754,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintViewportBackground_MethodID_136: jmethodID?
 
     open func paintViewportBackground( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintViewportBackground", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintViewportBackground_MethodID_136, args: &__args, locals: &__locals )
     }
 
@@ -2772,14 +2774,14 @@ open class SynthPainter: java_swift.JavaObject {
     private static var paintViewportBorder_MethodID_137: jmethodID?
 
     open func paintViewportBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintViewportBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthPainter.paintViewportBorder_MethodID_137, args: &__args, locals: &__locals )
     }
 

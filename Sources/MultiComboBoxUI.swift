@@ -24,8 +24,8 @@ open class MultiComboBoxUI: ComboBoxUI {
 
     open var uis: java_util.Vector! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "uis", fieldType: "Ljava/util/Vector;", fieldCache: &MultiComboBoxUI.uis_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "uis", fieldType: "Ljava/util/Vector;", fieldCache: &MultiComboBoxUI.uis_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.Vector( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -40,56 +40,22 @@ open class MultiComboBoxUI: ComboBoxUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/multi/MultiComboBoxUI", classCache: &MultiComboBoxUI.MultiComboBoxUIJNIClass, methodSig: "()V", methodCache: &MultiComboBoxUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.multi.MultiComboBoxUI.update(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var update_MethodID_2: jmethodID?
-
-    open func update( a: java_awt.Graphics?, b: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.update_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func update( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
-        update( a: _a, b: _b )
-    }
-
-    /// public boolean javax.swing.plaf.multi.MultiComboBoxUI.contains(javax.swing.JComponent,int,int)
-
-    private static var contains_MethodID_3: jmethodID?
-
-    open func contains( a: JComponent?, b: Int, c: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljavax/swing/JComponent;II)Z", methodCache: &MultiComboBoxUI.contains_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func contains( _ _a: JComponent?, _ _b: Int, _ _c: Int ) -> Bool {
-        return contains( a: _a, b: _b, c: _c )
-    }
-
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.multi.MultiComboBoxUI.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_4: jmethodID?
+    private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( a: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiComboBoxUI", classCache: &MultiComboBoxUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/multi/MultiComboBoxUI", classCache: &MultiComboBoxUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -98,127 +64,67 @@ open class MultiComboBoxUI: ComboBoxUI {
         return createUI( a: _a )
     }
 
-    /// public void javax.swing.plaf.multi.MultiComboBoxUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// public boolean javax.swing.plaf.multi.MultiComboBoxUI.contains(javax.swing.JComponent,int,int)
 
-    private static var paint_MethodID_5: jmethodID?
+    private static var contains_MethodID_3: jmethodID?
 
-    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
+    open func contains( a: JComponent?, b: Int, c: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = jvalue( i: jint(b) )
+        __args[2] = jvalue( i: jint(c) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljavax/swing/JComponent;II)Z", methodCache: &MultiComboBoxUI.contains_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func contains( _ _a: JComponent?, _ _b: Int, _ _c: Int ) -> Bool {
+        return contains( a: _a, b: _b, c: _c )
+    }
+
+    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiComboBoxUI.getAccessibleChild(javax.swing.JComponent,int)
+
+    private static var getAccessibleChild_MethodID_4: jmethodID?
+
+    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.paint_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
-        paint( a: _a, b: _b )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiComboBoxUI.setPopupVisible(javax.swing.JComboBox,boolean)
-
-    private static var setPopupVisible_MethodID_6: jmethodID?
-
-    open func setPopupVisible( a: JComboBox?, b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupVisible", methodSig: "(Ljavax/swing/JComboBox;Z)V", methodCache: &MultiComboBoxUI.setPopupVisible_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func setPopupVisible( _ _a: JComboBox?, _ _b: Bool ) {
-        setPopupVisible( a: _a, b: _b )
-    }
-
-    /// public boolean javax.swing.plaf.multi.MultiComboBoxUI.isPopupVisible(javax.swing.JComboBox)
-
-    private static var isPopupVisible_MethodID_7: jmethodID?
-
-    open func isPopupVisible( a: JComboBox? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupVisible", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &MultiComboBoxUI.isPopupVisible_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func isPopupVisible( _ _a: JComboBox? ) -> Bool {
-        return isPopupVisible( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiComboBoxUI.installUI(javax.swing.JComponent)
-
-    private static var installUI_MethodID_8: jmethodID?
-
-    open func installUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.installUI_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    override open func installUI( _ _a: JComponent? ) {
-        installUI( a: _a )
-    }
-
-    /// public void javax.swing.plaf.multi.MultiComboBoxUI.uninstallUI(javax.swing.JComponent)
-
-    private static var uninstallUI_MethodID_9: jmethodID?
-
-    open func uninstallUI( a: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.uninstallUI_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    override open func uninstallUI( _ _a: JComponent? ) {
-        uninstallUI( a: _a )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiComboBoxUI.getPreferredSize(javax.swing.JComponent)
-
-    private static var getPreferredSize_MethodID_10: jmethodID?
-
-    open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiComboBoxUI.getPreferredSize_MethodID_10, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(b) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiComboBoxUI.getAccessibleChild_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+        return __return != nil ? /* interface javax.accessibility.Accessible */ UnavailableProtocolForward( javaObject: __return ) : nil
     }
 
-    override open func getPreferredSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getPreferredSize( a: _a )
+    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
+        return getAccessibleChild( a: _a, b: _b )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.multi.MultiComboBoxUI.getMinimumSize(javax.swing.JComponent)
+    /// public int javax.swing.plaf.multi.MultiComboBoxUI.getAccessibleChildrenCount(javax.swing.JComponent)
 
-    private static var getMinimumSize_MethodID_11: jmethodID?
+    private static var getAccessibleChildrenCount_MethodID_5: jmethodID?
 
-    open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiComboBoxUI.getMinimumSize_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiComboBoxUI.getAccessibleChildrenCount_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    override open func getMinimumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
-        return getMinimumSize( a: _a )
+    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
+        return getAccessibleChildrenCount( a: _a )
     }
 
     /// public java.awt.Dimension javax.swing.plaf.multi.MultiComboBoxUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var getMaximumSize_MethodID_12: jmethodID?
+    private static var getMaximumSize_MethodID_6: jmethodID?
 
     open func getMaximumSize( a: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiComboBoxUI.getMaximumSize_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiComboBoxUI.getMaximumSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -227,67 +133,161 @@ open class MultiComboBoxUI: ComboBoxUI {
         return getMaximumSize( a: _a )
     }
 
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiComboBoxUI.getMinimumSize(javax.swing.JComponent)
+
+    private static var getMinimumSize_MethodID_7: jmethodID?
+
+    open func getMinimumSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiComboBoxUI.getMinimumSize_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getMinimumSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getMinimumSize( a: _a )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.multi.MultiComboBoxUI.getPreferredSize(javax.swing.JComponent)
+
+    private static var getPreferredSize_MethodID_8: jmethodID?
+
+    open func getPreferredSize( a: JComponent? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &MultiComboBoxUI.getPreferredSize_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getPreferredSize( _ _a: JComponent? ) -> java_awt.Dimension! {
+        return getPreferredSize( a: _a )
+    }
+
+    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiComboBoxUI.getUIs()
+
+    private static var getUIs_MethodID_9: jmethodID?
+
+    open func getUIs() -> [ComponentUI]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiComboBoxUI.getUIs_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ComponentUI].self, from: __return )
+    }
+
+
+    /// public void javax.swing.plaf.multi.MultiComboBoxUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_10: jmethodID?
+
+    open func installUI( a: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.installUI_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func installUI( _ _a: JComponent? ) {
+        installUI( a: _a )
+    }
+
     /// public boolean javax.swing.plaf.multi.MultiComboBoxUI.isFocusTraversable(javax.swing.JComboBox)
 
-    private static var isFocusTraversable_MethodID_13: jmethodID?
+    private static var isFocusTraversable_MethodID_11: jmethodID?
 
     open func isFocusTraversable( a: JComboBox? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusTraversable", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &MultiComboBoxUI.isFocusTraversable_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusTraversable", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &MultiComboBoxUI.isFocusTraversable_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func isFocusTraversable( _ _a: JComboBox? ) -> Bool {
         return isFocusTraversable( a: _a )
     }
 
-    /// public int javax.swing.plaf.multi.MultiComboBoxUI.getAccessibleChildrenCount(javax.swing.JComponent)
+    /// public boolean javax.swing.plaf.multi.MultiComboBoxUI.isPopupVisible(javax.swing.JComboBox)
 
-    private static var getAccessibleChildrenCount_MethodID_14: jmethodID?
+    private static var isPopupVisible_MethodID_12: jmethodID?
 
-    open func getAccessibleChildrenCount( a: JComponent? ) -> Int {
+    open func isPopupVisible( a: JComboBox? ) -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleChildrenCount", methodSig: "(Ljavax/swing/JComponent;)I", methodCache: &MultiComboBoxUI.getAccessibleChildrenCount_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupVisible", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &MultiComboBoxUI.isPopupVisible_MethodID_12, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    override open func getAccessibleChildrenCount( _ _a: JComponent? ) -> Int {
-        return getAccessibleChildrenCount( a: _a )
+    override open func isPopupVisible( _ _a: JComboBox? ) -> Bool {
+        return isPopupVisible( a: _a )
     }
 
-    /// public javax.accessibility.Accessible javax.swing.plaf.multi.MultiComboBoxUI.getAccessibleChild(javax.swing.JComponent,int)
+    /// public void javax.swing.plaf.multi.MultiComboBoxUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var getAccessibleChild_MethodID_15: jmethodID?
+    private static var paint_MethodID_13: jmethodID?
 
-    open func getAccessibleChild( a: JComponent?, b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func paint( a: java_awt.Graphics?, b: JComponent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleChild", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/accessibility/Accessible;", methodCache: &MultiComboBoxUI.getAccessibleChild_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.paint_MethodID_13, args: &__args, locals: &__locals )
     }
 
-    override open func getAccessibleChild( _ _a: JComponent?, _ _b: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        return getAccessibleChild( a: _a, b: _b )
+    override open func paint( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
+        paint( a: _a, b: _b )
     }
 
-    /// public javax.swing.plaf.ComponentUI[] javax.swing.plaf.multi.MultiComboBoxUI.getUIs()
+    /// public void javax.swing.plaf.multi.MultiComboBoxUI.setPopupVisible(javax.swing.JComboBox,boolean)
 
-    private static var getUIs_MethodID_16: jmethodID?
+    private static var setPopupVisible_MethodID_14: jmethodID?
 
-    open func getUIs() -> [ComponentUI]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setPopupVisible( a: JComboBox?, b: Bool ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUIs", methodSig: "()[Ljavax/swing/plaf/ComponentUI;", methodCache: &MultiComboBoxUI.getUIs_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ComponentUI](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupVisible", methodSig: "(Ljavax/swing/JComboBox;Z)V", methodCache: &MultiComboBoxUI.setPopupVisible_MethodID_14, args: &__args, locals: &__locals )
     }
 
+    override open func setPopupVisible( _ _a: JComboBox?, _ _b: Bool ) {
+        setPopupVisible( a: _a, b: _b )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiComboBoxUI.uninstallUI(javax.swing.JComponent)
+
+    private static var uninstallUI_MethodID_15: jmethodID?
+
+    open func uninstallUI( a: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.uninstallUI_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func uninstallUI( _ _a: JComponent? ) {
+        uninstallUI( a: _a )
+    }
+
+    /// public void javax.swing.plaf.multi.MultiComboBoxUI.update(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var update_MethodID_16: jmethodID?
+
+    open func update( a: java_awt.Graphics?, b: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MultiComboBoxUI.update_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    override open func update( _ _a: java_awt.Graphics?, _ _b: JComponent? ) {
+        update( a: _a, b: _b )
+    }
 
 }
 

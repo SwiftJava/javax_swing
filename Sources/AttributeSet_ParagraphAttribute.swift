@@ -16,4 +16,3 @@ open class AttributeSet_ParagraphAttributeForward: JNIObjectForward, AttributeSe
 
 }
 
-

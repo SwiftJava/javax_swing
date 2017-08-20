@@ -24,8 +24,8 @@ open class TransferHandler_DropLocation: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: java_awt.Point? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/TransferHandler$DropLocation", classCache: &TransferHandler_DropLocation.TransferHandler_DropLocationJNIClass, methodSig: "(Ljava/awt/Point;)V", methodCache: &TransferHandler_DropLocation.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -36,20 +36,22 @@ open class TransferHandler_DropLocation: java_swift.JavaObject {
         self.init( arg0: _arg0 )
     }
 
-    /// public java.lang.String javax.swing.TransferHandler$DropLocation.toString()
-
     /// public final java.awt.Point javax.swing.TransferHandler$DropLocation.getDropPoint()
 
     private static var getDropPoint_MethodID_2: jmethodID?
 
     open func getDropPoint() -> java_awt.Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDropPoint", methodSig: "()Ljava/awt/Point;", methodCache: &TransferHandler_DropLocation.getDropPoint_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
 
+
+    /// public java.lang.String javax.swing.TransferHandler$DropLocation.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

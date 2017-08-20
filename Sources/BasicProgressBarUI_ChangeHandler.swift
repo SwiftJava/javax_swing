@@ -18,13 +18,15 @@ open class BasicProgressBarUI_ChangeHandler: java_swift.JavaObject, ChangeListen
 
     /// final javax.swing.plaf.basic.BasicProgressBarUI javax.swing.plaf.basic.BasicProgressBarUI$ChangeHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicProgressBarUI$ChangeHandler(javax.swing.plaf.basic.BasicProgressBarUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicProgressBarUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicProgressBarUI$ChangeHandler", classCache: &BasicProgressBarUI_ChangeHandler.BasicProgressBarUI_ChangeHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicProgressBarUI;)V", methodCache: &BasicProgressBarUI_ChangeHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicProgressBarUI_ChangeHandler: java_swift.JavaObject, ChangeListen
     private static var stateChanged_MethodID_2: jmethodID?
 
     open func stateChanged( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicProgressBarUI_ChangeHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }

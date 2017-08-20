@@ -24,8 +24,8 @@ open class CaretListenerForward: java_util.EventListenerForward, CaretListener {
     private static var caretUpdate_MethodID_2: jmethodID?
 
     open func caretUpdate( e: CaretEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "caretUpdate", methodSig: "(Ljavax/swing/event/CaretEvent;)V", methodCache: &CaretListenerForward.caretUpdate_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class CaretListenerForward: java_util.EventListenerForward, CaretListener {
 
 }
 
-
 private typealias CaretListener_caretUpdate_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func CaretListener_caretUpdate_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     CaretListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).caretUpdate( e: e != nil ? CaretEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class CaretListenerLocal_: JNILocalProxy<CaretListener, Any> {
@@ -89,8 +86,5 @@ open class CaretListenerBase: CaretListener {
     open func caretUpdate( e: CaretEvent? ) /**/ {
     }
 
-    open func caretUpdate( _ _e: CaretEvent? ) /**/ {
-        caretUpdate( e: _e )
-    }
 
 }

@@ -20,33 +20,35 @@ open class DateFormatter: InternationalFormatter {
 
     /// private java.text.Format javax.swing.text.InternationalFormatter.format
 
+    /// private transient boolean javax.swing.text.InternationalFormatter.ignoreDocumentMutate
+
+    /// private transient java.text.AttributedCharacterIterator javax.swing.text.InternationalFormatter.iterator
+
+    /// private transient java.util.BitSet javax.swing.text.InternationalFormatter.literalMask
+
     /// private java.lang.Comparable javax.swing.text.InternationalFormatter.max
 
     /// private java.lang.Comparable javax.swing.text.InternationalFormatter.min
 
-    /// private transient java.util.BitSet javax.swing.text.InternationalFormatter.literalMask
-
-    /// private transient java.text.AttributedCharacterIterator javax.swing.text.InternationalFormatter.iterator
+    /// private transient java.lang.String javax.swing.text.InternationalFormatter.string
 
     /// private transient boolean javax.swing.text.InternationalFormatter.validMask
 
-    /// private transient java.lang.String javax.swing.text.InternationalFormatter.string
-
-    /// private transient boolean javax.swing.text.InternationalFormatter.ignoreDocumentMutate
-
     /// private boolean javax.swing.text.DefaultFormatter.allowsInvalid
-
-    /// private boolean javax.swing.text.DefaultFormatter.overwriteMode
 
     /// private boolean javax.swing.text.DefaultFormatter.commitOnEdit
 
-    /// private java.lang.Class javax.swing.text.DefaultFormatter.valueClass
+    /// private javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.documentFilter
 
     /// private javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.navigationFilter
 
-    /// private javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.documentFilter
+    /// private boolean javax.swing.text.DefaultFormatter.overwriteMode
 
     /// transient javax.swing.text.DefaultFormatter$ReplaceHolder javax.swing.text.DefaultFormatter.replaceHolder
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.Class javax.swing.text.DefaultFormatter.valueClass
 
     /// private javax.swing.JFormattedTextField javax.swing.JFormattedTextField$AbstractFormatter.ftf
 
@@ -55,8 +57,8 @@ open class DateFormatter: InternationalFormatter {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DateFormatter", classCache: &DateFormatter.DateFormatterJNIClass, methodSig: "()V", methodCache: &DateFormatter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -66,41 +68,47 @@ open class DateFormatter: InternationalFormatter {
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( format: /* java.text.DateFormat */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( format: /* class java.text.DateFormat */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: format, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DateFormatter", classCache: &DateFormatter.DateFormatterJNIClass, methodSig: "(Ljava/text/DateFormat;)V", methodCache: &DateFormatter.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _format: /* java.text.DateFormat */ UnclassedObject? ) {
+    public convenience init( _ _format: /* class java.text.DateFormat */ UnavailableObject? ) {
         self.init( format: _format )
     }
 
+    /// java.lang.Object javax.swing.text.DateFormatter.adjustValue(java.lang.Object,java.util.Map,java.lang.Object,int) throws javax.swing.text.BadLocationException,java.text.ParseException
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.Object javax.swing.text.DateFormatter.getAdjustField(int,java.util.Map)
+
+    // Skipping method: true false false false false 
+
     /// private java.util.Calendar javax.swing.text.DateFormatter.getCalendar()
+
+    /// boolean javax.swing.text.DateFormatter.getSupportsIncrement()
+
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.text.DateFormatter.setFormat(java.text.DateFormat)
 
     private static var setFormat_MethodID_3: jmethodID?
 
-    override open func setFormat( format: /* java.text.DateFormat */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func setFormat( format: /* class java.text.DateFormat */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: format, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/DateFormat;)V", methodCache: &DateFormatter.setFormat_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    override open func setFormat( _ _format: /* java.text.DateFormat */ UnclassedObject? ) {
+    override open func setFormat( _ _format: /* class java.text.DateFormat */ UnavailableObject? ) {
         setFormat( format: _format )
     }
-
-    /// boolean javax.swing.text.DateFormatter.getSupportsIncrement()
-
-    /// java.lang.Object javax.swing.text.DateFormatter.getAdjustField(int,java.util.Map)
-
-    /// java.lang.Object javax.swing.text.DateFormatter.adjustValue(java.lang.Object,java.util.Map,java.lang.Object,int) throws javax.swing.text.BadLocationException,java.text.ParseException
 
 }
 

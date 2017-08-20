@@ -24,11 +24,11 @@ open class Highlighter_HighlightPainterForward: JNIObjectForward, Highlighter_Hi
     private static var paint_MethodID_2: jmethodID?
 
     open func paint( g: java_awt.Graphics?, p0: Int, p1: Int, bounds: java_awt.Shape?, c: JTextComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = jvalue( i: jint(p0) )
+        __args[2] = jvalue( i: jint(p1) )
         __args[3] = JNIType.toJava( value: bounds, locals: &__locals )
         __args[4] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;IILjava/awt/Shape;Ljavax/swing/text/JTextComponent;)V", methodCache: &Highlighter_HighlightPainterForward.paint_MethodID_2, args: &__args, locals: &__locals )
@@ -39,5 +39,4 @@ open class Highlighter_HighlightPainterForward: JNIObjectForward, Highlighter_Hi
     }
 
 }
-
 

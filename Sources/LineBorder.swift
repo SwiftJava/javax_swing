@@ -21,31 +21,14 @@ open class LineBorder: AbstractBorder {
 
     /// private static javax.swing.border.Border javax.swing.border.LineBorder.grayLine
 
-    /// protected int javax.swing.border.LineBorder.thickness
-
-    private static var thickness_FieldID: jfieldID?
-
-    open var thickness: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "thickness", fieldType: "I", fieldCache: &LineBorder.thickness_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "thickness", fieldType: "I", fieldCache: &LineBorder.thickness_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
     /// protected java.awt.Color javax.swing.border.LineBorder.lineColor
 
     private static var lineColor_FieldID: jfieldID?
 
     open var lineColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "lineColor", fieldType: "Ljava/awt/Color;", fieldCache: &LineBorder.lineColor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "lineColor", fieldType: "Ljava/awt/Color;", fieldCache: &LineBorder.lineColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -61,44 +44,41 @@ open class LineBorder: AbstractBorder {
 
     open var roundedCorners: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "roundedCorners", fieldType: "Z", fieldCache: &LineBorder.roundedCorners_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "roundedCorners", fieldType: "Z", fieldCache: &LineBorder.roundedCorners_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "roundedCorners", fieldType: "Z", fieldCache: &LineBorder.roundedCorners_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// public javax.swing.border.LineBorder(java.awt.Color,int)
+    /// protected int javax.swing.border.LineBorder.thickness
 
-    private static var new_MethodID_1: jmethodID?
+    private static var thickness_FieldID: jfieldID?
 
-    public convenience init( color: java_awt.Color?, thickness: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: color, locals: &__locals )
-        __args[1] = JNIType.toJava( value: thickness, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/LineBorder", classCache: &LineBorder.LineBorderJNIClass, methodSig: "(Ljava/awt/Color;I)V", methodCache: &LineBorder.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _color: java_awt.Color?, _ _thickness: Int ) {
-        self.init( color: _color, thickness: _thickness )
+    open var thickness: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "thickness", fieldType: "I", fieldCache: &LineBorder.thickness_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "thickness", fieldType: "I", fieldCache: &LineBorder.thickness_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
     }
 
     /// public javax.swing.border.LineBorder(java.awt.Color)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( color: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: color, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/LineBorder", classCache: &LineBorder.LineBorderJNIClass, methodSig: "(Ljava/awt/Color;)V", methodCache: &LineBorder.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/LineBorder", classCache: &LineBorder.LineBorderJNIClass, methodSig: "(Ljava/awt/Color;)V", methodCache: &LineBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -107,16 +87,34 @@ open class LineBorder: AbstractBorder {
         self.init( color: _color )
     }
 
+    /// public javax.swing.border.LineBorder(java.awt.Color,int)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( color: java_awt.Color?, thickness: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: color, locals: &__locals )
+        __args[1] = jvalue( i: jint(thickness) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/LineBorder", classCache: &LineBorder.LineBorderJNIClass, methodSig: "(Ljava/awt/Color;I)V", methodCache: &LineBorder.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _color: java_awt.Color?, _ _thickness: Int ) {
+        self.init( color: _color, thickness: _thickness )
+    }
+
     /// public javax.swing.border.LineBorder(java.awt.Color,int,boolean)
 
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( color: java_awt.Color?, thickness: Int, roundedCorners: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: color, locals: &__locals )
-        __args[1] = JNIType.toJava( value: thickness, locals: &__locals )
-        __args[2] = JNIType.toJava( value: roundedCorners, locals: &__locals )
+        __args[1] = jvalue( i: jint(thickness) )
+        __args[2] = jvalue( z: jboolean(roundedCorners ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/LineBorder", classCache: &LineBorder.LineBorderJNIClass, methodSig: "(Ljava/awt/Color;IZ)V", methodCache: &LineBorder.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -131,8 +129,8 @@ open class LineBorder: AbstractBorder {
     private static var createBlackLineBorder_MethodID_4: jmethodID?
 
     open class func createBlackLineBorder() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/border/LineBorder", classCache: &LineBorderJNIClass, methodName: "createBlackLineBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createBlackLineBorder_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
@@ -144,56 +142,62 @@ open class LineBorder: AbstractBorder {
     private static var createGrayLineBorder_MethodID_5: jmethodID?
 
     open class func createGrayLineBorder() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/border/LineBorder", classCache: &LineBorderJNIClass, methodName: "createGrayLineBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &createGrayLineBorder_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
 
+    /// public java.awt.Insets javax.swing.border.LineBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    // Skipping method: false true false false false 
+
     /// public java.awt.Color javax.swing.border.LineBorder.getLineColor()
 
     private static var getLineColor_MethodID_6: jmethodID?
 
     open func getLineColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineColor", methodSig: "()Ljava/awt/Color;", methodCache: &LineBorder.getLineColor_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
 
-    /// public int javax.swing.border.LineBorder.getThickness()
-
-    private static var getThickness_MethodID_7: jmethodID?
-
-    open func getThickness() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getThickness", methodSig: "()I", methodCache: &LineBorder.getThickness_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public boolean javax.swing.border.LineBorder.getRoundedCorners()
 
-    private static var getRoundedCorners_MethodID_8: jmethodID?
+    private static var getRoundedCorners_MethodID_7: jmethodID?
 
     open func getRoundedCorners() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getRoundedCorners", methodSig: "()Z", methodCache: &LineBorder.getRoundedCorners_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getRoundedCorners", methodSig: "()Z", methodCache: &LineBorder.getRoundedCorners_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
+
+    /// public int javax.swing.border.LineBorder.getThickness()
+
+    private static var getThickness_MethodID_8: jmethodID?
+
+    open func getThickness() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getThickness", methodSig: "()I", methodCache: &LineBorder.getThickness_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean javax.swing.border.LineBorder.isBorderOpaque()
+
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.border.LineBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
-    /// public java.awt.Insets javax.swing.border.LineBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
-
-    /// public boolean javax.swing.border.LineBorder.isBorderOpaque()
+    // Skipping method: false true false false false 
 
 }
 

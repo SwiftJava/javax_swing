@@ -19,13 +19,15 @@ open class BasicSliderUI_ComponentHandler: java_awt.ComponentAdapter {
 
     /// final javax.swing.plaf.basic.BasicSliderUI javax.swing.plaf.basic.BasicSliderUI$ComponentHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicSliderUI$ComponentHandler(javax.swing.plaf.basic.BasicSliderUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicSliderUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSliderUI$ComponentHandler", classCache: &BasicSliderUI_ComponentHandler.BasicSliderUI_ComponentHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSliderUI;)V", methodCache: &BasicSliderUI_ComponentHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -37,6 +39,8 @@ open class BasicSliderUI_ComponentHandler: java_awt.ComponentAdapter {
     }
 
     /// public void javax.swing.plaf.basic.BasicSliderUI$ComponentHandler.componentResized(java.awt.event.ComponentEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

@@ -16,4 +16,3 @@ open class AttributeSet_ColorAttributeForward: JNIObjectForward, AttributeSet_Co
 
 }
 
-

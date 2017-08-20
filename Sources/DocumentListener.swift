@@ -8,6 +8,10 @@ import java_util
 
 public protocol DocumentListener: java_util.EventListener {
 
+    /// public abstract void javax.swing.event.DocumentListener.changedUpdate(javax.swing.event.DocumentEvent)
+
+    func changedUpdate( e: DocumentEvent? )
+
     /// public abstract void javax.swing.event.DocumentListener.insertUpdate(javax.swing.event.DocumentEvent)
 
     func insertUpdate( e: DocumentEvent? )
@@ -16,10 +20,6 @@ public protocol DocumentListener: java_util.EventListener {
 
     func removeUpdate( e: DocumentEvent? )
 
-    /// public abstract void javax.swing.event.DocumentListener.changedUpdate(javax.swing.event.DocumentEvent)
-
-    func changedUpdate( e: DocumentEvent? )
-
 }
 
 
@@ -27,15 +27,30 @@ open class DocumentListenerForward: java_util.EventListenerForward, DocumentList
 
     private static var DocumentListenerJNIClass: jclass?
 
+    /// public abstract void javax.swing.event.DocumentListener.changedUpdate(javax.swing.event.DocumentEvent)
+
+    private static var changedUpdate_MethodID_4: jmethodID?
+
+    open func changedUpdate( e: DocumentEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &DocumentListenerForward.changedUpdate_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func changedUpdate( _ _e: DocumentEvent? ) {
+        changedUpdate( e: _e )
+    }
+
     /// public abstract void javax.swing.event.DocumentListener.insertUpdate(javax.swing.event.DocumentEvent)
 
-    private static var insertUpdate_MethodID_4: jmethodID?
+    private static var insertUpdate_MethodID_5: jmethodID?
 
     open func insertUpdate( e: DocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &DocumentListenerForward.insertUpdate_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &DocumentListenerForward.insertUpdate_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func insertUpdate( _ _e: DocumentEvent? ) {
@@ -44,59 +59,37 @@ open class DocumentListenerForward: java_util.EventListenerForward, DocumentList
 
     /// public abstract void javax.swing.event.DocumentListener.removeUpdate(javax.swing.event.DocumentEvent)
 
-    private static var removeUpdate_MethodID_5: jmethodID?
+    private static var removeUpdate_MethodID_6: jmethodID?
 
     open func removeUpdate( e: DocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &DocumentListenerForward.removeUpdate_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &DocumentListenerForward.removeUpdate_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func removeUpdate( _ _e: DocumentEvent? ) {
         removeUpdate( e: _e )
     }
 
-    /// public abstract void javax.swing.event.DocumentListener.changedUpdate(javax.swing.event.DocumentEvent)
-
-    private static var changedUpdate_MethodID_6: jmethodID?
-
-    open func changedUpdate( e: DocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &DocumentListenerForward.changedUpdate_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func changedUpdate( _ _e: DocumentEvent? ) {
-        changedUpdate( e: _e )
-    }
-
 }
 
+private typealias DocumentListener_changedUpdate_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias DocumentListener_insertUpdate_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DocumentListener_insertUpdate_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    DocumentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).insertUpdate( e: e != nil ? DocumentEventForward( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DocumentListener_removeUpdate_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DocumentListener_removeUpdate_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    DocumentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).removeUpdate( e: e != nil ? DocumentEventForward( javaObject: e ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DocumentListener_changedUpdate_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DocumentListener_changedUpdate_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
+private func DocumentListener_changedUpdate_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
     DocumentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).changedUpdate( e: e != nil ? DocumentEventForward( javaObject: e ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias DocumentListener_insertUpdate_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DocumentListener_insertUpdate_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    DocumentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).insertUpdate( e: e != nil ? DocumentEventForward( javaObject: e ) : nil )
+}
+
+private typealias DocumentListener_removeUpdate_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DocumentListener_removeUpdate_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    DocumentListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).removeUpdate( e: e != nil ? DocumentEventForward( javaObject: e ) : nil )
 }
 
 fileprivate class DocumentListenerLocal_: JNILocalProxy<DocumentListener, Any> {
@@ -104,14 +97,14 @@ fileprivate class DocumentListenerLocal_: JNILocalProxy<DocumentListener, Any> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let DocumentListener_insertUpdate_0_thunk: DocumentListener_insertUpdate_0_type = DocumentListener_insertUpdate_0
-        natives.append( JNINativeMethod( name: strdup("__insertUpdate"), signature: strdup("(JLjavax/swing/event/DocumentEvent;)V"), fnPtr: unsafeBitCast( DocumentListener_insertUpdate_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DocumentListener_changedUpdate_0_thunk: DocumentListener_changedUpdate_0_type = DocumentListener_changedUpdate_0
+        natives.append( JNINativeMethod( name: strdup("__changedUpdate"), signature: strdup("(JLjavax/swing/event/DocumentEvent;)V"), fnPtr: unsafeBitCast( DocumentListener_changedUpdate_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DocumentListener_removeUpdate_1_thunk: DocumentListener_removeUpdate_1_type = DocumentListener_removeUpdate_1
-        natives.append( JNINativeMethod( name: strdup("__removeUpdate"), signature: strdup("(JLjavax/swing/event/DocumentEvent;)V"), fnPtr: unsafeBitCast( DocumentListener_removeUpdate_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DocumentListener_insertUpdate_1_thunk: DocumentListener_insertUpdate_1_type = DocumentListener_insertUpdate_1
+        natives.append( JNINativeMethod( name: strdup("__insertUpdate"), signature: strdup("(JLjavax/swing/event/DocumentEvent;)V"), fnPtr: unsafeBitCast( DocumentListener_insertUpdate_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DocumentListener_changedUpdate_2_thunk: DocumentListener_changedUpdate_2_type = DocumentListener_changedUpdate_2
-        natives.append( JNINativeMethod( name: strdup("__changedUpdate"), signature: strdup("(JLjavax/swing/event/DocumentEvent;)V"), fnPtr: unsafeBitCast( DocumentListener_changedUpdate_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DocumentListener_removeUpdate_2_thunk: DocumentListener_removeUpdate_2_type = DocumentListener_removeUpdate_2
+        natives.append( JNINativeMethod( name: strdup("__removeUpdate"), signature: strdup("(JLjavax/swing/event/DocumentEvent;)V"), fnPtr: unsafeBitCast( DocumentListener_removeUpdate_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -144,31 +137,22 @@ open class DocumentListenerBase: DocumentListener {
 
     public init() {}
 
+    /// public abstract void javax.swing.event.DocumentListener.changedUpdate(javax.swing.event.DocumentEvent)
+
+    open func changedUpdate( e: DocumentEvent? ) /**/ {
+    }
+
+
     /// public abstract void javax.swing.event.DocumentListener.insertUpdate(javax.swing.event.DocumentEvent)
 
     open func insertUpdate( e: DocumentEvent? ) /**/ {
     }
 
-    open func insertUpdate( _ _e: DocumentEvent? ) /**/ {
-        insertUpdate( e: _e )
-    }
 
     /// public abstract void javax.swing.event.DocumentListener.removeUpdate(javax.swing.event.DocumentEvent)
 
     open func removeUpdate( e: DocumentEvent? ) /**/ {
     }
 
-    open func removeUpdate( _ _e: DocumentEvent? ) /**/ {
-        removeUpdate( e: _e )
-    }
-
-    /// public abstract void javax.swing.event.DocumentListener.changedUpdate(javax.swing.event.DocumentEvent)
-
-    open func changedUpdate( e: DocumentEvent? ) /**/ {
-    }
-
-    open func changedUpdate( _ _e: DocumentEvent? ) /**/ {
-        changedUpdate( e: _e )
-    }
 
 }

@@ -17,14 +17,30 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
 
     private static var BasicMenuUI_ChangeHandlerJNIClass: jclass?
 
+    /// public boolean javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.isSelected
+
+    private static var isSelected_FieldID: jfieldID?
+
+    open var isSelected: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "isSelected", fieldType: "Z", fieldCache: &BasicMenuUI_ChangeHandler.isSelected_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "isSelected", fieldType: "Z", fieldCache: &BasicMenuUI_ChangeHandler.isSelected_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
+
     /// public javax.swing.JMenu javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.menu
 
     private static var menu_FieldID: jfieldID?
 
     open var menu: JMenu! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menu", fieldType: "Ljavax/swing/JMenu;", fieldCache: &BasicMenuUI_ChangeHandler.menu_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "menu", fieldType: "Ljavax/swing/JMenu;", fieldCache: &BasicMenuUI_ChangeHandler.menu_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JMenu( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -34,14 +50,18 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
         }
     }
 
+    /// final javax.swing.plaf.basic.BasicMenuUI javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.this$0
+
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicMenuUI javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.ui
 
     private static var ui_FieldID: jfieldID?
 
     open var ui: BasicMenuUI! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/basic/BasicMenuUI;", fieldCache: &BasicMenuUI_ChangeHandler.ui_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/basic/BasicMenuUI;", fieldCache: &BasicMenuUI_ChangeHandler.ui_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? BasicMenuUI( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,31 +71,14 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
         }
     }
 
-    /// public boolean javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.isSelected
-
-    private static var isSelected_FieldID: jfieldID?
-
-    open var isSelected: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "isSelected", fieldType: "Z", fieldCache: &BasicMenuUI_ChangeHandler.isSelected_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "isSelected", fieldType: "Z", fieldCache: &BasicMenuUI_ChangeHandler.isSelected_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// public java.awt.Component javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.wasFocused
 
     private static var wasFocused_FieldID: jfieldID?
 
     open var wasFocused: java_awt.Component! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "wasFocused", fieldType: "Ljava/awt/Component;", fieldCache: &BasicMenuUI_ChangeHandler.wasFocused_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "wasFocused", fieldType: "Ljava/awt/Component;", fieldCache: &BasicMenuUI_ChangeHandler.wasFocused_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Component( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -85,15 +88,13 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
         }
     }
 
-    /// final javax.swing.plaf.basic.BasicMenuUI javax.swing.plaf.basic.BasicMenuUI$ChangeHandler.this$0
-
     /// public javax.swing.plaf.basic.BasicMenuUI$ChangeHandler(javax.swing.plaf.basic.BasicMenuUI,javax.swing.JMenu,javax.swing.plaf.basic.BasicMenuUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicMenuUI?, m: JMenu?, ui: BasicMenuUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: m, locals: &__locals )
         __args[2] = JNIType.toJava( value: ui, locals: &__locals )
@@ -111,8 +112,8 @@ open class BasicMenuUI_ChangeHandler: java_swift.JavaObject, ChangeListener {
     private static var stateChanged_MethodID_2: jmethodID?
 
     open func stateChanged( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicMenuUI_ChangeHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }

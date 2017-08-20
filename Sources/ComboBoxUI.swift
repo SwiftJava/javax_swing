@@ -21,27 +21,27 @@ open class ComboBoxUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/ComboBoxUI", classCache: &ComboBoxUI.ComboBoxUIJNIClass, methodSig: "()V", methodCache: &ComboBoxUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract void javax.swing.plaf.ComboBoxUI.setPopupVisible(javax.swing.JComboBox,boolean)
+    /// public abstract boolean javax.swing.plaf.ComboBoxUI.isFocusTraversable(javax.swing.JComboBox)
 
-    private static var setPopupVisible_MethodID_2: jmethodID?
+    private static var isFocusTraversable_MethodID_2: jmethodID?
 
-    open func setPopupVisible( c: JComboBox?, v: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func isFocusTraversable( c: JComboBox? ) -> Bool {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        __args[1] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupVisible", methodSig: "(Ljavax/swing/JComboBox;Z)V", methodCache: &ComboBoxUI.setPopupVisible_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusTraversable", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &ComboBoxUI.isFocusTraversable_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func setPopupVisible( _ _c: JComboBox?, _ _v: Bool ) {
-        setPopupVisible( c: _c, v: _v )
+    open func isFocusTraversable( _ _c: JComboBox? ) -> Bool {
+        return isFocusTraversable( c: _c )
     }
 
     /// public abstract boolean javax.swing.plaf.ComboBoxUI.isPopupVisible(javax.swing.JComboBox)
@@ -49,31 +49,31 @@ open class ComboBoxUI: ComponentUI {
     private static var isPopupVisible_MethodID_3: jmethodID?
 
     open func isPopupVisible( c: JComboBox? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupVisible", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &ComboBoxUI.isPopupVisible_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isPopupVisible( _ _c: JComboBox? ) -> Bool {
         return isPopupVisible( c: _c )
     }
 
-    /// public abstract boolean javax.swing.plaf.ComboBoxUI.isFocusTraversable(javax.swing.JComboBox)
+    /// public abstract void javax.swing.plaf.ComboBoxUI.setPopupVisible(javax.swing.JComboBox,boolean)
 
-    private static var isFocusTraversable_MethodID_4: jmethodID?
+    private static var setPopupVisible_MethodID_4: jmethodID?
 
-    open func isFocusTraversable( c: JComboBox? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setPopupVisible( c: JComboBox?, v: Bool ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusTraversable", methodSig: "(Ljavax/swing/JComboBox;)Z", methodCache: &ComboBoxUI.isFocusTraversable_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[1] = jvalue( z: jboolean(v ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupVisible", methodSig: "(Ljavax/swing/JComboBox;Z)V", methodCache: &ComboBoxUI.setPopupVisible_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func isFocusTraversable( _ _c: JComboBox? ) -> Bool {
-        return isFocusTraversable( c: _c )
+    open func setPopupVisible( _ _c: JComboBox?, _ _v: Bool ) {
+        setPopupVisible( c: _c, v: _v )
     }
 
 }

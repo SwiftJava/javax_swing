@@ -23,35 +23,19 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     open var minTabWidth: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "minTabWidth", fieldType: "I", fieldCache: &MetalTabbedPaneUI.minTabWidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "minTabWidth", fieldType: "I", fieldCache: &MetalTabbedPaneUI.minTabWidth_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "minTabWidth", fieldType: "I", fieldCache: &MetalTabbedPaneUI.minTabWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.unselectedBackground
+    /// private boolean javax.swing.plaf.metal.MetalTabbedPaneUI.ocean
 
-    /// protected java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.tabAreaBackground
-
-    private static var tabAreaBackground_FieldID: jfieldID?
-
-    open var tabAreaBackground: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tabAreaBackground", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.tabAreaBackground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "tabAreaBackground", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.tabAreaBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.oceanSelectedBorderColor
 
     /// protected java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.selectColor
 
@@ -59,8 +43,8 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     open var selectColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.selectColor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "selectColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.selectColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -76,8 +60,8 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     open var selectHighlight: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.selectHighlight_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "selectHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.selectHighlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -87,200 +71,53 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         }
     }
 
+    /// protected java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.tabAreaBackground
+
+    private static var tabAreaBackground_FieldID: jfieldID?
+
+    open var tabAreaBackground: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "tabAreaBackground", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.tabAreaBackground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "tabAreaBackground", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.tabAreaBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// private boolean javax.swing.plaf.metal.MetalTabbedPaneUI.tabsOpaque
 
-    /// private boolean javax.swing.plaf.metal.MetalTabbedPaneUI.ocean
+    /// private java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.unselectedBackground
 
-    /// private java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.oceanSelectedBorderColor
+    /// private static final int javax.swing.plaf.basic.BasicTabbedPaneUI.CROP_SEGMENT
 
-    /// protected javax.swing.JTabbedPane javax.swing.plaf.basic.BasicTabbedPaneUI.tabPane
+    /// private static int[] javax.swing.plaf.basic.BasicTabbedPaneUI.xCropLen
 
-    private static var tabPane_FieldID: jfieldID?
+    /// private static int[] javax.swing.plaf.basic.BasicTabbedPaneUI.yCropLen
 
-    override open var tabPane: JTabbedPane! {
+    /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.baseline
+
+    /// protected transient java.awt.Rectangle javax.swing.plaf.basic.BasicTabbedPaneUI.calcRect
+
+    private static var calcRect_FieldID: jfieldID?
+
+    override open var calcRect: java_awt.Rectangle! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tabPane", fieldType: "Ljavax/swing/JTabbedPane;", fieldCache: &MetalTabbedPaneUI.tabPane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JTabbedPane( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "calcRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.calcRect_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Rectangle( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "tabPane", fieldType: "Ljavax/swing/JTabbedPane;", fieldCache: &MetalTabbedPaneUI.tabPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "calcRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.calcRect_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.highlight
-
-    private static var highlight_FieldID: jfieldID?
-
-    override open var highlight: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.highlight_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.lightHighlight
-
-    private static var lightHighlight_FieldID: jfieldID?
-
-    override open var lightHighlight: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.lightHighlight_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.lightHighlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.shadow
-
-    private static var shadow_FieldID: jfieldID?
-
-    override open var shadow: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.shadow_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.darkShadow
-
-    private static var darkShadow_FieldID: jfieldID?
-
-    override open var darkShadow: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.darkShadow_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.darkShadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.focus
-
-    private static var focus_FieldID: jfieldID?
-
-    override open var focus: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "focus", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.focus_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "focus", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.focus_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.selectedColor
-
-    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.textIconGap
-
-    private static var textIconGap_FieldID: jfieldID?
-
-    override open var textIconGap: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "textIconGap", fieldType: "I", fieldCache: &MetalTabbedPaneUI.textIconGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "textIconGap", fieldType: "I", fieldCache: &MetalTabbedPaneUI.textIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.tabRunOverlay
-
-    private static var tabRunOverlay_FieldID: jfieldID?
-
-    override open var tabRunOverlay: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "tabRunOverlay", fieldType: "I", fieldCache: &MetalTabbedPaneUI.tabRunOverlay_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "tabRunOverlay", fieldType: "I", fieldCache: &MetalTabbedPaneUI.tabRunOverlay_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.tabInsets
-
-    private static var tabInsets_FieldID: jfieldID?
-
-    override open var tabInsets: java_awt.Insets! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tabInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabInsets_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "tabInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabInsets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.selectedTabPadInsets
-
-    private static var selectedTabPadInsets_FieldID: jfieldID?
-
-    override open var selectedTabPadInsets: java_awt.Insets! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectedTabPadInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.selectedTabPadInsets_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "selectedTabPadInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.selectedTabPadInsets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.tabAreaInsets
-
-    private static var tabAreaInsets_FieldID: jfieldID?
-
-    override open var tabAreaInsets: java_awt.Insets! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tabAreaInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabAreaInsets_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "tabAreaInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabAreaInsets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.calculatedBaseline
 
     /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.contentBorderInsets
 
@@ -288,8 +125,8 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     override open var contentBorderInsets: java_awt.Insets! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "contentBorderInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.contentBorderInsets_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "contentBorderInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.contentBorderInsets_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -299,26 +136,26 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         }
     }
 
-    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.tabsOverlapBorder
-
-    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.tabsOpaque
-
     /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.contentOpaque
 
-    /// protected javax.swing.KeyStroke javax.swing.plaf.basic.BasicTabbedPaneUI.upKey
+    /// private java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.currentPadInsets
 
-    private static var upKey_FieldID: jfieldID?
+    /// private java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.currentTabAreaInsets
 
-    override open var upKey: KeyStroke! {
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.darkShadow
+
+    private static var darkShadow_FieldID: jfieldID?
+
+    override open var darkShadow: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.upKey_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? KeyStroke( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.darkShadow_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.upKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.darkShadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -328,8 +165,8 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     override open var downKey: KeyStroke! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "downKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.downKey_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "downKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.downKey_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? KeyStroke( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -339,14 +176,73 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         }
     }
 
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.focus
+
+    private static var focus_FieldID: jfieldID?
+
+    override open var focus: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "focus", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.focus_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "focus", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.focus_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.focusIndex
+
+    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicTabbedPaneUI.focusListener
+
+    private static var focusListener_FieldID: jfieldID?
+
+    override open var focusListener: java_awt.FocusListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &MetalTabbedPaneUI.focusListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.FocusListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &MetalTabbedPaneUI.focusListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private javax.swing.plaf.basic.BasicTabbedPaneUI$Handler javax.swing.plaf.basic.BasicTabbedPaneUI.handler
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.highlight
+
+    private static var highlight_FieldID: jfieldID?
+
+    override open var highlight: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.highlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.highlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private java.util.Vector javax.swing.plaf.basic.BasicTabbedPaneUI.htmlViews
+
+    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.isRunsDirty
+
     /// protected javax.swing.KeyStroke javax.swing.plaf.basic.BasicTabbedPaneUI.leftKey
 
     private static var leftKey_FieldID: jfieldID?
 
     override open var leftKey: KeyStroke! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "leftKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.leftKey_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "leftKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.leftKey_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? KeyStroke( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -356,88 +252,20 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         }
     }
 
-    /// protected javax.swing.KeyStroke javax.swing.plaf.basic.BasicTabbedPaneUI.rightKey
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.lightHighlight
 
-    private static var rightKey_FieldID: jfieldID?
+    private static var lightHighlight_FieldID: jfieldID?
 
-    override open var rightKey: KeyStroke! {
+    override open var lightHighlight: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.rightKey_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? KeyStroke( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.lightHighlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.rightKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected int[] javax.swing.plaf.basic.BasicTabbedPaneUI.tabRuns
-
-    private static var tabRuns_FieldID: jfieldID?
-
-    override open var tabRuns: [Int32]! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tabRuns", fieldType: "[I", fieldCache: &MetalTabbedPaneUI.tabRuns_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "tabRuns", fieldType: "[I", fieldCache: &MetalTabbedPaneUI.tabRuns_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.runCount
-
-    private static var runCount_FieldID: jfieldID?
-
-    override open var runCount: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "runCount", fieldType: "I", fieldCache: &MetalTabbedPaneUI.runCount_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "runCount", fieldType: "I", fieldCache: &MetalTabbedPaneUI.runCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.selectedRun
-
-    private static var selectedRun_FieldID: jfieldID?
-
-    override open var selectedRun: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "selectedRun", fieldType: "I", fieldCache: &MetalTabbedPaneUI.selectedRun_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "selectedRun", fieldType: "I", fieldCache: &MetalTabbedPaneUI.selectedRun_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Rectangle[] javax.swing.plaf.basic.BasicTabbedPaneUI.rects
-
-    private static var rects_FieldID: jfieldID?
-
-    override open var rects: [Rectangle]! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "rects", fieldType: "[Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.rects_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Rectangle](), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "rects", fieldType: "[Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.rects_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.lightHighlight_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -447,13 +275,12 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     override open var maxTabHeight: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "maxTabHeight", fieldType: "I", fieldCache: &MetalTabbedPaneUI.maxTabHeight_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "maxTabHeight", fieldType: "I", fieldCache: &MetalTabbedPaneUI.maxTabHeight_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "maxTabHeight", fieldType: "I", fieldCache: &MetalTabbedPaneUI.maxTabHeight_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -464,50 +291,19 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     override open var maxTabWidth: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "maxTabWidth", fieldType: "I", fieldCache: &MetalTabbedPaneUI.maxTabWidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "maxTabWidth", fieldType: "I", fieldCache: &MetalTabbedPaneUI.maxTabWidth_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "maxTabWidth", fieldType: "I", fieldCache: &MetalTabbedPaneUI.maxTabWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.tabChangeListener
+    /// private javax.swing.InputMap javax.swing.plaf.basic.BasicTabbedPaneUI.mnemonicInputMap
 
-    private static var tabChangeListener_FieldID: jfieldID?
-
-    override open var tabChangeListener: ChangeListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tabChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalTabbedPaneUI.tabChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "tabChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalTabbedPaneUI.tabChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.propertyChangeListener
-
-    private static var propertyChangeListener_FieldID: jfieldID?
-
-    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalTabbedPaneUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalTabbedPaneUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private java.util.Hashtable javax.swing.plaf.basic.BasicTabbedPaneUI.mnemonicToIndexMap
 
     /// protected java.awt.event.MouseListener javax.swing.plaf.basic.BasicTabbedPaneUI.mouseListener
 
@@ -515,8 +311,8 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     override open var mouseListener: java_awt.MouseListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "mouseListener", fieldType: "Ljava/awt/event/MouseListener;", fieldCache: &MetalTabbedPaneUI.mouseListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "mouseListener", fieldType: "Ljava/awt/event/MouseListener;", fieldCache: &MetalTabbedPaneUI.mouseListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.MouseListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -526,133 +322,364 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         }
     }
 
-    /// protected java.awt.event.FocusListener javax.swing.plaf.basic.BasicTabbedPaneUI.focusListener
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.propertyChangeListener
 
-    private static var focusListener_FieldID: jfieldID?
+    private static var propertyChangeListener_FieldID: jfieldID?
 
-    override open var focusListener: java_awt.FocusListener! {
+    override open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &MetalTabbedPaneUI.focusListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.FocusListenerForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalTabbedPaneUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "focusListener", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &MetalTabbedPaneUI.focusListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalTabbedPaneUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// private java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.currentPadInsets
+    /// protected java.awt.Rectangle[] javax.swing.plaf.basic.BasicTabbedPaneUI.rects
 
-    /// private java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.currentTabAreaInsets
+    private static var rects_FieldID: jfieldID?
 
-    /// private java.awt.Component javax.swing.plaf.basic.BasicTabbedPaneUI.visibleComponent
-
-    /// private java.util.Vector javax.swing.plaf.basic.BasicTabbedPaneUI.htmlViews
-
-    /// private java.util.Hashtable javax.swing.plaf.basic.BasicTabbedPaneUI.mnemonicToIndexMap
-
-    /// private javax.swing.InputMap javax.swing.plaf.basic.BasicTabbedPaneUI.mnemonicInputMap
-
-    /// private javax.swing.plaf.basic.BasicTabbedPaneUI$ScrollableTabSupport javax.swing.plaf.basic.BasicTabbedPaneUI.tabScroller
-
-    /// private javax.swing.plaf.basic.BasicTabbedPaneUI$TabContainer javax.swing.plaf.basic.BasicTabbedPaneUI.tabContainer
-
-    /// protected transient java.awt.Rectangle javax.swing.plaf.basic.BasicTabbedPaneUI.calcRect
-
-    private static var calcRect_FieldID: jfieldID?
-
-    override open var calcRect: java_awt.Rectangle! {
+    override open var rects: [Rectangle]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "calcRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.calcRect_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Rectangle( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "rects", fieldType: "[Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.rects_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Rectangle].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "calcRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.calcRect_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "rects", fieldType: "[Ljava/awt/Rectangle;", fieldCache: &MetalTabbedPaneUI.rects_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.focusIndex
+    /// protected javax.swing.KeyStroke javax.swing.plaf.basic.BasicTabbedPaneUI.rightKey
 
-    /// private javax.swing.plaf.basic.BasicTabbedPaneUI$Handler javax.swing.plaf.basic.BasicTabbedPaneUI.handler
+    private static var rightKey_FieldID: jfieldID?
+
+    override open var rightKey: KeyStroke! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.rightKey_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? KeyStroke( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "rightKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.rightKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.rolloverTabIndex
 
-    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.isRunsDirty
+    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.runCount
 
-    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.calculatedBaseline
+    private static var runCount_FieldID: jfieldID?
 
-    /// private int javax.swing.plaf.basic.BasicTabbedPaneUI.baseline
+    override open var runCount: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "runCount", fieldType: "I", fieldCache: &MetalTabbedPaneUI.runCount_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "runCount", fieldType: "I", fieldCache: &MetalTabbedPaneUI.runCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
-    /// private static int[] javax.swing.plaf.basic.BasicTabbedPaneUI.xCropLen
+    /// private java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.selectedColor
 
-    /// private static int[] javax.swing.plaf.basic.BasicTabbedPaneUI.yCropLen
+    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.selectedRun
 
-    /// private static final int javax.swing.plaf.basic.BasicTabbedPaneUI.CROP_SEGMENT
+    private static var selectedRun_FieldID: jfieldID?
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    override open var selectedRun: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "selectedRun", fieldType: "I", fieldCache: &MetalTabbedPaneUI.selectedRun_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "selectedRun", fieldType: "I", fieldCache: &MetalTabbedPaneUI.selectedRun_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
-    /// public static final int javax.swing.SwingConstants.TOP
+    /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.selectedTabPadInsets
 
-    /// public static final int javax.swing.SwingConstants.LEFT
+    private static var selectedTabPadInsets_FieldID: jfieldID?
+
+    override open var selectedTabPadInsets: java_awt.Insets! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "selectedTabPadInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.selectedTabPadInsets_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "selectedTabPadInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.selectedTabPadInsets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicTabbedPaneUI.shadow
+
+    private static var shadow_FieldID: jfieldID?
+
+    override open var shadow: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.shadow_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &MetalTabbedPaneUI.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.tabAreaInsets
+
+    private static var tabAreaInsets_FieldID: jfieldID?
+
+    override open var tabAreaInsets: java_awt.Insets! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "tabAreaInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabAreaInsets_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "tabAreaInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabAreaInsets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicTabbedPaneUI.tabChangeListener
+
+    private static var tabChangeListener_FieldID: jfieldID?
+
+    override open var tabChangeListener: ChangeListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "tabChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalTabbedPaneUI.tabChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "tabChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalTabbedPaneUI.tabChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private javax.swing.plaf.basic.BasicTabbedPaneUI$TabContainer javax.swing.plaf.basic.BasicTabbedPaneUI.tabContainer
+
+    /// protected java.awt.Insets javax.swing.plaf.basic.BasicTabbedPaneUI.tabInsets
+
+    private static var tabInsets_FieldID: jfieldID?
+
+    override open var tabInsets: java_awt.Insets! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "tabInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabInsets_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Insets( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "tabInsets", fieldType: "Ljava/awt/Insets;", fieldCache: &MetalTabbedPaneUI.tabInsets_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JTabbedPane javax.swing.plaf.basic.BasicTabbedPaneUI.tabPane
+
+    private static var tabPane_FieldID: jfieldID?
+
+    override open var tabPane: JTabbedPane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "tabPane", fieldType: "Ljavax/swing/JTabbedPane;", fieldCache: &MetalTabbedPaneUI.tabPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JTabbedPane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "tabPane", fieldType: "Ljavax/swing/JTabbedPane;", fieldCache: &MetalTabbedPaneUI.tabPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.tabRunOverlay
+
+    private static var tabRunOverlay_FieldID: jfieldID?
+
+    override open var tabRunOverlay: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "tabRunOverlay", fieldType: "I", fieldCache: &MetalTabbedPaneUI.tabRunOverlay_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "tabRunOverlay", fieldType: "I", fieldCache: &MetalTabbedPaneUI.tabRunOverlay_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int[] javax.swing.plaf.basic.BasicTabbedPaneUI.tabRuns
+
+    private static var tabRuns_FieldID: jfieldID?
+
+    override open var tabRuns: [Int32]! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "tabRuns", fieldType: "[I", fieldCache: &MetalTabbedPaneUI.tabRuns_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "tabRuns", fieldType: "[I", fieldCache: &MetalTabbedPaneUI.tabRuns_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private javax.swing.plaf.basic.BasicTabbedPaneUI$ScrollableTabSupport javax.swing.plaf.basic.BasicTabbedPaneUI.tabScroller
+
+    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.tabsOpaque
+
+    /// private boolean javax.swing.plaf.basic.BasicTabbedPaneUI.tabsOverlapBorder
+
+    /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI.textIconGap
+
+    private static var textIconGap_FieldID: jfieldID?
+
+    override open var textIconGap: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "textIconGap", fieldType: "I", fieldCache: &MetalTabbedPaneUI.textIconGap_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "textIconGap", fieldType: "I", fieldCache: &MetalTabbedPaneUI.textIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.KeyStroke javax.swing.plaf.basic.BasicTabbedPaneUI.upKey
+
+    private static var upKey_FieldID: jfieldID?
+
+    override open var upKey: KeyStroke! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.upKey_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? KeyStroke( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "upKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &MetalTabbedPaneUI.upKey_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private java.awt.Component javax.swing.plaf.basic.BasicTabbedPaneUI.visibleComponent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.plaf.metal.MetalTabbedPaneUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalTabbedPaneUI", classCache: &MetalTabbedPaneUI.MetalTabbedPaneUIJNIClass, methodSig: "()V", methodCache: &MetalTabbedPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
-
-    /// public void javax.swing.plaf.metal.MetalTabbedPaneUI.update(java.awt.Graphics,javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalTabbedPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalTabbedPaneUI", classCache: &MetalTabbedPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -663,85 +690,58 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         return createUI( x: _x )
     }
 
-    /// public void javax.swing.plaf.metal.MetalTabbedPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.calculateMaxTabHeight(int)
 
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.installDefaults()
+    private static var calculateMaxTabHeight_MethodID_3: jmethodID?
 
-    private static var installDefaults_MethodID_3: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func calculateMaxTabHeight( tabPlacement: Int ) -> Int {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalTabbedPaneUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateMaxTabHeight", methodSig: "(I)I", methodCache: &MetalTabbedPaneUI.calculateMaxTabHeight_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+    override open func calculateMaxTabHeight( _ _tabPlacement: Int ) -> Int {
+        return calculateMaxTabHeight( tabPlacement: _tabPlacement )
+    }
 
     /// protected java.awt.LayoutManager javax.swing.plaf.metal.MetalTabbedPaneUI.createLayoutManager()
 
     private static var createLayoutManager_MethodID_4: jmethodID?
 
     override open func createLayoutManager() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &MetalTabbedPaneUI.createLayoutManager_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
     }
 
 
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintTopTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
+    /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.getBaselineOffset()
 
-    private static var paintTopTabBorder_MethodID_5: jmethodID?
+    private static var getBaselineOffset_MethodID_5: jmethodID?
 
-    open func paintTopTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+    override open func getBaselineOffset() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: btm, locals: &__locals )
-        __args[7] = JNIType.toJava( value: rght, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTopTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintTopTabBorder_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaselineOffset", methodSig: "()I", methodCache: &MetalTabbedPaneUI.getBaselineOffset_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func paintTopTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
-        paintTopTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
-    }
-
-    /// protected boolean javax.swing.plaf.metal.MetalTabbedPaneUI.shouldFillGap(int,int,int,int)
-
-    private static var shouldFillGap_MethodID_6: jmethodID?
-
-    open func shouldFillGap( currentRun: Int, tabIndex: Int, x: Int, y: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: currentRun, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldFillGap", methodSig: "(IIII)Z", methodCache: &MetalTabbedPaneUI.shouldFillGap_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func shouldFillGap( _ _currentRun: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int ) -> Bool {
-        return shouldFillGap( currentRun: _currentRun, tabIndex: _tabIndex, x: _x, y: _y )
-    }
 
     /// protected java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.getColorForGap(int,int,int)
 
-    private static var getColorForGap_MethodID_7: jmethodID?
+    private static var getColorForGap_MethodID_6: jmethodID?
 
     open func getColorForGap( currentRun: Int, x: Int, y: Int ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: currentRun, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorForGap", methodSig: "(III)Ljava/awt/Color;", methodCache: &MetalTabbedPaneUI.getColorForGap_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(currentRun) )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getColorForGap", methodSig: "(III)Ljava/awt/Color;", methodCache: &MetalTabbedPaneUI.getColorForGap_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -750,116 +750,22 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
         return getColorForGap( currentRun: _currentRun, x: _x, y: _y )
     }
 
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintLeftTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
-
-    private static var paintLeftTabBorder_MethodID_8: jmethodID?
-
-    open func paintLeftTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: btm, locals: &__locals )
-        __args[7] = JNIType.toJava( value: rght, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLeftTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintLeftTabBorder_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func paintLeftTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
-        paintLeftTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintBottomTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
-
-    private static var paintBottomTabBorder_MethodID_9: jmethodID?
-
-    open func paintBottomTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: btm, locals: &__locals )
-        __args[7] = JNIType.toJava( value: rght, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBottomTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintBottomTabBorder_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func paintBottomTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
-        paintBottomTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintRightTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
-
-    private static var paintRightTabBorder_MethodID_10: jmethodID?
-
-    open func paintRightTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 9 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        __args[6] = JNIType.toJava( value: btm, locals: &__locals )
-        __args[7] = JNIType.toJava( value: rght, locals: &__locals )
-        __args[8] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRightTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintRightTabBorder_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func paintRightTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
-        paintRightTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintHighlightBelowTab()
-
-    private static var paintHighlightBelowTab_MethodID_11: jmethodID?
-
-    open func paintHighlightBelowTab() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHighlightBelowTab", methodSig: "()V", methodCache: &MetalTabbedPaneUI.paintHighlightBelowTab_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// private boolean javax.swing.plaf.metal.MetalTabbedPaneUI.isLastInRun(int)
-
-    /// private java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.getUnselectedBackgroundAt(int)
-
     /// int javax.swing.plaf.metal.MetalTabbedPaneUI.getRolloverTabIndex()
 
-    /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.getBaselineOffset()
-
-    private static var getBaselineOffset_MethodID_12: jmethodID?
-
-    override open func getBaselineOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBaselineOffset", methodSig: "()I", methodCache: &MetalTabbedPaneUI.getBaselineOffset_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.getTabLabelShiftX(int,int,boolean)
 
-    private static var getTabLabelShiftX_MethodID_13: jmethodID?
+    private static var getTabLabelShiftX_MethodID_7: jmethodID?
 
     override open func getTabLabelShiftX( tabPlacement: Int, tabIndex: Int, isSelected: Bool ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftX", methodSig: "(IIZ)I", methodCache: &MetalTabbedPaneUI.getTabLabelShiftX_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(tabIndex) )
+        __args[2] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftX", methodSig: "(IIZ)I", methodCache: &MetalTabbedPaneUI.getTabLabelShiftX_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     override open func getTabLabelShiftX( _ _tabPlacement: Int, _ _tabIndex: Int, _ _isSelected: Bool ) -> Int {
@@ -868,198 +774,339 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.getTabLabelShiftY(int,int,boolean)
 
-    private static var getTabLabelShiftY_MethodID_14: jmethodID?
+    private static var getTabLabelShiftY_MethodID_8: jmethodID?
 
     override open func getTabLabelShiftY( tabPlacement: Int, tabIndex: Int, isSelected: Bool ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftY", methodSig: "(IIZ)I", methodCache: &MetalTabbedPaneUI.getTabLabelShiftY_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(tabIndex) )
+        __args[2] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabLabelShiftY", methodSig: "(IIZ)I", methodCache: &MetalTabbedPaneUI.getTabLabelShiftY_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     override open func getTabLabelShiftY( _ _tabPlacement: Int, _ _tabIndex: Int, _ _isSelected: Bool ) -> Int {
         return getTabLabelShiftY( tabPlacement: _tabPlacement, tabIndex: _tabIndex, isSelected: _isSelected )
     }
 
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintFocusIndicator(java.awt.Graphics,int,java.awt.Rectangle[],int,java.awt.Rectangle,java.awt.Rectangle,boolean)
-
-    private static var paintFocusIndicator_MethodID_15: jmethodID?
-
-    override open func paintFocusIndicator( g: java_awt.Graphics?, tabPlacement: Int, rects: [Rectangle]?, tabIndex: Int, iconRect: java_awt.Rectangle?, textRect: java_awt.Rectangle?, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: rects, locals: &__locals )
-        __args[3] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[4] = JNIType.toJava( value: iconRect, locals: &__locals )
-        __args[5] = JNIType.toJava( value: textRect, locals: &__locals )
-        __args[6] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocusIndicator", methodSig: "(Ljava/awt/Graphics;I[Ljava/awt/Rectangle;ILjava/awt/Rectangle;Ljava/awt/Rectangle;Z)V", methodCache: &MetalTabbedPaneUI.paintFocusIndicator_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    override open func paintFocusIndicator( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _rects: [Rectangle]?, _ _tabIndex: Int, _ _iconRect: java_awt.Rectangle?, _ _textRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
-        paintFocusIndicator( g: _g, tabPlacement: _tabPlacement, rects: _rects, tabIndex: _tabIndex, iconRect: _iconRect, textRect: _textRect, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintTabBorder(java.awt.Graphics,int,int,int,int,int,int,boolean)
-
-    private static var paintTabBorder_MethodID_16: jmethodID?
-
-    override open func paintTabBorder( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, x: Int, y: Int, w: Int, h: Int, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: w, locals: &__locals )
-        __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        __args[7] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBorder", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintTabBorder_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    override open func paintTabBorder( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _isSelected: Bool ) {
-        paintTabBorder( g: _g, tabPlacement: _tabPlacement, tabIndex: _tabIndex, x: _x, y: _y, w: _w, h: _h, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintTabBackground(java.awt.Graphics,int,int,int,int,int,int,boolean)
-
-    private static var paintTabBackground_MethodID_17: jmethodID?
-
-    override open func paintTabBackground( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, x: Int, y: Int, w: Int, h: Int, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: tabIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: w, locals: &__locals )
-        __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        __args[7] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBackground", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintTabBackground_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    override open func paintTabBackground( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _isSelected: Bool ) {
-        paintTabBackground( g: _g, tabPlacement: _tabPlacement, tabIndex: _tabIndex, x: _x, y: _y, w: _w, h: _h, isSelected: _isSelected )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderTopEdge(java.awt.Graphics,int,int,int,int,int,int)
-
-    private static var paintContentBorderTopEdge_MethodID_18: jmethodID?
-
-    override open func paintContentBorderTopEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: w, locals: &__locals )
-        __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderTopEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderTopEdge_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    override open func paintContentBorderTopEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintContentBorderTopEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderLeftEdge(java.awt.Graphics,int,int,int,int,int,int)
-
-    private static var paintContentBorderLeftEdge_MethodID_19: jmethodID?
-
-    override open func paintContentBorderLeftEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: w, locals: &__locals )
-        __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderLeftEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderLeftEdge_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    override open func paintContentBorderLeftEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintContentBorderLeftEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderBottomEdge(java.awt.Graphics,int,int,int,int,int,int)
-
-    private static var paintContentBorderBottomEdge_MethodID_20: jmethodID?
-
-    override open func paintContentBorderBottomEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: w, locals: &__locals )
-        __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderBottomEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderBottomEdge_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    override open func paintContentBorderBottomEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintContentBorderBottomEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderRightEdge(java.awt.Graphics,int,int,int,int,int,int)
-
-    private static var paintContentBorderRightEdge_MethodID_21: jmethodID?
-
-    override open func paintContentBorderRightEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[2] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: x, locals: &__locals )
-        __args[4] = JNIType.toJava( value: y, locals: &__locals )
-        __args[5] = JNIType.toJava( value: w, locals: &__locals )
-        __args[6] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderRightEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderRightEdge_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    override open func paintContentBorderRightEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintContentBorderRightEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.getTabRunOverlay(int)
 
-    private static var getTabRunOverlay_MethodID_22: jmethodID?
+    private static var getTabRunOverlay_MethodID_9: jmethodID?
 
     override open func getTabRunOverlay( tabPlacement: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunOverlay", methodSig: "(I)I", methodCache: &MetalTabbedPaneUI.getTabRunOverlay_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunOverlay", methodSig: "(I)I", methodCache: &MetalTabbedPaneUI.getTabRunOverlay_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     override open func getTabRunOverlay( _ _tabPlacement: Int ) -> Int {
         return getTabRunOverlay( tabPlacement: _tabPlacement )
     }
 
+    /// private java.awt.Color javax.swing.plaf.metal.MetalTabbedPaneUI.getUnselectedBackgroundAt(int)
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.installDefaults()
+
+    private static var installDefaults_MethodID_10: jmethodID?
+
+    override open func installDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalTabbedPaneUI.installDefaults_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// private boolean javax.swing.plaf.metal.MetalTabbedPaneUI.isLastInRun(int)
+
+    /// public void javax.swing.plaf.metal.MetalTabbedPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintBottomTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
+
+    private static var paintBottomTabBorder_MethodID_11: jmethodID?
+
+    open func paintBottomTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        __args[0] = jvalue( i: jint(tabIndex) )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(btm) )
+        __args[7] = jvalue( i: jint(rght) )
+        __args[8] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBottomTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintBottomTabBorder_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func paintBottomTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
+        paintBottomTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderBottomEdge(java.awt.Graphics,int,int,int,int,int,int)
+
+    private static var paintContentBorderBottomEdge_MethodID_12: jmethodID?
+
+    override open func paintContentBorderBottomEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = jvalue( i: jint(selectedIndex) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(w) )
+        __args[6] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderBottomEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderBottomEdge_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    override open func paintContentBorderBottomEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintContentBorderBottomEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderLeftEdge(java.awt.Graphics,int,int,int,int,int,int)
+
+    private static var paintContentBorderLeftEdge_MethodID_13: jmethodID?
+
+    override open func paintContentBorderLeftEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = jvalue( i: jint(selectedIndex) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(w) )
+        __args[6] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderLeftEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderLeftEdge_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func paintContentBorderLeftEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintContentBorderLeftEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderRightEdge(java.awt.Graphics,int,int,int,int,int,int)
+
+    private static var paintContentBorderRightEdge_MethodID_14: jmethodID?
+
+    override open func paintContentBorderRightEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = jvalue( i: jint(selectedIndex) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(w) )
+        __args[6] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderRightEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderRightEdge_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    override open func paintContentBorderRightEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintContentBorderRightEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintContentBorderTopEdge(java.awt.Graphics,int,int,int,int,int,int)
+
+    private static var paintContentBorderTopEdge_MethodID_15: jmethodID?
+
+    override open func paintContentBorderTopEdge( g: java_awt.Graphics?, tabPlacement: Int, selectedIndex: Int, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = jvalue( i: jint(selectedIndex) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(w) )
+        __args[6] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintContentBorderTopEdge", methodSig: "(Ljava/awt/Graphics;IIIIII)V", methodCache: &MetalTabbedPaneUI.paintContentBorderTopEdge_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func paintContentBorderTopEdge( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _selectedIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintContentBorderTopEdge( g: _g, tabPlacement: _tabPlacement, selectedIndex: _selectedIndex, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintFocusIndicator(java.awt.Graphics,int,java.awt.Rectangle[],int,java.awt.Rectangle,java.awt.Rectangle,boolean)
+
+    private static var paintFocusIndicator_MethodID_16: jmethodID?
+
+    override open func paintFocusIndicator( g: java_awt.Graphics?, tabPlacement: Int, rects: [Rectangle]?, tabIndex: Int, iconRect: java_awt.Rectangle?, textRect: java_awt.Rectangle?, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = JNIType.toJava( value: rects, locals: &__locals )
+        __args[3] = jvalue( i: jint(tabIndex) )
+        __args[4] = JNIType.toJava( value: iconRect, locals: &__locals )
+        __args[5] = JNIType.toJava( value: textRect, locals: &__locals )
+        __args[6] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocusIndicator", methodSig: "(Ljava/awt/Graphics;I[Ljava/awt/Rectangle;ILjava/awt/Rectangle;Ljava/awt/Rectangle;Z)V", methodCache: &MetalTabbedPaneUI.paintFocusIndicator_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    override open func paintFocusIndicator( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _rects: [Rectangle]?, _ _tabIndex: Int, _ _iconRect: java_awt.Rectangle?, _ _textRect: java_awt.Rectangle?, _ _isSelected: Bool ) {
+        paintFocusIndicator( g: _g, tabPlacement: _tabPlacement, rects: _rects, tabIndex: _tabIndex, iconRect: _iconRect, textRect: _textRect, isSelected: _isSelected )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintHighlightBelowTab()
+
+    private static var paintHighlightBelowTab_MethodID_17: jmethodID?
+
+    open func paintHighlightBelowTab() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintHighlightBelowTab", methodSig: "()V", methodCache: &MetalTabbedPaneUI.paintHighlightBelowTab_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintLeftTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
+
+    private static var paintLeftTabBorder_MethodID_18: jmethodID?
+
+    open func paintLeftTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        __args[0] = jvalue( i: jint(tabIndex) )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(btm) )
+        __args[7] = jvalue( i: jint(rght) )
+        __args[8] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintLeftTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintLeftTabBorder_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func paintLeftTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
+        paintLeftTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintRightTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
+
+    private static var paintRightTabBorder_MethodID_19: jmethodID?
+
+    open func paintRightTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        __args[0] = jvalue( i: jint(tabIndex) )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(btm) )
+        __args[7] = jvalue( i: jint(rght) )
+        __args[8] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintRightTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintRightTabBorder_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func paintRightTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
+        paintRightTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintTabBackground(java.awt.Graphics,int,int,int,int,int,int,boolean)
+
+    private static var paintTabBackground_MethodID_20: jmethodID?
+
+    override open func paintTabBackground( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, x: Int, y: Int, w: Int, h: Int, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = jvalue( i: jint(tabIndex) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(w) )
+        __args[6] = jvalue( i: jint(h) )
+        __args[7] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBackground", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintTabBackground_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    override open func paintTabBackground( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _isSelected: Bool ) {
+        paintTabBackground( g: _g, tabPlacement: _tabPlacement, tabIndex: _tabIndex, x: _x, y: _y, w: _w, h: _h, isSelected: _isSelected )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintTabBorder(java.awt.Graphics,int,int,int,int,int,int,boolean)
+
+    private static var paintTabBorder_MethodID_21: jmethodID?
+
+    override open func paintTabBorder( g: java_awt.Graphics?, tabPlacement: Int, tabIndex: Int, x: Int, y: Int, w: Int, h: Int, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = jvalue( i: jint(tabPlacement) )
+        __args[2] = jvalue( i: jint(tabIndex) )
+        __args[3] = jvalue( i: jint(x) )
+        __args[4] = jvalue( i: jint(y) )
+        __args[5] = jvalue( i: jint(w) )
+        __args[6] = jvalue( i: jint(h) )
+        __args[7] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTabBorder", methodSig: "(Ljava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintTabBorder_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    override open func paintTabBorder( _ _g: java_awt.Graphics?, _ _tabPlacement: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _isSelected: Bool ) {
+        paintTabBorder( g: _g, tabPlacement: _tabPlacement, tabIndex: _tabIndex, x: _x, y: _y, w: _w, h: _h, isSelected: _isSelected )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI.paintTopTabBorder(int,java.awt.Graphics,int,int,int,int,int,int,boolean)
+
+    private static var paintTopTabBorder_MethodID_22: jmethodID?
+
+    open func paintTopTabBorder( tabIndex: Int, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int, btm: Int, rght: Int, isSelected: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 9 )
+        __args[0] = jvalue( i: jint(tabIndex) )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        __args[6] = jvalue( i: jint(btm) )
+        __args[7] = jvalue( i: jint(rght) )
+        __args[8] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTopTabBorder", methodSig: "(ILjava/awt/Graphics;IIIIIIZ)V", methodCache: &MetalTabbedPaneUI.paintTopTabBorder_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func paintTopTabBorder( _ _tabIndex: Int, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int, _ _btm: Int, _ _rght: Int, _ _isSelected: Bool ) {
+        paintTopTabBorder( tabIndex: _tabIndex, g: _g, x: _x, y: _y, w: _w, h: _h, btm: _btm, rght: _rght, isSelected: _isSelected )
+    }
+
+    /// protected boolean javax.swing.plaf.metal.MetalTabbedPaneUI.shouldFillGap(int,int,int,int)
+
+    private static var shouldFillGap_MethodID_23: jmethodID?
+
+    open func shouldFillGap( currentRun: Int, tabIndex: Int, x: Int, y: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(currentRun) )
+        __args[1] = jvalue( i: jint(tabIndex) )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldFillGap", methodSig: "(IIII)Z", methodCache: &MetalTabbedPaneUI.shouldFillGap_MethodID_23, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func shouldFillGap( _ _currentRun: Int, _ _tabIndex: Int, _ _x: Int, _ _y: Int ) -> Bool {
+        return shouldFillGap( currentRun: _currentRun, tabIndex: _tabIndex, x: _x, y: _y )
+    }
+
     /// protected boolean javax.swing.plaf.metal.MetalTabbedPaneUI.shouldPadTabRun(int,int)
 
-    private static var shouldPadTabRun_MethodID_23: jmethodID?
+    private static var shouldPadTabRun_MethodID_24: jmethodID?
 
     override open func shouldPadTabRun( tabPlacement: Int, run: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: run, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldPadTabRun", methodSig: "(II)Z", methodCache: &MetalTabbedPaneUI.shouldPadTabRun_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(run) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldPadTabRun", methodSig: "(II)Z", methodCache: &MetalTabbedPaneUI.shouldPadTabRun_MethodID_24, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func shouldPadTabRun( _ _tabPlacement: Int, _ _run: Int ) -> Bool {
@@ -1068,36 +1115,24 @@ open class MetalTabbedPaneUI: BasicTabbedPaneUI {
 
     /// protected boolean javax.swing.plaf.metal.MetalTabbedPaneUI.shouldRotateTabRuns(int,int)
 
-    private static var shouldRotateTabRuns_MethodID_24: jmethodID?
+    private static var shouldRotateTabRuns_MethodID_25: jmethodID?
 
     open func shouldRotateTabRuns( tabPlacement: Int, selectedRun: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: selectedRun, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldRotateTabRuns", methodSig: "(II)Z", methodCache: &MetalTabbedPaneUI.shouldRotateTabRuns_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(selectedRun) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldRotateTabRuns", methodSig: "(II)Z", methodCache: &MetalTabbedPaneUI.shouldRotateTabRuns_MethodID_25, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func shouldRotateTabRuns( _ _tabPlacement: Int, _ _selectedRun: Int ) -> Bool {
         return shouldRotateTabRuns( tabPlacement: _tabPlacement, selectedRun: _selectedRun )
     }
 
-    /// protected int javax.swing.plaf.metal.MetalTabbedPaneUI.calculateMaxTabHeight(int)
+    /// public void javax.swing.plaf.metal.MetalTabbedPaneUI.update(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var calculateMaxTabHeight_MethodID_25: jmethodID?
-
-    override open func calculateMaxTabHeight( tabPlacement: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "calculateMaxTabHeight", methodSig: "(I)I", methodCache: &MetalTabbedPaneUI.calculateMaxTabHeight_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func calculateMaxTabHeight( _ _tabPlacement: Int ) -> Int {
-        return calculateMaxTabHeight( tabPlacement: _tabPlacement )
-    }
+    // Skipping method: false true false false false 
 
 }
 

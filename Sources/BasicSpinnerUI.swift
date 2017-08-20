@@ -17,14 +17,24 @@ open class BasicSpinnerUI: SpinnerUI {
 
     private static var BasicSpinnerUIJNIClass: jclass?
 
+    /// private static final javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler javax.swing.plaf.basic.BasicSpinnerUI.nextButtonHandler
+
+    /// private static final javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler javax.swing.plaf.basic.BasicSpinnerUI.previousButtonHandler
+
+    /// private static final java.awt.Dimension javax.swing.plaf.basic.BasicSpinnerUI.zeroSize
+
+    /// private javax.swing.plaf.basic.BasicSpinnerUI$Handler javax.swing.plaf.basic.BasicSpinnerUI.handler
+
+    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSpinnerUI.propertyChangeListener
+
     /// protected javax.swing.JSpinner javax.swing.plaf.basic.BasicSpinnerUI.spinner
 
     private static var spinner_FieldID: jfieldID?
 
     open var spinner: JSpinner! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "spinner", fieldType: "Ljavax/swing/JSpinner;", fieldCache: &BasicSpinnerUI.spinner_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "spinner", fieldType: "Ljavax/swing/JSpinner;", fieldCache: &BasicSpinnerUI.spinner_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JSpinner( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -34,23 +44,13 @@ open class BasicSpinnerUI: SpinnerUI {
         }
     }
 
-    /// private javax.swing.plaf.basic.BasicSpinnerUI$Handler javax.swing.plaf.basic.BasicSpinnerUI.handler
-
-    /// private static final javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler javax.swing.plaf.basic.BasicSpinnerUI.nextButtonHandler
-
-    /// private static final javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler javax.swing.plaf.basic.BasicSpinnerUI.previousButtonHandler
-
-    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSpinnerUI.propertyChangeListener
-
-    /// private static final java.awt.Dimension javax.swing.plaf.basic.BasicSpinnerUI.zeroSize
-
     /// public javax.swing.plaf.basic.BasicSpinnerUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSpinnerUI", classCache: &BasicSpinnerUI.BasicSpinnerUIJNIClass, methodSig: "()V", methodCache: &BasicSpinnerUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -58,23 +58,31 @@ open class BasicSpinnerUI: SpinnerUI {
 
     /// static java.awt.Dimension javax.swing.plaf.basic.BasicSpinnerUI.access$100()
 
+    // Skipping method: true false false false false 
+
     /// static void javax.swing.plaf.basic.BasicSpinnerUI.access$200(javax.swing.plaf.basic.BasicSpinnerUI)
+
+    // Skipping method: true false false false false 
 
     /// static javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler javax.swing.plaf.basic.BasicSpinnerUI.access$300()
 
+    // Skipping method: true false false false false 
+
     /// static javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler javax.swing.plaf.basic.BasicSpinnerUI.access$400()
+
+    // Skipping method: true false false false false 
 
     /// static void javax.swing.plaf.basic.BasicSpinnerUI.access$500(javax.swing.plaf.basic.BasicSpinnerUI,javax.swing.JComponent)
 
-    /// private javax.swing.plaf.basic.BasicSpinnerUI$Handler javax.swing.plaf.basic.BasicSpinnerUI.getHandler()
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicSpinnerUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicSpinnerUI", classCache: &BasicSpinnerUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -85,121 +93,112 @@ open class BasicSpinnerUI: SpinnerUI {
         return createUI( c: _c )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.replaceEditor(javax.swing.JComponent,javax.swing.JComponent)
+    /// static void javax.swing.plaf.basic.BasicSpinnerUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    private static var replaceEditor_MethodID_3: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func replaceEditor( oldEditor: JComponent?, newEditor: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    /// private java.awt.Component javax.swing.plaf.basic.BasicSpinnerUI.createArrowButton(int)
+
+    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicSpinnerUI.createEditor()
+
+    private static var createEditor_MethodID_3: jmethodID?
+
+    open func createEditor() -> JComponent! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: oldEditor, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newEditor, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceEditor", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)V", methodCache: &BasicSpinnerUI.replaceEditor_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func replaceEditor( _ _oldEditor: JComponent?, _ _newEditor: JComponent? ) {
-        replaceEditor( oldEditor: _oldEditor, newEditor: _newEditor )
-    }
-
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.maybeAdd(java.awt.Component,java.lang.String)
-
-    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installNextButtonListeners(java.awt.Component)
-
-    private static var installNextButtonListeners_MethodID_4: jmethodID?
-
-    open func installNextButtonListeners( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicSpinnerUI.createEditor_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicSpinnerUI.createLayout()
+
+    private static var createLayout_MethodID_4: jmethodID?
+
+    open func createLayout() -> java_awt.LayoutManager! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installNextButtonListeners", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSpinnerUI.installNextButtonListeners_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func installNextButtonListeners( _ _c: java_awt.Component? ) {
-        installNextButtonListeners( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installPreviousButtonListeners(java.awt.Component)
-
-    private static var installPreviousButtonListeners_MethodID_5: jmethodID?
-
-    open func installPreviousButtonListeners( c: java_awt.Component? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicSpinnerUI.createLayout_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Component javax.swing.plaf.basic.BasicSpinnerUI.createNextButton()
+
+    private static var createNextButton_MethodID_5: jmethodID?
+
+    open func createNextButton() -> java_awt.Component! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installPreviousButtonListeners", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSpinnerUI.installPreviousButtonListeners_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNextButton", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSpinnerUI.createNextButton_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-    open func installPreviousButtonListeners( _ _c: java_awt.Component? ) {
-        installPreviousButtonListeners( c: _c )
-    }
-
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.installButtonListeners(java.awt.Component,javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler)
 
     /// protected java.awt.Component javax.swing.plaf.basic.BasicSpinnerUI.createPreviousButton()
 
     private static var createPreviousButton_MethodID_6: jmethodID?
 
     open func createPreviousButton() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPreviousButton", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSpinnerUI.createPreviousButton_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
 
-    /// protected java.awt.Component javax.swing.plaf.basic.BasicSpinnerUI.createNextButton()
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSpinnerUI.createPropertyChangeListener()
 
-    private static var createNextButton_MethodID_7: jmethodID?
+    private static var createPropertyChangeListener_MethodID_7: jmethodID?
 
-    open func createNextButton() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createPropertyChangeListener() -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNextButton", methodSig: "()Ljava/awt/Component;", methodCache: &BasicSpinnerUI.createNextButton_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicSpinnerUI.createPropertyChangeListener_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
     }
 
 
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.updateEditorAlignment(javax.swing.JComponent)
+    /// public int javax.swing.plaf.basic.BasicSpinnerUI.getBaseline(javax.swing.JComponent,int,int)
 
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.maybeRemoveEditorBorder(javax.swing.JComponent)
+    // Skipping method: false true false false false 
 
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.installEditorBorderListener(javax.swing.JComponent)
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicSpinnerUI.getBaselineResizeBehavior(javax.swing.JComponent)
 
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.removeEditorBorderListener(javax.swing.JComponent)
+    // Skipping method: false true false false false 
 
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.updateEnabledState(java.awt.Container,boolean)
+    /// private javax.swing.plaf.basic.BasicSpinnerUI$Handler javax.swing.plaf.basic.BasicSpinnerUI.getHandler()
 
-    /// private void javax.swing.plaf.basic.BasicSpinnerUI.updateEnabledState()
+    /// private javax.swing.InputMap javax.swing.plaf.basic.BasicSpinnerUI.getInputMap(int)
 
-    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicSpinnerUI.createEditor()
-
-    private static var createEditor_MethodID_8: jmethodID?
-
-    open func createEditor() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEditor", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicSpinnerUI.createEditor_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicSpinnerUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicSpinnerUI.uninstallUI(javax.swing.JComponent)
-
-    /// static void javax.swing.plaf.basic.BasicSpinnerUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.installButtonListeners(java.awt.Component,javax.swing.plaf.basic.BasicSpinnerUI$ArrowButtonHandler)
 
     /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installDefaults()
 
-    private static var installDefaults_MethodID_9: jmethodID?
+    private static var installDefaults_MethodID_8: jmethodID?
 
     open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicSpinnerUI.installDefaults_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicSpinnerUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.installEditorBorderListener(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_9: jmethodID?
+
+    open func installKeyboardActions() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicSpinnerUI.installKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
@@ -208,78 +207,99 @@ open class BasicSpinnerUI: SpinnerUI {
     private static var installListeners_MethodID_10: jmethodID?
 
     open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicSpinnerUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
     }
 
 
-    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installKeyboardActions()
+    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installNextButtonListeners(java.awt.Component)
 
-    private static var installKeyboardActions_MethodID_11: jmethodID?
+    private static var installNextButtonListeners_MethodID_11: jmethodID?
 
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func installNextButtonListeners( c: java_awt.Component? ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicSpinnerUI.installKeyboardActions_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installNextButtonListeners", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSpinnerUI.installNextButtonListeners_MethodID_11, args: &__args, locals: &__locals )
     }
 
+    open func installNextButtonListeners( _ _c: java_awt.Component? ) {
+        installNextButtonListeners( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.installPreviousButtonListeners(java.awt.Component)
+
+    private static var installPreviousButtonListeners_MethodID_12: jmethodID?
+
+    open func installPreviousButtonListeners( c: java_awt.Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installPreviousButtonListeners", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSpinnerUI.installPreviousButtonListeners_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func installPreviousButtonListeners( _ _c: java_awt.Component? ) {
+        installPreviousButtonListeners( c: _c )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicSpinnerUI.installUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.maybeAdd(java.awt.Component,java.lang.String)
+
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.maybeRemoveEditorBorder(javax.swing.JComponent)
+
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.removeEditorBorderListener(javax.swing.JComponent)
+
+    /// protected void javax.swing.plaf.basic.BasicSpinnerUI.replaceEditor(javax.swing.JComponent,javax.swing.JComponent)
+
+    private static var replaceEditor_MethodID_13: jmethodID?
+
+    open func replaceEditor( oldEditor: JComponent?, newEditor: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: oldEditor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newEditor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceEditor", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)V", methodCache: &BasicSpinnerUI.replaceEditor_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func replaceEditor( _ _oldEditor: JComponent?, _ _newEditor: JComponent? ) {
+        replaceEditor( oldEditor: _oldEditor, newEditor: _newEditor )
+    }
 
     /// protected void javax.swing.plaf.basic.BasicSpinnerUI.uninstallDefaults()
 
-    private static var uninstallDefaults_MethodID_12: jmethodID?
+    private static var uninstallDefaults_MethodID_14: jmethodID?
 
     open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicSpinnerUI.uninstallDefaults_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicSpinnerUI.uninstallDefaults_MethodID_14, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicSpinnerUI.uninstallListeners()
 
-    private static var uninstallListeners_MethodID_13: jmethodID?
+    private static var uninstallListeners_MethodID_15: jmethodID?
 
     open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicSpinnerUI.uninstallListeners_MethodID_13, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicSpinnerUI.uninstallListeners_MethodID_15, args: &__args, locals: &__locals )
     }
 
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicSpinnerUI.createPropertyChangeListener()
+    /// public void javax.swing.plaf.basic.BasicSpinnerUI.uninstallUI(javax.swing.JComponent)
 
-    private static var createPropertyChangeListener_MethodID_14: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicSpinnerUI.createPropertyChangeListener_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.updateEditorAlignment(javax.swing.JComponent)
 
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.updateEnabledState(java.awt.Container,boolean)
 
-    /// private java.awt.Component javax.swing.plaf.basic.BasicSpinnerUI.createArrowButton(int)
-
-    /// public int javax.swing.plaf.basic.BasicSpinnerUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicSpinnerUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicSpinnerUI.createLayout()
-
-    private static var createLayout_MethodID_15: jmethodID?
-
-    open func createLayout() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayout", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicSpinnerUI.createLayout_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
-    /// private javax.swing.InputMap javax.swing.plaf.basic.BasicSpinnerUI.getInputMap(int)
+    /// private void javax.swing.plaf.basic.BasicSpinnerUI.updateEnabledState()
 
 }
 

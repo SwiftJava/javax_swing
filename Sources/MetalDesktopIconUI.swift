@@ -18,9 +18,15 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
 
     /// javax.swing.JButton javax.swing.plaf.metal.MetalDesktopIconUI.button
 
+    // Skipping field: true false false false false false 
+
     /// javax.swing.JLabel javax.swing.plaf.metal.MetalDesktopIconUI.label
 
+    // Skipping field: true false false false false false 
+
     /// javax.swing.plaf.metal.MetalDesktopIconUI$TitleListener javax.swing.plaf.metal.MetalDesktopIconUI.titleListener
+
+    // Skipping field: true false false false false false 
 
     /// private int javax.swing.plaf.metal.MetalDesktopIconUI.width
 
@@ -30,8 +36,8 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
 
     override open var desktopIcon: JInternalFrame_JDesktopIcon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "desktopIcon", fieldType: "Ljavax/swing/JInternalFrame$JDesktopIcon;", fieldCache: &MetalDesktopIconUI.desktopIcon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "desktopIcon", fieldType: "Ljavax/swing/JInternalFrame$JDesktopIcon;", fieldCache: &MetalDesktopIconUI.desktopIcon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JInternalFrame_JDesktopIcon( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -47,8 +53,8 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
 
     override open var frame: JInternalFrame! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &MetalDesktopIconUI.frame_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &MetalDesktopIconUI.frame_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JInternalFrame( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -64,8 +70,8 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
 
     override open var iconPane: JComponent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "iconPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &MetalDesktopIconUI.iconPane_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "iconPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &MetalDesktopIconUI.iconPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JComponent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -77,13 +83,15 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
 
     /// javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicDesktopIconUI.mouseInputListener
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.metal.MetalDesktopIconUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalDesktopIconUI", classCache: &MetalDesktopIconUI.MetalDesktopIconUIJNIClass, methodSig: "()V", methodCache: &MetalDesktopIconUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -94,8 +102,8 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalDesktopIconUI", classCache: &MetalDesktopIconUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -106,25 +114,37 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
         return createUI( c: _c )
     }
 
-    /// protected void javax.swing.plaf.metal.MetalDesktopIconUI.installDefaults()
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMaximumSize(javax.swing.JComponent)
 
-    private static var installDefaults_MethodID_3: jmethodID?
+    // Skipping method: false true false false false 
 
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalDesktopIconUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
-    }
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMinimumSize(javax.swing.JComponent)
 
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getPreferredSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.plaf.metal.MetalDesktopIconUI.installComponents()
 
-    private static var installComponents_MethodID_4: jmethodID?
+    private static var installComponents_MethodID_3: jmethodID?
 
     override open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &MetalDesktopIconUI.installComponents_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &MetalDesktopIconUI.installComponents_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.metal.MetalDesktopIconUI.installDefaults()
+
+    private static var installDefaults_MethodID_4: jmethodID?
+
+    override open func installDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalDesktopIconUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
 
@@ -133,8 +153,8 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
     private static var installListeners_MethodID_5: jmethodID?
 
     override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalDesktopIconUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -144,8 +164,8 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
     private static var uninstallComponents_MethodID_6: jmethodID?
 
     override open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &MetalDesktopIconUI.uninstallComponents_MethodID_6, args: &__args, locals: &__locals )
     }
 
@@ -155,17 +175,11 @@ open class MetalDesktopIconUI: BasicDesktopIconUI {
     private static var uninstallListeners_MethodID_7: jmethodID?
 
     override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &MetalDesktopIconUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
     }
 
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getPreferredSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMinimumSize(javax.swing.JComponent)
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalDesktopIconUI.getMaximumSize(javax.swing.JComponent)
 
 }
 

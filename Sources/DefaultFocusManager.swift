@@ -17,161 +17,155 @@ open class DefaultFocusManager: FocusManager {
 
     private static var DefaultFocusManagerJNIClass: jclass?
 
+    /// private final javax.swing.LayoutComparator javax.swing.DefaultFocusManager.comparator
+
     /// final java.awt.FocusTraversalPolicy javax.swing.DefaultFocusManager.gluePolicy
+
+    // Skipping field: true false false false false false 
 
     /// private final java.awt.FocusTraversalPolicy javax.swing.DefaultFocusManager.layoutPolicy
 
-    /// private final javax.swing.LayoutComparator javax.swing.DefaultFocusManager.comparator
-
     /// public static final java.lang.String javax.swing.FocusManager.FOCUS_MANAGER_CLASS_PROPERTY
+
+    // Skipping field: false true false false false false 
 
     /// private static boolean javax.swing.FocusManager.enabled
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.DefaultKeyboardFocusManager.focusLog
+    /// private static final java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.NULL_COMPONENT_WR
 
     /// private static final java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.NULL_WINDOW_WR
 
-    /// private static final java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.NULL_COMPONENT_WR
-
-    /// private java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.realOppositeWindowWR
-
-    /// private java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.realOppositeComponentWR
-
-    /// private int java.awt.DefaultKeyboardFocusManager.inSendMessage
-
-    /// private java.util.LinkedList java.awt.DefaultKeyboardFocusManager.enqueuedKeyEvents
-
-    /// private java.util.LinkedList java.awt.DefaultKeyboardFocusManager.typeAheadMarkers
+    /// private static final sun.util.logging.PlatformLogger java.awt.DefaultKeyboardFocusManager.focusLog
 
     /// private boolean java.awt.DefaultKeyboardFocusManager.consumeNextKeyTyped
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.focusLog
+    /// private java.util.LinkedList java.awt.DefaultKeyboardFocusManager.enqueuedKeyEvents
 
-    /// transient java.awt.peer.KeyboardFocusManagerPeer java.awt.KeyboardFocusManager.peer
+    /// private int java.awt.DefaultKeyboardFocusManager.inSendMessage
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.log
+    /// private java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.realOppositeComponentWR
 
-    /// public static final int java.awt.KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS
+    /// private java.lang.ref.WeakReference java.awt.DefaultKeyboardFocusManager.realOppositeWindowWR
+
+    /// private java.util.LinkedList java.awt.DefaultKeyboardFocusManager.typeAheadMarkers
+
+    /// static final boolean java.awt.KeyboardFocusManager.$assertionsDisabled
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS
 
-    /// public static final int java.awt.KeyboardFocusManager.UP_CYCLE_TRAVERSAL_KEYS
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.KeyboardFocusManager.DOWN_CYCLE_TRAVERSAL_KEYS
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS
+
+    // Skipping field: false true false false false false 
+
+    /// static final int java.awt.KeyboardFocusManager.SNFH_FAILURE
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_HANDLED
+
+    // Skipping field: true false false false false false 
+
+    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_PROCEED
+
+    // Skipping field: true false false false false false 
+
     /// static final int java.awt.KeyboardFocusManager.TRAVERSAL_KEY_LENGTH
 
-    /// private static java.awt.Component java.awt.KeyboardFocusManager.focusOwner
+    // Skipping field: true false false false false false 
 
-    /// private static java.awt.Component java.awt.KeyboardFocusManager.permanentFocusOwner
+    /// public static final int java.awt.KeyboardFocusManager.UP_CYCLE_TRAVERSAL_KEYS
 
-    /// private static java.awt.Window java.awt.KeyboardFocusManager.focusedWindow
+    // Skipping field: false true false false false false 
 
     /// private static java.awt.Window java.awt.KeyboardFocusManager.activeWindow
 
-    /// private java.awt.FocusTraversalPolicy java.awt.KeyboardFocusManager.defaultPolicy
+    /// private static boolean java.awt.KeyboardFocusManager.allowSyncFocusRequests
+
+    /// private static boolean java.awt.KeyboardFocusManager.clearingCurrentLightweightRequests
+
+    /// private static java.awt.Container java.awt.KeyboardFocusManager.currentFocusCycleRoot
+
+    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.currentLightweightRequests
 
     /// private static final java.lang.String[] java.awt.KeyboardFocusManager.defaultFocusTraversalKeyPropertyNames
 
     /// private static final java.awt.AWTKeyStroke[][] java.awt.KeyboardFocusManager.defaultFocusTraversalKeyStrokes
 
-    /// private java.util.Set[] java.awt.KeyboardFocusManager.defaultFocusTraversalKeys
+    /// private static volatile boolean java.awt.KeyboardFocusManager.disableRestoreFocus
 
-    /// private static java.awt.Container java.awt.KeyboardFocusManager.currentFocusCycleRoot
+    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.focusLog
 
-    /// private java.beans.VetoableChangeSupport java.awt.KeyboardFocusManager.vetoableSupport
+    /// private static java.awt.Component java.awt.KeyboardFocusManager.focusOwner
+
+    /// private static java.awt.Window java.awt.KeyboardFocusManager.focusedWindow
+
+    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.heavyweightRequests
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.KeyboardFocusManager.log
+
+    /// private static java.util.Map java.awt.KeyboardFocusManager.mostRecentFocusOwners
+
+    /// private static java.awt.Component java.awt.KeyboardFocusManager.newFocusOwner
+
+    /// private static java.awt.Component java.awt.KeyboardFocusManager.permanentFocusOwner
+
+    /// static java.lang.reflect.Field java.awt.KeyboardFocusManager.proxyActive
+
+    // Skipping field: true false false false false false 
+
+    /// private static java.awt.AWTPermission java.awt.KeyboardFocusManager.replaceKeyboardFocusManagerPermission
 
     /// private java.beans.PropertyChangeSupport java.awt.KeyboardFocusManager.changeSupport
+
+    /// transient java.awt.SequencedEvent java.awt.KeyboardFocusManager.currentSequencedEvent
+
+    // Skipping field: true false false false false false 
+
+    /// private java.util.Set[] java.awt.KeyboardFocusManager.defaultFocusTraversalKeys
+
+    /// private java.awt.FocusTraversalPolicy java.awt.KeyboardFocusManager.defaultPolicy
 
     /// private java.util.LinkedList java.awt.KeyboardFocusManager.keyEventDispatchers
 
     /// private java.util.LinkedList java.awt.KeyboardFocusManager.keyEventPostProcessors
 
-    /// private static java.util.Map java.awt.KeyboardFocusManager.mostRecentFocusOwners
+    /// transient java.awt.peer.KeyboardFocusManagerPeer java.awt.KeyboardFocusManager.peer
 
-    /// private static java.awt.AWTPermission java.awt.KeyboardFocusManager.replaceKeyboardFocusManagerPermission
+    // Skipping field: true false false false false false 
 
-    /// transient java.awt.SequencedEvent java.awt.KeyboardFocusManager.currentSequencedEvent
-
-    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.heavyweightRequests
-
-    /// private static java.util.LinkedList java.awt.KeyboardFocusManager.currentLightweightRequests
-
-    /// private static boolean java.awt.KeyboardFocusManager.clearingCurrentLightweightRequests
-
-    /// private static boolean java.awt.KeyboardFocusManager.allowSyncFocusRequests
-
-    /// private static java.awt.Component java.awt.KeyboardFocusManager.newFocusOwner
-
-    /// private static volatile boolean java.awt.KeyboardFocusManager.disableRestoreFocus
-
-    /// static final int java.awt.KeyboardFocusManager.SNFH_FAILURE
-
-    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_HANDLED
-
-    /// static final int java.awt.KeyboardFocusManager.SNFH_SUCCESS_PROCEED
-
-    /// static java.lang.reflect.Field java.awt.KeyboardFocusManager.proxyActive
-
-    /// static final boolean java.awt.KeyboardFocusManager.$assertionsDisabled
+    /// private java.beans.VetoableChangeSupport java.awt.KeyboardFocusManager.vetoableSupport
 
     /// public javax.swing.DefaultFocusManager()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultFocusManager", classCache: &DefaultFocusManager.DefaultFocusManagerJNIClass, methodSig: "()V", methodCache: &DefaultFocusManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.awt.Component javax.swing.DefaultFocusManager.getFirstComponent(java.awt.Container)
-
-    private static var getFirstComponent_MethodID_2: jmethodID?
-
-    open func getFirstComponent( aContainer: java_awt.Container? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getFirstComponent_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open func getFirstComponent( _ _aContainer: java_awt.Container? ) -> java_awt.Component! {
-        return getFirstComponent( aContainer: _aContainer )
-    }
-
-    /// public java.awt.Component javax.swing.DefaultFocusManager.getLastComponent(java.awt.Container)
-
-    private static var getLastComponent_MethodID_3: jmethodID?
-
-    open func getLastComponent( aContainer: java_awt.Container? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getLastComponent_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open func getLastComponent( _ _aContainer: java_awt.Container? ) -> java_awt.Component! {
-        return getLastComponent( aContainer: _aContainer )
-    }
-
     /// public boolean javax.swing.DefaultFocusManager.compareTabOrder(java.awt.Component,java.awt.Component)
 
-    private static var compareTabOrder_MethodID_4: jmethodID?
+    private static var compareTabOrder_MethodID_2: jmethodID?
 
     open func compareTabOrder( a: java_awt.Component?, b: java_awt.Component? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "compareTabOrder", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Z", methodCache: &DefaultFocusManager.compareTabOrder_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "compareTabOrder", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Z", methodCache: &DefaultFocusManager.compareTabOrder_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func compareTabOrder( _ _a: java_awt.Component?, _ _b: java_awt.Component? ) -> Bool {
@@ -180,14 +174,14 @@ open class DefaultFocusManager: FocusManager {
 
     /// public java.awt.Component javax.swing.DefaultFocusManager.getComponentAfter(java.awt.Container,java.awt.Component)
 
-    private static var getComponentAfter_MethodID_5: jmethodID?
+    private static var getComponentAfter_MethodID_3: jmethodID?
 
     open func getComponentAfter( aContainer: java_awt.Container?, aComponent: java_awt.Component? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
         __args[1] = JNIType.toJava( value: aComponent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentAfter_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentAfter", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentAfter_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
@@ -198,20 +192,54 @@ open class DefaultFocusManager: FocusManager {
 
     /// public java.awt.Component javax.swing.DefaultFocusManager.getComponentBefore(java.awt.Container,java.awt.Component)
 
-    private static var getComponentBefore_MethodID_6: jmethodID?
+    private static var getComponentBefore_MethodID_4: jmethodID?
 
     open func getComponentBefore( aContainer: java_awt.Container?, aComponent: java_awt.Component? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
         __args[1] = JNIType.toJava( value: aComponent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentBefore_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponentBefore", methodSig: "(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getComponentBefore_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
     open func getComponentBefore( _ _aContainer: java_awt.Container?, _ _aComponent: java_awt.Component? ) -> java_awt.Component! {
         return getComponentBefore( aContainer: _aContainer, aComponent: _aComponent )
+    }
+
+    /// public java.awt.Component javax.swing.DefaultFocusManager.getFirstComponent(java.awt.Container)
+
+    private static var getFirstComponent_MethodID_5: jmethodID?
+
+    open func getFirstComponent( aContainer: java_awt.Container? ) -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFirstComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getFirstComponent_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    open func getFirstComponent( _ _aContainer: java_awt.Container? ) -> java_awt.Component! {
+        return getFirstComponent( aContainer: _aContainer )
+    }
+
+    /// public java.awt.Component javax.swing.DefaultFocusManager.getLastComponent(java.awt.Container)
+
+    private static var getLastComponent_MethodID_6: jmethodID?
+
+    open func getLastComponent( aContainer: java_awt.Container? ) -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aContainer, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLastComponent", methodSig: "(Ljava/awt/Container;)Ljava/awt/Component;", methodCache: &DefaultFocusManager.getLastComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    open func getLastComponent( _ _aContainer: java_awt.Container? ) -> java_awt.Component! {
+        return getLastComponent( aContainer: _aContainer )
     }
 
 }

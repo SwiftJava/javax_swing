@@ -23,8 +23,8 @@ open class RowFilter: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/RowFilter", classCache: &RowFilter.RowFilterJNIClass, methodSig: "()V", methodCache: &RowFilter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -32,53 +32,38 @@ open class RowFilter: java_swift.JavaObject {
 
     /// static void javax.swing.RowFilter.access$000(int[])
 
-    /// public abstract boolean javax.swing.RowFilter.include(javax.swing.RowFilter$Entry)
+    // Skipping method: true false false false false 
 
-    private static var include_MethodID_2: jmethodID?
+    /// public static javax.swing.RowFilter javax.swing.RowFilter.andFilter(java.lang.Iterable)
 
-    open func include( entry: RowFilter_Entry? ) -> Bool {
+    private static var andFilter_MethodID_2: jmethodID?
+
+    open class func andFilter( filters: java_lang.Iterable? ) -> RowFilter! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: entry, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "include", methodSig: "(Ljavax/swing/RowFilter$Entry;)Z", methodCache: &RowFilter.include_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func include( _ _entry: RowFilter_Entry? ) -> Bool {
-        return include( entry: _entry )
-    }
-
-    /// private static void javax.swing.RowFilter.checkIndices(int[])
-
-    /// public static javax.swing.RowFilter javax.swing.RowFilter.regexFilter(java.lang.String,int[])
-
-    private static var regexFilter_MethodID_3: jmethodID?
-
-    open class func regexFilter( regex: String?, indices: [Int32]? ) -> RowFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: regex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: indices, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "regexFilter", methodSig: "(Ljava/lang/String;[I)Ljavax/swing/RowFilter;", methodCache: &regexFilter_MethodID_3, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: filters, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "andFilter", methodSig: "(Ljava/lang/Iterable;)Ljavax/swing/RowFilter;", methodCache: &andFilter_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RowFilter( javaObject: __return ) : nil
     }
 
-    open class func regexFilter( _ _regex: String?, _ _indices: [Int32]? ) -> RowFilter! {
-        return regexFilter( regex: _regex, indices: _indices )
+    open class func andFilter( _ _filters: java_lang.Iterable? ) -> RowFilter! {
+        return andFilter( filters: _filters )
     }
+
+    /// private static void javax.swing.RowFilter.checkIndices(int[])
 
     /// public static javax.swing.RowFilter javax.swing.RowFilter.dateFilter(javax.swing.RowFilter$ComparisonType,java.util.Date,int[])
 
-    private static var dateFilter_MethodID_4: jmethodID?
+    private static var dateFilter_MethodID_3: jmethodID?
 
     open class func dateFilter( type: RowFilter_ComparisonType?, date: java_util.Date?, indices: [Int32]? ) -> RowFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: date, locals: &__locals )
         __args[2] = JNIType.toJava( value: indices, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "dateFilter", methodSig: "(Ljavax/swing/RowFilter$ComparisonType;Ljava/util/Date;[I)Ljavax/swing/RowFilter;", methodCache: &dateFilter_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "dateFilter", methodSig: "(Ljavax/swing/RowFilter$ComparisonType;Ljava/util/Date;[I)Ljavax/swing/RowFilter;", methodCache: &dateFilter_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RowFilter( javaObject: __return ) : nil
     }
@@ -87,13 +72,30 @@ open class RowFilter: java_swift.JavaObject {
         return dateFilter( type: _type, date: _date, indices: _indices )
     }
 
+    /// public static javax.swing.RowFilter javax.swing.RowFilter.notFilter(javax.swing.RowFilter)
+
+    private static var notFilter_MethodID_4: jmethodID?
+
+    open class func notFilter( filter: RowFilter? ) -> RowFilter! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: filter, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "notFilter", methodSig: "(Ljavax/swing/RowFilter;)Ljavax/swing/RowFilter;", methodCache: &notFilter_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? RowFilter( javaObject: __return ) : nil
+    }
+
+    open class func notFilter( _ _filter: RowFilter? ) -> RowFilter! {
+        return notFilter( filter: _filter )
+    }
+
     /// public static javax.swing.RowFilter javax.swing.RowFilter.numberFilter(javax.swing.RowFilter$ComparisonType,java.lang.Number,int[])
 
     private static var numberFilter_MethodID_5: jmethodID?
 
     open class func numberFilter( type: RowFilter_ComparisonType?, number: java_lang.Number?, indices: [Int32]? ) -> RowFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: number, locals: &__locals )
         __args[2] = JNIType.toJava( value: indices, locals: &__locals )
@@ -111,8 +113,8 @@ open class RowFilter: java_swift.JavaObject {
     private static var orFilter_MethodID_6: jmethodID?
 
     open class func orFilter( filters: java_lang.Iterable? ) -> RowFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: filters, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "orFilter", methodSig: "(Ljava/lang/Iterable;)Ljavax/swing/RowFilter;", methodCache: &orFilter_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -123,38 +125,38 @@ open class RowFilter: java_swift.JavaObject {
         return orFilter( filters: _filters )
     }
 
-    /// public static javax.swing.RowFilter javax.swing.RowFilter.andFilter(java.lang.Iterable)
+    /// public static javax.swing.RowFilter javax.swing.RowFilter.regexFilter(java.lang.String,int[])
 
-    private static var andFilter_MethodID_7: jmethodID?
+    private static var regexFilter_MethodID_7: jmethodID?
 
-    open class func andFilter( filters: java_lang.Iterable? ) -> RowFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func regexFilter( regex: String?, indices: [Int32]? ) -> RowFilter! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: filters, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "andFilter", methodSig: "(Ljava/lang/Iterable;)Ljavax/swing/RowFilter;", methodCache: &andFilter_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: regex, locals: &__locals )
+        __args[1] = JNIType.toJava( value: indices, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "regexFilter", methodSig: "(Ljava/lang/String;[I)Ljavax/swing/RowFilter;", methodCache: &regexFilter_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? RowFilter( javaObject: __return ) : nil
     }
 
-    open class func andFilter( _ _filters: java_lang.Iterable? ) -> RowFilter! {
-        return andFilter( filters: _filters )
+    open class func regexFilter( _ _regex: String?, _ _indices: [Int32]? ) -> RowFilter! {
+        return regexFilter( regex: _regex, indices: _indices )
     }
 
-    /// public static javax.swing.RowFilter javax.swing.RowFilter.notFilter(javax.swing.RowFilter)
+    /// public abstract boolean javax.swing.RowFilter.include(javax.swing.RowFilter$Entry)
 
-    private static var notFilter_MethodID_8: jmethodID?
+    private static var include_MethodID_8: jmethodID?
 
-    open class func notFilter( filter: RowFilter? ) -> RowFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func include( entry: RowFilter_Entry? ) -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: filter, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/RowFilter", classCache: &RowFilterJNIClass, methodName: "notFilter", methodSig: "(Ljavax/swing/RowFilter;)Ljavax/swing/RowFilter;", methodCache: &notFilter_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? RowFilter( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: entry, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "include", methodSig: "(Ljavax/swing/RowFilter$Entry;)Z", methodCache: &RowFilter.include_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open class func notFilter( _ _filter: RowFilter? ) -> RowFilter! {
-        return notFilter( filter: _filter )
+    open func include( _ _entry: RowFilter_Entry? ) -> Bool {
+        return include( entry: _entry )
     }
 
 }

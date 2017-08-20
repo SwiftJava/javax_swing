@@ -16,14 +16,16 @@ open class BasicColorChooserUI: ColorChooserUI {
 
     private static var BasicColorChooserUIJNIClass: jclass?
 
+    /// private static javax.swing.TransferHandler javax.swing.plaf.basic.BasicColorChooserUI.defaultTransferHandler
+
     /// protected javax.swing.JColorChooser javax.swing.plaf.basic.BasicColorChooserUI.chooser
 
     private static var chooser_FieldID: jfieldID?
 
     open var chooser: JColorChooser! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "chooser", fieldType: "Ljavax/swing/JColorChooser;", fieldCache: &BasicColorChooserUI.chooser_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "chooser", fieldType: "Ljavax/swing/JColorChooser;", fieldCache: &BasicColorChooserUI.chooser_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JColorChooser( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -33,27 +35,14 @@ open class BasicColorChooserUI: ColorChooserUI {
         }
     }
 
-    /// javax.swing.JTabbedPane javax.swing.plaf.basic.BasicColorChooserUI.tabbedPane
-
-    /// javax.swing.JPanel javax.swing.plaf.basic.BasicColorChooserUI.singlePanel
-
-    /// javax.swing.JPanel javax.swing.plaf.basic.BasicColorChooserUI.previewPanelHolder
-
-    /// javax.swing.JComponent javax.swing.plaf.basic.BasicColorChooserUI.previewPanel
-
-    /// boolean javax.swing.plaf.basic.BasicColorChooserUI.isMultiPanel
-
-    /// private static javax.swing.TransferHandler javax.swing.plaf.basic.BasicColorChooserUI.defaultTransferHandler
-
     /// protected javax.swing.colorchooser.AbstractColorChooserPanel[] javax.swing.plaf.basic.BasicColorChooserUI.defaultChoosers
 
     private static var defaultChoosers_FieldID: jfieldID?
 
     open var defaultChoosers: [AbstractColorChooserPanel]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "defaultChoosers", fieldType: "[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", fieldCache: &BasicColorChooserUI.defaultChoosers_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [AbstractColorChooserPanel](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "defaultChoosers", fieldType: "[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", fieldCache: &BasicColorChooserUI.defaultChoosers_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [AbstractColorChooserPanel].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -62,14 +51,20 @@ open class BasicColorChooserUI: ColorChooserUI {
         }
     }
 
+    /// private javax.swing.plaf.basic.BasicColorChooserUI$Handler javax.swing.plaf.basic.BasicColorChooserUI.handler
+
+    /// boolean javax.swing.plaf.basic.BasicColorChooserUI.isMultiPanel
+
+    // Skipping field: true false false false false false 
+
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicColorChooserUI.previewListener
 
     private static var previewListener_FieldID: jfieldID?
 
     open var previewListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "previewListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicColorChooserUI.previewListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "previewListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicColorChooserUI.previewListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -79,15 +74,23 @@ open class BasicColorChooserUI: ColorChooserUI {
         }
     }
 
+    /// javax.swing.JComponent javax.swing.plaf.basic.BasicColorChooserUI.previewPanel
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.JPanel javax.swing.plaf.basic.BasicColorChooserUI.previewPanelHolder
+
+    // Skipping field: true false false false false false 
+
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicColorChooserUI.propertyChangeListener
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicColorChooserUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicColorChooserUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -96,15 +99,21 @@ open class BasicColorChooserUI: ColorChooserUI {
         }
     }
 
-    /// private javax.swing.plaf.basic.BasicColorChooserUI$Handler javax.swing.plaf.basic.BasicColorChooserUI.handler
+    /// javax.swing.JPanel javax.swing.plaf.basic.BasicColorChooserUI.singlePanel
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.JTabbedPane javax.swing.plaf.basic.BasicColorChooserUI.tabbedPane
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.basic.BasicColorChooserUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicColorChooserUI", classCache: &BasicColorChooserUI.BasicColorChooserUIJNIClass, methodSig: "()V", methodCache: &BasicColorChooserUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -112,17 +121,19 @@ open class BasicColorChooserUI: ColorChooserUI {
 
     /// static void javax.swing.plaf.basic.BasicColorChooserUI.access$100(javax.swing.plaf.basic.BasicColorChooserUI,javax.swing.colorchooser.ColorSelectionModel)
 
+    // Skipping method: true false false false false 
+
     /// static javax.swing.plaf.basic.BasicColorChooserUI$Handler javax.swing.plaf.basic.BasicColorChooserUI.access$200(javax.swing.plaf.basic.BasicColorChooserUI)
 
-    /// private javax.swing.plaf.basic.BasicColorChooserUI$Handler javax.swing.plaf.basic.BasicColorChooserUI.getHandler()
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicColorChooserUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicColorChooserUI", classCache: &BasicColorChooserUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -133,113 +144,119 @@ open class BasicColorChooserUI: ColorChooserUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.basic.BasicColorChooserUI.installUI(javax.swing.JComponent)
+    /// protected javax.swing.colorchooser.AbstractColorChooserPanel[] javax.swing.plaf.basic.BasicColorChooserUI.createDefaultChoosers()
 
-    /// public void javax.swing.plaf.basic.BasicColorChooserUI.uninstallUI(javax.swing.JComponent)
+    private static var createDefaultChoosers_MethodID_3: jmethodID?
 
-    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.installDefaults()
-
-    private static var installDefaults_MethodID_3: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createDefaultChoosers() -> [AbstractColorChooserPanel]! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicColorChooserUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.installListeners()
-
-    private static var installListeners_MethodID_4: jmethodID?
-
-    open func installListeners() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicColorChooserUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_5: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallDefaults_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_6: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultChoosers", methodSig: "()[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", methodCache: &BasicColorChooserUI.createDefaultChoosers_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [AbstractColorChooserPanel].self, from: __return )
     }
 
 
     /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicColorChooserUI.createPropertyChangeListener()
 
-    private static var createPropertyChangeListener_MethodID_7: jmethodID?
+    private static var createPropertyChangeListener_MethodID_4: jmethodID?
 
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createPropertyChangeListener() -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicColorChooserUI.createPropertyChangeListener_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicColorChooserUI.createPropertyChangeListener_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
     }
 
 
-    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallPreviewPanel()
+    /// private javax.swing.plaf.basic.BasicColorChooserUI$Handler javax.swing.plaf.basic.BasicColorChooserUI.getHandler()
 
-    private static var uninstallPreviewPanel_MethodID_8: jmethodID?
+    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.installDefaults()
 
-    open func uninstallPreviewPanel() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var installDefaults_MethodID_5: jmethodID?
+
+    open func installDefaults() {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallPreviewPanel", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallPreviewPanel_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicColorChooserUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.installListeners()
+
+    private static var installListeners_MethodID_6: jmethodID?
+
+    open func installListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicColorChooserUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.basic.BasicColorChooserUI.installPreviewPanel()
 
-    private static var installPreviewPanel_MethodID_9: jmethodID?
+    private static var installPreviewPanel_MethodID_7: jmethodID?
 
     open func installPreviewPanel() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installPreviewPanel", methodSig: "()V", methodCache: &BasicColorChooserUI.installPreviewPanel_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installPreviewPanel", methodSig: "()V", methodCache: &BasicColorChooserUI.installPreviewPanel_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
-    /// protected javax.swing.colorchooser.AbstractColorChooserPanel[] javax.swing.plaf.basic.BasicColorChooserUI.createDefaultChoosers()
+    /// public void javax.swing.plaf.basic.BasicColorChooserUI.installUI(javax.swing.JComponent)
 
-    private static var createDefaultChoosers_MethodID_10: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func createDefaultChoosers() -> [AbstractColorChooserPanel]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultChoosers", methodSig: "()[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", methodCache: &BasicColorChooserUI.createDefaultChoosers_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [AbstractColorChooserPanel](), from: __return )
-    }
-
+    /// private void javax.swing.plaf.basic.BasicColorChooserUI.selectionChanged(javax.swing.colorchooser.ColorSelectionModel)
 
     /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallDefaultChoosers()
 
-    private static var uninstallDefaultChoosers_MethodID_11: jmethodID?
+    private static var uninstallDefaultChoosers_MethodID_8: jmethodID?
 
     open func uninstallDefaultChoosers() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaultChoosers", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallDefaultChoosers_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaultChoosers", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallDefaultChoosers_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
-    /// private void javax.swing.plaf.basic.BasicColorChooserUI.selectionChanged(javax.swing.colorchooser.ColorSelectionModel)
+    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_9: jmethodID?
+
+    open func uninstallDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_10: jmethodID?
+
+    open func uninstallListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicColorChooserUI.uninstallPreviewPanel()
+
+    private static var uninstallPreviewPanel_MethodID_11: jmethodID?
+
+    open func uninstallPreviewPanel() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallPreviewPanel", methodSig: "()V", methodCache: &BasicColorChooserUI.uninstallPreviewPanel_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicColorChooserUI.uninstallUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
 }
 

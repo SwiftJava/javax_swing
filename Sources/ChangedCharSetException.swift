@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.text.ChangedCharSetException ///
 
-open class ChangedCharSetException: /* java.io.IOException */ UnclassedObject {
+open class ChangedCharSetException: /* class java.io.IOException */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,49 +16,59 @@ open class ChangedCharSetException: /* java.io.IOException */ UnclassedObject {
 
     private static var ChangedCharSetExceptionJNIClass: jclass?
 
+    /// boolean javax.swing.text.ChangedCharSetException.charSetKey
+
+    // Skipping field: true false false false false false 
+
     /// java.lang.String javax.swing.text.ChangedCharSetException.charSetSpec
 
-    /// boolean javax.swing.text.ChangedCharSetException.charSetKey
+    // Skipping field: true false false false false false 
 
     /// static final long java.io.IOException.serialVersionUID
 
+    // Skipping field: true true false false false false 
+
     /// static final long java.lang.Exception.serialVersionUID
 
-    /// private static final long java.lang.Throwable.serialVersionUID
+    // Skipping field: true true false false false false 
 
-    /// private java.lang.String java.lang.Throwable.detailMessage
+    /// static final boolean java.lang.Throwable.$assertionsDisabled
 
-    /// private static final java.lang.StackTraceElement[] java.lang.Throwable.UNASSIGNED_STACK
+    // Skipping field: true false false false false false 
 
-    /// private java.lang.Throwable java.lang.Throwable.cause
+    /// private static final java.lang.String java.lang.Throwable.CAUSE_CAPTION
 
-    /// private java.lang.StackTraceElement[] java.lang.Throwable.stackTrace
-
-    /// private static final java.util.List java.lang.Throwable.SUPPRESSED_SENTINEL
-
-    /// private java.util.List java.lang.Throwable.suppressedExceptions
+    /// private static final java.lang.Throwable[] java.lang.Throwable.EMPTY_THROWABLE_ARRAY
 
     /// private static final java.lang.String java.lang.Throwable.NULL_CAUSE_MESSAGE
 
     /// private static final java.lang.String java.lang.Throwable.SELF_SUPPRESSION_MESSAGE
 
-    /// private static final java.lang.String java.lang.Throwable.CAUSE_CAPTION
-
     /// private static final java.lang.String java.lang.Throwable.SUPPRESSED_CAPTION
 
-    /// private static final java.lang.Throwable[] java.lang.Throwable.EMPTY_THROWABLE_ARRAY
+    /// private static final java.util.List java.lang.Throwable.SUPPRESSED_SENTINEL
 
-    /// static final boolean java.lang.Throwable.$assertionsDisabled
+    /// private static final java.lang.StackTraceElement[] java.lang.Throwable.UNASSIGNED_STACK
+
+    /// private static final long java.lang.Throwable.serialVersionUID
+
+    /// private java.lang.Throwable java.lang.Throwable.cause
+
+    /// private java.lang.String java.lang.Throwable.detailMessage
+
+    /// private java.lang.StackTraceElement[] java.lang.Throwable.stackTrace
+
+    /// private java.util.List java.lang.Throwable.suppressedExceptions
 
     /// public javax.swing.text.ChangedCharSetException(java.lang.String,boolean)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( charSetSpec: String?, charSetKey: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: charSetSpec, locals: &__locals )
-        __args[1] = JNIType.toJava( value: charSetKey, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(charSetKey ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/ChangedCharSetException", classCache: &ChangedCharSetException.ChangedCharSetExceptionJNIClass, methodSig: "(Ljava/lang/String;Z)V", methodCache: &ChangedCharSetException.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -73,10 +83,11 @@ open class ChangedCharSetException: /* java.io.IOException */ UnclassedObject {
     private static var getCharSetSpec_MethodID_2: jmethodID?
 
     open func getCharSetSpec() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharSetSpec", methodSig: "()Ljava/lang/String;", methodCache: &ChangedCharSetException.getCharSetSpec_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
@@ -85,10 +96,10 @@ open class ChangedCharSetException: /* java.io.IOException */ UnclassedObject {
     private static var keyEqualsCharSet_MethodID_3: jmethodID?
 
     open func keyEqualsCharSet() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "keyEqualsCharSet", methodSig: "()Z", methodCache: &ChangedCharSetException.keyEqualsCharSet_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

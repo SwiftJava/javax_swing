@@ -19,13 +19,15 @@ open class BasicTabbedPaneUI_MouseHandler: java_awt.MouseAdapter {
 
     /// final javax.swing.plaf.basic.BasicTabbedPaneUI javax.swing.plaf.basic.BasicTabbedPaneUI$MouseHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTabbedPaneUI$MouseHandler(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTabbedPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTabbedPaneUI$MouseHandler", classCache: &BasicTabbedPaneUI_MouseHandler.BasicTabbedPaneUI_MouseHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTabbedPaneUI;)V", methodCache: &BasicTabbedPaneUI_MouseHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -37,6 +39,8 @@ open class BasicTabbedPaneUI_MouseHandler: java_awt.MouseAdapter {
     }
 
     /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$MouseHandler.mousePressed(java.awt.event.MouseEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

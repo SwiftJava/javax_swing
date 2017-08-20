@@ -17,19 +17,34 @@ open class BorderUIResource_EmptyBorderUIResource: EmptyBorder, UIResource {
 
     private static var BorderUIResource_EmptyBorderUIResourceJNIClass: jclass?
 
+    /// protected int javax.swing.border.EmptyBorder.bottom
+
+    private static var bottom_FieldID: jfieldID?
+
+    override open var bottom: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.bottom_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected int javax.swing.border.EmptyBorder.left
 
     private static var left_FieldID: jfieldID?
 
     override open var left: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.left_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.left_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "left", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.left_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -40,13 +55,12 @@ open class BorderUIResource_EmptyBorderUIResource: EmptyBorder, UIResource {
 
     override open var right: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.right_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.right_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "right", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.right_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -57,31 +71,13 @@ open class BorderUIResource_EmptyBorderUIResource: EmptyBorder, UIResource {
 
     override open var top: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.top_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.top_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "top", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.top_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.border.EmptyBorder.bottom
-
-    private static var bottom_FieldID: jfieldID?
-
-    override open var bottom: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.bottom_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_EmptyBorderUIResource.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -90,12 +86,12 @@ open class BorderUIResource_EmptyBorderUIResource: EmptyBorder, UIResource {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( top: Int, left: Int, bottom: Int, right: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(top) )
+        __args[1] = jvalue( i: jint(left) )
+        __args[2] = jvalue( i: jint(bottom) )
+        __args[3] = jvalue( i: jint(right) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$EmptyBorderUIResource", classCache: &BorderUIResource_EmptyBorderUIResource.BorderUIResource_EmptyBorderUIResourceJNIClass, methodSig: "(IIII)V", methodCache: &BorderUIResource_EmptyBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -110,8 +106,8 @@ open class BorderUIResource_EmptyBorderUIResource: EmptyBorder, UIResource {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( insets: java_awt.Insets? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: insets, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$EmptyBorderUIResource", classCache: &BorderUIResource_EmptyBorderUIResource.BorderUIResource_EmptyBorderUIResourceJNIClass, methodSig: "(Ljava/awt/Insets;)V", methodCache: &BorderUIResource_EmptyBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

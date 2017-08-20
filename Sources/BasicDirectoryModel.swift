@@ -17,21 +17,21 @@ open class BasicDirectoryModel: AbstractListModel {
 
     private static var BasicDirectoryModelJNIClass: jclass?
 
-    /// private javax.swing.JFileChooser javax.swing.plaf.basic.BasicDirectoryModel.filechooser
+    /// private boolean javax.swing.plaf.basic.BasicDirectoryModel.busy
 
-    /// private java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.fileCache
-
-    /// private javax.swing.plaf.basic.BasicDirectoryModel$LoadFilesThread javax.swing.plaf.basic.BasicDirectoryModel.loadThread
-
-    /// private java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.files
+    /// private java.beans.PropertyChangeSupport javax.swing.plaf.basic.BasicDirectoryModel.changeSupport
 
     /// private java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.directories
 
     /// private int javax.swing.plaf.basic.BasicDirectoryModel.fetchID
 
-    /// private java.beans.PropertyChangeSupport javax.swing.plaf.basic.BasicDirectoryModel.changeSupport
+    /// private java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.fileCache
 
-    /// private boolean javax.swing.plaf.basic.BasicDirectoryModel.busy
+    /// private javax.swing.JFileChooser javax.swing.plaf.basic.BasicDirectoryModel.filechooser
+
+    /// private java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.files
+
+    /// private javax.swing.plaf.basic.BasicDirectoryModel$LoadFilesThread javax.swing.plaf.basic.BasicDirectoryModel.loadThread
 
     /// protected javax.swing.event.EventListenerList javax.swing.AbstractListModel.listenerList
 
@@ -39,8 +39,8 @@ open class BasicDirectoryModel: AbstractListModel {
 
     override open var listenerList: EventListenerList! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicDirectoryModel.listenerList_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicDirectoryModel.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? EventListenerList( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -55,8 +55,8 @@ open class BasicDirectoryModel: AbstractListModel {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( filechooser: JFileChooser? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: filechooser, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicDirectoryModel", classCache: &BasicDirectoryModel.BasicDirectoryModelJNIClass, methodSig: "(Ljavax/swing/JFileChooser;)V", methodCache: &BasicDirectoryModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -67,20 +67,51 @@ open class BasicDirectoryModel: AbstractListModel {
         self.init( filechooser: _filechooser )
     }
 
-    /// public int javax.swing.plaf.basic.BasicDirectoryModel.indexOf(java.lang.Object)
+    /// static void javax.swing.plaf.basic.BasicDirectoryModel.access$000(javax.swing.plaf.basic.BasicDirectoryModel,boolean,int)
 
-    private static var indexOf_MethodID_2: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func indexOf( o: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// static javax.swing.JFileChooser javax.swing.plaf.basic.BasicDirectoryModel.access$100(javax.swing.plaf.basic.BasicDirectoryModel)
+
+    // Skipping method: true false false false false 
+
+    /// static java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.access$200(javax.swing.plaf.basic.BasicDirectoryModel)
+
+    // Skipping method: true false false false false 
+
+    /// static int javax.swing.plaf.basic.BasicDirectoryModel.access$300(javax.swing.plaf.basic.BasicDirectoryModel)
+
+    // Skipping method: true false false false false 
+
+    /// static java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.access$402(javax.swing.plaf.basic.BasicDirectoryModel,java.util.Vector)
+
+    // Skipping method: true false false false false 
+
+    /// static java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.access$502(javax.swing.plaf.basic.BasicDirectoryModel,java.util.Vector)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.basic.BasicDirectoryModel.access$600(javax.swing.plaf.basic.BasicDirectoryModel,java.lang.Object,int,int)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.basic.BasicDirectoryModel.access$700(javax.swing.plaf.basic.BasicDirectoryModel,java.lang.Object,int,int)
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.plaf.basic.BasicDirectoryModel.addPropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_2: jmethodID?
+
+    open func addPropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: o, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &BasicDirectoryModel.indexOf_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &BasicDirectoryModel.addPropertyChangeListener_MethodID_2, args: &__args, locals: &__locals )
     }
 
-    open func indexOf( _ _o: java_swift.JavaObject? ) -> Int {
-        return indexOf( o: _o )
+    open func addPropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( listener: _listener )
     }
 
     /// public boolean javax.swing.plaf.basic.BasicDirectoryModel.contains(java.lang.Object)
@@ -88,89 +119,116 @@ open class BasicDirectoryModel: AbstractListModel {
     private static var contains_MethodID_3: jmethodID?
 
     open func contains( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "contains", methodSig: "(Ljava/lang/Object;)Z", methodCache: &BasicDirectoryModel.contains_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func contains( _ _o: java_swift.JavaObject? ) -> Bool {
         return contains( o: _o )
     }
 
-    /// protected boolean javax.swing.plaf.basic.BasicDirectoryModel.lt(java.io.File,java.io.File)
+    /// public void javax.swing.plaf.basic.BasicDirectoryModel.fireContentsChanged()
 
-    private static var lt_MethodID_4: jmethodID?
+    private static var fireContentsChanged_MethodID_4: jmethodID?
 
-    open func lt( a: /* java.io.File */ UnclassedObject?, b: /* java.io.File */ UnclassedObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func fireContentsChanged() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lt", methodSig: "(Ljava/io/File;Ljava/io/File;)Z", methodCache: &BasicDirectoryModel.lt_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func lt( _ _a: /* java.io.File */ UnclassedObject?, _ _b: /* java.io.File */ UnclassedObject? ) -> Bool {
-        return lt( a: _a, b: _b )
-    }
-
-    /// static javax.swing.JFileChooser javax.swing.plaf.basic.BasicDirectoryModel.access$100(javax.swing.plaf.basic.BasicDirectoryModel)
-
-    /// static java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.access$200(javax.swing.plaf.basic.BasicDirectoryModel)
-
-    /// static int javax.swing.plaf.basic.BasicDirectoryModel.access$300(javax.swing.plaf.basic.BasicDirectoryModel)
-
-    /// static java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.access$402(javax.swing.plaf.basic.BasicDirectoryModel,java.util.Vector)
-
-    /// static java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.access$502(javax.swing.plaf.basic.BasicDirectoryModel,java.util.Vector)
-
-    /// static void javax.swing.plaf.basic.BasicDirectoryModel.access$000(javax.swing.plaf.basic.BasicDirectoryModel,boolean,int)
-
-    /// public int javax.swing.plaf.basic.BasicDirectoryModel.getSize()
-
-    /// static void javax.swing.plaf.basic.BasicDirectoryModel.access$600(javax.swing.plaf.basic.BasicDirectoryModel,java.lang.Object,int,int)
-
-    /// protected void javax.swing.plaf.basic.BasicDirectoryModel.sort(java.util.Vector)
-
-    private static var sort_MethodID_5: jmethodID?
-
-    open func sort( v: java_util.Vector? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireContentsChanged", methodSig: "()V", methodCache: &BasicDirectoryModel.fireContentsChanged_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicDirectoryModel.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_5: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "sort", methodSig: "(Ljava/util/Vector;)V", methodCache: &BasicDirectoryModel.sort_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &BasicDirectoryModel.firePropertyChange_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    open func sort( _ _v: java_util.Vector? ) {
-        sort( v: _v )
+    open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
     }
 
-    /// public java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.getFiles()
+    /// public java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.getDirectories()
 
-    private static var getFiles_MethodID_6: jmethodID?
+    private static var getDirectories_MethodID_6: jmethodID?
 
-    open func getFiles() -> java_util.Vector! {
+    open func getDirectories() -> java_util.Vector! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFiles", methodSig: "()Ljava/util/Vector;", methodCache: &BasicDirectoryModel.getFiles_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDirectories", methodSig: "()Ljava/util/Vector;", methodCache: &BasicDirectoryModel.getDirectories_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Vector( javaObject: __return ) : nil
     }
 
 
-    /// static void javax.swing.plaf.basic.BasicDirectoryModel.access$700(javax.swing.plaf.basic.BasicDirectoryModel,java.lang.Object,int,int)
+    /// public java.lang.Object javax.swing.plaf.basic.BasicDirectoryModel.getElementAt(int)
+
+    // Skipping method: false true false false false 
+
+    /// public java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.getFiles()
+
+    private static var getFiles_MethodID_7: jmethodID?
+
+    open func getFiles() -> java_util.Vector! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFiles", methodSig: "()Ljava/util/Vector;", methodCache: &BasicDirectoryModel.getFiles_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
+    }
+
+
+    /// public java.beans.PropertyChangeListener[] javax.swing.plaf.basic.BasicDirectoryModel.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_8: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &BasicDirectoryModel.getPropertyChangeListeners_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
+    /// public int javax.swing.plaf.basic.BasicDirectoryModel.getSize()
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.plaf.basic.BasicDirectoryModel.indexOf(java.lang.Object)
+
+    private static var indexOf_MethodID_9: jmethodID?
+
+    open func indexOf( o: java_swift.JavaObject? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: o, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "indexOf", methodSig: "(Ljava/lang/Object;)I", methodCache: &BasicDirectoryModel.indexOf_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func indexOf( _ _o: java_swift.JavaObject? ) -> Int {
+        return indexOf( o: _o )
+    }
 
     /// public void javax.swing.plaf.basic.BasicDirectoryModel.intervalAdded(javax.swing.event.ListDataEvent)
 
-    private static var intervalAdded_MethodID_7: jmethodID?
+    private static var intervalAdded_MethodID_10: jmethodID?
 
     open func intervalAdded( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicDirectoryModel.intervalAdded_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicDirectoryModel.intervalAdded_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func intervalAdded( _ _e: ListDataEvent? ) {
@@ -179,157 +237,119 @@ open class BasicDirectoryModel: AbstractListModel {
 
     /// public void javax.swing.plaf.basic.BasicDirectoryModel.intervalRemoved(javax.swing.event.ListDataEvent)
 
-    private static var intervalRemoved_MethodID_8: jmethodID?
+    private static var intervalRemoved_MethodID_11: jmethodID?
 
     open func intervalRemoved( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicDirectoryModel.intervalRemoved_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicDirectoryModel.intervalRemoved_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func intervalRemoved( _ _e: ListDataEvent? ) {
         intervalRemoved( e: _e )
     }
 
-    /// public java.lang.Object javax.swing.plaf.basic.BasicDirectoryModel.getElementAt(int)
-
-    /// private synchronized void javax.swing.plaf.basic.BasicDirectoryModel.setBusy(boolean,int)
-
     /// public void javax.swing.plaf.basic.BasicDirectoryModel.invalidateFileCache()
 
-    private static var invalidateFileCache_MethodID_9: jmethodID?
+    private static var invalidateFileCache_MethodID_12: jmethodID?
 
     open func invalidateFileCache() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateFileCache", methodSig: "()V", methodCache: &BasicDirectoryModel.invalidateFileCache_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateFileCache", methodSig: "()V", methodCache: &BasicDirectoryModel.invalidateFileCache_MethodID_12, args: &__args, locals: &__locals )
     }
 
 
-    /// public java.util.Vector javax.swing.plaf.basic.BasicDirectoryModel.getDirectories()
+    /// protected boolean javax.swing.plaf.basic.BasicDirectoryModel.lt(java.io.File,java.io.File)
 
-    private static var getDirectories_MethodID_10: jmethodID?
+    private static var lt_MethodID_13: jmethodID?
 
-    open func getDirectories() -> java_util.Vector! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func lt( a: /* class java.io.File */ UnavailableObject?, b: /* class java.io.File */ UnavailableObject? ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDirectories", methodSig: "()Ljava/util/Vector;", methodCache: &BasicDirectoryModel.getDirectories_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.Vector( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicDirectoryModel.validateFileCache()
-
-    private static var validateFileCache_MethodID_11: jmethodID?
-
-    open func validateFileCache() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "validateFileCache", methodSig: "()V", methodCache: &BasicDirectoryModel.validateFileCache_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// public boolean javax.swing.plaf.basic.BasicDirectoryModel.renameFile(java.io.File,java.io.File)
-
-    private static var renameFile_MethodID_12: jmethodID?
-
-    open func renameFile( oldFile: /* java.io.File */ UnclassedObject?, newFile: /* java.io.File */ UnclassedObject? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: oldFile, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newFile, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "renameFile", methodSig: "(Ljava/io/File;Ljava/io/File;)Z", methodCache: &BasicDirectoryModel.renameFile_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "lt", methodSig: "(Ljava/io/File;Ljava/io/File;)Z", methodCache: &BasicDirectoryModel.lt_MethodID_13, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func renameFile( _ _oldFile: /* java.io.File */ UnclassedObject?, _ _newFile: /* java.io.File */ UnclassedObject? ) -> Bool {
-        return renameFile( oldFile: _oldFile, newFile: _newFile )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicDirectoryModel.addPropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_13: jmethodID?
-
-    open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &BasicDirectoryModel.addPropertyChangeListener_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( listener: _listener )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicDirectoryModel.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_14: jmethodID?
-
-    open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &BasicDirectoryModel.removePropertyChangeListener_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( listener: _listener )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicDirectoryModel.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_15: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &BasicDirectoryModel.firePropertyChange_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    open func lt( _ _a: /* class java.io.File */ UnavailableObject?, _ _b: /* class java.io.File */ UnavailableObject? ) -> Bool {
+        return lt( a: _a, b: _b )
     }
 
     /// public void javax.swing.plaf.basic.BasicDirectoryModel.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_16: jmethodID?
+    private static var propertyChange_MethodID_14: jmethodID?
 
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicDirectoryModel.propertyChange_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicDirectoryModel.propertyChange_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         propertyChange( evt: _evt )
     }
 
-    /// public void javax.swing.plaf.basic.BasicDirectoryModel.fireContentsChanged()
+    /// public void javax.swing.plaf.basic.BasicDirectoryModel.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var fireContentsChanged_MethodID_17: jmethodID?
+    private static var removePropertyChangeListener_MethodID_15: jmethodID?
 
-    open func fireContentsChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removePropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireContentsChanged", methodSig: "()V", methodCache: &BasicDirectoryModel.fireContentsChanged_MethodID_17, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &BasicDirectoryModel.removePropertyChangeListener_MethodID_15, args: &__args, locals: &__locals )
     }
 
+    open func removePropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( listener: _listener )
+    }
 
-    /// public java.beans.PropertyChangeListener[] javax.swing.plaf.basic.BasicDirectoryModel.getPropertyChangeListeners()
+    /// public boolean javax.swing.plaf.basic.BasicDirectoryModel.renameFile(java.io.File,java.io.File)
 
-    private static var getPropertyChangeListeners_MethodID_18: jmethodID?
+    private static var renameFile_MethodID_16: jmethodID?
 
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func renameFile( oldFile: /* class java.io.File */ UnavailableObject?, newFile: /* class java.io.File */ UnavailableObject? ) -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &BasicDirectoryModel.getPropertyChangeListeners_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: oldFile, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newFile, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "renameFile", methodSig: "(Ljava/io/File;Ljava/io/File;)Z", methodCache: &BasicDirectoryModel.renameFile_MethodID_16, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func renameFile( _ _oldFile: /* class java.io.File */ UnavailableObject?, _ _newFile: /* class java.io.File */ UnavailableObject? ) -> Bool {
+        return renameFile( oldFile: _oldFile, newFile: _newFile )
+    }
+
+    /// private synchronized void javax.swing.plaf.basic.BasicDirectoryModel.setBusy(boolean,int)
+
+    /// protected void javax.swing.plaf.basic.BasicDirectoryModel.sort(java.util.Vector)
+
+    private static var sort_MethodID_17: jmethodID?
+
+    open func sort( v: java_util.Vector? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "sort", methodSig: "(Ljava/util/Vector;)V", methodCache: &BasicDirectoryModel.sort_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func sort( _ _v: java_util.Vector? ) {
+        sort( v: _v )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicDirectoryModel.validateFileCache()
+
+    private static var validateFileCache_MethodID_18: jmethodID?
+
+    open func validateFileCache() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "validateFileCache", methodSig: "()V", methodCache: &BasicDirectoryModel.validateFileCache_MethodID_18, args: &__args, locals: &__locals )
     }
 
 

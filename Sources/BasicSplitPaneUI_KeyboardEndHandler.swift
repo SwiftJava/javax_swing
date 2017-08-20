@@ -19,13 +19,15 @@ open class BasicSplitPaneUI_KeyboardEndHandler: java_swift.JavaObject, java_awt.
 
     /// final javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneUI$KeyboardEndHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicSplitPaneUI$KeyboardEndHandler(javax.swing.plaf.basic.BasicSplitPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicSplitPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSplitPaneUI$KeyboardEndHandler", classCache: &BasicSplitPaneUI_KeyboardEndHandler.BasicSplitPaneUI_KeyboardEndHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneUI_KeyboardEndHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -41,8 +43,8 @@ open class BasicSplitPaneUI_KeyboardEndHandler: java_swift.JavaObject, java_awt.
     private static var actionPerformed_MethodID_2: jmethodID?
 
     open func actionPerformed( e: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &BasicSplitPaneUI_KeyboardEndHandler.actionPerformed_MethodID_2, args: &__args, locals: &__locals )
     }

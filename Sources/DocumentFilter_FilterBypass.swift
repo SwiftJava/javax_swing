@@ -21,24 +21,59 @@ open class DocumentFilter_FilterBypass: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DocumentFilter$FilterBypass", classCache: &DocumentFilter_FilterBypass.DocumentFilter_FilterBypassJNIClass, methodSig: "()V", methodCache: &DocumentFilter_FilterBypass.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public abstract javax.swing.text.Document javax.swing.text.DocumentFilter$FilterBypass.getDocument()
+
+    private static var getDocument_MethodID_2: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &DocumentFilter_FilterBypass.getDocument_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract void javax.swing.text.DocumentFilter$FilterBypass.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
+
+    private static var insertString_MethodID_3: jmethodID?
+
+    open func insertString( offset: Int, string: String?, attr: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = JNIType.toJava( value: string, locals: &__locals )
+        __args[2] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentFilter_FilterBypass.insertString_MethodID_3, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func insertString( _ _offset: Int, _ _string: String?, _ _attr: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        try insertString( offset: _offset, string: _string, attr: _attr )
+    }
+
     /// public abstract void javax.swing.text.DocumentFilter$FilterBypass.remove(int,int) throws javax.swing.text.BadLocationException
 
-    private static var remove_MethodID_2: jmethodID?
+    private static var remove_MethodID_4: jmethodID?
 
     open func remove( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(II)V", methodCache: &DocumentFilter_FilterBypass.remove_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(II)V", methodCache: &DocumentFilter_FilterBypass.remove_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
     }
@@ -49,56 +84,24 @@ open class DocumentFilter_FilterBypass: java_swift.JavaObject {
 
     /// public abstract void javax.swing.text.DocumentFilter$FilterBypass.replace(int,int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    private static var replace_MethodID_3: jmethodID?
+    private static var replace_MethodID_5: jmethodID?
 
     open func replace( offset: Int, length: Int, string: String?, attrs: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
         __args[2] = JNIType.toJava( value: string, locals: &__locals )
         __args[3] = JNIType.toJava( value: attrs, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(IILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentFilter_FilterBypass.replace_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(IILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentFilter_FilterBypass.replace_MethodID_5, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
     }
 
     open func replace( _ _offset: Int, _ _length: Int, _ _string: String?, _ _attrs: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
         try replace( offset: _offset, length: _length, string: _string, attrs: _attrs )
-    }
-
-    /// public abstract javax.swing.text.Document javax.swing.text.DocumentFilter$FilterBypass.getDocument()
-
-    private static var getDocument_MethodID_4: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &DocumentFilter_FilterBypass.getDocument_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract void javax.swing.text.DocumentFilter$FilterBypass.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
-
-    private static var insertString_MethodID_5: jmethodID?
-
-    open func insertString( offset: Int, string: String?, attr: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: string, locals: &__locals )
-        __args[2] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentFilter_FilterBypass.insertString_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func insertString( _ _offset: Int, _ _string: String?, _ _attr: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        try insertString( offset: _offset, string: _string, attr: _attr )
     }
 
 }

@@ -17,22 +17,7 @@ open class BasicSplitPaneUI_BasicHorizontalLayoutManager: java_swift.JavaObject,
 
     private static var BasicSplitPaneUI_BasicHorizontalLayoutManagerJNIClass: jclass?
 
-    /// protected int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.sizes
-
-    private static var sizes_FieldID: jfieldID?
-
-    open var sizes: [Int32]! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.sizes_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.sizes_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.axis
 
     /// protected java.awt.Component[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.components
 
@@ -40,9 +25,8 @@ open class BasicSplitPaneUI_BasicHorizontalLayoutManager: java_swift.JavaObject,
 
     open var components: [Component]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "components", fieldType: "[Ljava/awt/Component;", fieldCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.components_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Component](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "components", fieldType: "[Ljava/awt/Component;", fieldCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.components_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Component].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -51,101 +35,85 @@ open class BasicSplitPaneUI_BasicHorizontalLayoutManager: java_swift.JavaObject,
         }
     }
 
-    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.lastSplitPaneSize
-
     /// private boolean javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.doReset
 
-    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.axis
+    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.lastSplitPaneSize
+
+    /// protected int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.sizes
+
+    private static var sizes_FieldID: jfieldID?
+
+    open var sizes: [Int32]! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.sizes_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.sizes_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// final javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.this$0
 
+    // Skipping field: true false false false false false 
+
     /// javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager(javax.swing.plaf.basic.BasicSplitPaneUI)
+
+    // Skipping init: true false false 
 
     /// javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager(javax.swing.plaf.basic.BasicSplitPaneUI,int)
 
-    /// protected int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizes()
+    // Skipping init: true false false 
 
-    private static var getSizes_MethodID_1: jmethodID?
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    open func getSizes() -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var addLayoutComponent_MethodID_1: jmethodID?
+
+    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSizes", methodSig: "()[I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getSizes_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.addLayoutComponent_MethodID_1, args: &__args, locals: &__locals )
     }
 
+    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
+        addLayoutComponent( name: _name, comp: _comp )
+    }
 
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.updateComponents()
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.addLayoutComponent(java.awt.Component,java.lang.Object)
 
-    private static var updateComponents_MethodID_2: jmethodID?
+    private static var addLayoutComponent_MethodID_2: jmethodID?
 
-    open func updateComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addLayoutComponent( comp: java_awt.Component?, constraints: java_swift.JavaObject? ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateComponents", methodSig: "()V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.updateComponents_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.addLayoutComponent_MethodID_2, args: &__args, locals: &__locals )
     }
 
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.resetSizeAt(int)
-
-    private static var resetSizeAt_MethodID_3: jmethodID?
-
-    open func resetSizeAt( index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetSizeAt", methodSig: "(I)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.resetSizeAt_MethodID_3, args: &__args, locals: &__locals )
+    open func addLayoutComponent( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject? ) {
+        addLayoutComponent( comp: _comp, constraints: _constraints )
     }
 
-    open func resetSizeAt( _ _index: Int ) {
-        resetSizeAt( index: _index )
-    }
+    /// void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.distributeSpace(int,boolean)
 
-    /// protected int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getPreferredSizeOfComponent(java.awt.Component)
-
-    private static var getPreferredSizeOfComponent_MethodID_4: jmethodID?
-
-    open func getPreferredSizeOfComponent( c: java_awt.Component? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredSizeOfComponent", methodSig: "(Ljava/awt/Component;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getPreferredSizeOfComponent_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getPreferredSizeOfComponent( _ _c: java_awt.Component? ) -> Int {
-        return getPreferredSizeOfComponent( c: _c )
-    }
-
-    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getMinimumSizeOfComponent(java.awt.Component)
-
-    /// protected int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeOfComponent(java.awt.Component)
-
-    private static var getSizeOfComponent_MethodID_5: jmethodID?
-
-    open func getSizeOfComponent( c: java_awt.Component? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSizeOfComponent", methodSig: "(Ljava/awt/Component;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getSizeOfComponent_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getSizeOfComponent( _ _c: java_awt.Component? ) -> Int {
-        return getSizeOfComponent( c: _c )
-    }
+    // Skipping method: true false false false false 
 
     /// protected int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getAvailableSize(java.awt.Dimension,java.awt.Insets)
 
-    private static var getAvailableSize_MethodID_6: jmethodID?
+    private static var getAvailableSize_MethodID_3: jmethodID?
 
     open func getAvailableSize( containerSize: java_awt.Dimension?, insets: java_awt.Insets? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: containerSize, locals: &__locals )
         __args[1] = JNIType.toJava( value: insets, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAvailableSize", methodSig: "(Ljava/awt/Dimension;Ljava/awt/Insets;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getAvailableSize_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAvailableSize", methodSig: "(Ljava/awt/Dimension;Ljava/awt/Insets;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getAvailableSize_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getAvailableSize( _ _containerSize: java_awt.Dimension?, _ _insets: java_awt.Insets? ) -> Int {
@@ -154,128 +122,186 @@ open class BasicSplitPaneUI_BasicHorizontalLayoutManager: java_swift.JavaObject,
 
     /// protected int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getInitialLocation(java.awt.Insets)
 
-    private static var getInitialLocation_MethodID_7: jmethodID?
+    private static var getInitialLocation_MethodID_4: jmethodID?
 
     open func getInitialLocation( insets: java_awt.Insets? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: insets, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInitialLocation", methodSig: "(Ljava/awt/Insets;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getInitialLocation_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getInitialLocation", methodSig: "(Ljava/awt/Insets;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getInitialLocation_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getInitialLocation( _ _insets: java_awt.Insets? ) -> Int {
         return getInitialLocation( insets: _insets )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.setComponentToSize(java.awt.Component,int,int,java.awt.Insets,java.awt.Dimension)
+    /// public float javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getLayoutAlignmentX(java.awt.Container)
 
-    private static var setComponentToSize_MethodID_8: jmethodID?
+    private static var getLayoutAlignmentX_MethodID_5: jmethodID?
 
-    open func setComponentToSize( c: java_awt.Component?, size: Int, location: Int, insets: java_awt.Insets?, containerSize: java_awt.Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    open func getLayoutAlignmentX( target: java_awt.Container? ) -> Float {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        __args[1] = JNIType.toJava( value: size, locals: &__locals )
-        __args[2] = JNIType.toJava( value: location, locals: &__locals )
-        __args[3] = JNIType.toJava( value: insets, locals: &__locals )
-        __args[4] = JNIType.toJava( value: containerSize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentToSize", methodSig: "(Ljava/awt/Component;IILjava/awt/Insets;Ljava/awt/Dimension;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.setComponentToSize_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getLayoutAlignmentX_MethodID_5, args: &__args, locals: &__locals )
+        return __return
     }
 
-    open func setComponentToSize( _ _c: java_awt.Component?, _ _size: Int, _ _location: Int, _ _insets: java_awt.Insets?, _ _containerSize: java_awt.Dimension? ) {
-        setComponentToSize( c: _c, size: _size, location: _location, insets: _insets, containerSize: _containerSize )
+    open func getLayoutAlignmentX( _ _target: java_awt.Container? ) -> Float {
+        return getLayoutAlignmentX( target: _target )
     }
 
-    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForPrimaryAxis(java.awt.Dimension)
+    /// public float javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getLayoutAlignmentY(java.awt.Container)
 
-    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForPrimaryAxis(java.awt.Insets,boolean)
+    private static var getLayoutAlignmentY_MethodID_6: jmethodID?
 
-    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForSecondaryAxis(java.awt.Insets,boolean)
+    open func getLayoutAlignmentY( target: java_awt.Container? ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getLayoutAlignmentY_MethodID_6, args: &__args, locals: &__locals )
+        return __return
+    }
 
-    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForSecondaryAxis(java.awt.Dimension)
+    open func getLayoutAlignmentY( _ _target: java_awt.Container? ) -> Float {
+        return getLayoutAlignmentY( target: _target )
+    }
 
-    /// int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getPreferredSizes()
+    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getMinimumSizeOfComponent(java.awt.Component)
+
+    // Skipping method: true false false false false 
 
     /// int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getMinimumSizes()
 
-    /// void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.distributeSpace(int,boolean)
+    // Skipping method: true false false false false 
 
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.removeLayoutComponent(java.awt.Component)
+    /// protected int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getPreferredSizeOfComponent(java.awt.Component)
 
-    private static var removeLayoutComponent_MethodID_9: jmethodID?
+    private static var getPreferredSizeOfComponent_MethodID_7: jmethodID?
 
-    open func removeLayoutComponent( comp: java_awt.Component? ) {
+    open func getPreferredSizeOfComponent( c: java_awt.Component? ) -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredSizeOfComponent", methodSig: "(Ljava/awt/Component;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getPreferredSizeOfComponent_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getPreferredSizeOfComponent( _ _c: java_awt.Component? ) -> Int {
+        return getPreferredSizeOfComponent( c: _c )
+    }
+
+    /// int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getPreferredSizes()
+
+    // Skipping method: true false false false false 
+
+    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForPrimaryAxis(java.awt.Dimension)
+
+    // Skipping method: true false false false false 
+
+    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForPrimaryAxis(java.awt.Insets,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForSecondaryAxis(java.awt.Dimension)
+
+    // Skipping method: true false false false false 
+
+    /// int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeForSecondaryAxis(java.awt.Insets,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// protected int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizeOfComponent(java.awt.Component)
+
+    private static var getSizeOfComponent_MethodID_8: jmethodID?
+
+    open func getSizeOfComponent( c: java_awt.Component? ) -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.removeLayoutComponent_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSizeOfComponent", methodSig: "(Ljava/awt/Component;)I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getSizeOfComponent_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
-        removeLayoutComponent( comp: _comp )
+    open func getSizeOfComponent( _ _c: java_awt.Component? ) -> Int {
+        return getSizeOfComponent( c: _c )
     }
 
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.addLayoutComponent(java.awt.Component,java.lang.Object)
+    /// protected int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getSizes()
 
-    private static var addLayoutComponent_MethodID_10: jmethodID?
+    private static var getSizes_MethodID_9: jmethodID?
 
-    open func addLayoutComponent( comp: java_awt.Component?, constraints: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getSizes() -> [Int32]! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.addLayoutComponent_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSizes", methodSig: "()[I", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getSizes_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
-    open func addLayoutComponent( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject? ) {
-        addLayoutComponent( comp: _comp, constraints: _constraints )
-    }
 
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.addLayoutComponent(java.lang.String,java.awt.Component)
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.invalidateLayout(java.awt.Container)
 
-    private static var addLayoutComponent_MethodID_11: jmethodID?
+    private static var invalidateLayout_MethodID_10: jmethodID?
 
-    open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func invalidateLayout( target: java_awt.Container? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.addLayoutComponent_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.invalidateLayout_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
-        addLayoutComponent( name: _name, comp: _comp )
+    open func invalidateLayout( _ _target: java_awt.Container? ) {
+        invalidateLayout( target: _target )
     }
 
     /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.layoutContainer(java.awt.Container)
 
-    private static var layoutContainer_MethodID_12: jmethodID?
+    private static var layoutContainer_MethodID_11: jmethodID?
 
     open func layoutContainer( parent: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.layoutContainer_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.layoutContainer_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func layoutContainer( _ _parent: java_awt.Container? ) {
         layoutContainer( parent: _parent )
     }
 
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.invalidateLayout(java.awt.Container)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.maximumLayoutSize(java.awt.Container)
 
-    private static var invalidateLayout_MethodID_13: jmethodID?
+    private static var maximumLayoutSize_MethodID_12: jmethodID?
 
-    open func invalidateLayout( target: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func maximumLayoutSize( target: java_awt.Container? ) -> java_awt.Dimension! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "invalidateLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.invalidateLayout_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.maximumLayoutSize_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
-    open func invalidateLayout( _ _target: java_awt.Container? ) {
-        invalidateLayout( target: _target )
+    open func maximumLayoutSize( _ _target: java_awt.Container? ) -> java_awt.Dimension! {
+        return maximumLayoutSize( target: _target )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.minimumLayoutSize(java.awt.Container)
+
+    private static var minimumLayoutSize_MethodID_13: jmethodID?
+
+    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.minimumLayoutSize_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return minimumLayoutSize( parent: _parent )
     }
 
     /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.preferredLayoutSize(java.awt.Container)
@@ -283,8 +309,8 @@ open class BasicSplitPaneUI_BasicHorizontalLayoutManager: java_swift.JavaObject,
     private static var preferredLayoutSize_MethodID_14: jmethodID?
 
     open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.preferredLayoutSize_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -295,101 +321,99 @@ open class BasicSplitPaneUI_BasicHorizontalLayoutManager: java_swift.JavaObject,
         return preferredLayoutSize( parent: _parent )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.minimumLayoutSize(java.awt.Container)
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.removeLayoutComponent(java.awt.Component)
 
-    private static var minimumLayoutSize_MethodID_15: jmethodID?
+    private static var removeLayoutComponent_MethodID_15: jmethodID?
 
-    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removeLayoutComponent( comp: java_awt.Component? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.minimumLayoutSize_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return minimumLayoutSize( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.maximumLayoutSize(java.awt.Container)
-
-    private static var maximumLayoutSize_MethodID_16: jmethodID?
-
-    open func maximumLayoutSize( target: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.removeLayoutComponent_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
+        removeLayoutComponent( comp: _comp )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.resetSizeAt(int)
+
+    private static var resetSizeAt_MethodID_16: jmethodID?
+
+    open func resetSizeAt( index: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "maximumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.maximumLayoutSize_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func maximumLayoutSize( _ _target: java_awt.Container? ) -> java_awt.Dimension! {
-        return maximumLayoutSize( target: _target )
-    }
-
-    /// public float javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getLayoutAlignmentX(java.awt.Container)
-
-    private static var getLayoutAlignmentX_MethodID_17: jmethodID?
-
-    open func getLayoutAlignmentX( target: java_awt.Container? ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentX", methodSig: "(Ljava/awt/Container;)F", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getLayoutAlignmentX_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        __args[0] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetSizeAt", methodSig: "(I)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.resetSizeAt_MethodID_16, args: &__args, locals: &__locals )
     }
 
-    open func getLayoutAlignmentX( _ _target: java_awt.Container? ) -> Float {
-        return getLayoutAlignmentX( target: _target )
+    open func resetSizeAt( _ _index: Int ) {
+        resetSizeAt( index: _index )
     }
-
-    /// public float javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.getLayoutAlignmentY(java.awt.Container)
-
-    private static var getLayoutAlignmentY_MethodID_18: jmethodID?
-
-    open func getLayoutAlignmentY( target: java_awt.Container? ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getLayoutAlignmentY", methodSig: "(Ljava/awt/Container;)F", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.getLayoutAlignmentY_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getLayoutAlignmentY( _ _target: java_awt.Container? ) -> Float {
-        return getLayoutAlignmentY( target: _target )
-    }
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.resetToPreferredSizes()
-
-    private static var resetToPreferredSizes_MethodID_19: jmethodID?
-
-    open func resetToPreferredSizes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "()V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.resetToPreferredSizes_MethodID_19, args: &__args, locals: &__locals )
-    }
-
 
     /// void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.resetToPreferredSizes(int)
 
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.resetToPreferredSizes()
+
+    private static var resetToPreferredSizes_MethodID_17: jmethodID?
+
+    open func resetToPreferredSizes() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "()V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.resetToPreferredSizes_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.setComponentToSize(java.awt.Component,int,int,java.awt.Insets,java.awt.Dimension)
+
+    private static var setComponentToSize_MethodID_18: jmethodID?
+
+    open func setComponentToSize( c: java_awt.Component?, size: Int, location: Int, insets: java_awt.Insets?, containerSize: java_awt.Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        __args[1] = jvalue( i: jint(size) )
+        __args[2] = jvalue( i: jint(location) )
+        __args[3] = JNIType.toJava( value: insets, locals: &__locals )
+        __args[4] = JNIType.toJava( value: containerSize, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setComponentToSize", methodSig: "(Ljava/awt/Component;IILjava/awt/Insets;Ljava/awt/Dimension;)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.setComponentToSize_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setComponentToSize( _ _c: java_awt.Component?, _ _size: Int, _ _location: Int, _ _insets: java_awt.Insets?, _ _containerSize: java_awt.Dimension? ) {
+        setComponentToSize( c: _c, size: _size, location: _location, insets: _insets, containerSize: _containerSize )
+    }
+
     /// void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.setDividerLocation(int,int)
+
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.setSizes(int[])
 
-    private static var setSizes_MethodID_20: jmethodID?
+    private static var setSizes_MethodID_19: jmethodID?
 
     open func setSizes( newSizes: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: newSizes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSizes", methodSig: "([I)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.setSizes_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSizes", methodSig: "([I)V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.setSizes_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func setSizes( _ _newSizes: [Int32]? ) {
         setSizes( newSizes: _newSizes )
     }
+
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.updateComponents()
+
+    private static var updateComponents_MethodID_20: jmethodID?
+
+    open func updateComponents() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateComponents", methodSig: "()V", methodCache: &BasicSplitPaneUI_BasicHorizontalLayoutManager.updateComponents_MethodID_20, args: &__args, locals: &__locals )
+    }
+
 
 }
 

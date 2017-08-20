@@ -18,23 +18,6 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
 
     /// private static java.lang.Boolean javax.swing.AbstractAction.RECONFIGURE_ON_NULL
 
-    /// protected boolean javax.swing.AbstractAction.enabled
-
-    private static var enabled_FieldID: jfieldID?
-
-    override open var enabled: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_HTMLTextAction.enabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_HTMLTextAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// private transient javax.swing.ArrayTable javax.swing.AbstractAction.arrayTable
 
     /// protected javax.swing.event.SwingPropertyChangeSupport javax.swing.AbstractAction.changeSupport
@@ -43,8 +26,8 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
 
     override open var changeSupport: SwingPropertyChangeSupport! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &HTMLEditorKit_HTMLTextAction.changeSupport_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &HTMLEditorKit_HTMLTextAction.changeSupport_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SwingPropertyChangeSupport( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -54,35 +37,73 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.DEFAULT
+    /// protected boolean javax.swing.AbstractAction.enabled
 
-    /// public static final java.lang.String javax.swing.Action.NAME
+    private static var enabled_FieldID: jfieldID?
 
-    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
-
-    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+    override open var enabled: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_HTMLTextAction.enabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_HTMLTextAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
 
     /// public static final java.lang.String javax.swing.Action.ACCELERATOR_KEY
 
-    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.DEFAULT
+
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.Action.DISPLAYED_MNEMONIC_INDEX_KEY
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.String javax.swing.Action.LARGE_ICON_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.NAME
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.html.HTMLEditorKit$HTMLTextAction(java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$HTMLTextAction", classCache: &HTMLEditorKit_HTMLTextAction.HTMLEditorKit_HTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &HTMLEditorKit_HTMLTextAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -93,21 +114,22 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
         self.init( name: _name )
     }
 
-    /// protected javax.swing.text.html.HTMLEditorKit javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getHTMLEditorKit(javax.swing.JEditorPane)
+    /// protected int javax.swing.text.html.HTMLEditorKit$HTMLTextAction.elementCountToTag(javax.swing.text.html.HTMLDocument,int,javax.swing.text.html.HTML$Tag)
 
-    private static var getHTMLEditorKit_MethodID_2: jmethodID?
+    private static var elementCountToTag_MethodID_2: jmethodID?
 
-    open func getHTMLEditorKit( e: JEditorPane? ) -> HTMLEditorKit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func elementCountToTag( doc: HTMLDocument?, offset: Int, tag: HTML_Tag? ) -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHTMLEditorKit", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/html/HTMLEditorKit;", methodCache: &HTMLEditorKit_HTMLTextAction.getHTMLEditorKit_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HTMLEditorKit( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: doc, locals: &__locals )
+        __args[1] = jvalue( i: jint(offset) )
+        __args[2] = JNIType.toJava( value: tag, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "elementCountToTag", methodSig: "(Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/html/HTML$Tag;)I", methodCache: &HTMLEditorKit_HTMLTextAction.elementCountToTag_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getHTMLEditorKit( _ _e: JEditorPane? ) -> HTMLEditorKit! {
-        return getHTMLEditorKit( e: _e )
+    open func elementCountToTag( _ _doc: HTMLDocument?, _ _offset: Int, _ _tag: HTML_Tag? ) -> Int {
+        return elementCountToTag( doc: _doc, offset: _offset, tag: _tag )
     }
 
     /// protected javax.swing.text.Element javax.swing.text.html.HTMLEditorKit$HTMLTextAction.findElementMatchingTag(javax.swing.text.html.HTMLDocument,int,javax.swing.text.html.HTML$Tag)
@@ -115,10 +137,10 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
     private static var findElementMatchingTag_MethodID_3: jmethodID?
 
     open func findElementMatchingTag( doc: HTMLDocument?, offset: Int, tag: HTML_Tag? ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[1] = jvalue( i: jint(offset) )
         __args[2] = JNIType.toJava( value: tag, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "findElementMatchingTag", methodSig: "(Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/html/HTML$Tag;)Ljavax/swing/text/Element;", methodCache: &HTMLEditorKit_HTMLTextAction.findElementMatchingTag_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -129,22 +151,23 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
         return findElementMatchingTag( doc: _doc, offset: _offset, tag: _tag )
     }
 
-    /// protected int javax.swing.text.html.HTMLEditorKit$HTMLTextAction.elementCountToTag(javax.swing.text.html.HTMLDocument,int,javax.swing.text.html.HTML$Tag)
+    /// private javax.swing.text.Element[] javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getElementsAt(javax.swing.text.Element,int,int)
 
-    private static var elementCountToTag_MethodID_4: jmethodID?
+    /// protected javax.swing.text.Element[] javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getElementsAt(javax.swing.text.html.HTMLDocument,int)
 
-    open func elementCountToTag( doc: HTMLDocument?, offset: Int, tag: HTML_Tag? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    private static var getElementsAt_MethodID_4: jmethodID?
+
+    open func getElementsAt( doc: HTMLDocument?, offset: Int ) -> [Element]! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: tag, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "elementCountToTag", methodSig: "(Ljavax/swing/text/html/HTMLDocument;ILjavax/swing/text/html/HTML$Tag;)I", methodCache: &HTMLEditorKit_HTMLTextAction.elementCountToTag_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[1] = jvalue( i: jint(offset) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElementsAt", methodSig: "(Ljavax/swing/text/html/HTMLDocument;I)[Ljavax/swing/text/Element;", methodCache: &HTMLEditorKit_HTMLTextAction.getElementsAt_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ElementForward].self, from: __return )
     }
 
-    open func elementCountToTag( _ _doc: HTMLDocument?, _ _offset: Int, _ _tag: HTML_Tag? ) -> Int {
-        return elementCountToTag( doc: _doc, offset: _offset, tag: _tag )
+    open func getElementsAt( _ _doc: HTMLDocument?, _ _offset: Int ) -> [Element]! {
+        return getElementsAt( doc: _doc, offset: _offset )
     }
 
     /// protected javax.swing.text.html.HTMLDocument javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getHTMLDocument(javax.swing.JEditorPane)
@@ -152,8 +175,8 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
     private static var getHTMLDocument_MethodID_5: jmethodID?
 
     open func getHTMLDocument( e: JEditorPane? ) -> HTMLDocument! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHTMLDocument", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/html/HTMLDocument;", methodCache: &HTMLEditorKit_HTMLTextAction.getHTMLDocument_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -164,23 +187,21 @@ open class HTMLEditorKit_HTMLTextAction: StyledEditorKit_StyledTextAction {
         return getHTMLDocument( e: _e )
     }
 
-    /// private javax.swing.text.Element[] javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getElementsAt(javax.swing.text.Element,int,int)
+    /// protected javax.swing.text.html.HTMLEditorKit javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getHTMLEditorKit(javax.swing.JEditorPane)
 
-    /// protected javax.swing.text.Element[] javax.swing.text.html.HTMLEditorKit$HTMLTextAction.getElementsAt(javax.swing.text.html.HTMLDocument,int)
+    private static var getHTMLEditorKit_MethodID_6: jmethodID?
 
-    private static var getElementsAt_MethodID_6: jmethodID?
-
-    open func getElementsAt( doc: HTMLDocument?, offset: Int ) -> [Element]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getHTMLEditorKit( e: JEditorPane? ) -> HTMLEditorKit! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElementsAt", methodSig: "(Ljavax/swing/text/html/HTMLDocument;I)[Ljavax/swing/text/Element;", methodCache: &HTMLEditorKit_HTMLTextAction.getElementsAt_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ElementForward](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHTMLEditorKit", methodSig: "(Ljavax/swing/JEditorPane;)Ljavax/swing/text/html/HTMLEditorKit;", methodCache: &HTMLEditorKit_HTMLTextAction.getHTMLEditorKit_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HTMLEditorKit( javaObject: __return ) : nil
     }
 
-    open func getElementsAt( _ _doc: HTMLDocument?, _ _offset: Int ) -> [Element]! {
-        return getElementsAt( doc: _doc, offset: _offset )
+    open func getHTMLEditorKit( _ _e: JEditorPane? ) -> HTMLEditorKit! {
+        return getHTMLEditorKit( e: _e )
     }
 
 }

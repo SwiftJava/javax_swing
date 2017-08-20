@@ -23,28 +23,29 @@ open class BasicOptionPaneUI_ButtonActionListener: java_swift.JavaObject, java_a
 
     open var buttonIndex: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "buttonIndex", fieldType: "I", fieldCache: &BasicOptionPaneUI_ButtonActionListener.buttonIndex_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "buttonIndex", fieldType: "I", fieldCache: &BasicOptionPaneUI_ButtonActionListener.buttonIndex_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "buttonIndex", fieldType: "I", fieldCache: &BasicOptionPaneUI_ButtonActionListener.buttonIndex_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
     /// final javax.swing.plaf.basic.BasicOptionPaneUI javax.swing.plaf.basic.BasicOptionPaneUI$ButtonActionListener.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicOptionPaneUI$ButtonActionListener(javax.swing.plaf.basic.BasicOptionPaneUI,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicOptionPaneUI?, buttonIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: buttonIndex, locals: &__locals )
+        __args[1] = jvalue( i: jint(buttonIndex) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicOptionPaneUI$ButtonActionListener", classCache: &BasicOptionPaneUI_ButtonActionListener.BasicOptionPaneUI_ButtonActionListenerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicOptionPaneUI;I)V", methodCache: &BasicOptionPaneUI_ButtonActionListener.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -59,8 +60,8 @@ open class BasicOptionPaneUI_ButtonActionListener: java_swift.JavaObject, java_a
     private static var actionPerformed_MethodID_2: jmethodID?
 
     open func actionPerformed( e: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &BasicOptionPaneUI_ButtonActionListener.actionPerformed_MethodID_2, args: &__args, locals: &__locals )
     }

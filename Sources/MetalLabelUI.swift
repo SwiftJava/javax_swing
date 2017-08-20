@@ -17,13 +17,17 @@ open class MetalLabelUI: BasicLabelUI {
 
     private static var MetalLabelUIJNIClass: jclass?
 
+    /// private static final java.lang.Object javax.swing.plaf.metal.MetalLabelUI.METAL_LABEL_UI_KEY
+
     /// protected static javax.swing.plaf.metal.MetalLabelUI javax.swing.plaf.metal.MetalLabelUI.metalLabelUI
 
-    /// private static final java.lang.Object javax.swing.plaf.metal.MetalLabelUI.METAL_LABEL_UI_KEY
+    // Skipping field: false false false false false true 
+
+    /// private static final java.lang.Object javax.swing.plaf.basic.BasicLabelUI.BASIC_LABEL_UI_KEY
 
     /// protected static javax.swing.plaf.basic.BasicLabelUI javax.swing.plaf.basic.BasicLabelUI.labelUI
 
-    /// private static final java.lang.Object javax.swing.plaf.basic.BasicLabelUI.BASIC_LABEL_UI_KEY
+    // Skipping field: false false false false false true 
 
     /// private java.awt.Rectangle javax.swing.plaf.basic.BasicLabelUI.paintIconR
 
@@ -34,8 +38,8 @@ open class MetalLabelUI: BasicLabelUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalLabelUI", classCache: &MetalLabelUI.MetalLabelUIJNIClass, methodSig: "()V", methodCache: &MetalLabelUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -46,8 +50,8 @@ open class MetalLabelUI: BasicLabelUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalLabelUI", classCache: &MetalLabelUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -63,13 +67,13 @@ open class MetalLabelUI: BasicLabelUI {
     private static var paintDisabledText_MethodID_3: jmethodID?
 
     override open func paintDisabledText( l: JLabel?, g: java_awt.Graphics?, s: String?, textX: Int, textY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: s, locals: &__locals )
-        __args[3] = JNIType.toJava( value: textX, locals: &__locals )
-        __args[4] = JNIType.toJava( value: textY, locals: &__locals )
+        __args[3] = jvalue( i: jint(textX) )
+        __args[4] = jvalue( i: jint(textY) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDisabledText", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/Graphics;Ljava/lang/String;II)V", methodCache: &MetalLabelUI.paintDisabledText_MethodID_3, args: &__args, locals: &__locals )
     }
 

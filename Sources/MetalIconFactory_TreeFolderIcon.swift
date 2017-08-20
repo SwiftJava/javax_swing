@@ -18,21 +18,27 @@ open class MetalIconFactory_TreeFolderIcon: MetalIconFactory_FolderIcon16 {
 
     /// javax.swing.plaf.metal.MetalIconFactory$ImageCacher javax.swing.plaf.metal.MetalIconFactory$FolderIcon16.imageCacher
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.metal.MetalIconFactory$TreeFolderIcon()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalIconFactory$TreeFolderIcon", classCache: &MetalIconFactory_TreeFolderIcon.MetalIconFactory_TreeFolderIconJNIClass, methodSig: "()V", methodCache: &MetalIconFactory_TreeFolderIcon.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeFolderIcon.getAdditionalHeight()
+
+    // Skipping method: false true false false false 
+
     /// public int javax.swing.plaf.metal.MetalIconFactory$TreeFolderIcon.getShift()
 
-    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeFolderIcon.getAdditionalHeight()
+    // Skipping method: false true false false false 
 
 }
 

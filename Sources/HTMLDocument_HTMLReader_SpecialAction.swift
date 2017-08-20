@@ -18,15 +18,19 @@ open class HTMLDocument_HTMLReader_SpecialAction: HTMLDocument_HTMLReader_TagAct
 
     /// final javax.swing.text.html.HTMLDocument$HTMLReader javax.swing.text.html.HTMLDocument$HTMLReader$SpecialAction.this$1
 
+    // Skipping field: true false false false false false 
+
     /// final javax.swing.text.html.HTMLDocument$HTMLReader javax.swing.text.html.HTMLDocument$HTMLReader$TagAction.this$1
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.text.html.HTMLDocument$HTMLReader$SpecialAction(javax.swing.text.html.HTMLDocument$HTMLReader)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_1: HTMLDocument_HTMLReader? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$HTMLReader$SpecialAction", classCache: &HTMLDocument_HTMLReader_SpecialAction.HTMLDocument_HTMLReader_SpecialActionJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument$HTMLReader;)V", methodCache: &HTMLDocument_HTMLReader_SpecialAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -38,6 +42,8 @@ open class HTMLDocument_HTMLReader_SpecialAction: HTMLDocument_HTMLReader_TagAct
     }
 
     /// public void javax.swing.text.html.HTMLDocument$HTMLReader$SpecialAction.start(javax.swing.text.html.HTML$Tag,javax.swing.text.MutableAttributeSet)
+
+    // Skipping method: false true false false false 
 
 }
 

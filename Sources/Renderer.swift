@@ -8,13 +8,13 @@ import java_awt
 
 public protocol Renderer: JavaProtocol {
 
-    /// public abstract void javax.swing.Renderer.setValue(java.lang.Object,boolean)
-
-    func setValue( aValue: java_swift.JavaObject?, isSelected: Bool )
-
     /// public abstract java.awt.Component javax.swing.Renderer.getComponent()
 
     func getComponent() -> java_awt.Component!
+
+    /// public abstract void javax.swing.Renderer.setValue(java.lang.Object,boolean)
+
+    func setValue( aValue: java_swift.JavaObject?, isSelected: Bool )
 
 }
 
@@ -23,35 +23,34 @@ open class RendererForward: JNIObjectForward, Renderer {
 
     private static var RendererJNIClass: jclass?
 
+    /// public abstract java.awt.Component javax.swing.Renderer.getComponent()
+
+    private static var getComponent_MethodID_3: jmethodID?
+
+    open func getComponent() -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &RendererForward.getComponent_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
     /// public abstract void javax.swing.Renderer.setValue(java.lang.Object,boolean)
 
-    private static var setValue_MethodID_3: jmethodID?
+    private static var setValue_MethodID_4: jmethodID?
 
     open func setValue( aValue: java_swift.JavaObject?, isSelected: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: aValue, locals: &__locals )
-        __args[1] = JNIType.toJava( value: isSelected, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;Z)V", methodCache: &RendererForward.setValue_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(Ljava/lang/Object;Z)V", methodCache: &RendererForward.setValue_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func setValue( _ _aValue: java_swift.JavaObject?, _ _isSelected: Bool ) {
         setValue( aValue: _aValue, isSelected: _isSelected )
     }
 
-    /// public abstract java.awt.Component javax.swing.Renderer.getComponent()
-
-    private static var getComponent_MethodID_4: jmethodID?
-
-    open func getComponent() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &RendererForward.getComponent_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
 }
-
 

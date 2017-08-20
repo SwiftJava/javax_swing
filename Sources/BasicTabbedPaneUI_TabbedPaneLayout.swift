@@ -19,13 +19,15 @@ open class BasicTabbedPaneUI_TabbedPaneLayout: java_swift.JavaObject, java_awt.L
 
     /// final javax.swing.plaf.basic.BasicTabbedPaneUI javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTabbedPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTabbedPaneUI$TabbedPaneLayout", classCache: &BasicTabbedPaneUI_TabbedPaneLayout.BasicTabbedPaneUI_TabbedPaneLayoutJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTabbedPaneUI;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -36,95 +38,46 @@ open class BasicTabbedPaneUI_TabbedPaneLayout: java_swift.JavaObject, java_awt.L
         self.init( this_0: _this_0 )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.removeLayoutComponent(java.awt.Component)
+    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.access$900(javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout)
 
-    private static var removeLayoutComponent_MethodID_2: jmethodID?
-
-    open func removeLayoutComponent( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.removeLayoutComponent_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
-        removeLayoutComponent( comp: _comp )
-    }
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.addLayoutComponent(java.lang.String,java.awt.Component)
 
-    private static var addLayoutComponent_MethodID_3: jmethodID?
+    private static var addLayoutComponent_MethodID_2: jmethodID?
 
     open func addLayoutComponent( name: String?, comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.addLayoutComponent_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addLayoutComponent", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.addLayoutComponent_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func addLayoutComponent( _ _name: String?, _ _comp: java_awt.Component? ) {
         addLayoutComponent( name: _name, comp: _comp )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.layoutContainer(java.awt.Container)
+    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.calculateLayoutInfo()
 
-    private static var layoutContainer_MethodID_4: jmethodID?
+    private static var calculateLayoutInfo_MethodID_3: jmethodID?
 
-    open func layoutContainer( parent: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func calculateLayoutInfo() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.layoutContainer_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func layoutContainer( _ _parent: java_awt.Container? ) {
-        layoutContainer( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.preferredLayoutSize(java.awt.Container)
-
-    private static var preferredLayoutSize_MethodID_5: jmethodID?
-
-    open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.preferredLayoutSize_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateLayoutInfo", methodSig: "()V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.calculateLayoutInfo_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func preferredLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return preferredLayoutSize( parent: _parent )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.minimumLayoutSize(java.awt.Container)
-
-    private static var minimumLayoutSize_MethodID_6: jmethodID?
-
-    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.minimumLayoutSize_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
-        return minimumLayoutSize( parent: _parent )
-    }
 
     /// protected java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.calculateSize(boolean)
 
-    private static var calculateSize_MethodID_7: jmethodID?
+    private static var calculateSize_MethodID_4: jmethodID?
 
     open func calculateSize( minimum: Bool ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: minimum, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateSize", methodSig: "(Z)Ljava/awt/Dimension;", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.calculateSize_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(minimum ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateSize", methodSig: "(Z)Ljava/awt/Dimension;", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.calculateSize_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
@@ -133,30 +86,136 @@ open class BasicTabbedPaneUI_TabbedPaneLayout: java_swift.JavaObject, java_awt.L
         return calculateSize( minimum: _minimum )
     }
 
-    /// static void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.access$900(javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout)
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.calculateTabRects(int,int)
 
-    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.calculateLayoutInfo()
+    private static var calculateTabRects_MethodID_5: jmethodID?
 
-    private static var calculateLayoutInfo_MethodID_8: jmethodID?
-
-    open func calculateLayoutInfo() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func calculateTabRects( tabPlacement: Int, tabCount: Int ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateLayoutInfo", methodSig: "()V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.calculateLayoutInfo_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(tabCount) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTabRects", methodSig: "(II)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.calculateTabRects_MethodID_5, args: &__args, locals: &__locals )
     }
 
+    open func calculateTabRects( _ _tabPlacement: Int, _ _tabCount: Int ) {
+        calculateTabRects( tabPlacement: _tabPlacement, tabCount: _tabCount )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.layoutContainer(java.awt.Container)
+
+    private static var layoutContainer_MethodID_6: jmethodID?
+
+    open func layoutContainer( parent: java_awt.Container? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutContainer", methodSig: "(Ljava/awt/Container;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.layoutContainer_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func layoutContainer( _ _parent: java_awt.Container? ) {
+        layoutContainer( parent: _parent )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.layoutTabComponents()
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.minimumLayoutSize(java.awt.Container)
+
+    private static var minimumLayoutSize_MethodID_7: jmethodID?
+
+    open func minimumLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "minimumLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.minimumLayoutSize_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func minimumLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return minimumLayoutSize( parent: _parent )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.normalizeTabRuns(int,int,int,int)
+
+    private static var normalizeTabRuns_MethodID_8: jmethodID?
+
+    open func normalizeTabRuns( tabPlacement: Int, tabCount: Int, start: Int, max: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(tabCount) )
+        __args[2] = jvalue( i: jint(start) )
+        __args[3] = jvalue( i: jint(max) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "normalizeTabRuns", methodSig: "(IIII)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.normalizeTabRuns_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func normalizeTabRuns( _ _tabPlacement: Int, _ _tabCount: Int, _ _start: Int, _ _max: Int ) {
+        normalizeTabRuns( tabPlacement: _tabPlacement, tabCount: _tabCount, start: _start, max: _max )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.padSelectedTab(int,int)
+
+    private static var padSelectedTab_MethodID_9: jmethodID?
+
+    open func padSelectedTab( tabPlacement: Int, selectedIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(selectedIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "padSelectedTab", methodSig: "(II)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.padSelectedTab_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func padSelectedTab( _ _tabPlacement: Int, _ _selectedIndex: Int ) {
+        padSelectedTab( tabPlacement: _tabPlacement, selectedIndex: _selectedIndex )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.padTabRun(int,int,int,int)
+
+    private static var padTabRun_MethodID_10: jmethodID?
+
+    open func padTabRun( tabPlacement: Int, start: Int, end: Int, max: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(start) )
+        __args[2] = jvalue( i: jint(end) )
+        __args[3] = jvalue( i: jint(max) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "padTabRun", methodSig: "(IIII)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.padTabRun_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func padTabRun( _ _tabPlacement: Int, _ _start: Int, _ _end: Int, _ _max: Int ) {
+        padTabRun( tabPlacement: _tabPlacement, start: _start, end: _end, max: _max )
+    }
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.preferredLayoutSize(java.awt.Container)
+
+    private static var preferredLayoutSize_MethodID_11: jmethodID?
+
+    open func preferredLayoutSize( parent: java_awt.Container? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "preferredLayoutSize", methodSig: "(Ljava/awt/Container;)Ljava/awt/Dimension;", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.preferredLayoutSize_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open func preferredLayoutSize( _ _parent: java_awt.Container? ) -> java_awt.Dimension! {
+        return preferredLayoutSize( parent: _parent )
+    }
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.preferredTabAreaHeight(int,int)
 
-    private static var preferredTabAreaHeight_MethodID_9: jmethodID?
+    private static var preferredTabAreaHeight_MethodID_12: jmethodID?
 
     open func preferredTabAreaHeight( tabPlacement: Int, width: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "preferredTabAreaHeight", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.preferredTabAreaHeight_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(width) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "preferredTabAreaHeight", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.preferredTabAreaHeight_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func preferredTabAreaHeight( _ _tabPlacement: Int, _ _width: Int ) -> Int {
@@ -165,105 +224,50 @@ open class BasicTabbedPaneUI_TabbedPaneLayout: java_swift.JavaObject, java_awt.L
 
     /// protected int javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.preferredTabAreaWidth(int,int)
 
-    private static var preferredTabAreaWidth_MethodID_10: jmethodID?
+    private static var preferredTabAreaWidth_MethodID_13: jmethodID?
 
     open func preferredTabAreaWidth( tabPlacement: Int, height: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "preferredTabAreaWidth", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.preferredTabAreaWidth_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(height) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "preferredTabAreaWidth", methodSig: "(II)I", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.preferredTabAreaWidth_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func preferredTabAreaWidth( _ _tabPlacement: Int, _ _height: Int ) -> Int {
         return preferredTabAreaWidth( tabPlacement: _tabPlacement, height: _height )
     }
 
-    /// private void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.layoutTabComponents()
+    /// public void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.removeLayoutComponent(java.awt.Component)
 
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.calculateTabRects(int,int)
+    private static var removeLayoutComponent_MethodID_14: jmethodID?
 
-    private static var calculateTabRects_MethodID_11: jmethodID?
-
-    open func calculateTabRects( tabPlacement: Int, tabCount: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func removeLayoutComponent( comp: java_awt.Component? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabCount, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "calculateTabRects", methodSig: "(II)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.calculateTabRects_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeLayoutComponent", methodSig: "(Ljava/awt/Component;)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.removeLayoutComponent_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func calculateTabRects( _ _tabPlacement: Int, _ _tabCount: Int ) {
-        calculateTabRects( tabPlacement: _tabPlacement, tabCount: _tabCount )
+    open func removeLayoutComponent( _ _comp: java_awt.Component? ) {
+        removeLayoutComponent( comp: _comp )
     }
 
     /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.rotateTabRuns(int,int)
 
-    private static var rotateTabRuns_MethodID_12: jmethodID?
+    private static var rotateTabRuns_MethodID_15: jmethodID?
 
     open func rotateTabRuns( tabPlacement: Int, selectedRun: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: selectedRun, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotateTabRuns", methodSig: "(II)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.rotateTabRuns_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(selectedRun) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotateTabRuns", methodSig: "(II)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.rotateTabRuns_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func rotateTabRuns( _ _tabPlacement: Int, _ _selectedRun: Int ) {
         rotateTabRuns( tabPlacement: _tabPlacement, selectedRun: _selectedRun )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.normalizeTabRuns(int,int,int,int)
-
-    private static var normalizeTabRuns_MethodID_13: jmethodID?
-
-    open func normalizeTabRuns( tabPlacement: Int, tabCount: Int, start: Int, max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabCount, locals: &__locals )
-        __args[2] = JNIType.toJava( value: start, locals: &__locals )
-        __args[3] = JNIType.toJava( value: max, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "normalizeTabRuns", methodSig: "(IIII)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.normalizeTabRuns_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func normalizeTabRuns( _ _tabPlacement: Int, _ _tabCount: Int, _ _start: Int, _ _max: Int ) {
-        normalizeTabRuns( tabPlacement: _tabPlacement, tabCount: _tabCount, start: _start, max: _max )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.padTabRun(int,int,int,int)
-
-    private static var padTabRun_MethodID_14: jmethodID?
-
-    open func padTabRun( tabPlacement: Int, start: Int, end: Int, max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: end, locals: &__locals )
-        __args[3] = JNIType.toJava( value: max, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "padTabRun", methodSig: "(IIII)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.padTabRun_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func padTabRun( _ _tabPlacement: Int, _ _start: Int, _ _end: Int, _ _max: Int ) {
-        padTabRun( tabPlacement: _tabPlacement, start: _start, end: _end, max: _max )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.padSelectedTab(int,int)
-
-    private static var padSelectedTab_MethodID_15: jmethodID?
-
-    open func padSelectedTab( tabPlacement: Int, selectedIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "padSelectedTab", methodSig: "(II)V", methodCache: &BasicTabbedPaneUI_TabbedPaneLayout.padSelectedTab_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func padSelectedTab( _ _tabPlacement: Int, _ _selectedIndex: Int ) {
-        padSelectedTab( tabPlacement: _tabPlacement, selectedIndex: _selectedIndex )
     }
 
 }

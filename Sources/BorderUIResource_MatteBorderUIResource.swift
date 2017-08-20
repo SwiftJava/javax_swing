@@ -23,8 +23,8 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
 
     override open var color: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "color", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_MatteBorderUIResource.color_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "color", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_MatteBorderUIResource.color_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -40,8 +40,8 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
 
     override open var tileIcon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "tileIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BorderUIResource_MatteBorderUIResource.tileIcon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "tileIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BorderUIResource_MatteBorderUIResource.tileIcon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,19 +51,34 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
         }
     }
 
+    /// protected int javax.swing.border.EmptyBorder.bottom
+
+    private static var bottom_FieldID: jfieldID?
+
+    override open var bottom: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.bottom_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected int javax.swing.border.EmptyBorder.left
 
     private static var left_FieldID: jfieldID?
 
     override open var left: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.left_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.left_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "left", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.left_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -74,13 +89,12 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
 
     override open var right: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.right_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.right_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "right", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.right_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -91,53 +105,31 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
 
     override open var top: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.top_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.top_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "top", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.top_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected int javax.swing.border.EmptyBorder.bottom
-
-    private static var bottom_FieldID: jfieldID?
-
-    override open var bottom: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.bottom_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &BorderUIResource_MatteBorderUIResource.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public javax.swing.plaf.BorderUIResource$MatteBorderUIResource(int,int,int,int,java.awt.Color)
+    /// public javax.swing.plaf.BorderUIResource$MatteBorderUIResource(javax.swing.Icon)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( top: Int, left: Int, bottom: Int, right: Int, color: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( tileIcon: Icon? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
-        __args[4] = JNIType.toJava( value: color, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$MatteBorderUIResource", classCache: &BorderUIResource_MatteBorderUIResource.BorderUIResource_MatteBorderUIResourceJNIClass, methodSig: "(IIIILjava/awt/Color;)V", methodCache: &BorderUIResource_MatteBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tileIcon, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$MatteBorderUIResource", classCache: &BorderUIResource_MatteBorderUIResource.BorderUIResource_MatteBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/Icon;)V", methodCache: &BorderUIResource_MatteBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _top: Int, _ _left: Int, _ _bottom: Int, _ _right: Int, _ _color: java_awt.Color? ) {
-        self.init( top: _top, left: _left, bottom: _bottom, right: _right, color: _color )
+    public convenience init( _ _tileIcon: Icon? ) {
+        self.init( tileIcon: _tileIcon )
     }
 
     /// public javax.swing.plaf.BorderUIResource$MatteBorderUIResource(int,int,int,int,javax.swing.Icon)
@@ -145,12 +137,12 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( top: Int, left: Int, bottom: Int, right: Int, tileIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(top) )
+        __args[1] = jvalue( i: jint(left) )
+        __args[2] = jvalue( i: jint(bottom) )
+        __args[3] = jvalue( i: jint(right) )
         __args[4] = JNIType.toJava( value: tileIcon, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$MatteBorderUIResource", classCache: &BorderUIResource_MatteBorderUIResource.BorderUIResource_MatteBorderUIResourceJNIClass, methodSig: "(IIIILjavax/swing/Icon;)V", methodCache: &BorderUIResource_MatteBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -161,21 +153,25 @@ open class BorderUIResource_MatteBorderUIResource: MatteBorder, UIResource {
         self.init( top: _top, left: _left, bottom: _bottom, right: _right, tileIcon: _tileIcon )
     }
 
-    /// public javax.swing.plaf.BorderUIResource$MatteBorderUIResource(javax.swing.Icon)
+    /// public javax.swing.plaf.BorderUIResource$MatteBorderUIResource(int,int,int,int,java.awt.Color)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( tileIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( top: Int, left: Int, bottom: Int, right: Int, color: java_awt.Color? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tileIcon, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$MatteBorderUIResource", classCache: &BorderUIResource_MatteBorderUIResource.BorderUIResource_MatteBorderUIResourceJNIClass, methodSig: "(Ljavax/swing/Icon;)V", methodCache: &BorderUIResource_MatteBorderUIResource.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(top) )
+        __args[1] = jvalue( i: jint(left) )
+        __args[2] = jvalue( i: jint(bottom) )
+        __args[3] = jvalue( i: jint(right) )
+        __args[4] = JNIType.toJava( value: color, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$MatteBorderUIResource", classCache: &BorderUIResource_MatteBorderUIResource.BorderUIResource_MatteBorderUIResourceJNIClass, methodSig: "(IIIILjava/awt/Color;)V", methodCache: &BorderUIResource_MatteBorderUIResource.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _tileIcon: Icon? ) {
-        self.init( tileIcon: _tileIcon )
+    public convenience init( _ _top: Int, _ _left: Int, _ _bottom: Int, _ _right: Int, _ _color: java_awt.Color? ) {
+        self.init( top: _top, left: _left, bottom: _bottom, right: _right, color: _color )
     }
 
 }

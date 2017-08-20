@@ -21,8 +21,8 @@ open class JFormattedTextField_AbstractFormatterFactory: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFormattedTextField$AbstractFormatterFactory", classCache: &JFormattedTextField_AbstractFormatterFactory.JFormattedTextField_AbstractFormatterFactoryJNIClass, methodSig: "()V", methodCache: &JFormattedTextField_AbstractFormatterFactory.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class JFormattedTextField_AbstractFormatterFactory: java_swift.JavaObject {
     private static var getFormatter_MethodID_2: jmethodID?
 
     open func getFormatter( tf: JFormattedTextField? ) -> JFormattedTextField_AbstractFormatter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: tf, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFormatter", methodSig: "(Ljavax/swing/JFormattedTextField;)Ljavax/swing/JFormattedTextField$AbstractFormatter;", methodCache: &JFormattedTextField_AbstractFormatterFactory.getFormatter_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

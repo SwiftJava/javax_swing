@@ -16,25 +16,27 @@ open class BasicTextUI_BasicHighlighter: DefaultHighlighter, UIResource {
 
     private static var BasicTextUI_BasicHighlighterJNIClass: jclass?
 
-    /// private static final javax.swing.text.Highlighter$Highlight[] javax.swing.text.DefaultHighlighter.noHighlights
+    /// public static final javax.swing.text.LayeredHighlighter$LayerPainter javax.swing.text.DefaultHighlighter.DefaultPainter
 
-    /// private java.util.Vector javax.swing.text.DefaultHighlighter.highlights
+    // Skipping field: false true false false false false 
+
+    /// private static final javax.swing.text.Highlighter$Highlight[] javax.swing.text.DefaultHighlighter.noHighlights
 
     /// private javax.swing.text.JTextComponent javax.swing.text.DefaultHighlighter.component
 
     /// private boolean javax.swing.text.DefaultHighlighter.drawsLayeredHighlights
 
-    /// private javax.swing.text.DefaultHighlighter$SafeDamager javax.swing.text.DefaultHighlighter.safeDamager
+    /// private java.util.Vector javax.swing.text.DefaultHighlighter.highlights
 
-    /// public static final javax.swing.text.LayeredHighlighter$LayerPainter javax.swing.text.DefaultHighlighter.DefaultPainter
+    /// private javax.swing.text.DefaultHighlighter$SafeDamager javax.swing.text.DefaultHighlighter.safeDamager
 
     /// public javax.swing.plaf.basic.BasicTextUI$BasicHighlighter()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTextUI$BasicHighlighter", classCache: &BasicTextUI_BasicHighlighter.BasicTextUI_BasicHighlighterJNIClass, methodSig: "()V", methodCache: &BasicTextUI_BasicHighlighter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

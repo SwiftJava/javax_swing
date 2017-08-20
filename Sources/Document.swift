@@ -9,51 +9,47 @@ public protocol Document: JavaProtocol {
 
     /// public static final java.lang.String javax.swing.text.Document.StreamDescriptionProperty
 
-    static var StreamDescriptionProperty: String! { get }
+    // Skipping field: false false false false false true 
 
     /// public static final java.lang.String javax.swing.text.Document.TitleProperty
 
-    static var TitleProperty: String! { get }
+    // Skipping field: false false false false false true 
 
-    /// public abstract void javax.swing.text.Document.remove(int,int) throws javax.swing.text.BadLocationException
+    /// public abstract void javax.swing.text.Document.addDocumentListener(javax.swing.event.DocumentListener)
 
-    func remove( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */
-
-    /// public abstract java.lang.Object javax.swing.text.Document.getProperty(java.lang.Object)
-
-    func getProperty( key: java_swift.JavaObject? ) -> java_swift.JavaObject!
-
-    /// public abstract int javax.swing.text.Document.getLength()
-
-    func getLength() -> Int
+    func addDocumentListener( listener: DocumentListener? )
 
     /// public abstract void javax.swing.text.Document.addUndoableEditListener(javax.swing.event.UndoableEditListener)
 
     func addUndoableEditListener( listener: UndoableEditListener? )
 
-    /// public abstract void javax.swing.text.Document.removeUndoableEditListener(javax.swing.event.UndoableEditListener)
+    /// public abstract javax.swing.text.Position javax.swing.text.Document.createPosition(int) throws javax.swing.text.BadLocationException
 
-    func removeUndoableEditListener( listener: UndoableEditListener? )
+    func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position!
 
-    /// public abstract javax.swing.text.Position javax.swing.text.Document.getStartPosition()
+    /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
 
-    func getStartPosition() -> Position!
+    func getDefaultRootElement() -> Element!
 
     /// public abstract javax.swing.text.Position javax.swing.text.Document.getEndPosition()
 
     func getEndPosition() -> Position!
 
+    /// public abstract int javax.swing.text.Document.getLength()
+
+    func getLength() -> Int
+
+    /// public abstract java.lang.Object javax.swing.text.Document.getProperty(java.lang.Object)
+
+    func getProperty( key: java_swift.JavaObject? ) -> java_swift.JavaObject!
+
     /// public abstract javax.swing.text.Element[] javax.swing.text.Document.getRootElements()
 
     func getRootElements() -> [Element]!
 
-    /// public abstract void javax.swing.text.Document.render(java.lang.Runnable)
+    /// public abstract javax.swing.text.Position javax.swing.text.Document.getStartPosition()
 
-    func render( r: java_swift.Runnable? )
-
-    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
-
-    func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? )
+    func getStartPosition() -> Position!
 
     /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
 
@@ -63,25 +59,29 @@ public protocol Document: JavaProtocol {
 
     func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */
 
-    /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
-
-    func removeDocumentListener( listener: DocumentListener? )
-
-    /// public abstract void javax.swing.text.Document.addDocumentListener(javax.swing.event.DocumentListener)
-
-    func addDocumentListener( listener: DocumentListener? )
-
     /// public abstract void javax.swing.text.Document.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
     func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */
 
-    /// public abstract javax.swing.text.Position javax.swing.text.Document.createPosition(int) throws javax.swing.text.BadLocationException
+    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
 
-    func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position!
+    func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? )
 
-    /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
+    /// public abstract void javax.swing.text.Document.remove(int,int) throws javax.swing.text.BadLocationException
 
-    func getDefaultRootElement() -> Element!
+    func remove( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */
+
+    /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
+
+    func removeDocumentListener( listener: DocumentListener? )
+
+    /// public abstract void javax.swing.text.Document.removeUndoableEditListener(javax.swing.event.UndoableEditListener)
+
+    func removeUndoableEditListener( listener: UndoableEditListener? )
+
+    /// public abstract void javax.swing.text.Document.render(java.lang.Runnable)
+
+    func render( r: java_swift.Runnable? )
 
 }
 
@@ -97,7 +97,8 @@ open class DocumentForward: JNIObjectForward, Document {
     open static var StreamDescriptionProperty: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "StreamDescriptionProperty", fieldType: "Ljava/lang/String;", fieldCache: &StreamDescriptionProperty_FieldID, className: "javax/swing/text/Document", classCache: &DocumentJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -108,258 +109,53 @@ open class DocumentForward: JNIObjectForward, Document {
     open static var TitleProperty: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TitleProperty", fieldType: "Ljava/lang/String;", fieldCache: &TitleProperty_FieldID, className: "javax/swing/text/Document", classCache: &DocumentJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
-    }
-
-    /// public abstract void javax.swing.text.Document.remove(int,int) throws javax.swing.text.BadLocationException
-
-    private static var remove_MethodID_18: jmethodID?
-
-    open func remove( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(II)V", methodCache: &DocumentForward.remove_MethodID_18, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func remove( _ _offs: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ {
-        try remove( offs: _offs, len: _len )
-    }
-
-    /// public abstract java.lang.Object javax.swing.text.Document.getProperty(java.lang.Object)
-
-    private static var getProperty_MethodID_19: jmethodID?
-
-    open func getProperty( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &DocumentForward.getProperty_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-    open func getProperty( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return getProperty( key: _key )
-    }
-
-    /// public abstract int javax.swing.text.Document.getLength()
-
-    private static var getLength_MethodID_20: jmethodID?
-
-    open func getLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &DocumentForward.getLength_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.text.Document.addUndoableEditListener(javax.swing.event.UndoableEditListener)
-
-    private static var addUndoableEditListener_MethodID_21: jmethodID?
-
-    open func addUndoableEditListener( listener: UndoableEditListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &DocumentForward.addUndoableEditListener_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func addUndoableEditListener( _ _listener: UndoableEditListener? ) {
-        addUndoableEditListener( listener: _listener )
-    }
-
-    /// public abstract void javax.swing.text.Document.removeUndoableEditListener(javax.swing.event.UndoableEditListener)
-
-    private static var removeUndoableEditListener_MethodID_22: jmethodID?
-
-    open func removeUndoableEditListener( listener: UndoableEditListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &DocumentForward.removeUndoableEditListener_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func removeUndoableEditListener( _ _listener: UndoableEditListener? ) {
-        removeUndoableEditListener( listener: _listener )
-    }
-
-    /// public abstract javax.swing.text.Position javax.swing.text.Document.getStartPosition()
-
-    private static var getStartPosition_MethodID_23: jmethodID?
-
-    open func getStartPosition() -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &DocumentForward.getStartPosition_MethodID_23, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PositionForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract javax.swing.text.Position javax.swing.text.Document.getEndPosition()
-
-    private static var getEndPosition_MethodID_24: jmethodID?
-
-    open func getEndPosition() -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &DocumentForward.getEndPosition_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PositionForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract javax.swing.text.Element[] javax.swing.text.Document.getRootElements()
-
-    private static var getRootElements_MethodID_25: jmethodID?
-
-    open func getRootElements() -> [Element]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootElements", methodSig: "()[Ljavax/swing/text/Element;", methodCache: &DocumentForward.getRootElements_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ElementForward](), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.text.Document.render(java.lang.Runnable)
-
-    private static var render_MethodID_26: jmethodID?
-
-    open func render( r: java_swift.Runnable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "render", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &DocumentForward.render_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func render( _ _r: java_swift.Runnable? ) {
-        render( r: _r )
-    }
-
-    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
-
-    private static var putProperty_MethodID_27: jmethodID?
-
-    open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DocumentForward.putProperty_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
-        putProperty( key: _key, value: _value )
-    }
-
-    /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
-
-    private static var getText_MethodID_28: jmethodID?
-
-    open func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &DocumentForward.getText_MethodID_28, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getText( _ _offset: Int, _ _length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        return try getText( offset: _offset, length: _length )
-    }
-
-    /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
-
-    private static var getText_MethodID_29: jmethodID?
-
-    open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &DocumentForward.getText_MethodID_29, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func getText( _ _offset: Int, _ _length: Int, _ _txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
-        try getText( offset: _offset, length: _length, txt: _txt )
-    }
-
-    /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
-
-    private static var removeDocumentListener_MethodID_30: jmethodID?
-
-    open func removeDocumentListener( listener: DocumentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.removeDocumentListener_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func removeDocumentListener( _ _listener: DocumentListener? ) {
-        removeDocumentListener( listener: _listener )
     }
 
     /// public abstract void javax.swing.text.Document.addDocumentListener(javax.swing.event.DocumentListener)
 
-    private static var addDocumentListener_MethodID_31: jmethodID?
+    private static var addDocumentListener_MethodID_18: jmethodID?
 
     open func addDocumentListener( listener: DocumentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.addDocumentListener_MethodID_31, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.addDocumentListener_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func addDocumentListener( _ _listener: DocumentListener? ) {
         addDocumentListener( listener: _listener )
     }
 
-    /// public abstract void javax.swing.text.Document.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
+    /// public abstract void javax.swing.text.Document.addUndoableEditListener(javax.swing.event.UndoableEditListener)
 
-    private static var insertString_MethodID_32: jmethodID?
+    private static var addUndoableEditListener_MethodID_19: jmethodID?
 
-    open func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func addUndoableEditListener( listener: UndoableEditListener? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: str, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentForward.insertString_MethodID_32, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &DocumentForward.addUndoableEditListener_MethodID_19, args: &__args, locals: &__locals )
     }
 
-    open func insertString( _ _offset: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        try insertString( offset: _offset, str: _str, a: _a )
+    open func addUndoableEditListener( _ _listener: UndoableEditListener? ) {
+        addUndoableEditListener( listener: _listener )
     }
 
     /// public abstract javax.swing.text.Position javax.swing.text.Document.createPosition(int) throws javax.swing.text.BadLocationException
 
-    private static var createPosition_MethodID_33: jmethodID?
+    private static var createPosition_MethodID_20: jmethodID?
 
     open func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &DocumentForward.createPosition_MethodID_33, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(offs) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &DocumentForward.createPosition_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
         return __return != nil ? PositionForward( javaObject: __return ) : nil
@@ -371,17 +167,228 @@ open class DocumentForward: JNIObjectForward, Document {
 
     /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
 
-    private static var getDefaultRootElement_MethodID_34: jmethodID?
+    private static var getDefaultRootElement_MethodID_21: jmethodID?
 
     open func getDefaultRootElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DocumentForward.getDefaultRootElement_MethodID_34, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &DocumentForward.getDefaultRootElement_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
 
 
-}
+    /// public abstract javax.swing.text.Position javax.swing.text.Document.getEndPosition()
 
+    private static var getEndPosition_MethodID_22: jmethodID?
+
+    open func getEndPosition() -> Position! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &DocumentForward.getEndPosition_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PositionForward( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract int javax.swing.text.Document.getLength()
+
+    private static var getLength_MethodID_23: jmethodID?
+
+    open func getLength() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &DocumentForward.getLength_MethodID_23, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract java.lang.Object javax.swing.text.Document.getProperty(java.lang.Object)
+
+    private static var getProperty_MethodID_24: jmethodID?
+
+    open func getProperty( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &DocumentForward.getProperty_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open func getProperty( _ _key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return getProperty( key: _key )
+    }
+
+    /// public abstract javax.swing.text.Element[] javax.swing.text.Document.getRootElements()
+
+    private static var getRootElements_MethodID_25: jmethodID?
+
+    open func getRootElements() -> [Element]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootElements", methodSig: "()[Ljavax/swing/text/Element;", methodCache: &DocumentForward.getRootElements_MethodID_25, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ElementForward].self, from: __return )
+    }
+
+
+    /// public abstract javax.swing.text.Position javax.swing.text.Document.getStartPosition()
+
+    private static var getStartPosition_MethodID_26: jmethodID?
+
+    open func getStartPosition() -> Position! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &DocumentForward.getStartPosition_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PositionForward( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_27: jmethodID?
+
+    open func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &DocumentForward.getText_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getText( _ _offset: Int, _ _length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        return try getText( offset: _offset, length: _length )
+    }
+
+    /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_28: jmethodID?
+
+    open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &DocumentForward.getText_MethodID_28, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func getText( _ _offset: Int, _ _length: Int, _ _txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
+        try getText( offset: _offset, length: _length, txt: _txt )
+    }
+
+    /// public abstract void javax.swing.text.Document.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
+
+    private static var insertString_MethodID_29: jmethodID?
+
+    open func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = JNIType.toJava( value: str, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &DocumentForward.insertString_MethodID_29, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func insertString( _ _offset: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
+        try insertString( offset: _offset, str: _str, a: _a )
+    }
+
+    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
+
+    private static var putProperty_MethodID_30: jmethodID?
+
+    open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &DocumentForward.putProperty_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
+        putProperty( key: _key, value: _value )
+    }
+
+    /// public abstract void javax.swing.text.Document.remove(int,int) throws javax.swing.text.BadLocationException
+
+    private static var remove_MethodID_31: jmethodID?
+
+    open func remove( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offs) )
+        __args[1] = jvalue( i: jint(len) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(II)V", methodCache: &DocumentForward.remove_MethodID_31, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func remove( _ _offs: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ {
+        try remove( offs: _offs, len: _len )
+    }
+
+    /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
+
+    private static var removeDocumentListener_MethodID_32: jmethodID?
+
+    open func removeDocumentListener( listener: DocumentListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &DocumentForward.removeDocumentListener_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func removeDocumentListener( _ _listener: DocumentListener? ) {
+        removeDocumentListener( listener: _listener )
+    }
+
+    /// public abstract void javax.swing.text.Document.removeUndoableEditListener(javax.swing.event.UndoableEditListener)
+
+    private static var removeUndoableEditListener_MethodID_33: jmethodID?
+
+    open func removeUndoableEditListener( listener: UndoableEditListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &DocumentForward.removeUndoableEditListener_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    open func removeUndoableEditListener( _ _listener: UndoableEditListener? ) {
+        removeUndoableEditListener( listener: _listener )
+    }
+
+    /// public abstract void javax.swing.text.Document.render(java.lang.Runnable)
+
+    private static var render_MethodID_34: jmethodID?
+
+    open func render( r: java_swift.Runnable? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "render", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &DocumentForward.render_MethodID_34, args: &__args, locals: &__locals )
+    }
+
+    open func render( _ _r: java_swift.Runnable? ) {
+        render( r: _r )
+    }
+
+}
 

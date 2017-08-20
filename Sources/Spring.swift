@@ -24,7 +24,7 @@ open class Spring: java_swift.JavaObject {
     open static var UNSET: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNSET", fieldType: "I", fieldCache: &UNSET_FieldID, className: "javax/swing/Spring", classCache: &SpringJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -33,85 +33,24 @@ open class Spring: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/Spring", classCache: &Spring.SpringJNIClass, methodSig: "()V", methodCache: &Spring.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public static javax.swing.Spring javax.swing.Spring.max(javax.swing.Spring,javax.swing.Spring)
-
-    private static var max_MethodID_2: jmethodID?
-
-    open class func max( s1: Spring?, s2: Spring? ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "max", methodSig: "(Ljavax/swing/Spring;Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &max_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Spring( javaObject: __return ) : nil
-    }
-
-    open class func max( _ _s1: Spring?, _ _s2: Spring? ) -> Spring! {
-        return max( s1: _s1, s2: _s2 )
-    }
-
-    /// public abstract int javax.swing.Spring.getValue()
-
-    private static var getValue_MethodID_3: jmethodID?
-
-    open func getValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &Spring.getValue_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.Spring.setValue(int)
-
-    private static var setValue_MethodID_4: jmethodID?
-
-    open func setValue( value: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &Spring.setValue_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setValue( _ _value: Int ) {
-        setValue( value: _value )
-    }
-
-    /// public static javax.swing.Spring javax.swing.Spring.sum(javax.swing.Spring,javax.swing.Spring)
-
-    private static var sum_MethodID_5: jmethodID?
-
-    open class func sum( s1: Spring?, s2: Spring? ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s1, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "sum", methodSig: "(Ljavax/swing/Spring;Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &sum_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Spring( javaObject: __return ) : nil
-    }
-
-    open class func sum( _ _s1: Spring?, _ _s2: Spring? ) -> Spring! {
-        return sum( s1: _s1, s2: _s2 )
-    }
+    /// private static void javax.swing.Spring.checkArg(java.lang.Object)
 
     /// public static javax.swing.Spring javax.swing.Spring.constant(int)
 
-    private static var constant_MethodID_6: jmethodID?
+    private static var constant_MethodID_2: jmethodID?
 
     open class func constant( pref: Int ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pref, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "constant", methodSig: "(I)Ljavax/swing/Spring;", methodCache: &constant_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pref) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "constant", methodSig: "(I)Ljavax/swing/Spring;", methodCache: &constant_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
@@ -122,15 +61,15 @@ open class Spring: java_swift.JavaObject {
 
     /// public static javax.swing.Spring javax.swing.Spring.constant(int,int,int)
 
-    private static var constant_MethodID_7: jmethodID?
+    private static var constant_MethodID_3: jmethodID?
 
     open class func constant( min: Int, pref: Int, max: Int ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pref, locals: &__locals )
-        __args[2] = JNIType.toJava( value: max, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "constant", methodSig: "(III)Ljavax/swing/Spring;", methodCache: &constant_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(min) )
+        __args[1] = jvalue( i: jint(pref) )
+        __args[2] = jvalue( i: jint(max) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "constant", methodSig: "(III)Ljavax/swing/Spring;", methodCache: &constant_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
@@ -139,77 +78,54 @@ open class Spring: java_swift.JavaObject {
         return constant( min: _min, pref: _pref, max: _max )
     }
 
-    /// private double javax.swing.Spring.range(boolean)
+    /// static javax.swing.Spring javax.swing.Spring.difference(javax.swing.Spring,javax.swing.Spring)
 
-    /// public static javax.swing.Spring javax.swing.Spring.scale(javax.swing.Spring,float)
+    // Skipping method: true false false false false 
 
-    private static var scale_MethodID_8: jmethodID?
+    /// public static javax.swing.Spring javax.swing.Spring.height(java.awt.Component)
 
-    open class func scale( s: Spring?, factor: Float ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    private static var height_MethodID_4: jmethodID?
+
+    open class func height( c: java_awt.Component? ) -> Spring! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        __args[1] = JNIType.toJava( value: factor, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "scale", methodSig: "(Ljavax/swing/Spring;F)Ljavax/swing/Spring;", methodCache: &scale_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "height", methodSig: "(Ljava/awt/Component;)Ljavax/swing/Spring;", methodCache: &height_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
 
-    open class func scale( _ _s: Spring?, _ _factor: Float ) -> Spring! {
-        return scale( s: _s, factor: _factor )
+    open class func height( _ _c: java_awt.Component? ) -> Spring! {
+        return height( c: _c )
     }
 
-    /// public abstract int javax.swing.Spring.getPreferredValue()
+    /// public static javax.swing.Spring javax.swing.Spring.max(javax.swing.Spring,javax.swing.Spring)
 
-    private static var getPreferredValue_MethodID_9: jmethodID?
+    private static var max_MethodID_5: jmethodID?
 
-    open func getPreferredValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func max( s1: Spring?, s2: Spring? ) -> Spring! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredValue", methodSig: "()I", methodCache: &Spring.getPreferredValue_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: s1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: s2, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "max", methodSig: "(Ljavax/swing/Spring;Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &max_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Spring( javaObject: __return ) : nil
     }
 
-
-    /// public abstract int javax.swing.Spring.getMinimumValue()
-
-    private static var getMinimumValue_MethodID_10: jmethodID?
-
-    open func getMinimumValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimumValue", methodSig: "()I", methodCache: &Spring.getMinimumValue_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    open class func max( _ _s1: Spring?, _ _s2: Spring? ) -> Spring! {
+        return max( s1: _s1, s2: _s2 )
     }
-
-
-    /// public abstract int javax.swing.Spring.getMaximumValue()
-
-    private static var getMaximumValue_MethodID_11: jmethodID?
-
-    open func getMaximumValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumValue", methodSig: "()I", methodCache: &Spring.getMaximumValue_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// double javax.swing.Spring.getStrain()
-
-    /// void javax.swing.Spring.setStrain(double)
-
-    /// boolean javax.swing.Spring.isCyclic(javax.swing.SpringLayout)
 
     /// public static javax.swing.Spring javax.swing.Spring.minus(javax.swing.Spring)
 
-    private static var minus_MethodID_12: jmethodID?
+    private static var minus_MethodID_6: jmethodID?
 
     open class func minus( s: Spring? ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "minus", methodSig: "(Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &minus_MethodID_12, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "minus", methodSig: "(Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &minus_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
@@ -218,19 +134,51 @@ open class Spring: java_swift.JavaObject {
         return minus( s: _s )
     }
 
-    /// static javax.swing.Spring javax.swing.Spring.difference(javax.swing.Spring,javax.swing.Spring)
+    /// public static javax.swing.Spring javax.swing.Spring.scale(javax.swing.Spring,float)
 
-    /// private static void javax.swing.Spring.checkArg(java.lang.Object)
+    private static var scale_MethodID_7: jmethodID?
+
+    open class func scale( s: Spring?, factor: Float ) -> Spring! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        __args[1] = jvalue( f: factor )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "scale", methodSig: "(Ljavax/swing/Spring;F)Ljavax/swing/Spring;", methodCache: &scale_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Spring( javaObject: __return ) : nil
+    }
+
+    open class func scale( _ _s: Spring?, _ _factor: Float ) -> Spring! {
+        return scale( s: _s, factor: _factor )
+    }
+
+    /// public static javax.swing.Spring javax.swing.Spring.sum(javax.swing.Spring,javax.swing.Spring)
+
+    private static var sum_MethodID_8: jmethodID?
+
+    open class func sum( s1: Spring?, s2: Spring? ) -> Spring! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: s1, locals: &__locals )
+        __args[1] = JNIType.toJava( value: s2, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "sum", methodSig: "(Ljavax/swing/Spring;Ljavax/swing/Spring;)Ljavax/swing/Spring;", methodCache: &sum_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Spring( javaObject: __return ) : nil
+    }
+
+    open class func sum( _ _s1: Spring?, _ _s2: Spring? ) -> Spring! {
+        return sum( s1: _s1, s2: _s2 )
+    }
 
     /// public static javax.swing.Spring javax.swing.Spring.width(java.awt.Component)
 
-    private static var width_MethodID_13: jmethodID?
+    private static var width_MethodID_9: jmethodID?
 
     open class func width( c: java_awt.Component? ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "width", methodSig: "(Ljava/awt/Component;)Ljavax/swing/Spring;", methodCache: &width_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "width", methodSig: "(Ljava/awt/Component;)Ljavax/swing/Spring;", methodCache: &width_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Spring( javaObject: __return ) : nil
     }
@@ -239,21 +187,81 @@ open class Spring: java_swift.JavaObject {
         return width( c: _c )
     }
 
-    /// public static javax.swing.Spring javax.swing.Spring.height(java.awt.Component)
+    /// public abstract int javax.swing.Spring.getMaximumValue()
 
-    private static var height_MethodID_14: jmethodID?
+    private static var getMaximumValue_MethodID_10: jmethodID?
 
-    open class func height( c: java_awt.Component? ) -> Spring! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMaximumValue() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/Spring", classCache: &SpringJNIClass, methodName: "height", methodSig: "(Ljava/awt/Component;)Ljavax/swing/Spring;", methodCache: &height_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Spring( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumValue", methodSig: "()I", methodCache: &Spring.getMaximumValue_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open class func height( _ _c: java_awt.Component? ) -> Spring! {
-        return height( c: _c )
+
+    /// public abstract int javax.swing.Spring.getMinimumValue()
+
+    private static var getMinimumValue_MethodID_11: jmethodID?
+
+    open func getMinimumValue() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimumValue", methodSig: "()I", methodCache: &Spring.getMinimumValue_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract int javax.swing.Spring.getPreferredValue()
+
+    private static var getPreferredValue_MethodID_12: jmethodID?
+
+    open func getPreferredValue() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredValue", methodSig: "()I", methodCache: &Spring.getPreferredValue_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// double javax.swing.Spring.getStrain()
+
+    // Skipping method: true false false false false 
+
+    /// public abstract int javax.swing.Spring.getValue()
+
+    private static var getValue_MethodID_13: jmethodID?
+
+    open func getValue() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &Spring.getValue_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// boolean javax.swing.Spring.isCyclic(javax.swing.SpringLayout)
+
+    // Skipping method: true false false false false 
+
+    /// private double javax.swing.Spring.range(boolean)
+
+    /// void javax.swing.Spring.setStrain(double)
+
+    // Skipping method: true false false false false 
+
+    /// public abstract void javax.swing.Spring.setValue(int)
+
+    private static var setValue_MethodID_14: jmethodID?
+
+    open func setValue( value: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(value) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &Spring.setValue_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func setValue( _ _value: Int ) {
+        setValue( value: _value )
     }
 
 }

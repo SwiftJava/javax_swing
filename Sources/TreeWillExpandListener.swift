@@ -8,13 +8,13 @@ import java_util
 
 public protocol TreeWillExpandListener: java_util.EventListener {
 
-    /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillExpand(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
-
-    func treeWillExpand( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */
-
     /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillCollapse(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
 
     func treeWillCollapse( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */
+
+    /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillExpand(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
+
+    func treeWillExpand( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */
 
 }
 
@@ -23,34 +23,17 @@ open class TreeWillExpandListenerForward: java_util.EventListenerForward, TreeWi
 
     private static var TreeWillExpandListenerJNIClass: jclass?
 
-    /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillExpand(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
-
-    private static var treeWillExpand_MethodID_3: jmethodID?
-
-    open func treeWillExpand( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeWillExpand", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &TreeWillExpandListenerForward.treeWillExpand_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw ExpandVetoException( javaObject: throwable )
-        }
-    }
-
-    open func treeWillExpand( _ _event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ {
-        try treeWillExpand( event: _event )
-    }
-
     /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillCollapse(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
 
-    private static var treeWillCollapse_MethodID_4: jmethodID?
+    private static var treeWillCollapse_MethodID_3: jmethodID?
 
     open func treeWillCollapse( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeWillCollapse", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &TreeWillExpandListenerForward.treeWillCollapse_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeWillCollapse", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &TreeWillExpandListenerForward.treeWillCollapse_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw ExpandVetoException( javaObject: throwable )
         }
     }
@@ -59,16 +42,32 @@ open class TreeWillExpandListenerForward: java_util.EventListenerForward, TreeWi
         try treeWillCollapse( event: _event )
     }
 
+    /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillExpand(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
+
+    private static var treeWillExpand_MethodID_4: jmethodID?
+
+    open func treeWillExpand( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeWillExpand", methodSig: "(Ljavax/swing/event/TreeExpansionEvent;)V", methodCache: &TreeWillExpandListenerForward.treeWillExpand_MethodID_4, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw ExpandVetoException( javaObject: throwable )
+        }
+    }
+
+    open func treeWillExpand( _ _event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ {
+        try treeWillExpand( event: _event )
+    }
+
 }
 
+private typealias TreeWillExpandListener_treeWillCollapse_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias TreeWillExpandListener_treeWillExpand_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func TreeWillExpandListener_treeWillExpand_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ event: jobject? ) -> () {
+private func TreeWillExpandListener_treeWillCollapse_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ event: jobject? ) -> () {
     do {
-    JNI.inNative = true;
-    try TreeWillExpandListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeWillExpand( event: event != nil ? TreeExpansionEvent( javaObject: event ) : nil )
-    JNI.inNative = false;
+        try TreeWillExpandListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeWillCollapse( event: event != nil ? TreeExpansionEvent( javaObject: event ) : nil )
     }
     catch let exception as Throwable {
         _ = exception.withJavaObject { JNI.api.Throw( JNI.env, $0 ) }
@@ -78,13 +77,11 @@ private func TreeWillExpandListener_treeWillExpand_0( _ __env: UnsafeMutablePoin
     }
 }
 
-private typealias TreeWillExpandListener_treeWillCollapse_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias TreeWillExpandListener_treeWillExpand_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func TreeWillExpandListener_treeWillCollapse_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ event: jobject? ) -> () {
+private func TreeWillExpandListener_treeWillExpand_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ event: jobject? ) -> () {
     do {
-    JNI.inNative = true;
-    try TreeWillExpandListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeWillCollapse( event: event != nil ? TreeExpansionEvent( javaObject: event ) : nil )
-    JNI.inNative = false;
+        try TreeWillExpandListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeWillExpand( event: event != nil ? TreeExpansionEvent( javaObject: event ) : nil )
     }
     catch let exception as Throwable {
         _ = exception.withJavaObject { JNI.api.Throw( JNI.env, $0 ) }
@@ -99,11 +96,11 @@ fileprivate class TreeWillExpandListenerLocal_: JNILocalProxy<TreeWillExpandList
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let TreeWillExpandListener_treeWillExpand_0_thunk: TreeWillExpandListener_treeWillExpand_0_type = TreeWillExpandListener_treeWillExpand_0
-        natives.append( JNINativeMethod( name: strdup("__treeWillExpand"), signature: strdup("(JLjavax/swing/event/TreeExpansionEvent;)V"), fnPtr: unsafeBitCast( TreeWillExpandListener_treeWillExpand_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let TreeWillExpandListener_treeWillCollapse_0_thunk: TreeWillExpandListener_treeWillCollapse_0_type = TreeWillExpandListener_treeWillCollapse_0
+        natives.append( JNINativeMethod( name: strdup("__treeWillCollapse"), signature: strdup("(JLjavax/swing/event/TreeExpansionEvent;)V"), fnPtr: unsafeBitCast( TreeWillExpandListener_treeWillCollapse_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let TreeWillExpandListener_treeWillCollapse_1_thunk: TreeWillExpandListener_treeWillCollapse_1_type = TreeWillExpandListener_treeWillCollapse_1
-        natives.append( JNINativeMethod( name: strdup("__treeWillCollapse"), signature: strdup("(JLjavax/swing/event/TreeExpansionEvent;)V"), fnPtr: unsafeBitCast( TreeWillExpandListener_treeWillCollapse_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let TreeWillExpandListener_treeWillExpand_1_thunk: TreeWillExpandListener_treeWillExpand_1_type = TreeWillExpandListener_treeWillExpand_1
+        natives.append( JNINativeMethod( name: strdup("__treeWillExpand"), signature: strdup("(JLjavax/swing/event/TreeExpansionEvent;)V"), fnPtr: unsafeBitCast( TreeWillExpandListener_treeWillExpand_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -136,22 +133,16 @@ open class TreeWillExpandListenerBase: TreeWillExpandListener {
 
     public init() {}
 
-    /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillExpand(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
-
-    open func treeWillExpand( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ /**/ {
-    }
-
-    open func treeWillExpand( _ _event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ /**/ {
-        try treeWillExpand( event: _event )
-    }
-
     /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillCollapse(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
 
     open func treeWillCollapse( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ /**/ {
     }
 
-    open func treeWillCollapse( _ _event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ /**/ {
-        try treeWillCollapse( event: _event )
+
+    /// public abstract void javax.swing.event.TreeWillExpandListener.treeWillExpand(javax.swing.event.TreeExpansionEvent) throws javax.swing.tree.ExpandVetoException
+
+    open func treeWillExpand( event: TreeExpansionEvent? ) throws /* javax.swing.tree.ExpandVetoException */ /**/ {
     }
+
 
 }

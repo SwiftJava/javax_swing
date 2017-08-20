@@ -21,14 +21,16 @@ open class BasicBorders_MarginBorder: AbstractBorder, UIResource {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicBorders$MarginBorder", classCache: &BasicBorders_MarginBorder.BasicBorders_MarginBorderJNIClass, methodSig: "()V", methodCache: &BasicBorders_MarginBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
     /// public java.awt.Insets javax.swing.plaf.basic.BasicBorders$MarginBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    // Skipping method: false true false false false 
 
 }
 

@@ -17,20 +17,21 @@ open class InsetsUIResource: java_awt.Insets, UIResource {
 
     private static var InsetsUIResourceJNIClass: jclass?
 
-    /// public int java.awt.Insets.top
+    /// private static final long java.awt.Insets.serialVersionUID
 
-    private static var top_FieldID: jfieldID?
+    /// public int java.awt.Insets.bottom
 
-    override open var top: Int {
+    private static var bottom_FieldID: jfieldID?
+
+    override open var bottom: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &InsetsUIResource.top_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &InsetsUIResource.bottom_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "top", fieldType: "I", fieldCache: &InsetsUIResource.top_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &InsetsUIResource.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -40,31 +41,13 @@ open class InsetsUIResource: java_awt.Insets, UIResource {
 
     override open var left: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &InsetsUIResource.left_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "left", fieldType: "I", fieldCache: &InsetsUIResource.left_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "left", fieldType: "I", fieldCache: &InsetsUIResource.left_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.Insets.bottom
-
-    private static var bottom_FieldID: jfieldID?
-
-    override open var bottom: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &InsetsUIResource.bottom_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "bottom", fieldType: "I", fieldCache: &InsetsUIResource.bottom_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
@@ -74,30 +57,43 @@ open class InsetsUIResource: java_awt.Insets, UIResource {
 
     override open var right: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &InsetsUIResource.right_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "right", fieldType: "I", fieldCache: &InsetsUIResource.right_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "right", fieldType: "I", fieldCache: &InsetsUIResource.right_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private static final long java.awt.Insets.serialVersionUID
+    /// public int java.awt.Insets.top
+
+    private static var top_FieldID: jfieldID?
+
+    override open var top: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "top", fieldType: "I", fieldCache: &InsetsUIResource.top_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "top", fieldType: "I", fieldCache: &InsetsUIResource.top_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// public javax.swing.plaf.InsetsUIResource(int,int,int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( top: Int, left: Int, bottom: Int, right: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(top) )
+        __args[1] = jvalue( i: jint(left) )
+        __args[2] = jvalue( i: jint(bottom) )
+        __args[3] = jvalue( i: jint(right) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/InsetsUIResource", classCache: &InsetsUIResource.InsetsUIResourceJNIClass, methodSig: "(IIII)V", methodCache: &InsetsUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

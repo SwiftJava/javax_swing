@@ -19,9 +19,9 @@ open class ListSelectionEvent: java_util.EventObject {
 
     /// private int javax.swing.event.ListSelectionEvent.firstIndex
 
-    /// private int javax.swing.event.ListSelectionEvent.lastIndex
-
     /// private boolean javax.swing.event.ListSelectionEvent.isAdjusting
+
+    /// private int javax.swing.event.ListSelectionEvent.lastIndex
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -31,8 +31,8 @@ open class ListSelectionEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ListSelectionEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ListSelectionEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -47,12 +47,12 @@ open class ListSelectionEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_swift.JavaObject?, firstIndex: Int, lastIndex: Int, isAdjusting: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: firstIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: lastIndex, locals: &__locals )
-        __args[3] = JNIType.toJava( value: isAdjusting, locals: &__locals )
+        __args[1] = jvalue( i: jint(firstIndex) )
+        __args[2] = jvalue( i: jint(lastIndex) )
+        __args[3] = jvalue( z: jboolean(isAdjusting ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/ListSelectionEvent", classCache: &ListSelectionEvent.ListSelectionEventJNIClass, methodSig: "(Ljava/lang/Object;IIZ)V", methodCache: &ListSelectionEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -62,17 +62,15 @@ open class ListSelectionEvent: java_util.EventObject {
         self.init( source: _source, firstIndex: _firstIndex, lastIndex: _lastIndex, isAdjusting: _isAdjusting )
     }
 
-    /// public java.lang.String javax.swing.event.ListSelectionEvent.toString()
-
     /// public int javax.swing.event.ListSelectionEvent.getFirstIndex()
 
     private static var getFirstIndex_MethodID_2: jmethodID?
 
     open func getFirstIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFirstIndex", methodSig: "()I", methodCache: &ListSelectionEvent.getFirstIndex_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -81,10 +79,10 @@ open class ListSelectionEvent: java_util.EventObject {
     private static var getLastIndex_MethodID_3: jmethodID?
 
     open func getLastIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLastIndex", methodSig: "()I", methodCache: &ListSelectionEvent.getLastIndex_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -93,12 +91,16 @@ open class ListSelectionEvent: java_util.EventObject {
     private static var getValueIsAdjusting_MethodID_4: jmethodID?
 
     open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &ListSelectionEvent.getValueIsAdjusting_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
+
+    /// public java.lang.String javax.swing.event.ListSelectionEvent.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

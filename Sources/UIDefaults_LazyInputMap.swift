@@ -23,8 +23,8 @@ open class UIDefaults_LazyInputMap: java_swift.JavaObject, UIDefaults_LazyValue 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: [JavaObject]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/UIDefaults$LazyInputMap", classCache: &UIDefaults_LazyInputMap.UIDefaults_LazyInputMapJNIClass, methodSig: "([Ljava/lang/Object;)V", methodCache: &UIDefaults_LazyInputMap.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +40,8 @@ open class UIDefaults_LazyInputMap: java_swift.JavaObject, UIDefaults_LazyValue 
     private static var createValue_MethodID_2: jmethodID?
 
     open func createValue( arg0: UIDefaults? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, mapClass: "javax/swing/UIDefaults", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createValue", methodSig: "(Ljavax/swing/UIDefaults;)Ljava/lang/Object;", methodCache: &UIDefaults_LazyInputMap.createValue_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

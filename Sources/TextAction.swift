@@ -19,23 +19,6 @@ open class TextAction: AbstractAction {
 
     /// private static java.lang.Boolean javax.swing.AbstractAction.RECONFIGURE_ON_NULL
 
-    /// protected boolean javax.swing.AbstractAction.enabled
-
-    private static var enabled_FieldID: jfieldID?
-
-    override open var enabled: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &TextAction.enabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &TextAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// private transient javax.swing.ArrayTable javax.swing.AbstractAction.arrayTable
 
     /// protected javax.swing.event.SwingPropertyChangeSupport javax.swing.AbstractAction.changeSupport
@@ -44,8 +27,8 @@ open class TextAction: AbstractAction {
 
     override open var changeSupport: SwingPropertyChangeSupport! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &TextAction.changeSupport_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &TextAction.changeSupport_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SwingPropertyChangeSupport( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -55,35 +38,73 @@ open class TextAction: AbstractAction {
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.DEFAULT
+    /// protected boolean javax.swing.AbstractAction.enabled
 
-    /// public static final java.lang.String javax.swing.Action.NAME
+    private static var enabled_FieldID: jfieldID?
 
-    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
-
-    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+    override open var enabled: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &TextAction.enabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &TextAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
 
     /// public static final java.lang.String javax.swing.Action.ACCELERATOR_KEY
 
-    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.DEFAULT
+
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.Action.DISPLAYED_MNEMONIC_INDEX_KEY
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.String javax.swing.Action.LARGE_ICON_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.NAME
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.TextAction(java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TextAction", classCache: &TextAction.TextActionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &TextAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -99,12 +120,12 @@ open class TextAction: AbstractAction {
     private static var augmentList_MethodID_2: jmethodID?
 
     open class func augmentList( list1: [Action]?, list2: [Action]? ) -> [Action]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: list1, locals: &__locals )
         __args[1] = JNIType.toJava( value: list2, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/TextAction", classCache: &TextActionJNIClass, methodName: "augmentList", methodSig: "([Ljavax/swing/Action;[Ljavax/swing/Action;)[Ljavax/swing/Action;", methodCache: &augmentList_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionForward](), from: __return )
+        return JNIType.toSwift( type: [ActionForward].self, from: __return )
     }
 
     open class func augmentList( _ _list1: [Action]?, _ _list2: [Action]? ) -> [Action]! {
@@ -116,8 +137,8 @@ open class TextAction: AbstractAction {
     private static var getFocusedComponent_MethodID_3: jmethodID?
 
     open func getFocusedComponent() -> JTextComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFocusedComponent", methodSig: "()Ljavax/swing/text/JTextComponent;", methodCache: &TextAction.getFocusedComponent_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JTextComponent( javaObject: __return ) : nil
@@ -129,8 +150,8 @@ open class TextAction: AbstractAction {
     private static var getTextComponent_MethodID_4: jmethodID?
 
     open func getTextComponent( e: java_awt.ActionEvent? ) -> JTextComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextComponent", methodSig: "(Ljava/awt/event/ActionEvent;)Ljavax/swing/text/JTextComponent;", methodCache: &TextAction.getTextComponent_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

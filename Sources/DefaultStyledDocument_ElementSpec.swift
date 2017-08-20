@@ -16,14 +16,14 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var DefaultStyledDocument_ElementSpecJNIClass: jclass?
 
-    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.StartTagType
+    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.ContentType
 
-    private static var StartTagType_FieldID: jfieldID?
+    private static var ContentType_FieldID: jfieldID?
 
-    open static var StartTagType: Int16 {
+    open static var ContentType: Int16 {
         get {
-            let __value = JNIField.GetStaticShortField( fieldName: "StartTagType", fieldType: "S", fieldCache: &StartTagType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
+            let __value = JNIField.GetStaticShortField( fieldName: "ContentType", fieldType: "S", fieldCache: &ContentType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
+            return __value
         }
     }
 
@@ -34,51 +34,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
     open static var EndTagType: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "EndTagType", fieldType: "S", fieldCache: &EndTagType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
-        }
-    }
-
-    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.ContentType
-
-    private static var ContentType_FieldID: jfieldID?
-
-    open static var ContentType: Int16 {
-        get {
-            let __value = JNIField.GetStaticShortField( fieldName: "ContentType", fieldType: "S", fieldCache: &ContentType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
-        }
-    }
-
-    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.JoinPreviousDirection
-
-    private static var JoinPreviousDirection_FieldID: jfieldID?
-
-    open static var JoinPreviousDirection: Int16 {
-        get {
-            let __value = JNIField.GetStaticShortField( fieldName: "JoinPreviousDirection", fieldType: "S", fieldCache: &JoinPreviousDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
-        }
-    }
-
-    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.JoinNextDirection
-
-    private static var JoinNextDirection_FieldID: jfieldID?
-
-    open static var JoinNextDirection: Int16 {
-        get {
-            let __value = JNIField.GetStaticShortField( fieldName: "JoinNextDirection", fieldType: "S", fieldCache: &JoinNextDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
-        }
-    }
-
-    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.OriginateDirection
-
-    private static var OriginateDirection_FieldID: jfieldID?
-
-    open static var OriginateDirection: Int16 {
-        get {
-            let __value = JNIField.GetStaticShortField( fieldName: "OriginateDirection", fieldType: "S", fieldCache: &OriginateDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
+            return __value
         }
     }
 
@@ -89,41 +45,82 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
     open static var JoinFractureDirection: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "JoinFractureDirection", fieldType: "S", fieldCache: &JoinFractureDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
-            return JNIType.toSwift( type: Int16(), from: __value )
+            return __value
+        }
+    }
+
+    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.JoinNextDirection
+
+    private static var JoinNextDirection_FieldID: jfieldID?
+
+    open static var JoinNextDirection: Int16 {
+        get {
+            let __value = JNIField.GetStaticShortField( fieldName: "JoinNextDirection", fieldType: "S", fieldCache: &JoinNextDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.JoinPreviousDirection
+
+    private static var JoinPreviousDirection_FieldID: jfieldID?
+
+    open static var JoinPreviousDirection: Int16 {
+        get {
+            let __value = JNIField.GetStaticShortField( fieldName: "JoinPreviousDirection", fieldType: "S", fieldCache: &JoinPreviousDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.OriginateDirection
+
+    private static var OriginateDirection_FieldID: jfieldID?
+
+    open static var OriginateDirection: Int16 {
+        get {
+            let __value = JNIField.GetStaticShortField( fieldName: "OriginateDirection", fieldType: "S", fieldCache: &OriginateDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
+            return __value
+        }
+    }
+
+    /// public static final short javax.swing.text.DefaultStyledDocument$ElementSpec.StartTagType
+
+    private static var StartTagType_FieldID: jfieldID?
+
+    open static var StartTagType: Int16 {
+        get {
+            let __value = JNIField.GetStaticShortField( fieldName: "StartTagType", fieldType: "S", fieldCache: &StartTagType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
+            return __value
         }
     }
 
     /// private javax.swing.text.AttributeSet javax.swing.text.DefaultStyledDocument$ElementSpec.attr
 
-    /// private int javax.swing.text.DefaultStyledDocument$ElementSpec.len
-
-    /// private short javax.swing.text.DefaultStyledDocument$ElementSpec.type
+    /// private char[] javax.swing.text.DefaultStyledDocument$ElementSpec.data
 
     /// private short javax.swing.text.DefaultStyledDocument$ElementSpec.direction
 
+    /// private int javax.swing.text.DefaultStyledDocument$ElementSpec.len
+
     /// private int javax.swing.text.DefaultStyledDocument$ElementSpec.offs
 
-    /// private char[] javax.swing.text.DefaultStyledDocument$ElementSpec.data
+    /// private short javax.swing.text.DefaultStyledDocument$ElementSpec.type
 
-    /// public javax.swing.text.DefaultStyledDocument$ElementSpec(javax.swing.text.AttributeSet,short,char[],int,int)
+    /// public javax.swing.text.DefaultStyledDocument$ElementSpec(javax.swing.text.AttributeSet,short)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( a: AttributeSet?, type: Int16, txt: [UInt16]?, offs: Int, len: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( a: AttributeSet?, type: Int16 ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
-        __args[3] = JNIType.toJava( value: offs, locals: &__locals )
-        __args[4] = JNIType.toJava( value: len, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpec.DefaultStyledDocument_ElementSpecJNIClass, methodSig: "(Ljavax/swing/text/AttributeSet;S[CII)V", methodCache: &DefaultStyledDocument_ElementSpec.new_MethodID_1, args: &__args, locals: &__locals )
+        __args[1] = jvalue( s: type )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpec.DefaultStyledDocument_ElementSpecJNIClass, methodSig: "(Ljavax/swing/text/AttributeSet;S)V", methodCache: &DefaultStyledDocument_ElementSpec.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _a: AttributeSet?, _ _type: Int16, _ _txt: [UInt16]?, _ _offs: Int, _ _len: Int ) {
-        self.init( a: _a, type: _type, txt: _txt, offs: _offs, len: _len )
+    public convenience init( _ _a: AttributeSet?, _ _type: Int16 ) {
+        self.init( a: _a, type: _type )
     }
 
     /// public javax.swing.text.DefaultStyledDocument$ElementSpec(javax.swing.text.AttributeSet,short,int)
@@ -131,11 +128,11 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( a: AttributeSet?, type: Int16, len: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: len, locals: &__locals )
+        __args[1] = jvalue( s: type )
+        __args[2] = jvalue( i: jint(len) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpec.DefaultStyledDocument_ElementSpecJNIClass, methodSig: "(Ljavax/swing/text/AttributeSet;SI)V", methodCache: &DefaultStyledDocument_ElementSpec.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -145,72 +142,73 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
         self.init( a: _a, type: _type, len: _len )
     }
 
-    /// public javax.swing.text.DefaultStyledDocument$ElementSpec(javax.swing.text.AttributeSet,short)
+    /// public javax.swing.text.DefaultStyledDocument$ElementSpec(javax.swing.text.AttributeSet,short,char[],int,int)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( a: AttributeSet?, type: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( a: AttributeSet?, type: Int16, txt: [UInt16]?, offs: Int, len: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpec.DefaultStyledDocument_ElementSpecJNIClass, methodSig: "(Ljavax/swing/text/AttributeSet;S)V", methodCache: &DefaultStyledDocument_ElementSpec.new_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = jvalue( s: type )
+        __args[2] = JNIType.toJava( value: txt, locals: &__locals )
+        __args[3] = jvalue( i: jint(offs) )
+        __args[4] = jvalue( i: jint(len) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpec.DefaultStyledDocument_ElementSpecJNIClass, methodSig: "(Ljavax/swing/text/AttributeSet;S[CII)V", methodCache: &DefaultStyledDocument_ElementSpec.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _a: AttributeSet?, _ _type: Int16 ) {
-        self.init( a: _a, type: _type )
+    public convenience init( _ _a: AttributeSet?, _ _type: Int16, _ _txt: [UInt16]?, _ _offs: Int, _ _len: Int ) {
+        self.init( a: _a, type: _type, txt: _txt, offs: _offs, len: _len )
     }
-
-    /// public java.lang.String javax.swing.text.DefaultStyledDocument$ElementSpec.toString()
-
-    /// public int javax.swing.text.DefaultStyledDocument$ElementSpec.getLength()
-
-    private static var getLength_MethodID_4: jmethodID?
-
-    open func getLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &DefaultStyledDocument_ElementSpec.getLength_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
 
     /// public char[] javax.swing.text.DefaultStyledDocument$ElementSpec.getArray()
 
-    private static var getArray_MethodID_5: jmethodID?
+    private static var getArray_MethodID_4: jmethodID?
 
     open func getArray() -> [UInt16]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getArray", methodSig: "()[C", methodCache: &DefaultStyledDocument_ElementSpec.getArray_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [UInt16](), from: __return )
-    }
-
-
-    /// public short javax.swing.text.DefaultStyledDocument$ElementSpec.getType()
-
-    private static var getType_MethodID_6: jmethodID?
-
-    open func getType() -> Int16 {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getType", methodSig: "()S", methodCache: &DefaultStyledDocument_ElementSpec.getType_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int16(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getArray", methodSig: "()[C", methodCache: &DefaultStyledDocument_ElementSpec.getArray_MethodID_4, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [UInt16].self, from: __return )
     }
 
 
     /// public javax.swing.text.AttributeSet javax.swing.text.DefaultStyledDocument$ElementSpec.getAttributes()
 
-    private static var getAttributes_MethodID_7: jmethodID?
+    private static var getAttributes_MethodID_5: jmethodID?
 
     open func getAttributes() -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &DefaultStyledDocument_ElementSpec.getAttributes_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &DefaultStyledDocument_ElementSpec.getAttributes_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
+    }
+
+
+    /// public short javax.swing.text.DefaultStyledDocument$ElementSpec.getDirection()
+
+    private static var getDirection_MethodID_6: jmethodID?
+
+    open func getDirection() -> Int16 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getDirection", methodSig: "()S", methodCache: &DefaultStyledDocument_ElementSpec.getDirection_MethodID_6, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public int javax.swing.text.DefaultStyledDocument$ElementSpec.getLength()
+
+    private static var getLength_MethodID_7: jmethodID?
+
+    open func getLength() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &DefaultStyledDocument_ElementSpec.getLength_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
@@ -219,54 +217,58 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
     private static var getOffset_MethodID_8: jmethodID?
 
     open func getOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "()I", methodCache: &DefaultStyledDocument_ElementSpec.getOffset_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
+    /// public short javax.swing.text.DefaultStyledDocument$ElementSpec.getType()
+
+    private static var getType_MethodID_9: jmethodID?
+
+    open func getType() -> Int16 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getType", methodSig: "()S", methodCache: &DefaultStyledDocument_ElementSpec.getType_MethodID_9, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public void javax.swing.text.DefaultStyledDocument$ElementSpec.setDirection(short)
+
+    private static var setDirection_MethodID_10: jmethodID?
+
+    open func setDirection( direction: Int16 ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( s: direction )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirection", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setDirection_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setDirection( _ _direction: Int16 ) {
+        setDirection( direction: _direction )
+    }
+
     /// public void javax.swing.text.DefaultStyledDocument$ElementSpec.setType(short)
 
-    private static var setType_MethodID_9: jmethodID?
+    private static var setType_MethodID_11: jmethodID?
 
     open func setType( type: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setType", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setType_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( s: type )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setType", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setType_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func setType( _ _type: Int16 ) {
         setType( type: _type )
     }
 
-    /// public short javax.swing.text.DefaultStyledDocument$ElementSpec.getDirection()
+    /// public java.lang.String javax.swing.text.DefaultStyledDocument$ElementSpec.toString()
 
-    private static var getDirection_MethodID_10: jmethodID?
-
-    open func getDirection() -> Int16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getDirection", methodSig: "()S", methodCache: &DefaultStyledDocument_ElementSpec.getDirection_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int16(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.DefaultStyledDocument$ElementSpec.setDirection(short)
-
-    private static var setDirection_MethodID_11: jmethodID?
-
-    open func setDirection( direction: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDirection", methodSig: "(S)V", methodCache: &DefaultStyledDocument_ElementSpec.setDirection_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setDirection( _ _direction: Int16 ) {
-        setDirection( direction: _direction )
-    }
+    // Skipping method: false true false false false 
 
 }
 

@@ -18,21 +18,27 @@ open class MetalIconFactory_TreeLeafIcon: MetalIconFactory_FileIcon16 {
 
     /// javax.swing.plaf.metal.MetalIconFactory$ImageCacher javax.swing.plaf.metal.MetalIconFactory$FileIcon16.imageCacher
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.metal.MetalIconFactory$TreeLeafIcon()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalIconFactory$TreeLeafIcon", classCache: &MetalIconFactory_TreeLeafIcon.MetalIconFactory_TreeLeafIconJNIClass, methodSig: "()V", methodCache: &MetalIconFactory_TreeLeafIcon.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeLeafIcon.getAdditionalHeight()
+
+    // Skipping method: false true false false false 
+
     /// public int javax.swing.plaf.metal.MetalIconFactory$TreeLeafIcon.getShift()
 
-    /// public int javax.swing.plaf.metal.MetalIconFactory$TreeLeafIcon.getAdditionalHeight()
+    // Skipping method: false true false false false 
 
 }
 

@@ -17,71 +17,43 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
 
     private static var BasicRadioButtonMenuItemUIJNIClass: jclass?
 
-    /// protected javax.swing.JMenuItem javax.swing.plaf.basic.BasicMenuItemUI.menuItem
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.DEBUG
 
-    private static var menuItem_FieldID: jfieldID?
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.TRACE
 
-    override open var menuItem: JMenuItem! {
+    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.VERBOSE
+
+    /// protected java.lang.String javax.swing.plaf.basic.BasicMenuItemUI.acceleratorDelimiter
+
+    private static var acceleratorDelimiter_FieldID: jfieldID?
+
+    override open var acceleratorDelimiter: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &BasicRadioButtonMenuItemUI.menuItem_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JMenuItem( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorDelimiter_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &BasicRadioButtonMenuItemUI.menuItem_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorDelimiter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionBackground
+    /// protected java.awt.Font javax.swing.plaf.basic.BasicMenuItemUI.acceleratorFont
 
-    private static var selectionBackground_FieldID: jfieldID?
+    private static var acceleratorFont_FieldID: jfieldID?
 
-    override open var selectionBackground: java_awt.Color! {
+    override open var acceleratorFont: java_awt.Font! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionBackground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorFont_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Font( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionForeground
-
-    private static var selectionForeground_FieldID: jfieldID?
-
-    override open var selectionForeground: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionForeground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.disabledForeground
-
-    private static var disabledForeground_FieldID: jfieldID?
-
-    override open var disabledForeground: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.disabledForeground_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.disabledForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -91,8 +63,8 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
 
     override open var acceleratorForeground: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorForeground_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -108,8 +80,8 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
 
     override open var acceleratorSelectionForeground: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorSelectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorSelectionForeground_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "acceleratorSelectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorSelectionForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -119,135 +91,14 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
         }
     }
 
-    /// protected java.lang.String javax.swing.plaf.basic.BasicMenuItemUI.acceleratorDelimiter
-
-    private static var acceleratorDelimiter_FieldID: jfieldID?
-
-    override open var acceleratorDelimiter: String! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorDelimiter_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "acceleratorDelimiter", fieldType: "Ljava/lang/String;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorDelimiter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicMenuItemUI.defaultTextIconGap
-
-    private static var defaultTextIconGap_FieldID: jfieldID?
-
-    override open var defaultTextIconGap: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonMenuItemUI.defaultTextIconGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonMenuItemUI.defaultTextIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Font javax.swing.plaf.basic.BasicMenuItemUI.acceleratorFont
-
-    private static var acceleratorFont_FieldID: jfieldID?
-
-    override open var acceleratorFont: java_awt.Font! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorFont_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Font( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "acceleratorFont", fieldType: "Ljava/awt/Font;", fieldCache: &BasicRadioButtonMenuItemUI.acceleratorFont_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicMenuItemUI.mouseInputListener
-
-    private static var mouseInputListener_FieldID: jfieldID?
-
-    override open var mouseInputListener: MouseInputListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicRadioButtonMenuItemUI.mouseInputListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MouseInputListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicRadioButtonMenuItemUI.mouseInputListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.MenuDragMouseListener javax.swing.plaf.basic.BasicMenuItemUI.menuDragMouseListener
-
-    private static var menuDragMouseListener_FieldID: jfieldID?
-
-    override open var menuDragMouseListener: MenuDragMouseListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuDragMouseListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MenuDragMouseListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuDragMouseListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.MenuKeyListener javax.swing.plaf.basic.BasicMenuItemUI.menuKeyListener
-
-    private static var menuKeyListener_FieldID: jfieldID?
-
-    override open var menuKeyListener: MenuKeyListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuKeyListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MenuKeyListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuKeyListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicMenuItemUI.propertyChangeListener
-
-    private static var propertyChangeListener_FieldID: jfieldID?
-
-    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicRadioButtonMenuItemUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicRadioButtonMenuItemUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// javax.swing.plaf.basic.BasicMenuItemUI$Handler javax.swing.plaf.basic.BasicMenuItemUI.handler
-
     /// protected javax.swing.Icon javax.swing.plaf.basic.BasicMenuItemUI.arrowIcon
 
     private static var arrowIcon_FieldID: jfieldID?
 
     override open var arrowIcon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "arrowIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicRadioButtonMenuItemUI.arrowIcon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "arrowIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicRadioButtonMenuItemUI.arrowIcon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -263,8 +114,8 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
 
     override open var checkIcon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "checkIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicRadioButtonMenuItemUI.checkIcon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "checkIcon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicRadioButtonMenuItemUI.checkIcon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -274,36 +125,185 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
         }
     }
 
+    /// protected int javax.swing.plaf.basic.BasicMenuItemUI.defaultTextIconGap
+
+    private static var defaultTextIconGap_FieldID: jfieldID?
+
+    override open var defaultTextIconGap: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonMenuItemUI.defaultTextIconGap_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonMenuItemUI.defaultTextIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.disabledForeground
+
+    private static var disabledForeground_FieldID: jfieldID?
+
+    override open var disabledForeground: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.disabledForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "disabledForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.disabledForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// javax.swing.plaf.basic.BasicMenuItemUI$Handler javax.swing.plaf.basic.BasicMenuItemUI.handler
+
+    // Skipping field: true false false false false false 
+
+    /// protected javax.swing.event.MenuDragMouseListener javax.swing.plaf.basic.BasicMenuItemUI.menuDragMouseListener
+
+    private static var menuDragMouseListener_FieldID: jfieldID?
+
+    override open var menuDragMouseListener: MenuDragMouseListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuDragMouseListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MenuDragMouseListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuDragMouseListener", fieldType: "Ljavax/swing/event/MenuDragMouseListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuDragMouseListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JMenuItem javax.swing.plaf.basic.BasicMenuItemUI.menuItem
+
+    private static var menuItem_FieldID: jfieldID?
+
+    override open var menuItem: JMenuItem! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &BasicRadioButtonMenuItemUI.menuItem_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JMenuItem( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuItem", fieldType: "Ljavax/swing/JMenuItem;", fieldCache: &BasicRadioButtonMenuItemUI.menuItem_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.event.MenuKeyListener javax.swing.plaf.basic.BasicMenuItemUI.menuKeyListener
+
+    private static var menuKeyListener_FieldID: jfieldID?
+
+    override open var menuKeyListener: MenuKeyListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuKeyListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MenuKeyListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuKeyListener", fieldType: "Ljavax/swing/event/MenuKeyListener;", fieldCache: &BasicRadioButtonMenuItemUI.menuKeyListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicMenuItemUI.mouseInputListener
+
+    private static var mouseInputListener_FieldID: jfieldID?
+
+    override open var mouseInputListener: MouseInputListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicRadioButtonMenuItemUI.mouseInputListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MouseInputListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "mouseInputListener", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicRadioButtonMenuItemUI.mouseInputListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected boolean javax.swing.plaf.basic.BasicMenuItemUI.oldBorderPainted
 
     private static var oldBorderPainted_FieldID: jfieldID?
 
     override open var oldBorderPainted: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &BasicRadioButtonMenuItemUI.oldBorderPainted_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &BasicRadioButtonMenuItemUI.oldBorderPainted_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "oldBorderPainted", fieldType: "Z", fieldCache: &BasicRadioButtonMenuItemUI.oldBorderPainted_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.TRACE
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicMenuItemUI.propertyChangeListener
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.VERBOSE
+    private static var propertyChangeListener_FieldID: jfieldID?
 
-    /// private static final boolean javax.swing.plaf.basic.BasicMenuItemUI.DEBUG
+    override open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicRadioButtonMenuItemUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicRadioButtonMenuItemUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionBackground
+
+    private static var selectionBackground_FieldID: jfieldID?
+
+    override open var selectionBackground: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionBackground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "selectionBackground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionBackground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicMenuItemUI.selectionForeground
+
+    private static var selectionForeground_FieldID: jfieldID?
+
+    override open var selectionForeground: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionForeground_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "selectionForeground", fieldType: "Ljava/awt/Color;", fieldCache: &BasicRadioButtonMenuItemUI.selectionForeground_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// public javax.swing.plaf.basic.BasicRadioButtonMenuItemUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicRadioButtonMenuItemUI", classCache: &BasicRadioButtonMenuItemUI.BasicRadioButtonMenuItemUIJNIClass, methodSig: "()V", methodCache: &BasicRadioButtonMenuItemUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -314,8 +314,8 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
     private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( b: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicRadioButtonMenuItemUI", classCache: &BasicRadioButtonMenuItemUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -326,35 +326,36 @@ open class BasicRadioButtonMenuItemUI: BasicMenuItemUI {
         return createUI( b: _b )
     }
 
+    /// protected java.lang.String javax.swing.plaf.basic.BasicRadioButtonMenuItemUI.getPropertyPrefix()
+
+    private static var getPropertyPrefix_MethodID_3: jmethodID?
+
+    override open func getPropertyPrefix() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicRadioButtonMenuItemUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
     /// public void javax.swing.plaf.basic.BasicRadioButtonMenuItemUI.processMouseEvent(javax.swing.JMenuItem,java.awt.event.MouseEvent,javax.swing.MenuElement[],javax.swing.MenuSelectionManager)
 
-    private static var processMouseEvent_MethodID_3: jmethodID?
+    private static var processMouseEvent_MethodID_4: jmethodID?
 
     open func processMouseEvent( item: JMenuItem?, e: java_awt.MouseEvent?, path: [MenuElement]?, manager: MenuSelectionManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: item, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
         __args[2] = JNIType.toJava( value: path, locals: &__locals )
         __args[3] = JNIType.toJava( value: manager, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljavax/swing/JMenuItem;Ljava/awt/event/MouseEvent;[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &BasicRadioButtonMenuItemUI.processMouseEvent_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processMouseEvent", methodSig: "(Ljavax/swing/JMenuItem;Ljava/awt/event/MouseEvent;[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &BasicRadioButtonMenuItemUI.processMouseEvent_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func processMouseEvent( _ _item: JMenuItem?, _ _e: java_awt.MouseEvent?, _ _path: [MenuElement]?, _ _manager: MenuSelectionManager? ) {
         processMouseEvent( item: _item, e: _e, path: _path, manager: _manager )
     }
-
-    /// protected java.lang.String javax.swing.plaf.basic.BasicRadioButtonMenuItemUI.getPropertyPrefix()
-
-    private static var getPropertyPrefix_MethodID_4: jmethodID?
-
-    override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicRadioButtonMenuItemUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
 
 }
 

@@ -17,17 +17,17 @@ open class StrokeBorder: AbstractBorder {
 
     private static var StrokeBorderJNIClass: jclass?
 
-    /// private final java.awt.BasicStroke javax.swing.border.StrokeBorder.stroke
-
     /// private final java.awt.Paint javax.swing.border.StrokeBorder.paint
+
+    /// private final java.awt.BasicStroke javax.swing.border.StrokeBorder.stroke
 
     /// public javax.swing.border.StrokeBorder(java.awt.BasicStroke)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( stroke: java_awt.BasicStroke? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: stroke, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/StrokeBorder", classCache: &StrokeBorder.StrokeBorderJNIClass, methodSig: "(Ljava/awt/BasicStroke;)V", methodCache: &StrokeBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -43,8 +43,8 @@ open class StrokeBorder: AbstractBorder {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( stroke: java_awt.BasicStroke?, paint: java_awt.Paint? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: stroke, locals: &__locals )
         __args[1] = JNIType.toJava( value: paint, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/StrokeBorder", classCache: &StrokeBorder.StrokeBorderJNIClass, methodSig: "(Ljava/awt/BasicStroke;Ljava/awt/Paint;)V", methodCache: &StrokeBorder.new_MethodID_2, args: &__args, locals: &__locals )
@@ -56,17 +56,17 @@ open class StrokeBorder: AbstractBorder {
         self.init( stroke: _stroke, paint: _paint )
     }
 
-    /// public void javax.swing.border.StrokeBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
-
     /// public java.awt.Insets javax.swing.border.StrokeBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    // Skipping method: false true false false false 
 
     /// public java.awt.Paint javax.swing.border.StrokeBorder.getPaint()
 
     private static var getPaint_MethodID_3: jmethodID?
 
     open func getPaint() -> java_awt.Paint! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPaint", methodSig: "()Ljava/awt/Paint;", methodCache: &StrokeBorder.getPaint_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.PaintForward( javaObject: __return ) : nil
@@ -78,13 +78,17 @@ open class StrokeBorder: AbstractBorder {
     private static var getStroke_MethodID_4: jmethodID?
 
     open func getStroke() -> java_awt.BasicStroke! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStroke", methodSig: "()Ljava/awt/BasicStroke;", methodCache: &StrokeBorder.getStroke_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.BasicStroke( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.border.StrokeBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    // Skipping method: false true false false false 
 
 }
 

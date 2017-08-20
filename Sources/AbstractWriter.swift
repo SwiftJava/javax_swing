@@ -16,151 +16,471 @@ open class AbstractWriter: java_swift.JavaObject {
 
     private static var AbstractWriterJNIClass: jclass?
 
-    /// private javax.swing.text.ElementIterator javax.swing.text.AbstractWriter.it
+    /// protected static final char javax.swing.text.AbstractWriter.NEWLINE
 
-    /// private java.io.Writer javax.swing.text.AbstractWriter.out
+    // Skipping field: false false false false false true 
+
+    /// private boolean javax.swing.text.AbstractWriter.canWrapLines
+
+    /// private int javax.swing.text.AbstractWriter.currLength
+
+    /// private javax.swing.text.Document javax.swing.text.AbstractWriter.doc
+
+    /// private int javax.swing.text.AbstractWriter.endOffset
+
+    /// private char[] javax.swing.text.AbstractWriter.indentChars
 
     /// private int javax.swing.text.AbstractWriter.indentLevel
 
     /// private int javax.swing.text.AbstractWriter.indentSpace
 
-    /// private javax.swing.text.Document javax.swing.text.AbstractWriter.doc
+    /// private boolean javax.swing.text.AbstractWriter.isLineEmpty
 
-    /// private int javax.swing.text.AbstractWriter.maxLineLength
-
-    /// private int javax.swing.text.AbstractWriter.currLength
-
-    /// private int javax.swing.text.AbstractWriter.startOffset
-
-    /// private int javax.swing.text.AbstractWriter.endOffset
-
-    /// private int javax.swing.text.AbstractWriter.offsetIndent
+    /// private javax.swing.text.ElementIterator javax.swing.text.AbstractWriter.it
 
     /// private java.lang.String javax.swing.text.AbstractWriter.lineSeparator
 
-    /// private boolean javax.swing.text.AbstractWriter.canWrapLines
-
-    /// private boolean javax.swing.text.AbstractWriter.isLineEmpty
-
-    /// private char[] javax.swing.text.AbstractWriter.indentChars
-
-    /// private char[] javax.swing.text.AbstractWriter.tempChars
+    /// private int javax.swing.text.AbstractWriter.maxLineLength
 
     /// private char[] javax.swing.text.AbstractWriter.newlineChars
 
+    /// private int javax.swing.text.AbstractWriter.offsetIndent
+
+    /// private java.io.Writer javax.swing.text.AbstractWriter.out
+
     /// private javax.swing.text.Segment javax.swing.text.AbstractWriter.segment
 
-    /// protected static final char javax.swing.text.AbstractWriter.NEWLINE
+    /// private int javax.swing.text.AbstractWriter.startOffset
 
-    /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Element,int,int)
+    /// private char[] javax.swing.text.AbstractWriter.tempChars
+
+    /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Document)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( w: /* java.io.Writer */ UnclassedObject?, root: Element?, pos: Int, len: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( w: /* class java.io.Writer */ UnavailableObject?, doc: Document? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: root, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[3] = JNIType.toJava( value: len, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Element;II)V", methodCache: &AbstractWriter.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _w: /* java.io.Writer */ UnclassedObject?, _ _root: Element?, _ _pos: Int, _ _len: Int ) {
-        self.init( w: _w, root: _root, pos: _pos, len: _len )
-    }
-
-    /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Element)
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init( w: /* java.io.Writer */ UnclassedObject?, root: Element? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: root, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Element;)V", methodCache: &AbstractWriter.new_MethodID_2, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Document;)V", methodCache: &AbstractWriter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: /* java.io.Writer */ UnclassedObject?, _ _root: Element? ) {
-        self.init( w: _w, root: _root )
+    public convenience init( _ _w: /* class java.io.Writer */ UnavailableObject?, _ _doc: Document? ) {
+        self.init( w: _w, doc: _doc )
     }
 
     /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Document,int,int)
 
-    private static var new_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
-    public convenience init( w: /* java.io.Writer */ UnclassedObject?, doc: Document?, pos: Int, len: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( w: /* class java.io.Writer */ UnavailableObject?, doc: Document?, pos: Int, len: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[3] = JNIType.toJava( value: len, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Document;II)V", methodCache: &AbstractWriter.new_MethodID_3, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(pos) )
+        __args[3] = jvalue( i: jint(len) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Document;II)V", methodCache: &AbstractWriter.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: /* java.io.Writer */ UnclassedObject?, _ _doc: Document?, _ _pos: Int, _ _len: Int ) {
+    public convenience init( _ _w: /* class java.io.Writer */ UnavailableObject?, _ _doc: Document?, _ _pos: Int, _ _len: Int ) {
         self.init( w: _w, doc: _doc, pos: _pos, len: _len )
     }
 
-    /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Document)
+    /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Element)
 
-    private static var new_MethodID_4: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
-    public convenience init( w: /* java.io.Writer */ UnclassedObject?, doc: Document? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( w: /* class java.io.Writer */ UnavailableObject?, root: Element? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Document;)V", methodCache: &AbstractWriter.new_MethodID_4, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: root, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Element;)V", methodCache: &AbstractWriter.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: /* java.io.Writer */ UnclassedObject?, _ _doc: Document? ) {
-        self.init( w: _w, doc: _doc )
+    public convenience init( _ _w: /* class java.io.Writer */ UnavailableObject?, _ _root: Element? ) {
+        self.init( w: _w, root: _root )
     }
 
-    /// private int javax.swing.text.AbstractWriter.indexOf(char[],char,int,int)
+    /// protected javax.swing.text.AbstractWriter(java.io.Writer,javax.swing.text.Element,int,int)
 
-    /// protected void javax.swing.text.AbstractWriter.write(char[],int,int) throws java.io.IOException
+    private static var new_MethodID_4: jmethodID?
 
-    private static var write_MethodID_5: jmethodID?
-
-    open func write( chars: [UInt16]?, startIndex: Int, length: Int ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init( w: /* class java.io.Writer */ UnavailableObject?, root: Element?, pos: Int, len: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
-        __args[1] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "([CII)V", methodCache: &AbstractWriter.write_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
+        __args[1] = JNIType.toJava( value: root, locals: &__locals )
+        __args[2] = jvalue( i: jint(pos) )
+        __args[3] = jvalue( i: jint(len) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractWriter", classCache: &AbstractWriter.AbstractWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/Element;II)V", methodCache: &AbstractWriter.new_MethodID_4, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _w: /* class java.io.Writer */ UnavailableObject?, _ _root: Element?, _ _pos: Int, _ _len: Int ) {
+        self.init( w: _w, root: _root, pos: _pos, len: _len )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.decrIndent()
+
+    private static var decrIndent_MethodID_5: jmethodID?
+
+    open func decrIndent() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "decrIndent", methodSig: "()V", methodCache: &AbstractWriter.decrIndent_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected boolean javax.swing.text.AbstractWriter.getCanWrapLines()
+
+    private static var getCanWrapLines_MethodID_6: jmethodID?
+
+    open func getCanWrapLines() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCanWrapLines", methodSig: "()Z", methodCache: &AbstractWriter.getCanWrapLines_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected int javax.swing.text.AbstractWriter.getCurrentLineLength()
+
+    private static var getCurrentLineLength_MethodID_7: jmethodID?
+
+    open func getCurrentLineLength() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCurrentLineLength", methodSig: "()I", methodCache: &AbstractWriter.getCurrentLineLength_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected javax.swing.text.Document javax.swing.text.AbstractWriter.getDocument()
+
+    private static var getDocument_MethodID_8: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractWriter.getDocument_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.text.ElementIterator javax.swing.text.AbstractWriter.getElementIterator()
+
+    private static var getElementIterator_MethodID_9: jmethodID?
+
+    open func getElementIterator() -> ElementIterator! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElementIterator", methodSig: "()Ljavax/swing/text/ElementIterator;", methodCache: &AbstractWriter.getElementIterator_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementIterator( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.text.AbstractWriter.getEndOffset()
+
+    private static var getEndOffset_MethodID_10: jmethodID?
+
+    open func getEndOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &AbstractWriter.getEndOffset_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected int javax.swing.text.AbstractWriter.getIndentLevel()
+
+    private static var getIndentLevel_MethodID_11: jmethodID?
+
+    open func getIndentLevel() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndentLevel", methodSig: "()I", methodCache: &AbstractWriter.getIndentLevel_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected int javax.swing.text.AbstractWriter.getIndentSpace()
+
+    private static var getIndentSpace_MethodID_12: jmethodID?
+
+    open func getIndentSpace() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndentSpace", methodSig: "()I", methodCache: &AbstractWriter.getIndentSpace_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected int javax.swing.text.AbstractWriter.getLineLength()
+
+    private static var getLineLength_MethodID_13: jmethodID?
+
+    open func getLineLength() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineLength", methodSig: "()I", methodCache: &AbstractWriter.getLineLength_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.lang.String javax.swing.text.AbstractWriter.getLineSeparator()
+
+    private static var getLineSeparator_MethodID_14: jmethodID?
+
+    open func getLineSeparator() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineSeparator", methodSig: "()Ljava/lang/String;", methodCache: &AbstractWriter.getLineSeparator_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.text.AbstractWriter.getStartOffset()
+
+    private static var getStartOffset_MethodID_15: jmethodID?
+
+    open func getStartOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &AbstractWriter.getStartOffset_MethodID_15, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected java.lang.String javax.swing.text.AbstractWriter.getText(javax.swing.text.Element) throws javax.swing.text.BadLocationException
+
+    private static var getText_MethodID_16: jmethodID?
+
+    open func getText( elem: Element? ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(Ljavax/swing/text/Element;)Ljava/lang/String;", methodCache: &AbstractWriter.getText_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getText( _ _elem: Element? ) throws /* javax.swing.text.BadLocationException */ -> String! {
+        return try getText( elem: _elem )
+    }
+
+    /// protected java.io.Writer javax.swing.text.AbstractWriter.getWriter()
+
+    private static var getWriter_MethodID_17: jmethodID?
+
+    open func getWriter() -> /* class java.io.Writer */ UnavailableObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWriter", methodSig: "()Ljava/io/Writer;", methodCache: &AbstractWriter.getWriter_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class java.io.Writer */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+
+    /// protected boolean javax.swing.text.AbstractWriter.inRange(javax.swing.text.Element)
+
+    private static var inRange_MethodID_18: jmethodID?
+
+    open func inRange( next: Element? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: next, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inRange", methodSig: "(Ljavax/swing/text/Element;)Z", methodCache: &AbstractWriter.inRange_MethodID_18, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func inRange( _ _next: Element? ) -> Bool {
+        return inRange( next: _next )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.incrIndent()
+
+    private static var incrIndent_MethodID_19: jmethodID?
+
+    open func incrIndent() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "incrIndent", methodSig: "()V", methodCache: &AbstractWriter.incrIndent_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.text.AbstractWriter.indent() throws java.io.IOException
+
+    private static var indent_MethodID_20: jmethodID?
+
+    open func indent() throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "indent", methodSig: "()V", methodCache: &AbstractWriter.indent_MethodID_20, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func write( _ _chars: [UInt16]?, _ _startIndex: Int, _ _length: Int ) throws /* java.io.IOException */ {
-        try write( chars: _chars, startIndex: _startIndex, length: _length )
+
+    /// private int javax.swing.text.AbstractWriter.indexOf(char[],char,int,int)
+
+    /// protected boolean javax.swing.text.AbstractWriter.isLineEmpty()
+
+    private static var isLineEmpty_MethodID_21: jmethodID?
+
+    open func isLineEmpty() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLineEmpty", methodSig: "()Z", methodCache: &AbstractWriter.isLineEmpty_MethodID_21, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected void javax.swing.text.AbstractWriter.output(char[],int,int) throws java.io.IOException
+
+    private static var output_MethodID_22: jmethodID?
+
+    open func output( content: [UInt16]?, start: Int, length: Int ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: content, locals: &__locals )
+        __args[1] = jvalue( i: jint(start) )
+        __args[2] = jvalue( i: jint(length) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "output", methodSig: "([CII)V", methodCache: &AbstractWriter.output_MethodID_22, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func output( _ _content: [UInt16]?, _ _start: Int, _ _length: Int ) throws /* java.io.IOException */ {
+        try output( content: _content, start: _start, length: _length )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.setCanWrapLines(boolean)
+
+    private static var setCanWrapLines_MethodID_23: jmethodID?
+
+    open func setCanWrapLines( newValue: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCanWrapLines", methodSig: "(Z)V", methodCache: &AbstractWriter.setCanWrapLines_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func setCanWrapLines( _ _newValue: Bool ) {
+        setCanWrapLines( newValue: _newValue )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.setCurrentLineLength(int)
+
+    private static var setCurrentLineLength_MethodID_24: jmethodID?
+
+    open func setCurrentLineLength( length: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(length) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentLineLength", methodSig: "(I)V", methodCache: &AbstractWriter.setCurrentLineLength_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setCurrentLineLength( _ _length: Int ) {
+        setCurrentLineLength( length: _length )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.setIndentSpace(int)
+
+    private static var setIndentSpace_MethodID_25: jmethodID?
+
+    open func setIndentSpace( space: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(space) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIndentSpace", methodSig: "(I)V", methodCache: &AbstractWriter.setIndentSpace_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setIndentSpace( _ _space: Int ) {
+        setIndentSpace( space: _space )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.setLineLength(int)
+
+    private static var setLineLength_MethodID_26: jmethodID?
+
+    open func setLineLength( l: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(l) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineLength", methodSig: "(I)V", methodCache: &AbstractWriter.setLineLength_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setLineLength( _ _l: Int ) {
+        setLineLength( l: _l )
+    }
+
+    /// public void javax.swing.text.AbstractWriter.setLineSeparator(java.lang.String)
+
+    private static var setLineSeparator_MethodID_27: jmethodID?
+
+    open func setLineSeparator( value: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineSeparator", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractWriter.setLineSeparator_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func setLineSeparator( _ _value: String? ) {
+        setLineSeparator( value: _value )
+    }
+
+    /// protected void javax.swing.text.AbstractWriter.text(javax.swing.text.Element) throws javax.swing.text.BadLocationException,java.io.IOException
+
+    private static var text_MethodID_28: jmethodID?
+
+    open func text( elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &AbstractWriter.text_MethodID_28, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+    }
+
+    open func text( _ _elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
+        try text( elem: _elem )
     }
 
     /// protected void javax.swing.text.AbstractWriter.write(java.lang.String) throws java.io.IOException
 
-    private static var write_MethodID_6: jmethodID?
+    private static var write_MethodID_29: jmethodID?
 
     open func write( content: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: content, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractWriter.write_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractWriter.write_MethodID_29, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
@@ -170,15 +490,16 @@ open class AbstractWriter: java_swift.JavaObject {
 
     /// protected void javax.swing.text.AbstractWriter.write(char) throws java.io.IOException
 
-    private static var write_MethodID_7: jmethodID?
+    private static var write_MethodID_30: jmethodID?
 
     open func write( ch: UInt16 ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ch, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "(C)V", methodCache: &AbstractWriter.write_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( c: ch )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "(C)V", methodCache: &AbstractWriter.write_MethodID_30, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
@@ -186,352 +507,54 @@ open class AbstractWriter: java_swift.JavaObject {
         try write( ch: _ch )
     }
 
+    /// protected void javax.swing.text.AbstractWriter.write(char[],int,int) throws java.io.IOException
+
+    private static var write_MethodID_31: jmethodID?
+
+    open func write( chars: [UInt16]?, startIndex: Int, length: Int ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: chars, locals: &__locals )
+        __args[1] = jvalue( i: jint(startIndex) )
+        __args[2] = jvalue( i: jint(length) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "([CII)V", methodCache: &AbstractWriter.write_MethodID_31, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func write( _ _chars: [UInt16]?, _ _startIndex: Int, _ _length: Int ) throws /* java.io.IOException */ {
+        try write( chars: _chars, startIndex: _startIndex, length: _length )
+    }
+
     /// protected abstract void javax.swing.text.AbstractWriter.write() throws java.io.IOException,javax.swing.text.BadLocationException
 
-    private static var write_MethodID_8: jmethodID?
+    private static var write_MethodID_32: jmethodID?
 
     open func write() throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "()V", methodCache: &AbstractWriter.write_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "()V", methodCache: &AbstractWriter.write_MethodID_32, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-
-    /// protected void javax.swing.text.AbstractWriter.indent() throws java.io.IOException
-
-    private static var indent_MethodID_9: jmethodID?
-
-    open func indent() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "indent", methodSig: "()V", methodCache: &AbstractWriter.indent_MethodID_9, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// protected boolean javax.swing.text.AbstractWriter.inRange(javax.swing.text.Element)
-
-    private static var inRange_MethodID_10: jmethodID?
-
-    open func inRange( next: Element? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: next, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inRange", methodSig: "(Ljavax/swing/text/Element;)Z", methodCache: &AbstractWriter.inRange_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func inRange( _ _next: Element? ) -> Bool {
-        return inRange( next: _next )
-    }
-
-    /// protected java.lang.String javax.swing.text.AbstractWriter.getText(javax.swing.text.Element) throws javax.swing.text.BadLocationException
-
-    private static var getText_MethodID_11: jmethodID?
-
-    open func getText( elem: Element? ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(Ljavax/swing/text/Element;)Ljava/lang/String;", methodCache: &AbstractWriter.getText_MethodID_11, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getText( _ _elem: Element? ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        return try getText( elem: _elem )
-    }
-
-    /// protected void javax.swing.text.AbstractWriter.text(javax.swing.text.Element) throws javax.swing.text.BadLocationException,java.io.IOException
-
-    private static var text_MethodID_12: jmethodID?
-
-    open func text( elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &AbstractWriter.text_MethodID_12, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    open func text( _ _elem: Element? ) throws /* javax.swing.text.BadLocationException, java.io.IOException */ {
-        try text( elem: _elem )
-    }
-
-    /// protected javax.swing.text.Document javax.swing.text.AbstractWriter.getDocument()
-
-    private static var getDocument_MethodID_13: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractWriter.getDocument_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.text.AbstractWriter.isLineEmpty()
-
-    private static var isLineEmpty_MethodID_14: jmethodID?
-
-    open func isLineEmpty() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLineEmpty", methodSig: "()Z", methodCache: &AbstractWriter.isLineEmpty_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected javax.swing.text.ElementIterator javax.swing.text.AbstractWriter.getElementIterator()
-
-    private static var getElementIterator_MethodID_15: jmethodID?
-
-    open func getElementIterator() -> ElementIterator! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElementIterator", methodSig: "()Ljavax/swing/text/ElementIterator;", methodCache: &AbstractWriter.getElementIterator_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementIterator( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.io.Writer javax.swing.text.AbstractWriter.getWriter()
-
-    private static var getWriter_MethodID_16: jmethodID?
-
-    open func getWriter() -> /* java.io.Writer */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWriter", methodSig: "()Ljava/io/Writer;", methodCache: &AbstractWriter.getWriter_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.io.Writer */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.setLineLength(int)
-
-    private static var setLineLength_MethodID_17: jmethodID?
-
-    open func setLineLength( l: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineLength", methodSig: "(I)V", methodCache: &AbstractWriter.setLineLength_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setLineLength( _ _l: Int ) {
-        setLineLength( l: _l )
-    }
-
-    /// protected int javax.swing.text.AbstractWriter.getLineLength()
-
-    private static var getLineLength_MethodID_18: jmethodID?
-
-    open func getLineLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLineLength", methodSig: "()I", methodCache: &AbstractWriter.getLineLength_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.setCurrentLineLength(int)
-
-    private static var setCurrentLineLength_MethodID_19: jmethodID?
-
-    open func setCurrentLineLength( length: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: length, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCurrentLineLength", methodSig: "(I)V", methodCache: &AbstractWriter.setCurrentLineLength_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setCurrentLineLength( _ _length: Int ) {
-        setCurrentLineLength( length: _length )
-    }
-
-    /// protected int javax.swing.text.AbstractWriter.getCurrentLineLength()
-
-    private static var getCurrentLineLength_MethodID_20: jmethodID?
-
-    open func getCurrentLineLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCurrentLineLength", methodSig: "()I", methodCache: &AbstractWriter.getCurrentLineLength_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.setCanWrapLines(boolean)
-
-    private static var setCanWrapLines_MethodID_21: jmethodID?
-
-    open func setCanWrapLines( newValue: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCanWrapLines", methodSig: "(Z)V", methodCache: &AbstractWriter.setCanWrapLines_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func setCanWrapLines( _ _newValue: Bool ) {
-        setCanWrapLines( newValue: _newValue )
-    }
-
-    /// protected boolean javax.swing.text.AbstractWriter.getCanWrapLines()
-
-    private static var getCanWrapLines_MethodID_22: jmethodID?
-
-    open func getCanWrapLines() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCanWrapLines", methodSig: "()Z", methodCache: &AbstractWriter.getCanWrapLines_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.setIndentSpace(int)
-
-    private static var setIndentSpace_MethodID_23: jmethodID?
-
-    open func setIndentSpace( space: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: space, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIndentSpace", methodSig: "(I)V", methodCache: &AbstractWriter.setIndentSpace_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func setIndentSpace( _ _space: Int ) {
-        setIndentSpace( space: _space )
-    }
-
-    /// protected int javax.swing.text.AbstractWriter.getIndentSpace()
-
-    private static var getIndentSpace_MethodID_24: jmethodID?
-
-    open func getIndentSpace() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndentSpace", methodSig: "()I", methodCache: &AbstractWriter.getIndentSpace_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.AbstractWriter.setLineSeparator(java.lang.String)
-
-    private static var setLineSeparator_MethodID_25: jmethodID?
-
-    open func setLineSeparator( value: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineSeparator", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractWriter.setLineSeparator_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setLineSeparator( _ _value: String? ) {
-        setLineSeparator( value: _value )
-    }
-
-    /// public java.lang.String javax.swing.text.AbstractWriter.getLineSeparator()
-
-    private static var getLineSeparator_MethodID_26: jmethodID?
-
-    open func getLineSeparator() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLineSeparator", methodSig: "()Ljava/lang/String;", methodCache: &AbstractWriter.getLineSeparator_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.incrIndent()
-
-    private static var incrIndent_MethodID_27: jmethodID?
-
-    open func incrIndent() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "incrIndent", methodSig: "()V", methodCache: &AbstractWriter.incrIndent_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.decrIndent()
-
-    private static var decrIndent_MethodID_28: jmethodID?
-
-    open func decrIndent() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "decrIndent", methodSig: "()V", methodCache: &AbstractWriter.decrIndent_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected int javax.swing.text.AbstractWriter.getIndentLevel()
-
-    private static var getIndentLevel_MethodID_29: jmethodID?
-
-    open func getIndentLevel() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndentLevel", methodSig: "()I", methodCache: &AbstractWriter.getIndentLevel_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.writeLineSeparator() throws java.io.IOException
-
-    private static var writeLineSeparator_MethodID_30: jmethodID?
-
-    open func writeLineSeparator() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLineSeparator", methodSig: "()V", methodCache: &AbstractWriter.writeLineSeparator_MethodID_30, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// protected void javax.swing.text.AbstractWriter.output(char[],int,int) throws java.io.IOException
-
-    private static var output_MethodID_31: jmethodID?
-
-    open func output( content: [UInt16]?, start: Int, length: Int ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: content, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        __args[2] = JNIType.toJava( value: length, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "output", methodSig: "([CII)V", methodCache: &AbstractWriter.output_MethodID_31, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func output( _ _content: [UInt16]?, _ _start: Int, _ _length: Int ) throws /* java.io.IOException */ {
-        try output( content: _content, start: _start, length: _length )
-    }
 
     /// protected void javax.swing.text.AbstractWriter.writeAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
 
-    private static var writeAttributes_MethodID_32: jmethodID?
+    private static var writeAttributes_MethodID_33: jmethodID?
 
     open func writeAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractWriter.writeAttributes_MethodID_32, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &AbstractWriter.writeAttributes_MethodID_33, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
@@ -539,27 +562,18 @@ open class AbstractWriter: java_swift.JavaObject {
         try writeAttributes( attr: _attr )
     }
 
-    /// public int javax.swing.text.AbstractWriter.getEndOffset()
+    /// protected void javax.swing.text.AbstractWriter.writeLineSeparator() throws java.io.IOException
 
-    private static var getEndOffset_MethodID_33: jmethodID?
+    private static var writeLineSeparator_MethodID_34: jmethodID?
 
-    open func getEndOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func writeLineSeparator() throws /* java.io.IOException */ {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &AbstractWriter.getEndOffset_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.text.AbstractWriter.getStartOffset()
-
-    private static var getStartOffset_MethodID_34: jmethodID?
-
-    open func getStartOffset() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &AbstractWriter.getStartOffset_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLineSeparator", methodSig: "()V", methodCache: &AbstractWriter.writeLineSeparator_MethodID_34, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
     }
 
 

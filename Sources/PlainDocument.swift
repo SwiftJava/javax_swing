@@ -16,17 +16,6 @@ open class PlainDocument: AbstractDocument {
 
     private static var PlainDocumentJNIClass: jclass?
 
-    /// public static final java.lang.String javax.swing.text.PlainDocument.tabSizeAttribute
-
-    private static var tabSizeAttribute_FieldID: jfieldID?
-
-    open static var tabSizeAttribute: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "tabSizeAttribute", fieldType: "Ljava/lang/String;", fieldCache: &tabSizeAttribute_FieldID, className: "javax/swing/text/PlainDocument", classCache: &PlainDocumentJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
     /// public static final java.lang.String javax.swing.text.PlainDocument.lineLimitAttribute
 
     private static var lineLimitAttribute_FieldID: jfieldID?
@@ -34,29 +23,84 @@ open class PlainDocument: AbstractDocument {
     open static var lineLimitAttribute: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "lineLimitAttribute", fieldType: "Ljava/lang/String;", fieldCache: &lineLimitAttribute_FieldID, className: "javax/swing/text/PlainDocument", classCache: &PlainDocumentJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// private javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.PlainDocument.defaultRoot
+    /// public static final java.lang.String javax.swing.text.PlainDocument.tabSizeAttribute
+
+    private static var tabSizeAttribute_FieldID: jfieldID?
+
+    open static var tabSizeAttribute: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "tabSizeAttribute", fieldType: "Ljava/lang/String;", fieldCache: &tabSizeAttribute_FieldID, className: "javax/swing/text/PlainDocument", classCache: &PlainDocumentJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
 
     /// private java.util.Vector javax.swing.text.PlainDocument.added
+
+    /// private javax.swing.text.AbstractDocument$AbstractElement javax.swing.text.PlainDocument.defaultRoot
 
     /// private java.util.Vector javax.swing.text.PlainDocument.removed
 
     /// private transient javax.swing.text.Segment javax.swing.text.PlainDocument.s
 
-    /// private transient int javax.swing.text.AbstractDocument.numReaders
+    /// static final java.lang.String javax.swing.text.AbstractDocument.AsyncLoadPriority
 
-    /// private transient java.lang.Thread javax.swing.text.AbstractDocument.currWriter
+    // Skipping field: true false false false false false 
 
-    /// private transient int javax.swing.text.AbstractDocument.numWriters
+    /// protected static final java.lang.String javax.swing.text.AbstractDocument.BAD_LOCATION
 
-    /// private transient boolean javax.swing.text.AbstractDocument.notifyingListeners
+    // Skipping field: false false false false false true 
+
+    /// private static final java.lang.String javax.swing.text.AbstractDocument.BAD_LOCK_STATE
+
+    /// public static final java.lang.String javax.swing.text.AbstractDocument.BidiElementName
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.AbstractDocument.ContentElementName
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.AbstractDocument.ElementNameAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.String javax.swing.text.AbstractDocument.I18NProperty
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.Object javax.swing.text.AbstractDocument.MultiByteProperty
+
+    // Skipping field: true false false false false false 
+
+    /// public static final java.lang.String javax.swing.text.AbstractDocument.ParagraphElementName
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.AbstractDocument.SectionElementName
+
+    // Skipping field: false true false false false false 
 
     /// private static java.lang.Boolean javax.swing.text.AbstractDocument.defaultI18NProperty
 
+    /// private transient javax.swing.text.AbstractDocument$BranchElement javax.swing.text.AbstractDocument.bidiRoot
+
+    /// private javax.swing.text.AbstractDocument$AttributeContext javax.swing.text.AbstractDocument.context
+
+    /// private transient java.lang.Thread javax.swing.text.AbstractDocument.currWriter
+
+    /// private javax.swing.text.AbstractDocument$Content javax.swing.text.AbstractDocument.data
+
+    /// private javax.swing.text.DocumentFilter javax.swing.text.AbstractDocument.documentFilter
+
     /// private java.util.Dictionary javax.swing.text.AbstractDocument.documentProperties
+
+    /// private transient javax.swing.text.DocumentFilter$FilterBypass javax.swing.text.AbstractDocument.filterBypass
 
     /// protected javax.swing.event.EventListenerList javax.swing.text.AbstractDocument.listenerList
 
@@ -64,8 +108,8 @@ open class PlainDocument: AbstractDocument {
 
     override open var listenerList: EventListenerList! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &PlainDocument.listenerList_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &PlainDocument.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? EventListenerList( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -75,47 +119,27 @@ open class PlainDocument: AbstractDocument {
         }
     }
 
-    /// private javax.swing.text.AbstractDocument$Content javax.swing.text.AbstractDocument.data
+    /// private transient boolean javax.swing.text.AbstractDocument.notifyingListeners
 
-    /// private javax.swing.text.AbstractDocument$AttributeContext javax.swing.text.AbstractDocument.context
+    /// private transient int javax.swing.text.AbstractDocument.numReaders
 
-    /// private transient javax.swing.text.AbstractDocument$BranchElement javax.swing.text.AbstractDocument.bidiRoot
-
-    /// private javax.swing.text.DocumentFilter javax.swing.text.AbstractDocument.documentFilter
-
-    /// private transient javax.swing.text.DocumentFilter$FilterBypass javax.swing.text.AbstractDocument.filterBypass
-
-    /// private static final java.lang.String javax.swing.text.AbstractDocument.BAD_LOCK_STATE
-
-    /// protected static final java.lang.String javax.swing.text.AbstractDocument.BAD_LOCATION
-
-    /// public static final java.lang.String javax.swing.text.AbstractDocument.ParagraphElementName
-
-    /// public static final java.lang.String javax.swing.text.AbstractDocument.ContentElementName
-
-    /// public static final java.lang.String javax.swing.text.AbstractDocument.SectionElementName
-
-    /// public static final java.lang.String javax.swing.text.AbstractDocument.BidiElementName
-
-    /// public static final java.lang.String javax.swing.text.AbstractDocument.ElementNameAttribute
-
-    /// static final java.lang.String javax.swing.text.AbstractDocument.I18NProperty
-
-    /// static final java.lang.Object javax.swing.text.AbstractDocument.MultiByteProperty
-
-    /// static final java.lang.String javax.swing.text.AbstractDocument.AsyncLoadPriority
+    /// private transient int javax.swing.text.AbstractDocument.numWriters
 
     /// public static final java.lang.String javax.swing.text.Document.StreamDescriptionProperty
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.String javax.swing.text.Document.TitleProperty
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.PlainDocument()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/PlainDocument", classCache: &PlainDocument.PlainDocumentJNIClass, methodSig: "()V", methodCache: &PlainDocument.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -126,8 +150,8 @@ open class PlainDocument: AbstractDocument {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( c: AbstractDocument_Content? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/PlainDocument", classCache: &PlainDocument.PlainDocumentJNIClass, methodSig: "(Ljavax/swing/text/AbstractDocument$Content;)V", methodCache: &PlainDocument.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -143,28 +167,39 @@ open class PlainDocument: AbstractDocument {
     private static var createDefaultRoot_MethodID_3: jmethodID?
 
     open func createDefaultRoot() -> AbstractDocument_AbstractElement! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultRoot", methodSig: "()Ljavax/swing/text/AbstractDocument$AbstractElement;", methodCache: &PlainDocument.createDefaultRoot_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AbstractDocument_AbstractElement( javaObject: __return ) : nil
     }
 
 
+    /// public javax.swing.text.Element javax.swing.text.PlainDocument.getDefaultRootElement()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.text.Element javax.swing.text.PlainDocument.getParagraphElement(int)
+
+    // Skipping method: false true false false false 
+
     /// private void javax.swing.text.PlainDocument.insertComposedTextUpdate(javax.swing.text.AbstractDocument$DefaultDocumentEvent,javax.swing.text.AttributeSet)
 
     /// public void javax.swing.text.PlainDocument.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
+    // Skipping method: false true false false false 
+
     private static var insertString_MethodID_4: jmethodID?
 
     open func insertString( offs: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offs) )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertString_MethodID_4, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
     }
@@ -178,8 +213,8 @@ open class PlainDocument: AbstractDocument {
     private static var insertUpdate_MethodID_5: jmethodID?
 
     override open func insertUpdate( chng: AbstractDocument_DefaultDocumentEvent?, attr: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: chng, locals: &__locals )
         __args[1] = JNIType.toJava( value: attr, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocument.insertUpdate_MethodID_5, args: &__args, locals: &__locals )
@@ -194,8 +229,8 @@ open class PlainDocument: AbstractDocument {
     private static var removeUpdate_MethodID_6: jmethodID?
 
     override open func removeUpdate( chng: AbstractDocument_DefaultDocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: chng, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/text/AbstractDocument$DefaultDocumentEvent;)V", methodCache: &PlainDocument.removeUpdate_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -204,19 +239,13 @@ open class PlainDocument: AbstractDocument {
         removeUpdate( chng: _chng )
     }
 
-    /// public javax.swing.text.Element javax.swing.text.PlainDocument.getParagraphElement(int)
-
-    /// public javax.swing.text.Element javax.swing.text.PlainDocument.getDefaultRootElement()
-
 }
 
 private typealias PlainDocument_insertString_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jint, _: jobject?, _: jobject? ) -> ()
 
 private func PlainDocument_insertString_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ offs: jint, _ str: jobject?, _ a: jobject? ) -> () {
     do {
-    JNI.inNative = true;
-    try PlainDocumentLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).insertString( offs: JNIType.toSwift( type: Int(), from: offs ), str: JNIType.toSwift( type: String(), from: str ), a: a != nil ? AttributeSetForward( javaObject: a ) : nil )
-    JNI.inNative = false;
+        try PlainDocumentLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).insertString( offs: Int(offs), str: str != nil ? String( javaObject: str ) : nil, a: a != nil ? AttributeSetForward( javaObject: a ) : nil )
     }
     catch let exception as Throwable {
         _ = exception.withJavaObject { JNI.api.Throw( JNI.env, $0 ) }
@@ -275,8 +304,8 @@ open class PlainDocumentBase: PlainDocument {
     private static var new_MethodID_7: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
         __args[0] = __local!.swiftValue()
@@ -291,8 +320,8 @@ open class PlainDocumentBase: PlainDocument {
     private static var new_MethodID_8: jmethodID?
 
     public convenience init( c: AbstractDocument_Content? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -312,19 +341,17 @@ open class PlainDocumentBase: PlainDocument {
     private static var insertString_MethodID_9: jmethodID?
 
     override open func insertString( offs: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ /**/ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offs) )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &PlainDocumentBase.insertString_MethodID_9, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
     }
 
-    override open func insertString( _ _offs: Int, _ _str: String?, _ _a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ /**/ {
-        try insertString( offs: _offs, str: _str, a: _a )
-    }
 
 }

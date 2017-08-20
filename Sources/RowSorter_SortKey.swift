@@ -25,9 +25,9 @@ open class RowSorter_SortKey: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( column: Int, sortOrder: SortOrder? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: column, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(column) )
         __args[1] = JNIType.toJava( value: sortOrder, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/RowSorter$SortKey", classCache: &RowSorter_SortKey.RowSorter_SortKeyJNIClass, methodSig: "(ILjavax/swing/SortOrder;)V", methodCache: &RowSorter_SortKey.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -43,28 +43,26 @@ open class RowSorter_SortKey: java_swift.JavaObject {
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &RowSorter_SortKey.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
         return equals( o: _o )
     }
 
-    /// public int javax.swing.RowSorter$SortKey.hashCode()
-
     /// public final int javax.swing.RowSorter$SortKey.getColumn()
 
     private static var getColumn_MethodID_3: jmethodID?
 
     open func getColumn() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getColumn", methodSig: "()I", methodCache: &RowSorter_SortKey.getColumn_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -73,13 +71,17 @@ open class RowSorter_SortKey: java_swift.JavaObject {
     private static var getSortOrder_MethodID_4: jmethodID?
 
     open func getSortOrder() -> SortOrder! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSortOrder", methodSig: "()Ljavax/swing/SortOrder;", methodCache: &RowSorter_SortKey.getSortOrder_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SortOrder( javaObject: __return ) : nil
     }
 
+
+    /// public int javax.swing.RowSorter$SortKey.hashCode()
+
+    // Skipping method: false true false false false 
 
 }
 

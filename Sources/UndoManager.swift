@@ -19,9 +19,11 @@ open class UndoManager: CompoundEdit, UndoableEditListener {
 
     /// int javax.swing.undo.UndoManager.indexOfNextAdd
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.undo.UndoManager.limit
 
-    /// boolean javax.swing.undo.CompoundEdit.inProgress
+    // Skipping field: true false false false false false 
 
     /// protected java.util.Vector javax.swing.undo.CompoundEdit.edits
 
@@ -29,8 +31,8 @@ open class UndoManager: CompoundEdit, UndoableEditListener {
 
     override open var edits: java_util.Vector! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "edits", fieldType: "Ljava/util/Vector;", fieldCache: &UndoManager.edits_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "edits", fieldType: "Ljava/util/Vector;", fieldCache: &UndoManager.edits_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.Vector( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -40,178 +42,151 @@ open class UndoManager: CompoundEdit, UndoableEditListener {
         }
     }
 
-    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
+    /// boolean javax.swing.undo.CompoundEdit.inProgress
+
+    // Skipping field: true false false false false false 
 
     /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
 
-    /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
+    // Skipping field: false false false false false true 
+
+    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
+
+    // Skipping field: false false false false false true 
 
     /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.undo.UndoManager()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/undo/UndoManager", classCache: &UndoManager.UndoManagerJNIClass, methodSig: "()V", methodCache: &UndoManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public java.lang.String javax.swing.undo.UndoManager.toString()
+    /// public synchronized boolean javax.swing.undo.UndoManager.addEdit(javax.swing.undo.UndoableEdit)
 
-    /// public synchronized void javax.swing.undo.UndoManager.end()
-
-    /// public void javax.swing.undo.UndoManager.undoableEditHappened(javax.swing.event.UndoableEditEvent)
-
-    private static var undoableEditHappened_MethodID_2: jmethodID?
-
-    open func undoableEditHappened( e: UndoableEditEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "undoableEditHappened", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &UndoManager.undoableEditHappened_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func undoableEditHappened( _ _e: UndoableEditEvent? ) {
-        undoableEditHappened( e: _e )
-    }
-
-    /// public synchronized void javax.swing.undo.UndoManager.undo() throws javax.swing.undo.CannotUndoException
-
-    /// public synchronized boolean javax.swing.undo.UndoManager.canUndo()
-
-    /// public synchronized void javax.swing.undo.UndoManager.redo() throws javax.swing.undo.CannotRedoException
+    // Skipping method: false true false false false 
 
     /// public synchronized boolean javax.swing.undo.UndoManager.canRedo()
 
-    /// public synchronized boolean javax.swing.undo.UndoManager.addEdit(javax.swing.undo.UndoableEdit)
+    // Skipping method: false true false false false 
 
-    /// public synchronized java.lang.String javax.swing.undo.UndoManager.getUndoPresentationName()
+    /// public synchronized boolean javax.swing.undo.UndoManager.canUndo()
 
-    /// public synchronized java.lang.String javax.swing.undo.UndoManager.getRedoPresentationName()
+    // Skipping method: false true false false false 
 
-    /// public synchronized int javax.swing.undo.UndoManager.getLimit()
+    /// public synchronized boolean javax.swing.undo.UndoManager.canUndoOrRedo()
 
-    private static var getLimit_MethodID_3: jmethodID?
+    private static var canUndoOrRedo_MethodID_2: jmethodID?
 
-    open func getLimit() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func canUndoOrRedo() -> Bool {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLimit", methodSig: "()I", methodCache: &UndoManager.getLimit_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canUndoOrRedo", methodSig: "()Z", methodCache: &UndoManager.canUndoOrRedo_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
     /// public synchronized void javax.swing.undo.UndoManager.discardAllEdits()
 
-    private static var discardAllEdits_MethodID_4: jmethodID?
+    private static var discardAllEdits_MethodID_3: jmethodID?
 
     open func discardAllEdits() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "discardAllEdits", methodSig: "()V", methodCache: &UndoManager.discardAllEdits_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.undo.UndoManager.trimForLimit()
-
-    private static var trimForLimit_MethodID_5: jmethodID?
-
-    open func trimForLimit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "trimForLimit", methodSig: "()V", methodCache: &UndoManager.trimForLimit_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.undo.UndoManager.trimEdits(int,int)
-
-    private static var trimEdits_MethodID_6: jmethodID?
-
-    open func trimEdits( from: Int, to: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: from, locals: &__locals )
-        __args[1] = JNIType.toJava( value: to, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "trimEdits", methodSig: "(II)V", methodCache: &UndoManager.trimEdits_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func trimEdits( _ _from: Int, _ _to: Int ) {
-        trimEdits( from: _from, to: _to )
-    }
-
-    /// public synchronized void javax.swing.undo.UndoManager.setLimit(int)
-
-    private static var setLimit_MethodID_7: jmethodID?
-
-    open func setLimit( l: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLimit", methodSig: "(I)V", methodCache: &UndoManager.setLimit_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setLimit( _ _l: Int ) {
-        setLimit( l: _l )
-    }
-
-    /// protected javax.swing.undo.UndoableEdit javax.swing.undo.UndoManager.editToBeUndone()
-
-    private static var editToBeUndone_MethodID_8: jmethodID?
-
-    open func editToBeUndone() -> UndoableEdit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "editToBeUndone", methodSig: "()Ljavax/swing/undo/UndoableEdit;", methodCache: &UndoManager.editToBeUndone_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? UndoableEditForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "discardAllEdits", methodSig: "()V", methodCache: &UndoManager.discardAllEdits_MethodID_3, args: &__args, locals: &__locals )
     }
 
 
     /// protected javax.swing.undo.UndoableEdit javax.swing.undo.UndoManager.editToBeRedone()
 
-    private static var editToBeRedone_MethodID_9: jmethodID?
+    private static var editToBeRedone_MethodID_4: jmethodID?
 
     open func editToBeRedone() -> UndoableEdit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "editToBeRedone", methodSig: "()Ljavax/swing/undo/UndoableEdit;", methodCache: &UndoManager.editToBeRedone_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "editToBeRedone", methodSig: "()Ljavax/swing/undo/UndoableEdit;", methodCache: &UndoManager.editToBeRedone_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? UndoableEditForward( javaObject: __return ) : nil
     }
 
 
-    /// protected void javax.swing.undo.UndoManager.undoTo(javax.swing.undo.UndoableEdit) throws javax.swing.undo.CannotUndoException
+    /// protected javax.swing.undo.UndoableEdit javax.swing.undo.UndoManager.editToBeUndone()
 
-    private static var undoTo_MethodID_10: jmethodID?
+    private static var editToBeUndone_MethodID_5: jmethodID?
 
-    open func undoTo( edit: UndoableEdit? ) throws /* javax.swing.undo.CannotUndoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func editToBeUndone() -> UndoableEdit! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: edit, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "undoTo", methodSig: "(Ljavax/swing/undo/UndoableEdit;)V", methodCache: &UndoManager.undoTo_MethodID_10, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw CannotUndoException( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "editToBeUndone", methodSig: "()Ljavax/swing/undo/UndoableEdit;", methodCache: &UndoManager.editToBeUndone_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? UndoableEditForward( javaObject: __return ) : nil
     }
 
-    open func undoTo( _ _edit: UndoableEdit? ) throws /* javax.swing.undo.CannotUndoException */ {
-        try undoTo( edit: _edit )
+
+    /// public synchronized void javax.swing.undo.UndoManager.end()
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized int javax.swing.undo.UndoManager.getLimit()
+
+    private static var getLimit_MethodID_6: jmethodID?
+
+    open func getLimit() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLimit", methodSig: "()I", methodCache: &UndoManager.getLimit_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
+
+    /// public synchronized java.lang.String javax.swing.undo.UndoManager.getRedoPresentationName()
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized java.lang.String javax.swing.undo.UndoManager.getUndoOrRedoPresentationName()
+
+    private static var getUndoOrRedoPresentationName_MethodID_7: jmethodID?
+
+    open func getUndoOrRedoPresentationName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUndoOrRedoPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &UndoManager.getUndoOrRedoPresentationName_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public synchronized java.lang.String javax.swing.undo.UndoManager.getUndoPresentationName()
+
+    // Skipping method: false true false false false 
+
+    /// public synchronized void javax.swing.undo.UndoManager.redo() throws javax.swing.undo.CannotRedoException
+
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.undo.UndoManager.redoTo(javax.swing.undo.UndoableEdit) throws javax.swing.undo.CannotRedoException
 
-    private static var redoTo_MethodID_11: jmethodID?
+    private static var redoTo_MethodID_8: jmethodID?
 
     open func redoTo( edit: UndoableEdit? ) throws /* javax.swing.undo.CannotRedoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: edit, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "redoTo", methodSig: "(Ljavax/swing/undo/UndoableEdit;)V", methodCache: &UndoManager.redoTo_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "redoTo", methodSig: "(Ljavax/swing/undo/UndoableEdit;)V", methodCache: &UndoManager.redoTo_MethodID_8, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw CannotRedoException( javaObject: throwable )
         }
     }
@@ -220,43 +195,104 @@ open class UndoManager: CompoundEdit, UndoableEditListener {
         try redoTo( edit: _edit )
     }
 
+    /// public synchronized void javax.swing.undo.UndoManager.setLimit(int)
+
+    private static var setLimit_MethodID_9: jmethodID?
+
+    open func setLimit( l: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(l) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLimit", methodSig: "(I)V", methodCache: &UndoManager.setLimit_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setLimit( _ _l: Int ) {
+        setLimit( l: _l )
+    }
+
+    /// public java.lang.String javax.swing.undo.UndoManager.toString()
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.undo.UndoManager.trimEdits(int,int)
+
+    private static var trimEdits_MethodID_10: jmethodID?
+
+    open func trimEdits( from: Int, to: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(from) )
+        __args[1] = jvalue( i: jint(to) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "trimEdits", methodSig: "(II)V", methodCache: &UndoManager.trimEdits_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func trimEdits( _ _from: Int, _ _to: Int ) {
+        trimEdits( from: _from, to: _to )
+    }
+
+    /// protected void javax.swing.undo.UndoManager.trimForLimit()
+
+    private static var trimForLimit_MethodID_11: jmethodID?
+
+    open func trimForLimit() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "trimForLimit", methodSig: "()V", methodCache: &UndoManager.trimForLimit_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// public synchronized void javax.swing.undo.UndoManager.undo() throws javax.swing.undo.CannotUndoException
+
+    // Skipping method: false true false false false 
+
     /// public synchronized void javax.swing.undo.UndoManager.undoOrRedo() throws javax.swing.undo.CannotRedoException,javax.swing.undo.CannotUndoException
 
     private static var undoOrRedo_MethodID_12: jmethodID?
 
     open func undoOrRedo() throws /* javax.swing.undo.CannotRedoException, javax.swing.undo.CannotUndoException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "undoOrRedo", methodSig: "()V", methodCache: &UndoManager.undoOrRedo_MethodID_12, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw CannotRedoException( javaObject: throwable )
         }
     }
 
 
-    /// public synchronized boolean javax.swing.undo.UndoManager.canUndoOrRedo()
+    /// protected void javax.swing.undo.UndoManager.undoTo(javax.swing.undo.UndoableEdit) throws javax.swing.undo.CannotUndoException
 
-    private static var canUndoOrRedo_MethodID_13: jmethodID?
+    private static var undoTo_MethodID_13: jmethodID?
 
-    open func canUndoOrRedo() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func undoTo( edit: UndoableEdit? ) throws /* javax.swing.undo.CannotUndoException */ {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "canUndoOrRedo", methodSig: "()Z", methodCache: &UndoManager.canUndoOrRedo_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: edit, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "undoTo", methodSig: "(Ljavax/swing/undo/UndoableEdit;)V", methodCache: &UndoManager.undoTo_MethodID_13, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw CannotUndoException( javaObject: throwable )
+        }
     }
 
-
-    /// public synchronized java.lang.String javax.swing.undo.UndoManager.getUndoOrRedoPresentationName()
-
-    private static var getUndoOrRedoPresentationName_MethodID_14: jmethodID?
-
-    open func getUndoOrRedoPresentationName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUndoOrRedoPresentationName", methodSig: "()Ljava/lang/String;", methodCache: &UndoManager.getUndoOrRedoPresentationName_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+    open func undoTo( _ _edit: UndoableEdit? ) throws /* javax.swing.undo.CannotUndoException */ {
+        try undoTo( edit: _edit )
     }
 
+    /// public void javax.swing.undo.UndoManager.undoableEditHappened(javax.swing.event.UndoableEditEvent)
+
+    private static var undoableEditHappened_MethodID_14: jmethodID?
+
+    open func undoableEditHappened( e: UndoableEditEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "undoableEditHappened", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &UndoManager.undoableEditHappened_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func undoableEditHappened( _ _e: UndoableEditEvent? ) {
+        undoableEditHappened( e: _e )
+    }
 
 }
 

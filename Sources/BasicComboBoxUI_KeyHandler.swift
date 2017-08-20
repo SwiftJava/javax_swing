@@ -19,13 +19,15 @@ open class BasicComboBoxUI_KeyHandler: java_awt.KeyAdapter {
 
     /// final javax.swing.plaf.basic.BasicComboBoxUI javax.swing.plaf.basic.BasicComboBoxUI$KeyHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicComboBoxUI$KeyHandler(javax.swing.plaf.basic.BasicComboBoxUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicComboBoxUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboBoxUI$KeyHandler", classCache: &BasicComboBoxUI_KeyHandler.BasicComboBoxUI_KeyHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicComboBoxUI;)V", methodCache: &BasicComboBoxUI_KeyHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -37,6 +39,8 @@ open class BasicComboBoxUI_KeyHandler: java_awt.KeyAdapter {
     }
 
     /// public void javax.swing.plaf.basic.BasicComboBoxUI$KeyHandler.keyPressed(java.awt.event.KeyEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

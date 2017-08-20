@@ -8,7 +8,7 @@ import java_lang
 
 /// class javax.swing.UIManager ///
 
-open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class UIManager: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -19,41 +19,81 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
 
     private static var UIManagerJNIClass: jclass?
 
+    /// private static final java.lang.String javax.swing.UIManager.auxiliaryLAFsKey
+
     /// private static final java.lang.Object javax.swing.UIManager.classLock
 
     /// private static final java.lang.String javax.swing.UIManager.defaultLAFKey
 
-    /// private static final java.lang.String javax.swing.UIManager.auxiliaryLAFsKey
-
-    /// private static final java.lang.String javax.swing.UIManager.multiplexingLAFKey
-
-    /// private static final java.lang.String javax.swing.UIManager.installedLAFsKey
-
     /// private static final java.lang.String javax.swing.UIManager.disableMnemonicKey
 
     /// private static javax.swing.UIManager$LookAndFeelInfo[] javax.swing.UIManager.installedLAFs
+
+    /// private static final java.lang.String javax.swing.UIManager.installedLAFsKey
+
+    /// private static final java.lang.String javax.swing.UIManager.multiplexingLAFKey
 
     /// public javax.swing.UIManager()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/UIManager", classCache: &UIManager.UIManagerJNIClass, methodSig: "()V", methodCache: &UIManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    /// static java.lang.String javax.swing.UIManager.access$100()
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.UIManager.access$200(java.util.Properties,java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// public static void javax.swing.UIManager.addAuxiliaryLookAndFeel(javax.swing.LookAndFeel)
+
+    private static var addAuxiliaryLookAndFeel_MethodID_2: jmethodID?
+
+    open class func addAuxiliaryLookAndFeel( laf: LookAndFeel? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: laf, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "addAuxiliaryLookAndFeel", methodSig: "(Ljavax/swing/LookAndFeel;)V", methodCache: &addAuxiliaryLookAndFeel_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open class func addAuxiliaryLookAndFeel( _ _laf: LookAndFeel? ) {
+        addAuxiliaryLookAndFeel( laf: _laf )
+    }
+
+    /// public static void javax.swing.UIManager.addPropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_3: jmethodID?
+
+    open class func addPropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &addPropertyChangeListener_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open class func addPropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( listener: _listener )
+    }
+
+    /// private static void javax.swing.UIManager.checkProperty(java.util.Properties,java.lang.String)
+
     /// public static java.lang.Object javax.swing.UIManager.get(java.lang.Object)
 
-    private static var get_MethodID_2: jmethodID?
+    private static var get_MethodID_4: jmethodID?
 
     open class func get( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "get", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &get_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "get", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &get_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -64,14 +104,14 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
 
     /// public static java.lang.Object javax.swing.UIManager.get(java.lang.Object,java.util.Locale)
 
-    private static var get_MethodID_3: jmethodID?
+    private static var get_MethodID_5: jmethodID?
 
     open class func get( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "get", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;", methodCache: &get_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "get", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/Object;", methodCache: &get_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -80,34 +120,28 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
         return get( key: _key, l: _l )
     }
 
-    /// public static java.lang.Object javax.swing.UIManager.put(java.lang.Object,java.lang.Object)
+    /// public static javax.swing.LookAndFeel[] javax.swing.UIManager.getAuxiliaryLookAndFeels()
 
-    private static var put_MethodID_4: jmethodID?
+    private static var getAuxiliaryLookAndFeels_MethodID_6: jmethodID?
 
-    open class func put( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func getAuxiliaryLookAndFeels() -> [LookAndFeel]! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "put", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &put_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getAuxiliaryLookAndFeels", methodSig: "()[Ljavax/swing/LookAndFeel;", methodCache: &getAuxiliaryLookAndFeels_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [LookAndFeel].self, from: __return )
     }
 
-    open class func put( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        return put( key: _key, value: _value )
-    }
 
     /// public static boolean javax.swing.UIManager.getBoolean(java.lang.Object)
 
-    private static var getBoolean_MethodID_5: jmethodID?
+    private static var getBoolean_MethodID_7: jmethodID?
 
     open class func getBoolean( key: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBoolean", methodSig: "(Ljava/lang/Object;)Z", methodCache: &getBoolean_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBoolean", methodSig: "(Ljava/lang/Object;)Z", methodCache: &getBoolean_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open class func getBoolean( _ _key: java_swift.JavaObject? ) -> Bool {
@@ -116,269 +150,30 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
 
     /// public static boolean javax.swing.UIManager.getBoolean(java.lang.Object,java.util.Locale)
 
-    private static var getBoolean_MethodID_6: jmethodID?
+    private static var getBoolean_MethodID_8: jmethodID?
 
     open class func getBoolean( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBoolean", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Z", methodCache: &getBoolean_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBoolean", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Z", methodCache: &getBoolean_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open class func getBoolean( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> Bool {
         return getBoolean( key: _key, l: _l )
     }
 
-    /// public static int javax.swing.UIManager.getInt(java.lang.Object)
-
-    private static var getInt_MethodID_7: jmethodID?
-
-    open class func getInt( key: java_swift.JavaObject? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInt", methodSig: "(Ljava/lang/Object;)I", methodCache: &getInt_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getInt( _ _key: java_swift.JavaObject? ) -> Int {
-        return getInt( key: _key )
-    }
-
-    /// public static int javax.swing.UIManager.getInt(java.lang.Object,java.util.Locale)
-
-    private static var getInt_MethodID_8: jmethodID?
-
-    open class func getInt( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInt", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)I", methodCache: &getInt_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getInt( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> Int {
-        return getInt( key: _key, l: _l )
-    }
-
-    /// static java.lang.String javax.swing.UIManager.access$100()
-
-    /// static void javax.swing.UIManager.access$200(java.util.Properties,java.lang.String)
-
-    /// private static void javax.swing.UIManager.initialize()
-
-    /// public static java.awt.Dimension javax.swing.UIManager.getDimension(java.lang.Object,java.util.Locale)
-
-    private static var getDimension_MethodID_9: jmethodID?
-
-    open class func getDimension( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getDimension", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Dimension;", methodCache: &getDimension_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open class func getDimension( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Dimension! {
-        return getDimension( key: _key, l: _l )
-    }
-
-    /// public static java.awt.Dimension javax.swing.UIManager.getDimension(java.lang.Object)
-
-    private static var getDimension_MethodID_10: jmethodID?
-
-    open class func getDimension( key: java_swift.JavaObject? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getDimension", methodSig: "(Ljava/lang/Object;)Ljava/awt/Dimension;", methodCache: &getDimension_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    open class func getDimension( _ _key: java_swift.JavaObject? ) -> java_awt.Dimension! {
-        return getDimension( key: _key )
-    }
-
-    /// public static javax.swing.plaf.ComponentUI javax.swing.UIManager.getUI(javax.swing.JComponent)
-
-    private static var getUI_MethodID_11: jmethodID?
-
-    open class func getUI( target: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &getUI_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    open class func getUI( _ _target: JComponent? ) -> ComponentUI! {
-        return getUI( target: _target )
-    }
-
-    /// public static javax.swing.UIDefaults javax.swing.UIManager.getDefaults()
-
-    private static var getDefaults_MethodID_12: jmethodID?
-
-    open class func getDefaults() -> UIDefaults! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getDefaults", methodSig: "()Ljavax/swing/UIDefaults;", methodCache: &getDefaults_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: UIDefaults(), from: __return )
-    }
-
-
-    /// public static javax.swing.Icon javax.swing.UIManager.getIcon(java.lang.Object)
-
-    private static var getIcon_MethodID_13: jmethodID?
-
-    open class func getIcon( key: java_swift.JavaObject? ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getIcon", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Icon;", methodCache: &getIcon_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    open class func getIcon( _ _key: java_swift.JavaObject? ) -> Icon! {
-        return getIcon( key: _key )
-    }
-
-    /// public static javax.swing.Icon javax.swing.UIManager.getIcon(java.lang.Object,java.util.Locale)
-
-    private static var getIcon_MethodID_14: jmethodID?
-
-    open class func getIcon( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getIcon", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/Icon;", methodCache: &getIcon_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    open class func getIcon( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> Icon! {
-        return getIcon( key: _key, l: _l )
-    }
-
-    /// public static java.awt.Insets javax.swing.UIManager.getInsets(java.lang.Object)
-
-    private static var getInsets_MethodID_15: jmethodID?
-
-    open class func getInsets( key: java_swift.JavaObject? ) -> java_awt.Insets! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInsets", methodSig: "(Ljava/lang/Object;)Ljava/awt/Insets;", methodCache: &getInsets_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
-    }
-
-    open class func getInsets( _ _key: java_swift.JavaObject? ) -> java_awt.Insets! {
-        return getInsets( key: _key )
-    }
-
-    /// public static java.awt.Insets javax.swing.UIManager.getInsets(java.lang.Object,java.util.Locale)
-
-    private static var getInsets_MethodID_16: jmethodID?
-
-    open class func getInsets( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Insets! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInsets", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Insets;", methodCache: &getInsets_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
-    }
-
-    open class func getInsets( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Insets! {
-        return getInsets( key: _key, l: _l )
-    }
-
-    /// public static java.awt.Font javax.swing.UIManager.getFont(java.lang.Object,java.util.Locale)
-
-    private static var getFont_MethodID_17: jmethodID?
-
-    open class func getFont( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getFont", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Font;", methodCache: &getFont_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
-    }
-
-    open class func getFont( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Font! {
-        return getFont( key: _key, l: _l )
-    }
-
-    /// public static java.awt.Font javax.swing.UIManager.getFont(java.lang.Object)
-
-    private static var getFont_MethodID_18: jmethodID?
-
-    open class func getFont( key: java_swift.JavaObject? ) -> java_awt.Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getFont", methodSig: "(Ljava/lang/Object;)Ljava/awt/Font;", methodCache: &getFont_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
-    }
-
-    open class func getFont( _ _key: java_swift.JavaObject? ) -> java_awt.Font! {
-        return getFont( key: _key )
-    }
-
-    /// public static void javax.swing.UIManager.addPropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_19: jmethodID?
-
-    open class func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &addPropertyChangeListener_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open class func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( listener: _listener )
-    }
-
-    /// public static void javax.swing.UIManager.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_20: jmethodID?
-
-    open class func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &removePropertyChangeListener_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open class func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( listener: _listener )
-    }
-
     /// public static javax.swing.border.Border javax.swing.UIManager.getBorder(java.lang.Object)
 
-    private static var getBorder_MethodID_21: jmethodID?
+    private static var getBorder_MethodID_9: jmethodID?
 
     open class func getBorder( key: java_swift.JavaObject? ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBorder", methodSig: "(Ljava/lang/Object;)Ljavax/swing/border/Border;", methodCache: &getBorder_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBorder", methodSig: "(Ljava/lang/Object;)Ljavax/swing/border/Border;", methodCache: &getBorder_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -389,14 +184,14 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
 
     /// public static javax.swing.border.Border javax.swing.UIManager.getBorder(java.lang.Object,java.util.Locale)
 
-    private static var getBorder_MethodID_22: jmethodID?
+    private static var getBorder_MethodID_10: jmethodID?
 
     open class func getBorder( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBorder", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/border/Border;", methodCache: &getBorder_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getBorder", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/border/Border;", methodCache: &getBorder_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
@@ -405,52 +200,381 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
         return getBorder( key: _key, l: _l )
     }
 
-    /// private static javax.swing.UIManager$LAFState javax.swing.UIManager.getLAFState()
+    /// public static java.awt.Color javax.swing.UIManager.getColor(java.lang.Object)
 
-    /// private static java.lang.String javax.swing.UIManager.makeInstalledLAFKey(java.lang.String,java.lang.String)
+    private static var getColor_MethodID_11: jmethodID?
 
-    /// private static java.lang.String javax.swing.UIManager.makeSwingPropertiesFilename()
+    open class func getColor( key: java_swift.JavaObject? ) -> java_awt.Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/Object;)Ljava/awt/Color;", methodCache: &getColor_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+    open class func getColor( _ _key: java_swift.JavaObject? ) -> java_awt.Color! {
+        return getColor( key: _key )
+    }
+
+    /// public static java.awt.Color javax.swing.UIManager.getColor(java.lang.Object,java.util.Locale)
+
+    private static var getColor_MethodID_12: jmethodID?
+
+    open class func getColor( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Color;", methodCache: &getColor_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+    open class func getColor( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Color! {
+        return getColor( key: _key, l: _l )
+    }
+
+    /// public static java.lang.String javax.swing.UIManager.getCrossPlatformLookAndFeelClassName()
+
+    private static var getCrossPlatformLookAndFeelClassName_MethodID_13: jmethodID?
+
+    open class func getCrossPlatformLookAndFeelClassName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getCrossPlatformLookAndFeelClassName", methodSig: "()Ljava/lang/String;", methodCache: &getCrossPlatformLookAndFeelClassName_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.UIDefaults javax.swing.UIManager.getDefaults()
+
+    private static var getDefaults_MethodID_14: jmethodID?
+
+    open class func getDefaults() -> UIDefaults! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getDefaults", methodSig: "()Ljavax/swing/UIDefaults;", methodCache: &getDefaults_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: UIDefaults.self, from: __return )
+    }
+
+
+    /// public static java.awt.Dimension javax.swing.UIManager.getDimension(java.lang.Object)
+
+    private static var getDimension_MethodID_15: jmethodID?
+
+    open class func getDimension( key: java_swift.JavaObject? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getDimension", methodSig: "(Ljava/lang/Object;)Ljava/awt/Dimension;", methodCache: &getDimension_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open class func getDimension( _ _key: java_swift.JavaObject? ) -> java_awt.Dimension! {
+        return getDimension( key: _key )
+    }
+
+    /// public static java.awt.Dimension javax.swing.UIManager.getDimension(java.lang.Object,java.util.Locale)
+
+    private static var getDimension_MethodID_16: jmethodID?
+
+    open class func getDimension( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getDimension", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Dimension;", methodCache: &getDimension_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    open class func getDimension( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Dimension! {
+        return getDimension( key: _key, l: _l )
+    }
+
+    /// public static java.awt.Font javax.swing.UIManager.getFont(java.lang.Object)
+
+    private static var getFont_MethodID_17: jmethodID?
+
+    open class func getFont( key: java_swift.JavaObject? ) -> java_awt.Font! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getFont", methodSig: "(Ljava/lang/Object;)Ljava/awt/Font;", methodCache: &getFont_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
+    }
+
+    open class func getFont( _ _key: java_swift.JavaObject? ) -> java_awt.Font! {
+        return getFont( key: _key )
+    }
+
+    /// public static java.awt.Font javax.swing.UIManager.getFont(java.lang.Object,java.util.Locale)
+
+    private static var getFont_MethodID_18: jmethodID?
+
+    open class func getFont( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Font! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getFont", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Font;", methodCache: &getFont_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Font( javaObject: __return ) : nil
+    }
+
+    open class func getFont( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Font! {
+        return getFont( key: _key, l: _l )
+    }
+
+    /// public static javax.swing.Icon javax.swing.UIManager.getIcon(java.lang.Object)
+
+    private static var getIcon_MethodID_19: jmethodID?
+
+    open class func getIcon( key: java_swift.JavaObject? ) -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getIcon", methodSig: "(Ljava/lang/Object;)Ljavax/swing/Icon;", methodCache: &getIcon_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    open class func getIcon( _ _key: java_swift.JavaObject? ) -> Icon! {
+        return getIcon( key: _key )
+    }
+
+    /// public static javax.swing.Icon javax.swing.UIManager.getIcon(java.lang.Object,java.util.Locale)
+
+    private static var getIcon_MethodID_20: jmethodID?
+
+    open class func getIcon( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getIcon", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljavax/swing/Icon;", methodCache: &getIcon_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    open class func getIcon( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> Icon! {
+        return getIcon( key: _key, l: _l )
+    }
+
+    /// public static java.awt.Insets javax.swing.UIManager.getInsets(java.lang.Object)
+
+    private static var getInsets_MethodID_21: jmethodID?
+
+    open class func getInsets( key: java_swift.JavaObject? ) -> java_awt.Insets! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInsets", methodSig: "(Ljava/lang/Object;)Ljava/awt/Insets;", methodCache: &getInsets_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
+    }
+
+    open class func getInsets( _ _key: java_swift.JavaObject? ) -> java_awt.Insets! {
+        return getInsets( key: _key )
+    }
+
+    /// public static java.awt.Insets javax.swing.UIManager.getInsets(java.lang.Object,java.util.Locale)
+
+    private static var getInsets_MethodID_22: jmethodID?
+
+    open class func getInsets( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Insets! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInsets", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Insets;", methodCache: &getInsets_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
+    }
+
+    open class func getInsets( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Insets! {
+        return getInsets( key: _key, l: _l )
+    }
 
     /// public static javax.swing.UIManager$LookAndFeelInfo[] javax.swing.UIManager.getInstalledLookAndFeels()
 
     private static var getInstalledLookAndFeels_MethodID_23: jmethodID?
 
     open class func getInstalledLookAndFeels() -> [UIManager_LookAndFeelInfo]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInstalledLookAndFeels", methodSig: "()[Ljavax/swing/UIManager$LookAndFeelInfo;", methodCache: &getInstalledLookAndFeels_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [UIManager_LookAndFeelInfo](), from: __return )
+        return JNIType.toSwift( type: [UIManager_LookAndFeelInfo].self, from: __return )
     }
 
 
-    /// public static void javax.swing.UIManager.setInstalledLookAndFeels(javax.swing.UIManager$LookAndFeelInfo[]) throws java.lang.SecurityException
+    /// public static int javax.swing.UIManager.getInt(java.lang.Object)
 
-    private static var setInstalledLookAndFeels_MethodID_24: jmethodID?
+    private static var getInt_MethodID_24: jmethodID?
 
-    open class func setInstalledLookAndFeels( infos: [UIManager_LookAndFeelInfo]? ) throws /* java.lang.SecurityException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func getInt( key: java_swift.JavaObject? ) -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: infos, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "setInstalledLookAndFeels", methodSig: "([Ljavax/swing/UIManager$LookAndFeelInfo;)V", methodCache: &setInstalledLookAndFeels_MethodID_24, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.JavaSecurityException( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInt", methodSig: "(Ljava/lang/Object;)I", methodCache: &getInt_MethodID_24, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open class func setInstalledLookAndFeels( _ _infos: [UIManager_LookAndFeelInfo]? ) throws /* java.lang.SecurityException */ {
-        try setInstalledLookAndFeels( infos: _infos )
+    open class func getInt( _ _key: java_swift.JavaObject? ) -> Int {
+        return getInt( key: _key )
     }
+
+    /// public static int javax.swing.UIManager.getInt(java.lang.Object,java.util.Locale)
+
+    private static var getInt_MethodID_25: jmethodID?
+
+    open class func getInt( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getInt", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)I", methodCache: &getInt_MethodID_25, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open class func getInt( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> Int {
+        return getInt( key: _key, l: _l )
+    }
+
+    /// private static javax.swing.UIManager$LAFState javax.swing.UIManager.getLAFState()
+
+    /// public static javax.swing.LookAndFeel javax.swing.UIManager.getLookAndFeel()
+
+    private static var getLookAndFeel_MethodID_26: jmethodID?
+
+    open class func getLookAndFeel() -> LookAndFeel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getLookAndFeel", methodSig: "()Ljavax/swing/LookAndFeel;", methodCache: &getLookAndFeel_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? LookAndFeel( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.UIDefaults javax.swing.UIManager.getLookAndFeelDefaults()
+
+    private static var getLookAndFeelDefaults_MethodID_27: jmethodID?
+
+    open class func getLookAndFeelDefaults() -> UIDefaults! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getLookAndFeelDefaults", methodSig: "()Ljavax/swing/UIDefaults;", methodCache: &getLookAndFeelDefaults_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: UIDefaults.self, from: __return )
+    }
+
+
+    /// private static javax.swing.LookAndFeel javax.swing.UIManager.getMultiLookAndFeel()
+
+    /// public static java.beans.PropertyChangeListener[] javax.swing.UIManager.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_28: jmethodID?
+
+    open class func getPropertyChangeListeners() -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &getPropertyChangeListeners_MethodID_28, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
+    /// public static java.lang.String javax.swing.UIManager.getString(java.lang.Object)
+
+    private static var getString_MethodID_29: jmethodID?
+
+    open class func getString( key: java_swift.JavaObject? ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &getString_MethodID_29, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open class func getString( _ _key: java_swift.JavaObject? ) -> String! {
+        return getString( key: _key )
+    }
+
+    /// static java.lang.String javax.swing.UIManager.getString(java.lang.Object,java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// public static java.lang.String javax.swing.UIManager.getString(java.lang.Object,java.util.Locale)
+
+    private static var getString_MethodID_30: jmethodID?
+
+    open class func getString( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: l, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getString", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/String;", methodCache: &getString_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open class func getString( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> String! {
+        return getString( key: _key, l: _l )
+    }
+
+    /// public static java.lang.String javax.swing.UIManager.getSystemLookAndFeelClassName()
+
+    private static var getSystemLookAndFeelClassName_MethodID_31: jmethodID?
+
+    open class func getSystemLookAndFeelClassName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getSystemLookAndFeelClassName", methodSig: "()Ljava/lang/String;", methodCache: &getSystemLookAndFeelClassName_MethodID_31, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.UIManager.getUI(javax.swing.JComponent)
+
+    private static var getUI_MethodID_32: jmethodID?
+
+    open class func getUI( target: JComponent? ) -> ComponentUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: target, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &getUI_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    open class func getUI( _ _target: JComponent? ) -> ComponentUI! {
+        return getUI( target: _target )
+    }
+
+    /// private static void javax.swing.UIManager.initialize()
+
+    /// private static void javax.swing.UIManager.initializeAuxiliaryLAFs(java.util.Properties)
+
+    /// private static void javax.swing.UIManager.initializeDefaultLAF(java.util.Properties)
+
+    /// private static void javax.swing.UIManager.initializeInstalledLAFs(java.util.Properties)
+
+    /// private static void javax.swing.UIManager.initializeSystemDefaults(java.util.Properties)
 
     /// public static void javax.swing.UIManager.installLookAndFeel(java.lang.String,java.lang.String)
 
-    private static var installLookAndFeel_MethodID_25: jmethodID?
+    private static var installLookAndFeel_MethodID_33: jmethodID?
 
     open class func installLookAndFeel( name: String?, className: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: className, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "installLookAndFeel", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &installLookAndFeel_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "installLookAndFeel", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &installLookAndFeel_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open class func installLookAndFeel( _ _name: String?, _ _className: String? ) {
@@ -459,29 +583,108 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
 
     /// public static void javax.swing.UIManager.installLookAndFeel(javax.swing.UIManager$LookAndFeelInfo)
 
-    private static var installLookAndFeel_MethodID_26: jmethodID?
+    private static var installLookAndFeel_MethodID_34: jmethodID?
 
     open class func installLookAndFeel( info: UIManager_LookAndFeelInfo? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: info, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "installLookAndFeel", methodSig: "(Ljavax/swing/UIManager$LookAndFeelInfo;)V", methodCache: &installLookAndFeel_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "installLookAndFeel", methodSig: "(Ljavax/swing/UIManager$LookAndFeelInfo;)V", methodCache: &installLookAndFeel_MethodID_34, args: &__args, locals: &__locals )
     }
 
     open class func installLookAndFeel( _ _info: UIManager_LookAndFeelInfo? ) {
         installLookAndFeel( info: _info )
     }
 
+    /// private static java.util.Properties javax.swing.UIManager.loadSwingProperties()
+
+    /// private static java.lang.String javax.swing.UIManager.makeInstalledLAFKey(java.lang.String,java.lang.String)
+
+    /// private static java.lang.String javax.swing.UIManager.makeSwingPropertiesFilename()
+
+    /// private static void javax.swing.UIManager.maybeInitialize()
+
+    /// private static void javax.swing.UIManager.maybeInitializeFocusPolicy(javax.swing.JComponent)
+
+    /// public static java.lang.Object javax.swing.UIManager.put(java.lang.Object,java.lang.Object)
+
+    private static var put_MethodID_35: jmethodID?
+
+    open class func put( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "put", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &put_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+    open class func put( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> java_swift.JavaObject! {
+        return put( key: _key, value: _value )
+    }
+
+    /// public static boolean javax.swing.UIManager.removeAuxiliaryLookAndFeel(javax.swing.LookAndFeel)
+
+    private static var removeAuxiliaryLookAndFeel_MethodID_36: jmethodID?
+
+    open class func removeAuxiliaryLookAndFeel( laf: LookAndFeel? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: laf, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "removeAuxiliaryLookAndFeel", methodSig: "(Ljavax/swing/LookAndFeel;)Z", methodCache: &removeAuxiliaryLookAndFeel_MethodID_36, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func removeAuxiliaryLookAndFeel( _ _laf: LookAndFeel? ) -> Bool {
+        return removeAuxiliaryLookAndFeel( laf: _laf )
+    }
+
+    /// public static void javax.swing.UIManager.removePropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_37: jmethodID?
+
+    open class func removePropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &removePropertyChangeListener_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    open class func removePropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( listener: _listener )
+    }
+
+    /// public static void javax.swing.UIManager.setInstalledLookAndFeels(javax.swing.UIManager$LookAndFeelInfo[]) throws java.lang.SecurityException
+
+    private static var setInstalledLookAndFeels_MethodID_38: jmethodID?
+
+    open class func setInstalledLookAndFeels( infos: [UIManager_LookAndFeelInfo]? ) throws /* java.lang.SecurityException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: infos, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "setInstalledLookAndFeels", methodSig: "([Ljavax/swing/UIManager$LookAndFeelInfo;)V", methodCache: &setInstalledLookAndFeels_MethodID_38, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.JavaSecurityException( javaObject: throwable )
+        }
+    }
+
+    open class func setInstalledLookAndFeels( _ _infos: [UIManager_LookAndFeelInfo]? ) throws /* java.lang.SecurityException */ {
+        try setInstalledLookAndFeels( infos: _infos )
+    }
+
     /// public static void javax.swing.UIManager.setLookAndFeel(javax.swing.LookAndFeel) throws javax.swing.UnsupportedLookAndFeelException
 
-    private static var setLookAndFeel_MethodID_27: jmethodID?
+    private static var setLookAndFeel_MethodID_39: jmethodID?
 
     open class func setLookAndFeel( newLookAndFeel: LookAndFeel? ) throws /* javax.swing.UnsupportedLookAndFeelException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: newLookAndFeel, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "setLookAndFeel", methodSig: "(Ljavax/swing/LookAndFeel;)V", methodCache: &setLookAndFeel_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "setLookAndFeel", methodSig: "(Ljavax/swing/LookAndFeel;)V", methodCache: &setLookAndFeel_MethodID_39, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw UnsupportedLookAndFeelException( javaObject: throwable )
         }
     }
@@ -492,213 +695,21 @@ open class UIManager: java_swift.JavaObject, /* java.io.Serializable */ Unclasse
 
     /// public static void javax.swing.UIManager.setLookAndFeel(java.lang.String) throws java.lang.ClassNotFoundException,java.lang.InstantiationException,java.lang.IllegalAccessException,javax.swing.UnsupportedLookAndFeelException
 
-    private static var setLookAndFeel_MethodID_28: jmethodID?
+    private static var setLookAndFeel_MethodID_40: jmethodID?
 
     open class func setLookAndFeel( className: String? ) throws /* java.lang.ClassNotFoundException, java.lang.InstantiationException, java.lang.IllegalAccessException, javax.swing.UnsupportedLookAndFeelException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: className, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "setLookAndFeel", methodSig: "(Ljava/lang/String;)V", methodCache: &setLookAndFeel_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "setLookAndFeel", methodSig: "(Ljava/lang/String;)V", methodCache: &setLookAndFeel_MethodID_40, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.ClassNotFoundException( javaObject: throwable )
         }
     }
 
     open class func setLookAndFeel( _ _className: String? ) throws /* java.lang.ClassNotFoundException, java.lang.InstantiationException, java.lang.IllegalAccessException, javax.swing.UnsupportedLookAndFeelException */ {
         try setLookAndFeel( className: _className )
-    }
-
-    /// public static java.lang.String javax.swing.UIManager.getSystemLookAndFeelClassName()
-
-    private static var getSystemLookAndFeelClassName_MethodID_29: jmethodID?
-
-    open class func getSystemLookAndFeelClassName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getSystemLookAndFeelClassName", methodSig: "()Ljava/lang/String;", methodCache: &getSystemLookAndFeelClassName_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public static java.lang.String javax.swing.UIManager.getCrossPlatformLookAndFeelClassName()
-
-    private static var getCrossPlatformLookAndFeelClassName_MethodID_30: jmethodID?
-
-    open class func getCrossPlatformLookAndFeelClassName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getCrossPlatformLookAndFeelClassName", methodSig: "()Ljava/lang/String;", methodCache: &getCrossPlatformLookAndFeelClassName_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public static javax.swing.UIDefaults javax.swing.UIManager.getLookAndFeelDefaults()
-
-    private static var getLookAndFeelDefaults_MethodID_31: jmethodID?
-
-    open class func getLookAndFeelDefaults() -> UIDefaults! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getLookAndFeelDefaults", methodSig: "()Ljavax/swing/UIDefaults;", methodCache: &getLookAndFeelDefaults_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: UIDefaults(), from: __return )
-    }
-
-
-    /// private static javax.swing.LookAndFeel javax.swing.UIManager.getMultiLookAndFeel()
-
-    /// public static void javax.swing.UIManager.addAuxiliaryLookAndFeel(javax.swing.LookAndFeel)
-
-    private static var addAuxiliaryLookAndFeel_MethodID_32: jmethodID?
-
-    open class func addAuxiliaryLookAndFeel( laf: LookAndFeel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: laf, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "addAuxiliaryLookAndFeel", methodSig: "(Ljavax/swing/LookAndFeel;)V", methodCache: &addAuxiliaryLookAndFeel_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open class func addAuxiliaryLookAndFeel( _ _laf: LookAndFeel? ) {
-        addAuxiliaryLookAndFeel( laf: _laf )
-    }
-
-    /// public static boolean javax.swing.UIManager.removeAuxiliaryLookAndFeel(javax.swing.LookAndFeel)
-
-    private static var removeAuxiliaryLookAndFeel_MethodID_33: jmethodID?
-
-    open class func removeAuxiliaryLookAndFeel( laf: LookAndFeel? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: laf, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "removeAuxiliaryLookAndFeel", methodSig: "(Ljavax/swing/LookAndFeel;)Z", methodCache: &removeAuxiliaryLookAndFeel_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func removeAuxiliaryLookAndFeel( _ _laf: LookAndFeel? ) -> Bool {
-        return removeAuxiliaryLookAndFeel( laf: _laf )
-    }
-
-    /// public static javax.swing.LookAndFeel[] javax.swing.UIManager.getAuxiliaryLookAndFeels()
-
-    private static var getAuxiliaryLookAndFeels_MethodID_34: jmethodID?
-
-    open class func getAuxiliaryLookAndFeels() -> [LookAndFeel]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getAuxiliaryLookAndFeels", methodSig: "()[Ljavax/swing/LookAndFeel;", methodCache: &getAuxiliaryLookAndFeels_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [LookAndFeel](), from: __return )
-    }
-
-
-    /// private static java.util.Properties javax.swing.UIManager.loadSwingProperties()
-
-    /// private static void javax.swing.UIManager.checkProperty(java.util.Properties,java.lang.String)
-
-    /// private static void javax.swing.UIManager.initializeInstalledLAFs(java.util.Properties)
-
-    /// private static void javax.swing.UIManager.initializeDefaultLAF(java.util.Properties)
-
-    /// private static void javax.swing.UIManager.initializeAuxiliaryLAFs(java.util.Properties)
-
-    /// private static void javax.swing.UIManager.initializeSystemDefaults(java.util.Properties)
-
-    /// private static void javax.swing.UIManager.maybeInitialize()
-
-    /// private static void javax.swing.UIManager.maybeInitializeFocusPolicy(javax.swing.JComponent)
-
-    /// public static java.lang.String javax.swing.UIManager.getString(java.lang.Object,java.util.Locale)
-
-    private static var getString_MethodID_35: jmethodID?
-
-    open class func getString( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getString", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/lang/String;", methodCache: &getString_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func getString( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> String! {
-        return getString( key: _key, l: _l )
-    }
-
-    /// public static java.lang.String javax.swing.UIManager.getString(java.lang.Object)
-
-    private static var getString_MethodID_36: jmethodID?
-
-    open class func getString( key: java_swift.JavaObject? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &getString_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func getString( _ _key: java_swift.JavaObject? ) -> String! {
-        return getString( key: _key )
-    }
-
-    /// static java.lang.String javax.swing.UIManager.getString(java.lang.Object,java.awt.Component)
-
-    /// public static java.beans.PropertyChangeListener[] javax.swing.UIManager.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_37: jmethodID?
-
-    open class func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &getPropertyChangeListeners_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-
-    /// public static javax.swing.LookAndFeel javax.swing.UIManager.getLookAndFeel()
-
-    private static var getLookAndFeel_MethodID_38: jmethodID?
-
-    open class func getLookAndFeel() -> LookAndFeel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getLookAndFeel", methodSig: "()Ljavax/swing/LookAndFeel;", methodCache: &getLookAndFeel_MethodID_38, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? LookAndFeel( javaObject: __return ) : nil
-    }
-
-
-    /// public static java.awt.Color javax.swing.UIManager.getColor(java.lang.Object,java.util.Locale)
-
-    private static var getColor_MethodID_39: jmethodID?
-
-    open class func getColor( key: java_swift.JavaObject?, l: java_util.JavaLocale? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: l, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/Object;Ljava/util/Locale;)Ljava/awt/Color;", methodCache: &getColor_MethodID_39, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open class func getColor( _ _key: java_swift.JavaObject?, _ _l: java_util.JavaLocale? ) -> java_awt.Color! {
-        return getColor( key: _key, l: _l )
-    }
-
-    /// public static java.awt.Color javax.swing.UIManager.getColor(java.lang.Object)
-
-    private static var getColor_MethodID_40: jmethodID?
-
-    open class func getColor( key: java_swift.JavaObject? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/UIManager", classCache: &UIManagerJNIClass, methodName: "getColor", methodSig: "(Ljava/lang/Object;)Ljava/awt/Color;", methodCache: &getColor_MethodID_40, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open class func getColor( _ _key: java_swift.JavaObject? ) -> java_awt.Color! {
-        return getColor( key: _key )
     }
 
 }

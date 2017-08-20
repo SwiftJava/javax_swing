@@ -12,21 +12,21 @@ public protocol Scrollable: JavaProtocol {
 
     func getPreferredScrollableViewportSize() -> java_awt.Dimension!
 
-    /// public abstract int javax.swing.Scrollable.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
-
-    func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int
-
     /// public abstract int javax.swing.Scrollable.getScrollableBlockIncrement(java.awt.Rectangle,int,int)
 
     func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int
+
+    /// public abstract boolean javax.swing.Scrollable.getScrollableTracksViewportHeight()
+
+    func getScrollableTracksViewportHeight() -> Bool
 
     /// public abstract boolean javax.swing.Scrollable.getScrollableTracksViewportWidth()
 
     func getScrollableTracksViewportWidth() -> Bool
 
-    /// public abstract boolean javax.swing.Scrollable.getScrollableTracksViewportHeight()
+    /// public abstract int javax.swing.Scrollable.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
 
-    func getScrollableTracksViewportHeight() -> Bool
+    func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int
 
 }
 
@@ -40,74 +40,73 @@ open class ScrollableForward: JNIObjectForward, Scrollable {
     private static var getPreferredScrollableViewportSize_MethodID_6: jmethodID?
 
     open func getPreferredScrollableViewportSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredScrollableViewportSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &ScrollableForward.getPreferredScrollableViewportSize_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
 
-    /// public abstract int javax.swing.Scrollable.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
-
-    private static var getScrollableUnitIncrement_MethodID_7: jmethodID?
-
-    open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: visibleRect, locals: &__locals )
-        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
-        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &ScrollableForward.getScrollableUnitIncrement_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getScrollableUnitIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
-        return getScrollableUnitIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
-    }
-
     /// public abstract int javax.swing.Scrollable.getScrollableBlockIncrement(java.awt.Rectangle,int,int)
 
-    private static var getScrollableBlockIncrement_MethodID_8: jmethodID?
+    private static var getScrollableBlockIncrement_MethodID_7: jmethodID?
 
     open func getScrollableBlockIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: visibleRect, locals: &__locals )
-        __args[1] = JNIType.toJava( value: orientation, locals: &__locals )
-        __args[2] = JNIType.toJava( value: direction, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &ScrollableForward.getScrollableBlockIncrement_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[1] = jvalue( i: jint(orientation) )
+        __args[2] = jvalue( i: jint(direction) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableBlockIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &ScrollableForward.getScrollableBlockIncrement_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getScrollableBlockIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
         return getScrollableBlockIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
     }
 
+    /// public abstract boolean javax.swing.Scrollable.getScrollableTracksViewportHeight()
+
+    private static var getScrollableTracksViewportHeight_MethodID_8: jmethodID?
+
+    open func getScrollableTracksViewportHeight() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &ScrollableForward.getScrollableTracksViewportHeight_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
     /// public abstract boolean javax.swing.Scrollable.getScrollableTracksViewportWidth()
 
     private static var getScrollableTracksViewportWidth_MethodID_9: jmethodID?
 
     open func getScrollableTracksViewportWidth() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportWidth", methodSig: "()Z", methodCache: &ScrollableForward.getScrollableTracksViewportWidth_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public abstract boolean javax.swing.Scrollable.getScrollableTracksViewportHeight()
+    /// public abstract int javax.swing.Scrollable.getScrollableUnitIncrement(java.awt.Rectangle,int,int)
 
-    private static var getScrollableTracksViewportHeight_MethodID_10: jmethodID?
+    private static var getScrollableUnitIncrement_MethodID_10: jmethodID?
 
-    open func getScrollableTracksViewportHeight() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getScrollableUnitIncrement( visibleRect: java_awt.Rectangle?, orientation: Int, direction: Int ) -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getScrollableTracksViewportHeight", methodSig: "()Z", methodCache: &ScrollableForward.getScrollableTracksViewportHeight_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: visibleRect, locals: &__locals )
+        __args[1] = jvalue( i: jint(orientation) )
+        __args[2] = jvalue( i: jint(direction) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getScrollableUnitIncrement", methodSig: "(Ljava/awt/Rectangle;II)I", methodCache: &ScrollableForward.getScrollableUnitIncrement_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+    open func getScrollableUnitIncrement( _ _visibleRect: java_awt.Rectangle?, _ _orientation: Int, _ _direction: Int ) -> Int {
+        return getScrollableUnitIncrement( visibleRect: _visibleRect, orientation: _orientation, direction: _direction )
+    }
 
 }
-
 

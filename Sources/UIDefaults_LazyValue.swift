@@ -23,8 +23,8 @@ open class UIDefaults_LazyValueForward: JNIObjectForward, UIDefaults_LazyValue {
     private static var createValue_MethodID_2: jmethodID?
 
     open func createValue( arg0: UIDefaults? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, mapClass: "javax/swing/UIDefaults", locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createValue", methodSig: "(Ljavax/swing/UIDefaults;)Ljava/lang/Object;", methodCache: &UIDefaults_LazyValueForward.createValue_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -36,5 +36,4 @@ open class UIDefaults_LazyValueForward: JNIObjectForward, UIDefaults_LazyValue {
     }
 
 }
-
 

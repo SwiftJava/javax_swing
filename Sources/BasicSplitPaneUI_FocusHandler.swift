@@ -19,13 +19,15 @@ open class BasicSplitPaneUI_FocusHandler: java_awt.FocusAdapter {
 
     /// final javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneUI$FocusHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicSplitPaneUI$FocusHandler(javax.swing.plaf.basic.BasicSplitPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicSplitPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSplitPaneUI$FocusHandler", classCache: &BasicSplitPaneUI_FocusHandler.BasicSplitPaneUI_FocusHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneUI_FocusHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -41,8 +43,8 @@ open class BasicSplitPaneUI_FocusHandler: java_awt.FocusAdapter {
     private static var focusGained_MethodID_2: jmethodID?
 
     open func focusGained( ev: java_awt.FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ev, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusGained", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicSplitPaneUI_FocusHandler.focusGained_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -56,8 +58,8 @@ open class BasicSplitPaneUI_FocusHandler: java_awt.FocusAdapter {
     private static var focusLost_MethodID_3: jmethodID?
 
     open func focusLost( ev: java_awt.FocusEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ev, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "focusLost", methodSig: "(Ljava/awt/event/FocusEvent;)V", methodCache: &BasicSplitPaneUI_FocusHandler.focusLost_MethodID_3, args: &__args, locals: &__locals )
     }

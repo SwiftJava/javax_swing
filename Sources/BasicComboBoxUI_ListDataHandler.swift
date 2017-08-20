@@ -18,13 +18,15 @@ open class BasicComboBoxUI_ListDataHandler: java_swift.JavaObject, ListDataListe
 
     /// final javax.swing.plaf.basic.BasicComboBoxUI javax.swing.plaf.basic.BasicComboBoxUI$ListDataHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicComboBoxUI$ListDataHandler(javax.swing.plaf.basic.BasicComboBoxUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicComboBoxUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboBoxUI$ListDataHandler", classCache: &BasicComboBoxUI_ListDataHandler.BasicComboBoxUI_ListDataHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicComboBoxUI;)V", methodCache: &BasicComboBoxUI_ListDataHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicComboBoxUI_ListDataHandler: java_swift.JavaObject, ListDataListe
     private static var contentsChanged_MethodID_2: jmethodID?
 
     open func contentsChanged( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "contentsChanged", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicComboBoxUI_ListDataHandler.contentsChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -55,8 +57,8 @@ open class BasicComboBoxUI_ListDataHandler: java_swift.JavaObject, ListDataListe
     private static var intervalAdded_MethodID_3: jmethodID?
 
     open func intervalAdded( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicComboBoxUI_ListDataHandler.intervalAdded_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -70,8 +72,8 @@ open class BasicComboBoxUI_ListDataHandler: java_swift.JavaObject, ListDataListe
     private static var intervalRemoved_MethodID_4: jmethodID?
 
     open func intervalRemoved( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &BasicComboBoxUI_ListDataHandler.intervalRemoved_MethodID_4, args: &__args, locals: &__locals )
     }

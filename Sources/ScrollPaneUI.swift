@@ -21,8 +21,8 @@ open class ScrollPaneUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/ScrollPaneUI", classCache: &ScrollPaneUI.ScrollPaneUIJNIClass, methodSig: "()V", methodCache: &ScrollPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

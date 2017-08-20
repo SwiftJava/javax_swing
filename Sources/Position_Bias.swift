@@ -16,17 +16,6 @@ open class Position_Bias: java_swift.JavaObject {
 
     private static var Position_BiasJNIClass: jclass?
 
-    /// public static final javax.swing.text.Position$Bias javax.swing.text.Position$Bias.Forward
-
-    private static var Forward_FieldID: jfieldID?
-
-    open static var Forward: Position_Bias! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "Forward", fieldType: "Ljavax/swing/text/Position$Bias;", fieldCache: &Forward_FieldID, className: "javax/swing/text/Position$Bias", classCache: &Position_BiasJNIClass )
-            return __value != nil ? Position_Bias( javaObject: __value ) : nil
-        }
-    }
-
     /// public static final javax.swing.text.Position$Bias javax.swing.text.Position$Bias.Backward
 
     private static var Backward_FieldID: jfieldID?
@@ -34,6 +23,19 @@ open class Position_Bias: java_swift.JavaObject {
     open static var Backward: Position_Bias! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Backward", fieldType: "Ljavax/swing/text/Position$Bias;", fieldCache: &Backward_FieldID, className: "javax/swing/text/Position$Bias", classCache: &Position_BiasJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? Position_Bias( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final javax.swing.text.Position$Bias javax.swing.text.Position$Bias.Forward
+
+    private static var Forward_FieldID: jfieldID?
+
+    open static var Forward: Position_Bias! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "Forward", fieldType: "Ljavax/swing/text/Position$Bias;", fieldCache: &Forward_FieldID, className: "javax/swing/text/Position$Bias", classCache: &Position_BiasJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? Position_Bias( javaObject: __value ) : nil
         }
     }
@@ -43,6 +45,8 @@ open class Position_Bias: java_swift.JavaObject {
     /// private javax.swing.text.Position$Bias(java.lang.String)
 
     /// public java.lang.String javax.swing.text.Position$Bias.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

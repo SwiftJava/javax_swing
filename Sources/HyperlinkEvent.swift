@@ -18,15 +18,15 @@ open class HyperlinkEvent: java_util.EventObject {
 
     private static var HyperlinkEventJNIClass: jclass?
 
-    /// private javax.swing.event.HyperlinkEvent$EventType javax.swing.event.HyperlinkEvent.type
-
-    /// private java.net.URL javax.swing.event.HyperlinkEvent.u
-
     /// private java.lang.String javax.swing.event.HyperlinkEvent.desc
+
+    /// private java.awt.event.InputEvent javax.swing.event.HyperlinkEvent.inputEvent
 
     /// private javax.swing.text.Element javax.swing.event.HyperlinkEvent.sourceElement
 
-    /// private java.awt.event.InputEvent javax.swing.event.HyperlinkEvent.inputEvent
+    /// private javax.swing.event.HyperlinkEvent$EventType javax.swing.event.HyperlinkEvent.type
+
+    /// private java.net.URL javax.swing.event.HyperlinkEvent.u
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -36,8 +36,8 @@ open class HyperlinkEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HyperlinkEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &HyperlinkEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -47,98 +47,98 @@ open class HyperlinkEvent: java_util.EventObject {
         }
     }
 
-    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,java.lang.String,javax.swing.text.Element,java.awt.event.InputEvent)
+    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject?, desc: String?, sourceElement: Element?, inputEvent: java_awt.InputEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* class java.net.URL */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;)V", methodCache: &HyperlinkEvent.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* class java.net.URL */ UnavailableObject? ) {
+        self.init( source: _source, type: _type, u: _u )
+    }
+
+    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,java.lang.String)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* class java.net.URL */ UnavailableObject?, desc: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
+        __args[3] = JNIType.toJava( value: desc, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;)V", methodCache: &HyperlinkEvent.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* class java.net.URL */ UnavailableObject?, _ _desc: String? ) {
+        self.init( source: _source, type: _type, u: _u, desc: _desc )
+    }
+
+    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,java.lang.String,javax.swing.text.Element)
+
+    private static var new_MethodID_3: jmethodID?
+
+    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* class java.net.URL */ UnavailableObject?, desc: String?, sourceElement: Element? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: source, locals: &__locals )
+        __args[1] = JNIType.toJava( value: type, locals: &__locals )
+        __args[2] = JNIType.toJava( value: u, locals: &__locals )
+        __args[3] = JNIType.toJava( value: desc, locals: &__locals )
+        __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;)V", methodCache: &HyperlinkEvent.new_MethodID_3, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* class java.net.URL */ UnavailableObject?, _ _desc: String?, _ _sourceElement: Element? ) {
+        self.init( source: _source, type: _type, u: _u, desc: _desc, sourceElement: _sourceElement )
+    }
+
+    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,java.lang.String,javax.swing.text.Element,java.awt.event.InputEvent)
+
+    private static var new_MethodID_4: jmethodID?
+
+    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* class java.net.URL */ UnavailableObject?, desc: String?, sourceElement: Element?, inputEvent: java_awt.InputEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: u, locals: &__locals )
         __args[3] = JNIType.toJava( value: desc, locals: &__locals )
         __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
         __args[5] = JNIType.toJava( value: inputEvent, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;Ljava/awt/event/InputEvent;)V", methodCache: &HyperlinkEvent.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;Ljava/awt/event/InputEvent;)V", methodCache: &HyperlinkEvent.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* java.net.URL */ UnclassedObject?, _ _desc: String?, _ _sourceElement: Element?, _ _inputEvent: java_awt.InputEvent? ) {
+    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* class java.net.URL */ UnavailableObject?, _ _desc: String?, _ _sourceElement: Element?, _ _inputEvent: java_awt.InputEvent? ) {
         self.init( source: _source, type: _type, u: _u, desc: _desc, sourceElement: _sourceElement, inputEvent: _inputEvent )
     }
 
-    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,java.lang.String,javax.swing.text.Element)
+    /// public java.lang.String javax.swing.event.HyperlinkEvent.getDescription()
 
-    private static var new_MethodID_2: jmethodID?
+    private static var getDescription_MethodID_5: jmethodID?
 
-    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject?, desc: String?, sourceElement: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    open func getDescription() -> String! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u, locals: &__locals )
-        __args[3] = JNIType.toJava( value: desc, locals: &__locals )
-        __args[4] = JNIType.toJava( value: sourceElement, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;Ljavax/swing/text/Element;)V", methodCache: &HyperlinkEvent.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* java.net.URL */ UnclassedObject?, _ _desc: String?, _ _sourceElement: Element? ) {
-        self.init( source: _source, type: _type, u: _u, desc: _desc, sourceElement: _sourceElement )
-    }
-
-    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,java.lang.String)
-
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject?, desc: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u, locals: &__locals )
-        __args[3] = JNIType.toJava( value: desc, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;Ljava/lang/String;)V", methodCache: &HyperlinkEvent.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* java.net.URL */ UnclassedObject?, _ _desc: String? ) {
-        self.init( source: _source, type: _type, u: _u, desc: _desc )
-    }
-
-    /// public javax.swing.event.HyperlinkEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL)
-
-    private static var new_MethodID_4: jmethodID?
-
-    public convenience init( source: java_swift.JavaObject?, type: HyperlinkEvent_EventType?, u: /* java.net.URL */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: u, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/event/HyperlinkEvent", classCache: &HyperlinkEvent.HyperlinkEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/event/HyperlinkEvent$EventType;Ljava/net/URL;)V", methodCache: &HyperlinkEvent.new_MethodID_4, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _source: java_swift.JavaObject?, _ _type: HyperlinkEvent_EventType?, _ _u: /* java.net.URL */ UnclassedObject? ) {
-        self.init( source: _source, type: _type, u: _u )
-    }
-
-    /// public java.net.URL javax.swing.event.HyperlinkEvent.getURL()
-
-    private static var getURL_MethodID_5: jmethodID?
-
-    open func getURL() -> /* java.net.URL */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getURL", methodSig: "()Ljava/net/URL;", methodCache: &HyperlinkEvent.getURL_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "()Ljava/lang/String;", methodCache: &HyperlinkEvent.getDescription_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
@@ -147,49 +147,50 @@ open class HyperlinkEvent: java_util.EventObject {
     private static var getEventType_MethodID_6: jmethodID?
 
     open func getEventType() -> HyperlinkEvent_EventType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEventType", methodSig: "()Ljavax/swing/event/HyperlinkEvent$EventType;", methodCache: &HyperlinkEvent.getEventType_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HyperlinkEvent_EventType( javaObject: __return ) : nil
     }
 
 
-    /// public javax.swing.text.Element javax.swing.event.HyperlinkEvent.getSourceElement()
-
-    private static var getSourceElement_MethodID_7: jmethodID?
-
-    open func getSourceElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSourceElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &HyperlinkEvent.getSourceElement_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
-
     /// public java.awt.event.InputEvent javax.swing.event.HyperlinkEvent.getInputEvent()
 
-    private static var getInputEvent_MethodID_8: jmethodID?
+    private static var getInputEvent_MethodID_7: jmethodID?
 
     open func getInputEvent() -> java_awt.InputEvent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputEvent", methodSig: "()Ljava/awt/event/InputEvent;", methodCache: &HyperlinkEvent.getInputEvent_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputEvent", methodSig: "()Ljava/awt/event/InputEvent;", methodCache: &HyperlinkEvent.getInputEvent_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.InputEvent( javaObject: __return ) : nil
     }
 
 
-    /// public java.lang.String javax.swing.event.HyperlinkEvent.getDescription()
+    /// public javax.swing.text.Element javax.swing.event.HyperlinkEvent.getSourceElement()
 
-    private static var getDescription_MethodID_9: jmethodID?
+    private static var getSourceElement_MethodID_8: jmethodID?
 
-    open func getDescription() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getSourceElement() -> Element! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "()Ljava/lang/String;", methodCache: &HyperlinkEvent.getDescription_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSourceElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &HyperlinkEvent.getSourceElement_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.net.URL javax.swing.event.HyperlinkEvent.getURL()
+
+    private static var getURL_MethodID_9: jmethodID?
+
+    open func getURL() -> /* class java.net.URL */ UnavailableObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getURL", methodSig: "()Ljava/net/URL;", methodCache: &HyperlinkEvent.getURL_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class java.net.URL */ UnavailableObject( javaObject: __return ) : nil
     }
 
 

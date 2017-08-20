@@ -17,14 +17,30 @@ open class FieldView: PlainView {
 
     private static var FieldViewJNIClass: jclass?
 
+    /// int javax.swing.text.PlainView.firstLineOffset
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font javax.swing.text.PlainView.font
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.Segment javax.swing.text.PlainView.lineBuffer
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.Element javax.swing.text.PlainView.longLine
+
+    // Skipping field: true false false false false false 
+
     /// protected java.awt.FontMetrics javax.swing.text.PlainView.metrics
 
     private static var metrics_FieldID: jfieldID?
 
     override open var metrics: java_awt.FontMetrics! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "metrics", fieldType: "Ljava/awt/FontMetrics;", fieldCache: &FieldView.metrics_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "metrics", fieldType: "Ljava/awt/FontMetrics;", fieldCache: &FieldView.metrics_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.FontMetrics( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -34,93 +50,153 @@ open class FieldView: PlainView {
         }
     }
 
-    /// javax.swing.text.Element javax.swing.text.PlainView.longLine
-
-    /// java.awt.Font javax.swing.text.PlainView.font
-
-    /// javax.swing.text.Segment javax.swing.text.PlainView.lineBuffer
-
-    /// int javax.swing.text.PlainView.tabSize
-
-    /// int javax.swing.text.PlainView.tabBase
-
     /// int javax.swing.text.PlainView.sel0
+
+    // Skipping field: true false false false false false 
 
     /// int javax.swing.text.PlainView.sel1
 
-    /// java.awt.Color javax.swing.text.PlainView.unselected
+    // Skipping field: true false false false false false 
 
     /// java.awt.Color javax.swing.text.PlainView.selected
 
-    /// int javax.swing.text.PlainView.firstLineOffset
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.PlainView.tabBase
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.PlainView.tabSize
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color javax.swing.text.PlainView.unselected
+
+    // Skipping field: true false false false false false 
 
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.FieldView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/FieldView", classCache: &FieldView.FieldViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &FieldView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -131,44 +207,15 @@ open class FieldView: PlainView {
         self.init( elem: _elem )
     }
 
-    /// public void javax.swing.text.FieldView.paint(java.awt.Graphics,java.awt.Shape)
-
-    /// java.awt.Shape javax.swing.text.FieldView.adjustPaintRegion(java.awt.Shape)
-
-    /// public int javax.swing.text.FieldView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    /// public java.awt.Shape javax.swing.text.FieldView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
-
-    /// protected java.awt.FontMetrics javax.swing.text.FieldView.getFontMetrics()
-
-    private static var getFontMetrics_MethodID_2: jmethodID?
-
-    open func getFontMetrics() -> java_awt.FontMetrics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &FieldView.getFontMetrics_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.text.FieldView.getResizeWeight(int)
-
-    /// public void javax.swing.text.FieldView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public void javax.swing.text.FieldView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public float javax.swing.text.FieldView.getPreferredSpan(int)
-
     /// protected java.awt.Shape javax.swing.text.FieldView.adjustAllocation(java.awt.Shape)
 
-    private static var adjustAllocation_MethodID_3: jmethodID?
+    private static var adjustAllocation_MethodID_2: jmethodID?
 
     open func adjustAllocation( a: java_awt.Shape? ) -> java_awt.Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "adjustAllocation", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &FieldView.adjustAllocation_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "adjustAllocation", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &FieldView.adjustAllocation_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
     }
@@ -177,7 +224,54 @@ open class FieldView: PlainView {
         return adjustAllocation( a: _a )
     }
 
+    /// java.awt.Shape javax.swing.text.FieldView.adjustPaintRegion(java.awt.Shape)
+
+    // Skipping method: true false false false false 
+
+    /// protected java.awt.FontMetrics javax.swing.text.FieldView.getFontMetrics()
+
+    private static var getFontMetrics_MethodID_3: jmethodID?
+
+    open func getFontMetrics() -> java_awt.FontMetrics! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFontMetrics", methodSig: "()Ljava/awt/FontMetrics;", methodCache: &FieldView.getFontMetrics_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.FontMetrics( javaObject: __return ) : nil
+    }
+
+
+    /// public float javax.swing.text.FieldView.getPreferredSpan(int)
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.FieldView.getResizeWeight(int)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.FieldView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Shape javax.swing.text.FieldView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.FieldView.paint(java.awt.Graphics,java.awt.Shape)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.FieldView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    // Skipping method: false true false false false 
+
     /// void javax.swing.text.FieldView.updateVisibilityModel()
+
+    // Skipping method: true false false false false 
+
+    /// public int javax.swing.text.FieldView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    // Skipping method: false true false false false 
 
 }
 

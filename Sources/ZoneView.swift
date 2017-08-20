@@ -17,125 +17,215 @@ open class ZoneView: BoxView {
 
     private static var ZoneViewJNIClass: jclass?
 
+    /// java.util.Vector javax.swing.text.ZoneView.loadedZones
+
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.ZoneView.maxZoneSize
+
+    // Skipping field: true false false false false false 
 
     /// int javax.swing.text.ZoneView.maxZonesLoaded
 
-    /// java.util.Vector javax.swing.text.ZoneView.loadedZones
-
-    /// int javax.swing.text.BoxView.majorAxis
-
-    /// int javax.swing.text.BoxView.majorSpan
-
-    /// int javax.swing.text.BoxView.minorSpan
-
-    /// boolean javax.swing.text.BoxView.majorReqValid
-
-    /// boolean javax.swing.text.BoxView.minorReqValid
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.BoxView.majorAllocValid
 
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorAxis
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorSpans
 
+    // Skipping field: true false false false false false 
+
     /// boolean javax.swing.text.BoxView.minorAllocValid
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorSpans
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.ZoneView(javax.swing.text.Element,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element?, axis: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        __args[1] = jvalue( i: jint(axis) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/ZoneView", classCache: &ZoneView.ZoneViewJNIClass, methodSig: "(Ljavax/swing/text/Element;I)V", methodCache: &ZoneView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -145,120 +235,16 @@ open class ZoneView: BoxView {
         self.init( elem: _elem, axis: _axis )
     }
 
-    /// void javax.swing.text.ZoneView.handleRemove(int,int)
-
-    /// protected void javax.swing.text.ZoneView.zoneWasLoaded(javax.swing.text.View)
-
-    private static var zoneWasLoaded_MethodID_2: jmethodID?
-
-    open func zoneWasLoaded( zone: View? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: zone, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "zoneWasLoaded", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.zoneWasLoaded_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func zoneWasLoaded( _ _zone: View? ) {
-        zoneWasLoaded( zone: _zone )
-    }
-
-    /// public int javax.swing.text.ZoneView.getMaximumZoneSize()
-
-    private static var getMaximumZoneSize_MethodID_3: jmethodID?
-
-    open func getMaximumZoneSize() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumZoneSize", methodSig: "()I", methodCache: &ZoneView.getMaximumZoneSize_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.ZoneView.setMaximumZoneSize(int)
-
-    private static var setMaximumZoneSize_MethodID_4: jmethodID?
-
-    open func setMaximumZoneSize( size: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: size, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumZoneSize", methodSig: "(I)V", methodCache: &ZoneView.setMaximumZoneSize_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximumZoneSize( _ _size: Int ) {
-        setMaximumZoneSize( size: _size )
-    }
-
-    /// public int javax.swing.text.ZoneView.getMaxZonesLoaded()
-
-    private static var getMaxZonesLoaded_MethodID_5: jmethodID?
-
-    open func getMaxZonesLoaded() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxZonesLoaded", methodSig: "()I", methodCache: &ZoneView.getMaxZonesLoaded_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.ZoneView.setMaxZonesLoaded(int)
-
-    private static var setMaxZonesLoaded_MethodID_6: jmethodID?
-
-    open func setMaxZonesLoaded( mzl: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mzl, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaxZonesLoaded", methodSig: "(I)V", methodCache: &ZoneView.setMaxZonesLoaded_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setMaxZonesLoaded( _ _mzl: Int ) {
-        setMaxZonesLoaded( mzl: _mzl )
-    }
-
-    /// void javax.swing.text.ZoneView.unloadOldZones()
-
-    /// protected void javax.swing.text.ZoneView.unloadZone(javax.swing.text.View)
-
-    private static var unloadZone_MethodID_7: jmethodID?
-
-    open func unloadZone( zone: View? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: zone, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "unloadZone", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.unloadZone_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func unloadZone( _ _zone: View? ) {
-        unloadZone( zone: _zone )
-    }
-
-    /// protected boolean javax.swing.text.ZoneView.isZoneLoaded(javax.swing.text.View)
-
-    private static var isZoneLoaded_MethodID_8: jmethodID?
-
-    open func isZoneLoaded( zone: View? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: zone, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isZoneLoaded", methodSig: "(Ljavax/swing/text/View;)Z", methodCache: &ZoneView.isZoneLoaded_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isZoneLoaded( _ _zone: View? ) -> Bool {
-        return isZoneLoaded( zone: _zone )
-    }
-
     /// protected javax.swing.text.View javax.swing.text.ZoneView.createZone(int,int)
 
-    private static var createZone_MethodID_9: jmethodID?
+    private static var createZone_MethodID_2: jmethodID?
 
     open func createZone( p0: Int, p1: Int ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createZone", methodSig: "(II)Ljavax/swing/text/View;", methodCache: &ZoneView.createZone_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(p0) )
+        __args[1] = jvalue( i: jint(p1) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createZone", methodSig: "(II)Ljavax/swing/text/View;", methodCache: &ZoneView.createZone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -267,60 +253,174 @@ open class ZoneView: BoxView {
         return createZone( p0: _p0, p1: _p1 )
     }
 
+    /// int javax.swing.text.ZoneView.getDesiredZoneEnd(int)
+
+    // Skipping method: true false false false false 
+
+    /// public int javax.swing.text.ZoneView.getMaxZonesLoaded()
+
+    private static var getMaxZonesLoaded_MethodID_3: jmethodID?
+
+    open func getMaxZonesLoaded() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxZonesLoaded", methodSig: "()I", methodCache: &ZoneView.getMaxZonesLoaded_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.text.ZoneView.getMaximumZoneSize()
+
+    private static var getMaximumZoneSize_MethodID_4: jmethodID?
+
+    open func getMaximumZoneSize() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumZoneSize", methodSig: "()I", methodCache: &ZoneView.getMaximumZoneSize_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected int javax.swing.text.ZoneView.getViewIndexAtPosition(int)
+
+    private static var getViewIndexAtPosition_MethodID_5: jmethodID?
+
+    override open func getViewIndexAtPosition( pos: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &ZoneView.getViewIndexAtPosition_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    override open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
+        return getViewIndexAtPosition( pos: _pos )
+    }
+
     /// void javax.swing.text.ZoneView.handleInsert(int,int)
 
-    /// void javax.swing.text.ZoneView.splitZone(int,int,int)
+    // Skipping method: true false false false false 
 
-    /// int javax.swing.text.ZoneView.getDesiredZoneEnd(int)
+    /// void javax.swing.text.ZoneView.handleRemove(int,int)
+
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.text.ZoneView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var insertUpdate_MethodID_10: jmethodID?
+    private static var insertUpdate_MethodID_6: jmethodID?
 
     open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: changes, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.insertUpdate_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.insertUpdate_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
         insertUpdate( changes: _changes, a: _a, f: _f )
     }
 
+    /// protected boolean javax.swing.text.ZoneView.isZoneLoaded(javax.swing.text.View)
+
+    private static var isZoneLoaded_MethodID_7: jmethodID?
+
+    open func isZoneLoaded( zone: View? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: zone, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isZoneLoaded", methodSig: "(Ljavax/swing/text/View;)Z", methodCache: &ZoneView.isZoneLoaded_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isZoneLoaded( _ _zone: View? ) -> Bool {
+        return isZoneLoaded( zone: _zone )
+    }
+
+    /// protected void javax.swing.text.ZoneView.loadChildren(javax.swing.text.ViewFactory)
+
+    private static var loadChildren_MethodID_8: jmethodID?
+
+    override open func loadChildren( f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.loadChildren_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    override open func loadChildren( _ _f: ViewFactory? ) {
+        loadChildren( f: _f )
+    }
+
     /// public void javax.swing.text.ZoneView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var removeUpdate_MethodID_11: jmethodID?
+    private static var removeUpdate_MethodID_9: jmethodID?
 
     open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: changes, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.removeUpdate_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.removeUpdate_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
         removeUpdate( changes: _changes, a: _a, f: _f )
     }
 
-    /// protected int javax.swing.text.ZoneView.getViewIndexAtPosition(int)
+    /// public void javax.swing.text.ZoneView.setMaxZonesLoaded(int)
 
-    private static var getViewIndexAtPosition_MethodID_12: jmethodID?
+    private static var setMaxZonesLoaded_MethodID_10: jmethodID?
 
-    override open func getViewIndexAtPosition( pos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setMaxZonesLoaded( mzl: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &ZoneView.getViewIndexAtPosition_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(mzl) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaxZonesLoaded", methodSig: "(I)V", methodCache: &ZoneView.setMaxZonesLoaded_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    override open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
-        return getViewIndexAtPosition( pos: _pos )
+    open func setMaxZonesLoaded( _ _mzl: Int ) {
+        setMaxZonesLoaded( mzl: _mzl )
+    }
+
+    /// public void javax.swing.text.ZoneView.setMaximumZoneSize(int)
+
+    private static var setMaximumZoneSize_MethodID_11: jmethodID?
+
+    open func setMaximumZoneSize( size: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(size) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumZoneSize", methodSig: "(I)V", methodCache: &ZoneView.setMaximumZoneSize_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximumZoneSize( _ _size: Int ) {
+        setMaximumZoneSize( size: _size )
+    }
+
+    /// void javax.swing.text.ZoneView.splitZone(int,int,int)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.ZoneView.unloadOldZones()
+
+    // Skipping method: true false false false false 
+
+    /// protected void javax.swing.text.ZoneView.unloadZone(javax.swing.text.View)
+
+    private static var unloadZone_MethodID_12: jmethodID?
+
+    open func unloadZone( zone: View? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: zone, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "unloadZone", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.unloadZone_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func unloadZone( _ _zone: View? ) {
+        unloadZone( zone: _zone )
     }
 
     /// protected boolean javax.swing.text.ZoneView.updateChildren(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,javax.swing.text.ViewFactory)
@@ -328,32 +428,32 @@ open class ZoneView: BoxView {
     private static var updateChildren_MethodID_13: jmethodID?
 
     override open func updateChildren( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, f: ViewFactory? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: ec, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
         __args[2] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateChildren", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljavax/swing/text/ViewFactory;)Z", methodCache: &ZoneView.updateChildren_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func updateChildren( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _f: ViewFactory? ) -> Bool {
         return updateChildren( ec: _ec, e: _e, f: _f )
     }
 
-    /// protected void javax.swing.text.ZoneView.loadChildren(javax.swing.text.ViewFactory)
+    /// protected void javax.swing.text.ZoneView.zoneWasLoaded(javax.swing.text.View)
 
-    private static var loadChildren_MethodID_14: jmethodID?
+    private static var zoneWasLoaded_MethodID_14: jmethodID?
 
-    override open func loadChildren( f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func zoneWasLoaded( zone: View? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &ZoneView.loadChildren_MethodID_14, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: zone, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "zoneWasLoaded", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &ZoneView.zoneWasLoaded_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    override open func loadChildren( _ _f: ViewFactory? ) {
-        loadChildren( f: _f )
+    open func zoneWasLoaded( _ _zone: View? ) {
+        zoneWasLoaded( zone: _zone )
     }
 
 }

@@ -22,8 +22,8 @@ open class AbstractLayoutCache_NodeDimensions: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/tree/AbstractLayoutCache$NodeDimensions", classCache: &AbstractLayoutCache_NodeDimensions.AbstractLayoutCache_NodeDimensionsJNIClass, methodSig: "()V", methodCache: &AbstractLayoutCache_NodeDimensions.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -34,12 +34,12 @@ open class AbstractLayoutCache_NodeDimensions: java_swift.JavaObject {
     private static var getNodeDimensions_MethodID_2: jmethodID?
 
     open func getNodeDimensions( value: java_swift.JavaObject?, row: Int, depth: Int, expanded: Bool, bounds: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        __args[1] = JNIType.toJava( value: row, locals: &__locals )
-        __args[2] = JNIType.toJava( value: depth, locals: &__locals )
-        __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
+        __args[1] = jvalue( i: jint(row) )
+        __args[2] = jvalue( i: jint(depth) )
+        __args[3] = jvalue( z: jboolean(expanded ? JNI_TRUE : JNI_FALSE) )
         __args[4] = JNIType.toJava( value: bounds, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNodeDimensions", methodSig: "(Ljava/lang/Object;IIZLjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &AbstractLayoutCache_NodeDimensions.getNodeDimensions_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }

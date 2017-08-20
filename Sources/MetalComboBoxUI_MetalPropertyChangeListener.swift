@@ -18,15 +18,19 @@ open class MetalComboBoxUI_MetalPropertyChangeListener: BasicComboBoxUI_Property
 
     /// final javax.swing.plaf.metal.MetalComboBoxUI javax.swing.plaf.metal.MetalComboBoxUI$MetalPropertyChangeListener.this$0
 
+    // Skipping field: true false false false false false 
+
     /// final javax.swing.plaf.basic.BasicComboBoxUI javax.swing.plaf.basic.BasicComboBoxUI$PropertyChangeHandler.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.metal.MetalComboBoxUI$MetalPropertyChangeListener(javax.swing.plaf.metal.MetalComboBoxUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: MetalComboBoxUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxUI$MetalPropertyChangeListener", classCache: &MetalComboBoxUI_MetalPropertyChangeListener.MetalComboBoxUI_MetalPropertyChangeListenerJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalComboBoxUI;)V", methodCache: &MetalComboBoxUI_MetalPropertyChangeListener.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -38,6 +42,8 @@ open class MetalComboBoxUI_MetalPropertyChangeListener: BasicComboBoxUI_Property
     }
 
     /// public void javax.swing.plaf.metal.MetalComboBoxUI$MetalPropertyChangeListener.propertyChange(java.beans.PropertyChangeEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

@@ -24,8 +24,8 @@ open class ListSelectionListenerForward: java_util.EventListenerForward, ListSel
     private static var valueChanged_MethodID_2: jmethodID?
 
     open func valueChanged( e: ListSelectionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &ListSelectionListenerForward.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class ListSelectionListenerForward: java_util.EventListenerForward, ListSel
 
 }
 
-
 private typealias ListSelectionListener_valueChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ListSelectionListener_valueChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ListSelectionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).valueChanged( e: e != nil ? ListSelectionEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class ListSelectionListenerLocal_: JNILocalProxy<ListSelectionListener, Any> {
@@ -89,8 +86,5 @@ open class ListSelectionListenerBase: ListSelectionListener {
     open func valueChanged( e: ListSelectionEvent? ) /**/ {
     }
 
-    open func valueChanged( _ _e: ListSelectionEvent? ) /**/ {
-        valueChanged( e: _e )
-    }
 
 }

@@ -7,41 +7,29 @@ import java_swift
 
 public protocol DesktopManager: JavaProtocol {
 
-    /// public abstract void javax.swing.DesktopManager.openFrame(javax.swing.JInternalFrame)
+    /// public abstract void javax.swing.DesktopManager.activateFrame(javax.swing.JInternalFrame)
 
-    func openFrame( f: JInternalFrame? )
+    func activateFrame( f: JInternalFrame? )
+
+    /// public abstract void javax.swing.DesktopManager.beginDraggingFrame(javax.swing.JComponent)
+
+    func beginDraggingFrame( f: JComponent? )
+
+    /// public abstract void javax.swing.DesktopManager.beginResizingFrame(javax.swing.JComponent,int)
+
+    func beginResizingFrame( f: JComponent?, direction: Int )
 
     /// public abstract void javax.swing.DesktopManager.closeFrame(javax.swing.JInternalFrame)
 
     func closeFrame( f: JInternalFrame? )
 
-    /// public abstract void javax.swing.DesktopManager.maximizeFrame(javax.swing.JInternalFrame)
-
-    func maximizeFrame( f: JInternalFrame? )
-
-    /// public abstract void javax.swing.DesktopManager.minimizeFrame(javax.swing.JInternalFrame)
-
-    func minimizeFrame( f: JInternalFrame? )
-
-    /// public abstract void javax.swing.DesktopManager.iconifyFrame(javax.swing.JInternalFrame)
-
-    func iconifyFrame( f: JInternalFrame? )
-
-    /// public abstract void javax.swing.DesktopManager.deiconifyFrame(javax.swing.JInternalFrame)
-
-    func deiconifyFrame( f: JInternalFrame? )
-
-    /// public abstract void javax.swing.DesktopManager.activateFrame(javax.swing.JInternalFrame)
-
-    func activateFrame( f: JInternalFrame? )
-
     /// public abstract void javax.swing.DesktopManager.deactivateFrame(javax.swing.JInternalFrame)
 
     func deactivateFrame( f: JInternalFrame? )
 
-    /// public abstract void javax.swing.DesktopManager.beginDraggingFrame(javax.swing.JComponent)
+    /// public abstract void javax.swing.DesktopManager.deiconifyFrame(javax.swing.JInternalFrame)
 
-    func beginDraggingFrame( f: JComponent? )
+    func deiconifyFrame( f: JInternalFrame? )
 
     /// public abstract void javax.swing.DesktopManager.dragFrame(javax.swing.JComponent,int,int)
 
@@ -51,17 +39,29 @@ public protocol DesktopManager: JavaProtocol {
 
     func endDraggingFrame( f: JComponent? )
 
-    /// public abstract void javax.swing.DesktopManager.beginResizingFrame(javax.swing.JComponent,int)
+    /// public abstract void javax.swing.DesktopManager.endResizingFrame(javax.swing.JComponent)
 
-    func beginResizingFrame( f: JComponent?, direction: Int )
+    func endResizingFrame( f: JComponent? )
+
+    /// public abstract void javax.swing.DesktopManager.iconifyFrame(javax.swing.JInternalFrame)
+
+    func iconifyFrame( f: JInternalFrame? )
+
+    /// public abstract void javax.swing.DesktopManager.maximizeFrame(javax.swing.JInternalFrame)
+
+    func maximizeFrame( f: JInternalFrame? )
+
+    /// public abstract void javax.swing.DesktopManager.minimizeFrame(javax.swing.JInternalFrame)
+
+    func minimizeFrame( f: JInternalFrame? )
+
+    /// public abstract void javax.swing.DesktopManager.openFrame(javax.swing.JInternalFrame)
+
+    func openFrame( f: JInternalFrame? )
 
     /// public abstract void javax.swing.DesktopManager.resizeFrame(javax.swing.JComponent,int,int,int,int)
 
     func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int )
-
-    /// public abstract void javax.swing.DesktopManager.endResizingFrame(javax.swing.JComponent)
-
-    func endResizingFrame( f: JComponent? )
 
     /// public abstract void javax.swing.DesktopManager.setBoundsForFrame(javax.swing.JComponent,int,int,int,int)
 
@@ -74,79 +74,80 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
 
     private static var DesktopManagerJNIClass: jclass?
 
-    /// public abstract void javax.swing.DesktopManager.openFrame(javax.swing.JInternalFrame)
+    /// public abstract void javax.swing.DesktopManager.activateFrame(javax.swing.JInternalFrame)
 
-    private static var openFrame_MethodID_16: jmethodID?
+    private static var activateFrame_MethodID_16: jmethodID?
 
-    open func openFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func activateFrame( f: JInternalFrame? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "openFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.openFrame_MethodID_16, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.activateFrame_MethodID_16, args: &__args, locals: &__locals )
     }
 
-    open func openFrame( _ _f: JInternalFrame? ) {
-        openFrame( f: _f )
+    open func activateFrame( _ _f: JInternalFrame? ) {
+        activateFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.beginDraggingFrame(javax.swing.JComponent)
+
+    private static var beginDraggingFrame_MethodID_17: jmethodID?
+
+    open func beginDraggingFrame( f: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.beginDraggingFrame_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func beginDraggingFrame( _ _f: JComponent? ) {
+        beginDraggingFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.beginResizingFrame(javax.swing.JComponent,int)
+
+    private static var beginResizingFrame_MethodID_18: jmethodID?
+
+    open func beginResizingFrame( f: JComponent?, direction: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        __args[1] = jvalue( i: jint(direction) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginResizingFrame", methodSig: "(Ljavax/swing/JComponent;I)V", methodCache: &DesktopManagerForward.beginResizingFrame_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func beginResizingFrame( _ _f: JComponent?, _ _direction: Int ) {
+        beginResizingFrame( f: _f, direction: _direction )
     }
 
     /// public abstract void javax.swing.DesktopManager.closeFrame(javax.swing.JInternalFrame)
 
-    private static var closeFrame_MethodID_17: jmethodID?
+    private static var closeFrame_MethodID_19: jmethodID?
 
     open func closeFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.closeFrame_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.closeFrame_MethodID_19, args: &__args, locals: &__locals )
     }
 
     open func closeFrame( _ _f: JInternalFrame? ) {
         closeFrame( f: _f )
     }
 
-    /// public abstract void javax.swing.DesktopManager.maximizeFrame(javax.swing.JInternalFrame)
+    /// public abstract void javax.swing.DesktopManager.deactivateFrame(javax.swing.JInternalFrame)
 
-    private static var maximizeFrame_MethodID_18: jmethodID?
+    private static var deactivateFrame_MethodID_20: jmethodID?
 
-    open func maximizeFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func deactivateFrame( f: JInternalFrame? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "maximizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.maximizeFrame_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func maximizeFrame( _ _f: JInternalFrame? ) {
-        maximizeFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.minimizeFrame(javax.swing.JInternalFrame)
-
-    private static var minimizeFrame_MethodID_19: jmethodID?
-
-    open func minimizeFrame( f: JInternalFrame? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "minimizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.minimizeFrame_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deactivateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.deactivateFrame_MethodID_20, args: &__args, locals: &__locals )
     }
 
-    open func minimizeFrame( _ _f: JInternalFrame? ) {
-        minimizeFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.iconifyFrame(javax.swing.JInternalFrame)
-
-    private static var iconifyFrame_MethodID_20: jmethodID?
-
-    open func iconifyFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "iconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.iconifyFrame_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func iconifyFrame( _ _f: JInternalFrame? ) {
-        iconifyFrame( f: _f )
+    open func deactivateFrame( _ _f: JInternalFrame? ) {
+        deactivateFrame( f: _f )
     }
 
     /// public abstract void javax.swing.DesktopManager.deiconifyFrame(javax.swing.JInternalFrame)
@@ -154,8 +155,8 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     private static var deiconifyFrame_MethodID_21: jmethodID?
 
     open func deiconifyFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "deiconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.deiconifyFrame_MethodID_21, args: &__args, locals: &__locals )
     }
@@ -164,62 +165,17 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
         deiconifyFrame( f: _f )
     }
 
-    /// public abstract void javax.swing.DesktopManager.activateFrame(javax.swing.JInternalFrame)
-
-    private static var activateFrame_MethodID_22: jmethodID?
-
-    open func activateFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.activateFrame_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func activateFrame( _ _f: JInternalFrame? ) {
-        activateFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.deactivateFrame(javax.swing.JInternalFrame)
-
-    private static var deactivateFrame_MethodID_23: jmethodID?
-
-    open func deactivateFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deactivateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.deactivateFrame_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func deactivateFrame( _ _f: JInternalFrame? ) {
-        deactivateFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.beginDraggingFrame(javax.swing.JComponent)
-
-    private static var beginDraggingFrame_MethodID_24: jmethodID?
-
-    open func beginDraggingFrame( f: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.beginDraggingFrame_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func beginDraggingFrame( _ _f: JComponent? ) {
-        beginDraggingFrame( f: _f )
-    }
-
     /// public abstract void javax.swing.DesktopManager.dragFrame(javax.swing.JComponent,int,int)
 
-    private static var dragFrame_MethodID_25: jmethodID?
+    private static var dragFrame_MethodID_22: jmethodID?
 
     open func dragFrame( f: JComponent?, newX: Int, newY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragFrame", methodSig: "(Ljavax/swing/JComponent;II)V", methodCache: &DesktopManagerForward.dragFrame_MethodID_25, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(newX) )
+        __args[2] = jvalue( i: jint(newY) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragFrame", methodSig: "(Ljavax/swing/JComponent;II)V", methodCache: &DesktopManagerForward.dragFrame_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func dragFrame( _ _f: JComponent?, _ _newX: Int, _ _newY: Int ) {
@@ -228,67 +184,111 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
 
     /// public abstract void javax.swing.DesktopManager.endDraggingFrame(javax.swing.JComponent)
 
-    private static var endDraggingFrame_MethodID_26: jmethodID?
+    private static var endDraggingFrame_MethodID_23: jmethodID?
 
     open func endDraggingFrame( f: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.endDraggingFrame_MethodID_26, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endDraggingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.endDraggingFrame_MethodID_23, args: &__args, locals: &__locals )
     }
 
     open func endDraggingFrame( _ _f: JComponent? ) {
         endDraggingFrame( f: _f )
     }
 
-    /// public abstract void javax.swing.DesktopManager.beginResizingFrame(javax.swing.JComponent,int)
-
-    private static var beginResizingFrame_MethodID_27: jmethodID?
-
-    open func beginResizingFrame( f: JComponent?, direction: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        __args[1] = JNIType.toJava( value: direction, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "beginResizingFrame", methodSig: "(Ljavax/swing/JComponent;I)V", methodCache: &DesktopManagerForward.beginResizingFrame_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func beginResizingFrame( _ _f: JComponent?, _ _direction: Int ) {
-        beginResizingFrame( f: _f, direction: _direction )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.resizeFrame(javax.swing.JComponent,int,int,int,int)
-
-    private static var resizeFrame_MethodID_28: jmethodID?
-
-    open func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newY, locals: &__locals )
-        __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )
-        __args[4] = JNIType.toJava( value: newHeight, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resizeFrame", methodSig: "(Ljavax/swing/JComponent;IIII)V", methodCache: &DesktopManagerForward.resizeFrame_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func resizeFrame( _ _f: JComponent?, _ _newX: Int, _ _newY: Int, _ _newWidth: Int, _ _newHeight: Int ) {
-        resizeFrame( f: _f, newX: _newX, newY: _newY, newWidth: _newWidth, newHeight: _newHeight )
-    }
-
     /// public abstract void javax.swing.DesktopManager.endResizingFrame(javax.swing.JComponent)
 
-    private static var endResizingFrame_MethodID_29: jmethodID?
+    private static var endResizingFrame_MethodID_24: jmethodID?
 
     open func endResizingFrame( f: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endResizingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.endResizingFrame_MethodID_29, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endResizingFrame", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &DesktopManagerForward.endResizingFrame_MethodID_24, args: &__args, locals: &__locals )
     }
 
     open func endResizingFrame( _ _f: JComponent? ) {
         endResizingFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.iconifyFrame(javax.swing.JInternalFrame)
+
+    private static var iconifyFrame_MethodID_25: jmethodID?
+
+    open func iconifyFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "iconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.iconifyFrame_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func iconifyFrame( _ _f: JInternalFrame? ) {
+        iconifyFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.maximizeFrame(javax.swing.JInternalFrame)
+
+    private static var maximizeFrame_MethodID_26: jmethodID?
+
+    open func maximizeFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "maximizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.maximizeFrame_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func maximizeFrame( _ _f: JInternalFrame? ) {
+        maximizeFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.minimizeFrame(javax.swing.JInternalFrame)
+
+    private static var minimizeFrame_MethodID_27: jmethodID?
+
+    open func minimizeFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "minimizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.minimizeFrame_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func minimizeFrame( _ _f: JInternalFrame? ) {
+        minimizeFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.openFrame(javax.swing.JInternalFrame)
+
+    private static var openFrame_MethodID_28: jmethodID?
+
+    open func openFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "openFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &DesktopManagerForward.openFrame_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func openFrame( _ _f: JInternalFrame? ) {
+        openFrame( f: _f )
+    }
+
+    /// public abstract void javax.swing.DesktopManager.resizeFrame(javax.swing.JComponent,int,int,int,int)
+
+    private static var resizeFrame_MethodID_29: jmethodID?
+
+    open func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        __args[1] = jvalue( i: jint(newX) )
+        __args[2] = jvalue( i: jint(newY) )
+        __args[3] = jvalue( i: jint(newWidth) )
+        __args[4] = jvalue( i: jint(newHeight) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resizeFrame", methodSig: "(Ljavax/swing/JComponent;IIII)V", methodCache: &DesktopManagerForward.resizeFrame_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func resizeFrame( _ _f: JComponent?, _ _newX: Int, _ _newY: Int, _ _newWidth: Int, _ _newHeight: Int ) {
+        resizeFrame( f: _f, newX: _newX, newY: _newY, newWidth: _newWidth, newHeight: _newHeight )
     }
 
     /// public abstract void javax.swing.DesktopManager.setBoundsForFrame(javax.swing.JComponent,int,int,int,int)
@@ -296,13 +296,13 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
     private static var setBoundsForFrame_MethodID_30: jmethodID?
 
     open func setBoundsForFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newX, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newY, locals: &__locals )
-        __args[3] = JNIType.toJava( value: newWidth, locals: &__locals )
-        __args[4] = JNIType.toJava( value: newHeight, locals: &__locals )
+        __args[1] = jvalue( i: jint(newX) )
+        __args[2] = jvalue( i: jint(newY) )
+        __args[3] = jvalue( i: jint(newWidth) )
+        __args[4] = jvalue( i: jint(newHeight) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBoundsForFrame", methodSig: "(Ljavax/swing/JComponent;IIII)V", methodCache: &DesktopManagerForward.setBoundsForFrame_MethodID_30, args: &__args, locals: &__locals )
     }
 
@@ -312,125 +312,94 @@ open class DesktopManagerForward: JNIObjectForward, DesktopManager {
 
 }
 
+private typealias DesktopManager_activateFrame_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias DesktopManager_openFrame_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DesktopManager_openFrame_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).openFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
+private func DesktopManager_activateFrame_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).activateFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
 }
 
-private typealias DesktopManager_closeFrame_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DesktopManager_beginDraggingFrame_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DesktopManager_closeFrame_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
+private func DesktopManager_beginDraggingFrame_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).beginDraggingFrame( f: f != nil ? JComponent( javaObject: f ) : nil )
+}
+
+private typealias DesktopManager_beginResizingFrame_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint ) -> ()
+
+private func DesktopManager_beginResizingFrame_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ direction: jint ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).beginResizingFrame( f: f != nil ? JComponent( javaObject: f ) : nil, direction: Int(direction) )
+}
+
+private typealias DesktopManager_closeFrame_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DesktopManager_closeFrame_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
     DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).closeFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DesktopManager_maximizeFrame_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DesktopManager_deactivateFrame_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DesktopManager_maximizeFrame_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).maximizeFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_minimizeFrame_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DesktopManager_minimizeFrame_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).minimizeFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_iconifyFrame_4_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DesktopManager_iconifyFrame_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).iconifyFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
+private func DesktopManager_deactivateFrame_4( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).deactivateFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
 }
 
 private typealias DesktopManager_deiconifyFrame_5_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func DesktopManager_deiconifyFrame_5( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
     DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).deiconifyFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DesktopManager_activateFrame_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DesktopManager_dragFrame_6_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint, _: jint ) -> ()
 
-private func DesktopManager_activateFrame_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).activateFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
+private func DesktopManager_dragFrame_6( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ newX: jint, _ newY: jint ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragFrame( f: f != nil ? JComponent( javaObject: f ) : nil, newX: Int(newX), newY: Int(newY) )
 }
 
-private typealias DesktopManager_deactivateFrame_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias DesktopManager_endDraggingFrame_7_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DesktopManager_deactivateFrame_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).deactivateFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_beginDraggingFrame_8_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DesktopManager_beginDraggingFrame_8( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).beginDraggingFrame( f: f != nil ? JComponent( javaObject: f ) : nil )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_dragFrame_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint, _: jint ) -> ()
-
-private func DesktopManager_dragFrame_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ newX: jint, _ newY: jint ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).dragFrame( f: f != nil ? JComponent( javaObject: f ) : nil, newX: JNIType.toSwift( type: Int(), from: newX ), newY: JNIType.toSwift( type: Int(), from: newY ) )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_endDraggingFrame_10_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DesktopManager_endDraggingFrame_10( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
+private func DesktopManager_endDraggingFrame_7( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
     DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).endDraggingFrame( f: f != nil ? JComponent( javaObject: f ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias DesktopManager_beginResizingFrame_11_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint ) -> ()
+private typealias DesktopManager_endResizingFrame_8_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func DesktopManager_beginResizingFrame_11( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ direction: jint ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).beginResizingFrame( f: f != nil ? JComponent( javaObject: f ) : nil, direction: JNIType.toSwift( type: Int(), from: direction ) )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_resizeFrame_12_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint, _: jint, _: jint, _: jint ) -> ()
-
-private func DesktopManager_resizeFrame_12( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ newX: jint, _ newY: jint, _ newWidth: jint, _ newHeight: jint ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).resizeFrame( f: f != nil ? JComponent( javaObject: f ) : nil, newX: JNIType.toSwift( type: Int(), from: newX ), newY: JNIType.toSwift( type: Int(), from: newY ), newWidth: JNIType.toSwift( type: Int(), from: newWidth ), newHeight: JNIType.toSwift( type: Int(), from: newHeight ) )
-    JNI.inNative = false;
-}
-
-private typealias DesktopManager_endResizingFrame_13_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func DesktopManager_endResizingFrame_13( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
-    JNI.inNative = true;
+private func DesktopManager_endResizingFrame_8( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
     DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).endResizingFrame( f: f != nil ? JComponent( javaObject: f ) : nil )
-    JNI.inNative = false;
+}
+
+private typealias DesktopManager_iconifyFrame_9_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DesktopManager_iconifyFrame_9( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).iconifyFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
+}
+
+private typealias DesktopManager_maximizeFrame_10_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DesktopManager_maximizeFrame_10( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).maximizeFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
+}
+
+private typealias DesktopManager_minimizeFrame_11_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DesktopManager_minimizeFrame_11( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).minimizeFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
+}
+
+private typealias DesktopManager_openFrame_12_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+
+private func DesktopManager_openFrame_12( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject? ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).openFrame( f: f != nil ? JInternalFrame( javaObject: f ) : nil )
+}
+
+private typealias DesktopManager_resizeFrame_13_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint, _: jint, _: jint, _: jint ) -> ()
+
+private func DesktopManager_resizeFrame_13( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ newX: jint, _ newY: jint, _ newWidth: jint, _ newHeight: jint ) -> () {
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).resizeFrame( f: f != nil ? JComponent( javaObject: f ) : nil, newX: Int(newX), newY: Int(newY), newWidth: Int(newWidth), newHeight: Int(newHeight) )
 }
 
 private typealias DesktopManager_setBoundsForFrame_14_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject?, _: jint, _: jint, _: jint, _: jint ) -> ()
 
 private func DesktopManager_setBoundsForFrame_14( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ f: jobject?, _ newX: jint, _ newY: jint, _ newWidth: jint, _ newHeight: jint ) -> () {
-    JNI.inNative = true;
-    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).setBoundsForFrame( f: f != nil ? JComponent( javaObject: f ) : nil, newX: JNIType.toSwift( type: Int(), from: newX ), newY: JNIType.toSwift( type: Int(), from: newY ), newWidth: JNIType.toSwift( type: Int(), from: newWidth ), newHeight: JNIType.toSwift( type: Int(), from: newHeight ) )
-    JNI.inNative = false;
+    DesktopManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).setBoundsForFrame( f: f != nil ? JComponent( javaObject: f ) : nil, newX: Int(newX), newY: Int(newY), newWidth: Int(newWidth), newHeight: Int(newHeight) )
 }
 
 fileprivate class DesktopManagerLocal_: JNILocalProxy<DesktopManager, Any> {
@@ -438,47 +407,47 @@ fileprivate class DesktopManagerLocal_: JNILocalProxy<DesktopManager, Any> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let DesktopManager_openFrame_0_thunk: DesktopManager_openFrame_0_type = DesktopManager_openFrame_0
-        natives.append( JNINativeMethod( name: strdup("__openFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_openFrame_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_activateFrame_0_thunk: DesktopManager_activateFrame_0_type = DesktopManager_activateFrame_0
+        natives.append( JNINativeMethod( name: strdup("__activateFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_activateFrame_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_closeFrame_1_thunk: DesktopManager_closeFrame_1_type = DesktopManager_closeFrame_1
-        natives.append( JNINativeMethod( name: strdup("__closeFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_closeFrame_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_beginDraggingFrame_1_thunk: DesktopManager_beginDraggingFrame_1_type = DesktopManager_beginDraggingFrame_1
+        natives.append( JNINativeMethod( name: strdup("__beginDraggingFrame"), signature: strdup("(JLjavax/swing/JComponent;)V"), fnPtr: unsafeBitCast( DesktopManager_beginDraggingFrame_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_maximizeFrame_2_thunk: DesktopManager_maximizeFrame_2_type = DesktopManager_maximizeFrame_2
-        natives.append( JNINativeMethod( name: strdup("__maximizeFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_maximizeFrame_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_beginResizingFrame_2_thunk: DesktopManager_beginResizingFrame_2_type = DesktopManager_beginResizingFrame_2
+        natives.append( JNINativeMethod( name: strdup("__beginResizingFrame"), signature: strdup("(JLjavax/swing/JComponent;I)V"), fnPtr: unsafeBitCast( DesktopManager_beginResizingFrame_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_minimizeFrame_3_thunk: DesktopManager_minimizeFrame_3_type = DesktopManager_minimizeFrame_3
-        natives.append( JNINativeMethod( name: strdup("__minimizeFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_minimizeFrame_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_closeFrame_3_thunk: DesktopManager_closeFrame_3_type = DesktopManager_closeFrame_3
+        natives.append( JNINativeMethod( name: strdup("__closeFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_closeFrame_3_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_iconifyFrame_4_thunk: DesktopManager_iconifyFrame_4_type = DesktopManager_iconifyFrame_4
-        natives.append( JNINativeMethod( name: strdup("__iconifyFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_iconifyFrame_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_deactivateFrame_4_thunk: DesktopManager_deactivateFrame_4_type = DesktopManager_deactivateFrame_4
+        natives.append( JNINativeMethod( name: strdup("__deactivateFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_deactivateFrame_4_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let DesktopManager_deiconifyFrame_5_thunk: DesktopManager_deiconifyFrame_5_type = DesktopManager_deiconifyFrame_5
         natives.append( JNINativeMethod( name: strdup("__deiconifyFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_deiconifyFrame_5_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_activateFrame_6_thunk: DesktopManager_activateFrame_6_type = DesktopManager_activateFrame_6
-        natives.append( JNINativeMethod( name: strdup("__activateFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_activateFrame_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_dragFrame_6_thunk: DesktopManager_dragFrame_6_type = DesktopManager_dragFrame_6
+        natives.append( JNINativeMethod( name: strdup("__dragFrame"), signature: strdup("(JLjavax/swing/JComponent;II)V"), fnPtr: unsafeBitCast( DesktopManager_dragFrame_6_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_deactivateFrame_7_thunk: DesktopManager_deactivateFrame_7_type = DesktopManager_deactivateFrame_7
-        natives.append( JNINativeMethod( name: strdup("__deactivateFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_deactivateFrame_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_endDraggingFrame_7_thunk: DesktopManager_endDraggingFrame_7_type = DesktopManager_endDraggingFrame_7
+        natives.append( JNINativeMethod( name: strdup("__endDraggingFrame"), signature: strdup("(JLjavax/swing/JComponent;)V"), fnPtr: unsafeBitCast( DesktopManager_endDraggingFrame_7_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_beginDraggingFrame_8_thunk: DesktopManager_beginDraggingFrame_8_type = DesktopManager_beginDraggingFrame_8
-        natives.append( JNINativeMethod( name: strdup("__beginDraggingFrame"), signature: strdup("(JLjavax/swing/JComponent;)V"), fnPtr: unsafeBitCast( DesktopManager_beginDraggingFrame_8_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_endResizingFrame_8_thunk: DesktopManager_endResizingFrame_8_type = DesktopManager_endResizingFrame_8
+        natives.append( JNINativeMethod( name: strdup("__endResizingFrame"), signature: strdup("(JLjavax/swing/JComponent;)V"), fnPtr: unsafeBitCast( DesktopManager_endResizingFrame_8_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_dragFrame_9_thunk: DesktopManager_dragFrame_9_type = DesktopManager_dragFrame_9
-        natives.append( JNINativeMethod( name: strdup("__dragFrame"), signature: strdup("(JLjavax/swing/JComponent;II)V"), fnPtr: unsafeBitCast( DesktopManager_dragFrame_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_iconifyFrame_9_thunk: DesktopManager_iconifyFrame_9_type = DesktopManager_iconifyFrame_9
+        natives.append( JNINativeMethod( name: strdup("__iconifyFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_iconifyFrame_9_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_endDraggingFrame_10_thunk: DesktopManager_endDraggingFrame_10_type = DesktopManager_endDraggingFrame_10
-        natives.append( JNINativeMethod( name: strdup("__endDraggingFrame"), signature: strdup("(JLjavax/swing/JComponent;)V"), fnPtr: unsafeBitCast( DesktopManager_endDraggingFrame_10_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_maximizeFrame_10_thunk: DesktopManager_maximizeFrame_10_type = DesktopManager_maximizeFrame_10
+        natives.append( JNINativeMethod( name: strdup("__maximizeFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_maximizeFrame_10_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_beginResizingFrame_11_thunk: DesktopManager_beginResizingFrame_11_type = DesktopManager_beginResizingFrame_11
-        natives.append( JNINativeMethod( name: strdup("__beginResizingFrame"), signature: strdup("(JLjavax/swing/JComponent;I)V"), fnPtr: unsafeBitCast( DesktopManager_beginResizingFrame_11_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_minimizeFrame_11_thunk: DesktopManager_minimizeFrame_11_type = DesktopManager_minimizeFrame_11
+        natives.append( JNINativeMethod( name: strdup("__minimizeFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_minimizeFrame_11_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_resizeFrame_12_thunk: DesktopManager_resizeFrame_12_type = DesktopManager_resizeFrame_12
-        natives.append( JNINativeMethod( name: strdup("__resizeFrame"), signature: strdup("(JLjavax/swing/JComponent;IIII)V"), fnPtr: unsafeBitCast( DesktopManager_resizeFrame_12_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_openFrame_12_thunk: DesktopManager_openFrame_12_type = DesktopManager_openFrame_12
+        natives.append( JNINativeMethod( name: strdup("__openFrame"), signature: strdup("(JLjavax/swing/JInternalFrame;)V"), fnPtr: unsafeBitCast( DesktopManager_openFrame_12_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let DesktopManager_endResizingFrame_13_thunk: DesktopManager_endResizingFrame_13_type = DesktopManager_endResizingFrame_13
-        natives.append( JNINativeMethod( name: strdup("__endResizingFrame"), signature: strdup("(JLjavax/swing/JComponent;)V"), fnPtr: unsafeBitCast( DesktopManager_endResizingFrame_13_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let DesktopManager_resizeFrame_13_thunk: DesktopManager_resizeFrame_13_type = DesktopManager_resizeFrame_13
+        natives.append( JNINativeMethod( name: strdup("__resizeFrame"), signature: strdup("(JLjavax/swing/JComponent;IIII)V"), fnPtr: unsafeBitCast( DesktopManager_resizeFrame_13_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let DesktopManager_setBoundsForFrame_14_thunk: DesktopManager_setBoundsForFrame_14_type = DesktopManager_setBoundsForFrame_14
         natives.append( JNINativeMethod( name: strdup("__setBoundsForFrame"), signature: strdup("(JLjavax/swing/JComponent;IIII)V"), fnPtr: unsafeBitCast( DesktopManager_setBoundsForFrame_14_thunk, to: UnsafeMutableRawPointer.self ) ) )
@@ -514,139 +483,94 @@ open class DesktopManagerBase: DesktopManager {
 
     public init() {}
 
-    /// public abstract void javax.swing.DesktopManager.openFrame(javax.swing.JInternalFrame)
-
-    open func openFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func openFrame( _ _f: JInternalFrame? ) /**/ {
-        openFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.closeFrame(javax.swing.JInternalFrame)
-
-    open func closeFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func closeFrame( _ _f: JInternalFrame? ) /**/ {
-        closeFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.maximizeFrame(javax.swing.JInternalFrame)
-
-    open func maximizeFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func maximizeFrame( _ _f: JInternalFrame? ) /**/ {
-        maximizeFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.minimizeFrame(javax.swing.JInternalFrame)
-
-    open func minimizeFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func minimizeFrame( _ _f: JInternalFrame? ) /**/ {
-        minimizeFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.iconifyFrame(javax.swing.JInternalFrame)
-
-    open func iconifyFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func iconifyFrame( _ _f: JInternalFrame? ) /**/ {
-        iconifyFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.deiconifyFrame(javax.swing.JInternalFrame)
-
-    open func deiconifyFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func deiconifyFrame( _ _f: JInternalFrame? ) /**/ {
-        deiconifyFrame( f: _f )
-    }
-
     /// public abstract void javax.swing.DesktopManager.activateFrame(javax.swing.JInternalFrame)
 
     open func activateFrame( f: JInternalFrame? ) /**/ {
     }
 
-    open func activateFrame( _ _f: JInternalFrame? ) /**/ {
-        activateFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.deactivateFrame(javax.swing.JInternalFrame)
-
-    open func deactivateFrame( f: JInternalFrame? ) /**/ {
-    }
-
-    open func deactivateFrame( _ _f: JInternalFrame? ) /**/ {
-        deactivateFrame( f: _f )
-    }
 
     /// public abstract void javax.swing.DesktopManager.beginDraggingFrame(javax.swing.JComponent)
 
     open func beginDraggingFrame( f: JComponent? ) /**/ {
     }
 
-    open func beginDraggingFrame( _ _f: JComponent? ) /**/ {
-        beginDraggingFrame( f: _f )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.dragFrame(javax.swing.JComponent,int,int)
-
-    open func dragFrame( f: JComponent?, newX: Int, newY: Int ) /**/ {
-    }
-
-    open func dragFrame( _ _f: JComponent?, _ _newX: Int, _ _newY: Int ) /**/ {
-        dragFrame( f: _f, newX: _newX, newY: _newY )
-    }
-
-    /// public abstract void javax.swing.DesktopManager.endDraggingFrame(javax.swing.JComponent)
-
-    open func endDraggingFrame( f: JComponent? ) /**/ {
-    }
-
-    open func endDraggingFrame( _ _f: JComponent? ) /**/ {
-        endDraggingFrame( f: _f )
-    }
 
     /// public abstract void javax.swing.DesktopManager.beginResizingFrame(javax.swing.JComponent,int)
 
     open func beginResizingFrame( f: JComponent?, direction: Int ) /**/ {
     }
 
-    open func beginResizingFrame( _ _f: JComponent?, _ _direction: Int ) /**/ {
-        beginResizingFrame( f: _f, direction: _direction )
+
+    /// public abstract void javax.swing.DesktopManager.closeFrame(javax.swing.JInternalFrame)
+
+    open func closeFrame( f: JInternalFrame? ) /**/ {
     }
 
-    /// public abstract void javax.swing.DesktopManager.resizeFrame(javax.swing.JComponent,int,int,int,int)
 
-    open func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) /**/ {
+    /// public abstract void javax.swing.DesktopManager.deactivateFrame(javax.swing.JInternalFrame)
+
+    open func deactivateFrame( f: JInternalFrame? ) /**/ {
     }
 
-    open func resizeFrame( _ _f: JComponent?, _ _newX: Int, _ _newY: Int, _ _newWidth: Int, _ _newHeight: Int ) /**/ {
-        resizeFrame( f: _f, newX: _newX, newY: _newY, newWidth: _newWidth, newHeight: _newHeight )
+
+    /// public abstract void javax.swing.DesktopManager.deiconifyFrame(javax.swing.JInternalFrame)
+
+    open func deiconifyFrame( f: JInternalFrame? ) /**/ {
     }
+
+
+    /// public abstract void javax.swing.DesktopManager.dragFrame(javax.swing.JComponent,int,int)
+
+    open func dragFrame( f: JComponent?, newX: Int, newY: Int ) /**/ {
+    }
+
+
+    /// public abstract void javax.swing.DesktopManager.endDraggingFrame(javax.swing.JComponent)
+
+    open func endDraggingFrame( f: JComponent? ) /**/ {
+    }
+
 
     /// public abstract void javax.swing.DesktopManager.endResizingFrame(javax.swing.JComponent)
 
     open func endResizingFrame( f: JComponent? ) /**/ {
     }
 
-    open func endResizingFrame( _ _f: JComponent? ) /**/ {
-        endResizingFrame( f: _f )
+
+    /// public abstract void javax.swing.DesktopManager.iconifyFrame(javax.swing.JInternalFrame)
+
+    open func iconifyFrame( f: JInternalFrame? ) /**/ {
     }
+
+
+    /// public abstract void javax.swing.DesktopManager.maximizeFrame(javax.swing.JInternalFrame)
+
+    open func maximizeFrame( f: JInternalFrame? ) /**/ {
+    }
+
+
+    /// public abstract void javax.swing.DesktopManager.minimizeFrame(javax.swing.JInternalFrame)
+
+    open func minimizeFrame( f: JInternalFrame? ) /**/ {
+    }
+
+
+    /// public abstract void javax.swing.DesktopManager.openFrame(javax.swing.JInternalFrame)
+
+    open func openFrame( f: JInternalFrame? ) /**/ {
+    }
+
+
+    /// public abstract void javax.swing.DesktopManager.resizeFrame(javax.swing.JComponent,int,int,int,int)
+
+    open func resizeFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) /**/ {
+    }
+
 
     /// public abstract void javax.swing.DesktopManager.setBoundsForFrame(javax.swing.JComponent,int,int,int,int)
 
     open func setBoundsForFrame( f: JComponent?, newX: Int, newY: Int, newWidth: Int, newHeight: Int ) /**/ {
     }
 
-    open func setBoundsForFrame( _ _f: JComponent?, _ _newX: Int, _ _newY: Int, _ _newWidth: Int, _ _newHeight: Int ) /**/ {
-        setBoundsForFrame( f: _f, newX: _newX, newY: _newY, newWidth: _newWidth, newHeight: _newHeight )
-    }
 
 }

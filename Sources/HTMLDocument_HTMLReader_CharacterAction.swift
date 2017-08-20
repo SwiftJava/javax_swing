@@ -18,15 +18,19 @@ open class HTMLDocument_HTMLReader_CharacterAction: HTMLDocument_HTMLReader_TagA
 
     /// final javax.swing.text.html.HTMLDocument$HTMLReader javax.swing.text.html.HTMLDocument$HTMLReader$CharacterAction.this$1
 
+    // Skipping field: true false false false false false 
+
     /// final javax.swing.text.html.HTMLDocument$HTMLReader javax.swing.text.html.HTMLDocument$HTMLReader$TagAction.this$1
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.text.html.HTMLDocument$HTMLReader$CharacterAction(javax.swing.text.html.HTMLDocument$HTMLReader)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_1: HTMLDocument_HTMLReader? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$HTMLReader$CharacterAction", classCache: &HTMLDocument_HTMLReader_CharacterAction.HTMLDocument_HTMLReader_CharacterActionJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument$HTMLReader;)V", methodCache: &HTMLDocument_HTMLReader_CharacterAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -39,13 +43,15 @@ open class HTMLDocument_HTMLReader_CharacterAction: HTMLDocument_HTMLReader_TagA
 
     /// public void javax.swing.text.html.HTMLDocument$HTMLReader$CharacterAction.end(javax.swing.text.html.HTML$Tag)
 
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.text.html.HTMLDocument$HTMLReader$CharacterAction.start(javax.swing.text.html.HTML$Tag,javax.swing.text.MutableAttributeSet)
 
     private static var start_MethodID_2: jmethodID?
 
     open func start( t: HTML_Tag?, attr: MutableAttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: t, locals: &__locals )
         __args[1] = JNIType.toJava( value: attr, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "start", methodSig: "(Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &HTMLDocument_HTMLReader_CharacterAction.start_MethodID_2, args: &__args, locals: &__locals )

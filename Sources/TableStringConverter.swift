@@ -21,8 +21,8 @@ open class TableStringConverter: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/table/TableStringConverter", classCache: &TableStringConverter.TableStringConverterJNIClass, methodSig: "()V", methodCache: &TableStringConverter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,13 +33,14 @@ open class TableStringConverter: java_swift.JavaObject {
     private static var toString_MethodID_2: jmethodID?
 
     open func toString( model: TableModel?, row: Int, column: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: model, locals: &__locals )
-        __args[1] = JNIType.toJava( value: row, locals: &__locals )
-        __args[2] = JNIType.toJava( value: column, locals: &__locals )
+        __args[1] = jvalue( i: jint(row) )
+        __args[2] = jvalue( i: jint(column) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "toString", methodSig: "(Ljavax/swing/table/TableModel;II)Ljava/lang/String;", methodCache: &TableStringConverter.toString_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
     open func toString( _ _model: TableModel?, _ _row: Int, _ _column: Int ) -> String! {

@@ -32,8 +32,8 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
     private static var menuKeyPressed_MethodID_4: jmethodID?
 
     open func menuKeyPressed( e: MenuKeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuKeyPressed", methodSig: "(Ljavax/swing/event/MenuKeyEvent;)V", methodCache: &MenuKeyListenerForward.menuKeyPressed_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -47,8 +47,8 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
     private static var menuKeyReleased_MethodID_5: jmethodID?
 
     open func menuKeyReleased( e: MenuKeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuKeyReleased", methodSig: "(Ljavax/swing/event/MenuKeyEvent;)V", methodCache: &MenuKeyListenerForward.menuKeyReleased_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -62,8 +62,8 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
     private static var menuKeyTyped_MethodID_6: jmethodID?
 
     open func menuKeyTyped( e: MenuKeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuKeyTyped", methodSig: "(Ljavax/swing/event/MenuKeyEvent;)V", methodCache: &MenuKeyListenerForward.menuKeyTyped_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -74,29 +74,22 @@ open class MenuKeyListenerForward: java_util.EventListenerForward, MenuKeyListen
 
 }
 
-
 private typealias MenuKeyListener_menuKeyPressed_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func MenuKeyListener_menuKeyPressed_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     MenuKeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuKeyPressed( e: e != nil ? MenuKeyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias MenuKeyListener_menuKeyReleased_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func MenuKeyListener_menuKeyReleased_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     MenuKeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuKeyReleased( e: e != nil ? MenuKeyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias MenuKeyListener_menuKeyTyped_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func MenuKeyListener_menuKeyTyped_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     MenuKeyListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuKeyTyped( e: e != nil ? MenuKeyEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class MenuKeyListenerLocal_: JNILocalProxy<MenuKeyListener, Any> {
@@ -149,26 +142,17 @@ open class MenuKeyListenerBase: MenuKeyListener {
     open func menuKeyPressed( e: MenuKeyEvent? ) /**/ {
     }
 
-    open func menuKeyPressed( _ _e: MenuKeyEvent? ) /**/ {
-        menuKeyPressed( e: _e )
-    }
 
     /// public abstract void javax.swing.event.MenuKeyListener.menuKeyReleased(javax.swing.event.MenuKeyEvent)
 
     open func menuKeyReleased( e: MenuKeyEvent? ) /**/ {
     }
 
-    open func menuKeyReleased( _ _e: MenuKeyEvent? ) /**/ {
-        menuKeyReleased( e: _e )
-    }
 
     /// public abstract void javax.swing.event.MenuKeyListener.menuKeyTyped(javax.swing.event.MenuKeyEvent)
 
     open func menuKeyTyped( e: MenuKeyEvent? ) /**/ {
     }
 
-    open func menuKeyTyped( _ _e: MenuKeyEvent? ) /**/ {
-        menuKeyTyped( e: _e )
-    }
 
 }

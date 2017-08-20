@@ -18,13 +18,15 @@ open class BasicScrollPaneUI_ViewportChangeHandler: java_swift.JavaObject, Chang
 
     /// final javax.swing.plaf.basic.BasicScrollPaneUI javax.swing.plaf.basic.BasicScrollPaneUI$ViewportChangeHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicScrollPaneUI$ViewportChangeHandler(javax.swing.plaf.basic.BasicScrollPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicScrollPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicScrollPaneUI$ViewportChangeHandler", classCache: &BasicScrollPaneUI_ViewportChangeHandler.BasicScrollPaneUI_ViewportChangeHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicScrollPaneUI;)V", methodCache: &BasicScrollPaneUI_ViewportChangeHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicScrollPaneUI_ViewportChangeHandler: java_swift.JavaObject, Chang
     private static var stateChanged_MethodID_2: jmethodID?
 
     open func stateChanged( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicScrollPaneUI_ViewportChangeHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }

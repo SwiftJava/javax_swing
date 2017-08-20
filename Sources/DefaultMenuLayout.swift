@@ -17,37 +17,45 @@ open class DefaultMenuLayout: BoxLayout, UIResource {
 
     private static var DefaultMenuLayoutJNIClass: jclass?
 
-    /// public static final int javax.swing.BoxLayout.X_AXIS
-
-    /// public static final int javax.swing.BoxLayout.Y_AXIS
-
     /// public static final int javax.swing.BoxLayout.LINE_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.BoxLayout.PAGE_AXIS
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.BoxLayout.X_AXIS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.BoxLayout.Y_AXIS
+
+    // Skipping field: false true false false false false 
+
     /// private int javax.swing.BoxLayout.axis
+
+    /// private transient java.io.PrintStream javax.swing.BoxLayout.dbg
 
     /// private java.awt.Container javax.swing.BoxLayout.target
 
     /// private transient javax.swing.SizeRequirements[] javax.swing.BoxLayout.xChildren
 
-    /// private transient javax.swing.SizeRequirements[] javax.swing.BoxLayout.yChildren
-
     /// private transient javax.swing.SizeRequirements javax.swing.BoxLayout.xTotal
 
-    /// private transient javax.swing.SizeRequirements javax.swing.BoxLayout.yTotal
+    /// private transient javax.swing.SizeRequirements[] javax.swing.BoxLayout.yChildren
 
-    /// private transient java.io.PrintStream javax.swing.BoxLayout.dbg
+    /// private transient javax.swing.SizeRequirements javax.swing.BoxLayout.yTotal
 
     /// public javax.swing.plaf.basic.DefaultMenuLayout(java.awt.Container,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( target: java_awt.Container?, axis: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: target, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        __args[1] = jvalue( i: jint(axis) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/DefaultMenuLayout", classCache: &DefaultMenuLayout.DefaultMenuLayoutJNIClass, methodSig: "(Ljava/awt/Container;I)V", methodCache: &DefaultMenuLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -58,6 +66,8 @@ open class DefaultMenuLayout: BoxLayout, UIResource {
     }
 
     /// public java.awt.Dimension javax.swing.plaf.basic.DefaultMenuLayout.preferredLayoutSize(java.awt.Container)
+
+    // Skipping method: false true false false false 
 
 }
 

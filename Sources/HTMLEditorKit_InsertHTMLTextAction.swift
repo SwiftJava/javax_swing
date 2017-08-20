@@ -17,15 +17,70 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
 
     private static var HTMLEditorKit_InsertHTMLTextActionJNIClass: jclass?
 
+    /// protected javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.addTag
+
+    private static var addTag_FieldID: jfieldID?
+
+    open var addTag: HTML_Tag! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "addTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.addTag_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? HTML_Tag( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "addTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.addTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// boolean javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.adjustSelection
+
+    // Skipping field: true false false false false false 
+
+    /// protected javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.alternateAddTag
+
+    private static var alternateAddTag_FieldID: jfieldID?
+
+    open var alternateAddTag: HTML_Tag! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "alternateAddTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateAddTag_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? HTML_Tag( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "alternateAddTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateAddTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.alternateParentTag
+
+    private static var alternateParentTag_FieldID: jfieldID?
+
+    open var alternateParentTag: HTML_Tag! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "alternateParentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateParentTag_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? HTML_Tag( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "alternateParentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateParentTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected java.lang.String javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.html
 
     private static var html_FieldID: jfieldID?
 
     open var html: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "html", fieldType: "Ljava/lang/String;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.html_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "html", fieldType: "Ljava/lang/String;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.html_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -40,8 +95,8 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
 
     open var parentTag: HTML_Tag! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "parentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.parentTag_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "parentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.parentTag_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? HTML_Tag( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,77 +106,7 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
     }
 
-    /// protected javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.addTag
-
-    private static var addTag_FieldID: jfieldID?
-
-    open var addTag: HTML_Tag! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "addTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.addTag_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? HTML_Tag( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "addTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.addTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.alternateParentTag
-
-    private static var alternateParentTag_FieldID: jfieldID?
-
-    open var alternateParentTag: HTML_Tag! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "alternateParentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateParentTag_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? HTML_Tag( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "alternateParentTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateParentTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.text.html.HTML$Tag javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.alternateAddTag
-
-    private static var alternateAddTag_FieldID: jfieldID?
-
-    open var alternateAddTag: HTML_Tag! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "alternateAddTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateAddTag_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? HTML_Tag( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "alternateAddTag", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.alternateAddTag_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// boolean javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.adjustSelection
-
     /// private static java.lang.Boolean javax.swing.AbstractAction.RECONFIGURE_ON_NULL
-
-    /// protected boolean javax.swing.AbstractAction.enabled
-
-    private static var enabled_FieldID: jfieldID?
-
-    override open var enabled: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.enabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
 
     /// private transient javax.swing.ArrayTable javax.swing.AbstractAction.arrayTable
 
@@ -131,8 +116,8 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
 
     override open var changeSupport: SwingPropertyChangeSupport! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.changeSupport_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.changeSupport_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SwingPropertyChangeSupport( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -142,64 +127,78 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.DEFAULT
+    /// protected boolean javax.swing.AbstractAction.enabled
 
-    /// public static final java.lang.String javax.swing.Action.NAME
+    private static var enabled_FieldID: jfieldID?
 
-    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
-
-    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+    override open var enabled: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.enabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &HTMLEditorKit_InsertHTMLTextAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
 
     /// public static final java.lang.String javax.swing.Action.ACCELERATOR_KEY
 
-    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.DEFAULT
+
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.Action.DISPLAYED_MNEMONIC_INDEX_KEY
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.String javax.swing.Action.LARGE_ICON_KEY
 
-    /// javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction(java.lang.String,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,boolean)
+    // Skipping field: false true false false false false 
 
-    /// public javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction(java.lang.String,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
+    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
 
-    private static var new_MethodID_1: jmethodID?
+    // Skipping field: false true false false false false 
 
-    public convenience init( name: String?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag?, alternateParentTag: HTML_Tag?, alternateAddTag: HTML_Tag? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: html, locals: &__locals )
-        __args[2] = JNIType.toJava( value: parentTag, locals: &__locals )
-        __args[3] = JNIType.toJava( value: addTag, locals: &__locals )
-        __args[4] = JNIType.toJava( value: alternateParentTag, locals: &__locals )
-        __args[5] = JNIType.toJava( value: alternateAddTag, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$InsertHTMLTextAction", classCache: &HTMLEditorKit_InsertHTMLTextAction.HTMLEditorKit_InsertHTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
+    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
 
-    public convenience init( _ _name: String?, _ _html: String?, _ _parentTag: HTML_Tag?, _ _addTag: HTML_Tag?, _ _alternateParentTag: HTML_Tag?, _ _alternateAddTag: HTML_Tag? ) {
-        self.init( name: _name, html: _html, parentTag: _parentTag, addTag: _addTag, alternateParentTag: _alternateParentTag, alternateAddTag: _alternateAddTag )
-    }
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.NAME
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction(java.lang.String,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( name: String?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: html, locals: &__locals )
         __args[2] = JNIType.toJava( value: parentTag, locals: &__locals )
         __args[3] = JNIType.toJava( value: addTag, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$InsertHTMLTextAction", classCache: &HTMLEditorKit_InsertHTMLTextAction.HTMLEditorKit_InsertHTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$InsertHTMLTextAction", classCache: &HTMLEditorKit_InsertHTMLTextAction.HTMLEditorKit_InsertHTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -208,39 +207,61 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         self.init( name: _name, html: _html, parentTag: _parentTag, addTag: _addTag )
     }
 
-    /// protected void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertHTML(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,java.lang.String,int,int,javax.swing.text.html.HTML$Tag)
+    /// public javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction(java.lang.String,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
 
-    private static var insertHTML_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
-    open func insertHTML( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, html: String?, popDepth: Int, pushDepth: Int, addTag: HTML_Tag? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    public convenience init( name: String?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag?, alternateParentTag: HTML_Tag?, alternateAddTag: HTML_Tag? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
-        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[3] = JNIType.toJava( value: html, locals: &__locals )
-        __args[4] = JNIType.toJava( value: popDepth, locals: &__locals )
-        __args[5] = JNIType.toJava( value: pushDepth, locals: &__locals )
-        __args[6] = JNIType.toJava( value: addTag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertHTML_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        __args[1] = JNIType.toJava( value: html, locals: &__locals )
+        __args[2] = JNIType.toJava( value: parentTag, locals: &__locals )
+        __args[3] = JNIType.toJava( value: addTag, locals: &__locals )
+        __args[4] = JNIType.toJava( value: alternateParentTag, locals: &__locals )
+        __args[5] = JNIType.toJava( value: alternateAddTag, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$InsertHTMLTextAction", classCache: &HTMLEditorKit_InsertHTMLTextAction.HTMLEditorKit_InsertHTMLTextActionJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;Ljavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func insertHTML( _ _editor: JEditorPane?, _ _doc: HTMLDocument?, _ _offset: Int, _ _html: String?, _ _popDepth: Int, _ _pushDepth: Int, _ _addTag: HTML_Tag? ) {
-        insertHTML( editor: _editor, doc: _doc, offset: _offset, html: _html, popDepth: _popDepth, pushDepth: _pushDepth, addTag: _addTag )
+    public convenience init( _ _name: String?, _ _html: String?, _ _parentTag: HTML_Tag?, _ _addTag: HTML_Tag?, _ _alternateParentTag: HTML_Tag?, _ _alternateAddTag: HTML_Tag? ) {
+        self.init( name: _name, html: _html, parentTag: _parentTag, addTag: _addTag, alternateParentTag: _alternateParentTag, alternateAddTag: _alternateAddTag )
+    }
+
+    /// javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction(java.lang.String,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag,boolean)
+
+    // Skipping init: true false false 
+
+    /// public void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.actionPerformed(java.awt.event.ActionEvent)
+
+    private static var actionPerformed_MethodID_3: jmethodID?
+
+    open func actionPerformed( ae: java_awt.ActionEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ae, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.actionPerformed_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    override open func actionPerformed( _ _ae: java_awt.ActionEvent? ) {
+        actionPerformed( ae: _ae )
     }
 
     /// void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.adjustSelection(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,int)
+
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertAtBoundary(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,javax.swing.text.Element,java.lang.String,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
 
     private static var insertAtBoundary_MethodID_4: jmethodID?
 
     open func insertAtBoundary( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, insertElement: Element?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: editor, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[2] = jvalue( i: jint(offset) )
         __args[3] = JNIType.toJava( value: insertElement, locals: &__locals )
         __args[4] = JNIType.toJava( value: html, locals: &__locals )
         __args[5] = JNIType.toJava( value: parentTag, locals: &__locals )
@@ -257,11 +278,11 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
     private static var insertAtBoundry_MethodID_5: jmethodID?
 
     open func insertAtBoundry( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, insertElement: Element?, html: String?, parentTag: HTML_Tag?, addTag: HTML_Tag? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: editor, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[2] = JNIType.toJava( value: offset, locals: &__locals )
+        __args[2] = jvalue( i: jint(offset) )
         __args[3] = JNIType.toJava( value: insertElement, locals: &__locals )
         __args[4] = JNIType.toJava( value: html, locals: &__locals )
         __args[5] = JNIType.toJava( value: parentTag, locals: &__locals )
@@ -273,22 +294,30 @@ open class HTMLEditorKit_InsertHTMLTextAction: HTMLEditorKit_HTMLTextAction {
         insertAtBoundry( editor: _editor, doc: _doc, offset: _offset, insertElement: _insertElement, html: _html, parentTag: _parentTag, addTag: _addTag )
     }
 
+    /// protected void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertHTML(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,java.lang.String,int,int,javax.swing.text.html.HTML$Tag)
+
+    private static var insertHTML_MethodID_6: jmethodID?
+
+    open func insertHTML( editor: JEditorPane?, doc: HTMLDocument?, offset: Int, html: String?, popDepth: Int, pushDepth: Int, addTag: HTML_Tag? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: editor, locals: &__locals )
+        __args[1] = JNIType.toJava( value: doc, locals: &__locals )
+        __args[2] = jvalue( i: jint(offset) )
+        __args[3] = JNIType.toJava( value: html, locals: &__locals )
+        __args[4] = jvalue( i: jint(popDepth) )
+        __args[5] = jvalue( i: jint(pushDepth) )
+        __args[6] = JNIType.toJava( value: addTag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertHTML", methodSig: "(Ljavax/swing/JEditorPane;Ljavax/swing/text/html/HTMLDocument;ILjava/lang/String;IILjavax/swing/text/html/HTML$Tag;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.insertHTML_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func insertHTML( _ _editor: JEditorPane?, _ _doc: HTMLDocument?, _ _offset: Int, _ _html: String?, _ _popDepth: Int, _ _pushDepth: Int, _ _addTag: HTML_Tag? ) {
+        insertHTML( editor: _editor, doc: _doc, offset: _offset, html: _html, popDepth: _popDepth, pushDepth: _pushDepth, addTag: _addTag )
+    }
+
     /// boolean javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.insertIntoTag(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,int,javax.swing.text.html.HTML$Tag,javax.swing.text.html.HTML$Tag)
 
-    /// public void javax.swing.text.html.HTMLEditorKit$InsertHTMLTextAction.actionPerformed(java.awt.event.ActionEvent)
-
-    private static var actionPerformed_MethodID_6: jmethodID?
-
-    open func actionPerformed( ae: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ae, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &HTMLEditorKit_InsertHTMLTextAction.actionPerformed_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func actionPerformed( _ _ae: java_awt.ActionEvent? ) {
-        actionPerformed( ae: _ae )
-    }
+    // Skipping method: true false false false false 
 
 }
 

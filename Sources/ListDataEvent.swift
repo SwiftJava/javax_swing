@@ -24,7 +24,7 @@ open class ListDataEvent: java_util.EventObject {
     open static var CONTENTS_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTENTS_CHANGED", fieldType: "I", fieldCache: &CONTENTS_CHANGED_FieldID, className: "javax/swing/event/ListDataEvent", classCache: &ListDataEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -35,7 +35,7 @@ open class ListDataEvent: java_util.EventObject {
     open static var INTERVAL_ADDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERVAL_ADDED", fieldType: "I", fieldCache: &INTERVAL_ADDED_FieldID, className: "javax/swing/event/ListDataEvent", classCache: &ListDataEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -46,15 +46,15 @@ open class ListDataEvent: java_util.EventObject {
     open static var INTERVAL_REMOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERVAL_REMOVED", fieldType: "I", fieldCache: &INTERVAL_REMOVED_FieldID, className: "javax/swing/event/ListDataEvent", classCache: &ListDataEventJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
-
-    /// private int javax.swing.event.ListDataEvent.type
 
     /// private int javax.swing.event.ListDataEvent.index0
 
     /// private int javax.swing.event.ListDataEvent.index1
+
+    /// private int javax.swing.event.ListDataEvent.type
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -64,8 +64,8 @@ open class ListDataEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ListDataEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &ListDataEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -80,12 +80,12 @@ open class ListDataEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_swift.JavaObject?, type: Int, index0: Int, index1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: type, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index0, locals: &__locals )
-        __args[3] = JNIType.toJava( value: index1, locals: &__locals )
+        __args[1] = jvalue( i: jint(type) )
+        __args[2] = jvalue( i: jint(index0) )
+        __args[3] = jvalue( i: jint(index1) )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/ListDataEvent", classCache: &ListDataEvent.ListDataEventJNIClass, methodSig: "(Ljava/lang/Object;III)V", methodCache: &ListDataEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -95,43 +95,45 @@ open class ListDataEvent: java_util.EventObject {
         self.init( source: _source, type: _type, index0: _index0, index1: _index1 )
     }
 
-    /// public java.lang.String javax.swing.event.ListDataEvent.toString()
-
-    /// public int javax.swing.event.ListDataEvent.getType()
-
-    private static var getType_MethodID_2: jmethodID?
-
-    open func getType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getType", methodSig: "()I", methodCache: &ListDataEvent.getType_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public int javax.swing.event.ListDataEvent.getIndex0()
 
-    private static var getIndex0_MethodID_3: jmethodID?
+    private static var getIndex0_MethodID_2: jmethodID?
 
     open func getIndex0() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex0", methodSig: "()I", methodCache: &ListDataEvent.getIndex0_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex0", methodSig: "()I", methodCache: &ListDataEvent.getIndex0_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
     /// public int javax.swing.event.ListDataEvent.getIndex1()
 
-    private static var getIndex1_MethodID_4: jmethodID?
+    private static var getIndex1_MethodID_3: jmethodID?
 
     open func getIndex1() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex1", methodSig: "()I", methodCache: &ListDataEvent.getIndex1_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex1", methodSig: "()I", methodCache: &ListDataEvent.getIndex1_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public int javax.swing.event.ListDataEvent.getType()
+
+    private static var getType_MethodID_4: jmethodID?
+
+    open func getType() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getType", methodSig: "()I", methodCache: &ListDataEvent.getType_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.lang.String javax.swing.event.ListDataEvent.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

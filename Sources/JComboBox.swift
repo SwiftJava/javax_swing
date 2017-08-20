@@ -20,14 +20,35 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     /// private static final java.lang.String javax.swing.JComboBox.uiClassID
 
+    /// private javax.swing.Action javax.swing.JComboBox.action
+
+    /// protected java.lang.String javax.swing.JComboBox.actionCommand
+
+    private static var actionCommand_FieldID: jfieldID?
+
+    open var actionCommand: String! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "actionCommand", fieldType: "Ljava/lang/String;", fieldCache: &JComboBox.actionCommand_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "actionCommand", fieldType: "Ljava/lang/String;", fieldCache: &JComboBox.actionCommand_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private java.beans.PropertyChangeListener javax.swing.JComboBox.actionPropertyChangeListener
+
     /// protected javax.swing.ComboBoxModel javax.swing.JComboBox.dataModel
 
     private static var dataModel_FieldID: jfieldID?
 
     open var dataModel: ComboBoxModel! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "dataModel", fieldType: "Ljavax/swing/ComboBoxModel;", fieldCache: &JComboBox.dataModel_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "dataModel", fieldType: "Ljavax/swing/ComboBoxModel;", fieldCache: &JComboBox.dataModel_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ComboBoxModelForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -37,31 +58,14 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         }
     }
 
-    /// protected javax.swing.ListCellRenderer javax.swing.JComboBox.renderer
-
-    private static var renderer_FieldID: jfieldID?
-
-    open var renderer: ListCellRenderer! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "renderer", fieldType: "Ljavax/swing/ListCellRenderer;", fieldCache: &JComboBox.renderer_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ListCellRendererForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "renderer", fieldType: "Ljavax/swing/ListCellRenderer;", fieldCache: &JComboBox.renderer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.ComboBoxEditor javax.swing.JComboBox.editor
 
     private static var editor_FieldID: jfieldID?
 
     open var editor: ComboBoxEditor! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/ComboBoxEditor;", fieldCache: &JComboBox.editor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/ComboBoxEditor;", fieldCache: &JComboBox.editor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ComboBoxEditorForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -71,22 +75,7 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         }
     }
 
-    /// protected int javax.swing.JComboBox.maximumRowCount
-
-    private static var maximumRowCount_FieldID: jfieldID?
-
-    open var maximumRowCount: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "maximumRowCount", fieldType: "I", fieldCache: &JComboBox.maximumRowCount_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "maximumRowCount", fieldType: "I", fieldCache: &JComboBox.maximumRowCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
+    /// private boolean javax.swing.JComboBox.firingActionEvent
 
     /// protected boolean javax.swing.JComboBox.isEditable
 
@@ -94,13 +83,12 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     open var isEditable: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "isEditable", fieldType: "Z", fieldCache: &JComboBox.isEditable_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "isEditable", fieldType: "Z", fieldCache: &JComboBox.isEditable_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "isEditable", fieldType: "Z", fieldCache: &JComboBox.isEditable_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
@@ -111,8 +99,8 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     open var keySelectionManager: JComboBox_KeySelectionManager! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "keySelectionManager", fieldType: "Ljavax/swing/JComboBox$KeySelectionManager;", fieldCache: &JComboBox.keySelectionManager_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "keySelectionManager", fieldType: "Ljavax/swing/JComboBox$KeySelectionManager;", fieldCache: &JComboBox.keySelectionManager_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JComboBox_KeySelectionManagerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -122,37 +110,54 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         }
     }
 
-    /// protected java.lang.String javax.swing.JComboBox.actionCommand
-
-    private static var actionCommand_FieldID: jfieldID?
-
-    open var actionCommand: String! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "actionCommand", fieldType: "Ljava/lang/String;", fieldCache: &JComboBox.actionCommand_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "actionCommand", fieldType: "Ljava/lang/String;", fieldCache: &JComboBox.actionCommand_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected boolean javax.swing.JComboBox.lightWeightPopupEnabled
 
     private static var lightWeightPopupEnabled_FieldID: jfieldID?
 
     open var lightWeightPopupEnabled: Bool {
         get {
+            let __value = JNIField.GetBooleanField( fieldName: "lightWeightPopupEnabled", fieldType: "Z", fieldCache: &JComboBox.lightWeightPopupEnabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "lightWeightPopupEnabled", fieldType: "Z", fieldCache: &JComboBox.lightWeightPopupEnabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "lightWeightPopupEnabled", fieldType: "Z", fieldCache: &JComboBox.lightWeightPopupEnabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.JComboBox.maximumRowCount
+
+    private static var maximumRowCount_FieldID: jfieldID?
+
+    open var maximumRowCount: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "maximumRowCount", fieldType: "I", fieldCache: &JComboBox.maximumRowCount_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "maximumRowCount", fieldType: "I", fieldCache: &JComboBox.maximumRowCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// private java.lang.Object javax.swing.JComboBox.prototypeDisplayValue
+
+    /// protected javax.swing.ListCellRenderer javax.swing.JComboBox.renderer
+
+    private static var renderer_FieldID: jfieldID?
+
+    open var renderer: ListCellRenderer! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "renderer", fieldType: "Ljavax/swing/ListCellRenderer;", fieldCache: &JComboBox.renderer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ListCellRendererForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "lightWeightPopupEnabled", fieldType: "Z", fieldCache: &JComboBox.lightWeightPopupEnabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "renderer", fieldType: "Ljavax/swing/ListCellRenderer;", fieldCache: &JComboBox.renderer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -162,8 +167,8 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     open var selectedItemReminder: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "selectedItemReminder", fieldType: "Ljava/lang/Object;", fieldCache: &JComboBox.selectedItemReminder_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "selectedItemReminder", fieldType: "Ljava/lang/Object;", fieldCache: &JComboBox.selectedItemReminder_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -173,129 +178,39 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         }
     }
 
-    /// private java.lang.Object javax.swing.JComboBox.prototypeDisplayValue
-
-    /// private boolean javax.swing.JComboBox.firingActionEvent
-
     /// private boolean javax.swing.JComboBox.selectingItem
-
-    /// private javax.swing.Action javax.swing.JComboBox.action
-
-    /// private java.beans.PropertyChangeListener javax.swing.JComboBox.actionPropertyChangeListener
-
-    /// private static final java.lang.String javax.swing.JComponent.uiClassID
-
-    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
-
-    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
-
-    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
-
-    /// private static final int javax.swing.JComponent.NOT_OBSCURED
-
-    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
-
-    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
-
-    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
-
-    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
-
-    /// private boolean javax.swing.JComponent.isAlignmentXSet
-
-    /// private float javax.swing.JComponent.alignmentX
-
-    /// private boolean javax.swing.JComponent.isAlignmentYSet
-
-    /// private float javax.swing.JComponent.alignmentY
-
-    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
-
-    private static var ui_FieldID: jfieldID?
-
-    override open var ui: ComponentUI! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JComboBox.ui_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ComponentUI( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JComboBox.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
-
-    private static var listenerList_FieldID: jfieldID?
-
-    override open var listenerList: EventListenerList! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JComboBox.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JComboBox.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
-
-    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
-
-    /// private boolean javax.swing.JComponent.autoscrolls
-
-    /// private javax.swing.border.Border javax.swing.JComponent.border
-
-    /// private int javax.swing.JComponent.flags
-
-    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
-
-    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
-
-    /// transient java.awt.Component javax.swing.JComponent.paintingChild
-
-    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
-
-    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
-
-    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
-
-    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
-
-    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
-
-    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
-
-    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
-
-    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
-
-    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
-
-    /// private static final int javax.swing.JComponent.IS_OPAQUE
-
-    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
-
-    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
 
     /// private static final int javax.swing.JComponent.ACTIONMAP_CREATED
 
+    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
+
+    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
+
+    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
+
     /// private static final int javax.swing.JComponent.CREATED_DOUBLE_BUFFER
+
+    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
+
+    // Skipping field: true false false false false false 
+
+    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
+
+    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
+
+    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
+
+    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
+
+    /// private static final int javax.swing.JComponent.IS_OPAQUE
+
+    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
 
     /// private static final int javax.swing.JComponent.IS_PRINTING
 
@@ -303,7 +218,19 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     /// private static final int javax.swing.JComponent.IS_REPAINTING
 
-    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
+
+    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
+
+    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
+
+    /// private static final int javax.swing.JComponent.NOT_OBSCURED
+
+    /// private static final int javax.swing.JComponent.OPAQUE_SET
+
+    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
+
+    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
 
     /// private static final int javax.swing.JComponent.RESERVED_1
 
@@ -317,301 +244,347 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     /// private static final int javax.swing.JComponent.RESERVED_6
 
+    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
+
+    // Skipping field: false true false false false false 
+
+    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
+
+    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+
     /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_LAST
-
-    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
-
-    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
-
-    /// private static final int javax.swing.JComponent.OPAQUE_SET
-
-    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
-
-    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
-
-    /// private static java.util.List javax.swing.JComponent.tempRectangles
-
-    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
-
-    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
-
-    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
-
-    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
-
-    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// private static java.awt.Component javax.swing.JComponent.componentObtainingGraphicsFrom
 
     /// private static java.lang.Object javax.swing.JComponent.componentObtainingGraphicsFromLock
 
-    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// static final sun.awt.RequestFocusController javax.swing.JComponent.focusController
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
+
+    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
+
+    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
+
+    /// private static java.util.List javax.swing.JComponent.tempRectangles
+
+    /// private static final java.lang.String javax.swing.JComponent.uiClassID
+
+    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+
+    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
+
+    /// private float javax.swing.JComponent.alignmentX
+
+    /// private float javax.swing.JComponent.alignmentY
+
+    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
+
+    /// private boolean javax.swing.JComponent.autoscrolls
+
+    /// private javax.swing.border.Border javax.swing.JComponent.border
+
+    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
+
+    /// private int javax.swing.JComponent.flags
+
+    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
+
+    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
+
+    /// private boolean javax.swing.JComponent.isAlignmentXSet
+
+    /// private boolean javax.swing.JComponent.isAlignmentYSet
+
+    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
+
+    private static var listenerList_FieldID: jfieldID?
+
+    override open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JComboBox.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JComboBox.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// transient java.awt.Component javax.swing.JComponent.paintingChild
+
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
+
+    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
+
+    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
+
+    private static var ui_FieldID: jfieldID?
+
+    override open var ui: ComponentUI! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JComboBox.ui_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ComponentUI( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JComboBox.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
+
+    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
+
+    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JComboBox.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JComboBox.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -620,51 +593,265 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ABORT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ALLBITS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.image.ImageObserver.ERROR
 
-    /// public static final int java.awt.image.ImageObserver.ABORT
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.JComboBox()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/JComboBox", classCache: &JComboBox.JComboBoxJNIClass, methodSig: "()V", methodCache: &JComboBox.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public javax.swing.JComboBox(java.util.Vector)
+    /// public javax.swing.JComboBox(javax.swing.ComboBoxModel)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( items: java_util.Vector? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( aModel: ComboBoxModel? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: items, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JComboBox", classCache: &JComboBox.JComboBoxJNIClass, methodSig: "(Ljava/util/Vector;)V", methodCache: &JComboBox.new_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aModel, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JComboBox", classCache: &JComboBox.JComboBoxJNIClass, methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &JComboBox.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _items: java_util.Vector? ) {
-        self.init( items: _items )
+    public convenience init( _ _aModel: ComboBoxModel? ) {
+        self.init( aModel: _aModel )
     }
 
     /// public javax.swing.JComboBox(java.lang.Object[])
@@ -672,8 +859,8 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( items: [JavaObject]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: items, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JComboBox", classCache: &JComboBox.JComboBoxJNIClass, methodSig: "([Ljava/lang/Object;)V", methodCache: &JComboBox.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -684,721 +871,319 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         self.init( items: _items )
     }
 
-    /// public javax.swing.JComboBox(javax.swing.ComboBoxModel)
+    /// public javax.swing.JComboBox(java.util.Vector)
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init( aModel: ComboBoxModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( items: java_util.Vector? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aModel, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JComboBox", classCache: &JComboBox.JComboBoxJNIClass, methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &JComboBox.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: items, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JComboBox", classCache: &JComboBox.JComboBoxJNIClass, methodSig: "(Ljava/util/Vector;)V", methodCache: &JComboBox.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _aModel: ComboBoxModel? ) {
-        self.init( aModel: _aModel )
+    public convenience init( _ _items: java_util.Vector? ) {
+        self.init( items: _items )
     }
 
     /// private void javax.swing.JComboBox.init()
 
-    /// private void javax.swing.JComboBox.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+    /// public void javax.swing.JComboBox.actionPerformed(java.awt.event.ActionEvent)
 
-    /// protected java.lang.String javax.swing.JComboBox.paramString()
+    private static var actionPerformed_MethodID_5: jmethodID?
 
-    private static var paramString_MethodID_5: jmethodID?
-
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func actionPerformed( e: java_awt.ActionEvent? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JComboBox.paramString_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public javax.swing.plaf.ComboBoxUI javax.swing.JComboBox.getUI()
-
-    private static var getUI_MethodID_6: jmethodID?
-
-    open func getUI() -> ComboBoxUI! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ComboBoxUI;", methodCache: &JComboBox.getUI_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboBoxUI( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &JComboBox.actionPerformed_MethodID_5, args: &__args, locals: &__locals )
     }
 
+    open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
+        actionPerformed( e: _e )
+    }
 
-    /// private boolean javax.swing.JComboBox.isListener(java.lang.Class,java.awt.event.ActionListener)
+    /// protected void javax.swing.JComboBox.actionPropertyChanged(javax.swing.Action,java.lang.String)
 
-    /// public void javax.swing.JComboBox.setEditable(boolean)
+    private static var actionPropertyChanged_MethodID_6: jmethodID?
 
-    private static var setEditable_MethodID_7: jmethodID?
+    open func actionPropertyChanged( action: Action?, propertyName: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: action, locals: &__locals )
+        __args[1] = JNIType.toJava( value: propertyName, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPropertyChanged", methodSig: "(Ljavax/swing/Action;Ljava/lang/String;)V", methodCache: &JComboBox.actionPropertyChanged_MethodID_6, args: &__args, locals: &__locals )
+    }
 
-    open func setEditable( aFlag: Bool ) {
+    open func actionPropertyChanged( _ _action: Action?, _ _propertyName: String? ) {
+        actionPropertyChanged( action: _action, propertyName: _propertyName )
+    }
+
+    /// public void javax.swing.JComboBox.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_7: jmethodID?
+
+    open func addActionListener( l: java_awt.ActionListener? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aFlag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &JComboBox.setEditable_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JComboBox.addActionListener_MethodID_7, args: &__args, locals: &__locals )
     }
 
-    open func setEditable( _ _aFlag: Bool ) {
-        setEditable( aFlag: _aFlag )
-    }
-
-    /// protected void javax.swing.JComboBox.installAncestorListener()
-
-    private static var installAncestorListener_MethodID_8: jmethodID?
-
-    open func installAncestorListener() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installAncestorListener", methodSig: "()V", methodCache: &JComboBox.installAncestorListener_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JComboBox.setLightWeightPopupEnabled(boolean)
-
-    private static var setLightWeightPopupEnabled_MethodID_9: jmethodID?
-
-    open func setLightWeightPopupEnabled( aFlag: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aFlag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLightWeightPopupEnabled", methodSig: "(Z)V", methodCache: &JComboBox.setLightWeightPopupEnabled_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setLightWeightPopupEnabled( _ _aFlag: Bool ) {
-        setLightWeightPopupEnabled( aFlag: _aFlag )
-    }
-
-    /// public boolean javax.swing.JComboBox.isLightWeightPopupEnabled()
-
-    private static var isLightWeightPopupEnabled_MethodID_10: jmethodID?
-
-    open func isLightWeightPopupEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLightWeightPopupEnabled", methodSig: "()Z", methodCache: &JComboBox.isLightWeightPopupEnabled_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JComboBox.setMaximumRowCount(int)
-
-    private static var setMaximumRowCount_MethodID_11: jmethodID?
-
-    open func setMaximumRowCount( count: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: count, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumRowCount", methodSig: "(I)V", methodCache: &JComboBox.setMaximumRowCount_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximumRowCount( _ _count: Int ) {
-        setMaximumRowCount( count: _count )
-    }
-
-    /// public int javax.swing.JComboBox.getMaximumRowCount()
-
-    private static var getMaximumRowCount_MethodID_12: jmethodID?
-
-    open func getMaximumRowCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumRowCount", methodSig: "()I", methodCache: &JComboBox.getMaximumRowCount_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JComboBox.setRenderer(javax.swing.ListCellRenderer)
-
-    private static var setRenderer_MethodID_13: jmethodID?
-
-    open func setRenderer( aRenderer: ListCellRenderer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aRenderer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRenderer", methodSig: "(Ljavax/swing/ListCellRenderer;)V", methodCache: &JComboBox.setRenderer_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setRenderer( _ _aRenderer: ListCellRenderer? ) {
-        setRenderer( aRenderer: _aRenderer )
-    }
-
-    /// public javax.swing.ListCellRenderer javax.swing.JComboBox.getRenderer()
-
-    private static var getRenderer_MethodID_14: jmethodID?
-
-    open func getRenderer() -> ListCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderer", methodSig: "()Ljavax/swing/ListCellRenderer;", methodCache: &JComboBox.getRenderer_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ListCellRendererForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JComboBox.setEditor(javax.swing.ComboBoxEditor)
-
-    private static var setEditor_MethodID_15: jmethodID?
-
-    open func setEditor( anEditor: ComboBoxEditor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEditor, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditor", methodSig: "(Ljavax/swing/ComboBoxEditor;)V", methodCache: &JComboBox.setEditor_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setEditor( _ _anEditor: ComboBoxEditor? ) {
-        setEditor( anEditor: _anEditor )
-    }
-
-    /// public javax.swing.ComboBoxEditor javax.swing.JComboBox.getEditor()
-
-    private static var getEditor_MethodID_16: jmethodID?
-
-    open func getEditor() -> ComboBoxEditor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditor", methodSig: "()Ljavax/swing/ComboBoxEditor;", methodCache: &JComboBox.getEditor_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboBoxEditorForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JComboBox.setSelectedIndex(int)
-
-    private static var setSelectedIndex_MethodID_17: jmethodID?
-
-    open func setSelectedIndex( anIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &JComboBox.setSelectedIndex_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedIndex( _ _anIndex: Int ) {
-        setSelectedIndex( anIndex: _anIndex )
-    }
-
-    /// public int javax.swing.JComboBox.getSelectedIndex()
-
-    private static var getSelectedIndex_MethodID_18: jmethodID?
-
-    open func getSelectedIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &JComboBox.getSelectedIndex_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.lang.Object javax.swing.JComboBox.getPrototypeDisplayValue()
-
-    private static var getPrototypeDisplayValue_MethodID_19: jmethodID?
-
-    open func getPrototypeDisplayValue() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrototypeDisplayValue", methodSig: "()Ljava/lang/Object;", methodCache: &JComboBox.getPrototypeDisplayValue_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JComboBox.setPrototypeDisplayValue(java.lang.Object)
-
-    private static var setPrototypeDisplayValue_MethodID_20: jmethodID?
-
-    open func setPrototypeDisplayValue( prototypeDisplayValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: prototypeDisplayValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrototypeDisplayValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.setPrototypeDisplayValue_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func setPrototypeDisplayValue( _ _prototypeDisplayValue: java_swift.JavaObject? ) {
-        setPrototypeDisplayValue( prototypeDisplayValue: _prototypeDisplayValue )
+    open func addActionListener( _ _l: java_awt.ActionListener? ) {
+        addActionListener( l: _l )
     }
 
     /// public void javax.swing.JComboBox.addItem(java.lang.Object)
 
-    private static var addItem_MethodID_21: jmethodID?
+    private static var addItem_MethodID_8: jmethodID?
 
     open func addItem( item: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: item, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.addItem_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.addItem_MethodID_8, args: &__args, locals: &__locals )
     }
 
     open func addItem( _ _item: java_swift.JavaObject? ) {
         addItem( item: _item )
     }
 
-    /// public void javax.swing.JComboBox.insertItemAt(java.lang.Object,int)
-
-    private static var insertItemAt_MethodID_22: jmethodID?
-
-    open func insertItemAt( item: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: item, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertItemAt", methodSig: "(Ljava/lang/Object;I)V", methodCache: &JComboBox.insertItemAt_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func insertItemAt( _ _item: java_swift.JavaObject?, _ _index: Int ) {
-        insertItemAt( item: _item, index: _index )
-    }
-
-    /// public void javax.swing.JComboBox.removeItem(java.lang.Object)
-
-    private static var removeItem_MethodID_23: jmethodID?
-
-    open func removeItem( anObject: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.removeItem_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func removeItem( _ _anObject: java_swift.JavaObject? ) {
-        removeItem( anObject: _anObject )
-    }
-
-    /// public void javax.swing.JComboBox.removeItemAt(int)
-
-    private static var removeItemAt_MethodID_24: jmethodID?
-
-    open func removeItemAt( anIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemAt", methodSig: "(I)V", methodCache: &JComboBox.removeItemAt_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func removeItemAt( _ _anIndex: Int ) {
-        removeItemAt( anIndex: _anIndex )
-    }
-
-    /// public void javax.swing.JComboBox.removeAllItems()
-
-    private static var removeAllItems_MethodID_25: jmethodID?
-
-    open func removeAllItems() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAllItems", methodSig: "()V", methodCache: &JComboBox.removeAllItems_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-
-    /// void javax.swing.JComboBox.checkMutableComboBoxModel()
-
-    /// public void javax.swing.JComboBox.showPopup()
-
-    private static var showPopup_MethodID_26: jmethodID?
-
-    open func showPopup() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "showPopup", methodSig: "()V", methodCache: &JComboBox.showPopup_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JComboBox.hidePopup()
-
-    private static var hidePopup_MethodID_27: jmethodID?
-
-    open func hidePopup() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hidePopup", methodSig: "()V", methodCache: &JComboBox.hidePopup_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JComboBox.setPopupVisible(boolean)
-
-    private static var setPopupVisible_MethodID_28: jmethodID?
-
-    open func setPopupVisible( v: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupVisible", methodSig: "(Z)V", methodCache: &JComboBox.setPopupVisible_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-    open func setPopupVisible( _ _v: Bool ) {
-        setPopupVisible( v: _v )
-    }
-
-    /// public boolean javax.swing.JComboBox.isPopupVisible()
-
-    private static var isPopupVisible_MethodID_29: jmethodID?
-
-    open func isPopupVisible() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupVisible", methodSig: "()Z", methodCache: &JComboBox.isPopupVisible_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
     /// public void javax.swing.JComboBox.addItemListener(java.awt.event.ItemListener)
 
-    private static var addItemListener_MethodID_30: jmethodID?
+    private static var addItemListener_MethodID_9: jmethodID?
 
     open func addItemListener( l: java_awt.ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &JComboBox.addItemListener_MethodID_30, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &JComboBox.addItemListener_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func addItemListener( _ _l: java_awt.ItemListener? ) {
         addItemListener( l: _l )
     }
 
-    /// public void javax.swing.JComboBox.removeItemListener(java.awt.event.ItemListener)
-
-    private static var removeItemListener_MethodID_31: jmethodID?
-
-    open func removeItemListener( l: java_awt.ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &JComboBox.removeItemListener_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func removeItemListener( _ _l: java_awt.ItemListener? ) {
-        removeItemListener( l: _l )
-    }
-
-    /// public java.awt.event.ItemListener[] javax.swing.JComboBox.getItemListeners()
-
-    private static var getItemListeners_MethodID_32: jmethodID?
-
-    open func getItemListeners() -> [ItemListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &JComboBox.getItemListeners_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ItemListenerForward](), from: __return )
-    }
-
-
-    /// public void javax.swing.JComboBox.removeActionListener(java.awt.event.ActionListener)
-
-    private static var removeActionListener_MethodID_33: jmethodID?
-
-    open func removeActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JComboBox.removeActionListener_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func removeActionListener( _ _l: java_awt.ActionListener? ) {
-        removeActionListener( l: _l )
-    }
-
-    /// public java.awt.event.ActionListener[] javax.swing.JComboBox.getActionListeners()
-
-    private static var getActionListeners_MethodID_34: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &JComboBox.getActionListeners_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
-    }
-
-
     /// public void javax.swing.JComboBox.addPopupMenuListener(javax.swing.event.PopupMenuListener)
 
-    private static var addPopupMenuListener_MethodID_35: jmethodID?
+    private static var addPopupMenuListener_MethodID_10: jmethodID?
 
     open func addPopupMenuListener( l: PopupMenuListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPopupMenuListener", methodSig: "(Ljavax/swing/event/PopupMenuListener;)V", methodCache: &JComboBox.addPopupMenuListener_MethodID_35, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPopupMenuListener", methodSig: "(Ljavax/swing/event/PopupMenuListener;)V", methodCache: &JComboBox.addPopupMenuListener_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func addPopupMenuListener( _ _l: PopupMenuListener? ) {
         addPopupMenuListener( l: _l )
     }
 
-    /// public void javax.swing.JComboBox.removePopupMenuListener(javax.swing.event.PopupMenuListener)
+    /// void javax.swing.JComboBox.checkMutableComboBoxModel()
 
-    private static var removePopupMenuListener_MethodID_36: jmethodID?
-
-    open func removePopupMenuListener( l: PopupMenuListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePopupMenuListener", methodSig: "(Ljavax/swing/event/PopupMenuListener;)V", methodCache: &JComboBox.removePopupMenuListener_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func removePopupMenuListener( _ _l: PopupMenuListener? ) {
-        removePopupMenuListener( l: _l )
-    }
-
-    /// public javax.swing.event.PopupMenuListener[] javax.swing.JComboBox.getPopupMenuListeners()
-
-    private static var getPopupMenuListeners_MethodID_37: jmethodID?
-
-    open func getPopupMenuListeners() -> [PopupMenuListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenuListeners", methodSig: "()[Ljavax/swing/event/PopupMenuListener;", methodCache: &JComboBox.getPopupMenuListeners_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [PopupMenuListenerForward](), from: __return )
-    }
-
-
-    /// public void javax.swing.JComboBox.firePopupMenuWillBecomeVisible()
-
-    private static var firePopupMenuWillBecomeVisible_MethodID_38: jmethodID?
-
-    open func firePopupMenuWillBecomeVisible() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeVisible", methodSig: "()V", methodCache: &JComboBox.firePopupMenuWillBecomeVisible_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JComboBox.firePopupMenuWillBecomeInvisible()
-
-    private static var firePopupMenuWillBecomeInvisible_MethodID_39: jmethodID?
-
-    open func firePopupMenuWillBecomeInvisible() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeInvisible", methodSig: "()V", methodCache: &JComboBox.firePopupMenuWillBecomeInvisible_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JComboBox.firePopupMenuCanceled()
-
-    private static var firePopupMenuCanceled_MethodID_40: jmethodID?
-
-    open func firePopupMenuCanceled() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuCanceled", methodSig: "()V", methodCache: &JComboBox.firePopupMenuCanceled_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.JComboBox.setAction(javax.swing.Action)
-
-    private static var setAction_MethodID_41: jmethodID?
-
-    open func setAction( a: Action? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &JComboBox.setAction_MethodID_41, args: &__args, locals: &__locals )
-    }
-
-    open func setAction( _ _a: Action? ) {
-        setAction( a: _a )
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.JComboBox.createActionPropertyChangeListener(javax.swing.Action)
-
-    private static var createActionPropertyChangeListener_MethodID_42: jmethodID?
-
-    open func createActionPropertyChangeListener( a: Action? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionPropertyChangeListener", methodSig: "(Ljavax/swing/Action;)Ljava/beans/PropertyChangeListener;", methodCache: &JComboBox.createActionPropertyChangeListener_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    open func createActionPropertyChangeListener( _ _a: Action? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        return createActionPropertyChangeListener( a: _a )
-    }
-
-    /// private void javax.swing.JComboBox.setActionCommandFromAction(javax.swing.Action)
-
-    /// protected void javax.swing.JComboBox.fireItemStateChanged(java.awt.event.ItemEvent)
-
-    private static var fireItemStateChanged_MethodID_43: jmethodID?
-
-    open func fireItemStateChanged( e: java_awt.ItemEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireItemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &JComboBox.fireItemStateChanged_MethodID_43, args: &__args, locals: &__locals )
-    }
-
-    open func fireItemStateChanged( _ _e: java_awt.ItemEvent? ) {
-        fireItemStateChanged( e: _e )
-    }
-
-    /// protected void javax.swing.JComboBox.fireActionEvent()
-
-    private static var fireActionEvent_MethodID_44: jmethodID?
-
-    open func fireActionEvent() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionEvent", methodSig: "()V", methodCache: &JComboBox.fireActionEvent_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.JComboBox.selectedItemChanged()
-
-    private static var selectedItemChanged_MethodID_45: jmethodID?
-
-    open func selectedItemChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectedItemChanged", methodSig: "()V", methodCache: &JComboBox.selectedItemChanged_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-
-    /// public java.lang.Object[] javax.swing.JComboBox.getSelectedObjects()
-
-    private static var getSelectedObjects_MethodID_46: jmethodID?
-
-    open func getSelectedObjects() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &JComboBox.getSelectedObjects_MethodID_46, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
-    }
-
-
-    /// public void javax.swing.JComboBox.contentsChanged(javax.swing.event.ListDataEvent)
-
-    private static var contentsChanged_MethodID_47: jmethodID?
-
-    open func contentsChanged( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "contentsChanged", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &JComboBox.contentsChanged_MethodID_47, args: &__args, locals: &__locals )
-    }
-
-    open func contentsChanged( _ _e: ListDataEvent? ) {
-        contentsChanged( e: _e )
-    }
-
-    /// public void javax.swing.JComboBox.intervalAdded(javax.swing.event.ListDataEvent)
-
-    private static var intervalAdded_MethodID_48: jmethodID?
-
-    open func intervalAdded( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &JComboBox.intervalAdded_MethodID_48, args: &__args, locals: &__locals )
-    }
-
-    open func intervalAdded( _ _e: ListDataEvent? ) {
-        intervalAdded( e: _e )
-    }
-
-    /// public void javax.swing.JComboBox.intervalRemoved(javax.swing.event.ListDataEvent)
-
-    private static var intervalRemoved_MethodID_49: jmethodID?
-
-    open func intervalRemoved( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &JComboBox.intervalRemoved_MethodID_49, args: &__args, locals: &__locals )
-    }
-
-    open func intervalRemoved( _ _e: ListDataEvent? ) {
-        intervalRemoved( e: _e )
-    }
-
-    /// public boolean javax.swing.JComboBox.selectWithKeyChar(char)
-
-    private static var selectWithKeyChar_MethodID_50: jmethodID?
-
-    open func selectWithKeyChar( keyChar: UInt16 ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keyChar, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "selectWithKeyChar", methodSig: "(C)Z", methodCache: &JComboBox.selectWithKeyChar_MethodID_50, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func selectWithKeyChar( _ _keyChar: UInt16 ) -> Bool {
-        return selectWithKeyChar( keyChar: _keyChar )
-    }
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.JComboBox.configureEditor(javax.swing.ComboBoxEditor,java.lang.Object)
 
-    private static var configureEditor_MethodID_51: jmethodID?
+    private static var configureEditor_MethodID_11: jmethodID?
 
     open func configureEditor( anEditor: ComboBoxEditor?, anItem: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: anEditor, locals: &__locals )
         __args[1] = JNIType.toJava( value: anItem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureEditor", methodSig: "(Ljavax/swing/ComboBoxEditor;Ljava/lang/Object;)V", methodCache: &JComboBox.configureEditor_MethodID_51, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureEditor", methodSig: "(Ljavax/swing/ComboBoxEditor;Ljava/lang/Object;)V", methodCache: &JComboBox.configureEditor_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func configureEditor( _ _anEditor: ComboBoxEditor?, _ _anItem: java_swift.JavaObject? ) {
         configureEditor( anEditor: _anEditor, anItem: _anItem )
     }
 
-    /// public void javax.swing.JComboBox.setKeySelectionManager(javax.swing.JComboBox$KeySelectionManager)
+    /// protected void javax.swing.JComboBox.configurePropertiesFromAction(javax.swing.Action)
 
-    private static var setKeySelectionManager_MethodID_52: jmethodID?
+    private static var configurePropertiesFromAction_MethodID_12: jmethodID?
 
-    open func setKeySelectionManager( aManager: JComboBox_KeySelectionManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func configurePropertiesFromAction( a: Action? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aManager, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeySelectionManager", methodSig: "(Ljavax/swing/JComboBox$KeySelectionManager;)V", methodCache: &JComboBox.setKeySelectionManager_MethodID_52, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePropertiesFromAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &JComboBox.configurePropertiesFromAction_MethodID_12, args: &__args, locals: &__locals )
     }
 
-    open func setKeySelectionManager( _ _aManager: JComboBox_KeySelectionManager? ) {
-        setKeySelectionManager( aManager: _aManager )
+    open func configurePropertiesFromAction( _ _a: Action? ) {
+        configurePropertiesFromAction( a: _a )
     }
 
-    /// public javax.swing.JComboBox$KeySelectionManager javax.swing.JComboBox.getKeySelectionManager()
+    /// public void javax.swing.JComboBox.contentsChanged(javax.swing.event.ListDataEvent)
 
-    private static var getKeySelectionManager_MethodID_53: jmethodID?
+    private static var contentsChanged_MethodID_13: jmethodID?
 
-    open func getKeySelectionManager() -> JComboBox_KeySelectionManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func contentsChanged( e: ListDataEvent? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeySelectionManager", methodSig: "()Ljavax/swing/JComboBox$KeySelectionManager;", methodCache: &JComboBox.getKeySelectionManager_MethodID_53, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "contentsChanged", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &JComboBox.contentsChanged_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func contentsChanged( _ _e: ListDataEvent? ) {
+        contentsChanged( e: _e )
+    }
+
+    /// protected java.beans.PropertyChangeListener javax.swing.JComboBox.createActionPropertyChangeListener(javax.swing.Action)
+
+    private static var createActionPropertyChangeListener_MethodID_14: jmethodID?
+
+    open func createActionPropertyChangeListener( a: Action? ) -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionPropertyChangeListener", methodSig: "(Ljavax/swing/Action;)Ljava/beans/PropertyChangeListener;", methodCache: &JComboBox.createActionPropertyChangeListener_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
+    }
+
+    open func createActionPropertyChangeListener( _ _a: Action? ) -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        return createActionPropertyChangeListener( a: _a )
+    }
+
+    /// protected javax.swing.JComboBox$KeySelectionManager javax.swing.JComboBox.createDefaultKeySelectionManager()
+
+    private static var createDefaultKeySelectionManager_MethodID_15: jmethodID?
+
+    open func createDefaultKeySelectionManager() -> JComboBox_KeySelectionManager! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultKeySelectionManager", methodSig: "()Ljavax/swing/JComboBox$KeySelectionManager;", methodCache: &JComboBox.createDefaultKeySelectionManager_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComboBox_KeySelectionManagerForward( javaObject: __return ) : nil
     }
 
 
-    /// public int javax.swing.JComboBox.getItemCount()
+    /// protected void javax.swing.JComboBox.fireActionEvent()
 
-    private static var getItemCount_MethodID_54: jmethodID?
+    private static var fireActionEvent_MethodID_16: jmethodID?
 
-    open func getItemCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func fireActionEvent() {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &JComboBox.getItemCount_MethodID_54, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionEvent", methodSig: "()V", methodCache: &JComboBox.fireActionEvent_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.JComboBox.fireItemStateChanged(java.awt.event.ItemEvent)
+
+    private static var fireItemStateChanged_MethodID_17: jmethodID?
+
+    open func fireItemStateChanged( e: java_awt.ItemEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireItemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &JComboBox.fireItemStateChanged_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func fireItemStateChanged( _ _e: java_awt.ItemEvent? ) {
+        fireItemStateChanged( e: _e )
+    }
+
+    /// public void javax.swing.JComboBox.firePopupMenuCanceled()
+
+    private static var firePopupMenuCanceled_MethodID_18: jmethodID?
+
+    open func firePopupMenuCanceled() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuCanceled", methodSig: "()V", methodCache: &JComboBox.firePopupMenuCanceled_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.firePopupMenuWillBecomeInvisible()
+
+    private static var firePopupMenuWillBecomeInvisible_MethodID_19: jmethodID?
+
+    open func firePopupMenuWillBecomeInvisible() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeInvisible", methodSig: "()V", methodCache: &JComboBox.firePopupMenuWillBecomeInvisible_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.firePopupMenuWillBecomeVisible()
+
+    private static var firePopupMenuWillBecomeVisible_MethodID_20: jmethodID?
+
+    open func firePopupMenuWillBecomeVisible() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePopupMenuWillBecomeVisible", methodSig: "()V", methodCache: &JComboBox.firePopupMenuWillBecomeVisible_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JComboBox.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.Action javax.swing.JComboBox.getAction()
+
+    private static var getAction_MethodID_21: jmethodID?
+
+    open func getAction() -> Action! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "()Ljavax/swing/Action;", methodCache: &JComboBox.getAction_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ActionForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.JComboBox.getActionCommand()
+
+    private static var getActionCommand_MethodID_22: jmethodID?
+
+    open func getActionCommand() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &JComboBox.getActionCommand_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.event.ActionListener[] javax.swing.JComboBox.getActionListeners()
+
+    private static var getActionListeners_MethodID_23: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &JComboBox.getActionListeners_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward].self, from: __return )
+    }
+
+
+    /// public javax.swing.ComboBoxEditor javax.swing.JComboBox.getEditor()
+
+    private static var getEditor_MethodID_24: jmethodID?
+
+    open func getEditor() -> ComboBoxEditor! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditor", methodSig: "()Ljavax/swing/ComboBoxEditor;", methodCache: &JComboBox.getEditor_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComboBoxEditorForward( javaObject: __return ) : nil
     }
 
 
     /// public java.lang.Object javax.swing.JComboBox.getItemAt(int)
 
-    private static var getItemAt_MethodID_55: jmethodID?
+    private static var getItemAt_MethodID_25: jmethodID?
 
     open func getItemAt( index: Int ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemAt", methodSig: "(I)Ljava/lang/Object;", methodCache: &JComboBox.getItemAt_MethodID_55, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemAt", methodSig: "(I)Ljava/lang/Object;", methodCache: &JComboBox.getItemAt_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -1407,51 +1192,284 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
         return getItemAt( index: _index )
     }
 
-    /// protected javax.swing.JComboBox$KeySelectionManager javax.swing.JComboBox.createDefaultKeySelectionManager()
+    /// public int javax.swing.JComboBox.getItemCount()
 
-    private static var createDefaultKeySelectionManager_MethodID_56: jmethodID?
+    private static var getItemCount_MethodID_26: jmethodID?
 
-    open func createDefaultKeySelectionManager() -> JComboBox_KeySelectionManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getItemCount() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultKeySelectionManager", methodSig: "()Ljavax/swing/JComboBox$KeySelectionManager;", methodCache: &JComboBox.createDefaultKeySelectionManager_MethodID_56, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getItemCount", methodSig: "()I", methodCache: &JComboBox.getItemCount_MethodID_26, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.event.ItemListener[] javax.swing.JComboBox.getItemListeners()
+
+    private static var getItemListeners_MethodID_27: jmethodID?
+
+    open func getItemListeners() -> [ItemListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &JComboBox.getItemListeners_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ItemListenerForward].self, from: __return )
+    }
+
+
+    /// public javax.swing.JComboBox$KeySelectionManager javax.swing.JComboBox.getKeySelectionManager()
+
+    private static var getKeySelectionManager_MethodID_28: jmethodID?
+
+    open func getKeySelectionManager() -> JComboBox_KeySelectionManager! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeySelectionManager", methodSig: "()Ljavax/swing/JComboBox$KeySelectionManager;", methodCache: &JComboBox.getKeySelectionManager_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComboBox_KeySelectionManagerForward( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.JComboBox.updateUI()
+    /// public int javax.swing.JComboBox.getMaximumRowCount()
 
-    /// public void javax.swing.JComboBox.setUI(javax.swing.plaf.ComboBoxUI)
+    private static var getMaximumRowCount_MethodID_29: jmethodID?
 
-    private static var setUI_MethodID_57: jmethodID?
-
-    open func setUI( ui: ComboBoxUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMaximumRowCount() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ComboBoxUI;)V", methodCache: &JComboBox.setUI_MethodID_57, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumRowCount", methodSig: "()I", methodCache: &JComboBox.getMaximumRowCount_MethodID_29, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func setUI( _ _ui: ComboBoxUI? ) {
-        setUI( ui: _ui )
+
+    /// public javax.swing.ComboBoxModel javax.swing.JComboBox.getModel()
+
+    private static var getModel_MethodID_30: jmethodID?
+
+    open func getModel() -> ComboBoxModel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/ComboBoxModel;", methodCache: &JComboBox.getModel_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComboBoxModelForward( javaObject: __return ) : nil
     }
+
+
+    /// public javax.swing.event.PopupMenuListener[] javax.swing.JComboBox.getPopupMenuListeners()
+
+    private static var getPopupMenuListeners_MethodID_31: jmethodID?
+
+    open func getPopupMenuListeners() -> [PopupMenuListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopupMenuListeners", methodSig: "()[Ljavax/swing/event/PopupMenuListener;", methodCache: &JComboBox.getPopupMenuListeners_MethodID_31, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [PopupMenuListenerForward].self, from: __return )
+    }
+
+
+    /// public java.lang.Object javax.swing.JComboBox.getPrototypeDisplayValue()
+
+    private static var getPrototypeDisplayValue_MethodID_32: jmethodID?
+
+    open func getPrototypeDisplayValue() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPrototypeDisplayValue", methodSig: "()Ljava/lang/Object;", methodCache: &JComboBox.getPrototypeDisplayValue_MethodID_32, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.ListCellRenderer javax.swing.JComboBox.getRenderer()
+
+    private static var getRenderer_MethodID_33: jmethodID?
+
+    open func getRenderer() -> ListCellRenderer! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRenderer", methodSig: "()Ljavax/swing/ListCellRenderer;", methodCache: &JComboBox.getRenderer_MethodID_33, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ListCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.JComboBox.getSelectedIndex()
+
+    private static var getSelectedIndex_MethodID_34: jmethodID?
+
+    open func getSelectedIndex() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &JComboBox.getSelectedIndex_MethodID_34, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.lang.Object javax.swing.JComboBox.getSelectedItem()
+
+    private static var getSelectedItem_MethodID_35: jmethodID?
+
+    open func getSelectedItem() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/Object;", methodCache: &JComboBox.getSelectedItem_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.Object[] javax.swing.JComboBox.getSelectedObjects()
+
+    private static var getSelectedObjects_MethodID_36: jmethodID?
+
+    open func getSelectedObjects() -> [JavaObject]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &JComboBox.getSelectedObjects_MethodID_36, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject].self, from: __return )
+    }
+
+
+    /// public javax.swing.plaf.ComboBoxUI javax.swing.JComboBox.getUI()
+
+    private static var getUI_MethodID_37: jmethodID?
+
+    open func getUI() -> ComboBoxUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ComboBoxUI;", methodCache: &JComboBox.getUI_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComboBoxUI( javaObject: __return ) : nil
+    }
+
 
     /// public java.lang.String javax.swing.JComboBox.getUIClassID()
 
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.JComboBox.hidePopup()
+
+    private static var hidePopup_MethodID_38: jmethodID?
+
+    open func hidePopup() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hidePopup", methodSig: "()V", methodCache: &JComboBox.hidePopup_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.insertItemAt(java.lang.Object,int)
+
+    private static var insertItemAt_MethodID_39: jmethodID?
+
+    open func insertItemAt( item: java_swift.JavaObject?, index: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: item, locals: &__locals )
+        __args[1] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertItemAt", methodSig: "(Ljava/lang/Object;I)V", methodCache: &JComboBox.insertItemAt_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+    open func insertItemAt( _ _item: java_swift.JavaObject?, _ _index: Int ) {
+        insertItemAt( item: _item, index: _index )
+    }
+
+    /// protected void javax.swing.JComboBox.installAncestorListener()
+
+    private static var installAncestorListener_MethodID_40: jmethodID?
+
+    open func installAncestorListener() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installAncestorListener", methodSig: "()V", methodCache: &JComboBox.installAncestorListener_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.intervalAdded(javax.swing.event.ListDataEvent)
+
+    private static var intervalAdded_MethodID_41: jmethodID?
+
+    open func intervalAdded( e: ListDataEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &JComboBox.intervalAdded_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func intervalAdded( _ _e: ListDataEvent? ) {
+        intervalAdded( e: _e )
+    }
+
+    /// public void javax.swing.JComboBox.intervalRemoved(javax.swing.event.ListDataEvent)
+
+    private static var intervalRemoved_MethodID_42: jmethodID?
+
+    open func intervalRemoved( e: ListDataEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &JComboBox.intervalRemoved_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+    open func intervalRemoved( _ _e: ListDataEvent? ) {
+        intervalRemoved( e: _e )
+    }
+
+    /// public boolean javax.swing.JComboBox.isEditable()
+
+    // Skipping method: false false false false true 
+
+    /// public boolean javax.swing.JComboBox.isLightWeightPopupEnabled()
+
+    private static var isLightWeightPopupEnabled_MethodID_43: jmethodID?
+
+    open func isLightWeightPopupEnabled() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isLightWeightPopupEnabled", methodSig: "()Z", methodCache: &JComboBox.isLightWeightPopupEnabled_MethodID_43, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// private boolean javax.swing.JComboBox.isListener(java.lang.Class,java.awt.event.ActionListener)
+
+    /// public boolean javax.swing.JComboBox.isPopupVisible()
+
+    private static var isPopupVisible_MethodID_44: jmethodID?
+
+    open func isPopupVisible() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isPopupVisible", methodSig: "()Z", methodCache: &JComboBox.isPopupVisible_MethodID_44, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected java.lang.String javax.swing.JComboBox.paramString()
+
+    private static var paramString_MethodID_45: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JComboBox.paramString_MethodID_45, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
     /// protected boolean javax.swing.JComboBox.processKeyBinding(javax.swing.KeyStroke,java.awt.event.KeyEvent,int,boolean)
 
-    private static var processKeyBinding_MethodID_58: jmethodID?
+    private static var processKeyBinding_MethodID_46: jmethodID?
 
     override open func processKeyBinding( ks: KeyStroke?, e: java_awt.KeyEvent?, condition: Int, pressed: Bool ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: ks, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: condition, locals: &__locals )
-        __args[3] = JNIType.toJava( value: pressed, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "processKeyBinding", methodSig: "(Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;IZ)Z", methodCache: &JComboBox.processKeyBinding_MethodID_58, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        __args[2] = jvalue( i: jint(condition) )
+        __args[3] = jvalue( z: jboolean(pressed ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "processKeyBinding", methodSig: "(Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;IZ)Z", methodCache: &JComboBox.processKeyBinding_MethodID_46, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func processKeyBinding( _ _ks: KeyStroke?, _ _e: java_awt.KeyEvent?, _ _condition: Int, _ _pressed: Bool ) -> Bool {
@@ -1460,198 +1478,381 @@ open class JComboBox: JComponent, java_awt.ItemSelectable, ListDataListener, jav
 
     /// public void javax.swing.JComboBox.processKeyEvent(java.awt.event.KeyEvent)
 
-    private static var processKeyEvent_MethodID_59: jmethodID?
+    private static var processKeyEvent_MethodID_47: jmethodID?
 
     override open func processKeyEvent( e: java_awt.KeyEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &JComboBox.processKeyEvent_MethodID_59, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processKeyEvent", methodSig: "(Ljava/awt/event/KeyEvent;)V", methodCache: &JComboBox.processKeyEvent_MethodID_47, args: &__args, locals: &__locals )
     }
 
     override open func processKeyEvent( _ _e: java_awt.KeyEvent? ) {
         processKeyEvent( e: _e )
     }
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JComboBox.getAccessibleContext()
+    /// public void javax.swing.JComboBox.removeActionListener(java.awt.event.ActionListener)
 
-    /// public javax.swing.ComboBoxModel javax.swing.JComboBox.getModel()
+    private static var removeActionListener_MethodID_48: jmethodID?
 
-    private static var getModel_MethodID_60: jmethodID?
-
-    open func getModel() -> ComboBoxModel! {
+    open func removeActionListener( l: java_awt.ActionListener? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/ComboBoxModel;", methodCache: &JComboBox.getModel_MethodID_60, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComboBoxModelForward( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JComboBox.removeActionListener_MethodID_48, args: &__args, locals: &__locals )
     }
 
+    open func removeActionListener( _ _l: java_awt.ActionListener? ) {
+        removeActionListener( l: _l )
+    }
 
-    /// public void javax.swing.JComboBox.setEnabled(boolean)
+    /// public void javax.swing.JComboBox.removeAllItems()
 
-    private static var setEnabled_MethodID_61: jmethodID?
+    private static var removeAllItems_MethodID_49: jmethodID?
 
-    open func setEnabled( b: Bool ) {
+    open func removeAllItems() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAllItems", methodSig: "()V", methodCache: &JComboBox.removeAllItems_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.removeItem(java.lang.Object)
+
+    private static var removeItem_MethodID_50: jmethodID?
+
+    open func removeItem( anObject: java_swift.JavaObject? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &JComboBox.setEnabled_MethodID_61, args: &__args, locals: &__locals )
-    }
-
-    override open func setEnabled( _ _b: Bool ) {
-        setEnabled( b: _b )
-    }
-
-    /// protected void javax.swing.JComboBox.actionPropertyChanged(javax.swing.Action,java.lang.String)
-
-    private static var actionPropertyChanged_MethodID_62: jmethodID?
-
-    open func actionPropertyChanged( action: Action?, propertyName: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: action, locals: &__locals )
-        __args[1] = JNIType.toJava( value: propertyName, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPropertyChanged", methodSig: "(Ljavax/swing/Action;Ljava/lang/String;)V", methodCache: &JComboBox.actionPropertyChanged_MethodID_62, args: &__args, locals: &__locals )
-    }
-
-    open func actionPropertyChanged( _ _action: Action?, _ _propertyName: String? ) {
-        actionPropertyChanged( action: _action, propertyName: _propertyName )
-    }
-
-    /// protected void javax.swing.JComboBox.configurePropertiesFromAction(javax.swing.Action)
-
-    private static var configurePropertiesFromAction_MethodID_63: jmethodID?
-
-    open func configurePropertiesFromAction( a: Action? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePropertiesFromAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &JComboBox.configurePropertiesFromAction_MethodID_63, args: &__args, locals: &__locals )
-    }
-
-    open func configurePropertiesFromAction( _ _a: Action? ) {
-        configurePropertiesFromAction( a: _a )
-    }
-
-    /// public javax.swing.Action javax.swing.JComboBox.getAction()
-
-    private static var getAction_MethodID_64: jmethodID?
-
-    open func getAction() -> Action! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "()Ljavax/swing/Action;", methodCache: &JComboBox.getAction_MethodID_64, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ActionForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JComboBox.setSelectedItem(java.lang.Object)
-
-    private static var setSelectedItem_MethodID_65: jmethodID?
-
-    open func setSelectedItem( anObject: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.setSelectedItem_MethodID_65, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.removeItem_MethodID_50, args: &__args, locals: &__locals )
     }
 
-    open func setSelectedItem( _ _anObject: java_swift.JavaObject? ) {
-        setSelectedItem( anObject: _anObject )
+    open func removeItem( _ _anObject: java_swift.JavaObject? ) {
+        removeItem( anObject: _anObject )
     }
 
-    /// public java.lang.Object javax.swing.JComboBox.getSelectedItem()
+    /// public void javax.swing.JComboBox.removeItemAt(int)
 
-    private static var getSelectedItem_MethodID_66: jmethodID?
+    private static var removeItemAt_MethodID_51: jmethodID?
 
-    open func getSelectedItem() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removeItemAt( anIndex: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedItem", methodSig: "()Ljava/lang/Object;", methodCache: &JComboBox.getSelectedItem_MethodID_66, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean javax.swing.JComboBox.isEditable()
-
-    /// public void javax.swing.JComboBox.setModel(javax.swing.ComboBoxModel)
-
-    private static var setModel_MethodID_67: jmethodID?
-
-    open func setModel( aModel: ComboBoxModel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(anIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemAt", methodSig: "(I)V", methodCache: &JComboBox.removeItemAt_MethodID_51, args: &__args, locals: &__locals )
+    }
+
+    open func removeItemAt( _ _anIndex: Int ) {
+        removeItemAt( anIndex: _anIndex )
+    }
+
+    /// public void javax.swing.JComboBox.removeItemListener(java.awt.event.ItemListener)
+
+    private static var removeItemListener_MethodID_52: jmethodID?
+
+    open func removeItemListener( l: java_awt.ItemListener? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &JComboBox.setModel_MethodID_67, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _aModel: ComboBoxModel? ) {
-        setModel( aModel: _aModel )
-    }
-
-    /// public java.lang.String javax.swing.JComboBox.getActionCommand()
-
-    private static var getActionCommand_MethodID_68: jmethodID?
-
-    open func getActionCommand() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &JComboBox.getActionCommand_MethodID_68, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &JComboBox.removeItemListener_MethodID_52, args: &__args, locals: &__locals )
     }
 
+    open func removeItemListener( _ _l: java_awt.ItemListener? ) {
+        removeItemListener( l: _l )
+    }
 
-    /// public void javax.swing.JComboBox.actionPerformed(java.awt.event.ActionEvent)
+    /// public void javax.swing.JComboBox.removePopupMenuListener(javax.swing.event.PopupMenuListener)
 
-    private static var actionPerformed_MethodID_69: jmethodID?
+    private static var removePopupMenuListener_MethodID_53: jmethodID?
 
-    open func actionPerformed( e: java_awt.ActionEvent? ) {
+    open func removePopupMenuListener( l: PopupMenuListener? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &JComboBox.actionPerformed_MethodID_69, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePopupMenuListener", methodSig: "(Ljavax/swing/event/PopupMenuListener;)V", methodCache: &JComboBox.removePopupMenuListener_MethodID_53, args: &__args, locals: &__locals )
     }
 
-    open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
-        actionPerformed( e: _e )
+    open func removePopupMenuListener( _ _l: PopupMenuListener? ) {
+        removePopupMenuListener( l: _l )
+    }
+
+    /// public boolean javax.swing.JComboBox.selectWithKeyChar(char)
+
+    private static var selectWithKeyChar_MethodID_54: jmethodID?
+
+    open func selectWithKeyChar( keyChar: UInt16 ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( c: keyChar )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "selectWithKeyChar", methodSig: "(C)Z", methodCache: &JComboBox.selectWithKeyChar_MethodID_54, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func selectWithKeyChar( _ _keyChar: UInt16 ) -> Bool {
+        return selectWithKeyChar( keyChar: _keyChar )
+    }
+
+    /// protected void javax.swing.JComboBox.selectedItemChanged()
+
+    private static var selectedItemChanged_MethodID_55: jmethodID?
+
+    open func selectedItemChanged() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectedItemChanged", methodSig: "()V", methodCache: &JComboBox.selectedItemChanged_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.setAction(javax.swing.Action)
+
+    private static var setAction_MethodID_56: jmethodID?
+
+    open func setAction( a: Action? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &JComboBox.setAction_MethodID_56, args: &__args, locals: &__locals )
+    }
+
+    open func setAction( _ _a: Action? ) {
+        setAction( a: _a )
     }
 
     /// public void javax.swing.JComboBox.setActionCommand(java.lang.String)
 
-    private static var setActionCommand_MethodID_70: jmethodID?
+    private static var setActionCommand_MethodID_57: jmethodID?
 
     open func setActionCommand( aCommand: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: aCommand, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &JComboBox.setActionCommand_MethodID_70, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &JComboBox.setActionCommand_MethodID_57, args: &__args, locals: &__locals )
     }
 
     open func setActionCommand( _ _aCommand: String? ) {
         setActionCommand( aCommand: _aCommand )
     }
 
-    /// public void javax.swing.JComboBox.addActionListener(java.awt.event.ActionListener)
+    /// private void javax.swing.JComboBox.setActionCommandFromAction(javax.swing.Action)
 
-    private static var addActionListener_MethodID_71: jmethodID?
+    /// public void javax.swing.JComboBox.setEditable(boolean)
 
-    open func addActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var setEditable_MethodID_58: jmethodID?
+
+    open func setEditable( aFlag: Bool ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &JComboBox.addActionListener_MethodID_71, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(aFlag ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditable", methodSig: "(Z)V", methodCache: &JComboBox.setEditable_MethodID_58, args: &__args, locals: &__locals )
     }
 
-    open func addActionListener( _ _l: java_awt.ActionListener? ) {
-        addActionListener( l: _l )
+    open func setEditable( _ _aFlag: Bool ) {
+        setEditable( aFlag: _aFlag )
     }
+
+    /// public void javax.swing.JComboBox.setEditor(javax.swing.ComboBoxEditor)
+
+    private static var setEditor_MethodID_59: jmethodID?
+
+    open func setEditor( anEditor: ComboBoxEditor? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: anEditor, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditor", methodSig: "(Ljavax/swing/ComboBoxEditor;)V", methodCache: &JComboBox.setEditor_MethodID_59, args: &__args, locals: &__locals )
+    }
+
+    open func setEditor( _ _anEditor: ComboBoxEditor? ) {
+        setEditor( anEditor: _anEditor )
+    }
+
+    /// public void javax.swing.JComboBox.setEnabled(boolean)
+
+    private static var setEnabled_MethodID_60: jmethodID?
+
+    open func setEnabled( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &JComboBox.setEnabled_MethodID_60, args: &__args, locals: &__locals )
+    }
+
+    override open func setEnabled( _ _b: Bool ) {
+        setEnabled( b: _b )
+    }
+
+    /// public void javax.swing.JComboBox.setKeySelectionManager(javax.swing.JComboBox$KeySelectionManager)
+
+    private static var setKeySelectionManager_MethodID_61: jmethodID?
+
+    open func setKeySelectionManager( aManager: JComboBox_KeySelectionManager? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aManager, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeySelectionManager", methodSig: "(Ljavax/swing/JComboBox$KeySelectionManager;)V", methodCache: &JComboBox.setKeySelectionManager_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func setKeySelectionManager( _ _aManager: JComboBox_KeySelectionManager? ) {
+        setKeySelectionManager( aManager: _aManager )
+    }
+
+    /// public void javax.swing.JComboBox.setLightWeightPopupEnabled(boolean)
+
+    private static var setLightWeightPopupEnabled_MethodID_62: jmethodID?
+
+    open func setLightWeightPopupEnabled( aFlag: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(aFlag ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLightWeightPopupEnabled", methodSig: "(Z)V", methodCache: &JComboBox.setLightWeightPopupEnabled_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open func setLightWeightPopupEnabled( _ _aFlag: Bool ) {
+        setLightWeightPopupEnabled( aFlag: _aFlag )
+    }
+
+    /// public void javax.swing.JComboBox.setMaximumRowCount(int)
+
+    private static var setMaximumRowCount_MethodID_63: jmethodID?
+
+    open func setMaximumRowCount( count: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(count) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximumRowCount", methodSig: "(I)V", methodCache: &JComboBox.setMaximumRowCount_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+    open func setMaximumRowCount( _ _count: Int ) {
+        setMaximumRowCount( count: _count )
+    }
+
+    /// public void javax.swing.JComboBox.setModel(javax.swing.ComboBoxModel)
+
+    private static var setModel_MethodID_64: jmethodID?
+
+    open func setModel( aModel: ComboBoxModel? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aModel, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/ComboBoxModel;)V", methodCache: &JComboBox.setModel_MethodID_64, args: &__args, locals: &__locals )
+    }
+
+    open func setModel( _ _aModel: ComboBoxModel? ) {
+        setModel( aModel: _aModel )
+    }
+
+    /// public void javax.swing.JComboBox.setPopupVisible(boolean)
+
+    private static var setPopupVisible_MethodID_65: jmethodID?
+
+    open func setPopupVisible( v: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(v ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPopupVisible", methodSig: "(Z)V", methodCache: &JComboBox.setPopupVisible_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+    open func setPopupVisible( _ _v: Bool ) {
+        setPopupVisible( v: _v )
+    }
+
+    /// public void javax.swing.JComboBox.setPrototypeDisplayValue(java.lang.Object)
+
+    private static var setPrototypeDisplayValue_MethodID_66: jmethodID?
+
+    open func setPrototypeDisplayValue( prototypeDisplayValue: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: prototypeDisplayValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPrototypeDisplayValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.setPrototypeDisplayValue_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+    open func setPrototypeDisplayValue( _ _prototypeDisplayValue: java_swift.JavaObject? ) {
+        setPrototypeDisplayValue( prototypeDisplayValue: _prototypeDisplayValue )
+    }
+
+    /// public void javax.swing.JComboBox.setRenderer(javax.swing.ListCellRenderer)
+
+    private static var setRenderer_MethodID_67: jmethodID?
+
+    open func setRenderer( aRenderer: ListCellRenderer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: aRenderer, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRenderer", methodSig: "(Ljavax/swing/ListCellRenderer;)V", methodCache: &JComboBox.setRenderer_MethodID_67, args: &__args, locals: &__locals )
+    }
+
+    open func setRenderer( _ _aRenderer: ListCellRenderer? ) {
+        setRenderer( aRenderer: _aRenderer )
+    }
+
+    /// public void javax.swing.JComboBox.setSelectedIndex(int)
+
+    private static var setSelectedIndex_MethodID_68: jmethodID?
+
+    open func setSelectedIndex( anIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(anIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &JComboBox.setSelectedIndex_MethodID_68, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedIndex( _ _anIndex: Int ) {
+        setSelectedIndex( anIndex: _anIndex )
+    }
+
+    /// public void javax.swing.JComboBox.setSelectedItem(java.lang.Object)
+
+    private static var setSelectedItem_MethodID_69: jmethodID?
+
+    open func setSelectedItem( anObject: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedItem", methodSig: "(Ljava/lang/Object;)V", methodCache: &JComboBox.setSelectedItem_MethodID_69, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedItem( _ _anObject: java_swift.JavaObject? ) {
+        setSelectedItem( anObject: _anObject )
+    }
+
+    /// public void javax.swing.JComboBox.setUI(javax.swing.plaf.ComboBoxUI)
+
+    private static var setUI_MethodID_70: jmethodID?
+
+    open func setUI( ui: ComboBoxUI? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ComboBoxUI;)V", methodCache: &JComboBox.setUI_MethodID_70, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: ComboBoxUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// public void javax.swing.JComboBox.showPopup()
+
+    private static var showPopup_MethodID_71: jmethodID?
+
+    open func showPopup() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "showPopup", methodSig: "()V", methodCache: &JComboBox.showPopup_MethodID_71, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.JComboBox.updateUI()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.JComboBox.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 

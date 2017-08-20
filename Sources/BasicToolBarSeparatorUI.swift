@@ -17,31 +17,14 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
 
     private static var BasicToolBarSeparatorUIJNIClass: jclass?
 
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicSeparatorUI.shadow
-
-    private static var shadow_FieldID: jfieldID?
-
-    override open var shadow: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicToolBarSeparatorUI.shadow_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicToolBarSeparatorUI.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected java.awt.Color javax.swing.plaf.basic.BasicSeparatorUI.highlight
 
     private static var highlight_FieldID: jfieldID?
 
     override open var highlight: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicToolBarSeparatorUI.highlight_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicToolBarSeparatorUI.highlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,13 +34,30 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
         }
     }
 
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicSeparatorUI.shadow
+
+    private static var shadow_FieldID: jfieldID?
+
+    override open var shadow: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicToolBarSeparatorUI.shadow_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicToolBarSeparatorUI.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// public javax.swing.plaf.basic.BasicToolBarSeparatorUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicToolBarSeparatorUI", classCache: &BasicToolBarSeparatorUI.BasicToolBarSeparatorUIJNIClass, methodSig: "()V", methodCache: &BasicToolBarSeparatorUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -68,8 +68,8 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicToolBarSeparatorUI", classCache: &BasicToolBarSeparatorUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -80,15 +80,17 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.basic.BasicToolBarSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolBarSeparatorUI.getPreferredSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.plaf.basic.BasicToolBarSeparatorUI.installDefaults(javax.swing.JSeparator)
 
     private static var installDefaults_MethodID_3: jmethodID?
 
     override open func installDefaults( s: JSeparator? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: s, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JSeparator;)V", methodCache: &BasicToolBarSeparatorUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -97,7 +99,9 @@ open class BasicToolBarSeparatorUI: BasicSeparatorUI {
         installDefaults( s: _s )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicToolBarSeparatorUI.getPreferredSize(javax.swing.JComponent)
+    /// public void javax.swing.plaf.basic.BasicToolBarSeparatorUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
 }
 

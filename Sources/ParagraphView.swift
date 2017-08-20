@@ -17,9 +17,17 @@ open class ParagraphView: FlowView, TabExpander {
 
     private static var ParagraphViewJNIClass: jclass?
 
-    /// private int javax.swing.text.ParagraphView.justification
+    /// static java.lang.Class javax.swing.text.ParagraphView.i18nStrategy
 
-    /// private float javax.swing.text.ParagraphView.lineSpacing
+    // Skipping field: true false false false false false 
+
+    /// static char[] javax.swing.text.ParagraphView.tabChars
+
+    // Skipping field: true false false false false false 
+
+    /// static char[] javax.swing.text.ParagraphView.tabDecimalChars
+
+    // Skipping field: true false false false false false 
 
     /// protected int javax.swing.text.ParagraphView.firstLineIndent
 
@@ -27,41 +35,21 @@ open class ParagraphView: FlowView, TabExpander {
 
     open var firstLineIndent: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "firstLineIndent", fieldType: "I", fieldCache: &ParagraphView.firstLineIndent_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "firstLineIndent", fieldType: "I", fieldCache: &ParagraphView.firstLineIndent_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "firstLineIndent", fieldType: "I", fieldCache: &ParagraphView.firstLineIndent_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
+    /// private int javax.swing.text.ParagraphView.justification
+
+    /// private float javax.swing.text.ParagraphView.lineSpacing
+
     /// private int javax.swing.text.ParagraphView.tabBase
-
-    /// static java.lang.Class javax.swing.text.ParagraphView.i18nStrategy
-
-    /// static char[] javax.swing.text.ParagraphView.tabChars
-
-    /// static char[] javax.swing.text.ParagraphView.tabDecimalChars
-
-    /// protected int javax.swing.text.FlowView.layoutSpan
-
-    private static var layoutSpan_FieldID: jfieldID?
-
-    override open var layoutSpan: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &ParagraphView.layoutSpan_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &ParagraphView.layoutSpan_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected javax.swing.text.View javax.swing.text.FlowView.layoutPool
 
@@ -69,8 +57,8 @@ open class ParagraphView: FlowView, TabExpander {
 
     override open var layoutPool: View! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "layoutPool", fieldType: "Ljavax/swing/text/View;", fieldCache: &ParagraphView.layoutPool_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "layoutPool", fieldType: "Ljavax/swing/text/View;", fieldCache: &ParagraphView.layoutPool_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? View( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -80,14 +68,30 @@ open class ParagraphView: FlowView, TabExpander {
         }
     }
 
+    /// protected int javax.swing.text.FlowView.layoutSpan
+
+    private static var layoutSpan_FieldID: jfieldID?
+
+    override open var layoutSpan: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &ParagraphView.layoutSpan_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &ParagraphView.layoutSpan_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.text.FlowView$FlowStrategy javax.swing.text.FlowView.strategy
 
     private static var strategy_FieldID: jfieldID?
 
     override open var strategy: FlowView_FlowStrategy! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "strategy", fieldType: "Ljavax/swing/text/FlowView$FlowStrategy;", fieldCache: &ParagraphView.strategy_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "strategy", fieldType: "Ljavax/swing/text/FlowView$FlowStrategy;", fieldCache: &ParagraphView.strategy_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? FlowView_FlowStrategy( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -97,117 +101,201 @@ open class ParagraphView: FlowView, TabExpander {
         }
     }
 
+    /// boolean javax.swing.text.BoxView.majorAllocValid
+
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.BoxView.majorAxis
 
-    /// int javax.swing.text.BoxView.majorSpan
-
-    /// int javax.swing.text.BoxView.minorSpan
-
-    /// boolean javax.swing.text.BoxView.majorReqValid
-
-    /// boolean javax.swing.text.BoxView.minorReqValid
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
-
-    /// boolean javax.swing.text.BoxView.majorAllocValid
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorSpans
+
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.BoxView.minorAllocValid
 
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorSpans
 
+    // Skipping field: true false false false false false 
+
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.ParagraphView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/ParagraphView", classCache: &ParagraphView.ParagraphViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &ParagraphView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -218,37 +306,25 @@ open class ParagraphView: FlowView, TabExpander {
         self.init( elem: _elem )
     }
 
-    /// static float javax.swing.text.ParagraphView.access$100(javax.swing.text.ParagraphView)
-
     /// static int javax.swing.text.ParagraphView.access$000(javax.swing.text.ParagraphView)
 
-    /// public void javax.swing.text.ParagraphView.paint(java.awt.Graphics,java.awt.Shape)
+    // Skipping method: true false false false false 
 
-    private static var paint_MethodID_2: jmethodID?
+    /// static float javax.swing.text.ParagraphView.access$100(javax.swing.text.ParagraphView)
 
-    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ParagraphView.paint_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
-        paint( g: _g, a: _a )
-    }
+    // Skipping method: true false false false false 
 
     /// public javax.swing.text.View javax.swing.text.ParagraphView.breakView(int,float,java.awt.Shape)
 
-    private static var breakView_MethodID_3: jmethodID?
+    private static var breakView_MethodID_2: jmethodID?
 
     open func breakView( axis: Int, len: Float, a: java_awt.Shape? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: len, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(axis) )
+        __args[1] = jvalue( f: len )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IFLjava/awt/Shape;)Ljavax/swing/text/View;", methodCache: &ParagraphView.breakView_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IFLjava/awt/Shape;)Ljavax/swing/text/View;", methodCache: &ParagraphView.breakView_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -257,46 +333,16 @@ open class ParagraphView: FlowView, TabExpander {
         return breakView( axis: _axis, len: _len, a: _a )
     }
 
-    /// public int javax.swing.text.ParagraphView.getBreakWeight(int,float)
-
-    private static var getBreakWeight_MethodID_4: jmethodID?
-
-    open func getBreakWeight( axis: Int, len: Float ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBreakWeight", methodSig: "(IF)I", methodCache: &ParagraphView.getBreakWeight_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getBreakWeight( _ _axis: Int, _ _len: Float ) -> Int {
-        return getBreakWeight( axis: _axis, len: _len )
-    }
-
-    /// protected void javax.swing.text.ParagraphView.setPropertiesFromAttributes()
-
-    private static var setPropertiesFromAttributes_MethodID_5: jmethodID?
-
-    open func setPropertiesFromAttributes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &ParagraphView.setPropertiesFromAttributes_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// public int javax.swing.text.ParagraphView.getFlowSpan(int)
-
     /// protected javax.swing.SizeRequirements javax.swing.text.ParagraphView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var calculateMinorAxisRequirements_MethodID_6: jmethodID?
+    private static var calculateMinorAxisRequirements_MethodID_3: jmethodID?
 
     override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(axis) )
         __args[1] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &ParagraphView.calculateMinorAxisRequirements_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &ParagraphView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -305,72 +351,123 @@ open class ParagraphView: FlowView, TabExpander {
         return calculateMinorAxisRequirements( axis: _axis, r: _r )
     }
 
-    /// protected void javax.swing.text.ParagraphView.setJustification(int)
+    /// public void javax.swing.text.ParagraphView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var setJustification_MethodID_7: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func setJustification( j: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// protected javax.swing.text.View javax.swing.text.ParagraphView.createRow()
+
+    private static var createRow_MethodID_4: jmethodID?
+
+    override open func createRow() -> View! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: j, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJustification", methodSig: "(I)V", methodCache: &ParagraphView.setJustification_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setJustification( _ _j: Int ) {
-        setJustification( j: _j )
-    }
-
-    /// protected void javax.swing.text.ParagraphView.setLineSpacing(float)
-
-    private static var setLineSpacing_MethodID_8: jmethodID?
-
-    open func setLineSpacing( ls: Float ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRow", methodSig: "()Ljavax/swing/text/View;", methodCache: &ParagraphView.createRow_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+
+    /// private float javax.swing.text.ParagraphView.findEdgeSpan(javax.swing.text.View,int,int,int,int)
+
+    /// protected int javax.swing.text.ParagraphView.findOffsetToCharactersInString(char[],int)
+
+    private static var findOffsetToCharactersInString_MethodID_5: jmethodID?
+
+    open func findOffsetToCharactersInString( string: [UInt16]?, start: Int ) -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ls, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineSpacing", methodSig: "(F)V", methodCache: &ParagraphView.setLineSpacing_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: string, locals: &__locals )
+        __args[1] = jvalue( i: jint(start) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "findOffsetToCharactersInString", methodSig: "([CI)I", methodCache: &ParagraphView.findOffsetToCharactersInString_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func setLineSpacing( _ _ls: Float ) {
-        setLineSpacing( ls: _ls )
+    open func findOffsetToCharactersInString( _ _string: [UInt16]?, _ _start: Int ) -> Int {
+        return findOffsetToCharactersInString( string: _string, start: _start )
     }
 
-    /// protected void javax.swing.text.ParagraphView.setFirstLineIndent(float)
+    /// protected boolean javax.swing.text.ParagraphView.flipEastAndWestAtEnds(int,javax.swing.text.Position$Bias)
 
-    private static var setFirstLineIndent_MethodID_9: jmethodID?
+    private static var flipEastAndWestAtEnds_MethodID_6: jmethodID?
 
-    open func setFirstLineIndent( fi: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func flipEastAndWestAtEnds( position: Int, bias: Position_Bias? ) -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: fi, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFirstLineIndent", methodSig: "(F)V", methodCache: &ParagraphView.setFirstLineIndent_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(position) )
+        __args[1] = JNIType.toJava( value: bias, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "flipEastAndWestAtEnds", methodSig: "(ILjavax/swing/text/Position$Bias;)Z", methodCache: &ParagraphView.flipEastAndWestAtEnds_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func setFirstLineIndent( _ _fi: Float ) {
-        setFirstLineIndent( fi: _fi )
+    override open func flipEastAndWestAtEnds( _ _position: Int, _ _bias: Position_Bias? ) -> Bool {
+        return flipEastAndWestAtEnds( position: _position, bias: _bias )
     }
 
-    /// protected int javax.swing.text.ParagraphView.getLayoutViewCount()
+    /// public float javax.swing.text.ParagraphView.getAlignment(int)
 
-    private static var getLayoutViewCount_MethodID_10: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func getLayoutViewCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public int javax.swing.text.ParagraphView.getBreakWeight(int,float)
+
+    private static var getBreakWeight_MethodID_7: jmethodID?
+
+    open func getBreakWeight( axis: Int, len: Float ) -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayoutViewCount", methodSig: "()I", methodCache: &ParagraphView.getLayoutViewCount_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(axis) )
+        __args[1] = jvalue( f: len )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBreakWeight", methodSig: "(IF)I", methodCache: &ParagraphView.getBreakWeight_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+    open func getBreakWeight( _ _axis: Int, _ _len: Float ) -> Int {
+        return getBreakWeight( axis: _axis, len: _len )
+    }
+
+    /// protected int javax.swing.text.ParagraphView.getClosestPositionTo(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[],int,int) throws javax.swing.text.BadLocationException
+
+    private static var getClosestPositionTo_MethodID_8: jmethodID?
+
+    open func getClosestPositionTo( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]?, rowIndex: Int, x: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = jvalue( i: jint(direction) )
+        __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
+        __args[5] = jvalue( i: jint(rowIndex) )
+        __args[6] = jvalue( i: jint(x) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getClosestPositionTo", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;II)I", methodCache: &ParagraphView.getClosestPositionTo_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return Int(__return)
+    }
+
+    open func getClosestPositionTo( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]?, _ _rowIndex: Int, _ _x: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try getClosestPositionTo( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet, rowIndex: _rowIndex, x: _x )
+    }
+
+    /// public int javax.swing.text.ParagraphView.getFlowSpan(int)
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.ParagraphView.getFlowStart(int)
+
+    // Skipping method: false true false false false 
 
     /// protected javax.swing.text.View javax.swing.text.ParagraphView.getLayoutView(int)
 
-    private static var getLayoutView_MethodID_11: jmethodID?
+    private static var getLayoutView_MethodID_9: jmethodID?
 
     open func getLayoutView( index: Int ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutView", methodSig: "(I)Ljavax/swing/text/View;", methodCache: &ParagraphView.getLayoutView_MethodID_11, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayoutView", methodSig: "(I)Ljavax/swing/text/View;", methodCache: &ParagraphView.getLayoutView_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -379,167 +476,172 @@ open class ParagraphView: FlowView, TabExpander {
         return getLayoutView( index: _index )
     }
 
-    /// protected int javax.swing.text.ParagraphView.getClosestPositionTo(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[],int,int) throws javax.swing.text.BadLocationException
+    /// protected int javax.swing.text.ParagraphView.getLayoutViewCount()
 
-    private static var getClosestPositionTo_MethodID_12: jmethodID?
+    private static var getLayoutViewCount_MethodID_10: jmethodID?
 
-    open func getClosestPositionTo( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]?, rowIndex: Int, x: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    open func getLayoutViewCount() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: direction, locals: &__locals )
-        __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
-        __args[5] = JNIType.toJava( value: rowIndex, locals: &__locals )
-        __args[6] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getClosestPositionTo", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;II)I", methodCache: &ParagraphView.getClosestPositionTo_MethodID_12, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getClosestPositionTo( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]?, _ _rowIndex: Int, _ _x: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try getClosestPositionTo( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet, rowIndex: _rowIndex, x: _x )
-    }
-
-    /// public int javax.swing.text.ParagraphView.getFlowStart(int)
-
-    /// protected javax.swing.text.View javax.swing.text.ParagraphView.createRow()
-
-    private static var createRow_MethodID_13: jmethodID?
-
-    override open func createRow() -> View! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRow", methodSig: "()Ljavax/swing/text/View;", methodCache: &ParagraphView.createRow_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLayoutViewCount", methodSig: "()I", methodCache: &ParagraphView.getLayoutViewCount_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public float javax.swing.text.ParagraphView.nextTabStop(float,int)
-
-    private static var nextTabStop_MethodID_14: jmethodID?
-
-    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &ParagraphView.nextTabStop_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
-        return nextTabStop( x: _x, tabOffset: _tabOffset )
-    }
-
-    /// protected javax.swing.text.TabSet javax.swing.text.ParagraphView.getTabSet()
-
-    private static var getTabSet_MethodID_15: jmethodID?
-
-    open func getTabSet() -> JavaTabSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabSet", methodSig: "()Ljavax/swing/text/TabSet;", methodCache: &ParagraphView.getTabSet_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JavaTabSet( javaObject: __return ) : nil
-    }
-
-
-    /// protected float javax.swing.text.ParagraphView.getPartialSize(int,int)
-
-    private static var getPartialSize_MethodID_16: jmethodID?
-
-    open func getPartialSize( startOffset: Int, endOffset: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startOffset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endOffset, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPartialSize", methodSig: "(II)F", methodCache: &ParagraphView.getPartialSize_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getPartialSize( _ _startOffset: Int, _ _endOffset: Int ) -> Float {
-        return getPartialSize( startOffset: _startOffset, endOffset: _endOffset )
-    }
-
-    /// protected int javax.swing.text.ParagraphView.findOffsetToCharactersInString(char[],int)
-
-    private static var findOffsetToCharactersInString_MethodID_17: jmethodID?
-
-    open func findOffsetToCharactersInString( string: [UInt16]?, start: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: string, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "findOffsetToCharactersInString", methodSig: "([CI)I", methodCache: &ParagraphView.findOffsetToCharactersInString_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func findOffsetToCharactersInString( _ _string: [UInt16]?, _ _start: Int ) -> Int {
-        return findOffsetToCharactersInString( string: _string, start: _start )
-    }
-
-    /// protected float javax.swing.text.ParagraphView.getTabBase()
-
-    private static var getTabBase_MethodID_18: jmethodID?
-
-    open func getTabBase() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getTabBase", methodSig: "()F", methodCache: &ParagraphView.getTabBase_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-
-    /// private float javax.swing.text.ParagraphView.findEdgeSpan(javax.swing.text.View,int,int,int,int)
-
-    /// public float javax.swing.text.ParagraphView.getAlignment(int)
-
-    /// public void javax.swing.text.ParagraphView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
     /// protected int javax.swing.text.ParagraphView.getNextNorthSouthVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
 
-    private static var getNextNorthSouthVisualPositionFrom_MethodID_19: jmethodID?
+    private static var getNextNorthSouthVisualPositionFrom_MethodID_11: jmethodID?
 
     override open func getNextNorthSouthVisualPositionFrom( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(pos) )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: direction, locals: &__locals )
+        __args[3] = jvalue( i: jint(direction) )
         __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextNorthSouthVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &ParagraphView.getNextNorthSouthVisualPositionFrom_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextNorthSouthVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &ParagraphView.getNextNorthSouthVisualPositionFrom_MethodID_11, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     override open func getNextNorthSouthVisualPositionFrom( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
         return try getNextNorthSouthVisualPositionFrom( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet )
     }
 
-    /// protected boolean javax.swing.text.ParagraphView.flipEastAndWestAtEnds(int,javax.swing.text.Position$Bias)
+    /// protected float javax.swing.text.ParagraphView.getPartialSize(int,int)
 
-    private static var flipEastAndWestAtEnds_MethodID_20: jmethodID?
+    private static var getPartialSize_MethodID_12: jmethodID?
 
-    override open func flipEastAndWestAtEnds( position: Int, bias: Position_Bias? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getPartialSize( startOffset: Int, endOffset: Int ) -> Float {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        __args[1] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "flipEastAndWestAtEnds", methodSig: "(ILjavax/swing/text/Position$Bias;)Z", methodCache: &ParagraphView.flipEastAndWestAtEnds_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(startOffset) )
+        __args[1] = jvalue( i: jint(endOffset) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPartialSize", methodSig: "(II)F", methodCache: &ParagraphView.getPartialSize_MethodID_12, args: &__args, locals: &__locals )
+        return __return
     }
 
-    override open func flipEastAndWestAtEnds( _ _position: Int, _ _bias: Position_Bias? ) -> Bool {
-        return flipEastAndWestAtEnds( position: _position, bias: _bias )
+    open func getPartialSize( _ _startOffset: Int, _ _endOffset: Int ) -> Float {
+        return getPartialSize( startOffset: _startOffset, endOffset: _endOffset )
     }
+
+    /// protected float javax.swing.text.ParagraphView.getTabBase()
+
+    private static var getTabBase_MethodID_13: jmethodID?
+
+    open func getTabBase() -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getTabBase", methodSig: "()F", methodCache: &ParagraphView.getTabBase_MethodID_13, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// protected javax.swing.text.TabSet javax.swing.text.ParagraphView.getTabSet()
+
+    private static var getTabSet_MethodID_14: jmethodID?
+
+    open func getTabSet() -> JavaTabSet! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabSet", methodSig: "()Ljavax/swing/text/TabSet;", methodCache: &ParagraphView.getTabSet_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JavaTabSet( javaObject: __return ) : nil
+    }
+
+
+    /// public float javax.swing.text.ParagraphView.nextTabStop(float,int)
+
+    private static var nextTabStop_MethodID_15: jmethodID?
+
+    open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( i: jint(tabOffset) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &ParagraphView.nextTabStop_MethodID_15, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
+        return nextTabStop( x: _x, tabOffset: _tabOffset )
+    }
+
+    /// public void javax.swing.text.ParagraphView.paint(java.awt.Graphics,java.awt.Shape)
+
+    private static var paint_MethodID_16: jmethodID?
+
+    open func paint( g: java_awt.Graphics?, a: java_awt.Shape? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &ParagraphView.paint_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    override open func paint( _ _g: java_awt.Graphics?, _ _a: java_awt.Shape? ) {
+        paint( g: _g, a: _a )
+    }
+
+    /// protected void javax.swing.text.ParagraphView.setFirstLineIndent(float)
+
+    private static var setFirstLineIndent_MethodID_17: jmethodID?
+
+    open func setFirstLineIndent( fi: Float ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: fi )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFirstLineIndent", methodSig: "(F)V", methodCache: &ParagraphView.setFirstLineIndent_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setFirstLineIndent( _ _fi: Float ) {
+        setFirstLineIndent( fi: _fi )
+    }
+
+    /// protected void javax.swing.text.ParagraphView.setJustification(int)
+
+    private static var setJustification_MethodID_18: jmethodID?
+
+    open func setJustification( j: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(j) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJustification", methodSig: "(I)V", methodCache: &ParagraphView.setJustification_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setJustification( _ _j: Int ) {
+        setJustification( j: _j )
+    }
+
+    /// protected void javax.swing.text.ParagraphView.setLineSpacing(float)
+
+    private static var setLineSpacing_MethodID_19: jmethodID?
+
+    open func setLineSpacing( ls: Float ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: ls )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLineSpacing", methodSig: "(F)V", methodCache: &ParagraphView.setLineSpacing_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func setLineSpacing( _ _ls: Float ) {
+        setLineSpacing( ls: _ls )
+    }
+
+    /// protected void javax.swing.text.ParagraphView.setPropertiesFromAttributes()
+
+    private static var setPropertiesFromAttributes_MethodID_20: jmethodID?
+
+    open func setPropertiesFromAttributes() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &ParagraphView.setPropertiesFromAttributes_MethodID_20, args: &__args, locals: &__locals )
+    }
+
 
 }
 

@@ -21,8 +21,8 @@ open class SynthStyleFactory: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthStyleFactory", classCache: &SynthStyleFactory.SynthStyleFactoryJNIClass, methodSig: "()V", methodCache: &SynthStyleFactory.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -33,8 +33,8 @@ open class SynthStyleFactory: java_swift.JavaObject {
     private static var getStyle_MethodID_2: jmethodID?
 
     open func getStyle( c: JComponent?, id: Region? ) -> SynthStyle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: id, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/plaf/synth/Region;)Ljavax/swing/plaf/synth/SynthStyle;", methodCache: &SynthStyleFactory.getStyle_MethodID_2, args: &__args, locals: &__locals )

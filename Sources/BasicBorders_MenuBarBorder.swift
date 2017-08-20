@@ -17,17 +17,17 @@ open class BasicBorders_MenuBarBorder: AbstractBorder, UIResource {
 
     private static var BasicBorders_MenuBarBorderJNIClass: jclass?
 
-    /// private java.awt.Color javax.swing.plaf.basic.BasicBorders$MenuBarBorder.shadow
-
     /// private java.awt.Color javax.swing.plaf.basic.BasicBorders$MenuBarBorder.highlight
+
+    /// private java.awt.Color javax.swing.plaf.basic.BasicBorders$MenuBarBorder.shadow
 
     /// public javax.swing.plaf.basic.BasicBorders$MenuBarBorder(java.awt.Color,java.awt.Color)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( shadow: java_awt.Color?, highlight: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: shadow, locals: &__locals )
         __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicBorders$MenuBarBorder", classCache: &BasicBorders_MenuBarBorder.BasicBorders_MenuBarBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &BasicBorders_MenuBarBorder.new_MethodID_1, args: &__args, locals: &__locals )
@@ -39,9 +39,13 @@ open class BasicBorders_MenuBarBorder: AbstractBorder, UIResource {
         self.init( shadow: _shadow, highlight: _highlight )
     }
 
+    /// public java.awt.Insets javax.swing.plaf.basic.BasicBorders$MenuBarBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.plaf.basic.BasicBorders$MenuBarBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
-    /// public java.awt.Insets javax.swing.plaf.basic.BasicBorders$MenuBarBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
+    // Skipping method: false true false false false 
 
 }
 

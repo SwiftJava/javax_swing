@@ -16,81 +16,153 @@ open class StyleConstants_FontConstants: StyleConstants, AttributeSet_FontAttrib
 
     private static var StyleConstants_FontConstantsJNIClass: jclass?
 
-    /// public static final java.lang.String javax.swing.text.StyleConstants.ComponentElementName
-
-    /// public static final java.lang.String javax.swing.text.StyleConstants.IconElementName
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.NameAttribute
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.ResolveAttribute
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.ModelAttribute
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.BidiLevel
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.FontFamily
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Family
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.FontSize
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Size
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Bold
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Italic
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Underline
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.StrikeThrough
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Superscript
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Subscript
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Foreground
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Background
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.ComponentAttribute
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.IconAttribute
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.ComposedTextAttribute
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.FirstLineIndent
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.LeftIndent
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.RightIndent
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.LineSpacing
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.SpaceAbove
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.SpaceBelow
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Alignment
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.TabSet
-
-    /// public static final java.lang.Object javax.swing.text.StyleConstants.Orientation
-
-    /// public static final int javax.swing.text.StyleConstants.ALIGN_LEFT
-
     /// public static final int javax.swing.text.StyleConstants.ALIGN_CENTER
 
-    /// public static final int javax.swing.text.StyleConstants.ALIGN_RIGHT
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.StyleConstants.ALIGN_JUSTIFIED
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.StyleConstants.ALIGN_LEFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.StyleConstants.ALIGN_RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Alignment
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Background
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.BidiLevel
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Bold
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.ComponentAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.StyleConstants.ComponentElementName
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.ComposedTextAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Family
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.FirstLineIndent
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.FontFamily
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.FontSize
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Foreground
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.IconAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.StyleConstants.IconElementName
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Italic
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.LeftIndent
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.LineSpacing
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.ModelAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.NameAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Orientation
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.ResolveAttribute
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.RightIndent
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Size
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.SpaceAbove
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.SpaceBelow
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.StrikeThrough
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Subscript
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Superscript
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.TabSet
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.Object javax.swing.text.StyleConstants.Underline
+
+    // Skipping field: false true false false false false 
+
     /// static java.lang.Object[] javax.swing.text.StyleConstants.keys
+
+    // Skipping field: true false false false false false 
 
     /// private java.lang.String javax.swing.text.StyleConstants.representation
 
     /// private javax.swing.text.StyleConstants$FontConstants(java.lang.String)
 
     /// javax.swing.text.StyleConstants$FontConstants(java.lang.String,javax.swing.text.StyleConstants$1)
+
+    // Skipping init: true false false 
 
 }
 

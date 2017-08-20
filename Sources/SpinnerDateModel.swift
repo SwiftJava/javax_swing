@@ -18,13 +18,13 @@ open class SpinnerDateModel: AbstractSpinnerModel {
 
     private static var SpinnerDateModelJNIClass: jclass?
 
-    /// private java.lang.Comparable javax.swing.SpinnerDateModel.start
+    /// private int javax.swing.SpinnerDateModel.calendarField
 
     /// private java.lang.Comparable javax.swing.SpinnerDateModel.end
 
-    /// private java.util.Calendar javax.swing.SpinnerDateModel.value
+    /// private java.lang.Comparable javax.swing.SpinnerDateModel.start
 
-    /// private int javax.swing.SpinnerDateModel.calendarField
+    /// private java.util.Calendar javax.swing.SpinnerDateModel.value
 
     /// private transient javax.swing.event.ChangeEvent javax.swing.AbstractSpinnerModel.changeEvent
 
@@ -34,8 +34,8 @@ open class SpinnerDateModel: AbstractSpinnerModel {
 
     override open var listenerList: EventListenerList! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &SpinnerDateModel.listenerList_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &SpinnerDateModel.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? EventListenerList( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -50,8 +50,8 @@ open class SpinnerDateModel: AbstractSpinnerModel {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/SpinnerDateModel", classCache: &SpinnerDateModel.SpinnerDateModelJNIClass, methodSig: "()V", methodCache: &SpinnerDateModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -62,12 +62,12 @@ open class SpinnerDateModel: AbstractSpinnerModel {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( value: java_util.Date?, start: java_lang.JavaComparable?, end: java_lang.JavaComparable?, calendarField: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: value, locals: &__locals )
         __args[1] = JNIType.toJava( value: start, locals: &__locals )
         __args[2] = JNIType.toJava( value: end, locals: &__locals )
-        __args[3] = JNIType.toJava( value: calendarField, locals: &__locals )
+        __args[3] = jvalue( i: jint(calendarField) )
         let __object = JNIMethod.NewObject( className: "javax/swing/SpinnerDateModel", classCache: &SpinnerDateModel.SpinnerDateModelJNIClass, methodSig: "(Ljava/util/Date;Ljava/lang/Comparable;Ljava/lang/Comparable;I)V", methodCache: &SpinnerDateModel.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -77,37 +77,30 @@ open class SpinnerDateModel: AbstractSpinnerModel {
         self.init( value: _value, start: _start, end: _end, calendarField: _calendarField )
     }
 
-    /// public java.lang.Object javax.swing.SpinnerDateModel.getValue()
+    /// private boolean javax.swing.SpinnerDateModel.calendarFieldOK(int)
 
-    /// public void javax.swing.SpinnerDateModel.setValue(java.lang.Object)
+    /// public int javax.swing.SpinnerDateModel.getCalendarField()
 
-    /// public java.util.Date javax.swing.SpinnerDateModel.getDate()
+    private static var getCalendarField_MethodID_3: jmethodID?
 
-    private static var getDate_MethodID_3: jmethodID?
-
-    open func getDate() -> java_util.Date! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getCalendarField() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDate", methodSig: "()Ljava/util/Date;", methodCache: &SpinnerDateModel.getDate_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.Date( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCalendarField", methodSig: "()I", methodCache: &SpinnerDateModel.getCalendarField_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public java.lang.Object javax.swing.SpinnerDateModel.getNextValue()
+    /// public java.util.Date javax.swing.SpinnerDateModel.getDate()
 
-    /// public java.lang.Object javax.swing.SpinnerDateModel.getPreviousValue()
+    private static var getDate_MethodID_4: jmethodID?
 
-    /// public java.lang.Comparable javax.swing.SpinnerDateModel.getStart()
-
-    private static var getStart_MethodID_4: jmethodID?
-
-    open func getStart() -> java_lang.JavaComparable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getDate() -> java_util.Date! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStart", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getStart_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDate", methodSig: "()Ljava/util/Date;", methodCache: &SpinnerDateModel.getDate_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
+        return __return != nil ? java_util.Date( javaObject: __return ) : nil
     }
 
 
@@ -116,72 +109,87 @@ open class SpinnerDateModel: AbstractSpinnerModel {
     private static var getEnd_MethodID_5: jmethodID?
 
     open func getEnd() -> java_lang.JavaComparable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEnd", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getEnd_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
     }
 
 
-    /// private boolean javax.swing.SpinnerDateModel.calendarFieldOK(int)
+    /// public java.lang.Object javax.swing.SpinnerDateModel.getNextValue()
 
-    /// public void javax.swing.SpinnerDateModel.setStart(java.lang.Comparable)
+    // Skipping method: false true false false false 
 
-    private static var setStart_MethodID_6: jmethodID?
+    /// public java.lang.Object javax.swing.SpinnerDateModel.getPreviousValue()
 
-    open func setStart( start: java_lang.JavaComparable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    // Skipping method: false true false false false 
+
+    /// public java.lang.Comparable javax.swing.SpinnerDateModel.getStart()
+
+    private static var getStart_MethodID_6: jmethodID?
+
+    open func getStart() -> java_lang.JavaComparable! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: start, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStart", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &SpinnerDateModel.setStart_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setStart( _ _start: java_lang.JavaComparable? ) {
-        setStart( start: _start )
-    }
-
-    /// public void javax.swing.SpinnerDateModel.setEnd(java.lang.Comparable)
-
-    private static var setEnd_MethodID_7: jmethodID?
-
-    open func setEnd( end: java_lang.JavaComparable? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: end, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnd", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &SpinnerDateModel.setEnd_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStart", methodSig: "()Ljava/lang/Comparable;", methodCache: &SpinnerDateModel.getStart_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_lang.JavaComparableForward( javaObject: __return ) : nil
     }
 
-    open func setEnd( _ _end: java_lang.JavaComparable? ) {
-        setEnd( end: _end )
-    }
+
+    /// public java.lang.Object javax.swing.SpinnerDateModel.getValue()
+
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.SpinnerDateModel.setCalendarField(int)
 
-    private static var setCalendarField_MethodID_8: jmethodID?
+    private static var setCalendarField_MethodID_7: jmethodID?
 
     open func setCalendarField( calendarField: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: calendarField, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCalendarField", methodSig: "(I)V", methodCache: &SpinnerDateModel.setCalendarField_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(calendarField) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCalendarField", methodSig: "(I)V", methodCache: &SpinnerDateModel.setCalendarField_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func setCalendarField( _ _calendarField: Int ) {
         setCalendarField( calendarField: _calendarField )
     }
 
-    /// public int javax.swing.SpinnerDateModel.getCalendarField()
+    /// public void javax.swing.SpinnerDateModel.setEnd(java.lang.Comparable)
 
-    private static var getCalendarField_MethodID_9: jmethodID?
+    private static var setEnd_MethodID_8: jmethodID?
 
-    open func getCalendarField() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setEnd( end: java_lang.JavaComparable? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCalendarField", methodSig: "()I", methodCache: &SpinnerDateModel.getCalendarField_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: end, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnd", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &SpinnerDateModel.setEnd_MethodID_8, args: &__args, locals: &__locals )
     }
 
+    open func setEnd( _ _end: java_lang.JavaComparable? ) {
+        setEnd( end: _end )
+    }
+
+    /// public void javax.swing.SpinnerDateModel.setStart(java.lang.Comparable)
+
+    private static var setStart_MethodID_9: jmethodID?
+
+    open func setStart( start: java_lang.JavaComparable? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: start, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setStart", methodSig: "(Ljava/lang/Comparable;)V", methodCache: &SpinnerDateModel.setStart_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setStart( _ _start: java_lang.JavaComparable? ) {
+        setStart( start: _start )
+    }
+
+    /// public void javax.swing.SpinnerDateModel.setValue(java.lang.Object)
+
+    // Skipping method: false true false false false 
 
 }
 

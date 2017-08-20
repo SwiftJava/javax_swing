@@ -19,87 +19,143 @@ open class CompositeView: View {
 
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
 
+    /// private short javax.swing.text.CompositeView.bottom
+
+    /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
+
     /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
 
-    /// private int javax.swing.text.CompositeView.nchildren
-
     /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
 
     /// private short javax.swing.text.CompositeView.right
 
     /// private short javax.swing.text.CompositeView.top
 
-    /// private short javax.swing.text.CompositeView.bottom
-
-    /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
-
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.CompositeView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/CompositeView", classCache: &CompositeView.CompositeViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &CompositeView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -110,172 +166,64 @@ open class CompositeView: View {
         self.init( elem: _elem )
     }
 
-    /// public void javax.swing.text.CompositeView.replace(int,int,javax.swing.text.View[])
-
-    /// public void javax.swing.text.CompositeView.setParent(javax.swing.text.View)
-
-    /// public int javax.swing.text.CompositeView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    private static var viewToModel_MethodID_2: jmethodID?
-
-    open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &CompositeView.viewToModel_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    override open func viewToModel( _ _x: Float, _ _y: Float, _ _a: java_awt.Shape?, _ _bias: [Position_Bias]? ) -> Int {
-        return viewToModel( x: _x, y: _y, a: _a, bias: _bias )
-    }
-
-    /// public java.awt.Shape javax.swing.text.CompositeView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
-
-    /// public java.awt.Shape javax.swing.text.CompositeView.modelToView(int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias,java.awt.Shape) throws javax.swing.text.BadLocationException
-
-    /// protected int javax.swing.text.CompositeView.getViewIndexAtPosition(int)
-
-    private static var getViewIndexAtPosition_MethodID_3: jmethodID?
-
-    open func getViewIndexAtPosition( pos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &CompositeView.getViewIndexAtPosition_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
-        return getViewIndexAtPosition( pos: _pos )
-    }
-
-    /// protected void javax.swing.text.CompositeView.loadChildren(javax.swing.text.ViewFactory)
-
-    private static var loadChildren_MethodID_4: jmethodID?
-
-    open func loadChildren( f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &CompositeView.loadChildren_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func loadChildren( _ _f: ViewFactory? ) {
-        loadChildren( f: _f )
-    }
-
-    /// protected abstract boolean javax.swing.text.CompositeView.isBefore(int,int,java.awt.Rectangle)
-
-    private static var isBefore_MethodID_5: jmethodID?
-
-    open func isBefore( x: Int, y: Int, alloc: java_awt.Rectangle? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBefore", methodSig: "(IILjava/awt/Rectangle;)Z", methodCache: &CompositeView.isBefore_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isBefore( _ _x: Int, _ _y: Int, _ _alloc: java_awt.Rectangle? ) -> Bool {
-        return isBefore( x: _x, y: _y, alloc: _alloc )
-    }
-
-    /// protected abstract boolean javax.swing.text.CompositeView.isAfter(int,int,java.awt.Rectangle)
-
-    private static var isAfter_MethodID_6: jmethodID?
-
-    open func isAfter( x: Int, y: Int, alloc: java_awt.Rectangle? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAfter", methodSig: "(IILjava/awt/Rectangle;)Z", methodCache: &CompositeView.isAfter_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func isAfter( _ _x: Int, _ _y: Int, _ _alloc: java_awt.Rectangle? ) -> Bool {
-        return isAfter( x: _x, y: _y, alloc: _alloc )
-    }
-
-    /// protected abstract javax.swing.text.View javax.swing.text.CompositeView.getViewAtPoint(int,int,java.awt.Rectangle)
-
-    private static var getViewAtPoint_MethodID_7: jmethodID?
-
-    open func getViewAtPoint( x: Int, y: Int, alloc: java_awt.Rectangle? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPoint", methodSig: "(IILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &CompositeView.getViewAtPoint_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    open func getViewAtPoint( _ _x: Int, _ _y: Int, _ _alloc: java_awt.Rectangle? ) -> View! {
-        return getViewAtPoint( x: _x, y: _y, alloc: _alloc )
-    }
-
     /// protected abstract void javax.swing.text.CompositeView.childAllocation(int,java.awt.Rectangle)
 
-    private static var childAllocation_MethodID_8: jmethodID?
+    private static var childAllocation_MethodID_2: jmethodID?
 
     open func childAllocation( index: Int, a: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(index) )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "childAllocation", methodSig: "(ILjava/awt/Rectangle;)V", methodCache: &CompositeView.childAllocation_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "childAllocation", methodSig: "(ILjava/awt/Rectangle;)V", methodCache: &CompositeView.childAllocation_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func childAllocation( _ _index: Int, _ _a: java_awt.Rectangle? ) {
         childAllocation( index: _index, a: _a )
     }
 
-    /// public int javax.swing.text.CompositeView.getViewCount()
+    /// protected boolean javax.swing.text.CompositeView.flipEastAndWestAtEnds(int,javax.swing.text.Position$Bias)
 
-    /// public javax.swing.text.View javax.swing.text.CompositeView.getView(int)
+    private static var flipEastAndWestAtEnds_MethodID_3: jmethodID?
+
+    open func flipEastAndWestAtEnds( position: Int, bias: Position_Bias? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(position) )
+        __args[1] = JNIType.toJava( value: bias, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "flipEastAndWestAtEnds", methodSig: "(ILjavax/swing/text/Position$Bias;)Z", methodCache: &CompositeView.flipEastAndWestAtEnds_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func flipEastAndWestAtEnds( _ _position: Int, _ _bias: Position_Bias? ) -> Bool {
+        return flipEastAndWestAtEnds( position: _position, bias: _bias )
+    }
+
+    /// protected short javax.swing.text.CompositeView.getBottomInset()
+
+    private static var getBottomInset_MethodID_4: jmethodID?
+
+    open func getBottomInset() -> Int16 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getBottomInset", methodSig: "()S", methodCache: &CompositeView.getBottomInset_MethodID_4, args: &__args, locals: &__locals )
+        return __return
+    }
+
 
     /// public java.awt.Shape javax.swing.text.CompositeView.getChildAllocation(int,java.awt.Shape)
 
-    /// public int javax.swing.text.CompositeView.getNextVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    /// public int javax.swing.text.CompositeView.getViewIndex(int,javax.swing.text.Position$Bias)
-
-    /// protected javax.swing.text.View javax.swing.text.CompositeView.getViewAtPosition(int,java.awt.Rectangle)
-
-    private static var getViewAtPosition_MethodID_9: jmethodID?
-
-    open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &CompositeView.getViewAtPosition_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
-        return getViewAtPosition( pos: _pos, a: _a )
-    }
+    // Skipping method: false true false false false 
 
     /// protected java.awt.Rectangle javax.swing.text.CompositeView.getInsideAllocation(java.awt.Shape)
 
-    private static var getInsideAllocation_MethodID_10: jmethodID?
+    private static var getInsideAllocation_MethodID_5: jmethodID?
 
     open func getInsideAllocation( a: java_awt.Shape? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsideAllocation", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Rectangle;", methodCache: &CompositeView.getInsideAllocation_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInsideAllocation", methodSig: "(Ljava/awt/Shape;)Ljava/awt/Rectangle;", methodCache: &CompositeView.getInsideAllocation_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -284,148 +232,276 @@ open class CompositeView: View {
         return getInsideAllocation( a: _a )
     }
 
-    /// protected void javax.swing.text.CompositeView.setParagraphInsets(javax.swing.text.AttributeSet)
-
-    private static var setParagraphInsets_MethodID_11: jmethodID?
-
-    open func setParagraphInsets( attr: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphInsets", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &CompositeView.setParagraphInsets_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setParagraphInsets( _ _attr: AttributeSet? ) {
-        setParagraphInsets( attr: _attr )
-    }
-
-    /// protected void javax.swing.text.CompositeView.setInsets(short,short,short,short)
-
-    private static var setInsets_MethodID_12: jmethodID?
-
-    open func setInsets( top: Int16, left: Int16, bottom: Int16, right: Int16 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: top, locals: &__locals )
-        __args[1] = JNIType.toJava( value: left, locals: &__locals )
-        __args[2] = JNIType.toJava( value: bottom, locals: &__locals )
-        __args[3] = JNIType.toJava( value: right, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInsets", methodSig: "(SSSS)V", methodCache: &CompositeView.setInsets_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setInsets( _ _top: Int16, _ _left: Int16, _ _bottom: Int16, _ _right: Int16 ) {
-        setInsets( top: _top, left: _left, bottom: _bottom, right: _right )
-    }
-
     /// protected short javax.swing.text.CompositeView.getLeftInset()
 
-    private static var getLeftInset_MethodID_13: jmethodID?
+    private static var getLeftInset_MethodID_6: jmethodID?
 
     open func getLeftInset() -> Int16 {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getLeftInset", methodSig: "()S", methodCache: &CompositeView.getLeftInset_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int16(), from: __return )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getLeftInset", methodSig: "()S", methodCache: &CompositeView.getLeftInset_MethodID_6, args: &__args, locals: &__locals )
+        return __return
     }
 
-
-    /// protected short javax.swing.text.CompositeView.getRightInset()
-
-    private static var getRightInset_MethodID_14: jmethodID?
-
-    open func getRightInset() -> Int16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getRightInset", methodSig: "()S", methodCache: &CompositeView.getRightInset_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int16(), from: __return )
-    }
-
-
-    /// protected short javax.swing.text.CompositeView.getTopInset()
-
-    private static var getTopInset_MethodID_15: jmethodID?
-
-    open func getTopInset() -> Int16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getTopInset", methodSig: "()S", methodCache: &CompositeView.getTopInset_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int16(), from: __return )
-    }
-
-
-    /// protected short javax.swing.text.CompositeView.getBottomInset()
-
-    private static var getBottomInset_MethodID_16: jmethodID?
-
-    open func getBottomInset() -> Int16 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getBottomInset", methodSig: "()S", methodCache: &CompositeView.getBottomInset_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int16(), from: __return )
-    }
-
-
-    /// protected int javax.swing.text.CompositeView.getNextNorthSouthVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    private static var getNextNorthSouthVisualPositionFrom_MethodID_17: jmethodID?
-
-    open func getNextNorthSouthVisualPositionFrom( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: direction, locals: &__locals )
-        __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextNorthSouthVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &CompositeView.getNextNorthSouthVisualPositionFrom_MethodID_17, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getNextNorthSouthVisualPositionFrom( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try getNextNorthSouthVisualPositionFrom( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet )
-    }
 
     /// protected int javax.swing.text.CompositeView.getNextEastWestVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
 
-    private static var getNextEastWestVisualPositionFrom_MethodID_18: jmethodID?
+    private static var getNextEastWestVisualPositionFrom_MethodID_7: jmethodID?
 
     open func getNextEastWestVisualPositionFrom( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(pos) )
         __args[1] = JNIType.toJava( value: b, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: direction, locals: &__locals )
+        __args[3] = jvalue( i: jint(direction) )
         __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextEastWestVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &CompositeView.getNextEastWestVisualPositionFrom_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextEastWestVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &CompositeView.getNextEastWestVisualPositionFrom_MethodID_7, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func getNextEastWestVisualPositionFrom( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
         return try getNextEastWestVisualPositionFrom( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet )
     }
 
-    /// protected boolean javax.swing.text.CompositeView.flipEastAndWestAtEnds(int,javax.swing.text.Position$Bias)
+    /// protected int javax.swing.text.CompositeView.getNextNorthSouthVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
 
-    private static var flipEastAndWestAtEnds_MethodID_19: jmethodID?
+    private static var getNextNorthSouthVisualPositionFrom_MethodID_8: jmethodID?
 
-    open func flipEastAndWestAtEnds( position: Int, bias: Position_Bias? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getNextNorthSouthVisualPositionFrom( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: position, locals: &__locals )
-        __args[1] = JNIType.toJava( value: bias, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "flipEastAndWestAtEnds", methodSig: "(ILjavax/swing/text/Position$Bias;)Z", methodCache: &CompositeView.flipEastAndWestAtEnds_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = jvalue( i: jint(direction) )
+        __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextNorthSouthVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &CompositeView.getNextNorthSouthVisualPositionFrom_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return Int(__return)
     }
 
-    open func flipEastAndWestAtEnds( _ _position: Int, _ _bias: Position_Bias? ) -> Bool {
-        return flipEastAndWestAtEnds( position: _position, bias: _bias )
+    open func getNextNorthSouthVisualPositionFrom( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try getNextNorthSouthVisualPositionFrom( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet )
+    }
+
+    /// public int javax.swing.text.CompositeView.getNextVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    // Skipping method: false true false false false 
+
+    /// protected short javax.swing.text.CompositeView.getRightInset()
+
+    private static var getRightInset_MethodID_9: jmethodID?
+
+    open func getRightInset() -> Int16 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getRightInset", methodSig: "()S", methodCache: &CompositeView.getRightInset_MethodID_9, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// protected short javax.swing.text.CompositeView.getTopInset()
+
+    private static var getTopInset_MethodID_10: jmethodID?
+
+    open func getTopInset() -> Int16 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallShortMethod( object: javaObject, methodName: "getTopInset", methodSig: "()S", methodCache: &CompositeView.getTopInset_MethodID_10, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public javax.swing.text.View javax.swing.text.CompositeView.getView(int)
+
+    // Skipping method: false true false false false 
+
+    /// protected abstract javax.swing.text.View javax.swing.text.CompositeView.getViewAtPoint(int,int,java.awt.Rectangle)
+
+    private static var getViewAtPoint_MethodID_11: jmethodID?
+
+    open func getViewAtPoint( x: Int, y: Int, alloc: java_awt.Rectangle? ) -> View! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPoint", methodSig: "(IILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &CompositeView.getViewAtPoint_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    open func getViewAtPoint( _ _x: Int, _ _y: Int, _ _alloc: java_awt.Rectangle? ) -> View! {
+        return getViewAtPoint( x: _x, y: _y, alloc: _alloc )
+    }
+
+    /// protected javax.swing.text.View javax.swing.text.CompositeView.getViewAtPosition(int,java.awt.Rectangle)
+
+    private static var getViewAtPosition_MethodID_12: jmethodID?
+
+    open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &CompositeView.getViewAtPosition_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
+        return getViewAtPosition( pos: _pos, a: _a )
+    }
+
+    /// public int javax.swing.text.CompositeView.getViewCount()
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.CompositeView.getViewIndex(int,javax.swing.text.Position$Bias)
+
+    // Skipping method: false true false false false 
+
+    /// protected int javax.swing.text.CompositeView.getViewIndexAtPosition(int)
+
+    private static var getViewIndexAtPosition_MethodID_13: jmethodID?
+
+    open func getViewIndexAtPosition( pos: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &CompositeView.getViewIndexAtPosition_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
+        return getViewIndexAtPosition( pos: _pos )
+    }
+
+    /// protected abstract boolean javax.swing.text.CompositeView.isAfter(int,int,java.awt.Rectangle)
+
+    private static var isAfter_MethodID_14: jmethodID?
+
+    open func isAfter( x: Int, y: Int, alloc: java_awt.Rectangle? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isAfter", methodSig: "(IILjava/awt/Rectangle;)Z", methodCache: &CompositeView.isAfter_MethodID_14, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isAfter( _ _x: Int, _ _y: Int, _ _alloc: java_awt.Rectangle? ) -> Bool {
+        return isAfter( x: _x, y: _y, alloc: _alloc )
+    }
+
+    /// protected abstract boolean javax.swing.text.CompositeView.isBefore(int,int,java.awt.Rectangle)
+
+    private static var isBefore_MethodID_15: jmethodID?
+
+    open func isBefore( x: Int, y: Int, alloc: java_awt.Rectangle? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = JNIType.toJava( value: alloc, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBefore", methodSig: "(IILjava/awt/Rectangle;)Z", methodCache: &CompositeView.isBefore_MethodID_15, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isBefore( _ _x: Int, _ _y: Int, _ _alloc: java_awt.Rectangle? ) -> Bool {
+        return isBefore( x: _x, y: _y, alloc: _alloc )
+    }
+
+    /// protected void javax.swing.text.CompositeView.loadChildren(javax.swing.text.ViewFactory)
+
+    private static var loadChildren_MethodID_16: jmethodID?
+
+    open func loadChildren( f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &CompositeView.loadChildren_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func loadChildren( _ _f: ViewFactory? ) {
+        loadChildren( f: _f )
+    }
+
+    /// public java.awt.Shape javax.swing.text.CompositeView.modelToView(int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias,java.awt.Shape) throws javax.swing.text.BadLocationException
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Shape javax.swing.text.CompositeView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.CompositeView.replace(int,int,javax.swing.text.View[])
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.text.CompositeView.setInsets(short,short,short,short)
+
+    private static var setInsets_MethodID_17: jmethodID?
+
+    open func setInsets( top: Int16, left: Int16, bottom: Int16, right: Int16 ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( s: top )
+        __args[1] = jvalue( s: left )
+        __args[2] = jvalue( s: bottom )
+        __args[3] = jvalue( s: right )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInsets", methodSig: "(SSSS)V", methodCache: &CompositeView.setInsets_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setInsets( _ _top: Int16, _ _left: Int16, _ _bottom: Int16, _ _right: Int16 ) {
+        setInsets( top: _top, left: _left, bottom: _bottom, right: _right )
+    }
+
+    /// protected void javax.swing.text.CompositeView.setParagraphInsets(javax.swing.text.AttributeSet)
+
+    private static var setParagraphInsets_MethodID_18: jmethodID?
+
+    open func setParagraphInsets( attr: AttributeSet? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphInsets", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &CompositeView.setParagraphInsets_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setParagraphInsets( _ _attr: AttributeSet? ) {
+        setParagraphInsets( attr: _attr )
+    }
+
+    /// public void javax.swing.text.CompositeView.setParent(javax.swing.text.View)
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.CompositeView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    private static var viewToModel_MethodID_19: jmethodID?
+
+    open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, bias: [Position_Bias]? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = JNIType.toJava( value: bias, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &CompositeView.viewToModel_MethodID_19, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    override open func viewToModel( _ _x: Float, _ _y: Float, _ _a: java_awt.Shape?, _ _bias: [Position_Bias]? ) -> Int {
+        return viewToModel( x: _x, y: _y, a: _a, bias: _bias )
     }
 
 }

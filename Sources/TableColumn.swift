@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.table.TableColumn ///
 
-open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class TableColumn: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,6 +16,18 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     private static var TableColumnJNIClass: jclass?
 
+    /// public static final java.lang.String javax.swing.table.TableColumn.CELL_RENDERER_PROPERTY
+
+    private static var CELL_RENDERER_PROPERTY_FieldID: jfieldID?
+
+    open static var CELL_RENDERER_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "CELL_RENDERER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CELL_RENDERER_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
     /// public static final java.lang.String javax.swing.table.TableColumn.COLUMN_WIDTH_PROPERTY
 
     private static var COLUMN_WIDTH_PROPERTY_FieldID: jfieldID?
@@ -23,18 +35,8 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     open static var COLUMN_WIDTH_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLUMN_WIDTH_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &COLUMN_WIDTH_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.table.TableColumn.HEADER_VALUE_PROPERTY
-
-    private static var HEADER_VALUE_PROPERTY_FieldID: jfieldID?
-
-    open static var HEADER_VALUE_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "HEADER_VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HEADER_VALUE_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -45,107 +47,58 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     open static var HEADER_RENDERER_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HEADER_RENDERER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HEADER_RENDERER_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.String javax.swing.table.TableColumn.CELL_RENDERER_PROPERTY
+    /// public static final java.lang.String javax.swing.table.TableColumn.HEADER_VALUE_PROPERTY
 
-    private static var CELL_RENDERER_PROPERTY_FieldID: jfieldID?
+    private static var HEADER_VALUE_PROPERTY_FieldID: jfieldID?
 
-    open static var CELL_RENDERER_PROPERTY: String! {
+    open static var HEADER_VALUE_PROPERTY: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "CELL_RENDERER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CELL_RENDERER_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "HEADER_VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HEADER_VALUE_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// protected int javax.swing.table.TableColumn.modelIndex
+    /// protected javax.swing.table.TableCellEditor javax.swing.table.TableColumn.cellEditor
 
-    private static var modelIndex_FieldID: jfieldID?
+    private static var cellEditor_FieldID: jfieldID?
 
-    open var modelIndex: Int {
+    open var cellEditor: TableCellEditor! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "modelIndex", fieldType: "I", fieldCache: &TableColumn.modelIndex_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "cellEditor", fieldType: "Ljavax/swing/table/TableCellEditor;", fieldCache: &TableColumn.cellEditor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? TableCellEditorForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "modelIndex", fieldType: "I", fieldCache: &TableColumn.modelIndex_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "cellEditor", fieldType: "Ljavax/swing/table/TableCellEditor;", fieldCache: &TableColumn.cellEditor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected java.lang.Object javax.swing.table.TableColumn.identifier
+    /// protected javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.cellRenderer
 
-    private static var identifier_FieldID: jfieldID?
+    private static var cellRenderer_FieldID: jfieldID?
 
-    open var identifier: java_swift.JavaObject! {
+    open var cellRenderer: TableCellRenderer! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "identifier", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumn.identifier_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "cellRenderer", fieldType: "Ljavax/swing/table/TableCellRenderer;", fieldCache: &TableColumn.cellRenderer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? TableCellRendererForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "identifier", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumn.identifier_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "cellRenderer", fieldType: "Ljavax/swing/table/TableCellRenderer;", fieldCache: &TableColumn.cellRenderer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected int javax.swing.table.TableColumn.width
-
-    private static var width_FieldID: jfieldID?
-
-    open var width: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &TableColumn.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &TableColumn.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.table.TableColumn.minWidth
-
-    private static var minWidth_FieldID: jfieldID?
-
-    open var minWidth: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "minWidth", fieldType: "I", fieldCache: &TableColumn.minWidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "minWidth", fieldType: "I", fieldCache: &TableColumn.minWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// private int javax.swing.table.TableColumn.preferredWidth
-
-    /// protected int javax.swing.table.TableColumn.maxWidth
-
-    private static var maxWidth_FieldID: jfieldID?
-
-    open var maxWidth: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "maxWidth", fieldType: "I", fieldCache: &TableColumn.maxWidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "maxWidth", fieldType: "I", fieldCache: &TableColumn.maxWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
+    /// private javax.swing.event.SwingPropertyChangeSupport javax.swing.table.TableColumn.changeSupport
 
     /// protected javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.headerRenderer
 
@@ -153,8 +106,8 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     open var headerRenderer: TableCellRenderer! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "headerRenderer", fieldType: "Ljavax/swing/table/TableCellRenderer;", fieldCache: &TableColumn.headerRenderer_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "headerRenderer", fieldType: "Ljavax/swing/table/TableCellRenderer;", fieldCache: &TableColumn.headerRenderer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? TableCellRendererForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -170,8 +123,8 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     open var headerValue: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "headerValue", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumn.headerValue_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "headerValue", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumn.headerValue_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -181,37 +134,20 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         }
     }
 
-    /// protected javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.cellRenderer
+    /// protected java.lang.Object javax.swing.table.TableColumn.identifier
 
-    private static var cellRenderer_FieldID: jfieldID?
+    private static var identifier_FieldID: jfieldID?
 
-    open var cellRenderer: TableCellRenderer! {
+    open var identifier: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "cellRenderer", fieldType: "Ljavax/swing/table/TableCellRenderer;", fieldCache: &TableColumn.cellRenderer_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? TableCellRendererForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "identifier", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumn.identifier_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "cellRenderer", fieldType: "Ljavax/swing/table/TableCellRenderer;", fieldCache: &TableColumn.cellRenderer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.table.TableCellEditor javax.swing.table.TableColumn.cellEditor
-
-    private static var cellEditor_FieldID: jfieldID?
-
-    open var cellEditor: TableCellEditor! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "cellEditor", fieldType: "Ljavax/swing/table/TableCellEditor;", fieldCache: &TableColumn.cellEditor_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? TableCellEditorForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "cellEditor", fieldType: "Ljavax/swing/table/TableCellEditor;", fieldCache: &TableColumn.cellEditor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "identifier", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumn.identifier_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -221,16 +157,65 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     open var isResizable: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "isResizable", fieldType: "Z", fieldCache: &TableColumn.isResizable_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "isResizable", fieldType: "Z", fieldCache: &TableColumn.isResizable_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "isResizable", fieldType: "Z", fieldCache: &TableColumn.isResizable_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
+
+    /// protected int javax.swing.table.TableColumn.maxWidth
+
+    private static var maxWidth_FieldID: jfieldID?
+
+    open var maxWidth: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "maxWidth", fieldType: "I", fieldCache: &TableColumn.maxWidth_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "maxWidth", fieldType: "I", fieldCache: &TableColumn.maxWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.table.TableColumn.minWidth
+
+    private static var minWidth_FieldID: jfieldID?
+
+    open var minWidth: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "minWidth", fieldType: "I", fieldCache: &TableColumn.minWidth_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "minWidth", fieldType: "I", fieldCache: &TableColumn.minWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.table.TableColumn.modelIndex
+
+    private static var modelIndex_FieldID: jfieldID?
+
+    open var modelIndex: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "modelIndex", fieldType: "I", fieldCache: &TableColumn.modelIndex_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "modelIndex", fieldType: "I", fieldCache: &TableColumn.modelIndex_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// private int javax.swing.table.TableColumn.preferredWidth
 
     /// protected transient int javax.swing.table.TableColumn.resizedPostingDisableCount
 
@@ -238,66 +223,53 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     open var resizedPostingDisableCount: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "resizedPostingDisableCount", fieldType: "I", fieldCache: &TableColumn.resizedPostingDisableCount_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "resizedPostingDisableCount", fieldType: "I", fieldCache: &TableColumn.resizedPostingDisableCount_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "resizedPostingDisableCount", fieldType: "I", fieldCache: &TableColumn.resizedPostingDisableCount_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private javax.swing.event.SwingPropertyChangeSupport javax.swing.table.TableColumn.changeSupport
+    /// protected int javax.swing.table.TableColumn.width
 
-    /// public javax.swing.table.TableColumn(int,int,javax.swing.table.TableCellRenderer,javax.swing.table.TableCellEditor)
+    private static var width_FieldID: jfieldID?
+
+    open var width: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &TableColumn.width_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &TableColumn.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// public javax.swing.table.TableColumn()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( modelIndex: Int, width: Int, cellRenderer: TableCellRenderer?, cellEditor: TableCellEditor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modelIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        __args[2] = JNIType.toJava( value: cellRenderer, locals: &__locals )
-        __args[3] = JNIType.toJava( value: cellEditor, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "(IILjavax/swing/table/TableCellRenderer;Ljavax/swing/table/TableCellEditor;)V", methodCache: &TableColumn.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "()V", methodCache: &TableColumn.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _modelIndex: Int, _ _width: Int, _ _cellRenderer: TableCellRenderer?, _ _cellEditor: TableCellEditor? ) {
-        self.init( modelIndex: _modelIndex, width: _width, cellRenderer: _cellRenderer, cellEditor: _cellEditor )
-    }
-
-    /// public javax.swing.table.TableColumn(int,int)
-
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init( modelIndex: Int, width: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modelIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "(II)V", methodCache: &TableColumn.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _modelIndex: Int, _ _width: Int ) {
-        self.init( modelIndex: _modelIndex, width: _width )
     }
 
     /// public javax.swing.table.TableColumn(int)
 
-    private static var new_MethodID_3: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( modelIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modelIndex, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "(I)V", methodCache: &TableColumn.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(modelIndex) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "(I)V", methodCache: &TableColumn.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -306,411 +278,437 @@ open class TableColumn: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         self.init( modelIndex: _modelIndex )
     }
 
-    /// public javax.swing.table.TableColumn()
+    /// public javax.swing.table.TableColumn(int,int)
 
-    private static var new_MethodID_4: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( modelIndex: Int, width: Int ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "()V", methodCache: &TableColumn.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(modelIndex) )
+        __args[1] = jvalue( i: jint(width) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "(II)V", methodCache: &TableColumn.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.table.TableColumn.setModelIndex(int)
+    public convenience init( _ _modelIndex: Int, _ _width: Int ) {
+        self.init( modelIndex: _modelIndex, width: _width )
+    }
 
-    private static var setModelIndex_MethodID_5: jmethodID?
+    /// public javax.swing.table.TableColumn(int,int,javax.swing.table.TableCellRenderer,javax.swing.table.TableCellEditor)
 
-    open func setModelIndex( modelIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var new_MethodID_4: jmethodID?
+
+    public convenience init( modelIndex: Int, width: Int, cellRenderer: TableCellRenderer?, cellEditor: TableCellEditor? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: modelIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModelIndex", methodSig: "(I)V", methodCache: &TableColumn.setModelIndex_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(modelIndex) )
+        __args[1] = jvalue( i: jint(width) )
+        __args[2] = JNIType.toJava( value: cellRenderer, locals: &__locals )
+        __args[3] = JNIType.toJava( value: cellEditor, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/table/TableColumn", classCache: &TableColumn.TableColumnJNIClass, methodSig: "(IILjavax/swing/table/TableCellRenderer;Ljavax/swing/table/TableCellEditor;)V", methodCache: &TableColumn.new_MethodID_4, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
-    open func setModelIndex( _ _modelIndex: Int ) {
-        setModelIndex( modelIndex: _modelIndex )
+    public convenience init( _ _modelIndex: Int, _ _width: Int, _ _cellRenderer: TableCellRenderer?, _ _cellEditor: TableCellEditor? ) {
+        self.init( modelIndex: _modelIndex, width: _width, cellRenderer: _cellRenderer, cellEditor: _cellEditor )
     }
 
-    /// public void javax.swing.table.TableColumn.setIdentifier(java.lang.Object)
+    /// public synchronized void javax.swing.table.TableColumn.addPropertyChangeListener(java.beans.PropertyChangeListener)
 
-    private static var setIdentifier_MethodID_6: jmethodID?
+    private static var addPropertyChangeListener_MethodID_5: jmethodID?
 
-    open func setIdentifier( identifier: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addPropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: identifier, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIdentifier", methodSig: "(Ljava/lang/Object;)V", methodCache: &TableColumn.setIdentifier_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setIdentifier( _ _identifier: java_swift.JavaObject? ) {
-        setIdentifier( identifier: _identifier )
-    }
-
-    /// public void javax.swing.table.TableColumn.setHeaderRenderer(javax.swing.table.TableCellRenderer)
-
-    private static var setHeaderRenderer_MethodID_7: jmethodID?
-
-    open func setHeaderRenderer( headerRenderer: TableCellRenderer? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &TableColumn.addPropertyChangeListener_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func addPropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( listener: _listener )
+    }
+
+    /// protected javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.createDefaultHeaderRenderer()
+
+    private static var createDefaultHeaderRenderer_MethodID_6: jmethodID?
+
+    open func createDefaultHeaderRenderer() -> TableCellRenderer! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: headerRenderer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHeaderRenderer", methodSig: "(Ljavax/swing/table/TableCellRenderer;)V", methodCache: &TableColumn.setHeaderRenderer_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setHeaderRenderer( _ _headerRenderer: TableCellRenderer? ) {
-        setHeaderRenderer( headerRenderer: _headerRenderer )
-    }
-
-    /// public void javax.swing.table.TableColumn.setMinWidth(int)
-
-    private static var setMinWidth_MethodID_8: jmethodID?
-
-    open func setMinWidth( minWidth: Int ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: minWidth, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinWidth", methodSig: "(I)V", methodCache: &TableColumn.setMinWidth_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setMinWidth( _ _minWidth: Int ) {
-        setMinWidth( minWidth: _minWidth )
-    }
-
-    /// public void javax.swing.table.TableColumn.setMaxWidth(int)
-
-    private static var setMaxWidth_MethodID_9: jmethodID?
-
-    open func setMaxWidth( maxWidth: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: maxWidth, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaxWidth", methodSig: "(I)V", methodCache: &TableColumn.setMaxWidth_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setMaxWidth( _ _maxWidth: Int ) {
-        setMaxWidth( maxWidth: _maxWidth )
-    }
-
-    /// public boolean javax.swing.table.TableColumn.getResizable()
-
-    private static var getResizable_MethodID_10: jmethodID?
-
-    open func getResizable() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getResizable", methodSig: "()Z", methodCache: &TableColumn.getResizable_MethodID_10, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.table.TableColumn.sizeWidthToFit()
-
-    private static var sizeWidthToFit_MethodID_11: jmethodID?
-
-    open func sizeWidthToFit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "sizeWidthToFit", methodSig: "()V", methodCache: &TableColumn.sizeWidthToFit_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultHeaderRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &TableColumn.createDefaultHeaderRenderer_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
     }
 
 
     /// public void javax.swing.table.TableColumn.disableResizedPosting()
 
-    private static var disableResizedPosting_MethodID_12: jmethodID?
+    private static var disableResizedPosting_MethodID_7: jmethodID?
 
     open func disableResizedPosting() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disableResizedPosting", methodSig: "()V", methodCache: &TableColumn.disableResizedPosting_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "disableResizedPosting", methodSig: "()V", methodCache: &TableColumn.disableResizedPosting_MethodID_7, args: &__args, locals: &__locals )
     }
 
 
     /// public void javax.swing.table.TableColumn.enableResizedPosting()
 
-    private static var enableResizedPosting_MethodID_13: jmethodID?
+    private static var enableResizedPosting_MethodID_8: jmethodID?
 
     open func enableResizedPosting() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableResizedPosting", methodSig: "()V", methodCache: &TableColumn.enableResizedPosting_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.createDefaultHeaderRenderer()
-
-    private static var createDefaultHeaderRenderer_MethodID_14: jmethodID?
-
-    open func createDefaultHeaderRenderer() -> TableCellRenderer! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultHeaderRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &TableColumn.createDefaultHeaderRenderer_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "enableResizedPosting", methodSig: "()V", methodCache: &TableColumn.enableResizedPosting_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
-    /// public void javax.swing.table.TableColumn.setCellRenderer(javax.swing.table.TableCellRenderer)
-
-    private static var setCellRenderer_MethodID_15: jmethodID?
-
-    open func setCellRenderer( cellRenderer: TableCellRenderer? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cellRenderer, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellRenderer", methodSig: "(Ljavax/swing/table/TableCellRenderer;)V", methodCache: &TableColumn.setCellRenderer_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setCellRenderer( _ _cellRenderer: TableCellRenderer? ) {
-        setCellRenderer( cellRenderer: _cellRenderer )
-    }
-
-    /// public int javax.swing.table.TableColumn.getWidth()
-
-    private static var getWidth_MethodID_16: jmethodID?
-
-    open func getWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &TableColumn.getWidth_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public synchronized void javax.swing.table.TableColumn.addPropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_17: jmethodID?
-
-    open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &TableColumn.addPropertyChangeListener_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( listener: _listener )
-    }
-
-    /// public synchronized void javax.swing.table.TableColumn.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_18: jmethodID?
-
-    open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &TableColumn.removePropertyChangeListener_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( listener: _listener )
-    }
+    /// private void javax.swing.table.TableColumn.firePropertyChange(java.lang.String,boolean,boolean)
 
     /// private void javax.swing.table.TableColumn.firePropertyChange(java.lang.String,int,int)
 
     /// private void javax.swing.table.TableColumn.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
 
-    /// private void javax.swing.table.TableColumn.firePropertyChange(java.lang.String,boolean,boolean)
-
-    /// public javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.getCellRenderer()
-
-    private static var getCellRenderer_MethodID_19: jmethodID?
-
-    open func getCellRenderer() -> TableCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &TableColumn.getCellRenderer_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
-    }
-
-
     /// public javax.swing.table.TableCellEditor javax.swing.table.TableColumn.getCellEditor()
 
-    private static var getCellEditor_MethodID_20: jmethodID?
+    private static var getCellEditor_MethodID_9: jmethodID?
 
     open func getCellEditor() -> TableCellEditor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellEditor", methodSig: "()Ljavax/swing/table/TableCellEditor;", methodCache: &TableColumn.getCellEditor_MethodID_20, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellEditor", methodSig: "()Ljavax/swing/table/TableCellEditor;", methodCache: &TableColumn.getCellEditor_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TableCellEditorForward( javaObject: __return ) : nil
     }
 
 
+    /// public javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.getCellRenderer()
+
+    private static var getCellRenderer_MethodID_10: jmethodID?
+
+    open func getCellRenderer() -> TableCellRenderer! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &TableColumn.getCellRenderer_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.getHeaderRenderer()
+
+    private static var getHeaderRenderer_MethodID_11: jmethodID?
+
+    open func getHeaderRenderer() -> TableCellRenderer! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeaderRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &TableColumn.getHeaderRenderer_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.Object javax.swing.table.TableColumn.getHeaderValue()
+
+    private static var getHeaderValue_MethodID_12: jmethodID?
+
+    open func getHeaderValue() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeaderValue", methodSig: "()Ljava/lang/Object;", methodCache: &TableColumn.getHeaderValue_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.Object javax.swing.table.TableColumn.getIdentifier()
+
+    private static var getIdentifier_MethodID_13: jmethodID?
+
+    open func getIdentifier() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIdentifier", methodSig: "()Ljava/lang/Object;", methodCache: &TableColumn.getIdentifier_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.table.TableColumn.getMaxWidth()
+
+    private static var getMaxWidth_MethodID_14: jmethodID?
+
+    open func getMaxWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxWidth", methodSig: "()I", methodCache: &TableColumn.getMaxWidth_MethodID_14, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.table.TableColumn.getMinWidth()
+
+    private static var getMinWidth_MethodID_15: jmethodID?
+
+    open func getMinWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinWidth", methodSig: "()I", methodCache: &TableColumn.getMinWidth_MethodID_15, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.table.TableColumn.getModelIndex()
+
+    private static var getModelIndex_MethodID_16: jmethodID?
+
+    open func getModelIndex() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModelIndex", methodSig: "()I", methodCache: &TableColumn.getModelIndex_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.table.TableColumn.getPreferredWidth()
+
+    private static var getPreferredWidth_MethodID_17: jmethodID?
+
+    open func getPreferredWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredWidth", methodSig: "()I", methodCache: &TableColumn.getPreferredWidth_MethodID_17, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.table.TableColumn.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_18: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &TableColumn.getPropertyChangeListeners_MethodID_18, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
+    /// public boolean javax.swing.table.TableColumn.getResizable()
+
+    private static var getResizable_MethodID_19: jmethodID?
+
+    open func getResizable() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getResizable", methodSig: "()Z", methodCache: &TableColumn.getResizable_MethodID_19, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public int javax.swing.table.TableColumn.getWidth()
+
+    private static var getWidth_MethodID_20: jmethodID?
+
+    open func getWidth() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getWidth", methodSig: "()I", methodCache: &TableColumn.getWidth_MethodID_20, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public synchronized void javax.swing.table.TableColumn.removePropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var removePropertyChangeListener_MethodID_21: jmethodID?
+
+    open func removePropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &TableColumn.removePropertyChangeListener_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func removePropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( listener: _listener )
+    }
+
     /// public void javax.swing.table.TableColumn.setCellEditor(javax.swing.table.TableCellEditor)
 
-    private static var setCellEditor_MethodID_21: jmethodID?
+    private static var setCellEditor_MethodID_22: jmethodID?
 
     open func setCellEditor( cellEditor: TableCellEditor? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: cellEditor, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellEditor", methodSig: "(Ljavax/swing/table/TableCellEditor;)V", methodCache: &TableColumn.setCellEditor_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellEditor", methodSig: "(Ljavax/swing/table/TableCellEditor;)V", methodCache: &TableColumn.setCellEditor_MethodID_22, args: &__args, locals: &__locals )
     }
 
     open func setCellEditor( _ _cellEditor: TableCellEditor? ) {
         setCellEditor( cellEditor: _cellEditor )
     }
 
-    /// public java.lang.Object javax.swing.table.TableColumn.getHeaderValue()
+    /// public void javax.swing.table.TableColumn.setCellRenderer(javax.swing.table.TableCellRenderer)
 
-    private static var getHeaderValue_MethodID_22: jmethodID?
+    private static var setCellRenderer_MethodID_23: jmethodID?
 
-    open func getHeaderValue() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setCellRenderer( cellRenderer: TableCellRenderer? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeaderValue", methodSig: "()Ljava/lang/Object;", methodCache: &TableColumn.getHeaderValue_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: cellRenderer, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCellRenderer", methodSig: "(Ljavax/swing/table/TableCellRenderer;)V", methodCache: &TableColumn.setCellRenderer_MethodID_23, args: &__args, locals: &__locals )
     }
 
-
-    /// public int javax.swing.table.TableColumn.getModelIndex()
-
-    private static var getModelIndex_MethodID_23: jmethodID?
-
-    open func getModelIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModelIndex", methodSig: "()I", methodCache: &TableColumn.getModelIndex_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    open func setCellRenderer( _ _cellRenderer: TableCellRenderer? ) {
+        setCellRenderer( cellRenderer: _cellRenderer )
     }
 
+    /// public void javax.swing.table.TableColumn.setHeaderRenderer(javax.swing.table.TableCellRenderer)
+
+    private static var setHeaderRenderer_MethodID_24: jmethodID?
+
+    open func setHeaderRenderer( headerRenderer: TableCellRenderer? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: headerRenderer, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHeaderRenderer", methodSig: "(Ljavax/swing/table/TableCellRenderer;)V", methodCache: &TableColumn.setHeaderRenderer_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setHeaderRenderer( _ _headerRenderer: TableCellRenderer? ) {
+        setHeaderRenderer( headerRenderer: _headerRenderer )
+    }
 
     /// public void javax.swing.table.TableColumn.setHeaderValue(java.lang.Object)
 
-    private static var setHeaderValue_MethodID_24: jmethodID?
+    private static var setHeaderValue_MethodID_25: jmethodID?
 
     open func setHeaderValue( headerValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: headerValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHeaderValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &TableColumn.setHeaderValue_MethodID_24, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHeaderValue", methodSig: "(Ljava/lang/Object;)V", methodCache: &TableColumn.setHeaderValue_MethodID_25, args: &__args, locals: &__locals )
     }
 
     open func setHeaderValue( _ _headerValue: java_swift.JavaObject? ) {
         setHeaderValue( headerValue: _headerValue )
     }
 
-    /// public void javax.swing.table.TableColumn.setWidth(int)
+    /// public void javax.swing.table.TableColumn.setIdentifier(java.lang.Object)
 
-    private static var setWidth_MethodID_25: jmethodID?
+    private static var setIdentifier_MethodID_26: jmethodID?
 
-    open func setWidth( width: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setIdentifier( identifier: java_swift.JavaObject? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWidth", methodSig: "(I)V", methodCache: &TableColumn.setWidth_MethodID_25, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: identifier, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIdentifier", methodSig: "(Ljava/lang/Object;)V", methodCache: &TableColumn.setIdentifier_MethodID_26, args: &__args, locals: &__locals )
     }
 
-    open func setWidth( _ _width: Int ) {
-        setWidth( width: _width )
+    open func setIdentifier( _ _identifier: java_swift.JavaObject? ) {
+        setIdentifier( identifier: _identifier )
+    }
+
+    /// public void javax.swing.table.TableColumn.setMaxWidth(int)
+
+    private static var setMaxWidth_MethodID_27: jmethodID?
+
+    open func setMaxWidth( maxWidth: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(maxWidth) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaxWidth", methodSig: "(I)V", methodCache: &TableColumn.setMaxWidth_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func setMaxWidth( _ _maxWidth: Int ) {
+        setMaxWidth( maxWidth: _maxWidth )
+    }
+
+    /// public void javax.swing.table.TableColumn.setMinWidth(int)
+
+    private static var setMinWidth_MethodID_28: jmethodID?
+
+    open func setMinWidth( minWidth: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(minWidth) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinWidth", methodSig: "(I)V", methodCache: &TableColumn.setMinWidth_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func setMinWidth( _ _minWidth: Int ) {
+        setMinWidth( minWidth: _minWidth )
+    }
+
+    /// public void javax.swing.table.TableColumn.setModelIndex(int)
+
+    private static var setModelIndex_MethodID_29: jmethodID?
+
+    open func setModelIndex( modelIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(modelIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModelIndex", methodSig: "(I)V", methodCache: &TableColumn.setModelIndex_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setModelIndex( _ _modelIndex: Int ) {
+        setModelIndex( modelIndex: _modelIndex )
     }
 
     /// public void javax.swing.table.TableColumn.setPreferredWidth(int)
 
-    private static var setPreferredWidth_MethodID_26: jmethodID?
+    private static var setPreferredWidth_MethodID_30: jmethodID?
 
     open func setPreferredWidth( preferredWidth: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: preferredWidth, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreferredWidth", methodSig: "(I)V", methodCache: &TableColumn.setPreferredWidth_MethodID_26, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(preferredWidth) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPreferredWidth", methodSig: "(I)V", methodCache: &TableColumn.setPreferredWidth_MethodID_30, args: &__args, locals: &__locals )
     }
 
     open func setPreferredWidth( _ _preferredWidth: Int ) {
         setPreferredWidth( preferredWidth: _preferredWidth )
     }
 
-    /// public javax.swing.table.TableCellRenderer javax.swing.table.TableColumn.getHeaderRenderer()
-
-    private static var getHeaderRenderer_MethodID_27: jmethodID?
-
-    open func getHeaderRenderer() -> TableCellRenderer! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHeaderRenderer", methodSig: "()Ljavax/swing/table/TableCellRenderer;", methodCache: &TableColumn.getHeaderRenderer_MethodID_27, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TableCellRendererForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.lang.Object javax.swing.table.TableColumn.getIdentifier()
-
-    private static var getIdentifier_MethodID_28: jmethodID?
-
-    open func getIdentifier() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIdentifier", methodSig: "()Ljava/lang/Object;", methodCache: &TableColumn.getIdentifier_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.table.TableColumn.getPropertyChangeListeners()
-
-    private static var getPropertyChangeListeners_MethodID_29: jmethodID?
-
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &TableColumn.getPropertyChangeListeners_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
-    }
-
-
     /// public void javax.swing.table.TableColumn.setResizable(boolean)
 
-    private static var setResizable_MethodID_30: jmethodID?
+    private static var setResizable_MethodID_31: jmethodID?
 
     open func setResizable( isResizable: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: isResizable, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &TableColumn.setResizable_MethodID_30, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(isResizable ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResizable", methodSig: "(Z)V", methodCache: &TableColumn.setResizable_MethodID_31, args: &__args, locals: &__locals )
     }
 
     open func setResizable( _ _isResizable: Bool ) {
         setResizable( isResizable: _isResizable )
     }
 
-    /// public int javax.swing.table.TableColumn.getMinWidth()
+    /// public void javax.swing.table.TableColumn.setWidth(int)
 
-    private static var getMinWidth_MethodID_31: jmethodID?
+    private static var setWidth_MethodID_32: jmethodID?
 
-    open func getMinWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setWidth( width: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinWidth", methodSig: "()I", methodCache: &TableColumn.getMinWidth_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(width) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWidth", methodSig: "(I)V", methodCache: &TableColumn.setWidth_MethodID_32, args: &__args, locals: &__locals )
     }
 
-
-    /// public int javax.swing.table.TableColumn.getMaxWidth()
-
-    private static var getMaxWidth_MethodID_32: jmethodID?
-
-    open func getMaxWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaxWidth", methodSig: "()I", methodCache: &TableColumn.getMaxWidth_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    open func setWidth( _ _width: Int ) {
+        setWidth( width: _width )
     }
 
+    /// public void javax.swing.table.TableColumn.sizeWidthToFit()
 
-    /// public int javax.swing.table.TableColumn.getPreferredWidth()
+    private static var sizeWidthToFit_MethodID_33: jmethodID?
 
-    private static var getPreferredWidth_MethodID_33: jmethodID?
-
-    open func getPreferredWidth() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func sizeWidthToFit() {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredWidth", methodSig: "()I", methodCache: &TableColumn.getPreferredWidth_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "sizeWidthToFit", methodSig: "()V", methodCache: &TableColumn.sizeWidthToFit_MethodID_33, args: &__args, locals: &__locals )
     }
 
 

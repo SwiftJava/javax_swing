@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.plaf.basic.BasicSliderUI$PropertyChangeHandler ///
 
-open class BasicSliderUI_PropertyChangeHandler: java_swift.JavaObject, /* java.beans.PropertyChangeListener */ UnclassedProtocol {
+open class BasicSliderUI_PropertyChangeHandler: java_swift.JavaObject, /* interface java.beans.PropertyChangeListener */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -18,13 +18,15 @@ open class BasicSliderUI_PropertyChangeHandler: java_swift.JavaObject, /* java.b
 
     /// final javax.swing.plaf.basic.BasicSliderUI javax.swing.plaf.basic.BasicSliderUI$PropertyChangeHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicSliderUI$PropertyChangeHandler(javax.swing.plaf.basic.BasicSliderUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicSliderUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSliderUI$PropertyChangeHandler", classCache: &BasicSliderUI_PropertyChangeHandler.BasicSliderUI_PropertyChangeHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSliderUI;)V", methodCache: &BasicSliderUI_PropertyChangeHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -39,14 +41,14 @@ open class BasicSliderUI_PropertyChangeHandler: java_swift.JavaObject, /* java.b
 
     private static var propertyChange_MethodID_2: jmethodID?
 
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicSliderUI_PropertyChangeHandler.propertyChange_MethodID_2, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         propertyChange( evt: _evt )
     }
 

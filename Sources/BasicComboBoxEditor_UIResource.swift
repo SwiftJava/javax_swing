@@ -22,8 +22,8 @@ open class BasicComboBoxEditor_UIResource: BasicComboBoxEditor, UIResource {
 
     override open var editor: JTextField! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/JTextField;", fieldCache: &BasicComboBoxEditor_UIResource.editor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/JTextField;", fieldCache: &BasicComboBoxEditor_UIResource.editor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JTextField( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -40,8 +40,8 @@ open class BasicComboBoxEditor_UIResource: BasicComboBoxEditor, UIResource {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicComboBoxEditor$UIResource", classCache: &BasicComboBoxEditor_UIResource.BasicComboBoxEditor_UIResourceJNIClass, methodSig: "()V", methodCache: &BasicComboBoxEditor_UIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

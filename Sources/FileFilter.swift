@@ -21,8 +21,8 @@ open class FileFilter: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/filechooser/FileFilter", classCache: &FileFilter.FileFilterJNIClass, methodSig: "()V", methodCache: &FileFilter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -32,15 +32,15 @@ open class FileFilter: java_swift.JavaObject {
 
     private static var accept_MethodID_2: jmethodID?
 
-    open func accept( f: /* java.io.File */ UnclassedObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func accept( f: /* class java.io.File */ UnavailableObject? ) -> Bool {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "accept", methodSig: "(Ljava/io/File;)Z", methodCache: &FileFilter.accept_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    open func accept( _ _f: /* java.io.File */ UnclassedObject? ) -> Bool {
+    open func accept( _ _f: /* class java.io.File */ UnavailableObject? ) -> Bool {
         return accept( f: _f )
     }
 
@@ -49,10 +49,11 @@ open class FileFilter: java_swift.JavaObject {
     private static var getDescription_MethodID_3: jmethodID?
 
     open func getDescription() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDescription", methodSig: "()Ljava/lang/String;", methodCache: &FileFilter.getDescription_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 

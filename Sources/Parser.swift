@@ -17,17 +17,29 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var ParserJNIClass: jclass?
 
-    /// private char[] javax.swing.text.html.parser.Parser.text
+    /// private static final java.lang.String javax.swing.text.html.parser.Parser.END_COMMENT
 
-    /// private int javax.swing.text.html.parser.Parser.textpos
+    /// private static final char[] javax.swing.text.html.parser.Parser.SCRIPT_END_TAG
 
-    /// private javax.swing.text.html.parser.TagElement javax.swing.text.html.parser.Parser.last
+    /// private static final char[] javax.swing.text.html.parser.Parser.SCRIPT_END_TAG_UPPER_CASE
 
-    /// private boolean javax.swing.text.html.parser.Parser.space
+    /// private static final java.lang.String javax.swing.text.html.parser.Parser.START_COMMENT
 
-    /// private char[] javax.swing.text.html.parser.Parser.str
+    /// private static final char[] javax.swing.text.html.parser.Parser.cp1252Map
 
-    /// private int javax.swing.text.html.parser.Parser.strpos
+    /// private javax.swing.text.SimpleAttributeSet javax.swing.text.html.parser.Parser.attributes
+
+    /// private char[] javax.swing.text.html.parser.Parser.buf
+
+    /// private int javax.swing.text.html.parser.Parser.ch
+
+    /// private int javax.swing.text.html.parser.Parser.crCount
+
+    /// private int javax.swing.text.html.parser.Parser.crlfCount
+
+    /// private int javax.swing.text.html.parser.Parser.currentBlockStartPos
+
+    /// private int javax.swing.text.html.parser.Parser.currentPosition
 
     /// protected javax.swing.text.html.parser.DTD javax.swing.text.html.parser.Parser.dtd
 
@@ -35,8 +47,8 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     open var dtd: DTD! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "dtd", fieldType: "Ljavax/swing/text/html/parser/DTD;", fieldCache: &Parser.dtd_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "dtd", fieldType: "Ljavax/swing/text/html/parser/DTD;", fieldCache: &Parser.dtd_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? DTD( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -46,29 +58,39 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         }
     }
 
-    /// private int javax.swing.text.html.parser.Parser.ch
-
-    /// private int javax.swing.text.html.parser.Parser.ln
+    /// private boolean javax.swing.text.html.parser.Parser.ignoreSpace
 
     /// private java.io.Reader javax.swing.text.html.parser.Parser.in
 
-    /// private javax.swing.text.html.parser.Element javax.swing.text.html.parser.Parser.recent
+    /// private javax.swing.text.html.parser.TagElement javax.swing.text.html.parser.Parser.last
 
-    /// private javax.swing.text.html.parser.TagStack javax.swing.text.html.parser.Parser.stack
-
-    /// private boolean javax.swing.text.html.parser.Parser.skipTag
+    /// private int javax.swing.text.html.parser.Parser.lastBlockStartPos
 
     /// private javax.swing.text.html.parser.TagElement javax.swing.text.html.parser.Parser.lastFormSent
 
-    /// private javax.swing.text.SimpleAttributeSet javax.swing.text.html.parser.Parser.attributes
+    /// private int javax.swing.text.html.parser.Parser.len
 
-    /// private boolean javax.swing.text.html.parser.Parser.seenHtml
+    /// private int javax.swing.text.html.parser.Parser.lfCount
 
-    /// private boolean javax.swing.text.html.parser.Parser.seenHead
+    /// private int javax.swing.text.html.parser.Parser.ln
+
+    /// private int javax.swing.text.html.parser.Parser.pos
+
+    /// private javax.swing.text.html.parser.Element javax.swing.text.html.parser.Parser.recent
 
     /// private boolean javax.swing.text.html.parser.Parser.seenBody
 
-    /// private boolean javax.swing.text.html.parser.Parser.ignoreSpace
+    /// private boolean javax.swing.text.html.parser.Parser.seenHead
+
+    /// private boolean javax.swing.text.html.parser.Parser.seenHtml
+
+    /// private boolean javax.swing.text.html.parser.Parser.skipTag
+
+    /// private boolean javax.swing.text.html.parser.Parser.space
+
+    /// private javax.swing.text.html.parser.TagStack javax.swing.text.html.parser.Parser.stack
+
+    /// private char[] javax.swing.text.html.parser.Parser.str
 
     /// protected boolean javax.swing.text.html.parser.Parser.strict
 
@@ -76,242 +98,21 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     open var strict: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "strict", fieldType: "Z", fieldCache: &Parser.strict_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "strict", fieldType: "Z", fieldCache: &Parser.strict_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "strict", fieldType: "Z", fieldCache: &Parser.strict_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private int javax.swing.text.html.parser.Parser.crlfCount
+    /// private int javax.swing.text.html.parser.Parser.strpos
 
-    /// private int javax.swing.text.html.parser.Parser.crCount
+    /// private char[] javax.swing.text.html.parser.Parser.text
 
-    /// private int javax.swing.text.html.parser.Parser.lfCount
-
-    /// private int javax.swing.text.html.parser.Parser.currentBlockStartPos
-
-    /// private int javax.swing.text.html.parser.Parser.lastBlockStartPos
-
-    /// private static final char[] javax.swing.text.html.parser.Parser.cp1252Map
-
-    /// private static final java.lang.String javax.swing.text.html.parser.Parser.START_COMMENT
-
-    /// private static final java.lang.String javax.swing.text.html.parser.Parser.END_COMMENT
-
-    /// private static final char[] javax.swing.text.html.parser.Parser.SCRIPT_END_TAG
-
-    /// private static final char[] javax.swing.text.html.parser.Parser.SCRIPT_END_TAG_UPPER_CASE
-
-    /// private char[] javax.swing.text.html.parser.Parser.buf
-
-    /// private int javax.swing.text.html.parser.Parser.pos
-
-    /// private int javax.swing.text.html.parser.Parser.len
-
-    /// private int javax.swing.text.html.parser.Parser.currentPosition
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.CDATA
-
-    private static var CDATA_FieldID: jfieldID?
-
-    open static var CDATA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CDATA", fieldType: "I", fieldCache: &CDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.ENTITY
-
-    private static var ENTITY_FieldID: jfieldID?
-
-    open static var ENTITY: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENTITY", fieldType: "I", fieldCache: &ENTITY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.ENTITIES
-
-    private static var ENTITIES_FieldID: jfieldID?
-
-    open static var ENTITIES: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENTITIES", fieldType: "I", fieldCache: &ENTITIES_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.ID
-
-    private static var ID_FieldID: jfieldID?
-
-    open static var ID: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ID", fieldType: "I", fieldCache: &ID_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.IDREF
-
-    private static var IDREF_FieldID: jfieldID?
-
-    open static var IDREF: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "IDREF", fieldType: "I", fieldCache: &IDREF_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.IDREFS
-
-    private static var IDREFS_FieldID: jfieldID?
-
-    open static var IDREFS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "IDREFS", fieldType: "I", fieldCache: &IDREFS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NAME
-
-    private static var NAME_FieldID: jfieldID?
-
-    open static var NAME: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NAME", fieldType: "I", fieldCache: &NAME_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NAMES
-
-    private static var NAMES_FieldID: jfieldID?
-
-    open static var NAMES: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NAMES", fieldType: "I", fieldCache: &NAMES_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NMTOKEN
-
-    private static var NMTOKEN_FieldID: jfieldID?
-
-    open static var NMTOKEN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NMTOKEN", fieldType: "I", fieldCache: &NMTOKEN_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NMTOKENS
-
-    private static var NMTOKENS_FieldID: jfieldID?
-
-    open static var NMTOKENS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NMTOKENS", fieldType: "I", fieldCache: &NMTOKENS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NOTATION
-
-    private static var NOTATION_FieldID: jfieldID?
-
-    open static var NOTATION: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NOTATION", fieldType: "I", fieldCache: &NOTATION_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NUMBER
-
-    private static var NUMBER_FieldID: jfieldID?
-
-    open static var NUMBER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NUMBER", fieldType: "I", fieldCache: &NUMBER_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NUMBERS
-
-    private static var NUMBERS_FieldID: jfieldID?
-
-    open static var NUMBERS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NUMBERS", fieldType: "I", fieldCache: &NUMBERS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NUTOKEN
-
-    private static var NUTOKEN_FieldID: jfieldID?
-
-    open static var NUTOKEN: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NUTOKEN", fieldType: "I", fieldCache: &NUTOKEN_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.NUTOKENS
-
-    private static var NUTOKENS_FieldID: jfieldID?
-
-    open static var NUTOKENS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NUTOKENS", fieldType: "I", fieldCache: &NUTOKENS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.RCDATA
-
-    private static var RCDATA_FieldID: jfieldID?
-
-    open static var RCDATA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RCDATA", fieldType: "I", fieldCache: &RCDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.EMPTY
-
-    private static var EMPTY_FieldID: jfieldID?
-
-    open static var EMPTY: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "EMPTY", fieldType: "I", fieldCache: &EMPTY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.MODEL
-
-    private static var MODEL_FieldID: jfieldID?
-
-    open static var MODEL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MODEL", fieldType: "I", fieldCache: &MODEL_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private int javax.swing.text.html.parser.Parser.textpos
 
     /// public static final int javax.swing.text.html.parser.DTDConstants.ANY
 
@@ -320,40 +121,18 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open static var ANY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANY", fieldType: "I", fieldCache: &ANY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.text.html.parser.DTDConstants.FIXED
+    /// public static final int javax.swing.text.html.parser.DTDConstants.CDATA
 
-    private static var FIXED_FieldID: jfieldID?
+    private static var CDATA_FieldID: jfieldID?
 
-    open static var FIXED: Int {
+    open static var CDATA: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FIXED", fieldType: "I", fieldCache: &FIXED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.REQUIRED
-
-    private static var REQUIRED_FieldID: jfieldID?
-
-    open static var REQUIRED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "REQUIRED", fieldType: "I", fieldCache: &REQUIRED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.CURRENT
-
-    private static var CURRENT_FieldID: jfieldID?
-
-    open static var CURRENT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CURRENT", fieldType: "I", fieldCache: &CURRENT_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CDATA", fieldType: "I", fieldCache: &CDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
         }
     }
 
@@ -364,117 +143,18 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open static var CONREF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONREF", fieldType: "I", fieldCache: &CONREF_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.text.html.parser.DTDConstants.IMPLIED
+    /// public static final int javax.swing.text.html.parser.DTDConstants.CURRENT
 
-    private static var IMPLIED_FieldID: jfieldID?
+    private static var CURRENT_FieldID: jfieldID?
 
-    open static var IMPLIED: Int {
+    open static var CURRENT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "IMPLIED", fieldType: "I", fieldCache: &IMPLIED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.PUBLIC
-
-    private static var PUBLIC_FieldID: jfieldID?
-
-    open static var PUBLIC: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PUBLIC", fieldType: "I", fieldCache: &PUBLIC_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.SDATA
-
-    private static var SDATA_FieldID: jfieldID?
-
-    open static var SDATA: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SDATA", fieldType: "I", fieldCache: &SDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.PI
-
-    private static var PI_FieldID: jfieldID?
-
-    open static var PI: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PI", fieldType: "I", fieldCache: &PI_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.STARTTAG
-
-    private static var STARTTAG_FieldID: jfieldID?
-
-    open static var STARTTAG: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "STARTTAG", fieldType: "I", fieldCache: &STARTTAG_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.ENDTAG
-
-    private static var ENDTAG_FieldID: jfieldID?
-
-    open static var ENDTAG: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENDTAG", fieldType: "I", fieldCache: &ENDTAG_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.MS
-
-    private static var MS_FieldID: jfieldID?
-
-    open static var MS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MS", fieldType: "I", fieldCache: &MS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.MD
-
-    private static var MD_FieldID: jfieldID?
-
-    open static var MD: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MD", fieldType: "I", fieldCache: &MD_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.SYSTEM
-
-    private static var SYSTEM_FieldID: jfieldID?
-
-    open static var SYSTEM: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SYSTEM", fieldType: "I", fieldCache: &SYSTEM_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.html.parser.DTDConstants.GENERAL
-
-    private static var GENERAL_FieldID: jfieldID?
-
-    open static var GENERAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "GENERAL", fieldType: "I", fieldCache: &GENERAL_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CURRENT", fieldType: "I", fieldCache: &CURRENT_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
         }
     }
 
@@ -485,7 +165,249 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open static var DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.EMPTY
+
+    private static var EMPTY_FieldID: jfieldID?
+
+    open static var EMPTY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "EMPTY", fieldType: "I", fieldCache: &EMPTY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.ENDTAG
+
+    private static var ENDTAG_FieldID: jfieldID?
+
+    open static var ENDTAG: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENDTAG", fieldType: "I", fieldCache: &ENDTAG_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.ENTITIES
+
+    private static var ENTITIES_FieldID: jfieldID?
+
+    open static var ENTITIES: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENTITIES", fieldType: "I", fieldCache: &ENTITIES_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.ENTITY
+
+    private static var ENTITY_FieldID: jfieldID?
+
+    open static var ENTITY: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENTITY", fieldType: "I", fieldCache: &ENTITY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.FIXED
+
+    private static var FIXED_FieldID: jfieldID?
+
+    open static var FIXED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FIXED", fieldType: "I", fieldCache: &FIXED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.GENERAL
+
+    private static var GENERAL_FieldID: jfieldID?
+
+    open static var GENERAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "GENERAL", fieldType: "I", fieldCache: &GENERAL_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.ID
+
+    private static var ID_FieldID: jfieldID?
+
+    open static var ID: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ID", fieldType: "I", fieldCache: &ID_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.IDREF
+
+    private static var IDREF_FieldID: jfieldID?
+
+    open static var IDREF: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "IDREF", fieldType: "I", fieldCache: &IDREF_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.IDREFS
+
+    private static var IDREFS_FieldID: jfieldID?
+
+    open static var IDREFS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "IDREFS", fieldType: "I", fieldCache: &IDREFS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.IMPLIED
+
+    private static var IMPLIED_FieldID: jfieldID?
+
+    open static var IMPLIED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "IMPLIED", fieldType: "I", fieldCache: &IMPLIED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.MD
+
+    private static var MD_FieldID: jfieldID?
+
+    open static var MD: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MD", fieldType: "I", fieldCache: &MD_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.MODEL
+
+    private static var MODEL_FieldID: jfieldID?
+
+    open static var MODEL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MODEL", fieldType: "I", fieldCache: &MODEL_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.MS
+
+    private static var MS_FieldID: jfieldID?
+
+    open static var MS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MS", fieldType: "I", fieldCache: &MS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NAME
+
+    private static var NAME_FieldID: jfieldID?
+
+    open static var NAME: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NAME", fieldType: "I", fieldCache: &NAME_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NAMES
+
+    private static var NAMES_FieldID: jfieldID?
+
+    open static var NAMES: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NAMES", fieldType: "I", fieldCache: &NAMES_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NMTOKEN
+
+    private static var NMTOKEN_FieldID: jfieldID?
+
+    open static var NMTOKEN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NMTOKEN", fieldType: "I", fieldCache: &NMTOKEN_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NMTOKENS
+
+    private static var NMTOKENS_FieldID: jfieldID?
+
+    open static var NMTOKENS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NMTOKENS", fieldType: "I", fieldCache: &NMTOKENS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NOTATION
+
+    private static var NOTATION_FieldID: jfieldID?
+
+    open static var NOTATION: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NOTATION", fieldType: "I", fieldCache: &NOTATION_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NUMBER
+
+    private static var NUMBER_FieldID: jfieldID?
+
+    open static var NUMBER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NUMBER", fieldType: "I", fieldCache: &NUMBER_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NUMBERS
+
+    private static var NUMBERS_FieldID: jfieldID?
+
+    open static var NUMBERS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NUMBERS", fieldType: "I", fieldCache: &NUMBERS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NUTOKEN
+
+    private static var NUTOKEN_FieldID: jfieldID?
+
+    open static var NUTOKEN: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NUTOKEN", fieldType: "I", fieldCache: &NUTOKEN_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.NUTOKENS
+
+    private static var NUTOKENS_FieldID: jfieldID?
+
+    open static var NUTOKENS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NUTOKENS", fieldType: "I", fieldCache: &NUTOKENS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
         }
     }
 
@@ -496,7 +418,84 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     open static var PARAMETER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PARAMETER", fieldType: "I", fieldCache: &PARAMETER_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.PI
+
+    private static var PI_FieldID: jfieldID?
+
+    open static var PI: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PI", fieldType: "I", fieldCache: &PI_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.PUBLIC
+
+    private static var PUBLIC_FieldID: jfieldID?
+
+    open static var PUBLIC: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PUBLIC", fieldType: "I", fieldCache: &PUBLIC_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.RCDATA
+
+    private static var RCDATA_FieldID: jfieldID?
+
+    open static var RCDATA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RCDATA", fieldType: "I", fieldCache: &RCDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.REQUIRED
+
+    private static var REQUIRED_FieldID: jfieldID?
+
+    open static var REQUIRED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "REQUIRED", fieldType: "I", fieldCache: &REQUIRED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.SDATA
+
+    private static var SDATA_FieldID: jfieldID?
+
+    open static var SDATA: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SDATA", fieldType: "I", fieldCache: &SDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.STARTTAG
+
+    private static var STARTTAG_FieldID: jfieldID?
+
+    open static var STARTTAG: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "STARTTAG", fieldType: "I", fieldCache: &STARTTAG_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.html.parser.DTDConstants.SYSTEM
+
+    private static var SYSTEM_FieldID: jfieldID?
+
+    open static var SYSTEM: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SYSTEM", fieldType: "I", fieldCache: &SYSTEM_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
+            return Int(__value)
         }
     }
 
@@ -505,8 +504,8 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( dtd: DTD? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: dtd, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/parser/Parser", classCache: &Parser.ParserJNIClass, methodSig: "(Ljavax/swing/text/html/parser/DTD;)V", methodCache: &Parser.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -517,57 +516,54 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         self.init( dtd: _dtd )
     }
 
-    /// char[] javax.swing.text.html.parser.Parser.getChars(int)
+    /// void javax.swing.text.html.parser.Parser.addString(int)
 
-    /// char[] javax.swing.text.html.parser.Parser.getChars(int,int)
+    // Skipping method: true false false false false 
 
-    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    /// protected void javax.swing.text.html.parser.Parser.endTag(boolean)
 
-    private static var error_MethodID_2: jmethodID?
+    private static var endTag_MethodID_2: jmethodID?
 
-    open func error( err: String?, arg1: String?, arg2: String?, arg3: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func endTag( omitted: Bool ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(omitted ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endTag", methodSig: "(Z)V", methodCache: &Parser.endTag_MethodID_2, args: &__args, locals: &__locals )
     }
 
-    open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String?, _ _arg3: String? ) {
-        error( err: _err, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String)
-
-    private static var error_MethodID_3: jmethodID?
-
-    open func error( err: String?, arg1: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func error( _ _err: String?, _ _arg1: String? ) {
-        error( err: _err, arg1: _arg1 )
+    open func endTag( _ _omitted: Bool ) {
+        endTag( omitted: _omitted )
     }
 
     /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String)
 
-    private static var error_MethodID_4: jmethodID?
+    private static var error_MethodID_3: jmethodID?
 
     open func error( err: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: err, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func error( _ _err: String? ) {
         error( err: _err )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String)
+
+    private static var error_MethodID_4: jmethodID?
+
+    open func error( err: String?, arg1: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: err, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func error( _ _err: String?, _ _arg1: String? ) {
+        error( err: _err, arg1: _arg1 )
     }
 
     /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String)
@@ -575,8 +571,8 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     private static var error_MethodID_5: jmethodID?
 
     open func error( err: String?, arg1: String?, arg2: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: err, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
@@ -587,158 +583,133 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         error( err: _err, arg1: _arg1, arg2: _arg2 )
     }
 
+    /// protected void javax.swing.text.html.parser.Parser.error(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+
+    private static var error_MethodID_6: jmethodID?
+
+    open func error( err: String?, arg1: String?, arg2: String?, arg3: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: err, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "error", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", methodCache: &Parser.error_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func error( _ _err: String?, _ _arg1: String?, _ _arg2: String?, _ _arg3: String? ) {
+        error( err: _err, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// void javax.swing.text.html.parser.Parser.errorContext() throws javax.swing.text.ChangedCharSetException
+
+    // Skipping method: true false false false false 
+
+    /// protected void javax.swing.text.html.parser.Parser.flushAttributes()
+
+    private static var flushAttributes_MethodID_7: jmethodID?
+
+    open func flushAttributes() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "flushAttributes", methodSig: "()V", methodCache: &Parser.flushAttributes_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
     /// protected javax.swing.text.SimpleAttributeSet javax.swing.text.html.parser.Parser.getAttributes()
 
-    private static var getAttributes_MethodID_6: jmethodID?
+    private static var getAttributes_MethodID_8: jmethodID?
 
     open func getAttributes() -> SimpleAttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributes", methodSig: "()Ljavax/swing/text/SimpleAttributeSet;", methodCache: &Parser.getAttributes_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributes", methodSig: "()Ljavax/swing/text/SimpleAttributeSet;", methodCache: &Parser.getAttributes_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SimpleAttributeSet( javaObject: __return ) : nil
     }
 
 
-    /// public synchronized void javax.swing.text.html.parser.Parser.parse(java.io.Reader) throws java.io.IOException
+    /// int javax.swing.text.html.parser.Parser.getBlockStartPosition()
 
-    private static var parse_MethodID_7: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func parse( _in: /* java.io.Reader */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// char[] javax.swing.text.html.parser.Parser.getChars(int)
+
+    // Skipping method: true false false false false 
+
+    /// char[] javax.swing.text.html.parser.Parser.getChars(int,int)
+
+    // Skipping method: true false false false false 
+
+    /// protected int javax.swing.text.html.parser.Parser.getCurrentLine()
+
+    private static var getCurrentLine_MethodID_9: jmethodID?
+
+    open func getCurrentLine() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "parse", methodSig: "(Ljava/io/Reader;)V", methodCache: &Parser.parse_MethodID_7, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func parse( _ __in: /* java.io.Reader */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try parse( _in: __in )
-    }
-
-    /// void javax.swing.text.html.parser.Parser.handleText(javax.swing.text.html.parser.TagElement)
-
-    /// protected void javax.swing.text.html.parser.Parser.handleText(char[])
-
-    private static var handleText_MethodID_8: jmethodID?
-
-    open func handleText( text: [UInt16]? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCurrentLine", methodSig: "()I", methodCache: &Parser.getCurrentLine_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// protected int javax.swing.text.html.parser.Parser.getCurrentPos()
+
+    private static var getCurrentPos_MethodID_10: jmethodID?
+
+    open func getCurrentPos() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleText", methodSig: "([C)V", methodCache: &Parser.handleText_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func handleText( _ _text: [UInt16]? ) {
-        handleText( text: _text )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.handleStartTag(javax.swing.text.html.parser.TagElement)
-
-    private static var handleStartTag_MethodID_9: jmethodID?
-
-    open func handleStartTag( tag: TagElement? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleStartTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleStartTag_MethodID_9, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCurrentPos", methodSig: "()I", methodCache: &Parser.getCurrentPos_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func handleStartTag( _ _tag: TagElement? ) {
-        handleStartTag( tag: _tag )
-    }
+
+    /// java.lang.String javax.swing.text.html.parser.Parser.getEndOfLineString()
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.parser.Parser.getString(int)
+
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.text.html.parser.Parser.handleComment(char[])
 
-    private static var handleComment_MethodID_10: jmethodID?
+    private static var handleComment_MethodID_11: jmethodID?
 
     open func handleComment( text: [UInt16]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleComment", methodSig: "([C)V", methodCache: &Parser.handleComment_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleComment", methodSig: "([C)V", methodCache: &Parser.handleComment_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func handleComment( _ _text: [UInt16]? ) {
         handleComment( text: _text )
     }
 
-    /// protected void javax.swing.text.html.parser.Parser.handleEndTag(javax.swing.text.html.parser.TagElement)
+    /// protected void javax.swing.text.html.parser.Parser.handleEOFInComment()
 
-    private static var handleEndTag_MethodID_11: jmethodID?
+    private static var handleEOFInComment_MethodID_12: jmethodID?
 
-    open func handleEndTag( tag: TagElement? ) {
+    open func handleEOFInComment() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEndTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleEndTag_MethodID_11, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEOFInComment", methodSig: "()V", methodCache: &Parser.handleEOFInComment_MethodID_12, args: &__args, locals: &__locals )
     }
 
-    open func handleEndTag( _ _tag: TagElement? ) {
-        handleEndTag( tag: _tag )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.handleError(int,java.lang.String)
-
-    private static var handleError_MethodID_12: jmethodID?
-
-    open func handleError( ln: Int, msg: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ln, locals: &__locals )
-        __args[1] = JNIType.toJava( value: msg, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleError", methodSig: "(ILjava/lang/String;)V", methodCache: &Parser.handleError_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func handleError( _ _ln: Int, _ _msg: String? ) {
-        handleError( ln: _ln, msg: _msg )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.endTag(boolean)
-
-    private static var endTag_MethodID_13: jmethodID?
-
-    open func endTag( omitted: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: omitted, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endTag", methodSig: "(Z)V", methodCache: &Parser.endTag_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func endTag( _ _omitted: Bool ) {
-        endTag( omitted: _omitted )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.startTag(javax.swing.text.html.parser.TagElement) throws javax.swing.text.ChangedCharSetException
-
-    private static var startTag_MethodID_14: jmethodID?
-
-    open func startTag( tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.startTag_MethodID_14, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw ChangedCharSetException( javaObject: throwable )
-        }
-    }
-
-    open func startTag( _ _tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
-        try startTag( tag: _tag )
-    }
 
     /// protected void javax.swing.text.html.parser.Parser.handleEmptyTag(javax.swing.text.html.parser.TagElement) throws javax.swing.text.ChangedCharSetException
 
-    private static var handleEmptyTag_MethodID_15: jmethodID?
+    private static var handleEmptyTag_MethodID_13: jmethodID?
 
     open func handleEmptyTag( tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: tag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEmptyTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleEmptyTag_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEmptyTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleEmptyTag_MethodID_13, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw ChangedCharSetException( javaObject: throwable )
         }
     }
@@ -747,52 +718,105 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         try handleEmptyTag( tag: _tag )
     }
 
-    /// java.lang.String javax.swing.text.html.parser.Parser.getEndOfLineString()
+    /// protected void javax.swing.text.html.parser.Parser.handleEndTag(javax.swing.text.html.parser.TagElement)
 
-    /// int javax.swing.text.html.parser.Parser.getBlockStartPosition()
+    private static var handleEndTag_MethodID_14: jmethodID?
 
-    /// protected void javax.swing.text.html.parser.Parser.flushAttributes()
-
-    private static var flushAttributes_MethodID_16: jmethodID?
-
-    open func flushAttributes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func handleEndTag( tag: TagElement? ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "flushAttributes", methodSig: "()V", methodCache: &Parser.flushAttributes_MethodID_16, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEndTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleEndTag_MethodID_14, args: &__args, locals: &__locals )
     }
 
-
-    /// protected int javax.swing.text.html.parser.Parser.getCurrentPos()
-
-    private static var getCurrentPos_MethodID_17: jmethodID?
-
-    open func getCurrentPos() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCurrentPos", methodSig: "()I", methodCache: &Parser.getCurrentPos_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    open func handleEndTag( _ _tag: TagElement? ) {
+        handleEndTag( tag: _tag )
     }
 
+    /// protected void javax.swing.text.html.parser.Parser.handleError(int,java.lang.String)
 
-    /// protected int javax.swing.text.html.parser.Parser.getCurrentLine()
+    private static var handleError_MethodID_15: jmethodID?
 
-    private static var getCurrentLine_MethodID_18: jmethodID?
-
-    open func getCurrentLine() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func handleError( ln: Int, msg: String? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCurrentLine", methodSig: "()I", methodCache: &Parser.getCurrentLine_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(ln) )
+        __args[1] = JNIType.toJava( value: msg, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleError", methodSig: "(ILjava/lang/String;)V", methodCache: &Parser.handleError_MethodID_15, args: &__args, locals: &__locals )
     }
 
+    open func handleError( _ _ln: Int, _ _msg: String? ) {
+        handleError( ln: _ln, msg: _msg )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.handleStartTag(javax.swing.text.html.parser.TagElement)
+
+    private static var handleStartTag_MethodID_16: jmethodID?
+
+    open func handleStartTag( tag: TagElement? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleStartTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.handleStartTag_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func handleStartTag( _ _tag: TagElement? ) {
+        handleStartTag( tag: _tag )
+    }
+
+    /// void javax.swing.text.html.parser.Parser.handleText(javax.swing.text.html.parser.TagElement)
+
+    // Skipping method: true false false false false 
+
+    /// protected void javax.swing.text.html.parser.Parser.handleText(char[])
+
+    private static var handleText_MethodID_17: jmethodID?
+
+    open func handleText( text: [UInt16]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleText", methodSig: "([C)V", methodCache: &Parser.handleText_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func handleText( _ _text: [UInt16]? ) {
+        handleText( text: _text )
+    }
+
+    /// protected void javax.swing.text.html.parser.Parser.handleTitle(char[])
+
+    private static var handleTitle_MethodID_18: jmethodID?
+
+    open func handleTitle( text: [UInt16]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleTitle", methodSig: "([C)V", methodCache: &Parser.handleTitle_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func handleTitle( _ _text: [UInt16]? ) {
+        handleTitle( text: _text )
+    }
+
+    /// boolean javax.swing.text.html.parser.Parser.ignoreElement(javax.swing.text.html.parser.Element)
+
+    // Skipping method: true false false false false 
+
+    /// boolean javax.swing.text.html.parser.Parser.legalElementContext(javax.swing.text.html.parser.Element) throws javax.swing.text.ChangedCharSetException
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.parser.Parser.legalTagContext(javax.swing.text.html.parser.TagElement) throws javax.swing.text.ChangedCharSetException
+
+    // Skipping method: true false false false false 
 
     /// protected javax.swing.text.html.parser.TagElement javax.swing.text.html.parser.Parser.makeTag(javax.swing.text.html.parser.Element)
 
     private static var makeTag_MethodID_19: jmethodID?
 
     open func makeTag( elem: text_html_parser_Element? ) -> TagElement! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeTag", methodSig: "(Ljavax/swing/text/html/parser/Element;)Ljavax/swing/text/html/parser/TagElement;", methodCache: &Parser.makeTag_MethodID_19, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -808,10 +832,10 @@ open class Parser: java_swift.JavaObject, DTDConstants {
     private static var makeTag_MethodID_20: jmethodID?
 
     open func makeTag( elem: text_html_parser_Element?, fictional: Bool ) -> TagElement! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        __args[1] = JNIType.toJava( value: fictional, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(fictional ? JNI_TRUE : JNI_FALSE) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "makeTag", methodSig: "(Ljavax/swing/text/html/parser/Element;Z)Ljavax/swing/text/html/parser/TagElement;", methodCache: &Parser.makeTag_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TagElement( javaObject: __return ) : nil
@@ -821,122 +845,149 @@ open class Parser: java_swift.JavaObject, DTDConstants {
         return makeTag( elem: _elem, fictional: _fictional )
     }
 
-    /// protected void javax.swing.text.html.parser.Parser.handleTitle(char[])
-
-    private static var handleTitle_MethodID_21: jmethodID?
-
-    open func handleTitle( text: [UInt16]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleTitle", methodSig: "([C)V", methodCache: &Parser.handleTitle_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func handleTitle( _ _text: [UInt16]? ) {
-        handleTitle( text: _text )
-    }
-
-    /// protected void javax.swing.text.html.parser.Parser.handleEOFInComment()
-
-    private static var handleEOFInComment_MethodID_22: jmethodID?
-
-    open func handleEOFInComment() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "handleEOFInComment", methodSig: "()V", methodCache: &Parser.handleEOFInComment_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-
-    /// boolean javax.swing.text.html.parser.Parser.ignoreElement(javax.swing.text.html.parser.Element)
+    /// private char[] javax.swing.text.html.parser.Parser.mapNumericReference(int)
 
     /// protected void javax.swing.text.html.parser.Parser.markFirstTime(javax.swing.text.html.parser.Element)
 
-    private static var markFirstTime_MethodID_23: jmethodID?
+    private static var markFirstTime_MethodID_21: jmethodID?
 
     open func markFirstTime( elem: text_html_parser_Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "markFirstTime", methodSig: "(Ljavax/swing/text/html/parser/Element;)V", methodCache: &Parser.markFirstTime_MethodID_23, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "markFirstTime", methodSig: "(Ljavax/swing/text/html/parser/Element;)V", methodCache: &Parser.markFirstTime_MethodID_21, args: &__args, locals: &__locals )
     }
 
     open func markFirstTime( _ _elem: text_html_parser_Element? ) {
         markFirstTime( elem: _elem )
     }
 
-    /// boolean javax.swing.text.html.parser.Parser.legalElementContext(javax.swing.text.html.parser.Element) throws javax.swing.text.ChangedCharSetException
+    /// public synchronized void javax.swing.text.html.parser.Parser.parse(java.io.Reader) throws java.io.IOException
 
-    /// void javax.swing.text.html.parser.Parser.legalTagContext(javax.swing.text.html.parser.TagElement) throws javax.swing.text.ChangedCharSetException
+    private static var parse_MethodID_22: jmethodID?
 
-    /// void javax.swing.text.html.parser.Parser.errorContext() throws javax.swing.text.ChangedCharSetException
+    open func parse( _in: /* class java.io.Reader */ UnavailableObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "parse", methodSig: "(Ljava/io/Reader;)V", methodCache: &Parser.parse_MethodID_22, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
 
-    /// void javax.swing.text.html.parser.Parser.addString(int)
-
-    /// void javax.swing.text.html.parser.Parser.resetStrBuffer()
-
-    /// int javax.swing.text.html.parser.Parser.strIndexOf(char)
-
-    /// void javax.swing.text.html.parser.Parser.skipSpace() throws java.io.IOException
-
-    /// boolean javax.swing.text.html.parser.Parser.parseIdentifier(boolean) throws java.io.IOException
-
-    /// private char[] javax.swing.text.html.parser.Parser.parseEntityReference() throws java.io.IOException
-
-    /// private char[] javax.swing.text.html.parser.Parser.mapNumericReference(int)
-
-    /// void javax.swing.text.html.parser.Parser.parseComment() throws java.io.IOException
-
-    /// void javax.swing.text.html.parser.Parser.parseLiteral(boolean) throws java.io.IOException
-
-    /// java.lang.String javax.swing.text.html.parser.Parser.parseAttributeValue(boolean) throws java.io.IOException
+    open func parse( _ __in: /* class java.io.Reader */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try parse( _in: __in )
+    }
 
     /// void javax.swing.text.html.parser.Parser.parseAttributeSpecificationList(javax.swing.text.html.parser.Element) throws java.io.IOException
 
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.parser.Parser.parseAttributeValue(boolean) throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.parser.Parser.parseComment() throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.parser.Parser.parseContent() throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
     /// public java.lang.String javax.swing.text.html.parser.Parser.parseDTDMarkup() throws java.io.IOException
 
-    private static var parseDTDMarkup_MethodID_24: jmethodID?
+    private static var parseDTDMarkup_MethodID_23: jmethodID?
 
     open func parseDTDMarkup() throws /* java.io.IOException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "parseDTDMarkup", methodSig: "()Ljava/lang/String;", methodCache: &Parser.parseDTDMarkup_MethodID_24, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "parseDTDMarkup", methodSig: "()Ljava/lang/String;", methodCache: &Parser.parseDTDMarkup_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
-        return JNIType.toSwift( type: String(), from: __return )
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
+    /// private char[] javax.swing.text.html.parser.Parser.parseEntityReference() throws java.io.IOException
+
+    /// boolean javax.swing.text.html.parser.Parser.parseIdentifier(boolean) throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.parser.Parser.parseInvalidTag() throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.parser.Parser.parseLiteral(boolean) throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
     /// protected boolean javax.swing.text.html.parser.Parser.parseMarkupDeclarations(java.lang.StringBuffer) throws java.io.IOException
 
-    private static var parseMarkupDeclarations_MethodID_25: jmethodID?
+    private static var parseMarkupDeclarations_MethodID_24: jmethodID?
 
     open func parseMarkupDeclarations( strBuff: java_lang.StringBuffer? ) throws /* java.io.IOException */ -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: strBuff, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "parseMarkupDeclarations", methodSig: "(Ljava/lang/StringBuffer;)Z", methodCache: &Parser.parseMarkupDeclarations_MethodID_25, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "parseMarkupDeclarations", methodSig: "(Ljava/lang/StringBuffer;)Z", methodCache: &Parser.parseMarkupDeclarations_MethodID_24, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func parseMarkupDeclarations( _ _strBuff: java_lang.StringBuffer? ) throws /* java.io.IOException */ -> Bool {
         return try parseMarkupDeclarations( strBuff: _strBuff )
     }
 
-    /// void javax.swing.text.html.parser.Parser.parseInvalidTag() throws java.io.IOException
+    /// void javax.swing.text.html.parser.Parser.parseScript() throws java.io.IOException
+
+    // Skipping method: true false false false false 
 
     /// void javax.swing.text.html.parser.Parser.parseTag() throws java.io.IOException
 
-    /// void javax.swing.text.html.parser.Parser.parseScript() throws java.io.IOException
-
-    /// void javax.swing.text.html.parser.Parser.parseContent() throws java.io.IOException
+    // Skipping method: true false false false false 
 
     /// private final int javax.swing.text.html.parser.Parser.readCh() throws java.io.IOException
 
-    /// java.lang.String javax.swing.text.html.parser.Parser.getString(int)
+    /// void javax.swing.text.html.parser.Parser.resetStrBuffer()
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.parser.Parser.skipSpace() throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
+    /// protected void javax.swing.text.html.parser.Parser.startTag(javax.swing.text.html.parser.TagElement) throws javax.swing.text.ChangedCharSetException
+
+    private static var startTag_MethodID_25: jmethodID?
+
+    open func startTag( tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTag", methodSig: "(Ljavax/swing/text/html/parser/TagElement;)V", methodCache: &Parser.startTag_MethodID_25, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw ChangedCharSetException( javaObject: throwable )
+        }
+    }
+
+    open func startTag( _ _tag: TagElement? ) throws /* javax.swing.text.ChangedCharSetException */ {
+        try startTag( tag: _tag )
+    }
+
+    /// int javax.swing.text.html.parser.Parser.strIndexOf(char)
+
+    // Skipping method: true false false false false 
 
 }
 

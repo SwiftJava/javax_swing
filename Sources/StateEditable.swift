@@ -10,7 +10,7 @@ public protocol StateEditable: JavaProtocol {
 
     /// public static final java.lang.String javax.swing.undo.StateEditable.RCSID
 
-    static var RCSID: String! { get }
+    // Skipping field: false false false false false true 
 
     /// public abstract void javax.swing.undo.StateEditable.restoreState(java.util.Hashtable)
 
@@ -34,7 +34,8 @@ open class StateEditableForward: JNIObjectForward, StateEditable {
     open static var RCSID: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RCSID", fieldType: "Ljava/lang/String;", fieldCache: &RCSID_FieldID, className: "javax/swing/undo/StateEditable", classCache: &StateEditableJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -43,8 +44,8 @@ open class StateEditableForward: JNIObjectForward, StateEditable {
     private static var restoreState_MethodID_3: jmethodID?
 
     open func restoreState( state: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: state, mapClass: "java/util/Hashtable", locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "restoreState", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &StateEditableForward.restoreState_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -58,8 +59,8 @@ open class StateEditableForward: JNIObjectForward, StateEditable {
     private static var storeState_MethodID_4: jmethodID?
 
     open func storeState( state: java_util.Hashtable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: state, mapClass: "java/util/Hashtable", locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "storeState", methodSig: "(Ljava/util/Hashtable;)V", methodCache: &StateEditableForward.storeState_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -69,5 +70,4 @@ open class StateEditableForward: JNIObjectForward, StateEditable {
     }
 
 }
-
 

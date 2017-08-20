@@ -12,21 +12,9 @@ public protocol StyledDocument: Document {
 
     func addStyle( nm: String?, parent: Style? ) -> Style!
 
-    /// public abstract void javax.swing.text.StyledDocument.removeStyle(java.lang.String)
+    /// public abstract java.awt.Color javax.swing.text.StyledDocument.getBackground(javax.swing.text.AttributeSet)
 
-    func removeStyle( nm: String? )
-
-    /// public abstract void javax.swing.text.StyledDocument.setLogicalStyle(int,javax.swing.text.Style)
-
-    func setLogicalStyle( pos: Int, s: Style? )
-
-    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getLogicalStyle(int)
-
-    func getLogicalStyle( p: Int ) -> Style!
-
-    /// public abstract void javax.swing.text.StyledDocument.setParagraphAttributes(int,int,javax.swing.text.AttributeSet,boolean)
-
-    func setParagraphAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool )
+    func getBackground( attr: AttributeSet? ) -> java_awt.Color!
 
     /// public abstract javax.swing.text.Element javax.swing.text.StyledDocument.getCharacterElement(int)
 
@@ -36,25 +24,37 @@ public protocol StyledDocument: Document {
 
     func getFont( attr: AttributeSet? ) -> java_awt.Font!
 
-    /// public abstract java.awt.Color javax.swing.text.StyledDocument.getBackground(javax.swing.text.AttributeSet)
-
-    func getBackground( attr: AttributeSet? ) -> java_awt.Color!
-
     /// public abstract java.awt.Color javax.swing.text.StyledDocument.getForeground(javax.swing.text.AttributeSet)
 
     func getForeground( attr: AttributeSet? ) -> java_awt.Color!
 
-    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getStyle(java.lang.String)
+    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getLogicalStyle(int)
 
-    func getStyle( nm: String? ) -> Style!
+    func getLogicalStyle( p: Int ) -> Style!
 
     /// public abstract javax.swing.text.Element javax.swing.text.StyledDocument.getParagraphElement(int)
 
     func getParagraphElement( pos: Int ) -> Element!
 
+    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getStyle(java.lang.String)
+
+    func getStyle( nm: String? ) -> Style!
+
+    /// public abstract void javax.swing.text.StyledDocument.removeStyle(java.lang.String)
+
+    func removeStyle( nm: String? )
+
     /// public abstract void javax.swing.text.StyledDocument.setCharacterAttributes(int,int,javax.swing.text.AttributeSet,boolean)
 
     func setCharacterAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool )
+
+    /// public abstract void javax.swing.text.StyledDocument.setLogicalStyle(int,javax.swing.text.Style)
+
+    func setLogicalStyle( pos: Int, s: Style? )
+
+    /// public abstract void javax.swing.text.StyledDocument.setParagraphAttributes(int,int,javax.swing.text.AttributeSet,boolean)
+
+    func setParagraphAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool )
 
 }
 
@@ -63,16 +63,31 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
 
     private static var StyledDocumentJNIClass: jclass?
 
+    /// public abstract void javax.swing.text.Document.addDocumentListener(javax.swing.event.DocumentListener)
+
+    private static var addDocumentListener_MethodID_13: jmethodID?
+
+    override open func addDocumentListener( listener: DocumentListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &StyledDocumentForward.addDocumentListener_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    override open func addDocumentListener( _ _listener: DocumentListener? ) {
+        addDocumentListener( listener: _listener )
+    }
+
     /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.addStyle(java.lang.String,javax.swing.text.Style)
 
-    private static var addStyle_MethodID_13: jmethodID?
+    private static var addStyle_MethodID_14: jmethodID?
 
     open func addStyle( nm: String?, parent: Style? ) -> Style! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: nm, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addStyle", methodSig: "(Ljava/lang/String;Ljavax/swing/text/Style;)Ljavax/swing/text/Style;", methodCache: &StyledDocumentForward.addStyle_MethodID_13, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "addStyle", methodSig: "(Ljava/lang/String;Ljavax/swing/text/Style;)Ljavax/swing/text/Style;", methodCache: &StyledDocumentForward.addStyle_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleForward( javaObject: __return ) : nil
     }
@@ -81,70 +96,57 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         return addStyle( nm: _nm, parent: _parent )
     }
 
-    /// public abstract void javax.swing.text.StyledDocument.removeStyle(java.lang.String)
+    /// public abstract void javax.swing.text.Document.addUndoableEditListener(javax.swing.event.UndoableEditListener)
 
-    private static var removeStyle_MethodID_14: jmethodID?
+    private static var addUndoableEditListener_MethodID_15: jmethodID?
 
-    open func removeStyle( nm: String? ) {
+    override open func addUndoableEditListener( listener: UndoableEditListener? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &StyledDocumentForward.addUndoableEditListener_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    override open func addUndoableEditListener( _ _listener: UndoableEditListener? ) {
+        addUndoableEditListener( listener: _listener )
+    }
+
+    /// public abstract javax.swing.text.Position javax.swing.text.Document.createPosition(int) throws javax.swing.text.BadLocationException
+
+    private static var createPosition_MethodID_16: jmethodID?
+
+    override open func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeStyle", methodSig: "(Ljava/lang/String;)V", methodCache: &StyledDocumentForward.removeStyle_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func removeStyle( _ _nm: String? ) {
-        removeStyle( nm: _nm )
-    }
-
-    /// public abstract void javax.swing.text.StyledDocument.setLogicalStyle(int,javax.swing.text.Style)
-
-    private static var setLogicalStyle_MethodID_15: jmethodID?
-
-    open func setLogicalStyle( pos: Int, s: Style? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLogicalStyle", methodSig: "(ILjavax/swing/text/Style;)V", methodCache: &StyledDocumentForward.setLogicalStyle_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setLogicalStyle( _ _pos: Int, _ _s: Style? ) {
-        setLogicalStyle( pos: _pos, s: _s )
-    }
-
-    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getLogicalStyle(int)
-
-    private static var getLogicalStyle_MethodID_16: jmethodID?
-
-    open func getLogicalStyle( p: Int ) -> Style! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalStyle", methodSig: "(I)Ljavax/swing/text/Style;", methodCache: &StyledDocumentForward.getLogicalStyle_MethodID_16, args: &__args, locals: &__locals )
+        __args[0] = jvalue( i: jint(offs) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &StyledDocumentForward.createPosition_MethodID_16, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleForward( javaObject: __return ) : nil
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? PositionForward( javaObject: __return ) : nil
     }
 
-    open func getLogicalStyle( _ _p: Int ) -> Style! {
-        return getLogicalStyle( p: _p )
+    override open func createPosition( _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
+        return try createPosition( offs: _offs )
     }
 
-    /// public abstract void javax.swing.text.StyledDocument.setParagraphAttributes(int,int,javax.swing.text.AttributeSet,boolean)
+    /// public abstract java.awt.Color javax.swing.text.StyledDocument.getBackground(javax.swing.text.AttributeSet)
 
-    private static var setParagraphAttributes_MethodID_17: jmethodID?
+    private static var getBackground_MethodID_17: jmethodID?
 
-    open func setParagraphAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func getBackground( attr: AttributeSet? ) -> java_awt.Color! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: s, locals: &__locals )
-        __args[3] = JNIType.toJava( value: replace, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphAttributes", methodSig: "(IILjavax/swing/text/AttributeSet;Z)V", methodCache: &StyledDocumentForward.setParagraphAttributes_MethodID_17, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyledDocumentForward.getBackground_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
-    open func setParagraphAttributes( _ _offset: Int, _ _length: Int, _ _s: AttributeSet?, _ _replace: Bool ) {
-        setParagraphAttributes( offset: _offset, length: _length, s: _s, replace: _replace )
+    open func getBackground( _ _attr: AttributeSet? ) -> java_awt.Color! {
+        return getBackground( attr: _attr )
     }
 
     /// public abstract javax.swing.text.Element javax.swing.text.StyledDocument.getCharacterElement(int)
@@ -152,9 +154,9 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
     private static var getCharacterElement_MethodID_18: jmethodID?
 
     open func getCharacterElement( pos: Int ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getCharacterElement_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
@@ -164,15 +166,41 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         return getCharacterElement( pos: _pos )
     }
 
+    /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
+
+    private static var getDefaultRootElement_MethodID_19: jmethodID?
+
+    override open func getDefaultRootElement() -> Element! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getDefaultRootElement_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract javax.swing.text.Position javax.swing.text.Document.getEndPosition()
+
+    private static var getEndPosition_MethodID_20: jmethodID?
+
+    override open func getEndPosition() -> Position! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &StyledDocumentForward.getEndPosition_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? PositionForward( javaObject: __return ) : nil
+    }
+
+
     /// public abstract java.awt.Font javax.swing.text.StyledDocument.getFont(javax.swing.text.AttributeSet)
 
-    private static var getFont_MethodID_19: jmethodID?
+    private static var getFont_MethodID_21: jmethodID?
 
     open func getFont( attr: AttributeSet? ) -> java_awt.Font! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Font;", methodCache: &StyledDocumentForward.getFont_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getFont", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Font;", methodCache: &StyledDocumentForward.getFont_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Font( javaObject: __return ) : nil
     }
@@ -181,32 +209,15 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         return getFont( attr: _attr )
     }
 
-    /// public abstract java.awt.Color javax.swing.text.StyledDocument.getBackground(javax.swing.text.AttributeSet)
-
-    private static var getBackground_MethodID_20: jmethodID?
-
-    open func getBackground( attr: AttributeSet? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBackground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyledDocumentForward.getBackground_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
-    }
-
-    open func getBackground( _ _attr: AttributeSet? ) -> java_awt.Color! {
-        return getBackground( attr: _attr )
-    }
-
     /// public abstract java.awt.Color javax.swing.text.StyledDocument.getForeground(javax.swing.text.AttributeSet)
 
-    private static var getForeground_MethodID_21: jmethodID?
+    private static var getForeground_MethodID_22: jmethodID?
 
     open func getForeground( attr: AttributeSet? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyledDocumentForward.getForeground_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getForeground", methodSig: "(Ljavax/swing/text/AttributeSet;)Ljava/awt/Color;", methodCache: &StyledDocumentForward.getForeground_MethodID_22, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -215,32 +226,44 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         return getForeground( attr: _attr )
     }
 
-    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getStyle(java.lang.String)
+    /// public abstract int javax.swing.text.Document.getLength()
 
-    private static var getStyle_MethodID_22: jmethodID?
+    private static var getLength_MethodID_23: jmethodID?
 
-    open func getStyle( nm: String? ) -> Style! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func getLength() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Style;", methodCache: &StyledDocumentForward.getStyle_MethodID_22, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &StyledDocumentForward.getLength_MethodID_23, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getLogicalStyle(int)
+
+    private static var getLogicalStyle_MethodID_24: jmethodID?
+
+    open func getLogicalStyle( p: Int ) -> Style! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(p) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLogicalStyle", methodSig: "(I)Ljavax/swing/text/Style;", methodCache: &StyledDocumentForward.getLogicalStyle_MethodID_24, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? StyleForward( javaObject: __return ) : nil
     }
 
-    open func getStyle( _ _nm: String? ) -> Style! {
-        return getStyle( nm: _nm )
+    open func getLogicalStyle( _ _p: Int ) -> Style! {
+        return getLogicalStyle( p: _p )
     }
 
     /// public abstract javax.swing.text.Element javax.swing.text.StyledDocument.getParagraphElement(int)
 
-    private static var getParagraphElement_MethodID_23: jmethodID?
+    private static var getParagraphElement_MethodID_25: jmethodID?
 
     open func getParagraphElement( pos: Int ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParagraphElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getParagraphElement_MethodID_23, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParagraphElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getParagraphElement_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -249,50 +272,13 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         return getParagraphElement( pos: _pos )
     }
 
-    /// public abstract void javax.swing.text.StyledDocument.setCharacterAttributes(int,int,javax.swing.text.AttributeSet,boolean)
-
-    private static var setCharacterAttributes_MethodID_24: jmethodID?
-
-    open func setCharacterAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: s, locals: &__locals )
-        __args[3] = JNIType.toJava( value: replace, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCharacterAttributes", methodSig: "(IILjavax/swing/text/AttributeSet;Z)V", methodCache: &StyledDocumentForward.setCharacterAttributes_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setCharacterAttributes( _ _offset: Int, _ _length: Int, _ _s: AttributeSet?, _ _replace: Bool ) {
-        setCharacterAttributes( offset: _offset, length: _length, s: _s, replace: _replace )
-    }
-
-    /// public abstract void javax.swing.text.Document.remove(int,int) throws javax.swing.text.BadLocationException
-
-    private static var remove_MethodID_25: jmethodID?
-
-    override open func remove( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        __args[1] = JNIType.toJava( value: len, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(II)V", methodCache: &StyledDocumentForward.remove_MethodID_25, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-    }
-
-    override open func remove( _ _offs: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ {
-        try remove( offs: _offs, len: _len )
-    }
-
     /// public abstract java.lang.Object javax.swing.text.Document.getProperty(java.lang.Object)
 
     private static var getProperty_MethodID_26: jmethodID?
 
     override open func getProperty( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProperty", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyledDocumentForward.getProperty_MethodID_26, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -303,131 +289,64 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         return getProperty( key: _key )
     }
 
-    /// public abstract int javax.swing.text.Document.getLength()
+    /// public abstract javax.swing.text.Element[] javax.swing.text.Document.getRootElements()
 
-    private static var getLength_MethodID_27: jmethodID?
+    private static var getRootElements_MethodID_27: jmethodID?
 
-    override open func getLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func getRootElements() -> [Element]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &StyledDocumentForward.getLength_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.text.Document.addUndoableEditListener(javax.swing.event.UndoableEditListener)
-
-    private static var addUndoableEditListener_MethodID_28: jmethodID?
-
-    override open func addUndoableEditListener( listener: UndoableEditListener? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &StyledDocumentForward.addUndoableEditListener_MethodID_28, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootElements", methodSig: "()[Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getRootElements_MethodID_27, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ElementForward].self, from: __return )
     }
 
-    override open func addUndoableEditListener( _ _listener: UndoableEditListener? ) {
-        addUndoableEditListener( listener: _listener )
-    }
-
-    /// public abstract void javax.swing.text.Document.removeUndoableEditListener(javax.swing.event.UndoableEditListener)
-
-    private static var removeUndoableEditListener_MethodID_29: jmethodID?
-
-    override open func removeUndoableEditListener( listener: UndoableEditListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &StyledDocumentForward.removeUndoableEditListener_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    override open func removeUndoableEditListener( _ _listener: UndoableEditListener? ) {
-        removeUndoableEditListener( listener: _listener )
-    }
 
     /// public abstract javax.swing.text.Position javax.swing.text.Document.getStartPosition()
 
-    private static var getStartPosition_MethodID_30: jmethodID?
+    private static var getStartPosition_MethodID_28: jmethodID?
 
     override open func getStartPosition() -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &StyledDocumentForward.getStartPosition_MethodID_30, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStartPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &StyledDocumentForward.getStartPosition_MethodID_28, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PositionForward( javaObject: __return ) : nil
     }
 
 
-    /// public abstract javax.swing.text.Position javax.swing.text.Document.getEndPosition()
+    /// public abstract javax.swing.text.Style javax.swing.text.StyledDocument.getStyle(java.lang.String)
 
-    private static var getEndPosition_MethodID_31: jmethodID?
+    private static var getStyle_MethodID_29: jmethodID?
 
-    override open func getEndPosition() -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getStyle( nm: String? ) -> Style! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEndPosition", methodSig: "()Ljavax/swing/text/Position;", methodCache: &StyledDocumentForward.getEndPosition_MethodID_31, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/Style;", methodCache: &StyledDocumentForward.getStyle_MethodID_29, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? PositionForward( javaObject: __return ) : nil
+        return __return != nil ? StyleForward( javaObject: __return ) : nil
     }
 
-
-    /// public abstract javax.swing.text.Element[] javax.swing.text.Document.getRootElements()
-
-    private static var getRootElements_MethodID_32: jmethodID?
-
-    override open func getRootElements() -> [Element]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootElements", methodSig: "()[Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getRootElements_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ElementForward](), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.text.Document.render(java.lang.Runnable)
-
-    private static var render_MethodID_33: jmethodID?
-
-    override open func render( r: java_swift.Runnable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: r, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "render", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &StyledDocumentForward.render_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    override open func render( _ _r: java_swift.Runnable? ) {
-        render( r: _r )
-    }
-
-    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
-
-    private static var putProperty_MethodID_34: jmethodID?
-
-    override open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &StyledDocumentForward.putProperty_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    override open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
-        putProperty( key: _key, value: _value )
+    open func getStyle( _ _nm: String? ) -> Style! {
+        return getStyle( nm: _nm )
     }
 
     /// public abstract java.lang.String javax.swing.text.Document.getText(int,int) throws javax.swing.text.BadLocationException
 
-    private static var getText_MethodID_35: jmethodID?
+    private static var getText_MethodID_30: jmethodID?
 
     override open func getText( offset: Int, length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &StyledDocumentForward.getText_MethodID_35, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "(II)Ljava/lang/String;", methodCache: &StyledDocumentForward.getText_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
-        return JNIType.toSwift( type: String(), from: __return )
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
     override open func getText( _ _offset: Int, _ _length: Int ) throws /* javax.swing.text.BadLocationException */ -> String! {
@@ -436,16 +355,17 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
 
     /// public abstract void javax.swing.text.Document.getText(int,int,javax.swing.text.Segment) throws javax.swing.text.BadLocationException
 
-    private static var getText_MethodID_36: jmethodID?
+    private static var getText_MethodID_31: jmethodID?
 
     override open func getText( offset: Int, length: Int, txt: Segment? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
         __args[2] = JNIType.toJava( value: txt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &StyledDocumentForward.getText_MethodID_36, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "getText", methodSig: "(IILjavax/swing/text/Segment;)V", methodCache: &StyledDocumentForward.getText_MethodID_31, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
     }
@@ -454,48 +374,19 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         try getText( offset: _offset, length: _length, txt: _txt )
     }
 
-    /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
-
-    private static var removeDocumentListener_MethodID_37: jmethodID?
-
-    override open func removeDocumentListener( listener: DocumentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &StyledDocumentForward.removeDocumentListener_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    override open func removeDocumentListener( _ _listener: DocumentListener? ) {
-        removeDocumentListener( listener: _listener )
-    }
-
-    /// public abstract void javax.swing.text.Document.addDocumentListener(javax.swing.event.DocumentListener)
-
-    private static var addDocumentListener_MethodID_38: jmethodID?
-
-    override open func addDocumentListener( listener: DocumentListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &StyledDocumentForward.addDocumentListener_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-    override open func addDocumentListener( _ _listener: DocumentListener? ) {
-        addDocumentListener( listener: _listener )
-    }
-
     /// public abstract void javax.swing.text.Document.insertString(int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    private static var insertString_MethodID_39: jmethodID?
+    private static var insertString_MethodID_32: jmethodID?
 
     override open func insertString( offset: Int, str: String?, a: AttributeSet? ) throws /* javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
         __args[1] = JNIType.toJava( value: str, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &StyledDocumentForward.insertString_MethodID_39, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertString", methodSig: "(ILjava/lang/String;Ljavax/swing/text/AttributeSet;)V", methodCache: &StyledDocumentForward.insertString_MethodID_32, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
     }
@@ -504,39 +395,153 @@ open class StyledDocumentForward: DocumentForward, StyledDocument {
         try insertString( offset: _offset, str: _str, a: _a )
     }
 
-    /// public abstract javax.swing.text.Position javax.swing.text.Document.createPosition(int) throws javax.swing.text.BadLocationException
+    /// public abstract void javax.swing.text.Document.putProperty(java.lang.Object,java.lang.Object)
 
-    private static var createPosition_MethodID_40: jmethodID?
+    private static var putProperty_MethodID_33: jmethodID?
 
-    override open func createPosition( offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func putProperty( key: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPosition", methodSig: "(I)Ljavax/swing/text/Position;", methodCache: &StyledDocumentForward.createPosition_MethodID_40, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putProperty", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &StyledDocumentForward.putProperty_MethodID_33, args: &__args, locals: &__locals )
+    }
+
+    override open func putProperty( _ _key: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
+        putProperty( key: _key, value: _value )
+    }
+
+    /// public abstract void javax.swing.text.Document.remove(int,int) throws javax.swing.text.BadLocationException
+
+    private static var remove_MethodID_34: jmethodID?
+
+    override open func remove( offs: Int, len: Int ) throws /* javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offs) )
+        __args[1] = jvalue( i: jint(len) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(II)V", methodCache: &StyledDocumentForward.remove_MethodID_34, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
-        return __return != nil ? PositionForward( javaObject: __return ) : nil
     }
 
-    override open func createPosition( _ _offs: Int ) throws /* javax.swing.text.BadLocationException */ -> Position! {
-        return try createPosition( offs: _offs )
+    override open func remove( _ _offs: Int, _ _len: Int ) throws /* javax.swing.text.BadLocationException */ {
+        try remove( offs: _offs, len: _len )
     }
 
-    /// public abstract javax.swing.text.Element javax.swing.text.Document.getDefaultRootElement()
+    /// public abstract void javax.swing.text.Document.removeDocumentListener(javax.swing.event.DocumentListener)
 
-    private static var getDefaultRootElement_MethodID_41: jmethodID?
+    private static var removeDocumentListener_MethodID_35: jmethodID?
 
-    override open func getDefaultRootElement() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func removeDocumentListener( listener: DocumentListener? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultRootElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &StyledDocumentForward.getDefaultRootElement_MethodID_41, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeDocumentListener", methodSig: "(Ljavax/swing/event/DocumentListener;)V", methodCache: &StyledDocumentForward.removeDocumentListener_MethodID_35, args: &__args, locals: &__locals )
     }
 
+    override open func removeDocumentListener( _ _listener: DocumentListener? ) {
+        removeDocumentListener( listener: _listener )
+    }
+
+    /// public abstract void javax.swing.text.StyledDocument.removeStyle(java.lang.String)
+
+    private static var removeStyle_MethodID_36: jmethodID?
+
+    open func removeStyle( nm: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: nm, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeStyle", methodSig: "(Ljava/lang/String;)V", methodCache: &StyledDocumentForward.removeStyle_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func removeStyle( _ _nm: String? ) {
+        removeStyle( nm: _nm )
+    }
+
+    /// public abstract void javax.swing.text.Document.removeUndoableEditListener(javax.swing.event.UndoableEditListener)
+
+    private static var removeUndoableEditListener_MethodID_37: jmethodID?
+
+    override open func removeUndoableEditListener( listener: UndoableEditListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUndoableEditListener", methodSig: "(Ljavax/swing/event/UndoableEditListener;)V", methodCache: &StyledDocumentForward.removeUndoableEditListener_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    override open func removeUndoableEditListener( _ _listener: UndoableEditListener? ) {
+        removeUndoableEditListener( listener: _listener )
+    }
+
+    /// public abstract void javax.swing.text.Document.render(java.lang.Runnable)
+
+    private static var render_MethodID_38: jmethodID?
+
+    override open func render( r: java_swift.Runnable? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: r, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "render", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &StyledDocumentForward.render_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+    override open func render( _ _r: java_swift.Runnable? ) {
+        render( r: _r )
+    }
+
+    /// public abstract void javax.swing.text.StyledDocument.setCharacterAttributes(int,int,javax.swing.text.AttributeSet,boolean)
+
+    private static var setCharacterAttributes_MethodID_39: jmethodID?
+
+    open func setCharacterAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: s, locals: &__locals )
+        __args[3] = jvalue( z: jboolean(replace ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCharacterAttributes", methodSig: "(IILjavax/swing/text/AttributeSet;Z)V", methodCache: &StyledDocumentForward.setCharacterAttributes_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+    open func setCharacterAttributes( _ _offset: Int, _ _length: Int, _ _s: AttributeSet?, _ _replace: Bool ) {
+        setCharacterAttributes( offset: _offset, length: _length, s: _s, replace: _replace )
+    }
+
+    /// public abstract void javax.swing.text.StyledDocument.setLogicalStyle(int,javax.swing.text.Style)
+
+    private static var setLogicalStyle_MethodID_40: jmethodID?
+
+    open func setLogicalStyle( pos: Int, s: Style? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLogicalStyle", methodSig: "(ILjavax/swing/text/Style;)V", methodCache: &StyledDocumentForward.setLogicalStyle_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open func setLogicalStyle( _ _pos: Int, _ _s: Style? ) {
+        setLogicalStyle( pos: _pos, s: _s )
+    }
+
+    /// public abstract void javax.swing.text.StyledDocument.setParagraphAttributes(int,int,javax.swing.text.AttributeSet,boolean)
+
+    private static var setParagraphAttributes_MethodID_41: jmethodID?
+
+    open func setParagraphAttributes( offset: Int, length: Int, s: AttributeSet?, replace: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: s, locals: &__locals )
+        __args[3] = jvalue( z: jboolean(replace ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParagraphAttributes", methodSig: "(IILjavax/swing/text/AttributeSet;Z)V", methodCache: &StyledDocumentForward.setParagraphAttributes_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func setParagraphAttributes( _ _offset: Int, _ _length: Int, _ _s: AttributeSet?, _ _replace: Bool ) {
+        setParagraphAttributes( offset: _offset, length: _length, s: _s, replace: _replace )
+    }
 
 }
-
 

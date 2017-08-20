@@ -24,8 +24,8 @@ open class RowSorterListenerForward: java_util.EventListenerForward, RowSorterLi
     private static var sorterChanged_MethodID_2: jmethodID?
 
     open func sorterChanged( e: RowSorterEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "sorterChanged", methodSig: "(Ljavax/swing/event/RowSorterEvent;)V", methodCache: &RowSorterListenerForward.sorterChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class RowSorterListenerForward: java_util.EventListenerForward, RowSorterLi
 
 }
 
-
 private typealias RowSorterListener_sorterChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func RowSorterListener_sorterChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     RowSorterListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).sorterChanged( e: e != nil ? RowSorterEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class RowSorterListenerLocal_: JNILocalProxy<RowSorterListener, Any> {
@@ -89,8 +86,5 @@ open class RowSorterListenerBase: RowSorterListener {
     open func sorterChanged( e: RowSorterEvent? ) /**/ {
     }
 
-    open func sorterChanged( _ _e: RowSorterEvent? ) /**/ {
-        sorterChanged( e: _e )
-    }
 
 }

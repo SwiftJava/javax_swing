@@ -21,123 +21,207 @@ open class ListView: BlockView {
 
     /// private javax.swing.text.AttributeSet javax.swing.text.html.BlockView.attr
 
-    /// private javax.swing.text.html.StyleSheet$BoxPainter javax.swing.text.html.BlockView.painter
+    /// private javax.swing.text.html.CSS$LengthValue javax.swing.text.html.BlockView.cssHeight
 
     /// private javax.swing.text.html.CSS$LengthValue javax.swing.text.html.BlockView.cssWidth
 
-    /// private javax.swing.text.html.CSS$LengthValue javax.swing.text.html.BlockView.cssHeight
-
-    /// int javax.swing.text.BoxView.majorAxis
-
-    /// int javax.swing.text.BoxView.majorSpan
-
-    /// int javax.swing.text.BoxView.minorSpan
-
-    /// boolean javax.swing.text.BoxView.majorReqValid
-
-    /// boolean javax.swing.text.BoxView.minorReqValid
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+    /// private javax.swing.text.html.StyleSheet$BoxPainter javax.swing.text.html.BlockView.painter
 
     /// boolean javax.swing.text.BoxView.majorAllocValid
 
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorAxis
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorSpans
 
+    // Skipping field: true false false false false false 
+
     /// boolean javax.swing.text.BoxView.minorAllocValid
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorSpans
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.html.ListView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/ListView", classCache: &ListView.ListViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &ListView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -148,37 +232,41 @@ open class ListView: BlockView {
         self.init( elem: _elem )
     }
 
+    /// public float javax.swing.text.html.ListView.getAlignment(int)
+
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.text.html.ListView.paint(java.awt.Graphics,java.awt.Shape)
 
-    /// protected void javax.swing.text.html.ListView.setPropertiesFromAttributes()
-
-    private static var setPropertiesFromAttributes_MethodID_2: jmethodID?
-
-    override open func setPropertiesFromAttributes() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &ListView.setPropertiesFromAttributes_MethodID_2, args: &__args, locals: &__locals )
-    }
-
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.text.html.ListView.paintChild(java.awt.Graphics,java.awt.Rectangle,int)
 
-    private static var paintChild_MethodID_3: jmethodID?
+    private static var paintChild_MethodID_2: jmethodID?
 
     override open func paintChild( g: java_awt.Graphics?, alloc: java_awt.Rectangle?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: alloc, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChild", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &ListView.paintChild_MethodID_3, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintChild", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;I)V", methodCache: &ListView.paintChild_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func paintChild( _ _g: java_awt.Graphics?, _ _alloc: java_awt.Rectangle?, _ _index: Int ) {
         paintChild( g: _g, alloc: _alloc, index: _index )
     }
 
-    /// public float javax.swing.text.html.ListView.getAlignment(int)
+    /// protected void javax.swing.text.html.ListView.setPropertiesFromAttributes()
+
+    private static var setPropertiesFromAttributes_MethodID_3: jmethodID?
+
+    override open func setPropertiesFromAttributes() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPropertiesFromAttributes", methodSig: "()V", methodCache: &ListView.setPropertiesFromAttributes_MethodID_3, args: &__args, locals: &__locals )
+    }
+
 
 }
 

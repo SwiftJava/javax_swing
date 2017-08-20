@@ -6,7 +6,7 @@ import java_awt
 
 /// class javax.swing.plaf.synth.SynthScrollPaneUI ///
 
-open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeListener */ UnclassedProtocol, SynthUI {
+open class SynthScrollPaneUI: BasicScrollPaneUI, /* interface java.beans.PropertyChangeListener */ UnavailableProtocol, SynthUI {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -19,43 +19,11 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthScrollPaneUI.style
 
-    /// private boolean javax.swing.plaf.synth.SynthScrollPaneUI.viewportViewHasFocus
-
     /// private javax.swing.plaf.synth.SynthScrollPaneUI$ViewportViewFocusHandler javax.swing.plaf.synth.SynthScrollPaneUI.viewportViewFocusHandler
 
-    /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicScrollPaneUI.scrollpane
+    /// private boolean javax.swing.plaf.synth.SynthScrollPaneUI.viewportViewHasFocus
 
-    private static var scrollpane_FieldID: jfieldID?
-
-    override open var scrollpane: JScrollPane! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &SynthScrollPaneUI.scrollpane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JScrollPane( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &SynthScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbChangeListener
-
-    private static var vsbChangeListener_FieldID: jfieldID?
-
-    override open var vsbChangeListener: ChangeListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.handler
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbChangeListener
 
@@ -63,8 +31,8 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     override open var hsbChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.hsbChangeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.hsbChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -74,14 +42,56 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
         }
     }
 
+    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbPropertyChangeListener
+
+    /// private java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.mouseScrollListener
+
+    /// private int javax.swing.plaf.basic.BasicScrollPaneUI.oldExtent
+
+    /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicScrollPaneUI.scrollpane
+
+    private static var scrollpane_FieldID: jfieldID?
+
+    override open var scrollpane: JScrollPane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &SynthScrollPaneUI.scrollpane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JScrollPane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &SynthScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicScrollPaneUI.setValueCalled
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.spPropertyChangeListener
+
+    private static var spPropertyChangeListener_FieldID: jfieldID?
+
+    override open var spPropertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.viewportChangeListener
 
     private static var viewportChangeListener_FieldID: jfieldID?
 
     override open var viewportChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.viewportChangeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.viewportChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -91,107 +101,117 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
         }
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.spPropertyChangeListener
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbChangeListener
 
-    private static var spPropertyChangeListener_FieldID: jfieldID?
+    private static var vsbChangeListener_FieldID: jfieldID?
 
-    override open var spPropertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var vsbChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.vsbChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &SynthScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
-
-    /// private java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.mouseScrollListener
-
-    /// private int javax.swing.plaf.basic.BasicScrollPaneUI.oldExtent
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbPropertyChangeListener
 
-    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbPropertyChangeListener
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.COLUMN_HEADER
 
-    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.handler
-
-    /// private boolean javax.swing.plaf.basic.BasicScrollPaneUI.setValueCalled
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VIEWPORT
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR
 
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.ROW_HEADER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.COLUMN_HEADER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEFT_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_RIGHT_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEFT_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_RIGHT_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEADING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_TRAILING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEADING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_TRAILING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_POLICY
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_POLICY
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
-
-    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
-
-    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS
 
-    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
+    // Skipping field: false true false false false false 
 
-    private static var ENABLED_FieldID: jfieldID?
+    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
 
-    open static var ENABLED: Int {
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_POLICY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEADING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEFT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_RIGHT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_TRAILING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.ROW_HEADER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEADING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEFT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_RIGHT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_TRAILING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_POLICY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VIEWPORT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.DEFAULT
+
+    private static var DEFAULT_FieldID: jfieldID?
+
+    open static var DEFAULT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
-
-    private static var MOUSE_OVER_FieldID: jfieldID?
-
-    open static var MOUSE_OVER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
-
-    private static var PRESSED_FieldID: jfieldID?
-
-    open static var PRESSED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -202,7 +222,18 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
     open static var DISABLED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
+
+    private static var ENABLED_FieldID: jfieldID?
+
+    open static var ENABLED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -213,7 +244,29 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
     open static var FOCUSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
+
+    private static var MOUSE_OVER_FieldID: jfieldID?
+
+    open static var MOUSE_OVER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
+
+    private static var PRESSED_FieldID: jfieldID?
+
+    open static var PRESSED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -224,18 +277,7 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
     open static var SELECTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.DEFAULT
-
-    private static var DEFAULT_FieldID: jfieldID?
-
-    open static var DEFAULT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -244,28 +286,57 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUI.SynthScrollPaneUIJNIClass, methodSig: "()V", methodCache: &SynthScrollPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.update(java.awt.Graphics,javax.swing.JComponent)
+    /// static boolean javax.swing.plaf.synth.SynthScrollPaneUI.access$102(javax.swing.plaf.synth.SynthScrollPaneUI,boolean)
+
+    // Skipping method: true false false false false 
 
     /// static javax.swing.JScrollPane javax.swing.plaf.synth.SynthScrollPaneUI.access$200(javax.swing.plaf.synth.SynthScrollPaneUI)
 
+    // Skipping method: true false false false false 
+
     /// static javax.swing.JScrollPane javax.swing.plaf.synth.SynthScrollPaneUI.access$300(javax.swing.plaf.synth.SynthScrollPaneUI)
+
+    // Skipping method: true false false false false 
+
+    /// static javax.swing.JScrollPane javax.swing.plaf.synth.SynthScrollPaneUI.access$400(javax.swing.plaf.synth.SynthScrollPaneUI)
+
+    // Skipping method: true false false false false 
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthScrollPaneUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_2: jmethodID?
+
+    override open class func createUI( x: JComponent? ) -> ComponentUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
+        return createUI( x: _x )
+    }
+
+    /// private int javax.swing.plaf.synth.SynthScrollPaneUI.getComponentState(javax.swing.JComponent)
 
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthScrollPaneUI.getContext(javax.swing.JComponent)
 
-    private static var getContext_MethodID_2: jmethodID?
+    private static var getContext_MethodID_3: jmethodID?
 
     open func getContext( c: JComponent? ) -> SynthContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthScrollPaneUI.getContext_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthScrollPaneUI.getContext_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
     }
@@ -276,76 +347,15 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthScrollPaneUI.getContext(javax.swing.JComponent,int)
 
-    /// static javax.swing.JScrollPane javax.swing.plaf.synth.SynthScrollPaneUI.access$400(javax.swing.plaf.synth.SynthScrollPaneUI)
-
-    /// static boolean javax.swing.plaf.synth.SynthScrollPaneUI.access$102(javax.swing.plaf.synth.SynthScrollPaneUI,boolean)
-
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthScrollPaneUI.createUI(javax.swing.JComponent)
-
-    private static var createUI_MethodID_3: jmethodID?
-
-    override open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthScrollPaneUI", classCache: &SynthScrollPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
-        return createUI( x: _x )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthScrollPaneUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// private int javax.swing.plaf.synth.SynthScrollPaneUI.getComponentState(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_5: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthScrollPaneUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
     /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.installDefaults(javax.swing.JScrollPane)
 
-    private static var installDefaults_MethodID_6: jmethodID?
+    private static var installDefaults_MethodID_4: jmethodID?
 
     override open func installDefaults( scrollpane: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: scrollpane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
     override open func installDefaults( _ _scrollpane: JScrollPane? ) {
@@ -354,28 +364,83 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.installListeners(javax.swing.JScrollPane)
 
-    private static var installListeners_MethodID_7: jmethodID?
+    private static var installListeners_MethodID_5: jmethodID?
 
     override open func installListeners( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installListeners_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func installListeners( _ _c: JScrollPane? ) {
         installListeners( c: _c )
     }
 
+    /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_6: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthScrollPaneUI.paint_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_7: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthScrollPaneUI.paintBorder_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_8: jmethodID?
+
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthScrollPaneUI.propertyChange_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        propertyChange( evt: _evt )
+    }
+
     /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.uninstallDefaults(javax.swing.JScrollPane)
 
-    private static var uninstallDefaults_MethodID_8: jmethodID?
+    private static var uninstallDefaults_MethodID_9: jmethodID?
 
     override open func uninstallDefaults( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &SynthScrollPaneUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func uninstallDefaults( _ _c: JScrollPane? ) {
@@ -384,33 +449,22 @@ open class SynthScrollPaneUI: BasicScrollPaneUI, /* java.beans.PropertyChangeLis
 
     /// protected void javax.swing.plaf.synth.SynthScrollPaneUI.uninstallListeners(javax.swing.JComponent)
 
-    private static var uninstallListeners_MethodID_9: jmethodID?
+    private static var uninstallListeners_MethodID_10: jmethodID?
 
     override open func uninstallListeners( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthScrollPaneUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &SynthScrollPaneUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
     }
 
     override open func uninstallListeners( _ _c: JComponent? ) {
         uninstallListeners( c: _c )
     }
 
-    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+    /// public void javax.swing.plaf.synth.SynthScrollPaneUI.update(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var propertyChange_MethodID_10: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthScrollPaneUI.propertyChange_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
+    // Skipping method: false true false false false 
 
     /// private void javax.swing.plaf.synth.SynthScrollPaneUI.updateStyle(javax.swing.JScrollPane)
 

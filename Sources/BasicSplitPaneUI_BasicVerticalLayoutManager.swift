@@ -19,22 +19,9 @@ open class BasicSplitPaneUI_BasicVerticalLayoutManager: BasicSplitPaneUI_BasicHo
 
     /// final javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneUI$BasicVerticalLayoutManager.this$0
 
-    /// protected int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.sizes
+    // Skipping field: true false false false false false 
 
-    private static var sizes_FieldID: jfieldID?
-
-    override open var sizes: [Int32]! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.sizes_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Int32](), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.sizes_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.axis
 
     /// protected java.awt.Component[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.components
 
@@ -42,9 +29,8 @@ open class BasicSplitPaneUI_BasicVerticalLayoutManager: BasicSplitPaneUI_BasicHo
 
     override open var components: [Component]! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "components", fieldType: "[Ljava/awt/Component;", fieldCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.components_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: [Component](), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "components", fieldType: "[Ljava/awt/Component;", fieldCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.components_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Component].self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -53,21 +39,37 @@ open class BasicSplitPaneUI_BasicVerticalLayoutManager: BasicSplitPaneUI_BasicHo
         }
     }
 
-    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.lastSplitPaneSize
-
     /// private boolean javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.doReset
 
-    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.axis
+    /// private int javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.lastSplitPaneSize
+
+    /// protected int[] javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.sizes
+
+    private static var sizes_FieldID: jfieldID?
+
+    override open var sizes: [Int32]! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.sizes_FieldID, object: javaObject )
+            return JNIType.toSwift( type: [Int32].self, from: __value )
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "sizes", fieldType: "[I", fieldCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.sizes_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// final javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneUI$BasicHorizontalLayoutManager.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.basic.BasicSplitPaneUI$BasicVerticalLayoutManager(javax.swing.plaf.basic.BasicSplitPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicSplitPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSplitPaneUI$BasicVerticalLayoutManager", classCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.BasicSplitPaneUI_BasicVerticalLayoutManagerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneUI_BasicVerticalLayoutManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

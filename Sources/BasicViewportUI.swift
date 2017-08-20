@@ -23,8 +23,8 @@ open class BasicViewportUI: ViewportUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicViewportUI", classCache: &BasicViewportUI.BasicViewportUIJNIClass, methodSig: "()V", methodCache: &BasicViewportUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -35,8 +35,8 @@ open class BasicViewportUI: ViewportUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicViewportUI", classCache: &BasicViewportUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -47,17 +47,13 @@ open class BasicViewportUI: ViewportUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.basic.BasicViewportUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicViewportUI.uninstallUI(javax.swing.JComponent)
-
     /// protected void javax.swing.plaf.basic.BasicViewportUI.installDefaults(javax.swing.JComponent)
 
     private static var installDefaults_MethodID_3: jmethodID?
 
     open func installDefaults( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicViewportUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -66,13 +62,17 @@ open class BasicViewportUI: ViewportUI {
         installDefaults( c: _c )
     }
 
+    /// public void javax.swing.plaf.basic.BasicViewportUI.installUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
     /// protected void javax.swing.plaf.basic.BasicViewportUI.uninstallDefaults(javax.swing.JComponent)
 
     private static var uninstallDefaults_MethodID_4: jmethodID?
 
     open func uninstallDefaults( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicViewportUI.uninstallDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -80,6 +80,10 @@ open class BasicViewportUI: ViewportUI {
     open func uninstallDefaults( _ _c: JComponent? ) {
         uninstallDefaults( c: _c )
     }
+
+    /// public void javax.swing.plaf.basic.BasicViewportUI.uninstallUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
 }
 

@@ -7,7 +7,7 @@ import java_util
 
 /// class javax.swing.text.html.HTMLEditorKit$LinkController ///
 
-open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Serializable */ UnclassedProtocol {
+open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -18,23 +18,23 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
 
     private static var HTMLEditorKit_LinkControllerJNIClass: jclass?
 
+    /// private transient javax.swing.text.Position$Bias[] javax.swing.text.html.HTMLEditorKit$LinkController.bias
+
     /// private javax.swing.text.Element javax.swing.text.html.HTMLEditorKit$LinkController.curElem
 
     /// private boolean javax.swing.text.html.HTMLEditorKit$LinkController.curElemImage
 
-    /// private java.lang.String javax.swing.text.html.HTMLEditorKit$LinkController.href
-
-    /// private transient javax.swing.text.Position$Bias[] javax.swing.text.html.HTMLEditorKit$LinkController.bias
-
     /// private int javax.swing.text.html.HTMLEditorKit$LinkController.curOffset
+
+    /// private java.lang.String javax.swing.text.html.HTMLEditorKit$LinkController.href
 
     /// public javax.swing.text.html.HTMLEditorKit$LinkController()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLEditorKit$LinkController", classCache: &HTMLEditorKit_LinkController.HTMLEditorKit_LinkControllerJNIClass, methodSig: "()V", methodCache: &HTMLEditorKit_LinkController.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -45,9 +45,9 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
     private static var activateLink_MethodID_2: jmethodID?
 
     open func activateLink( pos: Int, editor: JEditorPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(pos) )
         __args[1] = JNIType.toJava( value: editor, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateLink", methodSig: "(ILjavax/swing/JEditorPane;)V", methodCache: &HTMLEditorKit_LinkController.activateLink_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -58,25 +58,41 @@ open class HTMLEditorKit_LinkController: java_awt.MouseAdapter, /* java.io.Seria
 
     /// void javax.swing.text.html.HTMLEditorKit$LinkController.activateLink(int,javax.swing.JEditorPane,java.awt.event.MouseEvent)
 
-    /// private java.lang.String javax.swing.text.html.HTMLEditorKit$LinkController.getMapHREF(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,javax.swing.text.Element,javax.swing.text.AttributeSet,int,int,int)
-
-    /// private boolean javax.swing.text.html.HTMLEditorKit$LinkController.doesElementContainLocation(javax.swing.JEditorPane,javax.swing.text.Element,int,int,int)
+    // Skipping method: true false false false false 
 
     /// javax.swing.event.HyperlinkEvent javax.swing.text.html.HTMLEditorKit$LinkController.createHyperlinkEvent(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.AttributeSet,javax.swing.text.Element,java.awt.event.MouseEvent)
 
+    // Skipping method: true false false false false 
+
+    /// private boolean javax.swing.text.html.HTMLEditorKit$LinkController.doesElementContainLocation(javax.swing.JEditorPane,javax.swing.text.Element,int,int,int)
+
     /// void javax.swing.text.html.HTMLEditorKit$LinkController.fireEvents(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,java.lang.String,javax.swing.text.Element,java.awt.event.MouseEvent)
+
+    // Skipping method: true false false false false 
+
+    /// private java.lang.String javax.swing.text.html.HTMLEditorKit$LinkController.getMapHREF(javax.swing.JEditorPane,javax.swing.text.html.HTMLDocument,javax.swing.text.Element,javax.swing.text.AttributeSet,int,int,int)
 
     /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseClicked(java.awt.event.MouseEvent)
 
-    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseMoved(java.awt.event.MouseEvent)
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseDragged(java.awt.event.MouseEvent)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.html.HTMLEditorKit$LinkController.mouseMoved(java.awt.event.MouseEvent)
+
+    // Skipping method: false true false false false 
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract void java.awt.event.MouseMotionListener.mouseDragged(java.awt.event.MouseEvent)
 
+    // Skipping method: false true false false false 
+
     /// public abstract void java.awt.event.MouseMotionListener.mouseMoved(java.awt.event.MouseEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

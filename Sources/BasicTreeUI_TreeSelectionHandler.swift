@@ -18,13 +18,15 @@ open class BasicTreeUI_TreeSelectionHandler: java_swift.JavaObject, TreeSelectio
 
     /// final javax.swing.plaf.basic.BasicTreeUI javax.swing.plaf.basic.BasicTreeUI$TreeSelectionHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTreeUI$TreeSelectionHandler(javax.swing.plaf.basic.BasicTreeUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTreeUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$TreeSelectionHandler", classCache: &BasicTreeUI_TreeSelectionHandler.BasicTreeUI_TreeSelectionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_TreeSelectionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicTreeUI_TreeSelectionHandler: java_swift.JavaObject, TreeSelectio
     private static var valueChanged_MethodID_2: jmethodID?
 
     open func valueChanged( e: TreeSelectionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/TreeSelectionEvent;)V", methodCache: &BasicTreeUI_TreeSelectionHandler.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }

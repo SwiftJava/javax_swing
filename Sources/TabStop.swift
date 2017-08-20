@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.text.TabStop ///
 
-open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,25 +16,14 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
 
     private static var TabStopJNIClass: jclass?
 
-    /// public static final int javax.swing.text.TabStop.ALIGN_LEFT
+    /// public static final int javax.swing.text.TabStop.ALIGN_BAR
 
-    private static var ALIGN_LEFT_FieldID: jfieldID?
+    private static var ALIGN_BAR_FieldID: jfieldID?
 
-    open static var ALIGN_LEFT: Int {
+    open static var ALIGN_BAR: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_LEFT", fieldType: "I", fieldCache: &ALIGN_LEFT_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.TabStop.ALIGN_RIGHT
-
-    private static var ALIGN_RIGHT_FieldID: jfieldID?
-
-    open static var ALIGN_RIGHT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_RIGHT", fieldType: "I", fieldCache: &ALIGN_RIGHT_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_BAR", fieldType: "I", fieldCache: &ALIGN_BAR_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
         }
     }
 
@@ -45,7 +34,7 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     open static var ALIGN_CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_CENTER", fieldType: "I", fieldCache: &ALIGN_CENTER_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -56,29 +45,29 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     open static var ALIGN_DECIMAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_DECIMAL", fieldType: "I", fieldCache: &ALIGN_DECIMAL_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.text.TabStop.ALIGN_BAR
+    /// public static final int javax.swing.text.TabStop.ALIGN_LEFT
 
-    private static var ALIGN_BAR_FieldID: jfieldID?
+    private static var ALIGN_LEFT_FieldID: jfieldID?
 
-    open static var ALIGN_BAR: Int {
+    open static var ALIGN_LEFT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_BAR", fieldType: "I", fieldCache: &ALIGN_BAR_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_LEFT", fieldType: "I", fieldCache: &ALIGN_LEFT_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.text.TabStop.LEAD_NONE
+    /// public static final int javax.swing.text.TabStop.ALIGN_RIGHT
 
-    private static var LEAD_NONE_FieldID: jfieldID?
+    private static var ALIGN_RIGHT_FieldID: jfieldID?
 
-    open static var LEAD_NONE: Int {
+    open static var ALIGN_RIGHT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_NONE", fieldType: "I", fieldCache: &LEAD_NONE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_RIGHT", fieldType: "I", fieldCache: &ALIGN_RIGHT_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
         }
     }
 
@@ -89,40 +78,7 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     open static var LEAD_DOTS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_DOTS", fieldType: "I", fieldCache: &LEAD_DOTS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.TabStop.LEAD_HYPHENS
-
-    private static var LEAD_HYPHENS_FieldID: jfieldID?
-
-    open static var LEAD_HYPHENS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_HYPHENS", fieldType: "I", fieldCache: &LEAD_HYPHENS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.TabStop.LEAD_UNDERLINE
-
-    private static var LEAD_UNDERLINE_FieldID: jfieldID?
-
-    open static var LEAD_UNDERLINE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_UNDERLINE", fieldType: "I", fieldCache: &LEAD_UNDERLINE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.TabStop.LEAD_THICKLINE
-
-    private static var LEAD_THICKLINE_FieldID: jfieldID?
-
-    open static var LEAD_THICKLINE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_THICKLINE", fieldType: "I", fieldCache: &LEAD_THICKLINE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -133,24 +89,68 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     open static var LEAD_EQUALS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_EQUALS", fieldType: "I", fieldCache: &LEAD_EQUALS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.TabStop.LEAD_HYPHENS
+
+    private static var LEAD_HYPHENS_FieldID: jfieldID?
+
+    open static var LEAD_HYPHENS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_HYPHENS", fieldType: "I", fieldCache: &LEAD_HYPHENS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.TabStop.LEAD_NONE
+
+    private static var LEAD_NONE_FieldID: jfieldID?
+
+    open static var LEAD_NONE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_NONE", fieldType: "I", fieldCache: &LEAD_NONE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.TabStop.LEAD_THICKLINE
+
+    private static var LEAD_THICKLINE_FieldID: jfieldID?
+
+    open static var LEAD_THICKLINE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_THICKLINE", fieldType: "I", fieldCache: &LEAD_THICKLINE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.TabStop.LEAD_UNDERLINE
+
+    private static var LEAD_UNDERLINE_FieldID: jfieldID?
+
+    open static var LEAD_UNDERLINE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "LEAD_UNDERLINE", fieldType: "I", fieldCache: &LEAD_UNDERLINE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
+            return Int(__value)
         }
     }
 
     /// private int javax.swing.text.TabStop.alignment
 
-    /// private float javax.swing.text.TabStop.position
-
     /// private int javax.swing.text.TabStop.leader
+
+    /// private float javax.swing.text.TabStop.position
 
     /// public javax.swing.text.TabStop(float)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( pos: Float ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: pos )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TabStop", classCache: &TabStop.TabStopJNIClass, methodSig: "(F)V", methodCache: &TabStop.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -165,11 +165,11 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( pos: Float, align: Int, leader: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: align, locals: &__locals )
-        __args[2] = JNIType.toJava( value: leader, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: pos )
+        __args[1] = jvalue( i: jint(align) )
+        __args[2] = jvalue( i: jint(leader) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TabStop", classCache: &TabStop.TabStopJNIClass, methodSig: "(FII)V", methodCache: &TabStop.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -184,30 +184,26 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     private static var equals_MethodID_3: jmethodID?
 
     open func equals( other: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: other, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &TabStop.equals_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _other: java_swift.JavaObject? ) -> Bool {
         return equals( other: _other )
     }
 
-    /// public java.lang.String javax.swing.text.TabStop.toString()
+    /// public int javax.swing.text.TabStop.getAlignment()
 
-    /// public int javax.swing.text.TabStop.hashCode()
+    private static var getAlignment_MethodID_4: jmethodID?
 
-    /// public float javax.swing.text.TabStop.getPosition()
-
-    private static var getPosition_MethodID_4: jmethodID?
-
-    open func getPosition() -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getAlignment() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPosition", methodSig: "()F", methodCache: &TabStop.getPosition_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &TabStop.getAlignment_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
@@ -216,24 +212,32 @@ open class TabStop: java_swift.JavaObject, /* java.io.Serializable */ UnclassedP
     private static var getLeader_MethodID_5: jmethodID?
 
     open func getLeader() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLeader", methodSig: "()I", methodCache: &TabStop.getLeader_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// public int javax.swing.text.TabStop.getAlignment()
+    /// public float javax.swing.text.TabStop.getPosition()
 
-    private static var getAlignment_MethodID_6: jmethodID?
+    private static var getPosition_MethodID_6: jmethodID?
 
-    open func getAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPosition() -> Float {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAlignment", methodSig: "()I", methodCache: &TabStop.getAlignment_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPosition", methodSig: "()F", methodCache: &TabStop.getPosition_MethodID_6, args: &__args, locals: &__locals )
+        return __return
     }
 
+
+    /// public int javax.swing.text.TabStop.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.text.TabStop.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

@@ -22,42 +22,24 @@ open class ListUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/ListUI", classCache: &ListUI.ListUIJNIClass, methodSig: "()V", methodCache: &ListUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract java.awt.Point javax.swing.plaf.ListUI.indexToLocation(javax.swing.JList,int)
-
-    private static var indexToLocation_MethodID_2: jmethodID?
-
-    open func indexToLocation( list: JList?, index: Int ) -> java_awt.Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: list, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "indexToLocation", methodSig: "(Ljavax/swing/JList;I)Ljava/awt/Point;", methodCache: &ListUI.indexToLocation_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Point( javaObject: __return ) : nil
-    }
-
-    open func indexToLocation( _ _list: JList?, _ _index: Int ) -> java_awt.Point! {
-        return indexToLocation( list: _list, index: _index )
-    }
-
     /// public abstract java.awt.Rectangle javax.swing.plaf.ListUI.getCellBounds(javax.swing.JList,int,int)
 
-    private static var getCellBounds_MethodID_3: jmethodID?
+    private static var getCellBounds_MethodID_2: jmethodID?
 
     open func getCellBounds( list: JList?, index1: Int, index2: Int ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: list, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index2, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellBounds", methodSig: "(Ljavax/swing/JList;II)Ljava/awt/Rectangle;", methodCache: &ListUI.getCellBounds_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(index1) )
+        __args[2] = jvalue( i: jint(index2) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCellBounds", methodSig: "(Ljavax/swing/JList;II)Ljava/awt/Rectangle;", methodCache: &ListUI.getCellBounds_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -66,17 +48,35 @@ open class ListUI: ComponentUI {
         return getCellBounds( list: _list, index1: _index1, index2: _index2 )
     }
 
+    /// public abstract java.awt.Point javax.swing.plaf.ListUI.indexToLocation(javax.swing.JList,int)
+
+    private static var indexToLocation_MethodID_3: jmethodID?
+
+    open func indexToLocation( list: JList?, index: Int ) -> java_awt.Point! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: list, locals: &__locals )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "indexToLocation", methodSig: "(Ljavax/swing/JList;I)Ljava/awt/Point;", methodCache: &ListUI.indexToLocation_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Point( javaObject: __return ) : nil
+    }
+
+    open func indexToLocation( _ _list: JList?, _ _index: Int ) -> java_awt.Point! {
+        return indexToLocation( list: _list, index: _index )
+    }
+
     /// public abstract int javax.swing.plaf.ListUI.locationToIndex(javax.swing.JList,java.awt.Point)
 
     private static var locationToIndex_MethodID_4: jmethodID?
 
     open func locationToIndex( list: JList?, location: java_awt.Point? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: list, locals: &__locals )
         __args[1] = JNIType.toJava( value: location, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "locationToIndex", methodSig: "(Ljavax/swing/JList;Ljava/awt/Point;)I", methodCache: &ListUI.locationToIndex_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func locationToIndex( _ _list: JList?, _ _location: java_awt.Point? ) -> Int {

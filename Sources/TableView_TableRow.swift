@@ -19,121 +19,211 @@ open class TableView_TableRow: BoxView {
 
     /// java.util.BitSet javax.swing.text.TableView$TableRow.fillColumns
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.TableView$TableRow.row
+
+    // Skipping field: true false false false false false 
 
     /// final javax.swing.text.TableView javax.swing.text.TableView$TableRow.this$0
 
-    /// int javax.swing.text.BoxView.majorAxis
-
-    /// int javax.swing.text.BoxView.majorSpan
-
-    /// int javax.swing.text.BoxView.minorSpan
-
-    /// boolean javax.swing.text.BoxView.majorReqValid
-
-    /// boolean javax.swing.text.BoxView.minorReqValid
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.BoxView.majorAllocValid
 
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorAxis
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorSpans
 
+    // Skipping field: true false false false false false 
+
     /// boolean javax.swing.text.BoxView.minorAllocValid
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorSpans
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.TableView$TableRow(javax.swing.text.TableView,javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: TableView?, elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TableView$TableRow", classCache: &TableView_TableRow.TableView_TableRowJNIClass, methodSig: "(Ljavax/swing/text/TableView;Ljavax/swing/text/Element;)V", methodCache: &TableView_TableRow.new_MethodID_1, args: &__args, locals: &__locals )
@@ -145,42 +235,57 @@ open class TableView_TableRow: BoxView {
         self.init( this_0: _this_0, elem: _elem )
     }
 
-    /// public void javax.swing.text.TableView$TableRow.replace(int,int,javax.swing.text.View[])
-
-    private static var replace_MethodID_2: jmethodID?
-
-    override open func replace( offset: Int, length: Int, views: [View]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: views, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/View;)V", methodCache: &TableView_TableRow.replace_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
-        replace( offset: _offset, length: _length, views: _views )
-    }
-
     /// void javax.swing.text.TableView$TableRow.clearFilledColumns()
 
-    /// void javax.swing.text.TableView$TableRow.setRow(int)
-
-    /// boolean javax.swing.text.TableView$TableRow.isFilled(int)
+    // Skipping method: true false false false false 
 
     /// void javax.swing.text.TableView$TableRow.fillColumn(int)
 
+    // Skipping method: true false false false false 
+
+    /// int javax.swing.text.TableView$TableRow.getColumnCount()
+
+    // Skipping method: true false false false false 
+
     /// public int javax.swing.text.TableView$TableRow.getResizeWeight(int)
+
+    // Skipping method: false true false false false 
+
+    /// int javax.swing.text.TableView$TableRow.getRow()
+
+    // Skipping method: true false false false false 
+
+    /// protected javax.swing.text.View javax.swing.text.TableView$TableRow.getViewAtPosition(int,java.awt.Rectangle)
+
+    private static var getViewAtPosition_MethodID_2: jmethodID?
+
+    override open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView_TableRow.getViewAtPosition_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
+        return getViewAtPosition( pos: _pos, a: _a )
+    }
+
+    /// boolean javax.swing.text.TableView$TableRow.isFilled(int)
+
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.text.TableView$TableRow.layoutMajorAxis(int,int,int[],int[])
 
     private static var layoutMajorAxis_MethodID_3: jmethodID?
 
     override open func layoutMajorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: targetSpan, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(targetSpan) )
+        __args[1] = jvalue( i: jint(axis) )
         __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[3] = JNIType.toJava( value: spans, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMajorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_TableRow.layoutMajorAxis_MethodID_3, args: &__args, locals: &__locals )
@@ -195,10 +300,10 @@ open class TableView_TableRow: BoxView {
     private static var layoutMinorAxis_MethodID_4: jmethodID?
 
     override open func layoutMinorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: targetSpan, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(targetSpan) )
+        __args[1] = jvalue( i: jint(axis) )
         __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[3] = JNIType.toJava( value: spans, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_TableRow.layoutMinorAxis_MethodID_4, args: &__args, locals: &__locals )
@@ -208,27 +313,26 @@ open class TableView_TableRow: BoxView {
         layoutMinorAxis( targetSpan: _targetSpan, axis: _axis, offsets: _offsets, spans: _spans )
     }
 
-    /// int javax.swing.text.TableView$TableRow.getColumnCount()
+    /// public void javax.swing.text.TableView$TableRow.replace(int,int,javax.swing.text.View[])
 
-    /// int javax.swing.text.TableView$TableRow.getRow()
+    private static var replace_MethodID_5: jmethodID?
 
-    /// protected javax.swing.text.View javax.swing.text.TableView$TableRow.getViewAtPosition(int,java.awt.Rectangle)
-
-    private static var getViewAtPosition_MethodID_5: jmethodID?
-
-    override open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    override open func replace( offset: Int, length: Int, views: [View]? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView_TableRow.getViewAtPosition_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: views, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/View;)V", methodCache: &TableView_TableRow.replace_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
-        return getViewAtPosition( pos: _pos, a: _a )
+    override open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
+        replace( offset: _offset, length: _length, views: _views )
     }
+
+    /// void javax.swing.text.TableView$TableRow.setRow(int)
+
+    // Skipping method: true false false false false 
 
 }
 

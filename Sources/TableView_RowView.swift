@@ -17,131 +17,225 @@ open class TableView_RowView: BoxView {
 
     private static var TableView_RowViewJNIClass: jclass?
 
-    /// private javax.swing.text.html.StyleSheet$BoxPainter javax.swing.text.html.TableView$RowView.painter
-
     /// private javax.swing.text.AttributeSet javax.swing.text.html.TableView$RowView.attr
 
     /// java.util.BitSet javax.swing.text.html.TableView$RowView.fillColumns
 
-    /// int javax.swing.text.html.TableView$RowView.rowIndex
-
-    /// int javax.swing.text.html.TableView$RowView.viewIndex
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.html.TableView$RowView.multiRowCells
 
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.text.html.StyleSheet$BoxPainter javax.swing.text.html.TableView$RowView.painter
+
+    /// int javax.swing.text.html.TableView$RowView.rowIndex
+
+    // Skipping field: true false false false false false 
+
     /// final javax.swing.text.html.TableView javax.swing.text.html.TableView$RowView.this$0
 
-    /// int javax.swing.text.BoxView.majorAxis
+    // Skipping field: true false false false false false 
 
-    /// int javax.swing.text.BoxView.majorSpan
+    /// int javax.swing.text.html.TableView$RowView.viewIndex
 
-    /// int javax.swing.text.BoxView.minorSpan
-
-    /// boolean javax.swing.text.BoxView.majorReqValid
-
-    /// boolean javax.swing.text.BoxView.minorReqValid
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.BoxView.majorAllocValid
 
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorAxis
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorSpans
 
+    // Skipping field: true false false false false false 
+
     /// boolean javax.swing.text.BoxView.minorAllocValid
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorSpans
+
+    // Skipping field: true false false false false false 
 
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.html.TableView$RowView(javax.swing.text.html.TableView,javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( this_0: /* javax.swing.text.html.TableView */ UnclassedObject?, elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( this_0: /* class javax.swing.text.html.TableView */ UnavailableObject?, elem: Element? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/TableView$RowView", classCache: &TableView_RowView.TableView_RowViewJNIClass, methodSig: "(Ljavax/swing/text/html/TableView;Ljavax/swing/text/Element;)V", methodCache: &TableView_RowView.new_MethodID_1, args: &__args, locals: &__locals )
@@ -149,55 +243,36 @@ open class TableView_RowView: BoxView {
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _this_0: /* javax.swing.text.html.TableView */ UnclassedObject?, _ _elem: Element? ) {
+    public convenience init( _ _this_0: /* class javax.swing.text.html.TableView */ UnavailableObject?, _ _elem: Element? ) {
         self.init( this_0: _this_0, elem: _elem )
     }
 
-    /// public void javax.swing.text.html.TableView$RowView.replace(int,int,javax.swing.text.View[])
+    /// protected javax.swing.SizeRequirements javax.swing.text.html.TableView$RowView.calculateMajorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var replace_MethodID_2: jmethodID?
+    private static var calculateMajorAxisRequirements_MethodID_2: jmethodID?
 
-    override open func replace( offset: Int, length: Int, views: [View]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    override open func calculateMajorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: views, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/View;)V", methodCache: &TableView_RowView.replace_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(axis) )
+        __args[1] = JNIType.toJava( value: r, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMajorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMajorAxisRequirements_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
 
-    override open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
-        replace( offset: _offset, length: _length, views: _views )
+    override open func calculateMajorAxisRequirements( _ _axis: Int, _ _r: SizeRequirements? ) -> SizeRequirements! {
+        return calculateMajorAxisRequirements( axis: _axis, r: _r )
     }
-
-    /// public javax.swing.text.AttributeSet javax.swing.text.html.TableView$RowView.getAttributes()
-
-    /// public void javax.swing.text.html.TableView$RowView.paint(java.awt.Graphics,java.awt.Shape)
-
-    /// void javax.swing.text.html.TableView$RowView.clearFilledColumns()
-
-    /// boolean javax.swing.text.html.TableView$RowView.isFilled(int)
-
-    /// void javax.swing.text.html.TableView$RowView.fillColumn(int)
-
-    /// public float javax.swing.text.html.TableView$RowView.getMinimumSpan(int)
-
-    /// public float javax.swing.text.html.TableView$RowView.getMaximumSpan(int)
-
-    /// public void javax.swing.text.html.TableView$RowView.preferenceChanged(javax.swing.text.View,boolean,boolean)
-
-    /// public int javax.swing.text.html.TableView$RowView.getResizeWeight(int)
-
-    /// void javax.swing.text.html.TableView$RowView.setPropertiesFromAttributes()
 
     /// protected javax.swing.SizeRequirements javax.swing.text.html.TableView$RowView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
 
     private static var calculateMinorAxisRequirements_MethodID_3: jmethodID?
 
     override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(axis) )
         __args[1] = JNIType.toJava( value: r, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMinorAxisRequirements_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -208,18 +283,93 @@ open class TableView_RowView: BoxView {
         return calculateMinorAxisRequirements( axis: _axis, r: _r )
     }
 
+    /// public void javax.swing.text.html.TableView$RowView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    // Skipping method: false true false false false 
+
+    /// void javax.swing.text.html.TableView$RowView.clearFilledColumns()
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.TableView$RowView.fillColumn(int)
+
+    // Skipping method: true false false false false 
+
+    /// javax.swing.text.View javax.swing.text.html.TableView$RowView.findViewAtPoint(int,int,java.awt.Rectangle)
+
+    // Skipping method: true false false false false 
+
+    /// public javax.swing.text.AttributeSet javax.swing.text.html.TableView$RowView.getAttributes()
+
+    // Skipping method: false true false false false 
+
+    /// int javax.swing.text.html.TableView$RowView.getColumnCount()
+
+    // Skipping method: true false false false false 
+
+    /// public float javax.swing.text.html.TableView$RowView.getMaximumSpan(int)
+
+    // Skipping method: false true false false false 
+
+    /// public float javax.swing.text.html.TableView$RowView.getMinimumSpan(int)
+
+    // Skipping method: false true false false false 
+
+    /// public float javax.swing.text.html.TableView$RowView.getPreferredSpan(int)
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.html.TableView$RowView.getResizeWeight(int)
+
+    // Skipping method: false true false false false 
+
+    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.TableView$RowView.getStyleSheet()
+
+    private static var getStyleSheet_MethodID_4: jmethodID?
+
+    open func getStyleSheet() -> StyleSheet! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &TableView_RowView.getStyleSheet_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? StyleSheet( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.text.View javax.swing.text.html.TableView$RowView.getViewAtPosition(int,java.awt.Rectangle)
+
+    private static var getViewAtPosition_MethodID_5: jmethodID?
+
+    override open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView_RowView.getViewAtPosition_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
+        return getViewAtPosition( pos: _pos, a: _a )
+    }
+
+    /// boolean javax.swing.text.html.TableView$RowView.isFilled(int)
+
+    // Skipping method: true false false false false 
+
     /// protected void javax.swing.text.html.TableView$RowView.layoutMajorAxis(int,int,int[],int[])
 
-    private static var layoutMajorAxis_MethodID_4: jmethodID?
+    private static var layoutMajorAxis_MethodID_6: jmethodID?
 
     override open func layoutMajorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: targetSpan, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(targetSpan) )
+        __args[1] = jvalue( i: jint(axis) )
         __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[3] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMajorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMajorAxis_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMajorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMajorAxis_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func layoutMajorAxis( _ _targetSpan: Int, _ _axis: Int, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
@@ -228,78 +378,50 @@ open class TableView_RowView: BoxView {
 
     /// protected void javax.swing.text.html.TableView$RowView.layoutMinorAxis(int,int,int[],int[])
 
-    private static var layoutMinorAxis_MethodID_5: jmethodID?
+    private static var layoutMinorAxis_MethodID_7: jmethodID?
 
     override open func layoutMinorAxis( targetSpan: Int, axis: Int, offsets: [Int32]?, spans: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: targetSpan, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(targetSpan) )
+        __args[1] = jvalue( i: jint(axis) )
         __args[2] = JNIType.toJava( value: offsets, locals: &__locals )
         __args[3] = JNIType.toJava( value: spans, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMinorAxis_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layoutMinorAxis", methodSig: "(II[I[I)V", methodCache: &TableView_RowView.layoutMinorAxis_MethodID_7, args: &__args, locals: &__locals )
     }
 
     override open func layoutMinorAxis( _ _targetSpan: Int, _ _axis: Int, _ _offsets: [Int32]?, _ _spans: [Int32]? ) {
         layoutMinorAxis( targetSpan: _targetSpan, axis: _axis, offsets: _offsets, spans: _spans )
     }
 
-    /// protected javax.swing.SizeRequirements javax.swing.text.html.TableView$RowView.calculateMajorAxisRequirements(int,javax.swing.SizeRequirements)
+    /// public void javax.swing.text.html.TableView$RowView.paint(java.awt.Graphics,java.awt.Shape)
 
-    private static var calculateMajorAxisRequirements_MethodID_6: jmethodID?
+    // Skipping method: false true false false false 
 
-    override open func calculateMajorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    /// public void javax.swing.text.html.TableView$RowView.preferenceChanged(javax.swing.text.View,boolean,boolean)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.html.TableView$RowView.replace(int,int,javax.swing.text.View[])
+
+    private static var replace_MethodID_8: jmethodID?
+
+    override open func replace( offset: Int, length: Int, views: [View]? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMajorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &TableView_RowView.calculateMajorAxisRequirements_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SizeRequirements( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: views, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/View;)V", methodCache: &TableView_RowView.replace_MethodID_8, args: &__args, locals: &__locals )
     }
 
-    override open func calculateMajorAxisRequirements( _ _axis: Int, _ _r: SizeRequirements? ) -> SizeRequirements! {
-        return calculateMajorAxisRequirements( axis: _axis, r: _r )
+    override open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
+        replace( offset: _offset, length: _length, views: _views )
     }
 
-    /// int javax.swing.text.html.TableView$RowView.getColumnCount()
+    /// void javax.swing.text.html.TableView$RowView.setPropertiesFromAttributes()
 
-    /// protected javax.swing.text.html.StyleSheet javax.swing.text.html.TableView$RowView.getStyleSheet()
-
-    private static var getStyleSheet_MethodID_7: jmethodID?
-
-    open func getStyleSheet() -> StyleSheet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyleSheet", methodSig: "()Ljavax/swing/text/html/StyleSheet;", methodCache: &TableView_RowView.getStyleSheet_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? StyleSheet( javaObject: __return ) : nil
-    }
-
-
-    /// javax.swing.text.View javax.swing.text.html.TableView$RowView.findViewAtPoint(int,int,java.awt.Rectangle)
-
-    /// public void javax.swing.text.html.TableView$RowView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    /// public float javax.swing.text.html.TableView$RowView.getPreferredSpan(int)
-
-    /// protected javax.swing.text.View javax.swing.text.html.TableView$RowView.getViewAtPosition(int,java.awt.Rectangle)
-
-    private static var getViewAtPosition_MethodID_8: jmethodID?
-
-    override open func getViewAtPosition( pos: Int, a: java_awt.Rectangle? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewAtPosition", methodSig: "(ILjava/awt/Rectangle;)Ljavax/swing/text/View;", methodCache: &TableView_RowView.getViewAtPosition_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    override open func getViewAtPosition( _ _pos: Int, _ _a: java_awt.Rectangle? ) -> View! {
-        return getViewAtPosition( pos: _pos, a: _a )
-    }
+    // Skipping method: true false false false false 
 
 }
 

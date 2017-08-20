@@ -22,38 +22,23 @@ open class SplitPaneUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/SplitPaneUI", classCache: &SplitPaneUI.SplitPaneUIJNIClass, methodSig: "()V", methodCache: &SplitPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract void javax.swing.plaf.SplitPaneUI.resetToPreferredSizes(javax.swing.JSplitPane)
-
-    private static var resetToPreferredSizes_MethodID_2: jmethodID?
-
-    open func resetToPreferredSizes( jc: JSplitPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: jc, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "(Ljavax/swing/JSplitPane;)V", methodCache: &SplitPaneUI.resetToPreferredSizes_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func resetToPreferredSizes( _ _jc: JSplitPane? ) {
-        resetToPreferredSizes( jc: _jc )
-    }
-
     /// public abstract void javax.swing.plaf.SplitPaneUI.finishedPaintingChildren(javax.swing.JSplitPane,java.awt.Graphics)
 
-    private static var finishedPaintingChildren_MethodID_3: jmethodID?
+    private static var finishedPaintingChildren_MethodID_2: jmethodID?
 
     open func finishedPaintingChildren( jc: JSplitPane?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: jc, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &SplitPaneUI.finishedPaintingChildren_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishedPaintingChildren", methodSig: "(Ljavax/swing/JSplitPane;Ljava/awt/Graphics;)V", methodCache: &SplitPaneUI.finishedPaintingChildren_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func finishedPaintingChildren( _ _jc: JSplitPane?, _ _g: java_awt.Graphics? ) {
@@ -62,66 +47,81 @@ open class SplitPaneUI: ComponentUI {
 
     /// public abstract int javax.swing.plaf.SplitPaneUI.getDividerLocation(javax.swing.JSplitPane)
 
-    private static var getDividerLocation_MethodID_4: jmethodID?
+    private static var getDividerLocation_MethodID_3: jmethodID?
 
     open func getDividerLocation( jc: JSplitPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: jc, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &SplitPaneUI.getDividerLocation_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &SplitPaneUI.getDividerLocation_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getDividerLocation( _ _jc: JSplitPane? ) -> Int {
         return getDividerLocation( jc: _jc )
     }
 
-    /// public abstract void javax.swing.plaf.SplitPaneUI.setDividerLocation(javax.swing.JSplitPane,int)
+    /// public abstract int javax.swing.plaf.SplitPaneUI.getMaximumDividerLocation(javax.swing.JSplitPane)
 
-    private static var setDividerLocation_MethodID_5: jmethodID?
+    private static var getMaximumDividerLocation_MethodID_4: jmethodID?
 
-    open func setDividerLocation( jc: JSplitPane?, location: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func getMaximumDividerLocation( jc: JSplitPane? ) -> Int {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: jc, locals: &__locals )
-        __args[1] = JNIType.toJava( value: location, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;I)V", methodCache: &SplitPaneUI.setDividerLocation_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &SplitPaneUI.getMaximumDividerLocation_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func setDividerLocation( _ _jc: JSplitPane?, _ _location: Int ) {
-        setDividerLocation( jc: _jc, location: _location )
+    open func getMaximumDividerLocation( _ _jc: JSplitPane? ) -> Int {
+        return getMaximumDividerLocation( jc: _jc )
     }
 
     /// public abstract int javax.swing.plaf.SplitPaneUI.getMinimumDividerLocation(javax.swing.JSplitPane)
 
-    private static var getMinimumDividerLocation_MethodID_6: jmethodID?
+    private static var getMinimumDividerLocation_MethodID_5: jmethodID?
 
     open func getMinimumDividerLocation( jc: JSplitPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: jc, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &SplitPaneUI.getMinimumDividerLocation_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &SplitPaneUI.getMinimumDividerLocation_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getMinimumDividerLocation( _ _jc: JSplitPane? ) -> Int {
         return getMinimumDividerLocation( jc: _jc )
     }
 
-    /// public abstract int javax.swing.plaf.SplitPaneUI.getMaximumDividerLocation(javax.swing.JSplitPane)
+    /// public abstract void javax.swing.plaf.SplitPaneUI.resetToPreferredSizes(javax.swing.JSplitPane)
 
-    private static var getMaximumDividerLocation_MethodID_7: jmethodID?
+    private static var resetToPreferredSizes_MethodID_6: jmethodID?
 
-    open func getMaximumDividerLocation( jc: JSplitPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func resetToPreferredSizes( jc: JSplitPane? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: jc, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximumDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;)I", methodCache: &SplitPaneUI.getMaximumDividerLocation_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "resetToPreferredSizes", methodSig: "(Ljavax/swing/JSplitPane;)V", methodCache: &SplitPaneUI.resetToPreferredSizes_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func getMaximumDividerLocation( _ _jc: JSplitPane? ) -> Int {
-        return getMaximumDividerLocation( jc: _jc )
+    open func resetToPreferredSizes( _ _jc: JSplitPane? ) {
+        resetToPreferredSizes( jc: _jc )
+    }
+
+    /// public abstract void javax.swing.plaf.SplitPaneUI.setDividerLocation(javax.swing.JSplitPane,int)
+
+    private static var setDividerLocation_MethodID_7: jmethodID?
+
+    open func setDividerLocation( jc: JSplitPane?, location: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: jc, locals: &__locals )
+        __args[1] = jvalue( i: jint(location) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerLocation", methodSig: "(Ljavax/swing/JSplitPane;I)V", methodCache: &SplitPaneUI.setDividerLocation_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func setDividerLocation( _ _jc: JSplitPane?, _ _location: Int ) {
+        setDividerLocation( jc: _jc, location: _location )
     }
 
 }

@@ -25,8 +25,8 @@ open class CaretEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &CaretEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &CaretEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -41,8 +41,8 @@ open class CaretEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/CaretEvent", classCache: &CaretEvent.CaretEventJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &CaretEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -53,27 +53,27 @@ open class CaretEvent: java_util.EventObject {
         self.init( source: _source )
     }
 
-    /// public abstract int javax.swing.event.CaretEvent.getMark()
+    /// public abstract int javax.swing.event.CaretEvent.getDot()
 
-    private static var getMark_MethodID_2: jmethodID?
+    private static var getDot_MethodID_2: jmethodID?
 
-    open func getMark() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getDot() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMark", methodSig: "()I", methodCache: &CaretEvent.getMark_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDot", methodSig: "()I", methodCache: &CaretEvent.getDot_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public abstract int javax.swing.event.CaretEvent.getDot()
+    /// public abstract int javax.swing.event.CaretEvent.getMark()
 
-    private static var getDot_MethodID_3: jmethodID?
+    private static var getMark_MethodID_3: jmethodID?
 
-    open func getDot() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMark() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDot", methodSig: "()I", methodCache: &CaretEvent.getDot_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMark", methodSig: "()I", methodCache: &CaretEvent.getMark_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 

@@ -17,31 +17,14 @@ open class FlowView: BoxView {
 
     private static var FlowViewJNIClass: jclass?
 
-    /// protected int javax.swing.text.FlowView.layoutSpan
-
-    private static var layoutSpan_FieldID: jfieldID?
-
-    open var layoutSpan: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &FlowView.layoutSpan_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &FlowView.layoutSpan_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.text.View javax.swing.text.FlowView.layoutPool
 
     private static var layoutPool_FieldID: jfieldID?
 
     open var layoutPool: View! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "layoutPool", fieldType: "Ljavax/swing/text/View;", fieldCache: &FlowView.layoutPool_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "layoutPool", fieldType: "Ljavax/swing/text/View;", fieldCache: &FlowView.layoutPool_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? View( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,14 +34,30 @@ open class FlowView: BoxView {
         }
     }
 
+    /// protected int javax.swing.text.FlowView.layoutSpan
+
+    private static var layoutSpan_FieldID: jfieldID?
+
+    open var layoutSpan: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &FlowView.layoutSpan_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "layoutSpan", fieldType: "I", fieldCache: &FlowView.layoutSpan_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.text.FlowView$FlowStrategy javax.swing.text.FlowView.strategy
 
     private static var strategy_FieldID: jfieldID?
 
     open var strategy: FlowView_FlowStrategy! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "strategy", fieldType: "Ljavax/swing/text/FlowView$FlowStrategy;", fieldCache: &FlowView.strategy_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "strategy", fieldType: "Ljavax/swing/text/FlowView$FlowStrategy;", fieldCache: &FlowView.strategy_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? FlowView_FlowStrategy( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -68,119 +67,203 @@ open class FlowView: BoxView {
         }
     }
 
+    /// boolean javax.swing.text.BoxView.majorAllocValid
+
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.BoxView.majorAxis
 
-    /// int javax.swing.text.BoxView.majorSpan
-
-    /// int javax.swing.text.BoxView.minorSpan
-
-    /// boolean javax.swing.text.BoxView.majorReqValid
-
-    /// boolean javax.swing.text.BoxView.minorReqValid
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
-
-    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
-
-    /// boolean javax.swing.text.BoxView.majorAllocValid
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.majorOffsets
 
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.majorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.majorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.majorSpan
+
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.majorSpans
+
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.BoxView.minorAllocValid
 
+    // Skipping field: true false false false false false 
+
     /// int[] javax.swing.text.BoxView.minorOffsets
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.BoxView.minorReqValid
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.SizeRequirements javax.swing.text.BoxView.minorRequest
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.BoxView.minorSpan
+
+    // Skipping field: true false false false false false 
 
     /// int[] javax.swing.text.BoxView.minorSpans
 
+    // Skipping field: true false false false false false 
+
     /// java.awt.Rectangle javax.swing.text.BoxView.tempRect
 
+    // Skipping field: true false false false false false 
+
     /// private static javax.swing.text.View[] javax.swing.text.CompositeView.ZERO
-
-    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
-
-    /// private int javax.swing.text.CompositeView.nchildren
-
-    /// private short javax.swing.text.CompositeView.left
-
-    /// private short javax.swing.text.CompositeView.right
-
-    /// private short javax.swing.text.CompositeView.top
 
     /// private short javax.swing.text.CompositeView.bottom
 
     /// private java.awt.Rectangle javax.swing.text.CompositeView.childAlloc
 
+    /// private javax.swing.text.View[] javax.swing.text.CompositeView.children
+
+    /// private short javax.swing.text.CompositeView.left
+
+    /// private int javax.swing.text.CompositeView.nchildren
+
+    /// private short javax.swing.text.CompositeView.right
+
+    /// private short javax.swing.text.CompositeView.top
+
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.FlowView(javax.swing.text.Element,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element?, axis: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        __args[1] = JNIType.toJava( value: axis, locals: &__locals )
+        __args[1] = jvalue( i: jint(axis) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/FlowView", classCache: &FlowView.FlowViewJNIClass, methodSig: "(Ljavax/swing/text/Element;I)V", methodCache: &FlowView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -190,50 +273,16 @@ open class FlowView: BoxView {
         self.init( elem: _elem, axis: _axis )
     }
 
-    /// public void javax.swing.text.FlowView.setParent(javax.swing.text.View)
-
-    /// protected void javax.swing.text.FlowView.layout(int,int)
-
-    private static var layout_MethodID_2: jmethodID?
-
-    override open func layout( width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "(II)V", methodCache: &FlowView.layout_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func layout( _ _width: Int, _ _height: Int ) {
-        layout( width: _width, height: _height )
-    }
-
-    /// public int javax.swing.text.FlowView.getFlowSpan(int)
-
-    private static var getFlowSpan_MethodID_3: jmethodID?
-
-    open func getFlowSpan( index: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowSpan", methodSig: "(I)I", methodCache: &FlowView.getFlowSpan_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getFlowSpan( _ _index: Int ) -> Int {
-        return getFlowSpan( index: _index )
-    }
-
     /// protected javax.swing.SizeRequirements javax.swing.text.FlowView.calculateMinorAxisRequirements(int,javax.swing.SizeRequirements)
 
-    private static var calculateMinorAxisRequirements_MethodID_4: jmethodID?
+    private static var calculateMinorAxisRequirements_MethodID_2: jmethodID?
 
     override open func calculateMinorAxisRequirements( axis: Int, r: SizeRequirements? ) -> SizeRequirements! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(axis) )
         __args[1] = JNIType.toJava( value: r, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &FlowView.calculateMinorAxisRequirements_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "calculateMinorAxisRequirements", methodSig: "(ILjavax/swing/SizeRequirements;)Ljavax/swing/SizeRequirements;", methodCache: &FlowView.calculateMinorAxisRequirements_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SizeRequirements( javaObject: __return ) : nil
     }
@@ -242,30 +291,31 @@ open class FlowView: BoxView {
         return calculateMinorAxisRequirements( axis: _axis, r: _r )
     }
 
-    /// public int javax.swing.text.FlowView.getFlowStart(int)
+    /// public void javax.swing.text.FlowView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var getFlowStart_MethodID_5: jmethodID?
+    private static var changedUpdate_MethodID_3: jmethodID?
 
-    open func getFlowStart( index: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func changedUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowStart", methodSig: "(I)I", methodCache: &FlowView.getFlowStart_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.changedUpdate_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func getFlowStart( _ _index: Int ) -> Int {
-        return getFlowStart( index: _index )
+    override open func changedUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        changedUpdate( changes: _changes, a: _a, f: _f )
     }
 
     /// protected abstract javax.swing.text.View javax.swing.text.FlowView.createRow()
 
-    private static var createRow_MethodID_6: jmethodID?
+    private static var createRow_MethodID_4: jmethodID?
 
     open func createRow() -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRow", methodSig: "()Ljavax/swing/text/View;", methodCache: &FlowView.createRow_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRow", methodSig: "()Ljavax/swing/text/View;", methodCache: &FlowView.createRow_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
@@ -273,97 +323,132 @@ open class FlowView: BoxView {
 
     /// public int javax.swing.text.FlowView.getFlowAxis()
 
-    private static var getFlowAxis_MethodID_7: jmethodID?
+    private static var getFlowAxis_MethodID_5: jmethodID?
 
     open func getFlowAxis() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowAxis", methodSig: "()I", methodCache: &FlowView.getFlowAxis_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.text.FlowView.getFlowSpan(int)
+
+    private static var getFlowSpan_MethodID_6: jmethodID?
+
+    open func getFlowSpan( index: Int ) -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowAxis", methodSig: "()I", methodCache: &FlowView.getFlowAxis_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowSpan", methodSig: "(I)I", methodCache: &FlowView.getFlowSpan_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+    open func getFlowSpan( _ _index: Int ) -> Int {
+        return getFlowSpan( index: _index )
+    }
 
-    /// public void javax.swing.text.FlowView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+    /// public int javax.swing.text.FlowView.getFlowStart(int)
 
-    private static var insertUpdate_MethodID_8: jmethodID?
+    private static var getFlowStart_MethodID_7: jmethodID?
 
-    open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func getFlowStart( index: Int ) -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.insertUpdate_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFlowStart", methodSig: "(I)I", methodCache: &FlowView.getFlowStart_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        insertUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// public void javax.swing.text.FlowView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var removeUpdate_MethodID_9: jmethodID?
-
-    open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.removeUpdate_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        removeUpdate( changes: _changes, a: _a, f: _f )
-    }
-
-    /// public void javax.swing.text.FlowView.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var changedUpdate_MethodID_10: jmethodID?
-
-    open func changedUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.changedUpdate_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    override open func changedUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        changedUpdate( changes: _changes, a: _a, f: _f )
+    open func getFlowStart( _ _index: Int ) -> Int {
+        return getFlowStart( index: _index )
     }
 
     /// protected int javax.swing.text.FlowView.getViewIndexAtPosition(int)
 
-    private static var getViewIndexAtPosition_MethodID_11: jmethodID?
+    private static var getViewIndexAtPosition_MethodID_8: jmethodID?
 
     override open func getViewIndexAtPosition( pos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &FlowView.getViewIndexAtPosition_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndexAtPosition", methodSig: "(I)I", methodCache: &FlowView.getViewIndexAtPosition_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     override open func getViewIndexAtPosition( _ _pos: Int ) -> Int {
         return getViewIndexAtPosition( pos: _pos )
     }
 
+    /// public void javax.swing.text.FlowView.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var insertUpdate_MethodID_9: jmethodID?
+
+    open func insertUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.insertUpdate_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func insertUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        insertUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// protected void javax.swing.text.FlowView.layout(int,int)
+
+    private static var layout_MethodID_10: jmethodID?
+
+    override open func layout( width: Int, height: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "layout", methodSig: "(II)V", methodCache: &FlowView.layout_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func layout( _ _width: Int, _ _height: Int ) {
+        layout( width: _width, height: _height )
+    }
+
     /// protected void javax.swing.text.FlowView.loadChildren(javax.swing.text.ViewFactory)
 
-    private static var loadChildren_MethodID_12: jmethodID?
+    private static var loadChildren_MethodID_11: jmethodID?
 
     override open func loadChildren( f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.loadChildren_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "(Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.loadChildren_MethodID_11, args: &__args, locals: &__locals )
     }
 
     override open func loadChildren( _ _f: ViewFactory? ) {
         loadChildren( f: _f )
     }
+
+    /// public void javax.swing.text.FlowView.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var removeUpdate_MethodID_12: jmethodID?
+
+    open func removeUpdate( changes: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: changes, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &FlowView.removeUpdate_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    override open func removeUpdate( _ _changes: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        removeUpdate( changes: _changes, a: _a, f: _f )
+    }
+
+    /// public void javax.swing.text.FlowView.setParent(javax.swing.text.View)
+
+    // Skipping method: false true false false false 
 
 }
 

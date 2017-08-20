@@ -22,23 +22,25 @@ open class SynthContext: java_swift.JavaObject {
 
     /// private javax.swing.plaf.synth.Region javax.swing.plaf.synth.SynthContext.region
 
-    /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthContext.style
-
     /// private int javax.swing.plaf.synth.SynthContext.state
 
+    /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthContext.style
+
     /// javax.swing.plaf.synth.SynthContext()
+
+    // Skipping init: true false false 
 
     /// public javax.swing.plaf.synth.SynthContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,javax.swing.plaf.synth.SynthStyle,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( component: JComponent?, region: Region?, style: SynthStyle?, state: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: component, locals: &__locals )
         __args[1] = JNIType.toJava( value: region, locals: &__locals )
         __args[2] = JNIType.toJava( value: style, locals: &__locals )
-        __args[3] = JNIType.toJava( value: state, locals: &__locals )
+        __args[3] = jvalue( i: jint(state) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthContext", classCache: &SynthContext.SynthContextJNIClass, methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/plaf/synth/Region;Ljavax/swing/plaf/synth/SynthStyle;I)V", methodCache: &SynthContext.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -48,74 +50,92 @@ open class SynthContext: java_swift.JavaObject {
         self.init( component: _component, region: _region, style: _style, state: _state )
     }
 
-    /// static javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthContext.getContext(javax.swing.JComponent,javax.swing.plaf.synth.SynthStyle,int)
-
     /// static javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthContext.getContext(javax.swing.JComponent,javax.swing.plaf.synth.Region,javax.swing.plaf.synth.SynthStyle,int)
 
-    /// void javax.swing.plaf.synth.SynthContext.reset(javax.swing.JComponent,javax.swing.plaf.synth.Region,javax.swing.plaf.synth.SynthStyle,int)
+    // Skipping method: true false false false false 
 
-    /// javax.swing.plaf.synth.SynthPainter javax.swing.plaf.synth.SynthContext.getPainter()
+    /// static javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthContext.getContext(javax.swing.JComponent,javax.swing.plaf.synth.SynthStyle,int)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.synth.SynthContext.releaseContext(javax.swing.plaf.synth.SynthContext)
+
+    // Skipping method: true false false false false 
 
     /// void javax.swing.plaf.synth.SynthContext.dispose()
 
-    /// public int javax.swing.plaf.synth.SynthContext.getComponentState()
+    // Skipping method: true false false false false 
 
-    private static var getComponentState_MethodID_2: jmethodID?
+    /// public javax.swing.JComponent javax.swing.plaf.synth.SynthContext.getComponent()
 
-    open func getComponentState() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var getComponent_MethodID_2: jmethodID?
+
+    open func getComponent() -> JComponent! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentState", methodSig: "()I", methodCache: &SynthContext.getComponentState_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &SynthContext.getComponent_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
 
-    /// void javax.swing.plaf.synth.SynthContext.setComponentState(int)
+    /// public int javax.swing.plaf.synth.SynthContext.getComponentState()
+
+    private static var getComponentState_MethodID_3: jmethodID?
+
+    open func getComponentState() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getComponentState", methodSig: "()I", methodCache: &SynthContext.getComponentState_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// javax.swing.plaf.synth.SynthPainter javax.swing.plaf.synth.SynthContext.getPainter()
+
+    // Skipping method: true false false false false 
 
     /// public javax.swing.plaf.synth.Region javax.swing.plaf.synth.SynthContext.getRegion()
 
-    private static var getRegion_MethodID_3: jmethodID?
+    private static var getRegion_MethodID_4: jmethodID?
 
     open func getRegion() -> Region! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRegion", methodSig: "()Ljavax/swing/plaf/synth/Region;", methodCache: &SynthContext.getRegion_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRegion", methodSig: "()Ljavax/swing/plaf/synth/Region;", methodCache: &SynthContext.getRegion_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Region( javaObject: __return ) : nil
     }
 
 
-    /// boolean javax.swing.plaf.synth.SynthContext.isSubregion()
-
-    /// static void javax.swing.plaf.synth.SynthContext.releaseContext(javax.swing.plaf.synth.SynthContext)
-
-    /// void javax.swing.plaf.synth.SynthContext.setStyle(javax.swing.plaf.synth.SynthStyle)
-
     /// public javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthContext.getStyle()
 
-    private static var getStyle_MethodID_4: jmethodID?
+    private static var getStyle_MethodID_5: jmethodID?
 
     open func getStyle() -> SynthStyle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "()Ljavax/swing/plaf/synth/SynthStyle;", methodCache: &SynthContext.getStyle_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStyle", methodSig: "()Ljavax/swing/plaf/synth/SynthStyle;", methodCache: &SynthContext.getStyle_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthStyle( javaObject: __return ) : nil
     }
 
 
-    /// public javax.swing.JComponent javax.swing.plaf.synth.SynthContext.getComponent()
+    /// boolean javax.swing.plaf.synth.SynthContext.isSubregion()
 
-    private static var getComponent_MethodID_5: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func getComponent() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &SynthContext.getComponent_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
-    }
+    /// void javax.swing.plaf.synth.SynthContext.reset(javax.swing.JComponent,javax.swing.plaf.synth.Region,javax.swing.plaf.synth.SynthStyle,int)
 
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.plaf.synth.SynthContext.setComponentState(int)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.plaf.synth.SynthContext.setStyle(javax.swing.plaf.synth.SynthStyle)
+
+    // Skipping method: true false false false false 
 
 }
 

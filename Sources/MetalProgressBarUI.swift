@@ -17,67 +17,15 @@ open class MetalProgressBarUI: BasicProgressBarUI {
 
     private static var MetalProgressBarUIJNIClass: jclass?
 
-    /// private java.awt.Rectangle javax.swing.plaf.metal.MetalProgressBarUI.innards
-
     /// private java.awt.Rectangle javax.swing.plaf.metal.MetalProgressBarUI.box
 
-    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cachedPercent
+    /// private java.awt.Rectangle javax.swing.plaf.metal.MetalProgressBarUI.innards
 
-    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cellLength
-
-    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cellSpacing
-
-    /// private java.awt.Color javax.swing.plaf.basic.BasicProgressBarUI.selectionForeground
-
-    /// private java.awt.Color javax.swing.plaf.basic.BasicProgressBarUI.selectionBackground
-
-    /// private javax.swing.plaf.basic.BasicProgressBarUI$Animator javax.swing.plaf.basic.BasicProgressBarUI.animator
-
-    /// protected javax.swing.JProgressBar javax.swing.plaf.basic.BasicProgressBarUI.progressBar
-
-    private static var progressBar_FieldID: jfieldID?
-
-    override open var progressBar: JProgressBar! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "progressBar", fieldType: "Ljavax/swing/JProgressBar;", fieldCache: &MetalProgressBarUI.progressBar_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JProgressBar( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "progressBar", fieldType: "Ljavax/swing/JProgressBar;", fieldCache: &MetalProgressBarUI.progressBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicProgressBarUI.changeListener
-
-    private static var changeListener_FieldID: jfieldID?
-
-    override open var changeListener: ChangeListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalProgressBarUI.changeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalProgressBarUI.changeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private javax.swing.plaf.basic.BasicProgressBarUI$Handler javax.swing.plaf.basic.BasicProgressBarUI.handler
+    /// private static boolean javax.swing.plaf.basic.BasicProgressBarUI.ADJUSTTIMER
 
     /// private int javax.swing.plaf.basic.BasicProgressBarUI.animationIndex
 
-    /// private int javax.swing.plaf.basic.BasicProgressBarUI.numFrames
-
-    /// private int javax.swing.plaf.basic.BasicProgressBarUI.repaintInterval
-
-    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cycleTime
-
-    /// private static boolean javax.swing.plaf.basic.BasicProgressBarUI.ADJUSTTIMER
+    /// private javax.swing.plaf.basic.BasicProgressBarUI$Animator javax.swing.plaf.basic.BasicProgressBarUI.animator
 
     /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicProgressBarUI.boxRect
 
@@ -85,8 +33,8 @@ open class MetalProgressBarUI: BasicProgressBarUI {
 
     override open var boxRect: java_awt.Rectangle! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "boxRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalProgressBarUI.boxRect_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "boxRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalProgressBarUI.boxRect_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Rectangle( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -96,23 +44,75 @@ open class MetalProgressBarUI: BasicProgressBarUI {
         }
     }
 
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicProgressBarUI.nextPaintRect
+    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cachedPercent
+
+    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cellLength
+
+    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cellSpacing
+
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicProgressBarUI.changeListener
+
+    private static var changeListener_FieldID: jfieldID?
+
+    override open var changeListener: ChangeListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalProgressBarUI.changeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalProgressBarUI.changeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// private java.awt.Rectangle javax.swing.plaf.basic.BasicProgressBarUI.componentInnards
 
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicProgressBarUI.oldComponentInnards
+    /// private int javax.swing.plaf.basic.BasicProgressBarUI.cycleTime
 
     /// private double javax.swing.plaf.basic.BasicProgressBarUI.delta
 
+    /// private javax.swing.plaf.basic.BasicProgressBarUI$Handler javax.swing.plaf.basic.BasicProgressBarUI.handler
+
     /// private int javax.swing.plaf.basic.BasicProgressBarUI.maxPosition
+
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicProgressBarUI.nextPaintRect
+
+    /// private int javax.swing.plaf.basic.BasicProgressBarUI.numFrames
+
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicProgressBarUI.oldComponentInnards
+
+    /// protected javax.swing.JProgressBar javax.swing.plaf.basic.BasicProgressBarUI.progressBar
+
+    private static var progressBar_FieldID: jfieldID?
+
+    override open var progressBar: JProgressBar! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "progressBar", fieldType: "Ljavax/swing/JProgressBar;", fieldCache: &MetalProgressBarUI.progressBar_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JProgressBar( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "progressBar", fieldType: "Ljavax/swing/JProgressBar;", fieldCache: &MetalProgressBarUI.progressBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private int javax.swing.plaf.basic.BasicProgressBarUI.repaintInterval
+
+    /// private java.awt.Color javax.swing.plaf.basic.BasicProgressBarUI.selectionBackground
+
+    /// private java.awt.Color javax.swing.plaf.basic.BasicProgressBarUI.selectionForeground
 
     /// public javax.swing.plaf.metal.MetalProgressBarUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalProgressBarUI", classCache: &MetalProgressBarUI.MetalProgressBarUIJNIClass, methodSig: "()V", methodCache: &MetalProgressBarUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -123,8 +123,8 @@ open class MetalProgressBarUI: BasicProgressBarUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalProgressBarUI", classCache: &MetalProgressBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -135,36 +135,36 @@ open class MetalProgressBarUI: BasicProgressBarUI {
         return createUI( c: _c )
     }
 
-    /// public void javax.swing.plaf.metal.MetalProgressBarUI.paintIndeterminate(java.awt.Graphics,javax.swing.JComponent)
-
-    private static var paintIndeterminate_MethodID_3: jmethodID?
-
-    override open func paintIndeterminate( g: java_awt.Graphics?, c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIndeterminate", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MetalProgressBarUI.paintIndeterminate_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    override open func paintIndeterminate( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
-        paintIndeterminate( g: _g, c: _c )
-    }
-
     /// public void javax.swing.plaf.metal.MetalProgressBarUI.paintDeterminate(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var paintDeterminate_MethodID_4: jmethodID?
+    private static var paintDeterminate_MethodID_3: jmethodID?
 
     override open func paintDeterminate( g: java_awt.Graphics?, c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDeterminate", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MetalProgressBarUI.paintDeterminate_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDeterminate", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MetalProgressBarUI.paintDeterminate_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func paintDeterminate( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
         paintDeterminate( g: _g, c: _c )
+    }
+
+    /// public void javax.swing.plaf.metal.MetalProgressBarUI.paintIndeterminate(java.awt.Graphics,javax.swing.JComponent)
+
+    private static var paintIndeterminate_MethodID_4: jmethodID?
+
+    override open func paintIndeterminate( g: java_awt.Graphics?, c: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintIndeterminate", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;)V", methodCache: &MetalProgressBarUI.paintIndeterminate_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func paintIndeterminate( _ _g: java_awt.Graphics?, _ _c: JComponent? ) {
+        paintIndeterminate( g: _g, c: _c )
     }
 
 }

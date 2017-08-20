@@ -6,7 +6,7 @@ import java_awt
 
 /// class javax.swing.ProgressMonitorInputStream ///
 
-open class ProgressMonitorInputStream: /* java.io.FilterInputStream */ UnclassedObject {
+open class ProgressMonitorInputStream: /* class java.io.FilterInputStream */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -27,11 +27,11 @@ open class ProgressMonitorInputStream: /* java.io.FilterInputStream */ Unclassed
 
     private static var _in_FieldID: jfieldID?
 
-    open var _in: /* java.io.InputStream */ UnclassedObject! {
+    open var _in: /* class java.io.InputStream */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "in", fieldType: "Ljava/io/InputStream;", fieldCache: &ProgressMonitorInputStream._in_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.io.InputStream */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "in", fieldType: "Ljava/io/InputStream;", fieldCache: &ProgressMonitorInputStream._in_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class java.io.InputStream */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -46,9 +46,9 @@ open class ProgressMonitorInputStream: /* java.io.FilterInputStream */ Unclassed
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, _in: /* java.io.InputStream */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init( parentComponent: java_awt.Component?, message: java_swift.JavaObject?, _in: /* class java.io.InputStream */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: parentComponent, locals: &__locals )
         __args[1] = JNIType.toJava( value: message, locals: &__locals )
         __args[2] = JNIType.toJava( value: _in, locals: &__locals )
@@ -57,34 +57,130 @@ open class ProgressMonitorInputStream: /* java.io.FilterInputStream */ Unclassed
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ __in: /* java.io.InputStream */ UnclassedObject? ) {
+    public convenience init( _ _parentComponent: java_awt.Component?, _ _message: java_swift.JavaObject?, _ __in: /* class java.io.InputStream */ UnavailableObject? ) {
         self.init( parentComponent: _parentComponent, message: _message, _in: __in )
     }
 
-    /// public int javax.swing.ProgressMonitorInputStream.read(byte[],int,int) throws java.io.IOException
-
-    /// public int javax.swing.ProgressMonitorInputStream.read(byte[]) throws java.io.IOException
-
-    /// public int javax.swing.ProgressMonitorInputStream.read() throws java.io.IOException
-
     /// public void javax.swing.ProgressMonitorInputStream.close() throws java.io.IOException
 
-    /// public long javax.swing.ProgressMonitorInputStream.skip(long) throws java.io.IOException
+    private static var close_MethodID_2: jmethodID?
 
-    /// public synchronized void javax.swing.ProgressMonitorInputStream.reset() throws java.io.IOException
+    open func close() throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "close", methodSig: "()V", methodCache: &ProgressMonitorInputStream.close_MethodID_2, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
 
     /// public javax.swing.ProgressMonitor javax.swing.ProgressMonitorInputStream.getProgressMonitor()
 
-    private static var getProgressMonitor_MethodID_2: jmethodID?
+    private static var getProgressMonitor_MethodID_3: jmethodID?
 
     open func getProgressMonitor() -> ProgressMonitor! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProgressMonitor", methodSig: "()Ljavax/swing/ProgressMonitor;", methodCache: &ProgressMonitorInputStream.getProgressMonitor_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getProgressMonitor", methodSig: "()Ljavax/swing/ProgressMonitor;", methodCache: &ProgressMonitorInputStream.getProgressMonitor_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ProgressMonitor( javaObject: __return ) : nil
     }
 
+
+    /// public int javax.swing.ProgressMonitorInputStream.read(byte[]) throws java.io.IOException
+
+    private static var read_MethodID_4: jmethodID?
+
+    open func read( b: [Int8]? ) throws /* java.io.IOException */ -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "read", methodSig: "([B)I", methodCache: &ProgressMonitorInputStream.read_MethodID_4, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+        return Int(__return)
+    }
+
+    open func read( _ _b: [Int8]? ) throws /* java.io.IOException */ -> Int {
+        return try read( b: _b )
+    }
+
+    /// public int javax.swing.ProgressMonitorInputStream.read(byte[],int,int) throws java.io.IOException
+
+    private static var read_MethodID_5: jmethodID?
+
+    open func read( b: [Int8]?, off: Int, len: Int ) throws /* java.io.IOException */ -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        __args[1] = jvalue( i: jint(off) )
+        __args[2] = jvalue( i: jint(len) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "read", methodSig: "([BII)I", methodCache: &ProgressMonitorInputStream.read_MethodID_5, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+        return Int(__return)
+    }
+
+    open func read( _ _b: [Int8]?, _ _off: Int, _ _len: Int ) throws /* java.io.IOException */ -> Int {
+        return try read( b: _b, off: _off, len: _len )
+    }
+
+    /// public int javax.swing.ProgressMonitorInputStream.read() throws java.io.IOException
+
+    private static var read_MethodID_6: jmethodID?
+
+    open func read() throws /* java.io.IOException */ -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "read", methodSig: "()I", methodCache: &ProgressMonitorInputStream.read_MethodID_6, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+        return Int(__return)
+    }
+
+
+    /// public synchronized void javax.swing.ProgressMonitorInputStream.reset() throws java.io.IOException
+
+    private static var reset_MethodID_7: jmethodID?
+
+    open func reset() throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "reset", methodSig: "()V", methodCache: &ProgressMonitorInputStream.reset_MethodID_7, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+
+    /// public long javax.swing.ProgressMonitorInputStream.skip(long) throws java.io.IOException
+
+    private static var skip_MethodID_8: jmethodID?
+
+    open func skip( n: Int64 ) throws /* java.io.IOException */ -> Int64 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( j: n )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "skip", methodSig: "(J)J", methodCache: &ProgressMonitorInputStream.skip_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+        return __return
+    }
+
+    open func skip( _ _n: Int64 ) throws /* java.io.IOException */ -> Int64 {
+        return try skip( n: _n )
+    }
 
 }
 

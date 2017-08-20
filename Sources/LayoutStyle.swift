@@ -22,8 +22,8 @@ open class LayoutStyle: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/LayoutStyle", classCache: &LayoutStyle.LayoutStyleJNIClass, methodSig: "()V", methodCache: &LayoutStyle.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -34,45 +34,45 @@ open class LayoutStyle: java_swift.JavaObject {
     private static var getInstance_MethodID_2: jmethodID?
 
     open class func getInstance() -> LayoutStyle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/LayoutStyle", classCache: &LayoutStyleJNIClass, methodName: "getInstance", methodSig: "()Ljavax/swing/LayoutStyle;", methodCache: &getInstance_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LayoutStyle( javaObject: __return ) : nil
     }
 
 
-    /// public abstract int javax.swing.LayoutStyle.getContainerGap(javax.swing.JComponent,int,java.awt.Container)
-
-    private static var getContainerGap_MethodID_3: jmethodID?
-
-    open func getContainerGap( component: JComponent?, position: Int, parent: java_awt.Container? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: component, locals: &__locals )
-        __args[1] = JNIType.toJava( value: position, locals: &__locals )
-        __args[2] = JNIType.toJava( value: parent, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getContainerGap", methodSig: "(Ljavax/swing/JComponent;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getContainerGap_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getContainerGap( _ _component: JComponent?, _ _position: Int, _ _parent: java_awt.Container? ) -> Int {
-        return getContainerGap( component: _component, position: _position, parent: _parent )
-    }
-
     /// public static void javax.swing.LayoutStyle.setInstance(javax.swing.LayoutStyle)
 
-    private static var setInstance_MethodID_4: jmethodID?
+    private static var setInstance_MethodID_3: jmethodID?
 
     open class func setInstance( style: LayoutStyle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: style, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/LayoutStyle", classCache: &LayoutStyleJNIClass, methodName: "setInstance", methodSig: "(Ljavax/swing/LayoutStyle;)V", methodCache: &setInstance_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/LayoutStyle", classCache: &LayoutStyleJNIClass, methodName: "setInstance", methodSig: "(Ljavax/swing/LayoutStyle;)V", methodCache: &setInstance_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open class func setInstance( _ _style: LayoutStyle? ) {
         setInstance( style: _style )
+    }
+
+    /// public abstract int javax.swing.LayoutStyle.getContainerGap(javax.swing.JComponent,int,java.awt.Container)
+
+    private static var getContainerGap_MethodID_4: jmethodID?
+
+    open func getContainerGap( component: JComponent?, position: Int, parent: java_awt.Container? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: component, locals: &__locals )
+        __args[1] = jvalue( i: jint(position) )
+        __args[2] = JNIType.toJava( value: parent, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getContainerGap", methodSig: "(Ljavax/swing/JComponent;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getContainerGap_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getContainerGap( _ _component: JComponent?, _ _position: Int, _ _parent: java_awt.Container? ) -> Int {
+        return getContainerGap( component: _component, position: _position, parent: _parent )
     }
 
     /// public abstract int javax.swing.LayoutStyle.getPreferredGap(javax.swing.JComponent,javax.swing.JComponent,javax.swing.LayoutStyle$ComponentPlacement,int,java.awt.Container)
@@ -80,15 +80,15 @@ open class LayoutStyle: java_swift.JavaObject {
     private static var getPreferredGap_MethodID_5: jmethodID?
 
     open func getPreferredGap( component1: JComponent?, component2: JComponent?, type: LayoutStyle_ComponentPlacement?, position: Int, parent: java_awt.Container? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: component1, locals: &__locals )
         __args[1] = JNIType.toJava( value: component2, locals: &__locals )
         __args[2] = JNIType.toJava( value: type, locals: &__locals )
-        __args[3] = JNIType.toJava( value: position, locals: &__locals )
+        __args[3] = jvalue( i: jint(position) )
         __args[4] = JNIType.toJava( value: parent, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreferredGap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;Ljavax/swing/LayoutStyle$ComponentPlacement;ILjava/awt/Container;)I", methodCache: &LayoutStyle.getPreferredGap_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func getPreferredGap( _ _component1: JComponent?, _ _component2: JComponent?, _ _type: LayoutStyle_ComponentPlacement?, _ _position: Int, _ _parent: java_awt.Container? ) -> Int {

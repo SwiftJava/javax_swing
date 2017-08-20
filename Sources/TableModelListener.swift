@@ -24,8 +24,8 @@ open class TableModelListenerForward: java_util.EventListenerForward, TableModel
     private static var tableChanged_MethodID_2: jmethodID?
 
     open func tableChanged( e: TableModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "tableChanged", methodSig: "(Ljavax/swing/event/TableModelEvent;)V", methodCache: &TableModelListenerForward.tableChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class TableModelListenerForward: java_util.EventListenerForward, TableModel
 
 }
 
-
 private typealias TableModelListener_tableChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TableModelListener_tableChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TableModelListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).tableChanged( e: e != nil ? TableModelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class TableModelListenerLocal_: JNILocalProxy<TableModelListener, Any> {
@@ -89,8 +86,5 @@ open class TableModelListenerBase: TableModelListener {
     open func tableChanged( e: TableModelEvent? ) /**/ {
     }
 
-    open func tableChanged( _ _e: TableModelEvent? ) /**/ {
-        tableChanged( e: _e )
-    }
 
 }

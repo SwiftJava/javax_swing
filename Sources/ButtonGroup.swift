@@ -6,7 +6,7 @@ import java_util
 
 /// class javax.swing.ButtonGroup ///
 
-open class ButtonGroup: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class ButtonGroup: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -23,8 +23,8 @@ open class ButtonGroup: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     open var buttons: java_util.Vector! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "buttons", fieldType: "Ljava/util/Vector;", fieldCache: &ButtonGroup.buttons_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "buttons", fieldType: "Ljava/util/Vector;", fieldCache: &ButtonGroup.buttons_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.Vector( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -36,13 +36,15 @@ open class ButtonGroup: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     /// javax.swing.ButtonModel javax.swing.ButtonGroup.selection
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.ButtonGroup()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/ButtonGroup", classCache: &ButtonGroup.ButtonGroupJNIClass, methodSig: "()V", methodCache: &ButtonGroup.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -53,8 +55,8 @@ open class ButtonGroup: java_swift.JavaObject, /* java.io.Serializable */ Unclas
     private static var add_MethodID_2: jmethodID?
 
     open func add( b: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "add", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &ButtonGroup.add_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -63,29 +65,50 @@ open class ButtonGroup: java_swift.JavaObject, /* java.io.Serializable */ Unclas
         add( b: _b )
     }
 
-    /// public void javax.swing.ButtonGroup.remove(javax.swing.AbstractButton)
+    /// public void javax.swing.ButtonGroup.clearSelection()
 
-    private static var remove_MethodID_3: jmethodID?
+    private static var clearSelection_MethodID_3: jmethodID?
 
-    open func remove( b: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func clearSelection() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &ButtonGroup.remove_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &ButtonGroup.clearSelection_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func remove( _ _b: AbstractButton? ) {
-        remove( b: _b )
+
+    /// public int javax.swing.ButtonGroup.getButtonCount()
+
+    private static var getButtonCount_MethodID_4: jmethodID?
+
+    open func getButtonCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getButtonCount", methodSig: "()I", methodCache: &ButtonGroup.getButtonCount_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
+
+    /// public java.util.Enumeration javax.swing.ButtonGroup.getElements()
+
+    private static var getElements_MethodID_5: jmethodID?
+
+    open func getElements() -> java_util.Enumeration! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElements", methodSig: "()Ljava/util/Enumeration;", methodCache: &ButtonGroup.getElements_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
+    }
+
 
     /// public javax.swing.ButtonModel javax.swing.ButtonGroup.getSelection()
 
-    private static var getSelection_MethodID_4: jmethodID?
+    private static var getSelection_MethodID_6: jmethodID?
 
     open func getSelection() -> ButtonModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelection", methodSig: "()Ljavax/swing/ButtonModel;", methodCache: &ButtonGroup.getSelection_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelection", methodSig: "()Ljavax/swing/ButtonModel;", methodCache: &ButtonGroup.getSelection_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ButtonModelForward( javaObject: __return ) : nil
     }
@@ -93,71 +116,50 @@ open class ButtonGroup: java_swift.JavaObject, /* java.io.Serializable */ Unclas
 
     /// public boolean javax.swing.ButtonGroup.isSelected(javax.swing.ButtonModel)
 
-    private static var isSelected_MethodID_5: jmethodID?
+    private static var isSelected_MethodID_7: jmethodID?
 
     open func isSelected( m: ButtonModel? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "(Ljavax/swing/ButtonModel;)Z", methodCache: &ButtonGroup.isSelected_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "(Ljavax/swing/ButtonModel;)Z", methodCache: &ButtonGroup.isSelected_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isSelected( _ _m: ButtonModel? ) -> Bool {
         return isSelected( m: _m )
     }
 
-    /// public int javax.swing.ButtonGroup.getButtonCount()
+    /// public void javax.swing.ButtonGroup.remove(javax.swing.AbstractButton)
 
-    private static var getButtonCount_MethodID_6: jmethodID?
+    private static var remove_MethodID_8: jmethodID?
 
-    open func getButtonCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func remove( b: AbstractButton? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getButtonCount", methodSig: "()I", methodCache: &ButtonGroup.getButtonCount_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &ButtonGroup.remove_MethodID_8, args: &__args, locals: &__locals )
     }
 
-
-    /// public java.util.Enumeration javax.swing.ButtonGroup.getElements()
-
-    private static var getElements_MethodID_7: jmethodID?
-
-    open func getElements() -> java_util.Enumeration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElements", methodSig: "()Ljava/util/Enumeration;", methodCache: &ButtonGroup.getElements_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
+    open func remove( _ _b: AbstractButton? ) {
+        remove( b: _b )
     }
-
 
     /// public void javax.swing.ButtonGroup.setSelected(javax.swing.ButtonModel,boolean)
 
-    private static var setSelected_MethodID_8: jmethodID?
+    private static var setSelected_MethodID_9: jmethodID?
 
     open func setSelected( m: ButtonModel?, b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Ljavax/swing/ButtonModel;Z)V", methodCache: &ButtonGroup.setSelected_MethodID_8, args: &__args, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Ljavax/swing/ButtonModel;Z)V", methodCache: &ButtonGroup.setSelected_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func setSelected( _ _m: ButtonModel?, _ _b: Bool ) {
         setSelected( m: _m, b: _b )
     }
-
-    /// public void javax.swing.ButtonGroup.clearSelection()
-
-    private static var clearSelection_MethodID_9: jmethodID?
-
-    open func clearSelection() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &ButtonGroup.clearSelection_MethodID_9, args: &__args, locals: &__locals )
-    }
-
 
 }
 

@@ -25,8 +25,8 @@ open class PopupMenuEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &PopupMenuEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &PopupMenuEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -41,8 +41,8 @@ open class PopupMenuEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/PopupMenuEvent", classCache: &PopupMenuEvent.PopupMenuEventJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &PopupMenuEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

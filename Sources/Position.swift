@@ -23,13 +23,12 @@ open class PositionForward: JNIObjectForward, Position {
     private static var getOffset_MethodID_2: jmethodID?
 
     open func getOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "()I", methodCache: &PositionForward.getOffset_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
 }
-
 

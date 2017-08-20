@@ -17,39 +17,7 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
 
     private static var BasicScrollPaneUIJNIClass: jclass?
 
-    /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicScrollPaneUI.scrollpane
-
-    private static var scrollpane_FieldID: jfieldID?
-
-    open var scrollpane: JScrollPane! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &BasicScrollPaneUI.scrollpane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JScrollPane( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &BasicScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbChangeListener
-
-    private static var vsbChangeListener_FieldID: jfieldID?
-
-    open var vsbChangeListener: ChangeListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.handler
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbChangeListener
 
@@ -57,8 +25,8 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
 
     open var hsbChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.hsbChangeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.hsbChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -68,14 +36,56 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
         }
     }
 
+    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbPropertyChangeListener
+
+    /// private java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.mouseScrollListener
+
+    /// private int javax.swing.plaf.basic.BasicScrollPaneUI.oldExtent
+
+    /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicScrollPaneUI.scrollpane
+
+    private static var scrollpane_FieldID: jfieldID?
+
+    open var scrollpane: JScrollPane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &BasicScrollPaneUI.scrollpane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JScrollPane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &BasicScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicScrollPaneUI.setValueCalled
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.spPropertyChangeListener
+
+    private static var spPropertyChangeListener_FieldID: jfieldID?
+
+    open var spPropertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.viewportChangeListener
 
     private static var viewportChangeListener_FieldID: jfieldID?
 
     open var viewportChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.viewportChangeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.viewportChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -85,54 +95,34 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
         }
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.spPropertyChangeListener
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbChangeListener
 
-    private static var spPropertyChangeListener_FieldID: jfieldID?
+    private static var vsbChangeListener_FieldID: jfieldID?
 
-    open var spPropertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    open var vsbChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.vsbChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &BasicScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
-
-    /// private java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.mouseScrollListener
-
-    /// private int javax.swing.plaf.basic.BasicScrollPaneUI.oldExtent
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbPropertyChangeListener
 
-    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbPropertyChangeListener
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.COLUMN_HEADER
 
-    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.handler
+    private static var COLUMN_HEADER_FieldID: jfieldID?
 
-    /// private boolean javax.swing.plaf.basic.BasicScrollPaneUI.setValueCalled
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VIEWPORT
-
-    private static var VIEWPORT_FieldID: jfieldID?
-
-    open static var VIEWPORT: String! {
+    open static var COLUMN_HEADER: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VIEWPORT", fieldType: "Ljava/lang/String;", fieldCache: &VIEWPORT_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR
-
-    private static var VERTICAL_SCROLLBAR_FieldID: jfieldID?
-
-    open static var VERTICAL_SCROLLBAR: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_SCROLLBAR", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_SCROLLBAR_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "COLUMN_HEADER", fieldType: "Ljava/lang/String;", fieldCache: &COLUMN_HEADER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -143,194 +133,8 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
     open static var HORIZONTAL_SCROLLBAR: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_SCROLLBAR", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_SCROLLBAR_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.ROW_HEADER
-
-    private static var ROW_HEADER_FieldID: jfieldID?
-
-    open static var ROW_HEADER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ROW_HEADER", fieldType: "Ljava/lang/String;", fieldCache: &ROW_HEADER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.COLUMN_HEADER
-
-    private static var COLUMN_HEADER_FieldID: jfieldID?
-
-    open static var COLUMN_HEADER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "COLUMN_HEADER", fieldType: "Ljava/lang/String;", fieldCache: &COLUMN_HEADER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEFT_CORNER
-
-    private static var LOWER_LEFT_CORNER_FieldID: jfieldID?
-
-    open static var LOWER_LEFT_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_LEFT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_LEFT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_RIGHT_CORNER
-
-    private static var LOWER_RIGHT_CORNER_FieldID: jfieldID?
-
-    open static var LOWER_RIGHT_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_RIGHT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_RIGHT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEFT_CORNER
-
-    private static var UPPER_LEFT_CORNER_FieldID: jfieldID?
-
-    open static var UPPER_LEFT_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_LEFT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_LEFT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_RIGHT_CORNER
-
-    private static var UPPER_RIGHT_CORNER_FieldID: jfieldID?
-
-    open static var UPPER_RIGHT_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_RIGHT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_RIGHT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEADING_CORNER
-
-    private static var LOWER_LEADING_CORNER_FieldID: jfieldID?
-
-    open static var LOWER_LEADING_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_LEADING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_LEADING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_TRAILING_CORNER
-
-    private static var LOWER_TRAILING_CORNER_FieldID: jfieldID?
-
-    open static var LOWER_TRAILING_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_TRAILING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_TRAILING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEADING_CORNER
-
-    private static var UPPER_LEADING_CORNER_FieldID: jfieldID?
-
-    open static var UPPER_LEADING_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_LEADING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_LEADING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_TRAILING_CORNER
-
-    private static var UPPER_TRAILING_CORNER_FieldID: jfieldID?
-
-    open static var UPPER_TRAILING_CORNER: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_TRAILING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_TRAILING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_POLICY
-
-    private static var VERTICAL_SCROLLBAR_POLICY_FieldID: jfieldID?
-
-    open static var VERTICAL_SCROLLBAR_POLICY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_SCROLLBAR_POLICY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_SCROLLBAR_POLICY_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_POLICY
-
-    private static var HORIZONTAL_SCROLLBAR_POLICY_FieldID: jfieldID?
-
-    open static var HORIZONTAL_SCROLLBAR_POLICY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_SCROLLBAR_POLICY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_SCROLLBAR_POLICY_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
-
-    private static var VERTICAL_SCROLLBAR_AS_NEEDED_FieldID: jfieldID?
-
-    open static var VERTICAL_SCROLLBAR_AS_NEEDED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_AS_NEEDED", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_AS_NEEDED_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
-
-    private static var VERTICAL_SCROLLBAR_NEVER_FieldID: jfieldID?
-
-    open static var VERTICAL_SCROLLBAR_NEVER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_NEVER", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_NEVER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
-
-    private static var VERTICAL_SCROLLBAR_ALWAYS_FieldID: jfieldID?
-
-    open static var VERTICAL_SCROLLBAR_ALWAYS: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_ALWAYS", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_ALWAYS_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
-
-    private static var HORIZONTAL_SCROLLBAR_AS_NEEDED_FieldID: jfieldID?
-
-    open static var HORIZONTAL_SCROLLBAR_AS_NEEDED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_AS_NEEDED", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_AS_NEEDED_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
-
-    private static var HORIZONTAL_SCROLLBAR_NEVER_FieldID: jfieldID?
-
-    open static var HORIZONTAL_SCROLLBAR_NEVER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_NEVER", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_NEVER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -341,7 +145,218 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
     open static var HORIZONTAL_SCROLLBAR_ALWAYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_ALWAYS", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_ALWAYS_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
+
+    private static var HORIZONTAL_SCROLLBAR_AS_NEEDED_FieldID: jfieldID?
+
+    open static var HORIZONTAL_SCROLLBAR_AS_NEEDED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_AS_NEEDED", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_AS_NEEDED_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
+
+    private static var HORIZONTAL_SCROLLBAR_NEVER_FieldID: jfieldID?
+
+    open static var HORIZONTAL_SCROLLBAR_NEVER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_NEVER", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_NEVER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_POLICY
+
+    private static var HORIZONTAL_SCROLLBAR_POLICY_FieldID: jfieldID?
+
+    open static var HORIZONTAL_SCROLLBAR_POLICY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_SCROLLBAR_POLICY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_SCROLLBAR_POLICY_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEADING_CORNER
+
+    private static var LOWER_LEADING_CORNER_FieldID: jfieldID?
+
+    open static var LOWER_LEADING_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_LEADING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_LEADING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEFT_CORNER
+
+    private static var LOWER_LEFT_CORNER_FieldID: jfieldID?
+
+    open static var LOWER_LEFT_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_LEFT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_LEFT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_RIGHT_CORNER
+
+    private static var LOWER_RIGHT_CORNER_FieldID: jfieldID?
+
+    open static var LOWER_RIGHT_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_RIGHT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_RIGHT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_TRAILING_CORNER
+
+    private static var LOWER_TRAILING_CORNER_FieldID: jfieldID?
+
+    open static var LOWER_TRAILING_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_TRAILING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_TRAILING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.ROW_HEADER
+
+    private static var ROW_HEADER_FieldID: jfieldID?
+
+    open static var ROW_HEADER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ROW_HEADER", fieldType: "Ljava/lang/String;", fieldCache: &ROW_HEADER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEADING_CORNER
+
+    private static var UPPER_LEADING_CORNER_FieldID: jfieldID?
+
+    open static var UPPER_LEADING_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_LEADING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_LEADING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEFT_CORNER
+
+    private static var UPPER_LEFT_CORNER_FieldID: jfieldID?
+
+    open static var UPPER_LEFT_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_LEFT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_LEFT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_RIGHT_CORNER
+
+    private static var UPPER_RIGHT_CORNER_FieldID: jfieldID?
+
+    open static var UPPER_RIGHT_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_RIGHT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_RIGHT_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_TRAILING_CORNER
+
+    private static var UPPER_TRAILING_CORNER_FieldID: jfieldID?
+
+    open static var UPPER_TRAILING_CORNER: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_TRAILING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_TRAILING_CORNER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR
+
+    private static var VERTICAL_SCROLLBAR_FieldID: jfieldID?
+
+    open static var VERTICAL_SCROLLBAR: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_SCROLLBAR", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_SCROLLBAR_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
+
+    private static var VERTICAL_SCROLLBAR_ALWAYS_FieldID: jfieldID?
+
+    open static var VERTICAL_SCROLLBAR_ALWAYS: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_ALWAYS", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_ALWAYS_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
+
+    private static var VERTICAL_SCROLLBAR_AS_NEEDED_FieldID: jfieldID?
+
+    open static var VERTICAL_SCROLLBAR_AS_NEEDED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_AS_NEEDED", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_AS_NEEDED_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
+
+    private static var VERTICAL_SCROLLBAR_NEVER_FieldID: jfieldID?
+
+    open static var VERTICAL_SCROLLBAR_NEVER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_NEVER", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_NEVER_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_POLICY
+
+    private static var VERTICAL_SCROLLBAR_POLICY_FieldID: jfieldID?
+
+    open static var VERTICAL_SCROLLBAR_POLICY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_SCROLLBAR_POLICY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_SCROLLBAR_POLICY_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VIEWPORT
+
+    private static var VIEWPORT_FieldID: jfieldID?
+
+    open static var VIEWPORT: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VIEWPORT", fieldType: "Ljava/lang/String;", fieldCache: &VIEWPORT_FieldID, className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -350,30 +365,36 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUI.BasicScrollPaneUIJNIClass, methodSig: "()V", methodCache: &BasicScrollPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// static void javax.swing.plaf.basic.BasicScrollPaneUI.access$200(javax.swing.plaf.basic.BasicScrollPaneUI,java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.plaf.basic.BasicScrollPaneUI.access$300(javax.swing.plaf.basic.BasicScrollPaneUI,java.beans.PropertyChangeEvent)
-
     /// static javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.access$000(javax.swing.plaf.basic.BasicScrollPaneUI)
+
+    // Skipping method: true false false false false 
 
     /// static boolean javax.swing.plaf.basic.BasicScrollPaneUI.access$102(javax.swing.plaf.basic.BasicScrollPaneUI,boolean)
 
-    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.getHandler()
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.basic.BasicScrollPaneUI.access$200(javax.swing.plaf.basic.BasicScrollPaneUI,java.beans.PropertyChangeEvent)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.basic.BasicScrollPaneUI.access$300(javax.swing.plaf.basic.BasicScrollPaneUI,java.beans.PropertyChangeEvent)
+
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicScrollPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicScrollPaneUI", classCache: &BasicScrollPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -384,25 +405,18 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
         return createUI( x: _x )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.syncScrollPaneWithViewport()
+    /// static void javax.swing.plaf.basic.BasicScrollPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    private static var syncScrollPaneWithViewport_MethodID_3: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func syncScrollPaneWithViewport() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createHSBChangeListener()
+
+    private static var createHSBChangeListener_MethodID_3: jmethodID?
+
+    open func createHSBChangeListener() -> ChangeListener! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "syncScrollPaneWithViewport", methodSig: "()V", methodCache: &BasicScrollPaneUI.syncScrollPaneWithViewport_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createViewportChangeListener()
-
-    private static var createViewportChangeListener_MethodID_4: jmethodID?
-
-    open func createViewportChangeListener() -> ChangeListener! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createViewportChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicScrollPaneUI.createViewportChangeListener_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createHSBChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicScrollPaneUI.createHSBChangeListener_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
@@ -410,14 +424,40 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createHSBPropertyChangeListener()
 
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createHSBChangeListener()
+    /// protected java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.createMouseWheelListener()
 
-    private static var createHSBChangeListener_MethodID_5: jmethodID?
+    private static var createMouseWheelListener_MethodID_4: jmethodID?
 
-    open func createHSBChangeListener() -> ChangeListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createMouseWheelListener() -> java_awt.MouseWheelListener! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createHSBChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicScrollPaneUI.createHSBChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseWheelListener", methodSig: "()Ljava/awt/event/MouseWheelListener;", methodCache: &BasicScrollPaneUI.createMouseWheelListener_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.MouseWheelListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_5: jmethodID?
+
+    open func createPropertyChangeListener() -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicScrollPaneUI.createPropertyChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createVSBChangeListener()
+
+    private static var createVSBChangeListener_MethodID_6: jmethodID?
+
+    open func createVSBChangeListener() -> ChangeListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVSBChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicScrollPaneUI.createVSBChangeListener_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
@@ -425,94 +465,89 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createVSBPropertyChangeListener()
 
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createVSBChangeListener()
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createViewportChangeListener()
 
-    private static var createVSBChangeListener_MethodID_6: jmethodID?
+    private static var createViewportChangeListener_MethodID_7: jmethodID?
 
-    open func createVSBChangeListener() -> ChangeListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createViewportChangeListener() -> ChangeListener! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createVSBChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicScrollPaneUI.createVSBChangeListener_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createViewportChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &BasicScrollPaneUI.createViewportChangeListener_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateScrollBarDisplayPolicy(java.beans.PropertyChangeEvent)
+    /// public int javax.swing.plaf.basic.BasicScrollPaneUI.getBaseline(javax.swing.JComponent,int,int)
 
-    private static var updateScrollBarDisplayPolicy_MethodID_7: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func updateScrollBarDisplayPolicy( e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicScrollPaneUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.getHandler()
+
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicScrollPaneUI.getInputMap(int)
+
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollPaneUI.getMaximumSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.installDefaults(javax.swing.JScrollPane)
+
+    private static var installDefaults_MethodID_8: jmethodID?
+
+    open func installDefaults( scrollpane: JScrollPane? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateScrollBarDisplayPolicy", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateScrollBarDisplayPolicy_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func updateScrollBarDisplayPolicy( _ _e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        updateScrollBarDisplayPolicy( e: _e )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateViewport(java.beans.PropertyChangeEvent)
-
-    private static var updateViewport_MethodID_8: jmethodID?
-
-    open func updateViewport( e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: scrollpane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func installDefaults( _ _scrollpane: JScrollPane? ) {
+        installDefaults( scrollpane: _scrollpane )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.installKeyboardActions(javax.swing.JScrollPane)
+
+    private static var installKeyboardActions_MethodID_9: jmethodID?
+
+    open func installKeyboardActions( c: JScrollPane? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateViewport", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateViewport_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func updateViewport( _ _e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        updateViewport( e: _e )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateRowHeader(java.beans.PropertyChangeEvent)
-
-    private static var updateRowHeader_MethodID_9: jmethodID?
-
-    open func updateRowHeader( e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.installKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func installKeyboardActions( _ _c: JScrollPane? ) {
+        installKeyboardActions( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.installListeners(javax.swing.JScrollPane)
+
+    private static var installListeners_MethodID_10: jmethodID?
+
+    open func installListeners( c: JScrollPane? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateRowHeader", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateRowHeader_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func updateRowHeader( _ _e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        updateRowHeader( e: _e )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateColumnHeader(java.beans.PropertyChangeEvent)
-
-    private static var updateColumnHeader_MethodID_10: jmethodID?
-
-    open func updateColumnHeader( e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateColumnHeader", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateColumnHeader_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.installListeners_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func updateColumnHeader( _ _e: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        updateColumnHeader( e: _e )
+    open func installListeners( _ _c: JScrollPane? ) {
+        installListeners( c: _c )
     }
-
-    /// private void javax.swing.plaf.basic.BasicScrollPaneUI.updateHorizontalScrollBar(java.beans.PropertyChangeEvent)
-
-    /// private void javax.swing.plaf.basic.BasicScrollPaneUI.updateVerticalScrollBar(java.beans.PropertyChangeEvent)
-
-    /// private void javax.swing.plaf.basic.BasicScrollPaneUI.updateScrollBar(java.beans.PropertyChangeEvent,javax.swing.event.ChangeListener,java.beans.PropertyChangeListener)
-
-    /// public void javax.swing.plaf.basic.BasicScrollPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
     /// public void javax.swing.plaf.basic.BasicScrollPaneUI.installUI(javax.swing.JComponent)
 
     private static var installUI_MethodID_11: jmethodID?
 
     open func installUI( x: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicScrollPaneUI.installUI_MethodID_11, args: &__args, locals: &__locals )
     }
@@ -521,133 +556,135 @@ open class BasicScrollPaneUI: ScrollPaneUI, ScrollPaneConstants {
         installUI( x: _x )
     }
 
-    /// public void javax.swing.plaf.basic.BasicScrollPaneUI.uninstallUI(javax.swing.JComponent)
+    /// public void javax.swing.plaf.basic.BasicScrollPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    /// static void javax.swing.plaf.basic.BasicScrollPaneUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
+    // Skipping method: false true false false false 
 
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.installDefaults(javax.swing.JScrollPane)
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.syncScrollPaneWithViewport()
 
-    private static var installDefaults_MethodID_12: jmethodID?
+    private static var syncScrollPaneWithViewport_MethodID_12: jmethodID?
 
-    open func installDefaults( scrollpane: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func syncScrollPaneWithViewport() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: scrollpane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.installDefaults_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func installDefaults( _ _scrollpane: JScrollPane? ) {
-        installDefaults( scrollpane: _scrollpane )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.installListeners(javax.swing.JScrollPane)
-
-    private static var installListeners_MethodID_13: jmethodID?
-
-    open func installListeners( c: JScrollPane? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.installListeners_MethodID_13, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "syncScrollPaneWithViewport", methodSig: "()V", methodCache: &BasicScrollPaneUI.syncScrollPaneWithViewport_MethodID_12, args: &__args, locals: &__locals )
     }
 
-    open func installListeners( _ _c: JScrollPane? ) {
-        installListeners( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.installKeyboardActions(javax.swing.JScrollPane)
-
-    private static var installKeyboardActions_MethodID_14: jmethodID?
-
-    open func installKeyboardActions( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.installKeyboardActions_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func installKeyboardActions( _ _c: JScrollPane? ) {
-        installKeyboardActions( c: _c )
-    }
 
     /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.uninstallDefaults(javax.swing.JScrollPane)
 
-    private static var uninstallDefaults_MethodID_15: jmethodID?
+    private static var uninstallDefaults_MethodID_13: jmethodID?
 
     open func uninstallDefaults( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.uninstallDefaults_MethodID_15, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.uninstallDefaults_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func uninstallDefaults( _ _c: JScrollPane? ) {
         uninstallDefaults( c: _c )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.uninstallListeners(javax.swing.JComponent)
-
-    private static var uninstallListeners_MethodID_16: jmethodID?
-
-    open func uninstallListeners( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicScrollPaneUI.uninstallListeners_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallListeners( _ _c: JComponent? ) {
-        uninstallListeners( c: _c )
-    }
-
     /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.uninstallKeyboardActions(javax.swing.JScrollPane)
 
-    private static var uninstallKeyboardActions_MethodID_17: jmethodID?
+    private static var uninstallKeyboardActions_MethodID_14: jmethodID?
 
     open func uninstallKeyboardActions( c: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.uninstallKeyboardActions_MethodID_17, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &BasicScrollPaneUI.uninstallKeyboardActions_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func uninstallKeyboardActions( _ _c: JScrollPane? ) {
         uninstallKeyboardActions( c: _c )
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.createPropertyChangeListener()
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.uninstallListeners(javax.swing.JComponent)
 
-    private static var createPropertyChangeListener_MethodID_18: jmethodID?
+    private static var uninstallListeners_MethodID_15: jmethodID?
 
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func uninstallListeners( c: JComponent? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicScrollPaneUI.createPropertyChangeListener_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicScrollPaneUI.uninstallListeners_MethodID_15, args: &__args, locals: &__locals )
     }
 
-
-    /// protected java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.createMouseWheelListener()
-
-    private static var createMouseWheelListener_MethodID_19: jmethodID?
-
-    open func createMouseWheelListener() -> java_awt.MouseWheelListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMouseWheelListener", methodSig: "()Ljava/awt/event/MouseWheelListener;", methodCache: &BasicScrollPaneUI.createMouseWheelListener_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.MouseWheelListenerForward( javaObject: __return ) : nil
+    open func uninstallListeners( _ _c: JComponent? ) {
+        uninstallListeners( c: _c )
     }
 
+    /// public void javax.swing.plaf.basic.BasicScrollPaneUI.uninstallUI(javax.swing.JComponent)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicScrollPaneUI.getMaximumSize(javax.swing.JComponent)
+    // Skipping method: false true false false false 
 
-    /// public int javax.swing.plaf.basic.BasicScrollPaneUI.getBaseline(javax.swing.JComponent,int,int)
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateColumnHeader(java.beans.PropertyChangeEvent)
 
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicScrollPaneUI.getBaselineResizeBehavior(javax.swing.JComponent)
+    private static var updateColumnHeader_MethodID_16: jmethodID?
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicScrollPaneUI.getInputMap(int)
+    open func updateColumnHeader( e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateColumnHeader", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateColumnHeader_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func updateColumnHeader( _ _e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        updateColumnHeader( e: _e )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicScrollPaneUI.updateHorizontalScrollBar(java.beans.PropertyChangeEvent)
+
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateRowHeader(java.beans.PropertyChangeEvent)
+
+    private static var updateRowHeader_MethodID_17: jmethodID?
+
+    open func updateRowHeader( e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateRowHeader", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateRowHeader_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func updateRowHeader( _ _e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        updateRowHeader( e: _e )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicScrollPaneUI.updateScrollBar(java.beans.PropertyChangeEvent,javax.swing.event.ChangeListener,java.beans.PropertyChangeListener)
+
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateScrollBarDisplayPolicy(java.beans.PropertyChangeEvent)
+
+    private static var updateScrollBarDisplayPolicy_MethodID_18: jmethodID?
+
+    open func updateScrollBarDisplayPolicy( e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateScrollBarDisplayPolicy", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateScrollBarDisplayPolicy_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func updateScrollBarDisplayPolicy( _ _e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        updateScrollBarDisplayPolicy( e: _e )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicScrollPaneUI.updateVerticalScrollBar(java.beans.PropertyChangeEvent)
+
+    /// protected void javax.swing.plaf.basic.BasicScrollPaneUI.updateViewport(java.beans.PropertyChangeEvent)
+
+    private static var updateViewport_MethodID_19: jmethodID?
+
+    open func updateViewport( e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateViewport", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicScrollPaneUI.updateViewport_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func updateViewport( _ _e: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        updateViewport( e: _e )
+    }
 
 }
 

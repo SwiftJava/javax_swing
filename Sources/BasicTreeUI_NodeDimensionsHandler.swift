@@ -19,13 +19,15 @@ open class BasicTreeUI_NodeDimensionsHandler: AbstractLayoutCache_NodeDimensions
 
     /// final javax.swing.plaf.basic.BasicTreeUI javax.swing.plaf.basic.BasicTreeUI$NodeDimensionsHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTreeUI$NodeDimensionsHandler(javax.swing.plaf.basic.BasicTreeUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTreeUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$NodeDimensionsHandler", classCache: &BasicTreeUI_NodeDimensionsHandler.BasicTreeUI_NodeDimensionsHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_NodeDimensionsHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -36,42 +38,42 @@ open class BasicTreeUI_NodeDimensionsHandler: AbstractLayoutCache_NodeDimensions
         self.init( this_0: _this_0 )
     }
 
-    /// protected int javax.swing.plaf.basic.BasicTreeUI$NodeDimensionsHandler.getRowX(int,int)
-
-    private static var getRowX_MethodID_2: jmethodID?
-
-    open func getRowX( row: Int, depth: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: row, locals: &__locals )
-        __args[1] = JNIType.toJava( value: depth, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowX", methodSig: "(II)I", methodCache: &BasicTreeUI_NodeDimensionsHandler.getRowX_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getRowX( _ _row: Int, _ _depth: Int ) -> Int {
-        return getRowX( row: _row, depth: _depth )
-    }
-
     /// public java.awt.Rectangle javax.swing.plaf.basic.BasicTreeUI$NodeDimensionsHandler.getNodeDimensions(java.lang.Object,int,int,boolean,java.awt.Rectangle)
 
-    private static var getNodeDimensions_MethodID_3: jmethodID?
+    private static var getNodeDimensions_MethodID_2: jmethodID?
 
     open func getNodeDimensions( value: java_swift.JavaObject?, row: Int, depth: Int, expanded: Bool, size: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        __args[1] = JNIType.toJava( value: row, locals: &__locals )
-        __args[2] = JNIType.toJava( value: depth, locals: &__locals )
-        __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
+        __args[1] = jvalue( i: jint(row) )
+        __args[2] = jvalue( i: jint(depth) )
+        __args[3] = jvalue( z: jboolean(expanded ? JNI_TRUE : JNI_FALSE) )
         __args[4] = JNIType.toJava( value: size, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNodeDimensions", methodSig: "(Ljava/lang/Object;IIZLjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &BasicTreeUI_NodeDimensionsHandler.getNodeDimensions_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNodeDimensions", methodSig: "(Ljava/lang/Object;IIZLjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &BasicTreeUI_NodeDimensionsHandler.getNodeDimensions_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
 
     override open func getNodeDimensions( _ _value: java_swift.JavaObject?, _ _row: Int, _ _depth: Int, _ _expanded: Bool, _ _size: java_awt.Rectangle? ) -> java_awt.Rectangle! {
         return getNodeDimensions( value: _value, row: _row, depth: _depth, expanded: _expanded, size: _size )
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicTreeUI$NodeDimensionsHandler.getRowX(int,int)
+
+    private static var getRowX_MethodID_3: jmethodID?
+
+    open func getRowX( row: Int, depth: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(row) )
+        __args[1] = jvalue( i: jint(depth) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getRowX", methodSig: "(II)I", methodCache: &BasicTreeUI_NodeDimensionsHandler.getRowX_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getRowX( _ _row: Int, _ _depth: Int ) -> Int {
+        return getRowX( row: _row, depth: _depth )
     }
 
 }

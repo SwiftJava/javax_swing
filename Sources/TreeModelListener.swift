@@ -36,8 +36,8 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     private static var treeNodesChanged_MethodID_5: jmethodID?
 
     open func treeNodesChanged( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesChanged", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeNodesChanged_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -51,8 +51,8 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     private static var treeNodesInserted_MethodID_6: jmethodID?
 
     open func treeNodesInserted( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesInserted", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeNodesInserted_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -66,8 +66,8 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     private static var treeNodesRemoved_MethodID_7: jmethodID?
 
     open func treeNodesRemoved( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesRemoved", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeNodesRemoved_MethodID_7, args: &__args, locals: &__locals )
     }
@@ -81,8 +81,8 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
     private static var treeStructureChanged_MethodID_8: jmethodID?
 
     open func treeStructureChanged( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeStructureChanged", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &TreeModelListenerForward.treeStructureChanged_MethodID_8, args: &__args, locals: &__locals )
     }
@@ -93,37 +93,28 @@ open class TreeModelListenerForward: java_util.EventListenerForward, TreeModelLi
 
 }
 
-
 private typealias TreeModelListener_treeNodesChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TreeModelListener_treeNodesChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TreeModelListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeNodesChanged( e: e != nil ? TreeModelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias TreeModelListener_treeNodesInserted_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TreeModelListener_treeNodesInserted_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TreeModelListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeNodesInserted( e: e != nil ? TreeModelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias TreeModelListener_treeNodesRemoved_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TreeModelListener_treeNodesRemoved_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TreeModelListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeNodesRemoved( e: e != nil ? TreeModelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias TreeModelListener_treeStructureChanged_3_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TreeModelListener_treeStructureChanged_3( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TreeModelListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).treeStructureChanged( e: e != nil ? TreeModelEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class TreeModelListenerLocal_: JNILocalProxy<TreeModelListener, Any> {
@@ -179,35 +170,23 @@ open class TreeModelListenerBase: TreeModelListener {
     open func treeNodesChanged( e: TreeModelEvent? ) /**/ {
     }
 
-    open func treeNodesChanged( _ _e: TreeModelEvent? ) /**/ {
-        treeNodesChanged( e: _e )
-    }
 
     /// public abstract void javax.swing.event.TreeModelListener.treeNodesInserted(javax.swing.event.TreeModelEvent)
 
     open func treeNodesInserted( e: TreeModelEvent? ) /**/ {
     }
 
-    open func treeNodesInserted( _ _e: TreeModelEvent? ) /**/ {
-        treeNodesInserted( e: _e )
-    }
 
     /// public abstract void javax.swing.event.TreeModelListener.treeNodesRemoved(javax.swing.event.TreeModelEvent)
 
     open func treeNodesRemoved( e: TreeModelEvent? ) /**/ {
     }
 
-    open func treeNodesRemoved( _ _e: TreeModelEvent? ) /**/ {
-        treeNodesRemoved( e: _e )
-    }
 
     /// public abstract void javax.swing.event.TreeModelListener.treeStructureChanged(javax.swing.event.TreeModelEvent)
 
     open func treeStructureChanged( e: TreeModelEvent? ) /**/ {
     }
 
-    open func treeStructureChanged( _ _e: TreeModelEvent? ) /**/ {
-        treeStructureChanged( e: _e )
-    }
 
 }

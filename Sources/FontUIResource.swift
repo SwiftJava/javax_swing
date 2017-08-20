@@ -17,33 +17,105 @@ open class FontUIResource: java_awt.Font, UIResource {
 
     private static var FontUIResourceJNIClass: jclass?
 
-    /// private java.util.Hashtable java.awt.Font.fRequestedAttributes
-
-    /// public static final java.lang.String java.awt.Font.DIALOG
-
-    /// public static final java.lang.String java.awt.Font.DIALOG_INPUT
-
-    /// public static final java.lang.String java.awt.Font.SANS_SERIF
-
-    /// public static final java.lang.String java.awt.Font.SERIF
-
-    /// public static final java.lang.String java.awt.Font.MONOSPACED
-
-    /// public static final int java.awt.Font.PLAIN
-
     /// public static final int java.awt.Font.BOLD
 
-    /// public static final int java.awt.Font.ITALIC
-
-    /// public static final int java.awt.Font.ROMAN_BASELINE
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.Font.CENTER_BASELINE
 
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String java.awt.Font.DIALOG
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String java.awt.Font.DIALOG_INPUT
+
+    // Skipping field: false true false false false false 
+
+    /// private static final int java.awt.Font.EXTRA_MASK
+
     /// public static final int java.awt.Font.HANGING_BASELINE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Font.ITALIC
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Font.LAYOUT_LEFT_TO_RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// private static final int java.awt.Font.LAYOUT_MASK
+
+    /// public static final int java.awt.Font.LAYOUT_NO_LIMIT_CONTEXT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Font.LAYOUT_NO_START_CONTEXT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Font.LAYOUT_RIGHT_TO_LEFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String java.awt.Font.MONOSPACED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Font.PLAIN
+
+    // Skipping field: false true false false false false 
+
+    /// private static final int java.awt.Font.PRIMARY_MASK
+
+    /// private static final int java.awt.Font.RECOGNIZED_MASK
+
+    /// public static final int java.awt.Font.ROMAN_BASELINE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String java.awt.Font.SANS_SERIF
+
+    // Skipping field: false true false false false false 
+
+    /// private static final int java.awt.Font.SECONDARY_MASK
+
+    /// public static final java.lang.String java.awt.Font.SERIF
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.Font.TRUETYPE_FONT
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.Font.TYPE1_FONT
+
+    // Skipping field: false true false false false false 
+
+    /// private static final java.awt.geom.AffineTransform java.awt.Font.identityTx
+
+    /// private static final long java.awt.Font.serialVersionUID
+
+    /// private static final float[] java.awt.Font.ssinfo
+
+    /// private transient boolean java.awt.Font.createdFont
+
+    /// private java.util.Hashtable java.awt.Font.fRequestedAttributes
+
+    /// private transient java.lang.ref.SoftReference java.awt.Font.flmref
+
+    /// private transient sun.font.Font2DHandle java.awt.Font.font2DHandle
+
+    /// private int java.awt.Font.fontSerializedDataVersion
+
+    /// private transient boolean java.awt.Font.hasLayoutAttributes
+
+    /// transient int java.awt.Font.hash
+
+    // Skipping field: true false false false false false 
 
     /// protected java.lang.String java.awt.Font.name
 
@@ -51,9 +123,9 @@ open class FontUIResource: java_awt.Font, UIResource {
 
     override open var name: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "name", fieldType: "Ljava/lang/String;", fieldCache: &FontUIResource.name_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "name", fieldType: "Ljava/lang/String;", fieldCache: &FontUIResource.name_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -62,20 +134,25 @@ open class FontUIResource: java_awt.Font, UIResource {
         }
     }
 
-    /// protected int java.awt.Font.style
+    /// private transient boolean java.awt.Font.nonIdentityTx
 
-    private static var style_FieldID: jfieldID?
+    /// private transient long java.awt.Font.pData
 
-    override open var style: Int {
+    /// private transient java.awt.peer.FontPeer java.awt.Font.peer
+
+    /// protected float java.awt.Font.pointSize
+
+    private static var pointSize_FieldID: jfieldID?
+
+    override open var pointSize: Float {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "style", fieldType: "I", fieldCache: &FontUIResource.style_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetFloatField( fieldName: "pointSize", fieldType: "F", fieldCache: &FontUIResource.pointSize_FieldID, object: javaObject )
+            return __value
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "style", fieldType: "I", fieldCache: &FontUIResource.style_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            let __value = jvalue( f: newValue )
+            JNIField.SetFloatField( fieldName: "pointSize", fieldType: "F", fieldCache: &FontUIResource.pointSize_FieldID, object: javaObject, value: __value.f, locals: &__locals )
         }
     }
 
@@ -85,88 +162,44 @@ open class FontUIResource: java_awt.Font, UIResource {
 
     override open var size: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "size", fieldType: "I", fieldCache: &FontUIResource.size_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "size", fieldType: "I", fieldCache: &FontUIResource.size_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "size", fieldType: "I", fieldCache: &FontUIResource.size_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected float java.awt.Font.pointSize
+    /// protected int java.awt.Font.style
 
-    private static var pointSize_FieldID: jfieldID?
+    private static var style_FieldID: jfieldID?
 
-    override open var pointSize: Float {
+    override open var style: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetFloatField( fieldName: "pointSize", fieldType: "F", fieldCache: &FontUIResource.pointSize_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Float(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "style", fieldType: "I", fieldCache: &FontUIResource.style_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetFloatField( fieldName: "pointSize", fieldType: "F", fieldCache: &FontUIResource.pointSize_FieldID, object: javaObject, value: __value.f, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "style", fieldType: "I", fieldCache: &FontUIResource.style_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private transient java.awt.peer.FontPeer java.awt.Font.peer
-
-    /// private transient long java.awt.Font.pData
-
-    /// private transient sun.font.Font2DHandle java.awt.Font.font2DHandle
-
     /// private transient sun.font.AttributeValues java.awt.Font.values
-
-    /// private transient boolean java.awt.Font.hasLayoutAttributes
-
-    /// private transient boolean java.awt.Font.createdFont
-
-    /// private transient boolean java.awt.Font.nonIdentityTx
-
-    /// private static final java.awt.geom.AffineTransform java.awt.Font.identityTx
-
-    /// private static final long java.awt.Font.serialVersionUID
-
-    /// private static final int java.awt.Font.RECOGNIZED_MASK
-
-    /// private static final int java.awt.Font.PRIMARY_MASK
-
-    /// private static final int java.awt.Font.SECONDARY_MASK
-
-    /// private static final int java.awt.Font.LAYOUT_MASK
-
-    /// private static final int java.awt.Font.EXTRA_MASK
-
-    /// private static final float[] java.awt.Font.ssinfo
-
-    /// transient int java.awt.Font.hash
-
-    /// private int java.awt.Font.fontSerializedDataVersion
-
-    /// private transient java.lang.ref.SoftReference java.awt.Font.flmref
-
-    /// public static final int java.awt.Font.LAYOUT_LEFT_TO_RIGHT
-
-    /// public static final int java.awt.Font.LAYOUT_RIGHT_TO_LEFT
-
-    /// public static final int java.awt.Font.LAYOUT_NO_START_CONTEXT
-
-    /// public static final int java.awt.Font.LAYOUT_NO_LIMIT_CONTEXT
 
     /// public javax.swing.plaf.FontUIResource(java.lang.String,int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( name: String?, style: Int, size: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: style, locals: &__locals )
-        __args[2] = JNIType.toJava( value: size, locals: &__locals )
+        __args[1] = jvalue( i: jint(style) )
+        __args[2] = jvalue( i: jint(size) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/FontUIResource", classCache: &FontUIResource.FontUIResourceJNIClass, methodSig: "(Ljava/lang/String;II)V", methodCache: &FontUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -181,8 +214,8 @@ open class FontUIResource: java_awt.Font, UIResource {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( font: java_awt.Font? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: font, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/FontUIResource", classCache: &FontUIResource.FontUIResourceJNIClass, methodSig: "(Ljava/awt/Font;)V", methodCache: &FontUIResource.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )

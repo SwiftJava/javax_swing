@@ -23,8 +23,8 @@ open class ViewFactoryForward: JNIObjectForward, ViewFactory {
     private static var create_MethodID_2: jmethodID?
 
     open func create( elem: Element? ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "create", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/text/View;", methodCache: &ViewFactoryForward.create_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -36,5 +36,4 @@ open class ViewFactoryForward: JNIObjectForward, ViewFactory {
     }
 
 }
-
 

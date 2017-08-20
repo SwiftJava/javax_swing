@@ -16,137 +16,253 @@ open class StyledEditorKit: DefaultEditorKit {
 
     private static var StyledEditorKitJNIClass: jclass?
 
-    /// private static final javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.defaultFactory
+    /// private static final javax.swing.Action[] javax.swing.text.StyledEditorKit.defaultActions
 
-    /// javax.swing.text.Element javax.swing.text.StyledEditorKit.currentRun
+    /// private static final javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.defaultFactory
 
     /// javax.swing.text.Element javax.swing.text.StyledEditorKit.currentParagraph
 
-    /// javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.inputAttributes
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.Element javax.swing.text.StyledEditorKit.currentRun
+
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.StyledEditorKit$AttributeTracker javax.swing.text.StyledEditorKit.inputAttributeUpdater
 
-    /// private static final javax.swing.Action[] javax.swing.text.StyledEditorKit.defaultActions
+    /// javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.inputAttributes
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.EndOfLineStringProperty
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertContentAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertBreakAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertTabAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevCharAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextCharAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.readOnlyAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.writableAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.cutAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.copyAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pasteAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beepAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageUpAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageDownAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageUpAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageDownAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageLeftAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageRightAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.forwardAction
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.backwardAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionForwardAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBackwardAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beepAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.upAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.downAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionUpAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionDownAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.previousWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.nextWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPreviousWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionNextWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginParagraphAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endParagraphAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginParagraphAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndParagraphAction
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginLineAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectWordAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginParagraphAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectLineAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectParagraphAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginWordAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectAllAction
+    // Skipping field: false true false false false false 
 
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.unselectAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.copyAction
 
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.toggleComponentOrientationAction
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.cutAction
+
+    // Skipping field: false true false false false false 
+
+    /// private static final javax.swing.Action[] javax.swing.text.DefaultEditorKit.defaultActions
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.defaultKeyTypedAction
 
-    /// private static final javax.swing.Action[] javax.swing.text.DefaultEditorKit.defaultActions
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextCharAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevCharAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.downAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.forwardAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertBreakAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertContentAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertTabAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.nextWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageDownAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageUpAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pasteAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.previousWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.readOnlyAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectAllAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBackwardAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionDownAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionForwardAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionNextWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageDownAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageLeftAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageRightAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageUpAction
+
+    // Skipping field: true false false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPreviousWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionUpAction
+
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.toggleComponentOrientationAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.unselectAction
+
+    // Skipping field: true false false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.upAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.writableAction
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.StyledEditorKit()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/StyledEditorKit", classCache: &StyledEditorKit.StyledEditorKitJNIClass, methodSig: "()V", methodCache: &StyledEditorKit.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -154,31 +270,24 @@ open class StyledEditorKit: DefaultEditorKit {
 
     /// public java.lang.Object javax.swing.text.StyledEditorKit.clone()
 
-    /// public javax.swing.Action[] javax.swing.text.StyledEditorKit.getActions()
+    // Skipping method: false true false false false 
 
-    /// public javax.swing.text.Element javax.swing.text.StyledEditorKit.getCharacterAttributeRun()
+    /// public javax.swing.text.Document javax.swing.text.StyledEditorKit.createDefaultDocument()
 
-    private static var getCharacterAttributeRun_MethodID_2: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func getCharacterAttributeRun() -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttributeRun", methodSig: "()Ljavax/swing/text/Element;", methodCache: &StyledEditorKit.getCharacterAttributeRun_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
-    }
-
+    /// private void javax.swing.text.StyledEditorKit.createInputAttributeUpdated()
 
     /// protected void javax.swing.text.StyledEditorKit.createInputAttributes(javax.swing.text.Element,javax.swing.text.MutableAttributeSet)
 
-    private static var createInputAttributes_MethodID_3: jmethodID?
+    private static var createInputAttributes_MethodID_2: jmethodID?
 
     open func createInputAttributes( element: Element?, set: MutableAttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: element, locals: &__locals )
         __args[1] = JNIType.toJava( value: set, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInputAttributes", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &StyledEditorKit.createInputAttributes_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInputAttributes", methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/MutableAttributeSet;)V", methodCache: &StyledEditorKit.createInputAttributes_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func createInputAttributes( _ _element: Element?, _ _set: MutableAttributeSet? ) {
@@ -187,21 +296,34 @@ open class StyledEditorKit: DefaultEditorKit {
 
     /// private void javax.swing.text.StyledEditorKit.createInputAttributes()
 
-    /// private void javax.swing.text.StyledEditorKit.createInputAttributeUpdated()
-
     /// public void javax.swing.text.StyledEditorKit.deinstall(javax.swing.JEditorPane)
 
-    /// public void javax.swing.text.StyledEditorKit.install(javax.swing.JEditorPane)
+    // Skipping method: false true false false false 
 
-    /// public javax.swing.text.Document javax.swing.text.StyledEditorKit.createDefaultDocument()
+    /// public javax.swing.Action[] javax.swing.text.StyledEditorKit.getActions()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.text.Element javax.swing.text.StyledEditorKit.getCharacterAttributeRun()
+
+    private static var getCharacterAttributeRun_MethodID_3: jmethodID?
+
+    open func getCharacterAttributeRun() -> Element! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttributeRun", methodSig: "()Ljavax/swing/text/Element;", methodCache: &StyledEditorKit.getCharacterAttributeRun_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
 
     /// public javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.getInputAttributes()
 
     private static var getInputAttributes_MethodID_4: jmethodID?
 
     open func getInputAttributes() -> MutableAttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getInputAttributes", methodSig: "()Ljavax/swing/text/MutableAttributeSet;", methodCache: &StyledEditorKit.getInputAttributes_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? MutableAttributeSetForward( javaObject: __return ) : nil
@@ -209,6 +331,12 @@ open class StyledEditorKit: DefaultEditorKit {
 
 
     /// public javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.getViewFactory()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.StyledEditorKit.install(javax.swing.JEditorPane)
+
+    // Skipping method: false true false false false 
 
 }
 

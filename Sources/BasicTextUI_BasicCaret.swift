@@ -16,28 +16,29 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
 
     private static var BasicTextUI_BasicCaretJNIClass: jclass?
 
-    /// public static final int javax.swing.text.DefaultCaret.UPDATE_WHEN_ON_EDT
+    /// public static final int javax.swing.text.DefaultCaret.ALWAYS_UPDATE
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.DefaultCaret.NEVER_UPDATE
 
-    /// public static final int javax.swing.text.DefaultCaret.ALWAYS_UPDATE
+    // Skipping field: false true false false false false 
 
-    /// protected javax.swing.event.EventListenerList javax.swing.text.DefaultCaret.listenerList
+    /// public static final int javax.swing.text.DefaultCaret.UPDATE_WHEN_ON_EDT
 
-    private static var listenerList_FieldID: jfieldID?
+    // Skipping field: false true false false false false 
 
-    override open var listenerList: EventListenerList! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicTextUI_BasicCaret.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicTextUI_BasicCaret.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private static transient javax.swing.Action javax.swing.text.DefaultCaret.selectLine
+
+    /// private static transient javax.swing.Action javax.swing.text.DefaultCaret.selectWord
+
+    /// boolean javax.swing.text.DefaultCaret.active
+
+    // Skipping field: true false false false false false 
+
+    /// private float javax.swing.text.DefaultCaret.aspectRatio
+
+    /// private int javax.swing.text.DefaultCaret.caretWidth
 
     /// protected transient javax.swing.event.ChangeEvent javax.swing.text.DefaultCaret.changeEvent
 
@@ -45,8 +46,8 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
 
     override open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &BasicTextUI_BasicCaret.changeEvent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &BasicTextUI_BasicCaret.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -58,55 +59,124 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
 
     /// javax.swing.text.JTextComponent javax.swing.text.DefaultCaret.component
 
-    /// int javax.swing.text.DefaultCaret.updatePolicy
-
-    /// boolean javax.swing.text.DefaultCaret.visible
-
-    /// boolean javax.swing.text.DefaultCaret.active
+    // Skipping field: true false false false false false 
 
     /// int javax.swing.text.DefaultCaret.dot
 
-    /// int javax.swing.text.DefaultCaret.mark
-
-    /// java.lang.Object javax.swing.text.DefaultCaret.selectionTag
-
-    /// boolean javax.swing.text.DefaultCaret.selectionVisible
-
-    /// javax.swing.Timer javax.swing.text.DefaultCaret.flasher
-
-    /// java.awt.Point javax.swing.text.DefaultCaret.magicCaretPosition
+    // Skipping field: true false false false false false 
 
     /// transient javax.swing.text.Position$Bias javax.swing.text.DefaultCaret.dotBias
 
-    /// transient javax.swing.text.Position$Bias javax.swing.text.DefaultCaret.markBias
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.text.DefaultCaret.dotLTR
 
-    /// boolean javax.swing.text.DefaultCaret.markLTR
+    // Skipping field: true false false false false false 
 
-    /// transient javax.swing.text.DefaultCaret$Handler javax.swing.text.DefaultCaret.handler
+    /// private transient javax.swing.text.NavigationFilter$FilterBypass javax.swing.text.DefaultCaret.filterBypass
 
     /// private transient int[] javax.swing.text.DefaultCaret.flagXPoints
 
     /// private transient int[] javax.swing.text.DefaultCaret.flagYPoints
 
-    /// private transient javax.swing.text.NavigationFilter$FilterBypass javax.swing.text.DefaultCaret.filterBypass
+    /// javax.swing.Timer javax.swing.text.DefaultCaret.flasher
 
-    /// private static transient javax.swing.Action javax.swing.text.DefaultCaret.selectWord
-
-    /// private static transient javax.swing.Action javax.swing.text.DefaultCaret.selectLine
-
-    /// private boolean javax.swing.text.DefaultCaret.ownsSelection
+    // Skipping field: true false false false false false 
 
     /// private boolean javax.swing.text.DefaultCaret.forceCaretPositionChange
 
-    /// private transient boolean javax.swing.text.DefaultCaret.shouldHandleRelease
+    /// transient javax.swing.text.DefaultCaret$Handler javax.swing.text.DefaultCaret.handler
+
+    // Skipping field: true false false false false false 
+
+    /// protected javax.swing.event.EventListenerList javax.swing.text.DefaultCaret.listenerList
+
+    private static var listenerList_FieldID: jfieldID?
+
+    override open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicTextUI_BasicCaret.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &BasicTextUI_BasicCaret.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// java.awt.Point javax.swing.text.DefaultCaret.magicCaretPosition
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.DefaultCaret.mark
+
+    // Skipping field: true false false false false false 
+
+    /// transient javax.swing.text.Position$Bias javax.swing.text.DefaultCaret.markBias
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.DefaultCaret.markLTR
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean javax.swing.text.DefaultCaret.ownsSelection
 
     /// private transient java.awt.event.MouseEvent javax.swing.text.DefaultCaret.selectedWordEvent
 
-    /// private int javax.swing.text.DefaultCaret.caretWidth
+    /// java.lang.Object javax.swing.text.DefaultCaret.selectionTag
 
-    /// private float javax.swing.text.DefaultCaret.aspectRatio
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.DefaultCaret.selectionVisible
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean javax.swing.text.DefaultCaret.shouldHandleRelease
+
+    /// int javax.swing.text.DefaultCaret.updatePolicy
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.text.DefaultCaret.visible
+
+    // Skipping field: true false false false false false 
+
+    /// private static final long java.awt.Rectangle.serialVersionUID
+
+    /// public int java.awt.Rectangle.height
+
+    private static var height_FieldID: jfieldID?
+
+    override open var height: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.height_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// public int java.awt.Rectangle.width
+
+    private static var width_FieldID: jfieldID?
+
+    override open var width: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.width_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// public int java.awt.Rectangle.x
 
@@ -114,13 +184,12 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
 
     override open var x: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "x", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.x_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "x", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.x_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "x", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.x_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -131,68 +200,39 @@ open class BasicTextUI_BasicCaret: DefaultCaret, UIResource {
 
     override open var y: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "y", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.y_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "y", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.y_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "y", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.y_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// public int java.awt.Rectangle.width
+    /// public static final int java.awt.geom.Rectangle2D.OUT_BOTTOM
 
-    private static var width_FieldID: jfieldID?
-
-    override open var width: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public int java.awt.Rectangle.height
-
-    private static var height_FieldID: jfieldID?
-
-    override open var height: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &BasicTextUI_BasicCaret.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// private static final long java.awt.Rectangle.serialVersionUID
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.geom.Rectangle2D.OUT_LEFT
 
-    /// public static final int java.awt.geom.Rectangle2D.OUT_TOP
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.geom.Rectangle2D.OUT_RIGHT
 
-    /// public static final int java.awt.geom.Rectangle2D.OUT_BOTTOM
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.geom.Rectangle2D.OUT_TOP
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.plaf.basic.BasicTextUI$BasicCaret()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTextUI$BasicCaret", classCache: &BasicTextUI_BasicCaret.BasicTextUI_BasicCaretJNIClass, methodSig: "()V", methodCache: &BasicTextUI_BasicCaret.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

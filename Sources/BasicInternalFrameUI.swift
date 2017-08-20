@@ -17,24 +17,7 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     private static var BasicInternalFrameUIJNIClass: jclass?
 
-    /// protected javax.swing.JInternalFrame javax.swing.plaf.basic.BasicInternalFrameUI.frame
-
-    private static var frame_FieldID: jfieldID?
-
-    open var frame: JInternalFrame! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &BasicInternalFrameUI.frame_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JInternalFrame( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &BasicInternalFrameUI.frame_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private javax.swing.plaf.basic.BasicInternalFrameUI$Handler javax.swing.plaf.basic.BasicInternalFrameUI.handler
+    /// private static javax.swing.DesktopManager javax.swing.plaf.basic.BasicInternalFrameUI.sharedDesktopManager
 
     /// protected javax.swing.event.MouseInputAdapter javax.swing.plaf.basic.BasicInternalFrameUI.borderListener
 
@@ -42,8 +25,8 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     open var borderListener: MouseInputAdapter! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "borderListener", fieldType: "Ljavax/swing/event/MouseInputAdapter;", fieldCache: &BasicInternalFrameUI.borderListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "borderListener", fieldType: "Ljavax/swing/event/MouseInputAdapter;", fieldCache: &BasicInternalFrameUI.borderListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? MouseInputAdapter( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -53,48 +36,14 @@ open class BasicInternalFrameUI: InternalFrameUI {
         }
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicInternalFrameUI.propertyChangeListener
-
-    private static var propertyChangeListener_FieldID: jfieldID?
-
-    open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicInternalFrameUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicInternalFrameUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicInternalFrameUI.internalFrameLayout
-
-    private static var internalFrameLayout_FieldID: jfieldID?
-
-    open var internalFrameLayout: java_awt.LayoutManager! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "internalFrameLayout", fieldType: "Ljava/awt/LayoutManager;", fieldCache: &BasicInternalFrameUI.internalFrameLayout_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.LayoutManagerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "internalFrameLayout", fieldType: "Ljava/awt/LayoutManager;", fieldCache: &BasicInternalFrameUI.internalFrameLayout_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicInternalFrameUI.componentListener
 
     private static var componentListener_FieldID: jfieldID?
 
     open var componentListener: java_awt.ComponentListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "componentListener", fieldType: "Ljava/awt/event/ComponentListener;", fieldCache: &BasicInternalFrameUI.componentListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "componentListener", fieldType: "Ljava/awt/event/ComponentListener;", fieldCache: &BasicInternalFrameUI.componentListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.ComponentListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -104,75 +53,9 @@ open class BasicInternalFrameUI: InternalFrameUI {
         }
     }
 
-    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicInternalFrameUI.glassPaneDispatcher
+    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.componentListenerAdded
 
-    private static var glassPaneDispatcher_FieldID: jfieldID?
-
-    open var glassPaneDispatcher: MouseInputListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "glassPaneDispatcher", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicInternalFrameUI.glassPaneDispatcher_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MouseInputListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "glassPaneDispatcher", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicInternalFrameUI.glassPaneDispatcher_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private javax.swing.event.InternalFrameListener javax.swing.plaf.basic.BasicInternalFrameUI.internalFrameListener
-
-    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.northPane
-
-    private static var northPane_FieldID: jfieldID?
-
-    open var northPane: JComponent! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "northPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.northPane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JComponent( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "northPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.northPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.southPane
-
-    private static var southPane_FieldID: jfieldID?
-
-    open var southPane: JComponent! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "southPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.southPane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JComponent( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "southPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.southPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.westPane
-
-    private static var westPane_FieldID: jfieldID?
-
-    open var westPane: JComponent! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "westPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.westPane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JComponent( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "westPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.westPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.dragging
 
     /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.eastPane
 
@@ -180,8 +63,8 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     open var eastPane: JComponent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "eastPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.eastPane_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "eastPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.eastPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JComponent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -191,32 +74,81 @@ open class BasicInternalFrameUI: InternalFrameUI {
         }
     }
 
-    /// protected javax.swing.plaf.basic.BasicInternalFrameTitlePane javax.swing.plaf.basic.BasicInternalFrameUI.titlePane
+    /// protected javax.swing.JInternalFrame javax.swing.plaf.basic.BasicInternalFrameUI.frame
 
-    private static var titlePane_FieldID: jfieldID?
+    private static var frame_FieldID: jfieldID?
 
-    open var titlePane: BasicInternalFrameTitlePane! {
+    open var frame: JInternalFrame! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "titlePane", fieldType: "Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;", fieldCache: &BasicInternalFrameUI.titlePane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? BasicInternalFrameTitlePane( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &BasicInternalFrameUI.frame_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JInternalFrame( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "titlePane", fieldType: "Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;", fieldCache: &BasicInternalFrameUI.titlePane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "frame", fieldType: "Ljavax/swing/JInternalFrame;", fieldCache: &BasicInternalFrameUI.frame_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// private static javax.swing.DesktopManager javax.swing.plaf.basic.BasicInternalFrameUI.sharedDesktopManager
+    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicInternalFrameUI.glassPaneDispatcher
 
-    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.componentListenerAdded
+    private static var glassPaneDispatcher_FieldID: jfieldID?
 
-    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicInternalFrameUI.parentBounds
+    open var glassPaneDispatcher: MouseInputListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "glassPaneDispatcher", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicInternalFrameUI.glassPaneDispatcher_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MouseInputListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "glassPaneDispatcher", fieldType: "Ljavax/swing/event/MouseInputListener;", fieldCache: &BasicInternalFrameUI.glassPaneDispatcher_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
-    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.dragging
+    /// private javax.swing.plaf.basic.BasicInternalFrameUI$Handler javax.swing.plaf.basic.BasicInternalFrameUI.handler
 
-    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.resizing
+    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicInternalFrameUI.internalFrameLayout
+
+    private static var internalFrameLayout_FieldID: jfieldID?
+
+    open var internalFrameLayout: java_awt.LayoutManager! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "internalFrameLayout", fieldType: "Ljava/awt/LayoutManager;", fieldCache: &BasicInternalFrameUI.internalFrameLayout_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.LayoutManagerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "internalFrameLayout", fieldType: "Ljava/awt/LayoutManager;", fieldCache: &BasicInternalFrameUI.internalFrameLayout_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private javax.swing.event.InternalFrameListener javax.swing.plaf.basic.BasicInternalFrameUI.internalFrameListener
+
+    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.keyBindingActive
+
+    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.keyBindingRegistered
+
+    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.northPane
+
+    private static var northPane_FieldID: jfieldID?
+
+    open var northPane: JComponent! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "northPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.northPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JComponent( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "northPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.northPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// protected javax.swing.KeyStroke javax.swing.plaf.basic.BasicInternalFrameUI.openMenuKey
 
@@ -224,8 +156,8 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     open var openMenuKey: KeyStroke! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "openMenuKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicInternalFrameUI.openMenuKey_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "openMenuKey", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &BasicInternalFrameUI.openMenuKey_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? KeyStroke( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -235,17 +167,85 @@ open class BasicInternalFrameUI: InternalFrameUI {
         }
     }
 
-    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.keyBindingRegistered
+    /// private java.awt.Rectangle javax.swing.plaf.basic.BasicInternalFrameUI.parentBounds
 
-    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.keyBindingActive
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicInternalFrameUI.propertyChangeListener
+
+    private static var propertyChangeListener_FieldID: jfieldID?
+
+    open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicInternalFrameUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &BasicInternalFrameUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicInternalFrameUI.resizing
+
+    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.southPane
+
+    private static var southPane_FieldID: jfieldID?
+
+    open var southPane: JComponent! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "southPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.southPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JComponent( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "southPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.southPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.plaf.basic.BasicInternalFrameTitlePane javax.swing.plaf.basic.BasicInternalFrameUI.titlePane
+
+    private static var titlePane_FieldID: jfieldID?
+
+    open var titlePane: BasicInternalFrameTitlePane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "titlePane", fieldType: "Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;", fieldCache: &BasicInternalFrameUI.titlePane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? BasicInternalFrameTitlePane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "titlePane", fieldType: "Ljavax/swing/plaf/basic/BasicInternalFrameTitlePane;", fieldCache: &BasicInternalFrameUI.titlePane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.westPane
+
+    private static var westPane_FieldID: jfieldID?
+
+    open var westPane: JComponent! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "westPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.westPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JComponent( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "westPane", fieldType: "Ljavax/swing/JComponent;", fieldCache: &BasicInternalFrameUI.westPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// public javax.swing.plaf.basic.BasicInternalFrameUI(javax.swing.JInternalFrame)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( b: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicInternalFrameUI", classCache: &BasicInternalFrameUI.BasicInternalFrameUIJNIClass, methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -258,29 +258,51 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     /// static javax.swing.plaf.basic.BasicInternalFrameUI$Handler javax.swing.plaf.basic.BasicInternalFrameUI.access$100(javax.swing.plaf.basic.BasicInternalFrameUI)
 
+    // Skipping method: true false false false false 
+
     /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$200(javax.swing.plaf.basic.BasicInternalFrameUI)
 
-    /// static java.awt.event.WindowFocusListener javax.swing.plaf.basic.BasicInternalFrameUI.access$300(javax.swing.plaf.basic.BasicInternalFrameUI)
-
-    /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$402(javax.swing.plaf.basic.BasicInternalFrameUI,boolean)
-
-    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicInternalFrameUI.access$502(javax.swing.plaf.basic.BasicInternalFrameUI,java.awt.Rectangle)
-
-    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicInternalFrameUI.access$500(javax.swing.plaf.basic.BasicInternalFrameUI)
-
-    /// static void javax.swing.plaf.basic.BasicInternalFrameUI.access$600(javax.swing.plaf.basic.BasicInternalFrameUI)
+    // Skipping method: true false false false false 
 
     /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$202(javax.swing.plaf.basic.BasicInternalFrameUI,boolean)
 
-    /// private javax.swing.plaf.basic.BasicInternalFrameUI$Handler javax.swing.plaf.basic.BasicInternalFrameUI.getHandler()
+    // Skipping method: true false false false false 
+
+    /// static java.awt.event.WindowFocusListener javax.swing.plaf.basic.BasicInternalFrameUI.access$300(javax.swing.plaf.basic.BasicInternalFrameUI)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$402(javax.swing.plaf.basic.BasicInternalFrameUI,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicInternalFrameUI.access$500(javax.swing.plaf.basic.BasicInternalFrameUI)
+
+    // Skipping method: true false false false false 
+
+    /// static java.awt.Rectangle javax.swing.plaf.basic.BasicInternalFrameUI.access$502(javax.swing.plaf.basic.BasicInternalFrameUI,java.awt.Rectangle)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.basic.BasicInternalFrameUI.access$600(javax.swing.plaf.basic.BasicInternalFrameUI)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$700(javax.swing.plaf.basic.BasicInternalFrameUI)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$702(javax.swing.plaf.basic.BasicInternalFrameUI,boolean)
+
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicInternalFrameUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( b: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicInternalFrameUI", classCache: &BasicInternalFrameUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -291,490 +313,152 @@ open class BasicInternalFrameUI: InternalFrameUI {
         return createUI( b: _b )
     }
 
-    /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$700(javax.swing.plaf.basic.BasicInternalFrameUI)
-
-    /// public void javax.swing.plaf.basic.BasicInternalFrameUI.installUI(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallUI(javax.swing.JComponent)
-
     /// static void javax.swing.plaf.basic.BasicInternalFrameUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installDefaults()
-
-    private static var installDefaults_MethodID_3: jmethodID?
-
-    open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicInternalFrameUI.installDefaults_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installComponents()
-
-    private static var installComponents_MethodID_4: jmethodID?
-
-    open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicInternalFrameUI.installComponents_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installListeners()
-
-    private static var installListeners_MethodID_5: jmethodID?
-
-    open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicInternalFrameUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installKeyboardActions()
-
-    private static var installKeyboardActions_MethodID_6: jmethodID?
-
-    open func installKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicInternalFrameUI.installKeyboardActions_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_7: jmethodID?
-
-    open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallComponents()
-
-    private static var uninstallComponents_MethodID_8: jmethodID?
-
-    open func uninstallComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallComponents_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallListeners()
-
-    private static var uninstallListeners_MethodID_9: jmethodID?
-
-    open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallKeyboardActions()
-
-    private static var uninstallKeyboardActions_MethodID_10: jmethodID?
-
-    open func uninstallKeyboardActions() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallKeyboardActions_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicInternalFrameUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_11: jmethodID?
-
-    open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicInternalFrameUI.createPropertyChangeListener_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicInternalFrameUI.createInputMap(int)
-
-    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicInternalFrameUI.createLayoutManager()
-
-    private static var createLayoutManager_MethodID_12: jmethodID?
-
-    open func createLayoutManager() -> java_awt.LayoutManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicInternalFrameUI.createLayoutManager_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
-    }
-
-
-    /// static boolean javax.swing.plaf.basic.BasicInternalFrameUI.access$702(javax.swing.plaf.basic.BasicInternalFrameUI,boolean)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicInternalFrameUI.getPreferredSize(javax.swing.JComponent)
-
-    private static var getPreferredSize_MethodID_13: jmethodID?
-
-    open func getPreferredSize( x: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicInternalFrameUI.getPreferredSize_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getPreferredSize( _ _x: JComponent? ) -> java_awt.Dimension! {
-        return getPreferredSize( x: _x )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicInternalFrameUI.getMinimumSize(javax.swing.JComponent)
-
-    private static var getMinimumSize_MethodID_14: jmethodID?
-
-    open func getMinimumSize( x: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicInternalFrameUI.getMinimumSize_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getMinimumSize( _ _x: JComponent? ) -> java_awt.Dimension! {
-        return getMinimumSize( x: _x )
-    }
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicInternalFrameUI.getMaximumSize(javax.swing.JComponent)
-
-    private static var getMaximumSize_MethodID_15: jmethodID?
-
-    open func getMaximumSize( x: JComponent? ) -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicInternalFrameUI.getMaximumSize_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
-    }
-
-    override open func getMaximumSize( _ _x: JComponent? ) -> java_awt.Dimension! {
-        return getMaximumSize( x: _x )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.closeFrame(javax.swing.JInternalFrame)
-
-    private static var closeFrame_MethodID_16: jmethodID?
-
-    open func closeFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.closeFrame_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func closeFrame( _ _f: JInternalFrame? ) {
-        closeFrame( f: _f )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.maximizeFrame(javax.swing.JInternalFrame)
-
-    private static var maximizeFrame_MethodID_17: jmethodID?
-
-    open func maximizeFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "maximizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.maximizeFrame_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func maximizeFrame( _ _f: JInternalFrame? ) {
-        maximizeFrame( f: _f )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.minimizeFrame(javax.swing.JInternalFrame)
-
-    private static var minimizeFrame_MethodID_18: jmethodID?
-
-    open func minimizeFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "minimizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.minimizeFrame_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func minimizeFrame( _ _f: JInternalFrame? ) {
-        minimizeFrame( f: _f )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.iconifyFrame(javax.swing.JInternalFrame)
-
-    private static var iconifyFrame_MethodID_19: jmethodID?
-
-    open func iconifyFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "iconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.iconifyFrame_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func iconifyFrame( _ _f: JInternalFrame? ) {
-        iconifyFrame( f: _f )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.deiconifyFrame(javax.swing.JInternalFrame)
-
-    private static var deiconifyFrame_MethodID_20: jmethodID?
-
-    open func deiconifyFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deiconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.deiconifyFrame_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func deiconifyFrame( _ _f: JInternalFrame? ) {
-        deiconifyFrame( f: _f )
-    }
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.activateFrame(javax.swing.JInternalFrame)
 
-    private static var activateFrame_MethodID_21: jmethodID?
+    private static var activateFrame_MethodID_3: jmethodID?
 
     open func activateFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.activateFrame_MethodID_21, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "activateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.activateFrame_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func activateFrame( _ _f: JInternalFrame? ) {
         activateFrame( f: _f )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.deactivateFrame(javax.swing.JInternalFrame)
+    /// private void javax.swing.plaf.basic.BasicInternalFrameUI.cancelResize()
 
-    private static var deactivateFrame_MethodID_22: jmethodID?
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.closeFrame(javax.swing.JInternalFrame)
 
-    open func deactivateFrame( f: JInternalFrame? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var closeFrame_MethodID_4: jmethodID?
+
+    open func closeFrame( f: JInternalFrame? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deactivateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.deactivateFrame_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "closeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.closeFrame_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func deactivateFrame( _ _f: JInternalFrame? ) {
-        deactivateFrame( f: _f )
+    open func closeFrame( _ _f: JInternalFrame? ) {
+        closeFrame( f: _f )
     }
 
-    /// protected javax.swing.DesktopManager javax.swing.plaf.basic.BasicInternalFrameUI.getDesktopManager()
+    /// protected javax.swing.event.MouseInputAdapter javax.swing.plaf.basic.BasicInternalFrameUI.createBorderListener(javax.swing.JInternalFrame)
 
-    private static var getDesktopManager_MethodID_23: jmethodID?
+    private static var createBorderListener_MethodID_5: jmethodID?
 
-    open func getDesktopManager() -> DesktopManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createBorderListener( w: JInternalFrame? ) -> MouseInputAdapter! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopManager", methodSig: "()Ljavax/swing/DesktopManager;", methodCache: &BasicInternalFrameUI.getDesktopManager_MethodID_23, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBorderListener", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/event/MouseInputAdapter;", methodCache: &BasicInternalFrameUI.createBorderListener_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MouseInputAdapter( javaObject: __return ) : nil
+    }
+
+    open func createBorderListener( _ _w: JInternalFrame? ) -> MouseInputAdapter! {
+        return createBorderListener( w: _w )
+    }
+
+    /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicInternalFrameUI.createComponentListener()
+
+    private static var createComponentListener_MethodID_6: jmethodID?
+
+    open func createComponentListener() -> java_awt.ComponentListener! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "()Ljava/awt/event/ComponentListener;", methodCache: &BasicInternalFrameUI.createComponentListener_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected javax.swing.DesktopManager javax.swing.plaf.basic.BasicInternalFrameUI.createDesktopManager()
+
+    private static var createDesktopManager_MethodID_7: jmethodID?
+
+    open func createDesktopManager() -> DesktopManager! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDesktopManager", methodSig: "()Ljavax/swing/DesktopManager;", methodCache: &BasicInternalFrameUI.createDesktopManager_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DesktopManagerForward( javaObject: __return ) : nil
     }
 
 
-    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getNorthPane()
+    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.createEastPane(javax.swing.JInternalFrame)
 
-    private static var getNorthPane_MethodID_24: jmethodID?
+    private static var createEastPane_MethodID_8: jmethodID?
 
-    open func getNorthPane() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createEastPane( w: JInternalFrame? ) -> JComponent! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNorthPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getNorthPane_MethodID_24, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: w, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEastPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createEastPane_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
+    open func createEastPane( _ _w: JInternalFrame? ) -> JComponent! {
+        return createEastPane( w: _w )
+    }
 
-    /// public final boolean javax.swing.plaf.basic.BasicInternalFrameUI.isKeyBindingActive()
+    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicInternalFrameUI.createGlassPaneDispatcher()
 
-    private static var isKeyBindingActive_MethodID_25: jmethodID?
+    private static var createGlassPaneDispatcher_MethodID_9: jmethodID?
 
-    open func isKeyBindingActive() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createGlassPaneDispatcher() -> MouseInputListener! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isKeyBindingActive", methodSig: "()Z", methodCache: &BasicInternalFrameUI.isKeyBindingActive_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// void javax.swing.plaf.basic.BasicInternalFrameUI.updateFrameCursor()
-
-    /// protected final boolean javax.swing.plaf.basic.BasicInternalFrameUI.isKeyBindingRegistered()
-
-    private static var isKeyBindingRegistered_MethodID_26: jmethodID?
-
-    open func isKeyBindingRegistered() -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isKeyBindingRegistered", methodSig: "()Z", methodCache: &BasicInternalFrameUI.isKeyBindingRegistered_MethodID_26, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected final void javax.swing.plaf.basic.BasicInternalFrameUI.setKeyBindingRegistered(boolean)
-
-    private static var setKeyBindingRegistered_MethodID_27: jmethodID?
-
-    open func setKeyBindingRegistered( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyBindingRegistered", methodSig: "(Z)V", methodCache: &BasicInternalFrameUI.setKeyBindingRegistered_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func setKeyBindingRegistered( _ _b: Bool ) {
-        setKeyBindingRegistered( b: _b )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.setupMenuOpenKey()
-
-    private static var setupMenuOpenKey_MethodID_28: jmethodID?
-
-    open func setupMenuOpenKey() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setupMenuOpenKey", methodSig: "()V", methodCache: &BasicInternalFrameUI.setupMenuOpenKey_MethodID_28, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.setupMenuCloseKey()
-
-    private static var setupMenuCloseKey_MethodID_29: jmethodID?
-
-    open func setupMenuCloseKey() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setupMenuCloseKey", methodSig: "()V", methodCache: &BasicInternalFrameUI.setupMenuCloseKey_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected final void javax.swing.plaf.basic.BasicInternalFrameUI.setKeyBindingActive(boolean)
-
-    private static var setKeyBindingActive_MethodID_30: jmethodID?
-
-    open func setKeyBindingActive( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyBindingActive", methodSig: "(Z)V", methodCache: &BasicInternalFrameUI.setKeyBindingActive_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func setKeyBindingActive( _ _b: Bool ) {
-        setKeyBindingActive( b: _b )
-    }
-
-    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getSouthPane()
-
-    private static var getSouthPane_MethodID_31: jmethodID?
-
-    open func getSouthPane() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSouthPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getSouthPane_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGlassPaneDispatcher", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicInternalFrameUI.createGlassPaneDispatcher_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
+        return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getEastPane()
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicInternalFrameUI.createInputMap(int)
 
-    private static var getEastPane_MethodID_32: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func getEastPane() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.createInternalFrameListener()
+
+    private static var createInternalFrameListener_MethodID_10: jmethodID?
+
+    open func createInternalFrameListener() {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEastPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getEastPane_MethodID_32, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInternalFrameListener", methodSig: "()V", methodCache: &BasicInternalFrameUI.createInternalFrameListener_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected java.awt.LayoutManager javax.swing.plaf.basic.BasicInternalFrameUI.createLayoutManager()
+
+    private static var createLayoutManager_MethodID_11: jmethodID?
+
+    open func createLayoutManager() -> java_awt.LayoutManager! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLayoutManager", methodSig: "()Ljava/awt/LayoutManager;", methodCache: &BasicInternalFrameUI.createLayoutManager_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
+        return __return != nil ? java_awt.LayoutManagerForward( javaObject: __return ) : nil
     }
 
-
-    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getWestPane()
-
-    private static var getWestPane_MethodID_33: jmethodID?
-
-    open func getWestPane() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWestPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getWestPane_MethodID_33, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JComponent( javaObject: __return ) : nil
-    }
-
-
-    /// private java.awt.event.WindowFocusListener javax.swing.plaf.basic.BasicInternalFrameUI.getWindowFocusListener()
-
-    /// private void javax.swing.plaf.basic.BasicInternalFrameUI.cancelResize()
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.replacePane(javax.swing.JComponent,javax.swing.JComponent)
-
-    private static var replacePane_MethodID_34: jmethodID?
-
-    open func replacePane( currentPane: JComponent?, newPane: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: currentPane, locals: &__locals )
-        __args[1] = JNIType.toJava( value: newPane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replacePane", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.replacePane_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func replacePane( _ _currentPane: JComponent?, _ _newPane: JComponent? ) {
-        replacePane( currentPane: _currentPane, newPane: _newPane )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.deinstallMouseHandlers(javax.swing.JComponent)
-
-    private static var deinstallMouseHandlers_MethodID_35: jmethodID?
-
-    open func deinstallMouseHandlers( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstallMouseHandlers", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.deinstallMouseHandlers_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func deinstallMouseHandlers( _ _c: JComponent? ) {
-        deinstallMouseHandlers( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installMouseHandlers(javax.swing.JComponent)
-
-    private static var installMouseHandlers_MethodID_36: jmethodID?
-
-    open func installMouseHandlers( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installMouseHandlers", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.installMouseHandlers_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func installMouseHandlers( _ _c: JComponent? ) {
-        installMouseHandlers( c: _c )
-    }
 
     /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.createNorthPane(javax.swing.JInternalFrame)
 
-    private static var createNorthPane_MethodID_37: jmethodID?
+    private static var createNorthPane_MethodID_12: jmethodID?
 
     open func createNorthPane( w: JInternalFrame? ) -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNorthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createNorthPane_MethodID_37, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createNorthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createNorthPane_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
@@ -783,15 +467,28 @@ open class BasicInternalFrameUI: InternalFrameUI {
         return createNorthPane( w: _w )
     }
 
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicInternalFrameUI.createPropertyChangeListener()
+
+    private static var createPropertyChangeListener_MethodID_13: jmethodID?
+
+    open func createPropertyChangeListener() -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &BasicInternalFrameUI.createPropertyChangeListener_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
+    }
+
+
     /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.createSouthPane(javax.swing.JInternalFrame)
 
-    private static var createSouthPane_MethodID_38: jmethodID?
+    private static var createSouthPane_MethodID_14: jmethodID?
 
     open func createSouthPane( w: JInternalFrame? ) -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSouthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createSouthPane_MethodID_38, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSouthPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createSouthPane_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
@@ -802,13 +499,13 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.createWestPane(javax.swing.JInternalFrame)
 
-    private static var createWestPane_MethodID_39: jmethodID?
+    private static var createWestPane_MethodID_15: jmethodID?
 
     open func createWestPane( w: JInternalFrame? ) -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createWestPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createWestPane_MethodID_39, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createWestPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createWestPane_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
@@ -817,60 +514,377 @@ open class BasicInternalFrameUI: InternalFrameUI {
         return createWestPane( w: _w )
     }
 
-    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.createEastPane(javax.swing.JInternalFrame)
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.deactivateFrame(javax.swing.JInternalFrame)
 
-    private static var createEastPane_MethodID_40: jmethodID?
+    private static var deactivateFrame_MethodID_16: jmethodID?
 
-    open func createEastPane( w: JInternalFrame? ) -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func deactivateFrame( f: JInternalFrame? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createEastPane", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.createEastPane_MethodID_40, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deactivateFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.deactivateFrame_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func deactivateFrame( _ _f: JInternalFrame? ) {
+        deactivateFrame( f: _f )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.deiconifyFrame(javax.swing.JInternalFrame)
+
+    private static var deiconifyFrame_MethodID_17: jmethodID?
+
+    open func deiconifyFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deiconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.deiconifyFrame_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func deiconifyFrame( _ _f: JInternalFrame? ) {
+        deiconifyFrame( f: _f )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.deinstallMouseHandlers(javax.swing.JComponent)
+
+    private static var deinstallMouseHandlers_MethodID_18: jmethodID?
+
+    open func deinstallMouseHandlers( c: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "deinstallMouseHandlers", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.deinstallMouseHandlers_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func deinstallMouseHandlers( _ _c: JComponent? ) {
+        deinstallMouseHandlers( c: _c )
+    }
+
+    /// protected javax.swing.DesktopManager javax.swing.plaf.basic.BasicInternalFrameUI.getDesktopManager()
+
+    private static var getDesktopManager_MethodID_19: jmethodID?
+
+    open func getDesktopManager() -> DesktopManager! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDesktopManager", methodSig: "()Ljavax/swing/DesktopManager;", methodCache: &BasicInternalFrameUI.getDesktopManager_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DesktopManagerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getEastPane()
+
+    private static var getEastPane_MethodID_20: jmethodID?
+
+    open func getEastPane() -> JComponent! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEastPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getEastPane_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
-    open func createEastPane( _ _w: JInternalFrame? ) -> JComponent! {
-        return createEastPane( w: _w )
-    }
 
-    /// protected javax.swing.event.MouseInputAdapter javax.swing.plaf.basic.BasicInternalFrameUI.createBorderListener(javax.swing.JInternalFrame)
+    /// private javax.swing.plaf.basic.BasicInternalFrameUI$Handler javax.swing.plaf.basic.BasicInternalFrameUI.getHandler()
 
-    private static var createBorderListener_MethodID_41: jmethodID?
+    /// javax.swing.InputMap javax.swing.plaf.basic.BasicInternalFrameUI.getInputMap(int)
 
-    open func createBorderListener( w: JInternalFrame? ) -> MouseInputAdapter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    // Skipping method: true false false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicInternalFrameUI.getMaximumSize(javax.swing.JComponent)
+
+    private static var getMaximumSize_MethodID_21: jmethodID?
+
+    open func getMaximumSize( x: JComponent? ) -> java_awt.Dimension! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: w, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createBorderListener", methodSig: "(Ljavax/swing/JInternalFrame;)Ljavax/swing/event/MouseInputAdapter;", methodCache: &BasicInternalFrameUI.createBorderListener_MethodID_41, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMaximumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicInternalFrameUI.getMaximumSize_MethodID_21, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseInputAdapter( javaObject: __return ) : nil
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
-    open func createBorderListener( _ _w: JInternalFrame? ) -> MouseInputAdapter! {
-        return createBorderListener( w: _w )
+    override open func getMaximumSize( _ _x: JComponent? ) -> java_awt.Dimension! {
+        return getMaximumSize( x: _x )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.createInternalFrameListener()
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicInternalFrameUI.getMinimumSize(javax.swing.JComponent)
 
-    private static var createInternalFrameListener_MethodID_42: jmethodID?
+    private static var getMinimumSize_MethodID_22: jmethodID?
 
-    open func createInternalFrameListener() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMinimumSize( x: JComponent? ) -> java_awt.Dimension! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "createInternalFrameListener", methodSig: "()V", methodCache: &BasicInternalFrameUI.createInternalFrameListener_MethodID_42, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicInternalFrameUI.getMinimumSize_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
+    override open func getMinimumSize( _ _x: JComponent? ) -> java_awt.Dimension! {
+        return getMinimumSize( x: _x )
+    }
+
+    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getNorthPane()
+
+    private static var getNorthPane_MethodID_23: jmethodID?
+
+    open func getNorthPane() -> JComponent! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNorthPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getNorthPane_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicInternalFrameUI.getPreferredSize(javax.swing.JComponent)
+
+    private static var getPreferredSize_MethodID_24: jmethodID?
+
+    open func getPreferredSize( x: JComponent? ) -> java_awt.Dimension! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPreferredSize", methodSig: "(Ljavax/swing/JComponent;)Ljava/awt/Dimension;", methodCache: &BasicInternalFrameUI.getPreferredSize_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
+    }
+
+    override open func getPreferredSize( _ _x: JComponent? ) -> java_awt.Dimension! {
+        return getPreferredSize( x: _x )
+    }
+
+    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getSouthPane()
+
+    private static var getSouthPane_MethodID_25: jmethodID?
+
+    open func getSouthPane() -> JComponent! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSouthPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getSouthPane_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JComponent javax.swing.plaf.basic.BasicInternalFrameUI.getWestPane()
+
+    private static var getWestPane_MethodID_26: jmethodID?
+
+    open func getWestPane() -> JComponent! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getWestPane", methodSig: "()Ljavax/swing/JComponent;", methodCache: &BasicInternalFrameUI.getWestPane_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JComponent( javaObject: __return ) : nil
+    }
+
+
+    /// private java.awt.event.WindowFocusListener javax.swing.plaf.basic.BasicInternalFrameUI.getWindowFocusListener()
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.iconifyFrame(javax.swing.JInternalFrame)
+
+    private static var iconifyFrame_MethodID_27: jmethodID?
+
+    open func iconifyFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "iconifyFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.iconifyFrame_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func iconifyFrame( _ _f: JInternalFrame? ) {
+        iconifyFrame( f: _f )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installComponents()
+
+    private static var installComponents_MethodID_28: jmethodID?
+
+    open func installComponents() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &BasicInternalFrameUI.installComponents_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installDefaults()
+
+    private static var installDefaults_MethodID_29: jmethodID?
+
+    open func installDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &BasicInternalFrameUI.installDefaults_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installKeyboardActions()
+
+    private static var installKeyboardActions_MethodID_30: jmethodID?
+
+    open func installKeyboardActions() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "()V", methodCache: &BasicInternalFrameUI.installKeyboardActions_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installListeners()
+
+    private static var installListeners_MethodID_31: jmethodID?
+
+    open func installListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &BasicInternalFrameUI.installListeners_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.installMouseHandlers(javax.swing.JComponent)
+
+    private static var installMouseHandlers_MethodID_32: jmethodID?
+
+    open func installMouseHandlers( c: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installMouseHandlers", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.installMouseHandlers_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func installMouseHandlers( _ _c: JComponent? ) {
+        installMouseHandlers( c: _c )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicInternalFrameUI.installUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public final boolean javax.swing.plaf.basic.BasicInternalFrameUI.isKeyBindingActive()
+
+    private static var isKeyBindingActive_MethodID_33: jmethodID?
+
+    open func isKeyBindingActive() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isKeyBindingActive", methodSig: "()Z", methodCache: &BasicInternalFrameUI.isKeyBindingActive_MethodID_33, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected final boolean javax.swing.plaf.basic.BasicInternalFrameUI.isKeyBindingRegistered()
+
+    private static var isKeyBindingRegistered_MethodID_34: jmethodID?
+
+    open func isKeyBindingRegistered() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isKeyBindingRegistered", methodSig: "()Z", methodCache: &BasicInternalFrameUI.isKeyBindingRegistered_MethodID_34, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.maximizeFrame(javax.swing.JInternalFrame)
+
+    private static var maximizeFrame_MethodID_35: jmethodID?
+
+    open func maximizeFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "maximizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.maximizeFrame_MethodID_35, args: &__args, locals: &__locals )
+    }
+
+    open func maximizeFrame( _ _f: JInternalFrame? ) {
+        maximizeFrame( f: _f )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.minimizeFrame(javax.swing.JInternalFrame)
+
+    private static var minimizeFrame_MethodID_36: jmethodID?
+
+    open func minimizeFrame( f: JInternalFrame? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "minimizeFrame", methodSig: "(Ljavax/swing/JInternalFrame;)V", methodCache: &BasicInternalFrameUI.minimizeFrame_MethodID_36, args: &__args, locals: &__locals )
+    }
+
+    open func minimizeFrame( _ _f: JInternalFrame? ) {
+        minimizeFrame( f: _f )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.replacePane(javax.swing.JComponent,javax.swing.JComponent)
+
+    private static var replacePane_MethodID_37: jmethodID?
+
+    open func replacePane( currentPane: JComponent?, newPane: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: currentPane, locals: &__locals )
+        __args[1] = JNIType.toJava( value: newPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replacePane", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.replacePane_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    open func replacePane( _ _currentPane: JComponent?, _ _newPane: JComponent? ) {
+        replacePane( currentPane: _currentPane, newPane: _newPane )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicInternalFrameUI.setEastPane(javax.swing.JComponent)
+
+    private static var setEastPane_MethodID_38: jmethodID?
+
+    open func setEastPane( c: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEastPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setEastPane_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+    open func setEastPane( _ _c: JComponent? ) {
+        setEastPane( c: _c )
+    }
+
+    /// protected final void javax.swing.plaf.basic.BasicInternalFrameUI.setKeyBindingActive(boolean)
+
+    private static var setKeyBindingActive_MethodID_39: jmethodID?
+
+    open func setKeyBindingActive( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyBindingActive", methodSig: "(Z)V", methodCache: &BasicInternalFrameUI.setKeyBindingActive_MethodID_39, args: &__args, locals: &__locals )
+    }
+
+    open func setKeyBindingActive( _ _b: Bool ) {
+        setKeyBindingActive( b: _b )
+    }
+
+    /// protected final void javax.swing.plaf.basic.BasicInternalFrameUI.setKeyBindingRegistered(boolean)
+
+    private static var setKeyBindingRegistered_MethodID_40: jmethodID?
+
+    open func setKeyBindingRegistered( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setKeyBindingRegistered", methodSig: "(Z)V", methodCache: &BasicInternalFrameUI.setKeyBindingRegistered_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open func setKeyBindingRegistered( _ _b: Bool ) {
+        setKeyBindingRegistered( b: _b )
+    }
 
     /// public void javax.swing.plaf.basic.BasicInternalFrameUI.setNorthPane(javax.swing.JComponent)
 
-    private static var setNorthPane_MethodID_43: jmethodID?
+    private static var setNorthPane_MethodID_41: jmethodID?
 
     open func setNorthPane( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNorthPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setNorthPane_MethodID_43, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setNorthPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setNorthPane_MethodID_41, args: &__args, locals: &__locals )
     }
 
     open func setNorthPane( _ _c: JComponent? ) {
@@ -879,13 +893,13 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     /// public void javax.swing.plaf.basic.BasicInternalFrameUI.setSouthPane(javax.swing.JComponent)
 
-    private static var setSouthPane_MethodID_44: jmethodID?
+    private static var setSouthPane_MethodID_42: jmethodID?
 
     open func setSouthPane( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSouthPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setSouthPane_MethodID_44, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSouthPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setSouthPane_MethodID_42, args: &__args, locals: &__locals )
     }
 
     open func setSouthPane( _ _c: JComponent? ) {
@@ -894,74 +908,92 @@ open class BasicInternalFrameUI: InternalFrameUI {
 
     /// public void javax.swing.plaf.basic.BasicInternalFrameUI.setWestPane(javax.swing.JComponent)
 
-    private static var setWestPane_MethodID_45: jmethodID?
+    private static var setWestPane_MethodID_43: jmethodID?
 
     open func setWestPane( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWestPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setWestPane_MethodID_45, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setWestPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setWestPane_MethodID_43, args: &__args, locals: &__locals )
     }
 
     open func setWestPane( _ _c: JComponent? ) {
         setWestPane( c: _c )
     }
 
-    /// public void javax.swing.plaf.basic.BasicInternalFrameUI.setEastPane(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.setupMenuCloseKey()
 
-    private static var setEastPane_MethodID_46: jmethodID?
+    private static var setupMenuCloseKey_MethodID_44: jmethodID?
 
-    open func setEastPane( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setupMenuCloseKey() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEastPane", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &BasicInternalFrameUI.setEastPane_MethodID_46, args: &__args, locals: &__locals )
-    }
-
-    open func setEastPane( _ _c: JComponent? ) {
-        setEastPane( c: _c )
-    }
-
-    /// protected javax.swing.DesktopManager javax.swing.plaf.basic.BasicInternalFrameUI.createDesktopManager()
-
-    private static var createDesktopManager_MethodID_47: jmethodID?
-
-    open func createDesktopManager() -> DesktopManager! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDesktopManager", methodSig: "()Ljavax/swing/DesktopManager;", methodCache: &BasicInternalFrameUI.createDesktopManager_MethodID_47, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DesktopManagerForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setupMenuCloseKey", methodSig: "()V", methodCache: &BasicInternalFrameUI.setupMenuCloseKey_MethodID_44, args: &__args, locals: &__locals )
     }
 
 
-    /// protected java.awt.event.ComponentListener javax.swing.plaf.basic.BasicInternalFrameUI.createComponentListener()
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.setupMenuOpenKey()
 
-    private static var createComponentListener_MethodID_48: jmethodID?
+    private static var setupMenuOpenKey_MethodID_45: jmethodID?
 
-    open func createComponentListener() -> java_awt.ComponentListener! {
+    open func setupMenuOpenKey() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createComponentListener", methodSig: "()Ljava/awt/event/ComponentListener;", methodCache: &BasicInternalFrameUI.createComponentListener_MethodID_48, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ComponentListenerForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setupMenuOpenKey", methodSig: "()V", methodCache: &BasicInternalFrameUI.setupMenuOpenKey_MethodID_45, args: &__args, locals: &__locals )
     }
 
 
-    /// protected javax.swing.event.MouseInputListener javax.swing.plaf.basic.BasicInternalFrameUI.createGlassPaneDispatcher()
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallComponents()
 
-    private static var createGlassPaneDispatcher_MethodID_49: jmethodID?
+    private static var uninstallComponents_MethodID_46: jmethodID?
 
-    open func createGlassPaneDispatcher() -> MouseInputListener! {
+    open func uninstallComponents() {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createGlassPaneDispatcher", methodSig: "()Ljavax/swing/event/MouseInputListener;", methodCache: &BasicInternalFrameUI.createGlassPaneDispatcher_MethodID_49, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MouseInputListenerForward( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallComponents_MethodID_46, args: &__args, locals: &__locals )
     }
 
 
-    /// javax.swing.InputMap javax.swing.plaf.basic.BasicInternalFrameUI.getInputMap(int)
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_47: jmethodID?
+
+    open func uninstallDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallDefaults_MethodID_47, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallKeyboardActions()
+
+    private static var uninstallKeyboardActions_MethodID_48: jmethodID?
+
+    open func uninstallKeyboardActions() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallKeyboardActions_MethodID_48, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallListeners()
+
+    private static var uninstallListeners_MethodID_49: jmethodID?
+
+    open func uninstallListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &BasicInternalFrameUI.uninstallListeners_MethodID_49, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicInternalFrameUI.uninstallUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// void javax.swing.plaf.basic.BasicInternalFrameUI.updateFrameCursor()
+
+    // Skipping method: true false false false false 
 
 }
 

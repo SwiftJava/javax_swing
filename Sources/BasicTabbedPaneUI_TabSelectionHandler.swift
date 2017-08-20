@@ -18,13 +18,15 @@ open class BasicTabbedPaneUI_TabSelectionHandler: java_swift.JavaObject, ChangeL
 
     /// final javax.swing.plaf.basic.BasicTabbedPaneUI javax.swing.plaf.basic.BasicTabbedPaneUI$TabSelectionHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTabbedPaneUI$TabSelectionHandler(javax.swing.plaf.basic.BasicTabbedPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTabbedPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTabbedPaneUI$TabSelectionHandler", classCache: &BasicTabbedPaneUI_TabSelectionHandler.BasicTabbedPaneUI_TabSelectionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTabbedPaneUI;)V", methodCache: &BasicTabbedPaneUI_TabSelectionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicTabbedPaneUI_TabSelectionHandler: java_swift.JavaObject, ChangeL
     private static var stateChanged_MethodID_2: jmethodID?
 
     open func stateChanged( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &BasicTabbedPaneUI_TabSelectionHandler.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }

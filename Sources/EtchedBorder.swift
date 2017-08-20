@@ -17,17 +17,6 @@ open class EtchedBorder: AbstractBorder {
 
     private static var EtchedBorderJNIClass: jclass?
 
-    /// public static final int javax.swing.border.EtchedBorder.RAISED
-
-    private static var RAISED_FieldID: jfieldID?
-
-    open static var RAISED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RAISED", fieldType: "I", fieldCache: &RAISED_FieldID, className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
     /// public static final int javax.swing.border.EtchedBorder.LOWERED
 
     private static var LOWERED_FieldID: jfieldID?
@@ -35,7 +24,18 @@ open class EtchedBorder: AbstractBorder {
     open static var LOWERED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOWERED", fieldType: "I", fieldCache: &LOWERED_FieldID, className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.border.EtchedBorder.RAISED
+
+    private static var RAISED_FieldID: jfieldID?
+
+    open static var RAISED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RAISED", fieldType: "I", fieldCache: &RAISED_FieldID, className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorderJNIClass )
+            return Int(__value)
         }
     }
 
@@ -45,13 +45,12 @@ open class EtchedBorder: AbstractBorder {
 
     open var etchType: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "etchType", fieldType: "I", fieldCache: &EtchedBorder.etchType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "etchType", fieldType: "I", fieldCache: &EtchedBorder.etchType_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "etchType", fieldType: "I", fieldCache: &EtchedBorder.etchType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -62,8 +61,8 @@ open class EtchedBorder: AbstractBorder {
 
     open var highlight: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &EtchedBorder.highlight_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &EtchedBorder.highlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -79,8 +78,8 @@ open class EtchedBorder: AbstractBorder {
 
     open var shadow: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &EtchedBorder.shadow_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &EtchedBorder.shadow_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -90,17 +89,46 @@ open class EtchedBorder: AbstractBorder {
         }
     }
 
-    /// public javax.swing.border.EtchedBorder(int,java.awt.Color,java.awt.Color)
+    /// public javax.swing.border.EtchedBorder()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( etchType: Int, highlight: java_awt.Color?, shadow: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: etchType, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "()V", methodCache: &EtchedBorder.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// public javax.swing.border.EtchedBorder(int)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( etchType: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(etchType) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(I)V", methodCache: &EtchedBorder.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _etchType: Int ) {
+        self.init( etchType: _etchType )
+    }
+
+    /// public javax.swing.border.EtchedBorder(int,java.awt.Color,java.awt.Color)
+
+    private static var new_MethodID_3: jmethodID?
+
+    public convenience init( etchType: Int, highlight: java_awt.Color?, shadow: java_awt.Color? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(etchType) )
         __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
         __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &EtchedBorder.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &EtchedBorder.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -111,14 +139,14 @@ open class EtchedBorder: AbstractBorder {
 
     /// public javax.swing.border.EtchedBorder(java.awt.Color,java.awt.Color)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_4: jmethodID?
 
     public convenience init( highlight: java_awt.Color?, shadow: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: highlight, locals: &__locals )
         __args[1] = JNIType.toJava( value: shadow, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &EtchedBorder.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &EtchedBorder.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -127,69 +155,31 @@ open class EtchedBorder: AbstractBorder {
         self.init( highlight: _highlight, shadow: _shadow )
     }
 
-    /// public javax.swing.border.EtchedBorder(int)
+    /// public java.awt.Insets javax.swing.border.EtchedBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
 
-    private static var new_MethodID_3: jmethodID?
-
-    public convenience init( etchType: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: etchType, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "(I)V", methodCache: &EtchedBorder.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _etchType: Int ) {
-        self.init( etchType: _etchType )
-    }
-
-    /// public javax.swing.border.EtchedBorder()
-
-    private static var new_MethodID_4: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/EtchedBorder", classCache: &EtchedBorder.EtchedBorderJNIClass, methodSig: "()V", methodCache: &EtchedBorder.new_MethodID_4, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
+    // Skipping method: false true false false false 
 
     /// public int javax.swing.border.EtchedBorder.getEtchType()
 
     private static var getEtchType_MethodID_5: jmethodID?
 
     open func getEtchType() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEtchType", methodSig: "()I", methodCache: &EtchedBorder.getEtchType_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.awt.Color javax.swing.border.EtchedBorder.getHighlightColor()
-
-    private static var getHighlightColor_MethodID_6: jmethodID?
-
-    open func getHighlightColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "()Ljava/awt/Color;", methodCache: &EtchedBorder.getHighlightColor_MethodID_6, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+        return Int(__return)
     }
 
 
     /// public java.awt.Color javax.swing.border.EtchedBorder.getHighlightColor(java.awt.Component)
 
-    private static var getHighlightColor_MethodID_7: jmethodID?
+    private static var getHighlightColor_MethodID_6: jmethodID?
 
     open func getHighlightColor( c: java_awt.Component? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &EtchedBorder.getHighlightColor_MethodID_7, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &EtchedBorder.getHighlightColor_MethodID_6, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -198,13 +188,26 @@ open class EtchedBorder: AbstractBorder {
         return getHighlightColor( c: _c )
     }
 
+    /// public java.awt.Color javax.swing.border.EtchedBorder.getHighlightColor()
+
+    private static var getHighlightColor_MethodID_7: jmethodID?
+
+    open func getHighlightColor() -> java_awt.Color! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHighlightColor", methodSig: "()Ljava/awt/Color;", methodCache: &EtchedBorder.getHighlightColor_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Color( javaObject: __return ) : nil
+    }
+
+
     /// public java.awt.Color javax.swing.border.EtchedBorder.getShadowColor(java.awt.Component)
 
     private static var getShadowColor_MethodID_8: jmethodID?
 
     open func getShadowColor( c: java_awt.Component? ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowColor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Color;", methodCache: &EtchedBorder.getShadowColor_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -220,19 +223,21 @@ open class EtchedBorder: AbstractBorder {
     private static var getShadowColor_MethodID_9: jmethodID?
 
     open func getShadowColor() -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getShadowColor", methodSig: "()Ljava/awt/Color;", methodCache: &EtchedBorder.getShadowColor_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
 
 
+    /// public boolean javax.swing.border.EtchedBorder.isBorderOpaque()
+
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.border.EtchedBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
-    /// public java.awt.Insets javax.swing.border.EtchedBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
-
-    /// public boolean javax.swing.border.EtchedBorder.isBorderOpaque()
+    // Skipping method: false true false false false 
 
 }
 

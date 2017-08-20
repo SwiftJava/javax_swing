@@ -19,14 +19,16 @@ open class StateEdit: AbstractUndoableEdit {
 
     /// protected static final java.lang.String javax.swing.undo.StateEdit.RCSID
 
+    // Skipping field: false false false false false true 
+
     /// protected javax.swing.undo.StateEditable javax.swing.undo.StateEdit.object
 
     private static var object_FieldID: jfieldID?
 
     open var object: StateEditable! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "object", fieldType: "Ljavax/swing/undo/StateEditable;", fieldCache: &StateEdit.object_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "object", fieldType: "Ljavax/swing/undo/StateEditable;", fieldCache: &StateEdit.object_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? StateEditableForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -36,37 +38,35 @@ open class StateEdit: AbstractUndoableEdit {
         }
     }
 
-    /// protected java.util.Hashtable javax.swing.undo.StateEdit.preState
-
-    private static var preState_FieldID: jfieldID?
-
-    open var preState: java_util.Hashtable! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "preState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.preState_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: java_util.Hashtable(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, mapClass: "java/util/Hashtable", locals: &__locals )
-            JNIField.SetObjectField( fieldName: "preState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.preState_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected java.util.Hashtable javax.swing.undo.StateEdit.postState
 
     private static var postState_FieldID: jfieldID?
 
     open var postState: java_util.Hashtable! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "postState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.postState_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: java_util.Hashtable(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "postState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.postState_FieldID, object: javaObject )
+            return JNIType.toSwift( type: java_util.Hashtable.self, from: __value )
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, mapClass: "java/util/Hashtable", locals: &__locals )
             JNIField.SetObjectField( fieldName: "postState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.postState_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.util.Hashtable javax.swing.undo.StateEdit.preState
+
+    private static var preState_FieldID: jfieldID?
+
+    open var preState: java_util.Hashtable! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "preState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.preState_FieldID, object: javaObject )
+            return JNIType.toSwift( type: java_util.Hashtable.self, from: __value )
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, mapClass: "java/util/Hashtable", locals: &__locals )
+            JNIField.SetObjectField( fieldName: "preState", fieldType: "Ljava/util/Hashtable;", fieldCache: &StateEdit.preState_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -76,9 +76,9 @@ open class StateEdit: AbstractUndoableEdit {
 
     open var undoRedoName: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "undoRedoName", fieldType: "Ljava/lang/String;", fieldCache: &StateEdit.undoRedoName_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "undoRedoName", fieldType: "Ljava/lang/String;", fieldCache: &StateEdit.undoRedoName_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -87,21 +87,29 @@ open class StateEdit: AbstractUndoableEdit {
         }
     }
 
+    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
+
+    // Skipping field: false false false false false true 
+
     /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
 
-    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
+    // Skipping field: false false false false false true 
+
+    /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+
+    // Skipping field: true false false false false false 
 
     /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
 
-    /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.undo.StateEdit(javax.swing.undo.StateEditable)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( anObject: StateEditable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/undo/StateEdit", classCache: &StateEdit.StateEditJNIClass, methodSig: "(Ljavax/swing/undo/StateEditable;)V", methodCache: &StateEdit.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -117,8 +125,8 @@ open class StateEdit: AbstractUndoableEdit {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( anObject: StateEditable?, name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
         __args[1] = JNIType.toJava( value: name, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/undo/StateEdit", classCache: &StateEdit.StateEditJNIClass, methodSig: "(Ljavax/swing/undo/StateEditable;Ljava/lang/String;)V", methodCache: &StateEdit.new_MethodID_2, args: &__args, locals: &__locals )
@@ -130,49 +138,55 @@ open class StateEdit: AbstractUndoableEdit {
         self.init( anObject: _anObject, name: _name )
     }
 
-    /// public void javax.swing.undo.StateEdit.end()
-
-    private static var end_MethodID_3: jmethodID?
-
-    open func end() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "end", methodSig: "()V", methodCache: &StateEdit.end_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
     /// protected void javax.swing.undo.StateEdit.init(javax.swing.undo.StateEditable,java.lang.String)
 
-    private static var init_MethodID_4: jmethodID?
+    private static var init_MethodID_3: jmethodID?
 
     open func _init( anObject: StateEditable?, name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: anObject, locals: &__locals )
         __args[1] = JNIType.toJava( value: name, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "init", methodSig: "(Ljavax/swing/undo/StateEditable;Ljava/lang/String;)V", methodCache: &StateEdit.init_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "init", methodSig: "(Ljavax/swing/undo/StateEditable;Ljava/lang/String;)V", methodCache: &StateEdit.init_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func _init( _ _anObject: StateEditable?, _ _name: String? ) {
         _init( anObject: _anObject, name: _name )
     }
 
-    /// public void javax.swing.undo.StateEdit.undo()
+    /// public void javax.swing.undo.StateEdit.end()
+
+    private static var end_MethodID_4: jmethodID?
+
+    open func end() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "end", methodSig: "()V", methodCache: &StateEdit.end_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+
+    /// public java.lang.String javax.swing.undo.StateEdit.getPresentationName()
+
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.undo.StateEdit.redo()
 
-    /// public java.lang.String javax.swing.undo.StateEdit.getPresentationName()
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.undo.StateEdit.removeRedundantState()
 
     private static var removeRedundantState_MethodID_5: jmethodID?
 
     open func removeRedundantState() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeRedundantState", methodSig: "()V", methodCache: &StateEdit.removeRedundantState_MethodID_5, args: &__args, locals: &__locals )
     }
 
+
+    /// public void javax.swing.undo.StateEdit.undo()
+
+    // Skipping method: false true false false false 
 
 }
 

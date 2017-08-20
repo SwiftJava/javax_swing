@@ -16,4 +16,3 @@ open class AttributeSet_CharacterAttributeForward: JNIObjectForward, AttributeSe
 
 }
 
-

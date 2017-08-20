@@ -24,59 +24,65 @@ open class MinimalHTMLWriter: AbstractWriter {
 
     /// private static final javax.swing.text.html.CSS javax.swing.text.html.MinimalHTMLWriter.css
 
+    /// int javax.swing.text.html.MinimalHTMLWriter.endOffset
+
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.text.AttributeSet javax.swing.text.html.MinimalHTMLWriter.fontAttributes
+
     /// private int javax.swing.text.html.MinimalHTMLWriter.fontMask
 
     /// int javax.swing.text.html.MinimalHTMLWriter.startOffset
 
-    /// int javax.swing.text.html.MinimalHTMLWriter.endOffset
-
-    /// private javax.swing.text.AttributeSet javax.swing.text.html.MinimalHTMLWriter.fontAttributes
+    // Skipping field: true false false false false false 
 
     /// private java.util.Hashtable javax.swing.text.html.MinimalHTMLWriter.styleNameMapping
 
-    /// private javax.swing.text.ElementIterator javax.swing.text.AbstractWriter.it
+    /// protected static final char javax.swing.text.AbstractWriter.NEWLINE
 
-    /// private java.io.Writer javax.swing.text.AbstractWriter.out
+    // Skipping field: false false false false false true 
+
+    /// private boolean javax.swing.text.AbstractWriter.canWrapLines
+
+    /// private int javax.swing.text.AbstractWriter.currLength
+
+    /// private javax.swing.text.Document javax.swing.text.AbstractWriter.doc
+
+    /// private int javax.swing.text.AbstractWriter.endOffset
+
+    /// private char[] javax.swing.text.AbstractWriter.indentChars
 
     /// private int javax.swing.text.AbstractWriter.indentLevel
 
     /// private int javax.swing.text.AbstractWriter.indentSpace
 
-    /// private javax.swing.text.Document javax.swing.text.AbstractWriter.doc
+    /// private boolean javax.swing.text.AbstractWriter.isLineEmpty
 
-    /// private int javax.swing.text.AbstractWriter.maxLineLength
-
-    /// private int javax.swing.text.AbstractWriter.currLength
-
-    /// private int javax.swing.text.AbstractWriter.startOffset
-
-    /// private int javax.swing.text.AbstractWriter.endOffset
-
-    /// private int javax.swing.text.AbstractWriter.offsetIndent
+    /// private javax.swing.text.ElementIterator javax.swing.text.AbstractWriter.it
 
     /// private java.lang.String javax.swing.text.AbstractWriter.lineSeparator
 
-    /// private boolean javax.swing.text.AbstractWriter.canWrapLines
-
-    /// private boolean javax.swing.text.AbstractWriter.isLineEmpty
-
-    /// private char[] javax.swing.text.AbstractWriter.indentChars
-
-    /// private char[] javax.swing.text.AbstractWriter.tempChars
+    /// private int javax.swing.text.AbstractWriter.maxLineLength
 
     /// private char[] javax.swing.text.AbstractWriter.newlineChars
 
+    /// private int javax.swing.text.AbstractWriter.offsetIndent
+
+    /// private java.io.Writer javax.swing.text.AbstractWriter.out
+
     /// private javax.swing.text.Segment javax.swing.text.AbstractWriter.segment
 
-    /// protected static final char javax.swing.text.AbstractWriter.NEWLINE
+    /// private int javax.swing.text.AbstractWriter.startOffset
+
+    /// private char[] javax.swing.text.AbstractWriter.tempChars
 
     /// public javax.swing.text.html.MinimalHTMLWriter(java.io.Writer,javax.swing.text.StyledDocument)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( w: /* java.io.Writer */ UnclassedObject?, doc: StyledDocument? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( w: /* class java.io.Writer */ UnavailableObject?, doc: StyledDocument? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/MinimalHTMLWriter", classCache: &MinimalHTMLWriter.MinimalHTMLWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/StyledDocument;)V", methodCache: &MinimalHTMLWriter.new_MethodID_1, args: &__args, locals: &__locals )
@@ -84,7 +90,7 @@ open class MinimalHTMLWriter: AbstractWriter {
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: /* java.io.Writer */ UnclassedObject?, _ _doc: StyledDocument? ) {
+    public convenience init( _ _w: /* class java.io.Writer */ UnavailableObject?, _ _doc: StyledDocument? ) {
         self.init( w: _w, doc: _doc )
     }
 
@@ -92,352 +98,87 @@ open class MinimalHTMLWriter: AbstractWriter {
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( w: /* java.io.Writer */ UnclassedObject?, doc: StyledDocument?, pos: Int, len: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init( w: /* class java.io.Writer */ UnavailableObject?, doc: StyledDocument?, pos: Int, len: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: w, locals: &__locals )
         __args[1] = JNIType.toJava( value: doc, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[3] = JNIType.toJava( value: len, locals: &__locals )
+        __args[2] = jvalue( i: jint(pos) )
+        __args[3] = jvalue( i: jint(len) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/MinimalHTMLWriter", classCache: &MinimalHTMLWriter.MinimalHTMLWriterJNIClass, methodSig: "(Ljava/io/Writer;Ljavax/swing/text/StyledDocument;II)V", methodCache: &MinimalHTMLWriter.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _w: /* java.io.Writer */ UnclassedObject?, _ _doc: StyledDocument?, _ _pos: Int, _ _len: Int ) {
+    public convenience init( _ _w: /* class java.io.Writer */ UnavailableObject?, _ _doc: StyledDocument?, _ _pos: Int, _ _len: Int ) {
         self.init( w: _w, doc: _doc, pos: _pos, len: _len )
     }
 
-    /// public void javax.swing.text.html.MinimalHTMLWriter.write() throws java.io.IOException,javax.swing.text.BadLocationException
+    /// private java.lang.String javax.swing.text.html.MinimalHTMLWriter.addStyleName(java.lang.String)
 
-    private static var write_MethodID_3: jmethodID?
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.endFontTag() throws java.io.IOException
 
-    override open func write() throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var endFontTag_MethodID_3: jmethodID?
+
+    open func endFontTag() throws /* java.io.IOException */ {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "()V", methodCache: &MinimalHTMLWriter.write_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endFontTag", methodSig: "()V", methodCache: &MinimalHTMLWriter.endFontTag_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
 
-    /// private boolean javax.swing.text.html.MinimalHTMLWriter.isValidCharacter(char)
+    /// private void javax.swing.text.html.MinimalHTMLWriter.endSpanTag() throws java.io.IOException
 
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.text(javax.swing.text.Element) throws java.io.IOException,javax.swing.text.BadLocationException
+    /// protected boolean javax.swing.text.html.MinimalHTMLWriter.inFontTag()
 
-    private static var text_MethodID_4: jmethodID?
+    private static var inFontTag_MethodID_4: jmethodID?
 
-    override open func text( elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func inFontTag() -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.text_MethodID_4, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    override open func text( _ _elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        try text( elem: _elem )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
-
-    private static var writeAttributes_MethodID_5: jmethodID?
-
-    override open func writeAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeAttributes_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inFontTag", methodSig: "()Z", methodCache: &MinimalHTMLWriter.inFontTag_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-    override open func writeAttributes( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
-        try writeAttributes( attr: _attr )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStyles() throws java.io.IOException
-
-    private static var writeStyles_MethodID_6: jmethodID?
-
-    open func writeStyles() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeStyles", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeStyles_MethodID_6, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStartTag(java.lang.String) throws java.io.IOException
-
-    private static var writeStartTag_MethodID_7: jmethodID?
-
-    open func writeStartTag( tag: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeStartTag", methodSig: "(Ljava/lang/String;)V", methodCache: &MinimalHTMLWriter.writeStartTag_MethodID_7, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeStartTag( _ _tag: String? ) throws /* java.io.IOException */ {
-        try writeStartTag( tag: _tag )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeEndTag(java.lang.String) throws java.io.IOException
-
-    private static var writeEndTag_MethodID_8: jmethodID?
-
-    open func writeEndTag( endTag: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: endTag, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeEndTag", methodSig: "(Ljava/lang/String;)V", methodCache: &MinimalHTMLWriter.writeEndTag_MethodID_8, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeEndTag( _ _endTag: String? ) throws /* java.io.IOException */ {
-        try writeEndTag( endTag: _endTag )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeHeader() throws java.io.IOException
-
-    private static var writeHeader_MethodID_9: jmethodID?
-
-    open func writeHeader() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeHeader", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeHeader_MethodID_9, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeBody() throws java.io.IOException,javax.swing.text.BadLocationException
-
-    private static var writeBody_MethodID_10: jmethodID?
-
-    open func writeBody() throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeBody", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeBody_MethodID_10, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeEndParagraph() throws java.io.IOException
-
-    private static var writeEndParagraph_MethodID_11: jmethodID?
-
-    open func writeEndParagraph() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeEndParagraph", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeEndParagraph_MethodID_11, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStartParagraph(javax.swing.text.Element) throws java.io.IOException
-
-    private static var writeStartParagraph_MethodID_12: jmethodID?
-
-    open func writeStartParagraph( elem: Element? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeStartParagraph", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeStartParagraph_MethodID_12, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeStartParagraph( _ _elem: Element? ) throws /* java.io.IOException */ {
-        try writeStartParagraph( elem: _elem )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeLeaf(javax.swing.text.Element) throws java.io.IOException
-
-    private static var writeLeaf_MethodID_13: jmethodID?
-
-    open func writeLeaf( elem: Element? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLeaf", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeLeaf_MethodID_13, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeLeaf( _ _elem: Element? ) throws /* java.io.IOException */ {
-        try writeLeaf( elem: _elem )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeImage(javax.swing.text.Element) throws java.io.IOException
-
-    private static var writeImage_MethodID_14: jmethodID?
-
-    open func writeImage( elem: Element? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeImage", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeImage_MethodID_14, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeImage( _ _elem: Element? ) throws /* java.io.IOException */ {
-        try writeImage( elem: _elem )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeComponent(javax.swing.text.Element) throws java.io.IOException
-
-    private static var writeComponent_MethodID_15: jmethodID?
-
-    open func writeComponent( elem: Element? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeComponent", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeComponent_MethodID_15, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeComponent( _ _elem: Element? ) throws /* java.io.IOException */ {
-        try writeComponent( elem: _elem )
-    }
 
     /// protected boolean javax.swing.text.html.MinimalHTMLWriter.isText(javax.swing.text.Element)
 
-    private static var isText_MethodID_16: jmethodID?
+    private static var isText_MethodID_5: jmethodID?
 
     open func isText( elem: Element? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isText", methodSig: "(Ljavax/swing/text/Element;)Z", methodCache: &MinimalHTMLWriter.isText_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isText", methodSig: "(Ljavax/swing/text/Element;)Z", methodCache: &MinimalHTMLWriter.isText_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isText( _ _elem: Element? ) -> Bool {
         return isText( elem: _elem )
     }
 
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeContent(javax.swing.text.Element,boolean) throws java.io.IOException,javax.swing.text.BadLocationException
+    /// private boolean javax.swing.text.html.MinimalHTMLWriter.isValidCharacter(char)
 
-    private static var writeContent_MethodID_17: jmethodID?
-
-    open func writeContent( elem: Element?, needsIndenting: Bool ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        __args[1] = JNIType.toJava( value: needsIndenting, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeContent", methodSig: "(Ljavax/swing/text/Element;Z)V", methodCache: &MinimalHTMLWriter.writeContent_MethodID_17, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeContent( _ _elem: Element?, _ _needsIndenting: Bool ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
-        try writeContent( elem: _elem, needsIndenting: _needsIndenting )
-    }
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeHTMLTags(javax.swing.text.AttributeSet) throws java.io.IOException
-
-    private static var writeHTMLTags_MethodID_18: jmethodID?
-
-    open func writeHTMLTags( attr: AttributeSet? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeHTMLTags", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeHTMLTags_MethodID_18, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeHTMLTags( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
-        try writeHTMLTags( attr: _attr )
-    }
+    /// private java.lang.String javax.swing.text.html.MinimalHTMLWriter.mapStyleName(java.lang.String)
 
     /// private void javax.swing.text.html.MinimalHTMLWriter.setFontMask(javax.swing.text.AttributeSet)
 
-    /// private void javax.swing.text.html.MinimalHTMLWriter.writeStartMask(int) throws java.io.IOException
-
-    /// private void javax.swing.text.html.MinimalHTMLWriter.writeEndMask(int) throws java.io.IOException
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeNonHTMLAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
-
-    private static var writeNonHTMLAttributes_MethodID_19: jmethodID?
-
-    open func writeNonHTMLAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeNonHTMLAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeNonHTMLAttributes_MethodID_19, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func writeNonHTMLAttributes( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
-        try writeNonHTMLAttributes( attr: _attr )
-    }
-
-    /// protected boolean javax.swing.text.html.MinimalHTMLWriter.inFontTag()
-
-    private static var inFontTag_MethodID_20: jmethodID?
-
-    open func inFontTag() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "inFontTag", methodSig: "()Z", methodCache: &MinimalHTMLWriter.inFontTag_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.html.MinimalHTMLWriter.endFontTag() throws java.io.IOException
-
-    private static var endFontTag_MethodID_21: jmethodID?
-
-    open func endFontTag() throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "endFontTag", methodSig: "()V", methodCache: &MinimalHTMLWriter.endFontTag_MethodID_21, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-
     /// protected void javax.swing.text.html.MinimalHTMLWriter.startFontTag(java.lang.String) throws java.io.IOException
 
-    private static var startFontTag_MethodID_22: jmethodID?
+    private static var startFontTag_MethodID_6: jmethodID?
 
     open func startFontTag( style: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: style, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startFontTag", methodSig: "(Ljava/lang/String;)V", methodCache: &MinimalHTMLWriter.startFontTag_MethodID_22, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startFontTag", methodSig: "(Ljava/lang/String;)V", methodCache: &MinimalHTMLWriter.startFontTag_MethodID_6, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
@@ -447,11 +188,294 @@ open class MinimalHTMLWriter: AbstractWriter {
 
     /// private void javax.swing.text.html.MinimalHTMLWriter.startSpanTag(java.lang.String) throws java.io.IOException
 
-    /// private void javax.swing.text.html.MinimalHTMLWriter.endSpanTag() throws java.io.IOException
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.text(javax.swing.text.Element) throws java.io.IOException,javax.swing.text.BadLocationException
 
-    /// private java.lang.String javax.swing.text.html.MinimalHTMLWriter.addStyleName(java.lang.String)
+    private static var text_MethodID_7: jmethodID?
 
-    /// private java.lang.String javax.swing.text.html.MinimalHTMLWriter.mapStyleName(java.lang.String)
+    override open func text( elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "text", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.text_MethodID_7, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    override open func text( _ _elem: Element? ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
+        try text( elem: _elem )
+    }
+
+    /// public void javax.swing.text.html.MinimalHTMLWriter.write() throws java.io.IOException,javax.swing.text.BadLocationException
+
+    private static var write_MethodID_8: jmethodID?
+
+    override open func write() throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "write", methodSig: "()V", methodCache: &MinimalHTMLWriter.write_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
+
+    private static var writeAttributes_MethodID_9: jmethodID?
+
+    override open func writeAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeAttributes_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    override open func writeAttributes( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
+        try writeAttributes( attr: _attr )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeBody() throws java.io.IOException,javax.swing.text.BadLocationException
+
+    private static var writeBody_MethodID_10: jmethodID?
+
+    open func writeBody() throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeBody", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeBody_MethodID_10, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeComponent(javax.swing.text.Element) throws java.io.IOException
+
+    private static var writeComponent_MethodID_11: jmethodID?
+
+    open func writeComponent( elem: Element? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeComponent", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeComponent_MethodID_11, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeComponent( _ _elem: Element? ) throws /* java.io.IOException */ {
+        try writeComponent( elem: _elem )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeContent(javax.swing.text.Element,boolean) throws java.io.IOException,javax.swing.text.BadLocationException
+
+    private static var writeContent_MethodID_12: jmethodID?
+
+    open func writeContent( elem: Element?, needsIndenting: Bool ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(needsIndenting ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeContent", methodSig: "(Ljavax/swing/text/Element;Z)V", methodCache: &MinimalHTMLWriter.writeContent_MethodID_12, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeContent( _ _elem: Element?, _ _needsIndenting: Bool ) throws /* java.io.IOException, javax.swing.text.BadLocationException */ {
+        try writeContent( elem: _elem, needsIndenting: _needsIndenting )
+    }
+
+    /// private void javax.swing.text.html.MinimalHTMLWriter.writeEndMask(int) throws java.io.IOException
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeEndParagraph() throws java.io.IOException
+
+    private static var writeEndParagraph_MethodID_13: jmethodID?
+
+    open func writeEndParagraph() throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeEndParagraph", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeEndParagraph_MethodID_13, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeEndTag(java.lang.String) throws java.io.IOException
+
+    private static var writeEndTag_MethodID_14: jmethodID?
+
+    open func writeEndTag( endTag: String? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: endTag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeEndTag", methodSig: "(Ljava/lang/String;)V", methodCache: &MinimalHTMLWriter.writeEndTag_MethodID_14, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeEndTag( _ _endTag: String? ) throws /* java.io.IOException */ {
+        try writeEndTag( endTag: _endTag )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeHTMLTags(javax.swing.text.AttributeSet) throws java.io.IOException
+
+    private static var writeHTMLTags_MethodID_15: jmethodID?
+
+    open func writeHTMLTags( attr: AttributeSet? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeHTMLTags", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeHTMLTags_MethodID_15, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeHTMLTags( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
+        try writeHTMLTags( attr: _attr )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeHeader() throws java.io.IOException
+
+    private static var writeHeader_MethodID_16: jmethodID?
+
+    open func writeHeader() throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeHeader", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeHeader_MethodID_16, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeImage(javax.swing.text.Element) throws java.io.IOException
+
+    private static var writeImage_MethodID_17: jmethodID?
+
+    open func writeImage( elem: Element? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeImage", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeImage_MethodID_17, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeImage( _ _elem: Element? ) throws /* java.io.IOException */ {
+        try writeImage( elem: _elem )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeLeaf(javax.swing.text.Element) throws java.io.IOException
+
+    private static var writeLeaf_MethodID_18: jmethodID?
+
+    open func writeLeaf( elem: Element? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeLeaf", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeLeaf_MethodID_18, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeLeaf( _ _elem: Element? ) throws /* java.io.IOException */ {
+        try writeLeaf( elem: _elem )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeNonHTMLAttributes(javax.swing.text.AttributeSet) throws java.io.IOException
+
+    private static var writeNonHTMLAttributes_MethodID_19: jmethodID?
+
+    open func writeNonHTMLAttributes( attr: AttributeSet? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeNonHTMLAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &MinimalHTMLWriter.writeNonHTMLAttributes_MethodID_19, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeNonHTMLAttributes( _ _attr: AttributeSet? ) throws /* java.io.IOException */ {
+        try writeNonHTMLAttributes( attr: _attr )
+    }
+
+    /// private void javax.swing.text.html.MinimalHTMLWriter.writeStartMask(int) throws java.io.IOException
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStartParagraph(javax.swing.text.Element) throws java.io.IOException
+
+    private static var writeStartParagraph_MethodID_20: jmethodID?
+
+    open func writeStartParagraph( elem: Element? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: elem, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeStartParagraph", methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &MinimalHTMLWriter.writeStartParagraph_MethodID_20, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeStartParagraph( _ _elem: Element? ) throws /* java.io.IOException */ {
+        try writeStartParagraph( elem: _elem )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStartTag(java.lang.String) throws java.io.IOException
+
+    private static var writeStartTag_MethodID_21: jmethodID?
+
+    open func writeStartTag( tag: String? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tag, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeStartTag", methodSig: "(Ljava/lang/String;)V", methodCache: &MinimalHTMLWriter.writeStartTag_MethodID_21, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func writeStartTag( _ _tag: String? ) throws /* java.io.IOException */ {
+        try writeStartTag( tag: _tag )
+    }
+
+    /// protected void javax.swing.text.html.MinimalHTMLWriter.writeStyles() throws java.io.IOException
+
+    private static var writeStyles_MethodID_22: jmethodID?
+
+    open func writeStyles() throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "writeStyles", methodSig: "()V", methodCache: &MinimalHTMLWriter.writeStyles_MethodID_22, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
 
 }
 

@@ -22,33 +22,35 @@ open class NumberFormatter: InternationalFormatter {
 
     /// private java.text.Format javax.swing.text.InternationalFormatter.format
 
+    /// private transient boolean javax.swing.text.InternationalFormatter.ignoreDocumentMutate
+
+    /// private transient java.text.AttributedCharacterIterator javax.swing.text.InternationalFormatter.iterator
+
+    /// private transient java.util.BitSet javax.swing.text.InternationalFormatter.literalMask
+
     /// private java.lang.Comparable javax.swing.text.InternationalFormatter.max
 
     /// private java.lang.Comparable javax.swing.text.InternationalFormatter.min
 
-    /// private transient java.util.BitSet javax.swing.text.InternationalFormatter.literalMask
-
-    /// private transient java.text.AttributedCharacterIterator javax.swing.text.InternationalFormatter.iterator
+    /// private transient java.lang.String javax.swing.text.InternationalFormatter.string
 
     /// private transient boolean javax.swing.text.InternationalFormatter.validMask
 
-    /// private transient java.lang.String javax.swing.text.InternationalFormatter.string
-
-    /// private transient boolean javax.swing.text.InternationalFormatter.ignoreDocumentMutate
-
     /// private boolean javax.swing.text.DefaultFormatter.allowsInvalid
-
-    /// private boolean javax.swing.text.DefaultFormatter.overwriteMode
 
     /// private boolean javax.swing.text.DefaultFormatter.commitOnEdit
 
-    /// private java.lang.Class javax.swing.text.DefaultFormatter.valueClass
+    /// private javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.documentFilter
 
     /// private javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.navigationFilter
 
-    /// private javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.documentFilter
+    /// private boolean javax.swing.text.DefaultFormatter.overwriteMode
 
     /// transient javax.swing.text.DefaultFormatter$ReplaceHolder javax.swing.text.DefaultFormatter.replaceHolder
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.Class javax.swing.text.DefaultFormatter.valueClass
 
     /// private javax.swing.JFormattedTextField javax.swing.JFormattedTextField$AbstractFormatter.ftf
 
@@ -57,8 +59,8 @@ open class NumberFormatter: InternationalFormatter {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/NumberFormatter", classCache: &NumberFormatter.NumberFormatterJNIClass, methodSig: "()V", methodCache: &NumberFormatter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -68,61 +70,71 @@ open class NumberFormatter: InternationalFormatter {
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( arg0: /* java.text.NumberFormat */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( arg0: /* class java.text.NumberFormat */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/NumberFormatter", classCache: &NumberFormatter.NumberFormatterJNIClass, methodSig: "(Ljava/text/NumberFormat;)V", methodCache: &NumberFormatter.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _arg0: /* java.text.NumberFormat */ UnclassedObject? ) {
+    public convenience init( _ _arg0: /* class java.text.NumberFormat */ UnavailableObject? ) {
         self.init( arg0: _arg0 )
     }
 
+    /// private java.lang.Object javax.swing.text.NumberFormatter.convertValueToValueClass(java.lang.Object,java.lang.Class)
+
+    /// private java.text.DecimalFormatSymbols javax.swing.text.NumberFormatter.getDecimalFormatSymbols()
+
+    /// private char javax.swing.text.NumberFormatter.getDecimalSeparator()
+
+    /// private java.text.NumberFormat$Field javax.swing.text.NumberFormatter.getFieldFrom(int,int)
+
+    /// private char javax.swing.text.NumberFormatter.getMinusSign()
+
+    /// private char javax.swing.text.NumberFormatter.getPositiveSign()
+
+    /// boolean javax.swing.text.NumberFormatter.isLegalInsertText(java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// boolean javax.swing.text.NumberFormatter.isLiteral(java.util.Map)
+
+    // Skipping method: true false false false false 
+
+    /// boolean javax.swing.text.NumberFormatter.isNavigatable(int)
+
+    // Skipping method: true false false false false 
+
     /// void javax.swing.text.NumberFormatter.replace(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    /// java.lang.Object javax.swing.text.NumberFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.text.NumberFormatter.setFormat(java.text.Format)
 
     private static var setFormat_MethodID_3: jmethodID?
 
-    open func setFormat( arg0: /* java.text.Format */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setFormat( arg0: /* class java.text.Format */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFormat", methodSig: "(Ljava/text/Format;)V", methodCache: &NumberFormatter.setFormat_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    override open func setFormat( _ _arg0: /* java.text.Format */ UnclassedObject? ) {
+    override open func setFormat( _ _arg0: /* class java.text.Format */ UnavailableObject? ) {
         setFormat( arg0: _arg0 )
     }
 
-    /// private java.text.DecimalFormatSymbols javax.swing.text.NumberFormatter.getDecimalFormatSymbols()
+    /// java.lang.Object javax.swing.text.NumberFormatter.stringToValue(java.lang.String,java.text.Format) throws java.text.ParseException
 
-    /// private char javax.swing.text.NumberFormatter.getMinusSign()
+    // Skipping method: true false false false false 
 
-    /// boolean javax.swing.text.NumberFormatter.isLiteral(java.util.Map)
-
-    /// boolean javax.swing.text.NumberFormatter.isNavigatable(int)
-
-    /// boolean javax.swing.text.NumberFormatter.isLegalInsertText(java.lang.String)
-
-    /// private char javax.swing.text.NumberFormatter.getDecimalSeparator()
-
-    /// private java.lang.Object javax.swing.text.NumberFormatter.convertValueToValueClass(java.lang.Object,java.lang.Class)
-
-    /// private char javax.swing.text.NumberFormatter.getPositiveSign()
-
-    /// private java.text.NumberFormat$Field javax.swing.text.NumberFormatter.getFieldFrom(int,int)
-
-    /// private boolean javax.swing.text.NumberFormatter.toggleSignIfNecessary(javax.swing.text.DocumentFilter$FilterBypass,int,char) throws javax.swing.text.BadLocationException
+    /// private java.lang.Object javax.swing.text.NumberFormatter.toggleExponentSign(int,char) throws javax.swing.text.BadLocationException,java.text.ParseException
 
     /// private java.lang.Object javax.swing.text.NumberFormatter.toggleSign(boolean) throws java.text.ParseException
 
-    /// private java.lang.Object javax.swing.text.NumberFormatter.toggleExponentSign(int,char) throws javax.swing.text.BadLocationException,java.text.ParseException
+    /// private boolean javax.swing.text.NumberFormatter.toggleSignIfNecessary(javax.swing.text.DocumentFilter$FilterBypass,int,char) throws javax.swing.text.BadLocationException
 
 }
 

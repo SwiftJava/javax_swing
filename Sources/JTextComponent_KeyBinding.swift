@@ -16,14 +16,31 @@ open class JTextComponent_KeyBinding: java_swift.JavaObject {
 
     private static var JTextComponent_KeyBindingJNIClass: jclass?
 
+    /// public java.lang.String javax.swing.text.JTextComponent$KeyBinding.actionName
+
+    private static var actionName_FieldID: jfieldID?
+
+    open var actionName: String! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "actionName", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_KeyBinding.actionName_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "actionName", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_KeyBinding.actionName_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// public javax.swing.KeyStroke javax.swing.text.JTextComponent$KeyBinding.key
 
     private static var key_FieldID: jfieldID?
 
     open var key: KeyStroke! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "key", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &JTextComponent_KeyBinding.key_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "key", fieldType: "Ljavax/swing/KeyStroke;", fieldCache: &JTextComponent_KeyBinding.key_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? KeyStroke( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -33,30 +50,13 @@ open class JTextComponent_KeyBinding: java_swift.JavaObject {
         }
     }
 
-    /// public java.lang.String javax.swing.text.JTextComponent$KeyBinding.actionName
-
-    private static var actionName_FieldID: jfieldID?
-
-    open var actionName: String! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "actionName", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_KeyBinding.actionName_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "actionName", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_KeyBinding.actionName_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// public javax.swing.text.JTextComponent$KeyBinding(javax.swing.KeyStroke,java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: KeyStroke?, arg1: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/JTextComponent$KeyBinding", classCache: &JTextComponent_KeyBinding.JTextComponent_KeyBindingJNIClass, methodSig: "(Ljavax/swing/KeyStroke;Ljava/lang/String;)V", methodCache: &JTextComponent_KeyBinding.new_MethodID_1, args: &__args, locals: &__locals )

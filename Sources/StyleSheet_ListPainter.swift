@@ -6,7 +6,7 @@ import java_awt
 
 /// class javax.swing.text.html.StyleSheet$ListPainter ///
 
-open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class StyleSheet_ListPainter: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -19,68 +19,92 @@ open class StyleSheet_ListPainter: java_swift.JavaObject, /* java.io.Serializabl
 
     /// static final char[][] javax.swing.text.html.StyleSheet$ListPainter.romanChars
 
-    /// private java.awt.Rectangle javax.swing.text.html.StyleSheet$ListPainter.paintRect
+    // Skipping field: true false false false false false 
+
+    /// private int javax.swing.text.html.StyleSheet$ListPainter.bulletgap
 
     /// private boolean javax.swing.text.html.StyleSheet$ListPainter.checkedForStart
+
+    /// java.net.URL javax.swing.text.html.StyleSheet$ListPainter.imageurl
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.Icon javax.swing.text.html.StyleSheet$ListPainter.img
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean javax.swing.text.html.StyleSheet$ListPainter.isLeftToRight
+
+    /// private java.awt.Rectangle javax.swing.text.html.StyleSheet$ListPainter.paintRect
+
+    /// private javax.swing.text.html.StyleSheet javax.swing.text.html.StyleSheet$ListPainter.ss
 
     /// private int javax.swing.text.html.StyleSheet$ListPainter.start
 
     /// private javax.swing.text.html.CSS$Value javax.swing.text.html.StyleSheet$ListPainter.type
 
-    /// java.net.URL javax.swing.text.html.StyleSheet$ListPainter.imageurl
-
-    /// private javax.swing.text.html.StyleSheet javax.swing.text.html.StyleSheet$ListPainter.ss
-
-    /// javax.swing.Icon javax.swing.text.html.StyleSheet$ListPainter.img
-
-    /// private int javax.swing.text.html.StyleSheet$ListPainter.bulletgap
-
-    /// private boolean javax.swing.text.html.StyleSheet$ListPainter.isLeftToRight
-
     /// javax.swing.text.html.StyleSheet$ListPainter(javax.swing.text.AttributeSet,javax.swing.text.html.StyleSheet)
+
+    // Skipping init: true false false 
+
+    /// void javax.swing.text.html.StyleSheet$ListPainter.drawIcon(java.awt.Graphics,int,int,int,int,float,java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.StyleSheet$ListPainter.drawLetter(java.awt.Graphics,char,int,int,int,int,float,int)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.html.StyleSheet$ListPainter.drawShape(java.awt.Graphics,javax.swing.text.html.CSS$Value,int,int,int,int,float)
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatAlphaNumerals(int)
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatItemNum(int,char)
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanDigit(int,int)
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int)
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int,int)
+
+    // Skipping method: true false false false false 
+
+    /// private javax.swing.text.html.CSS$Value javax.swing.text.html.StyleSheet$ListPainter.getChildType(javax.swing.text.View)
+
+    /// private int javax.swing.text.html.StyleSheet$ListPainter.getRenderIndex(javax.swing.text.View,int)
+
+    /// private void javax.swing.text.html.StyleSheet$ListPainter.getStart(javax.swing.text.View)
 
     /// public void javax.swing.text.html.StyleSheet$ListPainter.paint(java.awt.Graphics,float,float,float,float,javax.swing.text.View,int)
 
     private static var paint_MethodID_1: jmethodID?
 
     open func paint( g: java_awt.Graphics?, x: Float, y: Float, w: Float, h: Float, v: View?, item: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: w, locals: &__locals )
-        __args[4] = JNIType.toJava( value: h, locals: &__locals )
+        __args[1] = jvalue( f: x )
+        __args[2] = jvalue( f: y )
+        __args[3] = jvalue( f: w )
+        __args[4] = jvalue( f: h )
         __args[5] = JNIType.toJava( value: v, locals: &__locals )
-        __args[6] = JNIType.toJava( value: item, locals: &__locals )
+        __args[6] = jvalue( i: jint(item) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;FFFFLjavax/swing/text/View;I)V", methodCache: &StyleSheet_ListPainter.paint_MethodID_1, args: &__args, locals: &__locals )
     }
 
     open func paint( _ _g: java_awt.Graphics?, _ _x: Float, _ _y: Float, _ _w: Float, _ _h: Float, _ _v: View?, _ _item: Int ) {
         paint( g: _g, x: _x, y: _y, w: _w, h: _h, v: _v, item: _item )
     }
-
-    /// private void javax.swing.text.html.StyleSheet$ListPainter.getStart(javax.swing.text.View)
-
-    /// private javax.swing.text.html.CSS$Value javax.swing.text.html.StyleSheet$ListPainter.getChildType(javax.swing.text.View)
-
-    /// private int javax.swing.text.html.StyleSheet$ListPainter.getRenderIndex(javax.swing.text.View,int)
-
-    /// void javax.swing.text.html.StyleSheet$ListPainter.drawIcon(java.awt.Graphics,int,int,int,int,float,java.awt.Component)
-
-    /// void javax.swing.text.html.StyleSheet$ListPainter.drawShape(java.awt.Graphics,javax.swing.text.html.CSS$Value,int,int,int,int,float)
-
-    /// void javax.swing.text.html.StyleSheet$ListPainter.drawLetter(java.awt.Graphics,char,int,int,int,int,float,int)
-
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatItemNum(int,char)
-
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatAlphaNumerals(int)
-
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int)
-
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanNumerals(int,int)
-
-    /// java.lang.String javax.swing.text.html.StyleSheet$ListPainter.formatRomanDigit(int,int)
 
 }
 

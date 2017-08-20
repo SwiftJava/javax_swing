@@ -18,34 +18,44 @@ open class HTMLDocument_RunElement: AbstractDocument_LeafElement {
 
     /// final javax.swing.text.html.HTMLDocument javax.swing.text.html.HTMLDocument$RunElement.this$0
 
+    // Skipping field: true false false false false false 
+
     /// private transient javax.swing.text.Position javax.swing.text.AbstractDocument$LeafElement.p0
 
     /// private transient javax.swing.text.Position javax.swing.text.AbstractDocument$LeafElement.p1
 
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$LeafElement.this$0
 
-    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+    // Skipping field: true false false false false false 
 
     /// private transient javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AbstractElement.attributes
 
+    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$AbstractElement.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.Object javax.swing.text.AttributeSet.NameAttribute
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.Object javax.swing.text.AttributeSet.ResolveAttribute
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.html.HTMLDocument$RunElement(javax.swing.text.html.HTMLDocument,javax.swing.text.Element,javax.swing.text.AttributeSet,int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: HTMLDocument?, parent: Element?, a: AttributeSet?, offs0: Int, offs1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: offs0, locals: &__locals )
-        __args[4] = JNIType.toJava( value: offs1, locals: &__locals )
+        __args[3] = jvalue( i: jint(offs0) )
+        __args[4] = jvalue( i: jint(offs1) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTMLDocument$RunElement", classCache: &HTMLDocument_RunElement.HTMLDocument_RunElementJNIClass, methodSig: "(Ljavax/swing/text/html/HTMLDocument;Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;II)V", methodCache: &HTMLDocument_RunElement.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -57,7 +67,11 @@ open class HTMLDocument_RunElement: AbstractDocument_LeafElement {
 
     /// public java.lang.String javax.swing.text.html.HTMLDocument$RunElement.getName()
 
+    // Skipping method: false true false false false 
+
     /// public javax.swing.text.AttributeSet javax.swing.text.html.HTMLDocument$RunElement.getResolveParent()
+
+    // Skipping method: false true false false false 
 
 }
 

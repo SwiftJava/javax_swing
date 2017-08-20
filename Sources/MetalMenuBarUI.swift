@@ -17,48 +17,14 @@ open class MetalMenuBarUI: BasicMenuBarUI {
 
     private static var MetalMenuBarUIJNIClass: jclass?
 
-    /// protected javax.swing.JMenuBar javax.swing.plaf.basic.BasicMenuBarUI.menuBar
-
-    private static var menuBar_FieldID: jfieldID?
-
-    override open var menuBar: JMenuBar! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "menuBar", fieldType: "Ljavax/swing/JMenuBar;", fieldCache: &MetalMenuBarUI.menuBar_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JMenuBar( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "menuBar", fieldType: "Ljavax/swing/JMenuBar;", fieldCache: &MetalMenuBarUI.menuBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.event.ContainerListener javax.swing.plaf.basic.BasicMenuBarUI.containerListener
-
-    private static var containerListener_FieldID: jfieldID?
-
-    override open var containerListener: java_awt.ContainerListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "containerListener", fieldType: "Ljava/awt/event/ContainerListener;", fieldCache: &MetalMenuBarUI.containerListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.ContainerListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "containerListener", fieldType: "Ljava/awt/event/ContainerListener;", fieldCache: &MetalMenuBarUI.containerListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicMenuBarUI.changeListener
 
     private static var changeListener_FieldID: jfieldID?
 
     override open var changeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalMenuBarUI.changeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalMenuBarUI.changeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -68,29 +34,61 @@ open class MetalMenuBarUI: BasicMenuBarUI {
         }
     }
 
+    /// protected java.awt.event.ContainerListener javax.swing.plaf.basic.BasicMenuBarUI.containerListener
+
+    private static var containerListener_FieldID: jfieldID?
+
+    override open var containerListener: java_awt.ContainerListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "containerListener", fieldType: "Ljava/awt/event/ContainerListener;", fieldCache: &MetalMenuBarUI.containerListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.ContainerListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "containerListener", fieldType: "Ljava/awt/event/ContainerListener;", fieldCache: &MetalMenuBarUI.containerListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// private javax.swing.plaf.basic.BasicMenuBarUI$Handler javax.swing.plaf.basic.BasicMenuBarUI.handler
+
+    /// protected javax.swing.JMenuBar javax.swing.plaf.basic.BasicMenuBarUI.menuBar
+
+    private static var menuBar_FieldID: jfieldID?
+
+    override open var menuBar: JMenuBar! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "menuBar", fieldType: "Ljavax/swing/JMenuBar;", fieldCache: &MetalMenuBarUI.menuBar_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JMenuBar( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "menuBar", fieldType: "Ljavax/swing/JMenuBar;", fieldCache: &MetalMenuBarUI.menuBar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// public javax.swing.plaf.metal.MetalMenuBarUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalMenuBarUI", classCache: &MetalMenuBarUI.MetalMenuBarUIJNIClass, methodSig: "()V", methodCache: &MetalMenuBarUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
-
-    /// public void javax.swing.plaf.metal.MetalMenuBarUI.update(java.awt.Graphics,javax.swing.JComponent)
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalMenuBarUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalMenuBarUI", classCache: &MetalMenuBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -103,7 +101,15 @@ open class MetalMenuBarUI: BasicMenuBarUI {
 
     /// public void javax.swing.plaf.metal.MetalMenuBarUI.installUI(javax.swing.JComponent)
 
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.plaf.metal.MetalMenuBarUI.uninstallUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.metal.MetalMenuBarUI.update(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
 }
 

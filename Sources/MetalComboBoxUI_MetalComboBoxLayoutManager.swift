@@ -19,15 +19,19 @@ open class MetalComboBoxUI_MetalComboBoxLayoutManager: BasicComboBoxUI_ComboBoxL
 
     /// final javax.swing.plaf.metal.MetalComboBoxUI javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager.this$0
 
+    // Skipping field: true false false false false false 
+
     /// final javax.swing.plaf.basic.BasicComboBoxUI javax.swing.plaf.basic.BasicComboBoxUI$ComboBoxLayoutManager.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager(javax.swing.plaf.metal.MetalComboBoxUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: MetalComboBoxUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxUI$MetalComboBoxLayoutManager", classCache: &MetalComboBoxUI_MetalComboBoxLayoutManager.MetalComboBoxUI_MetalComboBoxLayoutManagerJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalComboBoxUI;)V", methodCache: &MetalComboBoxUI_MetalComboBoxLayoutManager.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,13 +44,15 @@ open class MetalComboBoxUI_MetalComboBoxLayoutManager: BasicComboBoxUI_ComboBoxL
 
     /// public void javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager.layoutContainer(java.awt.Container)
 
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.plaf.metal.MetalComboBoxUI$MetalComboBoxLayoutManager.superLayout(java.awt.Container)
 
     private static var superLayout_MethodID_2: jmethodID?
 
     open func superLayout( parent: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "superLayout", methodSig: "(Ljava/awt/Container;)V", methodCache: &MetalComboBoxUI_MetalComboBoxLayoutManager.superLayout_MethodID_2, args: &__args, locals: &__locals )
     }

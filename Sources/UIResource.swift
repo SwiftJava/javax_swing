@@ -16,4 +16,3 @@ open class UIResourceForward: JNIObjectForward, UIResource {
 
 }
 
-

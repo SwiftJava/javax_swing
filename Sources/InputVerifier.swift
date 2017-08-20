@@ -21,43 +21,43 @@ open class InputVerifier: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/InputVerifier", classCache: &InputVerifier.InputVerifierJNIClass, methodSig: "()V", methodCache: &InputVerifier.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract boolean javax.swing.InputVerifier.verify(javax.swing.JComponent)
-
-    private static var verify_MethodID_2: jmethodID?
-
-    open func verify( input: JComponent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: input, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "verify", methodSig: "(Ljavax/swing/JComponent;)Z", methodCache: &InputVerifier.verify_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func verify( _ _input: JComponent? ) -> Bool {
-        return verify( input: _input )
-    }
-
     /// public boolean javax.swing.InputVerifier.shouldYieldFocus(javax.swing.JComponent)
 
-    private static var shouldYieldFocus_MethodID_3: jmethodID?
+    private static var shouldYieldFocus_MethodID_2: jmethodID?
 
     open func shouldYieldFocus( input: JComponent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: input, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldYieldFocus", methodSig: "(Ljavax/swing/JComponent;)Z", methodCache: &InputVerifier.shouldYieldFocus_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldYieldFocus", methodSig: "(Ljavax/swing/JComponent;)Z", methodCache: &InputVerifier.shouldYieldFocus_MethodID_2, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func shouldYieldFocus( _ _input: JComponent? ) -> Bool {
         return shouldYieldFocus( input: _input )
+    }
+
+    /// public abstract boolean javax.swing.InputVerifier.verify(javax.swing.JComponent)
+
+    private static var verify_MethodID_3: jmethodID?
+
+    open func verify( input: JComponent? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: input, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "verify", methodSig: "(Ljavax/swing/JComponent;)Z", methodCache: &InputVerifier.verify_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func verify( _ _input: JComponent? ) -> Bool {
+        return verify( input: _input )
     }
 
 }

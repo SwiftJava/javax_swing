@@ -18,13 +18,15 @@ open class BasicListUI_ListSelectionHandler: java_swift.JavaObject, ListSelectio
 
     /// final javax.swing.plaf.basic.BasicListUI javax.swing.plaf.basic.BasicListUI$ListSelectionHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicListUI$ListSelectionHandler(javax.swing.plaf.basic.BasicListUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicListUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicListUI$ListSelectionHandler", classCache: &BasicListUI_ListSelectionHandler.BasicListUI_ListSelectionHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicListUI;)V", methodCache: &BasicListUI_ListSelectionHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicListUI_ListSelectionHandler: java_swift.JavaObject, ListSelectio
     private static var valueChanged_MethodID_2: jmethodID?
 
     open func valueChanged( e: ListSelectionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/ListSelectionEvent;)V", methodCache: &BasicListUI_ListSelectionHandler.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }

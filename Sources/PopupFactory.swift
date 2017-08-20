@@ -18,15 +18,21 @@ open class PopupFactory: java_swift.JavaObject {
 
     private static var PopupFactoryJNIClass: jclass?
 
-    /// private static final java.lang.Object javax.swing.PopupFactory.SharedInstanceKey
+    /// static final int javax.swing.PopupFactory.HEAVY_WEIGHT_POPUP
 
-    /// private static final int javax.swing.PopupFactory.MAX_CACHE_SIZE
+    // Skipping field: true false false false false false 
 
     /// static final int javax.swing.PopupFactory.LIGHT_WEIGHT_POPUP
 
+    // Skipping field: true false false false false false 
+
+    /// private static final int javax.swing.PopupFactory.MAX_CACHE_SIZE
+
     /// static final int javax.swing.PopupFactory.MEDIUM_WEIGHT_POPUP
 
-    /// static final int javax.swing.PopupFactory.HEAVY_WEIGHT_POPUP
+    // Skipping field: true false false false false false 
+
+    /// private static final java.lang.Object javax.swing.PopupFactory.SharedInstanceKey
 
     /// private int javax.swing.PopupFactory.popupType
 
@@ -35,8 +41,8 @@ open class PopupFactory: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/PopupFactory", classCache: &PopupFactory.PopupFactoryJNIClass, methodSig: "()V", methodCache: &PopupFactory.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -47,30 +53,52 @@ open class PopupFactory: java_swift.JavaObject {
     private static var getSharedInstance_MethodID_2: jmethodID?
 
     open class func getSharedInstance() -> PopupFactory! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/PopupFactory", classCache: &PopupFactoryJNIClass, methodName: "getSharedInstance", methodSig: "()Ljavax/swing/PopupFactory;", methodCache: &getSharedInstance_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? PopupFactory( javaObject: __return ) : nil
     }
 
 
-    /// void javax.swing.PopupFactory.setPopupType(int)
+    /// public static void javax.swing.PopupFactory.setSharedInstance(javax.swing.PopupFactory)
+
+    private static var setSharedInstance_MethodID_3: jmethodID?
+
+    open class func setSharedInstance( factory: PopupFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: factory, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/PopupFactory", classCache: &PopupFactoryJNIClass, methodName: "setSharedInstance", methodSig: "(Ljavax/swing/PopupFactory;)V", methodCache: &setSharedInstance_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+    open class func setSharedInstance( _ _factory: PopupFactory? ) {
+        setSharedInstance( factory: _factory )
+    }
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getHeadlessPopup(java.awt.Component,java.awt.Component,int,int)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getHeavyWeightPopup(java.awt.Component,java.awt.Component,int,int)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getLightWeightPopup(java.awt.Component,java.awt.Component,int,int)
+
+    /// private javax.swing.Popup javax.swing.PopupFactory.getMediumWeightPopup(java.awt.Component,java.awt.Component,int,int)
 
     /// public javax.swing.Popup javax.swing.PopupFactory.getPopup(java.awt.Component,java.awt.Component,int,int) throws java.lang.IllegalArgumentException
 
-    private static var getPopup_MethodID_3: jmethodID?
+    private static var getPopup_MethodID_4: jmethodID?
 
     open func getPopup( owner: java_awt.Component?, contents: java_awt.Component?, x: Int, y: Int ) throws /* java.lang.IllegalArgumentException */ -> Popup! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: contents, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopup", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;II)Ljavax/swing/Popup;", methodCache: &PopupFactory.getPopup_MethodID_3, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPopup", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;II)Ljavax/swing/Popup;", methodCache: &PopupFactory.getPopup_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.IllegalArgumentException( javaObject: throwable )
         }
         return __return != nil ? Popup( javaObject: __return ) : nil
@@ -82,34 +110,17 @@ open class PopupFactory: java_swift.JavaObject {
 
     /// private javax.swing.Popup javax.swing.PopupFactory.getPopup(java.awt.Component,java.awt.Component,int,int,int)
 
-    /// public static void javax.swing.PopupFactory.setSharedInstance(javax.swing.PopupFactory)
-
-    private static var setSharedInstance_MethodID_4: jmethodID?
-
-    open class func setSharedInstance( factory: PopupFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: factory, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/PopupFactory", classCache: &PopupFactoryJNIClass, methodName: "setSharedInstance", methodSig: "(Ljavax/swing/PopupFactory;)V", methodCache: &setSharedInstance_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open class func setSharedInstance( _ _factory: PopupFactory? ) {
-        setSharedInstance( factory: _factory )
-    }
+    /// private int javax.swing.PopupFactory.getPopupType(java.awt.Component,java.awt.Component,int,int)
 
     /// int javax.swing.PopupFactory.getPopupType()
 
-    /// private int javax.swing.PopupFactory.getPopupType(java.awt.Component,java.awt.Component,int,int)
+    // Skipping method: true false false false false 
 
     /// private boolean javax.swing.PopupFactory.invokerInHeavyWeightPopup(java.awt.Component)
 
-    /// private javax.swing.Popup javax.swing.PopupFactory.getHeadlessPopup(java.awt.Component,java.awt.Component,int,int)
+    /// void javax.swing.PopupFactory.setPopupType(int)
 
-    /// private javax.swing.Popup javax.swing.PopupFactory.getHeavyWeightPopup(java.awt.Component,java.awt.Component,int,int)
-
-    /// private javax.swing.Popup javax.swing.PopupFactory.getLightWeightPopup(java.awt.Component,java.awt.Component,int,int)
-
-    /// private javax.swing.Popup javax.swing.PopupFactory.getMediumWeightPopup(java.awt.Component,java.awt.Component,int,int)
+    // Skipping method: true false false false false 
 
 }
 

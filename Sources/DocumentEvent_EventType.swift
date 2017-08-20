@@ -16,6 +16,18 @@ open class DocumentEvent_EventType: java_swift.JavaObject {
 
     private static var DocumentEvent_EventTypeJNIClass: jclass?
 
+    /// public static final javax.swing.event.DocumentEvent$EventType javax.swing.event.DocumentEvent$EventType.CHANGE
+
+    private static var CHANGE_FieldID: jfieldID?
+
+    open static var CHANGE: DocumentEvent_EventType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "CHANGE", fieldType: "Ljavax/swing/event/DocumentEvent$EventType;", fieldCache: &CHANGE_FieldID, className: "javax/swing/event/DocumentEvent$EventType", classCache: &DocumentEvent_EventTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? DocumentEvent_EventType( javaObject: __value ) : nil
+        }
+    }
+
     /// public static final javax.swing.event.DocumentEvent$EventType javax.swing.event.DocumentEvent$EventType.INSERT
 
     private static var INSERT_FieldID: jfieldID?
@@ -23,6 +35,7 @@ open class DocumentEvent_EventType: java_swift.JavaObject {
     open static var INSERT: DocumentEvent_EventType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INSERT", fieldType: "Ljavax/swing/event/DocumentEvent$EventType;", fieldCache: &INSERT_FieldID, className: "javax/swing/event/DocumentEvent$EventType", classCache: &DocumentEvent_EventTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? DocumentEvent_EventType( javaObject: __value ) : nil
         }
     }
@@ -34,17 +47,7 @@ open class DocumentEvent_EventType: java_swift.JavaObject {
     open static var REMOVE: DocumentEvent_EventType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "REMOVE", fieldType: "Ljavax/swing/event/DocumentEvent$EventType;", fieldCache: &REMOVE_FieldID, className: "javax/swing/event/DocumentEvent$EventType", classCache: &DocumentEvent_EventTypeJNIClass )
-            return __value != nil ? DocumentEvent_EventType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final javax.swing.event.DocumentEvent$EventType javax.swing.event.DocumentEvent$EventType.CHANGE
-
-    private static var CHANGE_FieldID: jfieldID?
-
-    open static var CHANGE: DocumentEvent_EventType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "CHANGE", fieldType: "Ljavax/swing/event/DocumentEvent$EventType;", fieldCache: &CHANGE_FieldID, className: "javax/swing/event/DocumentEvent$EventType", classCache: &DocumentEvent_EventTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? DocumentEvent_EventType( javaObject: __value ) : nil
         }
     }
@@ -54,6 +57,8 @@ open class DocumentEvent_EventType: java_swift.JavaObject {
     /// private javax.swing.event.DocumentEvent$EventType(java.lang.String)
 
     /// public java.lang.String javax.swing.event.DocumentEvent$EventType.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

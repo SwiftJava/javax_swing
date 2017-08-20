@@ -16,31 +16,14 @@ open class DefaultStyledDocument_AttributeUndoableEdit: AbstractUndoableEdit {
 
     private static var DefaultStyledDocument_AttributeUndoableEditJNIClass: jclass?
 
-    /// protected javax.swing.text.AttributeSet javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.newAttributes
-
-    private static var newAttributes_FieldID: jfieldID?
-
-    open var newAttributes: AttributeSet! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "newAttributes", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.newAttributes_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? AttributeSetForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "newAttributes", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.newAttributes_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.text.AttributeSet javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.copy
 
     private static var copy_FieldID: jfieldID?
 
     open var copy: AttributeSet! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "copy", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.copy_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "copy", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.copy_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? AttributeSetForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -50,31 +33,14 @@ open class DefaultStyledDocument_AttributeUndoableEdit: AbstractUndoableEdit {
         }
     }
 
-    /// protected boolean javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.isReplacing
-
-    private static var isReplacing_FieldID: jfieldID?
-
-    open var isReplacing: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "isReplacing", fieldType: "Z", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.isReplacing_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "isReplacing", fieldType: "Z", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.isReplacing_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.text.Element javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.element
 
     private static var element_FieldID: jfieldID?
 
     open var element: Element! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "element", fieldType: "Ljavax/swing/text/Element;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.element_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "element", fieldType: "Ljavax/swing/text/Element;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.element_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ElementForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -84,24 +50,65 @@ open class DefaultStyledDocument_AttributeUndoableEdit: AbstractUndoableEdit {
         }
     }
 
-    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
+    /// protected boolean javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.isReplacing
+
+    private static var isReplacing_FieldID: jfieldID?
+
+    open var isReplacing: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "isReplacing", fieldType: "Z", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.isReplacing_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "isReplacing", fieldType: "Z", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.isReplacing_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.text.AttributeSet javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.newAttributes
+
+    private static var newAttributes_FieldID: jfieldID?
+
+    open var newAttributes: AttributeSet! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "newAttributes", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.newAttributes_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? AttributeSetForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "newAttributes", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &DefaultStyledDocument_AttributeUndoableEdit.newAttributes_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
 
-    /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
+    // Skipping field: false false false false false true 
+
+    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
+
+    // Skipping field: false false false false false true 
 
     /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit(javax.swing.text.Element,javax.swing.text.AttributeSet,boolean)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( element: Element?, newAttributes: AttributeSet?, isReplacing: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: element, locals: &__locals )
         __args[1] = JNIType.toJava( value: newAttributes, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isReplacing, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(isReplacing ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultStyledDocument$AttributeUndoableEdit", classCache: &DefaultStyledDocument_AttributeUndoableEdit.DefaultStyledDocument_AttributeUndoableEditJNIClass, methodSig: "(Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;Z)V", methodCache: &DefaultStyledDocument_AttributeUndoableEdit.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -111,9 +118,13 @@ open class DefaultStyledDocument_AttributeUndoableEdit: AbstractUndoableEdit {
         self.init( element: _element, newAttributes: _newAttributes, isReplacing: _isReplacing )
     }
 
+    /// public void javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.redo() throws javax.swing.undo.CannotRedoException
+
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.undo() throws javax.swing.undo.CannotUndoException
 
-    /// public void javax.swing.text.DefaultStyledDocument$AttributeUndoableEdit.redo() throws javax.swing.undo.CannotRedoException
+    // Skipping method: false true false false false 
 
 }
 

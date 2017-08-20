@@ -16,17 +16,17 @@ open class UIManager_LookAndFeelInfo: java_swift.JavaObject {
 
     private static var UIManager_LookAndFeelInfoJNIClass: jclass?
 
-    /// private java.lang.String javax.swing.UIManager$LookAndFeelInfo.name
-
     /// private java.lang.String javax.swing.UIManager$LookAndFeelInfo.className
+
+    /// private java.lang.String javax.swing.UIManager$LookAndFeelInfo.name
 
     /// public javax.swing.UIManager$LookAndFeelInfo(java.lang.String,java.lang.String)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( name: String?, className: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: className, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/UIManager$LookAndFeelInfo", classCache: &UIManager_LookAndFeelInfo.UIManager_LookAndFeelInfoJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &UIManager_LookAndFeelInfo.new_MethodID_1, args: &__args, locals: &__locals )
@@ -38,31 +38,35 @@ open class UIManager_LookAndFeelInfo: java_swift.JavaObject {
         self.init( name: _name, className: _className )
     }
 
-    /// public java.lang.String javax.swing.UIManager$LookAndFeelInfo.toString()
+    /// public java.lang.String javax.swing.UIManager$LookAndFeelInfo.getClassName()
+
+    private static var getClassName_MethodID_2: jmethodID?
+
+    open func getClassName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClassName", methodSig: "()Ljava/lang/String;", methodCache: &UIManager_LookAndFeelInfo.getClassName_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
 
     /// public java.lang.String javax.swing.UIManager$LookAndFeelInfo.getName()
 
-    private static var getName_MethodID_2: jmethodID?
+    private static var getName_MethodID_3: jmethodID?
 
     open func getName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "()Ljava/lang/String;", methodCache: &UIManager_LookAndFeelInfo.getName_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "()Ljava/lang/String;", methodCache: &UIManager_LookAndFeelInfo.getName_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
-    /// public java.lang.String javax.swing.UIManager$LookAndFeelInfo.getClassName()
+    /// public java.lang.String javax.swing.UIManager$LookAndFeelInfo.toString()
 
-    private static var getClassName_MethodID_3: jmethodID?
-
-    open func getClassName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getClassName", methodSig: "()Ljava/lang/String;", methodCache: &UIManager_LookAndFeelInfo.getClassName_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
+    // Skipping method: false true false false false 
 
 }
 

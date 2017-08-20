@@ -22,28 +22,36 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
 
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$LeafElement.this$0
 
-    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+    // Skipping field: true false false false false false 
 
     /// private transient javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AbstractElement.attributes
 
+    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$AbstractElement.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.Object javax.swing.text.AttributeSet.NameAttribute
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.Object javax.swing.text.AttributeSet.ResolveAttribute
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.AbstractDocument$LeafElement(javax.swing.text.AbstractDocument,javax.swing.text.Element,javax.swing.text.AttributeSet,int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: AbstractDocument?, parent: Element?, a: AttributeSet?, offs0: Int, offs1: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: offs0, locals: &__locals )
-        __args[4] = JNIType.toJava( value: offs1, locals: &__locals )
+        __args[3] = jvalue( i: jint(offs0) )
+        __args[4] = jvalue( i: jint(offs1) )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractDocument$LeafElement", classCache: &AbstractDocument_LeafElement.AbstractDocument_LeafElementJNIClass, methodSig: "(Ljavax/swing/text/AbstractDocument;Ljavax/swing/text/Element;Ljavax/swing/text/AttributeSet;II)V", methodCache: &AbstractDocument_LeafElement.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -53,43 +61,61 @@ open class AbstractDocument_LeafElement: AbstractDocument_AbstractElement {
         self.init( this_0: _this_0, parent: _parent, a: _a, offs0: _offs0, offs1: _offs1 )
     }
 
-    /// public java.lang.String javax.swing.text.AbstractDocument$LeafElement.toString()
-
-    /// public java.lang.String javax.swing.text.AbstractDocument$LeafElement.getName()
-
-    /// private void javax.swing.text.AbstractDocument$LeafElement.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private void javax.swing.text.AbstractDocument$LeafElement.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public boolean javax.swing.text.AbstractDocument$LeafElement.isLeaf()
-
     /// public java.util.Enumeration javax.swing.text.AbstractDocument$LeafElement.children()
+
+    // Skipping method: false true false false false 
 
     /// public boolean javax.swing.text.AbstractDocument$LeafElement.getAllowsChildren()
 
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$LeafElement.getElement(int)
+
+    // Skipping method: false true false false false 
+
     /// public int javax.swing.text.AbstractDocument$LeafElement.getElementCount()
+
+    // Skipping method: false true false false false 
 
     /// public int javax.swing.text.AbstractDocument$LeafElement.getElementIndex(int)
 
     private static var getElementIndex_MethodID_2: jmethodID?
 
     open func getElementIndex( pos: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getElementIndex", methodSig: "(I)I", methodCache: &AbstractDocument_LeafElement.getElementIndex_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     override open func getElementIndex( _ _pos: Int ) -> Int {
         return getElementIndex( pos: _pos )
     }
 
-    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$LeafElement.getElement(int)
-
     /// public int javax.swing.text.AbstractDocument$LeafElement.getEndOffset()
 
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.text.AbstractDocument$LeafElement.getName()
+
+    // Skipping method: false true false false false 
+
     /// public int javax.swing.text.AbstractDocument$LeafElement.getStartOffset()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.AbstractDocument$LeafElement.isLeaf()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.text.AbstractDocument$LeafElement.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+
+    /// public java.lang.String javax.swing.text.AbstractDocument$LeafElement.toString()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.text.AbstractDocument$LeafElement.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

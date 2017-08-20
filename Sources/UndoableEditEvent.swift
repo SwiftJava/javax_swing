@@ -27,8 +27,8 @@ open class UndoableEditEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &UndoableEditEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &UndoableEditEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -43,8 +43,8 @@ open class UndoableEditEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_swift.JavaObject?, edit: UndoableEdit? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: edit, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/UndoableEditEvent", classCache: &UndoableEditEvent.UndoableEditEventJNIClass, methodSig: "(Ljava/lang/Object;Ljavax/swing/undo/UndoableEdit;)V", methodCache: &UndoableEditEvent.new_MethodID_1, args: &__args, locals: &__locals )
@@ -61,8 +61,8 @@ open class UndoableEditEvent: java_util.EventObject {
     private static var getEdit_MethodID_2: jmethodID?
 
     open func getEdit() -> UndoableEdit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEdit", methodSig: "()Ljavax/swing/undo/UndoableEdit;", methodCache: &UndoableEditEvent.getEdit_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? UndoableEditForward( javaObject: __return ) : nil

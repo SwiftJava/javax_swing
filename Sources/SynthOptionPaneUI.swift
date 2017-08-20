@@ -6,7 +6,7 @@ import java_awt
 
 /// class javax.swing.plaf.synth.SynthOptionPaneUI ///
 
-open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeListener */ UnclassedProtocol, SynthUI {
+open class SynthOptionPaneUI: BasicOptionPaneUI, /* interface java.beans.PropertyChangeListener */ UnavailableProtocol, SynthUI {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -19,60 +19,31 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
 
     /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthOptionPaneUI.style
 
+    /// public static final int javax.swing.plaf.basic.BasicOptionPaneUI.MinimumHeight
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.plaf.basic.BasicOptionPaneUI.MinimumWidth
 
-    /// public static final int javax.swing.plaf.basic.BasicOptionPaneUI.MinimumHeight
+    // Skipping field: false true false false false false 
 
     /// private static java.lang.String javax.swing.plaf.basic.BasicOptionPaneUI.newline
 
-    /// protected javax.swing.JOptionPane javax.swing.plaf.basic.BasicOptionPaneUI.optionPane
+    /// private javax.swing.plaf.basic.BasicOptionPaneUI$Handler javax.swing.plaf.basic.BasicOptionPaneUI.handler
 
-    private static var optionPane_FieldID: jfieldID?
+    /// protected boolean javax.swing.plaf.basic.BasicOptionPaneUI.hasCustomComponents
 
-    override open var optionPane: JOptionPane! {
+    private static var hasCustomComponents_FieldID: jfieldID?
+
+    override open var hasCustomComponents: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "optionPane", fieldType: "Ljavax/swing/JOptionPane;", fieldCache: &SynthOptionPaneUI.optionPane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JOptionPane( javaObject: __value ) : nil
+            let __value = JNIField.GetBooleanField( fieldName: "hasCustomComponents", fieldType: "Z", fieldCache: &SynthOptionPaneUI.hasCustomComponents_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "optionPane", fieldType: "Ljavax/swing/JOptionPane;", fieldCache: &SynthOptionPaneUI.optionPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI.minimumSize
-
-    private static var minimumSize_FieldID: jfieldID?
-
-    override open var minimumSize: java_awt.Dimension! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "minimumSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthOptionPaneUI.minimumSize_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Dimension( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "minimumSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthOptionPaneUI.minimumSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicOptionPaneUI.inputComponent
-
-    private static var inputComponent_FieldID: jfieldID?
-
-    override open var inputComponent: JComponent! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "inputComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthOptionPaneUI.inputComponent_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JComponent( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "inputComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthOptionPaneUI.inputComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "hasCustomComponents", fieldType: "Z", fieldCache: &SynthOptionPaneUI.hasCustomComponents_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
@@ -82,8 +53,8 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
 
     override open var initialFocusComponent: java_awt.Component! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "initialFocusComponent", fieldType: "Ljava/awt/Component;", fieldCache: &SynthOptionPaneUI.initialFocusComponent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "initialFocusComponent", fieldType: "Ljava/awt/Component;", fieldCache: &SynthOptionPaneUI.initialFocusComponent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Component( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -93,20 +64,54 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
         }
     }
 
-    /// protected boolean javax.swing.plaf.basic.BasicOptionPaneUI.hasCustomComponents
+    /// protected javax.swing.JComponent javax.swing.plaf.basic.BasicOptionPaneUI.inputComponent
 
-    private static var hasCustomComponents_FieldID: jfieldID?
+    private static var inputComponent_FieldID: jfieldID?
 
-    override open var hasCustomComponents: Bool {
+    override open var inputComponent: JComponent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "hasCustomComponents", fieldType: "Z", fieldCache: &SynthOptionPaneUI.hasCustomComponents_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "inputComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthOptionPaneUI.inputComponent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JComponent( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "hasCustomComponents", fieldType: "Z", fieldCache: &SynthOptionPaneUI.hasCustomComponents_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "inputComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &SynthOptionPaneUI.inputComponent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Dimension javax.swing.plaf.basic.BasicOptionPaneUI.minimumSize
+
+    private static var minimumSize_FieldID: jfieldID?
+
+    override open var minimumSize: java_awt.Dimension! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "minimumSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthOptionPaneUI.minimumSize_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Dimension( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "minimumSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &SynthOptionPaneUI.minimumSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JOptionPane javax.swing.plaf.basic.BasicOptionPaneUI.optionPane
+
+    private static var optionPane_FieldID: jfieldID?
+
+    override open var optionPane: JOptionPane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "optionPane", fieldType: "Ljavax/swing/JOptionPane;", fieldCache: &SynthOptionPaneUI.optionPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JOptionPane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "optionPane", fieldType: "Ljavax/swing/JOptionPane;", fieldCache: &SynthOptionPaneUI.optionPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -114,84 +119,16 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
 
     private static var propertyChangeListener_FieldID: jfieldID?
 
-    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthOptionPaneUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthOptionPaneUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &SynthOptionPaneUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private javax.swing.plaf.basic.BasicOptionPaneUI$Handler javax.swing.plaf.basic.BasicOptionPaneUI.handler
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
-
-    private static var ENABLED_FieldID: jfieldID?
-
-    open static var ENABLED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
-
-    private static var MOUSE_OVER_FieldID: jfieldID?
-
-    open static var MOUSE_OVER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
-
-    private static var PRESSED_FieldID: jfieldID?
-
-    open static var PRESSED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.DISABLED
-
-    private static var DISABLED_FieldID: jfieldID?
-
-    open static var DISABLED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.FOCUSED
-
-    private static var FOCUSED_FieldID: jfieldID?
-
-    open static var FOCUSED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.SELECTED
-
-    private static var SELECTED_FieldID: jfieldID?
-
-    open static var SELECTED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
         }
     }
 
@@ -202,7 +139,73 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
     open static var DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.DISABLED
+
+    private static var DISABLED_FieldID: jfieldID?
+
+    open static var DISABLED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
+
+    private static var ENABLED_FieldID: jfieldID?
+
+    open static var ENABLED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.FOCUSED
+
+    private static var FOCUSED_FieldID: jfieldID?
+
+    open static var FOCUSED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
+
+    private static var MOUSE_OVER_FieldID: jfieldID?
+
+    open static var MOUSE_OVER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
+
+    private static var PRESSED_FieldID: jfieldID?
+
+    open static var PRESSED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.SELECTED
+
+    private static var SELECTED_FieldID: jfieldID?
+
+    open static var SELECTED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -211,24 +214,67 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUI.SynthOptionPaneUIJNIClass, methodSig: "()V", methodCache: &SynthOptionPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.update(java.awt.Graphics,javax.swing.JComponent)
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthOptionPaneUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_2: jmethodID?
+
+    override open class func createUI( x: JComponent? ) -> ComponentUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
+        return createUI( x: _x )
+    }
+
+    /// protected java.awt.Container javax.swing.plaf.synth.SynthOptionPaneUI.createMessageArea()
+
+    private static var createMessageArea_MethodID_3: jmethodID?
+
+    override open func createMessageArea() -> java_awt.Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMessageArea", methodSig: "()Ljava/awt/Container;", methodCache: &SynthOptionPaneUI.createMessageArea_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// protected java.awt.Container javax.swing.plaf.synth.SynthOptionPaneUI.createSeparator()
+
+    private static var createSeparator_MethodID_4: jmethodID?
+
+    override open func createSeparator() -> java_awt.Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSeparator", methodSig: "()Ljava/awt/Container;", methodCache: &SynthOptionPaneUI.createSeparator_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// private int javax.swing.plaf.synth.SynthOptionPaneUI.getComponentState(javax.swing.JComponent)
 
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthOptionPaneUI.getContext(javax.swing.JComponent)
 
-    private static var getContext_MethodID_2: jmethodID?
+    private static var getContext_MethodID_5: jmethodID?
 
     open func getContext( c: JComponent? ) -> SynthContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthOptionPaneUI.getContext_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthOptionPaneUI.getContext_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
     }
@@ -239,71 +285,15 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthOptionPaneUI.getContext(javax.swing.JComponent,int)
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthOptionPaneUI.createUI(javax.swing.JComponent)
+    /// protected boolean javax.swing.plaf.synth.SynthOptionPaneUI.getSizeButtonsToSameWidth()
 
-    private static var createUI_MethodID_3: jmethodID?
+    private static var getSizeButtonsToSameWidth_MethodID_6: jmethodID?
 
-    override open class func createUI( x: JComponent? ) -> ComponentUI! {
+    override open func getSizeButtonsToSameWidth() -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthOptionPaneUI", classCache: &SynthOptionPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
-    }
-
-    override open class func createUI( _ _x: JComponent? ) -> ComponentUI! {
-        return createUI( x: _x )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
-
-    /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    private static var paint_MethodID_4: jmethodID?
-
-    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthOptionPaneUI.paint_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
-        paint( context: _context, g: _g )
-    }
-
-    /// private int javax.swing.plaf.synth.SynthOptionPaneUI.getComponentState(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_5: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthOptionPaneUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.installDefaults()
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthOptionPaneUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSizeButtonsToSameWidth", methodSig: "()Z", methodCache: &SynthOptionPaneUI.getSizeButtonsToSameWidth_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
@@ -312,97 +302,114 @@ open class SynthOptionPaneUI: BasicOptionPaneUI, /* java.beans.PropertyChangeLis
     private static var installComponents_MethodID_7: jmethodID?
 
     override open func installComponents() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "()V", methodCache: &SynthOptionPaneUI.installComponents_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.installDefaults()
+
+    private static var installDefaults_MethodID_8: jmethodID?
+
+    override open func installDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthOptionPaneUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.installListeners()
 
-    private static var installListeners_MethodID_8: jmethodID?
+    private static var installListeners_MethodID_9: jmethodID?
 
     override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthOptionPaneUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &SynthOptionPaneUI.installListeners_MethodID_9, args: &__args, locals: &__locals )
     }
 
 
+    /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    private static var paint_MethodID_10: jmethodID?
+
+    open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthOptionPaneUI.paint_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
+        paint( context: _context, g: _g )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_11: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthOptionPaneUI.paintBorder_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_12: jmethodID?
+
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthOptionPaneUI.propertyChange_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        propertyChange( evt: _evt )
+    }
+
     /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.uninstallDefaults()
 
-    private static var uninstallDefaults_MethodID_9: jmethodID?
+    private static var uninstallDefaults_MethodID_13: jmethodID?
 
     override open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthOptionPaneUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthOptionPaneUI.uninstallDefaults_MethodID_13, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.plaf.synth.SynthOptionPaneUI.uninstallListeners()
 
-    private static var uninstallListeners_MethodID_10: jmethodID?
+    private static var uninstallListeners_MethodID_14: jmethodID?
 
     override open func uninstallListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthOptionPaneUI.uninstallListeners_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.propertyChange(java.beans.PropertyChangeEvent)
-
-    private static var propertyChange_MethodID_11: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthOptionPaneUI.propertyChange_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
-
-    /// protected java.awt.Container javax.swing.plaf.synth.SynthOptionPaneUI.createMessageArea()
-
-    private static var createMessageArea_MethodID_12: jmethodID?
-
-    override open func createMessageArea() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createMessageArea", methodSig: "()Ljava/awt/Container;", methodCache: &SynthOptionPaneUI.createMessageArea_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "()V", methodCache: &SynthOptionPaneUI.uninstallListeners_MethodID_14, args: &__args, locals: &__locals )
     }
 
 
-    /// protected java.awt.Container javax.swing.plaf.synth.SynthOptionPaneUI.createSeparator()
+    /// public void javax.swing.plaf.synth.SynthOptionPaneUI.update(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var createSeparator_MethodID_13: jmethodID?
-
-    override open func createSeparator() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createSeparator", methodSig: "()Ljava/awt/Container;", methodCache: &SynthOptionPaneUI.createSeparator_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.plaf.synth.SynthOptionPaneUI.getSizeButtonsToSameWidth()
-
-    private static var getSizeButtonsToSameWidth_MethodID_14: jmethodID?
-
-    override open func getSizeButtonsToSameWidth() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSizeButtonsToSameWidth", methodSig: "()Z", methodCache: &SynthOptionPaneUI.getSizeButtonsToSameWidth_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
+    // Skipping method: false true false false false 
 
     /// private void javax.swing.plaf.synth.SynthOptionPaneUI.updateStyle(javax.swing.JComponent)
 

@@ -32,8 +32,8 @@ open class ListDataListenerForward: java_util.EventListenerForward, ListDataList
     private static var contentsChanged_MethodID_4: jmethodID?
 
     open func contentsChanged( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "contentsChanged", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &ListDataListenerForward.contentsChanged_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -47,8 +47,8 @@ open class ListDataListenerForward: java_util.EventListenerForward, ListDataList
     private static var intervalAdded_MethodID_5: jmethodID?
 
     open func intervalAdded( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalAdded", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &ListDataListenerForward.intervalAdded_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -62,8 +62,8 @@ open class ListDataListenerForward: java_util.EventListenerForward, ListDataList
     private static var intervalRemoved_MethodID_6: jmethodID?
 
     open func intervalRemoved( e: ListDataEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "intervalRemoved", methodSig: "(Ljavax/swing/event/ListDataEvent;)V", methodCache: &ListDataListenerForward.intervalRemoved_MethodID_6, args: &__args, locals: &__locals )
     }
@@ -74,29 +74,22 @@ open class ListDataListenerForward: java_util.EventListenerForward, ListDataList
 
 }
 
-
 private typealias ListDataListener_contentsChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ListDataListener_contentsChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ListDataListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).contentsChanged( e: e != nil ? ListDataEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias ListDataListener_intervalAdded_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ListDataListener_intervalAdded_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ListDataListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).intervalAdded( e: e != nil ? ListDataEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 private typealias ListDataListener_intervalRemoved_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ListDataListener_intervalRemoved_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ListDataListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).intervalRemoved( e: e != nil ? ListDataEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class ListDataListenerLocal_: JNILocalProxy<ListDataListener, Any> {
@@ -149,26 +142,17 @@ open class ListDataListenerBase: ListDataListener {
     open func contentsChanged( e: ListDataEvent? ) /**/ {
     }
 
-    open func contentsChanged( _ _e: ListDataEvent? ) /**/ {
-        contentsChanged( e: _e )
-    }
 
     /// public abstract void javax.swing.event.ListDataListener.intervalAdded(javax.swing.event.ListDataEvent)
 
     open func intervalAdded( e: ListDataEvent? ) /**/ {
     }
 
-    open func intervalAdded( _ _e: ListDataEvent? ) /**/ {
-        intervalAdded( e: _e )
-    }
 
     /// public abstract void javax.swing.event.ListDataListener.intervalRemoved(javax.swing.event.ListDataEvent)
 
     open func intervalRemoved( e: ListDataEvent? ) /**/ {
     }
 
-    open func intervalRemoved( _ _e: ListDataEvent? ) /**/ {
-        intervalRemoved( e: _e )
-    }
 
 }

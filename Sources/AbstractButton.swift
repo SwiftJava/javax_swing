@@ -18,94 +18,6 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
 
     private static var AbstractButtonJNIClass: jclass?
 
-    /// public static final java.lang.String javax.swing.AbstractButton.MODEL_CHANGED_PROPERTY
-
-    private static var MODEL_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var MODEL_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "MODEL_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MODEL_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.TEXT_CHANGED_PROPERTY
-
-    private static var TEXT_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var TEXT_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &TEXT_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.MNEMONIC_CHANGED_PROPERTY
-
-    private static var MNEMONIC_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var MNEMONIC_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "MNEMONIC_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MNEMONIC_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.MARGIN_CHANGED_PROPERTY
-
-    private static var MARGIN_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var MARGIN_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MARGIN_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.VERTICAL_ALIGNMENT_CHANGED_PROPERTY
-
-    private static var VERTICAL_ALIGNMENT_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var VERTICAL_ALIGNMENT_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_ALIGNMENT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_ALIGNMENT_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY
-
-    private static var HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.VERTICAL_TEXT_POSITION_CHANGED_PROPERTY
-
-    private static var VERTICAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var VERTICAL_TEXT_POSITION_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_TEXT_POSITION_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY
-
-    private static var HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
     /// public static final java.lang.String javax.swing.AbstractButton.BORDER_PAINTED_CHANGED_PROPERTY
 
     private static var BORDER_PAINTED_CHANGED_PROPERTY_FieldID: jfieldID?
@@ -113,29 +25,8 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var BORDER_PAINTED_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_PAINTED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &BORDER_PAINTED_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.FOCUS_PAINTED_CHANGED_PROPERTY
-
-    private static var FOCUS_PAINTED_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var FOCUS_PAINTED_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "FOCUS_PAINTED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FOCUS_PAINTED_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.ROLLOVER_ENABLED_CHANGED_PROPERTY
-
-    private static var ROLLOVER_ENABLED_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var ROLLOVER_ENABLED_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ROLLOVER_ENABLED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROLLOVER_ENABLED_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -146,62 +37,8 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var CONTENT_AREA_FILLED_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONTENT_AREA_FILLED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CONTENT_AREA_FILLED_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.ICON_CHANGED_PROPERTY
-
-    private static var ICON_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var ICON_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.PRESSED_ICON_CHANGED_PROPERTY
-
-    private static var PRESSED_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var PRESSED_ICON_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "PRESSED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &PRESSED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.SELECTED_ICON_CHANGED_PROPERTY
-
-    private static var SELECTED_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var SELECTED_ICON_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.ROLLOVER_ICON_CHANGED_PROPERTY
-
-    private static var ROLLOVER_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var ROLLOVER_ICON_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ROLLOVER_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROLLOVER_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.AbstractButton.ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY
-
-    private static var ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
-
-    open static var ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -212,7 +49,8 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var DISABLED_ICON_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DISABLED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DISABLED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -223,101 +61,192 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var DISABLED_SELECTED_ICON_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DISABLED_SELECTED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DISABLED_SELECTED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// protected javax.swing.ButtonModel javax.swing.AbstractButton.model
+    /// public static final java.lang.String javax.swing.AbstractButton.FOCUS_PAINTED_CHANGED_PROPERTY
 
-    private static var model_FieldID: jfieldID?
+    private static var FOCUS_PAINTED_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open var model: ButtonModel! {
+    open static var FOCUS_PAINTED_CHANGED_PROPERTY: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "model", fieldType: "Ljavax/swing/ButtonModel;", fieldCache: &AbstractButton.model_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ButtonModelForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "model", fieldType: "Ljavax/swing/ButtonModel;", fieldCache: &AbstractButton.model_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            let __value = JNIField.GetStaticObjectField( fieldName: "FOCUS_PAINTED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FOCUS_PAINTED_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// private java.lang.String javax.swing.AbstractButton.text
+    /// public static final java.lang.String javax.swing.AbstractButton.HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY
 
-    /// private java.awt.Insets javax.swing.AbstractButton.margin
+    private static var HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    /// private java.awt.Insets javax.swing.AbstractButton.defaultMargin
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.defaultIcon
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.pressedIcon
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.disabledIcon
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.selectedIcon
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.disabledSelectedIcon
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.rolloverIcon
-
-    /// private javax.swing.Icon javax.swing.AbstractButton.rolloverSelectedIcon
-
-    /// private boolean javax.swing.AbstractButton.paintBorder
-
-    /// private boolean javax.swing.AbstractButton.paintFocus
-
-    /// private boolean javax.swing.AbstractButton.rolloverEnabled
-
-    /// private boolean javax.swing.AbstractButton.contentAreaFilled
-
-    /// private int javax.swing.AbstractButton.verticalAlignment
-
-    /// private int javax.swing.AbstractButton.horizontalAlignment
-
-    /// private int javax.swing.AbstractButton.verticalTextPosition
-
-    /// private int javax.swing.AbstractButton.horizontalTextPosition
-
-    /// private int javax.swing.AbstractButton.iconTextGap
-
-    /// private int javax.swing.AbstractButton.mnemonic
-
-    /// private int javax.swing.AbstractButton.mnemonicIndex
-
-    /// private long javax.swing.AbstractButton.multiClickThreshhold
-
-    /// private boolean javax.swing.AbstractButton.borderPaintedSet
-
-    /// private boolean javax.swing.AbstractButton.rolloverEnabledSet
-
-    /// private boolean javax.swing.AbstractButton.iconTextGapSet
-
-    /// private boolean javax.swing.AbstractButton.contentAreaFilledSet
-
-    /// private boolean javax.swing.AbstractButton.setLayout
-
-    /// boolean javax.swing.AbstractButton.defaultCapable
-
-    /// private javax.swing.AbstractButton$Handler javax.swing.AbstractButton.handler
-
-    /// protected javax.swing.event.ChangeListener javax.swing.AbstractButton.changeListener
-
-    private static var changeListener_FieldID: jfieldID?
-
-    open var changeListener: ChangeListener! {
+    open static var HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &AbstractButton.changeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &AbstractButton.changeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_ALIGNMENT_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY
+
+    private static var HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.ICON_CHANGED_PROPERTY
+
+    private static var ICON_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var ICON_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.MARGIN_CHANGED_PROPERTY
+
+    private static var MARGIN_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var MARGIN_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MARGIN_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.MNEMONIC_CHANGED_PROPERTY
+
+    private static var MNEMONIC_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var MNEMONIC_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "MNEMONIC_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MNEMONIC_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.MODEL_CHANGED_PROPERTY
+
+    private static var MODEL_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var MODEL_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "MODEL_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MODEL_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.PRESSED_ICON_CHANGED_PROPERTY
+
+    private static var PRESSED_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var PRESSED_ICON_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "PRESSED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &PRESSED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.ROLLOVER_ENABLED_CHANGED_PROPERTY
+
+    private static var ROLLOVER_ENABLED_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var ROLLOVER_ENABLED_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ROLLOVER_ENABLED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROLLOVER_ENABLED_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.ROLLOVER_ICON_CHANGED_PROPERTY
+
+    private static var ROLLOVER_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var ROLLOVER_ICON_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ROLLOVER_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROLLOVER_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY
+
+    private static var ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROLLOVER_SELECTED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.SELECTED_ICON_CHANGED_PROPERTY
+
+    private static var SELECTED_ICON_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var SELECTED_ICON_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_ICON_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_ICON_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.TEXT_CHANGED_PROPERTY
+
+    private static var TEXT_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var TEXT_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &TEXT_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.VERTICAL_ALIGNMENT_CHANGED_PROPERTY
+
+    private static var VERTICAL_ALIGNMENT_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var VERTICAL_ALIGNMENT_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_ALIGNMENT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_ALIGNMENT_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.AbstractButton.VERTICAL_TEXT_POSITION_CHANGED_PROPERTY
+
+    private static var VERTICAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID: jfieldID?
+
+    open static var VERTICAL_TEXT_POSITION_CHANGED_PROPERTY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_TEXT_POSITION_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_TEXT_POSITION_CHANGED_PROPERTY_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// private javax.swing.Action javax.swing.AbstractButton.action
 
     /// protected java.awt.event.ActionListener javax.swing.AbstractButton.actionListener
 
@@ -325,8 +254,8 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
 
     open var actionListener: java_awt.ActionListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "actionListener", fieldType: "Ljava/awt/event/ActionListener;", fieldCache: &AbstractButton.actionListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "actionListener", fieldType: "Ljava/awt/event/ActionListener;", fieldCache: &AbstractButton.actionListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.ActionListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -336,22 +265,9 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
         }
     }
 
-    /// protected java.awt.event.ItemListener javax.swing.AbstractButton.itemListener
+    /// private java.beans.PropertyChangeListener javax.swing.AbstractButton.actionPropertyChangeListener
 
-    private static var itemListener_FieldID: jfieldID?
-
-    open var itemListener: java_awt.ItemListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "itemListener", fieldType: "Ljava/awt/event/ItemListener;", fieldCache: &AbstractButton.itemListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.ItemListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "itemListener", fieldType: "Ljava/awt/event/ItemListener;", fieldCache: &AbstractButton.itemListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private boolean javax.swing.AbstractButton.borderPaintedSet
 
     /// protected transient javax.swing.event.ChangeEvent javax.swing.AbstractButton.changeEvent
 
@@ -359,8 +275,8 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
 
     open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &AbstractButton.changeEvent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &AbstractButton.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -370,125 +286,148 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
         }
     }
 
+    /// protected javax.swing.event.ChangeListener javax.swing.AbstractButton.changeListener
+
+    private static var changeListener_FieldID: jfieldID?
+
+    open var changeListener: ChangeListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &AbstractButton.changeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &AbstractButton.changeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.AbstractButton.contentAreaFilled
+
+    /// private boolean javax.swing.AbstractButton.contentAreaFilledSet
+
+    /// boolean javax.swing.AbstractButton.defaultCapable
+
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.Icon javax.swing.AbstractButton.defaultIcon
+
+    /// private java.awt.Insets javax.swing.AbstractButton.defaultMargin
+
+    /// private javax.swing.Icon javax.swing.AbstractButton.disabledIcon
+
+    /// private javax.swing.Icon javax.swing.AbstractButton.disabledSelectedIcon
+
+    /// private javax.swing.AbstractButton$Handler javax.swing.AbstractButton.handler
+
     /// private boolean javax.swing.AbstractButton.hideActionText
 
-    /// private javax.swing.Action javax.swing.AbstractButton.action
+    /// private int javax.swing.AbstractButton.horizontalAlignment
 
-    /// private java.beans.PropertyChangeListener javax.swing.AbstractButton.actionPropertyChangeListener
+    /// private int javax.swing.AbstractButton.horizontalTextPosition
 
-    /// private static final java.lang.String javax.swing.JComponent.uiClassID
+    /// private int javax.swing.AbstractButton.iconTextGap
 
-    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
+    /// private boolean javax.swing.AbstractButton.iconTextGapSet
 
-    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
+    /// protected java.awt.event.ItemListener javax.swing.AbstractButton.itemListener
 
-    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
+    private static var itemListener_FieldID: jfieldID?
 
-    /// private static final int javax.swing.JComponent.NOT_OBSCURED
-
-    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
-
-    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
-
-    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
-
-    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
-
-    /// private boolean javax.swing.JComponent.isAlignmentXSet
-
-    /// private float javax.swing.JComponent.alignmentX
-
-    /// private boolean javax.swing.JComponent.isAlignmentYSet
-
-    /// private float javax.swing.JComponent.alignmentY
-
-    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
-
-    private static var ui_FieldID: jfieldID?
-
-    override open var ui: ComponentUI! {
+    open var itemListener: java_awt.ItemListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &AbstractButton.ui_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ComponentUI( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "itemListener", fieldType: "Ljava/awt/event/ItemListener;", fieldCache: &AbstractButton.itemListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.ItemListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &AbstractButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "itemListener", fieldType: "Ljava/awt/event/ItemListener;", fieldCache: &AbstractButton.itemListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
+    /// private java.awt.Insets javax.swing.AbstractButton.margin
 
-    private static var listenerList_FieldID: jfieldID?
+    /// private int javax.swing.AbstractButton.mnemonic
 
-    override open var listenerList: EventListenerList! {
+    /// private int javax.swing.AbstractButton.mnemonicIndex
+
+    /// protected javax.swing.ButtonModel javax.swing.AbstractButton.model
+
+    private static var model_FieldID: jfieldID?
+
+    open var model: ButtonModel! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractButton.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "model", fieldType: "Ljavax/swing/ButtonModel;", fieldCache: &AbstractButton.model_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ButtonModelForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "model", fieldType: "Ljavax/swing/ButtonModel;", fieldCache: &AbstractButton.model_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
+    /// private long javax.swing.AbstractButton.multiClickThreshhold
 
-    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
+    /// private boolean javax.swing.AbstractButton.paintBorder
 
-    /// private boolean javax.swing.JComponent.autoscrolls
+    /// private boolean javax.swing.AbstractButton.paintFocus
 
-    /// private javax.swing.border.Border javax.swing.JComponent.border
+    /// private javax.swing.Icon javax.swing.AbstractButton.pressedIcon
 
-    /// private int javax.swing.JComponent.flags
+    /// private boolean javax.swing.AbstractButton.rolloverEnabled
 
-    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
+    /// private boolean javax.swing.AbstractButton.rolloverEnabledSet
 
-    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
+    /// private javax.swing.Icon javax.swing.AbstractButton.rolloverIcon
 
-    /// transient java.awt.Component javax.swing.JComponent.paintingChild
+    /// private javax.swing.Icon javax.swing.AbstractButton.rolloverSelectedIcon
 
-    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
+    /// private javax.swing.Icon javax.swing.AbstractButton.selectedIcon
 
-    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
+    /// private boolean javax.swing.AbstractButton.setLayout
 
-    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
+    /// private java.lang.String javax.swing.AbstractButton.text
 
-    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
+    /// private int javax.swing.AbstractButton.verticalAlignment
 
-    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
-
-    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
-
-    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
-
-    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
-
-    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
-
-    /// private static final int javax.swing.JComponent.IS_OPAQUE
-
-    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
-
-    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+    /// private int javax.swing.AbstractButton.verticalTextPosition
 
     /// private static final int javax.swing.JComponent.ACTIONMAP_CREATED
 
+    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
+
+    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
+
+    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
+
     /// private static final int javax.swing.JComponent.CREATED_DOUBLE_BUFFER
+
+    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
+
+    // Skipping field: true false false false false false 
+
+    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
+
+    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
+
+    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
+
+    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
+
+    /// private static final int javax.swing.JComponent.IS_OPAQUE
+
+    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
 
     /// private static final int javax.swing.JComponent.IS_PRINTING
 
@@ -496,7 +435,19 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
 
     /// private static final int javax.swing.JComponent.IS_REPAINTING
 
-    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
+
+    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
+
+    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
+
+    /// private static final int javax.swing.JComponent.NOT_OBSCURED
+
+    /// private static final int javax.swing.JComponent.OPAQUE_SET
+
+    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
+
+    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
 
     /// private static final int javax.swing.JComponent.RESERVED_1
 
@@ -510,301 +461,347 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
 
     /// private static final int javax.swing.JComponent.RESERVED_6
 
+    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
+
+    // Skipping field: false true false false false false 
+
+    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
+
+    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+
     /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_LAST
-
-    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
-
-    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
-
-    /// private static final int javax.swing.JComponent.OPAQUE_SET
-
-    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
-
-    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
-
-    /// private static java.util.List javax.swing.JComponent.tempRectangles
-
-    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
-
-    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
-
-    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
-
-    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
-
-    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// private static java.awt.Component javax.swing.JComponent.componentObtainingGraphicsFrom
 
     /// private static java.lang.Object javax.swing.JComponent.componentObtainingGraphicsFromLock
 
-    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// static final sun.awt.RequestFocusController javax.swing.JComponent.focusController
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
+
+    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
+
+    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
+
+    /// private static java.util.List javax.swing.JComponent.tempRectangles
+
+    /// private static final java.lang.String javax.swing.JComponent.uiClassID
+
+    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+
+    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
+
+    /// private float javax.swing.JComponent.alignmentX
+
+    /// private float javax.swing.JComponent.alignmentY
+
+    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
+
+    /// private boolean javax.swing.JComponent.autoscrolls
+
+    /// private javax.swing.border.Border javax.swing.JComponent.border
+
+    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
+
+    /// private int javax.swing.JComponent.flags
+
+    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
+
+    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
+
+    /// private boolean javax.swing.JComponent.isAlignmentXSet
+
+    /// private boolean javax.swing.JComponent.isAlignmentYSet
+
+    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
+
+    private static var listenerList_FieldID: jfieldID?
+
+    override open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractButton.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &AbstractButton.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// transient java.awt.Component javax.swing.JComponent.paintingChild
+
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
+
+    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
+
+    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
+
+    private static var ui_FieldID: jfieldID?
+
+    override open var ui: ComponentUI! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &AbstractButton.ui_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ComponentUI( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &AbstractButton.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
+
+    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
+
+    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &AbstractButton.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &AbstractButton.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -813,56 +810,237 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: false true false false false false 
 
-    private static var CENTER_FieldID: jfieldID?
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
 
-    open static var CENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
+    /// public static final int java.awt.image.ImageObserver.ERROR
 
-    private static var TOP_FieldID: jfieldID?
+    // Skipping field: false true false false false false 
 
-    open static var TOP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
 
-    /// public static final int javax.swing.SwingConstants.LEFT
+    // Skipping field: false true false false false false 
 
-    private static var LEFT_FieldID: jfieldID?
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
 
-    open static var LEFT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
@@ -871,40 +1049,18 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM", fieldType: "I", fieldCache: &BOTTOM_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    private static var RIGHT_FieldID: jfieldID?
+    private static var CENTER_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    open static var CENTER: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH
-
-    private static var NORTH_FieldID: jfieldID?
-
-    open static var NORTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
-
-    private static var NORTH_EAST_FieldID: jfieldID?
-
-    open static var NORTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
         }
     }
 
@@ -915,62 +1071,7 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    private static var SOUTH_EAST_FieldID: jfieldID?
-
-    open static var SOUTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    private static var SOUTH_FieldID: jfieldID?
-
-    open static var SOUTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    private static var SOUTH_WEST_FieldID: jfieldID?
-
-    open static var SOUTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    private static var WEST_FieldID: jfieldID?
-
-    open static var WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
-
-    private static var NORTH_WEST_FieldID: jfieldID?
-
-    open static var NORTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -981,18 +1082,7 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.VERTICAL
-
-    private static var VERTICAL_FieldID: jfieldID?
-
-    open static var VERTICAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -1003,18 +1093,18 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    /// public static final int javax.swing.SwingConstants.LEFT
 
-    private static var TRAILING_FieldID: jfieldID?
+    private static var LEFT_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    open static var LEFT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
         }
     }
 
@@ -1025,7 +1115,40 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var NEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEXT", fieldType: "I", fieldCache: &NEXT_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    private static var NORTH_FieldID: jfieldID?
+
+    open static var NORTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    private static var NORTH_EAST_FieldID: jfieldID?
+
+    open static var NORTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    private static var NORTH_WEST_FieldID: jfieldID?
+
+    open static var NORTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
         }
     }
 
@@ -1036,7 +1159,95 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     open static var PREVIOUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREVIOUS", fieldType: "I", fieldCache: &PREVIOUS_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    private static var RIGHT_FieldID: jfieldID?
+
+    open static var RIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    private static var SOUTH_FieldID: jfieldID?
+
+    open static var SOUTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    private static var SOUTH_EAST_FieldID: jfieldID?
+
+    open static var SOUTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    private static var SOUTH_WEST_FieldID: jfieldID?
+
+    open static var SOUTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    private static var TOP_FieldID: jfieldID?
+
+    open static var TOP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    private static var TRAILING_FieldID: jfieldID?
+
+    open static var TRAILING: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    private static var VERTICAL_FieldID: jfieldID?
+
+    open static var VERTICAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    private static var WEST_FieldID: jfieldID?
+
+    open static var WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/AbstractButton", classCache: &AbstractButtonJNIClass )
+            return Int(__value)
         }
     }
 
@@ -1045,26 +1256,32 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/AbstractButton", classCache: &AbstractButton.AbstractButtonJNIClass, methodSig: "()V", methodCache: &AbstractButton.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    /// static javax.swing.AbstractButton$Handler javax.swing.AbstractButton.access$000(javax.swing.AbstractButton)
+
+    // Skipping method: true false false false false 
+
     /// static void javax.swing.AbstractButton.access$100(javax.swing.AbstractButton)
+
+    // Skipping method: true false false false false 
 
     /// static javax.accessibility.AccessibleContext javax.swing.AbstractButton.access$200(javax.swing.AbstractButton)
 
-    /// static javax.swing.AbstractButton$Handler javax.swing.AbstractButton.access$000(javax.swing.AbstractButton)
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.AbstractButton.init(java.lang.String,javax.swing.Icon)
 
     private static var init_MethodID_2: jmethodID?
 
     open func _init( text: String?, icon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: text, locals: &__locals )
         __args[1] = JNIType.toJava( value: icon, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "init", methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;)V", methodCache: &AbstractButton.init_MethodID_2, args: &__args, locals: &__locals )
@@ -1074,731 +1291,95 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
         _init( text: _text, icon: _icon )
     }
 
-    /// protected java.lang.String javax.swing.AbstractButton.paramString()
+    /// protected void javax.swing.AbstractButton.actionPropertyChanged(javax.swing.Action,java.lang.String)
 
-    private static var paramString_MethodID_3: jmethodID?
+    private static var actionPropertyChanged_MethodID_3: jmethodID?
 
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func actionPropertyChanged( action: Action?, propertyName: String? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.paramString_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: action, locals: &__locals )
+        __args[1] = JNIType.toJava( value: propertyName, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPropertyChanged", methodSig: "(Ljavax/swing/Action;Ljava/lang/String;)V", methodCache: &AbstractButton.actionPropertyChanged_MethodID_3, args: &__args, locals: &__locals )
     }
 
+    open func actionPropertyChanged( _ _action: Action?, _ _propertyName: String? ) {
+        actionPropertyChanged( action: _action, propertyName: _propertyName )
+    }
 
-    /// private javax.swing.AbstractButton$Handler javax.swing.AbstractButton.getHandler()
+    /// public void javax.swing.AbstractButton.addActionListener(java.awt.event.ActionListener)
+
+    private static var addActionListener_MethodID_4: jmethodID?
+
+    open func addActionListener( l: java_awt.ActionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &AbstractButton.addActionListener_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addActionListener( _ _l: java_awt.ActionListener? ) {
+        addActionListener( l: _l )
+    }
 
     /// public void javax.swing.AbstractButton.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_4: jmethodID?
+    private static var addChangeListener_MethodID_5: jmethodID?
 
     open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractButton.addChangeListener_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractButton.addChangeListener_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _l: ChangeListener? ) {
         addChangeListener( l: _l )
     }
 
-    /// public void javax.swing.AbstractButton.removeChangeListener(javax.swing.event.ChangeListener)
+    /// protected void javax.swing.AbstractButton.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var removeChangeListener_MethodID_5: jmethodID?
+    private static var addImpl_MethodID_6: jmethodID?
 
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractButton.removeChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[2] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &AbstractButton.addImpl_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
     }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.AbstractButton.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_6: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &AbstractButton.getChangeListeners_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.AbstractButton.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_7: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &AbstractButton.fireStateChanged_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
-    /// public javax.swing.plaf.ButtonUI javax.swing.AbstractButton.getUI()
-
-    private static var getUI_MethodID_8: jmethodID?
-
-    open func getUI() -> ButtonUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ButtonUI;", methodCache: &AbstractButton.getUI_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ButtonUI( javaObject: __return ) : nil
-    }
-
-
-    /// private boolean javax.swing.AbstractButton.isListener(java.lang.Class,java.awt.event.ActionListener)
 
     /// public void javax.swing.AbstractButton.addItemListener(java.awt.event.ItemListener)
 
-    private static var addItemListener_MethodID_9: jmethodID?
+    private static var addItemListener_MethodID_7: jmethodID?
 
     open func addItemListener( l: java_awt.ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &AbstractButton.addItemListener_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &AbstractButton.addItemListener_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func addItemListener( _ _l: java_awt.ItemListener? ) {
         addItemListener( l: _l )
     }
 
-    /// public void javax.swing.AbstractButton.removeItemListener(java.awt.event.ItemListener)
-
-    private static var removeItemListener_MethodID_10: jmethodID?
-
-    open func removeItemListener( l: java_awt.ItemListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &AbstractButton.removeItemListener_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func removeItemListener( _ _l: java_awt.ItemListener? ) {
-        removeItemListener( l: _l )
-    }
-
-    /// public java.awt.event.ItemListener[] javax.swing.AbstractButton.getItemListeners()
-
-    private static var getItemListeners_MethodID_11: jmethodID?
-
-    open func getItemListeners() -> [ItemListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &AbstractButton.getItemListeners_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ItemListenerForward](), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.removeActionListener(java.awt.event.ActionListener)
-
-    private static var removeActionListener_MethodID_12: jmethodID?
-
-    open func removeActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &AbstractButton.removeActionListener_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func removeActionListener( _ _l: java_awt.ActionListener? ) {
-        removeActionListener( l: _l )
-    }
-
-    /// public java.awt.event.ActionListener[] javax.swing.AbstractButton.getActionListeners()
-
-    private static var getActionListeners_MethodID_13: jmethodID?
-
-    open func getActionListeners() -> [ActionListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &AbstractButton.getActionListeners_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ActionListenerForward](), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setAction(javax.swing.Action)
-
-    private static var setAction_MethodID_14: jmethodID?
-
-    open func setAction( a: Action? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &AbstractButton.setAction_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func setAction( _ _a: Action? ) {
-        setAction( a: _a )
-    }
-
-    /// protected java.beans.PropertyChangeListener javax.swing.AbstractButton.createActionPropertyChangeListener(javax.swing.Action)
-
-    private static var createActionPropertyChangeListener_MethodID_15: jmethodID?
-
-    open func createActionPropertyChangeListener( a: Action? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionPropertyChangeListener", methodSig: "(Ljavax/swing/Action;)Ljava/beans/PropertyChangeListener;", methodCache: &AbstractButton.createActionPropertyChangeListener_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    open func createActionPropertyChangeListener( _ _a: Action? ) -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        return createActionPropertyChangeListener( a: _a )
-    }
-
-    /// private void javax.swing.AbstractButton.setActionCommandFromAction(javax.swing.Action)
-
-    /// protected void javax.swing.AbstractButton.fireItemStateChanged(java.awt.event.ItemEvent)
-
-    private static var fireItemStateChanged_MethodID_16: jmethodID?
-
-    open func fireItemStateChanged( event: java_awt.ItemEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireItemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &AbstractButton.fireItemStateChanged_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open func fireItemStateChanged( _ _event: java_awt.ItemEvent? ) {
-        fireItemStateChanged( event: _event )
-    }
-
-    /// public java.lang.Object[] javax.swing.AbstractButton.getSelectedObjects()
-
-    private static var getSelectedObjects_MethodID_17: jmethodID?
-
-    open func getSelectedObjects() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &AbstractButton.getSelectedObjects_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
-    }
-
-
-    /// void javax.swing.AbstractButton.setIconFromAction(javax.swing.Action)
-
-    /// boolean javax.swing.AbstractButton.shouldUpdateSelectedStateFromAction()
-
-    /// public void javax.swing.AbstractButton.setHideActionText(boolean)
-
-    private static var setHideActionText_MethodID_18: jmethodID?
-
-    open func setHideActionText( hideActionText: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: hideActionText, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHideActionText", methodSig: "(Z)V", methodCache: &AbstractButton.setHideActionText_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func setHideActionText( _ _hideActionText: Bool ) {
-        setHideActionText( hideActionText: _hideActionText )
-    }
-
-    /// public boolean javax.swing.AbstractButton.getHideActionText()
-
-    private static var getHideActionText_MethodID_19: jmethodID?
-
-    open func getHideActionText() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getHideActionText", methodSig: "()Z", methodCache: &AbstractButton.getHideActionText_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setMargin(java.awt.Insets)
-
-    private static var setMargin_MethodID_20: jmethodID?
-
-    open func setMargin( m: java_awt.Insets? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: m, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMargin", methodSig: "(Ljava/awt/Insets;)V", methodCache: &AbstractButton.setMargin_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func setMargin( _ _m: java_awt.Insets? ) {
-        setMargin( m: _m )
-    }
-
-    /// public java.awt.Insets javax.swing.AbstractButton.getMargin()
-
-    private static var getMargin_MethodID_21: jmethodID?
-
-    open func getMargin() -> java_awt.Insets! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMargin", methodSig: "()Ljava/awt/Insets;", methodCache: &AbstractButton.getMargin_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getPressedIcon()
-
-    private static var getPressedIcon_MethodID_22: jmethodID?
-
-    open func getPressedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPressedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getPressedIcon_MethodID_22, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.AbstractButton.setPressedIcon(javax.swing.Icon)
-
-    private static var setPressedIcon_MethodID_23: jmethodID?
-
-    open func setPressedIcon( pressedIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pressedIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPressedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setPressedIcon_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func setPressedIcon( _ _pressedIcon: Icon? ) {
-        setPressedIcon( pressedIcon: _pressedIcon )
-    }
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getSelectedIcon()
-
-    private static var getSelectedIcon_MethodID_24: jmethodID?
-
-    open func getSelectedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getSelectedIcon_MethodID_24, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.AbstractButton.setSelectedIcon(javax.swing.Icon)
-
-    private static var setSelectedIcon_MethodID_25: jmethodID?
-
-    open func setSelectedIcon( selectedIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: selectedIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setSelectedIcon_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setSelectedIcon( _ _selectedIcon: Icon? ) {
-        setSelectedIcon( selectedIcon: _selectedIcon )
-    }
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getRolloverIcon()
-
-    private static var getRolloverIcon_MethodID_26: jmethodID?
-
-    open func getRolloverIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRolloverIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getRolloverIcon_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.AbstractButton.setRolloverIcon(javax.swing.Icon)
-
-    private static var setRolloverIcon_MethodID_27: jmethodID?
-
-    open func setRolloverIcon( rolloverIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rolloverIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setRolloverIcon_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func setRolloverIcon( _ _rolloverIcon: Icon? ) {
-        setRolloverIcon( rolloverIcon: _rolloverIcon )
-    }
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getRolloverSelectedIcon()
-
-    private static var getRolloverSelectedIcon_MethodID_28: jmethodID?
-
-    open func getRolloverSelectedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRolloverSelectedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getRolloverSelectedIcon_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.AbstractButton.setRolloverSelectedIcon(javax.swing.Icon)
-
-    private static var setRolloverSelectedIcon_MethodID_29: jmethodID?
-
-    open func setRolloverSelectedIcon( rolloverSelectedIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: rolloverSelectedIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverSelectedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setRolloverSelectedIcon_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func setRolloverSelectedIcon( _ _rolloverSelectedIcon: Icon? ) {
-        setRolloverSelectedIcon( rolloverSelectedIcon: _rolloverSelectedIcon )
-    }
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getDisabledSelectedIcon()
-
-    private static var getDisabledSelectedIcon_MethodID_30: jmethodID?
-
-    open func getDisabledSelectedIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledSelectedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getDisabledSelectedIcon_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.AbstractButton.setDisabledSelectedIcon(javax.swing.Icon)
-
-    private static var setDisabledSelectedIcon_MethodID_31: jmethodID?
-
-    open func setDisabledSelectedIcon( disabledSelectedIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: disabledSelectedIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledSelectedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setDisabledSelectedIcon_MethodID_31, args: &__args, locals: &__locals )
-    }
-
-    open func setDisabledSelectedIcon( _ _disabledSelectedIcon: Icon? ) {
-        setDisabledSelectedIcon( disabledSelectedIcon: _disabledSelectedIcon )
-    }
-
-    /// private void javax.swing.AbstractButton.setDisplayedMnemonicIndexFromAction(javax.swing.Action,boolean)
-
-    /// private void javax.swing.AbstractButton.setMnemonicFromAction(javax.swing.Action)
-
-    /// private void javax.swing.AbstractButton.setTextFromAction(javax.swing.Action,boolean)
-
-    /// void javax.swing.AbstractButton.smallIconChanged(javax.swing.Action)
-
-    /// void javax.swing.AbstractButton.largeIconChanged(javax.swing.Action)
-
-    /// private void javax.swing.AbstractButton.setSelectedFromAction(javax.swing.Action)
-
-    /// java.beans.PropertyChangeListener javax.swing.AbstractButton.createActionPropertyChangeListener0(javax.swing.Action)
-
-    /// public boolean javax.swing.AbstractButton.isBorderPainted()
-
-    private static var isBorderPainted_MethodID_32: jmethodID?
-
-    open func isBorderPainted() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderPainted", methodSig: "()Z", methodCache: &AbstractButton.isBorderPainted_MethodID_32, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setBorderPainted(boolean)
-
-    private static var setBorderPainted_MethodID_33: jmethodID?
-
-    open func setBorderPainted( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderPainted", methodSig: "(Z)V", methodCache: &AbstractButton.setBorderPainted_MethodID_33, args: &__args, locals: &__locals )
-    }
-
-    open func setBorderPainted( _ _b: Bool ) {
-        setBorderPainted( b: _b )
-    }
-
-    /// public boolean javax.swing.AbstractButton.isFocusPainted()
-
-    private static var isFocusPainted_MethodID_34: jmethodID?
-
-    open func isFocusPainted() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusPainted", methodSig: "()Z", methodCache: &AbstractButton.isFocusPainted_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setFocusPainted(boolean)
-
-    private static var setFocusPainted_MethodID_35: jmethodID?
-
-    open func setFocusPainted( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusPainted", methodSig: "(Z)V", methodCache: &AbstractButton.setFocusPainted_MethodID_35, args: &__args, locals: &__locals )
-    }
-
-    open func setFocusPainted( _ _b: Bool ) {
-        setFocusPainted( b: _b )
-    }
-
-    /// public boolean javax.swing.AbstractButton.isContentAreaFilled()
-
-    private static var isContentAreaFilled_MethodID_36: jmethodID?
-
-    open func isContentAreaFilled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContentAreaFilled", methodSig: "()Z", methodCache: &AbstractButton.isContentAreaFilled_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setContentAreaFilled(boolean)
-
-    private static var setContentAreaFilled_MethodID_37: jmethodID?
-
-    open func setContentAreaFilled( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentAreaFilled", methodSig: "(Z)V", methodCache: &AbstractButton.setContentAreaFilled_MethodID_37, args: &__args, locals: &__locals )
-    }
-
-    open func setContentAreaFilled( _ _b: Bool ) {
-        setContentAreaFilled( b: _b )
-    }
-
-    /// public boolean javax.swing.AbstractButton.isRolloverEnabled()
-
-    private static var isRolloverEnabled_MethodID_38: jmethodID?
-
-    open func isRolloverEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRolloverEnabled", methodSig: "()Z", methodCache: &AbstractButton.isRolloverEnabled_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setRolloverEnabled(boolean)
-
-    private static var setRolloverEnabled_MethodID_39: jmethodID?
-
-    open func setRolloverEnabled( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverEnabled", methodSig: "(Z)V", methodCache: &AbstractButton.setRolloverEnabled_MethodID_39, args: &__args, locals: &__locals )
-    }
-
-    open func setRolloverEnabled( _ _b: Bool ) {
-        setRolloverEnabled( b: _b )
-    }
-
-    /// private void javax.swing.AbstractButton.updateDisplayedMnemonicIndex(java.lang.String,int)
-
-    /// private void javax.swing.AbstractButton.updateMnemonicProperties()
-
-    /// public void javax.swing.AbstractButton.setMultiClickThreshhold(long)
-
-    private static var setMultiClickThreshhold_MethodID_40: jmethodID?
-
-    open func setMultiClickThreshhold( threshhold: Int64 ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: threshhold, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMultiClickThreshhold", methodSig: "(J)V", methodCache: &AbstractButton.setMultiClickThreshhold_MethodID_40, args: &__args, locals: &__locals )
-    }
-
-    open func setMultiClickThreshhold( _ _threshhold: Int64 ) {
-        setMultiClickThreshhold( threshhold: _threshhold )
-    }
-
-    /// public long javax.swing.AbstractButton.getMultiClickThreshhold()
-
-    private static var getMultiClickThreshhold_MethodID_41: jmethodID?
-
-    open func getMultiClickThreshhold() -> Int64 {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getMultiClickThreshhold", methodSig: "()J", methodCache: &AbstractButton.getMultiClickThreshhold_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int64(), from: __return )
-    }
-
-
-    /// protected javax.swing.event.ChangeListener javax.swing.AbstractButton.createChangeListener()
-
-    private static var createChangeListener_MethodID_42: jmethodID?
-
-    open func createChangeListener() -> ChangeListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &AbstractButton.createChangeListener_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ActionListener javax.swing.AbstractButton.createActionListener()
-
-    private static var createActionListener_MethodID_43: jmethodID?
-
-    open func createActionListener() -> java_awt.ActionListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &AbstractButton.createActionListener_MethodID_43, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// protected java.awt.event.ItemListener javax.swing.AbstractButton.createItemListener()
-
-    private static var createItemListener_MethodID_44: jmethodID?
-
-    open func createItemListener() -> java_awt.ItemListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createItemListener", methodSig: "()Ljava/awt/event/ItemListener;", methodCache: &AbstractButton.createItemListener_MethodID_44, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ItemListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.AbstractButton.setLabel(java.lang.String)
-
-    private static var setLabel_MethodID_45: jmethodID?
-
-    open func setLabel( label: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: label, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractButton.setLabel_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-    open func setLabel( _ _label: String? ) {
-        setLabel( label: _label )
-    }
-
-    /// public void javax.swing.AbstractButton.updateUI()
-
-    /// public void javax.swing.AbstractButton.setUI(javax.swing.plaf.ButtonUI)
-
-    private static var setUI_MethodID_46: jmethodID?
-
-    open func setUI( ui: ButtonUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ButtonUI;)V", methodCache: &AbstractButton.setUI_MethodID_46, args: &__args, locals: &__locals )
-    }
-
-    open func setUI( _ _ui: ButtonUI? ) {
-        setUI( ui: _ui )
-    }
-
-    /// protected void javax.swing.AbstractButton.paintBorder(java.awt.Graphics)
-
-    private static var paintBorder_MethodID_47: jmethodID?
-
-    override open func paintBorder( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &AbstractButton.paintBorder_MethodID_47, args: &__args, locals: &__locals )
-    }
-
-    override open func paintBorder( _ _g: java_awt.Graphics? ) {
-        paintBorder( g: _g )
-    }
-
-    /// void javax.swing.AbstractButton.clientPropertyChanged(java.lang.Object,java.lang.Object,java.lang.Object)
-
-    /// void javax.swing.AbstractButton.setUIProperty(java.lang.String,java.lang.Object)
-
-    /// public void javax.swing.AbstractButton.setIcon(javax.swing.Icon)
-
-    private static var setIcon_MethodID_48: jmethodID?
-
-    open func setIcon( defaultIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: defaultIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setIcon_MethodID_48, args: &__args, locals: &__locals )
-    }
-
-    open func setIcon( _ _defaultIcon: Icon? ) {
-        setIcon( defaultIcon: _defaultIcon )
-    }
-
-    /// public void javax.swing.AbstractButton.setDisabledIcon(javax.swing.Icon)
-
-    private static var setDisabledIcon_MethodID_49: jmethodID?
-
-    open func setDisabledIcon( disabledIcon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: disabledIcon, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setDisabledIcon_MethodID_49, args: &__args, locals: &__locals )
-    }
-
-    open func setDisabledIcon( _ _disabledIcon: Icon? ) {
-        setDisabledIcon( disabledIcon: _disabledIcon )
-    }
-
-    /// public void javax.swing.AbstractButton.setDisplayedMnemonicIndex(int) throws java.lang.IllegalArgumentException
-
-    private static var setDisplayedMnemonicIndex_MethodID_50: jmethodID?
-
-    open func setDisplayedMnemonicIndex( index: Int ) throws /* java.lang.IllegalArgumentException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonicIndex", methodSig: "(I)V", methodCache: &AbstractButton.setDisplayedMnemonicIndex_MethodID_50, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.IllegalArgumentException( javaObject: throwable )
-        }
-    }
-
-    open func setDisplayedMnemonicIndex( _ _index: Int ) throws /* java.lang.IllegalArgumentException */ {
-        try setDisplayedMnemonicIndex( index: _index )
-    }
-
-    /// public int javax.swing.AbstractButton.getDisplayedMnemonicIndex()
-
-    private static var getDisplayedMnemonicIndex_MethodID_51: jmethodID?
-
-    open func getDisplayedMnemonicIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonicIndex", methodSig: "()I", methodCache: &AbstractButton.getDisplayedMnemonicIndex_MethodID_51, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// protected int javax.swing.AbstractButton.checkHorizontalKey(int,java.lang.String)
 
-    private static var checkHorizontalKey_MethodID_52: jmethodID?
+    private static var checkHorizontalKey_MethodID_8: jmethodID?
 
     open func checkHorizontalKey( key: Int, exception: String? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(key) )
         __args[1] = JNIType.toJava( value: exception, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkHorizontalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &AbstractButton.checkHorizontalKey_MethodID_52, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkHorizontalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &AbstractButton.checkHorizontalKey_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func checkHorizontalKey( _ _key: Int, _ _exception: String? ) -> Int {
@@ -1807,514 +1388,1173 @@ open class AbstractButton: JComponent, java_awt.ItemSelectable, SwingConstants {
 
     /// protected int javax.swing.AbstractButton.checkVerticalKey(int,java.lang.String)
 
-    private static var checkVerticalKey_MethodID_53: jmethodID?
+    private static var checkVerticalKey_MethodID_9: jmethodID?
 
     open func checkVerticalKey( key: Int, exception: String? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: key, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(key) )
         __args[1] = JNIType.toJava( value: exception, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkVerticalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &AbstractButton.checkVerticalKey_MethodID_53, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "checkVerticalKey", methodSig: "(ILjava/lang/String;)I", methodCache: &AbstractButton.checkVerticalKey_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func checkVerticalKey( _ _key: Int, _ _exception: String? ) -> Int {
         return checkVerticalKey( key: _key, exception: _exception )
     }
 
-    /// public int javax.swing.AbstractButton.getIconTextGap()
+    /// void javax.swing.AbstractButton.clientPropertyChanged(java.lang.Object,java.lang.Object,java.lang.Object)
 
-    private static var getIconTextGap_MethodID_54: jmethodID?
-
-    open func getIconTextGap() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconTextGap", methodSig: "()I", methodCache: &AbstractButton.getIconTextGap_MethodID_54, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setIconTextGap(int)
-
-    private static var setIconTextGap_MethodID_55: jmethodID?
-
-    open func setIconTextGap( iconTextGap: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: iconTextGap, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconTextGap", methodSig: "(I)V", methodCache: &AbstractButton.setIconTextGap_MethodID_55, args: &__args, locals: &__locals )
-    }
-
-    open func setIconTextGap( _ _iconTextGap: Int ) {
-        setIconTextGap( iconTextGap: _iconTextGap )
-    }
-
-    /// public void javax.swing.AbstractButton.setVerticalAlignment(int)
-
-    private static var setVerticalAlignment_MethodID_56: jmethodID?
-
-    open func setVerticalAlignment( alignment: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalAlignment", methodSig: "(I)V", methodCache: &AbstractButton.setVerticalAlignment_MethodID_56, args: &__args, locals: &__locals )
-    }
-
-    open func setVerticalAlignment( _ _alignment: Int ) {
-        setVerticalAlignment( alignment: _alignment )
-    }
-
-    /// public void javax.swing.AbstractButton.setHorizontalAlignment(int)
-
-    private static var setHorizontalAlignment_MethodID_57: jmethodID?
-
-    open func setHorizontalAlignment( alignment: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: alignment, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalAlignment", methodSig: "(I)V", methodCache: &AbstractButton.setHorizontalAlignment_MethodID_57, args: &__args, locals: &__locals )
-    }
-
-    open func setHorizontalAlignment( _ _alignment: Int ) {
-        setHorizontalAlignment( alignment: _alignment )
-    }
-
-    /// public void javax.swing.AbstractButton.setVerticalTextPosition(int)
-
-    private static var setVerticalTextPosition_MethodID_58: jmethodID?
-
-    open func setVerticalTextPosition( textPosition: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: textPosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalTextPosition", methodSig: "(I)V", methodCache: &AbstractButton.setVerticalTextPosition_MethodID_58, args: &__args, locals: &__locals )
-    }
-
-    open func setVerticalTextPosition( _ _textPosition: Int ) {
-        setVerticalTextPosition( textPosition: _textPosition )
-    }
-
-    /// public void javax.swing.AbstractButton.setHorizontalTextPosition(int)
-
-    private static var setHorizontalTextPosition_MethodID_59: jmethodID?
-
-    open func setHorizontalTextPosition( textPosition: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: textPosition, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalTextPosition", methodSig: "(I)V", methodCache: &AbstractButton.setHorizontalTextPosition_MethodID_59, args: &__args, locals: &__locals )
-    }
-
-    open func setHorizontalTextPosition( _ _textPosition: Int ) {
-        setHorizontalTextPosition( textPosition: _textPosition )
-    }
-
-    /// public void javax.swing.AbstractButton.removeNotify()
-
-    /// public boolean javax.swing.AbstractButton.imageUpdate(java.awt.Image,int,int,int,int,int)
-
-    private static var imageUpdate_MethodID_60: jmethodID?
-
-    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &AbstractButton.imageUpdate_MethodID_60, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
-        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public java.lang.String javax.swing.AbstractButton.getText()
-
-    private static var getText_MethodID_61: jmethodID?
-
-    open func getText() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.getText_MethodID_61, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getIcon()
-
-    private static var getIcon_MethodID_62: jmethodID?
-
-    open func getIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getIcon_MethodID_62, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public javax.swing.ButtonModel javax.swing.AbstractButton.getModel()
-
-    private static var getModel_MethodID_63: jmethodID?
-
-    open func getModel() -> ButtonModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/ButtonModel;", methodCache: &AbstractButton.getModel_MethodID_63, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ButtonModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// public boolean javax.swing.AbstractButton.isSelected()
-
-    private static var isSelected_MethodID_64: jmethodID?
-
-    open func isSelected() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &AbstractButton.isSelected_MethodID_64, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.doClick()
-
-    private static var doClick_MethodID_65: jmethodID?
-
-    open func doClick() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doClick", methodSig: "()V", methodCache: &AbstractButton.doClick_MethodID_65, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.AbstractButton.doClick(int)
-
-    private static var doClick_MethodID_66: jmethodID?
-
-    open func doClick( pressTime: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pressTime, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doClick", methodSig: "(I)V", methodCache: &AbstractButton.doClick_MethodID_66, args: &__args, locals: &__locals )
-    }
-
-    open func doClick( _ _pressTime: Int ) {
-        doClick( pressTime: _pressTime )
-    }
-
-    /// public void javax.swing.AbstractButton.setSelected(boolean)
-
-    private static var setSelected_MethodID_67: jmethodID?
-
-    open func setSelected( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Z)V", methodCache: &AbstractButton.setSelected_MethodID_67, args: &__args, locals: &__locals )
-    }
-
-    open func setSelected( _ _b: Bool ) {
-        setSelected( b: _b )
-    }
-
-    /// public void javax.swing.AbstractButton.setText(java.lang.String)
-
-    private static var setText_MethodID_68: jmethodID?
-
-    open func setText( text: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: text, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractButton.setText_MethodID_68, args: &__args, locals: &__locals )
-    }
-
-    open func setText( _ _text: String? ) {
-        setText( text: _text )
-    }
-
-    /// public javax.swing.Icon javax.swing.AbstractButton.getDisabledIcon()
-
-    private static var getDisabledIcon_MethodID_69: jmethodID?
-
-    open func getDisabledIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getDisabledIcon_MethodID_69, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.AbstractButton.getVerticalAlignment()
-
-    private static var getVerticalAlignment_MethodID_70: jmethodID?
-
-    open func getVerticalAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalAlignment", methodSig: "()I", methodCache: &AbstractButton.getVerticalAlignment_MethodID_70, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.AbstractButton.getHorizontalAlignment()
-
-    private static var getHorizontalAlignment_MethodID_71: jmethodID?
-
-    open func getHorizontalAlignment() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalAlignment", methodSig: "()I", methodCache: &AbstractButton.getHorizontalAlignment_MethodID_71, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.AbstractButton.getVerticalTextPosition()
-
-    private static var getVerticalTextPosition_MethodID_72: jmethodID?
-
-    open func getVerticalTextPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalTextPosition", methodSig: "()I", methodCache: &AbstractButton.getVerticalTextPosition_MethodID_72, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.AbstractButton.getHorizontalTextPosition()
-
-    private static var getHorizontalTextPosition_MethodID_73: jmethodID?
-
-    open func getHorizontalTextPosition() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalTextPosition", methodSig: "()I", methodCache: &AbstractButton.getHorizontalTextPosition_MethodID_73, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public int javax.swing.AbstractButton.getMnemonic()
-
-    private static var getMnemonic_MethodID_74: jmethodID?
-
-    open func getMnemonic() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMnemonic", methodSig: "()I", methodCache: &AbstractButton.getMnemonic_MethodID_74, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.AbstractButton.setEnabled(boolean)
-
-    private static var setEnabled_MethodID_75: jmethodID?
-
-    open func setEnabled( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &AbstractButton.setEnabled_MethodID_75, args: &__args, locals: &__locals )
-    }
-
-    override open func setEnabled( _ _b: Bool ) {
-        setEnabled( b: _b )
-    }
-
-    /// protected void javax.swing.AbstractButton.actionPropertyChanged(javax.swing.Action,java.lang.String)
-
-    private static var actionPropertyChanged_MethodID_76: jmethodID?
-
-    open func actionPropertyChanged( action: Action?, propertyName: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: action, locals: &__locals )
-        __args[1] = JNIType.toJava( value: propertyName, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPropertyChanged", methodSig: "(Ljavax/swing/Action;Ljava/lang/String;)V", methodCache: &AbstractButton.actionPropertyChanged_MethodID_76, args: &__args, locals: &__locals )
-    }
-
-    open func actionPropertyChanged( _ _action: Action?, _ _propertyName: String? ) {
-        actionPropertyChanged( action: _action, propertyName: _propertyName )
-    }
+    // Skipping method: true false false false false 
 
     /// protected void javax.swing.AbstractButton.configurePropertiesFromAction(javax.swing.Action)
 
-    private static var configurePropertiesFromAction_MethodID_77: jmethodID?
+    private static var configurePropertiesFromAction_MethodID_10: jmethodID?
 
     open func configurePropertiesFromAction( a: Action? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePropertiesFromAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &AbstractButton.configurePropertiesFromAction_MethodID_77, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "configurePropertiesFromAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &AbstractButton.configurePropertiesFromAction_MethodID_10, args: &__args, locals: &__locals )
     }
 
     open func configurePropertiesFromAction( _ _a: Action? ) {
         configurePropertiesFromAction( a: _a )
     }
 
-    /// public javax.swing.Action javax.swing.AbstractButton.getAction()
+    /// protected java.awt.event.ActionListener javax.swing.AbstractButton.createActionListener()
 
-    private static var getAction_MethodID_78: jmethodID?
+    private static var createActionListener_MethodID_11: jmethodID?
 
-    open func getAction() -> Action! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createActionListener() -> java_awt.ActionListener! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "()Ljavax/swing/Action;", methodCache: &AbstractButton.getAction_MethodID_78, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionListener", methodSig: "()Ljava/awt/event/ActionListener;", methodCache: &AbstractButton.createActionListener_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ActionForward( javaObject: __return ) : nil
+        return __return != nil ? java_awt.ActionListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.AbstractButton.setModel(javax.swing.ButtonModel)
+    /// protected java.beans.PropertyChangeListener javax.swing.AbstractButton.createActionPropertyChangeListener(javax.swing.Action)
 
-    private static var setModel_MethodID_79: jmethodID?
+    private static var createActionPropertyChangeListener_MethodID_12: jmethodID?
 
-    open func setModel( newModel: ButtonModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createActionPropertyChangeListener( a: Action? ) -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/ButtonModel;)V", methodCache: &AbstractButton.setModel_MethodID_79, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _newModel: ButtonModel? ) {
-        setModel( newModel: _newModel )
-    }
-
-    /// public java.lang.String javax.swing.AbstractButton.getLabel()
-
-    private static var getLabel_MethodID_80: jmethodID?
-
-    open func getLabel() -> String! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createActionPropertyChangeListener", methodSig: "(Ljavax/swing/Action;)Ljava/beans/PropertyChangeListener;", methodCache: &AbstractButton.createActionPropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
+    }
+
+    open func createActionPropertyChangeListener( _ _a: Action? ) -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        return createActionPropertyChangeListener( a: _a )
+    }
+
+    /// java.beans.PropertyChangeListener javax.swing.AbstractButton.createActionPropertyChangeListener0(javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// protected javax.swing.event.ChangeListener javax.swing.AbstractButton.createChangeListener()
+
+    private static var createChangeListener_MethodID_13: jmethodID?
+
+    open func createChangeListener() -> ChangeListener! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.getLabel_MethodID_80, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &AbstractButton.createChangeListener_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
 
-    /// public java.lang.String javax.swing.AbstractButton.getActionCommand()
+    /// protected java.awt.event.ItemListener javax.swing.AbstractButton.createItemListener()
 
-    private static var getActionCommand_MethodID_81: jmethodID?
+    private static var createItemListener_MethodID_14: jmethodID?
 
-    open func getActionCommand() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createItemListener() -> java_awt.ItemListener! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.getActionCommand_MethodID_81, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createItemListener", methodSig: "()Ljava/awt/event/ItemListener;", methodCache: &AbstractButton.createItemListener_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.ItemListenerForward( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.AbstractButton.doClick(int)
+
+    private static var doClick_MethodID_15: jmethodID?
+
+    open func doClick( pressTime: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pressTime) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doClick", methodSig: "(I)V", methodCache: &AbstractButton.doClick_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func doClick( _ _pressTime: Int ) {
+        doClick( pressTime: _pressTime )
+    }
+
+    /// public void javax.swing.AbstractButton.doClick()
+
+    private static var doClick_MethodID_16: jmethodID?
+
+    open func doClick() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "doClick", methodSig: "()V", methodCache: &AbstractButton.doClick_MethodID_16, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.AbstractButton.fireActionPerformed(java.awt.event.ActionEvent)
 
-    private static var fireActionPerformed_MethodID_82: jmethodID?
+    private static var fireActionPerformed_MethodID_17: jmethodID?
 
     open func fireActionPerformed( event: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: event, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &AbstractButton.fireActionPerformed_MethodID_82, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireActionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &AbstractButton.fireActionPerformed_MethodID_17, args: &__args, locals: &__locals )
     }
 
     open func fireActionPerformed( _ _event: java_awt.ActionEvent? ) {
         fireActionPerformed( event: _event )
     }
 
-    /// public void javax.swing.AbstractButton.setLayout(java.awt.LayoutManager)
+    /// protected void javax.swing.AbstractButton.fireItemStateChanged(java.awt.event.ItemEvent)
 
-    private static var setLayout_MethodID_83: jmethodID?
+    private static var fireItemStateChanged_MethodID_18: jmethodID?
 
-    open func setLayout( mgr: java_awt.LayoutManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func fireItemStateChanged( event: java_awt.ItemEvent? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &AbstractButton.setLayout_MethodID_83, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: event, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireItemStateChanged", methodSig: "(Ljava/awt/event/ItemEvent;)V", methodCache: &AbstractButton.fireItemStateChanged_MethodID_18, args: &__args, locals: &__locals )
     }
 
-    override open func setLayout( _ _mgr: java_awt.LayoutManager? ) {
-        setLayout( mgr: _mgr )
+    open func fireItemStateChanged( _ _event: java_awt.ItemEvent? ) {
+        fireItemStateChanged( event: _event )
+    }
+
+    /// protected void javax.swing.AbstractButton.fireStateChanged()
+
+    private static var fireStateChanged_MethodID_19: jmethodID?
+
+    open func fireStateChanged() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &AbstractButton.fireStateChanged_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+
+    /// public javax.swing.Action javax.swing.AbstractButton.getAction()
+
+    private static var getAction_MethodID_20: jmethodID?
+
+    open func getAction() -> Action! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAction", methodSig: "()Ljavax/swing/Action;", methodCache: &AbstractButton.getAction_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ActionForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.AbstractButton.getActionCommand()
+
+    private static var getActionCommand_MethodID_21: jmethodID?
+
+    open func getActionCommand() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionCommand", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.getActionCommand_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.event.ActionListener[] javax.swing.AbstractButton.getActionListeners()
+
+    private static var getActionListeners_MethodID_22: jmethodID?
+
+    open func getActionListeners() -> [ActionListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getActionListeners", methodSig: "()[Ljava/awt/event/ActionListener;", methodCache: &AbstractButton.getActionListeners_MethodID_22, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ActionListenerForward].self, from: __return )
+    }
+
+
+    /// public javax.swing.event.ChangeListener[] javax.swing.AbstractButton.getChangeListeners()
+
+    private static var getChangeListeners_MethodID_23: jmethodID?
+
+    open func getChangeListeners() -> [ChangeListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &AbstractButton.getChangeListeners_MethodID_23, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward].self, from: __return )
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getDisabledIcon()
+
+    private static var getDisabledIcon_MethodID_24: jmethodID?
+
+    open func getDisabledIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getDisabledIcon_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getDisabledSelectedIcon()
+
+    private static var getDisabledSelectedIcon_MethodID_25: jmethodID?
+
+    open func getDisabledSelectedIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledSelectedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getDisabledSelectedIcon_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.AbstractButton.getDisplayedMnemonicIndex()
+
+    private static var getDisplayedMnemonicIndex_MethodID_26: jmethodID?
+
+    open func getDisplayedMnemonicIndex() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDisplayedMnemonicIndex", methodSig: "()I", methodCache: &AbstractButton.getDisplayedMnemonicIndex_MethodID_26, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// private javax.swing.AbstractButton$Handler javax.swing.AbstractButton.getHandler()
+
+    /// public boolean javax.swing.AbstractButton.getHideActionText()
+
+    private static var getHideActionText_MethodID_27: jmethodID?
+
+    open func getHideActionText() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getHideActionText", methodSig: "()Z", methodCache: &AbstractButton.getHideActionText_MethodID_27, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public int javax.swing.AbstractButton.getHorizontalAlignment()
+
+    private static var getHorizontalAlignment_MethodID_28: jmethodID?
+
+    open func getHorizontalAlignment() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalAlignment", methodSig: "()I", methodCache: &AbstractButton.getHorizontalAlignment_MethodID_28, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.AbstractButton.getHorizontalTextPosition()
+
+    private static var getHorizontalTextPosition_MethodID_29: jmethodID?
+
+    open func getHorizontalTextPosition() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getHorizontalTextPosition", methodSig: "()I", methodCache: &AbstractButton.getHorizontalTextPosition_MethodID_29, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getIcon()
+
+    private static var getIcon_MethodID_30: jmethodID?
+
+    open func getIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getIcon_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.AbstractButton.getIconTextGap()
+
+    private static var getIconTextGap_MethodID_31: jmethodID?
+
+    open func getIconTextGap() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIconTextGap", methodSig: "()I", methodCache: &AbstractButton.getIconTextGap_MethodID_31, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.event.ItemListener[] javax.swing.AbstractButton.getItemListeners()
+
+    private static var getItemListeners_MethodID_32: jmethodID?
+
+    open func getItemListeners() -> [ItemListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getItemListeners", methodSig: "()[Ljava/awt/event/ItemListener;", methodCache: &AbstractButton.getItemListeners_MethodID_32, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ItemListenerForward].self, from: __return )
+    }
+
+
+    /// public java.lang.String javax.swing.AbstractButton.getLabel()
+
+    private static var getLabel_MethodID_33: jmethodID?
+
+    open func getLabel() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabel", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.getLabel_MethodID_33, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Insets javax.swing.AbstractButton.getMargin()
+
+    private static var getMargin_MethodID_34: jmethodID?
+
+    open func getMargin() -> java_awt.Insets! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMargin", methodSig: "()Ljava/awt/Insets;", methodCache: &AbstractButton.getMargin_MethodID_34, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Insets( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.AbstractButton.getMnemonic()
+
+    private static var getMnemonic_MethodID_35: jmethodID?
+
+    open func getMnemonic() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMnemonic", methodSig: "()I", methodCache: &AbstractButton.getMnemonic_MethodID_35, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public javax.swing.ButtonModel javax.swing.AbstractButton.getModel()
+
+    private static var getModel_MethodID_36: jmethodID?
+
+    open func getModel() -> ButtonModel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/ButtonModel;", methodCache: &AbstractButton.getModel_MethodID_36, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ButtonModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// public long javax.swing.AbstractButton.getMultiClickThreshhold()
+
+    private static var getMultiClickThreshhold_MethodID_37: jmethodID?
+
+    open func getMultiClickThreshhold() -> Int64 {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallLongMethod( object: javaObject, methodName: "getMultiClickThreshhold", methodSig: "()J", methodCache: &AbstractButton.getMultiClickThreshhold_MethodID_37, args: &__args, locals: &__locals )
+        return __return
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getPressedIcon()
+
+    private static var getPressedIcon_MethodID_38: jmethodID?
+
+    open func getPressedIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPressedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getPressedIcon_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getRolloverIcon()
+
+    private static var getRolloverIcon_MethodID_39: jmethodID?
+
+    open func getRolloverIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRolloverIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getRolloverIcon_MethodID_39, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getRolloverSelectedIcon()
+
+    private static var getRolloverSelectedIcon_MethodID_40: jmethodID?
+
+    open func getRolloverSelectedIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRolloverSelectedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getRolloverSelectedIcon_MethodID_40, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.Icon javax.swing.AbstractButton.getSelectedIcon()
+
+    private static var getSelectedIcon_MethodID_41: jmethodID?
+
+    open func getSelectedIcon() -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &AbstractButton.getSelectedIcon_MethodID_41, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.Object[] javax.swing.AbstractButton.getSelectedObjects()
+
+    private static var getSelectedObjects_MethodID_42: jmethodID?
+
+    open func getSelectedObjects() -> [JavaObject]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedObjects", methodSig: "()[Ljava/lang/Object;", methodCache: &AbstractButton.getSelectedObjects_MethodID_42, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject].self, from: __return )
+    }
+
+
+    /// public java.lang.String javax.swing.AbstractButton.getText()
+
+    private static var getText_MethodID_43: jmethodID?
+
+    open func getText() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getText", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.getText_MethodID_43, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.plaf.ButtonUI javax.swing.AbstractButton.getUI()
+
+    private static var getUI_MethodID_44: jmethodID?
+
+    open func getUI() -> ButtonUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/ButtonUI;", methodCache: &AbstractButton.getUI_MethodID_44, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ButtonUI( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.AbstractButton.getVerticalAlignment()
+
+    private static var getVerticalAlignment_MethodID_45: jmethodID?
+
+    open func getVerticalAlignment() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalAlignment", methodSig: "()I", methodCache: &AbstractButton.getVerticalAlignment_MethodID_45, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.AbstractButton.getVerticalTextPosition()
+
+    private static var getVerticalTextPosition_MethodID_46: jmethodID?
+
+    open func getVerticalTextPosition() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getVerticalTextPosition", methodSig: "()I", methodCache: &AbstractButton.getVerticalTextPosition_MethodID_46, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean javax.swing.AbstractButton.imageUpdate(java.awt.Image,int,int,int,int,int)
+
+    private static var imageUpdate_MethodID_47: jmethodID?
+
+    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = jvalue( i: jint(infoflags) )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &AbstractButton.imageUpdate_MethodID_47, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
+        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// public boolean javax.swing.AbstractButton.isBorderPainted()
+
+    private static var isBorderPainted_MethodID_48: jmethodID?
+
+    open func isBorderPainted() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isBorderPainted", methodSig: "()Z", methodCache: &AbstractButton.isBorderPainted_MethodID_48, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.AbstractButton.isContentAreaFilled()
+
+    private static var isContentAreaFilled_MethodID_49: jmethodID?
+
+    open func isContentAreaFilled() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isContentAreaFilled", methodSig: "()Z", methodCache: &AbstractButton.isContentAreaFilled_MethodID_49, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.AbstractButton.isFocusPainted()
+
+    private static var isFocusPainted_MethodID_50: jmethodID?
+
+    open func isFocusPainted() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isFocusPainted", methodSig: "()Z", methodCache: &AbstractButton.isFocusPainted_MethodID_50, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// private boolean javax.swing.AbstractButton.isListener(java.lang.Class,java.awt.event.ActionListener)
+
+    /// public boolean javax.swing.AbstractButton.isRolloverEnabled()
+
+    private static var isRolloverEnabled_MethodID_51: jmethodID?
+
+    open func isRolloverEnabled() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRolloverEnabled", methodSig: "()Z", methodCache: &AbstractButton.isRolloverEnabled_MethodID_51, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.AbstractButton.isSelected()
+
+    private static var isSelected_MethodID_52: jmethodID?
+
+    open func isSelected() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &AbstractButton.isSelected_MethodID_52, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// void javax.swing.AbstractButton.largeIconChanged(javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// protected void javax.swing.AbstractButton.paintBorder(java.awt.Graphics)
+
+    private static var paintBorder_MethodID_53: jmethodID?
+
+    override open func paintBorder( g: java_awt.Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &AbstractButton.paintBorder_MethodID_53, args: &__args, locals: &__locals )
+    }
+
+    override open func paintBorder( _ _g: java_awt.Graphics? ) {
+        paintBorder( g: _g )
+    }
+
+    /// protected java.lang.String javax.swing.AbstractButton.paramString()
+
+    private static var paramString_MethodID_54: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &AbstractButton.paramString_MethodID_54, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.AbstractButton.removeActionListener(java.awt.event.ActionListener)
+
+    private static var removeActionListener_MethodID_55: jmethodID?
+
+    open func removeActionListener( l: java_awt.ActionListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &AbstractButton.removeActionListener_MethodID_55, args: &__args, locals: &__locals )
+    }
+
+    open func removeActionListener( _ _l: java_awt.ActionListener? ) {
+        removeActionListener( l: _l )
+    }
+
+    /// public void javax.swing.AbstractButton.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_56: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &AbstractButton.removeChangeListener_MethodID_56, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
+    /// public void javax.swing.AbstractButton.removeItemListener(java.awt.event.ItemListener)
+
+    private static var removeItemListener_MethodID_57: jmethodID?
+
+    open func removeItemListener( l: java_awt.ItemListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeItemListener", methodSig: "(Ljava/awt/event/ItemListener;)V", methodCache: &AbstractButton.removeItemListener_MethodID_57, args: &__args, locals: &__locals )
+    }
+
+    open func removeItemListener( _ _l: java_awt.ItemListener? ) {
+        removeItemListener( l: _l )
+    }
+
+    /// public void javax.swing.AbstractButton.removeNotify()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.AbstractButton.setAction(javax.swing.Action)
+
+    private static var setAction_MethodID_58: jmethodID?
+
+    open func setAction( a: Action? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: a, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAction", methodSig: "(Ljavax/swing/Action;)V", methodCache: &AbstractButton.setAction_MethodID_58, args: &__args, locals: &__locals )
+    }
+
+    open func setAction( _ _a: Action? ) {
+        setAction( a: _a )
     }
 
     /// public void javax.swing.AbstractButton.setActionCommand(java.lang.String)
 
-    private static var setActionCommand_MethodID_84: jmethodID?
+    private static var setActionCommand_MethodID_59: jmethodID?
 
     open func setActionCommand( actionCommand: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: actionCommand, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractButton.setActionCommand_MethodID_84, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setActionCommand", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractButton.setActionCommand_MethodID_59, args: &__args, locals: &__locals )
     }
 
     open func setActionCommand( _ _actionCommand: String? ) {
         setActionCommand( actionCommand: _actionCommand )
     }
 
-    /// public void javax.swing.AbstractButton.addActionListener(java.awt.event.ActionListener)
+    /// private void javax.swing.AbstractButton.setActionCommandFromAction(javax.swing.Action)
 
-    private static var addActionListener_MethodID_85: jmethodID?
+    /// public void javax.swing.AbstractButton.setBorderPainted(boolean)
 
-    open func addActionListener( l: java_awt.ActionListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var setBorderPainted_MethodID_60: jmethodID?
+
+    open func setBorderPainted( b: Bool ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addActionListener", methodSig: "(Ljava/awt/event/ActionListener;)V", methodCache: &AbstractButton.addActionListener_MethodID_85, args: &__args, locals: &__locals )
-    }
-
-    open func addActionListener( _ _l: java_awt.ActionListener? ) {
-        addActionListener( l: _l )
-    }
-
-    /// public void javax.swing.AbstractButton.setMnemonic(char)
-
-    private static var setMnemonic_MethodID_86: jmethodID?
-
-    open func setMnemonic( mnemonic: UInt16 ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mnemonic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMnemonic", methodSig: "(C)V", methodCache: &AbstractButton.setMnemonic_MethodID_86, args: &__args, locals: &__locals )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorderPainted", methodSig: "(Z)V", methodCache: &AbstractButton.setBorderPainted_MethodID_60, args: &__args, locals: &__locals )
     }
 
-    open func setMnemonic( _ _mnemonic: UInt16 ) {
-        setMnemonic( mnemonic: _mnemonic )
+    open func setBorderPainted( _ _b: Bool ) {
+        setBorderPainted( b: _b )
+    }
+
+    /// public void javax.swing.AbstractButton.setContentAreaFilled(boolean)
+
+    private static var setContentAreaFilled_MethodID_61: jmethodID?
+
+    open func setContentAreaFilled( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentAreaFilled", methodSig: "(Z)V", methodCache: &AbstractButton.setContentAreaFilled_MethodID_61, args: &__args, locals: &__locals )
+    }
+
+    open func setContentAreaFilled( _ _b: Bool ) {
+        setContentAreaFilled( b: _b )
+    }
+
+    /// public void javax.swing.AbstractButton.setDisabledIcon(javax.swing.Icon)
+
+    private static var setDisabledIcon_MethodID_62: jmethodID?
+
+    open func setDisabledIcon( disabledIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: disabledIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setDisabledIcon_MethodID_62, args: &__args, locals: &__locals )
+    }
+
+    open func setDisabledIcon( _ _disabledIcon: Icon? ) {
+        setDisabledIcon( disabledIcon: _disabledIcon )
+    }
+
+    /// public void javax.swing.AbstractButton.setDisabledSelectedIcon(javax.swing.Icon)
+
+    private static var setDisabledSelectedIcon_MethodID_63: jmethodID?
+
+    open func setDisabledSelectedIcon( disabledSelectedIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: disabledSelectedIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisabledSelectedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setDisabledSelectedIcon_MethodID_63, args: &__args, locals: &__locals )
+    }
+
+    open func setDisabledSelectedIcon( _ _disabledSelectedIcon: Icon? ) {
+        setDisabledSelectedIcon( disabledSelectedIcon: _disabledSelectedIcon )
+    }
+
+    /// public void javax.swing.AbstractButton.setDisplayedMnemonicIndex(int) throws java.lang.IllegalArgumentException
+
+    private static var setDisplayedMnemonicIndex_MethodID_64: jmethodID?
+
+    open func setDisplayedMnemonicIndex( index: Int ) throws /* java.lang.IllegalArgumentException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDisplayedMnemonicIndex", methodSig: "(I)V", methodCache: &AbstractButton.setDisplayedMnemonicIndex_MethodID_64, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.IllegalArgumentException( javaObject: throwable )
+        }
+    }
+
+    open func setDisplayedMnemonicIndex( _ _index: Int ) throws /* java.lang.IllegalArgumentException */ {
+        try setDisplayedMnemonicIndex( index: _index )
+    }
+
+    /// private void javax.swing.AbstractButton.setDisplayedMnemonicIndexFromAction(javax.swing.Action,boolean)
+
+    /// public void javax.swing.AbstractButton.setEnabled(boolean)
+
+    private static var setEnabled_MethodID_65: jmethodID?
+
+    open func setEnabled( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &AbstractButton.setEnabled_MethodID_65, args: &__args, locals: &__locals )
+    }
+
+    override open func setEnabled( _ _b: Bool ) {
+        setEnabled( b: _b )
+    }
+
+    /// public void javax.swing.AbstractButton.setFocusPainted(boolean)
+
+    private static var setFocusPainted_MethodID_66: jmethodID?
+
+    open func setFocusPainted( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setFocusPainted", methodSig: "(Z)V", methodCache: &AbstractButton.setFocusPainted_MethodID_66, args: &__args, locals: &__locals )
+    }
+
+    open func setFocusPainted( _ _b: Bool ) {
+        setFocusPainted( b: _b )
+    }
+
+    /// public void javax.swing.AbstractButton.setHideActionText(boolean)
+
+    private static var setHideActionText_MethodID_67: jmethodID?
+
+    open func setHideActionText( hideActionText: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(hideActionText ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHideActionText", methodSig: "(Z)V", methodCache: &AbstractButton.setHideActionText_MethodID_67, args: &__args, locals: &__locals )
+    }
+
+    open func setHideActionText( _ _hideActionText: Bool ) {
+        setHideActionText( hideActionText: _hideActionText )
+    }
+
+    /// public void javax.swing.AbstractButton.setHorizontalAlignment(int)
+
+    private static var setHorizontalAlignment_MethodID_68: jmethodID?
+
+    open func setHorizontalAlignment( alignment: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(alignment) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalAlignment", methodSig: "(I)V", methodCache: &AbstractButton.setHorizontalAlignment_MethodID_68, args: &__args, locals: &__locals )
+    }
+
+    open func setHorizontalAlignment( _ _alignment: Int ) {
+        setHorizontalAlignment( alignment: _alignment )
+    }
+
+    /// public void javax.swing.AbstractButton.setHorizontalTextPosition(int)
+
+    private static var setHorizontalTextPosition_MethodID_69: jmethodID?
+
+    open func setHorizontalTextPosition( textPosition: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(textPosition) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setHorizontalTextPosition", methodSig: "(I)V", methodCache: &AbstractButton.setHorizontalTextPosition_MethodID_69, args: &__args, locals: &__locals )
+    }
+
+    open func setHorizontalTextPosition( _ _textPosition: Int ) {
+        setHorizontalTextPosition( textPosition: _textPosition )
+    }
+
+    /// public void javax.swing.AbstractButton.setIcon(javax.swing.Icon)
+
+    private static var setIcon_MethodID_70: jmethodID?
+
+    open func setIcon( defaultIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: defaultIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setIcon_MethodID_70, args: &__args, locals: &__locals )
+    }
+
+    open func setIcon( _ _defaultIcon: Icon? ) {
+        setIcon( defaultIcon: _defaultIcon )
+    }
+
+    /// void javax.swing.AbstractButton.setIconFromAction(javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.AbstractButton.setIconTextGap(int)
+
+    private static var setIconTextGap_MethodID_71: jmethodID?
+
+    open func setIconTextGap( iconTextGap: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(iconTextGap) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setIconTextGap", methodSig: "(I)V", methodCache: &AbstractButton.setIconTextGap_MethodID_71, args: &__args, locals: &__locals )
+    }
+
+    open func setIconTextGap( _ _iconTextGap: Int ) {
+        setIconTextGap( iconTextGap: _iconTextGap )
+    }
+
+    /// public void javax.swing.AbstractButton.setLabel(java.lang.String)
+
+    private static var setLabel_MethodID_72: jmethodID?
+
+    open func setLabel( label: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: label, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabel", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractButton.setLabel_MethodID_72, args: &__args, locals: &__locals )
+    }
+
+    open func setLabel( _ _label: String? ) {
+        setLabel( label: _label )
+    }
+
+    /// public void javax.swing.AbstractButton.setLayout(java.awt.LayoutManager)
+
+    private static var setLayout_MethodID_73: jmethodID?
+
+    open func setLayout( mgr: java_awt.LayoutManager? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: mgr, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &AbstractButton.setLayout_MethodID_73, args: &__args, locals: &__locals )
+    }
+
+    override open func setLayout( _ _mgr: java_awt.LayoutManager? ) {
+        setLayout( mgr: _mgr )
+    }
+
+    /// public void javax.swing.AbstractButton.setMargin(java.awt.Insets)
+
+    private static var setMargin_MethodID_74: jmethodID?
+
+    open func setMargin( m: java_awt.Insets? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: m, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMargin", methodSig: "(Ljava/awt/Insets;)V", methodCache: &AbstractButton.setMargin_MethodID_74, args: &__args, locals: &__locals )
+    }
+
+    open func setMargin( _ _m: java_awt.Insets? ) {
+        setMargin( m: _m )
     }
 
     /// public void javax.swing.AbstractButton.setMnemonic(int)
 
-    private static var setMnemonic_MethodID_87: jmethodID?
+    private static var setMnemonic_MethodID_75: jmethodID?
 
     open func setMnemonic( mnemonic: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mnemonic, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMnemonic", methodSig: "(I)V", methodCache: &AbstractButton.setMnemonic_MethodID_87, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(mnemonic) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMnemonic", methodSig: "(I)V", methodCache: &AbstractButton.setMnemonic_MethodID_75, args: &__args, locals: &__locals )
     }
 
     open func setMnemonic( _ _mnemonic: Int ) {
         setMnemonic( mnemonic: _mnemonic )
     }
 
-    /// protected void javax.swing.AbstractButton.addImpl(java.awt.Component,java.lang.Object,int)
+    /// public void javax.swing.AbstractButton.setMnemonic(char)
 
-    private static var addImpl_MethodID_88: jmethodID?
+    private static var setMnemonic_MethodID_76: jmethodID?
 
-    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func setMnemonic( mnemonic: UInt16 ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &AbstractButton.addImpl_MethodID_88, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( c: mnemonic )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMnemonic", methodSig: "(C)V", methodCache: &AbstractButton.setMnemonic_MethodID_76, args: &__args, locals: &__locals )
     }
 
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    open func setMnemonic( _ _mnemonic: UInt16 ) {
+        setMnemonic( mnemonic: _mnemonic )
     }
+
+    /// private void javax.swing.AbstractButton.setMnemonicFromAction(javax.swing.Action)
+
+    /// public void javax.swing.AbstractButton.setModel(javax.swing.ButtonModel)
+
+    private static var setModel_MethodID_77: jmethodID?
+
+    open func setModel( newModel: ButtonModel? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/ButtonModel;)V", methodCache: &AbstractButton.setModel_MethodID_77, args: &__args, locals: &__locals )
+    }
+
+    open func setModel( _ _newModel: ButtonModel? ) {
+        setModel( newModel: _newModel )
+    }
+
+    /// public void javax.swing.AbstractButton.setMultiClickThreshhold(long)
+
+    private static var setMultiClickThreshhold_MethodID_78: jmethodID?
+
+    open func setMultiClickThreshhold( threshhold: Int64 ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( j: threshhold )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMultiClickThreshhold", methodSig: "(J)V", methodCache: &AbstractButton.setMultiClickThreshhold_MethodID_78, args: &__args, locals: &__locals )
+    }
+
+    open func setMultiClickThreshhold( _ _threshhold: Int64 ) {
+        setMultiClickThreshhold( threshhold: _threshhold )
+    }
+
+    /// public void javax.swing.AbstractButton.setPressedIcon(javax.swing.Icon)
+
+    private static var setPressedIcon_MethodID_79: jmethodID?
+
+    open func setPressedIcon( pressedIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: pressedIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPressedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setPressedIcon_MethodID_79, args: &__args, locals: &__locals )
+    }
+
+    open func setPressedIcon( _ _pressedIcon: Icon? ) {
+        setPressedIcon( pressedIcon: _pressedIcon )
+    }
+
+    /// public void javax.swing.AbstractButton.setRolloverEnabled(boolean)
+
+    private static var setRolloverEnabled_MethodID_80: jmethodID?
+
+    open func setRolloverEnabled( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverEnabled", methodSig: "(Z)V", methodCache: &AbstractButton.setRolloverEnabled_MethodID_80, args: &__args, locals: &__locals )
+    }
+
+    open func setRolloverEnabled( _ _b: Bool ) {
+        setRolloverEnabled( b: _b )
+    }
+
+    /// public void javax.swing.AbstractButton.setRolloverIcon(javax.swing.Icon)
+
+    private static var setRolloverIcon_MethodID_81: jmethodID?
+
+    open func setRolloverIcon( rolloverIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: rolloverIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setRolloverIcon_MethodID_81, args: &__args, locals: &__locals )
+    }
+
+    open func setRolloverIcon( _ _rolloverIcon: Icon? ) {
+        setRolloverIcon( rolloverIcon: _rolloverIcon )
+    }
+
+    /// public void javax.swing.AbstractButton.setRolloverSelectedIcon(javax.swing.Icon)
+
+    private static var setRolloverSelectedIcon_MethodID_82: jmethodID?
+
+    open func setRolloverSelectedIcon( rolloverSelectedIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: rolloverSelectedIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRolloverSelectedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setRolloverSelectedIcon_MethodID_82, args: &__args, locals: &__locals )
+    }
+
+    open func setRolloverSelectedIcon( _ _rolloverSelectedIcon: Icon? ) {
+        setRolloverSelectedIcon( rolloverSelectedIcon: _rolloverSelectedIcon )
+    }
+
+    /// public void javax.swing.AbstractButton.setSelected(boolean)
+
+    private static var setSelected_MethodID_83: jmethodID?
+
+    open func setSelected( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelected", methodSig: "(Z)V", methodCache: &AbstractButton.setSelected_MethodID_83, args: &__args, locals: &__locals )
+    }
+
+    open func setSelected( _ _b: Bool ) {
+        setSelected( b: _b )
+    }
+
+    /// private void javax.swing.AbstractButton.setSelectedFromAction(javax.swing.Action)
+
+    /// public void javax.swing.AbstractButton.setSelectedIcon(javax.swing.Icon)
+
+    private static var setSelectedIcon_MethodID_84: jmethodID?
+
+    open func setSelectedIcon( selectedIcon: Icon? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: selectedIcon, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIcon", methodSig: "(Ljavax/swing/Icon;)V", methodCache: &AbstractButton.setSelectedIcon_MethodID_84, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedIcon( _ _selectedIcon: Icon? ) {
+        setSelectedIcon( selectedIcon: _selectedIcon )
+    }
+
+    /// public void javax.swing.AbstractButton.setText(java.lang.String)
+
+    private static var setText_MethodID_85: jmethodID?
+
+    open func setText( text: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: text, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractButton.setText_MethodID_85, args: &__args, locals: &__locals )
+    }
+
+    open func setText( _ _text: String? ) {
+        setText( text: _text )
+    }
+
+    /// private void javax.swing.AbstractButton.setTextFromAction(javax.swing.Action,boolean)
+
+    /// public void javax.swing.AbstractButton.setUI(javax.swing.plaf.ButtonUI)
+
+    private static var setUI_MethodID_86: jmethodID?
+
+    open func setUI( ui: ButtonUI? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ui, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/ButtonUI;)V", methodCache: &AbstractButton.setUI_MethodID_86, args: &__args, locals: &__locals )
+    }
+
+    open func setUI( _ _ui: ButtonUI? ) {
+        setUI( ui: _ui )
+    }
+
+    /// void javax.swing.AbstractButton.setUIProperty(java.lang.String,java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.AbstractButton.setVerticalAlignment(int)
+
+    private static var setVerticalAlignment_MethodID_87: jmethodID?
+
+    open func setVerticalAlignment( alignment: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(alignment) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalAlignment", methodSig: "(I)V", methodCache: &AbstractButton.setVerticalAlignment_MethodID_87, args: &__args, locals: &__locals )
+    }
+
+    open func setVerticalAlignment( _ _alignment: Int ) {
+        setVerticalAlignment( alignment: _alignment )
+    }
+
+    /// public void javax.swing.AbstractButton.setVerticalTextPosition(int)
+
+    private static var setVerticalTextPosition_MethodID_88: jmethodID?
+
+    open func setVerticalTextPosition( textPosition: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(textPosition) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setVerticalTextPosition", methodSig: "(I)V", methodCache: &AbstractButton.setVerticalTextPosition_MethodID_88, args: &__args, locals: &__locals )
+    }
+
+    open func setVerticalTextPosition( _ _textPosition: Int ) {
+        setVerticalTextPosition( textPosition: _textPosition )
+    }
+
+    /// boolean javax.swing.AbstractButton.shouldUpdateSelectedStateFromAction()
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.AbstractButton.smallIconChanged(javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// private void javax.swing.AbstractButton.updateDisplayedMnemonicIndex(java.lang.String,int)
+
+    /// private void javax.swing.AbstractButton.updateMnemonicProperties()
+
+    /// public void javax.swing.AbstractButton.updateUI()
+
+    // Skipping method: false true false false false 
 
 }
 

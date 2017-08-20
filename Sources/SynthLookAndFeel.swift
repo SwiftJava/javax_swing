@@ -19,106 +19,73 @@ open class SynthLookAndFeel: BasicLookAndFeel {
 
     /// static final java.awt.Insets javax.swing.plaf.synth.SynthLookAndFeel.EMPTY_UIRESOURCE_INSETS
 
-    /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.STYLE_FACTORY_KEY
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.SELECTED_UI_KEY
 
     /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.SELECTED_UI_STATE_KEY
 
-    /// private static javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.lastFactory
+    /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.STYLE_FACTORY_KEY
 
     /// private static sun.awt.AppContext javax.swing.plaf.synth.SynthLookAndFeel.lastContext
 
-    /// private javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.factory
-
-    /// private java.util.Map javax.swing.plaf.synth.SynthLookAndFeel.defaultsMap
-
-    /// private javax.swing.plaf.synth.SynthLookAndFeel$Handler javax.swing.plaf.synth.SynthLookAndFeel._handler
+    /// private static javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.lastFactory
 
     /// private static java.lang.ref.ReferenceQueue javax.swing.plaf.synth.SynthLookAndFeel.queue
 
+    /// private javax.swing.plaf.synth.SynthLookAndFeel$Handler javax.swing.plaf.synth.SynthLookAndFeel._handler
+
+    /// private java.util.Map javax.swing.plaf.synth.SynthLookAndFeel.defaultsMap
+
+    /// private javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.factory
+
     /// static boolean javax.swing.plaf.basic.BasicLookAndFeel.needsEventHelper
+
+    // Skipping field: true false false false false false 
 
     /// private transient java.lang.Object javax.swing.plaf.basic.BasicLookAndFeel.audioLock
 
     /// private javax.sound.sampled.Clip javax.swing.plaf.basic.BasicLookAndFeel.clipPlaying
 
+    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicLookAndFeel.disposer
+
     /// javax.swing.plaf.basic.BasicLookAndFeel$AWTEventHelper javax.swing.plaf.basic.BasicLookAndFeel.invocator
 
-    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicLookAndFeel.disposer
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.synth.SynthLookAndFeel()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeel.SynthLookAndFeelJNIClass, methodSig: "()V", methodCache: &SynthLookAndFeel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// static void javax.swing.plaf.synth.SynthLookAndFeel.update(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
-
-    /// public java.lang.String javax.swing.plaf.synth.SynthLookAndFeel.getName()
-
     /// static java.lang.ref.ReferenceQueue javax.swing.plaf.synth.SynthLookAndFeel.access$100()
+
+    // Skipping method: true false false false false 
 
     /// static java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.access$200()
 
-    /// public void javax.swing.plaf.synth.SynthLookAndFeel.load(java.io.InputStream,java.lang.Class) throws java.text.ParseException
-
-    private static var load_MethodID_2: jmethodID?
-
-    open func load( input: /* java.io.InputStream */ UnclassedObject?, resourceBase: java_swift.JavaClass? ) throws /* java.text.ParseException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: input, locals: &__locals )
-        __args[1] = JNIType.toJava( value: resourceBase, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "load", methodSig: "(Ljava/io/InputStream;Ljava/lang/Class;)V", methodCache: &SynthLookAndFeel.load_MethodID_2, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func load( _ _input: /* java.io.InputStream */ UnclassedObject?, _ _resourceBase: java_swift.JavaClass? ) throws /* java.text.ParseException */ {
-        try load( input: _input, resourceBase: _resourceBase )
-    }
-
-    /// public void javax.swing.plaf.synth.SynthLookAndFeel.load(java.net.URL) throws java.text.ParseException,java.io.IOException
-
-    private static var load_MethodID_3: jmethodID?
-
-    open func load( url: /* java.net.URL */ UnclassedObject? ) throws /* java.text.ParseException, java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: url, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "load", methodSig: "(Ljava/net/URL;)V", methodCache: &SynthLookAndFeel.load_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
-        }
-    }
-
-    open func load( _ _url: /* java.net.URL */ UnclassedObject? ) throws /* java.text.ParseException, java.io.IOException */ {
-        try load( url: _url )
-    }
-
-    /// private void javax.swing.plaf.synth.SynthLookAndFeel.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+    // Skipping method: true false false false false 
 
     /// static javax.swing.plaf.synth.SynthLookAndFeel$Handler javax.swing.plaf.synth.SynthLookAndFeel.access$500(javax.swing.plaf.synth.SynthLookAndFeel)
 
-    /// public void javax.swing.plaf.synth.SynthLookAndFeel.initialize()
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthLookAndFeel.createUI(javax.swing.JComponent)
 
-    private static var createUI_MethodID_4: jmethodID?
+    private static var createUI_MethodID_2: jmethodID?
 
     open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ComponentUI( javaObject: __return ) : nil
     }
@@ -127,112 +94,27 @@ open class SynthLookAndFeel: BasicLookAndFeel {
         return createUI( c: _c )
     }
 
-    /// public boolean javax.swing.plaf.synth.SynthLookAndFeel.isNativeLookAndFeel()
+    /// private static void javax.swing.plaf.synth.SynthLookAndFeel.flushUnreferenced()
 
     /// private static java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.getAATextInfo()
 
-    /// static java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.getUIOfType(javax.swing.plaf.ComponentUI,java.lang.Class)
-
-    /// public boolean javax.swing.plaf.synth.SynthLookAndFeel.shouldUpdateStyleOnAncestorChanged()
-
-    private static var shouldUpdateStyleOnAncestorChanged_MethodID_5: jmethodID?
-
-    open func shouldUpdateStyleOnAncestorChanged() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldUpdateStyleOnAncestorChanged", methodSig: "()Z", methodCache: &SynthLookAndFeel.shouldUpdateStyleOnAncestorChanged_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected boolean javax.swing.plaf.synth.SynthLookAndFeel.shouldUpdateStyleOnEvent(java.beans.PropertyChangeEvent)
-
-    private static var shouldUpdateStyleOnEvent_MethodID_6: jmethodID?
-
-    open func shouldUpdateStyleOnEvent( ev: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ev, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldUpdateStyleOnEvent", methodSig: "(Ljava/beans/PropertyChangeEvent;)Z", methodCache: &SynthLookAndFeel.shouldUpdateStyleOnEvent_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open func shouldUpdateStyleOnEvent( _ _ev: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) -> Bool {
-        return shouldUpdateStyleOnEvent( ev: _ev )
-    }
-
-    /// public static void javax.swing.plaf.synth.SynthLookAndFeel.setStyleFactory(javax.swing.plaf.synth.SynthStyleFactory)
-
-    private static var setStyleFactory_MethodID_7: jmethodID?
-
-    open class func setStyleFactory( cache: SynthStyleFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: cache, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "setStyleFactory", methodSig: "(Ljavax/swing/plaf/synth/SynthStyleFactory;)V", methodCache: &setStyleFactory_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open class func setStyleFactory( _ _cache: SynthStyleFactory? ) {
-        setStyleFactory( cache: _cache )
-    }
-
-    /// static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthLookAndFeel.getSelectedUI()
-
-    /// static void javax.swing.plaf.synth.SynthLookAndFeel.setSelectedUI(javax.swing.plaf.ComponentUI,boolean,boolean,boolean,boolean)
-
-    /// static int javax.swing.plaf.synth.SynthLookAndFeel.getSelectedUIState()
-
-    /// static void javax.swing.plaf.synth.SynthLookAndFeel.resetSelectedUI()
-
-    /// public static javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.getStyleFactory()
-
-    private static var getStyleFactory_MethodID_8: jmethodID?
-
-    open class func getStyleFactory() -> SynthStyleFactory! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "getStyleFactory", methodSig: "()Ljavax/swing/plaf/synth/SynthStyleFactory;", methodCache: &getStyleFactory_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SynthStyleFactory( javaObject: __return ) : nil
-    }
-
-
     /// static int javax.swing.plaf.synth.SynthLookAndFeel.getComponentState(java.awt.Component)
 
-    /// static boolean javax.swing.plaf.synth.SynthLookAndFeel.shouldUpdateStyle(java.beans.PropertyChangeEvent)
-
-    /// public static void javax.swing.plaf.synth.SynthLookAndFeel.updateStyles(java.awt.Component)
-
-    private static var updateStyles_MethodID_9: jmethodID?
-
-    open class func updateStyles( c: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "updateStyles", methodSig: "(Ljava/awt/Component;)V", methodCache: &updateStyles_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open class func updateStyles( _ _c: java_awt.Component? ) {
-        updateStyles( c: _c )
-    }
+    // Skipping method: true false false false false 
 
     /// static java.awt.Insets javax.swing.plaf.synth.SynthLookAndFeel.getPaintingInsets(javax.swing.plaf.synth.SynthContext,java.awt.Insets)
 
-    /// static void javax.swing.plaf.synth.SynthLookAndFeel.updateSubregion(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
-
-    /// private static void javax.swing.plaf.synth.SynthLookAndFeel.paintRegion(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
-
-    /// private static void javax.swing.plaf.synth.SynthLookAndFeel.flushUnreferenced()
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.synth.Region javax.swing.plaf.synth.SynthLookAndFeel.getRegion(javax.swing.JComponent)
 
-    private static var getRegion_MethodID_10: jmethodID?
+    private static var getRegion_MethodID_3: jmethodID?
 
     open class func getRegion( c: JComponent? ) -> Region! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "getRegion", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/Region;", methodCache: &getRegion_MethodID_10, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "getRegion", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/Region;", methodCache: &getRegion_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Region( javaObject: __return ) : nil
     }
@@ -241,30 +123,24 @@ open class SynthLookAndFeel: BasicLookAndFeel {
         return getRegion( c: _c )
     }
 
-    /// public java.lang.String javax.swing.plaf.synth.SynthLookAndFeel.getID()
+    /// static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthLookAndFeel.getSelectedUI()
 
-    /// public javax.swing.UIDefaults javax.swing.plaf.synth.SynthLookAndFeel.getDefaults()
+    // Skipping method: true false false false false 
 
-    /// public boolean javax.swing.plaf.synth.SynthLookAndFeel.isSupportedLookAndFeel()
+    /// static int javax.swing.plaf.synth.SynthLookAndFeel.getSelectedUIState()
 
-    /// public void javax.swing.plaf.synth.SynthLookAndFeel.uninitialize()
-
-    /// static javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthLookAndFeel.updateStyle(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthUI)
-
-    /// public java.lang.String javax.swing.plaf.synth.SynthLookAndFeel.getDescription()
-
-    /// static boolean javax.swing.plaf.synth.SynthLookAndFeel.isLeftToRight(java.awt.Component)
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthLookAndFeel.getStyle(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
-    private static var getStyle_MethodID_11: jmethodID?
+    private static var getStyle_MethodID_4: jmethodID?
 
     open class func getStyle( c: JComponent?, region: Region? ) -> SynthStyle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: region, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "getStyle", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/plaf/synth/Region;)Ljavax/swing/plaf/synth/SynthStyle;", methodCache: &getStyle_MethodID_11, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "getStyle", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/plaf/synth/Region;)Ljavax/swing/plaf/synth/SynthStyle;", methodCache: &getStyle_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthStyle( javaObject: __return ) : nil
     }
@@ -272,6 +148,184 @@ open class SynthLookAndFeel: BasicLookAndFeel {
     open class func getStyle( _ _c: JComponent?, _ _region: Region? ) -> SynthStyle! {
         return getStyle( c: _c, region: _region )
     }
+
+    /// public static javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.getStyleFactory()
+
+    private static var getStyleFactory_MethodID_5: jmethodID?
+
+    open class func getStyleFactory() -> SynthStyleFactory! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "getStyleFactory", methodSig: "()Ljavax/swing/plaf/synth/SynthStyleFactory;", methodCache: &getStyleFactory_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SynthStyleFactory( javaObject: __return ) : nil
+    }
+
+
+    /// static java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.getUIOfType(javax.swing.plaf.ComponentUI,java.lang.Class)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean javax.swing.plaf.synth.SynthLookAndFeel.isLeftToRight(java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// private static void javax.swing.plaf.synth.SynthLookAndFeel.paintRegion(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
+
+    /// static void javax.swing.plaf.synth.SynthLookAndFeel.resetSelectedUI()
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.synth.SynthLookAndFeel.setSelectedUI(javax.swing.plaf.ComponentUI,boolean,boolean,boolean,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// public static void javax.swing.plaf.synth.SynthLookAndFeel.setStyleFactory(javax.swing.plaf.synth.SynthStyleFactory)
+
+    private static var setStyleFactory_MethodID_6: jmethodID?
+
+    open class func setStyleFactory( cache: SynthStyleFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: cache, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "setStyleFactory", methodSig: "(Ljavax/swing/plaf/synth/SynthStyleFactory;)V", methodCache: &setStyleFactory_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open class func setStyleFactory( _ _cache: SynthStyleFactory? ) {
+        setStyleFactory( cache: _cache )
+    }
+
+    /// static boolean javax.swing.plaf.synth.SynthLookAndFeel.shouldUpdateStyle(java.beans.PropertyChangeEvent)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.synth.SynthLookAndFeel.update(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
+
+    // Skipping method: true false false false false 
+
+    /// static javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthLookAndFeel.updateStyle(javax.swing.plaf.synth.SynthContext,javax.swing.plaf.synth.SynthUI)
+
+    // Skipping method: true false false false false 
+
+    /// public static void javax.swing.plaf.synth.SynthLookAndFeel.updateStyles(java.awt.Component)
+
+    private static var updateStyles_MethodID_7: jmethodID?
+
+    open class func updateStyles( c: java_awt.Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/plaf/synth/SynthLookAndFeel", classCache: &SynthLookAndFeelJNIClass, methodName: "updateStyles", methodSig: "(Ljava/awt/Component;)V", methodCache: &updateStyles_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open class func updateStyles( _ _c: java_awt.Component? ) {
+        updateStyles( c: _c )
+    }
+
+    /// static void javax.swing.plaf.synth.SynthLookAndFeel.updateSubregion(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,java.awt.Rectangle)
+
+    // Skipping method: true false false false false 
+
+    /// public javax.swing.UIDefaults javax.swing.plaf.synth.SynthLookAndFeel.getDefaults()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.plaf.synth.SynthLookAndFeel.getDescription()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.plaf.synth.SynthLookAndFeel.getID()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.plaf.synth.SynthLookAndFeel.getName()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.synth.SynthLookAndFeel.initialize()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.plaf.synth.SynthLookAndFeel.isNativeLookAndFeel()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.plaf.synth.SynthLookAndFeel.isSupportedLookAndFeel()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.synth.SynthLookAndFeel.load(java.net.URL) throws java.text.ParseException,java.io.IOException
+
+    private static var load_MethodID_8: jmethodID?
+
+    open func load( url: /* class java.net.URL */ UnavailableObject? ) throws /* java.text.ParseException, java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: url, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "load", methodSig: "(Ljava/net/URL;)V", methodCache: &SynthLookAndFeel.load_MethodID_8, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.text.ParseException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func load( _ _url: /* class java.net.URL */ UnavailableObject? ) throws /* java.text.ParseException, java.io.IOException */ {
+        try load( url: _url )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthLookAndFeel.load(java.io.InputStream,java.lang.Class) throws java.text.ParseException
+
+    private static var load_MethodID_9: jmethodID?
+
+    open func load( input: /* class java.io.InputStream */ UnavailableObject?, resourceBase: java_swift.JavaClass? ) throws /* java.text.ParseException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: input, locals: &__locals )
+        __args[1] = JNIType.toJava( value: resourceBase, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "load", methodSig: "(Ljava/io/InputStream;Ljava/lang/Class;)V", methodCache: &SynthLookAndFeel.load_MethodID_9, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.text.ParseException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func load( _ _input: /* class java.io.InputStream */ UnavailableObject?, _ _resourceBase: java_swift.JavaClass? ) throws /* java.text.ParseException */ {
+        try load( input: _input, resourceBase: _resourceBase )
+    }
+
+    /// public boolean javax.swing.plaf.synth.SynthLookAndFeel.shouldUpdateStyleOnAncestorChanged()
+
+    private static var shouldUpdateStyleOnAncestorChanged_MethodID_10: jmethodID?
+
+    open func shouldUpdateStyleOnAncestorChanged() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldUpdateStyleOnAncestorChanged", methodSig: "()Z", methodCache: &SynthLookAndFeel.shouldUpdateStyleOnAncestorChanged_MethodID_10, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected boolean javax.swing.plaf.synth.SynthLookAndFeel.shouldUpdateStyleOnEvent(java.beans.PropertyChangeEvent)
+
+    private static var shouldUpdateStyleOnEvent_MethodID_11: jmethodID?
+
+    open func shouldUpdateStyleOnEvent( ev: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ev, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldUpdateStyleOnEvent", methodSig: "(Ljava/beans/PropertyChangeEvent;)Z", methodCache: &SynthLookAndFeel.shouldUpdateStyleOnEvent_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func shouldUpdateStyleOnEvent( _ _ev: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) -> Bool {
+        return shouldUpdateStyleOnEvent( ev: _ev )
+    }
+
+    /// public void javax.swing.plaf.synth.SynthLookAndFeel.uninitialize()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.plaf.synth.SynthLookAndFeel.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

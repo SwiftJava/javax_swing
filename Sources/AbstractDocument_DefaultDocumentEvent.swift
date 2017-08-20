@@ -17,17 +17,17 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
 
     private static var AbstractDocument_DefaultDocumentEventJNIClass: jclass?
 
-    /// private int javax.swing.text.AbstractDocument$DefaultDocumentEvent.offset
+    /// private java.util.Hashtable javax.swing.text.AbstractDocument$DefaultDocumentEvent.changeLookup
 
     /// private int javax.swing.text.AbstractDocument$DefaultDocumentEvent.length
 
-    /// private java.util.Hashtable javax.swing.text.AbstractDocument$DefaultDocumentEvent.changeLookup
-
-    /// private javax.swing.event.DocumentEvent$EventType javax.swing.text.AbstractDocument$DefaultDocumentEvent.type
+    /// private int javax.swing.text.AbstractDocument$DefaultDocumentEvent.offset
 
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$DefaultDocumentEvent.this$0
 
-    /// boolean javax.swing.undo.CompoundEdit.inProgress
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.event.DocumentEvent$EventType javax.swing.text.AbstractDocument$DefaultDocumentEvent.type
 
     /// protected java.util.Vector javax.swing.undo.CompoundEdit.edits
 
@@ -35,8 +35,8 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
 
     override open var edits: java_util.Vector! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "edits", fieldType: "Ljava/util/Vector;", fieldCache: &AbstractDocument_DefaultDocumentEvent.edits_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "edits", fieldType: "Ljava/util/Vector;", fieldCache: &AbstractDocument_DefaultDocumentEvent.edits_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.Vector( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -46,24 +46,36 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
         }
     }
 
-    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
+    /// boolean javax.swing.undo.CompoundEdit.inProgress
+
+    // Skipping field: true false false false false false 
 
     /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.RedoName
 
-    /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
+    // Skipping field: false false false false false true 
+
+    /// protected static final java.lang.String javax.swing.undo.AbstractUndoableEdit.UndoName
+
+    // Skipping field: false false false false false true 
 
     /// boolean javax.swing.undo.AbstractUndoableEdit.alive
+
+    // Skipping field: true false false false false false 
+
+    /// boolean javax.swing.undo.AbstractUndoableEdit.hasBeenDone
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.text.AbstractDocument$DefaultDocumentEvent(javax.swing.text.AbstractDocument,int,int,javax.swing.event.DocumentEvent$EventType)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: AbstractDocument?, offs: Int, len: Int, type: DocumentEvent_EventType? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offs, locals: &__locals )
-        __args[2] = JNIType.toJava( value: len, locals: &__locals )
+        __args[1] = jvalue( i: jint(offs) )
+        __args[2] = jvalue( i: jint(len) )
         __args[3] = JNIType.toJava( value: type, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/AbstractDocument$DefaultDocumentEvent", classCache: &AbstractDocument_DefaultDocumentEvent.AbstractDocument_DefaultDocumentEventJNIClass, methodSig: "(Ljavax/swing/text/AbstractDocument;IILjavax/swing/event/DocumentEvent$EventType;)V", methodCache: &AbstractDocument_DefaultDocumentEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -74,83 +86,23 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
         self.init( this_0: _this_0, offs: _offs, len: _len, type: _type )
     }
 
-    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.toString()
-
-    /// public int javax.swing.text.AbstractDocument$DefaultDocumentEvent.getLength()
-
-    private static var getLength_MethodID_2: jmethodID?
-
-    open func getLength() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &AbstractDocument_DefaultDocumentEvent.getLength_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// static javax.swing.event.DocumentEvent$EventType javax.swing.text.AbstractDocument$DefaultDocumentEvent.access$100(javax.swing.text.AbstractDocument$DefaultDocumentEvent)
 
-    /// public javax.swing.event.DocumentEvent$EventType javax.swing.text.AbstractDocument$DefaultDocumentEvent.getType()
-
-    private static var getType_MethodID_3: jmethodID?
-
-    open func getType() -> DocumentEvent_EventType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getType", methodSig: "()Ljavax/swing/event/DocumentEvent$EventType;", methodCache: &AbstractDocument_DefaultDocumentEvent.getType_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentEvent_EventType( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.text.AbstractDocument$DefaultDocumentEvent.getOffset()
-
-    private static var getOffset_MethodID_4: jmethodID?
-
-    open func getOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "()I", methodCache: &AbstractDocument_DefaultDocumentEvent.getOffset_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.AbstractDocument$DefaultDocumentEvent.undo() throws javax.swing.undo.CannotUndoException
-
-    /// public void javax.swing.text.AbstractDocument$DefaultDocumentEvent.redo() throws javax.swing.undo.CannotRedoException
+    // Skipping method: true false false false false 
 
     /// public boolean javax.swing.text.AbstractDocument$DefaultDocumentEvent.addEdit(javax.swing.undo.UndoableEdit)
 
-    /// public boolean javax.swing.text.AbstractDocument$DefaultDocumentEvent.isSignificant()
-
-    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.getPresentationName()
-
-    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.getUndoPresentationName()
-
-    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.getRedoPresentationName()
-
-    /// public javax.swing.text.Document javax.swing.text.AbstractDocument$DefaultDocumentEvent.getDocument()
-
-    private static var getDocument_MethodID_5: jmethodID?
-
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractDocument_DefaultDocumentEvent.getDocument_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
-    }
-
+    // Skipping method: false true false false false 
 
     /// public javax.swing.event.DocumentEvent$ElementChange javax.swing.text.AbstractDocument$DefaultDocumentEvent.getChange(javax.swing.text.Element)
 
-    private static var getChange_MethodID_6: jmethodID?
+    private static var getChange_MethodID_2: jmethodID?
 
     open func getChange( elem: Element? ) -> DocumentEvent_ElementChange! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChange", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/event/DocumentEvent$ElementChange;", methodCache: &AbstractDocument_DefaultDocumentEvent.getChange_MethodID_6, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChange", methodSig: "(Ljavax/swing/text/Element;)Ljavax/swing/event/DocumentEvent$ElementChange;", methodCache: &AbstractDocument_DefaultDocumentEvent.getChange_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? DocumentEvent_ElementChangeForward( javaObject: __return ) : nil
     }
@@ -158,6 +110,84 @@ open class AbstractDocument_DefaultDocumentEvent: CompoundEdit, DocumentEvent {
     open func getChange( _ _elem: Element? ) -> DocumentEvent_ElementChange! {
         return getChange( elem: _elem )
     }
+
+    /// public javax.swing.text.Document javax.swing.text.AbstractDocument$DefaultDocumentEvent.getDocument()
+
+    private static var getDocument_MethodID_3: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &AbstractDocument_DefaultDocumentEvent.getDocument_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.text.AbstractDocument$DefaultDocumentEvent.getLength()
+
+    private static var getLength_MethodID_4: jmethodID?
+
+    open func getLength() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getLength", methodSig: "()I", methodCache: &AbstractDocument_DefaultDocumentEvent.getLength_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.text.AbstractDocument$DefaultDocumentEvent.getOffset()
+
+    private static var getOffset_MethodID_5: jmethodID?
+
+    open func getOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOffset", methodSig: "()I", methodCache: &AbstractDocument_DefaultDocumentEvent.getOffset_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.getPresentationName()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.getRedoPresentationName()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.event.DocumentEvent$EventType javax.swing.text.AbstractDocument$DefaultDocumentEvent.getType()
+
+    private static var getType_MethodID_6: jmethodID?
+
+    open func getType() -> DocumentEvent_EventType! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getType", methodSig: "()Ljavax/swing/event/DocumentEvent$EventType;", methodCache: &AbstractDocument_DefaultDocumentEvent.getType_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentEvent_EventType( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.getUndoPresentationName()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.AbstractDocument$DefaultDocumentEvent.isSignificant()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.AbstractDocument$DefaultDocumentEvent.redo() throws javax.swing.undo.CannotRedoException
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.text.AbstractDocument$DefaultDocumentEvent.toString()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.AbstractDocument$DefaultDocumentEvent.undo() throws javax.swing.undo.CannotUndoException
+
+    // Skipping method: false true false false false 
 
 }
 

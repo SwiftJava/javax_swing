@@ -17,49 +17,44 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     private static var MetalScrollBarUIJNIClass: jclass?
 
-    /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.shadowColor
+    /// public static final java.lang.String javax.swing.plaf.metal.MetalScrollBarUI.FREE_STANDING_PROP
 
-    /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.highlightColor
+    private static var FREE_STANDING_PROP_FieldID: jfieldID?
+
+    open static var FREE_STANDING_PROP: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "FREE_STANDING_PROP", fieldType: "Ljava/lang/String;", fieldCache: &FREE_STANDING_PROP_FieldID, className: "javax/swing/plaf/metal/MetalScrollBarUI", classCache: &MetalScrollBarUIJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
 
     /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.darkShadowColor
 
+    /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.highlightColor
+
+    /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.shadowColor
+
     /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.thumbColor
 
-    /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.thumbShadow
-
     /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.thumbHighlightColor
+
+    /// private static java.awt.Color javax.swing.plaf.metal.MetalScrollBarUI.thumbShadow
 
     /// protected javax.swing.plaf.metal.MetalBumps javax.swing.plaf.metal.MetalScrollBarUI.bumps
 
     private static var bumps_FieldID: jfieldID?
 
-    open var bumps: /* javax.swing.plaf.metal.MetalBumps */ UnclassedObject! {
+    open var bumps: /* class javax.swing.plaf.metal.MetalBumps */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "bumps", fieldType: "Ljavax/swing/plaf/metal/MetalBumps;", fieldCache: &MetalScrollBarUI.bumps_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.metal.MetalBumps */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "bumps", fieldType: "Ljavax/swing/plaf/metal/MetalBumps;", fieldCache: &MetalScrollBarUI.bumps_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.metal.MetalBumps */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
             JNIField.SetObjectField( fieldName: "bumps", fieldType: "Ljavax/swing/plaf/metal/MetalBumps;", fieldCache: &MetalScrollBarUI.bumps_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.plaf.metal.MetalScrollButton javax.swing.plaf.metal.MetalScrollBarUI.increaseButton
-
-    private static var increaseButton_FieldID: jfieldID?
-
-    open var increaseButton: MetalScrollButton! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "increaseButton", fieldType: "Ljavax/swing/plaf/metal/MetalScrollButton;", fieldCache: &MetalScrollBarUI.increaseButton_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MetalScrollButton( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "increaseButton", fieldType: "Ljavax/swing/plaf/metal/MetalScrollButton;", fieldCache: &MetalScrollBarUI.increaseButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -69,8 +64,8 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     open var decreaseButton: MetalScrollButton! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "decreaseButton", fieldType: "Ljavax/swing/plaf/metal/MetalScrollButton;", fieldCache: &MetalScrollBarUI.decreaseButton_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "decreaseButton", fieldType: "Ljavax/swing/plaf/metal/MetalScrollButton;", fieldCache: &MetalScrollBarUI.decreaseButton_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? MetalScrollButton( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -80,31 +75,20 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         }
     }
 
-    /// protected int javax.swing.plaf.metal.MetalScrollBarUI.scrollBarWidth
+    /// protected javax.swing.plaf.metal.MetalScrollButton javax.swing.plaf.metal.MetalScrollBarUI.increaseButton
 
-    private static var scrollBarWidth_FieldID: jfieldID?
+    private static var increaseButton_FieldID: jfieldID?
 
-    override open var scrollBarWidth: Int {
+    open var increaseButton: MetalScrollButton! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "scrollBarWidth", fieldType: "I", fieldCache: &MetalScrollBarUI.scrollBarWidth_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "increaseButton", fieldType: "Ljavax/swing/plaf/metal/MetalScrollButton;", fieldCache: &MetalScrollBarUI.increaseButton_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MetalScrollButton( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "scrollBarWidth", fieldType: "I", fieldCache: &MetalScrollBarUI.scrollBarWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.plaf.metal.MetalScrollBarUI.FREE_STANDING_PROP
-
-    private static var FREE_STANDING_PROP_FieldID: jfieldID?
-
-    open static var FREE_STANDING_PROP: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "FREE_STANDING_PROP", fieldType: "Ljava/lang/String;", fieldCache: &FREE_STANDING_PROP_FieldID, className: "javax/swing/plaf/metal/MetalScrollBarUI", classCache: &MetalScrollBarUIJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            JNIField.SetObjectField( fieldName: "increaseButton", fieldType: "Ljavax/swing/plaf/metal/MetalScrollButton;", fieldCache: &MetalScrollBarUI.increaseButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -114,39 +98,156 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     open var isFreeStanding: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "isFreeStanding", fieldType: "Z", fieldCache: &MetalScrollBarUI.isFreeStanding_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "isFreeStanding", fieldType: "Z", fieldCache: &MetalScrollBarUI.isFreeStanding_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "isFreeStanding", fieldType: "Z", fieldCache: &MetalScrollBarUI.isFreeStanding_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.POSITIVE_SCROLL
+    /// protected int javax.swing.plaf.metal.MetalScrollBarUI.scrollBarWidth
 
-    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.NEGATIVE_SCROLL
+    private static var scrollBarWidth_FieldID: jfieldID?
 
-    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.MIN_SCROLL
+    override open var scrollBarWidth: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "scrollBarWidth", fieldType: "I", fieldCache: &MetalScrollBarUI.scrollBarWidth_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "scrollBarWidth", fieldType: "I", fieldCache: &MetalScrollBarUI.scrollBarWidth_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// static final boolean javax.swing.plaf.basic.BasicScrollBarUI.$assertionsDisabled
+
+    // Skipping field: true false false false false false 
+
+    /// protected static final int javax.swing.plaf.basic.BasicScrollBarUI.DECREASE_HIGHLIGHT
+
+    // Skipping field: false false false false false true 
+
+    /// protected static final int javax.swing.plaf.basic.BasicScrollBarUI.INCREASE_HIGHLIGHT
+
+    // Skipping field: false false false false false true 
 
     /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.MAX_SCROLL
 
-    /// protected java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.minimumThumbSize
+    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.MIN_SCROLL
 
-    private static var minimumThumbSize_FieldID: jfieldID?
+    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.NEGATIVE_SCROLL
 
-    override open var minimumThumbSize: java_awt.Dimension! {
+    /// protected static final int javax.swing.plaf.basic.BasicScrollBarUI.NO_HIGHLIGHT
+
+    // Skipping field: false false false false false true 
+
+    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.POSITIVE_SCROLL
+
+    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.scrollSpeedThrottle
+
+    /// protected javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener javax.swing.plaf.basic.BasicScrollBarUI.buttonListener
+
+    private static var buttonListener_FieldID: jfieldID?
+
+    override open var buttonListener: /* class javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "minimumThumbSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalScrollBarUI.minimumThumbSize_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Dimension( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "buttonListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ArrowButtonListener;", fieldCache: &MetalScrollBarUI.buttonListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "minimumThumbSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalScrollBarUI.minimumThumbSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "buttonListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ArrowButtonListener;", fieldCache: &MetalScrollBarUI.buttonListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JButton javax.swing.plaf.basic.BasicScrollBarUI.decrButton
+
+    private static var decrButton_FieldID: jfieldID?
+
+    override open var decrButton: JButton! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "decrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.decrButton_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JButton( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "decrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.decrButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicScrollBarUI.decrGap
+
+    private static var decrGap_FieldID: jfieldID?
+
+    override open var decrGap: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "decrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.decrGap_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "decrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.decrGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// private javax.swing.plaf.basic.BasicScrollBarUI$Handler javax.swing.plaf.basic.BasicScrollBarUI.handler
+
+    /// protected javax.swing.JButton javax.swing.plaf.basic.BasicScrollBarUI.incrButton
+
+    private static var incrButton_FieldID: jfieldID?
+
+    override open var incrButton: JButton! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "incrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.incrButton_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JButton( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "incrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.incrButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.plaf.basic.BasicScrollBarUI.incrGap
+
+    private static var incrGap_FieldID: jfieldID?
+
+    override open var incrGap: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "incrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.incrGap_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "incrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.incrGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected boolean javax.swing.plaf.basic.BasicScrollBarUI.isDragging
+
+    private static var isDragging_FieldID: jfieldID?
+
+    override open var isDragging: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "isDragging", fieldType: "Z", fieldCache: &MetalScrollBarUI.isDragging_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "isDragging", fieldType: "Z", fieldCache: &MetalScrollBarUI.isDragging_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
@@ -156,8 +257,8 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     override open var maximumThumbSize: java_awt.Dimension! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "maximumThumbSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalScrollBarUI.maximumThumbSize_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "maximumThumbSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalScrollBarUI.maximumThumbSize_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Dimension( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -167,14 +268,160 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         }
     }
 
+    /// protected java.awt.Dimension javax.swing.plaf.basic.BasicScrollBarUI.minimumThumbSize
+
+    private static var minimumThumbSize_FieldID: jfieldID?
+
+    override open var minimumThumbSize: java_awt.Dimension! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "minimumThumbSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalScrollBarUI.minimumThumbSize_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Dimension( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "minimumThumbSize", fieldType: "Ljava/awt/Dimension;", fieldCache: &MetalScrollBarUI.minimumThumbSize_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.plaf.basic.BasicScrollBarUI$ModelListener javax.swing.plaf.basic.BasicScrollBarUI.modelListener
+
+    private static var modelListener_FieldID: jfieldID?
+
+    override open var modelListener: /* class javax.swing.plaf.basic.BasicScrollBarUI$ModelListener */ UnavailableObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "modelListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ModelListener;", fieldCache: &MetalScrollBarUI.modelListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.basic.BasicScrollBarUI$ModelListener */ UnavailableObject( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "modelListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ModelListener;", fieldCache: &MetalScrollBarUI.modelListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollBarUI.propertyChangeListener
+
+    private static var propertyChangeListener_FieldID: jfieldID?
+
+    override open var propertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollBarUI.propertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollBarUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private int javax.swing.plaf.basic.BasicScrollBarUI.scrollBarValue
+
+    /// protected int javax.swing.plaf.basic.BasicScrollBarUI.scrollBarWidth
+
+    // Skipping field: false false true false false false 
+
+    /// protected javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener javax.swing.plaf.basic.BasicScrollBarUI.scrollListener
+
+    private static var scrollListener_FieldID: jfieldID?
+
+    override open var scrollListener: /* class javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener */ UnavailableObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "scrollListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ScrollListener;", fieldCache: &MetalScrollBarUI.scrollListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener */ UnavailableObject( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "scrollListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ScrollListener;", fieldCache: &MetalScrollBarUI.scrollListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.Timer javax.swing.plaf.basic.BasicScrollBarUI.scrollTimer
+
+    private static var scrollTimer_FieldID: jfieldID?
+
+    override open var scrollTimer: Timer! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "scrollTimer", fieldType: "Ljavax/swing/Timer;", fieldCache: &MetalScrollBarUI.scrollTimer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? Timer( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "scrollTimer", fieldType: "Ljavax/swing/Timer;", fieldCache: &MetalScrollBarUI.scrollTimer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.JScrollBar javax.swing.plaf.basic.BasicScrollBarUI.scrollbar
+
+    private static var scrollbar_FieldID: jfieldID?
+
+    override open var scrollbar: JScrollBar! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "scrollbar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &MetalScrollBarUI.scrollbar_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JScrollBar( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "scrollbar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &MetalScrollBarUI.scrollbar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicScrollBarUI.supportsAbsolutePositioning
+
+    /// private boolean javax.swing.plaf.basic.BasicScrollBarUI.thumbActive
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.thumbColor
+
+    private static var thumbColor_FieldID: jfieldID?
+
+    override open var thumbColor: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "thumbColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "thumbColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.thumbDarkShadowColor
+
+    private static var thumbDarkShadowColor_FieldID: jfieldID?
+
+    override open var thumbDarkShadowColor: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "thumbDarkShadowColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbDarkShadowColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "thumbDarkShadowColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbDarkShadowColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.thumbHighlightColor
 
     private static var thumbHighlightColor_FieldID: jfieldID?
 
     override open var thumbHighlightColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "thumbHighlightColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbHighlightColor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "thumbHighlightColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbHighlightColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -190,8 +437,8 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     override open var thumbLightShadowColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "thumbLightShadowColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbLightShadowColor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "thumbLightShadowColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbLightShadowColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -201,201 +448,14 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         }
     }
 
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.thumbDarkShadowColor
-
-    private static var thumbDarkShadowColor_FieldID: jfieldID?
-
-    override open var thumbDarkShadowColor: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "thumbDarkShadowColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbDarkShadowColor_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "thumbDarkShadowColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbDarkShadowColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.thumbColor
-
-    private static var thumbColor_FieldID: jfieldID?
-
-    override open var thumbColor: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "thumbColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbColor_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "thumbColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.thumbColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.trackColor
-
-    private static var trackColor_FieldID: jfieldID?
-
-    override open var trackColor: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "trackColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackColor_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "trackColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.trackHighlightColor
-
-    private static var trackHighlightColor_FieldID: jfieldID?
-
-    override open var trackHighlightColor: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "trackHighlightColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackHighlightColor_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "trackHighlightColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackHighlightColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.JScrollBar javax.swing.plaf.basic.BasicScrollBarUI.scrollbar
-
-    private static var scrollbar_FieldID: jfieldID?
-
-    override open var scrollbar: JScrollBar! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollbar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &MetalScrollBarUI.scrollbar_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JScrollBar( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "scrollbar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &MetalScrollBarUI.scrollbar_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.JButton javax.swing.plaf.basic.BasicScrollBarUI.incrButton
-
-    private static var incrButton_FieldID: jfieldID?
-
-    override open var incrButton: JButton! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "incrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.incrButton_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JButton( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "incrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.incrButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.JButton javax.swing.plaf.basic.BasicScrollBarUI.decrButton
-
-    private static var decrButton_FieldID: jfieldID?
-
-    override open var decrButton: JButton! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "decrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.decrButton_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JButton( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "decrButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &MetalScrollBarUI.decrButton_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected boolean javax.swing.plaf.basic.BasicScrollBarUI.isDragging
-
-    private static var isDragging_FieldID: jfieldID?
-
-    override open var isDragging: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "isDragging", fieldType: "Z", fieldCache: &MetalScrollBarUI.isDragging_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "isDragging", fieldType: "Z", fieldCache: &MetalScrollBarUI.isDragging_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.plaf.basic.BasicScrollBarUI$TrackListener javax.swing.plaf.basic.BasicScrollBarUI.trackListener
-
-    private static var trackListener_FieldID: jfieldID?
-
-    override open var trackListener: /* javax.swing.plaf.basic.BasicScrollBarUI$TrackListener */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "trackListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$TrackListener;", fieldCache: &MetalScrollBarUI.trackListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$TrackListener */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "trackListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$TrackListener;", fieldCache: &MetalScrollBarUI.trackListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener javax.swing.plaf.basic.BasicScrollBarUI.buttonListener
-
-    private static var buttonListener_FieldID: jfieldID?
-
-    override open var buttonListener: /* javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "buttonListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ArrowButtonListener;", fieldCache: &MetalScrollBarUI.buttonListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$ArrowButtonListener */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "buttonListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ArrowButtonListener;", fieldCache: &MetalScrollBarUI.buttonListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.plaf.basic.BasicScrollBarUI$ModelListener javax.swing.plaf.basic.BasicScrollBarUI.modelListener
-
-    private static var modelListener_FieldID: jfieldID?
-
-    override open var modelListener: /* javax.swing.plaf.basic.BasicScrollBarUI$ModelListener */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "modelListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ModelListener;", fieldCache: &MetalScrollBarUI.modelListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$ModelListener */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "modelListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ModelListener;", fieldCache: &MetalScrollBarUI.modelListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicScrollBarUI.thumbRect
 
     private static var thumbRect_FieldID: jfieldID?
 
     override open var thumbRect: java_awt.Rectangle! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "thumbRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalScrollBarUI.thumbRect_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "thumbRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalScrollBarUI.thumbRect_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Rectangle( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -405,20 +465,20 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         }
     }
 
-    /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicScrollBarUI.trackRect
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.trackColor
 
-    private static var trackRect_FieldID: jfieldID?
+    private static var trackColor_FieldID: jfieldID?
 
-    override open var trackRect: java_awt.Rectangle! {
+    override open var trackColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "trackRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalScrollBarUI.trackRect_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Rectangle( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "trackColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "trackRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalScrollBarUI.trackRect_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "trackColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -428,169 +488,152 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     override open var trackHighlight: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "trackHighlight", fieldType: "I", fieldCache: &MetalScrollBarUI.trackHighlight_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "trackHighlight", fieldType: "I", fieldCache: &MetalScrollBarUI.trackHighlight_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "trackHighlight", fieldType: "I", fieldCache: &MetalScrollBarUI.trackHighlight_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// protected static final int javax.swing.plaf.basic.BasicScrollBarUI.NO_HIGHLIGHT
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicScrollBarUI.trackHighlightColor
 
-    /// protected static final int javax.swing.plaf.basic.BasicScrollBarUI.DECREASE_HIGHLIGHT
+    private static var trackHighlightColor_FieldID: jfieldID?
 
-    /// protected static final int javax.swing.plaf.basic.BasicScrollBarUI.INCREASE_HIGHLIGHT
-
-    /// protected javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener javax.swing.plaf.basic.BasicScrollBarUI.scrollListener
-
-    private static var scrollListener_FieldID: jfieldID?
-
-    override open var scrollListener: /* javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener */ UnclassedObject! {
+    override open var trackHighlightColor: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ScrollListener;", fieldCache: &MetalScrollBarUI.scrollListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.basic.BasicScrollBarUI$ScrollListener */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "trackHighlightColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackHighlightColor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "scrollListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$ScrollListener;", fieldCache: &MetalScrollBarUI.scrollListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "trackHighlightColor", fieldType: "Ljava/awt/Color;", fieldCache: &MetalScrollBarUI.trackHighlightColor_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollBarUI.propertyChangeListener
+    /// protected javax.swing.plaf.basic.BasicScrollBarUI$TrackListener javax.swing.plaf.basic.BasicScrollBarUI.trackListener
 
-    private static var propertyChangeListener_FieldID: jfieldID?
+    private static var trackListener_FieldID: jfieldID?
 
-    override open var propertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var trackListener: /* class javax.swing.plaf.basic.BasicScrollBarUI$TrackListener */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollBarUI.propertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "trackListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$TrackListener;", fieldCache: &MetalScrollBarUI.trackListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.basic.BasicScrollBarUI$TrackListener */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "propertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollBarUI.propertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "trackListener", fieldType: "Ljavax/swing/plaf/basic/BasicScrollBarUI$TrackListener;", fieldCache: &MetalScrollBarUI.trackListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// protected javax.swing.Timer javax.swing.plaf.basic.BasicScrollBarUI.scrollTimer
+    /// protected java.awt.Rectangle javax.swing.plaf.basic.BasicScrollBarUI.trackRect
 
-    private static var scrollTimer_FieldID: jfieldID?
+    private static var trackRect_FieldID: jfieldID?
 
-    override open var scrollTimer: Timer! {
+    override open var trackRect: java_awt.Rectangle! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollTimer", fieldType: "Ljavax/swing/Timer;", fieldCache: &MetalScrollBarUI.scrollTimer_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? Timer( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "trackRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalScrollBarUI.trackRect_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Rectangle( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "scrollTimer", fieldType: "Ljavax/swing/Timer;", fieldCache: &MetalScrollBarUI.scrollTimer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "trackRect", fieldType: "Ljava/awt/Rectangle;", fieldCache: &MetalScrollBarUI.trackRect_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
-
-    /// private static final int javax.swing.plaf.basic.BasicScrollBarUI.scrollSpeedThrottle
-
-    /// private boolean javax.swing.plaf.basic.BasicScrollBarUI.supportsAbsolutePositioning
-
-    /// protected int javax.swing.plaf.basic.BasicScrollBarUI.scrollBarWidth
-
-    /// private javax.swing.plaf.basic.BasicScrollBarUI$Handler javax.swing.plaf.basic.BasicScrollBarUI.handler
-
-    /// private boolean javax.swing.plaf.basic.BasicScrollBarUI.thumbActive
 
     /// private boolean javax.swing.plaf.basic.BasicScrollBarUI.useCachedValue
 
-    /// private int javax.swing.plaf.basic.BasicScrollBarUI.scrollBarValue
+    /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// protected int javax.swing.plaf.basic.BasicScrollBarUI.incrGap
-
-    private static var incrGap_FieldID: jfieldID?
-
-    override open var incrGap: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "incrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.incrGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "incrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.incrGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicScrollBarUI.decrGap
-
-    private static var decrGap_FieldID: jfieldID?
-
-    override open var decrGap: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "decrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.decrGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "decrGap", fieldType: "I", fieldCache: &MetalScrollBarUI.decrGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// static final boolean javax.swing.plaf.basic.BasicScrollBarUI.$assertionsDisabled
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
-
-    /// public static final int javax.swing.SwingConstants.BOTTOM
-
-    /// public static final int javax.swing.SwingConstants.RIGHT
-
-    /// public static final int javax.swing.SwingConstants.NORTH
-
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.plaf.metal.MetalScrollBarUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalScrollBarUI", classCache: &MetalScrollBarUI.MetalScrollBarUIJNIClass, methodSig: "()V", methodCache: &MetalScrollBarUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -601,8 +644,8 @@ open class MetalScrollBarUI: BasicScrollBarUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalScrollBarUI", classCache: &MetalScrollBarUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -618,8 +661,8 @@ open class MetalScrollBarUI: BasicScrollBarUI {
     private static var configureScrollBarColors_MethodID_3: jmethodID?
 
     override open func configureScrollBarColors() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "configureScrollBarColors", methodSig: "()V", methodCache: &MetalScrollBarUI.configureScrollBarColors_MethodID_3, args: &__args, locals: &__locals )
     }
 
@@ -629,9 +672,9 @@ open class MetalScrollBarUI: BasicScrollBarUI {
     private static var createDecreaseButton_MethodID_4: jmethodID?
 
     override open func createDecreaseButton( orientation: Int ) -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(orientation) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDecreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &MetalScrollBarUI.createDecreaseButton_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
@@ -646,9 +689,9 @@ open class MetalScrollBarUI: BasicScrollBarUI {
     private static var createIncreaseButton_MethodID_5: jmethodID?
 
     override open func createIncreaseButton( orientation: Int ) -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(orientation) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createIncreaseButton", methodSig: "(I)Ljavax/swing/JButton;", methodCache: &MetalScrollBarUI.createIncreaseButton_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
@@ -658,109 +701,111 @@ open class MetalScrollBarUI: BasicScrollBarUI {
         return createIncreaseButton( orientation: _orientation )
     }
 
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.paintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollBarUI.createPropertyChangeListener()
 
-    private static var paintThumb_MethodID_6: jmethodID?
+    private static var createPropertyChangeListener_MethodID_6: jmethodID?
 
-    override open func paintThumb( g: java_awt.Graphics?, c: JComponent?, thumbBounds: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    override open func createPropertyChangeListener() -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: c, locals: &__locals )
-        __args[2] = JNIType.toJava( value: thumbBounds, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintThumb_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollBarUI.createPropertyChangeListener_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
     }
 
-    override open func paintThumb( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _thumbBounds: java_awt.Rectangle? ) {
-        paintThumb( g: _g, c: _c, thumbBounds: _thumbBounds )
-    }
 
     /// protected java.awt.Dimension javax.swing.plaf.metal.MetalScrollBarUI.getMinimumThumbSize()
 
     private static var getMinimumThumbSize_MethodID_7: jmethodID?
 
     override open func getMinimumThumbSize() -> java_awt.Dimension! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMinimumThumbSize", methodSig: "()Ljava/awt/Dimension;", methodCache: &MetalScrollBarUI.getMinimumThumbSize_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Dimension( javaObject: __return ) : nil
     }
 
 
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.setThumbBounds(int,int,int,int)
+    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollBarUI.getPreferredSize(javax.swing.JComponent)
 
-    private static var setThumbBounds_MethodID_8: jmethodID?
+    // Skipping method: false true false false false 
 
-    override open func setThumbBounds( x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installDefaults()
+
+    private static var installDefaults_MethodID_8: jmethodID?
+
+    override open func installDefaults() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: width, locals: &__locals )
-        __args[3] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbBounds", methodSig: "(IIII)V", methodCache: &MetalScrollBarUI.setThumbBounds_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalScrollBarUI.installDefaults_MethodID_8, args: &__args, locals: &__locals )
     }
 
-    override open func setThumbBounds( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        setThumbBounds( x: _x, y: _y, width: _width, height: _height )
+
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installListeners()
+
+    private static var installListeners_MethodID_9: jmethodID?
+
+    override open func installListeners() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalScrollBarUI.installListeners_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// private void javax.swing.plaf.metal.MetalScrollBarUI.oceanPaintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
+
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.paintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
+
+    private static var paintThumb_MethodID_10: jmethodID?
+
+    override open func paintThumb( g: java_awt.Graphics?, c: JComponent?, thumbBounds: java_awt.Rectangle? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: c, locals: &__locals )
+        __args[2] = JNIType.toJava( value: thumbBounds, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintThumb", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintThumb_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    override open func paintThumb( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _thumbBounds: java_awt.Rectangle? ) {
+        paintThumb( g: _g, c: _c, thumbBounds: _thumbBounds )
     }
 
     /// protected void javax.swing.plaf.metal.MetalScrollBarUI.paintTrack(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
 
-    private static var paintTrack_MethodID_9: jmethodID?
+    private static var paintTrack_MethodID_11: jmethodID?
 
     override open func paintTrack( g: java_awt.Graphics?, c: JComponent?, trackBounds: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
         __args[1] = JNIType.toJava( value: c, locals: &__locals )
         __args[2] = JNIType.toJava( value: trackBounds, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintTrack_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintTrack", methodSig: "(Ljava/awt/Graphics;Ljavax/swing/JComponent;Ljava/awt/Rectangle;)V", methodCache: &MetalScrollBarUI.paintTrack_MethodID_11, args: &__args, locals: &__locals )
     }
 
     override open func paintTrack( _ _g: java_awt.Graphics?, _ _c: JComponent?, _ _trackBounds: java_awt.Rectangle? ) {
         paintTrack( g: _g, c: _c, trackBounds: _trackBounds )
     }
 
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installDefaults()
+    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.setThumbBounds(int,int,int,int)
 
-    private static var installDefaults_MethodID_10: jmethodID?
+    private static var setThumbBounds_MethodID_12: jmethodID?
 
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func setThumbBounds( x: Int, y: Int, width: Int, height: Int ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &MetalScrollBarUI.installDefaults_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(x) )
+        __args[1] = jvalue( i: jint(y) )
+        __args[2] = jvalue( i: jint(width) )
+        __args[3] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setThumbBounds", methodSig: "(IIII)V", methodCache: &MetalScrollBarUI.setThumbBounds_MethodID_12, args: &__args, locals: &__locals )
     }
 
-
-    /// protected void javax.swing.plaf.metal.MetalScrollBarUI.installListeners()
-
-    private static var installListeners_MethodID_11: jmethodID?
-
-    override open func installListeners() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "()V", methodCache: &MetalScrollBarUI.installListeners_MethodID_11, args: &__args, locals: &__locals )
+    override open func setThumbBounds( _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        setThumbBounds( x: _x, y: _y, width: _width, height: _height )
     }
-
-
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollBarUI.createPropertyChangeListener()
-
-    private static var createPropertyChangeListener_MethodID_12: jmethodID?
-
-    override open func createPropertyChangeListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createPropertyChangeListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollBarUI.createPropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.awt.Dimension javax.swing.plaf.metal.MetalScrollBarUI.getPreferredSize(javax.swing.JComponent)
-
-    /// private void javax.swing.plaf.metal.MetalScrollBarUI.oceanPaintThumb(java.awt.Graphics,javax.swing.JComponent,java.awt.Rectangle)
 
 }
 

@@ -8,7 +8,7 @@ import java_util
 
 /// class javax.swing.AbstractAction ///
 
-open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /* java.io.Serializable */ UnclassedProtocol {
+open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -24,23 +24,6 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// private static java.lang.Boolean javax.swing.AbstractAction.RECONFIGURE_ON_NULL
 
-    /// protected boolean javax.swing.AbstractAction.enabled
-
-    private static var enabled_FieldID: jfieldID?
-
-    open var enabled: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &AbstractAction.enabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &AbstractAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// private transient javax.swing.ArrayTable javax.swing.AbstractAction.arrayTable
 
     /// protected javax.swing.event.SwingPropertyChangeSupport javax.swing.AbstractAction.changeSupport
@@ -49,8 +32,8 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     open var changeSupport: SwingPropertyChangeSupport! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &AbstractAction.changeSupport_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &AbstractAction.changeSupport_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SwingPropertyChangeSupport( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -60,69 +43,19 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.DEFAULT
+    /// protected boolean javax.swing.AbstractAction.enabled
 
-    private static var DEFAULT_FieldID: jfieldID?
+    private static var enabled_FieldID: jfieldID?
 
-    open static var DEFAULT: String! {
+    open var enabled: Bool {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT", fieldType: "Ljava/lang/String;", fieldCache: &DEFAULT_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &AbstractAction.enabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
-    }
-
-    /// public static final java.lang.String javax.swing.Action.NAME
-
-    private static var NAME_FieldID: jfieldID?
-
-    open static var NAME: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "NAME", fieldType: "Ljava/lang/String;", fieldCache: &NAME_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
-
-    private static var SHORT_DESCRIPTION_FieldID: jfieldID?
-
-    open static var SHORT_DESCRIPTION: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "SHORT_DESCRIPTION", fieldType: "Ljava/lang/String;", fieldCache: &SHORT_DESCRIPTION_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
-
-    private static var LONG_DESCRIPTION_FieldID: jfieldID?
-
-    open static var LONG_DESCRIPTION: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "LONG_DESCRIPTION", fieldType: "Ljava/lang/String;", fieldCache: &LONG_DESCRIPTION_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
-
-    private static var SMALL_ICON_FieldID: jfieldID?
-
-    open static var SMALL_ICON: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "SMALL_ICON", fieldType: "Ljava/lang/String;", fieldCache: &SMALL_ICON_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
-
-    private static var ACTION_COMMAND_KEY_FieldID: jfieldID?
-
-    open static var ACTION_COMMAND_KEY: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "ACTION_COMMAND_KEY", fieldType: "Ljava/lang/String;", fieldCache: &ACTION_COMMAND_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &AbstractAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
@@ -133,29 +66,32 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
     open static var ACCELERATOR_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACCELERATOR_KEY", fieldType: "Ljava/lang/String;", fieldCache: &ACCELERATOR_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
 
-    private static var MNEMONIC_KEY_FieldID: jfieldID?
+    private static var ACTION_COMMAND_KEY_FieldID: jfieldID?
 
-    open static var MNEMONIC_KEY: String! {
+    open static var ACTION_COMMAND_KEY: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "MNEMONIC_KEY", fieldType: "Ljava/lang/String;", fieldCache: &MNEMONIC_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "ACTION_COMMAND_KEY", fieldType: "Ljava/lang/String;", fieldCache: &ACTION_COMMAND_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+    /// public static final java.lang.String javax.swing.Action.DEFAULT
 
-    private static var SELECTED_KEY_FieldID: jfieldID?
+    private static var DEFAULT_FieldID: jfieldID?
 
-    open static var SELECTED_KEY: String! {
+    open static var DEFAULT: String! {
         get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_KEY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT", fieldType: "Ljava/lang/String;", fieldCache: &DEFAULT_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -166,7 +102,8 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
     open static var DISPLAYED_MNEMONIC_INDEX_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DISPLAYED_MNEMONIC_INDEX_KEY", fieldType: "Ljava/lang/String;", fieldCache: &DISPLAYED_MNEMONIC_INDEX_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
@@ -177,19 +114,104 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
     open static var LARGE_ICON_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LARGE_ICON_KEY", fieldType: "Ljava/lang/String;", fieldCache: &LARGE_ICON_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
+    }
+
+    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
+
+    private static var LONG_DESCRIPTION_FieldID: jfieldID?
+
+    open static var LONG_DESCRIPTION: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "LONG_DESCRIPTION", fieldType: "Ljava/lang/String;", fieldCache: &LONG_DESCRIPTION_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+
+    private static var MNEMONIC_KEY_FieldID: jfieldID?
+
+    open static var MNEMONIC_KEY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "MNEMONIC_KEY", fieldType: "Ljava/lang/String;", fieldCache: &MNEMONIC_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.Action.NAME
+
+    private static var NAME_FieldID: jfieldID?
+
+    open static var NAME: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "NAME", fieldType: "Ljava/lang/String;", fieldCache: &NAME_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+
+    private static var SELECTED_KEY_FieldID: jfieldID?
+
+    open static var SELECTED_KEY: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_KEY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_KEY_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
+
+    private static var SHORT_DESCRIPTION_FieldID: jfieldID?
+
+    open static var SHORT_DESCRIPTION: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "SHORT_DESCRIPTION", fieldType: "Ljava/lang/String;", fieldCache: &SHORT_DESCRIPTION_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
+
+    private static var SMALL_ICON_FieldID: jfieldID?
+
+    open static var SMALL_ICON: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "SMALL_ICON", fieldType: "Ljava/lang/String;", fieldCache: &SMALL_ICON_FieldID, className: "javax/swing/AbstractAction", classCache: &AbstractActionJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
+
+    /// public javax.swing.AbstractAction()
+
+    private static var new_MethodID_1: jmethodID?
+
+    public convenience init() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "()V", methodCache: &AbstractAction.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
     /// public javax.swing.AbstractAction(java.lang.String)
 
-    private static var new_MethodID_1: jmethodID?
+    private static var new_MethodID_2: jmethodID?
 
     public convenience init( name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractAction.new_MethodID_1, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &AbstractAction.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -200,14 +222,14 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
 
     /// public javax.swing.AbstractAction(java.lang.String,javax.swing.Icon)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_3: jmethodID?
 
     public convenience init( name: String?, icon: Icon? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: icon, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;)V", methodCache: &AbstractAction.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "(Ljava/lang/String;Ljavax/swing/Icon;)V", methodCache: &AbstractAction.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -216,43 +238,108 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         self.init( name: _name, icon: _icon )
     }
 
-    /// public javax.swing.AbstractAction()
+    /// static boolean javax.swing.AbstractAction.hasSelectedKey(javax.swing.Action)
 
-    private static var new_MethodID_3: jmethodID?
+    // Skipping method: true false false false false 
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// static boolean javax.swing.AbstractAction.isSelected(javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.AbstractAction.setEnabledFromAction(javax.swing.JComponent,javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.AbstractAction.setToolTipTextFromAction(javax.swing.JComponent,javax.swing.Action)
+
+    // Skipping method: true false false false false 
+
+    /// static boolean javax.swing.AbstractAction.shouldReconfigure(java.beans.PropertyChangeEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public synchronized void javax.swing.AbstractAction.addPropertyChangeListener(java.beans.PropertyChangeListener)
+
+    private static var addPropertyChangeListener_MethodID_4: jmethodID?
+
+    open func addPropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/AbstractAction", classCache: &AbstractAction.AbstractActionJNIClass, methodSig: "()V", methodCache: &AbstractAction.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.addPropertyChangeListener_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addPropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        addPropertyChangeListener( listener: _listener )
     }
 
     /// protected java.lang.Object javax.swing.AbstractAction.clone() throws java.lang.CloneNotSupportedException
 
-    private static var clone_MethodID_4: jmethodID?
+    private static var clone_MethodID_5: jmethodID?
 
     override open func clone() throws /* java.lang.CloneNotSupportedException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &AbstractAction.clone_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &AbstractAction.clone_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.CloneNotSupportedException( javaObject: throwable )
         }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
+    /// protected void javax.swing.AbstractAction.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
+
+    private static var firePropertyChange_MethodID_6: jmethodID?
+
+    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
+        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
+        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractAction.firePropertyChange_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
+        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
+    }
+
+    /// public java.lang.Object[] javax.swing.AbstractAction.getKeys()
+
+    private static var getKeys_MethodID_7: jmethodID?
+
+    open func getKeys() -> [JavaObject]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeys", methodSig: "()[Ljava/lang/Object;", methodCache: &AbstractAction.getKeys_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [JavaObject].self, from: __return )
+    }
+
+
+    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.AbstractAction.getPropertyChangeListeners()
+
+    private static var getPropertyChangeListeners_MethodID_8: jmethodID?
+
+    open func getPropertyChangeListeners() -> [/* interface java.beans.PropertyChangeListener */ UnavailableProtocol]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &AbstractAction.getPropertyChangeListeners_MethodID_8, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [/* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward].self, from: __return )
+    }
+
+
     /// public java.lang.Object javax.swing.AbstractAction.getValue(java.lang.String)
 
-    private static var getValue_MethodID_5: jmethodID?
+    private static var getValue_MethodID_9: jmethodID?
 
     open func getValue( key: String? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &AbstractAction.getValue_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &AbstractAction.getValue_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -261,133 +348,67 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
         return getValue( key: _key )
     }
 
-    /// private void javax.swing.AbstractAction.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
-
-    /// private void javax.swing.AbstractAction.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public java.lang.Object[] javax.swing.AbstractAction.getKeys()
-
-    private static var getKeys_MethodID_6: jmethodID?
-
-    open func getKeys() -> [JavaObject]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getKeys", methodSig: "()[Ljava/lang/Object;", methodCache: &AbstractAction.getKeys_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [JavaObject](), from: __return )
-    }
-
-
-    /// static boolean javax.swing.AbstractAction.isSelected(javax.swing.Action)
-
     /// public boolean javax.swing.AbstractAction.isEnabled()
 
-    private static var isEnabled_MethodID_7: jmethodID?
+    private static var isEnabled_MethodID_10: jmethodID?
 
     open func isEnabled() -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &AbstractAction.isEnabled_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEnabled", methodSig: "()Z", methodCache: &AbstractAction.isEnabled_MethodID_10, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-
-    /// public void javax.swing.AbstractAction.setEnabled(boolean)
-
-    private static var setEnabled_MethodID_8: jmethodID?
-
-    open func setEnabled( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &AbstractAction.setEnabled_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setEnabled( _ _b: Bool ) {
-        setEnabled( b: _b )
-    }
-
-    /// public synchronized void javax.swing.AbstractAction.addPropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var addPropertyChangeListener_MethodID_9: jmethodID?
-
-    open func addPropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addPropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.addPropertyChangeListener_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func addPropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        addPropertyChangeListener( listener: _listener )
-    }
-
-    /// public synchronized void javax.swing.AbstractAction.removePropertyChangeListener(java.beans.PropertyChangeListener)
-
-    private static var removePropertyChangeListener_MethodID_10: jmethodID?
-
-    open func removePropertyChangeListener( listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.removePropertyChangeListener_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func removePropertyChangeListener( _ _listener: /* java.beans.PropertyChangeListener */ UnclassedProtocol? ) {
-        removePropertyChangeListener( listener: _listener )
-    }
-
-    /// protected void javax.swing.AbstractAction.firePropertyChange(java.lang.String,java.lang.Object,java.lang.Object)
-
-    private static var firePropertyChange_MethodID_11: jmethodID?
-
-    open func firePropertyChange( propertyName: String?, oldValue: java_swift.JavaObject?, newValue: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: propertyName, locals: &__locals )
-        __args[1] = JNIType.toJava( value: oldValue, locals: &__locals )
-        __args[2] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &AbstractAction.firePropertyChange_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func firePropertyChange( _ _propertyName: String?, _ _oldValue: java_swift.JavaObject?, _ _newValue: java_swift.JavaObject? ) {
-        firePropertyChange( propertyName: _propertyName, oldValue: _oldValue, newValue: _newValue )
-    }
-
-    /// static boolean javax.swing.AbstractAction.shouldReconfigure(java.beans.PropertyChangeEvent)
-
-    /// static void javax.swing.AbstractAction.setEnabledFromAction(javax.swing.JComponent,javax.swing.Action)
-
-    /// static void javax.swing.AbstractAction.setToolTipTextFromAction(javax.swing.JComponent,javax.swing.Action)
-
-    /// static boolean javax.swing.AbstractAction.hasSelectedKey(javax.swing.Action)
 
     /// public void javax.swing.AbstractAction.putValue(java.lang.String,java.lang.Object)
 
-    private static var putValue_MethodID_12: jmethodID?
+    private static var putValue_MethodID_11: jmethodID?
 
     open func putValue( key: String?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &AbstractAction.putValue_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "putValue", methodSig: "(Ljava/lang/String;Ljava/lang/Object;)V", methodCache: &AbstractAction.putValue_MethodID_11, args: &__args, locals: &__locals )
     }
 
     open func putValue( _ _key: String?, _ _value: java_swift.JavaObject? ) {
         putValue( key: _key, value: _value )
     }
 
-    /// public synchronized java.beans.PropertyChangeListener[] javax.swing.AbstractAction.getPropertyChangeListeners()
+    /// private void javax.swing.AbstractAction.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
 
-    private static var getPropertyChangeListeners_MethodID_13: jmethodID?
+    /// public synchronized void javax.swing.AbstractAction.removePropertyChangeListener(java.beans.PropertyChangeListener)
 
-    open func getPropertyChangeListeners() -> [/* java.beans.PropertyChangeListener */ UnclassedProtocol]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var removePropertyChangeListener_MethodID_12: jmethodID?
+
+    open func removePropertyChangeListener( listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyChangeListeners", methodSig: "()[Ljava/beans/PropertyChangeListener;", methodCache: &AbstractAction.getPropertyChangeListeners_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [/* java.beans.PropertyChangeListener */ UnclassedProtocolForward](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removePropertyChangeListener", methodSig: "(Ljava/beans/PropertyChangeListener;)V", methodCache: &AbstractAction.removePropertyChangeListener_MethodID_12, args: &__args, locals: &__locals )
     }
 
+    open func removePropertyChangeListener( _ _listener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol? ) {
+        removePropertyChangeListener( listener: _listener )
+    }
+
+    /// public void javax.swing.AbstractAction.setEnabled(boolean)
+
+    private static var setEnabled_MethodID_13: jmethodID?
+
+    open func setEnabled( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEnabled", methodSig: "(Z)V", methodCache: &AbstractAction.setEnabled_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setEnabled( _ _b: Bool ) {
+        setEnabled( b: _b )
+    }
+
+    /// private void javax.swing.AbstractAction.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
@@ -396,8 +417,8 @@ open class AbstractAction: java_swift.JavaObject, Action, java_lang.Cloneable, /
     private static var actionPerformed_MethodID_14: jmethodID?
 
     open func actionPerformed( e: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &AbstractAction.actionPerformed_MethodID_14, args: &__args, locals: &__locals )
     }

@@ -24,15 +24,30 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
     open static var EXIT_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EXIT_ON_CLOSE", fieldType: "I", fieldCache: &EXIT_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
     /// private static final java.lang.Object javax.swing.JFrame.defaultLookAndFeelDecoratedKey
 
-    /// private int javax.swing.JFrame.defaultCloseOperation
+    /// protected javax.accessibility.AccessibleContext javax.swing.JFrame.accessibleContext
 
-    /// private javax.swing.TransferHandler javax.swing.JFrame.transferHandler
+    private static var accessibleContext_FieldID: jfieldID?
+
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JFrame.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JFrame.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private int javax.swing.JFrame.defaultCloseOperation
 
     /// protected javax.swing.JRootPane javax.swing.JFrame.rootPane
 
@@ -40,8 +55,8 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     open var rootPane: JRootPane! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "rootPane", fieldType: "Ljavax/swing/JRootPane;", fieldCache: &JFrame.rootPane_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "rootPane", fieldType: "Ljavax/swing/JRootPane;", fieldCache: &JFrame.rootPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JRootPane( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -57,87 +72,93 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     open var rootPaneCheckingEnabled: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "rootPaneCheckingEnabled", fieldType: "Z", fieldCache: &JFrame.rootPaneCheckingEnabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "rootPaneCheckingEnabled", fieldType: "Z", fieldCache: &JFrame.rootPaneCheckingEnabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "rootPaneCheckingEnabled", fieldType: "Z", fieldCache: &JFrame.rootPaneCheckingEnabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// protected javax.accessibility.AccessibleContext javax.swing.JFrame.accessibleContext
-
-    private static var accessibleContext_FieldID: jfieldID?
-
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JFrame.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JFrame.accessibleContext_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// public static final int java.awt.Frame.DEFAULT_CURSOR
+    /// private javax.swing.TransferHandler javax.swing.JFrame.transferHandler
 
     /// public static final int java.awt.Frame.CROSSHAIR_CURSOR
 
-    /// public static final int java.awt.Frame.TEXT_CURSOR
+    // Skipping field: false true false false false false 
 
-    /// public static final int java.awt.Frame.WAIT_CURSOR
+    /// public static final int java.awt.Frame.DEFAULT_CURSOR
 
-    /// public static final int java.awt.Frame.SW_RESIZE_CURSOR
-
-    /// public static final int java.awt.Frame.SE_RESIZE_CURSOR
-
-    /// public static final int java.awt.Frame.NW_RESIZE_CURSOR
-
-    /// public static final int java.awt.Frame.NE_RESIZE_CURSOR
-
-    /// public static final int java.awt.Frame.N_RESIZE_CURSOR
-
-    /// public static final int java.awt.Frame.S_RESIZE_CURSOR
-
-    /// public static final int java.awt.Frame.W_RESIZE_CURSOR
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.Frame.E_RESIZE_CURSOR
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.Frame.HAND_CURSOR
 
-    /// public static final int java.awt.Frame.MOVE_CURSOR
-
-    /// public static final int java.awt.Frame.NORMAL
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.Frame.ICONIFIED
 
-    /// public static final int java.awt.Frame.MAXIMIZED_HORIZ
-
-    /// public static final int java.awt.Frame.MAXIMIZED_VERT
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.Frame.MAXIMIZED_BOTH
 
-    /// java.awt.Rectangle java.awt.Frame.maximizedBounds
+    // Skipping field: false true false false false false 
 
-    /// java.lang.String java.awt.Frame.title
+    /// public static final int java.awt.Frame.MAXIMIZED_HORIZ
 
-    /// java.awt.MenuBar java.awt.Frame.menuBar
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Frame.resizable
+    /// public static final int java.awt.Frame.MAXIMIZED_VERT
 
-    /// boolean java.awt.Frame.undecorated
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Frame.mbManagement
+    /// public static final int java.awt.Frame.MOVE_CURSOR
 
-    /// private int java.awt.Frame.state
+    // Skipping field: false true false false false false 
 
-    /// java.util.Vector java.awt.Frame.ownedWindows
+    /// public static final int java.awt.Frame.NE_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.NORMAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.NW_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.N_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.SE_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.SW_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.S_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.TEXT_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.WAIT_CURSOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.Frame.W_RESIZE_CURSOR
+
+    // Skipping field: false true false false false false 
 
     /// private static final java.lang.String java.awt.Frame.base
 
@@ -147,75 +168,117 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     /// private int java.awt.Frame.frameSerializedDataVersion
 
-    /// java.lang.String java.awt.Window.warningString
+    /// java.awt.Rectangle java.awt.Frame.maximizedBounds
 
-    /// transient java.util.List java.awt.Window.icons
+    // Skipping field: true false false false false false 
 
-    /// private transient java.awt.Component java.awt.Window.temporaryLostComponent
+    /// boolean java.awt.Frame.mbManagement
 
-    /// static boolean java.awt.Window.systemSyncLWRequests
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Window.syncLWRequests
+    /// java.awt.MenuBar java.awt.Frame.menuBar
 
-    /// transient boolean java.awt.Window.beforeFirstShow
+    // Skipping field: true false false false false false 
 
-    /// private transient boolean java.awt.Window.disposing
+    /// java.util.Vector java.awt.Frame.ownedWindows
 
-    /// transient java.awt.Window$WindowDisposerRecord java.awt.Window.disposerRecord
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Frame.resizable
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Frame.state
+
+    /// java.lang.String java.awt.Frame.title
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Frame.undecorated
+
+    // Skipping field: true false false false false false 
 
     /// static final int java.awt.Window.OPENED
 
-    /// int java.awt.Window.state
-
-    /// private boolean java.awt.Window.alwaysOnTop
+    // Skipping field: true false false false false false 
 
     /// private static final sun.awt.util.IdentityArrayList java.awt.Window.allWindows
 
-    /// transient java.util.Vector java.awt.Window.ownedWindowList
-
-    /// private transient java.lang.ref.WeakReference java.awt.Window.weakThis
-
-    /// transient boolean java.awt.Window.showWithParent
-
-    /// transient java.awt.Dialog java.awt.Window.modalBlocker
-
-    /// java.awt.Dialog$ModalExclusionType java.awt.Window.modalExclusionType
-
-    /// transient java.awt.event.WindowListener java.awt.Window.windowListener
-
-    /// transient java.awt.event.WindowStateListener java.awt.Window.windowStateListener
-
-    /// transient java.awt.event.WindowFocusListener java.awt.Window.windowFocusListener
-
-    /// transient java.awt.im.InputContext java.awt.Window.inputContext
-
-    /// private transient java.lang.Object java.awt.Window.inputContextLock
-
-    /// private java.awt.FocusManager java.awt.Window.focusMgr
-
-    /// private boolean java.awt.Window.focusableWindowState
-
-    /// private volatile boolean java.awt.Window.autoRequestFocus
-
-    /// transient boolean java.awt.Window.isInShow
-
-    /// private volatile float java.awt.Window.opacity
-
-    /// private java.awt.Shape java.awt.Window.shape
-
     /// private static final java.lang.String java.awt.Window.base
+
+    /// private static final java.util.concurrent.atomic.AtomicBoolean java.awt.Window.beforeFirstWindowShown
+
+    /// private static final boolean java.awt.Window.locationByPlatformProp
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Window.log
 
     /// private static int java.awt.Window.nameCounter
 
     /// private static final long java.awt.Window.serialVersionUID
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Window.log
+    /// static boolean java.awt.Window.systemSyncLWRequests
 
-    /// private static final boolean java.awt.Window.locationByPlatformProp
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Window.alwaysOnTop
+
+    /// transient java.lang.Object java.awt.Window.anchor
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Window.autoRequestFocus
+
+    /// transient boolean java.awt.Window.beforeFirstShow
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.Window$WindowDisposerRecord java.awt.Window.disposerRecord
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Window.disposing
+
+    /// private java.awt.FocusManager java.awt.Window.focusMgr
+
+    /// private boolean java.awt.Window.focusableWindowState
+
+    /// transient java.util.List java.awt.Window.icons
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.im.InputContext java.awt.Window.inputContext
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Window.inputContextLock
+
+    /// transient boolean java.awt.Window.isInShow
+
+    // Skipping field: true false false false false false 
 
     /// transient boolean java.awt.Window.isTrayIconWindow
 
-    /// private transient volatile int java.awt.Window.securityWarningWidth
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Window.locationByPlatform
+
+    /// transient java.awt.Dialog java.awt.Window.modalBlocker
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dialog$ModalExclusionType java.awt.Window.modalExclusionType
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile float java.awt.Window.opacity
+
+    /// transient java.util.Vector java.awt.Window.ownedWindowList
+
+    // Skipping field: true false false false false false 
+
+    /// private transient float java.awt.Window.securityWarningAlignmentX
+
+    /// private transient float java.awt.Window.securityWarningAlignmentY
 
     /// private transient volatile int java.awt.Window.securityWarningHeight
 
@@ -223,311 +286,491 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     /// private transient double java.awt.Window.securityWarningPointY
 
-    /// private transient float java.awt.Window.securityWarningAlignmentX
+    /// private transient volatile int java.awt.Window.securityWarningWidth
 
-    /// private transient float java.awt.Window.securityWarningAlignmentY
+    /// private java.awt.Shape java.awt.Window.shape
 
-    /// transient java.lang.Object java.awt.Window.anchor
+    /// transient boolean java.awt.Window.showWithParent
 
-    /// private static final java.util.concurrent.atomic.AtomicBoolean java.awt.Window.beforeFirstWindowShown
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Window.state
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Window.syncLWRequests
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.awt.Component java.awt.Window.temporaryLostComponent
 
     /// private java.awt.Window$Type java.awt.Window.type
 
+    /// java.lang.String java.awt.Window.warningString
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.ref.WeakReference java.awt.Window.weakThis
+
+    /// transient java.awt.event.WindowFocusListener java.awt.Window.windowFocusListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.WindowListener java.awt.Window.windowListener
+
+    // Skipping field: true false false false false false 
+
     /// private int java.awt.Window.windowSerializedDataVersion
 
-    /// private volatile boolean java.awt.Window.locationByPlatform
+    /// transient java.awt.event.WindowStateListener java.awt.Window.windowStateListener
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    // Skipping field: true false false false false false 
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    // Skipping field: false false true false false false 
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public static final int javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE
+    // Skipping field: false true false false false false 
 
-    private static var DO_NOTHING_ON_CLOSE_FieldID: jfieldID?
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
 
-    open static var DO_NOTHING_ON_CLOSE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DO_NOTHING_ON_CLOSE", fieldType: "I", fieldCache: &DO_NOTHING_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.WindowConstants.HIDE_ON_CLOSE
+    /// public static final int java.awt.image.ImageObserver.ERROR
 
-    private static var HIDE_ON_CLOSE_FieldID: jfieldID?
+    // Skipping field: false true false false false false 
 
-    open static var HIDE_ON_CLOSE: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "HIDE_ON_CLOSE", fieldType: "I", fieldCache: &HIDE_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.WindowConstants.DISPOSE_ON_CLOSE
 
@@ -536,28 +779,46 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
     open static var DISPOSE_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISPOSE_ON_CLOSE", fieldType: "I", fieldCache: &DISPOSE_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE
+
+    private static var DO_NOTHING_ON_CLOSE_FieldID: jfieldID?
+
+    open static var DO_NOTHING_ON_CLOSE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "DO_NOTHING_ON_CLOSE", fieldType: "I", fieldCache: &DO_NOTHING_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
+            return Int(__value)
         }
     }
 
     /// public static final int javax.swing.WindowConstants.EXIT_ON_CLOSE
 
-    /// public javax.swing.JFrame(java.lang.String,java.awt.GraphicsConfiguration)
+    // Skipping field: false false true false false false 
+
+    /// public static final int javax.swing.WindowConstants.HIDE_ON_CLOSE
+
+    private static var HIDE_ON_CLOSE_FieldID: jfieldID?
+
+    open static var HIDE_ON_CLOSE: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "HIDE_ON_CLOSE", fieldType: "I", fieldCache: &HIDE_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public javax.swing.JFrame() throws java.awt.HeadlessException
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( title: String?, gc: java_awt.GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;)V", methodCache: &JFrame.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "()V", methodCache: &JFrame.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _title: String?, _ _gc: java_awt.GraphicsConfiguration? ) {
-        self.init( title: _title, gc: _gc )
     }
 
     /// public javax.swing.JFrame(java.lang.String) throws java.awt.HeadlessException
@@ -565,11 +826,12 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( title: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &JFrame.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_awt.HeadlessException( javaObject: throwable )
         }
         self.init( javaObject: __object )
@@ -580,15 +842,33 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
         try self.init( title: _title )
     }
 
-    /// public javax.swing.JFrame(java.awt.GraphicsConfiguration)
+    /// public javax.swing.JFrame(java.lang.String,java.awt.GraphicsConfiguration)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( gc: java_awt.GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( title: String?, gc: java_awt.GraphicsConfiguration? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;)V", methodCache: &JFrame.new_MethodID_3, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _title: String?, _ _gc: java_awt.GraphicsConfiguration? ) {
+        self.init( title: _title, gc: _gc )
+    }
+
+    /// public javax.swing.JFrame(java.awt.GraphicsConfiguration)
+
+    private static var new_MethodID_4: jmethodID?
+
+    public convenience init( gc: java_awt.GraphicsConfiguration? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: gc, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;)V", methodCache: &JFrame.new_MethodID_3, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;)V", methodCache: &JFrame.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -597,417 +877,412 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
         self.init( gc: _gc )
     }
 
-    /// public javax.swing.JFrame() throws java.awt.HeadlessException
-
-    private static var new_MethodID_4: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/JFrame", classCache: &JFrame.JFrameJNIClass, methodSig: "()V", methodCache: &JFrame.new_MethodID_4, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    /// public void javax.swing.JFrame.remove(java.awt.Component)
-
-    private static var remove_MethodID_5: jmethodID?
-
-    open func remove( comp: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JFrame.remove_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    override open func remove( _ _comp: java_awt.Component? ) {
-        remove( comp: _comp )
-    }
-
-    /// public void javax.swing.JFrame.update(java.awt.Graphics)
-
-    private static var update_MethodID_6: jmethodID?
-
-    open func update( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JFrame.update_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    override open func update( _ _g: java_awt.Graphics? ) {
-        update( g: _g )
-    }
-
-    /// protected java.lang.String javax.swing.JFrame.paramString()
-
-    private static var paramString_MethodID_7: jmethodID?
-
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JFrame.paramString_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public void javax.swing.JFrame.repaint(long,int,int,int,int)
-
-    private static var repaint_MethodID_8: jmethodID?
-
-    open func repaint( time: Int64, x: Int, y: Int, width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: time, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: width, locals: &__locals )
-        __args[4] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JFrame.repaint_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    override open func repaint( _ _time: Int64, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
-        repaint( time: _time, x: _x, y: _y, width: _width, height: _height )
-    }
-
-    /// public java.awt.Graphics javax.swing.JFrame.getGraphics()
-
-    /// public void javax.swing.JFrame.setIconImage(java.awt.Image)
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JFrame.getAccessibleContext()
-
-    /// public java.awt.Container javax.swing.JFrame.getContentPane()
-
-    private static var getContentPane_MethodID_9: jmethodID?
-
-    open func getContentPane() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JFrame.getContentPane_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JFrame.setLayout(java.awt.LayoutManager)
-
-    private static var setLayout_MethodID_10: jmethodID?
-
-    open func setLayout( manager: java_awt.LayoutManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: manager, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JFrame.setLayout_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
-        setLayout( manager: _manager )
-    }
-
-    /// public javax.swing.JRootPane javax.swing.JFrame.getRootPane()
-
-    private static var getRootPane_MethodID_11: jmethodID?
-
-    open func getRootPane() -> JRootPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JFrame.getRootPane_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JRootPane( javaObject: __return ) : nil
-    }
-
-
     /// public static boolean javax.swing.JFrame.isDefaultLookAndFeelDecorated()
 
-    private static var isDefaultLookAndFeelDecorated_MethodID_12: jmethodID?
+    private static var isDefaultLookAndFeelDecorated_MethodID_5: jmethodID?
 
     open class func isDefaultLookAndFeelDecorated() -> Bool {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/JFrame", classCache: &JFrameJNIClass, methodName: "isDefaultLookAndFeelDecorated", methodSig: "()Z", methodCache: &isDefaultLookAndFeelDecorated_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/JFrame", classCache: &JFrameJNIClass, methodName: "isDefaultLookAndFeelDecorated", methodSig: "()Z", methodCache: &isDefaultLookAndFeelDecorated_MethodID_5, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
-
-    /// protected javax.swing.JRootPane javax.swing.JFrame.createRootPane()
-
-    private static var createRootPane_MethodID_13: jmethodID?
-
-    open func createRootPane() -> JRootPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JFrame.createRootPane_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JRootPane( javaObject: __return ) : nil
-    }
-
-
-    /// protected void javax.swing.JFrame.processWindowEvent(java.awt.event.WindowEvent)
-
-    private static var processWindowEvent_MethodID_14: jmethodID?
-
-    open func processWindowEvent( e: java_awt.WindowEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &JFrame.processWindowEvent_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    override open func processWindowEvent( _ _e: java_awt.WindowEvent? ) {
-        processWindowEvent( e: _e )
-    }
-
-    /// public void javax.swing.JFrame.setDefaultCloseOperation(int)
-
-    private static var setDefaultCloseOperation_MethodID_15: jmethodID?
-
-    open func setDefaultCloseOperation( operation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: operation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCloseOperation", methodSig: "(I)V", methodCache: &JFrame.setDefaultCloseOperation_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setDefaultCloseOperation( _ _operation: Int ) {
-        setDefaultCloseOperation( operation: _operation )
-    }
-
-    /// public int javax.swing.JFrame.getDefaultCloseOperation()
-
-    private static var getDefaultCloseOperation_MethodID_16: jmethodID?
-
-    open func getDefaultCloseOperation() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDefaultCloseOperation", methodSig: "()I", methodCache: &JFrame.getDefaultCloseOperation_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JFrame.setTransferHandler(javax.swing.TransferHandler)
-
-    private static var setTransferHandler_MethodID_17: jmethodID?
-
-    open func setTransferHandler( newHandler: TransferHandler? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newHandler, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransferHandler", methodSig: "(Ljavax/swing/TransferHandler;)V", methodCache: &JFrame.setTransferHandler_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func setTransferHandler( _ _newHandler: TransferHandler? ) {
-        setTransferHandler( newHandler: _newHandler )
-    }
-
-    /// public javax.swing.TransferHandler javax.swing.JFrame.getTransferHandler()
-
-    private static var getTransferHandler_MethodID_18: jmethodID?
-
-    open func getTransferHandler() -> TransferHandler! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferHandler", methodSig: "()Ljavax/swing/TransferHandler;", methodCache: &JFrame.getTransferHandler_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? TransferHandler( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JFrame.setJMenuBar(javax.swing.JMenuBar)
-
-    private static var setJMenuBar_MethodID_19: jmethodID?
-
-    open func setJMenuBar( menubar: JMenuBar? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: menubar, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JFrame.setJMenuBar_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setJMenuBar( _ _menubar: JMenuBar? ) {
-        setJMenuBar( menubar: _menubar )
-    }
-
-    /// public javax.swing.JMenuBar javax.swing.JFrame.getJMenuBar()
-
-    private static var getJMenuBar_MethodID_20: jmethodID?
-
-    open func getJMenuBar() -> JMenuBar! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JFrame.getJMenuBar_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JMenuBar( javaObject: __return ) : nil
-    }
-
-
-    /// protected boolean javax.swing.JFrame.isRootPaneCheckingEnabled()
-
-    private static var isRootPaneCheckingEnabled_MethodID_21: jmethodID?
-
-    open func isRootPaneCheckingEnabled() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JFrame.isRootPaneCheckingEnabled_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// protected void javax.swing.JFrame.setRootPaneCheckingEnabled(boolean)
-
-    private static var setRootPaneCheckingEnabled_MethodID_22: jmethodID?
-
-    open func setRootPaneCheckingEnabled( enabled: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: enabled, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JFrame.setRootPaneCheckingEnabled_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
-        setRootPaneCheckingEnabled( enabled: _enabled )
-    }
-
-    /// protected void javax.swing.JFrame.addImpl(java.awt.Component,java.lang.Object,int)
-
-    private static var addImpl_MethodID_23: jmethodID?
-
-    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
-        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JFrame.addImpl_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
-        addImpl( comp: _comp, constraints: _constraints, index: _index )
-    }
-
-    /// protected void javax.swing.JFrame.setRootPane(javax.swing.JRootPane)
-
-    private static var setRootPane_MethodID_24: jmethodID?
-
-    open func setRootPane( root: JRootPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: root, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JFrame.setRootPane_MethodID_24, args: &__args, locals: &__locals )
-    }
-
-    open func setRootPane( _ _root: JRootPane? ) {
-        setRootPane( root: _root )
-    }
-
-    /// public void javax.swing.JFrame.setContentPane(java.awt.Container)
-
-    private static var setContentPane_MethodID_25: jmethodID?
-
-    open func setContentPane( contentPane: java_awt.Container? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: contentPane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JFrame.setContentPane_MethodID_25, args: &__args, locals: &__locals )
-    }
-
-    open func setContentPane( _ _contentPane: java_awt.Container? ) {
-        setContentPane( contentPane: _contentPane )
-    }
-
-    /// public javax.swing.JLayeredPane javax.swing.JFrame.getLayeredPane()
-
-    private static var getLayeredPane_MethodID_26: jmethodID?
-
-    open func getLayeredPane() -> JLayeredPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JFrame.getLayeredPane_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? JLayeredPane( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JFrame.setLayeredPane(javax.swing.JLayeredPane)
-
-    private static var setLayeredPane_MethodID_27: jmethodID?
-
-    open func setLayeredPane( layeredPane: JLayeredPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: layeredPane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JFrame.setLayeredPane_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
-        setLayeredPane( layeredPane: _layeredPane )
-    }
-
-    /// public java.awt.Component javax.swing.JFrame.getGlassPane()
-
-    private static var getGlassPane_MethodID_28: jmethodID?
-
-    open func getGlassPane() -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JFrame.getGlassPane_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JFrame.setGlassPane(java.awt.Component)
-
-    private static var setGlassPane_MethodID_29: jmethodID?
-
-    open func setGlassPane( glassPane: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: glassPane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JFrame.setGlassPane_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func setGlassPane( _ _glassPane: java_awt.Component? ) {
-        setGlassPane( glassPane: _glassPane )
-    }
 
     /// public static void javax.swing.JFrame.setDefaultLookAndFeelDecorated(boolean)
 
-    private static var setDefaultLookAndFeelDecorated_MethodID_30: jmethodID?
+    private static var setDefaultLookAndFeelDecorated_MethodID_6: jmethodID?
 
     open class func setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: defaultLookAndFeelDecorated, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JFrame", classCache: &JFrameJNIClass, methodName: "setDefaultLookAndFeelDecorated", methodSig: "(Z)V", methodCache: &setDefaultLookAndFeelDecorated_MethodID_30, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(defaultLookAndFeelDecorated ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JFrame", classCache: &JFrameJNIClass, methodName: "setDefaultLookAndFeelDecorated", methodSig: "(Z)V", methodCache: &setDefaultLookAndFeelDecorated_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open class func setDefaultLookAndFeelDecorated( _ _defaultLookAndFeelDecorated: Bool ) {
         setDefaultLookAndFeelDecorated( defaultLookAndFeelDecorated: _defaultLookAndFeelDecorated )
     }
 
-    /// protected void javax.swing.JFrame.frameInit()
+    /// protected void javax.swing.JFrame.addImpl(java.awt.Component,java.lang.Object,int)
 
-    private static var frameInit_MethodID_31: jmethodID?
+    private static var addImpl_MethodID_7: jmethodID?
 
-    open func frameInit() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addImpl( comp: java_awt.Component?, constraints: java_swift.JavaObject?, index: Int ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "frameInit", methodSig: "()V", methodCache: &JFrame.frameInit_MethodID_31, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        __args[1] = JNIType.toJava( value: constraints, locals: &__locals )
+        __args[2] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addImpl", methodSig: "(Ljava/awt/Component;Ljava/lang/Object;I)V", methodCache: &JFrame.addImpl_MethodID_7, args: &__args, locals: &__locals )
     }
 
+    override open func addImpl( _ _comp: java_awt.Component?, _ _constraints: java_swift.JavaObject?, _ _index: Int ) {
+        addImpl( comp: _comp, constraints: _constraints, index: _index )
+    }
+
+    /// protected javax.swing.JRootPane javax.swing.JFrame.createRootPane()
+
+    private static var createRootPane_MethodID_8: jmethodID?
+
+    open func createRootPane() -> JRootPane! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JFrame.createRootPane_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JRootPane( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.JFrame.frameInit()
+
+    private static var frameInit_MethodID_9: jmethodID?
+
+    open func frameInit() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "frameInit", methodSig: "()V", methodCache: &JFrame.frameInit_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JFrame.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Container javax.swing.JFrame.getContentPane()
+
+    private static var getContentPane_MethodID_10: jmethodID?
+
+    open func getContentPane() -> java_awt.Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentPane", methodSig: "()Ljava/awt/Container;", methodCache: &JFrame.getContentPane_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.JFrame.getDefaultCloseOperation()
+
+    private static var getDefaultCloseOperation_MethodID_11: jmethodID?
+
+    open func getDefaultCloseOperation() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDefaultCloseOperation", methodSig: "()I", methodCache: &JFrame.getDefaultCloseOperation_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Component javax.swing.JFrame.getGlassPane()
+
+    private static var getGlassPane_MethodID_12: jmethodID?
+
+    open func getGlassPane() -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGlassPane", methodSig: "()Ljava/awt/Component;", methodCache: &JFrame.getGlassPane_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Graphics javax.swing.JFrame.getGraphics()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.JMenuBar javax.swing.JFrame.getJMenuBar()
+
+    private static var getJMenuBar_MethodID_13: jmethodID?
+
+    open func getJMenuBar() -> JMenuBar! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getJMenuBar", methodSig: "()Ljavax/swing/JMenuBar;", methodCache: &JFrame.getJMenuBar_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JMenuBar( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JLayeredPane javax.swing.JFrame.getLayeredPane()
+
+    private static var getLayeredPane_MethodID_14: jmethodID?
+
+    open func getLayeredPane() -> JLayeredPane! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLayeredPane", methodSig: "()Ljavax/swing/JLayeredPane;", methodCache: &JFrame.getLayeredPane_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JLayeredPane( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.JRootPane javax.swing.JFrame.getRootPane()
+
+    private static var getRootPane_MethodID_15: jmethodID?
+
+    open func getRootPane() -> JRootPane! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRootPane", methodSig: "()Ljavax/swing/JRootPane;", methodCache: &JFrame.getRootPane_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? JRootPane( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.TransferHandler javax.swing.JFrame.getTransferHandler()
+
+    private static var getTransferHandler_MethodID_16: jmethodID?
+
+    open func getTransferHandler() -> TransferHandler! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTransferHandler", methodSig: "()Ljavax/swing/TransferHandler;", methodCache: &JFrame.getTransferHandler_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? TransferHandler( javaObject: __return ) : nil
+    }
+
+
+    /// protected boolean javax.swing.JFrame.isRootPaneCheckingEnabled()
+
+    private static var isRootPaneCheckingEnabled_MethodID_17: jmethodID?
+
+    open func isRootPaneCheckingEnabled() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isRootPaneCheckingEnabled", methodSig: "()Z", methodCache: &JFrame.isRootPaneCheckingEnabled_MethodID_17, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected java.lang.String javax.swing.JFrame.paramString()
+
+    private static var paramString_MethodID_18: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JFrame.paramString_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.JFrame.processWindowEvent(java.awt.event.WindowEvent)
+
+    private static var processWindowEvent_MethodID_19: jmethodID?
+
+    open func processWindowEvent( e: java_awt.WindowEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "processWindowEvent", methodSig: "(Ljava/awt/event/WindowEvent;)V", methodCache: &JFrame.processWindowEvent_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    override open func processWindowEvent( _ _e: java_awt.WindowEvent? ) {
+        processWindowEvent( e: _e )
+    }
+
+    /// public void javax.swing.JFrame.remove(java.awt.Component)
+
+    private static var remove_MethodID_20: jmethodID?
+
+    open func remove( comp: java_awt.Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comp, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(Ljava/awt/Component;)V", methodCache: &JFrame.remove_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    override open func remove( _ _comp: java_awt.Component? ) {
+        remove( comp: _comp )
+    }
+
+    /// public void javax.swing.JFrame.repaint(long,int,int,int,int)
+
+    private static var repaint_MethodID_21: jmethodID?
+
+    open func repaint( time: Int64, x: Int, y: Int, width: Int, height: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( j: time )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(width) )
+        __args[4] = jvalue( i: jint(height) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "repaint", methodSig: "(JIIII)V", methodCache: &JFrame.repaint_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    override open func repaint( _ _time: Int64, _ _x: Int, _ _y: Int, _ _width: Int, _ _height: Int ) {
+        repaint( time: _time, x: _x, y: _y, width: _width, height: _height )
+    }
+
+    /// public void javax.swing.JFrame.setContentPane(java.awt.Container)
+
+    private static var setContentPane_MethodID_22: jmethodID?
+
+    open func setContentPane( contentPane: java_awt.Container? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: contentPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentPane", methodSig: "(Ljava/awt/Container;)V", methodCache: &JFrame.setContentPane_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func setContentPane( _ _contentPane: java_awt.Container? ) {
+        setContentPane( contentPane: _contentPane )
+    }
+
+    /// public void javax.swing.JFrame.setDefaultCloseOperation(int)
+
+    private static var setDefaultCloseOperation_MethodID_23: jmethodID?
+
+    open func setDefaultCloseOperation( operation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(operation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDefaultCloseOperation", methodSig: "(I)V", methodCache: &JFrame.setDefaultCloseOperation_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func setDefaultCloseOperation( _ _operation: Int ) {
+        setDefaultCloseOperation( operation: _operation )
+    }
+
+    /// public void javax.swing.JFrame.setGlassPane(java.awt.Component)
+
+    private static var setGlassPane_MethodID_24: jmethodID?
+
+    open func setGlassPane( glassPane: java_awt.Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: glassPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setGlassPane", methodSig: "(Ljava/awt/Component;)V", methodCache: &JFrame.setGlassPane_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setGlassPane( _ _glassPane: java_awt.Component? ) {
+        setGlassPane( glassPane: _glassPane )
+    }
+
+    /// public void javax.swing.JFrame.setIconImage(java.awt.Image)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.JFrame.setJMenuBar(javax.swing.JMenuBar)
+
+    private static var setJMenuBar_MethodID_25: jmethodID?
+
+    open func setJMenuBar( menubar: JMenuBar? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: menubar, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setJMenuBar", methodSig: "(Ljavax/swing/JMenuBar;)V", methodCache: &JFrame.setJMenuBar_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setJMenuBar( _ _menubar: JMenuBar? ) {
+        setJMenuBar( menubar: _menubar )
+    }
+
+    /// public void javax.swing.JFrame.setLayeredPane(javax.swing.JLayeredPane)
+
+    private static var setLayeredPane_MethodID_26: jmethodID?
+
+    open func setLayeredPane( layeredPane: JLayeredPane? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: layeredPane, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayeredPane", methodSig: "(Ljavax/swing/JLayeredPane;)V", methodCache: &JFrame.setLayeredPane_MethodID_26, args: &__args, locals: &__locals )
+    }
+
+    open func setLayeredPane( _ _layeredPane: JLayeredPane? ) {
+        setLayeredPane( layeredPane: _layeredPane )
+    }
+
+    /// public void javax.swing.JFrame.setLayout(java.awt.LayoutManager)
+
+    private static var setLayout_MethodID_27: jmethodID?
+
+    open func setLayout( manager: java_awt.LayoutManager? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: manager, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLayout", methodSig: "(Ljava/awt/LayoutManager;)V", methodCache: &JFrame.setLayout_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    override open func setLayout( _ _manager: java_awt.LayoutManager? ) {
+        setLayout( manager: _manager )
+    }
+
+    /// protected void javax.swing.JFrame.setRootPane(javax.swing.JRootPane)
+
+    private static var setRootPane_MethodID_28: jmethodID?
+
+    open func setRootPane( root: JRootPane? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: root, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPane", methodSig: "(Ljavax/swing/JRootPane;)V", methodCache: &JFrame.setRootPane_MethodID_28, args: &__args, locals: &__locals )
+    }
+
+    open func setRootPane( _ _root: JRootPane? ) {
+        setRootPane( root: _root )
+    }
+
+    /// protected void javax.swing.JFrame.setRootPaneCheckingEnabled(boolean)
+
+    private static var setRootPaneCheckingEnabled_MethodID_29: jmethodID?
+
+    open func setRootPaneCheckingEnabled( enabled: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(enabled ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRootPaneCheckingEnabled", methodSig: "(Z)V", methodCache: &JFrame.setRootPaneCheckingEnabled_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func setRootPaneCheckingEnabled( _ _enabled: Bool ) {
+        setRootPaneCheckingEnabled( enabled: _enabled )
+    }
+
+    /// public void javax.swing.JFrame.setTransferHandler(javax.swing.TransferHandler)
+
+    private static var setTransferHandler_MethodID_30: jmethodID?
+
+    open func setTransferHandler( newHandler: TransferHandler? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: newHandler, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTransferHandler", methodSig: "(Ljavax/swing/TransferHandler;)V", methodCache: &JFrame.setTransferHandler_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func setTransferHandler( _ _newHandler: TransferHandler? ) {
+        setTransferHandler( newHandler: _newHandler )
+    }
+
+    /// public void javax.swing.JFrame.update(java.awt.Graphics)
+
+    private static var update_MethodID_31: jmethodID?
+
+    open func update( g: java_awt.Graphics? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "update", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &JFrame.update_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    override open func update( _ _g: java_awt.Graphics? ) {
+        update( g: _g )
+    }
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 
 private typealias JFrame_paint_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func JFrame_paint_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ arg0: jobject? ) -> () {
-    JNI.inNative = true;
     JFrameLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).paint( arg0: arg0 != nil ? java_awt.Graphics( javaObject: arg0 ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class JFrameLocal_: JNIObjectProxy<JFrame> {
@@ -1054,26 +1329,20 @@ open class JFrameBase: JFrame {
         }
     }
 
-    /// public javax.swing.JFrame(java.lang.String,java.awt.GraphicsConfiguration)
+    /// public javax.swing.JFrame() throws java.awt.HeadlessException
 
     private static var new_MethodID_32: jmethodID?
 
-    public convenience init( title: String?, gc: java_awt.GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: title, locals: &__locals )
-        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
 
         self.init( javaObject: nil )
-        __args[2] = __local!.swiftValue()
+        __args[0] = __local!.swiftValue()
 
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;J)V", methodCache: &JFrameBase.new_MethodID_32, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(J)V", methodCache: &JFrameBase.new_MethodID_32, args: &__args, locals: &__locals )
         self.javaObject = __object
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _title: String?, _ _gc: java_awt.GraphicsConfiguration? ) {
-        self.init( title: _title, gc: _gc )
     }
 
     /// public javax.swing.JFrame(java.lang.String) throws java.awt.HeadlessException
@@ -1081,8 +1350,8 @@ open class JFrameBase: JFrame {
     private static var new_MethodID_33: jmethodID?
 
     public convenience init( title: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: title, locals: &__locals )
 
         self.init( javaObject: nil )
@@ -1090,6 +1359,7 @@ open class JFrameBase: JFrame {
 
         let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(Ljava/lang/String;J)V", methodCache: &JFrameBase.new_MethodID_33, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_awt.HeadlessException( javaObject: throwable )
         }
         self.javaObject = __object
@@ -1100,41 +1370,47 @@ open class JFrameBase: JFrame {
         try self.init( title: _title )
     }
 
-    /// public javax.swing.JFrame(java.awt.GraphicsConfiguration)
+    /// public javax.swing.JFrame(java.lang.String,java.awt.GraphicsConfiguration)
 
     private static var new_MethodID_34: jmethodID?
 
-    public convenience init( gc: java_awt.GraphicsConfiguration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init( title: String?, gc: java_awt.GraphicsConfiguration? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: title, locals: &__locals )
+        __args[1] = JNIType.toJava( value: gc, locals: &__locals )
+
+        self.init( javaObject: nil )
+        __args[2] = __local!.swiftValue()
+
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(Ljava/lang/String;Ljava/awt/GraphicsConfiguration;J)V", methodCache: &JFrameBase.new_MethodID_34, args: &__args, locals: &__locals )
+        self.javaObject = __object
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _title: String?, _ _gc: java_awt.GraphicsConfiguration? ) {
+        self.init( title: _title, gc: _gc )
+    }
+
+    /// public javax.swing.JFrame(java.awt.GraphicsConfiguration)
+
+    private static var new_MethodID_35: jmethodID?
+
+    public convenience init( gc: java_awt.GraphicsConfiguration? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: gc, locals: &__locals )
 
         self.init( javaObject: nil )
         __args[1] = __local!.swiftValue()
 
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;J)V", methodCache: &JFrameBase.new_MethodID_34, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(Ljava/awt/GraphicsConfiguration;J)V", methodCache: &JFrameBase.new_MethodID_35, args: &__args, locals: &__locals )
         self.javaObject = __object
         JNI.DeleteLocalRef( __object )
     }
 
     public convenience init( _ _gc: java_awt.GraphicsConfiguration? ) {
         self.init( gc: _gc )
-    }
-
-    /// public javax.swing.JFrame() throws java.awt.HeadlessException
-
-    private static var new_MethodID_35: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-
-        self.init( javaObject: nil )
-        __args[0] = __local!.swiftValue()
-
-        let __object = JNIMethod.NewObject( className: "org/swiftjava/javax_swing/JFrameProxy", classCache: &JFrameBase.JFrameBaseJNIClass, methodSig: "(J)V", methodCache: &JFrameBase.new_MethodID_35, args: &__args, locals: &__locals )
-        self.javaObject = __object
-        JNI.DeleteLocalRef( __object )
     }
 
 }

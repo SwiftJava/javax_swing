@@ -24,8 +24,8 @@ open class TreeSelectionListenerForward: java_util.EventListenerForward, TreeSel
     private static var valueChanged_MethodID_2: jmethodID?
 
     open func valueChanged( e: TreeSelectionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "valueChanged", methodSig: "(Ljavax/swing/event/TreeSelectionEvent;)V", methodCache: &TreeSelectionListenerForward.valueChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class TreeSelectionListenerForward: java_util.EventListenerForward, TreeSel
 
 }
 
-
 private typealias TreeSelectionListener_valueChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func TreeSelectionListener_valueChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     TreeSelectionListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).valueChanged( e: e != nil ? TreeSelectionEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class TreeSelectionListenerLocal_: JNILocalProxy<TreeSelectionListener, Any> {
@@ -89,8 +86,5 @@ open class TreeSelectionListenerBase: TreeSelectionListener {
     open func valueChanged( e: TreeSelectionEvent? ) /**/ {
     }
 
-    open func valueChanged( _ _e: TreeSelectionEvent? ) /**/ {
-        valueChanged( e: _e )
-    }
 
 }

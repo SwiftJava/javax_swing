@@ -16,10 +16,6 @@ open class HTML: java_swift.JavaObject {
 
     private static var HTMLJNIClass: jclass?
 
-    /// private static final java.util.Hashtable javax.swing.text.html.HTML.tagHashtable
-
-    /// private static final java.util.Hashtable javax.swing.text.html.HTML.scMapping
-
     /// public static final java.lang.String javax.swing.text.html.HTML.NULL_ATTRIBUTE_VALUE
 
     private static var NULL_ATTRIBUTE_VALUE_FieldID: jfieldID?
@@ -27,80 +23,62 @@ open class HTML: java_swift.JavaObject {
     open static var NULL_ATTRIBUTE_VALUE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NULL_ATTRIBUTE_VALUE", fieldType: "Ljava/lang/String;", fieldCache: &NULL_ATTRIBUTE_VALUE_FieldID, className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
     /// private static final java.util.Hashtable javax.swing.text.html.HTML.attHashtable
+
+    /// private static final java.util.Hashtable javax.swing.text.html.HTML.scMapping
+
+    /// private static final java.util.Hashtable javax.swing.text.html.HTML.tagHashtable
 
     /// public javax.swing.text.html.HTML()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/html/HTML", classCache: &HTML.HTMLJNIClass, methodSig: "()V", methodCache: &HTML.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public static javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML.getTag(java.lang.String)
+    /// public static javax.swing.text.html.HTML$Attribute[] javax.swing.text.html.HTML.getAllAttributeKeys()
 
-    private static var getTag_MethodID_2: jmethodID?
+    private static var getAllAttributeKeys_MethodID_2: jmethodID?
 
-    open class func getTag( tagName: String? ) -> HTML_Tag! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func getAllAttributeKeys() -> [HTML_Attribute]! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tagName, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getTag", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/HTML$Tag;", methodCache: &getTag_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? HTML_Tag( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getAllAttributeKeys", methodSig: "()[Ljavax/swing/text/html/HTML$Attribute;", methodCache: &getAllAttributeKeys_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [HTML_Attribute].self, from: __return )
     }
 
-    open class func getTag( _ _tagName: String? ) -> HTML_Tag! {
-        return getTag( tagName: _tagName )
-    }
 
     /// public static javax.swing.text.html.HTML$Tag[] javax.swing.text.html.HTML.getAllTags()
 
     private static var getAllTags_MethodID_3: jmethodID?
 
     open class func getAllTags() -> [HTML_Tag]! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getAllTags", methodSig: "()[Ljavax/swing/text/html/HTML$Tag;", methodCache: &getAllTags_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [HTML_Tag](), from: __return )
+        return JNIType.toSwift( type: [HTML_Tag].self, from: __return )
     }
 
-
-    /// public static int javax.swing.text.html.HTML.getIntegerAttributeValue(javax.swing.text.AttributeSet,javax.swing.text.html.HTML$Attribute,int)
-
-    private static var getIntegerAttributeValue_MethodID_4: jmethodID?
-
-    open class func getIntegerAttributeValue( attr: AttributeSet?, key: HTML_Attribute?, def: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        __args[1] = JNIType.toJava( value: key, locals: &__locals )
-        __args[2] = JNIType.toJava( value: def, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getIntegerAttributeValue", methodSig: "(Ljavax/swing/text/AttributeSet;Ljavax/swing/text/html/HTML$Attribute;I)I", methodCache: &getIntegerAttributeValue_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func getIntegerAttributeValue( _ _attr: AttributeSet?, _ _key: HTML_Attribute?, _ _def: Int ) -> Int {
-        return getIntegerAttributeValue( attr: _attr, key: _key, def: _def )
-    }
 
     /// public static javax.swing.text.html.HTML$Attribute javax.swing.text.html.HTML.getAttributeKey(java.lang.String)
 
-    private static var getAttributeKey_MethodID_5: jmethodID?
+    private static var getAttributeKey_MethodID_4: jmethodID?
 
     open class func getAttributeKey( attName: String? ) -> HTML_Attribute! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: attName, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getAttributeKey", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/HTML$Attribute;", methodCache: &getAttributeKey_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getAttributeKey", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/HTML$Attribute;", methodCache: &getAttributeKey_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? HTML_Attribute( javaObject: __return ) : nil
     }
@@ -109,19 +87,44 @@ open class HTML: java_swift.JavaObject {
         return getAttributeKey( attName: _attName )
     }
 
-    /// public static javax.swing.text.html.HTML$Attribute[] javax.swing.text.html.HTML.getAllAttributeKeys()
+    /// public static int javax.swing.text.html.HTML.getIntegerAttributeValue(javax.swing.text.AttributeSet,javax.swing.text.html.HTML$Attribute,int)
 
-    private static var getAllAttributeKeys_MethodID_6: jmethodID?
+    private static var getIntegerAttributeValue_MethodID_5: jmethodID?
 
-    open class func getAllAttributeKeys() -> [HTML_Attribute]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func getIntegerAttributeValue( attr: AttributeSet?, key: HTML_Attribute?, def: Int ) -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getAllAttributeKeys", methodSig: "()[Ljavax/swing/text/html/HTML$Attribute;", methodCache: &getAllAttributeKeys_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [HTML_Attribute](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: attr, locals: &__locals )
+        __args[1] = JNIType.toJava( value: key, locals: &__locals )
+        __args[2] = jvalue( i: jint(def) )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getIntegerAttributeValue", methodSig: "(Ljavax/swing/text/AttributeSet;Ljavax/swing/text/html/HTML$Attribute;I)I", methodCache: &getIntegerAttributeValue_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+    open class func getIntegerAttributeValue( _ _attr: AttributeSet?, _ _key: HTML_Attribute?, _ _def: Int ) -> Int {
+        return getIntegerAttributeValue( attr: _attr, key: _key, def: _def )
+    }
+
+    /// public static javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML.getTag(java.lang.String)
+
+    private static var getTag_MethodID_6: jmethodID?
+
+    open class func getTag( tagName: String? ) -> HTML_Tag! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: tagName, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass, methodName: "getTag", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/html/HTML$Tag;", methodCache: &getTag_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? HTML_Tag( javaObject: __return ) : nil
+    }
+
+    open class func getTag( _ _tagName: String? ) -> HTML_Tag! {
+        return getTag( tagName: _tagName )
+    }
 
     /// static javax.swing.text.html.HTML$Tag javax.swing.text.html.HTML.getTagForStyleConstantsKey(javax.swing.text.StyleConstants)
+
+    // Skipping method: true false false false false 
 
 }
 

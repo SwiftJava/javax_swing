@@ -17,22 +17,7 @@ open class DimensionUIResource: java_awt.Dimension, UIResource {
 
     private static var DimensionUIResourceJNIClass: jclass?
 
-    /// public int java.awt.Dimension.width
-
-    private static var width_FieldID: jfieldID?
-
-    override open var width: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &DimensionUIResource.width_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &DimensionUIResource.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
+    /// private static final long java.awt.Dimension.serialVersionUID
 
     /// public int java.awt.Dimension.height
 
@@ -40,28 +25,41 @@ open class DimensionUIResource: java_awt.Dimension, UIResource {
 
     override open var height: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &DimensionUIResource.height_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "height", fieldType: "I", fieldCache: &DimensionUIResource.height_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "height", fieldType: "I", fieldCache: &DimensionUIResource.height_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private static final long java.awt.Dimension.serialVersionUID
+    /// public int java.awt.Dimension.width
+
+    private static var width_FieldID: jfieldID?
+
+    override open var width: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "width", fieldType: "I", fieldCache: &DimensionUIResource.width_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "width", fieldType: "I", fieldCache: &DimensionUIResource.width_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// public javax.swing.plaf.DimensionUIResource(int,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( width: Int, height: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(width) )
+        __args[1] = jvalue( i: jint(height) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/DimensionUIResource", classCache: &DimensionUIResource.DimensionUIResourceJNIClass, methodSig: "(II)V", methodCache: &DimensionUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

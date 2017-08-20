@@ -19,11 +19,15 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
 
     /// int javax.swing.text.JTextComponent$AccessibleJTextComponent.caretPos
 
+    // Skipping field: true false false false false false 
+
     /// java.awt.Point javax.swing.text.JTextComponent$AccessibleJTextComponent.oldLocationOnScreen
+
+    // Skipping field: true false false false false false 
 
     /// final javax.swing.text.JTextComponent javax.swing.text.JTextComponent$AccessibleJTextComponent.this$0
 
-    /// private transient volatile int javax.swing.JComponent$AccessibleJComponent.propertyListenersCount
+    // Skipping field: true false false false false false 
 
     /// protected java.awt.event.FocusListener javax.swing.JComponent$AccessibleJComponent.accessibleFocusHandler
 
@@ -31,8 +35,8 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
 
     override open var accessibleFocusHandler: java_awt.FocusListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleFocusHandler", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleFocusHandler_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "accessibleFocusHandler", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleFocusHandler_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.FocusListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -42,11 +46,13 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         }
     }
 
+    /// private transient volatile int javax.swing.JComponent$AccessibleJComponent.propertyListenersCount
+
     /// final javax.swing.JComponent javax.swing.JComponent$AccessibleJComponent.this$0
 
-    /// private static final long java.awt.Container$AccessibleAWTContainer.serialVersionUID
+    // Skipping field: true false false false false false 
 
-    /// private transient volatile int java.awt.Container$AccessibleAWTContainer.propertyListenersCount
+    /// private static final long java.awt.Container$AccessibleAWTContainer.serialVersionUID
 
     /// protected java.awt.event.ContainerListener java.awt.Container$AccessibleAWTContainer.accessibleContainerHandler
 
@@ -54,8 +60,8 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
 
     override open var accessibleContainerHandler: java_awt.ContainerListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContainerHandler", fieldType: "Ljava/awt/event/ContainerListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleContainerHandler_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContainerHandler", fieldType: "Ljava/awt/event/ContainerListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleContainerHandler_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.ContainerListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -65,11 +71,13 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         }
     }
 
+    /// private transient volatile int java.awt.Container$AccessibleAWTContainer.propertyListenersCount
+
     /// final java.awt.Container java.awt.Container$AccessibleAWTContainer.this$0
 
-    /// private static final long java.awt.Component$AccessibleAWTComponent.serialVersionUID
+    // Skipping field: true false false false false false 
 
-    /// private transient volatile int java.awt.Component$AccessibleAWTComponent.propertyListenersCount
+    /// private static final long java.awt.Component$AccessibleAWTComponent.serialVersionUID
 
     /// protected java.awt.event.ComponentListener java.awt.Component$AccessibleAWTComponent.accessibleAWTComponentHandler
 
@@ -77,8 +85,8 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
 
     override open var accessibleAWTComponentHandler: java_awt.ComponentListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleAWTComponentHandler", fieldType: "Ljava/awt/event/ComponentListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleAWTComponentHandler_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "accessibleAWTComponentHandler", fieldType: "Ljava/awt/event/ComponentListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleAWTComponentHandler_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.ComponentListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -94,8 +102,8 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
 
     override open var accessibleAWTFocusHandler: java_awt.FocusListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleAWTFocusHandler", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleAWTFocusHandler_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "accessibleAWTFocusHandler", fieldType: "Ljava/awt/event/FocusListener;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleAWTFocusHandler_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.FocusListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -105,68 +113,116 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         }
     }
 
+    /// private transient volatile int java.awt.Component$AccessibleAWTComponent.propertyListenersCount
+
     /// final java.awt.Component java.awt.Component$AccessibleAWTComponent.this$0
 
-    /// private volatile sun.awt.AppContext javax.accessibility.AccessibleContext.targetAppContext
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_NAME_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_DESCRIPTION_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_STATE_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_VALUE_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_SELECTION_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_CARET_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_VISIBLE_DATA_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_CHILD_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_ACTIVE_DESCENDANT_PROPERTY
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_CAPTION_CHANGED
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_SUMMARY_CHANGED
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_MODEL_CHANGED
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_ROW_HEADER_CHANGED
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED
-
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_ACTION_PROPERTY
 
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_HYPERTEXT_OFFSET
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TEXT_PROPERTY
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_ACTIVE_DESCENDANT_PROPERTY
 
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_INVALIDATE_CHILDREN
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TEXT_ATTRIBUTES_CHANGED
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_CARET_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_CHILD_PROPERTY
+
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_COMPONENT_BOUNDS_CHANGED
 
-    /// protected javax.accessibility.Accessible javax.accessibility.AccessibleContext.accessibleParent
+    // Skipping field: false true false false false false 
 
-    private static var accessibleParent_FieldID: jfieldID?
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_DESCRIPTION_PROPERTY
 
-    override open var accessibleParent: /* javax.accessibility.Accessible */ UnclassedProtocol! {
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_HYPERTEXT_OFFSET
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_INVALIDATE_CHILDREN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_NAME_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_SELECTION_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_STATE_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_CAPTION_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_COLUMN_DESCRIPTION_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_COLUMN_HEADER_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_MODEL_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_ROW_DESCRIPTION_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_ROW_HEADER_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TABLE_SUMMARY_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TEXT_ATTRIBUTES_CHANGED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_TEXT_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_VALUE_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.accessibility.AccessibleContext.ACCESSIBLE_VISIBLE_DATA_PROPERTY
+
+    // Skipping field: false true false false false false 
+
+    /// private java.beans.PropertyChangeSupport javax.accessibility.AccessibleContext.accessibleChangeSupport
+
+    /// protected java.lang.String javax.accessibility.AccessibleContext.accessibleDescription
+
+    private static var accessibleDescription_FieldID: jfieldID?
+
+    override open var accessibleDescription: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleParent", fieldType: "Ljavax/accessibility/Accessible;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleParent_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleDescription", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleDescription_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "accessibleParent", fieldType: "Ljavax/accessibility/Accessible;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleParent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "accessibleDescription", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleDescription_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -176,9 +232,9 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
 
     override open var accessibleName: String! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleName", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleName_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "accessibleName", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleName_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -187,36 +243,36 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         }
     }
 
-    /// protected java.lang.String javax.accessibility.AccessibleContext.accessibleDescription
+    /// protected javax.accessibility.Accessible javax.accessibility.AccessibleContext.accessibleParent
 
-    private static var accessibleDescription_FieldID: jfieldID?
+    private static var accessibleParent_FieldID: jfieldID?
 
-    override open var accessibleDescription: String! {
+    override open var accessibleParent: /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleDescription", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleDescription_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: String(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "accessibleParent", fieldType: "Ljavax/accessibility/Accessible;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleParent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface javax.accessibility.Accessible */ UnavailableProtocolForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "accessibleDescription", fieldType: "Ljava/lang/String;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleDescription_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "accessibleParent", fieldType: "Ljavax/accessibility/Accessible;", fieldCache: &JTextComponent_AccessibleJTextComponent.accessibleParent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// private java.beans.PropertyChangeSupport javax.accessibility.AccessibleContext.accessibleChangeSupport
+    /// private java.lang.Object javax.accessibility.AccessibleContext.nativeAXResource
 
     /// private javax.accessibility.AccessibleRelationSet javax.accessibility.AccessibleContext.relationSet
 
-    /// private java.lang.Object javax.accessibility.AccessibleContext.nativeAXResource
+    /// private volatile sun.awt.AppContext javax.accessibility.AccessibleContext.targetAppContext
 
     /// public javax.swing.text.JTextComponent$AccessibleJTextComponent(javax.swing.text.JTextComponent)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( arg0: JTextComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/JTextComponent$AccessibleJTextComponent", classCache: &JTextComponent_AccessibleJTextComponent.JTextComponent_AccessibleJTextComponentJNIClass, methodSig: "(Ljavax/swing/text/JTextComponent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -227,215 +283,228 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         self.init( arg0: _arg0 )
     }
 
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.delete(int,int)
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.caretUpdate(javax.swing.event.CaretEvent)
 
-    private static var delete_MethodID_2: jmethodID?
+    private static var caretUpdate_MethodID_2: jmethodID?
 
-    open func delete( startIndex: Int, endIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open func caretUpdate( e: CaretEvent? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delete", methodSig: "(II)V", methodCache: &JTextComponent_AccessibleJTextComponent.delete_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func delete( _ _startIndex: Int, _ _endIndex: Int ) {
-        delete( startIndex: _startIndex, endIndex: _endIndex )
-    }
-
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.setTextContents(java.lang.String)
-
-    private static var setTextContents_MethodID_3: jmethodID?
-
-    open func setTextContents( s: String? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "caretUpdate", methodSig: "(Ljavax/swing/event/CaretEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.caretUpdate_MethodID_2, args: &__args, locals: &__locals )
+    }
+
+    open func caretUpdate( _ _e: CaretEvent? ) {
+        caretUpdate( e: _e )
+    }
+
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.changedUpdate(javax.swing.event.DocumentEvent)
+
+    private static var changedUpdate_MethodID_3: jmethodID?
+
+    open func changedUpdate( e: DocumentEvent? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTextContents", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextComponent_AccessibleJTextComponent.setTextContents_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.changedUpdate_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func setTextContents( _ _s: String? ) {
-        setTextContents( s: _s )
+    open func changedUpdate( _ _e: DocumentEvent? ) {
+        changedUpdate( e: _e )
     }
-
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.insertTextAtIndex(int,java.lang.String)
-
-    private static var insertTextAtIndex_MethodID_4: jmethodID?
-
-    open func insertTextAtIndex( index: Int, s: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertTextAtIndex", methodSig: "(ILjava/lang/String;)V", methodCache: &JTextComponent_AccessibleJTextComponent.insertTextAtIndex_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func insertTextAtIndex( _ _index: Int, _ _s: String? ) {
-        insertTextAtIndex( index: _index, s: _s )
-    }
-
-    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextRange(int,int)
-
-    private static var getTextRange_MethodID_5: jmethodID?
-
-    open func getTextRange( startIndex: Int, endIndex: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextRange", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextRange_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getTextRange( _ _startIndex: Int, _ _endIndex: Int ) -> String! {
-        return getTextRange( startIndex: _startIndex, endIndex: _endIndex )
-    }
-
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.replaceText(int,int,java.lang.String)
-
-    private static var replaceText_MethodID_6: jmethodID?
-
-    open func replaceText( startIndex: Int, endIndex: Int, s: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: s, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceText", methodSig: "(IILjava/lang/String;)V", methodCache: &JTextComponent_AccessibleJTextComponent.replaceText_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func replaceText( _ _startIndex: Int, _ _endIndex: Int, _ _s: String? ) {
-        replaceText( startIndex: _startIndex, endIndex: _endIndex, s: _s )
-    }
-
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.selectText(int,int)
-
-    private static var selectText_MethodID_7: jmethodID?
-
-    open func selectText( startIndex: Int, endIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectText", methodSig: "(II)V", methodCache: &JTextComponent_AccessibleJTextComponent.selectText_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func selectText( _ _startIndex: Int, _ _endIndex: Int ) {
-        selectText( startIndex: _startIndex, endIndex: _endIndex )
-    }
-
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.setAttributes(int,int,javax.swing.text.AttributeSet)
-
-    private static var setAttributes_MethodID_8: jmethodID?
-
-    open func setAttributes( startIndex: Int, endIndex: Int, _as: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        __args[2] = JNIType.toJava( value: _as, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAttributes", methodSig: "(IILjavax/swing/text/AttributeSet;)V", methodCache: &JTextComponent_AccessibleJTextComponent.setAttributes_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setAttributes( _ _startIndex: Int, _ _endIndex: Int, _ __as: AttributeSet? ) {
-        setAttributes( startIndex: _startIndex, endIndex: _endIndex, _as: __as )
-    }
-
-    /// public javax.accessibility.AccessibleStateSet javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleStateSet()
 
     /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.cut(int,int)
 
-    private static var cut_MethodID_9: jmethodID?
+    private static var cut_MethodID_4: jmethodID?
 
     open func cut( startIndex: Int, endIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cut", methodSig: "(II)V", methodCache: &JTextComponent_AccessibleJTextComponent.cut_MethodID_9, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "cut", methodSig: "(II)V", methodCache: &JTextComponent_AccessibleJTextComponent.cut_MethodID_4, args: &__args, locals: &__locals )
     }
 
     open func cut( _ _startIndex: Int, _ _endIndex: Int ) {
         cut( startIndex: _startIndex, endIndex: _endIndex )
     }
 
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.paste(int)
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.delete(int,int)
 
-    private static var paste_MethodID_10: jmethodID?
+    private static var delete_MethodID_5: jmethodID?
 
-    open func paste( startIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func delete( startIndex: Int, endIndex: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paste", methodSig: "(I)V", methodCache: &JTextComponent_AccessibleJTextComponent.paste_MethodID_10, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "delete", methodSig: "(II)V", methodCache: &JTextComponent_AccessibleJTextComponent.delete_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    open func paste( _ _startIndex: Int ) {
-        paste( startIndex: _startIndex )
-    }
-
-    /// public javax.accessibility.AccessibleAction javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleAction()
-
-    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleActionCount()
-
-    private static var getAccessibleActionCount_MethodID_11: jmethodID?
-
-    open func getAccessibleActionCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleActionCount", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getAccessibleActionCount_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleActionDescription(int)
-
-    private static var getAccessibleActionDescription_MethodID_12: jmethodID?
-
-    open func getAccessibleActionDescription( i: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleActionDescription", methodSig: "(I)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getAccessibleActionDescription_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getAccessibleActionDescription( _ _i: Int ) -> String! {
-        return getAccessibleActionDescription( i: _i )
+    open func delete( _ _startIndex: Int, _ _endIndex: Int ) {
+        delete( startIndex: _startIndex, endIndex: _endIndex )
     }
 
     /// public boolean javax.swing.text.JTextComponent$AccessibleJTextComponent.doAccessibleAction(int)
 
-    private static var doAccessibleAction_MethodID_13: jmethodID?
+    private static var doAccessibleAction_MethodID_6: jmethodID?
 
     open func doAccessibleAction( i: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "doAccessibleAction", methodSig: "(I)Z", methodCache: &JTextComponent_AccessibleJTextComponent.doAccessibleAction_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(i) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "doAccessibleAction", methodSig: "(I)Z", methodCache: &JTextComponent_AccessibleJTextComponent.doAccessibleAction_MethodID_6, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func doAccessibleAction( _ _i: Int ) -> Bool {
         return doAccessibleAction( i: _i )
     }
 
-    /// public javax.accessibility.AccessibleText javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleText()
+    /// public javax.accessibility.AccessibleAction javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleAction()
 
-    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getIndexAtPoint(java.awt.Point)
+    // Skipping method: false true false false false 
 
-    private static var getIndexAtPoint_MethodID_14: jmethodID?
+    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleActionCount()
 
-    open func getIndexAtPoint( p: java_awt.Point? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var getAccessibleActionCount_MethodID_7: jmethodID?
+
+    open func getAccessibleActionCount() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexAtPoint", methodSig: "(Ljava/awt/Point;)I", methodCache: &JTextComponent_AccessibleJTextComponent.getIndexAtPoint_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAccessibleActionCount", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getAccessibleActionCount_MethodID_7, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getIndexAtPoint( _ _p: java_awt.Point? ) -> Int {
-        return getIndexAtPoint( p: _p )
+
+    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleActionDescription(int)
+
+    private static var getAccessibleActionDescription_MethodID_8: jmethodID?
+
+    open func getAccessibleActionDescription( i: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(i) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAccessibleActionDescription", methodSig: "(I)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getAccessibleActionDescription_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getAccessibleActionDescription( _ _i: Int ) -> String! {
+        return getAccessibleActionDescription( i: _i )
+    }
+
+    /// public javax.accessibility.AccessibleEditableText javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleEditableText()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.accessibility.AccessibleRole javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleRole()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.accessibility.AccessibleStateSet javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleStateSet()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.accessibility.AccessibleText javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleText()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAfterIndex(int,int)
+
+    private static var getAfterIndex_MethodID_9: jmethodID?
+
+    open func getAfterIndex( part: Int, index: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(part) )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAfterIndex", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getAfterIndex_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getAfterIndex( _ _part: Int, _ _index: Int ) -> String! {
+        return getAfterIndex( part: _part, index: _index )
+    }
+
+    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAtIndex(int,int)
+
+    private static var getAtIndex_MethodID_10: jmethodID?
+
+    open func getAtIndex( part: Int, index: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(part) )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAtIndex", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getAtIndex_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getAtIndex( _ _part: Int, _ _index: Int ) -> String! {
+        return getAtIndex( part: _part, index: _index )
+    }
+
+    /// private java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAtIndex(int,int,int)
+
+    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getBeforeIndex(int,int)
+
+    private static var getBeforeIndex_MethodID_11: jmethodID?
+
+    open func getBeforeIndex( part: Int, index: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(part) )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBeforeIndex", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getBeforeIndex_MethodID_11, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getBeforeIndex( _ _part: Int, _ _index: Int ) -> String! {
+        return getBeforeIndex( part: _part, index: _index )
+    }
+
+    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getCaretPosition()
+
+    private static var getCaretPosition_MethodID_12: jmethodID?
+
+    open func getCaretPosition() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getCaretPosition_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getCharCount()
+
+    private static var getCharCount_MethodID_13: jmethodID?
+
+    open func getCharCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCharCount", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getCharCount_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public javax.swing.text.AttributeSet javax.swing.text.JTextComponent$AccessibleJTextComponent.getCharacterAttribute(int)
+
+    private static var getCharacterAttribute_MethodID_14: jmethodID?
+
+    open func getCharacterAttribute( i: Int ) -> AttributeSet! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(i) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttribute", methodSig: "(I)Ljavax/swing/text/AttributeSet;", methodCache: &JTextComponent_AccessibleJTextComponent.getCharacterAttribute_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
+    }
+
+    open func getCharacterAttribute( _ _i: Int ) -> AttributeSet! {
+        return getCharacterAttribute( i: _i )
     }
 
     /// public java.awt.Rectangle javax.swing.text.JTextComponent$AccessibleJTextComponent.getCharacterBounds(int)
@@ -443,9 +512,9 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
     private static var getCharacterBounds_MethodID_15: jmethodID?
 
     open func getCharacterBounds( i: Int ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(i) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterBounds", methodSig: "(I)Ljava/awt/Rectangle;", methodCache: &JTextComponent_AccessibleJTextComponent.getCharacterBounds_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
@@ -455,153 +524,177 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         return getCharacterBounds( i: _i )
     }
 
-    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getCharCount()
+    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getIndexAtPoint(java.awt.Point)
 
-    private static var getCharCount_MethodID_16: jmethodID?
+    private static var getIndexAtPoint_MethodID_16: jmethodID?
 
-    open func getCharCount() -> Int {
+    open func getIndexAtPoint( p: java_awt.Point? ) -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCharCount", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getCharCount_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = JNIType.toJava( value: p, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndexAtPoint", methodSig: "(Ljava/awt/Point;)I", methodCache: &JTextComponent_AccessibleJTextComponent.getIndexAtPoint_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+    open func getIndexAtPoint( _ _p: java_awt.Point? ) -> Int {
+        return getIndexAtPoint( p: _p )
+    }
 
-    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getCaretPosition()
+    /// private javax.swing.text.Element javax.swing.text.JTextComponent$AccessibleJTextComponent.getParagraphElement(int)
 
-    private static var getCaretPosition_MethodID_17: jmethodID?
+    /// private javax.swing.text.JTextComponent$AccessibleJTextComponent$IndexedSegment javax.swing.text.JTextComponent$AccessibleJTextComponent.getParagraphElementText(int) throws javax.swing.text.BadLocationException
 
-    open func getCaretPosition() -> Int {
+    /// java.awt.Rectangle javax.swing.text.JTextComponent$AccessibleJTextComponent.getRootEditorRect()
+
+    // Skipping method: true false false false false 
+
+    /// private int javax.swing.text.JTextComponent$AccessibleJTextComponent.getRunEdge(int,int) throws javax.swing.text.BadLocationException
+
+    /// private javax.swing.text.JTextComponent$AccessibleJTextComponent$IndexedSegment javax.swing.text.JTextComponent$AccessibleJTextComponent.getSegmentAt(int,int) throws javax.swing.text.BadLocationException
+
+    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getSelectedText()
+
+    private static var getSelectedText_MethodID_17: jmethodID?
+
+    open func getSelectedText() -> String! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getCaretPosition", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getCaretPosition_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// private java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAtIndex(int,int,int)
-
-    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAtIndex(int,int)
-
-    private static var getAtIndex_MethodID_18: jmethodID?
-
-    open func getAtIndex( part: Int, index: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: part, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAtIndex", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getAtIndex_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getAtIndex( _ _part: Int, _ _index: Int ) -> String! {
-        return getAtIndex( part: _part, index: _index )
-    }
-
-    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getAfterIndex(int,int)
-
-    private static var getAfterIndex_MethodID_19: jmethodID?
-
-    open func getAfterIndex( part: Int, index: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: part, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAfterIndex", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getAfterIndex_MethodID_19, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getAfterIndex( _ _part: Int, _ _index: Int ) -> String! {
-        return getAfterIndex( part: _part, index: _index )
-    }
-
-    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getBeforeIndex(int,int)
-
-    private static var getBeforeIndex_MethodID_20: jmethodID?
-
-    open func getBeforeIndex( part: Int, index: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: part, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBeforeIndex", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getBeforeIndex_MethodID_20, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open func getBeforeIndex( _ _part: Int, _ _index: Int ) -> String! {
-        return getBeforeIndex( part: _part, index: _index )
-    }
-
-    /// public javax.swing.text.AttributeSet javax.swing.text.JTextComponent$AccessibleJTextComponent.getCharacterAttribute(int)
-
-    private static var getCharacterAttribute_MethodID_21: jmethodID?
-
-    open func getCharacterAttribute( i: Int ) -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getCharacterAttribute", methodSig: "(I)Ljavax/swing/text/AttributeSet;", methodCache: &JTextComponent_AccessibleJTextComponent.getCharacterAttribute_MethodID_21, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getSelectedText_MethodID_17, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
-    }
-
-    open func getCharacterAttribute( _ _i: Int ) -> AttributeSet! {
-        return getCharacterAttribute( i: _i )
-    }
-
-    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getSelectionStart()
-
-    private static var getSelectionStart_MethodID_22: jmethodID?
-
-    open func getSelectionStart() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getSelectionStart_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 
     /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getSelectionEnd()
 
-    private static var getSelectionEnd_MethodID_23: jmethodID?
+    private static var getSelectionEnd_MethodID_18: jmethodID?
 
     open func getSelectionEnd() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getSelectionEnd_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionEnd", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getSelectionEnd_MethodID_18, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getSelectedText()
+    /// public int javax.swing.text.JTextComponent$AccessibleJTextComponent.getSelectionStart()
 
-    private static var getSelectedText_MethodID_24: jmethodID?
+    private static var getSelectionStart_MethodID_19: jmethodID?
 
-    open func getSelectedText() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getSelectionStart() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSelectedText", methodSig: "()Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getSelectedText_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectionStart", methodSig: "()I", methodCache: &JTextComponent_AccessibleJTextComponent.getSelectionStart_MethodID_19, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public javax.accessibility.AccessibleRole javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleRole()
+    /// private javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getSequenceAtIndex(int,int,int)
 
-    /// public javax.accessibility.AccessibleEditableText javax.swing.text.JTextComponent$AccessibleJTextComponent.getAccessibleEditableText()
+    /// public java.awt.Rectangle javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextBounds(int,int)
 
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.caretUpdate(javax.swing.event.CaretEvent)
+    private static var getTextBounds_MethodID_20: jmethodID?
 
-    private static var caretUpdate_MethodID_25: jmethodID?
-
-    open func caretUpdate( e: CaretEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getTextBounds( startIndex: Int, endIndex: Int ) -> java_awt.Rectangle! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "caretUpdate", methodSig: "(Ljavax/swing/event/CaretEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.caretUpdate_MethodID_25, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextBounds", methodSig: "(II)Ljava/awt/Rectangle;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextBounds_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
 
-    open func caretUpdate( _ _e: CaretEvent? ) {
-        caretUpdate( e: _e )
+    open func getTextBounds( _ _startIndex: Int, _ _endIndex: Int ) -> java_awt.Rectangle! {
+        return getTextBounds( startIndex: _startIndex, endIndex: _endIndex )
+    }
+
+    /// public java.lang.String javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextRange(int,int)
+
+    private static var getTextRange_MethodID_21: jmethodID?
+
+    open func getTextRange( startIndex: Int, endIndex: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextRange", methodSig: "(II)Ljava/lang/String;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextRange_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open func getTextRange( _ _startIndex: Int, _ _endIndex: Int ) -> String! {
+        return getTextRange( startIndex: _startIndex, endIndex: _endIndex )
+    }
+
+    /// public javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextSequenceAfter(int,int)
+
+    private static var getTextSequenceAfter_MethodID_22: jmethodID?
+
+    open func getTextSequenceAfter( part: Int, index: Int ) -> /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(part) )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSequenceAfter", methodSig: "(II)Ljavax/accessibility/AccessibleTextSequence;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextSequenceAfter_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+    open func getTextSequenceAfter( _ _part: Int, _ _index: Int ) -> /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject! {
+        return getTextSequenceAfter( part: _part, index: _index )
+    }
+
+    /// public javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextSequenceAt(int,int)
+
+    private static var getTextSequenceAt_MethodID_23: jmethodID?
+
+    open func getTextSequenceAt( part: Int, index: Int ) -> /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(part) )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSequenceAt", methodSig: "(II)Ljavax/accessibility/AccessibleTextSequence;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextSequenceAt_MethodID_23, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+    open func getTextSequenceAt( _ _part: Int, _ _index: Int ) -> /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject! {
+        return getTextSequenceAt( part: _part, index: _index )
+    }
+
+    /// public javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextSequenceBefore(int,int)
+
+    private static var getTextSequenceBefore_MethodID_24: jmethodID?
+
+    open func getTextSequenceBefore( part: Int, index: Int ) -> /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(part) )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSequenceBefore", methodSig: "(II)Ljavax/accessibility/AccessibleTextSequence;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextSequenceBefore_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+    open func getTextSequenceBefore( _ _part: Int, _ _index: Int ) -> /* class javax.accessibility.AccessibleTextSequence */ UnavailableObject! {
+        return getTextSequenceBefore( part: _part, index: _index )
+    }
+
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.insertTextAtIndex(int,java.lang.String)
+
+    private static var insertTextAtIndex_MethodID_25: jmethodID?
+
+    open func insertTextAtIndex( index: Int, s: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(index) )
+        __args[1] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertTextAtIndex", methodSig: "(ILjava/lang/String;)V", methodCache: &JTextComponent_AccessibleJTextComponent.insertTextAtIndex_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func insertTextAtIndex( _ _index: Int, _ _s: String? ) {
+        insertTextAtIndex( index: _index, s: _s )
     }
 
     /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.insertUpdate(javax.swing.event.DocumentEvent)
@@ -609,8 +702,8 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
     private static var insertUpdate_MethodID_26: jmethodID?
 
     open func insertUpdate( e: DocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.insertUpdate_MethodID_26, args: &__args, locals: &__locals )
     }
@@ -619,118 +712,99 @@ open class JTextComponent_AccessibleJTextComponent: JComponent_AccessibleJCompon
         insertUpdate( e: _e )
     }
 
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.paste(int)
+
+    private static var paste_MethodID_27: jmethodID?
+
+    open func paste( startIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paste", methodSig: "(I)V", methodCache: &JTextComponent_AccessibleJTextComponent.paste_MethodID_27, args: &__args, locals: &__locals )
+    }
+
+    open func paste( _ _startIndex: Int ) {
+        paste( startIndex: _startIndex )
+    }
+
     /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.removeUpdate(javax.swing.event.DocumentEvent)
 
-    private static var removeUpdate_MethodID_27: jmethodID?
+    private static var removeUpdate_MethodID_28: jmethodID?
 
     open func removeUpdate( e: DocumentEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.removeUpdate_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.removeUpdate_MethodID_28, args: &__args, locals: &__locals )
     }
 
     open func removeUpdate( _ _e: DocumentEvent? ) {
         removeUpdate( e: _e )
     }
 
-    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.changedUpdate(javax.swing.event.DocumentEvent)
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.replaceText(int,int,java.lang.String)
 
-    private static var changedUpdate_MethodID_28: jmethodID?
+    private static var replaceText_MethodID_29: jmethodID?
 
-    open func changedUpdate( e: DocumentEvent? ) {
+    open func replaceText( startIndex: Int, endIndex: Int, s: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        __args[2] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceText", methodSig: "(IILjava/lang/String;)V", methodCache: &JTextComponent_AccessibleJTextComponent.replaceText_MethodID_29, args: &__args, locals: &__locals )
+    }
+
+    open func replaceText( _ _startIndex: Int, _ _endIndex: Int, _ _s: String? ) {
+        replaceText( startIndex: _startIndex, endIndex: _endIndex, s: _s )
+    }
+
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.selectText(int,int)
+
+    private static var selectText_MethodID_30: jmethodID?
+
+    open func selectText( startIndex: Int, endIndex: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "selectText", methodSig: "(II)V", methodCache: &JTextComponent_AccessibleJTextComponent.selectText_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func selectText( _ _startIndex: Int, _ _endIndex: Int ) {
+        selectText( startIndex: _startIndex, endIndex: _endIndex )
+    }
+
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.setAttributes(int,int,javax.swing.text.AttributeSet)
+
+    private static var setAttributes_MethodID_31: jmethodID?
+
+    open func setAttributes( startIndex: Int, endIndex: Int, _as: AttributeSet? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(startIndex) )
+        __args[1] = jvalue( i: jint(endIndex) )
+        __args[2] = JNIType.toJava( value: _as, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAttributes", methodSig: "(IILjavax/swing/text/AttributeSet;)V", methodCache: &JTextComponent_AccessibleJTextComponent.setAttributes_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func setAttributes( _ _startIndex: Int, _ _endIndex: Int, _ __as: AttributeSet? ) {
+        setAttributes( startIndex: _startIndex, endIndex: _endIndex, _as: __as )
+    }
+
+    /// public void javax.swing.text.JTextComponent$AccessibleJTextComponent.setTextContents(java.lang.String)
+
+    private static var setTextContents_MethodID_32: jmethodID?
+
+    open func setTextContents( s: String? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;)V", methodCache: &JTextComponent_AccessibleJTextComponent.changedUpdate_MethodID_28, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: s, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setTextContents", methodSig: "(Ljava/lang/String;)V", methodCache: &JTextComponent_AccessibleJTextComponent.setTextContents_MethodID_32, args: &__args, locals: &__locals )
     }
 
-    open func changedUpdate( _ _e: DocumentEvent? ) {
-        changedUpdate( e: _e )
-    }
-
-    /// java.awt.Rectangle javax.swing.text.JTextComponent$AccessibleJTextComponent.getRootEditorRect()
-
-    /// private javax.swing.text.Element javax.swing.text.JTextComponent$AccessibleJTextComponent.getParagraphElement(int)
-
-    /// private javax.swing.text.JTextComponent$AccessibleJTextComponent$IndexedSegment javax.swing.text.JTextComponent$AccessibleJTextComponent.getParagraphElementText(int) throws javax.swing.text.BadLocationException
-
-    /// private javax.swing.text.JTextComponent$AccessibleJTextComponent$IndexedSegment javax.swing.text.JTextComponent$AccessibleJTextComponent.getSegmentAt(int,int) throws javax.swing.text.BadLocationException
-
-    /// private javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getSequenceAtIndex(int,int,int)
-
-    /// private int javax.swing.text.JTextComponent$AccessibleJTextComponent.getRunEdge(int,int) throws javax.swing.text.BadLocationException
-
-    /// public javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextSequenceAt(int,int)
-
-    private static var getTextSequenceAt_MethodID_29: jmethodID?
-
-    open func getTextSequenceAt( part: Int, index: Int ) -> /* javax.accessibility.AccessibleTextSequence */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: part, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSequenceAt", methodSig: "(II)Ljavax/accessibility/AccessibleTextSequence;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextSequenceAt_MethodID_29, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleTextSequence */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-    open func getTextSequenceAt( _ _part: Int, _ _index: Int ) -> /* javax.accessibility.AccessibleTextSequence */ UnclassedObject! {
-        return getTextSequenceAt( part: _part, index: _index )
-    }
-
-    /// public javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextSequenceAfter(int,int)
-
-    private static var getTextSequenceAfter_MethodID_30: jmethodID?
-
-    open func getTextSequenceAfter( part: Int, index: Int ) -> /* javax.accessibility.AccessibleTextSequence */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: part, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSequenceAfter", methodSig: "(II)Ljavax/accessibility/AccessibleTextSequence;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextSequenceAfter_MethodID_30, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleTextSequence */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-    open func getTextSequenceAfter( _ _part: Int, _ _index: Int ) -> /* javax.accessibility.AccessibleTextSequence */ UnclassedObject! {
-        return getTextSequenceAfter( part: _part, index: _index )
-    }
-
-    /// public javax.accessibility.AccessibleTextSequence javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextSequenceBefore(int,int)
-
-    private static var getTextSequenceBefore_MethodID_31: jmethodID?
-
-    open func getTextSequenceBefore( part: Int, index: Int ) -> /* javax.accessibility.AccessibleTextSequence */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: part, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextSequenceBefore", methodSig: "(II)Ljavax/accessibility/AccessibleTextSequence;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextSequenceBefore_MethodID_31, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleTextSequence */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-    open func getTextSequenceBefore( _ _part: Int, _ _index: Int ) -> /* javax.accessibility.AccessibleTextSequence */ UnclassedObject! {
-        return getTextSequenceBefore( part: _part, index: _index )
-    }
-
-    /// public java.awt.Rectangle javax.swing.text.JTextComponent$AccessibleJTextComponent.getTextBounds(int,int)
-
-    private static var getTextBounds_MethodID_32: jmethodID?
-
-    open func getTextBounds( startIndex: Int, endIndex: Int ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: startIndex, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endIndex, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTextBounds", methodSig: "(II)Ljava/awt/Rectangle;", methodCache: &JTextComponent_AccessibleJTextComponent.getTextBounds_MethodID_32, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open func getTextBounds( _ _startIndex: Int, _ _endIndex: Int ) -> java_awt.Rectangle! {
-        return getTextBounds( startIndex: _startIndex, endIndex: _endIndex )
+    open func setTextContents( _ _s: String? ) {
+        setTextContents( s: _s )
     }
 
 }

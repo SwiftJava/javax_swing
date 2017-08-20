@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.text.TabSet ///
 
-open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ UnclassedProtocol {
+open class JavaTabSet: java_swift.JavaObject, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -16,17 +16,17 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
 
     private static var JavaTabSetJNIClass: jclass?
 
-    /// private javax.swing.text.TabStop[] javax.swing.text.TabSet.tabs
-
     /// private int javax.swing.text.TabSet.hashCode
+
+    /// private javax.swing.text.TabStop[] javax.swing.text.TabSet.tabs
 
     /// public javax.swing.text.TabSet(javax.swing.text.TabStop[])
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( tabs: [TabStop]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: tabs, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/TabSet", classCache: &JavaTabSet.JavaTabSetJNIClass, methodSig: "([Ljavax/swing/text/TabStop;)V", methodCache: &JavaTabSet.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -42,42 +42,26 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
     private static var equals_MethodID_2: jmethodID?
 
     open func equals( o: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: o, locals: &__locals )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "equals", methodSig: "(Ljava/lang/Object;)Z", methodCache: &JavaTabSet.equals_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
     override open func equals( _ _o: java_swift.JavaObject? ) -> Bool {
         return equals( o: _o )
     }
 
-    /// public java.lang.String javax.swing.text.TabSet.toString()
-
-    /// public int javax.swing.text.TabSet.hashCode()
-
-    /// public int javax.swing.text.TabSet.getTabCount()
-
-    private static var getTabCount_MethodID_3: jmethodID?
-
-    open func getTabCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabCount", methodSig: "()I", methodCache: &JavaTabSet.getTabCount_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
     /// public javax.swing.text.TabStop javax.swing.text.TabSet.getTab(int)
 
-    private static var getTab_MethodID_4: jmethodID?
+    private static var getTab_MethodID_3: jmethodID?
 
     open func getTab( index: Int ) -> TabStop! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTab", methodSig: "(I)Ljavax/swing/text/TabStop;", methodCache: &JavaTabSet.getTab_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTab", methodSig: "(I)Ljavax/swing/text/TabStop;", methodCache: &JavaTabSet.getTab_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TabStop( javaObject: __return ) : nil
     }
@@ -88,13 +72,13 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
 
     /// public javax.swing.text.TabStop javax.swing.text.TabSet.getTabAfter(float)
 
-    private static var getTabAfter_MethodID_5: jmethodID?
+    private static var getTabAfter_MethodID_4: jmethodID?
 
     open func getTabAfter( location: Float ) -> TabStop! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabAfter", methodSig: "(F)Ljavax/swing/text/TabStop;", methodCache: &JavaTabSet.getTabAfter_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: location )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabAfter", methodSig: "(F)Ljavax/swing/text/TabStop;", methodCache: &JavaTabSet.getTabAfter_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? TabStop( javaObject: __return ) : nil
     }
@@ -103,16 +87,28 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
         return getTabAfter( location: _location )
     }
 
+    /// public int javax.swing.text.TabSet.getTabCount()
+
+    private static var getTabCount_MethodID_5: jmethodID?
+
+    open func getTabCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabCount", methodSig: "()I", methodCache: &JavaTabSet.getTabCount_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public int javax.swing.text.TabSet.getTabIndex(javax.swing.text.TabStop)
 
     private static var getTabIndex_MethodID_6: jmethodID?
 
     open func getTabIndex( tab: TabStop? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: tab, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabIndex", methodSig: "(Ljavax/swing/text/TabStop;)I", methodCache: &JavaTabSet.getTabIndex_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func getTabIndex( _ _tab: TabStop? ) -> Int {
@@ -124,16 +120,24 @@ open class JavaTabSet: java_swift.JavaObject, /* java.io.Serializable */ Unclass
     private static var getTabIndexAfter_MethodID_7: jmethodID?
 
     open func getTabIndexAfter( location: Float ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( f: location )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabIndexAfter", methodSig: "(F)I", methodCache: &JavaTabSet.getTabIndexAfter_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func getTabIndexAfter( _ _location: Float ) -> Int {
         return getTabIndexAfter( location: _location )
     }
+
+    /// public int javax.swing.text.TabSet.hashCode()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.text.TabSet.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

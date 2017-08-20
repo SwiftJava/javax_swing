@@ -17,514 +17,1049 @@ open class MenuKeyEvent: java_awt.KeyEvent {
 
     private static var MenuKeyEventJNIClass: jclass?
 
-    /// private javax.swing.MenuElement[] javax.swing.event.MenuKeyEvent.path
-
     /// private javax.swing.MenuSelectionManager javax.swing.event.MenuKeyEvent.manager
 
-    /// private boolean java.awt.event.KeyEvent.isProxyActive
-
-    /// public static final int java.awt.event.KeyEvent.KEY_FIRST
-
-    /// public static final int java.awt.event.KeyEvent.KEY_LAST
-
-    /// public static final int java.awt.event.KeyEvent.KEY_TYPED
-
-    /// public static final int java.awt.event.KeyEvent.KEY_PRESSED
-
-    /// public static final int java.awt.event.KeyEvent.KEY_RELEASED
-
-    /// public static final int java.awt.event.KeyEvent.VK_ENTER
-
-    /// public static final int java.awt.event.KeyEvent.VK_BACK_SPACE
-
-    /// public static final int java.awt.event.KeyEvent.VK_TAB
-
-    /// public static final int java.awt.event.KeyEvent.VK_CANCEL
-
-    /// public static final int java.awt.event.KeyEvent.VK_CLEAR
-
-    /// public static final int java.awt.event.KeyEvent.VK_SHIFT
-
-    /// public static final int java.awt.event.KeyEvent.VK_CONTROL
-
-    /// public static final int java.awt.event.KeyEvent.VK_ALT
-
-    /// public static final int java.awt.event.KeyEvent.VK_PAUSE
-
-    /// public static final int java.awt.event.KeyEvent.VK_CAPS_LOCK
-
-    /// public static final int java.awt.event.KeyEvent.VK_ESCAPE
-
-    /// public static final int java.awt.event.KeyEvent.VK_SPACE
-
-    /// public static final int java.awt.event.KeyEvent.VK_PAGE_UP
-
-    /// public static final int java.awt.event.KeyEvent.VK_PAGE_DOWN
-
-    /// public static final int java.awt.event.KeyEvent.VK_END
-
-    /// public static final int java.awt.event.KeyEvent.VK_HOME
-
-    /// public static final int java.awt.event.KeyEvent.VK_LEFT
-
-    /// public static final int java.awt.event.KeyEvent.VK_UP
-
-    /// public static final int java.awt.event.KeyEvent.VK_RIGHT
-
-    /// public static final int java.awt.event.KeyEvent.VK_DOWN
-
-    /// public static final int java.awt.event.KeyEvent.VK_COMMA
-
-    /// public static final int java.awt.event.KeyEvent.VK_MINUS
-
-    /// public static final int java.awt.event.KeyEvent.VK_PERIOD
-
-    /// public static final int java.awt.event.KeyEvent.VK_SLASH
-
-    /// public static final int java.awt.event.KeyEvent.VK_0
-
-    /// public static final int java.awt.event.KeyEvent.VK_1
-
-    /// public static final int java.awt.event.KeyEvent.VK_2
-
-    /// public static final int java.awt.event.KeyEvent.VK_3
-
-    /// public static final int java.awt.event.KeyEvent.VK_4
-
-    /// public static final int java.awt.event.KeyEvent.VK_5
-
-    /// public static final int java.awt.event.KeyEvent.VK_6
-
-    /// public static final int java.awt.event.KeyEvent.VK_7
-
-    /// public static final int java.awt.event.KeyEvent.VK_8
-
-    /// public static final int java.awt.event.KeyEvent.VK_9
-
-    /// public static final int java.awt.event.KeyEvent.VK_SEMICOLON
-
-    /// public static final int java.awt.event.KeyEvent.VK_EQUALS
-
-    /// public static final int java.awt.event.KeyEvent.VK_A
-
-    /// public static final int java.awt.event.KeyEvent.VK_B
-
-    /// public static final int java.awt.event.KeyEvent.VK_C
-
-    /// public static final int java.awt.event.KeyEvent.VK_D
-
-    /// public static final int java.awt.event.KeyEvent.VK_E
-
-    /// public static final int java.awt.event.KeyEvent.VK_F
-
-    /// public static final int java.awt.event.KeyEvent.VK_G
-
-    /// public static final int java.awt.event.KeyEvent.VK_H
-
-    /// public static final int java.awt.event.KeyEvent.VK_I
-
-    /// public static final int java.awt.event.KeyEvent.VK_J
-
-    /// public static final int java.awt.event.KeyEvent.VK_K
-
-    /// public static final int java.awt.event.KeyEvent.VK_L
-
-    /// public static final int java.awt.event.KeyEvent.VK_M
-
-    /// public static final int java.awt.event.KeyEvent.VK_N
-
-    /// public static final int java.awt.event.KeyEvent.VK_O
-
-    /// public static final int java.awt.event.KeyEvent.VK_P
-
-    /// public static final int java.awt.event.KeyEvent.VK_Q
-
-    /// public static final int java.awt.event.KeyEvent.VK_R
-
-    /// public static final int java.awt.event.KeyEvent.VK_S
-
-    /// public static final int java.awt.event.KeyEvent.VK_T
-
-    /// public static final int java.awt.event.KeyEvent.VK_U
-
-    /// public static final int java.awt.event.KeyEvent.VK_V
-
-    /// public static final int java.awt.event.KeyEvent.VK_W
-
-    /// public static final int java.awt.event.KeyEvent.VK_X
-
-    /// public static final int java.awt.event.KeyEvent.VK_Y
-
-    /// public static final int java.awt.event.KeyEvent.VK_Z
-
-    /// public static final int java.awt.event.KeyEvent.VK_OPEN_BRACKET
-
-    /// public static final int java.awt.event.KeyEvent.VK_BACK_SLASH
-
-    /// public static final int java.awt.event.KeyEvent.VK_CLOSE_BRACKET
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD0
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD1
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD2
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD3
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD4
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD5
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD6
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD7
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD8
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD9
-
-    /// public static final int java.awt.event.KeyEvent.VK_MULTIPLY
-
-    /// public static final int java.awt.event.KeyEvent.VK_ADD
-
-    /// public static final int java.awt.event.KeyEvent.VK_SEPARATER
-
-    /// public static final int java.awt.event.KeyEvent.VK_SEPARATOR
-
-    /// public static final int java.awt.event.KeyEvent.VK_SUBTRACT
-
-    /// public static final int java.awt.event.KeyEvent.VK_DECIMAL
-
-    /// public static final int java.awt.event.KeyEvent.VK_DIVIDE
-
-    /// public static final int java.awt.event.KeyEvent.VK_DELETE
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUM_LOCK
-
-    /// public static final int java.awt.event.KeyEvent.VK_SCROLL_LOCK
-
-    /// public static final int java.awt.event.KeyEvent.VK_F1
-
-    /// public static final int java.awt.event.KeyEvent.VK_F2
-
-    /// public static final int java.awt.event.KeyEvent.VK_F3
-
-    /// public static final int java.awt.event.KeyEvent.VK_F4
-
-    /// public static final int java.awt.event.KeyEvent.VK_F5
-
-    /// public static final int java.awt.event.KeyEvent.VK_F6
-
-    /// public static final int java.awt.event.KeyEvent.VK_F7
-
-    /// public static final int java.awt.event.KeyEvent.VK_F8
-
-    /// public static final int java.awt.event.KeyEvent.VK_F9
-
-    /// public static final int java.awt.event.KeyEvent.VK_F10
-
-    /// public static final int java.awt.event.KeyEvent.VK_F11
-
-    /// public static final int java.awt.event.KeyEvent.VK_F12
-
-    /// public static final int java.awt.event.KeyEvent.VK_F13
-
-    /// public static final int java.awt.event.KeyEvent.VK_F14
-
-    /// public static final int java.awt.event.KeyEvent.VK_F15
-
-    /// public static final int java.awt.event.KeyEvent.VK_F16
-
-    /// public static final int java.awt.event.KeyEvent.VK_F17
-
-    /// public static final int java.awt.event.KeyEvent.VK_F18
-
-    /// public static final int java.awt.event.KeyEvent.VK_F19
-
-    /// public static final int java.awt.event.KeyEvent.VK_F20
-
-    /// public static final int java.awt.event.KeyEvent.VK_F21
-
-    /// public static final int java.awt.event.KeyEvent.VK_F22
-
-    /// public static final int java.awt.event.KeyEvent.VK_F23
-
-    /// public static final int java.awt.event.KeyEvent.VK_F24
-
-    /// public static final int java.awt.event.KeyEvent.VK_PRINTSCREEN
-
-    /// public static final int java.awt.event.KeyEvent.VK_INSERT
-
-    /// public static final int java.awt.event.KeyEvent.VK_HELP
-
-    /// public static final int java.awt.event.KeyEvent.VK_META
-
-    /// public static final int java.awt.event.KeyEvent.VK_BACK_QUOTE
-
-    /// public static final int java.awt.event.KeyEvent.VK_QUOTE
-
-    /// public static final int java.awt.event.KeyEvent.VK_KP_UP
-
-    /// public static final int java.awt.event.KeyEvent.VK_KP_DOWN
-
-    /// public static final int java.awt.event.KeyEvent.VK_KP_LEFT
-
-    /// public static final int java.awt.event.KeyEvent.VK_KP_RIGHT
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_GRAVE
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_ACUTE
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_CIRCUMFLEX
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_TILDE
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_MACRON
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_BREVE
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_ABOVEDOT
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_DIAERESIS
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_ABOVERING
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_DOUBLEACUTE
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_CARON
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_CEDILLA
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_OGONEK
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_IOTA
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_VOICED_SOUND
-
-    /// public static final int java.awt.event.KeyEvent.VK_DEAD_SEMIVOICED_SOUND
-
-    /// public static final int java.awt.event.KeyEvent.VK_AMPERSAND
-
-    /// public static final int java.awt.event.KeyEvent.VK_ASTERISK
-
-    /// public static final int java.awt.event.KeyEvent.VK_QUOTEDBL
-
-    /// public static final int java.awt.event.KeyEvent.VK_LESS
-
-    /// public static final int java.awt.event.KeyEvent.VK_GREATER
-
-    /// public static final int java.awt.event.KeyEvent.VK_BRACELEFT
-
-    /// public static final int java.awt.event.KeyEvent.VK_BRACERIGHT
-
-    /// public static final int java.awt.event.KeyEvent.VK_AT
-
-    /// public static final int java.awt.event.KeyEvent.VK_COLON
-
-    /// public static final int java.awt.event.KeyEvent.VK_CIRCUMFLEX
-
-    /// public static final int java.awt.event.KeyEvent.VK_DOLLAR
-
-    /// public static final int java.awt.event.KeyEvent.VK_EURO_SIGN
-
-    /// public static final int java.awt.event.KeyEvent.VK_EXCLAMATION_MARK
-
-    /// public static final int java.awt.event.KeyEvent.VK_INVERTED_EXCLAMATION_MARK
-
-    /// public static final int java.awt.event.KeyEvent.VK_LEFT_PARENTHESIS
-
-    /// public static final int java.awt.event.KeyEvent.VK_NUMBER_SIGN
-
-    /// public static final int java.awt.event.KeyEvent.VK_PLUS
-
-    /// public static final int java.awt.event.KeyEvent.VK_RIGHT_PARENTHESIS
-
-    /// public static final int java.awt.event.KeyEvent.VK_UNDERSCORE
-
-    /// public static final int java.awt.event.KeyEvent.VK_WINDOWS
-
-    /// public static final int java.awt.event.KeyEvent.VK_CONTEXT_MENU
-
-    /// public static final int java.awt.event.KeyEvent.VK_FINAL
-
-    /// public static final int java.awt.event.KeyEvent.VK_CONVERT
-
-    /// public static final int java.awt.event.KeyEvent.VK_NONCONVERT
-
-    /// public static final int java.awt.event.KeyEvent.VK_ACCEPT
-
-    /// public static final int java.awt.event.KeyEvent.VK_MODECHANGE
-
-    /// public static final int java.awt.event.KeyEvent.VK_KANA
-
-    /// public static final int java.awt.event.KeyEvent.VK_KANJI
-
-    /// public static final int java.awt.event.KeyEvent.VK_ALPHANUMERIC
-
-    /// public static final int java.awt.event.KeyEvent.VK_KATAKANA
-
-    /// public static final int java.awt.event.KeyEvent.VK_HIRAGANA
-
-    /// public static final int java.awt.event.KeyEvent.VK_FULL_WIDTH
-
-    /// public static final int java.awt.event.KeyEvent.VK_HALF_WIDTH
-
-    /// public static final int java.awt.event.KeyEvent.VK_ROMAN_CHARACTERS
-
-    /// public static final int java.awt.event.KeyEvent.VK_ALL_CANDIDATES
-
-    /// public static final int java.awt.event.KeyEvent.VK_PREVIOUS_CANDIDATE
-
-    /// public static final int java.awt.event.KeyEvent.VK_CODE_INPUT
-
-    /// public static final int java.awt.event.KeyEvent.VK_JAPANESE_KATAKANA
-
-    /// public static final int java.awt.event.KeyEvent.VK_JAPANESE_HIRAGANA
-
-    /// public static final int java.awt.event.KeyEvent.VK_JAPANESE_ROMAN
-
-    /// public static final int java.awt.event.KeyEvent.VK_KANA_LOCK
-
-    /// public static final int java.awt.event.KeyEvent.VK_INPUT_METHOD_ON_OFF
-
-    /// public static final int java.awt.event.KeyEvent.VK_CUT
-
-    /// public static final int java.awt.event.KeyEvent.VK_COPY
-
-    /// public static final int java.awt.event.KeyEvent.VK_PASTE
-
-    /// public static final int java.awt.event.KeyEvent.VK_UNDO
-
-    /// public static final int java.awt.event.KeyEvent.VK_AGAIN
-
-    /// public static final int java.awt.event.KeyEvent.VK_FIND
-
-    /// public static final int java.awt.event.KeyEvent.VK_PROPS
-
-    /// public static final int java.awt.event.KeyEvent.VK_STOP
-
-    /// public static final int java.awt.event.KeyEvent.VK_COMPOSE
-
-    /// public static final int java.awt.event.KeyEvent.VK_ALT_GRAPH
-
-    /// public static final int java.awt.event.KeyEvent.VK_BEGIN
-
-    /// public static final int java.awt.event.KeyEvent.VK_UNDEFINED
+    /// private javax.swing.MenuElement[] javax.swing.event.MenuKeyEvent.path
 
     /// public static final char java.awt.event.KeyEvent.CHAR_UNDEFINED
 
-    /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_UNKNOWN
+    // Skipping field: false true false false false false 
 
-    /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_STANDARD
+    /// public static final int java.awt.event.KeyEvent.KEY_FIRST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.KEY_LAST
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_LEFT
 
-    /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_RIGHT
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_NUMPAD
 
-    /// int java.awt.event.KeyEvent.keyCode
+    // Skipping field: false true false false false false 
 
-    /// char java.awt.event.KeyEvent.keyChar
+    /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_RIGHT
 
-    /// int java.awt.event.KeyEvent.keyLocation
+    // Skipping field: false true false false false false 
 
-    /// private transient long java.awt.event.KeyEvent.rawCode
+    /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_STANDARD
 
-    /// private transient long java.awt.event.KeyEvent.primaryLevelUnicode
+    // Skipping field: false true false false false false 
 
-    /// private transient long java.awt.event.KeyEvent.scancode
+    /// public static final int java.awt.event.KeyEvent.KEY_LOCATION_UNKNOWN
 
-    /// private transient long java.awt.event.KeyEvent.extendedKeyCode
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.KEY_PRESSED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.KEY_RELEASED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.KEY_TYPED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_0
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_1
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_2
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_3
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_4
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_5
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_6
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_7
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_8
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_9
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_A
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ACCEPT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ADD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_AGAIN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ALL_CANDIDATES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ALPHANUMERIC
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ALT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ALT_GRAPH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_AMPERSAND
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ASTERISK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_AT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_B
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_BACK_QUOTE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_BACK_SLASH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_BACK_SPACE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_BEGIN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_BRACELEFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_BRACERIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_C
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CANCEL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CAPS_LOCK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CIRCUMFLEX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CLEAR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CLOSE_BRACKET
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CODE_INPUT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_COLON
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_COMMA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_COMPOSE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CONTEXT_MENU
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CONTROL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CONVERT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_COPY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_CUT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_D
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_ABOVEDOT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_ABOVERING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_ACUTE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_BREVE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_CARON
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_CEDILLA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_CIRCUMFLEX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_DIAERESIS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_DOUBLEACUTE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_GRAVE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_IOTA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_MACRON
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_OGONEK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_SEMIVOICED_SOUND
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_TILDE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DEAD_VOICED_SOUND
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DECIMAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DELETE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DIVIDE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DOLLAR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_DOWN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_E
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_END
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ENTER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_EQUALS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ESCAPE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_EURO_SIGN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_EXCLAMATION_MARK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F1
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F10
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F11
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F12
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F13
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F14
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F15
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F16
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F17
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F18
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F19
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F2
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F20
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F21
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F22
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F23
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F24
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F3
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F4
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F5
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F6
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F7
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F8
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_F9
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_FINAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_FIND
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_FULL_WIDTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_G
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_GREATER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_H
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_HALF_WIDTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_HELP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_HIRAGANA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_HOME
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_I
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_INPUT_METHOD_ON_OFF
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_INSERT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_INVERTED_EXCLAMATION_MARK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_J
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_JAPANESE_HIRAGANA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_JAPANESE_KATAKANA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_JAPANESE_ROMAN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_K
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KANA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KANA_LOCK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KANJI
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KATAKANA
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KP_DOWN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KP_LEFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KP_RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_KP_UP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_L
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_LEFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_LEFT_PARENTHESIS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_LESS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_M
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_META
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_MINUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_MODECHANGE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_MULTIPLY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_N
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NONCONVERT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMBER_SIGN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD0
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD1
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD2
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD3
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD4
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD5
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD6
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD7
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD8
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUMPAD9
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_NUM_LOCK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_O
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_OPEN_BRACKET
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_P
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PAGE_DOWN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PAGE_UP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PASTE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PAUSE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PERIOD
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PLUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PREVIOUS_CANDIDATE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PRINTSCREEN
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_PROPS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_Q
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_QUOTE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_QUOTEDBL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_R
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_RIGHT_PARENTHESIS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_ROMAN_CHARACTERS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_S
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SCROLL_LOCK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SEMICOLON
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SEPARATER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SEPARATOR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SHIFT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SLASH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SPACE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_STOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_SUBTRACT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_T
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_TAB
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_U
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_UNDEFINED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_UNDERSCORE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_UNDO
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_UP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_V
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_W
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_WINDOWS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_X
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_Y
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.KeyEvent.VK_Z
+
+    // Skipping field: false true false false false false 
 
     /// private static final long java.awt.event.KeyEvent.serialVersionUID
 
+    /// private transient long java.awt.event.KeyEvent.extendedKeyCode
+
+    /// private boolean java.awt.event.KeyEvent.isProxyActive
+
+    /// char java.awt.event.KeyEvent.keyChar
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.event.KeyEvent.keyCode
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.event.KeyEvent.keyLocation
+
+    // Skipping field: true false false false false false 
+
     /// private java.awt.Component java.awt.event.KeyEvent.originalSource
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.event.InputEvent.logger
+    /// private transient long java.awt.event.KeyEvent.primaryLevelUnicode
 
-    /// public static final int java.awt.event.InputEvent.SHIFT_MASK
+    /// private transient long java.awt.event.KeyEvent.rawCode
 
-    /// public static final int java.awt.event.InputEvent.CTRL_MASK
-
-    /// public static final int java.awt.event.InputEvent.META_MASK
-
-    /// public static final int java.awt.event.InputEvent.ALT_MASK
-
-    /// public static final int java.awt.event.InputEvent.ALT_GRAPH_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON1_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON2_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON3_MASK
-
-    /// public static final int java.awt.event.InputEvent.SHIFT_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.CTRL_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.META_DOWN_MASK
+    /// private transient long java.awt.event.KeyEvent.scancode
 
     /// public static final int java.awt.event.InputEvent.ALT_DOWN_MASK
 
-    /// public static final int java.awt.event.InputEvent.BUTTON1_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON2_DOWN_MASK
-
-    /// public static final int java.awt.event.InputEvent.BUTTON3_DOWN_MASK
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.InputEvent.ALT_GRAPH_DOWN_MASK
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.ALT_GRAPH_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.ALT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON1_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON1_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON2_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON2_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON3_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.BUTTON3_MASK
+
+    // Skipping field: false true false false false false 
+
     /// private static final int[] java.awt.event.InputEvent.BUTTON_DOWN_MASK
+
+    /// public static final int java.awt.event.InputEvent.CTRL_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.CTRL_MASK
+
+    // Skipping field: false true false false false false 
 
     /// static final int java.awt.event.InputEvent.FIRST_HIGH_BIT
 
-    /// static final int java.awt.event.InputEvent.JDK_1_3_MODIFIERS
+    // Skipping field: true false false false false false 
 
     /// static final int java.awt.event.InputEvent.HIGH_MODIFIERS
 
-    /// long java.awt.event.InputEvent.when
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.event.InputEvent.modifiers
+    /// static final int java.awt.event.InputEvent.JDK_1_3_MODIFIERS
 
-    /// private transient boolean java.awt.event.InputEvent.canAccessSystemClipboard
+    // Skipping field: true false false false false false 
+
+    /// public static final int java.awt.event.InputEvent.META_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.META_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.SHIFT_DOWN_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.InputEvent.SHIFT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.event.InputEvent.logger
 
     /// static final long java.awt.event.InputEvent.serialVersionUID
 
+    // Skipping field: true true false false false false 
+
+    /// private transient boolean java.awt.event.InputEvent.canAccessSystemClipboard
+
+    /// int java.awt.event.InputEvent.modifiers
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.event.InputEvent.when
+
+    // Skipping field: true false false false false false 
+
     /// public static final int java.awt.event.ComponentEvent.COMPONENT_FIRST
 
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_LAST
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_MOVED
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_RESIZED
-
-    /// public static final int java.awt.event.ComponentEvent.COMPONENT_SHOWN
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.event.ComponentEvent.COMPONENT_HIDDEN
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_LAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_MOVED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_RESIZED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.event.ComponentEvent.COMPONENT_SHOWN
+
+    // Skipping field: false true false false false false 
+
     /// private static final long java.awt.event.ComponentEvent.serialVersionUID
+
+    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
+
+    // Skipping field: true false false false false false 
+
+    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
+
+    // Skipping field: false true false false false false 
+
+    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
 
     /// private static final sun.util.logging.PlatformLogger java.awt.AWTEvent.log
 
+    /// private static final long java.awt.AWTEvent.serialVersionUID
+
+    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
+
     /// private byte[] java.awt.AWTEvent.bdata
-
-    /// protected int java.awt.AWTEvent.id
-
-    private static var id_FieldID: jfieldID?
-
-    override open var id: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &MenuKeyEvent.id_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &MenuKeyEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
 
     /// protected boolean java.awt.AWTEvent.consumed
 
@@ -532,70 +1067,41 @@ open class MenuKeyEvent: java_awt.KeyEvent {
 
     override open var consumed: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &MenuKeyEvent.consumed_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &MenuKeyEvent.consumed_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "consumed", fieldType: "Z", fieldCache: &MenuKeyEvent.consumed_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private transient volatile java.security.AccessControlContext java.awt.AWTEvent.acc
-
     /// transient boolean java.awt.AWTEvent.focusManagerIsDispatching
+
+    // Skipping field: true false false false false false 
+
+    /// protected int java.awt.AWTEvent.id
+
+    private static var id_FieldID: jfieldID?
+
+    override open var id: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "id", fieldType: "I", fieldCache: &MenuKeyEvent.id_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "id", fieldType: "I", fieldCache: &MenuKeyEvent.id_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
 
     /// transient boolean java.awt.AWTEvent.isPosted
 
+    // Skipping field: true false false false false false 
+
     /// private transient boolean java.awt.AWTEvent.isSystemGenerated
-
-    /// public static final long java.awt.AWTEvent.COMPONENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.CONTAINER_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.FOCUS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.KEY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_MOTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ACTION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ADJUSTMENT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.ITEM_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.TEXT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INPUT_METHOD_EVENT_MASK
-
-    /// static final long java.awt.AWTEvent.INPUT_METHODS_ENABLED_MASK
-
-    /// public static final long java.awt.AWTEvent.PAINT_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.INVOCATION_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.HIERARCHY_BOUNDS_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.MOUSE_WHEEL_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_STATE_EVENT_MASK
-
-    /// public static final long java.awt.AWTEvent.WINDOW_FOCUS_EVENT_MASK
-
-    /// public static final int java.awt.AWTEvent.RESERVED_ID_MAX
-
-    /// private static java.lang.reflect.Field java.awt.AWTEvent.inputEvent_CanAccessSystemClipboard_Field
-
-    /// private static final long java.awt.AWTEvent.serialVersionUID
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -605,8 +1111,8 @@ open class MenuKeyEvent: java_awt.KeyEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MenuKeyEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &MenuKeyEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -621,14 +1127,14 @@ open class MenuKeyEvent: java_awt.KeyEvent {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: java_awt.Component?, id: Int, when: Int64, modifiers: Int, keyCode: Int, keyChar: UInt16, p: [MenuElement]?, m: MenuSelectionManager? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 8 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: id, locals: &__locals )
-        __args[2] = JNIType.toJava( value: when, locals: &__locals )
-        __args[3] = JNIType.toJava( value: modifiers, locals: &__locals )
-        __args[4] = JNIType.toJava( value: keyCode, locals: &__locals )
-        __args[5] = JNIType.toJava( value: keyChar, locals: &__locals )
+        __args[1] = jvalue( i: jint(id) )
+        __args[2] = jvalue( j: when )
+        __args[3] = jvalue( i: jint(modifiers) )
+        __args[4] = jvalue( i: jint(keyCode) )
+        __args[5] = jvalue( c: keyChar )
         __args[6] = JNIType.toJava( value: p, locals: &__locals )
         __args[7] = JNIType.toJava( value: m, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/MenuKeyEvent", classCache: &MenuKeyEvent.MenuKeyEventJNIClass, methodSig: "(Ljava/awt/Component;IJIIC[Ljavax/swing/MenuElement;Ljavax/swing/MenuSelectionManager;)V", methodCache: &MenuKeyEvent.new_MethodID_1, args: &__args, locals: &__locals )
@@ -640,28 +1146,28 @@ open class MenuKeyEvent: java_awt.KeyEvent {
         self.init( source: _source, id: _id, when: _when, modifiers: _modifiers, keyCode: _keyCode, keyChar: _keyChar, p: _p, m: _m )
     }
 
-    /// public javax.swing.MenuElement[] javax.swing.event.MenuKeyEvent.getPath()
+    /// public javax.swing.MenuSelectionManager javax.swing.event.MenuKeyEvent.getMenuSelectionManager()
 
-    private static var getPath_MethodID_2: jmethodID?
+    private static var getMenuSelectionManager_MethodID_2: jmethodID?
 
-    open func getPath() -> [MenuElement]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMenuSelectionManager() -> MenuSelectionManager! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPath", methodSig: "()[Ljavax/swing/MenuElement;", methodCache: &MenuKeyEvent.getPath_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [MenuElementForward](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuSelectionManager", methodSig: "()Ljavax/swing/MenuSelectionManager;", methodCache: &MenuKeyEvent.getMenuSelectionManager_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? MenuSelectionManager( javaObject: __return ) : nil
     }
 
 
-    /// public javax.swing.MenuSelectionManager javax.swing.event.MenuKeyEvent.getMenuSelectionManager()
+    /// public javax.swing.MenuElement[] javax.swing.event.MenuKeyEvent.getPath()
 
-    private static var getMenuSelectionManager_MethodID_3: jmethodID?
+    private static var getPath_MethodID_3: jmethodID?
 
-    open func getMenuSelectionManager() -> MenuSelectionManager! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPath() -> [MenuElement]! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMenuSelectionManager", methodSig: "()Ljavax/swing/MenuSelectionManager;", methodCache: &MenuKeyEvent.getMenuSelectionManager_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? MenuSelectionManager( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPath", methodSig: "()[Ljavax/swing/MenuElement;", methodCache: &MenuKeyEvent.getPath_MethodID_3, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [MenuElementForward].self, from: __return )
     }
 
 

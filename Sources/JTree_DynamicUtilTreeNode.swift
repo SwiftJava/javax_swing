@@ -17,31 +17,14 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
 
     private static var JTree_DynamicUtilTreeNodeJNIClass: jclass?
 
-    /// protected boolean javax.swing.JTree$DynamicUtilTreeNode.hasChildren
-
-    private static var hasChildren_FieldID: jfieldID?
-
-    open var hasChildren: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "hasChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.hasChildren_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "hasChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.hasChildren_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// protected java.lang.Object javax.swing.JTree$DynamicUtilTreeNode.childValue
 
     private static var childValue_FieldID: jfieldID?
 
     open var childValue: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "childValue", fieldType: "Ljava/lang/Object;", fieldCache: &JTree_DynamicUtilTreeNode.childValue_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "childValue", fieldType: "Ljava/lang/Object;", fieldCache: &JTree_DynamicUtilTreeNode.childValue_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,41 +34,57 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
         }
     }
 
+    /// protected boolean javax.swing.JTree$DynamicUtilTreeNode.hasChildren
+
+    private static var hasChildren_FieldID: jfieldID?
+
+    open var hasChildren: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "hasChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.hasChildren_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "hasChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.hasChildren_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
+
     /// protected boolean javax.swing.JTree$DynamicUtilTreeNode.loadedChildren
 
     private static var loadedChildren_FieldID: jfieldID?
 
     open var loadedChildren: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "loadedChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.loadedChildren_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "loadedChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.loadedChildren_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "loadedChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.loadedChildren_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
-    /// private static final long javax.swing.tree.DefaultMutableTreeNode.serialVersionUID
-
     /// public static final java.util.Enumeration javax.swing.tree.DefaultMutableTreeNode.EMPTY_ENUMERATION
 
-    /// protected javax.swing.tree.MutableTreeNode javax.swing.tree.DefaultMutableTreeNode.parent
+    // Skipping field: false true false false false false 
 
-    private static var parent_FieldID: jfieldID?
+    /// private static final long javax.swing.tree.DefaultMutableTreeNode.serialVersionUID
 
-    override open var parent: MutableTreeNode! {
+    /// protected boolean javax.swing.tree.DefaultMutableTreeNode.allowsChildren
+
+    private static var allowsChildren_FieldID: jfieldID?
+
+    override open var allowsChildren: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "parent", fieldType: "Ljavax/swing/tree/MutableTreeNode;", fieldCache: &JTree_DynamicUtilTreeNode.parent_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? MutableTreeNodeForward( javaObject: __value ) : nil
+            let __value = JNIField.GetBooleanField( fieldName: "allowsChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.allowsChildren_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "parent", fieldType: "Ljavax/swing/tree/MutableTreeNode;", fieldCache: &JTree_DynamicUtilTreeNode.parent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "allowsChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.allowsChildren_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
@@ -95,8 +94,8 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
 
     open var children: java_util.Vector! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "children", fieldType: "Ljava/util/Vector;", fieldCache: &JTree_DynamicUtilTreeNode.children_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "children", fieldType: "Ljava/util/Vector;", fieldCache: &JTree_DynamicUtilTreeNode.children_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_util.Vector( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -106,14 +105,31 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
         }
     }
 
+    /// protected javax.swing.tree.MutableTreeNode javax.swing.tree.DefaultMutableTreeNode.parent
+
+    private static var parent_FieldID: jfieldID?
+
+    override open var parent: MutableTreeNode! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "parent", fieldType: "Ljavax/swing/tree/MutableTreeNode;", fieldCache: &JTree_DynamicUtilTreeNode.parent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? MutableTreeNodeForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "parent", fieldType: "Ljavax/swing/tree/MutableTreeNode;", fieldCache: &JTree_DynamicUtilTreeNode.parent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected transient java.lang.Object javax.swing.tree.DefaultMutableTreeNode.userObject
 
     private static var userObject_FieldID: jfieldID?
 
     override open var userObject: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "userObject", fieldType: "Ljava/lang/Object;", fieldCache: &JTree_DynamicUtilTreeNode.userObject_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "userObject", fieldType: "Ljava/lang/Object;", fieldCache: &JTree_DynamicUtilTreeNode.userObject_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -123,30 +139,13 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
         }
     }
 
-    /// protected boolean javax.swing.tree.DefaultMutableTreeNode.allowsChildren
-
-    private static var allowsChildren_FieldID: jfieldID?
-
-    override open var allowsChildren: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "allowsChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.allowsChildren_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "allowsChildren", fieldType: "Z", fieldCache: &JTree_DynamicUtilTreeNode.allowsChildren_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// public javax.swing.JTree$DynamicUtilTreeNode(java.lang.Object,java.lang.Object)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( value: java_swift.JavaObject?, children: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: value, locals: &__locals )
         __args[1] = JNIType.toJava( value: children, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JTree$DynamicUtilTreeNode", classCache: &JTree_DynamicUtilTreeNode.JTree_DynamicUtilTreeNodeJNIClass, methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &JTree_DynamicUtilTreeNode.new_MethodID_1, args: &__args, locals: &__locals )
@@ -163,8 +162,8 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
     private static var createChildren_MethodID_2: jmethodID?
 
     open class func createChildren( parent: DefaultMutableTreeNode?, children: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: parent, locals: &__locals )
         __args[1] = JNIType.toJava( value: children, locals: &__locals )
         JNIMethod.CallStaticVoidMethod( className: "javax/swing/JTree$DynamicUtilTreeNode", classCache: &JTree_DynamicUtilTreeNodeJNIClass, methodName: "createChildren", methodSig: "(Ljavax/swing/tree/DefaultMutableTreeNode;Ljava/lang/Object;)V", methodCache: &createChildren_MethodID_2, args: &__args, locals: &__locals )
@@ -174,21 +173,29 @@ open class JTree_DynamicUtilTreeNode: DefaultMutableTreeNode {
         createChildren( parent: _parent, children: _children )
     }
 
-    /// public boolean javax.swing.JTree$DynamicUtilTreeNode.isLeaf()
+    /// public java.util.Enumeration javax.swing.JTree$DynamicUtilTreeNode.children()
+
+    // Skipping method: false true false false true 
+
+    /// public javax.swing.tree.TreeNode javax.swing.JTree$DynamicUtilTreeNode.getChildAt(int)
+
+    // Skipping method: false true false false false 
 
     /// public int javax.swing.JTree$DynamicUtilTreeNode.getChildCount()
 
-    /// public java.util.Enumeration javax.swing.JTree$DynamicUtilTreeNode.children()
+    // Skipping method: false true false false false 
 
-    /// public javax.swing.tree.TreeNode javax.swing.JTree$DynamicUtilTreeNode.getChildAt(int)
+    /// public boolean javax.swing.JTree$DynamicUtilTreeNode.isLeaf()
+
+    // Skipping method: false true false false false 
 
     /// protected void javax.swing.JTree$DynamicUtilTreeNode.loadChildren()
 
     private static var loadChildren_MethodID_3: jmethodID?
 
     open func loadChildren() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "loadChildren", methodSig: "()V", methodCache: &JTree_DynamicUtilTreeNode.loadChildren_MethodID_3, args: &__args, locals: &__locals )
     }
 

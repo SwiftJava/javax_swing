@@ -17,43 +17,17 @@ open class BasicSplitPaneDivider: java_awt.Container {
 
     private static var BasicSplitPaneDividerJNIClass: jclass?
 
-    /// protected static final int javax.swing.plaf.basic.BasicSplitPaneDivider.ONE_TOUCH_SIZE
-
     /// protected static final int javax.swing.plaf.basic.BasicSplitPaneDivider.ONE_TOUCH_OFFSET
 
-    /// protected javax.swing.plaf.basic.BasicSplitPaneDivider$DragController javax.swing.plaf.basic.BasicSplitPaneDivider.dragger
+    // Skipping field: false false false false false true 
 
-    private static var dragger_FieldID: jfieldID?
+    /// protected static final int javax.swing.plaf.basic.BasicSplitPaneDivider.ONE_TOUCH_SIZE
 
-    open var dragger: /* javax.swing.plaf.basic.BasicSplitPaneDivider$DragController */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "dragger", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$DragController;", fieldCache: &BasicSplitPaneDivider.dragger_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.basic.BasicSplitPaneDivider$DragController */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "dragger", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$DragController;", fieldCache: &BasicSplitPaneDivider.dragger_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    // Skipping field: false false false false false true 
 
-    /// protected javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneDivider.splitPaneUI
+    /// private javax.swing.border.Border javax.swing.plaf.basic.BasicSplitPaneDivider.border
 
-    private static var splitPaneUI_FieldID: jfieldID?
-
-    open var splitPaneUI: BasicSplitPaneUI! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "splitPaneUI", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneUI;", fieldCache: &BasicSplitPaneDivider.splitPaneUI_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? BasicSplitPaneUI( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "splitPaneUI", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneUI;", fieldCache: &BasicSplitPaneDivider.splitPaneUI_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private boolean javax.swing.plaf.basic.BasicSplitPaneDivider.centerOneTouchButtons
 
     /// protected int javax.swing.plaf.basic.BasicSplitPaneDivider.dividerSize
 
@@ -61,14 +35,30 @@ open class BasicSplitPaneDivider: java_awt.Container {
 
     open var dividerSize: Int {
         get {
+            let __value = JNIField.GetIntField( fieldName: "dividerSize", fieldType: "I", fieldCache: &BasicSplitPaneDivider.dividerSize_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "dividerSize", fieldType: "I", fieldCache: &BasicSplitPaneDivider.dividerSize_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "dividerSize", fieldType: "I", fieldCache: &BasicSplitPaneDivider.dividerSize_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.plaf.basic.BasicSplitPaneDivider$DragController javax.swing.plaf.basic.BasicSplitPaneDivider.dragger
+
+    private static var dragger_FieldID: jfieldID?
+
+    open var dragger: /* class javax.swing.plaf.basic.BasicSplitPaneDivider$DragController */ UnavailableObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "dragger", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$DragController;", fieldCache: &BasicSplitPaneDivider.dragger_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.basic.BasicSplitPaneDivider$DragController */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "dividerSize", fieldType: "I", fieldCache: &BasicSplitPaneDivider.dividerSize_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "dragger", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$DragController;", fieldCache: &BasicSplitPaneDivider.dragger_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -78,8 +68,8 @@ open class BasicSplitPaneDivider: java_awt.Container {
 
     open var hiddenDivider: java_awt.Component! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "hiddenDivider", fieldType: "Ljava/awt/Component;", fieldCache: &BasicSplitPaneDivider.hiddenDivider_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "hiddenDivider", fieldType: "Ljava/awt/Component;", fieldCache: &BasicSplitPaneDivider.hiddenDivider_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Component( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -89,65 +79,14 @@ open class BasicSplitPaneDivider: java_awt.Container {
         }
     }
 
-    /// protected javax.swing.JSplitPane javax.swing.plaf.basic.BasicSplitPaneDivider.splitPane
-
-    private static var splitPane_FieldID: jfieldID?
-
-    open var splitPane: JSplitPane! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "splitPane", fieldType: "Ljavax/swing/JSplitPane;", fieldCache: &BasicSplitPaneDivider.splitPane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JSplitPane( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "splitPane", fieldType: "Ljavax/swing/JSplitPane;", fieldCache: &BasicSplitPaneDivider.splitPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.plaf.basic.BasicSplitPaneDivider$MouseHandler javax.swing.plaf.basic.BasicSplitPaneDivider.mouseHandler
-
-    private static var mouseHandler_FieldID: jfieldID?
-
-    open var mouseHandler: /* javax.swing.plaf.basic.BasicSplitPaneDivider$MouseHandler */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "mouseHandler", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$MouseHandler;", fieldCache: &BasicSplitPaneDivider.mouseHandler_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.plaf.basic.BasicSplitPaneDivider$MouseHandler */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "mouseHandler", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$MouseHandler;", fieldCache: &BasicSplitPaneDivider.mouseHandler_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.plaf.basic.BasicSplitPaneDivider.orientation
-
-    private static var orientation_FieldID: jfieldID?
-
-    open var orientation: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &BasicSplitPaneDivider.orientation_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &BasicSplitPaneDivider.orientation_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.JButton javax.swing.plaf.basic.BasicSplitPaneDivider.leftButton
 
     private static var leftButton_FieldID: jfieldID?
 
     open var leftButton: JButton! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "leftButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &BasicSplitPaneDivider.leftButton_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "leftButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &BasicSplitPaneDivider.leftButton_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JButton( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -157,14 +96,53 @@ open class BasicSplitPaneDivider: java_awt.Container {
         }
     }
 
+    /// protected javax.swing.plaf.basic.BasicSplitPaneDivider$MouseHandler javax.swing.plaf.basic.BasicSplitPaneDivider.mouseHandler
+
+    private static var mouseHandler_FieldID: jfieldID?
+
+    open var mouseHandler: /* class javax.swing.plaf.basic.BasicSplitPaneDivider$MouseHandler */ UnavailableObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "mouseHandler", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$MouseHandler;", fieldCache: &BasicSplitPaneDivider.mouseHandler_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.plaf.basic.BasicSplitPaneDivider$MouseHandler */ UnavailableObject( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "mouseHandler", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneDivider$MouseHandler;", fieldCache: &BasicSplitPaneDivider.mouseHandler_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicSplitPaneDivider.mouseOver
+
+    /// private int javax.swing.plaf.basic.BasicSplitPaneDivider.oneTouchOffset
+
+    /// private int javax.swing.plaf.basic.BasicSplitPaneDivider.oneTouchSize
+
+    /// protected int javax.swing.plaf.basic.BasicSplitPaneDivider.orientation
+
+    private static var orientation_FieldID: jfieldID?
+
+    open var orientation: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &BasicSplitPaneDivider.orientation_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &BasicSplitPaneDivider.orientation_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.JButton javax.swing.plaf.basic.BasicSplitPaneDivider.rightButton
 
     private static var rightButton_FieldID: jfieldID?
 
     open var rightButton: JButton! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "rightButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &BasicSplitPaneDivider.rightButton_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "rightButton", fieldType: "Ljavax/swing/JButton;", fieldCache: &BasicSplitPaneDivider.rightButton_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JButton( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -174,275 +152,259 @@ open class BasicSplitPaneDivider: java_awt.Container {
         }
     }
 
-    /// private javax.swing.border.Border javax.swing.plaf.basic.BasicSplitPaneDivider.border
+    /// protected javax.swing.JSplitPane javax.swing.plaf.basic.BasicSplitPaneDivider.splitPane
 
-    /// private boolean javax.swing.plaf.basic.BasicSplitPaneDivider.mouseOver
+    private static var splitPane_FieldID: jfieldID?
 
-    /// private int javax.swing.plaf.basic.BasicSplitPaneDivider.oneTouchSize
+    open var splitPane: JSplitPane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "splitPane", fieldType: "Ljavax/swing/JSplitPane;", fieldCache: &BasicSplitPaneDivider.splitPane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JSplitPane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "splitPane", fieldType: "Ljavax/swing/JSplitPane;", fieldCache: &BasicSplitPaneDivider.splitPane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
-    /// private int javax.swing.plaf.basic.BasicSplitPaneDivider.oneTouchOffset
+    /// protected javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneDivider.splitPaneUI
 
-    /// private boolean javax.swing.plaf.basic.BasicSplitPaneDivider.centerOneTouchButtons
+    private static var splitPaneUI_FieldID: jfieldID?
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
-
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    open var splitPaneUI: BasicSplitPaneUI! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "splitPaneUI", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneUI;", fieldCache: &BasicSplitPaneDivider.splitPaneUI_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? BasicSplitPaneUI( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "splitPaneUI", fieldType: "Ljavax/swing/plaf/basic/BasicSplitPaneUI;", fieldCache: &BasicSplitPaneDivider.splitPaneUI_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &BasicSplitPaneDivider.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &BasicSplitPaneDivider.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -451,31 +413,245 @@ open class BasicSplitPaneDivider: java_awt.Container {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ABORT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ALLBITS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.image.ImageObserver.ERROR
 
-    /// public static final int java.awt.image.ImageObserver.ABORT
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.plaf.basic.BasicSplitPaneDivider(javax.swing.plaf.basic.BasicSplitPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( ui: BasicSplitPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ui, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicSplitPaneDivider", classCache: &BasicSplitPaneDivider.BasicSplitPaneDividerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneDivider.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -486,19 +662,25 @@ open class BasicSplitPaneDivider: java_awt.Container {
         self.init( ui: _ui )
     }
 
+    /// static int javax.swing.plaf.basic.BasicSplitPaneDivider.access$000(javax.swing.plaf.basic.BasicSplitPaneDivider)
+
+    // Skipping method: true false false false false 
+
     /// static boolean javax.swing.plaf.basic.BasicSplitPaneDivider.access$100(javax.swing.plaf.basic.BasicSplitPaneDivider)
+
+    // Skipping method: true false false false false 
 
     /// static int javax.swing.plaf.basic.BasicSplitPaneDivider.access$200(javax.swing.plaf.basic.BasicSplitPaneDivider)
 
-    /// static int javax.swing.plaf.basic.BasicSplitPaneDivider.access$000(javax.swing.plaf.basic.BasicSplitPaneDivider)
+    // Skipping method: true false false false false 
 
     /// protected javax.swing.JButton javax.swing.plaf.basic.BasicSplitPaneDivider.createLeftOneTouchButton()
 
     private static var createLeftOneTouchButton_MethodID_2: jmethodID?
 
     open func createLeftOneTouchButton() -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createLeftOneTouchButton", methodSig: "()Ljavax/swing/JButton;", methodCache: &BasicSplitPaneDivider.createLeftOneTouchButton_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
@@ -510,8 +692,8 @@ open class BasicSplitPaneDivider: java_awt.Container {
     private static var createRightOneTouchButton_MethodID_3: jmethodID?
 
     open func createRightOneTouchButton() -> JButton! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createRightOneTouchButton", methodSig: "()Ljavax/swing/JButton;", methodCache: &BasicSplitPaneDivider.createRightOneTouchButton_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JButton( javaObject: __return ) : nil
@@ -523,9 +705,9 @@ open class BasicSplitPaneDivider: java_awt.Container {
     private static var dragDividerTo_MethodID_4: jmethodID?
 
     open func dragDividerTo( location: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(location) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "dragDividerTo", methodSig: "(I)V", methodCache: &BasicSplitPaneDivider.dragDividerTo_MethodID_4, args: &__args, locals: &__locals )
     }
 
@@ -538,9 +720,9 @@ open class BasicSplitPaneDivider: java_awt.Container {
     private static var finishDraggingTo_MethodID_5: jmethodID?
 
     open func finishDraggingTo( location: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: location, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(location) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "finishDraggingTo", methodSig: "(I)V", methodCache: &BasicSplitPaneDivider.finishDraggingTo_MethodID_5, args: &__args, locals: &__locals )
     }
 
@@ -548,58 +730,65 @@ open class BasicSplitPaneDivider: java_awt.Container {
         finishDraggingTo( location: _location )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneDivider.prepareForDragging()
+    /// public javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneDivider.getBasicSplitPaneUI()
 
-    private static var prepareForDragging_MethodID_6: jmethodID?
+    private static var getBasicSplitPaneUI_MethodID_6: jmethodID?
 
-    open func prepareForDragging() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getBasicSplitPaneUI() -> BasicSplitPaneUI! {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForDragging", methodSig: "()V", methodCache: &BasicSplitPaneDivider.prepareForDragging_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.basic.BasicSplitPaneDivider.setMouseOver(boolean)
-
-    private static var setMouseOver_MethodID_7: jmethodID?
-
-    open func setMouseOver( mouseOver: Bool ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBasicSplitPaneUI", methodSig: "()Ljavax/swing/plaf/basic/BasicSplitPaneUI;", methodCache: &BasicSplitPaneDivider.getBasicSplitPaneUI_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BasicSplitPaneUI( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.border.Border javax.swing.plaf.basic.BasicSplitPaneDivider.getBorder()
+
+    private static var getBorder_MethodID_7: jmethodID?
+
+    open func getBorder() -> Border! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: mouseOver, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMouseOver", methodSig: "(Z)V", methodCache: &BasicSplitPaneDivider.setMouseOver_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func setMouseOver( _ _mouseOver: Bool ) {
-        setMouseOver( mouseOver: _mouseOver )
-    }
-
-    /// private void javax.swing.plaf.basic.BasicSplitPaneDivider.revalidateSplitPane()
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneDivider.setBasicSplitPaneUI(javax.swing.plaf.basic.BasicSplitPaneUI)
-
-    private static var setBasicSplitPaneUI_MethodID_8: jmethodID?
-
-    open func setBasicSplitPaneUI( newUI: BasicSplitPaneUI? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newUI, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBasicSplitPaneUI", methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneDivider.setBasicSplitPaneUI_MethodID_8, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &BasicSplitPaneDivider.getBorder_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BorderForward( javaObject: __return ) : nil
     }
 
-    open func setBasicSplitPaneUI( _ _newUI: BasicSplitPaneUI? ) {
-        setBasicSplitPaneUI( newUI: _newUI )
+
+    /// public int javax.swing.plaf.basic.BasicSplitPaneDivider.getDividerSize()
+
+    private static var getDividerSize_MethodID_8: jmethodID?
+
+    open func getDividerSize() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerSize", methodSig: "()I", methodCache: &BasicSplitPaneDivider.getDividerSize_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
+
+
+    /// public java.awt.Insets javax.swing.plaf.basic.BasicSplitPaneDivider.getInsets()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneDivider.getMinimumSize()
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneDivider.getPreferredSize()
+
+    // Skipping method: false true false false false 
 
     /// public boolean javax.swing.plaf.basic.BasicSplitPaneDivider.isMouseOver()
 
     private static var isMouseOver_MethodID_9: jmethodID?
 
     open func isMouseOver() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isMouseOver", methodSig: "()Z", methodCache: &BasicSplitPaneDivider.isMouseOver_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
@@ -608,8 +797,8 @@ open class BasicSplitPaneDivider: java_awt.Container {
     private static var oneTouchExpandableChanged_MethodID_10: jmethodID?
 
     open func oneTouchExpandableChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "oneTouchExpandableChanged", methodSig: "()V", methodCache: &BasicSplitPaneDivider.oneTouchExpandableChanged_MethodID_10, args: &__args, locals: &__locals )
     }
 
@@ -619,8 +808,8 @@ open class BasicSplitPaneDivider: java_awt.Container {
     private static var paint_MethodID_11: jmethodID?
 
     open func paint( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &BasicSplitPaneDivider.paint_MethodID_11, args: &__args, locals: &__locals )
     }
@@ -629,94 +818,93 @@ open class BasicSplitPaneDivider: java_awt.Container {
         paint( g: _g )
     }
 
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneDivider.prepareForDragging()
+
+    private static var prepareForDragging_MethodID_12: jmethodID?
+
+    open func prepareForDragging() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "prepareForDragging", methodSig: "()V", methodCache: &BasicSplitPaneDivider.prepareForDragging_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneDivider.propertyChange(java.beans.PropertyChangeEvent)
+
+    private static var propertyChange_MethodID_13: jmethodID?
+
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicSplitPaneDivider.propertyChange_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        propertyChange( evt: _evt )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicSplitPaneDivider.revalidateSplitPane()
+
+    /// public void javax.swing.plaf.basic.BasicSplitPaneDivider.setBasicSplitPaneUI(javax.swing.plaf.basic.BasicSplitPaneUI)
+
+    private static var setBasicSplitPaneUI_MethodID_14: jmethodID?
+
+    open func setBasicSplitPaneUI( newUI: BasicSplitPaneUI? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: newUI, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBasicSplitPaneUI", methodSig: "(Ljavax/swing/plaf/basic/BasicSplitPaneUI;)V", methodCache: &BasicSplitPaneDivider.setBasicSplitPaneUI_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func setBasicSplitPaneUI( _ _newUI: BasicSplitPaneUI? ) {
+        setBasicSplitPaneUI( newUI: _newUI )
+    }
+
     /// public void javax.swing.plaf.basic.BasicSplitPaneDivider.setBorder(javax.swing.border.Border)
 
-    private static var setBorder_MethodID_12: jmethodID?
+    private static var setBorder_MethodID_15: jmethodID?
 
     open func setBorder( border: Border? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: border, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorder", methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &BasicSplitPaneDivider.setBorder_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setBorder", methodSig: "(Ljavax/swing/border/Border;)V", methodCache: &BasicSplitPaneDivider.setBorder_MethodID_15, args: &__args, locals: &__locals )
     }
 
     open func setBorder( _ _border: Border? ) {
         setBorder( border: _border )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneDivider.getPreferredSize()
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicSplitPaneDivider.getMinimumSize()
-
-    /// public java.awt.Insets javax.swing.plaf.basic.BasicSplitPaneDivider.getInsets()
-
-    /// public javax.swing.border.Border javax.swing.plaf.basic.BasicSplitPaneDivider.getBorder()
-
-    private static var getBorder_MethodID_13: jmethodID?
-
-    open func getBorder() -> Border! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBorder", methodSig: "()Ljavax/swing/border/Border;", methodCache: &BasicSplitPaneDivider.getBorder_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BorderForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.plaf.basic.BasicSplitPaneDivider.propertyChange(java.beans.PropertyChangeEvent)
-
-    private static var propertyChange_MethodID_14: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicSplitPaneDivider.propertyChange_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
-    }
-
     /// public void javax.swing.plaf.basic.BasicSplitPaneDivider.setDividerSize(int)
 
-    private static var setDividerSize_MethodID_15: jmethodID?
+    private static var setDividerSize_MethodID_16: jmethodID?
 
     open func setDividerSize( newSize: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newSize, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerSize", methodSig: "(I)V", methodCache: &BasicSplitPaneDivider.setDividerSize_MethodID_15, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(newSize) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setDividerSize", methodSig: "(I)V", methodCache: &BasicSplitPaneDivider.setDividerSize_MethodID_16, args: &__args, locals: &__locals )
     }
 
     open func setDividerSize( _ _newSize: Int ) {
         setDividerSize( newSize: _newSize )
     }
 
-    /// public int javax.swing.plaf.basic.BasicSplitPaneDivider.getDividerSize()
+    /// protected void javax.swing.plaf.basic.BasicSplitPaneDivider.setMouseOver(boolean)
 
-    private static var getDividerSize_MethodID_16: jmethodID?
+    private static var setMouseOver_MethodID_17: jmethodID?
 
-    open func getDividerSize() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setMouseOver( mouseOver: Bool ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getDividerSize", methodSig: "()I", methodCache: &BasicSplitPaneDivider.getDividerSize_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(mouseOver ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMouseOver", methodSig: "(Z)V", methodCache: &BasicSplitPaneDivider.setMouseOver_MethodID_17, args: &__args, locals: &__locals )
     }
 
-
-    /// public javax.swing.plaf.basic.BasicSplitPaneUI javax.swing.plaf.basic.BasicSplitPaneDivider.getBasicSplitPaneUI()
-
-    private static var getBasicSplitPaneUI_MethodID_17: jmethodID?
-
-    open func getBasicSplitPaneUI() -> BasicSplitPaneUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBasicSplitPaneUI", methodSig: "()Ljavax/swing/plaf/basic/BasicSplitPaneUI;", methodCache: &BasicSplitPaneDivider.getBasicSplitPaneUI_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BasicSplitPaneUI( javaObject: __return ) : nil
+    open func setMouseOver( _ _mouseOver: Bool ) {
+        setMouseOver( mouseOver: _mouseOver )
     }
-
 
 }
 

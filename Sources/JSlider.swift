@@ -20,30 +20,43 @@ open class JSlider: JComponent, SwingConstants {
 
     /// private static final java.lang.String javax.swing.JSlider.uiClassID
 
-    /// private boolean javax.swing.JSlider.paintTicks
+    /// protected transient javax.swing.event.ChangeEvent javax.swing.JSlider.changeEvent
 
-    /// private boolean javax.swing.JSlider.paintTrack
+    private static var changeEvent_FieldID: jfieldID?
 
-    /// private boolean javax.swing.JSlider.paintLabels
-
-    /// private boolean javax.swing.JSlider.isInverted
-
-    /// protected javax.swing.BoundedRangeModel javax.swing.JSlider.sliderModel
-
-    private static var sliderModel_FieldID: jfieldID?
-
-    open var sliderModel: BoundedRangeModel! {
+    open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "sliderModel", fieldType: "Ljavax/swing/BoundedRangeModel;", fieldCache: &JSlider.sliderModel_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? BoundedRangeModelForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JSlider.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "sliderModel", fieldType: "Ljavax/swing/BoundedRangeModel;", fieldCache: &JSlider.sliderModel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JSlider.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
+
+    /// protected javax.swing.event.ChangeListener javax.swing.JSlider.changeListener
+
+    private static var changeListener_FieldID: jfieldID?
+
+    open var changeListener: ChangeListener! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &JSlider.changeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &JSlider.changeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.JSlider.isInverted
+
+    /// private java.util.Dictionary javax.swing.JSlider.labelTable
 
     /// protected int javax.swing.JSlider.majorTickSpacing
 
@@ -51,13 +64,12 @@ open class JSlider: JComponent, SwingConstants {
 
     open var majorTickSpacing: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "majorTickSpacing", fieldType: "I", fieldCache: &JSlider.majorTickSpacing_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "majorTickSpacing", fieldType: "I", fieldCache: &JSlider.majorTickSpacing_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "majorTickSpacing", fieldType: "I", fieldCache: &JSlider.majorTickSpacing_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -68,14 +80,52 @@ open class JSlider: JComponent, SwingConstants {
 
     open var minorTickSpacing: Int {
         get {
+            let __value = JNIField.GetIntField( fieldName: "minorTickSpacing", fieldType: "I", fieldCache: &JSlider.minorTickSpacing_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "minorTickSpacing", fieldType: "I", fieldCache: &JSlider.minorTickSpacing_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "minorTickSpacing", fieldType: "I", fieldCache: &JSlider.minorTickSpacing_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected int javax.swing.JSlider.orientation
+
+    private static var orientation_FieldID: jfieldID?
+
+    open var orientation: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &JSlider.orientation_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &JSlider.orientation_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.JSlider.paintLabels
+
+    /// private boolean javax.swing.JSlider.paintTicks
+
+    /// private boolean javax.swing.JSlider.paintTrack
+
+    /// protected javax.swing.BoundedRangeModel javax.swing.JSlider.sliderModel
+
+    private static var sliderModel_FieldID: jfieldID?
+
+    open var sliderModel: BoundedRangeModel! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "sliderModel", fieldType: "Ljavax/swing/BoundedRangeModel;", fieldCache: &JSlider.sliderModel_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? BoundedRangeModelForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "minorTickSpacing", fieldType: "I", fieldCache: &JSlider.minorTickSpacing_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "sliderModel", fieldType: "Ljavax/swing/BoundedRangeModel;", fieldCache: &JSlider.sliderModel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -85,185 +135,51 @@ open class JSlider: JComponent, SwingConstants {
 
     open var snapToTicks: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "snapToTicks", fieldType: "Z", fieldCache: &JSlider.snapToTicks_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetBooleanField( fieldName: "snapToTicks", fieldType: "Z", fieldCache: &JSlider.snapToTicks_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
             JNIField.SetBooleanField( fieldName: "snapToTicks", fieldType: "Z", fieldCache: &JSlider.snapToTicks_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
     /// boolean javax.swing.JSlider.snapToValue
 
-    /// protected int javax.swing.JSlider.orientation
-
-    private static var orientation_FieldID: jfieldID?
-
-    open var orientation: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &JSlider.orientation_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "orientation", fieldType: "I", fieldCache: &JSlider.orientation_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// private java.util.Dictionary javax.swing.JSlider.labelTable
-
-    /// protected javax.swing.event.ChangeListener javax.swing.JSlider.changeListener
-
-    private static var changeListener_FieldID: jfieldID?
-
-    open var changeListener: ChangeListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &JSlider.changeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "changeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &JSlider.changeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected transient javax.swing.event.ChangeEvent javax.swing.JSlider.changeEvent
-
-    private static var changeEvent_FieldID: jfieldID?
-
-    open var changeEvent: ChangeEvent! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JSlider.changeEvent_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeEvent( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &JSlider.changeEvent_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private static final java.lang.String javax.swing.JComponent.uiClassID
-
-    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
-
-    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
-
-    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
-
-    /// private static final int javax.swing.JComponent.NOT_OBSCURED
-
-    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
-
-    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
-
-    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
-
-    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
-
-    /// private boolean javax.swing.JComponent.isAlignmentXSet
-
-    /// private float javax.swing.JComponent.alignmentX
-
-    /// private boolean javax.swing.JComponent.isAlignmentYSet
-
-    /// private float javax.swing.JComponent.alignmentY
-
-    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
-
-    private static var ui_FieldID: jfieldID?
-
-    override open var ui: ComponentUI! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSlider.ui_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ComponentUI( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSlider.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
-
-    private static var listenerList_FieldID: jfieldID?
-
-    override open var listenerList: EventListenerList! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSlider.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSlider.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
-
-    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
-
-    /// private boolean javax.swing.JComponent.autoscrolls
-
-    /// private javax.swing.border.Border javax.swing.JComponent.border
-
-    /// private int javax.swing.JComponent.flags
-
-    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
-
-    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
-
-    /// transient java.awt.Component javax.swing.JComponent.paintingChild
-
-    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
-
-    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
-
-    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
-
-    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
-
-    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
-
-    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
-
-    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
-
-    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
-
-    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
-
-    /// private static final int javax.swing.JComponent.IS_OPAQUE
-
-    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
-
-    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+    // Skipping field: true false false false false false 
 
     /// private static final int javax.swing.JComponent.ACTIONMAP_CREATED
 
+    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
+
+    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
+
+    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
+
     /// private static final int javax.swing.JComponent.CREATED_DOUBLE_BUFFER
+
+    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
+
+    // Skipping field: true false false false false false 
+
+    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
+
+    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
+
+    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
+
+    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
+
+    /// private static final int javax.swing.JComponent.IS_OPAQUE
+
+    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
 
     /// private static final int javax.swing.JComponent.IS_PRINTING
 
@@ -271,7 +187,19 @@ open class JSlider: JComponent, SwingConstants {
 
     /// private static final int javax.swing.JComponent.IS_REPAINTING
 
-    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
+
+    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
+
+    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
+
+    /// private static final int javax.swing.JComponent.NOT_OBSCURED
+
+    /// private static final int javax.swing.JComponent.OPAQUE_SET
+
+    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
+
+    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
 
     /// private static final int javax.swing.JComponent.RESERVED_1
 
@@ -285,301 +213,347 @@ open class JSlider: JComponent, SwingConstants {
 
     /// private static final int javax.swing.JComponent.RESERVED_6
 
+    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
+
+    // Skipping field: false true false false false false 
+
+    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
+
+    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+
     /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_LAST
-
-    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
-
-    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
-
-    /// private static final int javax.swing.JComponent.OPAQUE_SET
-
-    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
-
-    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
-
-    /// private static java.util.List javax.swing.JComponent.tempRectangles
-
-    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
-
-    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
-
-    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
-
-    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
-
-    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// private static java.awt.Component javax.swing.JComponent.componentObtainingGraphicsFrom
 
     /// private static java.lang.Object javax.swing.JComponent.componentObtainingGraphicsFromLock
 
-    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// static final sun.awt.RequestFocusController javax.swing.JComponent.focusController
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
+
+    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
+
+    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
+
+    /// private static java.util.List javax.swing.JComponent.tempRectangles
+
+    /// private static final java.lang.String javax.swing.JComponent.uiClassID
+
+    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+
+    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
+
+    /// private float javax.swing.JComponent.alignmentX
+
+    /// private float javax.swing.JComponent.alignmentY
+
+    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
+
+    /// private boolean javax.swing.JComponent.autoscrolls
+
+    /// private javax.swing.border.Border javax.swing.JComponent.border
+
+    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
+
+    /// private int javax.swing.JComponent.flags
+
+    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
+
+    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
+
+    /// private boolean javax.swing.JComponent.isAlignmentXSet
+
+    /// private boolean javax.swing.JComponent.isAlignmentYSet
+
+    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
+
+    private static var listenerList_FieldID: jfieldID?
+
+    override open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSlider.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JSlider.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// transient java.awt.Component javax.swing.JComponent.paintingChild
+
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
+
+    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
+
+    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
+
+    private static var ui_FieldID: jfieldID?
+
+    override open var ui: ComponentUI! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSlider.ui_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ComponentUI( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JSlider.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
+
+    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
+
+    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSlider.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JSlider.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -588,56 +562,237 @@ open class JSlider: JComponent, SwingConstants {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: false true false false false false 
 
-    private static var CENTER_FieldID: jfieldID?
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
 
-    open static var CENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
+    /// public static final int java.awt.image.ImageObserver.ERROR
 
-    private static var TOP_FieldID: jfieldID?
+    // Skipping field: false true false false false false 
 
-    open static var TOP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
 
-    /// public static final int javax.swing.SwingConstants.LEFT
+    // Skipping field: false true false false false false 
 
-    private static var LEFT_FieldID: jfieldID?
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
 
-    open static var LEFT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
@@ -646,40 +801,18 @@ open class JSlider: JComponent, SwingConstants {
     open static var BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM", fieldType: "I", fieldCache: &BOTTOM_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    private static var RIGHT_FieldID: jfieldID?
+    private static var CENTER_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    open static var CENTER: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH
-
-    private static var NORTH_FieldID: jfieldID?
-
-    open static var NORTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
-
-    private static var NORTH_EAST_FieldID: jfieldID?
-
-    open static var NORTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
         }
     }
 
@@ -690,62 +823,7 @@ open class JSlider: JComponent, SwingConstants {
     open static var EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    private static var SOUTH_EAST_FieldID: jfieldID?
-
-    open static var SOUTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    private static var SOUTH_FieldID: jfieldID?
-
-    open static var SOUTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    private static var SOUTH_WEST_FieldID: jfieldID?
-
-    open static var SOUTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    private static var WEST_FieldID: jfieldID?
-
-    open static var WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
-
-    private static var NORTH_WEST_FieldID: jfieldID?
-
-    open static var NORTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -756,18 +834,7 @@ open class JSlider: JComponent, SwingConstants {
     open static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.VERTICAL
-
-    private static var VERTICAL_FieldID: jfieldID?
-
-    open static var VERTICAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -778,18 +845,18 @@ open class JSlider: JComponent, SwingConstants {
     open static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    /// public static final int javax.swing.SwingConstants.LEFT
 
-    private static var TRAILING_FieldID: jfieldID?
+    private static var LEFT_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    open static var LEFT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
         }
     }
 
@@ -800,7 +867,40 @@ open class JSlider: JComponent, SwingConstants {
     open static var NEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEXT", fieldType: "I", fieldCache: &NEXT_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    private static var NORTH_FieldID: jfieldID?
+
+    open static var NORTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    private static var NORTH_EAST_FieldID: jfieldID?
+
+    open static var NORTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    private static var NORTH_WEST_FieldID: jfieldID?
+
+    open static var NORTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
         }
     }
 
@@ -811,28 +911,108 @@ open class JSlider: JComponent, SwingConstants {
     open static var PREVIOUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREVIOUS", fieldType: "I", fieldCache: &PREVIOUS_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public javax.swing.JSlider(int,int,int,int)
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    private static var RIGHT_FieldID: jfieldID?
+
+    open static var RIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    private static var SOUTH_FieldID: jfieldID?
+
+    open static var SOUTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    private static var SOUTH_EAST_FieldID: jfieldID?
+
+    open static var SOUTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    private static var SOUTH_WEST_FieldID: jfieldID?
+
+    open static var SOUTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    private static var TOP_FieldID: jfieldID?
+
+    open static var TOP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    private static var TRAILING_FieldID: jfieldID?
+
+    open static var TRAILING: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    private static var VERTICAL_FieldID: jfieldID?
+
+    open static var VERTICAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    private static var WEST_FieldID: jfieldID?
+
+    open static var WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/JSlider", classCache: &JSliderJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public javax.swing.JSlider()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( orientation: Int, min: Int, max: Int, value: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        __args[1] = JNIType.toJava( value: min, locals: &__locals )
-        __args[2] = JNIType.toJava( value: max, locals: &__locals )
-        __args[3] = JNIType.toJava( value: value, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(IIII)V", methodCache: &JSlider.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "()V", methodCache: &JSlider.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _orientation: Int, _ _min: Int, _ _max: Int, _ _value: Int ) {
-        self.init( orientation: _orientation, min: _min, max: _max, value: _value )
     }
 
     /// public javax.swing.JSlider(javax.swing.BoundedRangeModel)
@@ -840,8 +1020,8 @@ open class JSlider: JComponent, SwingConstants {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( brm: BoundedRangeModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: brm, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JSlider.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -852,33 +1032,15 @@ open class JSlider: JComponent, SwingConstants {
         self.init( brm: _brm )
     }
 
-    /// public javax.swing.JSlider(int,int)
+    /// public javax.swing.JSlider(int)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( min: Int, max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min, locals: &__locals )
-        __args[1] = JNIType.toJava( value: max, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(II)V", methodCache: &JSlider.new_MethodID_3, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _min: Int, _ _max: Int ) {
-        self.init( min: _min, max: _max )
-    }
-
-    /// public javax.swing.JSlider(int)
-
-    private static var new_MethodID_4: jmethodID?
-
     public convenience init( orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(I)V", methodCache: &JSlider.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(orientation) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(I)V", methodCache: &JSlider.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -887,29 +1049,35 @@ open class JSlider: JComponent, SwingConstants {
         self.init( orientation: _orientation )
     }
 
-    /// public javax.swing.JSlider()
+    /// public javax.swing.JSlider(int,int)
 
-    private static var new_MethodID_5: jmethodID?
+    private static var new_MethodID_4: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( min: Int, max: Int ) {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "()V", methodCache: &JSlider.new_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(min) )
+        __args[1] = jvalue( i: jint(max) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(II)V", methodCache: &JSlider.new_MethodID_4, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
+    public convenience init( _ _min: Int, _ _max: Int ) {
+        self.init( min: _min, max: _max )
+    }
+
     /// public javax.swing.JSlider(int,int,int)
 
-    private static var new_MethodID_6: jmethodID?
+    private static var new_MethodID_5: jmethodID?
 
     public convenience init( min: Int, max: Int, value: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: min, locals: &__locals )
-        __args[1] = JNIType.toJava( value: max, locals: &__locals )
-        __args[2] = JNIType.toJava( value: value, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(III)V", methodCache: &JSlider.new_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(min) )
+        __args[1] = jvalue( i: jint(max) )
+        __args[2] = jvalue( i: jint(value) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(III)V", methodCache: &JSlider.new_MethodID_5, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -918,141 +1086,70 @@ open class JSlider: JComponent, SwingConstants {
         self.init( min: _min, max: _max, value: _value )
     }
 
-    /// public int javax.swing.JSlider.getValue()
+    /// public javax.swing.JSlider(int,int,int,int)
 
-    private static var getValue_MethodID_7: jmethodID?
+    private static var new_MethodID_6: jmethodID?
 
-    open func getValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( orientation: Int, min: Int, max: Int, value: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &JSlider.getValue_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(orientation) )
+        __args[1] = jvalue( i: jint(min) )
+        __args[2] = jvalue( i: jint(max) )
+        __args[3] = jvalue( i: jint(value) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JSlider", classCache: &JSlider.JSliderJNIClass, methodSig: "(IIII)V", methodCache: &JSlider.new_MethodID_6, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
+    public convenience init( _ _orientation: Int, _ _min: Int, _ _max: Int, _ _value: Int ) {
+        self.init( orientation: _orientation, min: _min, max: _max, value: _value )
+    }
 
     /// static java.util.Dictionary javax.swing.JSlider.access$100(javax.swing.JSlider)
 
-    /// private void javax.swing.JSlider.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
-
-    /// public void javax.swing.JSlider.setValue(int)
-
-    private static var setValue_MethodID_8: jmethodID?
-
-    open func setValue( n: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &JSlider.setValue_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setValue( _ _n: Int ) {
-        setValue( n: _n )
-    }
-
-    /// protected java.lang.String javax.swing.JSlider.paramString()
-
-    private static var paramString_MethodID_9: jmethodID?
-
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JSlider.paramString_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.JSlider.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_10: jmethodID?
+    private static var addChangeListener_MethodID_7: jmethodID?
 
     open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSlider.addChangeListener_MethodID_10, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSlider.addChangeListener_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _l: ChangeListener? ) {
         addChangeListener( l: _l )
     }
 
-    /// public void javax.swing.JSlider.removeChangeListener(javax.swing.event.ChangeListener)
+    /// private void javax.swing.JSlider.checkOrientation(int)
 
-    private static var removeChangeListener_MethodID_11: jmethodID?
+    /// protected javax.swing.event.ChangeListener javax.swing.JSlider.createChangeListener()
 
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var createChangeListener_MethodID_8: jmethodID?
+
+    open func createChangeListener() -> ChangeListener! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSlider.removeChangeListener_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.JSlider.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_12: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JSlider.getChangeListeners_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.JSlider.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_13: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JSlider.fireStateChanged_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-
-    /// public javax.swing.plaf.SliderUI javax.swing.JSlider.getUI()
-
-    private static var getUI_MethodID_14: jmethodID?
-
-    open func getUI() -> SliderUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SliderUI;", methodCache: &JSlider.getUI_MethodID_14, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &JSlider.createChangeListener_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? SliderUI( javaObject: __return ) : nil
+        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.JSlider.setOrientation(int)
-
-    private static var setOrientation_MethodID_15: jmethodID?
-
-    open func setOrientation( orientation: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: orientation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JSlider.setOrientation_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setOrientation( _ _orientation: Int ) {
-        setOrientation( orientation: _orientation )
-    }
 
     /// public java.util.Hashtable javax.swing.JSlider.createStandardLabels(int)
 
-    private static var createStandardLabels_MethodID_16: jmethodID?
+    private static var createStandardLabels_MethodID_9: jmethodID?
 
     open func createStandardLabels( increment: Int ) -> java_util.Hashtable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: increment, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStandardLabels", methodSig: "(I)Ljava/util/Hashtable;", methodCache: &JSlider.createStandardLabels_MethodID_16, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_util.Hashtable(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(increment) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStandardLabels", methodSig: "(I)Ljava/util/Hashtable;", methodCache: &JSlider.createStandardLabels_MethodID_9, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_util.Hashtable.self, from: __return )
     }
 
     open func createStandardLabels( _ _increment: Int ) -> java_util.Hashtable! {
@@ -1061,169 +1158,493 @@ open class JSlider: JComponent, SwingConstants {
 
     /// public java.util.Hashtable javax.swing.JSlider.createStandardLabels(int,int)
 
-    private static var createStandardLabels_MethodID_17: jmethodID?
+    private static var createStandardLabels_MethodID_10: jmethodID?
 
     open func createStandardLabels( increment: Int, start: Int ) -> java_util.Hashtable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: increment, locals: &__locals )
-        __args[1] = JNIType.toJava( value: start, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStandardLabels", methodSig: "(II)Ljava/util/Hashtable;", methodCache: &JSlider.createStandardLabels_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return JNIType.toSwift( type: java_util.Hashtable(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(increment) )
+        __args[1] = jvalue( i: jint(start) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createStandardLabels", methodSig: "(II)Ljava/util/Hashtable;", methodCache: &JSlider.createStandardLabels_MethodID_10, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: java_util.Hashtable.self, from: __return )
     }
 
     open func createStandardLabels( _ _increment: Int, _ _start: Int ) -> java_util.Hashtable! {
         return createStandardLabels( increment: _increment, start: _start )
     }
 
+    /// protected void javax.swing.JSlider.fireStateChanged()
+
+    private static var fireStateChanged_MethodID_11: jmethodID?
+
+    open func fireStateChanged() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &JSlider.fireStateChanged_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JSlider.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.event.ChangeListener[] javax.swing.JSlider.getChangeListeners()
+
+    private static var getChangeListeners_MethodID_12: jmethodID?
+
+    open func getChangeListeners() -> [ChangeListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &JSlider.getChangeListeners_MethodID_12, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward].self, from: __return )
+    }
+
+
+    /// public int javax.swing.JSlider.getExtent()
+
+    private static var getExtent_MethodID_13: jmethodID?
+
+    open func getExtent() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtent", methodSig: "()I", methodCache: &JSlider.getExtent_MethodID_13, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean javax.swing.JSlider.getInverted()
+
+    private static var getInverted_MethodID_14: jmethodID?
+
+    open func getInverted() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getInverted", methodSig: "()Z", methodCache: &JSlider.getInverted_MethodID_14, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
     /// public java.util.Dictionary javax.swing.JSlider.getLabelTable()
 
-    private static var getLabelTable_MethodID_18: jmethodID?
+    private static var getLabelTable_MethodID_15: jmethodID?
 
     open func getLabelTable() -> java_util.Dictionary! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabelTable", methodSig: "()Ljava/util/Dictionary;", methodCache: &JSlider.getLabelTable_MethodID_18, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getLabelTable", methodSig: "()Ljava/util/Dictionary;", methodCache: &JSlider.getLabelTable_MethodID_15, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_util.Dictionary( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.JSlider.setLabelTable(java.util.Dictionary)
+    /// public int javax.swing.JSlider.getMajorTickSpacing()
 
-    private static var setLabelTable_MethodID_19: jmethodID?
+    private static var getMajorTickSpacing_MethodID_16: jmethodID?
 
-    open func setLabelTable( labels: java_util.Dictionary? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getMajorTickSpacing() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: labels, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabelTable", methodSig: "(Ljava/util/Dictionary;)V", methodCache: &JSlider.setLabelTable_MethodID_19, args: &__args, locals: &__locals )
-    }
-
-    open func setLabelTable( _ _labels: java_util.Dictionary? ) {
-        setLabelTable( labels: _labels )
-    }
-
-    /// private void javax.swing.JSlider.checkOrientation(int)
-
-    /// protected void javax.swing.JSlider.updateLabelUIs()
-
-    private static var updateLabelUIs_MethodID_20: jmethodID?
-
-    open func updateLabelUIs() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLabelUIs", methodSig: "()V", methodCache: &JSlider.updateLabelUIs_MethodID_20, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMajorTickSpacing", methodSig: "()I", methodCache: &JSlider.getMajorTickSpacing_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// private void javax.swing.JSlider.updateLabelSizes()
+    /// public int javax.swing.JSlider.getMaximum()
 
-    /// public boolean javax.swing.JSlider.getInverted()
+    private static var getMaximum_MethodID_17: jmethodID?
 
-    private static var getInverted_MethodID_21: jmethodID?
-
-    open func getInverted() -> Bool {
+    open func getMaximum() -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getInverted", methodSig: "()Z", methodCache: &JSlider.getInverted_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &JSlider.getMaximum_MethodID_17, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public int javax.swing.JSlider.getMinimum()
+
+    private static var getMinimum_MethodID_18: jmethodID?
+
+    open func getMinimum() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &JSlider.getMinimum_MethodID_18, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public int javax.swing.JSlider.getMinorTickSpacing()
+
+    private static var getMinorTickSpacing_MethodID_19: jmethodID?
+
+    open func getMinorTickSpacing() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinorTickSpacing", methodSig: "()I", methodCache: &JSlider.getMinorTickSpacing_MethodID_19, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public javax.swing.BoundedRangeModel javax.swing.JSlider.getModel()
+
+    private static var getModel_MethodID_20: jmethodID?
+
+    open func getModel() -> BoundedRangeModel! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/BoundedRangeModel;", methodCache: &JSlider.getModel_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? BoundedRangeModelForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.JSlider.getOrientation()
+
+    private static var getOrientation_MethodID_21: jmethodID?
+
+    open func getOrientation() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSlider.getOrientation_MethodID_21, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean javax.swing.JSlider.getPaintLabels()
+
+    private static var getPaintLabels_MethodID_22: jmethodID?
+
+    open func getPaintLabels() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPaintLabels", methodSig: "()Z", methodCache: &JSlider.getPaintLabels_MethodID_22, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.JSlider.getPaintTicks()
+
+    private static var getPaintTicks_MethodID_23: jmethodID?
+
+    open func getPaintTicks() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPaintTicks", methodSig: "()Z", methodCache: &JSlider.getPaintTicks_MethodID_23, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.JSlider.getPaintTrack()
+
+    private static var getPaintTrack_MethodID_24: jmethodID?
+
+    open func getPaintTrack() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPaintTrack", methodSig: "()Z", methodCache: &JSlider.getPaintTrack_MethodID_24, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.JSlider.getSnapToTicks()
+
+    private static var getSnapToTicks_MethodID_25: jmethodID?
+
+    open func getSnapToTicks() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSnapToTicks", methodSig: "()Z", methodCache: &JSlider.getSnapToTicks_MethodID_25, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// boolean javax.swing.JSlider.getSnapToValue()
+
+    // Skipping method: true false false false false 
+
+    /// public javax.swing.plaf.SliderUI javax.swing.JSlider.getUI()
+
+    private static var getUI_MethodID_26: jmethodID?
+
+    open func getUI() -> SliderUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getUI", methodSig: "()Ljavax/swing/plaf/SliderUI;", methodCache: &JSlider.getUI_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? SliderUI( javaObject: __return ) : nil
+    }
+
+
+    /// public java.lang.String javax.swing.JSlider.getUIClassID()
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.JSlider.getValue()
+
+    private static var getValue_MethodID_27: jmethodID?
+
+    open func getValue() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &JSlider.getValue_MethodID_27, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public boolean javax.swing.JSlider.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_28: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &JSlider.getValueIsAdjusting_MethodID_28, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.JSlider.imageUpdate(java.awt.Image,int,int,int,int,int)
+
+    private static var imageUpdate_MethodID_29: jmethodID?
+
+    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: img, locals: &__locals )
+        __args[1] = jvalue( i: jint(infoflags) )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &JSlider.imageUpdate_MethodID_29, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
+        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
+    }
+
+    /// protected java.lang.String javax.swing.JSlider.paramString()
+
+    private static var paramString_MethodID_30: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JSlider.paramString_MethodID_30, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.JSlider.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_31: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &JSlider.removeChangeListener_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
+    /// public void javax.swing.JSlider.setExtent(int)
+
+    private static var setExtent_MethodID_32: jmethodID?
+
+    open func setExtent( extent: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(extent) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtent", methodSig: "(I)V", methodCache: &JSlider.setExtent_MethodID_32, args: &__args, locals: &__locals )
+    }
+
+    open func setExtent( _ _extent: Int ) {
+        setExtent( extent: _extent )
+    }
+
+    /// public void javax.swing.JSlider.setFont(java.awt.Font)
+
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.JSlider.setInverted(boolean)
 
-    private static var setInverted_MethodID_22: jmethodID?
+    private static var setInverted_MethodID_33: jmethodID?
 
     open func setInverted( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInverted", methodSig: "(Z)V", methodCache: &JSlider.setInverted_MethodID_22, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setInverted", methodSig: "(Z)V", methodCache: &JSlider.setInverted_MethodID_33, args: &__args, locals: &__locals )
     }
 
     open func setInverted( _ _b: Bool ) {
         setInverted( b: _b )
     }
 
-    /// public int javax.swing.JSlider.getMajorTickSpacing()
+    /// public void javax.swing.JSlider.setLabelTable(java.util.Dictionary)
 
-    private static var getMajorTickSpacing_MethodID_23: jmethodID?
+    private static var setLabelTable_MethodID_34: jmethodID?
 
-    open func getMajorTickSpacing() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setLabelTable( labels: java_util.Dictionary? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMajorTickSpacing", methodSig: "()I", methodCache: &JSlider.getMajorTickSpacing_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: labels, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setLabelTable", methodSig: "(Ljava/util/Dictionary;)V", methodCache: &JSlider.setLabelTable_MethodID_34, args: &__args, locals: &__locals )
     }
 
+    open func setLabelTable( _ _labels: java_util.Dictionary? ) {
+        setLabelTable( labels: _labels )
+    }
 
     /// public void javax.swing.JSlider.setMajorTickSpacing(int)
 
-    private static var setMajorTickSpacing_MethodID_24: jmethodID?
+    private static var setMajorTickSpacing_MethodID_35: jmethodID?
 
     open func setMajorTickSpacing( n: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMajorTickSpacing", methodSig: "(I)V", methodCache: &JSlider.setMajorTickSpacing_MethodID_24, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(n) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMajorTickSpacing", methodSig: "(I)V", methodCache: &JSlider.setMajorTickSpacing_MethodID_35, args: &__args, locals: &__locals )
     }
 
     open func setMajorTickSpacing( _ _n: Int ) {
         setMajorTickSpacing( n: _n )
     }
 
-    /// public int javax.swing.JSlider.getMinorTickSpacing()
+    /// public void javax.swing.JSlider.setMaximum(int)
 
-    private static var getMinorTickSpacing_MethodID_25: jmethodID?
+    private static var setMaximum_MethodID_36: jmethodID?
 
-    open func getMinorTickSpacing() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setMaximum( maximum: Int ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinorTickSpacing", methodSig: "()I", methodCache: &JSlider.getMinorTickSpacing_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(maximum) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &JSlider.setMaximum_MethodID_36, args: &__args, locals: &__locals )
     }
 
+    open func setMaximum( _ _maximum: Int ) {
+        setMaximum( maximum: _maximum )
+    }
+
+    /// public void javax.swing.JSlider.setMinimum(int)
+
+    private static var setMinimum_MethodID_37: jmethodID?
+
+    open func setMinimum( minimum: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(minimum) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &JSlider.setMinimum_MethodID_37, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimum( _ _minimum: Int ) {
+        setMinimum( minimum: _minimum )
+    }
 
     /// public void javax.swing.JSlider.setMinorTickSpacing(int)
 
-    private static var setMinorTickSpacing_MethodID_26: jmethodID?
+    private static var setMinorTickSpacing_MethodID_38: jmethodID?
 
     open func setMinorTickSpacing( n: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinorTickSpacing", methodSig: "(I)V", methodCache: &JSlider.setMinorTickSpacing_MethodID_26, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(n) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinorTickSpacing", methodSig: "(I)V", methodCache: &JSlider.setMinorTickSpacing_MethodID_38, args: &__args, locals: &__locals )
     }
 
     open func setMinorTickSpacing( _ _n: Int ) {
         setMinorTickSpacing( n: _n )
     }
 
-    /// public boolean javax.swing.JSlider.getSnapToTicks()
+    /// public void javax.swing.JSlider.setModel(javax.swing.BoundedRangeModel)
 
-    private static var getSnapToTicks_MethodID_27: jmethodID?
+    private static var setModel_MethodID_39: jmethodID?
 
-    open func getSnapToTicks() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setModel( newModel: BoundedRangeModel? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getSnapToTicks", methodSig: "()Z", methodCache: &JSlider.getSnapToTicks_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JSlider.setModel_MethodID_39, args: &__args, locals: &__locals )
     }
 
+    open func setModel( _ _newModel: BoundedRangeModel? ) {
+        setModel( newModel: _newModel )
+    }
 
-    /// boolean javax.swing.JSlider.getSnapToValue()
+    /// public void javax.swing.JSlider.setOrientation(int)
+
+    private static var setOrientation_MethodID_40: jmethodID?
+
+    open func setOrientation( orientation: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(orientation) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOrientation", methodSig: "(I)V", methodCache: &JSlider.setOrientation_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open func setOrientation( _ _orientation: Int ) {
+        setOrientation( orientation: _orientation )
+    }
+
+    /// public void javax.swing.JSlider.setPaintLabels(boolean)
+
+    private static var setPaintLabels_MethodID_41: jmethodID?
+
+    open func setPaintLabels( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintLabels", methodSig: "(Z)V", methodCache: &JSlider.setPaintLabels_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func setPaintLabels( _ _b: Bool ) {
+        setPaintLabels( b: _b )
+    }
+
+    /// public void javax.swing.JSlider.setPaintTicks(boolean)
+
+    private static var setPaintTicks_MethodID_42: jmethodID?
+
+    open func setPaintTicks( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintTicks", methodSig: "(Z)V", methodCache: &JSlider.setPaintTicks_MethodID_42, args: &__args, locals: &__locals )
+    }
+
+    open func setPaintTicks( _ _b: Bool ) {
+        setPaintTicks( b: _b )
+    }
+
+    /// public void javax.swing.JSlider.setPaintTrack(boolean)
+
+    private static var setPaintTrack_MethodID_43: jmethodID?
+
+    open func setPaintTrack( b: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintTrack", methodSig: "(Z)V", methodCache: &JSlider.setPaintTrack_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open func setPaintTrack( _ _b: Bool ) {
+        setPaintTrack( b: _b )
+    }
 
     /// public void javax.swing.JSlider.setSnapToTicks(boolean)
 
-    private static var setSnapToTicks_MethodID_28: jmethodID?
+    private static var setSnapToTicks_MethodID_44: jmethodID?
 
     open func setSnapToTicks( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSnapToTicks", methodSig: "(Z)V", methodCache: &JSlider.setSnapToTicks_MethodID_28, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSnapToTicks", methodSig: "(Z)V", methodCache: &JSlider.setSnapToTicks_MethodID_44, args: &__args, locals: &__locals )
     }
 
     open func setSnapToTicks( _ _b: Bool ) {
@@ -1232,263 +1653,36 @@ open class JSlider: JComponent, SwingConstants {
 
     /// void javax.swing.JSlider.setSnapToValue(boolean)
 
-    /// public boolean javax.swing.JSlider.getPaintTicks()
-
-    private static var getPaintTicks_MethodID_29: jmethodID?
-
-    open func getPaintTicks() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPaintTicks", methodSig: "()Z", methodCache: &JSlider.getPaintTicks_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSlider.setPaintTicks(boolean)
-
-    private static var setPaintTicks_MethodID_30: jmethodID?
-
-    open func setPaintTicks( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintTicks", methodSig: "(Z)V", methodCache: &JSlider.setPaintTicks_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func setPaintTicks( _ _b: Bool ) {
-        setPaintTicks( b: _b )
-    }
-
-    /// public boolean javax.swing.JSlider.getPaintTrack()
-
-    private static var getPaintTrack_MethodID_31: jmethodID?
-
-    open func getPaintTrack() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPaintTrack", methodSig: "()Z", methodCache: &JSlider.getPaintTrack_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSlider.setPaintTrack(boolean)
-
-    private static var setPaintTrack_MethodID_32: jmethodID?
-
-    open func setPaintTrack( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintTrack", methodSig: "(Z)V", methodCache: &JSlider.setPaintTrack_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func setPaintTrack( _ _b: Bool ) {
-        setPaintTrack( b: _b )
-    }
-
-    /// public boolean javax.swing.JSlider.getPaintLabels()
-
-    private static var getPaintLabels_MethodID_33: jmethodID?
-
-    open func getPaintLabels() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getPaintLabels", methodSig: "()Z", methodCache: &JSlider.getPaintLabels_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSlider.setPaintLabels(boolean)
-
-    private static var setPaintLabels_MethodID_34: jmethodID?
-
-    open func setPaintLabels( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPaintLabels", methodSig: "(Z)V", methodCache: &JSlider.setPaintLabels_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func setPaintLabels( _ _b: Bool ) {
-        setPaintLabels( b: _b )
-    }
-
-    /// public int javax.swing.JSlider.getMinimum()
-
-    private static var getMinimum_MethodID_35: jmethodID?
-
-    open func getMinimum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &JSlider.getMinimum_MethodID_35, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSlider.setMinimum(int)
-
-    private static var setMinimum_MethodID_36: jmethodID?
-
-    open func setMinimum( minimum: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: minimum, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &JSlider.setMinimum_MethodID_36, args: &__args, locals: &__locals )
-    }
-
-    open func setMinimum( _ _minimum: Int ) {
-        setMinimum( minimum: _minimum )
-    }
-
-    /// public int javax.swing.JSlider.getMaximum()
-
-    private static var getMaximum_MethodID_37: jmethodID?
-
-    open func getMaximum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &JSlider.getMaximum_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSlider.setExtent(int)
-
-    private static var setExtent_MethodID_38: jmethodID?
-
-    open func setExtent( extent: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: extent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtent", methodSig: "(I)V", methodCache: &JSlider.setExtent_MethodID_38, args: &__args, locals: &__locals )
-    }
-
-    open func setExtent( _ _extent: Int ) {
-        setExtent( extent: _extent )
-    }
-
-    /// protected javax.swing.event.ChangeListener javax.swing.JSlider.createChangeListener()
-
-    private static var createChangeListener_MethodID_39: jmethodID?
-
-    open func createChangeListener() -> ChangeListener! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createChangeListener", methodSig: "()Ljavax/swing/event/ChangeListener;", methodCache: &JSlider.createChangeListener_MethodID_39, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ChangeListenerForward( javaObject: __return ) : nil
-    }
-
-
-    /// public int javax.swing.JSlider.getExtent()
-
-    private static var getExtent_MethodID_40: jmethodID?
-
-    open func getExtent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtent", methodSig: "()I", methodCache: &JSlider.getExtent_MethodID_40, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.JSlider.updateUI()
+    // Skipping method: true false false false false 
 
     /// public void javax.swing.JSlider.setUI(javax.swing.plaf.SliderUI)
 
-    private static var setUI_MethodID_41: jmethodID?
+    private static var setUI_MethodID_45: jmethodID?
 
     open func setUI( ui: SliderUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: ui, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SliderUI;)V", methodCache: &JSlider.setUI_MethodID_41, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setUI", methodSig: "(Ljavax/swing/plaf/SliderUI;)V", methodCache: &JSlider.setUI_MethodID_45, args: &__args, locals: &__locals )
     }
 
     open func setUI( _ _ui: SliderUI? ) {
         setUI( ui: _ui )
     }
 
-    /// public java.lang.String javax.swing.JSlider.getUIClassID()
+    /// public void javax.swing.JSlider.setValue(int)
 
-    /// public int javax.swing.JSlider.getOrientation()
+    private static var setValue_MethodID_46: jmethodID?
 
-    private static var getOrientation_MethodID_42: jmethodID?
-
-    open func getOrientation() -> Int {
+    open func setValue( n: Int ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getOrientation", methodSig: "()I", methodCache: &JSlider.getOrientation_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[0] = jvalue( i: jint(n) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &JSlider.setValue_MethodID_46, args: &__args, locals: &__locals )
     }
 
-
-    /// public boolean javax.swing.JSlider.imageUpdate(java.awt.Image,int,int,int,int,int)
-
-    private static var imageUpdate_MethodID_43: jmethodID?
-
-    open func imageUpdate( img: java_awt.Image?, infoflags: Int, x: Int, y: Int, w: Int, h: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: img, locals: &__locals )
-        __args[1] = JNIType.toJava( value: infoflags, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "imageUpdate", methodSig: "(Ljava/awt/Image;IIIII)Z", methodCache: &JSlider.imageUpdate_MethodID_43, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func imageUpdate( _ _img: java_awt.Image?, _ _infoflags: Int, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) -> Bool {
-        return imageUpdate( img: _img, infoflags: _infoflags, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// public javax.accessibility.AccessibleContext javax.swing.JSlider.getAccessibleContext()
-
-    /// public javax.swing.BoundedRangeModel javax.swing.JSlider.getModel()
-
-    private static var getModel_MethodID_44: jmethodID?
-
-    open func getModel() -> BoundedRangeModel! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljavax/swing/BoundedRangeModel;", methodCache: &JSlider.getModel_MethodID_44, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? BoundedRangeModelForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JSlider.setFont(java.awt.Font)
-
-    /// public void javax.swing.JSlider.setMaximum(int)
-
-    private static var setMaximum_MethodID_45: jmethodID?
-
-    open func setMaximum( maximum: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: maximum, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &JSlider.setMaximum_MethodID_45, args: &__args, locals: &__locals )
-    }
-
-    open func setMaximum( _ _maximum: Int ) {
-        setMaximum( maximum: _maximum )
-    }
-
-    /// public void javax.swing.JSlider.setModel(javax.swing.BoundedRangeModel)
-
-    private static var setModel_MethodID_46: jmethodID?
-
-    open func setModel( newModel: BoundedRangeModel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setModel", methodSig: "(Ljavax/swing/BoundedRangeModel;)V", methodCache: &JSlider.setModel_MethodID_46, args: &__args, locals: &__locals )
-    }
-
-    open func setModel( _ _newModel: BoundedRangeModel? ) {
-        setModel( newModel: _newModel )
+    open func setValue( _ _n: Int ) {
+        setValue( n: _n )
     }
 
     /// public void javax.swing.JSlider.setValueIsAdjusting(boolean)
@@ -1496,9 +1690,9 @@ open class JSlider: JComponent, SwingConstants {
     private static var setValueIsAdjusting_MethodID_47: jmethodID?
 
     open func setValueIsAdjusting( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &JSlider.setValueIsAdjusting_MethodID_47, args: &__args, locals: &__locals )
     }
 
@@ -1506,21 +1700,30 @@ open class JSlider: JComponent, SwingConstants {
         setValueIsAdjusting( b: _b )
     }
 
-    /// public boolean javax.swing.JSlider.getValueIsAdjusting()
+    /// private void javax.swing.JSlider.updateLabelSizes()
 
-    private static var getValueIsAdjusting_MethodID_48: jmethodID?
+    /// protected void javax.swing.JSlider.updateLabelUIs()
 
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    private static var updateLabelUIs_MethodID_48: jmethodID?
+
+    open func updateLabelUIs() {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &JSlider.getValueIsAdjusting_MethodID_48, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLabelUIs", methodSig: "()V", methodCache: &JSlider.updateLabelUIs_MethodID_48, args: &__args, locals: &__locals )
     }
 
+
+    /// public void javax.swing.JSlider.updateUI()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.JSlider.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
     /// In declared protocol but not defined.. ///
 
     /// public abstract javax.accessibility.AccessibleContext javax.accessibility.Accessible.getAccessibleContext()
+
+    // Skipping method: false true false false false 
 
 }
 

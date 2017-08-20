@@ -6,7 +6,7 @@ import java_awt
 
 /// class javax.swing.plaf.basic.BasicLabelUI ///
 
-open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ UnclassedProtocol {
+open class BasicLabelUI: LabelUI, /* interface java.beans.PropertyChangeListener */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -17,9 +17,11 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
 
     private static var BasicLabelUIJNIClass: jclass?
 
+    /// private static final java.lang.Object javax.swing.plaf.basic.BasicLabelUI.BASIC_LABEL_UI_KEY
+
     /// protected static javax.swing.plaf.basic.BasicLabelUI javax.swing.plaf.basic.BasicLabelUI.labelUI
 
-    /// private static final java.lang.Object javax.swing.plaf.basic.BasicLabelUI.BASIC_LABEL_UI_KEY
+    // Skipping field: false false false false false true 
 
     /// private java.awt.Rectangle javax.swing.plaf.basic.BasicLabelUI.paintIconR
 
@@ -30,8 +32,8 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicLabelUI", classCache: &BasicLabelUI.BasicLabelUIJNIClass, methodSig: "()V", methodCache: &BasicLabelUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -42,8 +44,8 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( c: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicLabelUI", classCache: &BasicLabelUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -54,32 +56,103 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
         return createUI( c: _c )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.paintDisabledText(javax.swing.JLabel,java.awt.Graphics,java.lang.String,int,int)
+    /// static void javax.swing.plaf.basic.BasicLabelUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
 
-    private static var paintDisabledText_MethodID_3: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func paintDisabledText( l: JLabel?, g: java_awt.Graphics?, s: String?, textX: Int, textY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    /// public int javax.swing.plaf.basic.BasicLabelUI.getBaseline(javax.swing.JComponent,int,int)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicLabelUI.getBaselineResizeBehavior(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMaximumSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMinimumSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getPreferredSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.installComponents(javax.swing.JLabel)
+
+    private static var installComponents_MethodID_3: jmethodID?
+
+    open func installComponents( c: JLabel? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: s, locals: &__locals )
-        __args[3] = JNIType.toJava( value: textX, locals: &__locals )
-        __args[4] = JNIType.toJava( value: textY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDisabledText", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/Graphics;Ljava/lang/String;II)V", methodCache: &BasicLabelUI.paintDisabledText_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installComponents_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func paintDisabledText( _ _l: JLabel?, _ _g: java_awt.Graphics?, _ _s: String?, _ _textX: Int, _ _textY: Int ) {
-        paintDisabledText( l: _l, g: _g, s: _s, textX: _textX, textY: _textY )
+    open func installComponents( _ _c: JLabel? ) {
+        installComponents( c: _c )
     }
+
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.installDefaults(javax.swing.JLabel)
+
+    private static var installDefaults_MethodID_4: jmethodID?
+
+    open func installDefaults( c: JLabel? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func installDefaults( _ _c: JLabel? ) {
+        installDefaults( c: _c )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.installKeyboardActions(javax.swing.JLabel)
+
+    private static var installKeyboardActions_MethodID_5: jmethodID?
+
+    open func installKeyboardActions( l: JLabel? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installKeyboardActions_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    open func installKeyboardActions( _ _l: JLabel? ) {
+        installKeyboardActions( l: _l )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.installListeners(javax.swing.JLabel)
+
+    private static var installListeners_MethodID_6: jmethodID?
+
+    open func installListeners( c: JLabel? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func installListeners( _ _c: JLabel? ) {
+        installListeners( c: _c )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicLabelUI.installUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// private java.lang.String javax.swing.plaf.basic.BasicLabelUI.layout(javax.swing.JLabel,java.awt.FontMetrics,int,int)
 
     /// protected java.lang.String javax.swing.plaf.basic.BasicLabelUI.layoutCL(javax.swing.JLabel,java.awt.FontMetrics,java.lang.String,javax.swing.Icon,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle)
 
-    private static var layoutCL_MethodID_4: jmethodID?
+    private static var layoutCL_MethodID_7: jmethodID?
 
     open func layoutCL( label: JLabel?, fontMetrics: java_awt.FontMetrics?, text: String?, icon: Icon?, viewR: java_awt.Rectangle?, iconR: java_awt.Rectangle?, textR: java_awt.Rectangle? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
         __args[0] = JNIType.toJava( value: label, locals: &__locals )
         __args[1] = JNIType.toJava( value: fontMetrics, locals: &__locals )
         __args[2] = JNIType.toJava( value: text, locals: &__locals )
@@ -87,114 +160,70 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
         __args[4] = JNIType.toJava( value: viewR, locals: &__locals )
         __args[5] = JNIType.toJava( value: iconR, locals: &__locals )
         __args[6] = JNIType.toJava( value: textR, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "layoutCL", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;)Ljava/lang/String;", methodCache: &BasicLabelUI.layoutCL_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "layoutCL", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;Ljava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;)Ljava/lang/String;", methodCache: &BasicLabelUI.layoutCL_MethodID_7, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
     open func layoutCL( _ _label: JLabel?, _ _fontMetrics: java_awt.FontMetrics?, _ _text: String?, _ _icon: Icon?, _ _viewR: java_awt.Rectangle?, _ _iconR: java_awt.Rectangle?, _ _textR: java_awt.Rectangle? ) -> String! {
         return layoutCL( label: _label, fontMetrics: _fontMetrics, text: _text, icon: _icon, viewR: _viewR, iconR: _iconR, textR: _textR )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.paintEnabledText(javax.swing.JLabel,java.awt.Graphics,java.lang.String,int,int)
+    /// public void javax.swing.plaf.basic.BasicLabelUI.paint(java.awt.Graphics,javax.swing.JComponent)
 
-    private static var paintEnabledText_MethodID_5: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func paintEnabledText( l: JLabel?, g: java_awt.Graphics?, s: String?, textX: Int, textY: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.paintDisabledText(javax.swing.JLabel,java.awt.Graphics,java.lang.String,int,int)
+
+    private static var paintDisabledText_MethodID_8: jmethodID?
+
+    open func paintDisabledText( l: JLabel?, g: java_awt.Graphics?, s: String?, textX: Int, textY: Int ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
         __args[2] = JNIType.toJava( value: s, locals: &__locals )
-        __args[3] = JNIType.toJava( value: textX, locals: &__locals )
-        __args[4] = JNIType.toJava( value: textY, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintEnabledText", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/Graphics;Ljava/lang/String;II)V", methodCache: &BasicLabelUI.paintEnabledText_MethodID_5, args: &__args, locals: &__locals )
+        __args[3] = jvalue( i: jint(textX) )
+        __args[4] = jvalue( i: jint(textY) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintDisabledText", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/Graphics;Ljava/lang/String;II)V", methodCache: &BasicLabelUI.paintDisabledText_MethodID_8, args: &__args, locals: &__locals )
+    }
+
+    open func paintDisabledText( _ _l: JLabel?, _ _g: java_awt.Graphics?, _ _s: String?, _ _textX: Int, _ _textY: Int ) {
+        paintDisabledText( l: _l, g: _g, s: _s, textX: _textX, textY: _textY )
+    }
+
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.paintEnabledText(javax.swing.JLabel,java.awt.Graphics,java.lang.String,int,int)
+
+    private static var paintEnabledText_MethodID_9: jmethodID?
+
+    open func paintEnabledText( l: JLabel?, g: java_awt.Graphics?, s: String?, textX: Int, textY: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = JNIType.toJava( value: s, locals: &__locals )
+        __args[3] = jvalue( i: jint(textX) )
+        __args[4] = jvalue( i: jint(textY) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintEnabledText", methodSig: "(Ljavax/swing/JLabel;Ljava/awt/Graphics;Ljava/lang/String;II)V", methodCache: &BasicLabelUI.paintEnabledText_MethodID_9, args: &__args, locals: &__locals )
     }
 
     open func paintEnabledText( _ _l: JLabel?, _ _g: java_awt.Graphics?, _ _s: String?, _ _textX: Int, _ _textY: Int ) {
         paintEnabledText( l: _l, g: _g, s: _s, textX: _textX, textY: _textY )
     }
 
-    /// public void javax.swing.plaf.basic.BasicLabelUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// public void javax.swing.plaf.basic.BasicLabelUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    /// public void javax.swing.plaf.basic.BasicLabelUI.installUI(javax.swing.JComponent)
+    private static var propertyChange_MethodID_10: jmethodID?
 
-    /// public void javax.swing.plaf.basic.BasicLabelUI.uninstallUI(javax.swing.JComponent)
-
-    /// static void javax.swing.plaf.basic.BasicLabelUI.loadActionMap(javax.swing.plaf.basic.LazyActionMap)
-
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.installDefaults(javax.swing.JLabel)
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    open func installDefaults( c: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func installDefaults( _ _c: JLabel? ) {
-        installDefaults( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.installComponents(javax.swing.JLabel)
-
-    private static var installComponents_MethodID_7: jmethodID?
-
-    open func installComponents( c: JLabel? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installComponents", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installComponents_MethodID_7, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicLabelUI.propertyChange_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func installComponents( _ _c: JLabel? ) {
-        installComponents( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.installListeners(javax.swing.JLabel)
-
-    private static var installListeners_MethodID_8: jmethodID?
-
-    open func installListeners( c: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installListeners_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func installListeners( _ _c: JLabel? ) {
-        installListeners( c: _c )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.installKeyboardActions(javax.swing.JLabel)
-
-    private static var installKeyboardActions_MethodID_9: jmethodID?
-
-    open func installKeyboardActions( l: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installKeyboardActions", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.installKeyboardActions_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func installKeyboardActions( _ _l: JLabel? ) {
-        installKeyboardActions( l: _l )
-    }
-
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.uninstallDefaults(javax.swing.JLabel)
-
-    private static var uninstallDefaults_MethodID_10: jmethodID?
-
-    open func uninstallDefaults( c: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.uninstallDefaults_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func uninstallDefaults( _ _c: JLabel? ) {
-        uninstallDefaults( c: _c )
+    open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
+        propertyChange( evt: _evt )
     }
 
     /// protected void javax.swing.plaf.basic.BasicLabelUI.uninstallComponents(javax.swing.JLabel)
@@ -202,8 +231,8 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
     private static var uninstallComponents_MethodID_11: jmethodID?
 
     open func uninstallComponents( c: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallComponents", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.uninstallComponents_MethodID_11, args: &__args, locals: &__locals )
     }
@@ -212,19 +241,19 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
         uninstallComponents( c: _c )
     }
 
-    /// protected void javax.swing.plaf.basic.BasicLabelUI.uninstallListeners(javax.swing.JLabel)
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.uninstallDefaults(javax.swing.JLabel)
 
-    private static var uninstallListeners_MethodID_12: jmethodID?
+    private static var uninstallDefaults_MethodID_12: jmethodID?
 
-    open func uninstallListeners( c: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func uninstallDefaults( c: JLabel? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.uninstallListeners_MethodID_12, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.uninstallDefaults_MethodID_12, args: &__args, locals: &__locals )
     }
 
-    open func uninstallListeners( _ _c: JLabel? ) {
-        uninstallListeners( c: _c )
+    open func uninstallDefaults( _ _c: JLabel? ) {
+        uninstallDefaults( c: _c )
     }
 
     /// protected void javax.swing.plaf.basic.BasicLabelUI.uninstallKeyboardActions(javax.swing.JLabel)
@@ -232,8 +261,8 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
     private static var uninstallKeyboardActions_MethodID_13: jmethodID?
 
     open func uninstallKeyboardActions( c: JLabel? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallKeyboardActions", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.uninstallKeyboardActions_MethodID_13, args: &__args, locals: &__locals )
     }
@@ -242,32 +271,24 @@ open class BasicLabelUI: LabelUI, /* java.beans.PropertyChangeListener */ Unclas
         uninstallKeyboardActions( c: _c )
     }
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getPreferredSize(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.basic.BasicLabelUI.uninstallListeners(javax.swing.JLabel)
 
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMinimumSize(javax.swing.JComponent)
+    private static var uninstallListeners_MethodID_14: jmethodID?
 
-    /// private java.lang.String javax.swing.plaf.basic.BasicLabelUI.layout(javax.swing.JLabel,java.awt.FontMetrics,int,int)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicLabelUI.getMaximumSize(javax.swing.JComponent)
-
-    /// public int javax.swing.plaf.basic.BasicLabelUI.getBaseline(javax.swing.JComponent,int,int)
-
-    /// public java.awt.Component$BaselineResizeBehavior javax.swing.plaf.basic.BasicLabelUI.getBaselineResizeBehavior(javax.swing.JComponent)
-
-    /// public void javax.swing.plaf.basic.BasicLabelUI.propertyChange(java.beans.PropertyChangeEvent)
-
-    private static var propertyChange_MethodID_14: jmethodID?
-
-    open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func uninstallListeners( c: JLabel? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &BasicLabelUI.propertyChange_MethodID_14, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JLabel;)V", methodCache: &BasicLabelUI.uninstallListeners_MethodID_14, args: &__args, locals: &__locals )
     }
 
-    open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        propertyChange( evt: _evt )
+    open func uninstallListeners( _ _c: JLabel? ) {
+        uninstallListeners( c: _c )
     }
+
+    /// public void javax.swing.plaf.basic.BasicLabelUI.uninstallUI(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
 }
 

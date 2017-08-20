@@ -17,9 +17,13 @@ open class SoftBevelBorder: BevelBorder {
 
     private static var SoftBevelBorderJNIClass: jclass?
 
+    /// public static final int javax.swing.border.BevelBorder.LOWERED
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.border.BevelBorder.RAISED
 
-    /// public static final int javax.swing.border.BevelBorder.LOWERED
+    // Skipping field: false true false false false false 
 
     /// protected int javax.swing.border.BevelBorder.bevelType
 
@@ -27,31 +31,13 @@ open class SoftBevelBorder: BevelBorder {
 
     override open var bevelType: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "bevelType", fieldType: "I", fieldCache: &SoftBevelBorder.bevelType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "bevelType", fieldType: "I", fieldCache: &SoftBevelBorder.bevelType_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "bevelType", fieldType: "I", fieldCache: &SoftBevelBorder.bevelType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.border.BevelBorder.highlightOuter
-
-    private static var highlightOuter_FieldID: jfieldID?
-
-    override open var highlightOuter: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.highlightOuter_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.highlightOuter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -61,8 +47,8 @@ open class SoftBevelBorder: BevelBorder {
 
     override open var highlightInner: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlightInner", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.highlightInner_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "highlightInner", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.highlightInner_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -72,14 +58,31 @@ open class SoftBevelBorder: BevelBorder {
         }
     }
 
+    /// protected java.awt.Color javax.swing.border.BevelBorder.highlightOuter
+
+    private static var highlightOuter_FieldID: jfieldID?
+
+    override open var highlightOuter: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.highlightOuter_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.highlightOuter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected java.awt.Color javax.swing.border.BevelBorder.shadowInner
 
     private static var shadowInner_FieldID: jfieldID?
 
     override open var shadowInner: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadowInner", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.shadowInner_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "shadowInner", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.shadowInner_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -95,8 +98,8 @@ open class SoftBevelBorder: BevelBorder {
 
     override open var shadowOuter: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadowOuter", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.shadowOuter_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "shadowOuter", fieldType: "Ljava/awt/Color;", fieldCache: &SoftBevelBorder.shadowOuter_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -106,25 +109,21 @@ open class SoftBevelBorder: BevelBorder {
         }
     }
 
-    /// public javax.swing.border.SoftBevelBorder(int,java.awt.Color,java.awt.Color,java.awt.Color,java.awt.Color)
+    /// public javax.swing.border.SoftBevelBorder(int)
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( bevelType: Int, highlightOuterColor: java_awt.Color?, highlightInnerColor: java_awt.Color?, shadowOuterColor: java_awt.Color?, shadowInnerColor: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    public convenience init( bevelType: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
-        __args[1] = JNIType.toJava( value: highlightOuterColor, locals: &__locals )
-        __args[2] = JNIType.toJava( value: highlightInnerColor, locals: &__locals )
-        __args[3] = JNIType.toJava( value: shadowOuterColor, locals: &__locals )
-        __args[4] = JNIType.toJava( value: shadowInnerColor, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/SoftBevelBorder", classCache: &SoftBevelBorder.SoftBevelBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &SoftBevelBorder.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(bevelType) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/SoftBevelBorder", classCache: &SoftBevelBorder.SoftBevelBorderJNIClass, methodSig: "(I)V", methodCache: &SoftBevelBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _bevelType: Int, _ _highlightOuterColor: java_awt.Color?, _ _highlightInnerColor: java_awt.Color?, _ _shadowOuterColor: java_awt.Color?, _ _shadowInnerColor: java_awt.Color? ) {
-        self.init( bevelType: _bevelType, highlightOuterColor: _highlightOuterColor, highlightInnerColor: _highlightInnerColor, shadowOuterColor: _shadowOuterColor, shadowInnerColor: _shadowInnerColor )
+    public convenience init( _ _bevelType: Int ) {
+        self.init( bevelType: _bevelType )
     }
 
     /// public javax.swing.border.SoftBevelBorder(int,java.awt.Color,java.awt.Color)
@@ -132,9 +131,9 @@ open class SoftBevelBorder: BevelBorder {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( bevelType: Int, highlight: java_awt.Color?, shadow: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(bevelType) )
         __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
         __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/border/SoftBevelBorder", classCache: &SoftBevelBorder.SoftBevelBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &SoftBevelBorder.new_MethodID_2, args: &__args, locals: &__locals )
@@ -146,28 +145,38 @@ open class SoftBevelBorder: BevelBorder {
         self.init( bevelType: _bevelType, highlight: _highlight, shadow: _shadow )
     }
 
-    /// public javax.swing.border.SoftBevelBorder(int)
+    /// public javax.swing.border.SoftBevelBorder(int,java.awt.Color,java.awt.Color,java.awt.Color,java.awt.Color)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( bevelType: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( bevelType: Int, highlightOuterColor: java_awt.Color?, highlightInnerColor: java_awt.Color?, shadowOuterColor: java_awt.Color?, shadowInnerColor: java_awt.Color? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/border/SoftBevelBorder", classCache: &SoftBevelBorder.SoftBevelBorderJNIClass, methodSig: "(I)V", methodCache: &SoftBevelBorder.new_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(bevelType) )
+        __args[1] = JNIType.toJava( value: highlightOuterColor, locals: &__locals )
+        __args[2] = JNIType.toJava( value: highlightInnerColor, locals: &__locals )
+        __args[3] = JNIType.toJava( value: shadowOuterColor, locals: &__locals )
+        __args[4] = JNIType.toJava( value: shadowInnerColor, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/border/SoftBevelBorder", classCache: &SoftBevelBorder.SoftBevelBorderJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V", methodCache: &SoftBevelBorder.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _bevelType: Int ) {
-        self.init( bevelType: _bevelType )
+    public convenience init( _ _bevelType: Int, _ _highlightOuterColor: java_awt.Color?, _ _highlightInnerColor: java_awt.Color?, _ _shadowOuterColor: java_awt.Color?, _ _shadowInnerColor: java_awt.Color? ) {
+        self.init( bevelType: _bevelType, highlightOuterColor: _highlightOuterColor, highlightInnerColor: _highlightInnerColor, shadowOuterColor: _shadowOuterColor, shadowInnerColor: _shadowInnerColor )
     }
-
-    /// public void javax.swing.border.SoftBevelBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
 
     /// public java.awt.Insets javax.swing.border.SoftBevelBorder.getBorderInsets(java.awt.Component,java.awt.Insets)
 
+    // Skipping method: false true false false false 
+
     /// public boolean javax.swing.border.SoftBevelBorder.isBorderOpaque()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.border.SoftBevelBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    // Skipping method: false true false false false 
 
 }
 

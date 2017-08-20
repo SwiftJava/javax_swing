@@ -19,14 +19,32 @@ open class PasswordView: FieldView {
 
     /// static char[] javax.swing.text.PasswordView.ONE
 
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.PlainView.firstLineOffset
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font javax.swing.text.PlainView.font
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.Segment javax.swing.text.PlainView.lineBuffer
+
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.Element javax.swing.text.PlainView.longLine
+
+    // Skipping field: true false false false false false 
+
     /// protected java.awt.FontMetrics javax.swing.text.PlainView.metrics
 
     private static var metrics_FieldID: jfieldID?
 
     override open var metrics: java_awt.FontMetrics! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "metrics", fieldType: "Ljava/awt/FontMetrics;", fieldCache: &PasswordView.metrics_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "metrics", fieldType: "Ljava/awt/FontMetrics;", fieldCache: &PasswordView.metrics_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.FontMetrics( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -36,93 +54,153 @@ open class PasswordView: FieldView {
         }
     }
 
-    /// javax.swing.text.Element javax.swing.text.PlainView.longLine
-
-    /// java.awt.Font javax.swing.text.PlainView.font
-
-    /// javax.swing.text.Segment javax.swing.text.PlainView.lineBuffer
-
-    /// int javax.swing.text.PlainView.tabSize
-
-    /// int javax.swing.text.PlainView.tabBase
-
     /// int javax.swing.text.PlainView.sel0
+
+    // Skipping field: true false false false false false 
 
     /// int javax.swing.text.PlainView.sel1
 
-    /// java.awt.Color javax.swing.text.PlainView.unselected
+    // Skipping field: true false false false false false 
 
     /// java.awt.Color javax.swing.text.PlainView.selected
 
-    /// int javax.swing.text.PlainView.firstLineOffset
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.PlainView.tabBase
+
+    // Skipping field: true false false false false false 
+
+    /// int javax.swing.text.PlainView.tabSize
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color javax.swing.text.PlainView.unselected
+
+    // Skipping field: true false false false false false 
 
     /// public static final int javax.swing.text.View.BadBreakWeight
 
-    /// public static final int javax.swing.text.View.GoodBreakWeight
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.ExcellentBreakWeight
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.ForcedBreakWeight
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.text.View.X_AXIS
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.text.View.Y_AXIS
+
+    // Skipping field: false true false false false false 
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    /// public static final int javax.swing.SwingConstants.LEFT
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    // Skipping field: false true false false false false 
 
-    /// public static final int javax.swing.SwingConstants.NORTH
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.EAST
 
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.HORIZONTAL
 
-    /// public static final int javax.swing.SwingConstants.VERTICAL
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.LEADING
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.LEFT
+
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.SwingConstants.NEXT
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.SwingConstants.PREVIOUS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.PasswordView(javax.swing.text.Element)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/PasswordView", classCache: &PasswordView.PasswordViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &PasswordView.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -133,27 +211,23 @@ open class PasswordView: FieldView {
         self.init( elem: _elem )
     }
 
-    /// protected int javax.swing.text.PasswordView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
+    /// protected int javax.swing.text.PasswordView.drawEchoCharacter(java.awt.Graphics,int,int,char)
 
-    private static var drawUnselectedText_MethodID_2: jmethodID?
+    private static var drawEchoCharacter_MethodID_2: jmethodID?
 
-    override open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    open func drawEchoCharacter( g: java_awt.Graphics?, x: Int, y: Int, c: UInt16 ) -> Int {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[4] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PasswordView.drawUnselectedText_MethodID_2, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( c: c )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawEchoCharacter", methodSig: "(Ljava/awt/Graphics;IIC)I", methodCache: &PasswordView.drawEchoCharacter_MethodID_2, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    override open func drawUnselectedText( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _p0: Int, _ _p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try drawUnselectedText( g: _g, x: _x, y: _y, p0: _p0, p1: _p1 )
+    open func drawEchoCharacter( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _c: UInt16 ) -> Int {
+        return drawEchoCharacter( g: _g, x: _x, y: _y, c: _c )
     }
 
     /// protected int javax.swing.text.PasswordView.drawSelectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
@@ -161,48 +235,60 @@ open class PasswordView: FieldView {
     private static var drawSelectedText_MethodID_3: jmethodID?
 
     override open func drawSelectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[4] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(p0) )
+        __args[4] = jvalue( i: jint(p1) )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawSelectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PasswordView.drawSelectedText_MethodID_3, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     override open func drawSelectedText( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _p0: Int, _ _p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         return try drawSelectedText( g: _g, x: _x, y: _y, p0: _p0, p1: _p1 )
     }
 
-    /// protected int javax.swing.text.PasswordView.drawEchoCharacter(java.awt.Graphics,int,int,char)
+    /// protected int javax.swing.text.PasswordView.drawUnselectedText(java.awt.Graphics,int,int,int,int) throws javax.swing.text.BadLocationException
 
-    private static var drawEchoCharacter_MethodID_4: jmethodID?
+    private static var drawUnselectedText_MethodID_4: jmethodID?
 
-    open func drawEchoCharacter( g: java_awt.Graphics?, x: Int, y: Int, c: UInt16 ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    override open func drawUnselectedText( g: java_awt.Graphics?, x: Int, y: Int, p0: Int, p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        __args[3] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawEchoCharacter", methodSig: "(Ljava/awt/Graphics;IIC)I", methodCache: &PasswordView.drawEchoCharacter_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        __args[3] = jvalue( i: jint(p0) )
+        __args[4] = jvalue( i: jint(p1) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "drawUnselectedText", methodSig: "(Ljava/awt/Graphics;IIII)I", methodCache: &PasswordView.drawUnselectedText_MethodID_4, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return Int(__return)
     }
 
-    open func drawEchoCharacter( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _c: UInt16 ) -> Int {
-        return drawEchoCharacter( g: _g, x: _x, y: _y, c: _c )
+    override open func drawUnselectedText( _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _p0: Int, _ _p1: Int ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try drawUnselectedText( g: _g, x: _x, y: _y, p0: _p0, p1: _p1 )
     }
 
-    /// public int javax.swing.text.PasswordView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+    /// public float javax.swing.text.PasswordView.getPreferredSpan(int)
+
+    // Skipping method: false true false false false 
 
     /// public java.awt.Shape javax.swing.text.PasswordView.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    /// public float javax.swing.text.PasswordView.getPreferredSpan(int)
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.PasswordView.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    // Skipping method: false true false false false 
 
 }
 

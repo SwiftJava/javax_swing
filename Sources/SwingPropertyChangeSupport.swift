@@ -5,7 +5,7 @@ import java_swift
 
 /// class javax.swing.event.SwingPropertyChangeSupport ///
 
-open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ UnclassedObject {
+open class SwingPropertyChangeSupport: /* class java.beans.PropertyChangeSupport */ UnavailableObject {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -18,23 +18,27 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
 
     /// static final long javax.swing.event.SwingPropertyChangeSupport.serialVersionUID
 
+    // Skipping field: true true false false false false 
+
     /// private final boolean javax.swing.event.SwingPropertyChangeSupport.notifyOnEDT
-
-    /// private java.beans.PropertyChangeSupport$PropertyChangeListenerMap java.beans.PropertyChangeSupport.map
-
-    /// private java.lang.Object java.beans.PropertyChangeSupport.source
 
     /// private static final java.io.ObjectStreamField[] java.beans.PropertyChangeSupport.serialPersistentFields
 
     /// static final long java.beans.PropertyChangeSupport.serialVersionUID
+
+    // Skipping field: true true false false false false 
+
+    /// private java.beans.PropertyChangeSupport$PropertyChangeListenerMap java.beans.PropertyChangeSupport.map
+
+    /// private java.lang.Object java.beans.PropertyChangeSupport.source
 
     /// public javax.swing.event.SwingPropertyChangeSupport(java.lang.Object)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( sourceBean: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: sourceBean, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/SwingPropertyChangeSupport", classCache: &SwingPropertyChangeSupport.SwingPropertyChangeSupportJNIClass, methodSig: "(Ljava/lang/Object;)V", methodCache: &SwingPropertyChangeSupport.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -50,10 +54,10 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( sourceBean: java_swift.JavaObject?, notifyOnEDT: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: sourceBean, locals: &__locals )
-        __args[1] = JNIType.toJava( value: notifyOnEDT, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(notifyOnEDT ? JNI_TRUE : JNI_FALSE) )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/SwingPropertyChangeSupport", classCache: &SwingPropertyChangeSupport.SwingPropertyChangeSupportJNIClass, methodSig: "(Ljava/lang/Object;Z)V", methodCache: &SwingPropertyChangeSupport.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -67,14 +71,14 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
 
     private static var firePropertyChange_MethodID_3: jmethodID?
 
-    open func firePropertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func firePropertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "firePropertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SwingPropertyChangeSupport.firePropertyChange_MethodID_3, args: &__args, locals: &__locals )
     }
 
-    open func firePropertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    open func firePropertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         firePropertyChange( evt: _evt )
     }
 
@@ -83,10 +87,10 @@ open class SwingPropertyChangeSupport: /* java.beans.PropertyChangeSupport */ Un
     private static var isNotifyOnEDT_MethodID_4: jmethodID?
 
     open func isNotifyOnEDT() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isNotifyOnEDT", methodSig: "()Z", methodCache: &SwingPropertyChangeSupport.isNotifyOnEDT_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 

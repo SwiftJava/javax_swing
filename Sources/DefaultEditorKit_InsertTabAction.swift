@@ -18,23 +18,6 @@ open class DefaultEditorKit_InsertTabAction: TextAction {
 
     /// private static java.lang.Boolean javax.swing.AbstractAction.RECONFIGURE_ON_NULL
 
-    /// protected boolean javax.swing.AbstractAction.enabled
-
-    private static var enabled_FieldID: jfieldID?
-
-    override open var enabled: Bool {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &DefaultEditorKit_InsertTabAction.enabled_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &DefaultEditorKit_InsertTabAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
-        }
-    }
-
     /// private transient javax.swing.ArrayTable javax.swing.AbstractAction.arrayTable
 
     /// protected javax.swing.event.SwingPropertyChangeSupport javax.swing.AbstractAction.changeSupport
@@ -43,8 +26,8 @@ open class DefaultEditorKit_InsertTabAction: TextAction {
 
     override open var changeSupport: SwingPropertyChangeSupport! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &DefaultEditorKit_InsertTabAction.changeSupport_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeSupport", fieldType: "Ljavax/swing/event/SwingPropertyChangeSupport;", fieldCache: &DefaultEditorKit_InsertTabAction.changeSupport_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? SwingPropertyChangeSupport( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -54,41 +37,81 @@ open class DefaultEditorKit_InsertTabAction: TextAction {
         }
     }
 
-    /// public static final java.lang.String javax.swing.Action.DEFAULT
+    /// protected boolean javax.swing.AbstractAction.enabled
 
-    /// public static final java.lang.String javax.swing.Action.NAME
+    private static var enabled_FieldID: jfieldID?
 
-    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
-
-    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
-
-    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+    override open var enabled: Bool {
+        get {
+            let __value = JNIField.GetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &DefaultEditorKit_InsertTabAction.enabled_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "enabled", fieldType: "Z", fieldCache: &DefaultEditorKit_InsertTabAction.enabled_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+        }
+    }
 
     /// public static final java.lang.String javax.swing.Action.ACCELERATOR_KEY
 
-    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+    /// public static final java.lang.String javax.swing.Action.ACTION_COMMAND_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.DEFAULT
+
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.Action.DISPLAYED_MNEMONIC_INDEX_KEY
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.String javax.swing.Action.LARGE_ICON_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.LONG_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.MNEMONIC_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.NAME
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SELECTED_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SHORT_DESCRIPTION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.Action.SMALL_ICON
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.DefaultEditorKit$InsertTabAction()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultEditorKit$InsertTabAction", classCache: &DefaultEditorKit_InsertTabAction.DefaultEditorKit_InsertTabActionJNIClass, methodSig: "()V", methodCache: &DefaultEditorKit_InsertTabAction.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
     /// public void javax.swing.text.DefaultEditorKit$InsertTabAction.actionPerformed(java.awt.event.ActionEvent)
+
+    // Skipping method: false true false false false 
 
 }
 

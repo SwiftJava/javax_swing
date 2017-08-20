@@ -19,18 +19,30 @@ open class Popup: java_swift.JavaObject {
 
     /// private java.awt.Component javax.swing.Popup.component
 
-    /// protected javax.swing.Popup(java.awt.Component,java.awt.Component,int,int)
+    /// protected javax.swing.Popup()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( owner: java_awt.Component?, contents: java_awt.Component?, x: Int, y: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    public convenience init() {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/Popup", classCache: &Popup.PopupJNIClass, methodSig: "()V", methodCache: &Popup.new_MethodID_1, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    /// protected javax.swing.Popup(java.awt.Component,java.awt.Component,int,int)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( owner: java_awt.Component?, contents: java_awt.Component?, x: Int, y: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: owner, locals: &__locals )
         __args[1] = JNIType.toJava( value: contents, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/Popup", classCache: &Popup.PopupJNIClass, methodSig: "(Ljava/awt/Component;Ljava/awt/Component;II)V", methodCache: &Popup.new_MethodID_1, args: &__args, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        let __object = JNIMethod.NewObject( className: "javax/swing/Popup", classCache: &Popup.PopupJNIClass, methodSig: "(Ljava/awt/Component;Ljava/awt/Component;II)V", methodCache: &Popup.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -39,51 +51,49 @@ open class Popup: java_swift.JavaObject {
         self.init( owner: _owner, contents: _contents, x: _x, y: _y )
     }
 
-    /// protected javax.swing.Popup()
+    /// java.awt.Component javax.swing.Popup.createComponent(java.awt.Component)
 
-    private static var new_MethodID_2: jmethodID?
-
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/Popup", classCache: &Popup.PopupJNIClass, methodSig: "()V", methodCache: &Popup.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    /// void javax.swing.Popup.reset(java.awt.Component,java.awt.Component,int,int)
+    // Skipping method: true false false false false 
 
     /// void javax.swing.Popup.dispose()
 
-    /// public void javax.swing.Popup.show()
-
-    private static var show_MethodID_3: jmethodID?
-
-    open func show() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "()V", methodCache: &Popup.show_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-
-    /// private java.awt.Window javax.swing.Popup.getParentWindow(java.awt.Component)
-
-    /// java.awt.Component javax.swing.Popup.createComponent(java.awt.Component)
-
-    /// public void javax.swing.Popup.hide()
-
-    private static var hide_MethodID_4: jmethodID?
-
-    open func hide() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hide", methodSig: "()V", methodCache: &Popup.hide_MethodID_4, args: &__args, locals: &__locals )
-    }
-
+    // Skipping method: true false false false false 
 
     /// java.awt.Component javax.swing.Popup.getComponent()
 
+    // Skipping method: true false false false false 
+
+    /// private java.awt.Window javax.swing.Popup.getParentWindow(java.awt.Component)
+
+    /// public void javax.swing.Popup.hide()
+
+    private static var hide_MethodID_3: jmethodID?
+
+    open func hide() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "hide", methodSig: "()V", methodCache: &Popup.hide_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
     /// void javax.swing.Popup.pack()
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.Popup.reset(java.awt.Component,java.awt.Component,int,int)
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.Popup.show()
+
+    private static var show_MethodID_4: jmethodID?
+
+    open func show() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "show", methodSig: "()V", methodCache: &Popup.show_MethodID_4, args: &__args, locals: &__locals )
+    }
+
 
 }
 

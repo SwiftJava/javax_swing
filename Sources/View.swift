@@ -24,18 +24,7 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var BadBreakWeight: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BadBreakWeight", fieldType: "I", fieldCache: &BadBreakWeight_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.text.View.GoodBreakWeight
-
-    private static var GoodBreakWeight_FieldID: jfieldID?
-
-    open static var GoodBreakWeight: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "GoodBreakWeight", fieldType: "I", fieldCache: &GoodBreakWeight_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -46,7 +35,7 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var ExcellentBreakWeight: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ExcellentBreakWeight", fieldType: "I", fieldCache: &ExcellentBreakWeight_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -57,7 +46,18 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var ForcedBreakWeight: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ForcedBreakWeight", fieldType: "I", fieldCache: &ForcedBreakWeight_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.text.View.GoodBreakWeight
+
+    private static var GoodBreakWeight_FieldID: jfieldID?
+
+    open static var GoodBreakWeight: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "GoodBreakWeight", fieldType: "I", fieldCache: &GoodBreakWeight_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
         }
     }
 
@@ -68,7 +68,7 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var X_AXIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "X_AXIS", fieldType: "I", fieldCache: &X_AXIS_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -79,52 +79,25 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var Y_AXIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "Y_AXIS", fieldType: "I", fieldCache: &Y_AXIS_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
     /// static final javax.swing.text.Position$Bias[] javax.swing.text.View.sharedBiasReturn
 
-    /// private javax.swing.text.View javax.swing.text.View.parent
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.Element javax.swing.text.View.elem
 
     /// int javax.swing.text.View.firstUpdateIndex
 
+    // Skipping field: true false false false false false 
+
     /// int javax.swing.text.View.lastUpdateIndex
 
-    /// public static final int javax.swing.SwingConstants.CENTER
+    // Skipping field: true false false false false false 
 
-    private static var CENTER_FieldID: jfieldID?
-
-    open static var CENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    private static var TOP_FieldID: jfieldID?
-
-    open static var TOP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.LEFT
-
-    private static var LEFT_FieldID: jfieldID?
-
-    open static var LEFT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private javax.swing.text.View javax.swing.text.View.parent
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
@@ -133,40 +106,18 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM", fieldType: "I", fieldCache: &BOTTOM_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    private static var RIGHT_FieldID: jfieldID?
+    private static var CENTER_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    open static var CENTER: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH
-
-    private static var NORTH_FieldID: jfieldID?
-
-    open static var NORTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
-
-    private static var NORTH_EAST_FieldID: jfieldID?
-
-    open static var NORTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
         }
     }
 
@@ -177,62 +128,7 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    private static var SOUTH_EAST_FieldID: jfieldID?
-
-    open static var SOUTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    private static var SOUTH_FieldID: jfieldID?
-
-    open static var SOUTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    private static var SOUTH_WEST_FieldID: jfieldID?
-
-    open static var SOUTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    private static var WEST_FieldID: jfieldID?
-
-    open static var WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
-
-    private static var NORTH_WEST_FieldID: jfieldID?
-
-    open static var NORTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -243,18 +139,7 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.VERTICAL
-
-    private static var VERTICAL_FieldID: jfieldID?
-
-    open static var VERTICAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -265,18 +150,18 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    /// public static final int javax.swing.SwingConstants.LEFT
 
-    private static var TRAILING_FieldID: jfieldID?
+    private static var LEFT_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    open static var LEFT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
         }
     }
 
@@ -287,7 +172,40 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var NEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEXT", fieldType: "I", fieldCache: &NEXT_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    private static var NORTH_FieldID: jfieldID?
+
+    open static var NORTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    private static var NORTH_EAST_FieldID: jfieldID?
+
+    open static var NORTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    private static var NORTH_WEST_FieldID: jfieldID?
+
+    open static var NORTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
         }
     }
 
@@ -298,7 +216,95 @@ open class View: java_swift.JavaObject, SwingConstants {
     open static var PREVIOUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREVIOUS", fieldType: "I", fieldCache: &PREVIOUS_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    private static var RIGHT_FieldID: jfieldID?
+
+    open static var RIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    private static var SOUTH_FieldID: jfieldID?
+
+    open static var SOUTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    private static var SOUTH_EAST_FieldID: jfieldID?
+
+    open static var SOUTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    private static var SOUTH_WEST_FieldID: jfieldID?
+
+    open static var SOUTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    private static var TOP_FieldID: jfieldID?
+
+    open static var TOP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    private static var TRAILING_FieldID: jfieldID?
+
+    open static var TRAILING: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    private static var VERTICAL_FieldID: jfieldID?
+
+    open static var VERTICAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    private static var WEST_FieldID: jfieldID?
+
+    open static var WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/text/View", classCache: &ViewJNIClass )
+            return Int(__value)
         }
     }
 
@@ -307,8 +313,8 @@ open class View: java_swift.JavaObject, SwingConstants {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( elem: Element? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: elem, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/View", classCache: &View.ViewJNIClass, methodSig: "(Ljavax/swing/text/Element;)V", methodCache: &View.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -319,292 +325,515 @@ open class View: java_swift.JavaObject, SwingConstants {
         self.init( elem: _elem )
     }
 
-    /// public void javax.swing.text.View.remove(int)
-
-    private static var remove_MethodID_2: jmethodID?
-
-    open func remove( i: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: i, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &View.remove_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func remove( _ _i: Int ) {
-        remove( i: _i )
-    }
-
     /// public void javax.swing.text.View.append(javax.swing.text.View)
 
-    private static var append_MethodID_3: jmethodID?
+    private static var append_MethodID_2: jmethodID?
 
     open func append( v: View? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "append", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &View.append_MethodID_3, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "append", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &View.append_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func append( _ _v: View? ) {
         append( v: _v )
     }
 
-    /// public void javax.swing.text.View.replace(int,int,javax.swing.text.View[])
+    /// public javax.swing.text.View javax.swing.text.View.breakView(int,int,float,float)
 
-    private static var replace_MethodID_4: jmethodID?
+    private static var breakView_MethodID_3: jmethodID?
 
-    open func replace( offset: Int, length: Int, views: [View]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func breakView( axis: Int, offset: Int, pos: Float, len: Float ) -> View! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: views, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/View;)V", methodCache: &View.replace_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
-        replace( offset: _offset, length: _length, views: _views )
-    }
-
-    /// public javax.swing.text.View javax.swing.text.View.getParent()
-
-    private static var getParent_MethodID_5: jmethodID?
-
-    open func getParent() -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParent", methodSig: "()Ljavax/swing/text/View;", methodCache: &View.getParent_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(axis) )
+        __args[1] = jvalue( i: jint(offset) )
+        __args[2] = jvalue( f: pos )
+        __args[3] = jvalue( f: len )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IIFF)Ljavax/swing/text/View;", methodCache: &View.breakView_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? View( javaObject: __return ) : nil
     }
 
-
-    /// public void javax.swing.text.View.insert(int,javax.swing.text.View)
-
-    private static var insert_MethodID_6: jmethodID?
-
-    open func insert( offs: Int, v: View? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offs, locals: &__locals )
-        __args[1] = JNIType.toJava( value: v, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insert", methodSig: "(ILjavax/swing/text/View;)V", methodCache: &View.insert_MethodID_6, args: &__args, locals: &__locals )
+    open func breakView( _ _axis: Int, _ _offset: Int, _ _pos: Float, _ _len: Float ) -> View! {
+        return breakView( axis: _axis, offset: _offset, pos: _pos, len: _len )
     }
 
-    open func insert( _ _offs: Int, _ _v: View? ) {
-        insert( offs: _offs, v: _v )
+    /// void javax.swing.text.View.calculateUpdateIndexes(javax.swing.event.DocumentEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.text.View.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var changedUpdate_MethodID_4: jmethodID?
+
+    open func changedUpdate( e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.changedUpdate_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func changedUpdate( _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        changedUpdate( e: _e, a: _a, f: _f )
+    }
+
+    /// public javax.swing.text.View javax.swing.text.View.createFragment(int,int)
+
+    private static var createFragment_MethodID_5: jmethodID?
+
+    open func createFragment( p0: Int, p1: Int ) -> View! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(p0) )
+        __args[1] = jvalue( i: jint(p1) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFragment", methodSig: "(II)Ljavax/swing/text/View;", methodCache: &View.createFragment_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+    open func createFragment( _ _p0: Int, _ _p1: Int ) -> View! {
+        return createFragment( p0: _p0, p1: _p1 )
+    }
+
+    /// protected void javax.swing.text.View.forwardUpdate(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var forwardUpdate_MethodID_6: jmethodID?
+
+    open func forwardUpdate( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forwardUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.forwardUpdate_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func forwardUpdate( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        forwardUpdate( ec: _ec, e: _e, a: _a, f: _f )
+    }
+
+    /// protected void javax.swing.text.View.forwardUpdateToView(javax.swing.text.View,javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var forwardUpdateToView_MethodID_7: jmethodID?
+
+    open func forwardUpdateToView( v: View?, e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        __args[1] = JNIType.toJava( value: e, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forwardUpdateToView", methodSig: "(Ljavax/swing/text/View;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.forwardUpdateToView_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func forwardUpdateToView( _ _v: View?, _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        forwardUpdateToView( v: _v, e: _e, a: _a, f: _f )
+    }
+
+    /// public float javax.swing.text.View.getAlignment(int)
+
+    private static var getAlignment_MethodID_8: jmethodID?
+
+    open func getAlignment( axis: Int ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(axis) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAlignment", methodSig: "(I)F", methodCache: &View.getAlignment_MethodID_8, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func getAlignment( _ _axis: Int ) -> Float {
+        return getAlignment( axis: _axis )
     }
 
     /// public javax.swing.text.AttributeSet javax.swing.text.View.getAttributes()
 
-    private static var getAttributes_MethodID_7: jmethodID?
+    private static var getAttributes_MethodID_9: jmethodID?
 
     open func getAttributes() -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &View.getAttributes_MethodID_7, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &View.getAttributes_MethodID_9, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.text.View.setSize(float,float)
+    /// public int javax.swing.text.View.getBreakWeight(int,float,float)
 
-    private static var setSize_MethodID_8: jmethodID?
+    private static var getBreakWeight_MethodID_10: jmethodID?
 
-    open func setSize( width: Float, height: Float ) {
+    open func getBreakWeight( axis: Int, pos: Float, len: Float ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(axis) )
+        __args[1] = jvalue( f: pos )
+        __args[2] = jvalue( f: len )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBreakWeight", methodSig: "(IFF)I", methodCache: &View.getBreakWeight_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getBreakWeight( _ _axis: Int, _ _pos: Float, _ _len: Float ) -> Int {
+        return getBreakWeight( axis: _axis, pos: _pos, len: _len )
+    }
+
+    /// public java.awt.Shape javax.swing.text.View.getChildAllocation(int,java.awt.Shape)
+
+    private static var getChildAllocation_MethodID_11: jmethodID?
+
+    open func getChildAllocation( index: Int, a: java_awt.Shape? ) -> java_awt.Shape! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: width, locals: &__locals )
-        __args[1] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(FF)V", methodCache: &View.setSize_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setSize( _ _width: Float, _ _height: Float ) {
-        setSize( width: _width, height: _height )
-    }
-
-    /// public void javax.swing.text.View.removeAll()
-
-    private static var removeAll_MethodID_9: jmethodID?
-
-    open func removeAll() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAll", methodSig: "()V", methodCache: &View.removeAll_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-
-    /// public void javax.swing.text.View.setParent(javax.swing.text.View)
-
-    private static var setParent_MethodID_10: jmethodID?
-
-    open func setParent( parent: View? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParent", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &View.setParent_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setParent( _ _parent: View? ) {
-        setParent( parent: _parent )
-    }
-
-    /// public abstract void javax.swing.text.View.paint(java.awt.Graphics,java.awt.Shape)
-
-    private static var paint_MethodID_11: jmethodID?
-
-    open func paint( g: java_awt.Graphics?, allocation: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: allocation, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &View.paint_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func paint( _ _g: java_awt.Graphics?, _ _allocation: java_awt.Shape? ) {
-        paint( g: _g, allocation: _allocation )
-    }
-
-    /// public java.awt.Graphics javax.swing.text.View.getGraphics()
-
-    private static var getGraphics_MethodID_12: jmethodID?
-
-    open func getGraphics() -> java_awt.Graphics! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &View.getGraphics_MethodID_12, args: &__args, locals: &__locals )
+        __args[0] = jvalue( i: jint(index) )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAllocation", methodSig: "(ILjava/awt/Shape;)Ljava/awt/Shape;", methodCache: &View.getChildAllocation_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Graphics( javaObject: __return ) : nil
+        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
     }
 
+    open func getChildAllocation( _ _index: Int, _ _a: java_awt.Shape? ) -> java_awt.Shape! {
+        return getChildAllocation( index: _index, a: _a )
+    }
 
     /// public java.awt.Container javax.swing.text.View.getContainer()
 
-    private static var getContainer_MethodID_13: jmethodID?
+    private static var getContainer_MethodID_12: jmethodID?
 
     open func getContainer() -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContainer", methodSig: "()Ljava/awt/Container;", methodCache: &View.getContainer_MethodID_13, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContainer", methodSig: "()Ljava/awt/Container;", methodCache: &View.getContainer_MethodID_12, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Container( javaObject: __return ) : nil
     }
 
 
+    /// public javax.swing.text.Document javax.swing.text.View.getDocument()
+
+    private static var getDocument_MethodID_13: jmethodID?
+
+    open func getDocument() -> Document! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &View.getDocument_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.Element javax.swing.text.View.getElement()
+
+    private static var getElement_MethodID_14: jmethodID?
+
+    open func getElement() -> Element! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &View.getElement_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ElementForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.text.View.getEndOffset()
+
+    private static var getEndOffset_MethodID_15: jmethodID?
+
+    open func getEndOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &View.getEndOffset_MethodID_15, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.awt.Graphics javax.swing.text.View.getGraphics()
+
+    private static var getGraphics_MethodID_16: jmethodID?
+
+    open func getGraphics() -> java_awt.Graphics! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getGraphics", methodSig: "()Ljava/awt/Graphics;", methodCache: &View.getGraphics_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Graphics( javaObject: __return ) : nil
+    }
+
+
+    /// public float javax.swing.text.View.getMaximumSpan(int)
+
+    private static var getMaximumSpan_MethodID_17: jmethodID?
+
+    open func getMaximumSpan( axis: Int ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(axis) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMaximumSpan", methodSig: "(I)F", methodCache: &View.getMaximumSpan_MethodID_17, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func getMaximumSpan( _ _axis: Int ) -> Float {
+        return getMaximumSpan( axis: _axis )
+    }
+
+    /// public float javax.swing.text.View.getMinimumSpan(int)
+
+    private static var getMinimumSpan_MethodID_18: jmethodID?
+
+    open func getMinimumSpan( axis: Int ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(axis) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinimumSpan", methodSig: "(I)F", methodCache: &View.getMinimumSpan_MethodID_18, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func getMinimumSpan( _ _axis: Int ) -> Float {
+        return getMinimumSpan( axis: _axis )
+    }
+
+    /// public int javax.swing.text.View.getNextVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    private static var getNextVisualPositionFrom_MethodID_19: jmethodID?
+
+    open func getNextVisualPositionFrom( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = jvalue( i: jint(direction) )
+        __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &View.getNextVisualPositionFrom_MethodID_19, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return Int(__return)
+    }
+
+    open func getNextVisualPositionFrom( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
+        return try getNextVisualPositionFrom( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet )
+    }
+
+    /// public javax.swing.text.View javax.swing.text.View.getParent()
+
+    private static var getParent_MethodID_20: jmethodID?
+
+    open func getParent() -> View! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getParent", methodSig: "()Ljavax/swing/text/View;", methodCache: &View.getParent_MethodID_20, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? View( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract float javax.swing.text.View.getPreferredSpan(int)
+
+    private static var getPreferredSpan_MethodID_21: jmethodID?
+
+    open func getPreferredSpan( axis: Int ) -> Float {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(axis) )
+        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPreferredSpan", methodSig: "(I)F", methodCache: &View.getPreferredSpan_MethodID_21, args: &__args, locals: &__locals )
+        return __return
+    }
+
+    open func getPreferredSpan( _ _axis: Int ) -> Float {
+        return getPreferredSpan( axis: _axis )
+    }
+
+    /// public int javax.swing.text.View.getResizeWeight(int)
+
+    private static var getResizeWeight_MethodID_22: jmethodID?
+
+    open func getResizeWeight( axis: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(axis) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getResizeWeight", methodSig: "(I)I", methodCache: &View.getResizeWeight_MethodID_22, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getResizeWeight( _ _axis: Int ) -> Int {
+        return getResizeWeight( axis: _axis )
+    }
+
+    /// public int javax.swing.text.View.getStartOffset()
+
+    private static var getStartOffset_MethodID_23: jmethodID?
+
+    open func getStartOffset() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &View.getStartOffset_MethodID_23, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
     /// public java.lang.String javax.swing.text.View.getToolTipText(float,float,java.awt.Shape)
 
-    private static var getToolTipText_MethodID_14: jmethodID?
+    private static var getToolTipText_MethodID_24: jmethodID?
 
     open func getToolTipText( x: Float, y: Float, allocation: java_awt.Shape? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
         __args[2] = JNIType.toJava( value: allocation, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(FFLjava/awt/Shape;)Ljava/lang/String;", methodCache: &View.getToolTipText_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getToolTipText", methodSig: "(FFLjava/awt/Shape;)Ljava/lang/String;", methodCache: &View.getToolTipText_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
     open func getToolTipText( _ _x: Float, _ _y: Float, _ _allocation: java_awt.Shape? ) -> String! {
         return getToolTipText( x: _x, y: _y, allocation: _allocation )
     }
 
-    /// public int javax.swing.text.View.viewToModel(float,float,java.awt.Shape)
+    /// public javax.swing.text.View javax.swing.text.View.getView(int)
 
-    private static var viewToModel_MethodID_15: jmethodID?
+    private static var getView_MethodID_25: jmethodID?
 
-    open func viewToModel( x: Float, y: Float, a: java_awt.Shape? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func getView( n: Int ) -> View! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;)I", methodCache: &View.viewToModel_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func viewToModel( _ _x: Float, _ _y: Float, _ _a: java_awt.Shape? ) -> Int {
-        return viewToModel( x: _x, y: _y, a: _a )
-    }
-
-    /// public abstract int javax.swing.text.View.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
-
-    private static var viewToModel_MethodID_16: jmethodID?
-
-    open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, biasReturn: [Position_Bias]? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: biasReturn, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &View.viewToModel_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func viewToModel( _ _x: Float, _ _y: Float, _ _a: java_awt.Shape?, _ _biasReturn: [Position_Bias]? ) -> Int {
-        return viewToModel( x: _x, y: _y, a: _a, biasReturn: _biasReturn )
-    }
-
-    /// public abstract java.awt.Shape javax.swing.text.View.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
-
-    private static var modelToView_MethodID_17: jmethodID?
-
-    open func modelToView( pos: Int, a: java_awt.Shape?, b: Position_Bias? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(ILjava/awt/Shape;Ljavax/swing/text/Position$Bias;)Ljava/awt/Shape;", methodCache: &View.modelToView_MethodID_17, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(n) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getView", methodSig: "(I)Ljavax/swing/text/View;", methodCache: &View.getView_MethodID_25, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
+        return __return != nil ? View( javaObject: __return ) : nil
     }
 
-    open func modelToView( _ _pos: Int, _ _a: java_awt.Shape?, _ _b: Position_Bias? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
-        return try modelToView( pos: _pos, a: _a, b: _b )
+    open func getView( _ _n: Int ) -> View! {
+        return getView( n: _n )
     }
 
-    /// public java.awt.Shape javax.swing.text.View.modelToView(int,java.awt.Shape) throws javax.swing.text.BadLocationException
+    /// public int javax.swing.text.View.getViewCount()
 
-    private static var modelToView_MethodID_18: jmethodID?
+    private static var getViewCount_MethodID_26: jmethodID?
 
-    open func modelToView( pos: Int, a: java_awt.Shape? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
+    open func getViewCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewCount", methodSig: "()I", methodCache: &View.getViewCount_MethodID_26, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public javax.swing.text.ViewFactory javax.swing.text.View.getViewFactory()
+
+    private static var getViewFactory_MethodID_27: jmethodID?
+
+    open func getViewFactory() -> ViewFactory! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewFactory", methodSig: "()Ljavax/swing/text/ViewFactory;", methodCache: &View.getViewFactory_MethodID_27, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ViewFactoryForward( javaObject: __return ) : nil
+    }
+
+
+    /// public int javax.swing.text.View.getViewIndex(float,float,java.awt.Shape)
+
+    private static var getViewIndex_MethodID_28: jmethodID?
+
+    open func getViewIndex( x: Float, y: Float, allocation: java_awt.Shape? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = JNIType.toJava( value: allocation, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndex", methodSig: "(FFLjava/awt/Shape;)I", methodCache: &View.getViewIndex_MethodID_28, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func getViewIndex( _ _x: Float, _ _y: Float, _ _allocation: java_awt.Shape? ) -> Int {
+        return getViewIndex( x: _x, y: _y, allocation: _allocation )
+    }
+
+    /// public int javax.swing.text.View.getViewIndex(int,javax.swing.text.Position$Bias)
+
+    private static var getViewIndex_MethodID_29: jmethodID?
+
+    open func getViewIndex( pos: Int, b: Position_Bias? ) -> Int {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(ILjava/awt/Shape;)Ljava/awt/Shape;", methodCache: &View.modelToView_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndex", methodSig: "(ILjavax/swing/text/Position$Bias;)I", methodCache: &View.getViewIndex_MethodID_29, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func modelToView( _ _pos: Int, _ _a: java_awt.Shape? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
-        return try modelToView( pos: _pos, a: _a )
+    open func getViewIndex( _ _pos: Int, _ _b: Position_Bias? ) -> Int {
+        return getViewIndex( pos: _pos, b: _b )
     }
+
+    /// public void javax.swing.text.View.insert(int,javax.swing.text.View)
+
+    private static var insert_MethodID_30: jmethodID?
+
+    open func insert( offs: Int, v: View? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(offs) )
+        __args[1] = JNIType.toJava( value: v, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insert", methodSig: "(ILjavax/swing/text/View;)V", methodCache: &View.insert_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open func insert( _ _offs: Int, _ _v: View? ) {
+        insert( offs: _offs, v: _v )
+    }
+
+    /// public void javax.swing.text.View.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+
+    private static var insertUpdate_MethodID_31: jmethodID?
+
+    open func insertUpdate( e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: f, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.insertUpdate_MethodID_31, args: &__args, locals: &__locals )
+    }
+
+    open func insertUpdate( _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
+        insertUpdate( e: _e, a: _a, f: _f )
+    }
+
+    /// public boolean javax.swing.text.View.isVisible()
+
+    private static var isVisible_MethodID_32: jmethodID?
+
+    open func isVisible() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &View.isVisible_MethodID_32, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
 
     /// public java.awt.Shape javax.swing.text.View.modelToView(int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias,java.awt.Shape) throws javax.swing.text.BadLocationException
 
-    private static var modelToView_MethodID_19: jmethodID?
+    private static var modelToView_MethodID_33: jmethodID?
 
     open func modelToView( p0: Int, b0: Position_Bias?, p1: Int, b1: Position_Bias?, a: java_awt.Shape? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(p0) )
         __args[1] = JNIType.toJava( value: b0, locals: &__locals )
-        __args[2] = JNIType.toJava( value: p1, locals: &__locals )
+        __args[2] = jvalue( i: jint(p1) )
         __args[3] = JNIType.toJava( value: b1, locals: &__locals )
         __args[4] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(ILjavax/swing/text/Position$Bias;ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &View.modelToView_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(ILjavax/swing/text/Position$Bias;ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;)Ljava/awt/Shape;", methodCache: &View.modelToView_MethodID_33, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw BadLocationException( javaObject: throwable )
         }
         return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
@@ -614,464 +843,250 @@ open class View: java_swift.JavaObject, SwingConstants {
         return try modelToView( p0: _p0, b0: _b0, p1: _p1, b1: _b1, a: _a )
     }
 
-    /// public javax.swing.text.Document javax.swing.text.View.getDocument()
+    /// public java.awt.Shape javax.swing.text.View.modelToView(int,java.awt.Shape) throws javax.swing.text.BadLocationException
 
-    private static var getDocument_MethodID_20: jmethodID?
+    private static var modelToView_MethodID_34: jmethodID?
 
-    open func getDocument() -> Document! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func modelToView( pos: Int, a: java_awt.Shape? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocument", methodSig: "()Ljavax/swing/text/Document;", methodCache: &View.getDocument_MethodID_20, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(ILjava/awt/Shape;)Ljava/awt/Shape;", methodCache: &View.modelToView_MethodID_34, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentForward( javaObject: __return ) : nil
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
     }
 
+    open func modelToView( _ _pos: Int, _ _a: java_awt.Shape? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
+        return try modelToView( pos: _pos, a: _a )
+    }
 
-    /// public boolean javax.swing.text.View.isVisible()
+    /// public abstract java.awt.Shape javax.swing.text.View.modelToView(int,java.awt.Shape,javax.swing.text.Position$Bias) throws javax.swing.text.BadLocationException
 
-    private static var isVisible_MethodID_21: jmethodID?
+    private static var modelToView_MethodID_35: jmethodID?
 
-    open func isVisible() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func modelToView( pos: Int, a: java_awt.Shape?, b: Position_Bias? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isVisible", methodSig: "()Z", methodCache: &View.isVisible_MethodID_21, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(pos) )
+        __args[1] = JNIType.toJava( value: a, locals: &__locals )
+        __args[2] = JNIType.toJava( value: b, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "modelToView", methodSig: "(ILjava/awt/Shape;Ljavax/swing/text/Position$Bias;)Ljava/awt/Shape;", methodCache: &View.modelToView_MethodID_35, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw BadLocationException( javaObject: throwable )
+        }
+        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
     }
 
+    open func modelToView( _ _pos: Int, _ _a: java_awt.Shape?, _ _b: Position_Bias? ) throws /* javax.swing.text.BadLocationException */ -> java_awt.Shape! {
+        return try modelToView( pos: _pos, a: _a, b: _b )
+    }
 
-    /// public float javax.swing.text.View.getMinimumSpan(int)
+    /// public abstract void javax.swing.text.View.paint(java.awt.Graphics,java.awt.Shape)
 
-    private static var getMinimumSpan_MethodID_22: jmethodID?
+    private static var paint_MethodID_36: jmethodID?
 
-    open func getMinimumSpan( axis: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func paint( g: java_awt.Graphics?, allocation: java_awt.Shape? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMinimumSpan", methodSig: "(I)F", methodCache: &View.getMinimumSpan_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: allocation, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Shape;)V", methodCache: &View.paint_MethodID_36, args: &__args, locals: &__locals )
     }
 
-    open func getMinimumSpan( _ _axis: Int ) -> Float {
-        return getMinimumSpan( axis: _axis )
-    }
-
-    /// public float javax.swing.text.View.getMaximumSpan(int)
-
-    private static var getMaximumSpan_MethodID_23: jmethodID?
-
-    open func getMaximumSpan( axis: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getMaximumSpan", methodSig: "(I)F", methodCache: &View.getMaximumSpan_MethodID_23, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getMaximumSpan( _ _axis: Int ) -> Float {
-        return getMaximumSpan( axis: _axis )
+    open func paint( _ _g: java_awt.Graphics?, _ _allocation: java_awt.Shape? ) {
+        paint( g: _g, allocation: _allocation )
     }
 
     /// public void javax.swing.text.View.preferenceChanged(javax.swing.text.View,boolean,boolean)
 
-    private static var preferenceChanged_MethodID_24: jmethodID?
+    private static var preferenceChanged_MethodID_37: jmethodID?
 
     open func preferenceChanged( child: View?, width: Bool, height: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: child, locals: &__locals )
-        __args[1] = JNIType.toJava( value: width, locals: &__locals )
-        __args[2] = JNIType.toJava( value: height, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preferenceChanged", methodSig: "(Ljavax/swing/text/View;ZZ)V", methodCache: &View.preferenceChanged_MethodID_24, args: &__args, locals: &__locals )
+        __args[1] = jvalue( z: jboolean(width ? JNI_TRUE : JNI_FALSE) )
+        __args[2] = jvalue( z: jboolean(height ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "preferenceChanged", methodSig: "(Ljavax/swing/text/View;ZZ)V", methodCache: &View.preferenceChanged_MethodID_37, args: &__args, locals: &__locals )
     }
 
     open func preferenceChanged( _ _child: View?, _ _width: Bool, _ _height: Bool ) {
         preferenceChanged( child: _child, width: _width, height: _height )
     }
 
-    /// public javax.swing.text.View javax.swing.text.View.breakView(int,int,float,float)
+    /// public void javax.swing.text.View.remove(int)
 
-    private static var breakView_MethodID_25: jmethodID?
+    private static var remove_MethodID_38: jmethodID?
 
-    open func breakView( axis: Int, offset: Int, pos: Float, len: Float ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+    open func remove( i: Int ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[2] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[3] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "breakView", methodSig: "(IIFF)Ljavax/swing/text/View;", methodCache: &View.breakView_MethodID_25, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    open func breakView( _ _axis: Int, _ _offset: Int, _ _pos: Float, _ _len: Float ) -> View! {
-        return breakView( axis: _axis, offset: _offset, pos: _pos, len: _len )
-    }
-
-    /// public javax.swing.text.View javax.swing.text.View.createFragment(int,int)
-
-    private static var createFragment_MethodID_26: jmethodID?
-
-    open func createFragment( p0: Int, p1: Int ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: p0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createFragment", methodSig: "(II)Ljavax/swing/text/View;", methodCache: &View.createFragment_MethodID_26, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    open func createFragment( _ _p0: Int, _ _p1: Int ) -> View! {
-        return createFragment( p0: _p0, p1: _p1 )
-    }
-
-    /// public int javax.swing.text.View.getBreakWeight(int,float,float)
-
-    private static var getBreakWeight_MethodID_27: jmethodID?
-
-    open func getBreakWeight( axis: Int, pos: Float, len: Float ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        __args[1] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[2] = JNIType.toJava( value: len, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getBreakWeight", methodSig: "(IFF)I", methodCache: &View.getBreakWeight_MethodID_27, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getBreakWeight( _ _axis: Int, _ _pos: Float, _ _len: Float ) -> Int {
-        return getBreakWeight( axis: _axis, pos: _pos, len: _len )
-    }
-
-    /// public int javax.swing.text.View.getResizeWeight(int)
-
-    private static var getResizeWeight_MethodID_28: jmethodID?
-
-    open func getResizeWeight( axis: Int ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(i) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "remove", methodSig: "(I)V", methodCache: &View.remove_MethodID_38, args: &__args, locals: &__locals )
+    }
+
+    open func remove( _ _i: Int ) {
+        remove( i: _i )
+    }
+
+    /// public void javax.swing.text.View.removeAll()
+
+    private static var removeAll_MethodID_39: jmethodID?
+
+    open func removeAll() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getResizeWeight", methodSig: "(I)I", methodCache: &View.getResizeWeight_MethodID_28, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getResizeWeight( _ _axis: Int ) -> Int {
-        return getResizeWeight( axis: _axis )
-    }
-
-    /// protected void javax.swing.text.View.forwardUpdate(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var forwardUpdate_MethodID_29: jmethodID?
-
-    open func forwardUpdate( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forwardUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.forwardUpdate_MethodID_29, args: &__args, locals: &__locals )
-    }
-
-    open func forwardUpdate( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        forwardUpdate( ec: _ec, e: _e, a: _a, f: _f )
-    }
-
-    /// void javax.swing.text.View.calculateUpdateIndexes(javax.swing.event.DocumentEvent)
-
-    /// void javax.swing.text.View.updateAfterChange()
-
-    /// protected void javax.swing.text.View.updateLayout(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape)
-
-    private static var updateLayout_MethodID_30: jmethodID?
-
-    open func updateLayout( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
-        __args[1] = JNIType.toJava( value: e, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayout", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;)V", methodCache: &View.updateLayout_MethodID_30, args: &__args, locals: &__locals )
-    }
-
-    open func updateLayout( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape? ) {
-        updateLayout( ec: _ec, e: _e, a: _a )
-    }
-
-    /// public float javax.swing.text.View.getAlignment(int)
-
-    private static var getAlignment_MethodID_31: jmethodID?
-
-    open func getAlignment( axis: Int ) -> Float {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getAlignment", methodSig: "(I)F", methodCache: &View.getAlignment_MethodID_31, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAll", methodSig: "()V", methodCache: &View.removeAll_MethodID_39, args: &__args, locals: &__locals )
     }
 
-    open func getAlignment( _ _axis: Int ) -> Float {
-        return getAlignment( axis: _axis )
-    }
-
-    /// public void javax.swing.text.View.insertUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var insertUpdate_MethodID_32: jmethodID?
-
-    open func insertUpdate( e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "insertUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.insertUpdate_MethodID_32, args: &__args, locals: &__locals )
-    }
-
-    open func insertUpdate( _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        insertUpdate( e: _e, a: _a, f: _f )
-    }
 
     /// public void javax.swing.text.View.removeUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
 
-    private static var removeUpdate_MethodID_33: jmethodID?
+    private static var removeUpdate_MethodID_40: jmethodID?
 
     open func removeUpdate( e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         __args[1] = JNIType.toJava( value: a, locals: &__locals )
         __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.removeUpdate_MethodID_33, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.removeUpdate_MethodID_40, args: &__args, locals: &__locals )
     }
 
     open func removeUpdate( _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
         removeUpdate( e: _e, a: _a, f: _f )
     }
 
-    /// public void javax.swing.text.View.changedUpdate(javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
+    /// public void javax.swing.text.View.replace(int,int,javax.swing.text.View[])
 
-    private static var changedUpdate_MethodID_34: jmethodID?
+    private static var replace_MethodID_41: jmethodID?
 
-    open func changedUpdate( e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
+    open func replace( offset: Int, length: Int, views: [View]? ) {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: views, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/View;)V", methodCache: &View.replace_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open func replace( _ _offset: Int, _ _length: Int, _ _views: [View]? ) {
+        replace( offset: _offset, length: _length, views: _views )
+    }
+
+    /// public void javax.swing.text.View.setParent(javax.swing.text.View)
+
+    private static var setParent_MethodID_42: jmethodID?
+
+    open func setParent( parent: View? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "changedUpdate", methodSig: "(Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.changedUpdate_MethodID_34, args: &__args, locals: &__locals )
-    }
-
-    open func changedUpdate( _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        changedUpdate( e: _e, a: _a, f: _f )
-    }
-
-    /// public javax.swing.text.Element javax.swing.text.View.getElement()
-
-    private static var getElement_MethodID_35: jmethodID?
-
-    open func getElement() -> Element! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getElement", methodSig: "()Ljavax/swing/text/Element;", methodCache: &View.getElement_MethodID_35, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ElementForward( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setParent", methodSig: "(Ljavax/swing/text/View;)V", methodCache: &View.setParent_MethodID_42, args: &__args, locals: &__locals )
     }
 
-
-    /// public int javax.swing.text.View.getEndOffset()
-
-    private static var getEndOffset_MethodID_36: jmethodID?
-
-    open func getEndOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &View.getEndOffset_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+    open func setParent( _ _parent: View? ) {
+        setParent( parent: _parent )
     }
 
+    /// public void javax.swing.text.View.setSize(float,float)
 
-    /// public int javax.swing.text.View.getStartOffset()
+    private static var setSize_MethodID_43: jmethodID?
 
-    private static var getStartOffset_MethodID_37: jmethodID?
-
-    open func getStartOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setSize( width: Float, height: Float ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &View.getStartOffset_MethodID_37, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( f: width )
+        __args[1] = jvalue( f: height )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSize", methodSig: "(FF)V", methodCache: &View.setSize_MethodID_43, args: &__args, locals: &__locals )
     }
 
+    open func setSize( _ _width: Float, _ _height: Float ) {
+        setSize( width: _width, height: _height )
+    }
+
+    /// void javax.swing.text.View.updateAfterChange()
+
+    // Skipping method: true false false false false 
 
     /// protected boolean javax.swing.text.View.updateChildren(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,javax.swing.text.ViewFactory)
 
-    private static var updateChildren_MethodID_38: jmethodID?
+    private static var updateChildren_MethodID_44: jmethodID?
 
     open func updateChildren( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, f: ViewFactory? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: ec, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
         __args[2] = JNIType.toJava( value: f, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateChildren", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljavax/swing/text/ViewFactory;)Z", methodCache: &View.updateChildren_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "updateChildren", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljavax/swing/text/ViewFactory;)Z", methodCache: &View.updateChildren_MethodID_44, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func updateChildren( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _f: ViewFactory? ) -> Bool {
         return updateChildren( ec: _ec, e: _e, f: _f )
     }
 
-    /// public abstract float javax.swing.text.View.getPreferredSpan(int)
+    /// protected void javax.swing.text.View.updateLayout(javax.swing.event.DocumentEvent$ElementChange,javax.swing.event.DocumentEvent,java.awt.Shape)
 
-    private static var getPreferredSpan_MethodID_39: jmethodID?
+    private static var updateLayout_MethodID_45: jmethodID?
 
-    open func getPreferredSpan( axis: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func updateLayout( ec: DocumentEvent_ElementChange?, e: DocumentEvent?, a: java_awt.Shape? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: axis, locals: &__locals )
-        let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "getPreferredSpan", methodSig: "(I)F", methodCache: &View.getPreferredSpan_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
-    }
-
-    open func getPreferredSpan( _ _axis: Int ) -> Float {
-        return getPreferredSpan( axis: _axis )
-    }
-
-    /// protected void javax.swing.text.View.forwardUpdateToView(javax.swing.text.View,javax.swing.event.DocumentEvent,java.awt.Shape,javax.swing.text.ViewFactory)
-
-    private static var forwardUpdateToView_MethodID_40: jmethodID?
-
-    open func forwardUpdateToView( v: View?, e: DocumentEvent?, a: java_awt.Shape?, f: ViewFactory? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: v, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: ec, locals: &__locals )
         __args[1] = JNIType.toJava( value: e, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: f, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "forwardUpdateToView", methodSig: "(Ljavax/swing/text/View;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;Ljavax/swing/text/ViewFactory;)V", methodCache: &View.forwardUpdateToView_MethodID_40, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "updateLayout", methodSig: "(Ljavax/swing/event/DocumentEvent$ElementChange;Ljavax/swing/event/DocumentEvent;Ljava/awt/Shape;)V", methodCache: &View.updateLayout_MethodID_45, args: &__args, locals: &__locals )
     }
 
-    open func forwardUpdateToView( _ _v: View?, _ _e: DocumentEvent?, _ _a: java_awt.Shape?, _ _f: ViewFactory? ) {
-        forwardUpdateToView( v: _v, e: _e, a: _a, f: _f )
+    open func updateLayout( _ _ec: DocumentEvent_ElementChange?, _ _e: DocumentEvent?, _ _a: java_awt.Shape? ) {
+        updateLayout( ec: _ec, e: _e, a: _a )
     }
 
-    /// public int javax.swing.text.View.getViewCount()
+    /// public int javax.swing.text.View.viewToModel(float,float,java.awt.Shape)
 
-    private static var getViewCount_MethodID_41: jmethodID?
+    private static var viewToModel_MethodID_46: jmethodID?
 
-    open func getViewCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func viewToModel( x: Float, y: Float, a: java_awt.Shape? ) -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewCount", methodSig: "()I", methodCache: &View.getViewCount_MethodID_41, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public javax.swing.text.View javax.swing.text.View.getView(int)
-
-    private static var getView_MethodID_42: jmethodID?
-
-    open func getView( n: Int ) -> View! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: n, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getView", methodSig: "(I)Ljavax/swing/text/View;", methodCache: &View.getView_MethodID_42, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? View( javaObject: __return ) : nil
-    }
-
-    open func getView( _ _n: Int ) -> View! {
-        return getView( n: _n )
-    }
-
-    /// public java.awt.Shape javax.swing.text.View.getChildAllocation(int,java.awt.Shape)
-
-    private static var getChildAllocation_MethodID_43: jmethodID?
-
-    open func getChildAllocation( index: Int, a: java_awt.Shape? ) -> java_awt.Shape! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        __args[1] = JNIType.toJava( value: a, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChildAllocation", methodSig: "(ILjava/awt/Shape;)Ljava/awt/Shape;", methodCache: &View.getChildAllocation_MethodID_43, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.ShapeForward( javaObject: __return ) : nil
-    }
-
-    open func getChildAllocation( _ _index: Int, _ _a: java_awt.Shape? ) -> java_awt.Shape! {
-        return getChildAllocation( index: _index, a: _a )
-    }
-
-    /// public int javax.swing.text.View.getNextVisualPositionFrom(int,javax.swing.text.Position$Bias,java.awt.Shape,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    private static var getNextVisualPositionFrom_MethodID_44: jmethodID?
-
-    open func getNextVisualPositionFrom( pos: Int, b: Position_Bias?, a: java_awt.Shape?, direction: Int, biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        __args[2] = JNIType.toJava( value: a, locals: &__locals )
-        __args[3] = JNIType.toJava( value: direction, locals: &__locals )
-        __args[4] = JNIType.toJava( value: biasRet, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getNextVisualPositionFrom", methodSig: "(ILjavax/swing/text/Position$Bias;Ljava/awt/Shape;I[Ljavax/swing/text/Position$Bias;)I", methodCache: &View.getNextVisualPositionFrom_MethodID_44, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw BadLocationException( javaObject: throwable )
-        }
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getNextVisualPositionFrom( _ _pos: Int, _ _b: Position_Bias?, _ _a: java_awt.Shape?, _ _direction: Int, _ _biasRet: [Position_Bias]? ) throws /* javax.swing.text.BadLocationException */ -> Int {
-        return try getNextVisualPositionFrom( pos: _pos, b: _b, a: _a, direction: _direction, biasRet: _biasRet )
-    }
-
-    /// public int javax.swing.text.View.getViewIndex(int,javax.swing.text.Position$Bias)
-
-    private static var getViewIndex_MethodID_45: jmethodID?
-
-    open func getViewIndex( pos: Int, b: Position_Bias? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        __args[1] = JNIType.toJava( value: b, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndex", methodSig: "(ILjavax/swing/text/Position$Bias;)I", methodCache: &View.getViewIndex_MethodID_45, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func getViewIndex( _ _pos: Int, _ _b: Position_Bias? ) -> Int {
-        return getViewIndex( pos: _pos, b: _b )
-    }
-
-    /// public int javax.swing.text.View.getViewIndex(float,float,java.awt.Shape)
-
-    private static var getViewIndex_MethodID_46: jmethodID?
-
-    open func getViewIndex( x: Float, y: Float, allocation: java_awt.Shape? ) -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;)I", methodCache: &View.viewToModel_MethodID_46, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func viewToModel( _ _x: Float, _ _y: Float, _ _a: java_awt.Shape? ) -> Int {
+        return viewToModel( x: _x, y: _y, a: _a )
+    }
+
+    /// public abstract int javax.swing.text.View.viewToModel(float,float,java.awt.Shape,javax.swing.text.Position$Bias[])
+
+    private static var viewToModel_MethodID_47: jmethodID?
+
+    open func viewToModel( x: Float, y: Float, a: java_awt.Shape?, biasReturn: [Position_Bias]? ) -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: y, locals: &__locals )
-        __args[2] = JNIType.toJava( value: allocation, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewIndex", methodSig: "(FFLjava/awt/Shape;)I", methodCache: &View.getViewIndex_MethodID_46, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( f: y )
+        __args[2] = JNIType.toJava( value: a, locals: &__locals )
+        __args[3] = JNIType.toJava( value: biasReturn, locals: &__locals )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "viewToModel", methodSig: "(FFLjava/awt/Shape;[Ljavax/swing/text/Position$Bias;)I", methodCache: &View.viewToModel_MethodID_47, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open func getViewIndex( _ _x: Float, _ _y: Float, _ _allocation: java_awt.Shape? ) -> Int {
-        return getViewIndex( x: _x, y: _y, allocation: _allocation )
+    open func viewToModel( _ _x: Float, _ _y: Float, _ _a: java_awt.Shape?, _ _biasReturn: [Position_Bias]? ) -> Int {
+        return viewToModel( x: _x, y: _y, a: _a, biasReturn: _biasReturn )
     }
-
-    /// public javax.swing.text.ViewFactory javax.swing.text.View.getViewFactory()
-
-    private static var getViewFactory_MethodID_47: jmethodID?
-
-    open func getViewFactory() -> ViewFactory! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getViewFactory", methodSig: "()Ljavax/swing/text/ViewFactory;", methodCache: &View.getViewFactory_MethodID_47, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ViewFactoryForward( javaObject: __return ) : nil
-    }
-
 
 }
 

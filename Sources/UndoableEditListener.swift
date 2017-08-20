@@ -24,8 +24,8 @@ open class UndoableEditListenerForward: java_util.EventListenerForward, Undoable
     private static var undoableEditHappened_MethodID_2: jmethodID?
 
     open func undoableEditHappened( e: UndoableEditEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "undoableEditHappened", methodSig: "(Ljavax/swing/event/UndoableEditEvent;)V", methodCache: &UndoableEditListenerForward.undoableEditHappened_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class UndoableEditListenerForward: java_util.EventListenerForward, Undoable
 
 }
 
-
 private typealias UndoableEditListener_undoableEditHappened_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func UndoableEditListener_undoableEditHappened_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     UndoableEditListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).undoableEditHappened( e: e != nil ? UndoableEditEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class UndoableEditListenerLocal_: JNILocalProxy<UndoableEditListener, Any> {
@@ -89,8 +86,5 @@ open class UndoableEditListenerBase: UndoableEditListener {
     open func undoableEditHappened( e: UndoableEditEvent? ) /**/ {
     }
 
-    open func undoableEditHappened( _ _e: UndoableEditEvent? ) /**/ {
-        undoableEditHappened( e: _e )
-    }
 
 }

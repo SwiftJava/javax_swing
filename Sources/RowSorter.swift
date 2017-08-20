@@ -24,268 +24,270 @@ open class RowSorter: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/RowSorter", classCache: &RowSorter.RowSorterJNIClass, methodSig: "()V", methodCache: &RowSorter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract java.lang.Object javax.swing.RowSorter.getModel()
-
-    private static var getModel_MethodID_2: jmethodID?
-
-    open func getModel() -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljava/lang/Object;", methodCache: &RowSorter.getModel_MethodID_2, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract int javax.swing.RowSorter.convertRowIndexToView(int)
-
-    private static var convertRowIndexToView_MethodID_3: jmethodID?
-
-    open func convertRowIndexToView( index: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertRowIndexToView", methodSig: "(I)I", methodCache: &RowSorter.convertRowIndexToView_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func convertRowIndexToView( _ _index: Int ) -> Int {
-        return convertRowIndexToView( index: _index )
-    }
-
-    /// public abstract int javax.swing.RowSorter.convertRowIndexToModel(int)
-
-    private static var convertRowIndexToModel_MethodID_4: jmethodID?
-
-    open func convertRowIndexToModel( index: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertRowIndexToModel", methodSig: "(I)I", methodCache: &RowSorter.convertRowIndexToModel_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func convertRowIndexToModel( _ _index: Int ) -> Int {
-        return convertRowIndexToModel( index: _index )
-    }
-
-    /// public abstract int javax.swing.RowSorter.getViewRowCount()
-
-    private static var getViewRowCount_MethodID_5: jmethodID?
-
-    open func getViewRowCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewRowCount", methodSig: "()I", methodCache: &RowSorter.getViewRowCount_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public abstract void javax.swing.RowSorter.allRowsChanged()
-
-    private static var allRowsChanged_MethodID_6: jmethodID?
-
-    open func allRowsChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "allRowsChanged", methodSig: "()V", methodCache: &RowSorter.allRowsChanged_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void javax.swing.RowSorter.rowsUpdated(int,int,int)
-
-    private static var rowsUpdated_MethodID_7: jmethodID?
-
-    open func rowsUpdated( firstRow: Int, endRow: Int, column: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endRow, locals: &__locals )
-        __args[2] = JNIType.toJava( value: column, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsUpdated", methodSig: "(III)V", methodCache: &RowSorter.rowsUpdated_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-    open func rowsUpdated( _ _firstRow: Int, _ _endRow: Int, _ _column: Int ) {
-        rowsUpdated( firstRow: _firstRow, endRow: _endRow, column: _column )
-    }
-
-    /// public abstract void javax.swing.RowSorter.rowsUpdated(int,int)
-
-    private static var rowsUpdated_MethodID_8: jmethodID?
-
-    open func rowsUpdated( firstRow: Int, endRow: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsUpdated", methodSig: "(II)V", methodCache: &RowSorter.rowsUpdated_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func rowsUpdated( _ _firstRow: Int, _ _endRow: Int ) {
-        rowsUpdated( firstRow: _firstRow, endRow: _endRow )
-    }
-
-    /// public abstract void javax.swing.RowSorter.rowsInserted(int,int)
-
-    private static var rowsInserted_MethodID_9: jmethodID?
-
-    open func rowsInserted( firstRow: Int, endRow: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsInserted", methodSig: "(II)V", methodCache: &RowSorter.rowsInserted_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func rowsInserted( _ _firstRow: Int, _ _endRow: Int ) {
-        rowsInserted( firstRow: _firstRow, endRow: _endRow )
-    }
-
-    /// public abstract void javax.swing.RowSorter.rowsDeleted(int,int)
-
-    private static var rowsDeleted_MethodID_10: jmethodID?
-
-    open func rowsDeleted( firstRow: Int, endRow: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: firstRow, locals: &__locals )
-        __args[1] = JNIType.toJava( value: endRow, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsDeleted", methodSig: "(II)V", methodCache: &RowSorter.rowsDeleted_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func rowsDeleted( _ _firstRow: Int, _ _endRow: Int ) {
-        rowsDeleted( firstRow: _firstRow, endRow: _endRow )
-    }
-
-    /// public abstract void javax.swing.RowSorter.modelStructureChanged()
-
-    private static var modelStructureChanged_MethodID_11: jmethodID?
-
-    open func modelStructureChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "modelStructureChanged", methodSig: "()V", methodCache: &RowSorter.modelStructureChanged_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-
-    /// public abstract void javax.swing.RowSorter.setSortKeys(java.util.List)
-
-    private static var setSortKeys_MethodID_12: jmethodID?
-
-    open func setSortKeys( keys: java_util.List? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: keys, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSortKeys", methodSig: "(Ljava/util/List;)V", methodCache: &RowSorter.setSortKeys_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setSortKeys( _ _keys: java_util.List? ) {
-        setSortKeys( keys: _keys )
-    }
-
-    /// public abstract java.util.List javax.swing.RowSorter.getSortKeys()
-
-    private static var getSortKeys_MethodID_13: jmethodID?
-
-    open func getSortKeys() -> java_util.List! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSortKeys", methodSig: "()Ljava/util/List;", methodCache: &RowSorter.getSortKeys_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
-    }
-
-
-    /// public abstract void javax.swing.RowSorter.toggleSortOrder(int)
-
-    private static var toggleSortOrder_MethodID_14: jmethodID?
-
-    open func toggleSortOrder( column: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: column, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toggleSortOrder", methodSig: "(I)V", methodCache: &RowSorter.toggleSortOrder_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func toggleSortOrder( _ _column: Int ) {
-        toggleSortOrder( column: _column )
-    }
-
-    /// public abstract int javax.swing.RowSorter.getModelRowCount()
-
-    private static var getModelRowCount_MethodID_15: jmethodID?
-
-    open func getModelRowCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModelRowCount", methodSig: "()I", methodCache: &RowSorter.getModelRowCount_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// protected void javax.swing.RowSorter.fireSortOrderChanged()
-
-    private static var fireSortOrderChanged_MethodID_16: jmethodID?
-
-    open func fireSortOrderChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireSortOrderChanged", methodSig: "()V", methodCache: &RowSorter.fireSortOrderChanged_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.RowSorter.fireRowSorterChanged(int[])
-
-    private static var fireRowSorterChanged_MethodID_17: jmethodID?
-
-    open func fireRowSorterChanged( lastRowIndexToModel: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: lastRowIndexToModel, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireRowSorterChanged", methodSig: "([I)V", methodCache: &RowSorter.fireRowSorterChanged_MethodID_17, args: &__args, locals: &__locals )
-    }
-
-    open func fireRowSorterChanged( _ _lastRowIndexToModel: [Int32]? ) {
-        fireRowSorterChanged( lastRowIndexToModel: _lastRowIndexToModel )
-    }
-
-    /// void javax.swing.RowSorter.fireRowSorterChanged(javax.swing.event.RowSorterEvent)
-
     /// public void javax.swing.RowSorter.addRowSorterListener(javax.swing.event.RowSorterListener)
 
-    private static var addRowSorterListener_MethodID_18: jmethodID?
+    private static var addRowSorterListener_MethodID_2: jmethodID?
 
     open func addRowSorterListener( l: RowSorterListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRowSorterListener", methodSig: "(Ljavax/swing/event/RowSorterListener;)V", methodCache: &RowSorter.addRowSorterListener_MethodID_18, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addRowSorterListener", methodSig: "(Ljavax/swing/event/RowSorterListener;)V", methodCache: &RowSorter.addRowSorterListener_MethodID_2, args: &__args, locals: &__locals )
     }
 
     open func addRowSorterListener( _ _l: RowSorterListener? ) {
         addRowSorterListener( l: _l )
     }
 
+    /// public abstract void javax.swing.RowSorter.allRowsChanged()
+
+    private static var allRowsChanged_MethodID_3: jmethodID?
+
+    open func allRowsChanged() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "allRowsChanged", methodSig: "()V", methodCache: &RowSorter.allRowsChanged_MethodID_3, args: &__args, locals: &__locals )
+    }
+
+
+    /// public abstract int javax.swing.RowSorter.convertRowIndexToModel(int)
+
+    private static var convertRowIndexToModel_MethodID_4: jmethodID?
+
+    open func convertRowIndexToModel( index: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertRowIndexToModel", methodSig: "(I)I", methodCache: &RowSorter.convertRowIndexToModel_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func convertRowIndexToModel( _ _index: Int ) -> Int {
+        return convertRowIndexToModel( index: _index )
+    }
+
+    /// public abstract int javax.swing.RowSorter.convertRowIndexToView(int)
+
+    private static var convertRowIndexToView_MethodID_5: jmethodID?
+
+    open func convertRowIndexToView( index: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertRowIndexToView", methodSig: "(I)I", methodCache: &RowSorter.convertRowIndexToView_MethodID_5, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func convertRowIndexToView( _ _index: Int ) -> Int {
+        return convertRowIndexToView( index: _index )
+    }
+
+    /// void javax.swing.RowSorter.fireRowSorterChanged(javax.swing.event.RowSorterEvent)
+
+    // Skipping method: true false false false false 
+
+    /// protected void javax.swing.RowSorter.fireRowSorterChanged(int[])
+
+    private static var fireRowSorterChanged_MethodID_6: jmethodID?
+
+    open func fireRowSorterChanged( lastRowIndexToModel: [Int32]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: lastRowIndexToModel, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireRowSorterChanged", methodSig: "([I)V", methodCache: &RowSorter.fireRowSorterChanged_MethodID_6, args: &__args, locals: &__locals )
+    }
+
+    open func fireRowSorterChanged( _ _lastRowIndexToModel: [Int32]? ) {
+        fireRowSorterChanged( lastRowIndexToModel: _lastRowIndexToModel )
+    }
+
+    /// protected void javax.swing.RowSorter.fireSortOrderChanged()
+
+    private static var fireSortOrderChanged_MethodID_7: jmethodID?
+
+    open func fireSortOrderChanged() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireSortOrderChanged", methodSig: "()V", methodCache: &RowSorter.fireSortOrderChanged_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+
+    /// public abstract java.lang.Object javax.swing.RowSorter.getModel()
+
+    private static var getModel_MethodID_8: jmethodID?
+
+    open func getModel() -> java_swift.JavaObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getModel", methodSig: "()Ljava/lang/Object;", methodCache: &RowSorter.getModel_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract int javax.swing.RowSorter.getModelRowCount()
+
+    private static var getModelRowCount_MethodID_9: jmethodID?
+
+    open func getModelRowCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getModelRowCount", methodSig: "()I", methodCache: &RowSorter.getModelRowCount_MethodID_9, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract java.util.List javax.swing.RowSorter.getSortKeys()
+
+    private static var getSortKeys_MethodID_10: jmethodID?
+
+    open func getSortKeys() -> java_util.List! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getSortKeys", methodSig: "()Ljava/util/List;", methodCache: &RowSorter.getSortKeys_MethodID_10, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.ListForward( javaObject: __return ) : nil
+    }
+
+
+    /// public abstract int javax.swing.RowSorter.getViewRowCount()
+
+    private static var getViewRowCount_MethodID_11: jmethodID?
+
+    open func getViewRowCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getViewRowCount", methodSig: "()I", methodCache: &RowSorter.getViewRowCount_MethodID_11, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public abstract void javax.swing.RowSorter.modelStructureChanged()
+
+    private static var modelStructureChanged_MethodID_12: jmethodID?
+
+    open func modelStructureChanged() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "modelStructureChanged", methodSig: "()V", methodCache: &RowSorter.modelStructureChanged_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+
     /// public void javax.swing.RowSorter.removeRowSorterListener(javax.swing.event.RowSorterListener)
 
-    private static var removeRowSorterListener_MethodID_19: jmethodID?
+    private static var removeRowSorterListener_MethodID_13: jmethodID?
 
     open func removeRowSorterListener( l: RowSorterListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeRowSorterListener", methodSig: "(Ljavax/swing/event/RowSorterListener;)V", methodCache: &RowSorter.removeRowSorterListener_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeRowSorterListener", methodSig: "(Ljavax/swing/event/RowSorterListener;)V", methodCache: &RowSorter.removeRowSorterListener_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func removeRowSorterListener( _ _l: RowSorterListener? ) {
         removeRowSorterListener( l: _l )
+    }
+
+    /// public abstract void javax.swing.RowSorter.rowsDeleted(int,int)
+
+    private static var rowsDeleted_MethodID_14: jmethodID?
+
+    open func rowsDeleted( firstRow: Int, endRow: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(firstRow) )
+        __args[1] = jvalue( i: jint(endRow) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsDeleted", methodSig: "(II)V", methodCache: &RowSorter.rowsDeleted_MethodID_14, args: &__args, locals: &__locals )
+    }
+
+    open func rowsDeleted( _ _firstRow: Int, _ _endRow: Int ) {
+        rowsDeleted( firstRow: _firstRow, endRow: _endRow )
+    }
+
+    /// public abstract void javax.swing.RowSorter.rowsInserted(int,int)
+
+    private static var rowsInserted_MethodID_15: jmethodID?
+
+    open func rowsInserted( firstRow: Int, endRow: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(firstRow) )
+        __args[1] = jvalue( i: jint(endRow) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsInserted", methodSig: "(II)V", methodCache: &RowSorter.rowsInserted_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func rowsInserted( _ _firstRow: Int, _ _endRow: Int ) {
+        rowsInserted( firstRow: _firstRow, endRow: _endRow )
+    }
+
+    /// public abstract void javax.swing.RowSorter.rowsUpdated(int,int)
+
+    private static var rowsUpdated_MethodID_16: jmethodID?
+
+    open func rowsUpdated( firstRow: Int, endRow: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(firstRow) )
+        __args[1] = jvalue( i: jint(endRow) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsUpdated", methodSig: "(II)V", methodCache: &RowSorter.rowsUpdated_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func rowsUpdated( _ _firstRow: Int, _ _endRow: Int ) {
+        rowsUpdated( firstRow: _firstRow, endRow: _endRow )
+    }
+
+    /// public abstract void javax.swing.RowSorter.rowsUpdated(int,int,int)
+
+    private static var rowsUpdated_MethodID_17: jmethodID?
+
+    open func rowsUpdated( firstRow: Int, endRow: Int, column: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(firstRow) )
+        __args[1] = jvalue( i: jint(endRow) )
+        __args[2] = jvalue( i: jint(column) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rowsUpdated", methodSig: "(III)V", methodCache: &RowSorter.rowsUpdated_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func rowsUpdated( _ _firstRow: Int, _ _endRow: Int, _ _column: Int ) {
+        rowsUpdated( firstRow: _firstRow, endRow: _endRow, column: _column )
+    }
+
+    /// public abstract void javax.swing.RowSorter.setSortKeys(java.util.List)
+
+    private static var setSortKeys_MethodID_18: jmethodID?
+
+    open func setSortKeys( keys: java_util.List? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: keys, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSortKeys", methodSig: "(Ljava/util/List;)V", methodCache: &RowSorter.setSortKeys_MethodID_18, args: &__args, locals: &__locals )
+    }
+
+    open func setSortKeys( _ _keys: java_util.List? ) {
+        setSortKeys( keys: _keys )
+    }
+
+    /// public abstract void javax.swing.RowSorter.toggleSortOrder(int)
+
+    private static var toggleSortOrder_MethodID_19: jmethodID?
+
+    open func toggleSortOrder( column: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(column) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "toggleSortOrder", methodSig: "(I)V", methodCache: &RowSorter.toggleSortOrder_MethodID_19, args: &__args, locals: &__locals )
+    }
+
+    open func toggleSortOrder( _ _column: Int ) {
+        toggleSortOrder( column: _column )
     }
 
 }

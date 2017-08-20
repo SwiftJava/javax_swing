@@ -6,7 +6,7 @@ import java_util
 
 /// class javax.swing.text.StyleContext$NamedStyle ///
 
-open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Serializable */ UnclassedProtocol {
+open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -17,22 +17,7 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
 
     private static var StyleContext_NamedStyleJNIClass: jclass?
 
-    /// protected javax.swing.event.EventListenerList javax.swing.text.StyleContext$NamedStyle.listenerList
-
-    private static var listenerList_FieldID: jfieldID?
-
-    open var listenerList: EventListenerList! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &StyleContext_NamedStyle.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &StyleContext_NamedStyle.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private transient javax.swing.text.AttributeSet javax.swing.text.StyleContext$NamedStyle.attributes
 
     /// protected transient javax.swing.event.ChangeEvent javax.swing.text.StyleContext$NamedStyle.changeEvent
 
@@ -40,8 +25,8 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
 
     open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &StyleContext_NamedStyle.changeEvent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &StyleContext_NamedStyle.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,9 +36,26 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
         }
     }
 
-    /// private transient javax.swing.text.AttributeSet javax.swing.text.StyleContext$NamedStyle.attributes
+    /// protected javax.swing.event.EventListenerList javax.swing.text.StyleContext$NamedStyle.listenerList
+
+    private static var listenerList_FieldID: jfieldID?
+
+    open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &StyleContext_NamedStyle.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &StyleContext_NamedStyle.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
 
     /// final javax.swing.text.StyleContext javax.swing.text.StyleContext$NamedStyle.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.Object javax.swing.text.AttributeSet.NameAttribute
 
@@ -62,6 +64,7 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
     open static var NameAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NameAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &NameAttribute_FieldID, className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyleJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
@@ -73,6 +76,7 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
     open static var ResolveAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ResolveAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ResolveAttribute_FieldID, className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyleJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
     }
@@ -82,8 +86,8 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: StyleContext? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyle.StyleContext_NamedStyleJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;)V", methodCache: &StyleContext_NamedStyle.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -94,35 +98,17 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
         self.init( this_0: _this_0 )
     }
 
-    /// public javax.swing.text.StyleContext$NamedStyle(javax.swing.text.StyleContext,javax.swing.text.Style)
+    /// public javax.swing.text.StyleContext$NamedStyle(javax.swing.text.StyleContext,java.lang.String,javax.swing.text.Style)
 
     private static var new_MethodID_2: jmethodID?
 
-    public convenience init( this_0: StyleContext?, parent: Style? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: parent, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyle.StyleContext_NamedStyleJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;Ljavax/swing/text/Style;)V", methodCache: &StyleContext_NamedStyle.new_MethodID_2, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _this_0: StyleContext?, _ _parent: Style? ) {
-        self.init( this_0: _this_0, parent: _parent )
-    }
-
-    /// public javax.swing.text.StyleContext$NamedStyle(javax.swing.text.StyleContext,java.lang.String,javax.swing.text.Style)
-
-    private static var new_MethodID_3: jmethodID?
-
     public convenience init( this_0: StyleContext?, name: String?, parent: Style? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: name, locals: &__locals )
         __args[2] = JNIType.toJava( value: parent, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyle.StyleContext_NamedStyleJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;Ljava/lang/String;Ljavax/swing/text/Style;)V", methodCache: &StyleContext_NamedStyle.new_MethodID_3, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyle.StyleContext_NamedStyleJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;Ljava/lang/String;Ljavax/swing/text/Style;)V", methodCache: &StyleContext_NamedStyle.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -131,185 +117,81 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
         self.init( this_0: _this_0, name: _name, parent: _parent )
     }
 
-    /// public java.lang.String javax.swing.text.StyleContext$NamedStyle.toString()
+    /// public javax.swing.text.StyleContext$NamedStyle(javax.swing.text.StyleContext,javax.swing.text.Style)
 
-    /// public java.lang.String javax.swing.text.StyleContext$NamedStyle.getName()
+    private static var new_MethodID_3: jmethodID?
 
-    private static var getName_MethodID_4: jmethodID?
-
-    open func getName() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( this_0: StyleContext?, parent: Style? ) {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "()Ljava/lang/String;", methodCache: &StyleContext_NamedStyle.getName_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: parent, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/text/StyleContext$NamedStyle", classCache: &StyleContext_NamedStyle.StyleContext_NamedStyleJNIClass, methodSig: "(Ljavax/swing/text/StyleContext;Ljavax/swing/text/Style;)V", methodCache: &StyleContext_NamedStyle.new_MethodID_3, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
     }
 
+    public convenience init( _ _this_0: StyleContext?, _ _parent: Style? ) {
+        self.init( this_0: _this_0, parent: _parent )
+    }
 
-    /// private void javax.swing.text.StyleContext$NamedStyle.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+    /// public void javax.swing.text.StyleContext$NamedStyle.addAttribute(java.lang.Object,java.lang.Object)
 
-    /// private void javax.swing.text.StyleContext$NamedStyle.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+    private static var addAttribute_MethodID_4: jmethodID?
 
-    /// public void javax.swing.text.StyleContext$NamedStyle.setName(java.lang.String)
-
-    private static var setName_MethodID_5: jmethodID?
-
-    open func setName( name: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setName", methodSig: "(Ljava/lang/String;)V", methodCache: &StyleContext_NamedStyle.setName_MethodID_5, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &StyleContext_NamedStyle.addAttribute_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func setName( _ _name: String? ) {
-        setName( name: _name )
+    open func addAttribute( _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
+        addAttribute( name: _name, value: _value )
     }
 
-    /// public boolean javax.swing.text.StyleContext$NamedStyle.isDefined(java.lang.Object)
+    /// public void javax.swing.text.StyleContext$NamedStyle.addAttributes(javax.swing.text.AttributeSet)
 
-    private static var isDefined_MethodID_6: jmethodID?
+    private static var addAttributes_MethodID_5: jmethodID?
 
-    open func isDefined( attrName: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addAttributes( attributes: AttributeSet? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attrName, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDefined", methodSig: "(Ljava/lang/Object;)Z", methodCache: &StyleContext_NamedStyle.isDefined_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_NamedStyle.addAttributes_MethodID_5, args: &__args, locals: &__locals )
     }
 
-    open func isDefined( _ _attrName: java_swift.JavaObject? ) -> Bool {
-        return isDefined( attrName: _attrName )
+    open func addAttributes( _ _attributes: AttributeSet? ) {
+        addAttributes( attributes: _attributes )
     }
 
     /// public void javax.swing.text.StyleContext$NamedStyle.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_7: jmethodID?
+    private static var addChangeListener_MethodID_6: jmethodID?
 
     open func addChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &StyleContext_NamedStyle.addChangeListener_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &StyleContext_NamedStyle.addChangeListener_MethodID_6, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _l: ChangeListener? ) {
         addChangeListener( l: _l )
     }
 
-    /// public void javax.swing.text.StyleContext$NamedStyle.removeChangeListener(javax.swing.event.ChangeListener)
-
-    private static var removeChangeListener_MethodID_8: jmethodID?
-
-    open func removeChangeListener( l: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: l, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &StyleContext_NamedStyle.removeChangeListener_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _l: ChangeListener? ) {
-        removeChangeListener( l: _l )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.text.StyleContext$NamedStyle.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_9: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &StyleContext_NamedStyle.getChangeListeners_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
-    }
-
-
-    /// protected void javax.swing.text.StyleContext$NamedStyle.fireStateChanged()
-
-    private static var fireStateChanged_MethodID_10: jmethodID?
-
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &StyleContext_NamedStyle.fireStateChanged_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-
-    /// public javax.swing.text.AttributeSet javax.swing.text.StyleContext$NamedStyle.getResolveParent()
-
-    private static var getResolveParent_MethodID_11: jmethodID?
-
-    open func getResolveParent() -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResolveParent", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_NamedStyle.getResolveParent_MethodID_11, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.StyleContext$NamedStyle.setResolveParent(javax.swing.text.AttributeSet)
-
-    private static var setResolveParent_MethodID_12: jmethodID?
-
-    open func setResolveParent( parent: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResolveParent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_NamedStyle.setResolveParent_MethodID_12, args: &__args, locals: &__locals )
-    }
-
-    open func setResolveParent( _ _parent: AttributeSet? ) {
-        setResolveParent( parent: _parent )
-    }
-
-    /// public int javax.swing.text.StyleContext$NamedStyle.getAttributeCount()
-
-    private static var getAttributeCount_MethodID_13: jmethodID?
-
-    open func getAttributeCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAttributeCount", methodSig: "()I", methodCache: &StyleContext_NamedStyle.getAttributeCount_MethodID_13, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public javax.swing.text.AttributeSet javax.swing.text.StyleContext$NamedStyle.copyAttributes()
-
-    private static var copyAttributes_MethodID_14: jmethodID?
-
-    open func copyAttributes() -> AttributeSet! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_NamedStyle.copyAttributes_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
-    }
-
-
-    /// public java.util.Enumeration javax.swing.text.StyleContext$NamedStyle.getAttributeNames()
-
-    private static var getAttributeNames_MethodID_15: jmethodID?
-
-    open func getAttributeNames() -> java_util.Enumeration! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeNames", methodSig: "()Ljava/util/Enumeration;", methodCache: &StyleContext_NamedStyle.getAttributeNames_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
-    }
-
-
     /// public boolean javax.swing.text.StyleContext$NamedStyle.containsAttribute(java.lang.Object,java.lang.Object)
 
-    private static var containsAttribute_MethodID_16: jmethodID?
+    private static var containsAttribute_MethodID_7: jmethodID?
 
     open func containsAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: name, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &StyleContext_NamedStyle.containsAttribute_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)Z", methodCache: &StyleContext_NamedStyle.containsAttribute_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func containsAttribute( _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) -> Bool {
@@ -318,121 +200,53 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
 
     /// public boolean javax.swing.text.StyleContext$NamedStyle.containsAttributes(javax.swing.text.AttributeSet)
 
-    private static var containsAttributes_MethodID_17: jmethodID?
+    private static var containsAttributes_MethodID_8: jmethodID?
 
     open func containsAttributes( attributes: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_NamedStyle.containsAttributes_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "containsAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_NamedStyle.containsAttributes_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func containsAttributes( _ _attributes: AttributeSet? ) -> Bool {
         return containsAttributes( attributes: _attributes )
     }
 
-    /// public void javax.swing.text.StyleContext$NamedStyle.addAttributes(javax.swing.text.AttributeSet)
+    /// public javax.swing.text.AttributeSet javax.swing.text.StyleContext$NamedStyle.copyAttributes()
 
-    private static var addAttributes_MethodID_18: jmethodID?
+    private static var copyAttributes_MethodID_9: jmethodID?
 
-    open func addAttributes( attributes: AttributeSet? ) {
+    open func copyAttributes() -> AttributeSet! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "copyAttributes", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_NamedStyle.copyAttributes_MethodID_9, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
+    }
+
+
+    /// protected void javax.swing.text.StyleContext$NamedStyle.fireStateChanged()
+
+    private static var fireStateChanged_MethodID_10: jmethodID?
+
+    open func fireStateChanged() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_NamedStyle.addAttributes_MethodID_18, args: &__args, locals: &__locals )
-    }
-
-    open func addAttributes( _ _attributes: AttributeSet? ) {
-        addAttributes( attributes: _attributes )
-    }
-
-    /// public void javax.swing.text.StyleContext$NamedStyle.removeAttribute(java.lang.Object)
-
-    private static var removeAttribute_MethodID_19: jmethodID?
-
-    open func removeAttribute( name: java_swift.JavaObject? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljava/lang/Object;)V", methodCache: &StyleContext_NamedStyle.removeAttribute_MethodID_19, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &StyleContext_NamedStyle.fireStateChanged_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open func removeAttribute( _ _name: java_swift.JavaObject? ) {
-        removeAttribute( name: _name )
-    }
-
-    /// public void javax.swing.text.StyleContext$NamedStyle.removeAttributes(javax.swing.text.AttributeSet)
-
-    private static var removeAttributes_MethodID_20: jmethodID?
-
-    open func removeAttributes( attributes: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_NamedStyle.removeAttributes_MethodID_20, args: &__args, locals: &__locals )
-    }
-
-    open func removeAttributes( _ _attributes: AttributeSet? ) {
-        removeAttributes( attributes: _attributes )
-    }
-
-    /// public void javax.swing.text.StyleContext$NamedStyle.removeAttributes(java.util.Enumeration)
-
-    private static var removeAttributes_MethodID_21: jmethodID?
-
-    open func removeAttributes( names: java_util.Enumeration? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: names, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljava/util/Enumeration;)V", methodCache: &StyleContext_NamedStyle.removeAttributes_MethodID_21, args: &__args, locals: &__locals )
-    }
-
-    open func removeAttributes( _ _names: java_util.Enumeration? ) {
-        removeAttributes( names: _names )
-    }
-
-    /// public java.util.EventListener[] javax.swing.text.StyleContext$NamedStyle.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_22: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &StyleContext_NamedStyle.getListeners_MethodID_22, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
-    /// public void javax.swing.text.StyleContext$NamedStyle.addAttribute(java.lang.Object,java.lang.Object)
-
-    private static var addAttribute_MethodID_23: jmethodID?
-
-    open func addAttribute( name: java_swift.JavaObject?, value: java_swift.JavaObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: name, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addAttribute", methodSig: "(Ljava/lang/Object;Ljava/lang/Object;)V", methodCache: &StyleContext_NamedStyle.addAttribute_MethodID_23, args: &__args, locals: &__locals )
-    }
-
-    open func addAttribute( _ _name: java_swift.JavaObject?, _ _value: java_swift.JavaObject? ) {
-        addAttribute( name: _name, value: _value )
-    }
 
     /// public java.lang.Object javax.swing.text.StyleContext$NamedStyle.getAttribute(java.lang.Object)
 
-    private static var getAttribute_MethodID_24: jmethodID?
+    private static var getAttribute_MethodID_11: jmethodID?
 
     open func getAttribute( key: java_swift.JavaObject? ) -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: key, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyleContext_NamedStyle.getAttribute_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttribute", methodSig: "(Ljava/lang/Object;)Ljava/lang/Object;", methodCache: &StyleContext_NamedStyle.getAttribute_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -441,21 +255,214 @@ open class StyleContext_NamedStyle: java_swift.JavaObject, Style, /* java.io.Ser
         return getAttribute( key: _key )
     }
 
+    /// public int javax.swing.text.StyleContext$NamedStyle.getAttributeCount()
+
+    private static var getAttributeCount_MethodID_12: jmethodID?
+
+    open func getAttributeCount() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getAttributeCount", methodSig: "()I", methodCache: &StyleContext_NamedStyle.getAttributeCount_MethodID_12, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.util.Enumeration javax.swing.text.StyleContext$NamedStyle.getAttributeNames()
+
+    private static var getAttributeNames_MethodID_13: jmethodID?
+
+    open func getAttributeNames() -> java_util.Enumeration! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getAttributeNames", methodSig: "()Ljava/util/Enumeration;", methodCache: &StyleContext_NamedStyle.getAttributeNames_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_util.EnumerationForward( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.event.ChangeListener[] javax.swing.text.StyleContext$NamedStyle.getChangeListeners()
+
+    private static var getChangeListeners_MethodID_14: jmethodID?
+
+    open func getChangeListeners() -> [ChangeListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &StyleContext_NamedStyle.getChangeListeners_MethodID_14, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward].self, from: __return )
+    }
+
+
+    /// public java.util.EventListener[] javax.swing.text.StyleContext$NamedStyle.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_15: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &StyleContext_NamedStyle.getListeners_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
+    /// public java.lang.String javax.swing.text.StyleContext$NamedStyle.getName()
+
+    private static var getName_MethodID_16: jmethodID?
+
+    open func getName() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getName", methodSig: "()Ljava/lang/String;", methodCache: &StyleContext_NamedStyle.getName_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.AttributeSet javax.swing.text.StyleContext$NamedStyle.getResolveParent()
+
+    private static var getResolveParent_MethodID_17: jmethodID?
+
+    open func getResolveParent() -> AttributeSet! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getResolveParent", methodSig: "()Ljavax/swing/text/AttributeSet;", methodCache: &StyleContext_NamedStyle.getResolveParent_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? AttributeSetForward( javaObject: __return ) : nil
+    }
+
+
+    /// public boolean javax.swing.text.StyleContext$NamedStyle.isDefined(java.lang.Object)
+
+    private static var isDefined_MethodID_18: jmethodID?
+
+    open func isDefined( attrName: java_swift.JavaObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attrName, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isDefined", methodSig: "(Ljava/lang/Object;)Z", methodCache: &StyleContext_NamedStyle.isDefined_MethodID_18, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open func isDefined( _ _attrName: java_swift.JavaObject? ) -> Bool {
+        return isDefined( attrName: _attrName )
+    }
+
     /// public boolean javax.swing.text.StyleContext$NamedStyle.isEqual(javax.swing.text.AttributeSet)
 
-    private static var isEqual_MethodID_25: jmethodID?
+    private static var isEqual_MethodID_19: jmethodID?
 
     open func isEqual( attr: AttributeSet? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: attr, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_NamedStyle.isEqual_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isEqual", methodSig: "(Ljavax/swing/text/AttributeSet;)Z", methodCache: &StyleContext_NamedStyle.isEqual_MethodID_19, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
     open func isEqual( _ _attr: AttributeSet? ) -> Bool {
         return isEqual( attr: _attr )
     }
+
+    /// private void javax.swing.text.StyleContext$NamedStyle.readObject(java.io.ObjectInputStream) throws java.lang.ClassNotFoundException,java.io.IOException
+
+    /// public void javax.swing.text.StyleContext$NamedStyle.removeAttribute(java.lang.Object)
+
+    private static var removeAttribute_MethodID_20: jmethodID?
+
+    open func removeAttribute( name: java_swift.JavaObject? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttribute", methodSig: "(Ljava/lang/Object;)V", methodCache: &StyleContext_NamedStyle.removeAttribute_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func removeAttribute( _ _name: java_swift.JavaObject? ) {
+        removeAttribute( name: _name )
+    }
+
+    /// public void javax.swing.text.StyleContext$NamedStyle.removeAttributes(javax.swing.text.AttributeSet)
+
+    private static var removeAttributes_MethodID_21: jmethodID?
+
+    open func removeAttributes( attributes: AttributeSet? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: attributes, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_NamedStyle.removeAttributes_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    open func removeAttributes( _ _attributes: AttributeSet? ) {
+        removeAttributes( attributes: _attributes )
+    }
+
+    /// public void javax.swing.text.StyleContext$NamedStyle.removeAttributes(java.util.Enumeration)
+
+    private static var removeAttributes_MethodID_22: jmethodID?
+
+    open func removeAttributes( names: java_util.Enumeration? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: names, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeAttributes", methodSig: "(Ljava/util/Enumeration;)V", methodCache: &StyleContext_NamedStyle.removeAttributes_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func removeAttributes( _ _names: java_util.Enumeration? ) {
+        removeAttributes( names: _names )
+    }
+
+    /// public void javax.swing.text.StyleContext$NamedStyle.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_23: jmethodID?
+
+    open func removeChangeListener( l: ChangeListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: l, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &StyleContext_NamedStyle.removeChangeListener_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _l: ChangeListener? ) {
+        removeChangeListener( l: _l )
+    }
+
+    /// public void javax.swing.text.StyleContext$NamedStyle.setName(java.lang.String)
+
+    private static var setName_MethodID_24: jmethodID?
+
+    open func setName( name: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: name, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setName", methodSig: "(Ljava/lang/String;)V", methodCache: &StyleContext_NamedStyle.setName_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setName( _ _name: String? ) {
+        setName( name: _name )
+    }
+
+    /// public void javax.swing.text.StyleContext$NamedStyle.setResolveParent(javax.swing.text.AttributeSet)
+
+    private static var setResolveParent_MethodID_25: jmethodID?
+
+    open func setResolveParent( parent: AttributeSet? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: parent, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setResolveParent", methodSig: "(Ljavax/swing/text/AttributeSet;)V", methodCache: &StyleContext_NamedStyle.setResolveParent_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setResolveParent( _ _parent: AttributeSet? ) {
+        setResolveParent( parent: _parent )
+    }
+
+    /// public java.lang.String javax.swing.text.StyleContext$NamedStyle.toString()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.text.StyleContext$NamedStyle.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

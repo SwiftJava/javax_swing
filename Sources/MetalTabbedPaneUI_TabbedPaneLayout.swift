@@ -18,15 +18,19 @@ open class MetalTabbedPaneUI_TabbedPaneLayout: BasicTabbedPaneUI_TabbedPaneLayou
 
     /// final javax.swing.plaf.metal.MetalTabbedPaneUI javax.swing.plaf.metal.MetalTabbedPaneUI$TabbedPaneLayout.this$0
 
+    // Skipping field: true false false false false false 
+
     /// final javax.swing.plaf.basic.BasicTabbedPaneUI javax.swing.plaf.basic.BasicTabbedPaneUI$TabbedPaneLayout.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.metal.MetalTabbedPaneUI$TabbedPaneLayout(javax.swing.plaf.metal.MetalTabbedPaneUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: MetalTabbedPaneUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalTabbedPaneUI$TabbedPaneLayout", classCache: &MetalTabbedPaneUI_TabbedPaneLayout.MetalTabbedPaneUI_TabbedPaneLayoutJNIClass, methodSig: "(Ljavax/swing/plaf/metal/MetalTabbedPaneUI;)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -37,34 +41,18 @@ open class MetalTabbedPaneUI_TabbedPaneLayout: BasicTabbedPaneUI_TabbedPaneLayou
         self.init( this_0: _this_0 )
     }
 
-    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI$TabbedPaneLayout.rotateTabRuns(int,int)
-
-    private static var rotateTabRuns_MethodID_2: jmethodID?
-
-    override open func rotateTabRuns( tabPlacement: Int, selectedRun: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: selectedRun, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotateTabRuns", methodSig: "(II)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.rotateTabRuns_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    override open func rotateTabRuns( _ _tabPlacement: Int, _ _selectedRun: Int ) {
-        rotateTabRuns( tabPlacement: _tabPlacement, selectedRun: _selectedRun )
-    }
-
     /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI$TabbedPaneLayout.normalizeTabRuns(int,int,int,int)
 
-    private static var normalizeTabRuns_MethodID_3: jmethodID?
+    private static var normalizeTabRuns_MethodID_2: jmethodID?
 
     override open func normalizeTabRuns( tabPlacement: Int, tabCount: Int, start: Int, max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabCount, locals: &__locals )
-        __args[2] = JNIType.toJava( value: start, locals: &__locals )
-        __args[3] = JNIType.toJava( value: max, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "normalizeTabRuns", methodSig: "(IIII)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.normalizeTabRuns_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(tabCount) )
+        __args[2] = jvalue( i: jint(start) )
+        __args[3] = jvalue( i: jint(max) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "normalizeTabRuns", methodSig: "(IIII)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.normalizeTabRuns_MethodID_2, args: &__args, locals: &__locals )
     }
 
     override open func normalizeTabRuns( _ _tabPlacement: Int, _ _tabCount: Int, _ _start: Int, _ _max: Int ) {
@@ -73,18 +61,34 @@ open class MetalTabbedPaneUI_TabbedPaneLayout: BasicTabbedPaneUI_TabbedPaneLayou
 
     /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI$TabbedPaneLayout.padSelectedTab(int,int)
 
-    private static var padSelectedTab_MethodID_4: jmethodID?
+    private static var padSelectedTab_MethodID_3: jmethodID?
 
     override open func padSelectedTab( tabPlacement: Int, selectedIndex: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: tabPlacement, locals: &__locals )
-        __args[1] = JNIType.toJava( value: selectedIndex, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "padSelectedTab", methodSig: "(II)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.padSelectedTab_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(selectedIndex) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "padSelectedTab", methodSig: "(II)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.padSelectedTab_MethodID_3, args: &__args, locals: &__locals )
     }
 
     override open func padSelectedTab( _ _tabPlacement: Int, _ _selectedIndex: Int ) {
         padSelectedTab( tabPlacement: _tabPlacement, selectedIndex: _selectedIndex )
+    }
+
+    /// protected void javax.swing.plaf.metal.MetalTabbedPaneUI$TabbedPaneLayout.rotateTabRuns(int,int)
+
+    private static var rotateTabRuns_MethodID_4: jmethodID?
+
+    override open func rotateTabRuns( tabPlacement: Int, selectedRun: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( i: jint(tabPlacement) )
+        __args[1] = jvalue( i: jint(selectedRun) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "rotateTabRuns", methodSig: "(II)V", methodCache: &MetalTabbedPaneUI_TabbedPaneLayout.rotateTabRuns_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    override open func rotateTabRuns( _ _tabPlacement: Int, _ _selectedRun: Int ) {
+        rotateTabRuns( tabPlacement: _tabPlacement, selectedRun: _selectedRun )
     }
 
 }

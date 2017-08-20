@@ -23,13 +23,12 @@ open class TableColumnModelEvent: java_util.EventObject {
 
     open var fromIndex: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "fromIndex", fieldType: "I", fieldCache: &TableColumnModelEvent.fromIndex_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "fromIndex", fieldType: "I", fieldCache: &TableColumnModelEvent.fromIndex_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "fromIndex", fieldType: "I", fieldCache: &TableColumnModelEvent.fromIndex_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -40,13 +39,12 @@ open class TableColumnModelEvent: java_util.EventObject {
 
     open var toIndex: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "toIndex", fieldType: "I", fieldCache: &TableColumnModelEvent.toIndex_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "toIndex", fieldType: "I", fieldCache: &TableColumnModelEvent.toIndex_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "toIndex", fieldType: "I", fieldCache: &TableColumnModelEvent.toIndex_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
@@ -59,8 +57,8 @@ open class TableColumnModelEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumnModelEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &TableColumnModelEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -75,11 +73,11 @@ open class TableColumnModelEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: TableColumnModel?, from: Int, to: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
-        __args[1] = JNIType.toJava( value: from, locals: &__locals )
-        __args[2] = JNIType.toJava( value: to, locals: &__locals )
+        __args[1] = jvalue( i: jint(from) )
+        __args[2] = jvalue( i: jint(to) )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/TableColumnModelEvent", classCache: &TableColumnModelEvent.TableColumnModelEventJNIClass, methodSig: "(Ljavax/swing/table/TableColumnModel;II)V", methodCache: &TableColumnModelEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -94,10 +92,10 @@ open class TableColumnModelEvent: java_util.EventObject {
     private static var getFromIndex_MethodID_2: jmethodID?
 
     open func getFromIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getFromIndex", methodSig: "()I", methodCache: &TableColumnModelEvent.getFromIndex_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -106,10 +104,10 @@ open class TableColumnModelEvent: java_util.EventObject {
     private static var getToIndex_MethodID_3: jmethodID?
 
     open func getToIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getToIndex", methodSig: "()I", methodCache: &TableColumnModelEvent.getToIndex_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 

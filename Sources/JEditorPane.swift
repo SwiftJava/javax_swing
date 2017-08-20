@@ -17,25 +17,21 @@ open class JEditorPane: JTextComponent {
 
     private static var JEditorPaneJNIClass: jclass?
 
-    /// private javax.swing.SwingWorker javax.swing.JEditorPane.pageLoader
+    /// public static final java.lang.String javax.swing.JEditorPane.HONOR_DISPLAY_PROPERTIES
 
-    /// private javax.swing.text.EditorKit javax.swing.JEditorPane.kit
+    private static var HONOR_DISPLAY_PROPERTIES_FieldID: jfieldID?
 
-    /// private boolean javax.swing.JEditorPane.isUserSetEditorKit
-
-    /// private java.util.Hashtable javax.swing.JEditorPane.pageProperties
+    open static var HONOR_DISPLAY_PROPERTIES: String! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "HONOR_DISPLAY_PROPERTIES", fieldType: "Ljava/lang/String;", fieldCache: &HONOR_DISPLAY_PROPERTIES_FieldID, className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
+        }
+    }
 
     /// static final java.lang.String javax.swing.JEditorPane.PostDataProperty
 
-    /// private java.util.Hashtable javax.swing.JEditorPane.typeHandlers
-
-    /// private static final java.lang.Object javax.swing.JEditorPane.kitRegistryKey
-
-    /// private static final java.lang.Object javax.swing.JEditorPane.kitTypeRegistryKey
-
-    /// private static final java.lang.Object javax.swing.JEditorPane.kitLoaderRegistryKey
-
-    /// private static final java.lang.String javax.swing.JEditorPane.uiClassID
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.String javax.swing.JEditorPane.W3C_LENGTH_UNITS
 
@@ -44,202 +40,134 @@ open class JEditorPane: JTextComponent {
     open static var W3C_LENGTH_UNITS: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "W3C_LENGTH_UNITS", fieldType: "Ljava/lang/String;", fieldCache: &W3C_LENGTH_UNITS_FieldID, className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
-        }
-    }
-
-    /// public static final java.lang.String javax.swing.JEditorPane.HONOR_DISPLAY_PROPERTIES
-
-    private static var HONOR_DISPLAY_PROPERTIES_FieldID: jfieldID?
-
-    open static var HONOR_DISPLAY_PROPERTIES: String! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "HONOR_DISPLAY_PROPERTIES", fieldType: "Ljava/lang/String;", fieldCache: &HONOR_DISPLAY_PROPERTIES_FieldID, className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass )
-            return JNIType.toSwift( type: String(), from: __value )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? String( javaObject: __value ) : nil
         }
     }
 
     /// static final java.util.Map javax.swing.JEditorPane.defaultEditorKitMap
 
-    /// public static final java.lang.String javax.swing.text.JTextComponent.FOCUS_ACCELERATOR_KEY
+    // Skipping field: true false false false false false 
 
-    /// private javax.swing.text.Document javax.swing.text.JTextComponent.model
+    /// private static final java.lang.Object javax.swing.JEditorPane.kitLoaderRegistryKey
 
-    /// private transient javax.swing.text.Caret javax.swing.text.JTextComponent.caret
+    /// private static final java.lang.Object javax.swing.JEditorPane.kitRegistryKey
 
-    /// private javax.swing.text.NavigationFilter javax.swing.text.JTextComponent.navigationFilter
+    /// private static final java.lang.Object javax.swing.JEditorPane.kitTypeRegistryKey
 
-    /// private transient javax.swing.text.Highlighter javax.swing.text.JTextComponent.highlighter
+    /// private static final java.lang.String javax.swing.JEditorPane.uiClassID
 
-    /// private transient javax.swing.text.Keymap javax.swing.text.JTextComponent.keymap
+    /// private boolean javax.swing.JEditorPane.isUserSetEditorKit
 
-    /// private transient javax.swing.text.JTextComponent$MutableCaretEvent javax.swing.text.JTextComponent.caretEvent
+    /// private javax.swing.text.EditorKit javax.swing.JEditorPane.kit
 
-    /// private java.awt.Color javax.swing.text.JTextComponent.caretColor
+    /// private javax.swing.SwingWorker javax.swing.JEditorPane.pageLoader
 
-    /// private java.awt.Color javax.swing.text.JTextComponent.selectionColor
+    /// private java.util.Hashtable javax.swing.JEditorPane.pageProperties
 
-    /// private java.awt.Color javax.swing.text.JTextComponent.selectedTextColor
-
-    /// private java.awt.Color javax.swing.text.JTextComponent.disabledTextColor
-
-    /// private boolean javax.swing.text.JTextComponent.editable
-
-    /// private java.awt.Insets javax.swing.text.JTextComponent.margin
-
-    /// private char javax.swing.text.JTextComponent.focusAccelerator
-
-    /// private boolean javax.swing.text.JTextComponent.dragEnabled
-
-    /// private javax.swing.DropMode javax.swing.text.JTextComponent.dropMode
-
-    /// private transient javax.swing.text.JTextComponent$DropLocation javax.swing.text.JTextComponent.dropLocation
-
-    /// private static javax.swing.text.JTextComponent$DefaultTransferHandler javax.swing.text.JTextComponent.defaultTransferHandler
-
-    /// private static com.sun.beans.util.Cache javax.swing.text.JTextComponent.METHOD_OVERRIDDEN
-
-    /// private static final java.lang.Object javax.swing.text.JTextComponent.KEYMAP_TABLE
-
-    /// private transient java.awt.im.InputMethodRequests javax.swing.text.JTextComponent.inputMethodRequestsHandler
-
-    /// private javax.swing.text.SimpleAttributeSet javax.swing.text.JTextComponent.composedTextAttribute
-
-    /// private java.lang.String javax.swing.text.JTextComponent.composedTextContent
-
-    /// private javax.swing.text.Position javax.swing.text.JTextComponent.composedTextStart
-
-    /// private javax.swing.text.Position javax.swing.text.JTextComponent.composedTextEnd
-
-    /// private javax.swing.text.Position javax.swing.text.JTextComponent.latestCommittedTextStart
-
-    /// private javax.swing.text.Position javax.swing.text.JTextComponent.latestCommittedTextEnd
-
-    /// private javax.swing.text.JTextComponent$ComposedTextCaret javax.swing.text.JTextComponent.composedTextCaret
-
-    /// private transient javax.swing.text.Caret javax.swing.text.JTextComponent.originalCaret
-
-    /// private boolean javax.swing.text.JTextComponent.checkedInputOverride
-
-    /// private boolean javax.swing.text.JTextComponent.needToSendKeyTypedEvent
-
-    /// private static final java.lang.Object javax.swing.text.JTextComponent.FOCUSED_COMPONENT
+    /// private java.util.Hashtable javax.swing.JEditorPane.typeHandlers
 
     /// public static final java.lang.String javax.swing.text.JTextComponent.DEFAULT_KEYMAP
 
-    /// private static final java.lang.String javax.swing.JComponent.uiClassID
+    // Skipping field: false true false false false false 
 
-    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
+    /// private static final java.lang.Object javax.swing.text.JTextComponent.FOCUSED_COMPONENT
 
-    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
+    /// public static final java.lang.String javax.swing.text.JTextComponent.FOCUS_ACCELERATOR_KEY
 
-    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
+    // Skipping field: false true false false false false 
 
-    /// private static final int javax.swing.JComponent.NOT_OBSCURED
+    /// private static final java.lang.Object javax.swing.text.JTextComponent.KEYMAP_TABLE
 
-    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
+    /// private static com.sun.beans.util.Cache javax.swing.text.JTextComponent.METHOD_OVERRIDDEN
 
-    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
+    /// private static javax.swing.text.JTextComponent$DefaultTransferHandler javax.swing.text.JTextComponent.defaultTransferHandler
 
-    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
+    /// private transient javax.swing.text.Caret javax.swing.text.JTextComponent.caret
 
-    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
+    /// private java.awt.Color javax.swing.text.JTextComponent.caretColor
 
-    /// private boolean javax.swing.JComponent.isAlignmentXSet
+    /// private transient javax.swing.text.JTextComponent$MutableCaretEvent javax.swing.text.JTextComponent.caretEvent
 
-    /// private float javax.swing.JComponent.alignmentX
+    /// private boolean javax.swing.text.JTextComponent.checkedInputOverride
 
-    /// private boolean javax.swing.JComponent.isAlignmentYSet
+    /// private javax.swing.text.SimpleAttributeSet javax.swing.text.JTextComponent.composedTextAttribute
 
-    /// private float javax.swing.JComponent.alignmentY
+    /// private javax.swing.text.JTextComponent$ComposedTextCaret javax.swing.text.JTextComponent.composedTextCaret
 
-    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
+    /// private java.lang.String javax.swing.text.JTextComponent.composedTextContent
 
-    private static var ui_FieldID: jfieldID?
+    /// private javax.swing.text.Position javax.swing.text.JTextComponent.composedTextEnd
 
-    override open var ui: ComponentUI! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JEditorPane.ui_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ComponentUI( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JEditorPane.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private javax.swing.text.Position javax.swing.text.JTextComponent.composedTextStart
 
-    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
+    /// private java.awt.Color javax.swing.text.JTextComponent.disabledTextColor
 
-    private static var listenerList_FieldID: jfieldID?
+    /// private boolean javax.swing.text.JTextComponent.dragEnabled
 
-    override open var listenerList: EventListenerList! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JEditorPane.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JEditorPane.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private transient javax.swing.text.JTextComponent$DropLocation javax.swing.text.JTextComponent.dropLocation
 
-    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
+    /// private javax.swing.DropMode javax.swing.text.JTextComponent.dropMode
 
-    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
+    /// private boolean javax.swing.text.JTextComponent.editable
 
-    /// private boolean javax.swing.JComponent.autoscrolls
+    /// private char javax.swing.text.JTextComponent.focusAccelerator
 
-    /// private javax.swing.border.Border javax.swing.JComponent.border
+    /// private transient javax.swing.text.Highlighter javax.swing.text.JTextComponent.highlighter
 
-    /// private int javax.swing.JComponent.flags
+    /// private transient java.awt.im.InputMethodRequests javax.swing.text.JTextComponent.inputMethodRequestsHandler
 
-    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
+    /// private transient javax.swing.text.Keymap javax.swing.text.JTextComponent.keymap
 
-    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
+    /// private javax.swing.text.Position javax.swing.text.JTextComponent.latestCommittedTextEnd
 
-    /// transient java.awt.Component javax.swing.JComponent.paintingChild
+    /// private javax.swing.text.Position javax.swing.text.JTextComponent.latestCommittedTextStart
 
-    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
+    /// private java.awt.Insets javax.swing.text.JTextComponent.margin
 
-    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
+    /// private javax.swing.text.Document javax.swing.text.JTextComponent.model
 
-    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
+    /// private javax.swing.text.NavigationFilter javax.swing.text.JTextComponent.navigationFilter
 
-    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
+    /// private boolean javax.swing.text.JTextComponent.needToSendKeyTypedEvent
 
-    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
+    /// private transient javax.swing.text.Caret javax.swing.text.JTextComponent.originalCaret
 
-    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
+    /// private java.awt.Color javax.swing.text.JTextComponent.selectedTextColor
 
-    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
-
-    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
-
-    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
-
-    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
-
-    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
-
-    /// private static final int javax.swing.JComponent.IS_OPAQUE
-
-    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
-
-    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
-
-    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+    /// private java.awt.Color javax.swing.text.JTextComponent.selectionColor
 
     /// private static final int javax.swing.JComponent.ACTIONMAP_CREATED
 
+    /// private static final int javax.swing.JComponent.ANCESTOR_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.ANCESTOR_USING_BUFFER
+
+    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
+
+    /// private static final int javax.swing.JComponent.COMPLETELY_OBSCURED
+
     /// private static final int javax.swing.JComponent.CREATED_DOUBLE_BUFFER
+
+    /// static boolean javax.swing.JComponent.DEBUG_GRAPHICS_LOADED
+
+    // Skipping field: true false false false false false 
+
+    /// private static final int javax.swing.JComponent.FOCUS_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
+
+    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
+
+    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
+
+    /// private static final java.lang.Object javax.swing.JComponent.INPUT_VERIFIER_SOURCE_KEY
+
+    /// private static final int javax.swing.JComponent.IS_DOUBLE_BUFFERED
+
+    /// private static final int javax.swing.JComponent.IS_OPAQUE
+
+    /// private static final int javax.swing.JComponent.IS_PAINTING_TILE
 
     /// private static final int javax.swing.JComponent.IS_PRINTING
 
@@ -247,7 +175,19 @@ open class JEditorPane: JTextComponent {
 
     /// private static final int javax.swing.JComponent.IS_REPAINTING
 
-    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+    /// private static final java.lang.String javax.swing.JComponent.KEYBOARD_BINDINGS_KEY
+
+    /// private static final int javax.swing.JComponent.KEY_EVENTS_ENABLED
+
+    /// private static final java.lang.String javax.swing.JComponent.NEXT_FOCUS
+
+    /// private static final int javax.swing.JComponent.NOT_OBSCURED
+
+    /// private static final int javax.swing.JComponent.OPAQUE_SET
+
+    /// private static final int javax.swing.JComponent.PARTIALLY_OBSCURED
+
+    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
 
     /// private static final int javax.swing.JComponent.RESERVED_1
 
@@ -261,301 +201,347 @@ open class JEditorPane: JTextComponent {
 
     /// private static final int javax.swing.JComponent.RESERVED_6
 
+    /// public static final java.lang.String javax.swing.JComponent.TOOL_TIP_TEXT_KEY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.UNDEFINED_CONDITION
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_FOCUSED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW
+
+    // Skipping field: false true false false false false 
+
+    /// private static final java.lang.String javax.swing.JComponent.WHEN_IN_FOCUSED_WINDOW_BINDINGS
+
+    /// private static final int javax.swing.JComponent.WIF_INPUTMAP_CREATED
+
+    /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_FIRST
+
     /// private static final int javax.swing.JComponent.WRITE_OBJ_COUNTER_LAST
-
-    /// private static final int javax.swing.JComponent.REQUEST_FOCUS_DISABLED
-
-    /// private static final int javax.swing.JComponent.INHERITS_POPUP_MENU
-
-    /// private static final int javax.swing.JComponent.OPAQUE_SET
-
-    /// private static final int javax.swing.JComponent.AUTOSCROLLS_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_FORWARD_SET
-
-    /// private static final int javax.swing.JComponent.FOCUS_TRAVERSAL_KEYS_BACKWARD_SET
-
-    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
-
-    /// private static java.util.List javax.swing.JComponent.tempRectangles
-
-    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
-
-    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
-
-    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
-
-    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
-
-    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// private static java.awt.Component javax.swing.JComponent.componentObtainingGraphicsFrom
 
     /// private static java.lang.Object javax.swing.JComponent.componentObtainingGraphicsFromLock
 
-    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+    /// private static final java.lang.String javax.swing.JComponent.defaultLocale
 
     /// static final sun.awt.RequestFocusController javax.swing.JComponent.focusController
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+    /// private static java.util.Set javax.swing.JComponent.managingFocusBackwardTraversalKeys
+
+    /// private static java.util.Set javax.swing.JComponent.managingFocusForwardTraversalKeys
+
+    /// private static final java.util.Hashtable javax.swing.JComponent.readObjectCallbacks
+
+    /// private static java.util.List javax.swing.JComponent.tempRectangles
+
+    /// private static final java.lang.String javax.swing.JComponent.uiClassID
+
+    /// private transient java.lang.Object javax.swing.JComponent.aaTextInfo
+
+    /// private javax.swing.ActionMap javax.swing.JComponent.actionMap
+
+    /// private float javax.swing.JComponent.alignmentX
+
+    /// private float javax.swing.JComponent.alignmentY
+
+    /// private javax.swing.InputMap javax.swing.JComponent.ancestorInputMap
+
+    /// private boolean javax.swing.JComponent.autoscrolls
+
+    /// private javax.swing.border.Border javax.swing.JComponent.border
+
+    /// private transient javax.swing.ArrayTable javax.swing.JComponent.clientProperties
+
+    /// private int javax.swing.JComponent.flags
+
+    /// private javax.swing.InputMap javax.swing.JComponent.focusInputMap
+
+    /// private javax.swing.InputVerifier javax.swing.JComponent.inputVerifier
+
+    /// private boolean javax.swing.JComponent.isAlignmentXSet
+
+    /// private boolean javax.swing.JComponent.isAlignmentYSet
+
+    /// protected javax.swing.event.EventListenerList javax.swing.JComponent.listenerList
+
+    private static var listenerList_FieldID: jfieldID?
+
+    override open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JEditorPane.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &JEditorPane.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// transient java.awt.Component javax.swing.JComponent.paintingChild
+
+    // Skipping field: true false false false false false 
+
+    /// private javax.swing.JPopupMenu javax.swing.JComponent.popupMenu
+
+    /// private transient java.util.concurrent.atomic.AtomicBoolean javax.swing.JComponent.revalidateRunnableScheduled
+
+    /// protected transient javax.swing.plaf.ComponentUI javax.swing.JComponent.ui
+
+    private static var ui_FieldID: jfieldID?
+
+    override open var ui: ComponentUI! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JEditorPane.ui_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ComponentUI( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "ui", fieldType: "Ljavax/swing/plaf/ComponentUI;", fieldCache: &JEditorPane.ui_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.JComponent.verifyInputWhenFocusTarget
+
+    /// private java.beans.VetoableChangeSupport javax.swing.JComponent.vetoableChangeSupport
+
+    /// private javax.swing.ComponentInputMap javax.swing.JComponent.windowInputMap
 
     /// private static final java.awt.Component[] java.awt.Container.EMPTY_ARRAY
 
-    /// private java.util.List java.awt.Container.component
-
-    /// java.awt.LayoutManager java.awt.Container.layoutMgr
-
-    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
-
-    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
-
-    /// private boolean java.awt.Container.focusCycleRoot
-
-    /// private boolean java.awt.Container.focusTraversalPolicyProvider
-
-    /// private transient java.util.Set java.awt.Container.printingThreads
-
-    /// private transient boolean java.awt.Container.printing
-
-    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
-
-    /// transient int java.awt.Container.listeningChildren
-
-    /// transient int java.awt.Container.listeningBoundsChildren
-
-    /// transient int java.awt.Container.descendantsCount
-
-    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
-
-    /// private static final long java.awt.Container.serialVersionUID
-
     /// static final boolean java.awt.Container.INCLUDE_SELF
+
+    // Skipping field: true false false false false false 
 
     /// static final boolean java.awt.Container.SEARCH_HEAVYWEIGHTS
 
-    /// private transient int java.awt.Container.numOfHWComponents
+    // Skipping field: true false false false false false 
 
-    /// private transient int java.awt.Container.numOfLWComponents
+    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.eventLog
+
+    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Container.log
 
     /// private static final sun.util.logging.PlatformLogger java.awt.Container.mixingLog
 
     /// private static final java.io.ObjectStreamField[] java.awt.Container.serialPersistentFields
 
-    /// private static final boolean java.awt.Container.isJavaAwtSmartInvalidate
+    /// private static final long java.awt.Container.serialVersionUID
 
-    /// private static boolean java.awt.Container.descendUnconditionallyWhenValidating
+    /// private java.util.List java.awt.Container.component
 
-    /// transient java.awt.Component java.awt.Container.modalComp
+    /// transient java.awt.event.ContainerListener java.awt.Container.containerListener
 
-    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
+    // Skipping field: true false false false false false 
 
     /// private int java.awt.Container.containerSerializedDataVersion
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+    /// transient int java.awt.Container.descendantsCount
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+    // Skipping field: true false false false false false 
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+    /// private java.awt.LightweightDispatcher java.awt.Container.dispatcher
 
-    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+    /// private boolean java.awt.Container.focusCycleRoot
 
-    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+    /// private transient java.awt.FocusTraversalPolicy java.awt.Container.focusTraversalPolicy
 
-    /// transient java.awt.Container java.awt.Component.parent
+    /// private boolean java.awt.Container.focusTraversalPolicyProvider
 
-    /// transient sun.awt.AppContext java.awt.Component.appContext
+    /// java.awt.LayoutManager java.awt.Container.layoutMgr
 
-    /// int java.awt.Component.x
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.y
+    /// transient int java.awt.Container.listeningBoundsChildren
 
-    /// int java.awt.Component.width
+    // Skipping field: true false false false false false 
 
-    /// int java.awt.Component.height
+    /// transient int java.awt.Container.listeningChildren
 
-    /// java.awt.Color java.awt.Component.foreground
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Color java.awt.Component.background
+    /// transient sun.awt.AppContext java.awt.Container.modalAppContext
 
-    /// volatile java.awt.Font java.awt.Component.font
+    // Skipping field: true false false false false false 
 
-    /// java.awt.Font java.awt.Component.peerFont
+    /// transient java.awt.Component java.awt.Container.modalComp
 
-    /// java.awt.Cursor java.awt.Component.cursor
+    // Skipping field: true false false false false false 
 
-    /// java.util.Locale java.awt.Component.locale
+    /// private transient int java.awt.Container.numOfHWComponents
 
-    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+    /// private transient int java.awt.Container.numOfLWComponents
 
-    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+    /// transient java.awt.Color java.awt.Container.preserveBackgroundColor
 
-    /// boolean java.awt.Component.ignoreRepaint
+    // Skipping field: true false false false false false 
 
-    /// boolean java.awt.Component.visible
+    /// private transient boolean java.awt.Container.printing
 
-    /// boolean java.awt.Component.enabled
+    /// private transient java.util.Set java.awt.Container.printingThreads
 
-    /// private volatile boolean java.awt.Component.valid
+    /// static final boolean java.awt.Component.$assertionsDisabled
 
-    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+    // Skipping field: true false false false false false 
 
-    /// java.util.Vector java.awt.Component.popups
+    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
 
-    /// private java.lang.String java.awt.Component.name
+    // Skipping field: false true false false false false 
 
-    /// private boolean java.awt.Component.nameExplicitlySet
+    /// public static final float java.awt.Component.CENTER_ALIGNMENT
 
-    /// private boolean java.awt.Component.focusable
-
-    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
+    // Skipping field: false true false false false false 
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_DEFAULT
 
     /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_SET
 
-    /// private int java.awt.Component.isFocusTraversableOverridden
-
-    /// java.util.Set[] java.awt.Component.focusTraversalKeys
-
-    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
-
-    /// private boolean java.awt.Component.focusTraversalKeysEnabled
-
-    /// static final java.lang.Object java.awt.Component.LOCK
-
-    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
-
-    /// java.awt.Dimension java.awt.Component.minSize
-
-    /// boolean java.awt.Component.minSizeSet
-
-    /// java.awt.Dimension java.awt.Component.prefSize
-
-    /// boolean java.awt.Component.prefSizeSet
-
-    /// java.awt.Dimension java.awt.Component.maxSize
-
-    /// boolean java.awt.Component.maxSizeSet
-
-    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
-
-    /// boolean java.awt.Component.newEventsOnly
-
-    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
-
-    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
-
-    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
-
-    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
-
-    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
-
-    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
-
-    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
-
-    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
-
-    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
-
-    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
-
-    /// static final java.lang.String java.awt.Component.actionListenerK
-
-    /// static final java.lang.String java.awt.Component.adjustmentListenerK
-
-    /// static final java.lang.String java.awt.Component.componentListenerK
-
-    /// static final java.lang.String java.awt.Component.containerListenerK
-
-    /// static final java.lang.String java.awt.Component.focusListenerK
-
-    /// static final java.lang.String java.awt.Component.itemListenerK
-
-    /// static final java.lang.String java.awt.Component.keyListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
-
-    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
-
-    /// static final java.lang.String java.awt.Component.textListenerK
-
-    /// static final java.lang.String java.awt.Component.ownedWindowK
-
-    /// static final java.lang.String java.awt.Component.windowListenerK
-
-    /// static final java.lang.String java.awt.Component.inputMethodListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyListenerK
-
-    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
-
-    /// static final java.lang.String java.awt.Component.windowStateListenerK
-
-    /// static final java.lang.String java.awt.Component.windowFocusListenerK
-
-    /// long java.awt.Component.eventMask
-
-    /// static boolean java.awt.Component.isInc
-
-    /// static int java.awt.Component.incRate
-
-    /// public static final float java.awt.Component.TOP_ALIGNMENT
-
-    /// public static final float java.awt.Component.CENTER_ALIGNMENT
-
-    /// public static final float java.awt.Component.BOTTOM_ALIGNMENT
+    /// private static final int java.awt.Component.FOCUS_TRAVERSABLE_UNKNOWN
 
     /// public static final float java.awt.Component.LEFT_ALIGNMENT
 
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.Object java.awt.Component.LOCK
+
+    // Skipping field: true false false false false false 
+
     /// public static final float java.awt.Component.RIGHT_ALIGNMENT
 
-    /// private static final long java.awt.Component.serialVersionUID
+    // Skipping field: false true false false false false 
 
-    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+    /// public static final float java.awt.Component.TOP_ALIGNMENT
 
-    /// private transient java.lang.Object java.awt.Component.objectLock
+    // Skipping field: false true false false false false 
 
-    /// boolean java.awt.Component.isPacked
+    /// static final java.lang.String java.awt.Component.actionListenerK
 
-    /// private int java.awt.Component.boundsOp
+    // Skipping field: true false false false false false 
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+    /// static final java.lang.String java.awt.Component.adjustmentListenerK
 
-    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
-
-    /// private transient boolean java.awt.Component.isAddNotifyComplete
-
-    /// transient boolean java.awt.Component.backgroundEraseDisabled
-
-    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
-
-    /// private transient boolean java.awt.Component.coalescingEnabled
-
-    /// private static final java.util.Map java.awt.Component.coalesceMap
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Class[] java.awt.Component.coalesceEventsParams
 
+    /// private static final java.util.Map java.awt.Component.coalesceMap
+
+    /// static final java.lang.String java.awt.Component.componentListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.containerListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.eventLog
+
+    /// static final java.lang.String java.awt.Component.focusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.focusLog
+
+    /// private static final java.lang.String[] java.awt.Component.focusTraversalKeyPropertyNames
+
+    /// static final java.lang.String java.awt.Component.hierarchyBoundsListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.hierarchyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static int java.awt.Component.incRate
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.inputMethodListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static boolean java.awt.Component.isInc
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.itemListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.keyListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.log
+
+    /// private static final sun.util.logging.PlatformLogger java.awt.Component.mixingLog
+
+    /// static final java.lang.String java.awt.Component.mouseListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseMotionListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.mouseWheelListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.ownedWindowK
+
+    // Skipping field: true false false false false false 
+
     /// private static sun.awt.RequestFocusController java.awt.Component.requestFocusController
 
-    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
+    /// private static final long java.awt.Component.serialVersionUID
 
-    /// private int java.awt.Component.componentSerializedDataVersion
+    /// static final java.lang.String java.awt.Component.textListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowFocusListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String java.awt.Component.windowStateListenerK
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.security.AccessControlContext java.awt.Component.acc
 
     /// protected javax.accessibility.AccessibleContext java.awt.Component.accessibleContext
 
     private static var accessibleContext_FieldID: jfieldID?
 
-    override open var accessibleContext: /* javax.accessibility.AccessibleContext */ UnclassedObject! {
+    override open var accessibleContext: /* class javax.accessibility.AccessibleContext */ UnavailableObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JEditorPane.accessibleContext_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.accessibility.AccessibleContext */ UnclassedObject( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "accessibleContext", fieldType: "Ljavax/accessibility/AccessibleContext;", fieldCache: &JEditorPane.accessibleContext_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.accessibility.AccessibleContext */ UnavailableObject( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
@@ -564,40 +550,248 @@ open class JEditorPane: JTextComponent {
         }
     }
 
-    /// static final boolean java.awt.Component.$assertionsDisabled
+    /// transient sun.awt.AppContext java.awt.Component.appContext
 
-    /// public static final int java.awt.image.ImageObserver.WIDTH
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.HEIGHT
+    /// private boolean java.awt.Component.autoFocusTransferOnDisposal
 
-    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+    /// java.awt.Color java.awt.Component.background
 
-    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+    /// transient boolean java.awt.Component.backgroundEraseDisabled
 
-    /// public static final int java.awt.image.ImageObserver.ALLBITS
+    // Skipping field: true false false false false false 
 
-    /// public static final int java.awt.image.ImageObserver.ERROR
+    /// private int java.awt.Component.boundsOp
+
+    /// transient java.awt.image.BufferStrategy java.awt.Component.bufferStrategy
+
+    // Skipping field: true false false false false false 
+
+    /// private java.beans.PropertyChangeSupport java.awt.Component.changeSupport
+
+    /// private transient boolean java.awt.Component.coalescingEnabled
+
+    /// transient java.awt.event.ComponentListener java.awt.Component.componentListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.ComponentOrientation java.awt.Component.componentOrientation
+
+    // Skipping field: true false false false false false 
+
+    /// private int java.awt.Component.componentSerializedDataVersion
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.compoundShape
+
+    /// java.awt.Cursor java.awt.Component.cursor
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.dnd.DropTarget java.awt.Component.dropTarget
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.enabled
+
+    // Skipping field: true false false false false false 
+
+    /// transient sun.awt.EventQueueItem[] java.awt.Component.eventCache
+
+    // Skipping field: true false false false false false 
+
+    /// long java.awt.Component.eventMask
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.FocusListener java.awt.Component.focusListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Set[] java.awt.Component.focusTraversalKeys
+
+    // Skipping field: true false false false false false 
+
+    /// private boolean java.awt.Component.focusTraversalKeysEnabled
+
+    /// private boolean java.awt.Component.focusable
+
+    /// volatile java.awt.Font java.awt.Component.font
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Color java.awt.Component.foreground
+
+    // Skipping field: true false false false false false 
+
+    /// private transient volatile java.awt.GraphicsConfiguration java.awt.Component.graphicsConfig
+
+    /// int java.awt.Component.height
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyBoundsListener java.awt.Component.hierarchyBoundsListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.HierarchyListener java.awt.Component.hierarchyListener
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.ignoreRepaint
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.InputMethodListener java.awt.Component.inputMethodListener
+
+    // Skipping field: true false false false false false 
+
+    /// private transient boolean java.awt.Component.isAddNotifyComplete
+
+    /// private int java.awt.Component.isFocusTraversableOverridden
+
+    /// boolean java.awt.Component.isPacked
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.KeyListener java.awt.Component.keyListener
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Locale java.awt.Component.locale
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.maxSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.maxSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.minSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.minSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private transient sun.java2d.pipe.Region java.awt.Component.mixingCutoutRegion
+
+    /// transient java.awt.event.MouseListener java.awt.Component.mouseListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseMotionListener java.awt.Component.mouseMotionListener
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.event.MouseWheelListener java.awt.Component.mouseWheelListener
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.String java.awt.Component.name
+
+    /// private boolean java.awt.Component.nameExplicitlySet
+
+    /// boolean java.awt.Component.newEventsOnly
+
+    // Skipping field: true false false false false false 
+
+    /// private transient java.lang.Object java.awt.Component.objectLock
+
+    /// transient java.awt.Container java.awt.Component.parent
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.awt.peer.ComponentPeer java.awt.Component.peer
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Font java.awt.Component.peerFont
+
+    // Skipping field: true false false false false false 
+
+    /// java.util.Vector java.awt.Component.popups
+
+    // Skipping field: true false false false false false 
+
+    /// java.awt.Dimension java.awt.Component.prefSize
+
+    // Skipping field: true false false false false false 
+
+    /// boolean java.awt.Component.prefSizeSet
+
+    // Skipping field: true false false false false false 
+
+    /// private volatile boolean java.awt.Component.valid
+
+    /// boolean java.awt.Component.visible
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.width
+
+    // Skipping field: true false false false false false 
+
+    /// transient java.lang.RuntimeException java.awt.Component.windowClosingException
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.x
+
+    // Skipping field: true false false false false false 
+
+    /// int java.awt.Component.y
+
+    // Skipping field: true false false false false false 
 
     /// public static final int java.awt.image.ImageObserver.ABORT
 
-    /// public javax.swing.JEditorPane(java.lang.String,java.lang.String)
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ALLBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.ERROR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.FRAMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.HEIGHT
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.PROPERTIES
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.SOMEBITS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageObserver.WIDTH
+
+    // Skipping field: false true false false false false 
+
+    /// public javax.swing.JEditorPane()
 
     private static var new_MethodID_1: jmethodID?
 
-    public convenience init( type: String?, text: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    public convenience init() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: text, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &JEditorPane.new_MethodID_1, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "()V", methodCache: &JEditorPane.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _type: String?, _ _text: String? ) {
-        self.init( type: _type, text: _text )
     }
 
     /// public javax.swing.JEditorPane(java.lang.String) throws java.io.IOException
@@ -605,12 +799,13 @@ open class JEditorPane: JTextComponent {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( url: String? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: url, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.new_MethodID_2, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -620,265 +815,70 @@ open class JEditorPane: JTextComponent {
         try self.init( url: _url )
     }
 
-    /// public javax.swing.JEditorPane(java.net.URL) throws java.io.IOException
+    /// public javax.swing.JEditorPane(java.lang.String,java.lang.String)
 
     private static var new_MethodID_3: jmethodID?
 
-    public convenience init( initialPage: /* java.net.URL */ UnclassedObject? ) throws {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( type: String?, text: String? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: initialPage, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "(Ljava/net/URL;)V", methodCache: &JEditorPane.new_MethodID_3, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: text, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &JEditorPane.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    public convenience init( _ _initialPage: /* java.net.URL */ UnclassedObject? ) throws {
-        try self.init( initialPage: _initialPage )
+    public convenience init( _ _type: String?, _ _text: String? ) {
+        self.init( type: _type, text: _text )
     }
 
-    /// public javax.swing.JEditorPane()
+    /// public javax.swing.JEditorPane(java.net.URL) throws java.io.IOException
 
     private static var new_MethodID_4: jmethodID?
 
-    public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    public convenience init( initialPage: /* class java.net.URL */ UnavailableObject? ) throws {
         var __locals = [jobject]()
-        let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "()V", methodCache: &JEditorPane.new_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: initialPage, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/JEditorPane", classCache: &JEditorPane.JEditorPaneJNIClass, methodSig: "(Ljava/net/URL;)V", methodCache: &JEditorPane.new_MethodID_4, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// static javax.swing.text.Document javax.swing.JEditorPane.access$100(javax.swing.JEditorPane,javax.swing.text.EditorKit,java.net.URL)
-
-    /// static void javax.swing.JEditorPane.access$200(javax.swing.JEditorPane,java.lang.String,java.lang.Object,java.lang.Object)
-
-    /// static void javax.swing.JEditorPane.access$300(javax.swing.JEditorPane,java.net.URLConnection)
+    public convenience init( _ _initialPage: /* class java.net.URL */ UnavailableObject? ) throws {
+        try self.init( initialPage: _initialPage )
+    }
 
     /// static javax.swing.text.EditorKit javax.swing.JEditorPane.access$000(javax.swing.JEditorPane)
 
-    /// private void javax.swing.JEditorPane.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
+    // Skipping method: true false false false false 
 
-    /// public void javax.swing.JEditorPane.read(java.io.InputStream,java.lang.Object) throws java.io.IOException
+    /// static javax.swing.text.Document javax.swing.JEditorPane.access$100(javax.swing.JEditorPane,javax.swing.text.EditorKit,java.net.URL)
 
-    private static var read_MethodID_5: jmethodID?
+    // Skipping method: true false false false false 
 
-    open func read( _in: /* java.io.InputStream */ UnclassedObject?, desc: java_swift.JavaObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
-        __args[1] = JNIType.toJava( value: desc, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "read", methodSig: "(Ljava/io/InputStream;Ljava/lang/Object;)V", methodCache: &JEditorPane.read_MethodID_5, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-    }
+    /// static void javax.swing.JEditorPane.access$200(javax.swing.JEditorPane,java.lang.String,java.lang.Object,java.lang.Object)
 
-    override open func read( _ __in: /* java.io.InputStream */ UnclassedObject?, _ _desc: java_swift.JavaObject? ) throws /* java.io.IOException */ {
-        try read( _in: __in, desc: _desc )
-    }
+    // Skipping method: true false false false false 
 
-    /// void javax.swing.JEditorPane.read(java.io.InputStream,javax.swing.text.Document) throws java.io.IOException
+    /// static void javax.swing.JEditorPane.access$300(javax.swing.JEditorPane,java.net.URLConnection)
 
-    /// protected java.lang.String javax.swing.JEditorPane.paramString()
-
-    private static var paramString_MethodID_6: jmethodID?
-
-    override open func paramString() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JEditorPane.paramString_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// private int javax.swing.JEditorPane.getAsynchronousLoadPriority(javax.swing.text.Document)
-
-    /// public final java.lang.String javax.swing.JEditorPane.getContentType()
-
-    private static var getContentType_MethodID_7: jmethodID?
-
-    open func getContentType() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentType", methodSig: "()Ljava/lang/String;", methodCache: &JEditorPane.getContentType_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-
-    /// public final void javax.swing.JEditorPane.setContentType(java.lang.String)
-
-    private static var setContentType_MethodID_8: jmethodID?
-
-    open func setContentType( type: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentType", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setContentType_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    open func setContentType( _ _type: String? ) {
-        setContentType( type: _type )
-    }
-
-    /// public void javax.swing.JEditorPane.replaceSelection(java.lang.String)
-
-    private static var replaceSelection_MethodID_9: jmethodID?
-
-    open func replaceSelection( content: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: content, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceSelection", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.replaceSelection_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    override open func replaceSelection( _ _content: String? ) {
-        replaceSelection( content: _content )
-    }
-
-    /// public java.lang.String javax.swing.JEditorPane.getUIClassID()
-
-    /// protected javax.swing.text.EditorKit javax.swing.JEditorPane.createDefaultEditorKit()
-
-    private static var createDefaultEditorKit_MethodID_10: jmethodID?
-
-    open func createDefaultEditorKit() -> EditorKit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.createDefaultEditorKit_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? EditorKit( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.JEditorPane.setEditorKit(javax.swing.text.EditorKit)
-
-    private static var setEditorKit_MethodID_11: jmethodID?
-
-    open func setEditorKit( kit: EditorKit? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: kit, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKit", methodSig: "(Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKit_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open func setEditorKit( _ _kit: EditorKit? ) {
-        setEditorKit( kit: _kit )
-    }
-
-    /// public static java.lang.String javax.swing.JEditorPane.getEditorKitClassNameForContentType(java.lang.String)
-
-    private static var getEditorKitClassNameForContentType_MethodID_12: jmethodID?
-
-    open class func getEditorKitClassNameForContentType( type: String? ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "getEditorKitClassNameForContentType", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &getEditorKitClassNameForContentType_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func getEditorKitClassNameForContentType( _ _type: String? ) -> String! {
-        return getEditorKitClassNameForContentType( type: _type )
-    }
-
-    /// public void javax.swing.JEditorPane.setEditorKitForContentType(java.lang.String,javax.swing.text.EditorKit)
-
-    private static var setEditorKitForContentType_MethodID_13: jmethodID?
-
-    open func setEditorKitForContentType( type: String?, k: EditorKit? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: k, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKitForContentType_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setEditorKitForContentType( _ _type: String?, _ _k: EditorKit? ) {
-        setEditorKitForContentType( type: _type, k: _k )
-    }
-
-    /// public synchronized void javax.swing.JEditorPane.addHyperlinkListener(javax.swing.event.HyperlinkListener)
-
-    private static var addHyperlinkListener_MethodID_14: jmethodID?
-
-    open func addHyperlinkListener( listener: HyperlinkListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.addHyperlinkListener_MethodID_14, args: &__args, locals: &__locals )
-    }
-
-    open func addHyperlinkListener( _ _listener: HyperlinkListener? ) {
-        addHyperlinkListener( listener: _listener )
-    }
-
-    /// public synchronized void javax.swing.JEditorPane.removeHyperlinkListener(javax.swing.event.HyperlinkListener)
-
-    private static var removeHyperlinkListener_MethodID_15: jmethodID?
-
-    open func removeHyperlinkListener( listener: HyperlinkListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.removeHyperlinkListener_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func removeHyperlinkListener( _ _listener: HyperlinkListener? ) {
-        removeHyperlinkListener( listener: _listener )
-    }
-
-    /// public synchronized javax.swing.event.HyperlinkListener[] javax.swing.JEditorPane.getHyperlinkListeners()
-
-    private static var getHyperlinkListeners_MethodID_16: jmethodID?
-
-    open func getHyperlinkListeners() -> [HyperlinkListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHyperlinkListeners", methodSig: "()[Ljavax/swing/event/HyperlinkListener;", methodCache: &JEditorPane.getHyperlinkListeners_MethodID_16, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [HyperlinkListenerForward](), from: __return )
-    }
-
-
-    /// private javax.swing.text.Document javax.swing.JEditorPane.initializeModel(javax.swing.text.EditorKit,java.net.URL)
-
-    /// private void javax.swing.JEditorPane.handleConnectionProperties(java.net.URLConnection)
-
-    /// private java.lang.Object javax.swing.JEditorPane.getPostData()
-
-    /// private void javax.swing.JEditorPane.handlePostData(java.net.HttpURLConnection,java.lang.Object) throws java.io.IOException
-
-    /// private void javax.swing.JEditorPane.setCharsetFromContentTypeParameters(java.lang.String)
-
-    /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKitForContentType(java.lang.String)
-
-    private static var getEditorKitForContentType_MethodID_17: jmethodID?
-
-    open func getEditorKitForContentType( type: String? ) -> EditorKit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKitForContentType_MethodID_17, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? EditorKit( javaObject: __return ) : nil
-    }
-
-    open func getEditorKitForContentType( _ _type: String? ) -> EditorKit! {
-        return getEditorKitForContentType( type: _type )
-    }
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.text.EditorKit javax.swing.JEditorPane.createEditorKitForContentType(java.lang.String)
 
-    private static var createEditorKitForContentType_MethodID_18: jmethodID?
+    private static var createEditorKitForContentType_MethodID_5: jmethodID?
 
     open class func createEditorKitForContentType( type: String? ) -> EditorKit! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "createEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &createEditorKitForContentType_MethodID_18, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "createEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &createEditorKitForContentType_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EditorKit( javaObject: __return ) : nil
     }
@@ -887,134 +887,372 @@ open class JEditorPane: JTextComponent {
         return createEditorKitForContentType( type: _type )
     }
 
-    /// public static void javax.swing.JEditorPane.registerEditorKitForContentType(java.lang.String,java.lang.String,java.lang.ClassLoader)
+    /// public static java.lang.String javax.swing.JEditorPane.getEditorKitClassNameForContentType(java.lang.String)
 
-    private static var registerEditorKitForContentType_MethodID_19: jmethodID?
+    private static var getEditorKitClassNameForContentType_MethodID_6: jmethodID?
 
-    open class func registerEditorKitForContentType( type: String?, classname: String?, loader: java_lang.ClassLoader? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open class func getEditorKitClassNameForContentType( type: String? ) -> String! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
-        __args[1] = JNIType.toJava( value: classname, locals: &__locals )
-        __args[2] = JNIType.toJava( value: loader, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V", methodCache: &registerEditorKitForContentType_MethodID_19, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "getEditorKitClassNameForContentType", methodSig: "(Ljava/lang/String;)Ljava/lang/String;", methodCache: &getEditorKitClassNameForContentType_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
-    open class func registerEditorKitForContentType( _ _type: String?, _ _classname: String?, _ _loader: java_lang.ClassLoader? ) {
-        registerEditorKitForContentType( type: _type, classname: _classname, loader: _loader )
+    open class func getEditorKitClassNameForContentType( _ _type: String? ) -> String! {
+        return getEditorKitClassNameForContentType( type: _type )
     }
+
+    /// private static java.util.Hashtable javax.swing.JEditorPane.getKitLoaderRegistry()
+
+    /// private static java.util.Hashtable javax.swing.JEditorPane.getKitRegisty()
+
+    /// private static java.util.Hashtable javax.swing.JEditorPane.getKitTypeRegistry()
+
+    /// private static void javax.swing.JEditorPane.loadDefaultKitsIfNecessary()
 
     /// public static void javax.swing.JEditorPane.registerEditorKitForContentType(java.lang.String,java.lang.String)
 
-    private static var registerEditorKitForContentType_MethodID_20: jmethodID?
+    private static var registerEditorKitForContentType_MethodID_7: jmethodID?
 
     open class func registerEditorKitForContentType( type: String?, classname: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: type, locals: &__locals )
         __args[1] = JNIType.toJava( value: classname, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &registerEditorKitForContentType_MethodID_20, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;)V", methodCache: &registerEditorKitForContentType_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open class func registerEditorKitForContentType( _ _type: String?, _ _classname: String? ) {
         registerEditorKitForContentType( type: _type, classname: _classname )
     }
 
-    /// private static java.util.Hashtable javax.swing.JEditorPane.getKitTypeRegistry()
+    /// public static void javax.swing.JEditorPane.registerEditorKitForContentType(java.lang.String,java.lang.String,java.lang.ClassLoader)
 
-    /// private static java.util.Hashtable javax.swing.JEditorPane.getKitLoaderRegistry()
+    private static var registerEditorKitForContentType_MethodID_8: jmethodID?
 
-    /// private static java.util.Hashtable javax.swing.JEditorPane.getKitRegisty()
-
-    /// private static void javax.swing.JEditorPane.loadDefaultKitsIfNecessary()
-
-    /// public java.awt.Dimension javax.swing.JEditorPane.getPreferredSize()
-
-    /// protected java.io.InputStream javax.swing.JEditorPane.getStream(java.net.URL) throws java.io.IOException
-
-    private static var getStream_MethodID_21: jmethodID?
-
-    open func getStream( page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ -> /* java.io.InputStream */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func registerEditorKitForContentType( type: String?, classname: String?, loader: java_lang.ClassLoader? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: page, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStream", methodSig: "(Ljava/net/URL;)Ljava/io/InputStream;", methodCache: &JEditorPane.getStream_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
-        }
-        return __return != nil ? /* java.io.InputStream */ UnclassedObject( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: classname, locals: &__locals )
+        __args[2] = JNIType.toJava( value: loader, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass, methodName: "registerEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V", methodCache: &registerEditorKitForContentType_MethodID_8, args: &__args, locals: &__locals )
     }
 
-    open func getStream( _ _page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ -> /* java.io.InputStream */ UnclassedObject! {
-        return try getStream( page: _page )
+    open class func registerEditorKitForContentType( _ _type: String?, _ _classname: String?, _ _loader: java_lang.ClassLoader? ) {
+        registerEditorKitForContentType( type: _type, classname: _classname, loader: _loader )
     }
 
-    /// public java.lang.String javax.swing.JEditorPane.getText()
+    /// public synchronized void javax.swing.JEditorPane.addHyperlinkListener(javax.swing.event.HyperlinkListener)
 
-    /// public javax.accessibility.AccessibleContext javax.swing.JEditorPane.getAccessibleContext()
+    private static var addHyperlinkListener_MethodID_9: jmethodID?
 
-    /// public void javax.swing.JEditorPane.setText(java.lang.String)
-
-    private static var setText_MethodID_22: jmethodID?
-
-    open func setText( t: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func addHyperlinkListener( listener: HyperlinkListener? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: t, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setText_MethodID_22, args: &__args, locals: &__locals )
-    }
-
-    override open func setText( _ _t: String? ) {
-        setText( t: _t )
-    }
-
-    /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKit()
-
-    private static var getEditorKit_MethodID_23: jmethodID?
-
-    open func getEditorKit() -> EditorKit! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.addHyperlinkListener_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func addHyperlinkListener( _ _listener: HyperlinkListener? ) {
+        addHyperlinkListener( listener: _listener )
+    }
+
+    /// protected javax.swing.text.EditorKit javax.swing.JEditorPane.createDefaultEditorKit()
+
+    private static var createDefaultEditorKit_MethodID_10: jmethodID?
+
+    open func createDefaultEditorKit() -> EditorKit! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKit_MethodID_23, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createDefaultEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.createDefaultEditorKit_MethodID_10, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? EditorKit( javaObject: __return ) : nil
     }
 
 
-    /// public boolean javax.swing.JEditorPane.getScrollableTracksViewportWidth()
+    /// public void javax.swing.JEditorPane.fireHyperlinkUpdate(javax.swing.event.HyperlinkEvent)
+
+    private static var fireHyperlinkUpdate_MethodID_11: jmethodID?
+
+    open func fireHyperlinkUpdate( e: HyperlinkEvent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireHyperlinkUpdate", methodSig: "(Ljavax/swing/event/HyperlinkEvent;)V", methodCache: &JEditorPane.fireHyperlinkUpdate_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func fireHyperlinkUpdate( _ _e: HyperlinkEvent? ) {
+        fireHyperlinkUpdate( e: _e )
+    }
+
+    /// public javax.accessibility.AccessibleContext javax.swing.JEditorPane.getAccessibleContext()
+
+    // Skipping method: false true false false false 
+
+    /// private int javax.swing.JEditorPane.getAsynchronousLoadPriority(javax.swing.text.Document)
+
+    /// public final java.lang.String javax.swing.JEditorPane.getContentType()
+
+    private static var getContentType_MethodID_12: jmethodID?
+
+    open func getContentType() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContentType", methodSig: "()Ljava/lang/String;", methodCache: &JEditorPane.getContentType_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKit()
+
+    private static var getEditorKit_MethodID_13: jmethodID?
+
+    open func getEditorKit() -> EditorKit! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKit", methodSig: "()Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKit_MethodID_13, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? EditorKit( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.EditorKit javax.swing.JEditorPane.getEditorKitForContentType(java.lang.String)
+
+    private static var getEditorKitForContentType_MethodID_14: jmethodID?
+
+    open func getEditorKitForContentType( type: String? ) -> EditorKit! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getEditorKitForContentType", methodSig: "(Ljava/lang/String;)Ljavax/swing/text/EditorKit;", methodCache: &JEditorPane.getEditorKitForContentType_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? EditorKit( javaObject: __return ) : nil
+    }
+
+    open func getEditorKitForContentType( _ _type: String? ) -> EditorKit! {
+        return getEditorKitForContentType( type: _type )
+    }
+
+    /// public synchronized javax.swing.event.HyperlinkListener[] javax.swing.JEditorPane.getHyperlinkListeners()
+
+    private static var getHyperlinkListeners_MethodID_15: jmethodID?
+
+    open func getHyperlinkListeners() -> [HyperlinkListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getHyperlinkListeners", methodSig: "()[Ljavax/swing/event/HyperlinkListener;", methodCache: &JEditorPane.getHyperlinkListeners_MethodID_15, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [HyperlinkListenerForward].self, from: __return )
+    }
+
+
+    /// public java.net.URL javax.swing.JEditorPane.getPage()
+
+    private static var getPage_MethodID_16: jmethodID?
+
+    open func getPage() -> /* class java.net.URL */ UnavailableObject! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPage", methodSig: "()Ljava/net/URL;", methodCache: &JEditorPane.getPage_MethodID_16, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class java.net.URL */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+
+    /// private java.lang.Object javax.swing.JEditorPane.getPostData()
+
+    /// public java.awt.Dimension javax.swing.JEditorPane.getPreferredSize()
+
+    // Skipping method: false true false false false 
 
     /// public boolean javax.swing.JEditorPane.getScrollableTracksViewportHeight()
 
-    /// public void javax.swing.JEditorPane.setPage(java.net.URL) throws java.io.IOException
+    // Skipping method: false true false false false 
 
-    private static var setPage_MethodID_24: jmethodID?
+    /// public boolean javax.swing.JEditorPane.getScrollableTracksViewportWidth()
 
-    open func setPage( page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    // Skipping method: false true false false false 
+
+    /// protected java.io.InputStream javax.swing.JEditorPane.getStream(java.net.URL) throws java.io.IOException
+
+    private static var getStream_MethodID_17: jmethodID?
+
+    open func getStream( page: /* class java.net.URL */ UnavailableObject? ) throws /* java.io.IOException */ -> /* class java.io.InputStream */ UnavailableObject! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: page, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/net/URL;)V", methodCache: &JEditorPane.setPage_MethodID_24, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getStream", methodSig: "(Ljava/net/URL;)Ljava/io/InputStream;", methodCache: &JEditorPane.getStream_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+        return __return != nil ? /* class java.io.InputStream */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+    open func getStream( _ _page: /* class java.net.URL */ UnavailableObject? ) throws /* java.io.IOException */ -> /* class java.io.InputStream */ UnavailableObject! {
+        return try getStream( page: _page )
+    }
+
+    /// public java.lang.String javax.swing.JEditorPane.getText()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.JEditorPane.getUIClassID()
+
+    // Skipping method: false true false false false 
+
+    /// private void javax.swing.JEditorPane.handleConnectionProperties(java.net.URLConnection)
+
+    /// private void javax.swing.JEditorPane.handlePostData(java.net.HttpURLConnection,java.lang.Object) throws java.io.IOException
+
+    /// private javax.swing.text.Document javax.swing.JEditorPane.initializeModel(javax.swing.text.EditorKit,java.net.URL)
+
+    /// protected java.lang.String javax.swing.JEditorPane.paramString()
+
+    private static var paramString_MethodID_18: jmethodID?
+
+    override open func paramString() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "paramString", methodSig: "()Ljava/lang/String;", methodCache: &JEditorPane.paramString_MethodID_18, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// void javax.swing.JEditorPane.read(java.io.InputStream,javax.swing.text.Document) throws java.io.IOException
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.JEditorPane.read(java.io.InputStream,java.lang.Object) throws java.io.IOException
+
+    private static var read_MethodID_19: jmethodID?
+
+    open func read( _in: /* class java.io.InputStream */ UnavailableObject?, desc: java_swift.JavaObject? ) throws /* java.io.IOException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: _in, locals: &__locals )
+        __args[1] = JNIType.toJava( value: desc, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "read", methodSig: "(Ljava/io/InputStream;Ljava/lang/Object;)V", methodCache: &JEditorPane.read_MethodID_19, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
-    open func setPage( _ _page: /* java.net.URL */ UnclassedObject? ) throws /* java.io.IOException */ {
-        try setPage( page: _page )
+    override open func read( _ __in: /* class java.io.InputStream */ UnavailableObject?, _ _desc: java_swift.JavaObject? ) throws /* java.io.IOException */ {
+        try read( _in: __in, desc: _desc )
+    }
+
+    /// public synchronized void javax.swing.JEditorPane.removeHyperlinkListener(javax.swing.event.HyperlinkListener)
+
+    private static var removeHyperlinkListener_MethodID_20: jmethodID?
+
+    open func removeHyperlinkListener( listener: HyperlinkListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeHyperlinkListener", methodSig: "(Ljavax/swing/event/HyperlinkListener;)V", methodCache: &JEditorPane.removeHyperlinkListener_MethodID_20, args: &__args, locals: &__locals )
+    }
+
+    open func removeHyperlinkListener( _ _listener: HyperlinkListener? ) {
+        removeHyperlinkListener( listener: _listener )
+    }
+
+    /// public void javax.swing.JEditorPane.replaceSelection(java.lang.String)
+
+    private static var replaceSelection_MethodID_21: jmethodID?
+
+    open func replaceSelection( content: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: content, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replaceSelection", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.replaceSelection_MethodID_21, args: &__args, locals: &__locals )
+    }
+
+    override open func replaceSelection( _ _content: String? ) {
+        replaceSelection( content: _content )
+    }
+
+    /// public void javax.swing.JEditorPane.scrollToReference(java.lang.String)
+
+    private static var scrollToReference_MethodID_22: jmethodID?
+
+    open func scrollToReference( reference: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: reference, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollToReference", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.scrollToReference_MethodID_22, args: &__args, locals: &__locals )
+    }
+
+    open func scrollToReference( _ _reference: String? ) {
+        scrollToReference( reference: _reference )
+    }
+
+    /// private void javax.swing.JEditorPane.setCharsetFromContentTypeParameters(java.lang.String)
+
+    /// public final void javax.swing.JEditorPane.setContentType(java.lang.String)
+
+    private static var setContentType_MethodID_23: jmethodID?
+
+    open func setContentType( type: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setContentType", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setContentType_MethodID_23, args: &__args, locals: &__locals )
+    }
+
+    open func setContentType( _ _type: String? ) {
+        setContentType( type: _type )
+    }
+
+    /// public void javax.swing.JEditorPane.setEditorKit(javax.swing.text.EditorKit)
+
+    private static var setEditorKit_MethodID_24: jmethodID?
+
+    open func setEditorKit( kit: EditorKit? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: kit, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKit", methodSig: "(Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKit_MethodID_24, args: &__args, locals: &__locals )
+    }
+
+    open func setEditorKit( _ _kit: EditorKit? ) {
+        setEditorKit( kit: _kit )
+    }
+
+    /// public void javax.swing.JEditorPane.setEditorKitForContentType(java.lang.String,javax.swing.text.EditorKit)
+
+    private static var setEditorKitForContentType_MethodID_25: jmethodID?
+
+    open func setEditorKitForContentType( type: String?, k: EditorKit? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: type, locals: &__locals )
+        __args[1] = JNIType.toJava( value: k, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setEditorKitForContentType", methodSig: "(Ljava/lang/String;Ljavax/swing/text/EditorKit;)V", methodCache: &JEditorPane.setEditorKitForContentType_MethodID_25, args: &__args, locals: &__locals )
+    }
+
+    open func setEditorKitForContentType( _ _type: String?, _ _k: EditorKit? ) {
+        setEditorKitForContentType( type: _type, k: _k )
     }
 
     /// public void javax.swing.JEditorPane.setPage(java.lang.String) throws java.io.IOException
 
-    private static var setPage_MethodID_25: jmethodID?
+    private static var setPage_MethodID_26: jmethodID?
 
     open func setPage( url: String? ) throws /* java.io.IOException */ {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: url, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setPage_MethodID_25, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setPage_MethodID_26, args: &__args, locals: &__locals )
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.io.IOException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
         }
     }
 
@@ -1022,48 +1260,41 @@ open class JEditorPane: JTextComponent {
         try setPage( url: _url )
     }
 
-    /// public void javax.swing.JEditorPane.scrollToReference(java.lang.String)
+    /// public void javax.swing.JEditorPane.setPage(java.net.URL) throws java.io.IOException
 
-    private static var scrollToReference_MethodID_26: jmethodID?
+    private static var setPage_MethodID_27: jmethodID?
 
-    open func scrollToReference( reference: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func setPage( page: /* class java.net.URL */ UnavailableObject? ) throws /* java.io.IOException */ {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: reference, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "scrollToReference", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.scrollToReference_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open func scrollToReference( _ _reference: String? ) {
-        scrollToReference( reference: _reference )
-    }
-
-    /// public void javax.swing.JEditorPane.fireHyperlinkUpdate(javax.swing.event.HyperlinkEvent)
-
-    private static var fireHyperlinkUpdate_MethodID_27: jmethodID?
-
-    open func fireHyperlinkUpdate( e: HyperlinkEvent? ) {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: page, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setPage", methodSig: "(Ljava/net/URL;)V", methodCache: &JEditorPane.setPage_MethodID_27, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.io.IOException */ UnavailableObject( javaObject: throwable )
+        }
+    }
+
+    open func setPage( _ _page: /* class java.net.URL */ UnavailableObject? ) throws /* java.io.IOException */ {
+        try setPage( page: _page )
+    }
+
+    /// public void javax.swing.JEditorPane.setText(java.lang.String)
+
+    private static var setText_MethodID_28: jmethodID?
+
+    open func setText( t: String? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireHyperlinkUpdate", methodSig: "(Ljavax/swing/event/HyperlinkEvent;)V", methodCache: &JEditorPane.fireHyperlinkUpdate_MethodID_27, args: &__args, locals: &__locals )
-    }
-
-    open func fireHyperlinkUpdate( _ _e: HyperlinkEvent? ) {
-        fireHyperlinkUpdate( e: _e )
-    }
-
-    /// public java.net.URL javax.swing.JEditorPane.getPage()
-
-    private static var getPage_MethodID_28: jmethodID?
-
-    open func getPage() -> /* java.net.URL */ UnclassedObject! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPage", methodSig: "()Ljava/net/URL;", methodCache: &JEditorPane.getPage_MethodID_28, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.net.URL */ UnclassedObject( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: t, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setText", methodSig: "(Ljava/lang/String;)V", methodCache: &JEditorPane.setText_MethodID_28, args: &__args, locals: &__locals )
     }
 
+    override open func setText( _ _t: String? ) {
+        setText( t: _t )
+    }
+
+    /// private void javax.swing.JEditorPane.writeObject(java.io.ObjectOutputStream) throws java.io.IOException
 
 }
 

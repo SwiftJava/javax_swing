@@ -23,12 +23,12 @@ open class TabExpanderForward: JNIObjectForward, TabExpander {
     private static var nextTabStop_MethodID_2: jmethodID?
 
     open func nextTabStop( x: Float, tabOffset: Int ) -> Float {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        __args[1] = JNIType.toJava( value: tabOffset, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( f: x )
+        __args[1] = jvalue( i: jint(tabOffset) )
         let __return = JNIMethod.CallFloatMethod( object: javaObject, methodName: "nextTabStop", methodSig: "(FI)F", methodCache: &TabExpanderForward.nextTabStop_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Float(), from: __return )
+        return __return
     }
 
     open func nextTabStop( _ _x: Float, _ _tabOffset: Int ) -> Float {
@@ -36,5 +36,4 @@ open class TabExpanderForward: JNIObjectForward, TabExpander {
     }
 
 }
-
 

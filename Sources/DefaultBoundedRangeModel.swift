@@ -6,7 +6,7 @@ import java_util
 
 /// class javax.swing.DefaultBoundedRangeModel ///
 
-open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /* java.io.Serializable */ UnclassedProtocol {
+open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -23,8 +23,8 @@ open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /
 
     open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultBoundedRangeModel.changeEvent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultBoundedRangeModel.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -34,14 +34,18 @@ open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /
         }
     }
 
+    /// private int javax.swing.DefaultBoundedRangeModel.extent
+
+    /// private boolean javax.swing.DefaultBoundedRangeModel.isAdjusting
+
     /// protected javax.swing.event.EventListenerList javax.swing.DefaultBoundedRangeModel.listenerList
 
     private static var listenerList_FieldID: jfieldID?
 
     open var listenerList: EventListenerList! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultBoundedRangeModel.listenerList_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultBoundedRangeModel.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? EventListenerList( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,23 +55,19 @@ open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /
         }
     }
 
-    /// private int javax.swing.DefaultBoundedRangeModel.value
-
-    /// private int javax.swing.DefaultBoundedRangeModel.extent
+    /// private int javax.swing.DefaultBoundedRangeModel.max
 
     /// private int javax.swing.DefaultBoundedRangeModel.min
 
-    /// private int javax.swing.DefaultBoundedRangeModel.max
-
-    /// private boolean javax.swing.DefaultBoundedRangeModel.isAdjusting
+    /// private int javax.swing.DefaultBoundedRangeModel.value
 
     /// public javax.swing.DefaultBoundedRangeModel()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultBoundedRangeModel", classCache: &DefaultBoundedRangeModel.DefaultBoundedRangeModelJNIClass, methodSig: "()V", methodCache: &DefaultBoundedRangeModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -78,12 +78,12 @@ open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( value: Int, extent: Int, min: Int, max: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        __args[1] = JNIType.toJava( value: extent, locals: &__locals )
-        __args[2] = JNIType.toJava( value: min, locals: &__locals )
-        __args[3] = JNIType.toJava( value: max, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = jvalue( i: jint(value) )
+        __args[1] = jvalue( i: jint(extent) )
+        __args[2] = jvalue( i: jint(min) )
+        __args[3] = jvalue( i: jint(max) )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultBoundedRangeModel", classCache: &DefaultBoundedRangeModel.DefaultBoundedRangeModelJNIClass, methodSig: "(IIII)V", methodCache: &DefaultBoundedRangeModel.new_MethodID_2, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -93,85 +93,81 @@ open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /
         self.init( value: _value, extent: _extent, min: _min, max: _max )
     }
 
-    /// public java.lang.String javax.swing.DefaultBoundedRangeModel.toString()
-
-    /// public int javax.swing.DefaultBoundedRangeModel.getValue()
-
-    private static var getValue_MethodID_3: jmethodID?
-
-    open func getValue() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getValue_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public void javax.swing.DefaultBoundedRangeModel.setValue(int)
-
-    private static var setValue_MethodID_4: jmethodID?
-
-    open func setValue( newValue: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newValue, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setValue_MethodID_4, args: &__args, locals: &__locals )
-    }
-
-    open func setValue( _ _newValue: Int ) {
-        setValue( newValue: _newValue )
-    }
-
     /// public void javax.swing.DefaultBoundedRangeModel.addChangeListener(javax.swing.event.ChangeListener)
 
-    private static var addChangeListener_MethodID_5: jmethodID?
+    private static var addChangeListener_MethodID_3: jmethodID?
 
     open func addChangeListener( x: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultBoundedRangeModel.addChangeListener_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultBoundedRangeModel.addChangeListener_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open func addChangeListener( _ _x: ChangeListener? ) {
         addChangeListener( x: _x )
     }
 
-    /// public void javax.swing.DefaultBoundedRangeModel.removeChangeListener(javax.swing.event.ChangeListener)
+    /// protected void javax.swing.DefaultBoundedRangeModel.fireStateChanged()
 
-    private static var removeChangeListener_MethodID_6: jmethodID?
+    private static var fireStateChanged_MethodID_4: jmethodID?
 
-    open func removeChangeListener( x: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func fireStateChanged() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: x, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultBoundedRangeModel.removeChangeListener_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &DefaultBoundedRangeModel.fireStateChanged_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func removeChangeListener( _ _x: ChangeListener? ) {
-        removeChangeListener( x: _x )
-    }
 
     /// public javax.swing.event.ChangeListener[] javax.swing.DefaultBoundedRangeModel.getChangeListeners()
 
-    private static var getChangeListeners_MethodID_7: jmethodID?
+    private static var getChangeListeners_MethodID_5: jmethodID?
 
     open func getChangeListeners() -> [ChangeListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &DefaultBoundedRangeModel.getChangeListeners_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &DefaultBoundedRangeModel.getChangeListeners_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward].self, from: __return )
     }
 
 
-    /// protected void javax.swing.DefaultBoundedRangeModel.fireStateChanged()
+    /// public int javax.swing.DefaultBoundedRangeModel.getExtent()
 
-    private static var fireStateChanged_MethodID_8: jmethodID?
+    private static var getExtent_MethodID_6: jmethodID?
 
-    open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getExtent() -> Int {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &DefaultBoundedRangeModel.fireStateChanged_MethodID_8, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtent", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getExtent_MethodID_6, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+
+    /// public java.util.EventListener[] javax.swing.DefaultBoundedRangeModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_7: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultBoundedRangeModel.getListeners_MethodID_7, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
+    }
+
+    /// public int javax.swing.DefaultBoundedRangeModel.getMaximum()
+
+    private static var getMaximum_MethodID_8: jmethodID?
+
+    open func getMaximum() -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getMaximum_MethodID_8, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
@@ -180,143 +176,149 @@ open class DefaultBoundedRangeModel: java_swift.JavaObject, BoundedRangeModel, /
     private static var getMinimum_MethodID_9: jmethodID?
 
     open func getMinimum() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMinimum", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getMinimum_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// public void javax.swing.DefaultBoundedRangeModel.setMinimum(int)
+    /// public int javax.swing.DefaultBoundedRangeModel.getValue()
 
-    private static var setMinimum_MethodID_10: jmethodID?
+    private static var getValue_MethodID_10: jmethodID?
 
-    open func setMinimum( newMinimum: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getValue() -> Int {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newMinimum, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setMinimum_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open func setMinimum( _ _newMinimum: Int ) {
-        setMinimum( newMinimum: _newMinimum )
-    }
-
-    /// public int javax.swing.DefaultBoundedRangeModel.getMaximum()
-
-    private static var getMaximum_MethodID_11: jmethodID?
-
-    open func getMaximum() -> Int {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getMaximum", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getMaximum_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getValue", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getValue_MethodID_10, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public boolean javax.swing.DefaultBoundedRangeModel.getValueIsAdjusting()
+
+    private static var getValueIsAdjusting_MethodID_11: jmethodID?
+
+    open func getValueIsAdjusting() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &DefaultBoundedRangeModel.getValueIsAdjusting_MethodID_11, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public void javax.swing.DefaultBoundedRangeModel.removeChangeListener(javax.swing.event.ChangeListener)
+
+    private static var removeChangeListener_MethodID_12: jmethodID?
+
+    open func removeChangeListener( x: ChangeListener? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: x, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultBoundedRangeModel.removeChangeListener_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func removeChangeListener( _ _x: ChangeListener? ) {
+        removeChangeListener( x: _x )
+    }
 
     /// public void javax.swing.DefaultBoundedRangeModel.setExtent(int)
 
-    private static var setExtent_MethodID_12: jmethodID?
+    private static var setExtent_MethodID_13: jmethodID?
 
     open func setExtent( newExtent: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newExtent, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtent", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setExtent_MethodID_12, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(newExtent) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setExtent", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setExtent_MethodID_13, args: &__args, locals: &__locals )
     }
 
     open func setExtent( _ _newExtent: Int ) {
         setExtent( newExtent: _newExtent )
     }
 
-    /// public void javax.swing.DefaultBoundedRangeModel.setRangeProperties(int,int,int,int,boolean)
-
-    private static var setRangeProperties_MethodID_13: jmethodID?
-
-    open func setRangeProperties( value: Int, extent: Int, min: Int, max: Int, adjusting: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: value, locals: &__locals )
-        __args[1] = JNIType.toJava( value: extent, locals: &__locals )
-        __args[2] = JNIType.toJava( value: min, locals: &__locals )
-        __args[3] = JNIType.toJava( value: max, locals: &__locals )
-        __args[4] = JNIType.toJava( value: adjusting, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRangeProperties", methodSig: "(IIIIZ)V", methodCache: &DefaultBoundedRangeModel.setRangeProperties_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setRangeProperties( _ _value: Int, _ _extent: Int, _ _min: Int, _ _max: Int, _ _adjusting: Bool ) {
-        setRangeProperties( value: _value, extent: _extent, min: _min, max: _max, adjusting: _adjusting )
-    }
-
-    /// public int javax.swing.DefaultBoundedRangeModel.getExtent()
-
-    private static var getExtent_MethodID_14: jmethodID?
-
-    open func getExtent() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getExtent", methodSig: "()I", methodCache: &DefaultBoundedRangeModel.getExtent_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-
-    /// public java.util.EventListener[] javax.swing.DefaultBoundedRangeModel.getListeners(java.lang.Class)
-
-    private static var getListeners_MethodID_15: jmethodID?
-
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultBoundedRangeModel.getListeners_MethodID_15, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
     /// public void javax.swing.DefaultBoundedRangeModel.setMaximum(int)
 
-    private static var setMaximum_MethodID_16: jmethodID?
+    private static var setMaximum_MethodID_14: jmethodID?
 
     open func setMaximum( newMaximum: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: newMaximum, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setMaximum_MethodID_16, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(newMaximum) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMaximum", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setMaximum_MethodID_14, args: &__args, locals: &__locals )
     }
 
     open func setMaximum( _ _newMaximum: Int ) {
         setMaximum( newMaximum: _newMaximum )
     }
 
+    /// public void javax.swing.DefaultBoundedRangeModel.setMinimum(int)
+
+    private static var setMinimum_MethodID_15: jmethodID?
+
+    open func setMinimum( newMinimum: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(newMinimum) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setMinimum", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setMinimum_MethodID_15, args: &__args, locals: &__locals )
+    }
+
+    open func setMinimum( _ _newMinimum: Int ) {
+        setMinimum( newMinimum: _newMinimum )
+    }
+
+    /// public void javax.swing.DefaultBoundedRangeModel.setRangeProperties(int,int,int,int,boolean)
+
+    private static var setRangeProperties_MethodID_16: jmethodID?
+
+    open func setRangeProperties( value: Int, extent: Int, min: Int, max: Int, adjusting: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(value) )
+        __args[1] = jvalue( i: jint(extent) )
+        __args[2] = jvalue( i: jint(min) )
+        __args[3] = jvalue( i: jint(max) )
+        __args[4] = jvalue( z: jboolean(adjusting ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setRangeProperties", methodSig: "(IIIIZ)V", methodCache: &DefaultBoundedRangeModel.setRangeProperties_MethodID_16, args: &__args, locals: &__locals )
+    }
+
+    open func setRangeProperties( _ _value: Int, _ _extent: Int, _ _min: Int, _ _max: Int, _ _adjusting: Bool ) {
+        setRangeProperties( value: _value, extent: _extent, min: _min, max: _max, adjusting: _adjusting )
+    }
+
+    /// public void javax.swing.DefaultBoundedRangeModel.setValue(int)
+
+    private static var setValue_MethodID_17: jmethodID?
+
+    open func setValue( newValue: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(newValue) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValue", methodSig: "(I)V", methodCache: &DefaultBoundedRangeModel.setValue_MethodID_17, args: &__args, locals: &__locals )
+    }
+
+    open func setValue( _ _newValue: Int ) {
+        setValue( newValue: _newValue )
+    }
+
     /// public void javax.swing.DefaultBoundedRangeModel.setValueIsAdjusting(boolean)
 
-    private static var setValueIsAdjusting_MethodID_17: jmethodID?
+    private static var setValueIsAdjusting_MethodID_18: jmethodID?
 
     open func setValueIsAdjusting( b: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &DefaultBoundedRangeModel.setValueIsAdjusting_MethodID_17, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueIsAdjusting", methodSig: "(Z)V", methodCache: &DefaultBoundedRangeModel.setValueIsAdjusting_MethodID_18, args: &__args, locals: &__locals )
     }
 
     open func setValueIsAdjusting( _ _b: Bool ) {
         setValueIsAdjusting( b: _b )
     }
 
-    /// public boolean javax.swing.DefaultBoundedRangeModel.getValueIsAdjusting()
+    /// public java.lang.String javax.swing.DefaultBoundedRangeModel.toString()
 
-    private static var getValueIsAdjusting_MethodID_18: jmethodID?
-
-    open func getValueIsAdjusting() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getValueIsAdjusting", methodSig: "()Z", methodCache: &DefaultBoundedRangeModel.getValueIsAdjusting_MethodID_18, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
+    // Skipping method: false true false false false 
 
 }
 

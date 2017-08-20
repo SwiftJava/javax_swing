@@ -17,9 +17,9 @@ open class RowSorterEvent: java_util.EventObject {
 
     private static var RowSorterEventJNIClass: jclass?
 
-    /// private javax.swing.event.RowSorterEvent$Type javax.swing.event.RowSorterEvent.type
-
     /// private int[] javax.swing.event.RowSorterEvent.oldViewToModel
+
+    /// private javax.swing.event.RowSorterEvent$Type javax.swing.event.RowSorterEvent.type
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -29,8 +29,8 @@ open class RowSorterEvent: java_util.EventObject {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &RowSorterEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &RowSorterEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -45,8 +45,8 @@ open class RowSorterEvent: java_util.EventObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( source: RowSorter? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/event/RowSorterEvent", classCache: &RowSorterEvent.RowSorterEventJNIClass, methodSig: "(Ljavax/swing/RowSorter;)V", methodCache: &RowSorterEvent.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -62,8 +62,8 @@ open class RowSorterEvent: java_util.EventObject {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( source: RowSorter?, type: RowSorterEvent_Type?, previousRowIndexToModel: [Int32]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: source, locals: &__locals )
         __args[1] = JNIType.toJava( value: type, locals: &__locals )
         __args[2] = JNIType.toJava( value: previousRowIndexToModel, locals: &__locals )
@@ -76,50 +76,54 @@ open class RowSorterEvent: java_util.EventObject {
         self.init( source: _source, type: _type, previousRowIndexToModel: _previousRowIndexToModel )
     }
 
-    /// public javax.swing.event.RowSorterEvent$Type javax.swing.event.RowSorterEvent.getType()
+    /// public int javax.swing.event.RowSorterEvent.convertPreviousRowIndexToModel(int)
 
-    private static var getType_MethodID_3: jmethodID?
+    private static var convertPreviousRowIndexToModel_MethodID_3: jmethodID?
 
-    open func getType() -> RowSorterEvent_Type! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func convertPreviousRowIndexToModel( index: Int ) -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getType", methodSig: "()Ljavax/swing/event/RowSorterEvent$Type;", methodCache: &RowSorterEvent.getType_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? RowSorterEvent_Type( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertPreviousRowIndexToModel", methodSig: "(I)I", methodCache: &RowSorterEvent.convertPreviousRowIndexToModel_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-
-    /// public java.lang.Object javax.swing.event.RowSorterEvent.getSource()
-
-    /// public javax.swing.RowSorter javax.swing.event.RowSorterEvent.getSource()
+    open func convertPreviousRowIndexToModel( _ _index: Int ) -> Int {
+        return convertPreviousRowIndexToModel( index: _index )
+    }
 
     /// public int javax.swing.event.RowSorterEvent.getPreviousRowCount()
 
     private static var getPreviousRowCount_MethodID_4: jmethodID?
 
     open func getPreviousRowCount() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getPreviousRowCount", methodSig: "()I", methodCache: &RowSorterEvent.getPreviousRowCount_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
-    /// public int javax.swing.event.RowSorterEvent.convertPreviousRowIndexToModel(int)
+    /// public java.lang.Object javax.swing.event.RowSorterEvent.getSource()
 
-    private static var convertPreviousRowIndexToModel_MethodID_5: jmethodID?
+    // Skipping method: false true false false false 
 
-    open func convertPreviousRowIndexToModel( index: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// public javax.swing.RowSorter javax.swing.event.RowSorterEvent.getSource()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.event.RowSorterEvent$Type javax.swing.event.RowSorterEvent.getType()
+
+    private static var getType_MethodID_5: jmethodID?
+
+    open func getType() -> RowSorterEvent_Type! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "convertPreviousRowIndexToModel", methodSig: "(I)I", methodCache: &RowSorterEvent.convertPreviousRowIndexToModel_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getType", methodSig: "()Ljavax/swing/event/RowSorterEvent$Type;", methodCache: &RowSorterEvent.getType_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? RowSorterEvent_Type( javaObject: __return ) : nil
     }
 
-    open func convertPreviousRowIndexToModel( _ _index: Int ) -> Int {
-        return convertPreviousRowIndexToModel( index: _index )
-    }
 
 }
 

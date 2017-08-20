@@ -17,31 +17,14 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
 
     private static var BasicTreeUI_ComponentHandlerJNIClass: jclass?
 
-    /// protected javax.swing.Timer javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.timer
-
-    private static var timer_FieldID: jfieldID?
-
-    open var timer: Timer! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "timer", fieldType: "Ljavax/swing/Timer;", fieldCache: &BasicTreeUI_ComponentHandler.timer_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? Timer( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "timer", fieldType: "Ljavax/swing/Timer;", fieldCache: &BasicTreeUI_ComponentHandler.timer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected javax.swing.JScrollBar javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.scrollBar
 
     private static var scrollBar_FieldID: jfieldID?
 
     open var scrollBar: JScrollBar! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollBar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &BasicTreeUI_ComponentHandler.scrollBar_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "scrollBar", fieldType: "Ljavax/swing/JScrollBar;", fieldCache: &BasicTreeUI_ComponentHandler.scrollBar_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JScrollBar( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -53,13 +36,32 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
 
     /// final javax.swing.plaf.basic.BasicTreeUI javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.this$0
 
+    // Skipping field: true false false false false false 
+
+    /// protected javax.swing.Timer javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.timer
+
+    private static var timer_FieldID: jfieldID?
+
+    open var timer: Timer! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "timer", fieldType: "Ljavax/swing/Timer;", fieldCache: &BasicTreeUI_ComponentHandler.timer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? Timer( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "timer", fieldType: "Ljavax/swing/Timer;", fieldCache: &BasicTreeUI_ComponentHandler.timer_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// public javax.swing.plaf.basic.BasicTreeUI$ComponentHandler(javax.swing.plaf.basic.BasicTreeUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTreeUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$ComponentHandler", classCache: &BasicTreeUI_ComponentHandler.BasicTreeUI_ComponentHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_ComponentHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -70,46 +72,48 @@ open class BasicTreeUI_ComponentHandler: java_awt.ComponentAdapter, java_awt.Act
         self.init( this_0: _this_0 )
     }
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.componentMoved(java.awt.event.ComponentEvent)
+    /// public void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.actionPerformed(java.awt.event.ActionEvent)
 
-    /// protected void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.startTimer()
+    private static var actionPerformed_MethodID_2: jmethodID?
 
-    private static var startTimer_MethodID_2: jmethodID?
-
-    open func startTimer() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func actionPerformed( e: java_awt.ActionEvent? ) {
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTimer", methodSig: "()V", methodCache: &BasicTreeUI_ComponentHandler.startTimer_MethodID_2, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: e, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &BasicTreeUI_ComponentHandler.actionPerformed_MethodID_2, args: &__args, locals: &__locals )
     }
 
+    open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
+        actionPerformed( e: _e )
+    }
+
+    /// public void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.componentMoved(java.awt.event.ComponentEvent)
+
+    // Skipping method: false true false false false 
 
     /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.getScrollPane()
 
     private static var getScrollPane_MethodID_3: jmethodID?
 
     open func getScrollPane() -> JScrollPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getScrollPane", methodSig: "()Ljavax/swing/JScrollPane;", methodCache: &BasicTreeUI_ComponentHandler.getScrollPane_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JScrollPane( javaObject: __return ) : nil
     }
 
 
-    /// public void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.actionPerformed(java.awt.event.ActionEvent)
+    /// protected void javax.swing.plaf.basic.BasicTreeUI$ComponentHandler.startTimer()
 
-    private static var actionPerformed_MethodID_4: jmethodID?
+    private static var startTimer_MethodID_4: jmethodID?
 
-    open func actionPerformed( e: java_awt.ActionEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func startTimer() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "actionPerformed", methodSig: "(Ljava/awt/event/ActionEvent;)V", methodCache: &BasicTreeUI_ComponentHandler.actionPerformed_MethodID_4, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "startTimer", methodSig: "()V", methodCache: &BasicTreeUI_ComponentHandler.startTimer_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func actionPerformed( _ _e: java_awt.ActionEvent? ) {
-        actionPerformed( e: _e )
-    }
 
 }
 

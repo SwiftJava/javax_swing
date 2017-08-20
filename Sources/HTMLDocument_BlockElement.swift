@@ -18,31 +18,41 @@ open class HTMLDocument_BlockElement: AbstractDocument_BranchElement {
 
     /// final javax.swing.text.html.HTMLDocument javax.swing.text.html.HTMLDocument$BlockElement.this$0
 
-    /// private javax.swing.text.AbstractDocument$AbstractElement[] javax.swing.text.AbstractDocument$BranchElement.children
+    // Skipping field: true false false false false false 
 
-    /// private int javax.swing.text.AbstractDocument$BranchElement.nchildren
+    /// private javax.swing.text.AbstractDocument$AbstractElement[] javax.swing.text.AbstractDocument$BranchElement.children
 
     /// private int javax.swing.text.AbstractDocument$BranchElement.lastIndex
 
+    /// private int javax.swing.text.AbstractDocument$BranchElement.nchildren
+
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$BranchElement.this$0
 
-    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+    // Skipping field: true false false false false false 
 
     /// private transient javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AbstractElement.attributes
 
+    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$AbstractElement.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.Object javax.swing.text.AttributeSet.NameAttribute
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.Object javax.swing.text.AttributeSet.ResolveAttribute
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.html.HTMLDocument$BlockElement(javax.swing.text.html.HTMLDocument,javax.swing.text.Element,javax.swing.text.AttributeSet)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: HTMLDocument?, parent: Element?, a: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
@@ -57,7 +67,11 @@ open class HTMLDocument_BlockElement: AbstractDocument_BranchElement {
 
     /// public java.lang.String javax.swing.text.html.HTMLDocument$BlockElement.getName()
 
+    // Skipping method: false true false false false 
+
     /// public javax.swing.text.AttributeSet javax.swing.text.html.HTMLDocument$BlockElement.getResolveParent()
+
+    // Skipping method: false true false false false 
 
 }
 

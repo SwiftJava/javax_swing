@@ -19,150 +19,94 @@ open class NimbusLookAndFeel: SynthLookAndFeel {
 
     /// private static final java.lang.String[] javax.swing.plaf.nimbus.NimbusLookAndFeel.COMPONENT_KEYS
 
-    /// private javax.swing.plaf.nimbus.NimbusDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.defaults
-
-    /// private javax.swing.UIDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.uiDefaults
-
-    /// private javax.swing.plaf.nimbus.NimbusLookAndFeel$DefaultsListener javax.swing.plaf.nimbus.NimbusLookAndFeel.defaultsListener
-
     /// private java.util.Map javax.swing.plaf.nimbus.NimbusLookAndFeel.compiledDefaults
 
     /// private boolean javax.swing.plaf.nimbus.NimbusLookAndFeel.defaultListenerAdded
 
+    /// private javax.swing.plaf.nimbus.NimbusDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.defaults
+
+    /// private javax.swing.plaf.nimbus.NimbusLookAndFeel$DefaultsListener javax.swing.plaf.nimbus.NimbusLookAndFeel.defaultsListener
+
+    /// private javax.swing.UIDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.uiDefaults
+
     /// static final java.awt.Insets javax.swing.plaf.synth.SynthLookAndFeel.EMPTY_UIRESOURCE_INSETS
 
-    /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.STYLE_FACTORY_KEY
+    // Skipping field: true false false false false false 
 
     /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.SELECTED_UI_KEY
 
     /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.SELECTED_UI_STATE_KEY
 
-    /// private static javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.lastFactory
+    /// private static final java.lang.Object javax.swing.plaf.synth.SynthLookAndFeel.STYLE_FACTORY_KEY
 
     /// private static sun.awt.AppContext javax.swing.plaf.synth.SynthLookAndFeel.lastContext
 
-    /// private javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.factory
-
-    /// private java.util.Map javax.swing.plaf.synth.SynthLookAndFeel.defaultsMap
-
-    /// private javax.swing.plaf.synth.SynthLookAndFeel$Handler javax.swing.plaf.synth.SynthLookAndFeel._handler
+    /// private static javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.lastFactory
 
     /// private static java.lang.ref.ReferenceQueue javax.swing.plaf.synth.SynthLookAndFeel.queue
 
+    /// private javax.swing.plaf.synth.SynthLookAndFeel$Handler javax.swing.plaf.synth.SynthLookAndFeel._handler
+
+    /// private java.util.Map javax.swing.plaf.synth.SynthLookAndFeel.defaultsMap
+
+    /// private javax.swing.plaf.synth.SynthStyleFactory javax.swing.plaf.synth.SynthLookAndFeel.factory
+
     /// static boolean javax.swing.plaf.basic.BasicLookAndFeel.needsEventHelper
+
+    // Skipping field: true false false false false false 
 
     /// private transient java.lang.Object javax.swing.plaf.basic.BasicLookAndFeel.audioLock
 
     /// private javax.sound.sampled.Clip javax.swing.plaf.basic.BasicLookAndFeel.clipPlaying
 
+    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicLookAndFeel.disposer
+
     /// javax.swing.plaf.basic.BasicLookAndFeel$AWTEventHelper javax.swing.plaf.basic.BasicLookAndFeel.invocator
 
-    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicLookAndFeel.disposer
+    // Skipping field: true false false false false false 
 
     /// public javax.swing.plaf.nimbus.NimbusLookAndFeel()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/nimbus/NimbusLookAndFeel", classCache: &NimbusLookAndFeel.NimbusLookAndFeelJNIClass, methodSig: "()V", methodCache: &NimbusLookAndFeel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.nimbus.NimbusLookAndFeel.register(javax.swing.plaf.synth.Region,java.lang.String)
-
-    private static var register_MethodID_2: jmethodID?
-
-    open func register( arg0: Region?, arg1: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "register", methodSig: "(Ljavax/swing/plaf/synth/Region;Ljava/lang/String;)V", methodCache: &NimbusLookAndFeel.register_MethodID_2, args: &__args, locals: &__locals )
-    }
-
-    open func register( _ _arg0: Region?, _ _arg1: String? ) {
-        register( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getName()
-
     /// static javax.swing.plaf.nimbus.NimbusDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.access$100(javax.swing.plaf.nimbus.NimbusLookAndFeel)
+
+    // Skipping method: true false false false false 
 
     /// static javax.swing.UIDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.access$500(javax.swing.plaf.nimbus.NimbusLookAndFeel)
 
-    /// public void javax.swing.plaf.nimbus.NimbusLookAndFeel.initialize()
-
-    /// static java.lang.Object javax.swing.plaf.nimbus.NimbusLookAndFeel.resolveToolbarConstraint(javax.swing.JToolBar)
-
-    /// public boolean javax.swing.plaf.nimbus.NimbusLookAndFeel.shouldUpdateStyleOnAncestorChanged()
-
-    /// protected boolean javax.swing.plaf.nimbus.NimbusLookAndFeel.shouldUpdateStyleOnEvent(java.beans.PropertyChangeEvent)
-
-    private static var shouldUpdateStyleOnEvent_MethodID_3: jmethodID?
-
-    open func shouldUpdateStyleOnEvent( arg0: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldUpdateStyleOnEvent", methodSig: "(Ljava/beans/PropertyChangeEvent;)Z", methodCache: &NimbusLookAndFeel.shouldUpdateStyleOnEvent_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func shouldUpdateStyleOnEvent( _ _arg0: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) -> Bool {
-        return shouldUpdateStyleOnEvent( arg0: _arg0 )
-    }
-
-    /// private java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getSystemProperty(java.lang.String)
-
-    /// static java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.parsePrefix(java.lang.String)
-
-    /// java.util.Map javax.swing.plaf.nimbus.NimbusLookAndFeel.getDefaultsForPrefix(java.lang.String)
-
-    /// private void javax.swing.plaf.nimbus.NimbusLookAndFeel.addDefault(java.lang.String,java.lang.Object)
-
-    /// static void javax.swing.plaf.nimbus.NimbusLookAndFeel.access$700(javax.swing.plaf.nimbus.NimbusLookAndFeel,java.lang.String,java.lang.Object)
-
-    /// public java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getID()
-
-    /// public javax.swing.UIDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.getDefaults()
-
-    /// public javax.swing.Icon javax.swing.plaf.nimbus.NimbusLookAndFeel.getDisabledIcon(javax.swing.JComponent,javax.swing.Icon)
-
-    private static var getDisabledIcon_MethodID_4: jmethodID?
-
-    open func getDisabledIcon( arg0: JComponent?, arg1: Icon? ) -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledIcon", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/Icon;)Ljavax/swing/Icon;", methodCache: &NimbusLookAndFeel.getDisabledIcon_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-    override open func getDisabledIcon( _ _arg0: JComponent?, _ _arg1: Icon? ) -> Icon! {
-        return getDisabledIcon( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public void javax.swing.plaf.nimbus.NimbusLookAndFeel.uninitialize()
+    // Skipping method: true false false false false 
 
     /// static java.util.Map javax.swing.plaf.nimbus.NimbusLookAndFeel.access$602(javax.swing.plaf.nimbus.NimbusLookAndFeel,java.util.Map)
 
-    /// public java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getDescription()
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.plaf.nimbus.NimbusLookAndFeel.access$700(javax.swing.plaf.nimbus.NimbusLookAndFeel,java.lang.String,java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// static int javax.swing.plaf.nimbus.NimbusLookAndFeel.deriveARGB(java.awt.Color,java.awt.Color,float)
+
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.nimbus.NimbusStyle javax.swing.plaf.nimbus.NimbusLookAndFeel.getStyle(javax.swing.JComponent,javax.swing.plaf.synth.Region)
 
-    private static var getStyle_MethodID_5: jmethodID?
+    private static var getStyle_MethodID_2: jmethodID?
 
     open class func getStyle( arg0: JComponent?, arg1: Region? ) -> NimbusStyle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/nimbus/NimbusLookAndFeel", classCache: &NimbusLookAndFeelJNIClass, methodName: "getStyle", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/plaf/synth/Region;)Ljavax/swing/plaf/nimbus/NimbusStyle;", methodCache: &getStyle_MethodID_5, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/nimbus/NimbusLookAndFeel", classCache: &NimbusLookAndFeelJNIClass, methodName: "getStyle", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/plaf/synth/Region;)Ljavax/swing/plaf/nimbus/NimbusStyle;", methodCache: &getStyle_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? NimbusStyle( javaObject: __return ) : nil
     }
@@ -171,20 +115,38 @@ open class NimbusLookAndFeel: SynthLookAndFeel {
         return getStyle( arg0: _arg0, arg1: _arg1 )
     }
 
+    /// static java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.parsePrefix(java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// static java.lang.Object javax.swing.plaf.nimbus.NimbusLookAndFeel.resolveToolbarConstraint(javax.swing.JToolBar)
+
+    // Skipping method: true false false false false 
+
+    /// private void javax.swing.plaf.nimbus.NimbusLookAndFeel.addDefault(java.lang.String,java.lang.Object)
+
+    /// public javax.swing.UIDefaults javax.swing.plaf.nimbus.NimbusLookAndFeel.getDefaults()
+
+    // Skipping method: false true false false false 
+
+    /// java.util.Map javax.swing.plaf.nimbus.NimbusLookAndFeel.getDefaultsForPrefix(java.lang.String)
+
+    // Skipping method: true false false false false 
+
     /// public java.awt.Color javax.swing.plaf.nimbus.NimbusLookAndFeel.getDerivedColor(java.lang.String,float,float,float,int,boolean)
 
-    private static var getDerivedColor_MethodID_6: jmethodID?
+    private static var getDerivedColor_MethodID_3: jmethodID?
 
     open func getDerivedColor( arg0: String?, arg1: Float, arg2: Float, arg3: Float, arg4: Int, arg5: Bool ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arg5, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDerivedColor", methodSig: "(Ljava/lang/String;FFFIZ)Ljava/awt/Color;", methodCache: &NimbusLookAndFeel.getDerivedColor_MethodID_6, args: &__args, locals: &__locals )
+        __args[1] = jvalue( f: arg1 )
+        __args[2] = jvalue( f: arg2 )
+        __args[3] = jvalue( f: arg3 )
+        __args[4] = jvalue( i: jint(arg4) )
+        __args[5] = jvalue( z: jboolean(arg5 ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDerivedColor", methodSig: "(Ljava/lang/String;FFFIZ)Ljava/awt/Color;", methodCache: &NimbusLookAndFeel.getDerivedColor_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -195,15 +157,15 @@ open class NimbusLookAndFeel: SynthLookAndFeel {
 
     /// protected final java.awt.Color javax.swing.plaf.nimbus.NimbusLookAndFeel.getDerivedColor(java.awt.Color,java.awt.Color,float)
 
-    private static var getDerivedColor_MethodID_7: jmethodID?
+    private static var getDerivedColor_MethodID_4: jmethodID?
 
     open func getDerivedColor( arg0: java_awt.Color?, arg1: java_awt.Color?, arg2: Float ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDerivedColor", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;F)Ljava/awt/Color;", methodCache: &NimbusLookAndFeel.getDerivedColor_MethodID_7, args: &__args, locals: &__locals )
+        __args[2] = jvalue( f: arg2 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDerivedColor", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;F)Ljava/awt/Color;", methodCache: &NimbusLookAndFeel.getDerivedColor_MethodID_4, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -214,16 +176,16 @@ open class NimbusLookAndFeel: SynthLookAndFeel {
 
     /// protected final java.awt.Color javax.swing.plaf.nimbus.NimbusLookAndFeel.getDerivedColor(java.awt.Color,java.awt.Color,float,boolean)
 
-    private static var getDerivedColor_MethodID_8: jmethodID?
+    private static var getDerivedColor_MethodID_5: jmethodID?
 
     open func getDerivedColor( arg0: java_awt.Color?, arg1: java_awt.Color?, arg2: Float, arg3: Bool ) -> java_awt.Color! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDerivedColor", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;FZ)Ljava/awt/Color;", methodCache: &NimbusLookAndFeel.getDerivedColor_MethodID_8, args: &__args, locals: &__locals )
+        __args[2] = jvalue( f: arg2 )
+        __args[3] = jvalue( z: jboolean(arg3 ? JNI_TRUE : JNI_FALSE) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDerivedColor", methodSig: "(Ljava/awt/Color;Ljava/awt/Color;FZ)Ljava/awt/Color;", methodCache: &NimbusLookAndFeel.getDerivedColor_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Color( javaObject: __return ) : nil
     }
@@ -232,7 +194,81 @@ open class NimbusLookAndFeel: SynthLookAndFeel {
         return getDerivedColor( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
     }
 
-    /// static int javax.swing.plaf.nimbus.NimbusLookAndFeel.deriveARGB(java.awt.Color,java.awt.Color,float)
+    /// public java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getDescription()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.Icon javax.swing.plaf.nimbus.NimbusLookAndFeel.getDisabledIcon(javax.swing.JComponent,javax.swing.Icon)
+
+    private static var getDisabledIcon_MethodID_6: jmethodID?
+
+    open func getDisabledIcon( arg0: JComponent?, arg1: Icon? ) -> Icon! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDisabledIcon", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/Icon;)Ljavax/swing/Icon;", methodCache: &NimbusLookAndFeel.getDisabledIcon_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
+    }
+
+    override open func getDisabledIcon( _ _arg0: JComponent?, _ _arg1: Icon? ) -> Icon! {
+        return getDisabledIcon( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getID()
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getName()
+
+    // Skipping method: false true false false false 
+
+    /// private java.lang.String javax.swing.plaf.nimbus.NimbusLookAndFeel.getSystemProperty(java.lang.String)
+
+    /// public void javax.swing.plaf.nimbus.NimbusLookAndFeel.initialize()
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.plaf.nimbus.NimbusLookAndFeel.register(javax.swing.plaf.synth.Region,java.lang.String)
+
+    private static var register_MethodID_7: jmethodID?
+
+    open func register( arg0: Region?, arg1: String? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "register", methodSig: "(Ljavax/swing/plaf/synth/Region;Ljava/lang/String;)V", methodCache: &NimbusLookAndFeel.register_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func register( _ _arg0: Region?, _ _arg1: String? ) {
+        register( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public boolean javax.swing.plaf.nimbus.NimbusLookAndFeel.shouldUpdateStyleOnAncestorChanged()
+
+    // Skipping method: false true false false false 
+
+    /// protected boolean javax.swing.plaf.nimbus.NimbusLookAndFeel.shouldUpdateStyleOnEvent(java.beans.PropertyChangeEvent)
+
+    private static var shouldUpdateStyleOnEvent_MethodID_8: jmethodID?
+
+    open func shouldUpdateStyleOnEvent( arg0: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "shouldUpdateStyleOnEvent", methodSig: "(Ljava/beans/PropertyChangeEvent;)Z", methodCache: &NimbusLookAndFeel.shouldUpdateStyleOnEvent_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    override open func shouldUpdateStyleOnEvent( _ _arg0: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) -> Bool {
+        return shouldUpdateStyleOnEvent( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.plaf.nimbus.NimbusLookAndFeel.uninitialize()
+
+    // Skipping method: false true false false false 
 
 }
 

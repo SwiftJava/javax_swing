@@ -22,14 +22,34 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
 
     /// private static final java.lang.Object javax.swing.plaf.basic.BasicRadioButtonUI.BASIC_RADIO_BUTTON_UI_KEY
 
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.iconRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefIconRect
+
+    /// private static java.awt.Insets javax.swing.plaf.basic.BasicRadioButtonUI.prefInsets
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefTextRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefViewRect
+
+    /// private static final java.lang.String javax.swing.plaf.basic.BasicRadioButtonUI.propertyPrefix
+
+    /// private static java.awt.Dimension javax.swing.plaf.basic.BasicRadioButtonUI.size
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.textRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.viewRect
+
+    /// private boolean javax.swing.plaf.basic.BasicRadioButtonUI.defaults_initialized
+
     /// protected javax.swing.Icon javax.swing.plaf.basic.BasicRadioButtonUI.icon
 
     private static var icon_FieldID: jfieldID?
 
     override open var icon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "icon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicCheckBoxUI.icon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "icon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicCheckBoxUI.icon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -39,31 +59,21 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
         }
     }
 
-    /// private boolean javax.swing.plaf.basic.BasicRadioButtonUI.defaults_initialized
-
-    /// private static final java.lang.String javax.swing.plaf.basic.BasicRadioButtonUI.propertyPrefix
-
     /// private java.awt.event.KeyListener javax.swing.plaf.basic.BasicRadioButtonUI.keyListener
-
-    /// private static java.awt.Dimension javax.swing.plaf.basic.BasicRadioButtonUI.size
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.viewRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.iconRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.textRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefViewRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefIconRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefTextRect
-
-    /// private static java.awt.Insets javax.swing.plaf.basic.BasicRadioButtonUI.prefInsets
 
     /// private static final java.lang.Object javax.swing.plaf.basic.BasicToggleButtonUI.BASIC_TOGGLE_BUTTON_UI_KEY
 
     /// private static final java.lang.String javax.swing.plaf.basic.BasicToggleButtonUI.propertyPrefix
+
+    /// private static final java.lang.Object javax.swing.plaf.basic.BasicButtonUI.BASIC_BUTTON_UI_KEY
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.iconRect
+
+    /// private static final java.lang.String javax.swing.plaf.basic.BasicButtonUI.propertyPrefix
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.textRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.viewRect
 
     /// protected int javax.swing.plaf.basic.BasicButtonUI.defaultTextIconGap
 
@@ -71,18 +81,15 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
 
     override open var defaultTextIconGap: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicCheckBoxUI.defaultTextIconGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicCheckBoxUI.defaultTextIconGap_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicCheckBoxUI.defaultTextIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
-
-    /// private int javax.swing.plaf.basic.BasicButtonUI.shiftOffset
 
     /// protected int javax.swing.plaf.basic.BasicButtonUI.defaultTextShiftOffset
 
@@ -90,34 +97,25 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
 
     override open var defaultTextShiftOffset: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &BasicCheckBoxUI.defaultTextShiftOffset_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &BasicCheckBoxUI.defaultTextShiftOffset_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &BasicCheckBoxUI.defaultTextShiftOffset_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private static final java.lang.String javax.swing.plaf.basic.BasicButtonUI.propertyPrefix
-
-    /// private static final java.lang.Object javax.swing.plaf.basic.BasicButtonUI.BASIC_BUTTON_UI_KEY
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.viewRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.textRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.iconRect
+    /// private int javax.swing.plaf.basic.BasicButtonUI.shiftOffset
 
     /// public javax.swing.plaf.basic.BasicCheckBoxUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicCheckBoxUI", classCache: &BasicCheckBoxUI.BasicCheckBoxUIJNIClass, methodSig: "()V", methodCache: &BasicCheckBoxUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -128,8 +126,8 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( b: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicCheckBoxUI", classCache: &BasicCheckBoxUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -145,10 +143,11 @@ open class BasicCheckBoxUI: BasicRadioButtonUI {
     private static var getPropertyPrefix_MethodID_3: jmethodID?
 
     override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicCheckBoxUI.getPropertyPrefix_MethodID_3, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
 

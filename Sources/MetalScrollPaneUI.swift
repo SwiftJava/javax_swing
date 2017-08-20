@@ -18,39 +18,7 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     /// private java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollPaneUI.scrollBarSwapListener
 
-    /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicScrollPaneUI.scrollpane
-
-    private static var scrollpane_FieldID: jfieldID?
-
-    override open var scrollpane: JScrollPane! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &MetalScrollPaneUI.scrollpane_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? JScrollPane( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &MetalScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbChangeListener
-
-    private static var vsbChangeListener_FieldID: jfieldID?
-
-    override open var vsbChangeListener: ChangeListener! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
+    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.handler
 
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbChangeListener
 
@@ -58,8 +26,8 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     override open var hsbChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.hsbChangeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "hsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.hsbChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -69,14 +37,56 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
         }
     }
 
+    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbPropertyChangeListener
+
+    /// private java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.mouseScrollListener
+
+    /// private int javax.swing.plaf.basic.BasicScrollPaneUI.oldExtent
+
+    /// protected javax.swing.JScrollPane javax.swing.plaf.basic.BasicScrollPaneUI.scrollpane
+
+    private static var scrollpane_FieldID: jfieldID?
+
+    override open var scrollpane: JScrollPane! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &MetalScrollPaneUI.scrollpane_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? JScrollPane( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "scrollpane", fieldType: "Ljavax/swing/JScrollPane;", fieldCache: &MetalScrollPaneUI.scrollpane_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
+    /// private boolean javax.swing.plaf.basic.BasicScrollPaneUI.setValueCalled
+
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.spPropertyChangeListener
+
+    private static var spPropertyChangeListener_FieldID: jfieldID?
+
+    override open var spPropertyChangeListener: /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.viewportChangeListener
 
     private static var viewportChangeListener_FieldID: jfieldID?
 
     override open var viewportChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.viewportChangeListener_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "viewportChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.viewportChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -86,84 +96,116 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
         }
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.spPropertyChangeListener
+    /// protected javax.swing.event.ChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbChangeListener
 
-    private static var spPropertyChangeListener_FieldID: jfieldID?
+    private static var vsbChangeListener_FieldID: jfieldID?
 
-    override open var spPropertyChangeListener: /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
+    override open var vsbChangeListener: ChangeListener! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __value ) : nil
+            let __value = JNIField.GetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.vsbChangeListener_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ChangeListenerForward( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "spPropertyChangeListener", fieldType: "Ljava/beans/PropertyChangeListener;", fieldCache: &MetalScrollPaneUI.spPropertyChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "vsbChangeListener", fieldType: "Ljavax/swing/event/ChangeListener;", fieldCache: &MetalScrollPaneUI.vsbChangeListener_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
-    /// private java.awt.event.MouseWheelListener javax.swing.plaf.basic.BasicScrollPaneUI.mouseScrollListener
-
-    /// private int javax.swing.plaf.basic.BasicScrollPaneUI.oldExtent
-
     /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.vsbPropertyChangeListener
-
-    /// private java.beans.PropertyChangeListener javax.swing.plaf.basic.BasicScrollPaneUI.hsbPropertyChangeListener
-
-    /// private javax.swing.plaf.basic.BasicScrollPaneUI$Handler javax.swing.plaf.basic.BasicScrollPaneUI.handler
-
-    /// private boolean javax.swing.plaf.basic.BasicScrollPaneUI.setValueCalled
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VIEWPORT
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.ROW_HEADER
 
     /// public static final java.lang.String javax.swing.ScrollPaneConstants.COLUMN_HEADER
 
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEFT_CORNER
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_RIGHT_CORNER
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR
 
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEFT_CORNER
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_RIGHT_CORNER
+    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS
 
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEADING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_TRAILING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEADING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_TRAILING_CORNER
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_POLICY
-
-    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_POLICY
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
-
-    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
+    // Skipping field: false true false false false false 
 
     /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED
 
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
 
-    /// public static final int javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_POLICY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEADING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_LEFT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_RIGHT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.LOWER_TRAILING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.ROW_HEADER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEADING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_LEFT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_RIGHT_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.UPPER_TRAILING_CORNER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_POLICY
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.ScrollPaneConstants.VIEWPORT
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.plaf.metal.MetalScrollPaneUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalScrollPaneUI", classCache: &MetalScrollPaneUI.MetalScrollPaneUIJNIClass, methodSig: "()V", methodCache: &MetalScrollPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -171,13 +213,15 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     /// static void javax.swing.plaf.metal.MetalScrollPaneUI.access$000(javax.swing.plaf.metal.MetalScrollPaneUI)
 
+    // Skipping method: true false false false false 
+
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.metal.MetalScrollPaneUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( x: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: x, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/metal/MetalScrollPaneUI", classCache: &MetalScrollPaneUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -188,30 +232,26 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
         return createUI( x: _x )
     }
 
-    /// public void javax.swing.plaf.metal.MetalScrollPaneUI.installUI(javax.swing.JComponent)
+    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollPaneUI.createScrollBarSwapListener()
 
-    private static var installUI_MethodID_3: jmethodID?
+    private static var createScrollBarSwapListener_MethodID_3: jmethodID?
 
-    override open func installUI( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func createScrollBarSwapListener() -> /* interface java.beans.PropertyChangeListener */ UnavailableProtocol! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.installUI_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollBarSwapListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollPaneUI.createScrollBarSwapListener_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface java.beans.PropertyChangeListener */ UnavailableProtocolForward( javaObject: __return ) : nil
     }
 
-    override open func installUI( _ _c: JComponent? ) {
-        installUI( c: _c )
-    }
-
-    /// public void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallUI(javax.swing.JComponent)
 
     /// public void javax.swing.plaf.metal.MetalScrollPaneUI.installListeners(javax.swing.JScrollPane)
 
     private static var installListeners_MethodID_4: jmethodID?
 
     open func installListeners( scrollPane: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: scrollPane, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.installListeners_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -220,15 +260,30 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
         installListeners( scrollPane: _scrollPane )
     }
 
+    /// public void javax.swing.plaf.metal.MetalScrollPaneUI.installUI(javax.swing.JComponent)
+
+    private static var installUI_MethodID_5: jmethodID?
+
+    override open func installUI( c: JComponent? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: c, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installUI", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.installUI_MethodID_5, args: &__args, locals: &__locals )
+    }
+
+    override open func installUI( _ _c: JComponent? ) {
+        installUI( c: _c )
+    }
+
     /// protected void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallListeners(javax.swing.JComponent)
 
-    private static var uninstallListeners_MethodID_5: jmethodID?
+    private static var uninstallListeners_MethodID_6: jmethodID?
 
     override open func uninstallListeners( c: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func uninstallListeners( _ _c: JComponent? ) {
@@ -237,31 +292,22 @@ open class MetalScrollPaneUI: BasicScrollPaneUI {
 
     /// public void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallListeners(javax.swing.JScrollPane)
 
-    private static var uninstallListeners_MethodID_6: jmethodID?
+    private static var uninstallListeners_MethodID_7: jmethodID?
 
     open func uninstallListeners( scrollPane: JScrollPane? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: scrollPane, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/JScrollPane;)V", methodCache: &MetalScrollPaneUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
     }
 
     open func uninstallListeners( _ _scrollPane: JScrollPane? ) {
         uninstallListeners( scrollPane: _scrollPane )
     }
 
-    /// protected java.beans.PropertyChangeListener javax.swing.plaf.metal.MetalScrollPaneUI.createScrollBarSwapListener()
+    /// public void javax.swing.plaf.metal.MetalScrollPaneUI.uninstallUI(javax.swing.JComponent)
 
-    private static var createScrollBarSwapListener_MethodID_7: jmethodID?
-
-    open func createScrollBarSwapListener() -> /* java.beans.PropertyChangeListener */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "createScrollBarSwapListener", methodSig: "()Ljava/beans/PropertyChangeListener;", methodCache: &MetalScrollPaneUI.createScrollBarSwapListener_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* java.beans.PropertyChangeListener */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
+    // Skipping method: false true false false false 
 
     /// private void javax.swing.plaf.metal.MetalScrollPaneUI.updateScrollbarsFreeStanding()
 

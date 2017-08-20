@@ -24,14 +24,14 @@ open class TableCellRendererForward: JNIObjectForward, TableCellRenderer {
     private static var getTableCellRendererComponent_MethodID_2: jmethodID?
 
     open func getTableCellRendererComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, hasFocus: Bool, row: Int, column: Int ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: table, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        __args[3] = JNIType.toJava( value: hasFocus, locals: &__locals )
-        __args[4] = JNIType.toJava( value: row, locals: &__locals )
-        __args[5] = JNIType.toJava( value: column, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        __args[3] = jvalue( z: jboolean(hasFocus ? JNI_TRUE : JNI_FALSE) )
+        __args[4] = jvalue( i: jint(row) )
+        __args[5] = jvalue( i: jint(column) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableCellRendererComponent", methodSig: "(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;", methodCache: &TableCellRendererForward.getTableCellRendererComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -42,5 +42,4 @@ open class TableCellRendererForward: JNIObjectForward, TableCellRenderer {
     }
 
 }
-
 

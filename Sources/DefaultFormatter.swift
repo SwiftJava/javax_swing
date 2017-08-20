@@ -22,17 +22,19 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
 
     /// private boolean javax.swing.text.DefaultFormatter.allowsInvalid
 
-    /// private boolean javax.swing.text.DefaultFormatter.overwriteMode
-
     /// private boolean javax.swing.text.DefaultFormatter.commitOnEdit
-
-    /// private java.lang.Class javax.swing.text.DefaultFormatter.valueClass
-
-    /// private javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.navigationFilter
 
     /// private javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.documentFilter
 
+    /// private javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.navigationFilter
+
+    /// private boolean javax.swing.text.DefaultFormatter.overwriteMode
+
     /// transient javax.swing.text.DefaultFormatter$ReplaceHolder javax.swing.text.DefaultFormatter.replaceHolder
+
+    // Skipping field: true false false false false false 
+
+    /// private java.lang.Class javax.swing.text.DefaultFormatter.valueClass
 
     /// private javax.swing.JFormattedTextField javax.swing.JFormattedTextField$AbstractFormatter.ftf
 
@@ -41,55 +43,279 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/DefaultFormatter", classCache: &DefaultFormatter.DefaultFormatterJNIClass, methodSig: "()V", methodCache: &DefaultFormatter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
+
+    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$200(javax.swing.text.DefaultFormatter)
+
+    // Skipping method: true false false false false 
+
+    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$300(javax.swing.text.DefaultFormatter)
+
+    // Skipping method: true false false false false 
+
+    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$400(javax.swing.text.DefaultFormatter)
+
+    // Skipping method: true false false false false 
+
+    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$500(javax.swing.text.DefaultFormatter)
+
+    // Skipping method: true false false false false 
+
+    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$600(javax.swing.text.DefaultFormatter)
+
+    // Skipping method: true false false false false 
+
+    /// boolean javax.swing.text.DefaultFormatter.canReplace(javax.swing.text.DefaultFormatter$ReplaceHolder)
+
+    // Skipping method: true false false false false 
 
     /// public java.lang.Object javax.swing.text.DefaultFormatter.clone() throws java.lang.CloneNotSupportedException
 
     private static var clone_MethodID_2: jmethodID?
 
     override open func clone() throws /* java.lang.CloneNotSupportedException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "clone", methodSig: "()Ljava/lang/Object;", methodCache: &DefaultFormatter.clone_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
             throw java_lang.CloneNotSupportedException( javaObject: throwable )
         }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
 
 
-    /// boolean javax.swing.text.DefaultFormatter.replace(javax.swing.text.DefaultFormatter$ReplaceHolder) throws javax.swing.text.BadLocationException
+    /// void javax.swing.text.DefaultFormatter.commitEdit() throws java.text.ParseException
+
+    // Skipping method: true false false false false 
+
+    /// public boolean javax.swing.text.DefaultFormatter.getAllowsInvalid()
+
+    private static var getAllowsInvalid_MethodID_3: jmethodID?
+
+    open func getAllowsInvalid() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsInvalid", methodSig: "()Z", methodCache: &DefaultFormatter.getAllowsInvalid_MethodID_3, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public boolean javax.swing.text.DefaultFormatter.getCommitsOnValidEdit()
+
+    private static var getCommitsOnValidEdit_MethodID_4: jmethodID?
+
+    open func getCommitsOnValidEdit() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCommitsOnValidEdit", methodSig: "()Z", methodCache: &DefaultFormatter.getCommitsOnValidEdit_MethodID_4, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// protected javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.getDocumentFilter()
+
+    private static var getDocumentFilter_MethodID_5: jmethodID?
+
+    override open func getDocumentFilter() -> DocumentFilter! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentFilter", methodSig: "()Ljavax/swing/text/DocumentFilter;", methodCache: &DefaultFormatter.getDocumentFilter_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? DocumentFilter( javaObject: __return ) : nil
+    }
+
+
+    /// int javax.swing.text.DefaultFormatter.getInitialVisualPosition()
+
+    // Skipping method: true false false false false 
+
+    /// protected javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.getNavigationFilter()
+
+    private static var getNavigationFilter_MethodID_6: jmethodID?
+
+    override open func getNavigationFilter() -> NavigationFilter! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &DefaultFormatter.getNavigationFilter_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
+    }
+
+
+    /// int javax.swing.text.DefaultFormatter.getNextCursorPosition(int,int)
+
+    // Skipping method: true false false false false 
+
+    /// private int javax.swing.text.DefaultFormatter.getNextNavigatableChar(int,int)
+
+    /// int javax.swing.text.DefaultFormatter.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
+
+    // Skipping method: true false false false false 
+
+    /// public boolean javax.swing.text.DefaultFormatter.getOverwriteMode()
+
+    private static var getOverwriteMode_MethodID_7: jmethodID?
+
+    open func getOverwriteMode() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getOverwriteMode", methodSig: "()Z", methodCache: &DefaultFormatter.getOverwriteMode_MethodID_7, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// javax.swing.text.DefaultFormatter$ReplaceHolder javax.swing.text.DefaultFormatter.getReplaceHolder(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet)
+
+    // Skipping method: true false false false false 
+
+    /// java.lang.String javax.swing.text.DefaultFormatter.getReplaceString(int,int,java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// public java.lang.Class javax.swing.text.DefaultFormatter.getValueClass()
+
+    private static var getValueClass_MethodID_8: jmethodID?
+
+    open func getValueClass() -> java_swift.JavaClass! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValueClass", methodSig: "()Ljava/lang/Class;", methodCache: &DefaultFormatter.getValueClass_MethodID_8, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
+    }
+
+
+    /// public void javax.swing.text.DefaultFormatter.install(javax.swing.JFormattedTextField)
+
+    private static var install_MethodID_9: jmethodID?
+
+    open func install( arg0: JFormattedTextField? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &DefaultFormatter.install_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    override open func install( _ _arg0: JFormattedTextField? ) {
+        install( arg0: _arg0 )
+    }
+
+    /// boolean javax.swing.text.DefaultFormatter.isLegalInsertText(java.lang.String)
+
+    // Skipping method: true false false false false 
+
+    /// boolean javax.swing.text.DefaultFormatter.isNavigatable(int)
+
+    // Skipping method: true false false false false 
+
+    /// boolean javax.swing.text.DefaultFormatter.isValidEdit(javax.swing.text.DefaultFormatter$ReplaceHolder)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.DefaultFormatter.moveDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.DefaultFormatter.positionCursorAtInitialLocation()
+
+    // Skipping method: true false false false false 
 
     /// void javax.swing.text.DefaultFormatter.replace(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet) throws javax.swing.text.BadLocationException
 
-    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$200(javax.swing.text.DefaultFormatter)
+    // Skipping method: true false false false false 
 
-    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$300(javax.swing.text.DefaultFormatter)
+    /// boolean javax.swing.text.DefaultFormatter.replace(javax.swing.text.DefaultFormatter$ReplaceHolder) throws javax.swing.text.BadLocationException
 
-    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$400(javax.swing.text.DefaultFormatter)
+    // Skipping method: true false false false false 
 
-    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$500(javax.swing.text.DefaultFormatter)
+    /// void javax.swing.text.DefaultFormatter.repositionCursor(int,int)
 
-    /// static javax.swing.JFormattedTextField javax.swing.text.DefaultFormatter.access$600(javax.swing.text.DefaultFormatter)
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.text.DefaultFormatter.setAllowsInvalid(boolean)
+
+    private static var setAllowsInvalid_MethodID_10: jmethodID?
+
+    open func setAllowsInvalid( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllowsInvalid", methodSig: "(Z)V", methodCache: &DefaultFormatter.setAllowsInvalid_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setAllowsInvalid( _ _arg0: Bool ) {
+        setAllowsInvalid( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.DefaultFormatter.setCommitsOnValidEdit(boolean)
+
+    private static var setCommitsOnValidEdit_MethodID_11: jmethodID?
+
+    open func setCommitsOnValidEdit( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCommitsOnValidEdit", methodSig: "(Z)V", methodCache: &DefaultFormatter.setCommitsOnValidEdit_MethodID_11, args: &__args, locals: &__locals )
+    }
+
+    open func setCommitsOnValidEdit( _ _arg0: Bool ) {
+        setCommitsOnValidEdit( arg0: _arg0 )
+    }
+
+    /// void javax.swing.text.DefaultFormatter.setDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
+
+    // Skipping method: true false false false false 
+
+    /// public void javax.swing.text.DefaultFormatter.setOverwriteMode(boolean)
+
+    private static var setOverwriteMode_MethodID_12: jmethodID?
+
+    open func setOverwriteMode( arg0: Bool ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( z: jboolean(arg0 ? JNI_TRUE : JNI_FALSE) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOverwriteMode", methodSig: "(Z)V", methodCache: &DefaultFormatter.setOverwriteMode_MethodID_12, args: &__args, locals: &__locals )
+    }
+
+    open func setOverwriteMode( _ _arg0: Bool ) {
+        setOverwriteMode( arg0: _arg0 )
+    }
+
+    /// public void javax.swing.text.DefaultFormatter.setValueClass(java.lang.Class)
+
+    private static var setValueClass_MethodID_13: jmethodID?
+
+    open func setValueClass( arg0: java_swift.JavaClass? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueClass", methodSig: "(Ljava/lang/Class;)V", methodCache: &DefaultFormatter.setValueClass_MethodID_13, args: &__args, locals: &__locals )
+    }
+
+    open func setValueClass( _ _arg0: java_swift.JavaClass? ) {
+        setValueClass( arg0: _arg0 )
+    }
 
     /// public java.lang.Object javax.swing.text.DefaultFormatter.stringToValue(java.lang.String) throws java.text.ParseException
 
-    private static var stringToValue_MethodID_3: jmethodID?
+    private static var stringToValue_MethodID_14: jmethodID?
 
     open func stringToValue( arg0: String? ) throws /* java.text.ParseException */ -> java_swift.JavaObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &DefaultFormatter.stringToValue_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "stringToValue", methodSig: "(Ljava/lang/String;)Ljava/lang/Object;", methodCache: &DefaultFormatter.stringToValue_MethodID_14, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.text.ParseException */ UnavailableObject( javaObject: throwable )
         }
         return __return != nil ? java_swift.JavaObject( javaObject: __return ) : nil
     }
@@ -98,208 +324,34 @@ open class DefaultFormatter: JFormattedTextField_AbstractFormatter, java_lang.Cl
         return try stringToValue( arg0: _arg0 )
     }
 
+    /// void javax.swing.text.DefaultFormatter.updateValue(java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// void javax.swing.text.DefaultFormatter.updateValue()
+
+    // Skipping method: true false false false false 
+
     /// public java.lang.String javax.swing.text.DefaultFormatter.valueToString(java.lang.Object) throws java.text.ParseException
 
-    private static var valueToString_MethodID_4: jmethodID?
+    private static var valueToString_MethodID_15: jmethodID?
 
     open func valueToString( arg0: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &DefaultFormatter.valueToString_MethodID_4, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "valueToString", methodSig: "(Ljava/lang/Object;)Ljava/lang/String;", methodCache: &DefaultFormatter.valueToString_MethodID_15, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
         if let throwable = JNI.ExceptionCheck() {
-            throw /* java.text.ParseException */ UnclassedObject( javaObject: throwable )
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw /* class java.text.ParseException */ UnavailableObject( javaObject: throwable )
         }
-        return JNIType.toSwift( type: String(), from: __return )
+        return __return != nil ? String( javaObject: __return ) : nil
     }
 
     override open func valueToString( _ _arg0: java_swift.JavaObject? ) throws /* java.text.ParseException */ -> String! {
         return try valueToString( arg0: _arg0 )
     }
-
-    /// protected javax.swing.text.DocumentFilter javax.swing.text.DefaultFormatter.getDocumentFilter()
-
-    private static var getDocumentFilter_MethodID_5: jmethodID?
-
-    override open func getDocumentFilter() -> DocumentFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDocumentFilter", methodSig: "()Ljavax/swing/text/DocumentFilter;", methodCache: &DefaultFormatter.getDocumentFilter_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? DocumentFilter( javaObject: __return ) : nil
-    }
-
-
-    /// void javax.swing.text.DefaultFormatter.commitEdit() throws java.text.ParseException
-
-    /// public void javax.swing.text.DefaultFormatter.setValueClass(java.lang.Class)
-
-    private static var setValueClass_MethodID_6: jmethodID?
-
-    open func setValueClass( arg0: java_swift.JavaClass? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setValueClass", methodSig: "(Ljava/lang/Class;)V", methodCache: &DefaultFormatter.setValueClass_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-    open func setValueClass( _ _arg0: java_swift.JavaClass? ) {
-        setValueClass( arg0: _arg0 )
-    }
-
-    /// protected javax.swing.text.NavigationFilter javax.swing.text.DefaultFormatter.getNavigationFilter()
-
-    private static var getNavigationFilter_MethodID_7: jmethodID?
-
-    override open func getNavigationFilter() -> NavigationFilter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getNavigationFilter", methodSig: "()Ljavax/swing/text/NavigationFilter;", methodCache: &DefaultFormatter.getNavigationFilter_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? NavigationFilter( javaObject: __return ) : nil
-    }
-
-
-    /// public void javax.swing.text.DefaultFormatter.install(javax.swing.JFormattedTextField)
-
-    private static var install_MethodID_8: jmethodID?
-
-    open func install( arg0: JFormattedTextField? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "install", methodSig: "(Ljavax/swing/JFormattedTextField;)V", methodCache: &DefaultFormatter.install_MethodID_8, args: &__args, locals: &__locals )
-    }
-
-    override open func install( _ _arg0: JFormattedTextField? ) {
-        install( arg0: _arg0 )
-    }
-
-    /// void javax.swing.text.DefaultFormatter.setDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
-
-    /// void javax.swing.text.DefaultFormatter.moveDot(javax.swing.text.NavigationFilter$FilterBypass,int,javax.swing.text.Position$Bias)
-
-    /// int javax.swing.text.DefaultFormatter.getNextVisualPositionFrom(javax.swing.text.JTextComponent,int,javax.swing.text.Position$Bias,int,javax.swing.text.Position$Bias[]) throws javax.swing.text.BadLocationException
-
-    /// boolean javax.swing.text.DefaultFormatter.isNavigatable(int)
-
-    /// void javax.swing.text.DefaultFormatter.updateValue()
-
-    /// void javax.swing.text.DefaultFormatter.updateValue(java.lang.Object)
-
-    /// boolean javax.swing.text.DefaultFormatter.canReplace(javax.swing.text.DefaultFormatter$ReplaceHolder)
-
-    /// void javax.swing.text.DefaultFormatter.repositionCursor(int,int)
-
-    /// javax.swing.text.DefaultFormatter$ReplaceHolder javax.swing.text.DefaultFormatter.getReplaceHolder(javax.swing.text.DocumentFilter$FilterBypass,int,int,java.lang.String,javax.swing.text.AttributeSet)
-
-    /// public void javax.swing.text.DefaultFormatter.setOverwriteMode(boolean)
-
-    private static var setOverwriteMode_MethodID_9: jmethodID?
-
-    open func setOverwriteMode( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setOverwriteMode", methodSig: "(Z)V", methodCache: &DefaultFormatter.setOverwriteMode_MethodID_9, args: &__args, locals: &__locals )
-    }
-
-    open func setOverwriteMode( _ _arg0: Bool ) {
-        setOverwriteMode( arg0: _arg0 )
-    }
-
-    /// public java.lang.Class javax.swing.text.DefaultFormatter.getValueClass()
-
-    private static var getValueClass_MethodID_10: jmethodID?
-
-    open func getValueClass() -> java_swift.JavaClass! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getValueClass", methodSig: "()Ljava/lang/Class;", methodCache: &DefaultFormatter.getValueClass_MethodID_10, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_swift.JavaClass( javaObject: __return ) : nil
-    }
-
-
-    /// void javax.swing.text.DefaultFormatter.positionCursorAtInitialLocation()
-
-    /// public boolean javax.swing.text.DefaultFormatter.getAllowsInvalid()
-
-    private static var getAllowsInvalid_MethodID_11: jmethodID?
-
-    open func getAllowsInvalid() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getAllowsInvalid", methodSig: "()Z", methodCache: &DefaultFormatter.getAllowsInvalid_MethodID_11, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public boolean javax.swing.text.DefaultFormatter.getOverwriteMode()
-
-    private static var getOverwriteMode_MethodID_12: jmethodID?
-
-    open func getOverwriteMode() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getOverwriteMode", methodSig: "()Z", methodCache: &DefaultFormatter.getOverwriteMode_MethodID_12, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.DefaultFormatter.setCommitsOnValidEdit(boolean)
-
-    private static var setCommitsOnValidEdit_MethodID_13: jmethodID?
-
-    open func setCommitsOnValidEdit( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setCommitsOnValidEdit", methodSig: "(Z)V", methodCache: &DefaultFormatter.setCommitsOnValidEdit_MethodID_13, args: &__args, locals: &__locals )
-    }
-
-    open func setCommitsOnValidEdit( _ _arg0: Bool ) {
-        setCommitsOnValidEdit( arg0: _arg0 )
-    }
-
-    /// public boolean javax.swing.text.DefaultFormatter.getCommitsOnValidEdit()
-
-    private static var getCommitsOnValidEdit_MethodID_14: jmethodID?
-
-    open func getCommitsOnValidEdit() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "getCommitsOnValidEdit", methodSig: "()Z", methodCache: &DefaultFormatter.getCommitsOnValidEdit_MethodID_14, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// public void javax.swing.text.DefaultFormatter.setAllowsInvalid(boolean)
-
-    private static var setAllowsInvalid_MethodID_15: jmethodID?
-
-    open func setAllowsInvalid( arg0: Bool ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setAllowsInvalid", methodSig: "(Z)V", methodCache: &DefaultFormatter.setAllowsInvalid_MethodID_15, args: &__args, locals: &__locals )
-    }
-
-    open func setAllowsInvalid( _ _arg0: Bool ) {
-        setAllowsInvalid( arg0: _arg0 )
-    }
-
-    /// int javax.swing.text.DefaultFormatter.getInitialVisualPosition()
-
-    /// boolean javax.swing.text.DefaultFormatter.isLegalInsertText(java.lang.String)
-
-    /// private int javax.swing.text.DefaultFormatter.getNextNavigatableChar(int,int)
-
-    /// java.lang.String javax.swing.text.DefaultFormatter.getReplaceString(int,int,java.lang.String)
-
-    /// boolean javax.swing.text.DefaultFormatter.isValidEdit(javax.swing.text.DefaultFormatter$ReplaceHolder)
-
-    /// int javax.swing.text.DefaultFormatter.getNextCursorPosition(int,int)
 
 }
 

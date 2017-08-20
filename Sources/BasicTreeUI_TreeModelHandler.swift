@@ -18,13 +18,15 @@ open class BasicTreeUI_TreeModelHandler: java_swift.JavaObject, TreeModelListene
 
     /// final javax.swing.plaf.basic.BasicTreeUI javax.swing.plaf.basic.BasicTreeUI$TreeModelHandler.this$0
 
+    // Skipping field: true false false false false false 
+
     /// public javax.swing.plaf.basic.BasicTreeUI$TreeModelHandler(javax.swing.plaf.basic.BasicTreeUI)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: BasicTreeUI? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicTreeUI$TreeModelHandler", classCache: &BasicTreeUI_TreeModelHandler.BasicTreeUI_TreeModelHandlerJNIClass, methodSig: "(Ljavax/swing/plaf/basic/BasicTreeUI;)V", methodCache: &BasicTreeUI_TreeModelHandler.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -40,8 +42,8 @@ open class BasicTreeUI_TreeModelHandler: java_swift.JavaObject, TreeModelListene
     private static var treeNodesChanged_MethodID_2: jmethodID?
 
     open func treeNodesChanged( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesChanged", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &BasicTreeUI_TreeModelHandler.treeNodesChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -55,8 +57,8 @@ open class BasicTreeUI_TreeModelHandler: java_swift.JavaObject, TreeModelListene
     private static var treeNodesInserted_MethodID_3: jmethodID?
 
     open func treeNodesInserted( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesInserted", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &BasicTreeUI_TreeModelHandler.treeNodesInserted_MethodID_3, args: &__args, locals: &__locals )
     }
@@ -70,8 +72,8 @@ open class BasicTreeUI_TreeModelHandler: java_swift.JavaObject, TreeModelListene
     private static var treeNodesRemoved_MethodID_4: jmethodID?
 
     open func treeNodesRemoved( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeNodesRemoved", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &BasicTreeUI_TreeModelHandler.treeNodesRemoved_MethodID_4, args: &__args, locals: &__locals )
     }
@@ -85,8 +87,8 @@ open class BasicTreeUI_TreeModelHandler: java_swift.JavaObject, TreeModelListene
     private static var treeStructureChanged_MethodID_5: jmethodID?
 
     open func treeStructureChanged( e: TreeModelEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "treeStructureChanged", methodSig: "(Ljavax/swing/event/TreeModelEvent;)V", methodCache: &BasicTreeUI_TreeModelHandler.treeStructureChanged_MethodID_5, args: &__args, locals: &__locals )
     }

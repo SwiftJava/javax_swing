@@ -24,13 +24,13 @@ open class ListCellRendererForward: JNIObjectForward, ListCellRenderer {
     private static var getListCellRendererComponent_MethodID_2: jmethodID?
 
     open func getListCellRendererComponent( list: JList?, value: java_swift.JavaObject?, index: Int, isSelected: Bool, cellHasFocus: Bool ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         __args[0] = JNIType.toJava( value: list, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: index, locals: &__locals )
-        __args[3] = JNIType.toJava( value: isSelected, locals: &__locals )
-        __args[4] = JNIType.toJava( value: cellHasFocus, locals: &__locals )
+        __args[2] = jvalue( i: jint(index) )
+        __args[3] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        __args[4] = jvalue( z: jboolean(cellHasFocus ? JNI_TRUE : JNI_FALSE) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListCellRendererComponent", methodSig: "(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;", methodCache: &ListCellRendererForward.getListCellRendererComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -41,5 +41,4 @@ open class ListCellRendererForward: JNIObjectForward, ListCellRenderer {
     }
 
 }
-
 

@@ -24,8 +24,8 @@ open class ChangeListenerForward: java_util.EventListenerForward, ChangeListener
     private static var stateChanged_MethodID_2: jmethodID?
 
     open func stateChanged( e: ChangeEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "stateChanged", methodSig: "(Ljavax/swing/event/ChangeEvent;)V", methodCache: &ChangeListenerForward.stateChanged_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -36,13 +36,10 @@ open class ChangeListenerForward: java_util.EventListenerForward, ChangeListener
 
 }
 
-
 private typealias ChangeListener_stateChanged_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func ChangeListener_stateChanged_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     ChangeListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).stateChanged( e: e != nil ? ChangeEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
 fileprivate class ChangeListenerLocal_: JNILocalProxy<ChangeListener, Any> {
@@ -89,8 +86,5 @@ open class ChangeListenerBase: ChangeListener {
     open func stateChanged( e: ChangeEvent? ) /**/ {
     }
 
-    open func stateChanged( _ _e: ChangeEvent? ) /**/ {
-        stateChanged( e: _e )
-    }
 
 }

@@ -7,13 +7,13 @@ import java_swift
 
 public protocol Highlighter_Highlight: JavaProtocol {
 
-    /// public abstract javax.swing.text.Highlighter$HighlightPainter javax.swing.text.Highlighter$Highlight.getPainter()
-
-    func getPainter() -> Highlighter_HighlightPainter!
-
     /// public abstract int javax.swing.text.Highlighter$Highlight.getEndOffset()
 
     func getEndOffset() -> Int
+
+    /// public abstract javax.swing.text.Highlighter$HighlightPainter javax.swing.text.Highlighter$Highlight.getPainter()
+
+    func getPainter() -> Highlighter_HighlightPainter!
 
     /// public abstract int javax.swing.text.Highlighter$Highlight.getStartOffset()
 
@@ -26,28 +26,28 @@ open class Highlighter_HighlightForward: JNIObjectForward, Highlighter_Highlight
 
     private static var Highlighter_HighlightJNIClass: jclass?
 
-    /// public abstract javax.swing.text.Highlighter$HighlightPainter javax.swing.text.Highlighter$Highlight.getPainter()
+    /// public abstract int javax.swing.text.Highlighter$Highlight.getEndOffset()
 
-    private static var getPainter_MethodID_4: jmethodID?
+    private static var getEndOffset_MethodID_4: jmethodID?
 
-    open func getPainter() -> Highlighter_HighlightPainter! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getEndOffset() -> Int {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPainter", methodSig: "()Ljavax/swing/text/Highlighter$HighlightPainter;", methodCache: &Highlighter_HighlightForward.getPainter_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? Highlighter_HighlightPainterForward( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &Highlighter_HighlightForward.getEndOffset_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
 
-    /// public abstract int javax.swing.text.Highlighter$Highlight.getEndOffset()
+    /// public abstract javax.swing.text.Highlighter$HighlightPainter javax.swing.text.Highlighter$Highlight.getPainter()
 
-    private static var getEndOffset_MethodID_5: jmethodID?
+    private static var getPainter_MethodID_5: jmethodID?
 
-    open func getEndOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getPainter() -> Highlighter_HighlightPainter! {
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getEndOffset", methodSig: "()I", methodCache: &Highlighter_HighlightForward.getEndOffset_MethodID_5, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPainter", methodSig: "()Ljavax/swing/text/Highlighter$HighlightPainter;", methodCache: &Highlighter_HighlightForward.getPainter_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? Highlighter_HighlightPainterForward( javaObject: __return ) : nil
     }
 
 
@@ -56,13 +56,12 @@ open class Highlighter_HighlightForward: JNIObjectForward, Highlighter_Highlight
     private static var getStartOffset_MethodID_6: jmethodID?
 
     open func getStartOffset() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getStartOffset", methodSig: "()I", methodCache: &Highlighter_HighlightForward.getStartOffset_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
 }
-
 

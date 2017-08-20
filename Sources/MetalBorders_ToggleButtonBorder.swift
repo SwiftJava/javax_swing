@@ -18,19 +18,23 @@ open class MetalBorders_ToggleButtonBorder: MetalBorders_ButtonBorder {
 
     /// protected static java.awt.Insets javax.swing.plaf.metal.MetalBorders$ButtonBorder.borderInsets
 
+    // Skipping field: false false false false false true 
+
     /// public javax.swing.plaf.metal.MetalBorders$ToggleButtonBorder()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalBorders$ToggleButtonBorder", classCache: &MetalBorders_ToggleButtonBorder.MetalBorders_ToggleButtonBorderJNIClass, methodSig: "()V", methodCache: &MetalBorders_ToggleButtonBorder.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
     /// public void javax.swing.plaf.metal.MetalBorders$ToggleButtonBorder.paintBorder(java.awt.Component,java.awt.Graphics,int,int,int,int)
+
+    // Skipping method: false true false false false 
 
 }
 

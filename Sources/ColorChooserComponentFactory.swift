@@ -23,10 +23,10 @@ open class ColorChooserComponentFactory: java_swift.JavaObject {
     private static var getDefaultChooserPanels_MethodID_1: jmethodID?
 
     open class func getDefaultChooserPanels() -> [AbstractColorChooserPanel]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/colorchooser/ColorChooserComponentFactory", classCache: &ColorChooserComponentFactoryJNIClass, methodName: "getDefaultChooserPanels", methodSig: "()[Ljavax/swing/colorchooser/AbstractColorChooserPanel;", methodCache: &getDefaultChooserPanels_MethodID_1, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [AbstractColorChooserPanel](), from: __return )
+        return JNIType.toSwift( type: [AbstractColorChooserPanel].self, from: __return )
     }
 
 
@@ -35,8 +35,8 @@ open class ColorChooserComponentFactory: java_swift.JavaObject {
     private static var getPreviewPanel_MethodID_2: jmethodID?
 
     open class func getPreviewPanel() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/colorchooser/ColorChooserComponentFactory", classCache: &ColorChooserComponentFactoryJNIClass, methodName: "getPreviewPanel", methodSig: "()Ljavax/swing/JComponent;", methodCache: &getPreviewPanel_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil

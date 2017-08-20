@@ -6,7 +6,7 @@ import java_util
 
 /// class javax.swing.DefaultSingleSelectionModel ///
 
-open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionModel, /* java.io.Serializable */ UnclassedProtocol {
+open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionModel, /* interface java.io.Serializable */ UnavailableProtocol {
 
     public convenience init?( casting object: java_swift.JavaObject, _ file: StaticString = #file, _ line: Int = #line ) {
         self.init( javaObject: nil )
@@ -23,8 +23,8 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
 
     open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultSingleSelectionModel.changeEvent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultSingleSelectionModel.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -34,14 +34,16 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
         }
     }
 
+    /// private int javax.swing.DefaultSingleSelectionModel.index
+
     /// protected javax.swing.event.EventListenerList javax.swing.DefaultSingleSelectionModel.listenerList
 
     private static var listenerList_FieldID: jfieldID?
 
     open var listenerList: EventListenerList! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultSingleSelectionModel.listenerList_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultSingleSelectionModel.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? EventListenerList( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -51,15 +53,13 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
         }
     }
 
-    /// private int javax.swing.DefaultSingleSelectionModel.index
-
     /// public javax.swing.DefaultSingleSelectionModel()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultSingleSelectionModel", classCache: &DefaultSingleSelectionModel.DefaultSingleSelectionModelJNIClass, methodSig: "()V", methodCache: &DefaultSingleSelectionModel.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -70,8 +70,8 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
     private static var addChangeListener_MethodID_2: jmethodID?
 
     open func addChangeListener( listener: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: listener, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "addChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultSingleSelectionModel.addChangeListener_MethodID_2, args: &__args, locals: &__locals )
     }
@@ -80,57 +80,54 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
         addChangeListener( listener: _listener )
     }
 
-    /// public void javax.swing.DefaultSingleSelectionModel.removeChangeListener(javax.swing.event.ChangeListener)
+    /// public void javax.swing.DefaultSingleSelectionModel.clearSelection()
 
-    private static var removeChangeListener_MethodID_3: jmethodID?
+    private static var clearSelection_MethodID_3: jmethodID?
 
-    open func removeChangeListener( listener: ChangeListener? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func clearSelection() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultSingleSelectionModel.removeChangeListener_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func removeChangeListener( _ _listener: ChangeListener? ) {
-        removeChangeListener( listener: _listener )
-    }
-
-    /// public javax.swing.event.ChangeListener[] javax.swing.DefaultSingleSelectionModel.getChangeListeners()
-
-    private static var getChangeListeners_MethodID_4: jmethodID?
-
-    open func getChangeListeners() -> [ChangeListener]! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &DefaultSingleSelectionModel.getChangeListeners_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [ChangeListenerForward](), from: __return )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &DefaultSingleSelectionModel.clearSelection_MethodID_3, args: &__args, locals: &__locals )
     }
 
 
     /// protected void javax.swing.DefaultSingleSelectionModel.fireStateChanged()
 
-    private static var fireStateChanged_MethodID_5: jmethodID?
+    private static var fireStateChanged_MethodID_4: jmethodID?
 
     open func fireStateChanged() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &DefaultSingleSelectionModel.fireStateChanged_MethodID_5, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "fireStateChanged", methodSig: "()V", methodCache: &DefaultSingleSelectionModel.fireStateChanged_MethodID_4, args: &__args, locals: &__locals )
     }
 
 
-    /// public void javax.swing.DefaultSingleSelectionModel.setSelectedIndex(int)
+    /// public javax.swing.event.ChangeListener[] javax.swing.DefaultSingleSelectionModel.getChangeListeners()
 
-    private static var setSelectedIndex_MethodID_6: jmethodID?
+    private static var getChangeListeners_MethodID_5: jmethodID?
 
-    open func setSelectedIndex( index: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func getChangeListeners() -> [ChangeListener]! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: index, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &DefaultSingleSelectionModel.setSelectedIndex_MethodID_6, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getChangeListeners", methodSig: "()[Ljavax/swing/event/ChangeListener;", methodCache: &DefaultSingleSelectionModel.getChangeListeners_MethodID_5, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [ChangeListenerForward].self, from: __return )
     }
 
-    open func setSelectedIndex( _ _index: Int ) {
-        setSelectedIndex( index: _index )
+
+    /// public java.util.EventListener[] javax.swing.DefaultSingleSelectionModel.getListeners(java.lang.Class)
+
+    private static var getListeners_MethodID_6: jmethodID?
+
+    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultSingleSelectionModel.getListeners_MethodID_6, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [EventListenerForward].self, from: __return )
+    }
+
+    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
+        return getListeners( listenerType: _listenerType )
     }
 
     /// public int javax.swing.DefaultSingleSelectionModel.getSelectedIndex()
@@ -138,10 +135,10 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
     private static var getSelectedIndex_MethodID_7: jmethodID?
 
     open func getSelectedIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getSelectedIndex", methodSig: "()I", methodCache: &DefaultSingleSelectionModel.getSelectedIndex_MethodID_7, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
 
@@ -150,39 +147,42 @@ open class DefaultSingleSelectionModel: java_swift.JavaObject, SingleSelectionMo
     private static var isSelected_MethodID_8: jmethodID?
 
     open func isSelected() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isSelected", methodSig: "()Z", methodCache: &DefaultSingleSelectionModel.isSelected_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        return __return != jboolean(JNI_FALSE)
     }
 
 
-    /// public java.util.EventListener[] javax.swing.DefaultSingleSelectionModel.getListeners(java.lang.Class)
+    /// public void javax.swing.DefaultSingleSelectionModel.removeChangeListener(javax.swing.event.ChangeListener)
 
-    private static var getListeners_MethodID_9: jmethodID?
+    private static var removeChangeListener_MethodID_9: jmethodID?
 
-    open func getListeners( listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func removeChangeListener( listener: ChangeListener? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: listenerType, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getListeners", methodSig: "(Ljava/lang/Class;)[Ljava/util/EventListener;", methodCache: &DefaultSingleSelectionModel.getListeners_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [EventListenerForward](), from: __return )
-    }
-
-    open func getListeners( _ _listenerType: java_swift.JavaClass? ) -> [EventListener]! {
-        return getListeners( listenerType: _listenerType )
-    }
-
-    /// public void javax.swing.DefaultSingleSelectionModel.clearSelection()
-
-    private static var clearSelection_MethodID_10: jmethodID?
-
-    open func clearSelection() {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "clearSelection", methodSig: "()V", methodCache: &DefaultSingleSelectionModel.clearSelection_MethodID_10, args: &__args, locals: &__locals )
+        __args[0] = JNIType.toJava( value: listener, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "removeChangeListener", methodSig: "(Ljavax/swing/event/ChangeListener;)V", methodCache: &DefaultSingleSelectionModel.removeChangeListener_MethodID_9, args: &__args, locals: &__locals )
     }
 
+    open func removeChangeListener( _ _listener: ChangeListener? ) {
+        removeChangeListener( listener: _listener )
+    }
+
+    /// public void javax.swing.DefaultSingleSelectionModel.setSelectedIndex(int)
+
+    private static var setSelectedIndex_MethodID_10: jmethodID?
+
+    open func setSelectedIndex( index: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(index) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setSelectedIndex", methodSig: "(I)V", methodCache: &DefaultSingleSelectionModel.setSelectedIndex_MethodID_10, args: &__args, locals: &__locals )
+    }
+
+    open func setSelectedIndex( _ _index: Int ) {
+        setSelectedIndex( index: _index )
+    }
 
 }
 

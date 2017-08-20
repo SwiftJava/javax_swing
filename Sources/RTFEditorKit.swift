@@ -16,151 +16,277 @@ open class RTFEditorKit: StyledEditorKit {
 
     private static var RTFEditorKitJNIClass: jclass?
 
-    /// private static final javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.defaultFactory
+    /// private static final javax.swing.Action[] javax.swing.text.StyledEditorKit.defaultActions
 
-    /// javax.swing.text.Element javax.swing.text.StyledEditorKit.currentRun
+    /// private static final javax.swing.text.ViewFactory javax.swing.text.StyledEditorKit.defaultFactory
 
     /// javax.swing.text.Element javax.swing.text.StyledEditorKit.currentParagraph
 
-    /// javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.inputAttributes
+    // Skipping field: true false false false false false 
+
+    /// javax.swing.text.Element javax.swing.text.StyledEditorKit.currentRun
+
+    // Skipping field: true false false false false false 
 
     /// private javax.swing.text.StyledEditorKit$AttributeTracker javax.swing.text.StyledEditorKit.inputAttributeUpdater
 
-    /// private static final javax.swing.Action[] javax.swing.text.StyledEditorKit.defaultActions
+    /// javax.swing.text.MutableAttributeSet javax.swing.text.StyledEditorKit.inputAttributes
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.EndOfLineStringProperty
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertContentAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertBreakAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertTabAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevCharAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextCharAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.readOnlyAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.writableAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.cutAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.copyAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pasteAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beepAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageUpAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageDownAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageUpAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageDownAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageLeftAction
-
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageRightAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.forwardAction
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.backwardAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionForwardAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBackwardAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beepAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.upAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.downAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionUpAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionDownAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.previousWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.nextWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPreviousWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionNextWordAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndLineAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginParagraphAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endParagraphAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginParagraphAction
-
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndParagraphAction
+    // Skipping field: false true false false false false 
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginLineAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectWordAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginParagraphAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectLineAction
+    // Skipping field: false true false false false false 
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectParagraphAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.beginWordAction
 
-    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectAllAction
+    // Skipping field: false true false false false false 
 
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.unselectAction
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.copyAction
 
-    /// static final java.lang.String javax.swing.text.DefaultEditorKit.toggleComponentOrientationAction
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.cutAction
+
+    // Skipping field: false true false false false false 
+
+    /// private static final javax.swing.Action[] javax.swing.text.DefaultEditorKit.defaultActions
 
     /// public static final java.lang.String javax.swing.text.DefaultEditorKit.defaultKeyTypedAction
 
-    /// private static final javax.swing.Action[] javax.swing.text.DefaultEditorKit.defaultActions
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextCharAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deleteNextWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevCharAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.deletePrevWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.downAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.endWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.forwardAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertBreakAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertContentAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.insertTabAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.nextWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageDownAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pageUpAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.pasteAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.previousWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.readOnlyAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectAllAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBackwardAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionBeginWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionDownAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndLineAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndParagraphAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionEndWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionForwardAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionNextWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageDownAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageLeftAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageRightAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPageUpAction
+
+    // Skipping field: true false false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionPreviousWordAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.selectionUpAction
+
+    // Skipping field: false true false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.toggleComponentOrientationAction
+
+    // Skipping field: true false false false false false 
+
+    /// static final java.lang.String javax.swing.text.DefaultEditorKit.unselectAction
+
+    // Skipping field: true false false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.upAction
+
+    // Skipping field: false true false false false false 
+
+    /// public static final java.lang.String javax.swing.text.DefaultEditorKit.writableAction
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.rtf.RTFEditorKit()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/rtf/RTFEditorKit", classCache: &RTFEditorKit.RTFEditorKitJNIClass, methodSig: "()V", methodCache: &RTFEditorKit.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.text.rtf.RTFEditorKit.write(java.io.Writer,javax.swing.text.Document,int,int) throws java.io.IOException,javax.swing.text.BadLocationException
+    /// public java.lang.String javax.swing.text.rtf.RTFEditorKit.getContentType()
 
-    /// public void javax.swing.text.rtf.RTFEditorKit.write(java.io.OutputStream,javax.swing.text.Document,int,int) throws java.io.IOException,javax.swing.text.BadLocationException
+    // Skipping method: false true false false false 
 
     /// public void javax.swing.text.rtf.RTFEditorKit.read(java.io.InputStream,javax.swing.text.Document,int) throws java.io.IOException,javax.swing.text.BadLocationException
 
+    // Skipping method: false true false false false 
+
     /// public void javax.swing.text.rtf.RTFEditorKit.read(java.io.Reader,javax.swing.text.Document,int) throws java.io.IOException,javax.swing.text.BadLocationException
 
-    /// public java.lang.String javax.swing.text.rtf.RTFEditorKit.getContentType()
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.rtf.RTFEditorKit.write(java.io.Writer,javax.swing.text.Document,int,int) throws java.io.IOException,javax.swing.text.BadLocationException
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.text.rtf.RTFEditorKit.write(java.io.OutputStream,javax.swing.text.Document,int,int) throws java.io.IOException,javax.swing.text.BadLocationException
+
+    // Skipping method: false true false false false 
 
 }
 

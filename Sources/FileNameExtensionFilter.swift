@@ -27,8 +27,8 @@ open class FileNameExtensionFilter: FileFilter {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( description: String?, extensions: [String]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: description, locals: &__locals )
         __args[1] = JNIType.toJava( value: extensions, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/filechooser/FileNameExtensionFilter", classCache: &FileNameExtensionFilter.FileNameExtensionFilterJNIClass, methodSig: "(Ljava/lang/String;[Ljava/lang/String;)V", methodCache: &FileNameExtensionFilter.new_MethodID_1, args: &__args, locals: &__locals )
@@ -40,23 +40,29 @@ open class FileNameExtensionFilter: FileFilter {
         self.init( description: _description, extensions: _extensions )
     }
 
-    /// public java.lang.String javax.swing.filechooser.FileNameExtensionFilter.toString()
-
     /// public boolean javax.swing.filechooser.FileNameExtensionFilter.accept(java.io.File)
+
+    // Skipping method: false true false false false 
+
+    /// public java.lang.String javax.swing.filechooser.FileNameExtensionFilter.getDescription()
+
+    // Skipping method: false true false false false 
 
     /// public java.lang.String[] javax.swing.filechooser.FileNameExtensionFilter.getExtensions()
 
     private static var getExtensions_MethodID_2: jmethodID?
 
     open func getExtensions() -> [String]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getExtensions", methodSig: "()[Ljava/lang/String;", methodCache: &FileNameExtensionFilter.getExtensions_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [String](), from: __return )
+        return JNIType.toSwift( type: [String].self, from: __return )
     }
 
 
-    /// public java.lang.String javax.swing.filechooser.FileNameExtensionFilter.getDescription()
+    /// public java.lang.String javax.swing.filechooser.FileNameExtensionFilter.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

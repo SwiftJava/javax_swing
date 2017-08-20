@@ -21,56 +21,42 @@ open class SynthTextAreaUI: BasicTextAreaUI, SynthUI {
 
     /// private javax.swing.plaf.synth.SynthStyle javax.swing.plaf.synth.SynthTextAreaUI.style
 
-    /// private static javax.swing.plaf.basic.BasicTextUI$BasicCursor javax.swing.plaf.basic.BasicTextUI.textCursor
-
     /// private static final javax.swing.text.EditorKit javax.swing.plaf.basic.BasicTextUI.defaultKit
-
-    /// transient javax.swing.text.JTextComponent javax.swing.plaf.basic.BasicTextUI.editor
-
-    /// transient boolean javax.swing.plaf.basic.BasicTextUI.painted
-
-    /// transient javax.swing.plaf.basic.BasicTextUI$RootView javax.swing.plaf.basic.BasicTextUI.rootView
-
-    /// transient javax.swing.plaf.basic.BasicTextUI$UpdateHandler javax.swing.plaf.basic.BasicTextUI.updateHandler
 
     /// private static final javax.swing.TransferHandler javax.swing.plaf.basic.BasicTextUI.defaultTransferHandler
 
-    /// private final javax.swing.plaf.basic.BasicTextUI$DragListener javax.swing.plaf.basic.BasicTextUI.dragListener
-
     /// private static final javax.swing.text.Position$Bias[] javax.swing.plaf.basic.BasicTextUI.discardBias
+
+    /// private static javax.swing.plaf.basic.BasicTextUI$BasicCursor javax.swing.plaf.basic.BasicTextUI.textCursor
+
+    /// private final javax.swing.plaf.basic.BasicTextUI$DragListener javax.swing.plaf.basic.BasicTextUI.dragListener
 
     /// private javax.swing.text.DefaultCaret javax.swing.plaf.basic.BasicTextUI.dropCaret
 
-    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
+    /// transient javax.swing.text.JTextComponent javax.swing.plaf.basic.BasicTextUI.editor
 
-    private static var ENABLED_FieldID: jfieldID?
+    // Skipping field: true false false false false false 
 
-    open static var ENABLED: Int {
+    /// transient boolean javax.swing.plaf.basic.BasicTextUI.painted
+
+    // Skipping field: true false false false false false 
+
+    /// transient javax.swing.plaf.basic.BasicTextUI$RootView javax.swing.plaf.basic.BasicTextUI.rootView
+
+    // Skipping field: true false false false false false 
+
+    /// transient javax.swing.plaf.basic.BasicTextUI$UpdateHandler javax.swing.plaf.basic.BasicTextUI.updateHandler
+
+    // Skipping field: true false false false false false 
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.DEFAULT
+
+    private static var DEFAULT_FieldID: jfieldID?
+
+    open static var DEFAULT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
-
-    private static var MOUSE_OVER_FieldID: jfieldID?
-
-    open static var MOUSE_OVER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
-
-    private static var PRESSED_FieldID: jfieldID?
-
-    open static var PRESSED: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -81,7 +67,18 @@ open class SynthTextAreaUI: BasicTextAreaUI, SynthUI {
     open static var DISABLED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.ENABLED
+
+    private static var ENABLED_FieldID: jfieldID?
+
+    open static var ENABLED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -92,7 +89,29 @@ open class SynthTextAreaUI: BasicTextAreaUI, SynthUI {
     open static var FOCUSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.MOUSE_OVER
+
+    private static var MOUSE_OVER_FieldID: jfieldID?
+
+    open static var MOUSE_OVER: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.plaf.synth.SynthConstants.PRESSED
+
+    private static var PRESSED_FieldID: jfieldID?
+
+    open static var PRESSED: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
+            return Int(__value)
         }
     }
 
@@ -103,18 +122,7 @@ open class SynthTextAreaUI: BasicTextAreaUI, SynthUI {
     open static var SELECTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.plaf.synth.SynthConstants.DEFAULT
-
-    private static var DEFAULT_FieldID: jfieldID?
-
-    open static var DEFAULT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -123,28 +131,47 @@ open class SynthTextAreaUI: BasicTextAreaUI, SynthUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUI.SynthTextAreaUIJNIClass, methodSig: "()V", methodCache: &SynthTextAreaUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public void javax.swing.plaf.synth.SynthTextAreaUI.update(java.awt.Graphics,javax.swing.JComponent)
-
     /// static javax.swing.text.JTextComponent javax.swing.plaf.synth.SynthTextAreaUI.access$100(javax.swing.plaf.synth.SynthTextAreaUI)
+
+    // Skipping method: true false false false false 
 
     /// static javax.swing.text.JTextComponent javax.swing.plaf.synth.SynthTextAreaUI.access$200(javax.swing.plaf.synth.SynthTextAreaUI)
 
+    // Skipping method: true false false false false 
+
+    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthTextAreaUI.createUI(javax.swing.JComponent)
+
+    private static var createUI_MethodID_2: jmethodID?
+
+    override open class func createUI( ta: JComponent? ) -> ComponentUI! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: ta, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+    }
+
+    override open class func createUI( _ _ta: JComponent? ) -> ComponentUI! {
+        return createUI( ta: _ta )
+    }
+
     /// public javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTextAreaUI.getContext(javax.swing.JComponent)
 
-    private static var getContext_MethodID_2: jmethodID?
+    private static var getContext_MethodID_3: jmethodID?
 
     open func getContext( c: JComponent? ) -> SynthContext! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthTextAreaUI.getContext_MethodID_2, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getContext", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/synth/SynthContext;", methodCache: &SynthTextAreaUI.getContext_MethodID_3, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? SynthContext( javaObject: __return ) : nil
     }
@@ -155,110 +182,97 @@ open class SynthTextAreaUI: BasicTextAreaUI, SynthUI {
 
     /// private javax.swing.plaf.synth.SynthContext javax.swing.plaf.synth.SynthTextAreaUI.getContext(javax.swing.JComponent,int)
 
-    /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.synth.SynthTextAreaUI.createUI(javax.swing.JComponent)
+    /// protected void javax.swing.plaf.synth.SynthTextAreaUI.installDefaults()
 
-    private static var createUI_MethodID_3: jmethodID?
+    private static var installDefaults_MethodID_4: jmethodID?
 
-    override open class func createUI( ta: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func installDefaults() {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: ta, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/synth/SynthTextAreaUI", classCache: &SynthTextAreaUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_3, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ComponentUI( javaObject: __return ) : nil
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthTextAreaUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    override open class func createUI( _ _ta: JComponent? ) -> ComponentUI! {
-        return createUI( ta: _ta )
-    }
 
     /// protected void javax.swing.plaf.synth.SynthTextAreaUI.paint(javax.swing.plaf.synth.SynthContext,java.awt.Graphics)
 
-    private static var paint_MethodID_4: jmethodID?
+    private static var paint_MethodID_5: jmethodID?
 
     open func paint( context: SynthContext?, g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: context, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthTextAreaUI.paint_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paint", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;)V", methodCache: &SynthTextAreaUI.paint_MethodID_5, args: &__args, locals: &__locals )
     }
 
     open func paint( _ _context: SynthContext?, _ _g: java_awt.Graphics? ) {
         paint( context: _context, g: _g )
     }
 
-    /// public void javax.swing.plaf.synth.SynthTextAreaUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
-
-    private static var paintBorder_MethodID_5: jmethodID?
-
-    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: context, locals: &__locals )
-        __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthTextAreaUI.paintBorder_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
-        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
-    }
-
-    /// protected void javax.swing.plaf.synth.SynthTextAreaUI.installDefaults()
-
-    private static var installDefaults_MethodID_6: jmethodID?
-
-    override open func installDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "()V", methodCache: &SynthTextAreaUI.installDefaults_MethodID_6, args: &__args, locals: &__locals )
-    }
-
-
-    /// protected void javax.swing.plaf.synth.SynthTextAreaUI.uninstallDefaults()
-
-    private static var uninstallDefaults_MethodID_7: jmethodID?
-
-    override open func uninstallDefaults() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthTextAreaUI.uninstallDefaults_MethodID_7, args: &__args, locals: &__locals )
-    }
-
-
     /// protected void javax.swing.plaf.synth.SynthTextAreaUI.paintBackground(java.awt.Graphics)
 
-    private static var paintBackground_MethodID_8: jmethodID?
+    private static var paintBackground_MethodID_6: jmethodID?
 
     override open func paintBackground( g: java_awt.Graphics? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthTextAreaUI.paintBackground_MethodID_8, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBackground", methodSig: "(Ljava/awt/Graphics;)V", methodCache: &SynthTextAreaUI.paintBackground_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func paintBackground( _ _g: java_awt.Graphics? ) {
         paintBackground( g: _g )
     }
 
+    /// public void javax.swing.plaf.synth.SynthTextAreaUI.paintBorder(javax.swing.plaf.synth.SynthContext,java.awt.Graphics,int,int,int,int)
+
+    private static var paintBorder_MethodID_7: jmethodID?
+
+    open func paintBorder( context: SynthContext?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
+        __args[0] = JNIType.toJava( value: context, locals: &__locals )
+        __args[1] = JNIType.toJava( value: g, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljavax/swing/plaf/synth/SynthContext;Ljava/awt/Graphics;IIII)V", methodCache: &SynthTextAreaUI.paintBorder_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func paintBorder( _ _context: SynthContext?, _ _g: java_awt.Graphics?, _ _x: Int, _ _y: Int, _ _w: Int, _ _h: Int ) {
+        paintBorder( context: _context, g: _g, x: _x, y: _y, w: _w, h: _h )
+    }
+
     /// protected void javax.swing.plaf.synth.SynthTextAreaUI.propertyChange(java.beans.PropertyChangeEvent)
 
-    private static var propertyChange_MethodID_9: jmethodID?
+    private static var propertyChange_MethodID_8: jmethodID?
 
-    override open func propertyChange( evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    override open func propertyChange( evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: evt, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthTextAreaUI.propertyChange_MethodID_9, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "propertyChange", methodSig: "(Ljava/beans/PropertyChangeEvent;)V", methodCache: &SynthTextAreaUI.propertyChange_MethodID_8, args: &__args, locals: &__locals )
     }
 
-    override open func propertyChange( _ _evt: /* java.beans.PropertyChangeEvent */ UnclassedObject? ) {
+    override open func propertyChange( _ _evt: /* class java.beans.PropertyChangeEvent */ UnavailableObject? ) {
         propertyChange( evt: _evt )
     }
+
+    /// protected void javax.swing.plaf.synth.SynthTextAreaUI.uninstallDefaults()
+
+    private static var uninstallDefaults_MethodID_9: jmethodID?
+
+    override open func uninstallDefaults() {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "()V", methodCache: &SynthTextAreaUI.uninstallDefaults_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+
+    /// public void javax.swing.plaf.synth.SynthTextAreaUI.update(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
 
     /// private void javax.swing.plaf.synth.SynthTextAreaUI.updateStyle(javax.swing.text.JTextComponent)
 

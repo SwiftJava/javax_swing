@@ -16,21 +16,21 @@ open class FormSubmitEvent: HTMLFrameHyperlinkEvent {
 
     private static var FormSubmitEventJNIClass: jclass?
 
-    /// private javax.swing.text.html.FormSubmitEvent$MethodType javax.swing.text.html.FormSubmitEvent.method
-
     /// private java.lang.String javax.swing.text.html.FormSubmitEvent.data
 
+    /// private javax.swing.text.html.FormSubmitEvent$MethodType javax.swing.text.html.FormSubmitEvent.method
+
     /// private java.lang.String javax.swing.text.html.HTMLFrameHyperlinkEvent.targetFrame
+
+    /// private java.lang.String javax.swing.event.HyperlinkEvent.desc
+
+    /// private java.awt.event.InputEvent javax.swing.event.HyperlinkEvent.inputEvent
+
+    /// private javax.swing.text.Element javax.swing.event.HyperlinkEvent.sourceElement
 
     /// private javax.swing.event.HyperlinkEvent$EventType javax.swing.event.HyperlinkEvent.type
 
     /// private java.net.URL javax.swing.event.HyperlinkEvent.u
-
-    /// private java.lang.String javax.swing.event.HyperlinkEvent.desc
-
-    /// private javax.swing.text.Element javax.swing.event.HyperlinkEvent.sourceElement
-
-    /// private java.awt.event.InputEvent javax.swing.event.HyperlinkEvent.inputEvent
 
     /// private static final long java.util.EventObject.serialVersionUID
 
@@ -40,8 +40,8 @@ open class FormSubmitEvent: HTMLFrameHyperlinkEvent {
 
     override open var source: java_swift.JavaObject! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &FormSubmitEvent.source_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "source", fieldType: "Ljava/lang/Object;", fieldCache: &FormSubmitEvent.source_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_swift.JavaObject( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -53,28 +53,31 @@ open class FormSubmitEvent: HTMLFrameHyperlinkEvent {
 
     /// javax.swing.text.html.FormSubmitEvent(java.lang.Object,javax.swing.event.HyperlinkEvent$EventType,java.net.URL,javax.swing.text.Element,java.lang.String,javax.swing.text.html.FormSubmitEvent$MethodType,java.lang.String)
 
-    /// public javax.swing.text.html.FormSubmitEvent$MethodType javax.swing.text.html.FormSubmitEvent.getMethod()
-
-    private static var getMethod_MethodID_1: jmethodID?
-
-    open func getMethod() -> FormSubmitEvent_MethodType! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMethod", methodSig: "()Ljavax/swing/text/html/FormSubmitEvent$MethodType;", methodCache: &FormSubmitEvent.getMethod_MethodID_1, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? FormSubmitEvent_MethodType( javaObject: __return ) : nil
-    }
-
+    // Skipping init: true false false 
 
     /// public java.lang.String javax.swing.text.html.FormSubmitEvent.getData()
 
-    private static var getData_MethodID_2: jmethodID?
+    private static var getData_MethodID_1: jmethodID?
 
     open func getData() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()Ljava/lang/String;", methodCache: &FormSubmitEvent.getData_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getData", methodSig: "()Ljava/lang/String;", methodCache: &FormSubmitEvent.getData_MethodID_1, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+
+    /// public javax.swing.text.html.FormSubmitEvent$MethodType javax.swing.text.html.FormSubmitEvent.getMethod()
+
+    private static var getMethod_MethodID_2: jmethodID?
+
+    open func getMethod() -> FormSubmitEvent_MethodType! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getMethod", methodSig: "()Ljavax/swing/text/html/FormSubmitEvent$MethodType;", methodCache: &FormSubmitEvent.getMethod_MethodID_2, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? FormSubmitEvent_MethodType( javaObject: __return ) : nil
     }
 
 

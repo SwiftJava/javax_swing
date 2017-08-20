@@ -27,8 +27,8 @@ open class LayoutQueue: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/text/LayoutQueue", classCache: &LayoutQueue.LayoutQueueJNIClass, methodSig: "()V", methodCache: &LayoutQueue.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -39,42 +39,42 @@ open class LayoutQueue: java_swift.JavaObject {
     private static var getDefaultQueue_MethodID_2: jmethodID?
 
     open class func getDefaultQueue() -> LayoutQueue! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/text/LayoutQueue", classCache: &LayoutQueueJNIClass, methodName: "getDefaultQueue", methodSig: "()Ljavax/swing/text/LayoutQueue;", methodCache: &getDefaultQueue_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? LayoutQueue( javaObject: __return ) : nil
     }
 
 
-    /// public synchronized void javax.swing.text.LayoutQueue.addTask(java.lang.Runnable)
-
-    private static var addTask_MethodID_3: jmethodID?
-
-    open func addTask( task: java_swift.Runnable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: task, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTask", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &LayoutQueue.addTask_MethodID_3, args: &__args, locals: &__locals )
-    }
-
-    open func addTask( _ _task: java_swift.Runnable? ) {
-        addTask( task: _task )
-    }
-
     /// public static void javax.swing.text.LayoutQueue.setDefaultQueue(javax.swing.text.LayoutQueue)
 
-    private static var setDefaultQueue_MethodID_4: jmethodID?
+    private static var setDefaultQueue_MethodID_3: jmethodID?
 
     open class func setDefaultQueue( q: LayoutQueue? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: q, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/LayoutQueue", classCache: &LayoutQueueJNIClass, methodName: "setDefaultQueue", methodSig: "(Ljavax/swing/text/LayoutQueue;)V", methodCache: &setDefaultQueue_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/text/LayoutQueue", classCache: &LayoutQueueJNIClass, methodName: "setDefaultQueue", methodSig: "(Ljavax/swing/text/LayoutQueue;)V", methodCache: &setDefaultQueue_MethodID_3, args: &__args, locals: &__locals )
     }
 
     open class func setDefaultQueue( _ _q: LayoutQueue? ) {
         setDefaultQueue( q: _q )
+    }
+
+    /// public synchronized void javax.swing.text.LayoutQueue.addTask(java.lang.Runnable)
+
+    private static var addTask_MethodID_4: jmethodID?
+
+    open func addTask( task: java_swift.Runnable? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: task, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "addTask", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &LayoutQueue.addTask_MethodID_4, args: &__args, locals: &__locals )
+    }
+
+    open func addTask( _ _task: java_swift.Runnable? ) {
+        addTask( task: _task )
     }
 
     /// protected synchronized java.lang.Runnable javax.swing.text.LayoutQueue.waitForWork()
@@ -82,8 +82,8 @@ open class LayoutQueue: java_swift.JavaObject {
     private static var waitForWork_MethodID_5: jmethodID?
 
     open func waitForWork() -> java_swift.Runnable! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "waitForWork", methodSig: "()Ljava/lang/Runnable;", methodCache: &LayoutQueue.waitForWork_MethodID_5, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_swift.RunnableForward( javaObject: __return ) : nil

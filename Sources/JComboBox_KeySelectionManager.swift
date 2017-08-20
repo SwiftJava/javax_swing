@@ -23,12 +23,12 @@ open class JComboBox_KeySelectionManagerForward: JNIObjectForward, JComboBox_Key
     private static var selectionForKey_MethodID_2: jmethodID?
 
     open func selectionForKey( aKey: UInt16, aModel: ComboBoxModel? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: aKey, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( c: aKey )
         __args[1] = JNIType.toJava( value: aModel, locals: &__locals )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "selectionForKey", methodSig: "(CLjavax/swing/ComboBoxModel;)I", methodCache: &JComboBox_KeySelectionManagerForward.selectionForKey_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
     open func selectionForKey( _ _aKey: UInt16, _ _aModel: ComboBoxModel? ) -> Int {
@@ -37,15 +37,12 @@ open class JComboBox_KeySelectionManagerForward: JNIObjectForward, JComboBox_Key
 
 }
 
-
 private typealias JComboBox_KeySelectionManager_selectionForKey_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jchar, _: jobject? ) -> jint
 
 private func JComboBox_KeySelectionManager_selectionForKey_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ aKey: jchar, _ aModel: jobject? ) -> jint {
-    JNI.inNative = true;
-    let __return = JComboBox_KeySelectionManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).selectionForKey( aKey: JNIType.toSwift( type: UInt16(), from: aKey ), aModel: aModel != nil ? ComboBoxModelForward( javaObject: aModel ) : nil )
-    JNI.inNative = false;
-    var locals = [jobject]()
-    return JNI.check( JNIType.toJava( value: __return, locals: &locals ).i, &locals, removeLast: true )
+    let __return = JComboBox_KeySelectionManagerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).selectionForKey( aKey: aKey, aModel: aModel != nil ? ComboBoxModelForward( javaObject: aModel ) : nil )
+    var __locals = [jobject]()
+    return JNI.check( jvalue( i: jint(__return) ).i, &__locals, removeLast: true )
 }
 
 fileprivate class JComboBox_KeySelectionManagerLocal_: JNILocalProxy<JComboBox_KeySelectionManager, Any> {
@@ -93,8 +90,5 @@ open class JComboBox_KeySelectionManagerBase: JComboBox_KeySelectionManager {
         return 0
     }
 
-    open func selectionForKey( _ _aKey: UInt16, _ _aModel: ComboBoxModel? ) -> Int /**/ {
-        return selectionForKey( aKey: _aKey, aModel: _aModel )
-    }
 
 }

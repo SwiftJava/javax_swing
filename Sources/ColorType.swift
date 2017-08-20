@@ -16,17 +16,6 @@ open class ColorType: java_swift.JavaObject {
 
     private static var ColorTypeJNIClass: jclass?
 
-    /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.FOREGROUND
-
-    private static var FOREGROUND_FieldID: jfieldID?
-
-    open static var FOREGROUND: ColorType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "FOREGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &FOREGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
-            return __value != nil ? ColorType( javaObject: __value ) : nil
-        }
-    }
-
     /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.BACKGROUND
 
     private static var BACKGROUND_FieldID: jfieldID?
@@ -34,28 +23,7 @@ open class ColorType: java_swift.JavaObject {
     open static var BACKGROUND: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &BACKGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
-            return __value != nil ? ColorType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.TEXT_FOREGROUND
-
-    private static var TEXT_FOREGROUND_FieldID: jfieldID?
-
-    open static var TEXT_FOREGROUND: ColorType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_FOREGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &TEXT_FOREGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
-            return __value != nil ? ColorType( javaObject: __value ) : nil
-        }
-    }
-
-    /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.TEXT_BACKGROUND
-
-    private static var TEXT_BACKGROUND_FieldID: jfieldID?
-
-    open static var TEXT_BACKGROUND: ColorType! {
-        get {
-            let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_BACKGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &TEXT_BACKGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ColorType( javaObject: __value ) : nil
         }
     }
@@ -67,6 +35,19 @@ open class ColorType: java_swift.JavaObject {
     open static var FOCUS: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOCUS", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &FOCUS_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ColorType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.FOREGROUND
+
+    private static var FOREGROUND_FieldID: jfieldID?
+
+    open static var FOREGROUND: ColorType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "FOREGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &FOREGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ColorType( javaObject: __value ) : nil
         }
     }
@@ -78,7 +59,31 @@ open class ColorType: java_swift.JavaObject {
     open static var MAX_COUNT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MAX_COUNT", fieldType: "I", fieldCache: &MAX_COUNT_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.TEXT_BACKGROUND
+
+    private static var TEXT_BACKGROUND_FieldID: jfieldID?
+
+    open static var TEXT_BACKGROUND: ColorType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_BACKGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &TEXT_BACKGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ColorType( javaObject: __value ) : nil
+        }
+    }
+
+    /// public static final javax.swing.plaf.synth.ColorType javax.swing.plaf.synth.ColorType.TEXT_FOREGROUND
+
+    private static var TEXT_FOREGROUND_FieldID: jfieldID?
+
+    open static var TEXT_FOREGROUND: ColorType! {
+        get {
+            let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_FOREGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &TEXT_FOREGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? ColorType( javaObject: __value ) : nil
         }
     }
 
@@ -93,8 +98,8 @@ open class ColorType: java_swift.JavaObject {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( description: String? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: description, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/synth/ColorType", classCache: &ColorType.ColorTypeJNIClass, methodSig: "(Ljava/lang/String;)V", methodCache: &ColorType.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -105,19 +110,21 @@ open class ColorType: java_swift.JavaObject {
         self.init( description: _description )
     }
 
-    /// public java.lang.String javax.swing.plaf.synth.ColorType.toString()
-
     /// public final int javax.swing.plaf.synth.ColorType.getID()
 
     private static var getID_MethodID_2: jmethodID?
 
     open func getID() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getID", methodSig: "()I", methodCache: &ColorType.getID_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
+
+    /// public java.lang.String javax.swing.plaf.synth.ColorType.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

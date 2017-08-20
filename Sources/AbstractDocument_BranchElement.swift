@@ -18,29 +18,37 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
 
     /// private javax.swing.text.AbstractDocument$AbstractElement[] javax.swing.text.AbstractDocument$BranchElement.children
 
-    /// private int javax.swing.text.AbstractDocument$BranchElement.nchildren
-
     /// private int javax.swing.text.AbstractDocument$BranchElement.lastIndex
+
+    /// private int javax.swing.text.AbstractDocument$BranchElement.nchildren
 
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$BranchElement.this$0
 
-    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+    // Skipping field: true false false false false false 
 
     /// private transient javax.swing.text.AttributeSet javax.swing.text.AbstractDocument$AbstractElement.attributes
 
+    /// private javax.swing.text.Element javax.swing.text.AbstractDocument$AbstractElement.parent
+
     /// final javax.swing.text.AbstractDocument javax.swing.text.AbstractDocument$AbstractElement.this$0
+
+    // Skipping field: true false false false false false 
 
     /// public static final java.lang.Object javax.swing.text.AttributeSet.NameAttribute
 
+    // Skipping field: false true false false false false 
+
     /// public static final java.lang.Object javax.swing.text.AttributeSet.ResolveAttribute
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.text.AbstractDocument$BranchElement(javax.swing.text.AbstractDocument,javax.swing.text.Element,javax.swing.text.AttributeSet)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( this_0: AbstractDocument?, parent: Element?, a: AttributeSet? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: this_0, locals: &__locals )
         __args[1] = JNIType.toJava( value: parent, locals: &__locals )
         __args[2] = JNIType.toJava( value: a, locals: &__locals )
@@ -53,36 +61,51 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
         self.init( this_0: _this_0, parent: _parent, a: _a )
     }
 
-    /// public java.lang.String javax.swing.text.AbstractDocument$BranchElement.toString()
+    /// public java.util.Enumeration javax.swing.text.AbstractDocument$BranchElement.children()
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.text.AbstractDocument$BranchElement.getAllowsChildren()
+
+    // Skipping method: false true false false false 
+
+    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.getElement(int)
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementCount()
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementIndex(int)
+
+    // Skipping method: false true false false false 
+
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getEndOffset()
+
+    // Skipping method: false true false false false 
 
     /// public java.lang.String javax.swing.text.AbstractDocument$BranchElement.getName()
 
-    /// public void javax.swing.text.AbstractDocument$BranchElement.replace(int,int,javax.swing.text.Element[])
+    // Skipping method: false true false false false 
 
-    private static var replace_MethodID_2: jmethodID?
+    /// public int javax.swing.text.AbstractDocument$BranchElement.getStartOffset()
 
-    open func replace( offset: Int, length: Int, elems: [Element]? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: offset, locals: &__locals )
-        __args[1] = JNIType.toJava( value: length, locals: &__locals )
-        __args[2] = JNIType.toJava( value: elems, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/Element;)V", methodCache: &AbstractDocument_BranchElement.replace_MethodID_2, args: &__args, locals: &__locals )
-    }
+    // Skipping method: false true false false false 
 
-    open func replace( _ _offset: Int, _ _length: Int, _ _elems: [Element]? ) {
-        replace( offset: _offset, length: _length, elems: _elems )
-    }
+    /// public boolean javax.swing.text.AbstractDocument$BranchElement.isLeaf()
+
+    // Skipping method: false true false false false 
 
     /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.positionToElement(int)
 
-    private static var positionToElement_MethodID_3: jmethodID?
+    private static var positionToElement_MethodID_2: jmethodID?
 
     open func positionToElement( pos: Int ) -> Element! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pos, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "positionToElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &AbstractDocument_BranchElement.positionToElement_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(pos) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "positionToElement", methodSig: "(I)Ljavax/swing/text/Element;", methodCache: &AbstractDocument_BranchElement.positionToElement_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? ElementForward( javaObject: __return ) : nil
     }
@@ -91,21 +114,26 @@ open class AbstractDocument_BranchElement: AbstractDocument_AbstractElement {
         return positionToElement( pos: _pos )
     }
 
-    /// public boolean javax.swing.text.AbstractDocument$BranchElement.isLeaf()
+    /// public void javax.swing.text.AbstractDocument$BranchElement.replace(int,int,javax.swing.text.Element[])
 
-    /// public java.util.Enumeration javax.swing.text.AbstractDocument$BranchElement.children()
+    private static var replace_MethodID_3: jmethodID?
 
-    /// public boolean javax.swing.text.AbstractDocument$BranchElement.getAllowsChildren()
+    open func replace( offset: Int, length: Int, elems: [Element]? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(offset) )
+        __args[1] = jvalue( i: jint(length) )
+        __args[2] = JNIType.toJava( value: elems, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "replace", methodSig: "(II[Ljavax/swing/text/Element;)V", methodCache: &AbstractDocument_BranchElement.replace_MethodID_3, args: &__args, locals: &__locals )
+    }
 
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementCount()
+    open func replace( _ _offset: Int, _ _length: Int, _ _elems: [Element]? ) {
+        replace( offset: _offset, length: _length, elems: _elems )
+    }
 
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getElementIndex(int)
+    /// public java.lang.String javax.swing.text.AbstractDocument$BranchElement.toString()
 
-    /// public javax.swing.text.Element javax.swing.text.AbstractDocument$BranchElement.getElement(int)
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getEndOffset()
-
-    /// public int javax.swing.text.AbstractDocument$BranchElement.getStartOffset()
+    // Skipping method: false true false false false 
 
 }
 

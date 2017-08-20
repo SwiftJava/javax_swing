@@ -27,8 +27,8 @@ open class ComponentInputMap: InputMap {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( component: JComponent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: component, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/ComponentInputMap", classCache: &ComponentInputMap.ComponentInputMapJNIClass, methodSig: "(Ljavax/swing/JComponent;)V", methodCache: &ComponentInputMap.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -39,26 +39,34 @@ open class ComponentInputMap: InputMap {
         self.init( component: _component )
     }
 
-    /// public void javax.swing.ComponentInputMap.remove(javax.swing.KeyStroke)
-
-    /// public void javax.swing.ComponentInputMap.put(javax.swing.KeyStroke,java.lang.Object)
-
     /// public void javax.swing.ComponentInputMap.clear()
 
-    /// public void javax.swing.ComponentInputMap.setParent(javax.swing.InputMap)
+    // Skipping method: false true false false false 
 
     /// public javax.swing.JComponent javax.swing.ComponentInputMap.getComponent()
 
     private static var getComponent_MethodID_2: jmethodID?
 
     open func getComponent() -> JComponent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljavax/swing/JComponent;", methodCache: &ComponentInputMap.getComponent_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JComponent( javaObject: __return ) : nil
     }
 
+
+    /// public void javax.swing.ComponentInputMap.put(javax.swing.KeyStroke,java.lang.Object)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.ComponentInputMap.remove(javax.swing.KeyStroke)
+
+    // Skipping method: false true false false false 
+
+    /// public void javax.swing.ComponentInputMap.setParent(javax.swing.InputMap)
+
+    // Skipping method: false true false false false 
 
 }
 

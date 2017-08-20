@@ -23,11 +23,11 @@ open class RowMapperForward: JNIObjectForward, RowMapper {
     private static var getRowsForPaths_MethodID_2: jmethodID?
 
     open func getRowsForPaths( path: [TreePath]? ) -> [Int32]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: path, locals: &__locals )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getRowsForPaths", methodSig: "([Ljavax/swing/tree/TreePath;)[I", methodCache: &RowMapperForward.getRowsForPaths_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Int32](), from: __return )
+        return JNIType.toSwift( type: [Int32].self, from: __return )
     }
 
     open func getRowsForPaths( _ _path: [TreePath]? ) -> [Int32]! {
@@ -35,5 +35,4 @@ open class RowMapperForward: JNIObjectForward, RowMapper {
     }
 
 }
-
 

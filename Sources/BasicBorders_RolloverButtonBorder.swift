@@ -17,31 +17,14 @@ open class BasicBorders_RolloverButtonBorder: BasicBorders_ButtonBorder {
 
     private static var BasicBorders_RolloverButtonBorderJNIClass: jclass?
 
-    /// protected java.awt.Color javax.swing.plaf.basic.BasicBorders$ButtonBorder.shadow
-
-    private static var shadow_FieldID: jfieldID?
-
-    override open var shadow: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.shadow_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected java.awt.Color javax.swing.plaf.basic.BasicBorders$ButtonBorder.darkShadow
 
     private static var darkShadow_FieldID: jfieldID?
 
     override open var darkShadow: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.darkShadow_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "darkShadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.darkShadow_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -57,8 +40,8 @@ open class BasicBorders_RolloverButtonBorder: BasicBorders_ButtonBorder {
 
     override open var highlight: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.highlight_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "highlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.highlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -74,8 +57,8 @@ open class BasicBorders_RolloverButtonBorder: BasicBorders_ButtonBorder {
 
     override open var lightHighlight: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.lightHighlight_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "lightHighlight", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.lightHighlight_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -85,13 +68,30 @@ open class BasicBorders_RolloverButtonBorder: BasicBorders_ButtonBorder {
         }
     }
 
+    /// protected java.awt.Color javax.swing.plaf.basic.BasicBorders$ButtonBorder.shadow
+
+    private static var shadow_FieldID: jfieldID?
+
+    override open var shadow: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.shadow_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "shadow", fieldType: "Ljava/awt/Color;", fieldCache: &BasicBorders_RolloverButtonBorder.shadow_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// public javax.swing.plaf.basic.BasicBorders$RolloverButtonBorder(java.awt.Color,java.awt.Color,java.awt.Color,java.awt.Color)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( shadow: java_awt.Color?, darkShadow: java_awt.Color?, highlight: java_awt.Color?, lightHighlight: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: shadow, locals: &__locals )
         __args[1] = JNIType.toJava( value: darkShadow, locals: &__locals )
         __args[2] = JNIType.toJava( value: highlight, locals: &__locals )
@@ -110,14 +110,14 @@ open class BasicBorders_RolloverButtonBorder: BasicBorders_ButtonBorder {
     private static var paintBorder_MethodID_2: jmethodID?
 
     open func paintBorder( c: java_awt.Component?, g: java_awt.Graphics?, x: Int, y: Int, w: Int, h: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: c, locals: &__locals )
         __args[1] = JNIType.toJava( value: g, locals: &__locals )
-        __args[2] = JNIType.toJava( value: x, locals: &__locals )
-        __args[3] = JNIType.toJava( value: y, locals: &__locals )
-        __args[4] = JNIType.toJava( value: w, locals: &__locals )
-        __args[5] = JNIType.toJava( value: h, locals: &__locals )
+        __args[2] = jvalue( i: jint(x) )
+        __args[3] = jvalue( i: jint(y) )
+        __args[4] = jvalue( i: jint(w) )
+        __args[5] = jvalue( i: jint(h) )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintBorder", methodSig: "(Ljava/awt/Component;Ljava/awt/Graphics;IIII)V", methodCache: &BasicBorders_RolloverButtonBorder.paintBorder_MethodID_2, args: &__args, locals: &__locals )
     }
 

@@ -8,17 +8,17 @@ import java_util
 
 public protocol MenuListener: java_util.EventListener {
 
-    /// public abstract void javax.swing.event.MenuListener.menuSelected(javax.swing.event.MenuEvent)
+    /// public abstract void javax.swing.event.MenuListener.menuCanceled(javax.swing.event.MenuEvent)
 
-    func menuSelected( e: MenuEvent? )
+    func menuCanceled( e: MenuEvent? )
 
     /// public abstract void javax.swing.event.MenuListener.menuDeselected(javax.swing.event.MenuEvent)
 
     func menuDeselected( e: MenuEvent? )
 
-    /// public abstract void javax.swing.event.MenuListener.menuCanceled(javax.swing.event.MenuEvent)
+    /// public abstract void javax.swing.event.MenuListener.menuSelected(javax.swing.event.MenuEvent)
 
-    func menuCanceled( e: MenuEvent? )
+    func menuSelected( e: MenuEvent? )
 
 }
 
@@ -27,19 +27,19 @@ open class MenuListenerForward: java_util.EventListenerForward, MenuListener {
 
     private static var MenuListenerJNIClass: jclass?
 
-    /// public abstract void javax.swing.event.MenuListener.menuSelected(javax.swing.event.MenuEvent)
+    /// public abstract void javax.swing.event.MenuListener.menuCanceled(javax.swing.event.MenuEvent)
 
-    private static var menuSelected_MethodID_4: jmethodID?
+    private static var menuCanceled_MethodID_4: jmethodID?
 
-    open func menuSelected( e: MenuEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func menuCanceled( e: MenuEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuSelected", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuSelected_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuCanceled", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuCanceled_MethodID_4, args: &__args, locals: &__locals )
     }
 
-    open func menuSelected( _ _e: MenuEvent? ) {
-        menuSelected( e: _e )
+    open func menuCanceled( _ _e: MenuEvent? ) {
+        menuCanceled( e: _e )
     }
 
     /// public abstract void javax.swing.event.MenuListener.menuDeselected(javax.swing.event.MenuEvent)
@@ -47,8 +47,8 @@ open class MenuListenerForward: java_util.EventListenerForward, MenuListener {
     private static var menuDeselected_MethodID_5: jmethodID?
 
     open func menuDeselected( e: MenuEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
         JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuDeselected", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuDeselected_MethodID_5, args: &__args, locals: &__locals )
     }
@@ -57,46 +57,39 @@ open class MenuListenerForward: java_util.EventListenerForward, MenuListener {
         menuDeselected( e: _e )
     }
 
-    /// public abstract void javax.swing.event.MenuListener.menuCanceled(javax.swing.event.MenuEvent)
+    /// public abstract void javax.swing.event.MenuListener.menuSelected(javax.swing.event.MenuEvent)
 
-    private static var menuCanceled_MethodID_6: jmethodID?
+    private static var menuSelected_MethodID_6: jmethodID?
 
-    open func menuCanceled( e: MenuEvent? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open func menuSelected( e: MenuEvent? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: e, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuCanceled", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuCanceled_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "menuSelected", methodSig: "(Ljavax/swing/event/MenuEvent;)V", methodCache: &MenuListenerForward.menuSelected_MethodID_6, args: &__args, locals: &__locals )
     }
 
-    open func menuCanceled( _ _e: MenuEvent? ) {
-        menuCanceled( e: _e )
+    open func menuSelected( _ _e: MenuEvent? ) {
+        menuSelected( e: _e )
     }
 
 }
 
+private typealias MenuListener_menuCanceled_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private typealias MenuListener_menuSelected_0_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
-
-private func MenuListener_menuSelected_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuSelected( e: e != nil ? MenuEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+private func MenuListener_menuCanceled_0( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuCanceled( e: e != nil ? MenuEvent( javaObject: e ) : nil )
 }
 
 private typealias MenuListener_menuDeselected_1_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
 private func MenuListener_menuDeselected_1( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
     MenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuDeselected( e: e != nil ? MenuEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
 }
 
-private typealias MenuListener_menuCanceled_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
+private typealias MenuListener_menuSelected_2_type = @convention(c) ( _: UnsafeMutablePointer<JNIEnv?>, _: jobject?, _: jlong, _: jobject? ) -> ()
 
-private func MenuListener_menuCanceled_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
-    JNI.inNative = true;
-    MenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuCanceled( e: e != nil ? MenuEvent( javaObject: e ) : nil )
-    JNI.inNative = false;
+private func MenuListener_menuSelected_2( _ __env: UnsafeMutablePointer<JNIEnv?>, _ __this: jobject?, _ __swiftObject: jlong, _ e: jobject? ) -> () {
+    MenuListenerLocal_.swiftObject( jniEnv: __env, javaObject: __this, swiftObject: __swiftObject ).menuSelected( e: e != nil ? MenuEvent( javaObject: e ) : nil )
 }
 
 fileprivate class MenuListenerLocal_: JNILocalProxy<MenuListener, Any> {
@@ -104,14 +97,14 @@ fileprivate class MenuListenerLocal_: JNILocalProxy<MenuListener, Any> {
     fileprivate static let _proxyClass: jclass = {
         var natives = [JNINativeMethod]()
 
-        let MenuListener_menuSelected_0_thunk: MenuListener_menuSelected_0_type = MenuListener_menuSelected_0
-        natives.append( JNINativeMethod( name: strdup("__menuSelected"), signature: strdup("(JLjavax/swing/event/MenuEvent;)V"), fnPtr: unsafeBitCast( MenuListener_menuSelected_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MenuListener_menuCanceled_0_thunk: MenuListener_menuCanceled_0_type = MenuListener_menuCanceled_0
+        natives.append( JNINativeMethod( name: strdup("__menuCanceled"), signature: strdup("(JLjavax/swing/event/MenuEvent;)V"), fnPtr: unsafeBitCast( MenuListener_menuCanceled_0_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let MenuListener_menuDeselected_1_thunk: MenuListener_menuDeselected_1_type = MenuListener_menuDeselected_1
         natives.append( JNINativeMethod( name: strdup("__menuDeselected"), signature: strdup("(JLjavax/swing/event/MenuEvent;)V"), fnPtr: unsafeBitCast( MenuListener_menuDeselected_1_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
-        let MenuListener_menuCanceled_2_thunk: MenuListener_menuCanceled_2_type = MenuListener_menuCanceled_2
-        natives.append( JNINativeMethod( name: strdup("__menuCanceled"), signature: strdup("(JLjavax/swing/event/MenuEvent;)V"), fnPtr: unsafeBitCast( MenuListener_menuCanceled_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
+        let MenuListener_menuSelected_2_thunk: MenuListener_menuSelected_2_type = MenuListener_menuSelected_2
+        natives.append( JNINativeMethod( name: strdup("__menuSelected"), signature: strdup("(JLjavax/swing/event/MenuEvent;)V"), fnPtr: unsafeBitCast( MenuListener_menuSelected_2_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
@@ -144,31 +137,22 @@ open class MenuListenerBase: MenuListener {
 
     public init() {}
 
-    /// public abstract void javax.swing.event.MenuListener.menuSelected(javax.swing.event.MenuEvent)
+    /// public abstract void javax.swing.event.MenuListener.menuCanceled(javax.swing.event.MenuEvent)
 
-    open func menuSelected( e: MenuEvent? ) /**/ {
+    open func menuCanceled( e: MenuEvent? ) /**/ {
     }
 
-    open func menuSelected( _ _e: MenuEvent? ) /**/ {
-        menuSelected( e: _e )
-    }
 
     /// public abstract void javax.swing.event.MenuListener.menuDeselected(javax.swing.event.MenuEvent)
 
     open func menuDeselected( e: MenuEvent? ) /**/ {
     }
 
-    open func menuDeselected( _ _e: MenuEvent? ) /**/ {
-        menuDeselected( e: _e )
+
+    /// public abstract void javax.swing.event.MenuListener.menuSelected(javax.swing.event.MenuEvent)
+
+    open func menuSelected( e: MenuEvent? ) /**/ {
     }
 
-    /// public abstract void javax.swing.event.MenuListener.menuCanceled(javax.swing.event.MenuEvent)
-
-    open func menuCanceled( e: MenuEvent? ) /**/ {
-    }
-
-    open func menuCanceled( _ _e: MenuEvent? ) /**/ {
-        menuCanceled( e: _e )
-    }
 
 }

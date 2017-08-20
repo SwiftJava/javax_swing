@@ -22,41 +22,23 @@ open class TabbedPaneUI: ComponentUI {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/TabbedPaneUI", classCache: &TabbedPaneUI.TabbedPaneUIJNIClass, methodSig: "()V", methodCache: &TabbedPaneUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
 
-    /// public abstract int javax.swing.plaf.TabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int)
-
-    private static var tabForCoordinate_MethodID_2: jmethodID?
-
-    open func tabForCoordinate( pane: JTabbedPane?, x: Int, y: Int ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: pane, locals: &__locals )
-        __args[1] = JNIType.toJava( value: x, locals: &__locals )
-        __args[2] = JNIType.toJava( value: y, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "tabForCoordinate", methodSig: "(Ljavax/swing/JTabbedPane;II)I", methodCache: &TabbedPaneUI.tabForCoordinate_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open func tabForCoordinate( _ _pane: JTabbedPane?, _ _x: Int, _ _y: Int ) -> Int {
-        return tabForCoordinate( pane: _pane, x: _x, y: _y )
-    }
-
     /// public abstract java.awt.Rectangle javax.swing.plaf.TabbedPaneUI.getTabBounds(javax.swing.JTabbedPane,int)
 
-    private static var getTabBounds_MethodID_3: jmethodID?
+    private static var getTabBounds_MethodID_2: jmethodID?
 
     open func getTabBounds( pane: JTabbedPane?, index: Int ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: pane, locals: &__locals )
-        __args[1] = JNIType.toJava( value: index, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(Ljavax/swing/JTabbedPane;I)Ljava/awt/Rectangle;", methodCache: &TabbedPaneUI.getTabBounds_MethodID_3, args: &__args, locals: &__locals )
+        __args[1] = jvalue( i: jint(index) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTabBounds", methodSig: "(Ljavax/swing/JTabbedPane;I)Ljava/awt/Rectangle;", methodCache: &TabbedPaneUI.getTabBounds_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -67,18 +49,36 @@ open class TabbedPaneUI: ComponentUI {
 
     /// public abstract int javax.swing.plaf.TabbedPaneUI.getTabRunCount(javax.swing.JTabbedPane)
 
-    private static var getTabRunCount_MethodID_4: jmethodID?
+    private static var getTabRunCount_MethodID_3: jmethodID?
 
     open func getTabRunCount( pane: JTabbedPane? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: pane, locals: &__locals )
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunCount", methodSig: "(Ljavax/swing/JTabbedPane;)I", methodCache: &TabbedPaneUI.getTabRunCount_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getTabRunCount", methodSig: "(Ljavax/swing/JTabbedPane;)I", methodCache: &TabbedPaneUI.getTabRunCount_MethodID_3, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open func getTabRunCount( _ _pane: JTabbedPane? ) -> Int {
         return getTabRunCount( pane: _pane )
+    }
+
+    /// public abstract int javax.swing.plaf.TabbedPaneUI.tabForCoordinate(javax.swing.JTabbedPane,int,int)
+
+    private static var tabForCoordinate_MethodID_4: jmethodID?
+
+    open func tabForCoordinate( pane: JTabbedPane?, x: Int, y: Int ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: pane, locals: &__locals )
+        __args[1] = jvalue( i: jint(x) )
+        __args[2] = jvalue( i: jint(y) )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "tabForCoordinate", methodSig: "(Ljavax/swing/JTabbedPane;II)I", methodCache: &TabbedPaneUI.tabForCoordinate_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
+    }
+
+    open func tabForCoordinate( _ _pane: JTabbedPane?, _ _x: Int, _ _y: Int ) -> Int {
+        return tabForCoordinate( pane: _pane, x: _x, y: _y )
     }
 
 }

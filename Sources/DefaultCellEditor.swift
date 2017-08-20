@@ -18,14 +18,47 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
 
     private static var DefaultCellEditorJNIClass: jclass?
 
+    /// protected int javax.swing.DefaultCellEditor.clickCountToStart
+
+    private static var clickCountToStart_FieldID: jfieldID?
+
+    open var clickCountToStart: Int {
+        get {
+            let __value = JNIField.GetIntField( fieldName: "clickCountToStart", fieldType: "I", fieldCache: &DefaultCellEditor.clickCountToStart_FieldID, object: javaObject )
+            return Int(__value)
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = jvalue( i: jint(newValue) )
+            JNIField.SetIntField( fieldName: "clickCountToStart", fieldType: "I", fieldCache: &DefaultCellEditor.clickCountToStart_FieldID, object: javaObject, value: __value.i, locals: &__locals )
+        }
+    }
+
+    /// protected javax.swing.DefaultCellEditor$EditorDelegate javax.swing.DefaultCellEditor.delegate
+
+    private static var delegate_FieldID: jfieldID?
+
+    open var delegate: /* class javax.swing.DefaultCellEditor$EditorDelegate */ UnavailableObject! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "delegate", fieldType: "Ljavax/swing/DefaultCellEditor$EditorDelegate;", fieldCache: &DefaultCellEditor.delegate_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? /* class javax.swing.DefaultCellEditor$EditorDelegate */ UnavailableObject( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "delegate", fieldType: "Ljavax/swing/DefaultCellEditor$EditorDelegate;", fieldCache: &DefaultCellEditor.delegate_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected javax.swing.JComponent javax.swing.DefaultCellEditor.editorComponent
 
     private static var editorComponent_FieldID: jfieldID?
 
     open var editorComponent: JComponent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "editorComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &DefaultCellEditor.editorComponent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "editorComponent", fieldType: "Ljavax/swing/JComponent;", fieldCache: &DefaultCellEditor.editorComponent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JComponent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -35,65 +68,14 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         }
     }
 
-    /// protected javax.swing.DefaultCellEditor$EditorDelegate javax.swing.DefaultCellEditor.delegate
-
-    private static var delegate_FieldID: jfieldID?
-
-    open var delegate: /* javax.swing.DefaultCellEditor$EditorDelegate */ UnclassedObject! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "delegate", fieldType: "Ljavax/swing/DefaultCellEditor$EditorDelegate;", fieldCache: &DefaultCellEditor.delegate_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? /* javax.swing.DefaultCellEditor$EditorDelegate */ UnclassedObject( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "delegate", fieldType: "Ljavax/swing/DefaultCellEditor$EditorDelegate;", fieldCache: &DefaultCellEditor.delegate_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
-    /// protected int javax.swing.DefaultCellEditor.clickCountToStart
-
-    private static var clickCountToStart_FieldID: jfieldID?
-
-    open var clickCountToStart: Int {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "clickCountToStart", fieldType: "I", fieldCache: &DefaultCellEditor.clickCountToStart_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetIntField( fieldName: "clickCountToStart", fieldType: "I", fieldCache: &DefaultCellEditor.clickCountToStart_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected javax.swing.event.EventListenerList javax.swing.AbstractCellEditor.listenerList
-
-    private static var listenerList_FieldID: jfieldID?
-
-    override open var listenerList: EventListenerList! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultCellEditor.listenerList_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? EventListenerList( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultCellEditor.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
-        }
-    }
-
     /// protected transient javax.swing.event.ChangeEvent javax.swing.AbstractCellEditor.changeEvent
 
     private static var changeEvent_FieldID: jfieldID?
 
     override open var changeEvent: ChangeEvent! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultCellEditor.changeEvent_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "changeEvent", fieldType: "Ljavax/swing/event/ChangeEvent;", fieldCache: &DefaultCellEditor.changeEvent_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? ChangeEvent( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -103,32 +85,32 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         }
     }
 
-    /// public javax.swing.DefaultCellEditor(javax.swing.JComboBox)
+    /// protected javax.swing.event.EventListenerList javax.swing.AbstractCellEditor.listenerList
 
-    private static var new_MethodID_1: jmethodID?
+    private static var listenerList_FieldID: jfieldID?
 
-    public convenience init( comboBox: JComboBox? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: comboBox, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JComboBox;)V", methodCache: &DefaultCellEditor.new_MethodID_1, args: &__args, locals: &__locals )
-        self.init( javaObject: __object )
-        JNI.DeleteLocalRef( __object )
-    }
-
-    public convenience init( _ _comboBox: JComboBox? ) {
-        self.init( comboBox: _comboBox )
+    override open var listenerList: EventListenerList! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultCellEditor.listenerList_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? EventListenerList( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "listenerList", fieldType: "Ljavax/swing/event/EventListenerList;", fieldCache: &DefaultCellEditor.listenerList_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
     }
 
     /// public javax.swing.DefaultCellEditor(javax.swing.JCheckBox)
 
-    private static var new_MethodID_2: jmethodID?
+    private static var new_MethodID_1: jmethodID?
 
     public convenience init( checkBox: JCheckBox? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: checkBox, locals: &__locals )
-        let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JCheckBox;)V", methodCache: &DefaultCellEditor.new_MethodID_2, args: &__args, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JCheckBox;)V", methodCache: &DefaultCellEditor.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
     }
@@ -137,13 +119,30 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         self.init( checkBox: _checkBox )
     }
 
+    /// public javax.swing.DefaultCellEditor(javax.swing.JComboBox)
+
+    private static var new_MethodID_2: jmethodID?
+
+    public convenience init( comboBox: JComboBox? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: comboBox, locals: &__locals )
+        let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JComboBox;)V", methodCache: &DefaultCellEditor.new_MethodID_2, args: &__args, locals: &__locals )
+        self.init( javaObject: __object )
+        JNI.DeleteLocalRef( __object )
+    }
+
+    public convenience init( _ _comboBox: JComboBox? ) {
+        self.init( comboBox: _comboBox )
+    }
+
     /// public javax.swing.DefaultCellEditor(javax.swing.JTextField)
 
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( textField: JTextField? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: textField, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/DefaultCellEditor", classCache: &DefaultCellEditor.DefaultCellEditorJNIClass, methodSig: "(Ljavax/swing/JTextField;)V", methodCache: &DefaultCellEditor.new_MethodID_3, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
@@ -154,70 +153,73 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         self.init( textField: _textField )
     }
 
-    /// public boolean javax.swing.DefaultCellEditor.isCellEditable(java.util.EventObject)
-
-    private static var isCellEditable_MethodID_4: jmethodID?
-
-    override open func isCellEditable( anEvent: java_util.EventObject? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
-        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultCellEditor.isCellEditable_MethodID_4, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    override open func isCellEditable( _ _anEvent: java_util.EventObject? ) -> Bool {
-        return isCellEditable( anEvent: _anEvent )
-    }
-
-    /// public boolean javax.swing.DefaultCellEditor.shouldSelectCell(java.util.EventObject)
-
-    /// public boolean javax.swing.DefaultCellEditor.stopCellEditing()
-
     /// public void javax.swing.DefaultCellEditor.cancelCellEditing()
+
+    // Skipping method: false true false false false 
 
     /// public java.lang.Object javax.swing.DefaultCellEditor.getCellEditorValue()
 
-    /// public void javax.swing.DefaultCellEditor.setClickCountToStart(int)
-
-    private static var setClickCountToStart_MethodID_5: jmethodID?
-
-    open func setClickCountToStart( count: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: count, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClickCountToStart", methodSig: "(I)V", methodCache: &DefaultCellEditor.setClickCountToStart_MethodID_5, args: &__args, locals: &__locals )
-    }
-
-    open func setClickCountToStart( _ _count: Int ) {
-        setClickCountToStart( count: _count )
-    }
+    // Skipping method: false true false false false 
 
     /// public int javax.swing.DefaultCellEditor.getClickCountToStart()
 
-    private static var getClickCountToStart_MethodID_6: jmethodID?
+    private static var getClickCountToStart_MethodID_4: jmethodID?
 
     open func getClickCountToStart() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getClickCountToStart", methodSig: "()I", methodCache: &DefaultCellEditor.getClickCountToStart_MethodID_6, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getClickCountToStart", methodSig: "()I", methodCache: &DefaultCellEditor.getClickCountToStart_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
+
+    /// public java.awt.Component javax.swing.DefaultCellEditor.getComponent()
+
+    private static var getComponent_MethodID_5: jmethodID?
+
+    open func getComponent() -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &DefaultCellEditor.getComponent_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+
+    /// public java.awt.Component javax.swing.DefaultCellEditor.getTableCellEditorComponent(javax.swing.JTable,java.lang.Object,boolean,int,int)
+
+    private static var getTableCellEditorComponent_MethodID_6: jmethodID?
+
+    open func getTableCellEditorComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, row: Int, column: Int ) -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: table, locals: &__locals )
+        __args[1] = JNIType.toJava( value: value, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        __args[3] = jvalue( i: jint(row) )
+        __args[4] = jvalue( i: jint(column) )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableCellEditorComponent", methodSig: "(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;", methodCache: &DefaultCellEditor.getTableCellEditorComponent_MethodID_6, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+    }
+
+    open func getTableCellEditorComponent( _ _table: JTable?, _ _value: java_swift.JavaObject?, _ _isSelected: Bool, _ _row: Int, _ _column: Int ) -> java_awt.Component! {
+        return getTableCellEditorComponent( table: _table, value: _value, isSelected: _isSelected, row: _row, column: _column )
+    }
 
     /// public java.awt.Component javax.swing.DefaultCellEditor.getTreeCellEditorComponent(javax.swing.JTree,java.lang.Object,boolean,boolean,boolean,int)
 
     private static var getTreeCellEditorComponent_MethodID_7: jmethodID?
 
     open func getTreeCellEditorComponent( tree: JTree?, value: java_swift.JavaObject?, isSelected: Bool, expanded: Bool, leaf: Bool, row: Int ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 6 )
         __args[0] = JNIType.toJava( value: tree, locals: &__locals )
         __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        __args[3] = JNIType.toJava( value: expanded, locals: &__locals )
-        __args[4] = JNIType.toJava( value: leaf, locals: &__locals )
-        __args[5] = JNIType.toJava( value: row, locals: &__locals )
+        __args[2] = jvalue( z: jboolean(isSelected ? JNI_TRUE : JNI_FALSE) )
+        __args[3] = jvalue( z: jboolean(expanded ? JNI_TRUE : JNI_FALSE) )
+        __args[4] = jvalue( z: jboolean(leaf ? JNI_TRUE : JNI_FALSE) )
+        __args[5] = jvalue( i: jint(row) )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTreeCellEditorComponent", methodSig: "(Ljavax/swing/JTree;Ljava/lang/Object;ZZZI)Ljava/awt/Component;", methodCache: &DefaultCellEditor.getTreeCellEditorComponent_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
@@ -227,53 +229,70 @@ open class DefaultCellEditor: AbstractCellEditor, TableCellEditor, TreeCellEdito
         return getTreeCellEditorComponent( tree: _tree, value: _value, isSelected: _isSelected, expanded: _expanded, leaf: _leaf, row: _row )
     }
 
-    /// public java.awt.Component javax.swing.DefaultCellEditor.getTableCellEditorComponent(javax.swing.JTable,java.lang.Object,boolean,int,int)
+    /// public boolean javax.swing.DefaultCellEditor.isCellEditable(java.util.EventObject)
 
-    private static var getTableCellEditorComponent_MethodID_8: jmethodID?
+    private static var isCellEditable_MethodID_8: jmethodID?
 
-    open func getTableCellEditorComponent( table: JTable?, value: java_swift.JavaObject?, isSelected: Bool, row: Int, column: Int ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+    override open func isCellEditable( anEvent: java_util.EventObject? ) -> Bool {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: table, locals: &__locals )
-        __args[1] = JNIType.toJava( value: value, locals: &__locals )
-        __args[2] = JNIType.toJava( value: isSelected, locals: &__locals )
-        __args[3] = JNIType.toJava( value: row, locals: &__locals )
-        __args[4] = JNIType.toJava( value: column, locals: &__locals )
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getTableCellEditorComponent", methodSig: "(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;", methodCache: &DefaultCellEditor.getTableCellEditorComponent_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open func getTableCellEditorComponent( _ _table: JTable?, _ _value: java_swift.JavaObject?, _ _isSelected: Bool, _ _row: Int, _ _column: Int ) -> java_awt.Component! {
-        return getTableCellEditorComponent( table: _table, value: _value, isSelected: _isSelected, row: _row, column: _column )
-    }
-
-    /// public java.awt.Component javax.swing.DefaultCellEditor.getComponent()
-
-    private static var getComponent_MethodID_9: jmethodID?
-
-    open func getComponent() -> java_awt.Component! {
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getComponent", methodSig: "()Ljava/awt/Component;", methodCache: &DefaultCellEditor.getComponent_MethodID_9, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+        __args[0] = JNIType.toJava( value: anEvent, locals: &__locals )
+        let __return = JNIMethod.CallBooleanMethod( object: javaObject, methodName: "isCellEditable", methodSig: "(Ljava/util/EventObject;)Z", methodCache: &DefaultCellEditor.isCellEditable_MethodID_8, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
     }
 
+    override open func isCellEditable( _ _anEvent: java_util.EventObject? ) -> Bool {
+        return isCellEditable( anEvent: _anEvent )
+    }
+
+    /// public void javax.swing.DefaultCellEditor.setClickCountToStart(int)
+
+    private static var setClickCountToStart_MethodID_9: jmethodID?
+
+    open func setClickCountToStart( count: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(count) )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "setClickCountToStart", methodSig: "(I)V", methodCache: &DefaultCellEditor.setClickCountToStart_MethodID_9, args: &__args, locals: &__locals )
+    }
+
+    open func setClickCountToStart( _ _count: Int ) {
+        setClickCountToStart( count: _count )
+    }
+
+    /// public boolean javax.swing.DefaultCellEditor.shouldSelectCell(java.util.EventObject)
+
+    // Skipping method: false true false false false 
+
+    /// public boolean javax.swing.DefaultCellEditor.stopCellEditing()
+
+    // Skipping method: false true false false false 
 
     /// In declared protocol but not defined.. ///
 
-    /// public abstract void javax.swing.CellEditor.cancelCellEditing()
-
-    /// public abstract boolean javax.swing.CellEditor.stopCellEditing()
-
     /// public abstract void javax.swing.CellEditor.addCellEditorListener(javax.swing.event.CellEditorListener)
 
-    /// public abstract void javax.swing.CellEditor.removeCellEditorListener(javax.swing.event.CellEditorListener)
+    // Skipping method: false true false false false 
+
+    /// public abstract void javax.swing.CellEditor.cancelCellEditing()
+
+    // Skipping method: false true false false false 
 
     /// public abstract java.lang.Object javax.swing.CellEditor.getCellEditorValue()
 
+    // Skipping method: false true false false false 
+
+    /// public abstract void javax.swing.CellEditor.removeCellEditorListener(javax.swing.event.CellEditorListener)
+
+    // Skipping method: false true false false false 
+
     /// public abstract boolean javax.swing.CellEditor.shouldSelectCell(java.util.EventObject)
+
+    // Skipping method: false true false false false 
+
+    /// public abstract boolean javax.swing.CellEditor.stopCellEditing()
+
+    // Skipping method: false true false false false 
 
 }
 

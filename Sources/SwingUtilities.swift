@@ -20,46 +20,13 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
 
     /// private static boolean javax.swing.SwingUtilities.canAccessEventQueue
 
-    /// private static boolean javax.swing.SwingUtilities.eventQueueTested
-
-    /// private static boolean javax.swing.SwingUtilities.suppressDropSupport
-
     /// private static boolean javax.swing.SwingUtilities.checkedSuppressDropSupport
+
+    /// private static boolean javax.swing.SwingUtilities.eventQueueTested
 
     /// private static final java.lang.Object javax.swing.SwingUtilities.sharedOwnerFrameKey
 
-    /// public static final int javax.swing.SwingConstants.CENTER
-
-    private static var CENTER_FieldID: jfieldID?
-
-    open static var CENTER: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.TOP
-
-    private static var TOP_FieldID: jfieldID?
-
-    open static var TOP: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.LEFT
-
-    private static var LEFT_FieldID: jfieldID?
-
-    open static var LEFT: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
+    /// private static boolean javax.swing.SwingUtilities.suppressDropSupport
 
     /// public static final int javax.swing.SwingConstants.BOTTOM
 
@@ -68,40 +35,18 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     open static var BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM", fieldType: "I", fieldCache: &BOTTOM_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.RIGHT
+    /// public static final int javax.swing.SwingConstants.CENTER
 
-    private static var RIGHT_FieldID: jfieldID?
+    private static var CENTER_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    open static var CENTER: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH
-
-    private static var NORTH_FieldID: jfieldID?
-
-    open static var NORTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_EAST
-
-    private static var NORTH_EAST_FieldID: jfieldID?
-
-    open static var NORTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
         }
     }
 
@@ -112,62 +57,7 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     open static var EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
-
-    private static var SOUTH_EAST_FieldID: jfieldID?
-
-    open static var SOUTH_EAST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH
-
-    private static var SOUTH_FieldID: jfieldID?
-
-    open static var SOUTH: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
-
-    private static var SOUTH_WEST_FieldID: jfieldID?
-
-    open static var SOUTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.WEST
-
-    private static var WEST_FieldID: jfieldID?
-
-    open static var WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.NORTH_WEST
-
-    private static var NORTH_WEST_FieldID: jfieldID?
-
-    open static var NORTH_WEST: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -178,18 +68,7 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     open static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
-        }
-    }
-
-    /// public static final int javax.swing.SwingConstants.VERTICAL
-
-    private static var VERTICAL_FieldID: jfieldID?
-
-    open static var VERTICAL: Int {
-        get {
-            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
@@ -200,18 +79,18 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     open static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
         }
     }
 
-    /// public static final int javax.swing.SwingConstants.TRAILING
+    /// public static final int javax.swing.SwingConstants.LEFT
 
-    private static var TRAILING_FieldID: jfieldID?
+    private static var LEFT_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    open static var LEFT: Int {
         get {
-            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
         }
     }
 
@@ -222,7 +101,40 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     open static var NEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEXT", fieldType: "I", fieldCache: &NEXT_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH
+
+    private static var NORTH_FieldID: jfieldID?
+
+    open static var NORTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_EAST
+
+    private static var NORTH_EAST_FieldID: jfieldID?
+
+    open static var NORTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.NORTH_WEST
+
+    private static var NORTH_WEST_FieldID: jfieldID?
+
+    open static var NORTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
         }
     }
 
@@ -233,100 +145,204 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     open static var PREVIOUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREVIOUS", fieldType: "I", fieldCache: &PREVIOUS_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
-            return JNIType.toSwift( type: Int(), from: __value )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.RIGHT
+
+    private static var RIGHT_FieldID: jfieldID?
+
+    open static var RIGHT: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH
+
+    private static var SOUTH_FieldID: jfieldID?
+
+    open static var SOUTH: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_EAST
+
+    private static var SOUTH_EAST_FieldID: jfieldID?
+
+    open static var SOUTH_EAST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.SOUTH_WEST
+
+    private static var SOUTH_WEST_FieldID: jfieldID?
+
+    open static var SOUTH_WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TOP
+
+    private static var TOP_FieldID: jfieldID?
+
+    open static var TOP: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.TRAILING
+
+    private static var TRAILING_FieldID: jfieldID?
+
+    open static var TRAILING: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.VERTICAL
+
+    private static var VERTICAL_FieldID: jfieldID?
+
+    open static var VERTICAL: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
+        }
+    }
+
+    /// public static final int javax.swing.SwingConstants.WEST
+
+    private static var WEST_FieldID: jfieldID?
+
+    open static var WEST: Int {
+        get {
+            let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass )
+            return Int(__value)
         }
     }
 
     /// private javax.swing.SwingUtilities()
 
-    /// public static java.awt.Component javax.swing.SwingUtilities.getRoot(java.awt.Component)
+    /// static java.lang.Object javax.swing.SwingUtilities.appContextGet(java.lang.Object)
 
-    private static var getRoot_MethodID_1: jmethodID?
+    // Skipping method: true false false false false 
 
-    open class func getRoot( arg0: java_awt.Component? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    /// static void javax.swing.SwingUtilities.appContextPut(java.lang.Object,java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// static void javax.swing.SwingUtilities.appContextRemove(java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// public static java.awt.Rectangle javax.swing.SwingUtilities.calculateInnerArea(javax.swing.JComponent,java.awt.Rectangle)
+
+    private static var calculateInnerArea_MethodID_1: jmethodID?
+
+    open class func calculateInnerArea( arg0: JComponent?, arg1: java_awt.Rectangle? ) -> java_awt.Rectangle! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getRoot", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &getRoot_MethodID_1, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
-    }
-
-    open class func getRoot( _ _arg0: java_awt.Component? ) -> java_awt.Component! {
-        return getRoot( arg0: _arg0 )
-    }
-
-    /// private static boolean javax.swing.SwingUtilities.getSuppressDropTarget()
-
-    /// public static final boolean javax.swing.SwingUtilities.isRectangleContainingRectangle(java.awt.Rectangle,java.awt.Rectangle)
-
-    private static var isRectangleContainingRectangle_MethodID_2: jmethodID?
-
-    open class func isRectangleContainingRectangle( arg0: java_awt.Rectangle?, arg1: java_awt.Rectangle? ) -> Bool {
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isRectangleContainingRectangle", methodSig: "(Ljava/awt/Rectangle;Ljava/awt/Rectangle;)Z", methodCache: &isRectangleContainingRectangle_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isRectangleContainingRectangle( _ _arg0: java_awt.Rectangle?, _ _arg1: java_awt.Rectangle? ) -> Bool {
-        return isRectangleContainingRectangle( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public static java.awt.Rectangle javax.swing.SwingUtilities.getLocalBounds(java.awt.Component)
-
-    private static var getLocalBounds_MethodID_3: jmethodID?
-
-    open class func getLocalBounds( arg0: java_awt.Component? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getLocalBounds", methodSig: "(Ljava/awt/Component;)Ljava/awt/Rectangle;", methodCache: &getLocalBounds_MethodID_3, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "calculateInnerArea", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &calculateInnerArea_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
 
-    open class func getLocalBounds( _ _arg0: java_awt.Component? ) -> java_awt.Rectangle! {
-        return getLocalBounds( arg0: _arg0 )
+    open class func calculateInnerArea( _ _arg0: JComponent?, _ _arg1: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        return calculateInnerArea( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public static java.awt.Container javax.swing.SwingUtilities.getAncestorNamed(java.lang.String,java.awt.Component)
+    /// public static java.awt.Rectangle[] javax.swing.SwingUtilities.computeDifference(java.awt.Rectangle,java.awt.Rectangle)
 
-    private static var getAncestorNamed_MethodID_4: jmethodID?
+    private static var computeDifference_MethodID_2: jmethodID?
 
-    open class func getAncestorNamed( arg0: String?, arg1: java_awt.Component? ) -> java_awt.Container! {
+    open class func computeDifference( arg0: java_awt.Rectangle?, arg1: java_awt.Rectangle? ) -> [Rectangle]! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAncestorNamed", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getAncestorNamed_MethodID_4, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeDifference", methodSig: "(Ljava/awt/Rectangle;Ljava/awt/Rectangle;)[Ljava/awt/Rectangle;", methodCache: &computeDifference_MethodID_2, args: &__args, locals: &__locals )
+        return JNIType.toSwift( type: [Rectangle].self, from: __return )
     }
 
-    open class func getAncestorNamed( _ _arg0: String?, _ _arg1: java_awt.Component? ) -> java_awt.Container! {
-        return getAncestorNamed( arg0: _arg0, arg1: _arg1 )
+    open class func computeDifference( _ _arg0: java_awt.Rectangle?, _ _arg1: java_awt.Rectangle? ) -> [Rectangle]! {
+        return computeDifference( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public static java.awt.Component javax.swing.SwingUtilities.getDeepestComponentAt(java.awt.Component,int,int)
+    /// public static java.awt.Rectangle javax.swing.SwingUtilities.computeIntersection(int,int,int,int,java.awt.Rectangle)
 
-    private static var getDeepestComponentAt_MethodID_5: jmethodID?
+    private static var computeIntersection_MethodID_3: jmethodID?
 
-    open class func getDeepestComponentAt( arg0: java_awt.Component?, arg1: Int, arg2: Int ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open class func computeIntersection( arg0: Int, arg1: Int, arg2: Int, arg3: Int, arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = jvalue( i: jint(arg3) )
+        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeIntersection", methodSig: "(IIIILjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &computeIntersection_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    open class func computeIntersection( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int, _ _arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        return computeIntersection( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
+    }
+
+    /// public static int javax.swing.SwingUtilities.computeStringWidth(java.awt.FontMetrics,java.lang.String)
+
+    private static var computeStringWidth_MethodID_4: jmethodID?
+
+    open class func computeStringWidth( arg0: java_awt.FontMetrics?, arg1: String? ) -> Int {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getDeepestComponentAt", methodSig: "(Ljava/awt/Component;II)Ljava/awt/Component;", methodCache: &getDeepestComponentAt_MethodID_5, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeStringWidth", methodSig: "(Ljava/awt/FontMetrics;Ljava/lang/String;)I", methodCache: &computeStringWidth_MethodID_4, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
-    open class func getDeepestComponentAt( _ _arg0: java_awt.Component?, _ _arg1: Int, _ _arg2: Int ) -> java_awt.Component! {
-        return getDeepestComponentAt( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    open class func computeStringWidth( _ _arg0: java_awt.FontMetrics?, _ _arg1: String? ) -> Int {
+        return computeStringWidth( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static java.awt.Rectangle javax.swing.SwingUtilities.computeUnion(int,int,int,int,java.awt.Rectangle)
+
+    private static var computeUnion_MethodID_5: jmethodID?
+
+    open class func computeUnion( arg0: Int, arg1: Int, arg2: Int, arg3: Int, arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(arg0) )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        __args[3] = jvalue( i: jint(arg3) )
+        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeUnion", methodSig: "(IIIILjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &computeUnion_MethodID_5, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
+    }
+
+    open class func computeUnion( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int, _ _arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
+        return computeUnion( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
     }
 
     /// public static java.awt.event.MouseEvent javax.swing.SwingUtilities.convertMouseEvent(java.awt.Component,java.awt.event.MouseEvent,java.awt.Component)
@@ -334,8 +350,8 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
     private static var convertMouseEvent_MethodID_6: jmethodID?
 
     open class func convertMouseEvent( arg0: java_awt.Component?, arg1: java_awt.MouseEvent?, arg2: java_awt.Component? ) -> java_awt.MouseEvent! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
@@ -348,290 +364,18 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
         return convertMouseEvent( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public static java.awt.Window javax.swing.SwingUtilities.windowForComponent(java.awt.Component)
-
-    private static var windowForComponent_MethodID_7: jmethodID?
-
-    open class func windowForComponent( arg0: java_awt.Component? ) -> java_awt.Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "windowForComponent", methodSig: "(Ljava/awt/Component;)Ljava/awt/Window;", methodCache: &windowForComponent_MethodID_7, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Window( javaObject: __return ) : nil
-    }
-
-    open class func windowForComponent( _ _arg0: java_awt.Component? ) -> java_awt.Window! {
-        return windowForComponent( arg0: _arg0 )
-    }
-
-    /// public static boolean javax.swing.SwingUtilities.isRightMouseButton(java.awt.event.MouseEvent)
-
-    private static var isRightMouseButton_MethodID_8: jmethodID?
-
-    open class func isRightMouseButton( arg0: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isRightMouseButton", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &isRightMouseButton_MethodID_8, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isRightMouseButton( _ _arg0: java_awt.MouseEvent? ) -> Bool {
-        return isRightMouseButton( arg0: _arg0 )
-    }
-
-    /// public static int javax.swing.SwingUtilities.computeStringWidth(java.awt.FontMetrics,java.lang.String)
-
-    private static var computeStringWidth_MethodID_9: jmethodID?
-
-    open class func computeStringWidth( arg0: java_awt.FontMetrics?, arg1: String? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeStringWidth", methodSig: "(Ljava/awt/FontMetrics;Ljava/lang/String;)I", methodCache: &computeStringWidth_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
-    }
-
-    open class func computeStringWidth( _ _arg0: java_awt.FontMetrics?, _ _arg1: String? ) -> Int {
-        return computeStringWidth( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// private static java.lang.String javax.swing.SwingUtilities.layoutCompoundLabelImpl(javax.swing.JComponent,java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
-
-    /// private static javax.swing.CellRendererPane javax.swing.SwingUtilities.getCellRendererPane(java.awt.Component,java.awt.Container)
-
-    /// private static void javax.swing.SwingUtilities.updateComponentTreeUI0(java.awt.Component)
-
-    /// public static void javax.swing.SwingUtilities.replaceUIInputMap(javax.swing.JComponent,int,javax.swing.InputMap)
-
-    private static var replaceUIInputMap_MethodID_10: jmethodID?
-
-    open class func replaceUIInputMap( arg0: JComponent?, arg1: Int, arg2: InputMap? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "replaceUIInputMap", methodSig: "(Ljavax/swing/JComponent;ILjavax/swing/InputMap;)V", methodCache: &replaceUIInputMap_MethodID_10, args: &__args, locals: &__locals )
-    }
-
-    open class func replaceUIInputMap( _ _arg0: JComponent?, _ _arg1: Int, _ _arg2: InputMap? ) {
-        replaceUIInputMap( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
-    /// public static void javax.swing.SwingUtilities.replaceUIActionMap(javax.swing.JComponent,javax.swing.ActionMap)
-
-    private static var replaceUIActionMap_MethodID_11: jmethodID?
-
-    open class func replaceUIActionMap( arg0: JComponent?, arg1: ActionMap? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "replaceUIActionMap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/ActionMap;)V", methodCache: &replaceUIActionMap_MethodID_11, args: &__args, locals: &__locals )
-    }
-
-    open class func replaceUIActionMap( _ _arg0: JComponent?, _ _arg1: ActionMap? ) {
-        replaceUIActionMap( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public static javax.swing.InputMap javax.swing.SwingUtilities.getUIInputMap(javax.swing.JComponent,int)
-
-    private static var getUIInputMap_MethodID_12: jmethodID?
-
-    open class func getUIInputMap( arg0: JComponent?, arg1: Int ) -> InputMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUIInputMap", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/swing/InputMap;", methodCache: &getUIInputMap_MethodID_12, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? InputMap( javaObject: __return ) : nil
-    }
-
-    open class func getUIInputMap( _ _arg0: JComponent?, _ _arg1: Int ) -> InputMap! {
-        return getUIInputMap( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public static javax.swing.ActionMap javax.swing.SwingUtilities.getUIActionMap(javax.swing.JComponent)
-
-    private static var getUIActionMap_MethodID_13: jmethodID?
-
-    open class func getUIActionMap( arg0: JComponent? ) -> ActionMap! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUIActionMap", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/ActionMap;", methodCache: &getUIActionMap_MethodID_13, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? ActionMap( javaObject: __return ) : nil
-    }
-
-    open class func getUIActionMap( _ _arg0: JComponent? ) -> ActionMap! {
-        return getUIActionMap( arg0: _arg0 )
-    }
-
-    /// public static java.awt.Rectangle javax.swing.SwingUtilities.calculateInnerArea(javax.swing.JComponent,java.awt.Rectangle)
-
-    private static var calculateInnerArea_MethodID_14: jmethodID?
-
-    open class func calculateInnerArea( arg0: JComponent?, arg1: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "calculateInnerArea", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &calculateInnerArea_MethodID_14, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open class func calculateInnerArea( _ _arg0: JComponent?, _ _arg1: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        return calculateInnerArea( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// static java.lang.Class javax.swing.SwingUtilities.loadSystemClass(java.lang.String) throws java.lang.ClassNotFoundException
-
-    /// public static javax.accessibility.AccessibleStateSet javax.swing.SwingUtilities.getAccessibleStateSet(java.awt.Component)
-
-    private static var getAccessibleStateSet_MethodID_15: jmethodID?
-
-    open class func getAccessibleStateSet( arg0: java_awt.Component? ) -> /* javax.accessibility.AccessibleStateSet */ UnclassedObject! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleStateSet", methodSig: "(Ljava/awt/Component;)Ljavax/accessibility/AccessibleStateSet;", methodCache: &getAccessibleStateSet_MethodID_15, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.AccessibleStateSet */ UnclassedObject( javaObject: __return ) : nil
-    }
-
-    open class func getAccessibleStateSet( _ _arg0: java_awt.Component? ) -> /* javax.accessibility.AccessibleStateSet */ UnclassedObject! {
-        return getAccessibleStateSet( arg0: _arg0 )
-    }
-
-    /// public static void javax.swing.SwingUtilities.invokeLater(java.lang.Runnable)
-
-    private static var invokeLater_MethodID_16: jmethodID?
-
-    open class func invokeLater( arg0: java_swift.Runnable? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "invokeLater", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &invokeLater_MethodID_16, args: &__args, locals: &__locals )
-    }
-
-    open class func invokeLater( _ _arg0: java_swift.Runnable? ) {
-        invokeLater( arg0: _arg0 )
-    }
-
-    /// public static boolean javax.swing.SwingUtilities.isEventDispatchThread()
-
-    private static var isEventDispatchThread_MethodID_17: jmethodID?
-
-    open class func isEventDispatchThread() -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isEventDispatchThread", methodSig: "()Z", methodCache: &isEventDispatchThread_MethodID_17, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-
-    /// static void javax.swing.SwingUtilities.appContextPut(java.lang.Object,java.lang.Object)
-
-    /// static void javax.swing.SwingUtilities.appContextRemove(java.lang.Object)
-
-    /// static java.awt.Container javax.swing.SwingUtilities.getValidateRoot(java.awt.Container,boolean)
-
-    /// public static java.awt.Rectangle javax.swing.SwingUtilities.computeUnion(int,int,int,int,java.awt.Rectangle)
-
-    private static var computeUnion_MethodID_18: jmethodID?
-
-    open class func computeUnion( arg0: Int, arg1: Int, arg2: Int, arg3: Int, arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeUnion", methodSig: "(IIIILjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &computeUnion_MethodID_18, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open class func computeUnion( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int, _ _arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        return computeUnion( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
-    }
-
-    /// public static java.awt.Window javax.swing.SwingUtilities.getWindowAncestor(java.awt.Component)
-
-    private static var getWindowAncestor_MethodID_19: jmethodID?
-
-    open class func getWindowAncestor( arg0: java_awt.Component? ) -> java_awt.Window! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getWindowAncestor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Window;", methodCache: &getWindowAncestor_MethodID_19, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Window( javaObject: __return ) : nil
-    }
-
-    open class func getWindowAncestor( _ _arg0: java_awt.Component? ) -> java_awt.Window! {
-        return getWindowAncestor( arg0: _arg0 )
-    }
-
-    /// public static java.awt.Rectangle javax.swing.SwingUtilities.computeIntersection(int,int,int,int,java.awt.Rectangle)
-
-    private static var computeIntersection_MethodID_20: jmethodID?
-
-    open class func computeIntersection( arg0: Int, arg1: Int, arg2: Int, arg3: Int, arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeIntersection", methodSig: "(IIIILjava/awt/Rectangle;)Ljava/awt/Rectangle;", methodCache: &computeIntersection_MethodID_20, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
-    }
-
-    open class func computeIntersection( _ _arg0: Int, _ _arg1: Int, _ _arg2: Int, _ _arg3: Int, _ _arg4: java_awt.Rectangle? ) -> java_awt.Rectangle! {
-        return computeIntersection( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
-    }
-
-    /// public static java.awt.Point javax.swing.SwingUtilities.convertPoint(java.awt.Component,java.awt.Point,java.awt.Component)
-
-    private static var convertPoint_MethodID_21: jmethodID?
-
-    open class func convertPoint( arg0: java_awt.Component?, arg1: java_awt.Point?, arg2: java_awt.Component? ) -> java_awt.Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPoint", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;Ljava/awt/Component;)Ljava/awt/Point;", methodCache: &convertPoint_MethodID_21, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Point( javaObject: __return ) : nil
-    }
-
-    open class func convertPoint( _ _arg0: java_awt.Component?, _ _arg1: java_awt.Point?, _ _arg2: java_awt.Component? ) -> java_awt.Point! {
-        return convertPoint( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
-    }
-
     /// public static java.awt.Point javax.swing.SwingUtilities.convertPoint(java.awt.Component,int,int,java.awt.Component)
 
-    private static var convertPoint_MethodID_22: jmethodID?
+    private static var convertPoint_MethodID_7: jmethodID?
 
     open class func convertPoint( arg0: java_awt.Component?, arg1: Int, arg2: Int, arg3: java_awt.Component? ) -> java_awt.Point! {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
         __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPoint", methodSig: "(Ljava/awt/Component;IILjava/awt/Component;)Ljava/awt/Point;", methodCache: &convertPoint_MethodID_22, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPoint", methodSig: "(Ljava/awt/Component;IILjava/awt/Component;)Ljava/awt/Point;", methodCache: &convertPoint_MethodID_7, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
@@ -640,161 +384,68 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
         return convertPoint( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
     }
 
-    /// public static java.awt.Container javax.swing.SwingUtilities.getAncestorOfClass(java.lang.Class,java.awt.Component)
+    /// public static java.awt.Point javax.swing.SwingUtilities.convertPoint(java.awt.Component,java.awt.Point,java.awt.Component)
 
-    private static var getAncestorOfClass_MethodID_23: jmethodID?
+    private static var convertPoint_MethodID_8: jmethodID?
 
-    open class func getAncestorOfClass( arg0: java_swift.JavaClass?, arg1: java_awt.Component? ) -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func convertPoint( arg0: java_awt.Component?, arg1: java_awt.Point?, arg2: java_awt.Component? ) -> java_awt.Point! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAncestorOfClass", methodSig: "(Ljava/lang/Class;Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getAncestorOfClass_MethodID_23, args: &__args, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPoint", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;Ljava/awt/Component;)Ljava/awt/Point;", methodCache: &convertPoint_MethodID_8, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+        return __return != nil ? java_awt.Point( javaObject: __return ) : nil
     }
 
-    open class func getAncestorOfClass( _ _arg0: java_swift.JavaClass?, _ _arg1: java_awt.Component? ) -> java_awt.Container! {
-        return getAncestorOfClass( arg0: _arg0, arg1: _arg1 )
+    open class func convertPoint( _ _arg0: java_awt.Component?, _ _arg1: java_awt.Point?, _ _arg2: java_awt.Component? ) -> java_awt.Point! {
+        return convertPoint( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// public static boolean javax.swing.SwingUtilities.isLeftMouseButton(java.awt.event.MouseEvent)
+    /// public static void javax.swing.SwingUtilities.convertPointFromScreen(java.awt.Point,java.awt.Component)
 
-    private static var isLeftMouseButton_MethodID_24: jmethodID?
+    private static var convertPointFromScreen_MethodID_9: jmethodID?
 
-    open class func isLeftMouseButton( arg0: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func convertPointFromScreen( arg0: java_awt.Point?, arg1: java_awt.Component? ) {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isLeftMouseButton", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &isLeftMouseButton_MethodID_24, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isLeftMouseButton( _ _arg0: java_awt.MouseEvent? ) -> Bool {
-        return isLeftMouseButton( arg0: _arg0 )
-    }
-
-    /// public static boolean javax.swing.SwingUtilities.isMiddleMouseButton(java.awt.event.MouseEvent)
-
-    private static var isMiddleMouseButton_MethodID_25: jmethodID?
-
-    open class func isMiddleMouseButton( arg0: java_awt.MouseEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isMiddleMouseButton", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &isMiddleMouseButton_MethodID_25, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func isMiddleMouseButton( _ _arg0: java_awt.MouseEvent? ) -> Bool {
-        return isMiddleMouseButton( arg0: _arg0 )
-    }
-
-    /// public static void javax.swing.SwingUtilities.updateComponentTreeUI(java.awt.Component)
-
-    private static var updateComponentTreeUI_MethodID_26: jmethodID?
-
-    open class func updateComponentTreeUI( arg0: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "updateComponentTreeUI", methodSig: "(Ljava/awt/Component;)V", methodCache: &updateComponentTreeUI_MethodID_26, args: &__args, locals: &__locals )
-    }
-
-    open class func updateComponentTreeUI( _ _arg0: java_awt.Component? ) {
-        updateComponentTreeUI( arg0: _arg0 )
-    }
-
-    /// public static void javax.swing.SwingUtilities.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,java.awt.Rectangle)
-
-    private static var paintComponent_MethodID_27: jmethodID?
-
-    open class func paintComponent( arg0: java_awt.Graphics?, arg1: java_awt.Component?, arg2: java_awt.Container?, arg3: java_awt.Rectangle? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 4 )
-        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;Ljava/awt/Rectangle;)V", methodCache: &paintComponent_MethodID_27, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPointFromScreen", methodSig: "(Ljava/awt/Point;Ljava/awt/Component;)V", methodCache: &convertPointFromScreen_MethodID_9, args: &__args, locals: &__locals )
     }
 
-    open class func paintComponent( _ _arg0: java_awt.Graphics?, _ _arg1: java_awt.Component?, _ _arg2: java_awt.Container?, _ _arg3: java_awt.Rectangle? ) {
-        paintComponent( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    open class func convertPointFromScreen( _ _arg0: java_awt.Point?, _ _arg1: java_awt.Component? ) {
+        convertPointFromScreen( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public static void javax.swing.SwingUtilities.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,int,int,int,int)
+    /// public static void javax.swing.SwingUtilities.convertPointToScreen(java.awt.Point,java.awt.Component)
 
-    private static var paintComponent_MethodID_28: jmethodID?
+    private static var convertPointToScreen_MethodID_10: jmethodID?
 
-    open class func paintComponent( arg0: java_awt.Graphics?, arg1: java_awt.Component?, arg2: java_awt.Container?, arg3: Int, arg4: Int, arg5: Int, arg6: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+    open class func convertPointToScreen( arg0: java_awt.Point?, arg1: java_awt.Component? ) {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arg5, locals: &__locals )
-        __args[6] = JNIType.toJava( value: arg6, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;IIII)V", methodCache: &paintComponent_MethodID_28, args: &__args, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPointToScreen", methodSig: "(Ljava/awt/Point;Ljava/awt/Component;)V", methodCache: &convertPointToScreen_MethodID_10, args: &__args, locals: &__locals )
     }
 
-    open class func paintComponent( _ _arg0: java_awt.Graphics?, _ _arg1: java_awt.Component?, _ _arg2: java_awt.Container?, _ _arg3: Int, _ _arg4: Int, _ _arg5: Int, _ _arg6: Int ) {
-        paintComponent( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4, arg5: _arg5, arg6: _arg6 )
+    open class func convertPointToScreen( _ _arg0: java_awt.Point?, _ _arg1: java_awt.Component? ) {
+        convertPointToScreen( arg0: _arg0, arg1: _arg1 )
     }
-
-    /// public static boolean javax.swing.SwingUtilities.processKeyBindings(java.awt.event.KeyEvent)
-
-    private static var processKeyBindings_MethodID_29: jmethodID?
-
-    open class func processKeyBindings( arg0: java_awt.KeyEvent? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "processKeyBindings", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &processKeyBindings_MethodID_29, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func processKeyBindings( _ _arg0: java_awt.KeyEvent? ) -> Bool {
-        return processKeyBindings( arg0: _arg0 )
-    }
-
-    /// public static boolean javax.swing.SwingUtilities.notifyAction(javax.swing.Action,javax.swing.KeyStroke,java.awt.event.KeyEvent,java.lang.Object,int)
-
-    private static var notifyAction_MethodID_30: jmethodID?
-
-    open class func notifyAction( arg0: Action?, arg1: KeyStroke?, arg2: java_awt.KeyEvent?, arg3: java_swift.JavaObject?, arg4: Int ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "notifyAction", methodSig: "(Ljavax/swing/Action;Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;Ljava/lang/Object;I)Z", methodCache: &notifyAction_MethodID_30, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
-    }
-
-    open class func notifyAction( _ _arg0: Action?, _ _arg1: KeyStroke?, _ _arg2: java_awt.KeyEvent?, _ _arg3: java_swift.JavaObject?, _ _arg4: Int ) -> Bool {
-        return notifyAction( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
-    }
-
-    /// static boolean javax.swing.SwingUtilities.isValidKeyEventForKeyBindings(java.awt.event.KeyEvent)
-
-    /// static javax.swing.JComponent javax.swing.SwingUtilities.getPaintingOrigin(javax.swing.JComponent)
 
     /// public static java.awt.Rectangle javax.swing.SwingUtilities.convertRectangle(java.awt.Component,java.awt.Rectangle,java.awt.Component)
 
-    private static var convertRectangle_MethodID_31: jmethodID?
+    private static var convertRectangle_MethodID_11: jmethodID?
 
     open class func convertRectangle( arg0: java_awt.Component?, arg1: java_awt.Rectangle?, arg2: java_awt.Component? ) -> java_awt.Rectangle! {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
         __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertRectangle", methodSig: "(Ljava/awt/Component;Ljava/awt/Rectangle;Ljava/awt/Component;)Ljava/awt/Rectangle;", methodCache: &convertRectangle_MethodID_31, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertRectangle", methodSig: "(Ljava/awt/Component;Ljava/awt/Rectangle;Ljava/awt/Component;)Ljava/awt/Rectangle;", methodCache: &convertRectangle_MethodID_11, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
@@ -803,264 +454,224 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
         return convertRectangle( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// static int javax.swing.SwingUtilities.findDisplayedMnemonicIndex(java.lang.String,int)
+    /// static java.awt.Point javax.swing.SwingUtilities.convertScreenLocationToParent(java.awt.Container,int,int)
+
+    // Skipping method: true false false false false 
 
     /// static boolean javax.swing.SwingUtilities.doesIconReferenceImage(javax.swing.Icon,java.awt.Image)
 
-    /// static java.awt.Point javax.swing.SwingUtilities.convertScreenLocationToParent(java.awt.Container,int,int)
+    // Skipping method: true false false false false 
 
-    /// public static void javax.swing.SwingUtilities.invokeAndWait(java.lang.Runnable) throws java.lang.InterruptedException,java.lang.reflect.InvocationTargetException
+    /// static int javax.swing.SwingUtilities.findDisplayedMnemonicIndex(java.lang.String,int)
 
-    private static var invokeAndWait_MethodID_32: jmethodID?
+    // Skipping method: true false false false false 
 
-    open class func invokeAndWait( arg0: java_swift.Runnable? ) throws /* java.lang.InterruptedException, java.lang.reflect.InvocationTargetException */ {
+    /// public static java.awt.Component javax.swing.SwingUtilities.findFocusOwner(java.awt.Component)
+
+    private static var findFocusOwner_MethodID_12: jmethodID?
+
+    open class func findFocusOwner( arg0: java_awt.Component? ) -> java_awt.Component! {
+        var __locals = [jobject]()
         var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "invokeAndWait", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &invokeAndWait_MethodID_32, args: &__args, locals: &__locals )
-        if let throwable = JNI.ExceptionCheck() {
-            throw java_lang.InterruptedException( javaObject: throwable )
-        }
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "findFocusOwner", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &findFocusOwner_MethodID_12, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-    open class func invokeAndWait( _ _arg0: java_swift.Runnable? ) throws /* java.lang.InterruptedException, java.lang.reflect.InvocationTargetException */ {
-        try invokeAndWait( arg0: _arg0 )
-    }
-
-    /// public static java.lang.String javax.swing.SwingUtilities.layoutCompoundLabel(java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
-
-    private static var layoutCompoundLabel_MethodID_33: jmethodID?
-
-    open class func layoutCompoundLabel( arg0: java_awt.FontMetrics?, arg1: String?, arg2: Icon?, arg3: Int, arg4: Int, arg5: Int, arg6: Int, arg7: java_awt.Rectangle?, arg8: java_awt.Rectangle?, arg9: java_awt.Rectangle?, arg10: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 11 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arg5, locals: &__locals )
-        __args[6] = JNIType.toJava( value: arg6, locals: &__locals )
-        __args[7] = JNIType.toJava( value: arg7, locals: &__locals )
-        __args[8] = JNIType.toJava( value: arg8, locals: &__locals )
-        __args[9] = JNIType.toJava( value: arg9, locals: &__locals )
-        __args[10] = JNIType.toJava( value: arg10, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "layoutCompoundLabel", methodSig: "(Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;IIIILjava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;I)Ljava/lang/String;", methodCache: &layoutCompoundLabel_MethodID_33, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func layoutCompoundLabel( _ _arg0: java_awt.FontMetrics?, _ _arg1: String?, _ _arg2: Icon?, _ _arg3: Int, _ _arg4: Int, _ _arg5: Int, _ _arg6: Int, _ _arg7: java_awt.Rectangle?, _ _arg8: java_awt.Rectangle?, _ _arg9: java_awt.Rectangle?, _ _arg10: Int ) -> String! {
-        return layoutCompoundLabel( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4, arg5: _arg5, arg6: _arg6, arg7: _arg7, arg8: _arg8, arg9: _arg9, arg10: _arg10 )
-    }
-
-    /// public static java.lang.String javax.swing.SwingUtilities.layoutCompoundLabel(javax.swing.JComponent,java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
-
-    private static var layoutCompoundLabel_MethodID_34: jmethodID?
-
-    open class func layoutCompoundLabel( arg0: JComponent?, arg1: java_awt.FontMetrics?, arg2: String?, arg3: Icon?, arg4: Int, arg5: Int, arg6: Int, arg7: Int, arg8: java_awt.Rectangle?, arg9: java_awt.Rectangle?, arg10: java_awt.Rectangle?, arg11: Int ) -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 12 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
-        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
-        __args[4] = JNIType.toJava( value: arg4, locals: &__locals )
-        __args[5] = JNIType.toJava( value: arg5, locals: &__locals )
-        __args[6] = JNIType.toJava( value: arg6, locals: &__locals )
-        __args[7] = JNIType.toJava( value: arg7, locals: &__locals )
-        __args[8] = JNIType.toJava( value: arg8, locals: &__locals )
-        __args[9] = JNIType.toJava( value: arg9, locals: &__locals )
-        __args[10] = JNIType.toJava( value: arg10, locals: &__locals )
-        __args[11] = JNIType.toJava( value: arg11, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "layoutCompoundLabel", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;IIIILjava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;I)Ljava/lang/String;", methodCache: &layoutCompoundLabel_MethodID_34, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
-    open class func layoutCompoundLabel( _ _arg0: JComponent?, _ _arg1: java_awt.FontMetrics?, _ _arg2: String?, _ _arg3: Icon?, _ _arg4: Int, _ _arg5: Int, _ _arg6: Int, _ _arg7: Int, _ _arg8: java_awt.Rectangle?, _ _arg9: java_awt.Rectangle?, _ _arg10: java_awt.Rectangle?, _ _arg11: Int ) -> String! {
-        return layoutCompoundLabel( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4, arg5: _arg5, arg6: _arg6, arg7: _arg7, arg8: _arg8, arg9: _arg9, arg10: _arg10, arg11: _arg11 )
+    open class func findFocusOwner( _ _arg0: java_awt.Component? ) -> java_awt.Component! {
+        return findFocusOwner( arg0: _arg0 )
     }
 
     /// public static javax.accessibility.Accessible javax.swing.SwingUtilities.getAccessibleAt(java.awt.Component,java.awt.Point)
 
-    private static var getAccessibleAt_MethodID_35: jmethodID?
+    private static var getAccessibleAt_MethodID_13: jmethodID?
 
-    open class func getAccessibleAt( arg0: java_awt.Component?, arg1: java_awt.Point? ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func getAccessibleAt( arg0: java_awt.Component?, arg1: java_awt.Point? ) -> /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleAt", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;)Ljavax/accessibility/Accessible;", methodCache: &getAccessibleAt_MethodID_35, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleAt", methodSig: "(Ljava/awt/Component;Ljava/awt/Point;)Ljavax/accessibility/Accessible;", methodCache: &getAccessibleAt_MethodID_13, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
+        return __return != nil ? /* interface javax.accessibility.Accessible */ UnavailableProtocolForward( javaObject: __return ) : nil
     }
 
-    open class func getAccessibleAt( _ _arg0: java_awt.Component?, _ _arg1: java_awt.Point? ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
+    open class func getAccessibleAt( _ _arg0: java_awt.Component?, _ _arg1: java_awt.Point? ) -> /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
         return getAccessibleAt( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static javax.accessibility.Accessible javax.swing.SwingUtilities.getAccessibleChild(java.awt.Component,int)
+
+    private static var getAccessibleChild_MethodID_14: jmethodID?
+
+    open class func getAccessibleChild( arg0: java_awt.Component?, arg1: Int ) -> /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleChild", methodSig: "(Ljava/awt/Component;I)Ljavax/accessibility/Accessible;", methodCache: &getAccessibleChild_MethodID_14, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* interface javax.accessibility.Accessible */ UnavailableProtocolForward( javaObject: __return ) : nil
+    }
+
+    open class func getAccessibleChild( _ _arg0: java_awt.Component?, _ _arg1: Int ) -> /* interface javax.accessibility.Accessible */ UnavailableProtocol! {
+        return getAccessibleChild( arg0: _arg0, arg1: _arg1 )
     }
 
     /// public static int javax.swing.SwingUtilities.getAccessibleChildrenCount(java.awt.Component)
 
-    private static var getAccessibleChildrenCount_MethodID_36: jmethodID?
+    private static var getAccessibleChildrenCount_MethodID_15: jmethodID?
 
     open class func getAccessibleChildrenCount( arg0: java_awt.Component? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleChildrenCount", methodSig: "(Ljava/awt/Component;)I", methodCache: &getAccessibleChildrenCount_MethodID_36, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleChildrenCount", methodSig: "(Ljava/awt/Component;)I", methodCache: &getAccessibleChildrenCount_MethodID_15, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open class func getAccessibleChildrenCount( _ _arg0: java_awt.Component? ) -> Int {
         return getAccessibleChildrenCount( arg0: _arg0 )
     }
 
-    /// public static javax.accessibility.Accessible javax.swing.SwingUtilities.getAccessibleChild(java.awt.Component,int)
-
-    private static var getAccessibleChild_MethodID_37: jmethodID?
-
-    open class func getAccessibleChild( arg0: java_awt.Component?, arg1: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleChild", methodSig: "(Ljava/awt/Component;I)Ljavax/accessibility/Accessible;", methodCache: &getAccessibleChild_MethodID_37, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? /* javax.accessibility.Accessible */ UnclassedProtocolForward( javaObject: __return ) : nil
-    }
-
-    open class func getAccessibleChild( _ _arg0: java_awt.Component?, _ _arg1: Int ) -> /* javax.accessibility.Accessible */ UnclassedProtocol! {
-        return getAccessibleChild( arg0: _arg0, arg1: _arg1 )
-    }
-
     /// public static int javax.swing.SwingUtilities.getAccessibleIndexInParent(java.awt.Component)
 
-    private static var getAccessibleIndexInParent_MethodID_38: jmethodID?
+    private static var getAccessibleIndexInParent_MethodID_16: jmethodID?
 
     open class func getAccessibleIndexInParent( arg0: java_awt.Component? ) -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleIndexInParent", methodSig: "(Ljava/awt/Component;)I", methodCache: &getAccessibleIndexInParent_MethodID_38, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        let __return = JNIMethod.CallStaticIntMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleIndexInParent", methodSig: "(Ljava/awt/Component;)I", methodCache: &getAccessibleIndexInParent_MethodID_16, args: &__args, locals: &__locals )
+        return Int(__return)
     }
 
     open class func getAccessibleIndexInParent( _ _arg0: java_awt.Component? ) -> Int {
         return getAccessibleIndexInParent( arg0: _arg0 )
     }
 
-    /// public static java.awt.Rectangle[] javax.swing.SwingUtilities.computeDifference(java.awt.Rectangle,java.awt.Rectangle)
+    /// public static javax.accessibility.AccessibleStateSet javax.swing.SwingUtilities.getAccessibleStateSet(java.awt.Component)
 
-    private static var computeDifference_MethodID_39: jmethodID?
+    private static var getAccessibleStateSet_MethodID_17: jmethodID?
 
-    open class func computeDifference( arg0: java_awt.Rectangle?, arg1: java_awt.Rectangle? ) -> [Rectangle]! {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func getAccessibleStateSet( arg0: java_awt.Component? ) -> /* class javax.accessibility.AccessibleStateSet */ UnavailableObject! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAccessibleStateSet", methodSig: "(Ljava/awt/Component;)Ljavax/accessibility/AccessibleStateSet;", methodCache: &getAccessibleStateSet_MethodID_17, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? /* class javax.accessibility.AccessibleStateSet */ UnavailableObject( javaObject: __return ) : nil
+    }
+
+    open class func getAccessibleStateSet( _ _arg0: java_awt.Component? ) -> /* class javax.accessibility.AccessibleStateSet */ UnavailableObject! {
+        return getAccessibleStateSet( arg0: _arg0 )
+    }
+
+    /// public static java.awt.Container javax.swing.SwingUtilities.getAncestorNamed(java.lang.String,java.awt.Component)
+
+    private static var getAncestorNamed_MethodID_18: jmethodID?
+
+    open class func getAncestorNamed( arg0: String?, arg1: java_awt.Component? ) -> java_awt.Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
         __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "computeDifference", methodSig: "(Ljava/awt/Rectangle;Ljava/awt/Rectangle;)[Ljava/awt/Rectangle;", methodCache: &computeDifference_MethodID_39, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: [Rectangle](), from: __return )
-    }
-
-    open class func computeDifference( _ _arg0: java_awt.Rectangle?, _ _arg1: java_awt.Rectangle? ) -> [Rectangle]! {
-        return computeDifference( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// public static java.awt.Container javax.swing.SwingUtilities.getUnwrappedParent(java.awt.Component)
-
-    private static var getUnwrappedParent_MethodID_40: jmethodID?
-
-    open class func getUnwrappedParent( arg0: java_awt.Component? ) -> java_awt.Container! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUnwrappedParent", methodSig: "(Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getUnwrappedParent_MethodID_40, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAncestorNamed", methodSig: "(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getAncestorNamed_MethodID_18, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Container( javaObject: __return ) : nil
     }
 
-    open class func getUnwrappedParent( _ _arg0: java_awt.Component? ) -> java_awt.Container! {
-        return getUnwrappedParent( arg0: _arg0 )
+    open class func getAncestorNamed( _ _arg0: String?, _ _arg1: java_awt.Component? ) -> java_awt.Container! {
+        return getAncestorNamed( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// public static java.awt.Component javax.swing.SwingUtilities.getUnwrappedView(javax.swing.JViewport)
+    /// public static java.awt.Container javax.swing.SwingUtilities.getAncestorOfClass(java.lang.Class,java.awt.Component)
 
-    private static var getUnwrappedView_MethodID_41: jmethodID?
+    private static var getAncestorOfClass_MethodID_19: jmethodID?
 
-    open class func getUnwrappedView( arg0: JViewport? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func getAncestorOfClass( arg0: java_swift.JavaClass?, arg1: java_awt.Component? ) -> java_awt.Container! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUnwrappedView", methodSig: "(Ljavax/swing/JViewport;)Ljava/awt/Component;", methodCache: &getUnwrappedView_MethodID_41, args: &__args, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getAncestorOfClass", methodSig: "(Ljava/lang/Class;Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getAncestorOfClass_MethodID_19, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+    open class func getAncestorOfClass( _ _arg0: java_swift.JavaClass?, _ _arg1: java_awt.Component? ) -> java_awt.Container! {
+        return getAncestorOfClass( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// private static javax.swing.CellRendererPane javax.swing.SwingUtilities.getCellRendererPane(java.awt.Component,java.awt.Container)
+
+    /// public static java.awt.Component javax.swing.SwingUtilities.getDeepestComponentAt(java.awt.Component,int,int)
+
+    private static var getDeepestComponentAt_MethodID_20: jmethodID?
+
+    open class func getDeepestComponentAt( arg0: java_awt.Component?, arg1: Int, arg2: Int ) -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = jvalue( i: jint(arg2) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getDeepestComponentAt", methodSig: "(Ljava/awt/Component;II)Ljava/awt/Component;", methodCache: &getDeepestComponentAt_MethodID_20, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-    open class func getUnwrappedView( _ _arg0: JViewport? ) -> java_awt.Component! {
-        return getUnwrappedView( arg0: _arg0 )
+    open class func getDeepestComponentAt( _ _arg0: java_awt.Component?, _ _arg1: Int, _ _arg2: Int ) -> java_awt.Component! {
+        return getDeepestComponentAt( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
     }
 
-    /// static void javax.swing.SwingUtilities.updateRendererOrEditorUI(java.lang.Object)
+    /// public static java.awt.Rectangle javax.swing.SwingUtilities.getLocalBounds(java.awt.Component)
 
-    /// public static boolean javax.swing.SwingUtilities.isDescendingFrom(java.awt.Component,java.awt.Component)
+    private static var getLocalBounds_MethodID_21: jmethodID?
 
-    private static var isDescendingFrom_MethodID_42: jmethodID?
-
-    open class func isDescendingFrom( arg0: java_awt.Component?, arg1: java_awt.Component? ) -> Bool {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    open class func getLocalBounds( arg0: java_awt.Component? ) -> java_awt.Rectangle! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isDescendingFrom", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Z", methodCache: &isDescendingFrom_MethodID_42, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Bool(), from: __return )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getLocalBounds", methodSig: "(Ljava/awt/Component;)Ljava/awt/Rectangle;", methodCache: &getLocalBounds_MethodID_21, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Rectangle( javaObject: __return ) : nil
     }
 
-    open class func isDescendingFrom( _ _arg0: java_awt.Component?, _ _arg1: java_awt.Component? ) -> Bool {
-        return isDescendingFrom( arg0: _arg0, arg1: _arg1 )
+    open class func getLocalBounds( _ _arg0: java_awt.Component? ) -> java_awt.Rectangle! {
+        return getLocalBounds( arg0: _arg0 )
     }
 
-    /// public static void javax.swing.SwingUtilities.convertPointToScreen(java.awt.Point,java.awt.Component)
+    /// static javax.swing.JComponent javax.swing.SwingUtilities.getPaintingOrigin(javax.swing.JComponent)
 
-    private static var convertPointToScreen_MethodID_43: jmethodID?
+    // Skipping method: true false false false false 
 
-    open class func convertPointToScreen( arg0: java_awt.Point?, arg1: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+    /// public static java.awt.Component javax.swing.SwingUtilities.getRoot(java.awt.Component)
+
+    private static var getRoot_MethodID_22: jmethodID?
+
+    open class func getRoot( arg0: java_awt.Component? ) -> java_awt.Component! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPointToScreen", methodSig: "(Ljava/awt/Point;Ljava/awt/Component;)V", methodCache: &convertPointToScreen_MethodID_43, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getRoot", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &getRoot_MethodID_22, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-    open class func convertPointToScreen( _ _arg0: java_awt.Point?, _ _arg1: java_awt.Component? ) {
-        convertPointToScreen( arg0: _arg0, arg1: _arg1 )
+    open class func getRoot( _ _arg0: java_awt.Component? ) -> java_awt.Component! {
+        return getRoot( arg0: _arg0 )
     }
-
-    /// public static void javax.swing.SwingUtilities.convertPointFromScreen(java.awt.Point,java.awt.Component)
-
-    private static var convertPointFromScreen_MethodID_44: jmethodID?
-
-    open class func convertPointFromScreen( arg0: java_awt.Point?, arg1: java_awt.Component? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
-        var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
-        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "convertPointFromScreen", methodSig: "(Ljava/awt/Point;Ljava/awt/Component;)V", methodCache: &convertPointFromScreen_MethodID_44, args: &__args, locals: &__locals )
-    }
-
-    open class func convertPointFromScreen( _ _arg0: java_awt.Point?, _ _arg1: java_awt.Component? ) {
-        convertPointFromScreen( arg0: _arg0, arg1: _arg1 )
-    }
-
-    /// static boolean javax.swing.SwingUtilities.isLeftToRight(java.awt.Component)
 
     /// public static javax.swing.JRootPane javax.swing.SwingUtilities.getRootPane(java.awt.Component)
 
-    private static var getRootPane_MethodID_45: jmethodID?
+    private static var getRootPane_MethodID_23: jmethodID?
 
     open class func getRootPane( arg0: java_awt.Component? ) -> JRootPane! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getRootPane", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JRootPane;", methodCache: &getRootPane_MethodID_45, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getRootPane", methodSig: "(Ljava/awt/Component;)Ljavax/swing/JRootPane;", methodCache: &getRootPane_MethodID_23, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? JRootPane( javaObject: __return ) : nil
     }
@@ -1071,27 +682,449 @@ open class SwingUtilities: java_swift.JavaObject, SwingConstants {
 
     /// static java.awt.Frame javax.swing.SwingUtilities.getSharedOwnerFrame() throws java.awt.HeadlessException
 
+    // Skipping method: true false false false false 
+
     /// static java.awt.event.WindowListener javax.swing.SwingUtilities.getSharedOwnerFrameShutdownListener() throws java.awt.HeadlessException
 
-    /// static void javax.swing.SwingUtilities.installSwingDropTargetAsNecessary(java.awt.Component,javax.swing.TransferHandler)
+    // Skipping method: true false false false false 
 
-    /// static java.lang.Object javax.swing.SwingUtilities.appContextGet(java.lang.Object)
+    /// private static boolean javax.swing.SwingUtilities.getSuppressDropTarget()
 
-    /// public static java.awt.Component javax.swing.SwingUtilities.findFocusOwner(java.awt.Component)
+    /// public static javax.swing.ActionMap javax.swing.SwingUtilities.getUIActionMap(javax.swing.JComponent)
 
-    private static var findFocusOwner_MethodID_46: jmethodID?
+    private static var getUIActionMap_MethodID_24: jmethodID?
 
-    open class func findFocusOwner( arg0: java_awt.Component? ) -> java_awt.Component! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+    open class func getUIActionMap( arg0: JComponent? ) -> ActionMap! {
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
-        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "findFocusOwner", methodSig: "(Ljava/awt/Component;)Ljava/awt/Component;", methodCache: &findFocusOwner_MethodID_46, args: &__args, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUIActionMap", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/ActionMap;", methodCache: &getUIActionMap_MethodID_24, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? ActionMap( javaObject: __return ) : nil
+    }
+
+    open class func getUIActionMap( _ _arg0: JComponent? ) -> ActionMap! {
+        return getUIActionMap( arg0: _arg0 )
+    }
+
+    /// public static javax.swing.InputMap javax.swing.SwingUtilities.getUIInputMap(javax.swing.JComponent,int)
+
+    private static var getUIInputMap_MethodID_25: jmethodID?
+
+    open class func getUIInputMap( arg0: JComponent?, arg1: Int ) -> InputMap! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUIInputMap", methodSig: "(Ljavax/swing/JComponent;I)Ljavax/swing/InputMap;", methodCache: &getUIInputMap_MethodID_25, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? InputMap( javaObject: __return ) : nil
+    }
+
+    open class func getUIInputMap( _ _arg0: JComponent?, _ _arg1: Int ) -> InputMap! {
+        return getUIInputMap( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static java.awt.Container javax.swing.SwingUtilities.getUnwrappedParent(java.awt.Component)
+
+    private static var getUnwrappedParent_MethodID_26: jmethodID?
+
+    open class func getUnwrappedParent( arg0: java_awt.Component? ) -> java_awt.Container! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUnwrappedParent", methodSig: "(Ljava/awt/Component;)Ljava/awt/Container;", methodCache: &getUnwrappedParent_MethodID_26, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Container( javaObject: __return ) : nil
+    }
+
+    open class func getUnwrappedParent( _ _arg0: java_awt.Component? ) -> java_awt.Container! {
+        return getUnwrappedParent( arg0: _arg0 )
+    }
+
+    /// public static java.awt.Component javax.swing.SwingUtilities.getUnwrappedView(javax.swing.JViewport)
+
+    private static var getUnwrappedView_MethodID_27: jmethodID?
+
+    open class func getUnwrappedView( arg0: JViewport? ) -> java_awt.Component! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getUnwrappedView", methodSig: "(Ljavax/swing/JViewport;)Ljava/awt/Component;", methodCache: &getUnwrappedView_MethodID_27, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? java_awt.Component( javaObject: __return ) : nil
     }
 
-    open class func findFocusOwner( _ _arg0: java_awt.Component? ) -> java_awt.Component! {
-        return findFocusOwner( arg0: _arg0 )
+    open class func getUnwrappedView( _ _arg0: JViewport? ) -> java_awt.Component! {
+        return getUnwrappedView( arg0: _arg0 )
+    }
+
+    /// static java.awt.Container javax.swing.SwingUtilities.getValidateRoot(java.awt.Container,boolean)
+
+    // Skipping method: true false false false false 
+
+    /// public static java.awt.Window javax.swing.SwingUtilities.getWindowAncestor(java.awt.Component)
+
+    private static var getWindowAncestor_MethodID_28: jmethodID?
+
+    open class func getWindowAncestor( arg0: java_awt.Component? ) -> java_awt.Window! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "getWindowAncestor", methodSig: "(Ljava/awt/Component;)Ljava/awt/Window;", methodCache: &getWindowAncestor_MethodID_28, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Window( javaObject: __return ) : nil
+    }
+
+    open class func getWindowAncestor( _ _arg0: java_awt.Component? ) -> java_awt.Window! {
+        return getWindowAncestor( arg0: _arg0 )
+    }
+
+    /// static void javax.swing.SwingUtilities.installSwingDropTargetAsNecessary(java.awt.Component,javax.swing.TransferHandler)
+
+    // Skipping method: true false false false false 
+
+    /// public static void javax.swing.SwingUtilities.invokeAndWait(java.lang.Runnable) throws java.lang.InterruptedException,java.lang.reflect.InvocationTargetException
+
+    private static var invokeAndWait_MethodID_29: jmethodID?
+
+    open class func invokeAndWait( arg0: java_swift.Runnable? ) throws /* java.lang.InterruptedException, java.lang.reflect.InvocationTargetException */ {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "invokeAndWait", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &invokeAndWait_MethodID_29, args: &__args, locals: &__locals )
+        if let throwable = JNI.ExceptionCheck() {
+            defer { JNI.DeleteLocalRef( throwable ) }
+            throw java_lang.InterruptedException( javaObject: throwable )
+        }
+    }
+
+    open class func invokeAndWait( _ _arg0: java_swift.Runnable? ) throws /* java.lang.InterruptedException, java.lang.reflect.InvocationTargetException */ {
+        try invokeAndWait( arg0: _arg0 )
+    }
+
+    /// public static void javax.swing.SwingUtilities.invokeLater(java.lang.Runnable)
+
+    private static var invokeLater_MethodID_30: jmethodID?
+
+    open class func invokeLater( arg0: java_swift.Runnable? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "invokeLater", methodSig: "(Ljava/lang/Runnable;)V", methodCache: &invokeLater_MethodID_30, args: &__args, locals: &__locals )
+    }
+
+    open class func invokeLater( _ _arg0: java_swift.Runnable? ) {
+        invokeLater( arg0: _arg0 )
+    }
+
+    /// public static boolean javax.swing.SwingUtilities.isDescendingFrom(java.awt.Component,java.awt.Component)
+
+    private static var isDescendingFrom_MethodID_31: jmethodID?
+
+    open class func isDescendingFrom( arg0: java_awt.Component?, arg1: java_awt.Component? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isDescendingFrom", methodSig: "(Ljava/awt/Component;Ljava/awt/Component;)Z", methodCache: &isDescendingFrom_MethodID_31, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func isDescendingFrom( _ _arg0: java_awt.Component?, _ _arg1: java_awt.Component? ) -> Bool {
+        return isDescendingFrom( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static boolean javax.swing.SwingUtilities.isEventDispatchThread()
+
+    private static var isEventDispatchThread_MethodID_32: jmethodID?
+
+    open class func isEventDispatchThread() -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isEventDispatchThread", methodSig: "()Z", methodCache: &isEventDispatchThread_MethodID_32, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+
+    /// public static boolean javax.swing.SwingUtilities.isLeftMouseButton(java.awt.event.MouseEvent)
+
+    private static var isLeftMouseButton_MethodID_33: jmethodID?
+
+    open class func isLeftMouseButton( arg0: java_awt.MouseEvent? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isLeftMouseButton", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &isLeftMouseButton_MethodID_33, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func isLeftMouseButton( _ _arg0: java_awt.MouseEvent? ) -> Bool {
+        return isLeftMouseButton( arg0: _arg0 )
+    }
+
+    /// static boolean javax.swing.SwingUtilities.isLeftToRight(java.awt.Component)
+
+    // Skipping method: true false false false false 
+
+    /// public static boolean javax.swing.SwingUtilities.isMiddleMouseButton(java.awt.event.MouseEvent)
+
+    private static var isMiddleMouseButton_MethodID_34: jmethodID?
+
+    open class func isMiddleMouseButton( arg0: java_awt.MouseEvent? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isMiddleMouseButton", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &isMiddleMouseButton_MethodID_34, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func isMiddleMouseButton( _ _arg0: java_awt.MouseEvent? ) -> Bool {
+        return isMiddleMouseButton( arg0: _arg0 )
+    }
+
+    /// public static final boolean javax.swing.SwingUtilities.isRectangleContainingRectangle(java.awt.Rectangle,java.awt.Rectangle)
+
+    private static var isRectangleContainingRectangle_MethodID_35: jmethodID?
+
+    open class func isRectangleContainingRectangle( arg0: java_awt.Rectangle?, arg1: java_awt.Rectangle? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isRectangleContainingRectangle", methodSig: "(Ljava/awt/Rectangle;Ljava/awt/Rectangle;)Z", methodCache: &isRectangleContainingRectangle_MethodID_35, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func isRectangleContainingRectangle( _ _arg0: java_awt.Rectangle?, _ _arg1: java_awt.Rectangle? ) -> Bool {
+        return isRectangleContainingRectangle( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static boolean javax.swing.SwingUtilities.isRightMouseButton(java.awt.event.MouseEvent)
+
+    private static var isRightMouseButton_MethodID_36: jmethodID?
+
+    open class func isRightMouseButton( arg0: java_awt.MouseEvent? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "isRightMouseButton", methodSig: "(Ljava/awt/event/MouseEvent;)Z", methodCache: &isRightMouseButton_MethodID_36, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func isRightMouseButton( _ _arg0: java_awt.MouseEvent? ) -> Bool {
+        return isRightMouseButton( arg0: _arg0 )
+    }
+
+    /// static boolean javax.swing.SwingUtilities.isValidKeyEventForKeyBindings(java.awt.event.KeyEvent)
+
+    // Skipping method: true false false false false 
+
+    /// public static java.lang.String javax.swing.SwingUtilities.layoutCompoundLabel(javax.swing.JComponent,java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
+
+    private static var layoutCompoundLabel_MethodID_37: jmethodID?
+
+    open class func layoutCompoundLabel( arg0: JComponent?, arg1: java_awt.FontMetrics?, arg2: String?, arg3: Icon?, arg4: Int, arg5: Int, arg6: Int, arg7: Int, arg8: java_awt.Rectangle?, arg9: java_awt.Rectangle?, arg10: java_awt.Rectangle?, arg11: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 12 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        __args[4] = jvalue( i: jint(arg4) )
+        __args[5] = jvalue( i: jint(arg5) )
+        __args[6] = jvalue( i: jint(arg6) )
+        __args[7] = jvalue( i: jint(arg7) )
+        __args[8] = JNIType.toJava( value: arg8, locals: &__locals )
+        __args[9] = JNIType.toJava( value: arg9, locals: &__locals )
+        __args[10] = JNIType.toJava( value: arg10, locals: &__locals )
+        __args[11] = jvalue( i: jint(arg11) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "layoutCompoundLabel", methodSig: "(Ljavax/swing/JComponent;Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;IIIILjava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;I)Ljava/lang/String;", methodCache: &layoutCompoundLabel_MethodID_37, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open class func layoutCompoundLabel( _ _arg0: JComponent?, _ _arg1: java_awt.FontMetrics?, _ _arg2: String?, _ _arg3: Icon?, _ _arg4: Int, _ _arg5: Int, _ _arg6: Int, _ _arg7: Int, _ _arg8: java_awt.Rectangle?, _ _arg9: java_awt.Rectangle?, _ _arg10: java_awt.Rectangle?, _ _arg11: Int ) -> String! {
+        return layoutCompoundLabel( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4, arg5: _arg5, arg6: _arg6, arg7: _arg7, arg8: _arg8, arg9: _arg9, arg10: _arg10, arg11: _arg11 )
+    }
+
+    /// public static java.lang.String javax.swing.SwingUtilities.layoutCompoundLabel(java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
+
+    private static var layoutCompoundLabel_MethodID_38: jmethodID?
+
+    open class func layoutCompoundLabel( arg0: java_awt.FontMetrics?, arg1: String?, arg2: Icon?, arg3: Int, arg4: Int, arg5: Int, arg6: Int, arg7: java_awt.Rectangle?, arg8: java_awt.Rectangle?, arg9: java_awt.Rectangle?, arg10: Int ) -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 11 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = jvalue( i: jint(arg3) )
+        __args[4] = jvalue( i: jint(arg4) )
+        __args[5] = jvalue( i: jint(arg5) )
+        __args[6] = jvalue( i: jint(arg6) )
+        __args[7] = JNIType.toJava( value: arg7, locals: &__locals )
+        __args[8] = JNIType.toJava( value: arg8, locals: &__locals )
+        __args[9] = JNIType.toJava( value: arg9, locals: &__locals )
+        __args[10] = jvalue( i: jint(arg10) )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "layoutCompoundLabel", methodSig: "(Ljava/awt/FontMetrics;Ljava/lang/String;Ljavax/swing/Icon;IIIILjava/awt/Rectangle;Ljava/awt/Rectangle;Ljava/awt/Rectangle;I)Ljava/lang/String;", methodCache: &layoutCompoundLabel_MethodID_38, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
+    }
+
+    open class func layoutCompoundLabel( _ _arg0: java_awt.FontMetrics?, _ _arg1: String?, _ _arg2: Icon?, _ _arg3: Int, _ _arg4: Int, _ _arg5: Int, _ _arg6: Int, _ _arg7: java_awt.Rectangle?, _ _arg8: java_awt.Rectangle?, _ _arg9: java_awt.Rectangle?, _ _arg10: Int ) -> String! {
+        return layoutCompoundLabel( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4, arg5: _arg5, arg6: _arg6, arg7: _arg7, arg8: _arg8, arg9: _arg9, arg10: _arg10 )
+    }
+
+    /// private static java.lang.String javax.swing.SwingUtilities.layoutCompoundLabelImpl(javax.swing.JComponent,java.awt.FontMetrics,java.lang.String,javax.swing.Icon,int,int,int,int,java.awt.Rectangle,java.awt.Rectangle,java.awt.Rectangle,int)
+
+    /// static java.lang.Class javax.swing.SwingUtilities.loadSystemClass(java.lang.String) throws java.lang.ClassNotFoundException
+
+    // Skipping method: true false false false false 
+
+    /// public static boolean javax.swing.SwingUtilities.notifyAction(javax.swing.Action,javax.swing.KeyStroke,java.awt.event.KeyEvent,java.lang.Object,int)
+
+    private static var notifyAction_MethodID_39: jmethodID?
+
+    open class func notifyAction( arg0: Action?, arg1: KeyStroke?, arg2: java_awt.KeyEvent?, arg3: java_swift.JavaObject?, arg4: Int ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        __args[4] = jvalue( i: jint(arg4) )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "notifyAction", methodSig: "(Ljavax/swing/Action;Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;Ljava/lang/Object;I)Z", methodCache: &notifyAction_MethodID_39, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func notifyAction( _ _arg0: Action?, _ _arg1: KeyStroke?, _ _arg2: java_awt.KeyEvent?, _ _arg3: java_swift.JavaObject?, _ _arg4: Int ) -> Bool {
+        return notifyAction( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4 )
+    }
+
+    /// public static void javax.swing.SwingUtilities.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,int,int,int,int)
+
+    private static var paintComponent_MethodID_40: jmethodID?
+
+    open class func paintComponent( arg0: java_awt.Graphics?, arg1: java_awt.Component?, arg2: java_awt.Container?, arg3: Int, arg4: Int, arg5: Int, arg6: Int ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 7 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = jvalue( i: jint(arg3) )
+        __args[4] = jvalue( i: jint(arg4) )
+        __args[5] = jvalue( i: jint(arg5) )
+        __args[6] = jvalue( i: jint(arg6) )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;IIII)V", methodCache: &paintComponent_MethodID_40, args: &__args, locals: &__locals )
+    }
+
+    open class func paintComponent( _ _arg0: java_awt.Graphics?, _ _arg1: java_awt.Component?, _ _arg2: java_awt.Container?, _ _arg3: Int, _ _arg4: Int, _ _arg5: Int, _ _arg6: Int ) {
+        paintComponent( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3, arg4: _arg4, arg5: _arg5, arg6: _arg6 )
+    }
+
+    /// public static void javax.swing.SwingUtilities.paintComponent(java.awt.Graphics,java.awt.Component,java.awt.Container,java.awt.Rectangle)
+
+    private static var paintComponent_MethodID_41: jmethodID?
+
+    open class func paintComponent( arg0: java_awt.Graphics?, arg1: java_awt.Component?, arg2: java_awt.Container?, arg3: java_awt.Rectangle? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 4 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        __args[3] = JNIType.toJava( value: arg3, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "paintComponent", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Component;Ljava/awt/Container;Ljava/awt/Rectangle;)V", methodCache: &paintComponent_MethodID_41, args: &__args, locals: &__locals )
+    }
+
+    open class func paintComponent( _ _arg0: java_awt.Graphics?, _ _arg1: java_awt.Component?, _ _arg2: java_awt.Container?, _ _arg3: java_awt.Rectangle? ) {
+        paintComponent( arg0: _arg0, arg1: _arg1, arg2: _arg2, arg3: _arg3 )
+    }
+
+    /// public static boolean javax.swing.SwingUtilities.processKeyBindings(java.awt.event.KeyEvent)
+
+    private static var processKeyBindings_MethodID_42: jmethodID?
+
+    open class func processKeyBindings( arg0: java_awt.KeyEvent? ) -> Bool {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticBooleanMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "processKeyBindings", methodSig: "(Ljava/awt/event/KeyEvent;)Z", methodCache: &processKeyBindings_MethodID_42, args: &__args, locals: &__locals )
+        return __return != jboolean(JNI_FALSE)
+    }
+
+    open class func processKeyBindings( _ _arg0: java_awt.KeyEvent? ) -> Bool {
+        return processKeyBindings( arg0: _arg0 )
+    }
+
+    /// public static void javax.swing.SwingUtilities.replaceUIActionMap(javax.swing.JComponent,javax.swing.ActionMap)
+
+    private static var replaceUIActionMap_MethodID_43: jmethodID?
+
+    open class func replaceUIActionMap( arg0: JComponent?, arg1: ActionMap? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = JNIType.toJava( value: arg1, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "replaceUIActionMap", methodSig: "(Ljavax/swing/JComponent;Ljavax/swing/ActionMap;)V", methodCache: &replaceUIActionMap_MethodID_43, args: &__args, locals: &__locals )
+    }
+
+    open class func replaceUIActionMap( _ _arg0: JComponent?, _ _arg1: ActionMap? ) {
+        replaceUIActionMap( arg0: _arg0, arg1: _arg1 )
+    }
+
+    /// public static void javax.swing.SwingUtilities.replaceUIInputMap(javax.swing.JComponent,int,javax.swing.InputMap)
+
+    private static var replaceUIInputMap_MethodID_44: jmethodID?
+
+    open class func replaceUIInputMap( arg0: JComponent?, arg1: Int, arg2: InputMap? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        __args[1] = jvalue( i: jint(arg1) )
+        __args[2] = JNIType.toJava( value: arg2, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "replaceUIInputMap", methodSig: "(Ljavax/swing/JComponent;ILjavax/swing/InputMap;)V", methodCache: &replaceUIInputMap_MethodID_44, args: &__args, locals: &__locals )
+    }
+
+    open class func replaceUIInputMap( _ _arg0: JComponent?, _ _arg1: Int, _ _arg2: InputMap? ) {
+        replaceUIInputMap( arg0: _arg0, arg1: _arg1, arg2: _arg2 )
+    }
+
+    /// public static void javax.swing.SwingUtilities.updateComponentTreeUI(java.awt.Component)
+
+    private static var updateComponentTreeUI_MethodID_45: jmethodID?
+
+    open class func updateComponentTreeUI( arg0: java_awt.Component? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        JNIMethod.CallStaticVoidMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "updateComponentTreeUI", methodSig: "(Ljava/awt/Component;)V", methodCache: &updateComponentTreeUI_MethodID_45, args: &__args, locals: &__locals )
+    }
+
+    open class func updateComponentTreeUI( _ _arg0: java_awt.Component? ) {
+        updateComponentTreeUI( arg0: _arg0 )
+    }
+
+    /// private static void javax.swing.SwingUtilities.updateComponentTreeUI0(java.awt.Component)
+
+    /// static void javax.swing.SwingUtilities.updateRendererOrEditorUI(java.lang.Object)
+
+    // Skipping method: true false false false false 
+
+    /// public static java.awt.Window javax.swing.SwingUtilities.windowForComponent(java.awt.Component)
+
+    private static var windowForComponent_MethodID_46: jmethodID?
+
+    open class func windowForComponent( arg0: java_awt.Component? ) -> java_awt.Window! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = JNIType.toJava( value: arg0, locals: &__locals )
+        let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/SwingUtilities", classCache: &SwingUtilitiesJNIClass, methodName: "windowForComponent", methodSig: "(Ljava/awt/Component;)Ljava/awt/Window;", methodCache: &windowForComponent_MethodID_46, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? java_awt.Window( javaObject: __return ) : nil
+    }
+
+    open class func windowForComponent( _ _arg0: java_awt.Component? ) -> java_awt.Window! {
+        return windowForComponent( arg0: _arg0 )
     }
 
 }

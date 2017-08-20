@@ -16,4 +16,3 @@ open class AttributeSet_FontAttributeForward: JNIObjectForward, AttributeSet_Fon
 
 }
 
-

@@ -17,25 +17,25 @@ open class JTextComponent_DropLocation: TransferHandler_DropLocation {
 
     private static var JTextComponent_DropLocationJNIClass: jclass?
 
-    /// private final int javax.swing.text.JTextComponent$DropLocation.index
-
     /// private final javax.swing.text.Position$Bias javax.swing.text.JTextComponent$DropLocation.bias
+
+    /// private final int javax.swing.text.JTextComponent$DropLocation.index
 
     /// private final java.awt.Point javax.swing.TransferHandler$DropLocation.dropPoint
 
-    /// javax.swing.text.JTextComponent$DropLocation(java.awt.Point,int,javax.swing.text.Position$Bias,javax.swing.text.JTextComponent$1)
-
     /// private javax.swing.text.JTextComponent$DropLocation(java.awt.Point,int,javax.swing.text.Position$Bias)
 
-    /// public java.lang.String javax.swing.text.JTextComponent$DropLocation.toString()
+    /// javax.swing.text.JTextComponent$DropLocation(java.awt.Point,int,javax.swing.text.Position$Bias,javax.swing.text.JTextComponent$1)
+
+    // Skipping init: true false false 
 
     /// public javax.swing.text.Position$Bias javax.swing.text.JTextComponent$DropLocation.getBias()
 
     private static var getBias_MethodID_1: jmethodID?
 
     open func getBias() -> Position_Bias! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getBias", methodSig: "()Ljavax/swing/text/Position$Bias;", methodCache: &JTextComponent_DropLocation.getBias_MethodID_1, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
         return __return != nil ? Position_Bias( javaObject: __return ) : nil
@@ -47,12 +47,16 @@ open class JTextComponent_DropLocation: TransferHandler_DropLocation {
     private static var getIndex_MethodID_2: jmethodID?
 
     open func getIndex() -> Int {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __return = JNIMethod.CallIntMethod( object: javaObject, methodName: "getIndex", methodSig: "()I", methodCache: &JTextComponent_DropLocation.getIndex_MethodID_2, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: Int(), from: __return )
+        return Int(__return)
     }
 
+
+    /// public java.lang.String javax.swing.text.JTextComponent$DropLocation.toString()
+
+    // Skipping method: false true false false false 
 
 }
 

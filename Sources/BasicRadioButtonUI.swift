@@ -19,14 +19,34 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
 
     /// private static final java.lang.Object javax.swing.plaf.basic.BasicRadioButtonUI.BASIC_RADIO_BUTTON_UI_KEY
 
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.iconRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefIconRect
+
+    /// private static java.awt.Insets javax.swing.plaf.basic.BasicRadioButtonUI.prefInsets
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefTextRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefViewRect
+
+    /// private static final java.lang.String javax.swing.plaf.basic.BasicRadioButtonUI.propertyPrefix
+
+    /// private static java.awt.Dimension javax.swing.plaf.basic.BasicRadioButtonUI.size
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.textRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.viewRect
+
+    /// private boolean javax.swing.plaf.basic.BasicRadioButtonUI.defaults_initialized
+
     /// protected javax.swing.Icon javax.swing.plaf.basic.BasicRadioButtonUI.icon
 
     private static var icon_FieldID: jfieldID?
 
     open var icon: Icon! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "icon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicRadioButtonUI.icon_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "icon", fieldType: "Ljavax/swing/Icon;", fieldCache: &BasicRadioButtonUI.icon_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? IconForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -36,31 +56,21 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
         }
     }
 
-    /// private boolean javax.swing.plaf.basic.BasicRadioButtonUI.defaults_initialized
-
-    /// private static final java.lang.String javax.swing.plaf.basic.BasicRadioButtonUI.propertyPrefix
-
     /// private java.awt.event.KeyListener javax.swing.plaf.basic.BasicRadioButtonUI.keyListener
-
-    /// private static java.awt.Dimension javax.swing.plaf.basic.BasicRadioButtonUI.size
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.viewRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.iconRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.textRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefViewRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefIconRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicRadioButtonUI.prefTextRect
-
-    /// private static java.awt.Insets javax.swing.plaf.basic.BasicRadioButtonUI.prefInsets
 
     /// private static final java.lang.Object javax.swing.plaf.basic.BasicToggleButtonUI.BASIC_TOGGLE_BUTTON_UI_KEY
 
     /// private static final java.lang.String javax.swing.plaf.basic.BasicToggleButtonUI.propertyPrefix
+
+    /// private static final java.lang.Object javax.swing.plaf.basic.BasicButtonUI.BASIC_BUTTON_UI_KEY
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.iconRect
+
+    /// private static final java.lang.String javax.swing.plaf.basic.BasicButtonUI.propertyPrefix
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.textRect
+
+    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.viewRect
 
     /// protected int javax.swing.plaf.basic.BasicButtonUI.defaultTextIconGap
 
@@ -68,18 +78,15 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
 
     override open var defaultTextIconGap: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonUI.defaultTextIconGap_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonUI.defaultTextIconGap_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "defaultTextIconGap", fieldType: "I", fieldCache: &BasicRadioButtonUI.defaultTextIconGap_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
-
-    /// private int javax.swing.plaf.basic.BasicButtonUI.shiftOffset
 
     /// protected int javax.swing.plaf.basic.BasicButtonUI.defaultTextShiftOffset
 
@@ -87,34 +94,25 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
 
     override open var defaultTextShiftOffset: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &BasicRadioButtonUI.defaultTextShiftOffset_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &BasicRadioButtonUI.defaultTextShiftOffset_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "defaultTextShiftOffset", fieldType: "I", fieldCache: &BasicRadioButtonUI.defaultTextShiftOffset_FieldID, object: javaObject, value: __value.i, locals: &__locals )
         }
     }
 
-    /// private static final java.lang.String javax.swing.plaf.basic.BasicButtonUI.propertyPrefix
-
-    /// private static final java.lang.Object javax.swing.plaf.basic.BasicButtonUI.BASIC_BUTTON_UI_KEY
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.viewRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.textRect
-
-    /// private static java.awt.Rectangle javax.swing.plaf.basic.BasicButtonUI.iconRect
+    /// private int javax.swing.plaf.basic.BasicButtonUI.shiftOffset
 
     /// public javax.swing.plaf.basic.BasicRadioButtonUI()
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/basic/BasicRadioButtonUI", classCache: &BasicRadioButtonUI.BasicRadioButtonUIJNIClass, methodSig: "()V", methodCache: &BasicRadioButtonUI.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -122,15 +120,19 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
 
     /// static void javax.swing.plaf.basic.BasicRadioButtonUI.access$100(javax.swing.plaf.basic.BasicRadioButtonUI,java.awt.event.ActionEvent,boolean)
 
+    // Skipping method: true false false false false 
+
     /// static boolean javax.swing.plaf.basic.BasicRadioButtonUI.access$200(javax.swing.plaf.basic.BasicRadioButtonUI,java.lang.Object)
+
+    // Skipping method: true false false false false 
 
     /// public static javax.swing.plaf.ComponentUI javax.swing.plaf.basic.BasicRadioButtonUI.createUI(javax.swing.JComponent)
 
     private static var createUI_MethodID_2: jmethodID?
 
     override open class func createUI( b: JComponent? ) -> ComponentUI! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/plaf/basic/BasicRadioButtonUI", classCache: &BasicRadioButtonUIJNIClass, methodName: "createUI", methodSig: "(Ljavax/swing/JComponent;)Ljavax/swing/plaf/ComponentUI;", methodCache: &createUI_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -141,34 +143,47 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
         return createUI( b: _b )
     }
 
-    /// public synchronized void javax.swing.plaf.basic.BasicRadioButtonUI.paint(java.awt.Graphics,javax.swing.JComponent)
+    /// private java.awt.event.KeyListener javax.swing.plaf.basic.BasicRadioButtonUI.createKeyListener()
 
-    /// protected void javax.swing.plaf.basic.BasicRadioButtonUI.paintFocus(java.awt.Graphics,java.awt.Rectangle,java.awt.Dimension)
+    /// public javax.swing.Icon javax.swing.plaf.basic.BasicRadioButtonUI.getDefaultIcon()
 
-    private static var paintFocus_MethodID_3: jmethodID?
+    private static var getDefaultIcon_MethodID_3: jmethodID?
 
-    open func paintFocus( g: java_awt.Graphics?, textRect: java_awt.Rectangle?, size: java_awt.Dimension? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+    open func getDefaultIcon() -> Icon! {
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: g, locals: &__locals )
-        __args[1] = JNIType.toJava( value: textRect, locals: &__locals )
-        __args[2] = JNIType.toJava( value: size, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Dimension;)V", methodCache: &BasicRadioButtonUI.paintFocus_MethodID_3, args: &__args, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &BasicRadioButtonUI.getDefaultIcon_MethodID_3, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? IconForward( javaObject: __return ) : nil
     }
 
-    open func paintFocus( _ _g: java_awt.Graphics?, _ _textRect: java_awt.Rectangle?, _ _size: java_awt.Dimension? ) {
-        paintFocus( g: _g, textRect: _textRect, size: _size )
+
+    /// public java.awt.Dimension javax.swing.plaf.basic.BasicRadioButtonUI.getPreferredSize(javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// protected java.lang.String javax.swing.plaf.basic.BasicRadioButtonUI.getPropertyPrefix()
+
+    private static var getPropertyPrefix_MethodID_4: jmethodID?
+
+    override open func getPropertyPrefix() -> String! {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicRadioButtonUI.getPropertyPrefix_MethodID_4, args: &__args, locals: &__locals )
+        defer { JNI.DeleteLocalRef( __return ) }
+        return __return != nil ? String( javaObject: __return ) : nil
     }
+
 
     /// protected void javax.swing.plaf.basic.BasicRadioButtonUI.installDefaults(javax.swing.AbstractButton)
 
-    private static var installDefaults_MethodID_4: jmethodID?
+    private static var installDefaults_MethodID_5: jmethodID?
 
     override open func installDefaults( b: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.installDefaults_MethodID_4, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.installDefaults_MethodID_5, args: &__args, locals: &__locals )
     }
 
     override open func installDefaults( _ _b: AbstractButton? ) {
@@ -177,28 +192,53 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
 
     /// protected void javax.swing.plaf.basic.BasicRadioButtonUI.installListeners(javax.swing.AbstractButton)
 
-    private static var installListeners_MethodID_5: jmethodID?
+    private static var installListeners_MethodID_6: jmethodID?
 
     open func installListeners( button: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: button, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.installListeners_MethodID_5, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "installListeners", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.installListeners_MethodID_6, args: &__args, locals: &__locals )
     }
 
     override open func installListeners( _ _button: AbstractButton? ) {
         installListeners( button: _button )
     }
 
+    /// private boolean javax.swing.plaf.basic.BasicRadioButtonUI.isValidRadioButtonObj(java.lang.Object)
+
+    /// public synchronized void javax.swing.plaf.basic.BasicRadioButtonUI.paint(java.awt.Graphics,javax.swing.JComponent)
+
+    // Skipping method: false true false false false 
+
+    /// protected void javax.swing.plaf.basic.BasicRadioButtonUI.paintFocus(java.awt.Graphics,java.awt.Rectangle,java.awt.Dimension)
+
+    private static var paintFocus_MethodID_7: jmethodID?
+
+    open func paintFocus( g: java_awt.Graphics?, textRect: java_awt.Rectangle?, size: java_awt.Dimension? ) {
+        var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = JNIType.toJava( value: g, locals: &__locals )
+        __args[1] = JNIType.toJava( value: textRect, locals: &__locals )
+        __args[2] = JNIType.toJava( value: size, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "paintFocus", methodSig: "(Ljava/awt/Graphics;Ljava/awt/Rectangle;Ljava/awt/Dimension;)V", methodCache: &BasicRadioButtonUI.paintFocus_MethodID_7, args: &__args, locals: &__locals )
+    }
+
+    open func paintFocus( _ _g: java_awt.Graphics?, _ _textRect: java_awt.Rectangle?, _ _size: java_awt.Dimension? ) {
+        paintFocus( g: _g, textRect: _textRect, size: _size )
+    }
+
+    /// private void javax.swing.plaf.basic.BasicRadioButtonUI.selectRadioButton(java.awt.event.ActionEvent,boolean)
+
     /// protected void javax.swing.plaf.basic.BasicRadioButtonUI.uninstallDefaults(javax.swing.AbstractButton)
 
-    private static var uninstallDefaults_MethodID_6: jmethodID?
+    private static var uninstallDefaults_MethodID_8: jmethodID?
 
     override open func uninstallDefaults( b: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.uninstallDefaults_MethodID_6, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallDefaults", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.uninstallDefaults_MethodID_8, args: &__args, locals: &__locals )
     }
 
     override open func uninstallDefaults( _ _b: AbstractButton? ) {
@@ -207,51 +247,18 @@ open class BasicRadioButtonUI: BasicToggleButtonUI {
 
     /// protected void javax.swing.plaf.basic.BasicRadioButtonUI.uninstallListeners(javax.swing.AbstractButton)
 
-    private static var uninstallListeners_MethodID_7: jmethodID?
+    private static var uninstallListeners_MethodID_9: jmethodID?
 
     open func uninstallListeners( button: AbstractButton? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: button, locals: &__locals )
-        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.uninstallListeners_MethodID_7, args: &__args, locals: &__locals )
+        JNIMethod.CallVoidMethod( object: javaObject, methodName: "uninstallListeners", methodSig: "(Ljavax/swing/AbstractButton;)V", methodCache: &BasicRadioButtonUI.uninstallListeners_MethodID_9, args: &__args, locals: &__locals )
     }
 
     override open func uninstallListeners( _ _button: AbstractButton? ) {
         uninstallListeners( button: _button )
     }
-
-    /// public javax.swing.Icon javax.swing.plaf.basic.BasicRadioButtonUI.getDefaultIcon()
-
-    private static var getDefaultIcon_MethodID_8: jmethodID?
-
-    open func getDefaultIcon() -> Icon! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getDefaultIcon", methodSig: "()Ljavax/swing/Icon;", methodCache: &BasicRadioButtonUI.getDefaultIcon_MethodID_8, args: &__args, locals: &__locals )
-        defer { JNI.DeleteLocalRef( __return ) }
-        return __return != nil ? IconForward( javaObject: __return ) : nil
-    }
-
-
-    /// private java.awt.event.KeyListener javax.swing.plaf.basic.BasicRadioButtonUI.createKeyListener()
-
-    /// private boolean javax.swing.plaf.basic.BasicRadioButtonUI.isValidRadioButtonObj(java.lang.Object)
-
-    /// private void javax.swing.plaf.basic.BasicRadioButtonUI.selectRadioButton(java.awt.event.ActionEvent,boolean)
-
-    /// public java.awt.Dimension javax.swing.plaf.basic.BasicRadioButtonUI.getPreferredSize(javax.swing.JComponent)
-
-    /// protected java.lang.String javax.swing.plaf.basic.BasicRadioButtonUI.getPropertyPrefix()
-
-    private static var getPropertyPrefix_MethodID_9: jmethodID?
-
-    override open func getPropertyPrefix() -> String! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
-        var __locals = [jobject]()
-        let __return = JNIMethod.CallObjectMethod( object: javaObject, methodName: "getPropertyPrefix", methodSig: "()Ljava/lang/String;", methodCache: &BasicRadioButtonUI.getPropertyPrefix_MethodID_9, args: &__args, locals: &__locals )
-        return JNIType.toSwift( type: String(), from: __return )
-    }
-
 
 }
 

@@ -17,9 +17,13 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
 
     private static var BorderUIResource_BevelBorderUIResourceJNIClass: jclass?
 
+    /// public static final int javax.swing.border.BevelBorder.LOWERED
+
+    // Skipping field: false true false false false false 
+
     /// public static final int javax.swing.border.BevelBorder.RAISED
 
-    /// public static final int javax.swing.border.BevelBorder.LOWERED
+    // Skipping field: false true false false false false 
 
     /// protected int javax.swing.border.BevelBorder.bevelType
 
@@ -27,31 +31,13 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
 
     override open var bevelType: Int {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetIntField( fieldName: "bevelType", fieldType: "I", fieldCache: &BorderUIResource_BevelBorderUIResource.bevelType_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Int(), from: __value )
+            let __value = JNIField.GetIntField( fieldName: "bevelType", fieldType: "I", fieldCache: &BorderUIResource_BevelBorderUIResource.bevelType_FieldID, object: javaObject )
+            return Int(__value)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            let __value = jvalue( i: jint(newValue) )
             JNIField.SetIntField( fieldName: "bevelType", fieldType: "I", fieldCache: &BorderUIResource_BevelBorderUIResource.bevelType_FieldID, object: javaObject, value: __value.i, locals: &__locals )
-        }
-    }
-
-    /// protected java.awt.Color javax.swing.border.BevelBorder.highlightOuter
-
-    private static var highlightOuter_FieldID: jfieldID?
-
-    override open var highlightOuter: java_awt.Color! {
-        get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.highlightOuter_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
-        }
-        set(newValue) {
-            var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.highlightOuter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -61,8 +47,8 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
 
     override open var highlightInner: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "highlightInner", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.highlightInner_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "highlightInner", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.highlightInner_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -72,14 +58,31 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
         }
     }
 
+    /// protected java.awt.Color javax.swing.border.BevelBorder.highlightOuter
+
+    private static var highlightOuter_FieldID: jfieldID?
+
+    override open var highlightOuter: java_awt.Color! {
+        get {
+            let __value = JNIField.GetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.highlightOuter_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.Color( javaObject: __value ) : nil
+        }
+        set(newValue) {
+            var __locals = [jobject]()
+            let __value = JNIType.toJava( value: newValue, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "highlightOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.highlightOuter_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+        }
+    }
+
     /// protected java.awt.Color javax.swing.border.BevelBorder.shadowInner
 
     private static var shadowInner_FieldID: jfieldID?
 
     override open var shadowInner: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadowInner", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.shadowInner_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "shadowInner", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.shadowInner_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -95,8 +98,8 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
 
     override open var shadowOuter: java_awt.Color! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "shadowOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.shadowOuter_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "shadowOuter", fieldType: "Ljava/awt/Color;", fieldCache: &BorderUIResource_BevelBorderUIResource.shadowOuter_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.Color( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -111,9 +114,9 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( bevelType: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
+        __args[0] = jvalue( i: jint(bevelType) )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$BevelBorderUIResource", classCache: &BorderUIResource_BevelBorderUIResource.BorderUIResource_BevelBorderUIResourceJNIClass, methodSig: "(I)V", methodCache: &BorderUIResource_BevelBorderUIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -128,9 +131,9 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
     private static var new_MethodID_2: jmethodID?
 
     public convenience init( bevelType: Int, highlight: java_awt.Color?, shadow: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 3 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 3 )
+        __args[0] = jvalue( i: jint(bevelType) )
         __args[1] = JNIType.toJava( value: highlight, locals: &__locals )
         __args[2] = JNIType.toJava( value: shadow, locals: &__locals )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/BorderUIResource$BevelBorderUIResource", classCache: &BorderUIResource_BevelBorderUIResource.BorderUIResource_BevelBorderUIResourceJNIClass, methodSig: "(ILjava/awt/Color;Ljava/awt/Color;)V", methodCache: &BorderUIResource_BevelBorderUIResource.new_MethodID_2, args: &__args, locals: &__locals )
@@ -147,9 +150,9 @@ open class BorderUIResource_BevelBorderUIResource: BevelBorder, UIResource {
     private static var new_MethodID_3: jmethodID?
 
     public convenience init( bevelType: Int, highlightOuter: java_awt.Color?, highlightInner: java_awt.Color?, shadowOuter: java_awt.Color?, shadowInner: java_awt.Color? ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 5 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: bevelType, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 5 )
+        __args[0] = jvalue( i: jint(bevelType) )
         __args[1] = JNIType.toJava( value: highlightOuter, locals: &__locals )
         __args[2] = JNIType.toJava( value: highlightInner, locals: &__locals )
         __args[3] = JNIType.toJava( value: shadowOuter, locals: &__locals )

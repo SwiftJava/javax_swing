@@ -18,14 +18,16 @@ open class MetalComboBoxEditor_UIResource: MetalComboBoxEditor, UIResource {
 
     /// protected static java.awt.Insets javax.swing.plaf.metal.MetalComboBoxEditor.editorBorderInsets
 
+    // Skipping field: false false false false false true 
+
     /// protected javax.swing.JTextField javax.swing.plaf.basic.BasicComboBoxEditor.editor
 
     private static var editor_FieldID: jfieldID?
 
     override open var editor: JTextField! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/JTextField;", fieldCache: &MetalComboBoxEditor_UIResource.editor_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "editor", fieldType: "Ljavax/swing/JTextField;", fieldCache: &MetalComboBoxEditor_UIResource.editor_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? JTextField( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -42,8 +44,8 @@ open class MetalComboBoxEditor_UIResource: MetalComboBoxEditor, UIResource {
     private static var new_MethodID_1: jmethodID?
 
     public convenience init() {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         let __object = JNIMethod.NewObject( className: "javax/swing/plaf/metal/MetalComboBoxEditor$UIResource", classCache: &MetalComboBoxEditor_UIResource.MetalComboBoxEditor_UIResourceJNIClass, methodSig: "()V", methodCache: &MetalComboBoxEditor_UIResource.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )

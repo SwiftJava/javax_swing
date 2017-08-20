@@ -21,20 +21,19 @@ open class GrayFilter: java_awt.RGBImageFilter {
 
     /// private int javax.swing.GrayFilter.percent
 
-    /// protected java.awt.image.ColorModel java.awt.image.RGBImageFilter.origmodel
+    /// protected boolean java.awt.image.RGBImageFilter.canFilterIndexColorModel
 
-    private static var origmodel_FieldID: jfieldID?
+    private static var canFilterIndexColorModel_FieldID: jfieldID?
 
-    override open var origmodel: java_awt.ColorModel! {
+    override open var canFilterIndexColorModel: Bool {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "origmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.origmodel_FieldID, object: javaObject, locals: &__locals )
-            return __value != nil ? java_awt.ColorModel( javaObject: __value ) : nil
+            let __value = JNIField.GetBooleanField( fieldName: "canFilterIndexColorModel", fieldType: "Z", fieldCache: &GrayFilter.canFilterIndexColorModel_FieldID, object: javaObject )
+            return __value != jboolean(JNI_FALSE)
         }
         set(newValue) {
             var __locals = [jobject]()
-            let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetObjectField( fieldName: "origmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.origmodel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
+            let __value = jvalue( z: jboolean(newValue ? JNI_TRUE : JNI_FALSE) )
+            JNIField.SetBooleanField( fieldName: "canFilterIndexColorModel", fieldType: "Z", fieldCache: &GrayFilter.canFilterIndexColorModel_FieldID, object: javaObject, value: __value.z, locals: &__locals )
         }
     }
 
@@ -44,8 +43,8 @@ open class GrayFilter: java_awt.RGBImageFilter {
 
     override open var newmodel: java_awt.ColorModel! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "newmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.newmodel_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "newmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.newmodel_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.ColorModel( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -55,20 +54,20 @@ open class GrayFilter: java_awt.RGBImageFilter {
         }
     }
 
-    /// protected boolean java.awt.image.RGBImageFilter.canFilterIndexColorModel
+    /// protected java.awt.image.ColorModel java.awt.image.RGBImageFilter.origmodel
 
-    private static var canFilterIndexColorModel_FieldID: jfieldID?
+    private static var origmodel_FieldID: jfieldID?
 
-    override open var canFilterIndexColorModel: Bool {
+    override open var origmodel: java_awt.ColorModel! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetBooleanField( fieldName: "canFilterIndexColorModel", fieldType: "Z", fieldCache: &GrayFilter.canFilterIndexColorModel_FieldID, object: javaObject, locals: &__locals )
-            return JNIType.toSwift( type: Bool(), from: __value )
+            let __value = JNIField.GetObjectField( fieldName: "origmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.origmodel_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
+            return __value != nil ? java_awt.ColorModel( javaObject: __value ) : nil
         }
         set(newValue) {
             var __locals = [jobject]()
             let __value = JNIType.toJava( value: newValue, locals: &__locals )
-            JNIField.SetBooleanField( fieldName: "canFilterIndexColorModel", fieldType: "Z", fieldCache: &GrayFilter.canFilterIndexColorModel_FieldID, object: javaObject, value: __value.z, locals: &__locals )
+            JNIField.SetObjectField( fieldName: "origmodel", fieldType: "Ljava/awt/image/ColorModel;", fieldCache: &GrayFilter.origmodel_FieldID, object: javaObject, value: __value.l, locals: &__locals )
         }
     }
 
@@ -78,8 +77,8 @@ open class GrayFilter: java_awt.RGBImageFilter {
 
     override open var consumer: java_awt.ImageConsumer! {
         get {
-            var __locals = [jobject]()
-            let __value = JNIField.GetObjectField( fieldName: "consumer", fieldType: "Ljava/awt/image/ImageConsumer;", fieldCache: &GrayFilter.consumer_FieldID, object: javaObject, locals: &__locals )
+            let __value = JNIField.GetObjectField( fieldName: "consumer", fieldType: "Ljava/awt/image/ImageConsumer;", fieldCache: &GrayFilter.consumer_FieldID, object: javaObject )
+            defer { JNI.DeleteLocalRef( __value ) }
             return __value != nil ? java_awt.ImageConsumerForward( javaObject: __value ) : nil
         }
         set(newValue) {
@@ -89,33 +88,51 @@ open class GrayFilter: java_awt.RGBImageFilter {
         }
     }
 
-    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
-
-    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
-
     /// public static final int java.awt.image.ImageConsumer.COMPLETESCANLINES
 
-    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
+    // Skipping field: false true false false false false 
 
-    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
+    /// public static final int java.awt.image.ImageConsumer.IMAGEABORTED
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.ImageConsumer.IMAGEERROR
 
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.RANDOMPIXELORDER
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEFRAME
+
+    // Skipping field: false true false false false false 
+
     /// public static final int java.awt.image.ImageConsumer.SINGLEFRAMEDONE
+
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.SINGLEPASS
+
+    // Skipping field: false true false false false false 
 
     /// public static final int java.awt.image.ImageConsumer.STATICIMAGEDONE
 
-    /// public static final int java.awt.image.ImageConsumer.IMAGEABORTED
+    // Skipping field: false true false false false false 
+
+    /// public static final int java.awt.image.ImageConsumer.TOPDOWNLEFTRIGHT
+
+    // Skipping field: false true false false false false 
 
     /// public javax.swing.GrayFilter(boolean,int)
 
     private static var new_MethodID_1: jmethodID?
 
     public convenience init( b: Bool, p: Int ) {
-        var __args = [jvalue]( repeating: jvalue(), count: 2 )
         var __locals = [jobject]()
-        __args[0] = JNIType.toJava( value: b, locals: &__locals )
-        __args[1] = JNIType.toJava( value: p, locals: &__locals )
+        var __args = [jvalue]( repeating: jvalue(), count: 2 )
+        __args[0] = jvalue( z: jboolean(b ? JNI_TRUE : JNI_FALSE) )
+        __args[1] = jvalue( i: jint(p) )
         let __object = JNIMethod.NewObject( className: "javax/swing/GrayFilter", classCache: &GrayFilter.GrayFilterJNIClass, methodSig: "(ZI)V", methodCache: &GrayFilter.new_MethodID_1, args: &__args, locals: &__locals )
         self.init( javaObject: __object )
         JNI.DeleteLocalRef( __object )
@@ -130,8 +147,8 @@ open class GrayFilter: java_awt.RGBImageFilter {
     private static var createDisabledImage_MethodID_2: jmethodID?
 
     open class func createDisabledImage( i: java_awt.Image? ) -> java_awt.Image! {
-        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         var __locals = [jobject]()
+        var __args = [jvalue]( repeating: jvalue(), count: 1 )
         __args[0] = JNIType.toJava( value: i, locals: &__locals )
         let __return = JNIMethod.CallStaticObjectMethod( className: "javax/swing/GrayFilter", classCache: &GrayFilterJNIClass, methodName: "createDisabledImage", methodSig: "(Ljava/awt/Image;)Ljava/awt/Image;", methodCache: &createDisabledImage_MethodID_2, args: &__args, locals: &__locals )
         defer { JNI.DeleteLocalRef( __return ) }
@@ -143,6 +160,8 @@ open class GrayFilter: java_awt.RGBImageFilter {
     }
 
     /// public int javax.swing.GrayFilter.filterRGB(int,int,int)
+
+    // Skipping method: false true false false false 
 
 }
 
