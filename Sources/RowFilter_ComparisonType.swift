@@ -9,7 +9,7 @@ public enum RowFilter_ComparisonType: Int, JNIObjectProtocol, JNIObjectInit {
 
     case BEFORE, AFTER, EQUAL, NOT_EQUAL
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.RowFilter$ComparisonType")
+    static let enumConstants = JavaClass(loading: "javax.swing.RowFilter$ComparisonType")
         .getEnumConstants()!.map { RowFilter_ComparisonTypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> RowFilter_ComparisonTypeForward {

@@ -9,7 +9,7 @@ public enum GroupLayout_Alignment: Int, JNIObjectProtocol, JNIObjectInit {
 
     case LEADING, TRAILING, CENTER, BASELINE
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.GroupLayout$Alignment")
+    static let enumConstants = JavaClass(loading: "javax.swing.GroupLayout$Alignment")
         .getEnumConstants()!.map { GroupLayout_AlignmentForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> GroupLayout_AlignmentForward {

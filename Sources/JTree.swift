@@ -1517,11 +1517,11 @@ open class JTree: JComponent, Scrollable {
 
     // Skipping method: true false false false false 
 
-    /// javax.swing.JTree$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
+    /// javax.swing.TransferHandler$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
 
     // Skipping method: true false false false false 
 
-    /// javax.swing.TransferHandler$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
+    /// javax.swing.JTree$DropLocation javax.swing.JTree.dropLocationForPoint(java.awt.Point)
 
     // Skipping method: true false false false false 
 

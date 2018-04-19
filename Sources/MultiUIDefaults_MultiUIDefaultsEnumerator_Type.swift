@@ -9,7 +9,7 @@ public enum MultiUIDefaults_MultiUIDefaultsEnumerator_Type: Int, JNIObjectProtoc
 
     case KEYS, ELEMENTS
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.MultiUIDefaults$MultiUIDefaultsEnumerator$Type")
+    static let enumConstants = JavaClass(loading: "javax.swing.MultiUIDefaults$MultiUIDefaultsEnumerator$Type")
         .getEnumConstants()!.map { MultiUIDefaults_MultiUIDefaultsEnumerator_TypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> MultiUIDefaults_MultiUIDefaultsEnumerator_TypeForward {

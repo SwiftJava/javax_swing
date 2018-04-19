@@ -9,7 +9,7 @@ public enum SwingWorker_StateValue: Int, JNIObjectProtocol, JNIObjectInit {
 
     case PENDING, STARTED, DONE
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.SwingWorker$StateValue")
+    static let enumConstants = JavaClass(loading: "javax.swing.SwingWorker$StateValue")
         .getEnumConstants()!.map { SwingWorker_StateValueForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> SwingWorker_StateValueForward {

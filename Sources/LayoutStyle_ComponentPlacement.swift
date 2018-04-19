@@ -9,7 +9,7 @@ public enum LayoutStyle_ComponentPlacement: Int, JNIObjectProtocol, JNIObjectIni
 
     case RELATED, UNRELATED, INDENT
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.LayoutStyle$ComponentPlacement")
+    static let enumConstants = JavaClass(loading: "javax.swing.LayoutStyle$ComponentPlacement")
         .getEnumConstants()!.map { LayoutStyle_ComponentPlacementForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> LayoutStyle_ComponentPlacementForward {

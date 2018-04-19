@@ -9,7 +9,7 @@ public enum DropMode: Int, JNIObjectProtocol, JNIObjectInit {
 
     case USE_SELECTION, ON, INSERT, INSERT_ROWS, INSERT_COLS, ON_OR_INSERT, ON_OR_INSERT_ROWS, ON_OR_INSERT_COLS
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.DropMode")
+    static let enumConstants = JavaClass(loading: "javax.swing.DropMode")
         .getEnumConstants()!.map { DropModeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> DropModeForward {

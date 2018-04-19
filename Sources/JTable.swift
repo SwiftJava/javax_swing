@@ -1354,9 +1354,9 @@ open class JTable: JComponent, TableModelListener, Scrollable, TableColumnModelL
         addRowSelectionInterval( arg0: _arg0, arg1: _arg1 )
     }
 
-    /// private void javax.swing.JTable.adjustSizes(long,javax.swing.JTable$Resizable2,boolean)
-
     /// private void javax.swing.JTable.adjustSizes(long,javax.swing.JTable$Resizable3,boolean)
+
+    /// private void javax.swing.JTable.adjustSizes(long,javax.swing.JTable$Resizable2,boolean)
 
     /// private int javax.swing.JTable.boundColumn(int)
 
@@ -3622,9 +3622,9 @@ fileprivate class JTableLocal_: JNIObjectProxy<JTable> {
         natives.append( JNINativeMethod( name: strdup("__finalize"), signature: strdup("(J)V"), fnPtr: unsafeBitCast( JNIReleasableProxy__finalize_thunk, to: UnsafeMutableRawPointer.self ) ) )
 
         let clazz = JNI.FindClass( proxyClassName() )
-        withUnsafePointer(to: &natives[0]) {
+        natives.withUnsafeBufferPointer {
             nativesPtr in
-            if JNI.api.RegisterNatives( JNI.env, clazz, nativesPtr, jint(natives.count) ) != jint(JNI_OK) {
+            if JNI.api.RegisterNatives( JNI.env, clazz, nativesPtr.baseAddress, jint(nativesPtr.count) ) != jint(JNI_OK) {
                 JNI.report( "Unable to register java natives" )
             }
         }

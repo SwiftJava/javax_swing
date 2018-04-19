@@ -9,7 +9,7 @@ public enum FormSubmitEvent_MethodType: Int, JNIObjectProtocol, JNIObjectInit {
 
     case GET, POST
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.text.html.FormSubmitEvent$MethodType")
+    static let enumConstants = JavaClass(loading: "javax.swing.text.html.FormSubmitEvent$MethodType")
         .getEnumConstants()!.map { FormSubmitEvent_MethodTypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> FormSubmitEvent_MethodTypeForward {

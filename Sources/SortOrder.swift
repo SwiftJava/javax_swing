@@ -9,7 +9,7 @@ public enum SortOrder: Int, JNIObjectProtocol, JNIObjectInit {
 
     case ASCENDING, DESCENDING, UNSORTED
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.SortOrder")
+    static let enumConstants = JavaClass(loading: "javax.swing.SortOrder")
         .getEnumConstants()!.map { SortOrderForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> SortOrderForward {

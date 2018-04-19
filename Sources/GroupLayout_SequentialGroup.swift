@@ -111,11 +111,11 @@ open class GroupLayout_SequentialGroup: GroupLayout_Group {
 
     // Skipping method: false true false false false 
 
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
+    /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
 
     // Skipping method: false true false false false 
 
-    /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addComponent(java.awt.Component,int,int,int)
 
     // Skipping method: false true false false false 
 
@@ -150,11 +150,11 @@ open class GroupLayout_SequentialGroup: GroupLayout_Group {
     }
 
 
-    /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addGap(int)
+    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGap(int)
 
     // Skipping method: false true false false false 
 
-    /// public javax.swing.GroupLayout$SequentialGroup javax.swing.GroupLayout$SequentialGroup.addGap(int)
+    /// public javax.swing.GroupLayout$Group javax.swing.GroupLayout$SequentialGroup.addGap(int)
 
     // Skipping method: false true false false false 
 

@@ -9,7 +9,7 @@ public enum RowSorterEvent_Type: Int, JNIObjectProtocol, JNIObjectInit {
 
     case SORT_ORDER_CHANGED, SORTED
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.event.RowSorterEvent$Type")
+    static let enumConstants = JavaClass(loading: "javax.swing.event.RowSorterEvent$Type")
         .getEnumConstants()!.map { RowSorterEvent_TypeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> RowSorterEvent_TypeForward {

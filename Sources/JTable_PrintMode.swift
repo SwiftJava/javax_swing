@@ -9,7 +9,7 @@ public enum JTable_PrintMode: Int, JNIObjectProtocol, JNIObjectInit {
 
     case NORMAL, FIT_WIDTH
 
-    static let enumConstants = try! JavaClass.forName("javax.swing.JTable$PrintMode")
+    static let enumConstants = JavaClass(loading: "javax.swing.JTable$PrintMode")
         .getEnumConstants()!.map { JTable_PrintModeForward( javaObject: $0.javaObject ) }
 
     public func underlier() -> JTable_PrintModeForward {
