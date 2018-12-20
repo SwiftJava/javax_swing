@@ -94,7 +94,7 @@ open class DocumentForward: JNIObjectForward, Document {
 
     private static var StreamDescriptionProperty_FieldID: jfieldID?
 
-    open static var StreamDescriptionProperty: String! {
+    public static var StreamDescriptionProperty: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "StreamDescriptionProperty", fieldType: "Ljava/lang/String;", fieldCache: &StreamDescriptionProperty_FieldID, className: "javax/swing/text/Document", classCache: &DocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -106,7 +106,7 @@ open class DocumentForward: JNIObjectForward, Document {
 
     private static var TitleProperty_FieldID: jfieldID?
 
-    open static var TitleProperty: String! {
+    public static var TitleProperty: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TitleProperty", fieldType: "Ljava/lang/String;", fieldCache: &TitleProperty_FieldID, className: "javax/swing/text/Document", classCache: &DocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

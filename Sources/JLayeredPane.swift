@@ -23,7 +23,7 @@ open class JLayeredPane: JComponent {
 
     private static var DEFAULT_LAYER_FieldID: jfieldID?
 
-    open static var DEFAULT_LAYER: java_lang.Integer! {
+    public static var DEFAULT_LAYER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT_LAYER", fieldType: "Ljava/lang/Integer;", fieldCache: &DEFAULT_LAYER_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -35,7 +35,7 @@ open class JLayeredPane: JComponent {
 
     private static var DRAG_LAYER_FieldID: jfieldID?
 
-    open static var DRAG_LAYER: java_lang.Integer! {
+    public static var DRAG_LAYER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DRAG_LAYER", fieldType: "Ljava/lang/Integer;", fieldCache: &DRAG_LAYER_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -47,7 +47,7 @@ open class JLayeredPane: JComponent {
 
     private static var FRAME_CONTENT_LAYER_FieldID: jfieldID?
 
-    open static var FRAME_CONTENT_LAYER: java_lang.Integer! {
+    public static var FRAME_CONTENT_LAYER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FRAME_CONTENT_LAYER", fieldType: "Ljava/lang/Integer;", fieldCache: &FRAME_CONTENT_LAYER_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -59,7 +59,7 @@ open class JLayeredPane: JComponent {
 
     private static var LAYER_PROPERTY_FieldID: jfieldID?
 
-    open static var LAYER_PROPERTY: String! {
+    public static var LAYER_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LAYER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &LAYER_PROPERTY_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -71,7 +71,7 @@ open class JLayeredPane: JComponent {
 
     private static var MODAL_LAYER_FieldID: jfieldID?
 
-    open static var MODAL_LAYER: java_lang.Integer! {
+    public static var MODAL_LAYER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MODAL_LAYER", fieldType: "Ljava/lang/Integer;", fieldCache: &MODAL_LAYER_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -83,7 +83,7 @@ open class JLayeredPane: JComponent {
 
     private static var PALETTE_LAYER_FieldID: jfieldID?
 
-    open static var PALETTE_LAYER: java_lang.Integer! {
+    public static var PALETTE_LAYER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PALETTE_LAYER", fieldType: "Ljava/lang/Integer;", fieldCache: &PALETTE_LAYER_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -95,7 +95,7 @@ open class JLayeredPane: JComponent {
 
     private static var POPUP_LAYER_FieldID: jfieldID?
 
-    open static var POPUP_LAYER: java_lang.Integer! {
+    public static var POPUP_LAYER: java_lang.Integer! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POPUP_LAYER", fieldType: "Ljava/lang/Integer;", fieldCache: &POPUP_LAYER_FieldID, className: "javax/swing/JLayeredPane", classCache: &JLayeredPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

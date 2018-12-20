@@ -26,7 +26,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var BASELINE_FieldID: jfieldID?
 
-    open static var BASELINE: String! {
+    public static var BASELINE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BASELINE", fieldType: "Ljava/lang/String;", fieldCache: &BASELINE_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var EAST_FieldID: jfieldID?
 
-    open static var EAST: String! {
+    public static var EAST: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EAST", fieldType: "Ljava/lang/String;", fieldCache: &EAST_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -50,7 +50,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var HEIGHT_FieldID: jfieldID?
 
-    open static var HEIGHT: String! {
+    public static var HEIGHT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HEIGHT", fieldType: "Ljava/lang/String;", fieldCache: &HEIGHT_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -62,7 +62,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var HORIZONTAL_CENTER_FieldID: jfieldID?
 
-    open static var HORIZONTAL_CENTER: String! {
+    public static var HORIZONTAL_CENTER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_CENTER", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_CENTER_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -74,7 +74,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var NORTH_FieldID: jfieldID?
 
-    open static var NORTH: String! {
+    public static var NORTH: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NORTH", fieldType: "Ljava/lang/String;", fieldCache: &NORTH_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -86,7 +86,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var SOUTH_FieldID: jfieldID?
 
-    open static var SOUTH: String! {
+    public static var SOUTH: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SOUTH", fieldType: "Ljava/lang/String;", fieldCache: &SOUTH_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -98,7 +98,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var VERTICAL_CENTER_FieldID: jfieldID?
 
-    open static var VERTICAL_CENTER: String! {
+    public static var VERTICAL_CENTER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_CENTER", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_CENTER_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -110,7 +110,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var WEST_FieldID: jfieldID?
 
-    open static var WEST: String! {
+    public static var WEST: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WEST", fieldType: "Ljava/lang/String;", fieldCache: &WEST_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -122,7 +122,7 @@ open class SpringLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var WIDTH_FieldID: jfieldID?
 
-    open static var WIDTH: String! {
+    public static var WIDTH: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH", fieldType: "Ljava/lang/String;", fieldCache: &WIDTH_FieldID, className: "javax/swing/SpringLayout", classCache: &SpringLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

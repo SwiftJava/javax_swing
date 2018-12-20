@@ -56,7 +56,7 @@ open class JTable_PrintModeForward: JNIObjectForward {
 
     private static var FIT_WIDTH_FieldID: jfieldID?
 
-    open static var FIT_WIDTH: JTable_PrintMode! {
+    public static var FIT_WIDTH: JTable_PrintMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FIT_WIDTH", fieldType: "Ljavax/swing/JTable$PrintMode;", fieldCache: &FIT_WIDTH_FieldID, className: "javax/swing/JTable$PrintMode", classCache: &JTable_PrintModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class JTable_PrintModeForward: JNIObjectForward {
 
     private static var NORMAL_FieldID: jfieldID?
 
-    open static var NORMAL: JTable_PrintMode! {
+    public static var NORMAL: JTable_PrintMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NORMAL", fieldType: "Ljavax/swing/JTable$PrintMode;", fieldCache: &NORMAL_FieldID, className: "javax/swing/JTable$PrintMode", classCache: &JTable_PrintModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

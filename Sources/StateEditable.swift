@@ -31,7 +31,7 @@ open class StateEditableForward: JNIObjectForward, StateEditable {
 
     private static var RCSID_FieldID: jfieldID?
 
-    open static var RCSID: String! {
+    public static var RCSID: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RCSID", fieldType: "Ljava/lang/String;", fieldCache: &RCSID_FieldID, className: "javax/swing/undo/StateEditable", classCache: &StateEditableJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

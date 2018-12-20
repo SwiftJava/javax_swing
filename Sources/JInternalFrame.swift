@@ -22,7 +22,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var CONTENT_PANE_PROPERTY_FieldID: jfieldID?
 
-    open static var CONTENT_PANE_PROPERTY: String! {
+    public static var CONTENT_PANE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONTENT_PANE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CONTENT_PANE_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -34,7 +34,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var FRAME_ICON_PROPERTY_FieldID: jfieldID?
 
-    open static var FRAME_ICON_PROPERTY: String! {
+    public static var FRAME_ICON_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FRAME_ICON_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FRAME_ICON_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -46,7 +46,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var GLASS_PANE_PROPERTY_FieldID: jfieldID?
 
-    open static var GLASS_PANE_PROPERTY: String! {
+    public static var GLASS_PANE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "GLASS_PANE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &GLASS_PANE_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -58,7 +58,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var IS_CLOSED_PROPERTY_FieldID: jfieldID?
 
-    open static var IS_CLOSED_PROPERTY: String! {
+    public static var IS_CLOSED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IS_CLOSED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &IS_CLOSED_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -70,7 +70,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var IS_ICON_PROPERTY_FieldID: jfieldID?
 
-    open static var IS_ICON_PROPERTY: String! {
+    public static var IS_ICON_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IS_ICON_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &IS_ICON_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -82,7 +82,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var IS_MAXIMUM_PROPERTY_FieldID: jfieldID?
 
-    open static var IS_MAXIMUM_PROPERTY: String! {
+    public static var IS_MAXIMUM_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IS_MAXIMUM_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &IS_MAXIMUM_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -94,7 +94,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var IS_SELECTED_PROPERTY_FieldID: jfieldID?
 
-    open static var IS_SELECTED_PROPERTY: String! {
+    public static var IS_SELECTED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IS_SELECTED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &IS_SELECTED_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -106,7 +106,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var LAYERED_PANE_PROPERTY_FieldID: jfieldID?
 
-    open static var LAYERED_PANE_PROPERTY: String! {
+    public static var LAYERED_PANE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LAYERED_PANE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &LAYERED_PANE_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -118,7 +118,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var MENU_BAR_PROPERTY_FieldID: jfieldID?
 
-    open static var MENU_BAR_PROPERTY: String! {
+    public static var MENU_BAR_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MENU_BAR_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MENU_BAR_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -132,7 +132,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var ROOT_PANE_PROPERTY_FieldID: jfieldID?
 
-    open static var ROOT_PANE_PROPERTY: String! {
+    public static var ROOT_PANE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ROOT_PANE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROOT_PANE_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -144,7 +144,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var TITLE_PROPERTY_FieldID: jfieldID?
 
-    open static var TITLE_PROPERTY: String! {
+    public static var TITLE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TITLE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &TITLE_PROPERTY_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -1033,7 +1033,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var DISPOSE_ON_CLOSE_FieldID: jfieldID?
 
-    open static var DISPOSE_ON_CLOSE: Int {
+    public static var DISPOSE_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISPOSE_ON_CLOSE", fieldType: "I", fieldCache: &DISPOSE_ON_CLOSE_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             return Int(__value)
@@ -1044,7 +1044,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var DO_NOTHING_ON_CLOSE_FieldID: jfieldID?
 
-    open static var DO_NOTHING_ON_CLOSE: Int {
+    public static var DO_NOTHING_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DO_NOTHING_ON_CLOSE", fieldType: "I", fieldCache: &DO_NOTHING_ON_CLOSE_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             return Int(__value)
@@ -1055,7 +1055,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var EXIT_ON_CLOSE_FieldID: jfieldID?
 
-    open static var EXIT_ON_CLOSE: Int {
+    public static var EXIT_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EXIT_ON_CLOSE", fieldType: "I", fieldCache: &EXIT_ON_CLOSE_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             return Int(__value)
@@ -1066,7 +1066,7 @@ open class JInternalFrame: JComponent, WindowConstants, RootPaneContainer {
 
     private static var HIDE_ON_CLOSE_FieldID: jfieldID?
 
-    open static var HIDE_ON_CLOSE: Int {
+    public static var HIDE_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HIDE_ON_CLOSE", fieldType: "I", fieldCache: &HIDE_ON_CLOSE_FieldID, className: "javax/swing/JInternalFrame", classCache: &JInternalFrameJNIClass )
             return Int(__value)

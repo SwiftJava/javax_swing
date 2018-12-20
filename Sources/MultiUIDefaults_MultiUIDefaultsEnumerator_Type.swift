@@ -56,7 +56,7 @@ open class MultiUIDefaults_MultiUIDefaultsEnumerator_TypeForward: JNIObjectForwa
 
     private static var ELEMENTS_FieldID: jfieldID?
 
-    open static var ELEMENTS: MultiUIDefaults_MultiUIDefaultsEnumerator_Type! {
+    public static var ELEMENTS: MultiUIDefaults_MultiUIDefaultsEnumerator_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ELEMENTS", fieldType: "Ljavax/swing/MultiUIDefaults$MultiUIDefaultsEnumerator$Type;", fieldCache: &ELEMENTS_FieldID, className: "javax/swing/MultiUIDefaults$MultiUIDefaultsEnumerator$Type", classCache: &MultiUIDefaults_MultiUIDefaultsEnumerator_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class MultiUIDefaults_MultiUIDefaultsEnumerator_TypeForward: JNIObjectForwa
 
     private static var KEYS_FieldID: jfieldID?
 
-    open static var KEYS: MultiUIDefaults_MultiUIDefaultsEnumerator_Type! {
+    public static var KEYS: MultiUIDefaults_MultiUIDefaultsEnumerator_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KEYS", fieldType: "Ljavax/swing/MultiUIDefaults$MultiUIDefaultsEnumerator$Type;", fieldCache: &KEYS_FieldID, className: "javax/swing/MultiUIDefaults$MultiUIDefaultsEnumerator$Type", classCache: &MultiUIDefaults_MultiUIDefaultsEnumerator_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -56,7 +56,7 @@ open class LayoutStyle_ComponentPlacementForward: JNIObjectForward {
 
     private static var INDENT_FieldID: jfieldID?
 
-    open static var INDENT: LayoutStyle_ComponentPlacement! {
+    public static var INDENT: LayoutStyle_ComponentPlacement! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INDENT", fieldType: "Ljavax/swing/LayoutStyle$ComponentPlacement;", fieldCache: &INDENT_FieldID, className: "javax/swing/LayoutStyle$ComponentPlacement", classCache: &LayoutStyle_ComponentPlacementJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class LayoutStyle_ComponentPlacementForward: JNIObjectForward {
 
     private static var RELATED_FieldID: jfieldID?
 
-    open static var RELATED: LayoutStyle_ComponentPlacement! {
+    public static var RELATED: LayoutStyle_ComponentPlacement! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RELATED", fieldType: "Ljavax/swing/LayoutStyle$ComponentPlacement;", fieldCache: &RELATED_FieldID, className: "javax/swing/LayoutStyle$ComponentPlacement", classCache: &LayoutStyle_ComponentPlacementJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class LayoutStyle_ComponentPlacementForward: JNIObjectForward {
 
     private static var UNRELATED_FieldID: jfieldID?
 
-    open static var UNRELATED: LayoutStyle_ComponentPlacement! {
+    public static var UNRELATED: LayoutStyle_ComponentPlacement! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNRELATED", fieldType: "Ljavax/swing/LayoutStyle$ComponentPlacement;", fieldCache: &UNRELATED_FieldID, className: "javax/swing/LayoutStyle$ComponentPlacement", classCache: &LayoutStyle_ComponentPlacementJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

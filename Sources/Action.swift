@@ -87,7 +87,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var ACCELERATOR_KEY_FieldID: jfieldID?
 
-    open static var ACCELERATOR_KEY: String! {
+    public static var ACCELERATOR_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACCELERATOR_KEY", fieldType: "Ljava/lang/String;", fieldCache: &ACCELERATOR_KEY_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -99,7 +99,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var ACTION_COMMAND_KEY_FieldID: jfieldID?
 
-    open static var ACTION_COMMAND_KEY: String! {
+    public static var ACTION_COMMAND_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACTION_COMMAND_KEY", fieldType: "Ljava/lang/String;", fieldCache: &ACTION_COMMAND_KEY_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -111,7 +111,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var DEFAULT_FieldID: jfieldID?
 
-    open static var DEFAULT: String! {
+    public static var DEFAULT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT", fieldType: "Ljava/lang/String;", fieldCache: &DEFAULT_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -123,7 +123,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var DISPLAYED_MNEMONIC_INDEX_KEY_FieldID: jfieldID?
 
-    open static var DISPLAYED_MNEMONIC_INDEX_KEY: String! {
+    public static var DISPLAYED_MNEMONIC_INDEX_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DISPLAYED_MNEMONIC_INDEX_KEY", fieldType: "Ljava/lang/String;", fieldCache: &DISPLAYED_MNEMONIC_INDEX_KEY_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -135,7 +135,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var LARGE_ICON_KEY_FieldID: jfieldID?
 
-    open static var LARGE_ICON_KEY: String! {
+    public static var LARGE_ICON_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LARGE_ICON_KEY", fieldType: "Ljava/lang/String;", fieldCache: &LARGE_ICON_KEY_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -147,7 +147,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var LONG_DESCRIPTION_FieldID: jfieldID?
 
-    open static var LONG_DESCRIPTION: String! {
+    public static var LONG_DESCRIPTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LONG_DESCRIPTION", fieldType: "Ljava/lang/String;", fieldCache: &LONG_DESCRIPTION_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -159,7 +159,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var MNEMONIC_KEY_FieldID: jfieldID?
 
-    open static var MNEMONIC_KEY: String! {
+    public static var MNEMONIC_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MNEMONIC_KEY", fieldType: "Ljava/lang/String;", fieldCache: &MNEMONIC_KEY_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -171,7 +171,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var NAME_FieldID: jfieldID?
 
-    open static var NAME: String! {
+    public static var NAME: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NAME", fieldType: "Ljava/lang/String;", fieldCache: &NAME_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -183,7 +183,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var SELECTED_KEY_FieldID: jfieldID?
 
-    open static var SELECTED_KEY: String! {
+    public static var SELECTED_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_KEY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_KEY_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -195,7 +195,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var SHORT_DESCRIPTION_FieldID: jfieldID?
 
-    open static var SHORT_DESCRIPTION: String! {
+    public static var SHORT_DESCRIPTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SHORT_DESCRIPTION", fieldType: "Ljava/lang/String;", fieldCache: &SHORT_DESCRIPTION_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -207,7 +207,7 @@ open class ActionForward: java_awt.ActionListenerForward, Action {
 
     private static var SMALL_ICON_FieldID: jfieldID?
 
-    open static var SMALL_ICON: String! {
+    public static var SMALL_ICON: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SMALL_ICON", fieldType: "Ljava/lang/String;", fieldCache: &SMALL_ICON_FieldID, className: "javax/swing/Action", classCache: &ActionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

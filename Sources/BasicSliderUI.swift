@@ -22,7 +22,7 @@ open class BasicSliderUI: SliderUI {
 
     private static var MAX_SCROLL_FieldID: jfieldID?
 
-    open static var MAX_SCROLL: Int {
+    public static var MAX_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MAX_SCROLL", fieldType: "I", fieldCache: &MAX_SCROLL_FieldID, className: "javax/swing/plaf/basic/BasicSliderUI", classCache: &BasicSliderUIJNIClass )
             return Int(__value)
@@ -33,7 +33,7 @@ open class BasicSliderUI: SliderUI {
 
     private static var MIN_SCROLL_FieldID: jfieldID?
 
-    open static var MIN_SCROLL: Int {
+    public static var MIN_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MIN_SCROLL", fieldType: "I", fieldCache: &MIN_SCROLL_FieldID, className: "javax/swing/plaf/basic/BasicSliderUI", classCache: &BasicSliderUIJNIClass )
             return Int(__value)
@@ -44,7 +44,7 @@ open class BasicSliderUI: SliderUI {
 
     private static var NEGATIVE_SCROLL_FieldID: jfieldID?
 
-    open static var NEGATIVE_SCROLL: Int {
+    public static var NEGATIVE_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEGATIVE_SCROLL", fieldType: "I", fieldCache: &NEGATIVE_SCROLL_FieldID, className: "javax/swing/plaf/basic/BasicSliderUI", classCache: &BasicSliderUIJNIClass )
             return Int(__value)
@@ -55,7 +55,7 @@ open class BasicSliderUI: SliderUI {
 
     private static var POSITIVE_SCROLL_FieldID: jfieldID?
 
-    open static var POSITIVE_SCROLL: Int {
+    public static var POSITIVE_SCROLL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "POSITIVE_SCROLL", fieldType: "I", fieldCache: &POSITIVE_SCROLL_FieldID, className: "javax/swing/plaf/basic/BasicSliderUI", classCache: &BasicSliderUIJNIClass )
             return Int(__value)

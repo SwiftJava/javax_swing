@@ -22,7 +22,7 @@ open class DefaultButtonModel: java_swift.JavaObject, ButtonModel, /* interface 
 
     private static var ARMED_FieldID: jfieldID?
 
-    open static var ARMED: Int {
+    public static var ARMED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ARMED", fieldType: "I", fieldCache: &ARMED_FieldID, className: "javax/swing/DefaultButtonModel", classCache: &DefaultButtonModelJNIClass )
             return Int(__value)
@@ -33,7 +33,7 @@ open class DefaultButtonModel: java_swift.JavaObject, ButtonModel, /* interface 
 
     private static var ENABLED_FieldID: jfieldID?
 
-    open static var ENABLED: Int {
+    public static var ENABLED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/DefaultButtonModel", classCache: &DefaultButtonModelJNIClass )
             return Int(__value)
@@ -44,7 +44,7 @@ open class DefaultButtonModel: java_swift.JavaObject, ButtonModel, /* interface 
 
     private static var PRESSED_FieldID: jfieldID?
 
-    open static var PRESSED: Int {
+    public static var PRESSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/DefaultButtonModel", classCache: &DefaultButtonModelJNIClass )
             return Int(__value)
@@ -55,7 +55,7 @@ open class DefaultButtonModel: java_swift.JavaObject, ButtonModel, /* interface 
 
     private static var ROLLOVER_FieldID: jfieldID?
 
-    open static var ROLLOVER: Int {
+    public static var ROLLOVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ROLLOVER", fieldType: "I", fieldCache: &ROLLOVER_FieldID, className: "javax/swing/DefaultButtonModel", classCache: &DefaultButtonModelJNIClass )
             return Int(__value)
@@ -66,7 +66,7 @@ open class DefaultButtonModel: java_swift.JavaObject, ButtonModel, /* interface 
 
     private static var SELECTED_FieldID: jfieldID?
 
-    open static var SELECTED: Int {
+    public static var SELECTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/DefaultButtonModel", classCache: &DefaultButtonModelJNIClass )
             return Int(__value)

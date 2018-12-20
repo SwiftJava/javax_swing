@@ -21,7 +21,7 @@ open class JColorChooser: JComponent {
 
     private static var CHOOSER_PANELS_PROPERTY_FieldID: jfieldID?
 
-    open static var CHOOSER_PANELS_PROPERTY: String! {
+    public static var CHOOSER_PANELS_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CHOOSER_PANELS_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CHOOSER_PANELS_PROPERTY_FieldID, className: "javax/swing/JColorChooser", classCache: &JColorChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -33,7 +33,7 @@ open class JColorChooser: JComponent {
 
     private static var PREVIEW_PANEL_PROPERTY_FieldID: jfieldID?
 
-    open static var PREVIEW_PANEL_PROPERTY: String! {
+    public static var PREVIEW_PANEL_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PREVIEW_PANEL_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &PREVIEW_PANEL_PROPERTY_FieldID, className: "javax/swing/JColorChooser", classCache: &JColorChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -45,7 +45,7 @@ open class JColorChooser: JComponent {
 
     private static var SELECTION_MODEL_PROPERTY_FieldID: jfieldID?
 
-    open static var SELECTION_MODEL_PROPERTY: String! {
+    public static var SELECTION_MODEL_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTION_MODEL_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTION_MODEL_PROPERTY_FieldID, className: "javax/swing/JColorChooser", classCache: &JColorChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

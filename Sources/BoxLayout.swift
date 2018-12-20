@@ -21,7 +21,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* interfa
 
     private static var LINE_AXIS_FieldID: jfieldID?
 
-    open static var LINE_AXIS: Int {
+    public static var LINE_AXIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LINE_AXIS", fieldType: "I", fieldCache: &LINE_AXIS_FieldID, className: "javax/swing/BoxLayout", classCache: &BoxLayoutJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* interfa
 
     private static var PAGE_AXIS_FieldID: jfieldID?
 
-    open static var PAGE_AXIS: Int {
+    public static var PAGE_AXIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PAGE_AXIS", fieldType: "I", fieldCache: &PAGE_AXIS_FieldID, className: "javax/swing/BoxLayout", classCache: &BoxLayoutJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* interfa
 
     private static var X_AXIS_FieldID: jfieldID?
 
-    open static var X_AXIS: Int {
+    public static var X_AXIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "X_AXIS", fieldType: "I", fieldCache: &X_AXIS_FieldID, className: "javax/swing/BoxLayout", classCache: &BoxLayoutJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class BoxLayout: java_swift.JavaObject, java_awt.LayoutManager2, /* interfa
 
     private static var Y_AXIS_FieldID: jfieldID?
 
-    open static var Y_AXIS: Int {
+    public static var Y_AXIS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "Y_AXIS", fieldType: "I", fieldCache: &Y_AXIS_FieldID, className: "javax/swing/BoxLayout", classCache: &BoxLayoutJNIClass )
             return Int(__value)

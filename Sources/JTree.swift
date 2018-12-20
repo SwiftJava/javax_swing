@@ -26,7 +26,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var ANCHOR_SELECTION_PATH_PROPERTY_FieldID: jfieldID?
 
-    open static var ANCHOR_SELECTION_PATH_PROPERTY: String! {
+    public static var ANCHOR_SELECTION_PATH_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ANCHOR_SELECTION_PATH_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ANCHOR_SELECTION_PATH_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var CELL_EDITOR_PROPERTY_FieldID: jfieldID?
 
-    open static var CELL_EDITOR_PROPERTY: String! {
+    public static var CELL_EDITOR_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CELL_EDITOR_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CELL_EDITOR_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -50,7 +50,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var CELL_RENDERER_PROPERTY_FieldID: jfieldID?
 
-    open static var CELL_RENDERER_PROPERTY: String! {
+    public static var CELL_RENDERER_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CELL_RENDERER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CELL_RENDERER_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -62,7 +62,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var EDITABLE_PROPERTY_FieldID: jfieldID?
 
-    open static var EDITABLE_PROPERTY: String! {
+    public static var EDITABLE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EDITABLE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &EDITABLE_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -74,7 +74,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var EXPANDS_SELECTED_PATHS_PROPERTY_FieldID: jfieldID?
 
-    open static var EXPANDS_SELECTED_PATHS_PROPERTY: String! {
+    public static var EXPANDS_SELECTED_PATHS_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EXPANDS_SELECTED_PATHS_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &EXPANDS_SELECTED_PATHS_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -86,7 +86,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var INVOKES_STOP_CELL_EDITING_PROPERTY_FieldID: jfieldID?
 
-    open static var INVOKES_STOP_CELL_EDITING_PROPERTY: String! {
+    public static var INVOKES_STOP_CELL_EDITING_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INVOKES_STOP_CELL_EDITING_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &INVOKES_STOP_CELL_EDITING_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -98,7 +98,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var LARGE_MODEL_PROPERTY_FieldID: jfieldID?
 
-    open static var LARGE_MODEL_PROPERTY: String! {
+    public static var LARGE_MODEL_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LARGE_MODEL_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &LARGE_MODEL_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -110,7 +110,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var LEAD_SELECTION_PATH_PROPERTY_FieldID: jfieldID?
 
-    open static var LEAD_SELECTION_PATH_PROPERTY: String! {
+    public static var LEAD_SELECTION_PATH_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEAD_SELECTION_PATH_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &LEAD_SELECTION_PATH_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -122,7 +122,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var ROOT_VISIBLE_PROPERTY_FieldID: jfieldID?
 
-    open static var ROOT_VISIBLE_PROPERTY: String! {
+    public static var ROOT_VISIBLE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ROOT_VISIBLE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROOT_VISIBLE_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -134,7 +134,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var ROW_HEIGHT_PROPERTY_FieldID: jfieldID?
 
-    open static var ROW_HEIGHT_PROPERTY: String! {
+    public static var ROW_HEIGHT_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ROW_HEIGHT_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ROW_HEIGHT_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -146,7 +146,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var SCROLLS_ON_EXPAND_PROPERTY_FieldID: jfieldID?
 
-    open static var SCROLLS_ON_EXPAND_PROPERTY: String! {
+    public static var SCROLLS_ON_EXPAND_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SCROLLS_ON_EXPAND_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SCROLLS_ON_EXPAND_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -158,7 +158,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var SELECTION_MODEL_PROPERTY_FieldID: jfieldID?
 
-    open static var SELECTION_MODEL_PROPERTY: String! {
+    public static var SELECTION_MODEL_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTION_MODEL_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTION_MODEL_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -170,7 +170,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var SHOWS_ROOT_HANDLES_PROPERTY_FieldID: jfieldID?
 
-    open static var SHOWS_ROOT_HANDLES_PROPERTY: String! {
+    public static var SHOWS_ROOT_HANDLES_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SHOWS_ROOT_HANDLES_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SHOWS_ROOT_HANDLES_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -184,7 +184,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var TOGGLE_CLICK_COUNT_PROPERTY_FieldID: jfieldID?
 
-    open static var TOGGLE_CLICK_COUNT_PROPERTY: String! {
+    public static var TOGGLE_CLICK_COUNT_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOGGLE_CLICK_COUNT_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &TOGGLE_CLICK_COUNT_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -196,7 +196,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var TREE_MODEL_PROPERTY_FieldID: jfieldID?
 
-    open static var TREE_MODEL_PROPERTY: String! {
+    public static var TREE_MODEL_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TREE_MODEL_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &TREE_MODEL_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -208,7 +208,7 @@ open class JTree: JComponent, Scrollable {
 
     private static var VISIBLE_ROW_COUNT_PROPERTY_FieldID: jfieldID?
 
-    open static var VISIBLE_ROW_COUNT_PROPERTY: String! {
+    public static var VISIBLE_ROW_COUNT_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VISIBLE_ROW_COUNT_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &VISIBLE_ROW_COUNT_PROPERTY_FieldID, className: "javax/swing/JTree", classCache: &JTreeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

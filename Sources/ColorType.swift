@@ -20,7 +20,7 @@ open class ColorType: java_swift.JavaObject {
 
     private static var BACKGROUND_FieldID: jfieldID?
 
-    open static var BACKGROUND: ColorType! {
+    public static var BACKGROUND: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &BACKGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class ColorType: java_swift.JavaObject {
 
     private static var FOCUS_FieldID: jfieldID?
 
-    open static var FOCUS: ColorType! {
+    public static var FOCUS: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOCUS", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &FOCUS_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class ColorType: java_swift.JavaObject {
 
     private static var FOREGROUND_FieldID: jfieldID?
 
-    open static var FOREGROUND: ColorType! {
+    public static var FOREGROUND: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOREGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &FOREGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -56,7 +56,7 @@ open class ColorType: java_swift.JavaObject {
 
     private static var MAX_COUNT_FieldID: jfieldID?
 
-    open static var MAX_COUNT: Int {
+    public static var MAX_COUNT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MAX_COUNT", fieldType: "I", fieldCache: &MAX_COUNT_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
             return Int(__value)
@@ -67,7 +67,7 @@ open class ColorType: java_swift.JavaObject {
 
     private static var TEXT_BACKGROUND_FieldID: jfieldID?
 
-    open static var TEXT_BACKGROUND: ColorType! {
+    public static var TEXT_BACKGROUND: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_BACKGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &TEXT_BACKGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -79,7 +79,7 @@ open class ColorType: java_swift.JavaObject {
 
     private static var TEXT_FOREGROUND_FieldID: jfieldID?
 
-    open static var TEXT_FOREGROUND: ColorType! {
+    public static var TEXT_FOREGROUND: ColorType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_FOREGROUND", fieldType: "Ljavax/swing/plaf/synth/ColorType;", fieldCache: &TEXT_FOREGROUND_FieldID, className: "javax/swing/plaf/synth/ColorType", classCache: &ColorTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

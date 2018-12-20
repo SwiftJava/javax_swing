@@ -118,7 +118,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var ANY_FieldID: jfieldID?
 
-    open static var ANY: Int {
+    public static var ANY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANY", fieldType: "I", fieldCache: &ANY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -129,7 +129,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var CDATA_FieldID: jfieldID?
 
-    open static var CDATA: Int {
+    public static var CDATA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CDATA", fieldType: "I", fieldCache: &CDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -140,7 +140,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var CONREF_FieldID: jfieldID?
 
-    open static var CONREF: Int {
+    public static var CONREF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONREF", fieldType: "I", fieldCache: &CONREF_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -151,7 +151,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var CURRENT_FieldID: jfieldID?
 
-    open static var CURRENT: Int {
+    public static var CURRENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CURRENT", fieldType: "I", fieldCache: &CURRENT_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -162,7 +162,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var DEFAULT_FieldID: jfieldID?
 
-    open static var DEFAULT: Int {
+    public static var DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -173,7 +173,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var EMPTY_FieldID: jfieldID?
 
-    open static var EMPTY: Int {
+    public static var EMPTY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EMPTY", fieldType: "I", fieldCache: &EMPTY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -184,7 +184,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var ENDTAG_FieldID: jfieldID?
 
-    open static var ENDTAG: Int {
+    public static var ENDTAG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ENDTAG", fieldType: "I", fieldCache: &ENDTAG_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -195,7 +195,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var ENTITIES_FieldID: jfieldID?
 
-    open static var ENTITIES: Int {
+    public static var ENTITIES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ENTITIES", fieldType: "I", fieldCache: &ENTITIES_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -206,7 +206,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var ENTITY_FieldID: jfieldID?
 
-    open static var ENTITY: Int {
+    public static var ENTITY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ENTITY", fieldType: "I", fieldCache: &ENTITY_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -217,7 +217,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var FIXED_FieldID: jfieldID?
 
-    open static var FIXED: Int {
+    public static var FIXED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FIXED", fieldType: "I", fieldCache: &FIXED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -228,7 +228,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var GENERAL_FieldID: jfieldID?
 
-    open static var GENERAL: Int {
+    public static var GENERAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "GENERAL", fieldType: "I", fieldCache: &GENERAL_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -239,7 +239,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var ID_FieldID: jfieldID?
 
-    open static var ID: Int {
+    public static var ID: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ID", fieldType: "I", fieldCache: &ID_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -250,7 +250,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var IDREF_FieldID: jfieldID?
 
-    open static var IDREF: Int {
+    public static var IDREF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "IDREF", fieldType: "I", fieldCache: &IDREF_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -261,7 +261,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var IDREFS_FieldID: jfieldID?
 
-    open static var IDREFS: Int {
+    public static var IDREFS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "IDREFS", fieldType: "I", fieldCache: &IDREFS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -272,7 +272,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var IMPLIED_FieldID: jfieldID?
 
-    open static var IMPLIED: Int {
+    public static var IMPLIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "IMPLIED", fieldType: "I", fieldCache: &IMPLIED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -283,7 +283,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var MD_FieldID: jfieldID?
 
-    open static var MD: Int {
+    public static var MD: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MD", fieldType: "I", fieldCache: &MD_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -294,7 +294,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var MODEL_FieldID: jfieldID?
 
-    open static var MODEL: Int {
+    public static var MODEL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MODEL", fieldType: "I", fieldCache: &MODEL_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -305,7 +305,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var MS_FieldID: jfieldID?
 
-    open static var MS: Int {
+    public static var MS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MS", fieldType: "I", fieldCache: &MS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -316,7 +316,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NAME_FieldID: jfieldID?
 
-    open static var NAME: Int {
+    public static var NAME: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NAME", fieldType: "I", fieldCache: &NAME_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -327,7 +327,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NAMES_FieldID: jfieldID?
 
-    open static var NAMES: Int {
+    public static var NAMES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NAMES", fieldType: "I", fieldCache: &NAMES_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -338,7 +338,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NMTOKEN_FieldID: jfieldID?
 
-    open static var NMTOKEN: Int {
+    public static var NMTOKEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NMTOKEN", fieldType: "I", fieldCache: &NMTOKEN_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -349,7 +349,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NMTOKENS_FieldID: jfieldID?
 
-    open static var NMTOKENS: Int {
+    public static var NMTOKENS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NMTOKENS", fieldType: "I", fieldCache: &NMTOKENS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -360,7 +360,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NOTATION_FieldID: jfieldID?
 
-    open static var NOTATION: Int {
+    public static var NOTATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NOTATION", fieldType: "I", fieldCache: &NOTATION_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -371,7 +371,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NUMBER_FieldID: jfieldID?
 
-    open static var NUMBER: Int {
+    public static var NUMBER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NUMBER", fieldType: "I", fieldCache: &NUMBER_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -382,7 +382,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NUMBERS_FieldID: jfieldID?
 
-    open static var NUMBERS: Int {
+    public static var NUMBERS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NUMBERS", fieldType: "I", fieldCache: &NUMBERS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -393,7 +393,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NUTOKEN_FieldID: jfieldID?
 
-    open static var NUTOKEN: Int {
+    public static var NUTOKEN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NUTOKEN", fieldType: "I", fieldCache: &NUTOKEN_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -404,7 +404,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var NUTOKENS_FieldID: jfieldID?
 
-    open static var NUTOKENS: Int {
+    public static var NUTOKENS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NUTOKENS", fieldType: "I", fieldCache: &NUTOKENS_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -415,7 +415,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var PARAMETER_FieldID: jfieldID?
 
-    open static var PARAMETER: Int {
+    public static var PARAMETER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PARAMETER", fieldType: "I", fieldCache: &PARAMETER_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -426,7 +426,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var PI_FieldID: jfieldID?
 
-    open static var PI: Int {
+    public static var PI: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PI", fieldType: "I", fieldCache: &PI_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -437,7 +437,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var PUBLIC_FieldID: jfieldID?
 
-    open static var PUBLIC: Int {
+    public static var PUBLIC: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PUBLIC", fieldType: "I", fieldCache: &PUBLIC_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -448,7 +448,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var RCDATA_FieldID: jfieldID?
 
-    open static var RCDATA: Int {
+    public static var RCDATA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RCDATA", fieldType: "I", fieldCache: &RCDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -459,7 +459,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var REQUIRED_FieldID: jfieldID?
 
-    open static var REQUIRED: Int {
+    public static var REQUIRED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REQUIRED", fieldType: "I", fieldCache: &REQUIRED_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -470,7 +470,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var SDATA_FieldID: jfieldID?
 
-    open static var SDATA: Int {
+    public static var SDATA: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SDATA", fieldType: "I", fieldCache: &SDATA_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -481,7 +481,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var STARTTAG_FieldID: jfieldID?
 
-    open static var STARTTAG: Int {
+    public static var STARTTAG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "STARTTAG", fieldType: "I", fieldCache: &STARTTAG_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)
@@ -492,7 +492,7 @@ open class Parser: java_swift.JavaObject, DTDConstants {
 
     private static var SYSTEM_FieldID: jfieldID?
 
-    open static var SYSTEM: Int {
+    public static var SYSTEM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SYSTEM", fieldType: "I", fieldCache: &SYSTEM_FieldID, className: "javax/swing/text/html/parser/Parser", classCache: &ParserJNIClass )
             return Int(__value)

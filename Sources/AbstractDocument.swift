@@ -31,7 +31,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var BidiElementName_FieldID: jfieldID?
 
-    open static var BidiElementName: String! {
+    public static var BidiElementName: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BidiElementName", fieldType: "Ljava/lang/String;", fieldCache: &BidiElementName_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -43,7 +43,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var ContentElementName_FieldID: jfieldID?
 
-    open static var ContentElementName: String! {
+    public static var ContentElementName: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ContentElementName", fieldType: "Ljava/lang/String;", fieldCache: &ContentElementName_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -55,7 +55,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var ElementNameAttribute_FieldID: jfieldID?
 
-    open static var ElementNameAttribute: String! {
+    public static var ElementNameAttribute: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ElementNameAttribute", fieldType: "Ljava/lang/String;", fieldCache: &ElementNameAttribute_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -75,7 +75,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var ParagraphElementName_FieldID: jfieldID?
 
-    open static var ParagraphElementName: String! {
+    public static var ParagraphElementName: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ParagraphElementName", fieldType: "Ljava/lang/String;", fieldCache: &ParagraphElementName_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -87,7 +87,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var SectionElementName_FieldID: jfieldID?
 
-    open static var SectionElementName: String! {
+    public static var SectionElementName: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SectionElementName", fieldType: "Ljava/lang/String;", fieldCache: &SectionElementName_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -138,7 +138,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var StreamDescriptionProperty_FieldID: jfieldID?
 
-    open static var StreamDescriptionProperty: String! {
+    public static var StreamDescriptionProperty: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "StreamDescriptionProperty", fieldType: "Ljava/lang/String;", fieldCache: &StreamDescriptionProperty_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -150,7 +150,7 @@ open class AbstractDocument: java_swift.JavaObject, Document, /* interface java.
 
     private static var TitleProperty_FieldID: jfieldID?
 
-    open static var TitleProperty: String! {
+    public static var TitleProperty: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TitleProperty", fieldType: "Ljava/lang/String;", fieldCache: &TitleProperty_FieldID, className: "javax/swing/text/AbstractDocument", classCache: &AbstractDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

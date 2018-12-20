@@ -20,7 +20,7 @@ open class Position_Bias: java_swift.JavaObject {
 
     private static var Backward_FieldID: jfieldID?
 
-    open static var Backward: Position_Bias! {
+    public static var Backward: Position_Bias! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Backward", fieldType: "Ljavax/swing/text/Position$Bias;", fieldCache: &Backward_FieldID, className: "javax/swing/text/Position$Bias", classCache: &Position_BiasJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class Position_Bias: java_swift.JavaObject {
 
     private static var Forward_FieldID: jfieldID?
 
-    open static var Forward: Position_Bias! {
+    public static var Forward: Position_Bias! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Forward", fieldType: "Ljavax/swing/text/Position$Bias;", fieldCache: &Forward_FieldID, className: "javax/swing/text/Position$Bias", classCache: &Position_BiasJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

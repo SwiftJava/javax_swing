@@ -21,7 +21,7 @@ open class JCheckBox: JToggleButton {
 
     private static var BORDER_PAINTED_FLAT_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var BORDER_PAINTED_FLAT_CHANGED_PROPERTY: String! {
+    public static var BORDER_PAINTED_FLAT_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_PAINTED_FLAT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &BORDER_PAINTED_FLAT_CHANGED_PROPERTY_FieldID, className: "javax/swing/JCheckBox", classCache: &JCheckBoxJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

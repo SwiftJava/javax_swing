@@ -30,7 +30,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BACKGROUND_FieldID: jfieldID?
 
-    open static var BACKGROUND: CSS_Attribute! {
+    public static var BACKGROUND: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BACKGROUND_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -42,7 +42,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BACKGROUND_ATTACHMENT_FieldID: jfieldID?
 
-    open static var BACKGROUND_ATTACHMENT: CSS_Attribute! {
+    public static var BACKGROUND_ATTACHMENT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND_ATTACHMENT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BACKGROUND_ATTACHMENT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -54,7 +54,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BACKGROUND_COLOR_FieldID: jfieldID?
 
-    open static var BACKGROUND_COLOR: CSS_Attribute! {
+    public static var BACKGROUND_COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND_COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BACKGROUND_COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -66,7 +66,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BACKGROUND_IMAGE_FieldID: jfieldID?
 
-    open static var BACKGROUND_IMAGE: CSS_Attribute! {
+    public static var BACKGROUND_IMAGE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND_IMAGE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BACKGROUND_IMAGE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -78,7 +78,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BACKGROUND_POSITION_FieldID: jfieldID?
 
-    open static var BACKGROUND_POSITION: CSS_Attribute! {
+    public static var BACKGROUND_POSITION: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND_POSITION", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BACKGROUND_POSITION_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -90,7 +90,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BACKGROUND_REPEAT_FieldID: jfieldID?
 
-    open static var BACKGROUND_REPEAT: CSS_Attribute! {
+    public static var BACKGROUND_REPEAT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BACKGROUND_REPEAT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BACKGROUND_REPEAT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -102,7 +102,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_FieldID: jfieldID?
 
-    open static var BORDER: CSS_Attribute! {
+    public static var BORDER: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -114,7 +114,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_BOTTOM_FieldID: jfieldID?
 
-    open static var BORDER_BOTTOM: CSS_Attribute! {
+    public static var BORDER_BOTTOM: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_BOTTOM", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_BOTTOM_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -126,7 +126,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_BOTTOM_COLOR_FieldID: jfieldID?
 
-    open static var BORDER_BOTTOM_COLOR: CSS_Attribute! {
+    public static var BORDER_BOTTOM_COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_BOTTOM_COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_BOTTOM_COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -138,7 +138,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_BOTTOM_STYLE_FieldID: jfieldID?
 
-    open static var BORDER_BOTTOM_STYLE: CSS_Attribute! {
+    public static var BORDER_BOTTOM_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_BOTTOM_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_BOTTOM_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -150,7 +150,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_BOTTOM_WIDTH_FieldID: jfieldID?
 
-    open static var BORDER_BOTTOM_WIDTH: CSS_Attribute! {
+    public static var BORDER_BOTTOM_WIDTH: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_BOTTOM_WIDTH", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_BOTTOM_WIDTH_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -162,7 +162,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_COLOR_FieldID: jfieldID?
 
-    open static var BORDER_COLOR: CSS_Attribute! {
+    public static var BORDER_COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -174,7 +174,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_LEFT_FieldID: jfieldID?
 
-    open static var BORDER_LEFT: CSS_Attribute! {
+    public static var BORDER_LEFT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_LEFT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_LEFT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -186,7 +186,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_LEFT_COLOR_FieldID: jfieldID?
 
-    open static var BORDER_LEFT_COLOR: CSS_Attribute! {
+    public static var BORDER_LEFT_COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_LEFT_COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_LEFT_COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -198,7 +198,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_LEFT_STYLE_FieldID: jfieldID?
 
-    open static var BORDER_LEFT_STYLE: CSS_Attribute! {
+    public static var BORDER_LEFT_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_LEFT_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_LEFT_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -210,7 +210,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_LEFT_WIDTH_FieldID: jfieldID?
 
-    open static var BORDER_LEFT_WIDTH: CSS_Attribute! {
+    public static var BORDER_LEFT_WIDTH: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_LEFT_WIDTH", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_LEFT_WIDTH_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -222,7 +222,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_RIGHT_FieldID: jfieldID?
 
-    open static var BORDER_RIGHT: CSS_Attribute! {
+    public static var BORDER_RIGHT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_RIGHT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_RIGHT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -234,7 +234,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_RIGHT_COLOR_FieldID: jfieldID?
 
-    open static var BORDER_RIGHT_COLOR: CSS_Attribute! {
+    public static var BORDER_RIGHT_COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_RIGHT_COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_RIGHT_COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -246,7 +246,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_RIGHT_STYLE_FieldID: jfieldID?
 
-    open static var BORDER_RIGHT_STYLE: CSS_Attribute! {
+    public static var BORDER_RIGHT_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_RIGHT_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_RIGHT_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -258,7 +258,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_RIGHT_WIDTH_FieldID: jfieldID?
 
-    open static var BORDER_RIGHT_WIDTH: CSS_Attribute! {
+    public static var BORDER_RIGHT_WIDTH: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_RIGHT_WIDTH", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_RIGHT_WIDTH_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -274,7 +274,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_STYLE_FieldID: jfieldID?
 
-    open static var BORDER_STYLE: CSS_Attribute! {
+    public static var BORDER_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -286,7 +286,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_TOP_FieldID: jfieldID?
 
-    open static var BORDER_TOP: CSS_Attribute! {
+    public static var BORDER_TOP: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_TOP", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_TOP_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -298,7 +298,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_TOP_COLOR_FieldID: jfieldID?
 
-    open static var BORDER_TOP_COLOR: CSS_Attribute! {
+    public static var BORDER_TOP_COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_TOP_COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_TOP_COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -310,7 +310,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_TOP_STYLE_FieldID: jfieldID?
 
-    open static var BORDER_TOP_STYLE: CSS_Attribute! {
+    public static var BORDER_TOP_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_TOP_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_TOP_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -322,7 +322,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_TOP_WIDTH_FieldID: jfieldID?
 
-    open static var BORDER_TOP_WIDTH: CSS_Attribute! {
+    public static var BORDER_TOP_WIDTH: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_TOP_WIDTH", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_TOP_WIDTH_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -334,7 +334,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var BORDER_WIDTH_FieldID: jfieldID?
 
-    open static var BORDER_WIDTH: CSS_Attribute! {
+    public static var BORDER_WIDTH: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BORDER_WIDTH", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &BORDER_WIDTH_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -350,7 +350,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var CLEAR_FieldID: jfieldID?
 
-    open static var CLEAR: CSS_Attribute! {
+    public static var CLEAR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CLEAR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &CLEAR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -362,7 +362,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var COLOR_FieldID: jfieldID?
 
-    open static var COLOR: CSS_Attribute! {
+    public static var COLOR: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLOR", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &COLOR_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -374,7 +374,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var DISPLAY_FieldID: jfieldID?
 
-    open static var DISPLAY: CSS_Attribute! {
+    public static var DISPLAY: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DISPLAY", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &DISPLAY_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -386,7 +386,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FLOAT_FieldID: jfieldID?
 
-    open static var FLOAT: CSS_Attribute! {
+    public static var FLOAT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FLOAT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FLOAT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -398,7 +398,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FONT_FieldID: jfieldID?
 
-    open static var FONT: CSS_Attribute! {
+    public static var FONT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FONT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -410,7 +410,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FONT_FAMILY_FieldID: jfieldID?
 
-    open static var FONT_FAMILY: CSS_Attribute! {
+    public static var FONT_FAMILY: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_FAMILY", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FONT_FAMILY_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -422,7 +422,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FONT_SIZE_FieldID: jfieldID?
 
-    open static var FONT_SIZE: CSS_Attribute! {
+    public static var FONT_SIZE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_SIZE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FONT_SIZE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -434,7 +434,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FONT_STYLE_FieldID: jfieldID?
 
-    open static var FONT_STYLE: CSS_Attribute! {
+    public static var FONT_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FONT_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -446,7 +446,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FONT_VARIANT_FieldID: jfieldID?
 
-    open static var FONT_VARIANT: CSS_Attribute! {
+    public static var FONT_VARIANT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_VARIANT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FONT_VARIANT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -458,7 +458,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var FONT_WEIGHT_FieldID: jfieldID?
 
-    open static var FONT_WEIGHT: CSS_Attribute! {
+    public static var FONT_WEIGHT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_WEIGHT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &FONT_WEIGHT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -470,7 +470,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var HEIGHT_FieldID: jfieldID?
 
-    open static var HEIGHT: CSS_Attribute! {
+    public static var HEIGHT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HEIGHT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &HEIGHT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -482,7 +482,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var LETTER_SPACING_FieldID: jfieldID?
 
-    open static var LETTER_SPACING: CSS_Attribute! {
+    public static var LETTER_SPACING: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LETTER_SPACING", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &LETTER_SPACING_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -494,7 +494,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var LINE_HEIGHT_FieldID: jfieldID?
 
-    open static var LINE_HEIGHT: CSS_Attribute! {
+    public static var LINE_HEIGHT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LINE_HEIGHT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &LINE_HEIGHT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -506,7 +506,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var LIST_STYLE_FieldID: jfieldID?
 
-    open static var LIST_STYLE: CSS_Attribute! {
+    public static var LIST_STYLE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIST_STYLE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &LIST_STYLE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -518,7 +518,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var LIST_STYLE_IMAGE_FieldID: jfieldID?
 
-    open static var LIST_STYLE_IMAGE: CSS_Attribute! {
+    public static var LIST_STYLE_IMAGE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIST_STYLE_IMAGE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &LIST_STYLE_IMAGE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -530,7 +530,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var LIST_STYLE_POSITION_FieldID: jfieldID?
 
-    open static var LIST_STYLE_POSITION: CSS_Attribute! {
+    public static var LIST_STYLE_POSITION: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIST_STYLE_POSITION", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &LIST_STYLE_POSITION_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -542,7 +542,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var LIST_STYLE_TYPE_FieldID: jfieldID?
 
-    open static var LIST_STYLE_TYPE: CSS_Attribute! {
+    public static var LIST_STYLE_TYPE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIST_STYLE_TYPE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &LIST_STYLE_TYPE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -554,7 +554,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var MARGIN_FieldID: jfieldID?
 
-    open static var MARGIN: CSS_Attribute! {
+    public static var MARGIN: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &MARGIN_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -566,7 +566,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var MARGIN_BOTTOM_FieldID: jfieldID?
 
-    open static var MARGIN_BOTTOM: CSS_Attribute! {
+    public static var MARGIN_BOTTOM: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN_BOTTOM", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &MARGIN_BOTTOM_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -578,7 +578,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var MARGIN_LEFT_FieldID: jfieldID?
 
-    open static var MARGIN_LEFT: CSS_Attribute! {
+    public static var MARGIN_LEFT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN_LEFT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &MARGIN_LEFT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -598,7 +598,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var MARGIN_RIGHT_FieldID: jfieldID?
 
-    open static var MARGIN_RIGHT: CSS_Attribute! {
+    public static var MARGIN_RIGHT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN_RIGHT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &MARGIN_RIGHT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -618,7 +618,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var MARGIN_TOP_FieldID: jfieldID?
 
-    open static var MARGIN_TOP: CSS_Attribute! {
+    public static var MARGIN_TOP: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MARGIN_TOP", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &MARGIN_TOP_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -630,7 +630,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var PADDING_FieldID: jfieldID?
 
-    open static var PADDING: CSS_Attribute! {
+    public static var PADDING: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PADDING", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &PADDING_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -642,7 +642,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var PADDING_BOTTOM_FieldID: jfieldID?
 
-    open static var PADDING_BOTTOM: CSS_Attribute! {
+    public static var PADDING_BOTTOM: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PADDING_BOTTOM", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &PADDING_BOTTOM_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -654,7 +654,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var PADDING_LEFT_FieldID: jfieldID?
 
-    open static var PADDING_LEFT: CSS_Attribute! {
+    public static var PADDING_LEFT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PADDING_LEFT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &PADDING_LEFT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -666,7 +666,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var PADDING_RIGHT_FieldID: jfieldID?
 
-    open static var PADDING_RIGHT: CSS_Attribute! {
+    public static var PADDING_RIGHT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PADDING_RIGHT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &PADDING_RIGHT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -678,7 +678,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var PADDING_TOP_FieldID: jfieldID?
 
-    open static var PADDING_TOP: CSS_Attribute! {
+    public static var PADDING_TOP: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PADDING_TOP", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &PADDING_TOP_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -690,7 +690,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var TEXT_ALIGN_FieldID: jfieldID?
 
-    open static var TEXT_ALIGN: CSS_Attribute! {
+    public static var TEXT_ALIGN: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_ALIGN", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &TEXT_ALIGN_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -702,7 +702,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var TEXT_DECORATION_FieldID: jfieldID?
 
-    open static var TEXT_DECORATION: CSS_Attribute! {
+    public static var TEXT_DECORATION: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_DECORATION", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &TEXT_DECORATION_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -714,7 +714,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var TEXT_INDENT_FieldID: jfieldID?
 
-    open static var TEXT_INDENT: CSS_Attribute! {
+    public static var TEXT_INDENT: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_INDENT", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &TEXT_INDENT_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -726,7 +726,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var TEXT_TRANSFORM_FieldID: jfieldID?
 
-    open static var TEXT_TRANSFORM: CSS_Attribute! {
+    public static var TEXT_TRANSFORM: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_TRANSFORM", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &TEXT_TRANSFORM_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -738,7 +738,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var VERTICAL_ALIGN_FieldID: jfieldID?
 
-    open static var VERTICAL_ALIGN: CSS_Attribute! {
+    public static var VERTICAL_ALIGN: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_ALIGN", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &VERTICAL_ALIGN_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -750,7 +750,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var WHITE_SPACE_FieldID: jfieldID?
 
-    open static var WHITE_SPACE: CSS_Attribute! {
+    public static var WHITE_SPACE: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WHITE_SPACE", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &WHITE_SPACE_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -762,7 +762,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var WIDTH_FieldID: jfieldID?
 
-    open static var WIDTH: CSS_Attribute! {
+    public static var WIDTH: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WIDTH", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &WIDTH_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -774,7 +774,7 @@ open class CSS_Attribute: java_swift.JavaObject {
 
     private static var WORD_SPACING_FieldID: jfieldID?
 
-    open static var WORD_SPACING: CSS_Attribute! {
+    public static var WORD_SPACING: CSS_Attribute! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WORD_SPACING", fieldType: "Ljavax/swing/text/html/CSS$Attribute;", fieldCache: &WORD_SPACING_FieldID, className: "javax/swing/text/html/CSS$Attribute", classCache: &CSS_AttributeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

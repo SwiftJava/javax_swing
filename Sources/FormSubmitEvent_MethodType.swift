@@ -56,7 +56,7 @@ open class FormSubmitEvent_MethodTypeForward: JNIObjectForward {
 
     private static var GET_FieldID: jfieldID?
 
-    open static var GET: FormSubmitEvent_MethodType! {
+    public static var GET: FormSubmitEvent_MethodType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "GET", fieldType: "Ljavax/swing/text/html/FormSubmitEvent$MethodType;", fieldCache: &GET_FieldID, className: "javax/swing/text/html/FormSubmitEvent$MethodType", classCache: &FormSubmitEvent_MethodTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class FormSubmitEvent_MethodTypeForward: JNIObjectForward {
 
     private static var POST_FieldID: jfieldID?
 
-    open static var POST: FormSubmitEvent_MethodType! {
+    public static var POST: FormSubmitEvent_MethodType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POST", fieldType: "Ljavax/swing/text/html/FormSubmitEvent$MethodType;", fieldCache: &POST_FieldID, className: "javax/swing/text/html/FormSubmitEvent$MethodType", classCache: &FormSubmitEvent_MethodTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

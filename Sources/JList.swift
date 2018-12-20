@@ -26,7 +26,7 @@ open class JList: JComponent, Scrollable {
 
     private static var HORIZONTAL_WRAP_FieldID: jfieldID?
 
-    open static var HORIZONTAL_WRAP: Int {
+    public static var HORIZONTAL_WRAP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_WRAP", fieldType: "I", fieldCache: &HORIZONTAL_WRAP_FieldID, className: "javax/swing/JList", classCache: &JListJNIClass )
             return Int(__value)
@@ -37,7 +37,7 @@ open class JList: JComponent, Scrollable {
 
     private static var VERTICAL_FieldID: jfieldID?
 
-    open static var VERTICAL: Int {
+    public static var VERTICAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/JList", classCache: &JListJNIClass )
             return Int(__value)
@@ -48,7 +48,7 @@ open class JList: JComponent, Scrollable {
 
     private static var VERTICAL_WRAP_FieldID: jfieldID?
 
-    open static var VERTICAL_WRAP: Int {
+    public static var VERTICAL_WRAP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_WRAP", fieldType: "I", fieldCache: &VERTICAL_WRAP_FieldID, className: "javax/swing/JList", classCache: &JListJNIClass )
             return Int(__value)

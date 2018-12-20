@@ -22,7 +22,7 @@ open class DefaultStyledDocument: AbstractDocument, StyledDocument {
 
     private static var BUFFER_SIZE_DEFAULT_FieldID: jfieldID?
 
-    open static var BUFFER_SIZE_DEFAULT: Int {
+    public static var BUFFER_SIZE_DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUFFER_SIZE_DEFAULT", fieldType: "I", fieldCache: &BUFFER_SIZE_DEFAULT_FieldID, className: "javax/swing/text/DefaultStyledDocument", classCache: &DefaultStyledDocumentJNIClass )
             return Int(__value)

@@ -26,7 +26,7 @@ open class FormView: ComponentView, java_awt.ActionListener {
 
     private static var RESET_FieldID: jfieldID?
 
-    open static var RESET: String! {
+    public static var RESET: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RESET", fieldType: "Ljava/lang/String;", fieldCache: &RESET_FieldID, className: "javax/swing/text/html/FormView", classCache: &FormViewJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -38,7 +38,7 @@ open class FormView: ComponentView, java_awt.ActionListener {
 
     private static var SUBMIT_FieldID: jfieldID?
 
-    open static var SUBMIT: String! {
+    public static var SUBMIT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUBMIT", fieldType: "Ljava/lang/String;", fieldCache: &SUBMIT_FieldID, className: "javax/swing/text/html/FormView", classCache: &FormViewJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -21,7 +21,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ALIGN_CENTER_FieldID: jfieldID?
 
-    open static var ALIGN_CENTER: Int {
+    public static var ALIGN_CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_CENTER", fieldType: "I", fieldCache: &ALIGN_CENTER_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ALIGN_JUSTIFIED_FieldID: jfieldID?
 
-    open static var ALIGN_JUSTIFIED: Int {
+    public static var ALIGN_JUSTIFIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_JUSTIFIED", fieldType: "I", fieldCache: &ALIGN_JUSTIFIED_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ALIGN_LEFT_FieldID: jfieldID?
 
-    open static var ALIGN_LEFT: Int {
+    public static var ALIGN_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_LEFT", fieldType: "I", fieldCache: &ALIGN_LEFT_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ALIGN_RIGHT_FieldID: jfieldID?
 
-    open static var ALIGN_RIGHT: Int {
+    public static var ALIGN_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_RIGHT", fieldType: "I", fieldCache: &ALIGN_RIGHT_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Alignment_FieldID: jfieldID?
 
-    open static var Alignment: java_swift.JavaObject! {
+    public static var Alignment: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Alignment", fieldType: "Ljava/lang/Object;", fieldCache: &Alignment_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -77,7 +77,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Background_FieldID: jfieldID?
 
-    open static var Background: java_swift.JavaObject! {
+    public static var Background: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Background", fieldType: "Ljava/lang/Object;", fieldCache: &Background_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -89,7 +89,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var BidiLevel_FieldID: jfieldID?
 
-    open static var BidiLevel: java_swift.JavaObject! {
+    public static var BidiLevel: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BidiLevel", fieldType: "Ljava/lang/Object;", fieldCache: &BidiLevel_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -101,7 +101,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Bold_FieldID: jfieldID?
 
-    open static var Bold: java_swift.JavaObject! {
+    public static var Bold: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Bold", fieldType: "Ljava/lang/Object;", fieldCache: &Bold_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -113,7 +113,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ComponentAttribute_FieldID: jfieldID?
 
-    open static var ComponentAttribute: java_swift.JavaObject! {
+    public static var ComponentAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ComponentAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ComponentAttribute_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -125,7 +125,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ComponentElementName_FieldID: jfieldID?
 
-    open static var ComponentElementName: String! {
+    public static var ComponentElementName: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ComponentElementName", fieldType: "Ljava/lang/String;", fieldCache: &ComponentElementName_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -137,7 +137,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ComposedTextAttribute_FieldID: jfieldID?
 
-    open static var ComposedTextAttribute: java_swift.JavaObject! {
+    public static var ComposedTextAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ComposedTextAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ComposedTextAttribute_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -149,7 +149,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Family_FieldID: jfieldID?
 
-    open static var Family: java_swift.JavaObject! {
+    public static var Family: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Family", fieldType: "Ljava/lang/Object;", fieldCache: &Family_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -161,7 +161,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var FirstLineIndent_FieldID: jfieldID?
 
-    open static var FirstLineIndent: java_swift.JavaObject! {
+    public static var FirstLineIndent: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FirstLineIndent", fieldType: "Ljava/lang/Object;", fieldCache: &FirstLineIndent_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -173,7 +173,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var FontFamily_FieldID: jfieldID?
 
-    open static var FontFamily: java_swift.JavaObject! {
+    public static var FontFamily: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FontFamily", fieldType: "Ljava/lang/Object;", fieldCache: &FontFamily_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -185,7 +185,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var FontSize_FieldID: jfieldID?
 
-    open static var FontSize: java_swift.JavaObject! {
+    public static var FontSize: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FontSize", fieldType: "Ljava/lang/Object;", fieldCache: &FontSize_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -197,7 +197,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Foreground_FieldID: jfieldID?
 
-    open static var Foreground: java_swift.JavaObject! {
+    public static var Foreground: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Foreground", fieldType: "Ljava/lang/Object;", fieldCache: &Foreground_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -209,7 +209,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var IconAttribute_FieldID: jfieldID?
 
-    open static var IconAttribute: java_swift.JavaObject! {
+    public static var IconAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IconAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &IconAttribute_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -221,7 +221,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var IconElementName_FieldID: jfieldID?
 
-    open static var IconElementName: String! {
+    public static var IconElementName: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IconElementName", fieldType: "Ljava/lang/String;", fieldCache: &IconElementName_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -233,7 +233,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Italic_FieldID: jfieldID?
 
-    open static var Italic: java_swift.JavaObject! {
+    public static var Italic: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Italic", fieldType: "Ljava/lang/Object;", fieldCache: &Italic_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -245,7 +245,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var LeftIndent_FieldID: jfieldID?
 
-    open static var LeftIndent: java_swift.JavaObject! {
+    public static var LeftIndent: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LeftIndent", fieldType: "Ljava/lang/Object;", fieldCache: &LeftIndent_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -257,7 +257,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var LineSpacing_FieldID: jfieldID?
 
-    open static var LineSpacing: java_swift.JavaObject! {
+    public static var LineSpacing: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LineSpacing", fieldType: "Ljava/lang/Object;", fieldCache: &LineSpacing_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -269,7 +269,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ModelAttribute_FieldID: jfieldID?
 
-    open static var ModelAttribute: java_swift.JavaObject! {
+    public static var ModelAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ModelAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ModelAttribute_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -281,7 +281,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var NameAttribute_FieldID: jfieldID?
 
-    open static var NameAttribute: java_swift.JavaObject! {
+    public static var NameAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NameAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &NameAttribute_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -293,7 +293,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Orientation_FieldID: jfieldID?
 
-    open static var Orientation: java_swift.JavaObject! {
+    public static var Orientation: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Orientation", fieldType: "Ljava/lang/Object;", fieldCache: &Orientation_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -305,7 +305,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var ResolveAttribute_FieldID: jfieldID?
 
-    open static var ResolveAttribute: java_swift.JavaObject! {
+    public static var ResolveAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ResolveAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ResolveAttribute_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -317,7 +317,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var RightIndent_FieldID: jfieldID?
 
-    open static var RightIndent: java_swift.JavaObject! {
+    public static var RightIndent: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RightIndent", fieldType: "Ljava/lang/Object;", fieldCache: &RightIndent_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -329,7 +329,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Size_FieldID: jfieldID?
 
-    open static var Size: java_swift.JavaObject! {
+    public static var Size: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Size", fieldType: "Ljava/lang/Object;", fieldCache: &Size_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -341,7 +341,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var SpaceAbove_FieldID: jfieldID?
 
-    open static var SpaceAbove: java_swift.JavaObject! {
+    public static var SpaceAbove: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SpaceAbove", fieldType: "Ljava/lang/Object;", fieldCache: &SpaceAbove_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -353,7 +353,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var SpaceBelow_FieldID: jfieldID?
 
-    open static var SpaceBelow: java_swift.JavaObject! {
+    public static var SpaceBelow: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SpaceBelow", fieldType: "Ljava/lang/Object;", fieldCache: &SpaceBelow_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -365,7 +365,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var StrikeThrough_FieldID: jfieldID?
 
-    open static var StrikeThrough: java_swift.JavaObject! {
+    public static var StrikeThrough: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "StrikeThrough", fieldType: "Ljava/lang/Object;", fieldCache: &StrikeThrough_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -377,7 +377,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Subscript_FieldID: jfieldID?
 
-    open static var Subscript: java_swift.JavaObject! {
+    public static var Subscript: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Subscript", fieldType: "Ljava/lang/Object;", fieldCache: &Subscript_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -389,7 +389,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Superscript_FieldID: jfieldID?
 
-    open static var Superscript: java_swift.JavaObject! {
+    public static var Superscript: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Superscript", fieldType: "Ljava/lang/Object;", fieldCache: &Superscript_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -401,7 +401,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var TabSet_FieldID: jfieldID?
 
-    open static var TabSet: java_swift.JavaObject! {
+    public static var TabSet: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TabSet", fieldType: "Ljava/lang/Object;", fieldCache: &TabSet_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -413,7 +413,7 @@ open class StyleConstants: java_swift.JavaObject {
 
     private static var Underline_FieldID: jfieldID?
 
-    open static var Underline: java_swift.JavaObject! {
+    public static var Underline: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "Underline", fieldType: "Ljava/lang/Object;", fieldCache: &Underline_FieldID, className: "javax/swing/text/StyleConstants", classCache: &StyleConstantsJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

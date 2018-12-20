@@ -20,7 +20,7 @@ open class Region: java_swift.JavaObject {
 
     private static var ARROW_BUTTON_FieldID: jfieldID?
 
-    open static var ARROW_BUTTON: Region! {
+    public static var ARROW_BUTTON: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ARROW_BUTTON", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &ARROW_BUTTON_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class Region: java_swift.JavaObject {
 
     private static var BUTTON_FieldID: jfieldID?
 
-    open static var BUTTON: Region! {
+    public static var BUTTON: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BUTTON", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &BUTTON_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class Region: java_swift.JavaObject {
 
     private static var CHECK_BOX_FieldID: jfieldID?
 
-    open static var CHECK_BOX: Region! {
+    public static var CHECK_BOX: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CHECK_BOX", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &CHECK_BOX_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -56,7 +56,7 @@ open class Region: java_swift.JavaObject {
 
     private static var CHECK_BOX_MENU_ITEM_FieldID: jfieldID?
 
-    open static var CHECK_BOX_MENU_ITEM: Region! {
+    public static var CHECK_BOX_MENU_ITEM: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CHECK_BOX_MENU_ITEM", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &CHECK_BOX_MENU_ITEM_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class Region: java_swift.JavaObject {
 
     private static var COLOR_CHOOSER_FieldID: jfieldID?
 
-    open static var COLOR_CHOOSER: Region! {
+    public static var COLOR_CHOOSER: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLOR_CHOOSER", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &COLOR_CHOOSER_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class Region: java_swift.JavaObject {
 
     private static var COMBO_BOX_FieldID: jfieldID?
 
-    open static var COMBO_BOX: Region! {
+    public static var COMBO_BOX: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COMBO_BOX", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &COMBO_BOX_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class Region: java_swift.JavaObject {
 
     private static var DESKTOP_ICON_FieldID: jfieldID?
 
-    open static var DESKTOP_ICON: Region! {
+    public static var DESKTOP_ICON: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DESKTOP_ICON", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &DESKTOP_ICON_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class Region: java_swift.JavaObject {
 
     private static var DESKTOP_PANE_FieldID: jfieldID?
 
-    open static var DESKTOP_PANE: Region! {
+    public static var DESKTOP_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DESKTOP_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &DESKTOP_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -116,7 +116,7 @@ open class Region: java_swift.JavaObject {
 
     private static var EDITOR_PANE_FieldID: jfieldID?
 
-    open static var EDITOR_PANE: Region! {
+    public static var EDITOR_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EDITOR_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &EDITOR_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -128,7 +128,7 @@ open class Region: java_swift.JavaObject {
 
     private static var FILE_CHOOSER_FieldID: jfieldID?
 
-    open static var FILE_CHOOSER: Region! {
+    public static var FILE_CHOOSER: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE_CHOOSER", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &FILE_CHOOSER_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -140,7 +140,7 @@ open class Region: java_swift.JavaObject {
 
     private static var FORMATTED_TEXT_FIELD_FieldID: jfieldID?
 
-    open static var FORMATTED_TEXT_FIELD: Region! {
+    public static var FORMATTED_TEXT_FIELD: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FORMATTED_TEXT_FIELD", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &FORMATTED_TEXT_FIELD_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -152,7 +152,7 @@ open class Region: java_swift.JavaObject {
 
     private static var INTERNAL_FRAME_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME: Region! {
+    public static var INTERNAL_FRAME: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INTERNAL_FRAME", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &INTERNAL_FRAME_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -164,7 +164,7 @@ open class Region: java_swift.JavaObject {
 
     private static var INTERNAL_FRAME_TITLE_PANE_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_TITLE_PANE: Region! {
+    public static var INTERNAL_FRAME_TITLE_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INTERNAL_FRAME_TITLE_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &INTERNAL_FRAME_TITLE_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -176,7 +176,7 @@ open class Region: java_swift.JavaObject {
 
     private static var LABEL_FieldID: jfieldID?
 
-    open static var LABEL: Region! {
+    public static var LABEL: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LABEL", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &LABEL_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -188,7 +188,7 @@ open class Region: java_swift.JavaObject {
 
     private static var LIST_FieldID: jfieldID?
 
-    open static var LIST: Region! {
+    public static var LIST: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LIST", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &LIST_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -202,7 +202,7 @@ open class Region: java_swift.JavaObject {
 
     private static var MENU_FieldID: jfieldID?
 
-    open static var MENU: Region! {
+    public static var MENU: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MENU", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &MENU_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -214,7 +214,7 @@ open class Region: java_swift.JavaObject {
 
     private static var MENU_BAR_FieldID: jfieldID?
 
-    open static var MENU_BAR: Region! {
+    public static var MENU_BAR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MENU_BAR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &MENU_BAR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -226,7 +226,7 @@ open class Region: java_swift.JavaObject {
 
     private static var MENU_ITEM_FieldID: jfieldID?
 
-    open static var MENU_ITEM: Region! {
+    public static var MENU_ITEM: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MENU_ITEM", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &MENU_ITEM_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -238,7 +238,7 @@ open class Region: java_swift.JavaObject {
 
     private static var MENU_ITEM_ACCELERATOR_FieldID: jfieldID?
 
-    open static var MENU_ITEM_ACCELERATOR: Region! {
+    public static var MENU_ITEM_ACCELERATOR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MENU_ITEM_ACCELERATOR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &MENU_ITEM_ACCELERATOR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -250,7 +250,7 @@ open class Region: java_swift.JavaObject {
 
     private static var OPTION_PANE_FieldID: jfieldID?
 
-    open static var OPTION_PANE: Region! {
+    public static var OPTION_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OPTION_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &OPTION_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -262,7 +262,7 @@ open class Region: java_swift.JavaObject {
 
     private static var PANEL_FieldID: jfieldID?
 
-    open static var PANEL: Region! {
+    public static var PANEL: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PANEL", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &PANEL_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -274,7 +274,7 @@ open class Region: java_swift.JavaObject {
 
     private static var PASSWORD_FIELD_FieldID: jfieldID?
 
-    open static var PASSWORD_FIELD: Region! {
+    public static var PASSWORD_FIELD: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PASSWORD_FIELD", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &PASSWORD_FIELD_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -286,7 +286,7 @@ open class Region: java_swift.JavaObject {
 
     private static var POPUP_MENU_FieldID: jfieldID?
 
-    open static var POPUP_MENU: Region! {
+    public static var POPUP_MENU: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POPUP_MENU", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &POPUP_MENU_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -298,7 +298,7 @@ open class Region: java_swift.JavaObject {
 
     private static var POPUP_MENU_SEPARATOR_FieldID: jfieldID?
 
-    open static var POPUP_MENU_SEPARATOR: Region! {
+    public static var POPUP_MENU_SEPARATOR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "POPUP_MENU_SEPARATOR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &POPUP_MENU_SEPARATOR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -310,7 +310,7 @@ open class Region: java_swift.JavaObject {
 
     private static var PROGRESS_BAR_FieldID: jfieldID?
 
-    open static var PROGRESS_BAR: Region! {
+    public static var PROGRESS_BAR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PROGRESS_BAR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &PROGRESS_BAR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -322,7 +322,7 @@ open class Region: java_swift.JavaObject {
 
     private static var RADIO_BUTTON_FieldID: jfieldID?
 
-    open static var RADIO_BUTTON: Region! {
+    public static var RADIO_BUTTON: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RADIO_BUTTON", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &RADIO_BUTTON_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -334,7 +334,7 @@ open class Region: java_swift.JavaObject {
 
     private static var RADIO_BUTTON_MENU_ITEM_FieldID: jfieldID?
 
-    open static var RADIO_BUTTON_MENU_ITEM: Region! {
+    public static var RADIO_BUTTON_MENU_ITEM: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RADIO_BUTTON_MENU_ITEM", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &RADIO_BUTTON_MENU_ITEM_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -346,7 +346,7 @@ open class Region: java_swift.JavaObject {
 
     private static var ROOT_PANE_FieldID: jfieldID?
 
-    open static var ROOT_PANE: Region! {
+    public static var ROOT_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ROOT_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &ROOT_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -358,7 +358,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SCROLL_BAR_FieldID: jfieldID?
 
-    open static var SCROLL_BAR: Region! {
+    public static var SCROLL_BAR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SCROLL_BAR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SCROLL_BAR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -370,7 +370,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SCROLL_BAR_THUMB_FieldID: jfieldID?
 
-    open static var SCROLL_BAR_THUMB: Region! {
+    public static var SCROLL_BAR_THUMB: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SCROLL_BAR_THUMB", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SCROLL_BAR_THUMB_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -382,7 +382,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SCROLL_BAR_TRACK_FieldID: jfieldID?
 
-    open static var SCROLL_BAR_TRACK: Region! {
+    public static var SCROLL_BAR_TRACK: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SCROLL_BAR_TRACK", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SCROLL_BAR_TRACK_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -394,7 +394,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SCROLL_PANE_FieldID: jfieldID?
 
-    open static var SCROLL_PANE: Region! {
+    public static var SCROLL_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SCROLL_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SCROLL_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -406,7 +406,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SEPARATOR_FieldID: jfieldID?
 
-    open static var SEPARATOR: Region! {
+    public static var SEPARATOR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SEPARATOR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SEPARATOR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -418,7 +418,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SLIDER_FieldID: jfieldID?
 
-    open static var SLIDER: Region! {
+    public static var SLIDER: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SLIDER", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SLIDER_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -430,7 +430,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SLIDER_THUMB_FieldID: jfieldID?
 
-    open static var SLIDER_THUMB: Region! {
+    public static var SLIDER_THUMB: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SLIDER_THUMB", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SLIDER_THUMB_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -442,7 +442,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SLIDER_TRACK_FieldID: jfieldID?
 
-    open static var SLIDER_TRACK: Region! {
+    public static var SLIDER_TRACK: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SLIDER_TRACK", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SLIDER_TRACK_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -454,7 +454,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SPINNER_FieldID: jfieldID?
 
-    open static var SPINNER: Region! {
+    public static var SPINNER: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SPINNER", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SPINNER_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -466,7 +466,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SPLIT_PANE_FieldID: jfieldID?
 
-    open static var SPLIT_PANE: Region! {
+    public static var SPLIT_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SPLIT_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SPLIT_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -478,7 +478,7 @@ open class Region: java_swift.JavaObject {
 
     private static var SPLIT_PANE_DIVIDER_FieldID: jfieldID?
 
-    open static var SPLIT_PANE_DIVIDER: Region! {
+    public static var SPLIT_PANE_DIVIDER: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SPLIT_PANE_DIVIDER", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &SPLIT_PANE_DIVIDER_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -490,7 +490,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TABBED_PANE_FieldID: jfieldID?
 
-    open static var TABBED_PANE: Region! {
+    public static var TABBED_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABBED_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TABBED_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -502,7 +502,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TABBED_PANE_CONTENT_FieldID: jfieldID?
 
-    open static var TABBED_PANE_CONTENT: Region! {
+    public static var TABBED_PANE_CONTENT: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABBED_PANE_CONTENT", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TABBED_PANE_CONTENT_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -514,7 +514,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TABBED_PANE_TAB_FieldID: jfieldID?
 
-    open static var TABBED_PANE_TAB: Region! {
+    public static var TABBED_PANE_TAB: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABBED_PANE_TAB", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TABBED_PANE_TAB_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -526,7 +526,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TABBED_PANE_TAB_AREA_FieldID: jfieldID?
 
-    open static var TABBED_PANE_TAB_AREA: Region! {
+    public static var TABBED_PANE_TAB_AREA: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABBED_PANE_TAB_AREA", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TABBED_PANE_TAB_AREA_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -538,7 +538,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TABLE_FieldID: jfieldID?
 
-    open static var TABLE: Region! {
+    public static var TABLE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABLE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TABLE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -550,7 +550,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TABLE_HEADER_FieldID: jfieldID?
 
-    open static var TABLE_HEADER: Region! {
+    public static var TABLE_HEADER: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABLE_HEADER", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TABLE_HEADER_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -562,7 +562,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TEXT_AREA_FieldID: jfieldID?
 
-    open static var TEXT_AREA: Region! {
+    public static var TEXT_AREA: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_AREA", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TEXT_AREA_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -574,7 +574,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TEXT_FIELD_FieldID: jfieldID?
 
-    open static var TEXT_FIELD: Region! {
+    public static var TEXT_FIELD: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_FIELD", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TEXT_FIELD_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -586,7 +586,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TEXT_PANE_FieldID: jfieldID?
 
-    open static var TEXT_PANE: Region! {
+    public static var TEXT_PANE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXT_PANE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TEXT_PANE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -598,7 +598,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TOGGLE_BUTTON_FieldID: jfieldID?
 
-    open static var TOGGLE_BUTTON: Region! {
+    public static var TOGGLE_BUTTON: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOGGLE_BUTTON", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TOGGLE_BUTTON_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -610,7 +610,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TOOL_BAR_FieldID: jfieldID?
 
-    open static var TOOL_BAR: Region! {
+    public static var TOOL_BAR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOL_BAR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TOOL_BAR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -622,7 +622,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TOOL_BAR_CONTENT_FieldID: jfieldID?
 
-    open static var TOOL_BAR_CONTENT: Region! {
+    public static var TOOL_BAR_CONTENT: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOL_BAR_CONTENT", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TOOL_BAR_CONTENT_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -634,7 +634,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TOOL_BAR_DRAG_WINDOW_FieldID: jfieldID?
 
-    open static var TOOL_BAR_DRAG_WINDOW: Region! {
+    public static var TOOL_BAR_DRAG_WINDOW: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOL_BAR_DRAG_WINDOW", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TOOL_BAR_DRAG_WINDOW_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -646,7 +646,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TOOL_BAR_SEPARATOR_FieldID: jfieldID?
 
-    open static var TOOL_BAR_SEPARATOR: Region! {
+    public static var TOOL_BAR_SEPARATOR: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOL_BAR_SEPARATOR", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TOOL_BAR_SEPARATOR_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -658,7 +658,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TOOL_TIP_FieldID: jfieldID?
 
-    open static var TOOL_TIP: Region! {
+    public static var TOOL_TIP: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOL_TIP", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TOOL_TIP_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -670,7 +670,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TREE_FieldID: jfieldID?
 
-    open static var TREE: Region! {
+    public static var TREE: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TREE", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TREE_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -682,7 +682,7 @@ open class Region: java_swift.JavaObject {
 
     private static var TREE_CELL_FieldID: jfieldID?
 
-    open static var TREE_CELL: Region! {
+    public static var TREE_CELL: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TREE_CELL", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &TREE_CELL_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -696,7 +696,7 @@ open class Region: java_swift.JavaObject {
 
     private static var VIEWPORT_FieldID: jfieldID?
 
-    open static var VIEWPORT: Region! {
+    public static var VIEWPORT: Region! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VIEWPORT", fieldType: "Ljavax/swing/plaf/synth/Region;", fieldCache: &VIEWPORT_FieldID, className: "javax/swing/plaf/synth/Region", classCache: &RegionJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -21,7 +21,7 @@ open class JRootPane: JComponent {
 
     private static var COLOR_CHOOSER_DIALOG_FieldID: jfieldID?
 
-    open static var COLOR_CHOOSER_DIALOG: Int {
+    public static var COLOR_CHOOSER_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COLOR_CHOOSER_DIALOG", fieldType: "I", fieldCache: &COLOR_CHOOSER_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class JRootPane: JComponent {
 
     private static var ERROR_DIALOG_FieldID: jfieldID?
 
-    open static var ERROR_DIALOG: Int {
+    public static var ERROR_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR_DIALOG", fieldType: "I", fieldCache: &ERROR_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class JRootPane: JComponent {
 
     private static var FILE_CHOOSER_DIALOG_FieldID: jfieldID?
 
-    open static var FILE_CHOOSER_DIALOG: Int {
+    public static var FILE_CHOOSER_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FILE_CHOOSER_DIALOG", fieldType: "I", fieldCache: &FILE_CHOOSER_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class JRootPane: JComponent {
 
     private static var FRAME_FieldID: jfieldID?
 
-    open static var FRAME: Int {
+    public static var FRAME: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FRAME", fieldType: "I", fieldCache: &FRAME_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -67,7 +67,7 @@ open class JRootPane: JComponent {
 
     private static var INFORMATION_DIALOG_FieldID: jfieldID?
 
-    open static var INFORMATION_DIALOG: Int {
+    public static var INFORMATION_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INFORMATION_DIALOG", fieldType: "I", fieldCache: &INFORMATION_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -80,7 +80,7 @@ open class JRootPane: JComponent {
 
     private static var NONE_FieldID: jfieldID?
 
-    open static var NONE: Int {
+    public static var NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NONE", fieldType: "I", fieldCache: &NONE_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -91,7 +91,7 @@ open class JRootPane: JComponent {
 
     private static var PLAIN_DIALOG_FieldID: jfieldID?
 
-    open static var PLAIN_DIALOG: Int {
+    public static var PLAIN_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PLAIN_DIALOG", fieldType: "I", fieldCache: &PLAIN_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -102,7 +102,7 @@ open class JRootPane: JComponent {
 
     private static var QUESTION_DIALOG_FieldID: jfieldID?
 
-    open static var QUESTION_DIALOG: Int {
+    public static var QUESTION_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "QUESTION_DIALOG", fieldType: "I", fieldCache: &QUESTION_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)
@@ -113,7 +113,7 @@ open class JRootPane: JComponent {
 
     private static var WARNING_DIALOG_FieldID: jfieldID?
 
-    open static var WARNING_DIALOG: Int {
+    public static var WARNING_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WARNING_DIALOG", fieldType: "I", fieldCache: &WARNING_DIALOG_FieldID, className: "javax/swing/JRootPane", classCache: &JRootPaneJNIClass )
             return Int(__value)

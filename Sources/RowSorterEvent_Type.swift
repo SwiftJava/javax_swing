@@ -56,7 +56,7 @@ open class RowSorterEvent_TypeForward: JNIObjectForward {
 
     private static var SORTED_FieldID: jfieldID?
 
-    open static var SORTED: RowSorterEvent_Type! {
+    public static var SORTED: RowSorterEvent_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SORTED", fieldType: "Ljavax/swing/event/RowSorterEvent$Type;", fieldCache: &SORTED_FieldID, className: "javax/swing/event/RowSorterEvent$Type", classCache: &RowSorterEvent_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class RowSorterEvent_TypeForward: JNIObjectForward {
 
     private static var SORT_ORDER_CHANGED_FieldID: jfieldID?
 
-    open static var SORT_ORDER_CHANGED: RowSorterEvent_Type! {
+    public static var SORT_ORDER_CHANGED: RowSorterEvent_Type! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SORT_ORDER_CHANGED", fieldType: "Ljavax/swing/event/RowSorterEvent$Type;", fieldCache: &SORT_ORDER_CHANGED_FieldID, className: "javax/swing/event/RowSorterEvent$Type", classCache: &RowSorterEvent_TypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

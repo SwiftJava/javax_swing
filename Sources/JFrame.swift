@@ -21,7 +21,7 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     private static var EXIT_ON_CLOSE_FieldID: jfieldID?
 
-    open static var EXIT_ON_CLOSE: Int {
+    public static var EXIT_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EXIT_ON_CLOSE", fieldType: "I", fieldCache: &EXIT_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
             return Int(__value)
@@ -776,7 +776,7 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     private static var DISPOSE_ON_CLOSE_FieldID: jfieldID?
 
-    open static var DISPOSE_ON_CLOSE: Int {
+    public static var DISPOSE_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISPOSE_ON_CLOSE", fieldType: "I", fieldCache: &DISPOSE_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
             return Int(__value)
@@ -787,7 +787,7 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     private static var DO_NOTHING_ON_CLOSE_FieldID: jfieldID?
 
-    open static var DO_NOTHING_ON_CLOSE: Int {
+    public static var DO_NOTHING_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DO_NOTHING_ON_CLOSE", fieldType: "I", fieldCache: &DO_NOTHING_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
             return Int(__value)
@@ -802,7 +802,7 @@ open class JFrame: java_awt.Frame, WindowConstants, RootPaneContainer {
 
     private static var HIDE_ON_CLOSE_FieldID: jfieldID?
 
-    open static var HIDE_ON_CLOSE: Int {
+    public static var HIDE_ON_CLOSE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HIDE_ON_CLOSE", fieldType: "I", fieldCache: &HIDE_ON_CLOSE_FieldID, className: "javax/swing/JFrame", classCache: &JFrameJNIClass )
             return Int(__value)

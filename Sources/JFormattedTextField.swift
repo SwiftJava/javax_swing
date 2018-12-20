@@ -21,7 +21,7 @@ open class JFormattedTextField: JTextField {
 
     private static var COMMIT_FieldID: jfieldID?
 
-    open static var COMMIT: Int {
+    public static var COMMIT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMMIT", fieldType: "I", fieldCache: &COMMIT_FieldID, className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextFieldJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class JFormattedTextField: JTextField {
 
     private static var COMMIT_OR_REVERT_FieldID: jfieldID?
 
-    open static var COMMIT_OR_REVERT: Int {
+    public static var COMMIT_OR_REVERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COMMIT_OR_REVERT", fieldType: "I", fieldCache: &COMMIT_OR_REVERT_FieldID, className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextFieldJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class JFormattedTextField: JTextField {
 
     private static var PERSIST_FieldID: jfieldID?
 
-    open static var PERSIST: Int {
+    public static var PERSIST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PERSIST", fieldType: "I", fieldCache: &PERSIST_FieldID, className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextFieldJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class JFormattedTextField: JTextField {
 
     private static var REVERT_FieldID: jfieldID?
 
-    open static var REVERT: Int {
+    public static var REVERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "REVERT", fieldType: "I", fieldCache: &REVERT_FieldID, className: "javax/swing/JFormattedTextField", classCache: &JFormattedTextFieldJNIClass )
             return Int(__value)

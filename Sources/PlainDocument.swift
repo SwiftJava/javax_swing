@@ -20,7 +20,7 @@ open class PlainDocument: AbstractDocument {
 
     private static var lineLimitAttribute_FieldID: jfieldID?
 
-    open static var lineLimitAttribute: String! {
+    public static var lineLimitAttribute: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "lineLimitAttribute", fieldType: "Ljava/lang/String;", fieldCache: &lineLimitAttribute_FieldID, className: "javax/swing/text/PlainDocument", classCache: &PlainDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class PlainDocument: AbstractDocument {
 
     private static var tabSizeAttribute_FieldID: jfieldID?
 
-    open static var tabSizeAttribute: String! {
+    public static var tabSizeAttribute: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "tabSizeAttribute", fieldType: "Ljava/lang/String;", fieldCache: &tabSizeAttribute_FieldID, className: "javax/swing/text/PlainDocument", classCache: &PlainDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

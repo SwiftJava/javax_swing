@@ -21,7 +21,7 @@ open class JTextComponent: JComponent, Scrollable {
 
     private static var DEFAULT_KEYMAP_FieldID: jfieldID?
 
-    open static var DEFAULT_KEYMAP: String! {
+    public static var DEFAULT_KEYMAP: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT_KEYMAP", fieldType: "Ljava/lang/String;", fieldCache: &DEFAULT_KEYMAP_FieldID, className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -35,7 +35,7 @@ open class JTextComponent: JComponent, Scrollable {
 
     private static var FOCUS_ACCELERATOR_KEY_FieldID: jfieldID?
 
-    open static var FOCUS_ACCELERATOR_KEY: String! {
+    public static var FOCUS_ACCELERATOR_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOCUS_ACCELERATOR_KEY", fieldType: "Ljava/lang/String;", fieldCache: &FOCUS_ACCELERATOR_KEY_FieldID, className: "javax/swing/text/JTextComponent", classCache: &JTextComponentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

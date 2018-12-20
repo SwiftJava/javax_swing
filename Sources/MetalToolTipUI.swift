@@ -21,7 +21,7 @@ open class MetalToolTipUI: BasicToolTipUI {
 
     private static var padSpaceBetweenStrings_FieldID: jfieldID?
 
-    open static var padSpaceBetweenStrings: Int {
+    public static var padSpaceBetweenStrings: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "padSpaceBetweenStrings", fieldType: "I", fieldCache: &padSpaceBetweenStrings_FieldID, className: "javax/swing/plaf/metal/MetalToolTipUI", classCache: &MetalToolTipUIJNIClass )
             return Int(__value)

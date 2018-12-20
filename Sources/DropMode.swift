@@ -56,7 +56,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var INSERT_FieldID: jfieldID?
 
-    open static var INSERT: DropMode! {
+    public static var INSERT: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INSERT", fieldType: "Ljavax/swing/DropMode;", fieldCache: &INSERT_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var INSERT_COLS_FieldID: jfieldID?
 
-    open static var INSERT_COLS: DropMode! {
+    public static var INSERT_COLS: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INSERT_COLS", fieldType: "Ljavax/swing/DropMode;", fieldCache: &INSERT_COLS_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var INSERT_ROWS_FieldID: jfieldID?
 
-    open static var INSERT_ROWS: DropMode! {
+    public static var INSERT_ROWS: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INSERT_ROWS", fieldType: "Ljavax/swing/DropMode;", fieldCache: &INSERT_ROWS_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var ON_FieldID: jfieldID?
 
-    open static var ON: DropMode! {
+    public static var ON: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ON", fieldType: "Ljavax/swing/DropMode;", fieldCache: &ON_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var ON_OR_INSERT_FieldID: jfieldID?
 
-    open static var ON_OR_INSERT: DropMode! {
+    public static var ON_OR_INSERT: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ON_OR_INSERT", fieldType: "Ljavax/swing/DropMode;", fieldCache: &ON_OR_INSERT_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -116,7 +116,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var ON_OR_INSERT_COLS_FieldID: jfieldID?
 
-    open static var ON_OR_INSERT_COLS: DropMode! {
+    public static var ON_OR_INSERT_COLS: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ON_OR_INSERT_COLS", fieldType: "Ljavax/swing/DropMode;", fieldCache: &ON_OR_INSERT_COLS_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -128,7 +128,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var ON_OR_INSERT_ROWS_FieldID: jfieldID?
 
-    open static var ON_OR_INSERT_ROWS: DropMode! {
+    public static var ON_OR_INSERT_ROWS: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ON_OR_INSERT_ROWS", fieldType: "Ljavax/swing/DropMode;", fieldCache: &ON_OR_INSERT_ROWS_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -140,7 +140,7 @@ open class DropModeForward: JNIObjectForward {
 
     private static var USE_SELECTION_FieldID: jfieldID?
 
-    open static var USE_SELECTION: DropMode! {
+    public static var USE_SELECTION: DropMode! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "USE_SELECTION", fieldType: "Ljavax/swing/DropMode;", fieldCache: &USE_SELECTION_FieldID, className: "javax/swing/DropMode", classCache: &DropModeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

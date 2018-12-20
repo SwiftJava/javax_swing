@@ -84,7 +84,7 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     private static var MULTIPLE_INTERVAL_SELECTION_FieldID: jfieldID?
 
-    open static var MULTIPLE_INTERVAL_SELECTION: Int {
+    public static var MULTIPLE_INTERVAL_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MULTIPLE_INTERVAL_SELECTION", fieldType: "I", fieldCache: &MULTIPLE_INTERVAL_SELECTION_FieldID, className: "javax/swing/DefaultListSelectionModel", classCache: &DefaultListSelectionModelJNIClass )
             return Int(__value)
@@ -95,7 +95,7 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     private static var SINGLE_INTERVAL_SELECTION_FieldID: jfieldID?
 
-    open static var SINGLE_INTERVAL_SELECTION: Int {
+    public static var SINGLE_INTERVAL_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLE_INTERVAL_SELECTION", fieldType: "I", fieldCache: &SINGLE_INTERVAL_SELECTION_FieldID, className: "javax/swing/DefaultListSelectionModel", classCache: &DefaultListSelectionModelJNIClass )
             return Int(__value)
@@ -106,7 +106,7 @@ open class DefaultListSelectionModel: java_swift.JavaObject, ListSelectionModel,
 
     private static var SINGLE_SELECTION_FieldID: jfieldID?
 
-    open static var SINGLE_SELECTION: Int {
+    public static var SINGLE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLE_SELECTION", fieldType: "I", fieldCache: &SINGLE_SELECTION_FieldID, className: "javax/swing/DefaultListSelectionModel", classCache: &DefaultListSelectionModelJNIClass )
             return Int(__value)

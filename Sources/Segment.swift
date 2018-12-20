@@ -77,7 +77,7 @@ open class Segment: java_swift.JavaObject, java_lang.Cloneable, /* interface jav
 
     private static var DONE_FieldID: jfieldID?
 
-    open static var DONE: UInt16 {
+    public static var DONE: UInt16 {
         get {
             let __value = JNIField.GetStaticCharField( fieldName: "DONE", fieldType: "C", fieldCache: &DONE_FieldID, className: "javax/swing/text/Segment", classCache: &SegmentJNIClass )
             return __value

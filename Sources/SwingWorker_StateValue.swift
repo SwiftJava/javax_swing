@@ -56,7 +56,7 @@ open class SwingWorker_StateValueForward: JNIObjectForward {
 
     private static var DONE_FieldID: jfieldID?
 
-    open static var DONE: SwingWorker_StateValue! {
+    public static var DONE: SwingWorker_StateValue! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DONE", fieldType: "Ljavax/swing/SwingWorker$StateValue;", fieldCache: &DONE_FieldID, className: "javax/swing/SwingWorker$StateValue", classCache: &SwingWorker_StateValueJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class SwingWorker_StateValueForward: JNIObjectForward {
 
     private static var PENDING_FieldID: jfieldID?
 
-    open static var PENDING: SwingWorker_StateValue! {
+    public static var PENDING: SwingWorker_StateValue! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PENDING", fieldType: "Ljavax/swing/SwingWorker$StateValue;", fieldCache: &PENDING_FieldID, className: "javax/swing/SwingWorker$StateValue", classCache: &SwingWorker_StateValueJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class SwingWorker_StateValueForward: JNIObjectForward {
 
     private static var STARTED_FieldID: jfieldID?
 
-    open static var STARTED: SwingWorker_StateValue! {
+    public static var STARTED: SwingWorker_StateValue! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STARTED", fieldType: "Ljavax/swing/SwingWorker$StateValue;", fieldCache: &STARTED_FieldID, className: "javax/swing/SwingWorker$StateValue", classCache: &SwingWorker_StateValueJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

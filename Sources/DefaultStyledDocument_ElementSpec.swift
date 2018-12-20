@@ -20,7 +20,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var ContentType_FieldID: jfieldID?
 
-    open static var ContentType: Int16 {
+    public static var ContentType: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "ContentType", fieldType: "S", fieldCache: &ContentType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value
@@ -31,7 +31,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var EndTagType_FieldID: jfieldID?
 
-    open static var EndTagType: Int16 {
+    public static var EndTagType: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "EndTagType", fieldType: "S", fieldCache: &EndTagType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value
@@ -42,7 +42,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var JoinFractureDirection_FieldID: jfieldID?
 
-    open static var JoinFractureDirection: Int16 {
+    public static var JoinFractureDirection: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "JoinFractureDirection", fieldType: "S", fieldCache: &JoinFractureDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value
@@ -53,7 +53,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var JoinNextDirection_FieldID: jfieldID?
 
-    open static var JoinNextDirection: Int16 {
+    public static var JoinNextDirection: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "JoinNextDirection", fieldType: "S", fieldCache: &JoinNextDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value
@@ -64,7 +64,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var JoinPreviousDirection_FieldID: jfieldID?
 
-    open static var JoinPreviousDirection: Int16 {
+    public static var JoinPreviousDirection: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "JoinPreviousDirection", fieldType: "S", fieldCache: &JoinPreviousDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value
@@ -75,7 +75,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var OriginateDirection_FieldID: jfieldID?
 
-    open static var OriginateDirection: Int16 {
+    public static var OriginateDirection: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "OriginateDirection", fieldType: "S", fieldCache: &OriginateDirection_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value
@@ -86,7 +86,7 @@ open class DefaultStyledDocument_ElementSpec: java_swift.JavaObject {
 
     private static var StartTagType_FieldID: jfieldID?
 
-    open static var StartTagType: Int16 {
+    public static var StartTagType: Int16 {
         get {
             let __value = JNIField.GetStaticShortField( fieldName: "StartTagType", fieldType: "S", fieldCache: &StartTagType_FieldID, className: "javax/swing/text/DefaultStyledDocument$ElementSpec", classCache: &DefaultStyledDocument_ElementSpecJNIClass )
             return __value

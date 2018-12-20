@@ -20,7 +20,7 @@ open class HTMLDocument: DefaultStyledDocument {
 
     private static var AdditionalComments_FieldID: jfieldID?
 
-    open static var AdditionalComments: String! {
+    public static var AdditionalComments: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AdditionalComments", fieldType: "Ljava/lang/String;", fieldCache: &AdditionalComments_FieldID, className: "javax/swing/text/html/HTMLDocument", classCache: &HTMLDocumentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

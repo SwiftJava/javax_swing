@@ -21,7 +21,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_ACTIVATED_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_ACTIVATED: Int {
+    public static var INTERNAL_FRAME_ACTIVATED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_ACTIVATED", fieldType: "I", fieldCache: &INTERNAL_FRAME_ACTIVATED_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_CLOSED_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_CLOSED: Int {
+    public static var INTERNAL_FRAME_CLOSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_CLOSED", fieldType: "I", fieldCache: &INTERNAL_FRAME_CLOSED_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_CLOSING_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_CLOSING: Int {
+    public static var INTERNAL_FRAME_CLOSING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_CLOSING", fieldType: "I", fieldCache: &INTERNAL_FRAME_CLOSING_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_DEACTIVATED_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_DEACTIVATED: Int {
+    public static var INTERNAL_FRAME_DEACTIVATED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_DEACTIVATED", fieldType: "I", fieldCache: &INTERNAL_FRAME_DEACTIVATED_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_DEICONIFIED_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_DEICONIFIED: Int {
+    public static var INTERNAL_FRAME_DEICONIFIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_DEICONIFIED", fieldType: "I", fieldCache: &INTERNAL_FRAME_DEICONIFIED_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -76,7 +76,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_FIRST_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_FIRST: Int {
+    public static var INTERNAL_FRAME_FIRST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_FIRST", fieldType: "I", fieldCache: &INTERNAL_FRAME_FIRST_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -87,7 +87,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_ICONIFIED_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_ICONIFIED: Int {
+    public static var INTERNAL_FRAME_ICONIFIED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_ICONIFIED", fieldType: "I", fieldCache: &INTERNAL_FRAME_ICONIFIED_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -98,7 +98,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_LAST_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_LAST: Int {
+    public static var INTERNAL_FRAME_LAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_LAST", fieldType: "I", fieldCache: &INTERNAL_FRAME_LAST_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)
@@ -109,7 +109,7 @@ open class InternalFrameEvent: java_awt.AWTEvent {
 
     private static var INTERNAL_FRAME_OPENED_FieldID: jfieldID?
 
-    open static var INTERNAL_FRAME_OPENED: Int {
+    public static var INTERNAL_FRAME_OPENED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERNAL_FRAME_OPENED", fieldType: "I", fieldCache: &INTERNAL_FRAME_OPENED_FieldID, className: "javax/swing/event/InternalFrameEvent", classCache: &InternalFrameEventJNIClass )
             return Int(__value)

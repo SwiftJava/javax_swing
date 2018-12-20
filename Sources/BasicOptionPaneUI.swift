@@ -22,7 +22,7 @@ open class BasicOptionPaneUI: OptionPaneUI {
 
     private static var MinimumHeight_FieldID: jfieldID?
 
-    open static var MinimumHeight: Int {
+    public static var MinimumHeight: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MinimumHeight", fieldType: "I", fieldCache: &MinimumHeight_FieldID, className: "javax/swing/plaf/basic/BasicOptionPaneUI", classCache: &BasicOptionPaneUIJNIClass )
             return Int(__value)
@@ -33,7 +33,7 @@ open class BasicOptionPaneUI: OptionPaneUI {
 
     private static var MinimumWidth_FieldID: jfieldID?
 
-    open static var MinimumWidth: Int {
+    public static var MinimumWidth: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MinimumWidth", fieldType: "I", fieldCache: &MinimumWidth_FieldID, className: "javax/swing/plaf/basic/BasicOptionPaneUI", classCache: &BasicOptionPaneUIJNIClass )
             return Int(__value)

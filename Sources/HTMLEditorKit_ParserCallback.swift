@@ -20,7 +20,7 @@ open class HTMLEditorKit_ParserCallback: java_swift.JavaObject {
 
     private static var IMPLIED_FieldID: jfieldID?
 
-    open static var IMPLIED: java_swift.JavaObject! {
+    public static var IMPLIED: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMPLIED", fieldType: "Ljava/lang/Object;", fieldCache: &IMPLIED_FieldID, className: "javax/swing/text/html/HTMLEditorKit$ParserCallback", classCache: &HTMLEditorKit_ParserCallbackJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

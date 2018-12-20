@@ -22,7 +22,7 @@ open class FocusManager: java_awt.DefaultKeyboardFocusManager {
 
     private static var FOCUS_MANAGER_CLASS_PROPERTY_FieldID: jfieldID?
 
-    open static var FOCUS_MANAGER_CLASS_PROPERTY: String! {
+    public static var FOCUS_MANAGER_CLASS_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FOCUS_MANAGER_CLASS_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FOCUS_MANAGER_CLASS_PROPERTY_FieldID, className: "javax/swing/FocusManager", classCache: &FocusManagerJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

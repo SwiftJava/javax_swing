@@ -21,7 +21,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var ABOVE_BOTTOM_FieldID: jfieldID?
 
-    open static var ABOVE_BOTTOM: Int {
+    public static var ABOVE_BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_BOTTOM", fieldType: "I", fieldCache: &ABOVE_BOTTOM_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var ABOVE_TOP_FieldID: jfieldID?
 
-    open static var ABOVE_TOP: Int {
+    public static var ABOVE_TOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ABOVE_TOP", fieldType: "I", fieldCache: &ABOVE_TOP_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var BELOW_BOTTOM_FieldID: jfieldID?
 
-    open static var BELOW_BOTTOM: Int {
+    public static var BELOW_BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_BOTTOM", fieldType: "I", fieldCache: &BELOW_BOTTOM_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var BELOW_TOP_FieldID: jfieldID?
 
-    open static var BELOW_TOP: Int {
+    public static var BELOW_TOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BELOW_TOP", fieldType: "I", fieldCache: &BELOW_TOP_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var BOTTOM_FieldID: jfieldID?
 
-    open static var BOTTOM: Int {
+    public static var BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM", fieldType: "I", fieldCache: &BOTTOM_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -76,7 +76,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: Int {
+    public static var CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -87,7 +87,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var DEFAULT_JUSTIFICATION_FieldID: jfieldID?
 
-    open static var DEFAULT_JUSTIFICATION: Int {
+    public static var DEFAULT_JUSTIFICATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_JUSTIFICATION", fieldType: "I", fieldCache: &DEFAULT_JUSTIFICATION_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -98,7 +98,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var DEFAULT_POSITION_FieldID: jfieldID?
 
-    open static var DEFAULT_POSITION: Int {
+    public static var DEFAULT_POSITION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_POSITION", fieldType: "I", fieldCache: &DEFAULT_POSITION_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -113,7 +113,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var LEADING_FieldID: jfieldID?
 
-    open static var LEADING: Int {
+    public static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -124,7 +124,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var LEFT_FieldID: jfieldID?
 
-    open static var LEFT: Int {
+    public static var LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -135,7 +135,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var RIGHT_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    public static var RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -154,7 +154,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var TOP_FieldID: jfieldID?
 
-    open static var TOP: Int {
+    public static var TOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)
@@ -165,7 +165,7 @@ open class TitledBorder: AbstractBorder {
 
     private static var TRAILING_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    public static var TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/border/TitledBorder", classCache: &TitledBorderJNIClass )
             return Int(__value)

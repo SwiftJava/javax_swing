@@ -138,7 +138,7 @@ open class TreeSelectionModelForward: JNIObjectForward, TreeSelectionModel {
 
     private static var CONTIGUOUS_TREE_SELECTION_FieldID: jfieldID?
 
-    open static var CONTIGUOUS_TREE_SELECTION: Int {
+    public static var CONTIGUOUS_TREE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTIGUOUS_TREE_SELECTION", fieldType: "I", fieldCache: &CONTIGUOUS_TREE_SELECTION_FieldID, className: "javax/swing/tree/TreeSelectionModel", classCache: &TreeSelectionModelJNIClass )
             return Int(__value)
@@ -149,7 +149,7 @@ open class TreeSelectionModelForward: JNIObjectForward, TreeSelectionModel {
 
     private static var DISCONTIGUOUS_TREE_SELECTION_FieldID: jfieldID?
 
-    open static var DISCONTIGUOUS_TREE_SELECTION: Int {
+    public static var DISCONTIGUOUS_TREE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISCONTIGUOUS_TREE_SELECTION", fieldType: "I", fieldCache: &DISCONTIGUOUS_TREE_SELECTION_FieldID, className: "javax/swing/tree/TreeSelectionModel", classCache: &TreeSelectionModelJNIClass )
             return Int(__value)
@@ -160,7 +160,7 @@ open class TreeSelectionModelForward: JNIObjectForward, TreeSelectionModel {
 
     private static var SINGLE_TREE_SELECTION_FieldID: jfieldID?
 
-    open static var SINGLE_TREE_SELECTION: Int {
+    public static var SINGLE_TREE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLE_TREE_SELECTION", fieldType: "I", fieldCache: &SINGLE_TREE_SELECTION_FieldID, className: "javax/swing/tree/TreeSelectionModel", classCache: &TreeSelectionModelJNIClass )
             return Int(__value)

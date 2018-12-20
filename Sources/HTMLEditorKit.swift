@@ -25,7 +25,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var BOLD_ACTION_FieldID: jfieldID?
 
-    open static var BOLD_ACTION: String! {
+    public static var BOLD_ACTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BOLD_ACTION", fieldType: "Ljava/lang/String;", fieldCache: &BOLD_ACTION_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -37,7 +37,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var COLOR_ACTION_FieldID: jfieldID?
 
-    open static var COLOR_ACTION: String! {
+    public static var COLOR_ACTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLOR_ACTION", fieldType: "Ljava/lang/String;", fieldCache: &COLOR_ACTION_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -49,7 +49,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var DEFAULT_CSS_FieldID: jfieldID?
 
-    open static var DEFAULT_CSS: String! {
+    public static var DEFAULT_CSS: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT_CSS", fieldType: "Ljava/lang/String;", fieldCache: &DEFAULT_CSS_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -65,7 +65,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var FONT_CHANGE_BIGGER_FieldID: jfieldID?
 
-    open static var FONT_CHANGE_BIGGER: String! {
+    public static var FONT_CHANGE_BIGGER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_CHANGE_BIGGER", fieldType: "Ljava/lang/String;", fieldCache: &FONT_CHANGE_BIGGER_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -77,7 +77,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var FONT_CHANGE_SMALLER_FieldID: jfieldID?
 
-    open static var FONT_CHANGE_SMALLER: String! {
+    public static var FONT_CHANGE_SMALLER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT_CHANGE_SMALLER", fieldType: "Ljava/lang/String;", fieldCache: &FONT_CHANGE_SMALLER_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -89,7 +89,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var IMG_ALIGN_BOTTOM_FieldID: jfieldID?
 
-    open static var IMG_ALIGN_BOTTOM: String! {
+    public static var IMG_ALIGN_BOTTOM: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMG_ALIGN_BOTTOM", fieldType: "Ljava/lang/String;", fieldCache: &IMG_ALIGN_BOTTOM_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -101,7 +101,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var IMG_ALIGN_MIDDLE_FieldID: jfieldID?
 
-    open static var IMG_ALIGN_MIDDLE: String! {
+    public static var IMG_ALIGN_MIDDLE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMG_ALIGN_MIDDLE", fieldType: "Ljava/lang/String;", fieldCache: &IMG_ALIGN_MIDDLE_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -113,7 +113,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var IMG_ALIGN_TOP_FieldID: jfieldID?
 
-    open static var IMG_ALIGN_TOP: String! {
+    public static var IMG_ALIGN_TOP: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMG_ALIGN_TOP", fieldType: "Ljava/lang/String;", fieldCache: &IMG_ALIGN_TOP_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -125,7 +125,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var IMG_BORDER_FieldID: jfieldID?
 
-    open static var IMG_BORDER: String! {
+    public static var IMG_BORDER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMG_BORDER", fieldType: "Ljava/lang/String;", fieldCache: &IMG_BORDER_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -147,7 +147,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var ITALIC_ACTION_FieldID: jfieldID?
 
-    open static var ITALIC_ACTION: String! {
+    public static var ITALIC_ACTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ITALIC_ACTION", fieldType: "Ljava/lang/String;", fieldCache: &ITALIC_ACTION_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -159,7 +159,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var LOGICAL_STYLE_ACTION_FieldID: jfieldID?
 
-    open static var LOGICAL_STYLE_ACTION: String! {
+    public static var LOGICAL_STYLE_ACTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LOGICAL_STYLE_ACTION", fieldType: "Ljava/lang/String;", fieldCache: &LOGICAL_STYLE_ACTION_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -173,7 +173,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var PARA_INDENT_LEFT_FieldID: jfieldID?
 
-    open static var PARA_INDENT_LEFT: String! {
+    public static var PARA_INDENT_LEFT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PARA_INDENT_LEFT", fieldType: "Ljava/lang/String;", fieldCache: &PARA_INDENT_LEFT_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -185,7 +185,7 @@ open class HTMLEditorKit: StyledEditorKit {
 
     private static var PARA_INDENT_RIGHT_FieldID: jfieldID?
 
-    open static var PARA_INDENT_RIGHT: String! {
+    public static var PARA_INDENT_RIGHT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PARA_INDENT_RIGHT", fieldType: "Ljava/lang/String;", fieldCache: &PARA_INDENT_RIGHT_FieldID, className: "javax/swing/text/html/HTMLEditorKit", classCache: &HTMLEditorKitJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -27,7 +27,7 @@ open class NimbusStyle: SynthStyle {
 
     private static var LARGE_KEY_FieldID: jfieldID?
 
-    open static var LARGE_KEY: String! {
+    public static var LARGE_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LARGE_KEY", fieldType: "Ljava/lang/String;", fieldCache: &LARGE_KEY_FieldID, className: "javax/swing/plaf/nimbus/NimbusStyle", classCache: &NimbusStyleJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -39,7 +39,7 @@ open class NimbusStyle: SynthStyle {
 
     private static var LARGE_SCALE_FieldID: jfieldID?
 
-    open static var LARGE_SCALE: Double {
+    public static var LARGE_SCALE: Double {
         get {
             let __value = JNIField.GetStaticDoubleField( fieldName: "LARGE_SCALE", fieldType: "D", fieldCache: &LARGE_SCALE_FieldID, className: "javax/swing/plaf/nimbus/NimbusStyle", classCache: &NimbusStyleJNIClass )
             return __value
@@ -50,7 +50,7 @@ open class NimbusStyle: SynthStyle {
 
     private static var MINI_KEY_FieldID: jfieldID?
 
-    open static var MINI_KEY: String! {
+    public static var MINI_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MINI_KEY", fieldType: "Ljava/lang/String;", fieldCache: &MINI_KEY_FieldID, className: "javax/swing/plaf/nimbus/NimbusStyle", classCache: &NimbusStyleJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -62,7 +62,7 @@ open class NimbusStyle: SynthStyle {
 
     private static var MINI_SCALE_FieldID: jfieldID?
 
-    open static var MINI_SCALE: Double {
+    public static var MINI_SCALE: Double {
         get {
             let __value = JNIField.GetStaticDoubleField( fieldName: "MINI_SCALE", fieldType: "D", fieldCache: &MINI_SCALE_FieldID, className: "javax/swing/plaf/nimbus/NimbusStyle", classCache: &NimbusStyleJNIClass )
             return __value
@@ -75,7 +75,7 @@ open class NimbusStyle: SynthStyle {
 
     private static var SMALL_KEY_FieldID: jfieldID?
 
-    open static var SMALL_KEY: String! {
+    public static var SMALL_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SMALL_KEY", fieldType: "Ljava/lang/String;", fieldCache: &SMALL_KEY_FieldID, className: "javax/swing/plaf/nimbus/NimbusStyle", classCache: &NimbusStyleJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -87,7 +87,7 @@ open class NimbusStyle: SynthStyle {
 
     private static var SMALL_SCALE_FieldID: jfieldID?
 
-    open static var SMALL_SCALE: Double {
+    public static var SMALL_SCALE: Double {
         get {
             let __value = JNIField.GetStaticDoubleField( fieldName: "SMALL_SCALE", fieldType: "D", fieldCache: &SMALL_SCALE_FieldID, className: "javax/swing/plaf/nimbus/NimbusStyle", classCache: &NimbusStyleJNIClass )
             return __value

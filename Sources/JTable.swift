@@ -26,7 +26,7 @@ open class JTable: JComponent, TableModelListener, Scrollable, TableColumnModelL
 
     private static var AUTO_RESIZE_ALL_COLUMNS_FieldID: jfieldID?
 
-    open static var AUTO_RESIZE_ALL_COLUMNS: Int {
+    public static var AUTO_RESIZE_ALL_COLUMNS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "AUTO_RESIZE_ALL_COLUMNS", fieldType: "I", fieldCache: &AUTO_RESIZE_ALL_COLUMNS_FieldID, className: "javax/swing/JTable", classCache: &JTableJNIClass )
             return Int(__value)
@@ -37,7 +37,7 @@ open class JTable: JComponent, TableModelListener, Scrollable, TableColumnModelL
 
     private static var AUTO_RESIZE_LAST_COLUMN_FieldID: jfieldID?
 
-    open static var AUTO_RESIZE_LAST_COLUMN: Int {
+    public static var AUTO_RESIZE_LAST_COLUMN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "AUTO_RESIZE_LAST_COLUMN", fieldType: "I", fieldCache: &AUTO_RESIZE_LAST_COLUMN_FieldID, className: "javax/swing/JTable", classCache: &JTableJNIClass )
             return Int(__value)
@@ -48,7 +48,7 @@ open class JTable: JComponent, TableModelListener, Scrollable, TableColumnModelL
 
     private static var AUTO_RESIZE_NEXT_COLUMN_FieldID: jfieldID?
 
-    open static var AUTO_RESIZE_NEXT_COLUMN: Int {
+    public static var AUTO_RESIZE_NEXT_COLUMN: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "AUTO_RESIZE_NEXT_COLUMN", fieldType: "I", fieldCache: &AUTO_RESIZE_NEXT_COLUMN_FieldID, className: "javax/swing/JTable", classCache: &JTableJNIClass )
             return Int(__value)
@@ -59,7 +59,7 @@ open class JTable: JComponent, TableModelListener, Scrollable, TableColumnModelL
 
     private static var AUTO_RESIZE_OFF_FieldID: jfieldID?
 
-    open static var AUTO_RESIZE_OFF: Int {
+    public static var AUTO_RESIZE_OFF: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "AUTO_RESIZE_OFF", fieldType: "I", fieldCache: &AUTO_RESIZE_OFF_FieldID, className: "javax/swing/JTable", classCache: &JTableJNIClass )
             return Int(__value)
@@ -70,7 +70,7 @@ open class JTable: JComponent, TableModelListener, Scrollable, TableColumnModelL
 
     private static var AUTO_RESIZE_SUBSEQUENT_COLUMNS_FieldID: jfieldID?
 
-    open static var AUTO_RESIZE_SUBSEQUENT_COLUMNS: Int {
+    public static var AUTO_RESIZE_SUBSEQUENT_COLUMNS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "AUTO_RESIZE_SUBSEQUENT_COLUMNS", fieldType: "I", fieldCache: &AUTO_RESIZE_SUBSEQUENT_COLUMNS_FieldID, className: "javax/swing/JTable", classCache: &JTableJNIClass )
             return Int(__value)

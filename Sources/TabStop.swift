@@ -20,7 +20,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var ALIGN_BAR_FieldID: jfieldID?
 
-    open static var ALIGN_BAR: Int {
+    public static var ALIGN_BAR: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_BAR", fieldType: "I", fieldCache: &ALIGN_BAR_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -31,7 +31,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var ALIGN_CENTER_FieldID: jfieldID?
 
-    open static var ALIGN_CENTER: Int {
+    public static var ALIGN_CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_CENTER", fieldType: "I", fieldCache: &ALIGN_CENTER_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -42,7 +42,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var ALIGN_DECIMAL_FieldID: jfieldID?
 
-    open static var ALIGN_DECIMAL: Int {
+    public static var ALIGN_DECIMAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_DECIMAL", fieldType: "I", fieldCache: &ALIGN_DECIMAL_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -53,7 +53,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var ALIGN_LEFT_FieldID: jfieldID?
 
-    open static var ALIGN_LEFT: Int {
+    public static var ALIGN_LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_LEFT", fieldType: "I", fieldCache: &ALIGN_LEFT_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -64,7 +64,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var ALIGN_RIGHT_FieldID: jfieldID?
 
-    open static var ALIGN_RIGHT: Int {
+    public static var ALIGN_RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALIGN_RIGHT", fieldType: "I", fieldCache: &ALIGN_RIGHT_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -75,7 +75,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var LEAD_DOTS_FieldID: jfieldID?
 
-    open static var LEAD_DOTS: Int {
+    public static var LEAD_DOTS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_DOTS", fieldType: "I", fieldCache: &LEAD_DOTS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -86,7 +86,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var LEAD_EQUALS_FieldID: jfieldID?
 
-    open static var LEAD_EQUALS: Int {
+    public static var LEAD_EQUALS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_EQUALS", fieldType: "I", fieldCache: &LEAD_EQUALS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -97,7 +97,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var LEAD_HYPHENS_FieldID: jfieldID?
 
-    open static var LEAD_HYPHENS: Int {
+    public static var LEAD_HYPHENS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_HYPHENS", fieldType: "I", fieldCache: &LEAD_HYPHENS_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -108,7 +108,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var LEAD_NONE_FieldID: jfieldID?
 
-    open static var LEAD_NONE: Int {
+    public static var LEAD_NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_NONE", fieldType: "I", fieldCache: &LEAD_NONE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -119,7 +119,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var LEAD_THICKLINE_FieldID: jfieldID?
 
-    open static var LEAD_THICKLINE: Int {
+    public static var LEAD_THICKLINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_THICKLINE", fieldType: "I", fieldCache: &LEAD_THICKLINE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)
@@ -130,7 +130,7 @@ open class TabStop: java_swift.JavaObject, /* interface java.io.Serializable */ 
 
     private static var LEAD_UNDERLINE_FieldID: jfieldID?
 
-    open static var LEAD_UNDERLINE: Int {
+    public static var LEAD_UNDERLINE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEAD_UNDERLINE", fieldType: "I", fieldCache: &LEAD_UNDERLINE_FieldID, className: "javax/swing/text/TabStop", classCache: &TabStopJNIClass )
             return Int(__value)

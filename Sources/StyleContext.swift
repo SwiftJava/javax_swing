@@ -23,7 +23,7 @@ open class StyleContext: java_swift.JavaObject, /* interface java.io.Serializabl
 
     private static var DEFAULT_STYLE_FieldID: jfieldID?
 
-    open static var DEFAULT_STYLE: String! {
+    public static var DEFAULT_STYLE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DEFAULT_STYLE", fieldType: "Ljava/lang/String;", fieldCache: &DEFAULT_STYLE_FieldID, className: "javax/swing/text/StyleContext", classCache: &StyleContextJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

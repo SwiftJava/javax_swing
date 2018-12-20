@@ -21,7 +21,7 @@ open class MetalScrollBarUI: BasicScrollBarUI {
 
     private static var FREE_STANDING_PROP_FieldID: jfieldID?
 
-    open static var FREE_STANDING_PROP: String! {
+    public static var FREE_STANDING_PROP: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FREE_STANDING_PROP", fieldType: "Ljava/lang/String;", fieldCache: &FREE_STANDING_PROP_FieldID, className: "javax/swing/plaf/metal/MetalScrollBarUI", classCache: &MetalScrollBarUIJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

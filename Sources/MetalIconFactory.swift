@@ -20,7 +20,7 @@ open class MetalIconFactory: java_swift.JavaObject, /* interface java.io.Seriali
 
     private static var DARK_FieldID: jfieldID?
 
-    open static var DARK: Bool {
+    public static var DARK: Bool {
         get {
             let __value = JNIField.GetStaticBooleanField( fieldName: "DARK", fieldType: "Z", fieldCache: &DARK_FieldID, className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass )
             return __value != jboolean(JNI_FALSE)
@@ -31,7 +31,7 @@ open class MetalIconFactory: java_swift.JavaObject, /* interface java.io.Seriali
 
     private static var LIGHT_FieldID: jfieldID?
 
-    open static var LIGHT: Bool {
+    public static var LIGHT: Bool {
         get {
             let __value = JNIField.GetStaticBooleanField( fieldName: "LIGHT", fieldType: "Z", fieldCache: &LIGHT_FieldID, className: "javax/swing/plaf/metal/MetalIconFactory", classCache: &MetalIconFactoryJNIClass )
             return __value != jboolean(JNI_FALSE)

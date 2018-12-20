@@ -22,7 +22,7 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     private static var ALWAYS_UPDATE_FieldID: jfieldID?
 
-    open static var ALWAYS_UPDATE: Int {
+    public static var ALWAYS_UPDATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALWAYS_UPDATE", fieldType: "I", fieldCache: &ALWAYS_UPDATE_FieldID, className: "javax/swing/text/DefaultCaret", classCache: &DefaultCaretJNIClass )
             return Int(__value)
@@ -33,7 +33,7 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     private static var NEVER_UPDATE_FieldID: jfieldID?
 
-    open static var NEVER_UPDATE: Int {
+    public static var NEVER_UPDATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEVER_UPDATE", fieldType: "I", fieldCache: &NEVER_UPDATE_FieldID, className: "javax/swing/text/DefaultCaret", classCache: &DefaultCaretJNIClass )
             return Int(__value)
@@ -44,7 +44,7 @@ open class DefaultCaret: java_awt.Rectangle, Caret, java_awt.FocusListener, java
 
     private static var UPDATE_WHEN_ON_EDT_FieldID: jfieldID?
 
-    open static var UPDATE_WHEN_ON_EDT: Int {
+    public static var UPDATE_WHEN_ON_EDT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UPDATE_WHEN_ON_EDT", fieldType: "I", fieldCache: &UPDATE_WHEN_ON_EDT_FieldID, className: "javax/swing/text/DefaultCaret", classCache: &DefaultCaretJNIClass )
             return Int(__value)

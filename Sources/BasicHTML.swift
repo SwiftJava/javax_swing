@@ -25,7 +25,7 @@ open class BasicHTML: java_swift.JavaObject {
 
     private static var documentBaseKey_FieldID: jfieldID?
 
-    open static var documentBaseKey: String! {
+    public static var documentBaseKey: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "documentBaseKey", fieldType: "Ljava/lang/String;", fieldCache: &documentBaseKey_FieldID, className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -39,7 +39,7 @@ open class BasicHTML: java_swift.JavaObject {
 
     private static var propertyKey_FieldID: jfieldID?
 
-    open static var propertyKey: String! {
+    public static var propertyKey: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "propertyKey", fieldType: "Ljava/lang/String;", fieldCache: &propertyKey_FieldID, className: "javax/swing/plaf/basic/BasicHTML", classCache: &BasicHTMLJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

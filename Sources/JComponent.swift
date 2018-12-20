@@ -86,7 +86,7 @@ open class JComponent: java_awt.Container {
 
     private static var TOOL_TIP_TEXT_KEY_FieldID: jfieldID?
 
-    open static var TOOL_TIP_TEXT_KEY: String! {
+    public static var TOOL_TIP_TEXT_KEY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOOL_TIP_TEXT_KEY", fieldType: "Ljava/lang/String;", fieldCache: &TOOL_TIP_TEXT_KEY_FieldID, className: "javax/swing/JComponent", classCache: &JComponentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -98,7 +98,7 @@ open class JComponent: java_awt.Container {
 
     private static var UNDEFINED_CONDITION_FieldID: jfieldID?
 
-    open static var UNDEFINED_CONDITION: Int {
+    public static var UNDEFINED_CONDITION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNDEFINED_CONDITION", fieldType: "I", fieldCache: &UNDEFINED_CONDITION_FieldID, className: "javax/swing/JComponent", classCache: &JComponentJNIClass )
             return Int(__value)
@@ -109,7 +109,7 @@ open class JComponent: java_awt.Container {
 
     private static var WHEN_ANCESTOR_OF_FOCUSED_COMPONENT_FieldID: jfieldID?
 
-    open static var WHEN_ANCESTOR_OF_FOCUSED_COMPONENT: Int {
+    public static var WHEN_ANCESTOR_OF_FOCUSED_COMPONENT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WHEN_ANCESTOR_OF_FOCUSED_COMPONENT", fieldType: "I", fieldCache: &WHEN_ANCESTOR_OF_FOCUSED_COMPONENT_FieldID, className: "javax/swing/JComponent", classCache: &JComponentJNIClass )
             return Int(__value)
@@ -120,7 +120,7 @@ open class JComponent: java_awt.Container {
 
     private static var WHEN_FOCUSED_FieldID: jfieldID?
 
-    open static var WHEN_FOCUSED: Int {
+    public static var WHEN_FOCUSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WHEN_FOCUSED", fieldType: "I", fieldCache: &WHEN_FOCUSED_FieldID, className: "javax/swing/JComponent", classCache: &JComponentJNIClass )
             return Int(__value)
@@ -131,7 +131,7 @@ open class JComponent: java_awt.Container {
 
     private static var WHEN_IN_FOCUSED_WINDOW_FieldID: jfieldID?
 
-    open static var WHEN_IN_FOCUSED_WINDOW: Int {
+    public static var WHEN_IN_FOCUSED_WINDOW: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WHEN_IN_FOCUSED_WINDOW", fieldType: "I", fieldCache: &WHEN_IN_FOCUSED_WINDOW_FieldID, className: "javax/swing/JComponent", classCache: &JComponentJNIClass )
             return Int(__value)

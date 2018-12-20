@@ -21,7 +21,7 @@ open class AncestorEvent: java_awt.AWTEvent {
 
     private static var ANCESTOR_ADDED_FieldID: jfieldID?
 
-    open static var ANCESTOR_ADDED: Int {
+    public static var ANCESTOR_ADDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_ADDED", fieldType: "I", fieldCache: &ANCESTOR_ADDED_FieldID, className: "javax/swing/event/AncestorEvent", classCache: &AncestorEventJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class AncestorEvent: java_awt.AWTEvent {
 
     private static var ANCESTOR_MOVED_FieldID: jfieldID?
 
-    open static var ANCESTOR_MOVED: Int {
+    public static var ANCESTOR_MOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_MOVED", fieldType: "I", fieldCache: &ANCESTOR_MOVED_FieldID, className: "javax/swing/event/AncestorEvent", classCache: &AncestorEventJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class AncestorEvent: java_awt.AWTEvent {
 
     private static var ANCESTOR_REMOVED_FieldID: jfieldID?
 
-    open static var ANCESTOR_REMOVED: Int {
+    public static var ANCESTOR_REMOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ANCESTOR_REMOVED", fieldType: "I", fieldCache: &ANCESTOR_REMOVED_FieldID, className: "javax/swing/event/AncestorEvent", classCache: &AncestorEventJNIClass )
             return Int(__value)

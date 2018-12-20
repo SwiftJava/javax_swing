@@ -21,7 +21,7 @@ open class DebugGraphics: java_awt.Graphics {
 
     private static var BUFFERED_OPTION_FieldID: jfieldID?
 
-    open static var BUFFERED_OPTION: Int {
+    public static var BUFFERED_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BUFFERED_OPTION", fieldType: "I", fieldCache: &BUFFERED_OPTION_FieldID, className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class DebugGraphics: java_awt.Graphics {
 
     private static var FLASH_OPTION_FieldID: jfieldID?
 
-    open static var FLASH_OPTION: Int {
+    public static var FLASH_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FLASH_OPTION", fieldType: "I", fieldCache: &FLASH_OPTION_FieldID, className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class DebugGraphics: java_awt.Graphics {
 
     private static var LOG_OPTION_FieldID: jfieldID?
 
-    open static var LOG_OPTION: Int {
+    public static var LOG_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOG_OPTION", fieldType: "I", fieldCache: &LOG_OPTION_FieldID, className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class DebugGraphics: java_awt.Graphics {
 
     private static var NONE_OPTION_FieldID: jfieldID?
 
-    open static var NONE_OPTION: Int {
+    public static var NONE_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NONE_OPTION", fieldType: "I", fieldCache: &NONE_OPTION_FieldID, className: "javax/swing/DebugGraphics", classCache: &DebugGraphicsJNIClass )
             return Int(__value)

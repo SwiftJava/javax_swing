@@ -21,7 +21,7 @@ open class JOptionPane: JComponent {
 
     private static var CANCEL_OPTION_FieldID: jfieldID?
 
-    open static var CANCEL_OPTION: Int {
+    public static var CANCEL_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CANCEL_OPTION", fieldType: "I", fieldCache: &CANCEL_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class JOptionPane: JComponent {
 
     private static var CLOSED_OPTION_FieldID: jfieldID?
 
-    open static var CLOSED_OPTION: Int {
+    public static var CLOSED_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CLOSED_OPTION", fieldType: "I", fieldCache: &CLOSED_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class JOptionPane: JComponent {
 
     private static var DEFAULT_OPTION_FieldID: jfieldID?
 
-    open static var DEFAULT_OPTION: Int {
+    public static var DEFAULT_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_OPTION", fieldType: "I", fieldCache: &DEFAULT_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class JOptionPane: JComponent {
 
     private static var ERROR_MESSAGE_FieldID: jfieldID?
 
-    open static var ERROR_MESSAGE: Int {
+    public static var ERROR_MESSAGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR_MESSAGE", fieldType: "I", fieldCache: &ERROR_MESSAGE_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class JOptionPane: JComponent {
 
     private static var ICON_PROPERTY_FieldID: jfieldID?
 
-    open static var ICON_PROPERTY: String! {
+    public static var ICON_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ICON_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ICON_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -77,7 +77,7 @@ open class JOptionPane: JComponent {
 
     private static var INFORMATION_MESSAGE_FieldID: jfieldID?
 
-    open static var INFORMATION_MESSAGE: Int {
+    public static var INFORMATION_MESSAGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INFORMATION_MESSAGE", fieldType: "I", fieldCache: &INFORMATION_MESSAGE_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -88,7 +88,7 @@ open class JOptionPane: JComponent {
 
     private static var INITIAL_SELECTION_VALUE_PROPERTY_FieldID: jfieldID?
 
-    open static var INITIAL_SELECTION_VALUE_PROPERTY: String! {
+    public static var INITIAL_SELECTION_VALUE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INITIAL_SELECTION_VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &INITIAL_SELECTION_VALUE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -100,7 +100,7 @@ open class JOptionPane: JComponent {
 
     private static var INITIAL_VALUE_PROPERTY_FieldID: jfieldID?
 
-    open static var INITIAL_VALUE_PROPERTY: String! {
+    public static var INITIAL_VALUE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INITIAL_VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &INITIAL_VALUE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -112,7 +112,7 @@ open class JOptionPane: JComponent {
 
     private static var INPUT_VALUE_PROPERTY_FieldID: jfieldID?
 
-    open static var INPUT_VALUE_PROPERTY: String! {
+    public static var INPUT_VALUE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INPUT_VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &INPUT_VALUE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -124,7 +124,7 @@ open class JOptionPane: JComponent {
 
     private static var MESSAGE_PROPERTY_FieldID: jfieldID?
 
-    open static var MESSAGE_PROPERTY: String! {
+    public static var MESSAGE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MESSAGE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MESSAGE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -136,7 +136,7 @@ open class JOptionPane: JComponent {
 
     private static var MESSAGE_TYPE_PROPERTY_FieldID: jfieldID?
 
-    open static var MESSAGE_TYPE_PROPERTY: String! {
+    public static var MESSAGE_TYPE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MESSAGE_TYPE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MESSAGE_TYPE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -148,7 +148,7 @@ open class JOptionPane: JComponent {
 
     private static var NO_OPTION_FieldID: jfieldID?
 
-    open static var NO_OPTION: Int {
+    public static var NO_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NO_OPTION", fieldType: "I", fieldCache: &NO_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -159,7 +159,7 @@ open class JOptionPane: JComponent {
 
     private static var OK_CANCEL_OPTION_FieldID: jfieldID?
 
-    open static var OK_CANCEL_OPTION: Int {
+    public static var OK_CANCEL_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OK_CANCEL_OPTION", fieldType: "I", fieldCache: &OK_CANCEL_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -170,7 +170,7 @@ open class JOptionPane: JComponent {
 
     private static var OK_OPTION_FieldID: jfieldID?
 
-    open static var OK_OPTION: Int {
+    public static var OK_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OK_OPTION", fieldType: "I", fieldCache: &OK_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -181,7 +181,7 @@ open class JOptionPane: JComponent {
 
     private static var OPTIONS_PROPERTY_FieldID: jfieldID?
 
-    open static var OPTIONS_PROPERTY: String! {
+    public static var OPTIONS_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OPTIONS_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &OPTIONS_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -193,7 +193,7 @@ open class JOptionPane: JComponent {
 
     private static var OPTION_TYPE_PROPERTY_FieldID: jfieldID?
 
-    open static var OPTION_TYPE_PROPERTY: String! {
+    public static var OPTION_TYPE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OPTION_TYPE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &OPTION_TYPE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -205,7 +205,7 @@ open class JOptionPane: JComponent {
 
     private static var PLAIN_MESSAGE_FieldID: jfieldID?
 
-    open static var PLAIN_MESSAGE: Int {
+    public static var PLAIN_MESSAGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PLAIN_MESSAGE", fieldType: "I", fieldCache: &PLAIN_MESSAGE_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -216,7 +216,7 @@ open class JOptionPane: JComponent {
 
     private static var QUESTION_MESSAGE_FieldID: jfieldID?
 
-    open static var QUESTION_MESSAGE: Int {
+    public static var QUESTION_MESSAGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "QUESTION_MESSAGE", fieldType: "I", fieldCache: &QUESTION_MESSAGE_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -227,7 +227,7 @@ open class JOptionPane: JComponent {
 
     private static var SELECTION_VALUES_PROPERTY_FieldID: jfieldID?
 
-    open static var SELECTION_VALUES_PROPERTY: String! {
+    public static var SELECTION_VALUES_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTION_VALUES_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTION_VALUES_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -239,7 +239,7 @@ open class JOptionPane: JComponent {
 
     private static var UNINITIALIZED_VALUE_FieldID: jfieldID?
 
-    open static var UNINITIALIZED_VALUE: java_swift.JavaObject! {
+    public static var UNINITIALIZED_VALUE: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNINITIALIZED_VALUE", fieldType: "Ljava/lang/Object;", fieldCache: &UNINITIALIZED_VALUE_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -251,7 +251,7 @@ open class JOptionPane: JComponent {
 
     private static var VALUE_PROPERTY_FieldID: jfieldID?
 
-    open static var VALUE_PROPERTY: String! {
+    public static var VALUE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &VALUE_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -263,7 +263,7 @@ open class JOptionPane: JComponent {
 
     private static var WANTS_INPUT_PROPERTY_FieldID: jfieldID?
 
-    open static var WANTS_INPUT_PROPERTY: String! {
+    public static var WANTS_INPUT_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "WANTS_INPUT_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &WANTS_INPUT_PROPERTY_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -275,7 +275,7 @@ open class JOptionPane: JComponent {
 
     private static var WARNING_MESSAGE_FieldID: jfieldID?
 
-    open static var WARNING_MESSAGE: Int {
+    public static var WARNING_MESSAGE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WARNING_MESSAGE", fieldType: "I", fieldCache: &WARNING_MESSAGE_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -286,7 +286,7 @@ open class JOptionPane: JComponent {
 
     private static var YES_NO_CANCEL_OPTION_FieldID: jfieldID?
 
-    open static var YES_NO_CANCEL_OPTION: Int {
+    public static var YES_NO_CANCEL_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "YES_NO_CANCEL_OPTION", fieldType: "I", fieldCache: &YES_NO_CANCEL_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -297,7 +297,7 @@ open class JOptionPane: JComponent {
 
     private static var YES_NO_OPTION_FieldID: jfieldID?
 
-    open static var YES_NO_OPTION: Int {
+    public static var YES_NO_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "YES_NO_OPTION", fieldType: "I", fieldCache: &YES_NO_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)
@@ -308,7 +308,7 @@ open class JOptionPane: JComponent {
 
     private static var YES_OPTION_FieldID: jfieldID?
 
-    open static var YES_OPTION: Int {
+    public static var YES_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "YES_OPTION", fieldType: "I", fieldCache: &YES_OPTION_FieldID, className: "javax/swing/JOptionPane", classCache: &JOptionPaneJNIClass )
             return Int(__value)

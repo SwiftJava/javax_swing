@@ -21,7 +21,7 @@ open class JViewport: JComponent {
 
     private static var BACKINGSTORE_SCROLL_MODE_FieldID: jfieldID?
 
-    open static var BACKINGSTORE_SCROLL_MODE: Int {
+    public static var BACKINGSTORE_SCROLL_MODE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BACKINGSTORE_SCROLL_MODE", fieldType: "I", fieldCache: &BACKINGSTORE_SCROLL_MODE_FieldID, className: "javax/swing/JViewport", classCache: &JViewportJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class JViewport: JComponent {
 
     private static var BLIT_SCROLL_MODE_FieldID: jfieldID?
 
-    open static var BLIT_SCROLL_MODE: Int {
+    public static var BLIT_SCROLL_MODE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BLIT_SCROLL_MODE", fieldType: "I", fieldCache: &BLIT_SCROLL_MODE_FieldID, className: "javax/swing/JViewport", classCache: &JViewportJNIClass )
             return Int(__value)
@@ -47,7 +47,7 @@ open class JViewport: JComponent {
 
     private static var SIMPLE_SCROLL_MODE_FieldID: jfieldID?
 
-    open static var SIMPLE_SCROLL_MODE: Int {
+    public static var SIMPLE_SCROLL_MODE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SIMPLE_SCROLL_MODE", fieldType: "I", fieldCache: &SIMPLE_SCROLL_MODE_FieldID, className: "javax/swing/JViewport", classCache: &JViewportJNIClass )
             return Int(__value)

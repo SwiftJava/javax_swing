@@ -21,7 +21,7 @@ open class ListDataEvent: java_util.EventObject {
 
     private static var CONTENTS_CHANGED_FieldID: jfieldID?
 
-    open static var CONTENTS_CHANGED: Int {
+    public static var CONTENTS_CHANGED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTENTS_CHANGED", fieldType: "I", fieldCache: &CONTENTS_CHANGED_FieldID, className: "javax/swing/event/ListDataEvent", classCache: &ListDataEventJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class ListDataEvent: java_util.EventObject {
 
     private static var INTERVAL_ADDED_FieldID: jfieldID?
 
-    open static var INTERVAL_ADDED: Int {
+    public static var INTERVAL_ADDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERVAL_ADDED", fieldType: "I", fieldCache: &INTERVAL_ADDED_FieldID, className: "javax/swing/event/ListDataEvent", classCache: &ListDataEventJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class ListDataEvent: java_util.EventObject {
 
     private static var INTERVAL_REMOVED_FieldID: jfieldID?
 
-    open static var INTERVAL_REMOVED: Int {
+    public static var INTERVAL_REMOVED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INTERVAL_REMOVED", fieldType: "I", fieldCache: &INTERVAL_REMOVED_FieldID, className: "javax/swing/event/ListDataEvent", classCache: &ListDataEventJNIClass )
             return Int(__value)

@@ -735,7 +735,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     private static var HORIZONTAL_FieldID: jfieldID?
 
-    open static var HORIZONTAL: Int {
+    public static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "javax/swing/JScrollBar", classCache: &JScrollBarJNIClass )
             return Int(__value)
@@ -746,7 +746,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     private static var NO_ORIENTATION_FieldID: jfieldID?
 
-    open static var NO_ORIENTATION: Int {
+    public static var NO_ORIENTATION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NO_ORIENTATION", fieldType: "I", fieldCache: &NO_ORIENTATION_FieldID, className: "javax/swing/JScrollBar", classCache: &JScrollBarJNIClass )
             return Int(__value)
@@ -757,7 +757,7 @@ open class JScrollBar: JComponent, java_awt.Adjustable {
 
     private static var VERTICAL_FieldID: jfieldID?
 
-    open static var VERTICAL: Int {
+    public static var VERTICAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/JScrollBar", classCache: &JScrollBarJNIClass )
             return Int(__value)

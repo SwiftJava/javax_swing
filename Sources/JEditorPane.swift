@@ -21,7 +21,7 @@ open class JEditorPane: JTextComponent {
 
     private static var HONOR_DISPLAY_PROPERTIES_FieldID: jfieldID?
 
-    open static var HONOR_DISPLAY_PROPERTIES: String! {
+    public static var HONOR_DISPLAY_PROPERTIES: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HONOR_DISPLAY_PROPERTIES", fieldType: "Ljava/lang/String;", fieldCache: &HONOR_DISPLAY_PROPERTIES_FieldID, className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -37,7 +37,7 @@ open class JEditorPane: JTextComponent {
 
     private static var W3C_LENGTH_UNITS_FieldID: jfieldID?
 
-    open static var W3C_LENGTH_UNITS: String! {
+    public static var W3C_LENGTH_UNITS: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "W3C_LENGTH_UNITS", fieldType: "Ljava/lang/String;", fieldCache: &W3C_LENGTH_UNITS_FieldID, className: "javax/swing/JEditorPane", classCache: &JEditorPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -21,7 +21,7 @@ open class JFileChooser: JComponent {
 
     private static var ACCEPT_ALL_FILE_FILTER_USED_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var ACCEPT_ALL_FILE_FILTER_USED_CHANGED_PROPERTY: String! {
+    public static var ACCEPT_ALL_FILE_FILTER_USED_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACCEPT_ALL_FILE_FILTER_USED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ACCEPT_ALL_FILE_FILTER_USED_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -33,7 +33,7 @@ open class JFileChooser: JComponent {
 
     private static var ACCESSORY_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var ACCESSORY_CHANGED_PROPERTY: String! {
+    public static var ACCESSORY_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACCESSORY_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ACCESSORY_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -45,7 +45,7 @@ open class JFileChooser: JComponent {
 
     private static var APPROVE_BUTTON_MNEMONIC_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var APPROVE_BUTTON_MNEMONIC_CHANGED_PROPERTY: String! {
+    public static var APPROVE_BUTTON_MNEMONIC_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPROVE_BUTTON_MNEMONIC_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &APPROVE_BUTTON_MNEMONIC_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -57,7 +57,7 @@ open class JFileChooser: JComponent {
 
     private static var APPROVE_BUTTON_TEXT_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var APPROVE_BUTTON_TEXT_CHANGED_PROPERTY: String! {
+    public static var APPROVE_BUTTON_TEXT_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPROVE_BUTTON_TEXT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &APPROVE_BUTTON_TEXT_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -69,7 +69,7 @@ open class JFileChooser: JComponent {
 
     private static var APPROVE_BUTTON_TOOL_TIP_TEXT_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var APPROVE_BUTTON_TOOL_TIP_TEXT_CHANGED_PROPERTY: String! {
+    public static var APPROVE_BUTTON_TOOL_TIP_TEXT_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPROVE_BUTTON_TOOL_TIP_TEXT_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &APPROVE_BUTTON_TOOL_TIP_TEXT_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -81,7 +81,7 @@ open class JFileChooser: JComponent {
 
     private static var APPROVE_OPTION_FieldID: jfieldID?
 
-    open static var APPROVE_OPTION: Int {
+    public static var APPROVE_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "APPROVE_OPTION", fieldType: "I", fieldCache: &APPROVE_OPTION_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -92,7 +92,7 @@ open class JFileChooser: JComponent {
 
     private static var APPROVE_SELECTION_FieldID: jfieldID?
 
-    open static var APPROVE_SELECTION: String! {
+    public static var APPROVE_SELECTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPROVE_SELECTION", fieldType: "Ljava/lang/String;", fieldCache: &APPROVE_SELECTION_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class JFileChooser: JComponent {
 
     private static var CANCEL_OPTION_FieldID: jfieldID?
 
-    open static var CANCEL_OPTION: Int {
+    public static var CANCEL_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CANCEL_OPTION", fieldType: "I", fieldCache: &CANCEL_OPTION_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -115,7 +115,7 @@ open class JFileChooser: JComponent {
 
     private static var CANCEL_SELECTION_FieldID: jfieldID?
 
-    open static var CANCEL_SELECTION: String! {
+    public static var CANCEL_SELECTION: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CANCEL_SELECTION", fieldType: "Ljava/lang/String;", fieldCache: &CANCEL_SELECTION_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -127,7 +127,7 @@ open class JFileChooser: JComponent {
 
     private static var CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY: String! {
+    public static var CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CHOOSABLE_FILE_FILTER_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -139,7 +139,7 @@ open class JFileChooser: JComponent {
 
     private static var CONTROL_BUTTONS_ARE_SHOWN_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var CONTROL_BUTTONS_ARE_SHOWN_CHANGED_PROPERTY: String! {
+    public static var CONTROL_BUTTONS_ARE_SHOWN_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONTROL_BUTTONS_ARE_SHOWN_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CONTROL_BUTTONS_ARE_SHOWN_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -151,7 +151,7 @@ open class JFileChooser: JComponent {
 
     private static var CUSTOM_DIALOG_FieldID: jfieldID?
 
-    open static var CUSTOM_DIALOG: Int {
+    public static var CUSTOM_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CUSTOM_DIALOG", fieldType: "I", fieldCache: &CUSTOM_DIALOG_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -162,7 +162,7 @@ open class JFileChooser: JComponent {
 
     private static var DIALOG_TITLE_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var DIALOG_TITLE_CHANGED_PROPERTY: String! {
+    public static var DIALOG_TITLE_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIALOG_TITLE_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DIALOG_TITLE_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -174,7 +174,7 @@ open class JFileChooser: JComponent {
 
     private static var DIALOG_TYPE_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var DIALOG_TYPE_CHANGED_PROPERTY: String! {
+    public static var DIALOG_TYPE_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIALOG_TYPE_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DIALOG_TYPE_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -186,7 +186,7 @@ open class JFileChooser: JComponent {
 
     private static var DIRECTORIES_ONLY_FieldID: jfieldID?
 
-    open static var DIRECTORIES_ONLY: Int {
+    public static var DIRECTORIES_ONLY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DIRECTORIES_ONLY", fieldType: "I", fieldCache: &DIRECTORIES_ONLY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -197,7 +197,7 @@ open class JFileChooser: JComponent {
 
     private static var DIRECTORY_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var DIRECTORY_CHANGED_PROPERTY: String! {
+    public static var DIRECTORY_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIRECTORY_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DIRECTORY_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -209,7 +209,7 @@ open class JFileChooser: JComponent {
 
     private static var ERROR_OPTION_FieldID: jfieldID?
 
-    open static var ERROR_OPTION: Int {
+    public static var ERROR_OPTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ERROR_OPTION", fieldType: "I", fieldCache: &ERROR_OPTION_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -220,7 +220,7 @@ open class JFileChooser: JComponent {
 
     private static var FILES_AND_DIRECTORIES_FieldID: jfieldID?
 
-    open static var FILES_AND_DIRECTORIES: Int {
+    public static var FILES_AND_DIRECTORIES: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FILES_AND_DIRECTORIES", fieldType: "I", fieldCache: &FILES_AND_DIRECTORIES_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -231,7 +231,7 @@ open class JFileChooser: JComponent {
 
     private static var FILES_ONLY_FieldID: jfieldID?
 
-    open static var FILES_ONLY: Int {
+    public static var FILES_ONLY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FILES_ONLY", fieldType: "I", fieldCache: &FILES_ONLY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -242,7 +242,7 @@ open class JFileChooser: JComponent {
 
     private static var FILE_FILTER_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var FILE_FILTER_CHANGED_PROPERTY: String! {
+    public static var FILE_FILTER_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE_FILTER_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FILE_FILTER_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -254,7 +254,7 @@ open class JFileChooser: JComponent {
 
     private static var FILE_HIDING_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var FILE_HIDING_CHANGED_PROPERTY: String! {
+    public static var FILE_HIDING_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE_HIDING_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FILE_HIDING_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -266,7 +266,7 @@ open class JFileChooser: JComponent {
 
     private static var FILE_SELECTION_MODE_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var FILE_SELECTION_MODE_CHANGED_PROPERTY: String! {
+    public static var FILE_SELECTION_MODE_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE_SELECTION_MODE_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FILE_SELECTION_MODE_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -278,7 +278,7 @@ open class JFileChooser: JComponent {
 
     private static var FILE_SYSTEM_VIEW_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var FILE_SYSTEM_VIEW_CHANGED_PROPERTY: String! {
+    public static var FILE_SYSTEM_VIEW_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE_SYSTEM_VIEW_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FILE_SYSTEM_VIEW_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -290,7 +290,7 @@ open class JFileChooser: JComponent {
 
     private static var FILE_VIEW_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var FILE_VIEW_CHANGED_PROPERTY: String! {
+    public static var FILE_VIEW_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FILE_VIEW_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &FILE_VIEW_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -302,7 +302,7 @@ open class JFileChooser: JComponent {
 
     private static var MULTI_SELECTION_ENABLED_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var MULTI_SELECTION_ENABLED_CHANGED_PROPERTY: String! {
+    public static var MULTI_SELECTION_ENABLED_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MULTI_SELECTION_ENABLED_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &MULTI_SELECTION_ENABLED_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -314,7 +314,7 @@ open class JFileChooser: JComponent {
 
     private static var OPEN_DIALOG_FieldID: jfieldID?
 
-    open static var OPEN_DIALOG: Int {
+    public static var OPEN_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OPEN_DIALOG", fieldType: "I", fieldCache: &OPEN_DIALOG_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -325,7 +325,7 @@ open class JFileChooser: JComponent {
 
     private static var SAVE_DIALOG_FieldID: jfieldID?
 
-    open static var SAVE_DIALOG: Int {
+    public static var SAVE_DIALOG: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SAVE_DIALOG", fieldType: "I", fieldCache: &SAVE_DIALOG_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             return Int(__value)
@@ -336,7 +336,7 @@ open class JFileChooser: JComponent {
 
     private static var SELECTED_FILES_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var SELECTED_FILES_CHANGED_PROPERTY: String! {
+    public static var SELECTED_FILES_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_FILES_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_FILES_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -348,7 +348,7 @@ open class JFileChooser: JComponent {
 
     private static var SELECTED_FILE_CHANGED_PROPERTY_FieldID: jfieldID?
 
-    open static var SELECTED_FILE_CHANGED_PROPERTY: String! {
+    public static var SELECTED_FILE_CHANGED_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTED_FILE_CHANGED_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTED_FILE_CHANGED_PROPERTY_FieldID, className: "javax/swing/JFileChooser", classCache: &JFileChooserJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

@@ -22,7 +22,7 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var DEFAULT_SIZE_FieldID: jfieldID?
 
-    open static var DEFAULT_SIZE: Int {
+    public static var DEFAULT_SIZE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT_SIZE", fieldType: "I", fieldCache: &DEFAULT_SIZE_FieldID, className: "javax/swing/GroupLayout", classCache: &GroupLayoutJNIClass )
             return Int(__value)
@@ -37,7 +37,7 @@ open class GroupLayout: java_swift.JavaObject, java_awt.LayoutManager2 {
 
     private static var PREFERRED_SIZE_FieldID: jfieldID?
 
-    open static var PREFERRED_SIZE: Int {
+    public static var PREFERRED_SIZE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREFERRED_SIZE", fieldType: "I", fieldCache: &PREFERRED_SIZE_FieldID, className: "javax/swing/GroupLayout", classCache: &GroupLayoutJNIClass )
             return Int(__value)

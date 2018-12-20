@@ -29,7 +29,7 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
 
     private static var NameAttribute_FieldID: jfieldID?
 
-    open static var NameAttribute: java_swift.JavaObject! {
+    public static var NameAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NameAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &NameAttribute_FieldID, className: "javax/swing/text/AbstractDocument$AbstractElement", classCache: &AbstractDocument_AbstractElementJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -41,7 +41,7 @@ open class AbstractDocument_AbstractElement: java_swift.JavaObject, Element, Mut
 
     private static var ResolveAttribute_FieldID: jfieldID?
 
-    open static var ResolveAttribute: java_swift.JavaObject! {
+    public static var ResolveAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ResolveAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ResolveAttribute_FieldID, className: "javax/swing/text/AbstractDocument$AbstractElement", classCache: &AbstractDocument_AbstractElementJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

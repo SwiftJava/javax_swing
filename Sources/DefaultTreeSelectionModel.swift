@@ -25,7 +25,7 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     private static var SELECTION_MODE_PROPERTY_FieldID: jfieldID?
 
-    open static var SELECTION_MODE_PROPERTY: String! {
+    public static var SELECTION_MODE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECTION_MODE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &SELECTION_MODE_PROPERTY_FieldID, className: "javax/swing/tree/DefaultTreeSelectionModel", classCache: &DefaultTreeSelectionModelJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -192,7 +192,7 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     private static var CONTIGUOUS_TREE_SELECTION_FieldID: jfieldID?
 
-    open static var CONTIGUOUS_TREE_SELECTION: Int {
+    public static var CONTIGUOUS_TREE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CONTIGUOUS_TREE_SELECTION", fieldType: "I", fieldCache: &CONTIGUOUS_TREE_SELECTION_FieldID, className: "javax/swing/tree/DefaultTreeSelectionModel", classCache: &DefaultTreeSelectionModelJNIClass )
             return Int(__value)
@@ -203,7 +203,7 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     private static var DISCONTIGUOUS_TREE_SELECTION_FieldID: jfieldID?
 
-    open static var DISCONTIGUOUS_TREE_SELECTION: Int {
+    public static var DISCONTIGUOUS_TREE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISCONTIGUOUS_TREE_SELECTION", fieldType: "I", fieldCache: &DISCONTIGUOUS_TREE_SELECTION_FieldID, className: "javax/swing/tree/DefaultTreeSelectionModel", classCache: &DefaultTreeSelectionModelJNIClass )
             return Int(__value)
@@ -214,7 +214,7 @@ open class DefaultTreeSelectionModel: java_swift.JavaObject, java_lang.Cloneable
 
     private static var SINGLE_TREE_SELECTION_FieldID: jfieldID?
 
-    open static var SINGLE_TREE_SELECTION: Int {
+    public static var SINGLE_TREE_SELECTION: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SINGLE_TREE_SELECTION", fieldType: "I", fieldCache: &SINGLE_TREE_SELECTION_FieldID, className: "javax/swing/tree/DefaultTreeSelectionModel", classCache: &DefaultTreeSelectionModelJNIClass )
             return Int(__value)

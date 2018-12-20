@@ -20,7 +20,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var A_FieldID: jfieldID?
 
-    open static var A: HTML_Tag! {
+    public static var A: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "A", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &A_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var ADDRESS_FieldID: jfieldID?
 
-    open static var ADDRESS: HTML_Tag! {
+    public static var ADDRESS: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ADDRESS", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &ADDRESS_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var APPLET_FieldID: jfieldID?
 
-    open static var APPLET: HTML_Tag! {
+    public static var APPLET: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "APPLET", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &APPLET_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -56,7 +56,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var AREA_FieldID: jfieldID?
 
-    open static var AREA: HTML_Tag! {
+    public static var AREA: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AREA", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &AREA_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var B_FieldID: jfieldID?
 
-    open static var B: HTML_Tag! {
+    public static var B: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "B", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &B_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var BASE_FieldID: jfieldID?
 
-    open static var BASE: HTML_Tag! {
+    public static var BASE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BASE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &BASE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var BASEFONT_FieldID: jfieldID?
 
-    open static var BASEFONT: HTML_Tag! {
+    public static var BASEFONT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BASEFONT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &BASEFONT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var BIG_FieldID: jfieldID?
 
-    open static var BIG: HTML_Tag! {
+    public static var BIG: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BIG", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &BIG_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -116,7 +116,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var BLOCKQUOTE_FieldID: jfieldID?
 
-    open static var BLOCKQUOTE: HTML_Tag! {
+    public static var BLOCKQUOTE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BLOCKQUOTE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &BLOCKQUOTE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -128,7 +128,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var BODY_FieldID: jfieldID?
 
-    open static var BODY: HTML_Tag! {
+    public static var BODY: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BODY", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &BODY_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -140,7 +140,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var BR_FieldID: jfieldID?
 
-    open static var BR: HTML_Tag! {
+    public static var BR: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BR", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &BR_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -152,7 +152,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var CAPTION_FieldID: jfieldID?
 
-    open static var CAPTION: HTML_Tag! {
+    public static var CAPTION: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CAPTION", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &CAPTION_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -164,7 +164,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: HTML_Tag! {
+    public static var CENTER: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CENTER", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &CENTER_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -176,7 +176,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var CITE_FieldID: jfieldID?
 
-    open static var CITE: HTML_Tag! {
+    public static var CITE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CITE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &CITE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -188,7 +188,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var CODE_FieldID: jfieldID?
 
-    open static var CODE: HTML_Tag! {
+    public static var CODE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CODE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &CODE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -200,7 +200,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var COMMENT_FieldID: jfieldID?
 
-    open static var COMMENT: HTML_Tag! {
+    public static var COMMENT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COMMENT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &COMMENT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -212,7 +212,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var CONTENT_FieldID: jfieldID?
 
-    open static var CONTENT: HTML_Tag! {
+    public static var CONTENT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONTENT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &CONTENT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -224,7 +224,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var DD_FieldID: jfieldID?
 
-    open static var DD: HTML_Tag! {
+    public static var DD: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DD", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &DD_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -236,7 +236,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var DFN_FieldID: jfieldID?
 
-    open static var DFN: HTML_Tag! {
+    public static var DFN: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DFN", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &DFN_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -248,7 +248,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var DIR_FieldID: jfieldID?
 
-    open static var DIR: HTML_Tag! {
+    public static var DIR: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIR", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &DIR_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -260,7 +260,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var DIV_FieldID: jfieldID?
 
-    open static var DIV: HTML_Tag! {
+    public static var DIV: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIV", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &DIV_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -272,7 +272,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var DL_FieldID: jfieldID?
 
-    open static var DL: HTML_Tag! {
+    public static var DL: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DL", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &DL_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -284,7 +284,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var DT_FieldID: jfieldID?
 
-    open static var DT: HTML_Tag! {
+    public static var DT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &DT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -296,7 +296,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var EM_FieldID: jfieldID?
 
-    open static var EM: HTML_Tag! {
+    public static var EM: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EM", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &EM_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -308,7 +308,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var FONT_FieldID: jfieldID?
 
-    open static var FONT: HTML_Tag! {
+    public static var FONT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FONT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &FONT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -320,7 +320,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var FORM_FieldID: jfieldID?
 
-    open static var FORM: HTML_Tag! {
+    public static var FORM: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FORM", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &FORM_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -332,7 +332,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var FRAME_FieldID: jfieldID?
 
-    open static var FRAME: HTML_Tag! {
+    public static var FRAME: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FRAME", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &FRAME_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -344,7 +344,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var FRAMESET_FieldID: jfieldID?
 
-    open static var FRAMESET: HTML_Tag! {
+    public static var FRAMESET: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "FRAMESET", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &FRAMESET_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -356,7 +356,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var H1_FieldID: jfieldID?
 
-    open static var H1: HTML_Tag! {
+    public static var H1: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "H1", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &H1_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -368,7 +368,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var H2_FieldID: jfieldID?
 
-    open static var H2: HTML_Tag! {
+    public static var H2: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "H2", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &H2_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -380,7 +380,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var H3_FieldID: jfieldID?
 
-    open static var H3: HTML_Tag! {
+    public static var H3: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "H3", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &H3_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -392,7 +392,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var H4_FieldID: jfieldID?
 
-    open static var H4: HTML_Tag! {
+    public static var H4: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "H4", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &H4_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -404,7 +404,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var H5_FieldID: jfieldID?
 
-    open static var H5: HTML_Tag! {
+    public static var H5: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "H5", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &H5_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -416,7 +416,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var H6_FieldID: jfieldID?
 
-    open static var H6: HTML_Tag! {
+    public static var H6: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "H6", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &H6_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -428,7 +428,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var HEAD_FieldID: jfieldID?
 
-    open static var HEAD: HTML_Tag! {
+    public static var HEAD: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HEAD", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HEAD_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -440,7 +440,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var HR_FieldID: jfieldID?
 
-    open static var HR: HTML_Tag! {
+    public static var HR: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HR", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HR_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -452,7 +452,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var HTML_FieldID: jfieldID?
 
-    open static var HTML: HTML_Tag! {
+    public static var HTML: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HTML", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &HTML_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -464,7 +464,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var I_FieldID: jfieldID?
 
-    open static var I: HTML_Tag! {
+    public static var I: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "I", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &I_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -476,7 +476,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var IMG_FieldID: jfieldID?
 
-    open static var IMG: HTML_Tag! {
+    public static var IMG: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMG", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &IMG_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -488,7 +488,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var IMPLIED_FieldID: jfieldID?
 
-    open static var IMPLIED: HTML_Tag! {
+    public static var IMPLIED: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "IMPLIED", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &IMPLIED_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -500,7 +500,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var INPUT_FieldID: jfieldID?
 
-    open static var INPUT: HTML_Tag! {
+    public static var INPUT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "INPUT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &INPUT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -512,7 +512,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var ISINDEX_FieldID: jfieldID?
 
-    open static var ISINDEX: HTML_Tag! {
+    public static var ISINDEX: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ISINDEX", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &ISINDEX_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -524,7 +524,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var KBD_FieldID: jfieldID?
 
-    open static var KBD: HTML_Tag! {
+    public static var KBD: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "KBD", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &KBD_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -536,7 +536,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var LI_FieldID: jfieldID?
 
-    open static var LI: HTML_Tag! {
+    public static var LI: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LI", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &LI_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -548,7 +548,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var LINK_FieldID: jfieldID?
 
-    open static var LINK: HTML_Tag! {
+    public static var LINK: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LINK", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &LINK_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -560,7 +560,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var MAP_FieldID: jfieldID?
 
-    open static var MAP: HTML_Tag! {
+    public static var MAP: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MAP", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &MAP_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -572,7 +572,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var MENU_FieldID: jfieldID?
 
-    open static var MENU: HTML_Tag! {
+    public static var MENU: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "MENU", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &MENU_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -584,7 +584,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var META_FieldID: jfieldID?
 
-    open static var META: HTML_Tag! {
+    public static var META: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "META", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &META_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -600,7 +600,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var NOFRAMES_FieldID: jfieldID?
 
-    open static var NOFRAMES: HTML_Tag! {
+    public static var NOFRAMES: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NOFRAMES", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &NOFRAMES_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -612,7 +612,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var OBJECT_FieldID: jfieldID?
 
-    open static var OBJECT: HTML_Tag! {
+    public static var OBJECT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OBJECT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &OBJECT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -624,7 +624,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var OL_FieldID: jfieldID?
 
-    open static var OL: HTML_Tag! {
+    public static var OL: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OL", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &OL_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -636,7 +636,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var OPTION_FieldID: jfieldID?
 
-    open static var OPTION: HTML_Tag! {
+    public static var OPTION: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "OPTION", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &OPTION_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -648,7 +648,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var P_FieldID: jfieldID?
 
-    open static var P: HTML_Tag! {
+    public static var P: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "P", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &P_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -660,7 +660,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var PARAM_FieldID: jfieldID?
 
-    open static var PARAM: HTML_Tag! {
+    public static var PARAM: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PARAM", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &PARAM_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -672,7 +672,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var PRE_FieldID: jfieldID?
 
-    open static var PRE: HTML_Tag! {
+    public static var PRE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "PRE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &PRE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -684,7 +684,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var S_FieldID: jfieldID?
 
-    open static var S: HTML_Tag! {
+    public static var S: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "S", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &S_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -696,7 +696,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SAMP_FieldID: jfieldID?
 
-    open static var SAMP: HTML_Tag! {
+    public static var SAMP: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SAMP", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SAMP_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -708,7 +708,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SCRIPT_FieldID: jfieldID?
 
-    open static var SCRIPT: HTML_Tag! {
+    public static var SCRIPT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SCRIPT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SCRIPT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -720,7 +720,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SELECT_FieldID: jfieldID?
 
-    open static var SELECT: HTML_Tag! {
+    public static var SELECT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SELECT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SELECT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -732,7 +732,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SMALL_FieldID: jfieldID?
 
-    open static var SMALL: HTML_Tag! {
+    public static var SMALL: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SMALL", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SMALL_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -744,7 +744,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SPAN_FieldID: jfieldID?
 
-    open static var SPAN: HTML_Tag! {
+    public static var SPAN: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SPAN", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SPAN_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -756,7 +756,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var STRIKE_FieldID: jfieldID?
 
-    open static var STRIKE: HTML_Tag! {
+    public static var STRIKE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STRIKE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &STRIKE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -768,7 +768,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var STRONG_FieldID: jfieldID?
 
-    open static var STRONG: HTML_Tag! {
+    public static var STRONG: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STRONG", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &STRONG_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -780,7 +780,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var STYLE_FieldID: jfieldID?
 
-    open static var STYLE: HTML_Tag! {
+    public static var STYLE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "STYLE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &STYLE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -792,7 +792,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SUB_FieldID: jfieldID?
 
-    open static var SUB: HTML_Tag! {
+    public static var SUB: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUB", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SUB_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -804,7 +804,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var SUP_FieldID: jfieldID?
 
-    open static var SUP: HTML_Tag! {
+    public static var SUP: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "SUP", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &SUP_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -816,7 +816,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TABLE_FieldID: jfieldID?
 
-    open static var TABLE: HTML_Tag! {
+    public static var TABLE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TABLE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TABLE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -828,7 +828,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TD_FieldID: jfieldID?
 
-    open static var TD: HTML_Tag! {
+    public static var TD: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TD", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TD_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -840,7 +840,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TEXTAREA_FieldID: jfieldID?
 
-    open static var TEXTAREA: HTML_Tag! {
+    public static var TEXTAREA: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TEXTAREA", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TEXTAREA_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -852,7 +852,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TH_FieldID: jfieldID?
 
-    open static var TH: HTML_Tag! {
+    public static var TH: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TH", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TH_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -864,7 +864,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TITLE_FieldID: jfieldID?
 
-    open static var TITLE: HTML_Tag! {
+    public static var TITLE: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TITLE", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TITLE_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -876,7 +876,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TR_FieldID: jfieldID?
 
-    open static var TR: HTML_Tag! {
+    public static var TR: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TR", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TR_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -888,7 +888,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var TT_FieldID: jfieldID?
 
-    open static var TT: HTML_Tag! {
+    public static var TT: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TT", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &TT_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -900,7 +900,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var U_FieldID: jfieldID?
 
-    open static var U: HTML_Tag! {
+    public static var U: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "U", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &U_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -912,7 +912,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var UL_FieldID: jfieldID?
 
-    open static var UL: HTML_Tag! {
+    public static var UL: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UL", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &UL_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -924,7 +924,7 @@ open class HTML_Tag: java_swift.JavaObject {
 
     private static var VAR_FieldID: jfieldID?
 
-    open static var VAR: HTML_Tag! {
+    public static var VAR: HTML_Tag! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VAR", fieldType: "Ljavax/swing/text/html/HTML$Tag;", fieldCache: &VAR_FieldID, className: "javax/swing/text/html/HTML$Tag", classCache: &HTML_TagJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

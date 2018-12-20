@@ -25,7 +25,7 @@ open class DefaultMutableTreeNode: java_swift.JavaObject, java_lang.Cloneable, M
 
     private static var EMPTY_ENUMERATION_FieldID: jfieldID?
 
-    open static var EMPTY_ENUMERATION: java_util.Enumeration! {
+    public static var EMPTY_ENUMERATION: java_util.Enumeration! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EMPTY_ENUMERATION", fieldType: "Ljava/util/Enumeration;", fieldCache: &EMPTY_ENUMERATION_FieldID, className: "javax/swing/tree/DefaultMutableTreeNode", classCache: &DefaultMutableTreeNodeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

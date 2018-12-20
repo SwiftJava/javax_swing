@@ -21,7 +21,7 @@ open class DefaultHighlighter: LayeredHighlighter {
 
     private static var DefaultPainter_FieldID: jfieldID?
 
-    open static var DefaultPainter: LayeredHighlighter_LayerPainter! {
+    public static var DefaultPainter: LayeredHighlighter_LayerPainter! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DefaultPainter", fieldType: "Ljavax/swing/text/LayeredHighlighter$LayerPainter;", fieldCache: &DefaultPainter_FieldID, className: "javax/swing/text/DefaultHighlighter", classCache: &DefaultHighlighterJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

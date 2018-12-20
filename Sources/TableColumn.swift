@@ -20,7 +20,7 @@ open class TableColumn: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var CELL_RENDERER_PROPERTY_FieldID: jfieldID?
 
-    open static var CELL_RENDERER_PROPERTY: String! {
+    public static var CELL_RENDERER_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CELL_RENDERER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CELL_RENDERER_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class TableColumn: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var COLUMN_WIDTH_PROPERTY_FieldID: jfieldID?
 
-    open static var COLUMN_WIDTH_PROPERTY: String! {
+    public static var COLUMN_WIDTH_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLUMN_WIDTH_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &COLUMN_WIDTH_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class TableColumn: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var HEADER_RENDERER_PROPERTY_FieldID: jfieldID?
 
-    open static var HEADER_RENDERER_PROPERTY: String! {
+    public static var HEADER_RENDERER_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HEADER_RENDERER_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HEADER_RENDERER_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -56,7 +56,7 @@ open class TableColumn: java_swift.JavaObject, /* interface java.io.Serializable
 
     private static var HEADER_VALUE_PROPERTY_FieldID: jfieldID?
 
-    open static var HEADER_VALUE_PROPERTY: String! {
+    public static var HEADER_VALUE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HEADER_VALUE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &HEADER_VALUE_PROPERTY_FieldID, className: "javax/swing/table/TableColumn", classCache: &TableColumnJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

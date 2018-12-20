@@ -25,7 +25,7 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* in
 
     private static var EMPTY_FieldID: jfieldID?
 
-    open static var EMPTY: AttributeSet! {
+    public static var EMPTY: AttributeSet! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EMPTY", fieldType: "Ljavax/swing/text/AttributeSet;", fieldCache: &EMPTY_FieldID, className: "javax/swing/text/SimpleAttributeSet", classCache: &SimpleAttributeSetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -41,7 +41,7 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* in
 
     private static var NameAttribute_FieldID: jfieldID?
 
-    open static var NameAttribute: java_swift.JavaObject! {
+    public static var NameAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NameAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &NameAttribute_FieldID, className: "javax/swing/text/SimpleAttributeSet", classCache: &SimpleAttributeSetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -53,7 +53,7 @@ open class SimpleAttributeSet: java_swift.JavaObject, MutableAttributeSet, /* in
 
     private static var ResolveAttribute_FieldID: jfieldID?
 
-    open static var ResolveAttribute: java_swift.JavaObject! {
+    public static var ResolveAttribute: java_swift.JavaObject! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ResolveAttribute", fieldType: "Ljava/lang/Object;", fieldCache: &ResolveAttribute_FieldID, className: "javax/swing/text/SimpleAttributeSet", classCache: &SimpleAttributeSetJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

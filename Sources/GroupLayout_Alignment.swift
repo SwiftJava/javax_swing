@@ -56,7 +56,7 @@ open class GroupLayout_AlignmentForward: JNIObjectForward {
 
     private static var BASELINE_FieldID: jfieldID?
 
-    open static var BASELINE: GroupLayout_Alignment! {
+    public static var BASELINE: GroupLayout_Alignment! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BASELINE", fieldType: "Ljavax/swing/GroupLayout$Alignment;", fieldCache: &BASELINE_FieldID, className: "javax/swing/GroupLayout$Alignment", classCache: &GroupLayout_AlignmentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class GroupLayout_AlignmentForward: JNIObjectForward {
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: GroupLayout_Alignment! {
+    public static var CENTER: GroupLayout_Alignment! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CENTER", fieldType: "Ljavax/swing/GroupLayout$Alignment;", fieldCache: &CENTER_FieldID, className: "javax/swing/GroupLayout$Alignment", classCache: &GroupLayout_AlignmentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class GroupLayout_AlignmentForward: JNIObjectForward {
 
     private static var LEADING_FieldID: jfieldID?
 
-    open static var LEADING: GroupLayout_Alignment! {
+    public static var LEADING: GroupLayout_Alignment! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEADING", fieldType: "Ljavax/swing/GroupLayout$Alignment;", fieldCache: &LEADING_FieldID, className: "javax/swing/GroupLayout$Alignment", classCache: &GroupLayout_AlignmentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class GroupLayout_AlignmentForward: JNIObjectForward {
 
     private static var TRAILING_FieldID: jfieldID?
 
-    open static var TRAILING: GroupLayout_Alignment! {
+    public static var TRAILING: GroupLayout_Alignment! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TRAILING", fieldType: "Ljavax/swing/GroupLayout$Alignment;", fieldCache: &TRAILING_FieldID, className: "javax/swing/GroupLayout$Alignment", classCache: &GroupLayout_AlignmentJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

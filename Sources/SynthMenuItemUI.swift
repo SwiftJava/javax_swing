@@ -305,7 +305,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var DEFAULT_FieldID: jfieldID?
 
-    open static var DEFAULT: Int {
+    public static var DEFAULT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DEFAULT", fieldType: "I", fieldCache: &DEFAULT_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)
@@ -316,7 +316,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var DISABLED_FieldID: jfieldID?
 
-    open static var DISABLED: Int {
+    public static var DISABLED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DISABLED", fieldType: "I", fieldCache: &DISABLED_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)
@@ -327,7 +327,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var ENABLED_FieldID: jfieldID?
 
-    open static var ENABLED: Int {
+    public static var ENABLED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ENABLED", fieldType: "I", fieldCache: &ENABLED_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)
@@ -338,7 +338,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var FOCUSED_FieldID: jfieldID?
 
-    open static var FOCUSED: Int {
+    public static var FOCUSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "FOCUSED", fieldType: "I", fieldCache: &FOCUSED_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)
@@ -349,7 +349,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var MOUSE_OVER_FieldID: jfieldID?
 
-    open static var MOUSE_OVER: Int {
+    public static var MOUSE_OVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOUSE_OVER", fieldType: "I", fieldCache: &MOUSE_OVER_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)
@@ -360,7 +360,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var PRESSED_FieldID: jfieldID?
 
-    open static var PRESSED: Int {
+    public static var PRESSED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PRESSED", fieldType: "I", fieldCache: &PRESSED_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)
@@ -371,7 +371,7 @@ open class SynthMenuItemUI: BasicMenuItemUI, /* interface java.beans.PropertyCha
 
     private static var SELECTED_FieldID: jfieldID?
 
-    open static var SELECTED: Int {
+    public static var SELECTED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SELECTED", fieldType: "I", fieldCache: &SELECTED_FieldID, className: "javax/swing/plaf/synth/SynthMenuItemUI", classCache: &SynthMenuItemUIJNIClass )
             return Int(__value)

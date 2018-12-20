@@ -56,7 +56,7 @@ open class RowFilter_ComparisonTypeForward: JNIObjectForward {
 
     private static var AFTER_FieldID: jfieldID?
 
-    open static var AFTER: RowFilter_ComparisonType! {
+    public static var AFTER: RowFilter_ComparisonType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "AFTER", fieldType: "Ljavax/swing/RowFilter$ComparisonType;", fieldCache: &AFTER_FieldID, className: "javax/swing/RowFilter$ComparisonType", classCache: &RowFilter_ComparisonTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class RowFilter_ComparisonTypeForward: JNIObjectForward {
 
     private static var BEFORE_FieldID: jfieldID?
 
-    open static var BEFORE: RowFilter_ComparisonType! {
+    public static var BEFORE: RowFilter_ComparisonType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BEFORE", fieldType: "Ljavax/swing/RowFilter$ComparisonType;", fieldCache: &BEFORE_FieldID, className: "javax/swing/RowFilter$ComparisonType", classCache: &RowFilter_ComparisonTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class RowFilter_ComparisonTypeForward: JNIObjectForward {
 
     private static var EQUAL_FieldID: jfieldID?
 
-    open static var EQUAL: RowFilter_ComparisonType! {
+    public static var EQUAL: RowFilter_ComparisonType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EQUAL", fieldType: "Ljavax/swing/RowFilter$ComparisonType;", fieldCache: &EQUAL_FieldID, className: "javax/swing/RowFilter$ComparisonType", classCache: &RowFilter_ComparisonTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -92,7 +92,7 @@ open class RowFilter_ComparisonTypeForward: JNIObjectForward {
 
     private static var NOT_EQUAL_FieldID: jfieldID?
 
-    open static var NOT_EQUAL: RowFilter_ComparisonType! {
+    public static var NOT_EQUAL: RowFilter_ComparisonType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NOT_EQUAL", fieldType: "Ljavax/swing/RowFilter$ComparisonType;", fieldCache: &NOT_EQUAL_FieldID, className: "javax/swing/RowFilter$ComparisonType", classCache: &RowFilter_ComparisonTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

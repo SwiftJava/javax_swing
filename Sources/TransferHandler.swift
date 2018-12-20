@@ -22,7 +22,7 @@ open class TransferHandler: java_swift.JavaObject, /* interface java.io.Serializ
 
     private static var COPY_FieldID: jfieldID?
 
-    open static var COPY: Int {
+    public static var COPY: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COPY", fieldType: "I", fieldCache: &COPY_FieldID, className: "javax/swing/TransferHandler", classCache: &TransferHandlerJNIClass )
             return Int(__value)
@@ -33,7 +33,7 @@ open class TransferHandler: java_swift.JavaObject, /* interface java.io.Serializ
 
     private static var COPY_OR_MOVE_FieldID: jfieldID?
 
-    open static var COPY_OR_MOVE: Int {
+    public static var COPY_OR_MOVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "COPY_OR_MOVE", fieldType: "I", fieldCache: &COPY_OR_MOVE_FieldID, className: "javax/swing/TransferHandler", classCache: &TransferHandlerJNIClass )
             return Int(__value)
@@ -44,7 +44,7 @@ open class TransferHandler: java_swift.JavaObject, /* interface java.io.Serializ
 
     private static var LINK_FieldID: jfieldID?
 
-    open static var LINK: Int {
+    public static var LINK: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LINK", fieldType: "I", fieldCache: &LINK_FieldID, className: "javax/swing/TransferHandler", classCache: &TransferHandlerJNIClass )
             return Int(__value)
@@ -55,7 +55,7 @@ open class TransferHandler: java_swift.JavaObject, /* interface java.io.Serializ
 
     private static var MOVE_FieldID: jfieldID?
 
-    open static var MOVE: Int {
+    public static var MOVE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "MOVE", fieldType: "I", fieldCache: &MOVE_FieldID, className: "javax/swing/TransferHandler", classCache: &TransferHandlerJNIClass )
             return Int(__value)
@@ -66,7 +66,7 @@ open class TransferHandler: java_swift.JavaObject, /* interface java.io.Serializ
 
     private static var NONE_FieldID: jfieldID?
 
-    open static var NONE: Int {
+    public static var NONE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NONE", fieldType: "I", fieldCache: &NONE_FieldID, className: "javax/swing/TransferHandler", classCache: &TransferHandlerJNIClass )
             return Int(__value)

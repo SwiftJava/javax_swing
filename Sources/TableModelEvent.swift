@@ -21,7 +21,7 @@ open class TableModelEvent: java_util.EventObject {
 
     private static var ALL_COLUMNS_FieldID: jfieldID?
 
-    open static var ALL_COLUMNS: Int {
+    public static var ALL_COLUMNS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "ALL_COLUMNS", fieldType: "I", fieldCache: &ALL_COLUMNS_FieldID, className: "javax/swing/event/TableModelEvent", classCache: &TableModelEventJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class TableModelEvent: java_util.EventObject {
 
     private static var DELETE_FieldID: jfieldID?
 
-    open static var DELETE: Int {
+    public static var DELETE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "DELETE", fieldType: "I", fieldCache: &DELETE_FieldID, className: "javax/swing/event/TableModelEvent", classCache: &TableModelEventJNIClass )
             return Int(__value)
@@ -43,7 +43,7 @@ open class TableModelEvent: java_util.EventObject {
 
     private static var HEADER_ROW_FieldID: jfieldID?
 
-    open static var HEADER_ROW: Int {
+    public static var HEADER_ROW: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HEADER_ROW", fieldType: "I", fieldCache: &HEADER_ROW_FieldID, className: "javax/swing/event/TableModelEvent", classCache: &TableModelEventJNIClass )
             return Int(__value)
@@ -54,7 +54,7 @@ open class TableModelEvent: java_util.EventObject {
 
     private static var INSERT_FieldID: jfieldID?
 
-    open static var INSERT: Int {
+    public static var INSERT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "INSERT", fieldType: "I", fieldCache: &INSERT_FieldID, className: "javax/swing/event/TableModelEvent", classCache: &TableModelEventJNIClass )
             return Int(__value)
@@ -65,7 +65,7 @@ open class TableModelEvent: java_util.EventObject {
 
     private static var UPDATE_FieldID: jfieldID?
 
-    open static var UPDATE: Int {
+    public static var UPDATE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UPDATE", fieldType: "I", fieldCache: &UPDATE_FieldID, className: "javax/swing/event/TableModelEvent", classCache: &TableModelEventJNIClass )
             return Int(__value)

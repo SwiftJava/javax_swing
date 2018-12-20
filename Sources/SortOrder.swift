@@ -56,7 +56,7 @@ open class SortOrderForward: JNIObjectForward {
 
     private static var ASCENDING_FieldID: jfieldID?
 
-    open static var ASCENDING: SortOrder! {
+    public static var ASCENDING: SortOrder! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ASCENDING", fieldType: "Ljavax/swing/SortOrder;", fieldCache: &ASCENDING_FieldID, className: "javax/swing/SortOrder", classCache: &SortOrderJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -68,7 +68,7 @@ open class SortOrderForward: JNIObjectForward {
 
     private static var DESCENDING_FieldID: jfieldID?
 
-    open static var DESCENDING: SortOrder! {
+    public static var DESCENDING: SortOrder! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DESCENDING", fieldType: "Ljavax/swing/SortOrder;", fieldCache: &DESCENDING_FieldID, className: "javax/swing/SortOrder", classCache: &SortOrderJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -80,7 +80,7 @@ open class SortOrderForward: JNIObjectForward {
 
     private static var UNSORTED_FieldID: jfieldID?
 
-    open static var UNSORTED: SortOrder! {
+    public static var UNSORTED: SortOrder! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UNSORTED", fieldType: "Ljavax/swing/SortOrder;", fieldCache: &UNSORTED_FieldID, className: "javax/swing/SortOrder", classCache: &SortOrderJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

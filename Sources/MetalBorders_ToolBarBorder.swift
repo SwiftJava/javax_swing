@@ -38,7 +38,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var BOTTOM_FieldID: jfieldID?
 
-    open static var BOTTOM: Int {
+    public static var BOTTOM: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "BOTTOM", fieldType: "I", fieldCache: &BOTTOM_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -49,7 +49,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var CENTER_FieldID: jfieldID?
 
-    open static var CENTER: Int {
+    public static var CENTER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "CENTER", fieldType: "I", fieldCache: &CENTER_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -60,7 +60,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var EAST_FieldID: jfieldID?
 
-    open static var EAST: Int {
+    public static var EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "EAST", fieldType: "I", fieldCache: &EAST_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -71,7 +71,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var HORIZONTAL_FieldID: jfieldID?
 
-    open static var HORIZONTAL: Int {
+    public static var HORIZONTAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL", fieldType: "I", fieldCache: &HORIZONTAL_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -82,7 +82,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var LEADING_FieldID: jfieldID?
 
-    open static var LEADING: Int {
+    public static var LEADING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEADING", fieldType: "I", fieldCache: &LEADING_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -93,7 +93,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var LEFT_FieldID: jfieldID?
 
-    open static var LEFT: Int {
+    public static var LEFT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LEFT", fieldType: "I", fieldCache: &LEFT_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -104,7 +104,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var NEXT_FieldID: jfieldID?
 
-    open static var NEXT: Int {
+    public static var NEXT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NEXT", fieldType: "I", fieldCache: &NEXT_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -115,7 +115,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var NORTH_FieldID: jfieldID?
 
-    open static var NORTH: Int {
+    public static var NORTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NORTH", fieldType: "I", fieldCache: &NORTH_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -126,7 +126,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var NORTH_EAST_FieldID: jfieldID?
 
-    open static var NORTH_EAST: Int {
+    public static var NORTH_EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NORTH_EAST", fieldType: "I", fieldCache: &NORTH_EAST_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -137,7 +137,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var NORTH_WEST_FieldID: jfieldID?
 
-    open static var NORTH_WEST: Int {
+    public static var NORTH_WEST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "NORTH_WEST", fieldType: "I", fieldCache: &NORTH_WEST_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -148,7 +148,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var PREVIOUS_FieldID: jfieldID?
 
-    open static var PREVIOUS: Int {
+    public static var PREVIOUS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "PREVIOUS", fieldType: "I", fieldCache: &PREVIOUS_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -159,7 +159,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var RIGHT_FieldID: jfieldID?
 
-    open static var RIGHT: Int {
+    public static var RIGHT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RIGHT", fieldType: "I", fieldCache: &RIGHT_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -170,7 +170,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var SOUTH_FieldID: jfieldID?
 
-    open static var SOUTH: Int {
+    public static var SOUTH: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOUTH", fieldType: "I", fieldCache: &SOUTH_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -181,7 +181,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var SOUTH_EAST_FieldID: jfieldID?
 
-    open static var SOUTH_EAST: Int {
+    public static var SOUTH_EAST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_EAST", fieldType: "I", fieldCache: &SOUTH_EAST_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -192,7 +192,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var SOUTH_WEST_FieldID: jfieldID?
 
-    open static var SOUTH_WEST: Int {
+    public static var SOUTH_WEST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "SOUTH_WEST", fieldType: "I", fieldCache: &SOUTH_WEST_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -203,7 +203,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var TOP_FieldID: jfieldID?
 
-    open static var TOP: Int {
+    public static var TOP: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TOP", fieldType: "I", fieldCache: &TOP_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -214,7 +214,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var TRAILING_FieldID: jfieldID?
 
-    open static var TRAILING: Int {
+    public static var TRAILING: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "TRAILING", fieldType: "I", fieldCache: &TRAILING_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -225,7 +225,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var VERTICAL_FieldID: jfieldID?
 
-    open static var VERTICAL: Int {
+    public static var VERTICAL: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL", fieldType: "I", fieldCache: &VERTICAL_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)
@@ -236,7 +236,7 @@ open class MetalBorders_ToolBarBorder: AbstractBorder, UIResource, SwingConstant
 
     private static var WEST_FieldID: jfieldID?
 
-    open static var WEST: Int {
+    public static var WEST: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "WEST", fieldType: "I", fieldCache: &WEST_FieldID, className: "javax/swing/plaf/metal/MetalBorders$ToolBarBorder", classCache: &MetalBorders_ToolBarBorderJNIClass )
             return Int(__value)

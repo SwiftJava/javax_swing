@@ -21,7 +21,7 @@ open class JDesktopPane: JLayeredPane {
 
     private static var LIVE_DRAG_MODE_FieldID: jfieldID?
 
-    open static var LIVE_DRAG_MODE: Int {
+    public static var LIVE_DRAG_MODE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LIVE_DRAG_MODE", fieldType: "I", fieldCache: &LIVE_DRAG_MODE_FieldID, className: "javax/swing/JDesktopPane", classCache: &JDesktopPaneJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class JDesktopPane: JLayeredPane {
 
     private static var OUTLINE_DRAG_MODE_FieldID: jfieldID?
 
-    open static var OUTLINE_DRAG_MODE: Int {
+    public static var OUTLINE_DRAG_MODE: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "OUTLINE_DRAG_MODE", fieldType: "I", fieldCache: &OUTLINE_DRAG_MODE_FieldID, className: "javax/swing/JDesktopPane", classCache: &JDesktopPaneJNIClass )
             return Int(__value)

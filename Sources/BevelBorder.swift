@@ -21,7 +21,7 @@ open class BevelBorder: AbstractBorder {
 
     private static var LOWERED_FieldID: jfieldID?
 
-    open static var LOWERED: Int {
+    public static var LOWERED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "LOWERED", fieldType: "I", fieldCache: &LOWERED_FieldID, className: "javax/swing/border/BevelBorder", classCache: &BevelBorderJNIClass )
             return Int(__value)
@@ -32,7 +32,7 @@ open class BevelBorder: AbstractBorder {
 
     private static var RAISED_FieldID: jfieldID?
 
-    open static var RAISED: Int {
+    public static var RAISED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "RAISED", fieldType: "I", fieldCache: &RAISED_FieldID, className: "javax/swing/border/BevelBorder", classCache: &BevelBorderJNIClass )
             return Int(__value)

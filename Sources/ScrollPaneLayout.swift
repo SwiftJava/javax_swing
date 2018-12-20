@@ -206,7 +206,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var COLUMN_HEADER_FieldID: jfieldID?
 
-    open static var COLUMN_HEADER: String! {
+    public static var COLUMN_HEADER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "COLUMN_HEADER", fieldType: "Ljava/lang/String;", fieldCache: &COLUMN_HEADER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -218,7 +218,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var HORIZONTAL_SCROLLBAR_FieldID: jfieldID?
 
-    open static var HORIZONTAL_SCROLLBAR: String! {
+    public static var HORIZONTAL_SCROLLBAR: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_SCROLLBAR", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_SCROLLBAR_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -230,7 +230,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var HORIZONTAL_SCROLLBAR_ALWAYS_FieldID: jfieldID?
 
-    open static var HORIZONTAL_SCROLLBAR_ALWAYS: Int {
+    public static var HORIZONTAL_SCROLLBAR_ALWAYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_ALWAYS", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_ALWAYS_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             return Int(__value)
@@ -241,7 +241,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var HORIZONTAL_SCROLLBAR_AS_NEEDED_FieldID: jfieldID?
 
-    open static var HORIZONTAL_SCROLLBAR_AS_NEEDED: Int {
+    public static var HORIZONTAL_SCROLLBAR_AS_NEEDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_AS_NEEDED", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_AS_NEEDED_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             return Int(__value)
@@ -252,7 +252,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var HORIZONTAL_SCROLLBAR_NEVER_FieldID: jfieldID?
 
-    open static var HORIZONTAL_SCROLLBAR_NEVER: Int {
+    public static var HORIZONTAL_SCROLLBAR_NEVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SCROLLBAR_NEVER", fieldType: "I", fieldCache: &HORIZONTAL_SCROLLBAR_NEVER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             return Int(__value)
@@ -263,7 +263,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var HORIZONTAL_SCROLLBAR_POLICY_FieldID: jfieldID?
 
-    open static var HORIZONTAL_SCROLLBAR_POLICY: String! {
+    public static var HORIZONTAL_SCROLLBAR_POLICY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "HORIZONTAL_SCROLLBAR_POLICY", fieldType: "Ljava/lang/String;", fieldCache: &HORIZONTAL_SCROLLBAR_POLICY_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -275,7 +275,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var LOWER_LEADING_CORNER_FieldID: jfieldID?
 
-    open static var LOWER_LEADING_CORNER: String! {
+    public static var LOWER_LEADING_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_LEADING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_LEADING_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -287,7 +287,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var LOWER_LEFT_CORNER_FieldID: jfieldID?
 
-    open static var LOWER_LEFT_CORNER: String! {
+    public static var LOWER_LEFT_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_LEFT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_LEFT_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -299,7 +299,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var LOWER_RIGHT_CORNER_FieldID: jfieldID?
 
-    open static var LOWER_RIGHT_CORNER: String! {
+    public static var LOWER_RIGHT_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_RIGHT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_RIGHT_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -311,7 +311,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var LOWER_TRAILING_CORNER_FieldID: jfieldID?
 
-    open static var LOWER_TRAILING_CORNER: String! {
+    public static var LOWER_TRAILING_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LOWER_TRAILING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &LOWER_TRAILING_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -323,7 +323,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var ROW_HEADER_FieldID: jfieldID?
 
-    open static var ROW_HEADER: String! {
+    public static var ROW_HEADER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ROW_HEADER", fieldType: "Ljava/lang/String;", fieldCache: &ROW_HEADER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -335,7 +335,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var UPPER_LEADING_CORNER_FieldID: jfieldID?
 
-    open static var UPPER_LEADING_CORNER: String! {
+    public static var UPPER_LEADING_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_LEADING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_LEADING_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -347,7 +347,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var UPPER_LEFT_CORNER_FieldID: jfieldID?
 
-    open static var UPPER_LEFT_CORNER: String! {
+    public static var UPPER_LEFT_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_LEFT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_LEFT_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -359,7 +359,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var UPPER_RIGHT_CORNER_FieldID: jfieldID?
 
-    open static var UPPER_RIGHT_CORNER: String! {
+    public static var UPPER_RIGHT_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_RIGHT_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_RIGHT_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -371,7 +371,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var UPPER_TRAILING_CORNER_FieldID: jfieldID?
 
-    open static var UPPER_TRAILING_CORNER: String! {
+    public static var UPPER_TRAILING_CORNER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "UPPER_TRAILING_CORNER", fieldType: "Ljava/lang/String;", fieldCache: &UPPER_TRAILING_CORNER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -383,7 +383,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var VERTICAL_SCROLLBAR_FieldID: jfieldID?
 
-    open static var VERTICAL_SCROLLBAR: String! {
+    public static var VERTICAL_SCROLLBAR: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_SCROLLBAR", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_SCROLLBAR_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -395,7 +395,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var VERTICAL_SCROLLBAR_ALWAYS_FieldID: jfieldID?
 
-    open static var VERTICAL_SCROLLBAR_ALWAYS: Int {
+    public static var VERTICAL_SCROLLBAR_ALWAYS: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_ALWAYS", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_ALWAYS_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             return Int(__value)
@@ -406,7 +406,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var VERTICAL_SCROLLBAR_AS_NEEDED_FieldID: jfieldID?
 
-    open static var VERTICAL_SCROLLBAR_AS_NEEDED: Int {
+    public static var VERTICAL_SCROLLBAR_AS_NEEDED: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_AS_NEEDED", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_AS_NEEDED_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             return Int(__value)
@@ -417,7 +417,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var VERTICAL_SCROLLBAR_NEVER_FieldID: jfieldID?
 
-    open static var VERTICAL_SCROLLBAR_NEVER: Int {
+    public static var VERTICAL_SCROLLBAR_NEVER: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SCROLLBAR_NEVER", fieldType: "I", fieldCache: &VERTICAL_SCROLLBAR_NEVER_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             return Int(__value)
@@ -428,7 +428,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var VERTICAL_SCROLLBAR_POLICY_FieldID: jfieldID?
 
-    open static var VERTICAL_SCROLLBAR_POLICY: String! {
+    public static var VERTICAL_SCROLLBAR_POLICY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VERTICAL_SCROLLBAR_POLICY", fieldType: "Ljava/lang/String;", fieldCache: &VERTICAL_SCROLLBAR_POLICY_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -440,7 +440,7 @@ open class ScrollPaneLayout: java_swift.JavaObject, java_awt.LayoutManager, Scro
 
     private static var VIEWPORT_FieldID: jfieldID?
 
-    open static var VIEWPORT: String! {
+    public static var VIEWPORT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "VIEWPORT", fieldType: "Ljava/lang/String;", fieldCache: &VIEWPORT_FieldID, className: "javax/swing/ScrollPaneLayout", classCache: &ScrollPaneLayoutJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

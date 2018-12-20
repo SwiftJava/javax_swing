@@ -21,7 +21,7 @@ open class Spring: java_swift.JavaObject {
 
     private static var UNSET_FieldID: jfieldID?
 
-    open static var UNSET: Int {
+    public static var UNSET: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "UNSET", fieldType: "I", fieldCache: &UNSET_FieldID, className: "javax/swing/Spring", classCache: &SpringJNIClass )
             return Int(__value)

@@ -20,7 +20,7 @@ open class HyperlinkEvent_EventType: java_swift.JavaObject {
 
     private static var ACTIVATED_FieldID: jfieldID?
 
-    open static var ACTIVATED: HyperlinkEvent_EventType! {
+    public static var ACTIVATED: HyperlinkEvent_EventType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ACTIVATED", fieldType: "Ljavax/swing/event/HyperlinkEvent$EventType;", fieldCache: &ACTIVATED_FieldID, className: "javax/swing/event/HyperlinkEvent$EventType", classCache: &HyperlinkEvent_EventTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -32,7 +32,7 @@ open class HyperlinkEvent_EventType: java_swift.JavaObject {
 
     private static var ENTERED_FieldID: jfieldID?
 
-    open static var ENTERED: HyperlinkEvent_EventType! {
+    public static var ENTERED: HyperlinkEvent_EventType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ENTERED", fieldType: "Ljavax/swing/event/HyperlinkEvent$EventType;", fieldCache: &ENTERED_FieldID, className: "javax/swing/event/HyperlinkEvent$EventType", classCache: &HyperlinkEvent_EventTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -44,7 +44,7 @@ open class HyperlinkEvent_EventType: java_swift.JavaObject {
 
     private static var EXITED_FieldID: jfieldID?
 
-    open static var EXITED: HyperlinkEvent_EventType! {
+    public static var EXITED: HyperlinkEvent_EventType! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "EXITED", fieldType: "Ljavax/swing/event/HyperlinkEvent$EventType;", fieldCache: &EXITED_FieldID, className: "javax/swing/event/HyperlinkEvent$EventType", classCache: &HyperlinkEvent_EventTypeJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

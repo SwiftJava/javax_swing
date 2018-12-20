@@ -20,7 +20,7 @@ open class HTML: java_swift.JavaObject {
 
     private static var NULL_ATTRIBUTE_VALUE_FieldID: jfieldID?
 
-    open static var NULL_ATTRIBUTE_VALUE: String! {
+    public static var NULL_ATTRIBUTE_VALUE: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "NULL_ATTRIBUTE_VALUE", fieldType: "Ljava/lang/String;", fieldCache: &NULL_ATTRIBUTE_VALUE_FieldID, className: "javax/swing/text/html/HTML", classCache: &HTMLJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }

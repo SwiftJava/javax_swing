@@ -21,7 +21,7 @@ open class JSplitPane: JComponent {
 
     private static var BOTTOM_FieldID: jfieldID?
 
-    open static var BOTTOM: String! {
+    public static var BOTTOM: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "BOTTOM", fieldType: "Ljava/lang/String;", fieldCache: &BOTTOM_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -33,7 +33,7 @@ open class JSplitPane: JComponent {
 
     private static var CONTINUOUS_LAYOUT_PROPERTY_FieldID: jfieldID?
 
-    open static var CONTINUOUS_LAYOUT_PROPERTY: String! {
+    public static var CONTINUOUS_LAYOUT_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "CONTINUOUS_LAYOUT_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &CONTINUOUS_LAYOUT_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -45,7 +45,7 @@ open class JSplitPane: JComponent {
 
     private static var DIVIDER_FieldID: jfieldID?
 
-    open static var DIVIDER: String! {
+    public static var DIVIDER: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIVIDER", fieldType: "Ljava/lang/String;", fieldCache: &DIVIDER_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -57,7 +57,7 @@ open class JSplitPane: JComponent {
 
     private static var DIVIDER_LOCATION_PROPERTY_FieldID: jfieldID?
 
-    open static var DIVIDER_LOCATION_PROPERTY: String! {
+    public static var DIVIDER_LOCATION_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIVIDER_LOCATION_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DIVIDER_LOCATION_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -69,7 +69,7 @@ open class JSplitPane: JComponent {
 
     private static var DIVIDER_SIZE_PROPERTY_FieldID: jfieldID?
 
-    open static var DIVIDER_SIZE_PROPERTY: String! {
+    public static var DIVIDER_SIZE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "DIVIDER_SIZE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &DIVIDER_SIZE_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -81,7 +81,7 @@ open class JSplitPane: JComponent {
 
     private static var HORIZONTAL_SPLIT_FieldID: jfieldID?
 
-    open static var HORIZONTAL_SPLIT: Int {
+    public static var HORIZONTAL_SPLIT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "HORIZONTAL_SPLIT", fieldType: "I", fieldCache: &HORIZONTAL_SPLIT_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             return Int(__value)
@@ -92,7 +92,7 @@ open class JSplitPane: JComponent {
 
     private static var LAST_DIVIDER_LOCATION_PROPERTY_FieldID: jfieldID?
 
-    open static var LAST_DIVIDER_LOCATION_PROPERTY: String! {
+    public static var LAST_DIVIDER_LOCATION_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LAST_DIVIDER_LOCATION_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &LAST_DIVIDER_LOCATION_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -104,7 +104,7 @@ open class JSplitPane: JComponent {
 
     private static var LEFT_FieldID: jfieldID?
 
-    open static var LEFT: String! {
+    public static var LEFT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "LEFT", fieldType: "Ljava/lang/String;", fieldCache: &LEFT_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -116,7 +116,7 @@ open class JSplitPane: JComponent {
 
     private static var ONE_TOUCH_EXPANDABLE_PROPERTY_FieldID: jfieldID?
 
-    open static var ONE_TOUCH_EXPANDABLE_PROPERTY: String! {
+    public static var ONE_TOUCH_EXPANDABLE_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ONE_TOUCH_EXPANDABLE_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ONE_TOUCH_EXPANDABLE_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -128,7 +128,7 @@ open class JSplitPane: JComponent {
 
     private static var ORIENTATION_PROPERTY_FieldID: jfieldID?
 
-    open static var ORIENTATION_PROPERTY: String! {
+    public static var ORIENTATION_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "ORIENTATION_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &ORIENTATION_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -140,7 +140,7 @@ open class JSplitPane: JComponent {
 
     private static var RESIZE_WEIGHT_PROPERTY_FieldID: jfieldID?
 
-    open static var RESIZE_WEIGHT_PROPERTY: String! {
+    public static var RESIZE_WEIGHT_PROPERTY: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RESIZE_WEIGHT_PROPERTY", fieldType: "Ljava/lang/String;", fieldCache: &RESIZE_WEIGHT_PROPERTY_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -152,7 +152,7 @@ open class JSplitPane: JComponent {
 
     private static var RIGHT_FieldID: jfieldID?
 
-    open static var RIGHT: String! {
+    public static var RIGHT: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "RIGHT", fieldType: "Ljava/lang/String;", fieldCache: &RIGHT_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -164,7 +164,7 @@ open class JSplitPane: JComponent {
 
     private static var TOP_FieldID: jfieldID?
 
-    open static var TOP: String! {
+    public static var TOP: String! {
         get {
             let __value = JNIField.GetStaticObjectField( fieldName: "TOP", fieldType: "Ljava/lang/String;", fieldCache: &TOP_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             defer { JNI.DeleteLocalRef( __value ) }
@@ -176,7 +176,7 @@ open class JSplitPane: JComponent {
 
     private static var VERTICAL_SPLIT_FieldID: jfieldID?
 
-    open static var VERTICAL_SPLIT: Int {
+    public static var VERTICAL_SPLIT: Int {
         get {
             let __value = JNIField.GetStaticIntField( fieldName: "VERTICAL_SPLIT", fieldType: "I", fieldCache: &VERTICAL_SPLIT_FieldID, className: "javax/swing/JSplitPane", classCache: &JSplitPaneJNIClass )
             return Int(__value)
